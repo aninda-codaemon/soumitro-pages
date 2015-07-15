@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+    <title>Background Check | People Search | BeenVerified.com</title>
+    <meta name="description" content="Looking to find and connect with people? BeenVerified.com is your people search and background check answer.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bv-styles.css">
+
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="//manaron.s3.amazonaws.com/srg/Reverse-Phone/landing/js/respond.min.js"></script>
+    <![endif]-->
+    <!-- Hotjar Tracking Code for www.beenverified.com -->
+<script>
+    (function(f,b){
+        var c;
+        f.hj=f.hj||function(){(f.hj.q=f.hj.q||[]).push(arguments)};
+        f._hjSettings={hjid:25826, hjsv:4};
+        c=b.createElement("script");c.async=1;
+        c.src="//static.hotjar.com/c/hotjar-"+f._hjSettings.hjid+".js?sv="+f._hjSettings.hjsv;
+        b.getElementsByTagName("head")[0].appendChild(c); 
+    })(window,document);
+</script>
+
+
+  </head>
+
+    <body data-next-page="<%= next_page %>">
+
+      <header class="container">
+        <div class="row-fluid">
+          <a href="//www.beenverified.com" id="logo-header" class="pull-left" title="BeenVerified"></a><span class="slogan">Public data for personal matters</span>
+          <div class="visible-xs pull-right">
+            <a href="#" id="menu-dropdown" class="btn btn-default">Menu</a>
+          </div>
+          <div id="link-wrap" class="pull-right hide-elem">
+            <span class="hidden-xs"></span>&nbsp;<a href="//www.beenverified.com/login" class="btn btn-primary btn-round">Login</a>
+            <!--
+            <span class="hidden-xs">or</span>
+            <a id="header-sub-link" href="https://www.beenverified.com/lp/8d66ff/4/subscribe" class="btn btn-round btn-success">Subscribe</a>
+			-->
+            <p class="call-us"><strong>Questions? </strong> 
+              <a href="tel:+18885795910" class="phone hidden-xs" data-toggle="tooltip" data-placement="bottom" title="1-888-579-5910"></a>
+              <a href="mailto:support@beenverified.com" class="email hidden-xs" data-toggle="tooltip" data-placement="bottom" title="support@beenverified.com"></a>
+              <span class="hidden-lg hidden-md hidden-sm">1-888-579-5910</span><br>
+              <span class="hidden-lg hidden-md hidden-sm">support@beenverified.com</span>
+            </p>
+          </div>
+        </div>
+      </header>
+      <section id="top-banner">
+        <div id="top-bannerBG">
+          <div  class="container">
+            <div class="row-fluid">
+              <div class="col-xs-12">
+
+
+                <div class="row">
+                  <div class="col-xs-12 text-center" data-bv-content>
+                    <div data-bv-ref="default">
+                        <h1>Search What Matters To You</h1>
+                        <p class="sub-head">Use BeenVerified to make more informed decisions about people and the neighborhoods in your life.</p>
+                    </div>
+                    <div data-bv-ref="criminalrecords">
+                        <h1>Criminal Records</h1>
+                        <p class="sub-head">Public Records, Bankruptcies, Contact Information, and More!</p>
+                    </div>
+                    <div data-bv-ref="arrestrecords">
+                        <h1>Arrest Records</h1>
+                        <p class="sub-head">Criminal Records, Bankruptcies, Contact Information, and More!</p>
+                    </div>
+                    <div data-bv-ref="trafficrecords">
+                        <h1>Traffic Records</h1>
+                        <p class="sub-head">Public Records, Bankruptcies, Contact Information, and More!</p>
+                    </div>
+                    <div data-bv-ref="backgroundchecks">
+                        <h1>Background Checks</h1>
+                        <p class="sub-head">Criminal Records, Bankruptcies, Contact Information, and More!</p>
+                    </div>
+                    <div data-bv-ref="peoplesearch">
+                        <h1>People Search</h1>
+                        <p class="sub-head">Criminal Records, Bankruptcies, Contact Information, and More!</p>
+                    </div>
+                    <div data-bv-ref="courtrecords">
+                        <h1>Court Records</h1>
+                        <p class="sub-head">Public Records, Bankruptcies, Contact Information, and More!</p>
+                    </div>
+                    <div data-bv-ref="policerecords">
+                        <h1>Police Records</h1>
+                        <p class="sub-head">Criminal Records, Bankruptcies, Contact Information, and More!</p>
+                    </div>
+                    <div data-bv-ref="bankruptcyrecords">
+                        <h1>Bankruptcy Records</h1>
+                        <p class="sub-head">Public Records, Judgements, Contact Information, and More!</p>
+                    </div>
+                    <div data-bv-ref="propertyrecords">
+                        <h1>Property Records</h1>
+                        <p class="sub-head">Public Records, Bankruptcies, Contact Information, and More!</p>
+                    </div>
+                  </div> <!--data-bv-content-->
+                </div>
+
+
+              <div id="carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div id="search-slider" class="slider1 row item active">
+                    <div class="col-md-12">
+                      <div class="row">
+                        <div class="message-box">
+                            <p class="message-box-text"><strong>START HERE</strong><span class="hidden-xs"> - Try searching a relative, friend, neighbor, or even yourself...</span>
+                            <span class="carrot-down">&nbsp;</span>
+                            </p>
+                        </div> <!-- /.message-box -->
+                      </div><!--END row-->
+                      <div class="row">
+                        <form action="<%= next_page %>" id="header-search" class="header-search no-hide-header" role="form" method="get" name="record_search_form">
+                          <div class="col-md-3">
+                            <label for="fn" class="input-title">First Name:</label>
+                            <br>
+                            <input type="text" class="form-control" id="fn" placeholder="e.g., John" name="fn">
+                          </div>
+                          <div class="col-md-4">
+                            <label for="ln" class="input-title">Last Name:</label>
+                            <br>
+                            <input type="text" class="form-control" id="ln" placeholder="e.g., Doe" name="ln">
+                          </div>
+                          <div class="col-md-3">
+                            <label for="state" class="input-title">Last Known Location:</label>
+                            <br>
+                            <select name="state" id="state" class="form-control">
+                              <option value="All">All States</option>
+                              <option value="AL">Alabama</option>
+                              <option value="AK">Alaska</option>
+                              <option value="AZ">Arizona</option>
+                              <option value="AR">Arkansas</option>
+                              <option value="CA">California</option>
+                              <option value="CO">Colorado</option>
+                              <option value="CT">Connecticut</option>
+                              <option value="DE">Delaware</option>
+                              <option value="DC">District Of Columbia</option>
+                              <option value="FL">Florida</option>
+                              <option value="GA">Georgia</option>
+                              <option value="HI">Hawaii</option>
+                              <option value="ID">Idaho</option>
+                              <option value="IL">Illinois</option>
+                              <option value="IN">Indiana</option>
+                              <option value="IA">Iowa</option>
+                              <option value="KS">Kansas</option>
+                              <option value="KY">Kentucky</option>
+                              <option value="LA">Louisiana</option>
+                              <option value="ME">Maine</option>
+                              <option value="MD">Maryland</option>
+                              <option value="MA">Massachusetts</option>
+                              <option value="MI">Michigan</option>
+                              <option value="MN">Minnesota</option>
+                              <option value="MS">Mississippi</option>
+                              <option value="MO">Missouri</option>
+                              <option value="MT">Montana</option>
+                              <option value="NE">Nebraska</option>
+                              <option value="NV">Nevada</option>
+                              <option value="NH">New Hampshire</option>
+                              <option value="NJ">New Jersey</option>
+                              <option value="NM">New Mexico</option>
+                              <option value="NY">New York</option>
+                              <option value="NC">North Carolina</option>
+                              <option value="ND">North Dakota</option>
+                              <option value="OH">Ohio</option>
+                              <option value="OK">Oklahoma</option>
+                              <option value="OR">Oregon</option>
+                              <option value="PA">Pennsylvania</option>
+                              <option value="RI">Rhode Island</option>
+                              <option value="SC">South Carolina</option>
+                              <option value="SD">South Dakota</option>
+                              <option value="TN">Tennessee</option>
+                              <option value="TX">Texas</option>
+                              <option value="UT">Utah</option>
+                              <option value="VT">Vermont</option>
+                              <option value="VA">Virginia</option>
+                              <option value="WA">Washington</option>
+                              <option value="WV">West Virginia</option>
+                              <option value="WI">Wisconsin</option>
+                              <option value="WY">Wyoming</option>
+                            </select>
+                          </div>
+                          <div class="col-md-2">
+                            <label class="hidden-xs hidden-sm">&nbsp;</label>
+                            <br class="hidden-xs hidden-sm">
+                            <button type="submit" class="btn btn-block btn-success btn-success-pop">Search</button>
+                          </div>
+                          <div class="clearfix"></div>
+                        </form>
+                      </div><!--END row-->
+                    </div>
+                  </div><!--END slider1 -->
+
+                  <div id="survey-slider" class="slider2 row item">
+                    <div class="col-md-12">
+                      <div class="row">
+                        <div class="message-box">
+                            <p class="message-box-text"><strong>To improve your experience, why are you using BeenVerified today?</strong></p>
+                        </div> <!-- /.message-box -->
+                      </div>
+                      <div class="row">
+                        <div class="survey col-xs-12">
+
+                          <ul class="bv-survey text-center"
+                            data-survey-name='purpose-of-visit'
+                            data-survey-trigger='#pov-survey'
+                            data-survey-default='glyphicon-unchecked'
+                            data-survey-checked='glyphicon-check'>
+                              <!-- See SOT-333 for list of values. -->
+                              <li data-survey-val='10'>
+                                <p><span class="checkbox-sprite"></span> Research Myself</p>
+                                <div class="checkbox-image myself"></div>
+                              </li>
+                              <li data-survey-val='16'>
+                                <p><span class="checkbox-sprite"></span> Reconnecting</p>
+                                <div class="checkbox-image reconnect"></div>
+                              </li>
+                              <li data-survey-val='13'>
+                                <p><span class="checkbox-sprite"></span> Genealogy</p>
+                                <div class="checkbox-image genealogy"></div>
+                              </li>
+                              <li data-survey-val='15'>
+                                <p><span class="checkbox-sprite"></span> Professionally</p>
+                                <div class="checkbox-image professional"></div>
+                              </li>
+                              <li data-survey-val='14'>
+                                <p><span class="checkbox-sprite"></span> Dating</p>
+                                <div class="checkbox-image dating"></div>
+                              </li>
+                              <li data-survey-val='12'>
+                                <p><span class="checkbox-sprite"></span> Protect My Family</p>
+                                <div class="checkbox-image protect"></div>
+                              </li>
+                              <li data-survey-val='99'>
+                                <p><span class="checkbox-sprite"></span> Other</p>
+                                <div class="checkbox-image other"></div>
+                              </li>
+                          </ul>
+
+                          <div class="row">
+                            <div class="col-md-2 col-md-offset-5">
+                              <div class="row-fluid">
+                                <div class="col-sm-12">
+                                  <form id="pov-survey">
+                                    <button type="submit" class="btn btn-block btn-success btn-success-pop surveySubmit">Submit</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div><!--END row-->
+                    </div>
+                  </div><!--END slider2 -->
+
+                  <div id="mugshots-slider" class="slider3 row item">
+                    <div class="col-md-12">
+                      <div class="row">
+                        <div class="message-box">
+                            <div class="message-box-text" data-fr-bind="query searchData">
+                              <p>
+                                <span class="searchMugshots"></span><strong>Searching For <span id="subject-name">Your Subject</span> ...Please Be Patient</strong>
+                              </p>
+                            </div>
+                        </div> <!-- /.message-box -->
+                      </div>
+                      <div class="loading row">
+                        <div class="col-xs-12">
+                          <div class="row">
+                            <div class="col-xs-12">
+                              <h4 class="text-center"><span id="searchCategory" data-search-categories="Criminal Records,Bankruptcies,Associates,Phone Numbers,Property Records,Social Profiles,Felonies,Driving Citations,Sexual Offenders,Relatives">Addresses</span></h4>
+                              <div id="search-main-progress" class="progress">
+                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%">
+                                  <span class="sr-only">2% Complete (success)</span>
+                                </div>
+                              </div>
+                            </div><!--END loading-->
+                          </div><!--END row-->
+                          <div class="row">
+                            <div class="col-md-4 col-sm-12">
+                              <h4 class="text-center">Various Public Record Databases</h4>
+                              <div id="search-first-progress" class="progress">
+                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%">
+                                  <span class="sr-only">2% Complete (success)</span>
+                                </div>
+                              </div>
+                            </div><!--END loading-->
+                            <div class="col-md-4 col-sm-12">
+                              <h4 class="text-center">County and State Court Records</h4>
+                              <div id="search-second-progress" class="progress">
+                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%">
+                                  <span class="sr-only">2% Complete (success)</span>
+                                </div>
+                              </div>
+                            </div><!--END loading-->
+                            <div class="col-md-4 col-sm-12">
+                              <h4 class="text-center">Proprietary Data Sets</h4>
+                              <div id="search-third-progress" class="progress">
+                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%">
+                                  <span class="sr-only">40% Complete (success)</span>
+                                </div>
+                              </div>
+                            </div><!--END loading-->
+                          </div><!--END row-->
+                          <div class="row visible-lg">
+                            <div class="featured col-lg-12 text-center">
+                              <img src="img/featured.gif" width="836">
+                            </div>
+                          </div><!--END row-->
+                        </div>
+                      </div><!--END row-->
+                    </div>
+                  </div><!--END slider3 -->
+                </div><!-- .carousel.slide -->
+              </div><!--.carousel.slide-->
+
+
+
+
+              </div><!--END col-md-12-->
+            </div>
+          </div> <!-- /.container -->
+        </div> 
+      </section>
+
+      <section id="dataBenefits">
+        <div class="container">
+          <div class="row">
+            <h1 class="text-center">Public Data Can Help You</h1>
+          </div>
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <h3>Protect</h3>
+              <img class="img-responsive center-block" src="img/radar_197.png">
+              <p>Search billions of data points to uncover criminal histories, sex offenders, court decisions and past crimes.</p>
+            </div>
+            <div class="col-md-4 text-center">
+              <h3>Reconnect</h3>
+              <img class="img-responsive center-block" src="img/reconnect_197.png">
+              <p>With address, phone number and contact information at your disposal, you could reconnect with old friends, family and classmates.</p>
+            </div>
+            <div class="col-md-4 text-center">
+              <h3>Discover</h3>
+              <img class="img-responsive center-block" src="img/discover_197.png">
+              <p>Once you understand the full extent of our data, you’ll be able to make better decisions about relationships, property and family history.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="userRoles" class="blueBG">
+        <div class="container">
+          <div class="row">
+            <h1 class="text-center">BeenVerified Is For You. No Matter Who You Are.</h1>
+          </div>
+          <div class="row text-center">
+            <a class="role1" href="#" data-toggle="tooltip" data-placement="top" title="Scope out your online date"><span>The Dater</span></a>
+            <a class="role2" href="#" data-toggle="tooltip" data-placement="top" title="Look up your potential employer"><span>The Job Seeker</span></a>
+            <a class="role3" href="#" data-toggle="tooltip" data-placement="top" title="Look up people your children interact with"><span>The Caring Parent</span></a>
+            <a class="role4" href="#" data-toggle="tooltip" data-placement="top" title="Check yourself out"><span>The Selfie</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="aboutBV">
+        <div class="container">
+          <div class="row">
+            <h1 class="text-center">The Intersection Between Data And The Real World</h1>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h3>Partner with BeenVerified to incorporate public data into your life.</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <p class="counter">
+                <span class="digit">1</span>
+                <span class="digit">0</span>
+                <span class="digit">0</span>,
+                <span class="digit">0</span>
+                <span class="digit">0</span>
+                <span class="digit">0</span>+
+              </p>
+              <h4>Monthly Subscribers</h4>
+            </div>
+            <div class="col-md-4 text-center">
+              <p class="counter">
+                <span id="tick_0" class="timer-digit-single digit">3</span>
+                <span id="tick_1" class="timer-digit-single digit">0</span>,
+                <span id="tick_2" class="timer-digit-single digit">1</span>
+                <span id="tick_3" class="timer-digit-single digit">5</span>
+                <span id="tick_4" class="timer-digit-single digit">3</span>,
+                <span id="tick_5" class="timer-digit-single digit">4</span>
+                <span id="tick_6" class="timer-digit-single digit">1</span>
+                <span id="tick_7" class="timer-digit-single digit">4</span>
+              </p>
+              <h4>Background Reports Run by Our Users</h4>
+            </div>
+            <div class="col-md-4 text-center">
+              <p class="counter">
+                <span class="digit">1</span>,
+                <span class="digit">0</span>
+                <span class="digit">0</span>
+                <span class="digit">0</span>,
+                <span class="digit">0</span>
+                <span class="digit">0</span>
+                <span class="digit">0</span>,
+                <span class="digit">0</span>
+                <span class="digit">0</span>
+                <span class="digit">0</span>+
+              </p>
+              <h4>Of Public Data Points</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- COUNTER 
+      <section class="info-block highlight-block top-push bot-push">
+        <div class="container">
+        <div class="row">
+          <p class="h1 text-center text-royal"><span class="hidden-xs">Background </span>Reports Run By Our Users</p>
+          <p class="sub-header text-center">This is a real number, we promise!</p>
+          <div class="timer-wrapper col-xs-12 col-md-8 col-md-offset-2 clearfix text-center">
+            <div class="timer-digit-group">
+              <span id="tick_0" class="timer-digit-single">3</span>
+              <span id="tick_1" class="timer-digit-single">0</span>
+              <span class="timer-digit-single">,</span>
+              <span id="tick_2" class="timer-digit-single">1</span>
+              <span id="tick_3" class="timer-digit-single">5</span>
+              <span id="tick_4" class="timer-digit-single">3</span>
+              <span class="timer-digit-single">,</span>
+              <span id="tick_5" class="timer-digit-single">4</span>
+              <span id="tick_6" class="timer-digit-single">1</span>
+              <span id="tick_7" class="timer-digit-single">4</span>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>-->
+
+      <section id="guarantee">
+        <div class="container">
+          <div class="row text-center">
+            <h1>Always Improving</h1>
+            <h3>BeenVerified will be relentless in its pursuit of providing you with better public data.</h3>
+            <a class="btn btn-primary bottomSearch backToTop">Search Someone</a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container">
+            <div class="row">
+                <ul class="col-sm-3">
+                    <li class="footer-title">BeenVerified © <span class="current-year">2014</span></li>
+                    <li>Aggregates the most up-to-date public record databases available through our fast and easy-to-use web-based software.</li>
+                    <li class="terms-stack">
+                        <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Use</a> |
+                        <a href="//www.beenverified.com/privacy" target="_blank">Privacy Policy</a>
+                        <br>
+                        <a href="//www.beenverified.com/membership-agreement" target="_blank">Membership Agreement</a>
+                    </li>
+                    <div class="fb-like fb_iframe_widget" data-href="https://www.facebook.com/BeenVerified" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;href=https%3A%2F%2Fwww.facebook.com%2FBeenVerified&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false"><span style="vertical-align: bottom; width: 82px; height: 20px;"><iframe name="f1d8855e14" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="//www.facebook.com/plugins/like.php?action=like&amp;app_id=&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FQjK2hWv6uak.js%3Fversion%3D41%23cb%3Df3068a8784%26domain%3Dwww.beenverified.com%26origin%3Dhttp%253A%252F%252Fwww.beenverified.com%252Ff305cf94ec%26relation%3Dparent.parent&amp;href=https%3A%2F%2Fwww.facebook.com%2FBeenVerified&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false" style="border: none; visibility: visible; width: 82px; height: 20px;" class=""></iframe></span></div>
+                </ul>
+                <ul class="col-sm-2">
+                    <li class="footer-title">About Us</li>
+                    <li><a href="//www.beenverified.com/about-us">About BV</a></li>
+                    <li><a href="//www.beenverified.com/testimonials">Testimonials</a></li>
+                    <li><a href="http://jobs.beenverified.com">BeenVerified Jobs</a></li>
+                    <li><a href="//www.beenverified.com/press-page">Press</a></li>
+                    <li><a href="http://partners.beenverified.com/signup">Affiliates</a></li>
+                </ul>
+                <ul class="col-sm-2">
+                    <li class="footer-title">Apps</li>
+                    <li><a href="//itunes.apple.com/us/app/background-check-app/id342585873?mt=8" target="_blank">For iPhone</a></li>
+                    <li><a href="//itunes.apple.com/us/app/background-check-app-beenverified/id342585873?mt=8" target="_blank">For iPad</a></li>
+                    <li><a href="//market.android.com/details?id=com.beenverified.android&amp;feature=search_result" target="_blank">For Android</a></li>
+                    <li><a href="//docs.google.com/a/beenverified.com/spreadsheet/viewform?formkey=dEU1elc5dDVoMElwYmlYUWQ0Wkxjbmc6MA" target="_blank">Developer API</a></li>
+                </ul>
+                <ul class="col-sm-2">
+                    <li class="footer-title">Help</li>
+                    <li><a href="http://support.beenverified.com/home">Support</a></li>
+                    <li><a href="//www.beenverified.com/billing-faq">FAQ</a></li>
+                    <li><a href="//www.beenverified.com/contactus">Contact Us</a></li>
+                    <li><a href="//www.beenverified.com/optout">Remove My Info</a></li>
+                </ul>
+                <ul class="col-sm-3">
+                    <li class="footer-title">Community</li>
+                    <li class="icon-social icon-bv"><a href="http://blog.beenverified.com/" target="_blank">BeenVerified Blog</a></li>
+                    <li class="icon-social icon-fb"><a href="//www.facebook.com/BeenVerified" target="_blank">BeenVerified on Facebook</a></li>
+                    <li class="icon-social icon-tw"><a href="//twitter.com/#!/BeenVerified" target="_blank">BeenVerified on Twitter</a></li>
+                    <li class="icon-social icon-go"><a href="//plus.google.com/104769563048512126601" target="_blank">Google+ Page for BeenVerified</a></li>
+                    <li class="icon-social icon-pi"><a href="//www.pinterest.com/beenverified" target="_blank">BeenVerified Pinterest Pins</a></li>
+                    <li class="icon-social icon-li"><a href="//www.linkedin.com/company/1026312?trk=tyah" target="_blank">BeenVerified on LinkedIn</a></li>
+                </ul>
+            </div>
+            <div id="footer-resources" class="">
+                <p class="text-center">More Resources:</p>
+                <div id="resources-list">
+                    <div class="row">
+                        <a href="//www.beenverified.com/people-search" class="col-sm-offset-1 col-xs-12 col-sm-2 text-center">People Search</a>
+                        <!-- <a href="//www.beenverified.com/abc" class="col-xs-12 col-sm-2 text-center">People Directory</a> -->
+                        <a href="//www.beenverified.com/background-checks" class="col-xs-12 col-sm-2 text-center">Background Check</a>
+                        <a href="//www.beenverified.com/public-records" class="col-xs-12 col-sm-2 text-center">Public Records</a>
+                        <a href="//www.beenverified.com/criminal-records" class="col-xs-12 col-sm-2 text-center">Criminal Records</a>
+                        <a href="//www.beenverified.com/reverse-lookup" class="col-xs-12 col-sm-2 text-center">Reverse Lookups</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="disclaimer">
+            <div class="container">
+                <p>Disclaimer:  BeenVerified’s mission is to give people easy and affordable access to  public record information. BeenVerified does not provide private  investigator services, and is not a consumer reporting agency as defined  by the Fair Credit Report Act because the information provided by  BeenVerified is not collected or provided, in whole or in part, for the  purpose of furnishing consumer reports about those search subjects. For  more information governing the permitted and prohibited uses of BeenVerified, please review our <a href="//www.beenverified.com/dos-donts">“Do’s &amp; Don’ts”</a> and our <a href="//www.beenverified.com/consumer-terms-of-service">Terms &amp; Conditions</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/lodash.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/counter.js"></script>
+    <script type="text/javascript" src="js/workers.js"></script>
+    <script type="text/javascript" src="js/targeted.js"></script>
+    <script type="text/javascript" src="js/runner.js"></script>
+
+  </body>
+</html>
