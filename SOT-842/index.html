@@ -1,3 +1,4 @@
+<!-- SOT-842 -->
 <!DOCTYPE html>
 <html lang="en">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -38,7 +39,7 @@
     <div class="container">
       <div class="box-header">
         <h1>Search Public Records</h1>
-        <p>Try searching a relative, neighbor, friend or even yourself!</p>
+        <p class="hidden-xs">Try searching a relative, neighbor, friend or even yourself!</p>
       </div>
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
@@ -52,29 +53,36 @@
                   <li><a href="#">Property</a></li>
                 </ul>
               </div>
-              <div class="col-sm-6 text-right privacy"> <img src="images/lock.png" /> <span> We respect your privacy.</span> </div>
+              <div class="col-sm-6 text-right privacy hidden-xs"> <img src="images/lock.png" /> <span> We respect your privacy.</span> </div>
             </div>
             <form id="header-search" class="header-search">
               <div class="row">
-                <div class="col-md-3">
-                  <input type="text" name="fn" placeholder="First Name" id="fn">
-                </div>
-                <div class="col-md-3">
-                  <input type="text" name="ln" placeholder="Last Name" id="ln" />
-                </div>
-                <div class="col-md-3">
-                  <input type="text" name="ln" placeholder="State" id="st" />
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-block btn-success btn-search" type="submit">Search</button>
+              	<div class="col-sm-9 col-no-padding">
+                	<div class="field-group">
+                        <div class="row">
+                            <div class="col-sm-4">
+                              <input type="text" name="fn" placeholder="First Name" id="fn">
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" name="ln" placeholder="Last Name" id="ln" />
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text" name="st" placeholder="State" id="st" />
+                            </div>
+                        </div>
+                    </div>
+               	</div>
+              	<div class="col-sm-3 col-no-padding">
+                	  <span class="visible-xs">&nbsp;</span>
+                      <button class="btn btn-block btn-success btn-search" type="submit">Search</button>
                 </div>
               </div>
             </form>
           </div>
-          <div class="logos text-right"><img src="images/logos.png" align="advertisement" /></div>
+          <div class="logos text-right hidden-xs"><img src="images/logos.png" align="advertisement" class="img-responsive" /></div>
         </div>
       </div>
-      <div class="row">
+      <div class="row hidden-xs">
         <div class="col-lg-8 col-lg-offset-2">
           <div class="row">
             <div class="col-lg-5">
@@ -97,28 +105,30 @@
   <div class="container">
     <div class="box-header">
       <h1>Easy and Affordable Background Checks</h1>
-      <p>Learn why millions of people like you have chosen BeenVerified</p>
+      <p class="hidden-xs">Learn why millions of people like you have chosen BeenVerified</p>
     </div>
     <div class="box-contents">
       <div class="row">
-        <div class="col-sm-6">
-          <div class="row">
-            <div class="col-sm-10 col-sm-offset-1">
-              <h2>Search Anyone. Anytime</h2>
-              <p> Looking for someone? Our intuitive public records search engine makes it easy. </p>
-              <h2>Search Anyone. Anytime</h2>
-              <p> Looking for someone? Our intuitive public records search engine makes it easy. </p>
-              <h2>Search Anyone. Anytime</h2>
-              <p> Looking for someone? Our intuitive public records search engine makes it easy. </p>
-              <h2>Search Anyone. Anytime</h2>
-              <p> Looking for someone? Our intuitive public records search engine makes it easy. </p>
-              <div class="row">
-                <div class="col-md-6"> <a href="#" class="btn btn-default">Learn About Us</a> </div>
+      	<div class="col-sm-1 hidden-xs">&nbsp;</div>
+        <div class="col-sm-5">
+        		<div class="row"> 
+                <div class="col-sm-12">
+                      <img src="images/screenshot-resp.png" alt="" class="pull-right visible-xs screenshot-resp" />	
+                      <h2>Search Anyone. Anytime</h2>
+                      <p> Our intuitive public records search engine. </p>
+                      <h2>Respect for Privacy</h2>
+                      <p> Privacy-friendly public records. How we do it. </p>
+                      <h2>Affordable &amp; Accessible</h2>
+                      <p>We don't want you to ask yourself if it's "worth it".</p>
+                      <h2>All in 1 Report</h2>
+                      <p>Search for what you are looking for and get all.</p>
+                 </div>
               </div>
-            </div>
-          </div>
+              <div class="row">
+                <div class="col-md-6"> <a href="#" class="btn btn-block btn-default">Learn About Us</a> </div>
+              </div>
         </div>
-        <div class="col-sm-6 text-center"> <img src="images/screenshot.png" class="img-responsive" > </div>
+        <div class="col-sm-6 hidden-xs text-center"> <img src="images/screenshot.png" alt="" /> </div>
       </div>
     </div>
   </div>
@@ -126,22 +136,26 @@
 <section id="app">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 text-center"> <img src="images/mobiles.png" alt="" class="img-responsive"> </div>
-      <div class="col-lg-6">
+      <div class="col-sm-6 hidden-xs text-center"> <img src="images/mobiles.png" alt=""> </div>
+      <div class="col-sm-6">
         <div class="box-header">
           <h1>Billions of Records at Your Fingertips</h1>
-          <p> With over 5,000,000 downloads so far, BeenVerified is the go-to choice for mobile public data access. </p>
         </div>
         <div class="box-contents">
+         <div class="row">
+         	<div class="col-md-9">
+        <img src="images/app-resp.png" alt="" class="pull-left visible-xs app-resp" />
+          <p> With over 5,000,000 downloads so far, BeenVerified is the go-to choice for mobile public data access. </p>
+
           <p>"Great App &nbsp;&nbsp; <img src="images/app-rating.png" alt=""> </p>
-          <div class="row">
-            <div class="col-lg-8">
+           
               <p class="small"> BeenVerified is easy to use and provides the details needed for a reliable, accurate background check. Highly recommend!”<a href="#">- via the App Store</a> </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4"> <a href="#"><img src="images/btn-ios.png" /></a> </div>
-            <div class="col-md-5"> <a href="#"><img src="images/btn-android.png" /></a> </div>
+            <ul class="list-unstyled list-inline" >
+            	<li><a href="#"><img src="images/btn-ios.png" class="img-responsive" /></a></li>  
+             	<li><a href="#"><img src="images/btn-android.png" class="img-responsive" /></a></li>
+            </ul>   
+              </div>
+              </div>
           </div>
         </div>
       </div>
@@ -152,7 +166,7 @@
   <div class="container">
     <div class="box-header">
       <h1>Experience the BeenVerified Difference</h1>
-      <p>See what people like you are saying about BeenVerified</p>
+      <p class="hidden-xs">See what people like you are saying about BeenVerified</p>
     </div>
     <div class="box-contents">
       <div class="row">
@@ -166,9 +180,14 @@
             <li><img src="images/testi-user.png" /></li>
             <li><img src="images/testi-user.png" /></li>
           </ul>
-          <a href="#" class="btn btn-default">More Testimonials</a> </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <a href="#" class="btn btn-default btn-block">More Testimonials</a> 
+          	</div>
+          </div>
+        </div>
         <div class="col-sm-2 hidden-xs"></div>
-        <div class="col-sm-5">
+        <div class="col-sm-5 hidden-xs">
           <h2>From the Press</h2>
           <h3>Television News</h3>
           <div class="testi-contents">"Corporations, marketers, lawyers, and even journalists access public information. Now is the pretty appropriate time to level the 
@@ -178,7 +197,12 @@
             <li><img src="images/testi-logo.png" /></li>
             <li><img src="images/testi-logo.png" /></li>
           </ul>
-          <a href="#" class="btn btn-default">More Press Quotes</a> </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <a href="#" class="btn btn-default">More Press Quotes</a>
+            </div>
+          </div> 
+        </div>
       </div>
     </div>
   </div>
@@ -197,47 +221,40 @@
     </div>
     <div class="box-contents">
       <div class="graph-line hidden-xs text-center"> <img src="images/graph-line.png" class="img-responsive"/> </div>
+      <div class="graph-vert visible-xs text-left"><img src="images/graph-vert.png"  /></div>
       <div class="graph-dots">
         <div class="row">
           <div class="col-sm-3 text-center">
-            <p><img src="images/graph-dot.png" /><br />
-              <br />
-              <br />
-              Founded by Josh and Ross in 2007<br />
-              <br />
-              <br />
+            <p class="timeline-box">
+            	<img src="images/graph-dot.png" class="center-block" />
+
+              <span>Founded by Josh and Ross in 2007</span> 
             </p>
           </div>
           <div class="col-sm-3 text-center">
-            <p><img src="images/graph-dot.png" /><br />
-              <br />
-              <br />
+            <p class="timeline-box">
+            <img src="images/graph-dot.png" class="center-block" />
+            <span>
               Over 1,000,000
-              app downloads<br />
-              <br />
-              <br />
+              app downloads</span>
             </p>
           </div>
           <div class="col-sm-3 text-center">
-            <p><img src="images/graph-dot.png" /><br />
-              <br />
-              <br />
+             <p class="timeline-box">
+<img src="images/graph-dot.png" class="center-block" />
+<span>
               Named fastest growing
               private company in NC by 
-              Inc. Magazine in 2013<br />
-              <br />
-              <br />
+              Inc. Magazine in 2013</span>
             </p>
           </div>
           <div class="col-sm-3 text-center">
-            <p><img src="images/graph-dot.png" /><br />
-              <br />
-              <br />
+             <p class="timeline-box">
+<img src="images/graph-dot.png" class="center-block" /><span>
               Today we have over 
-              100,000 members<br />
-              <br />
-              <br />
+              100,000 members</span>
             </p>
+              
           </div>
         </div>
       </div>
@@ -245,7 +262,7 @@
   </div>
 </section>
 <section id="cta">
-  <p class="text-center"> What are you wairing for? &nbsp;&nbsp; <a href="#" class="btn btn-success">Search Someone</a> </p>
+  <p class="text-center"> <span>What are you wairing for?</span> &nbsp;&nbsp; <a href="#" class="btn btn-success">Search Someone</a> </p>
 </section>
 <footer id="footer">
   <div class="container">

@@ -13,8 +13,11 @@ body {
 .btn-success {
 	background:#6dac45;
 }
+.col-no-padding {
+	padding:0;
+}
 #header {
-	background:url(images/header-back.png) no-repeat;
+	background:url(images/header-bg.jpg) no-repeat;
 	background-size:cover;
 	padding:0 0 225px 0;
 }
@@ -44,9 +47,16 @@ body {
 }
 .navbar-brand {
 	padding: 0px;
+	margin-top:18px;
 }
 .navbar-toggle {
-	margin: 25px 0;
+	margin: 15px 0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #fff;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+	background-color: transparent;
 }
 .navbar-nav {
 	margin:10px 0 0;
@@ -114,10 +124,10 @@ body {
 	border: none;
 	border-radius: 2px;
 	color:#fff;
-	font-size:16px;
+	font-size:15px;
 	font-weight:400;
 	padding:5px 10px;
-	margin-right:15px;
+	margin:0;/*margin-right:15px;*/
 }
 .search-tabs > li > a:hover {
 	color:#fff;
@@ -138,37 +148,35 @@ body {
 	vertical-align:middle;
 }
 #header-search {
+	padding:0 15px;
+}
+#header-search .field-group {
 	background:#fff;
-	border-radius:3px;
-	border-top-right-radius:9px;
-	border-bottom-right-radius:9px;
-	padding:0px 0;
+	border-radius:3px 0 0 3px;
+	min-height:50px;
 }
 .header-search input {
 	border:none;
 	box-shadow:none;
 	border-radius:0px;
 	border-left:1px #dedfe2 solid;
-	padding:3px 20px;
 	width:98%;
-	font-size:18px;
-	font-weight:400;
-	margin:8px 0;
+	font-size:20px;
+	font-weight:300;
+	margin:9px 0;
+	padding:0 10px;
 }
 .header-search input#fn {
 	border-left:none;
 }
 .header-search input#st {
-	background:url(images/dd-arrow.png) no-repeat right center;
+	background:url(images/dd-arrow.png) no-repeat 95% center;
 }
 .header-search .btn-search {
-	border-top-left-radius:0px;
-	border-bottom-left-radius:0px;
-	border-top-right-radius:3px;
-	border-bottom-right-radius:3px;
-	padding:10px;
-	font-size:18px;
+	font-size:20px;
+	height:50px;
 	background:#6dac45;
+	border-radius:0 3px 3px 0;
 }
 .logos {
 	margin:10px 0 125px;
@@ -210,6 +218,9 @@ body {
 	margin:0px;
 	font-size:18px;
 }
+#background-checks .screenshot-resp {
+	margin: 0 -15px 0 15px;
+}
 #background-checks .btn-default {
 	margin:40px 0;
 }
@@ -246,6 +257,9 @@ body {
 	font-size:14px;
 	line-height:18px;
 	margin-bottom:40px;
+}
+#app .app-resp {
+	margin: 0 25px 0 -15px;
 }
 #testimonials {
 	background:url(images/testimonials-bg.png) no-repeat top center;
@@ -301,9 +315,9 @@ body {
 	margin-top:20px;
 }
 #video {
-	background:url(images/header-back.png) no-repeat;
+	background:url(images/header-bg.jpg) no-repeat;
 	background-size:cover;
-	padding:150px 0;
+	padding:100px 0 175px;
 }
 #video .btn-default {
 	color:#fff;
@@ -334,9 +348,18 @@ body {
 	font-size:22px;
 	text-align:center;
 }
-#timeline .box-contents p {
+.timeline-box {
+	position:relative;
+}
+.timeline-box img {
+}
+.timeline-box span {
+	margin-top:50px;
+	display:inline-block;
+}
+.timeline-box span {
 	color:#888;
-	font-weight:400;
+	font-weight:300;
 	margin:0px;
 	font-size:18px;
 }
@@ -349,7 +372,8 @@ body {
 }
 #cta p {
 	color:#fff;
-	font-size:22px;
+	font-size:20px;
+	font-weight:300;
 }
 #footer {
 	padding-top:75px;
@@ -427,4 +451,105 @@ body {
 p.disclaimer {
 	text-align:center;
 	margin-bottom:40px;
+}
+ @media only screen and (max-width : 1200px) {
+}
+ @media only screen and (max-width : 979px) {
+}
+ @media only screen and (max-width : 767px) {
+.home-search .box-header h1 {
+	font-size: 40px;
+}
+.home-search .box-header {
+	margin-bottom: 40px;
+}
+#header-search .field-group {
+	border-radius: 3px;
+}
+.header-search .btn-search {
+	border-radius: 3px;
+}
+#background-checks .box-header {
+	margin-bottom: 15px;
+}
+#background-checks .box-header h1 {
+	font-size: 25px;
+}
+#background-checks .box-contents h2 {
+	font-size: 17px;
+	margin: 15px 0 10px;
+}
+#background-checks .box-contents p {
+	font-size: 15px;
+}
+#background-checks .btn-default {
+	margin: 20px 0;
+}
+#app {
+	padding:25px 0 150px
+}
+#app .box-header {
+	margin-bottom: 25px;
+}
+#app .box-header h1 {
+	font-size: 23px;
+	line-height:22px;
+	text-align:center;
+	margin:0;
+}
+#testimonials {
+	padding:125px 0 50px;
+}
+#testimonials .box-header h1 {
+	font-size: 23px;
+	line-height:22px;
+	text-align:center;
+	margin:0;
+}
+
+.graph-dots {
+	margin:0 auto;
+}
+#timeline .box-header h1 {
+	font-size: 23px;
+	line-height:22px;
+	text-align:center;
+	margin:0;
+}
+#timeline .box-header p {
+	font-size: 18px;
+	margin:15px 0;
+}
+.timeline-box {
+	height:65px;
+}
+.timeline-box img {
+	left:7px;
+	top:60px;
+	width:30px;
+	position:absolute;
+}
+.timeline-box span {
+	left:55px;
+	top:60px;
+	margin:0px;
+	position:absolute;
+	display:block;
+	text-align:left;
+	font-size:16px;
+}
+.graph-vert {
+	position:absolute;
+	padding-left:20px;
+}
+}
+ @media only screen and (max-width : 480px) {
+.search-form {
+	background:none;
+	padding:0px;
+	border:none;
+	border-radius:0;
+}
+}
+ @media only screen and (max-width : 320px) {
 }
