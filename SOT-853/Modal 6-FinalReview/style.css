@@ -148,9 +148,11 @@ p.read-more {
 	border-radius:0 0 5px 5px;
 }
 @media only screen and (max-width : 992px) {
-	.col-left,
-	col-right {
+	.col-left {
 		margin:0 0 10px;
+	}
+	.col-right {
+		margin:0
 	}
     .criminal-records {
 		text-align:center;
