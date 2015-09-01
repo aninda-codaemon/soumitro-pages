@@ -31,9 +31,11 @@ a:hover {
 .col-left {
 	border:1px #e4e4e4 solid;
 	margin-right:1px;
+	min-height:550px;
 }
 .col-right {
 	border:1px #e4e4e4 solid;
+	min-height:550px;
 }
 .person-info {
 	padding:15px;
@@ -87,12 +89,6 @@ ul.details {
 ul.details li {
 	padding:10px 15px;
 	border-bottom:1px #e4e4e4 solid;
-}
-ul.details li:first-child {
-	border-top:none;
-}
-ul.details li:last-child {
-	border-bottom:none;
 }
 ul.details li .info {
 	padding:0px 0 0;
