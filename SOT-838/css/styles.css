@@ -1461,15 +1461,6 @@ span.highlight-text {
 #gen-report-modal7  {
 	font-family:'Lato', Arial, Helvetica, sans-serif !important;
 }
-/*
-#gen-report-modal7 a {
-	color:#0072bc;
-	text-decoration:none;
-}
-a:hover {
-	text-decoration:underline;
-}
-*/
 .row.no-gutter {
 	margin-left: 0;
 	margin-right: 0;
@@ -1510,7 +1501,7 @@ a:hover {
 }
 .person-info h3 {
 	color:#B3B3B3;
-	font-size:12px;
+	font-size:14px;
 	font-weight:700;
 	text-transform:uppercase;
 	margin:15px 0 0;
@@ -1537,10 +1528,10 @@ a:hover {
 	font-weight:700;
 	font-size:12px;
 }
-.details {
+#gen-report-modal7 .details {
 	padding:25px 15px 0;
 }
-.detail-box {
+#gen-report-modal7 .detail-box {
 	background:#fff;
 	min-height:145px;
 	position:relative;
@@ -1552,23 +1543,23 @@ a:hover {
 	-moz-box-shadow: 4px 4px 0px 0px rgba(233,233,233,1);
 	box-shadow: 4px 4px 0px 0px rgba(233,233,233,1);
 }
-.detail-box.crim-box {
+#gen-report-modal7 .detail-box.crim-box {
 	border:1px #e7526b solid;
 }
-.detail-box.crim-box h1 {
+#gen-report-modal7 .detail-box.crim-box h1 {
 	color:#e7526b;
 }
-.detail-box.crim-box h2 {
+#gen-report-modal7 .detail-box.crim-box h2 {
 	color:#e7526b;
 }
-.detail-box.crim-box p {
+#gen-report-modal7 .detail-box.crim-box p {
 	color:#e7526b;
 }
-.detail-box .detail-img {
+#gen-report-modal7 .detail-box .detail-img {
 	border-right:1px #e1e1e1 solid;
 	padding:12px 0;
 }
-.detail-box h1 {
+#gen-report-modal7 .detail-box h1 {
 	color:#555555;
 	font-size:16px;
 	font-weight:bold;
@@ -1576,7 +1567,7 @@ a:hover {
 	text-transform:uppercase;
 	margin:0 0 8px;
 }
-.detail-box h2 {
+#gen-report-modal7 .detail-box h2 {
 	color:#468dd1;
 	font-size:64px;
 	text-align:center;
@@ -1584,21 +1575,21 @@ a:hover {
 	line-height:65px;
 	margin:0;
 }
-.detail-box p {
+#gen-report-modal7 .detail-box p {
 	color:#898989;
 	font-size:14px;
 	text-align:center;
 	margin:0;
 }
-.guarantee, .awards {
+#gen-report-modal7 .guarantee, #gen-report-modal7 .awards {
 	margin:0 0 15px;
 }
-.guarantee p, .awards p {
+#gen-report-modal7 .guarantee p, #gen-report-modal7 .awards p {
 	color:#898989;
 	margin:5px 0 0;
 	font-size:12px;
 }
-.sample-report {
+#gen-report-modal7 .sample-report {
 	padding:15px 0;
 }
 .sample-report p {
@@ -1607,10 +1598,10 @@ a:hover {
 	text-align:center;
 	margin:0 0 5px;
 }
-.sample-report .report-wrap {
+#gen-report-modal7 .sample-report .report-wrap {
 	position:relative;
 }
-.sample-report .blurred {
+#gen-report-modal7 .sample-report .blurred {
 	position:absolute;
 	z-index:200;
 }
@@ -1634,6 +1625,125 @@ a:hover {
 	padding:10px 0;
 	border-radius:0 0 5px 5px;
 }
+/* == 8 ==  ========================= */
+#gen-report-modal8  {
+	font-family:'Lato', Arial, Helvetica, sans-serif !important;
+}
+#gen-report-modal8 .modal-header {
+	background:#5158A0;
+	padding:20px 0;
+	border-radius: 5px 5px 0 0;
+}
+#gen-report-modal8 .modal-header h1 {
+	color:#fff;
+	text-align:center;
+	margin:0;
+	padding:0 20px;
+	font-size:26px;
+	font-weight:bold;
+}
+#gen-report-modal8 .modal-body {
+	padding:0;
+}
+#gen-report-modal8 .person-info {
+}
+#gen-report-modal8 .person-info h3 {
+	margin:15px 0;
+	font-size:12px;
+}
+#gen-report-modal8 .person-name {
+	margin:0;
+	color:#484848;
+	font-size:20px;
+	font-weight:bold;
+}
+#gen-report-modal8  .person-address {
+	color:#898989;
+	font-weight:600;
+	font-size:14px;
+}
+#gen-report-modal8 .person-age {
+	color:#484848;
+	font-size:20px;
+	font-weight:bold;
+}
+#gen-report-modal8 .person-cities {
+	color:#898989;
+	font-weight:600;
+	font-size:14px;
+	line-height:18px;
+}
+#gen-report-modal8 .person-relatives {
+	color:#898989;
+	font-weight:600;
+	font-size:14px;
+	line-height:18px;
+}
+.report-includes li {
+	padding:0px;
+}
+#gen-report-modal8 .col-left {
+	border:1px #e4e4e4 solid;
+	margin-right:1px;
+	padding:40px;
+	min-height:525px;
+}
+#gen-report-modal8 .col-right {
+	border:1px #e4e4e4 solid;
+	min-height:525px;
+	padding:40px;
+}
+#gen-report-modal8 .col-left h1{
+	font-size:16px;
+	font-weight:bold;
+	color:#6dac45;
+	margin:0 0 25px;
+}
+#gen-report-modal8 .detail-box {
+	padding:15px 25px;
+	border-radius:5px;
+	background:#0072bc;
+	margin-top:10px;
+}
+#gen-report-modal8 .detail-box h2{
+	color:#fff;
+	font-size:16px;
+	line-height:25px;
+	font-weight:600;
+	margin:0px;
+}
+#gen-report-modal8 .crim-box {
+	background:#ed1c24;
+}
+#gen-report-modal8 p.more-info {
+	font-size:14px;
+	color:#9e9e9e;
+	margin:5px 0 0;
+}
+#gen-report-modal8 .guarantee {
+	margin:35px 0 15px;
+	padding:0 0 15px;
+	border-bottom:1px #ebebeb solid; 
+}
+#gen-report-modal8 .guarantee h2, #gen-report-modal8 .awards h2 {
+	font-size:18px;
+	color:#484848;
+	margin:0px;
+}
+#gen-report-modal8 .guarantee p, #gen-report-modal8 .awards p {
+	font-size:14px;
+	color:#484848;
+	margin:0px;
+}
+#gen-report-modal8 .modal-footer {
+	text-align:center;
+	color:#555555;
+	font-size:14px;
+	background:#ebebeb;
+	padding:10px 0;
+	border-radius:0 0 5px 5px;
+}
+
 /* ================================================ */
 /* == RESPONSIVE GOODIES ========================== */
 /* ================================================ */

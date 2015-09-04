@@ -71,6 +71,15 @@
     }
   }, {
 
+
+   // Modal Teaser w/ data    
+    $elem: $("#gen-report-modal7"),
+    animate: function () {
+      _.bind(generatingReport, this)();
+    }
+  }, {
+
+
     // LeadBox
 
     $elem: $("#gen-report-modal6"),
