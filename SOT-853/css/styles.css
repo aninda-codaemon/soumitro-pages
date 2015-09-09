@@ -58,6 +58,10 @@ select,
 
 .modal-dialog { margin-top: 10% !important; }
 
+.modal { 
+overflow:visible !important;
+position:absolute; }
+
 .modal.fade.in { top: 50px; }
 
 .modal-backdrop {
@@ -1798,7 +1802,7 @@ span.highlight-text {
 	line-height:18px;
 }
 #gen-report-modal9 .col-left {
-	padding:25px 20px 0;
+	padding:20px 20px 0;
 	min-height:525px;
 }
 #gen-report-modal9 .col-right {
@@ -1814,7 +1818,7 @@ span.highlight-text {
 	margin:0 0 25px;
 }
 #gen-report-modal9 .alert-box {
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 }
 #gen-report-modal9 .alert-icon {
 	background:#d71118;
@@ -1832,9 +1836,10 @@ span.highlight-text {
 }
 #gen-report-modal9 .alert-msg h2 {
 	color:#fff;
-	font-size:24px;
+	font-size:20px;
 	font-weight:400;
 	margin:0;
+	text-align:left;
 }
 #gen-report-modal9 .alert-msg a {
 	color:#fff;
@@ -1855,14 +1860,16 @@ span.highlight-text {
 }
 #gen-report-modal9 .detail-box h1 {
 	color:#555555;
-	font-size:18px;
+	font-size:16px;
 	font-weight:bold;
 	margin:0 0 10px;
 	padding:13px 0 0;
+	text-align:left;
 }
 #gen-report-modal9 .detail-box p {
 	color:#898989;
 	font-size:14px;
+	text-align:left;
 }
 #gen-report-modal9 p.more-info {
 	font-size:14px;
@@ -1959,7 +1966,7 @@ span.highlight-text {
 	padding:0;
 }
 #gen-report-modal10 ul.details li {
-	padding:6px 15px;
+	padding:6px 10px;
 	border-bottom:1px #e4e4e4 solid;
 }
 #gen-report-modal10 ul.details li .info {
@@ -1993,6 +2000,7 @@ span.highlight-text {
 	padding-top: 4px;
 	padding-bottom: 4px;
 	font-size:12px;
+	min-width:80px;
 }
 #gen-report-modal10 p.more-info {
 	font-size:14px;
@@ -2051,6 +2059,22 @@ span.highlight-text {
   }
   .loggingin .modal-dialog { max-width: none !important; }
   #gen-report-modal5 .modal-footer p { margin-top: 20px; }
+
+  #gen-report-modal10 .col-left {
+	margin:0 0 10px;
+  }
+  #gen-report-modal10 .col-right {
+	margin:0
+  }
+  #gen-report-modal10 .crim-box {
+	text-align:center;
+  }
+  #gen-report-modal10 .person-info .location {
+	padding: 0 0 10px;
+  }
+  #gen-report-modal10 ul.details li .btn {
+	margin-top:5px;
+  }
 }
 /* Landscape phone to portrait tablet */
 
@@ -2165,6 +2189,12 @@ span.highlight-text {
   #refine-modal-form input {
     margin-bottom: 6px !important;
   }
+  #gen-report-modal9 .person-info {
+	text-align:center;
+  }	
+  #gen-report-modal9 .person-name {
+	  margin:10px 0;
+  }	
 }
 
 @media (min-width: 481px) {
@@ -2213,6 +2243,10 @@ span.highlight-text {
   }
   .place-single {
     display: block;
+  }
+  #gen-report-modal9 .alert-msg h2 {
+	font-size:14px;
+	font-weight:600;
   }
 }
 

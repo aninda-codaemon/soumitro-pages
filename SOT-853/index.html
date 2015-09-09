@@ -1238,27 +1238,27 @@
                      <div class="person-photo"> <img src="img/alexander.png" class="img-responsive center-block" /> </div>
                   </div>
                   <div class="col-sm-3">
-                     <h3>Name</h3>
-                     <h2 class="person-name">Alexis Smith</h2>
+                     <h3 class="hidden-xs">Name</h3>
+                     <h2 class="person-name">Alexis Smith <span class="visible-xs-inline">, 42</span></h2>
                      <div class="person-address"> <img src="img/pin-green.png" /> &nbsp; Lakewood, NY </div>
                   </div>
-                  <div class="col-sm-1">
-                     <h3>Age</h3>
+                  <div class="col-sm-1 hidden-xs">
+                     <h3 class="hidden-xs">Age</h3>
                      <div class="person-age"> 42 </div>
                   </div>
-                  <div class="col-sm-2">
+                  <div class="col-sm-2 hidden-xs">
                      <h3>Past Cities</h3>
                      <div class="person-cities"> Maryland<br>
                         Chicago, IL 
                      </div>
                   </div>
-                  <div class="col-sm-2">
+                  <div class="col-sm-2 hidden-xs">
                      <h3>Relatives</h3>
                      <div class="person-relatives"> Joe Smith<br>
                         Adrian Smith 
                      </div>
                   </div>
-                  <div class="col-sm-2">
+                  <div class="col-sm-2 hidden-xs">
                      <h3>Report Includes</h3>
                      <div class="text-center">
                         <ul class="list-unstyled list-inline report-includes">
@@ -1367,9 +1367,7 @@
 <!-- ================================================== -->
 <!-- == 10 ==  ========================== -->
 <!-- ================================================== -->
-
-
-<div id="gen-report-modal10" aria-hidden="true" class="modal" style="display:block;">
+<div id="gen-report-modal10" aria-hidden="true" class="modal">
    <div class="modal-dialog">
       <div class="modal-content">
          <div class="modal-header">
@@ -1382,13 +1380,14 @@
                      <div class="person-info">
                         <div class="row">
                            <div class="col-md-2">
-                              <div class="photo"> <img src="img/alexander.png" class="img-responsive center-block" /> </div>
+                              <div class="photo"><img src="img/alexander.png" class="img-responsive center-block" /></div>
                            </div>
                            <div class="col-md-6 crim-box">
                               <h2 class="name">Alexander Armstrong</h2>
-                              <div> <span class="info">Criminal Records Found</span><span class="badge">3</span> &nbsp;&nbsp; <span class="check"><img src="img/check-red.png" /></span> </div>
+                              <div class="location visible-xs"> <img src="img/pin.png" /> Lakewood, NJ  /  Age 36 </div>
+                              <div><span class="info">Criminal Records Found</span><span class="badge">3</span> &nbsp;&nbsp; <span class="check"><img src="img/check-red.png" /></span></div>
                            </div>
-                           <div class="col-md-4">
+                           <div class="col-md-4 hidden-xs">
                               <div class="location"> <img src="img/pin.png" /> Lakewood, NJ  /  Age 36 </div>
                            </div>
                         </div>
@@ -1397,10 +1396,19 @@
                         <li>
                            <div class="row">
                               <div class="col-sm-9">
-                                 <div class="info"> <strong>Past Locations</strong> &nbsp;&nbsp; <span class="badge">4</span> &nbsp;&nbsp; <span class="links">Baltimore, MD &nbsp;&nbsp; / &nbsp;&nbsp; Chicago, IL &nbsp;&nbsp; / &nbsp;&nbsp; Skokie, IL...</span> <span class="found">Found &nbsp; <img src="img/check-blue.png"/ ></span> <span class="loading"><img src="img/loader.png" /></span> </div>
+                                 <div class="info"> <strong>Past Locations</strong> &nbsp;&nbsp; <span class="badge">4</span> &nbsp;&nbsp; <span class="links">Baltimore, MD...</span> <span class="found">Found &nbsp; <img src="img/check-blue.png"/ ></span> <span class="loading"><img src="img/loader.png" /></span> </div>
                               </div>
                               <div class="col-sm-3">
-                                 <p class="visible-xs">&nbsp;</p>
+                                 <a href="#" class="btn btn-default center-block">See More</a>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="row">
+                              <div class="col-sm-9">
+                                 <div class="info"> <strong>Past Locations</strong> &nbsp;&nbsp; <span class="badge">4</span> &nbsp;&nbsp; <span class="links">Baltimore, MD...</span> <span class="found">Found &nbsp; <img src="img/check-blue.png"/ ></span> <span class="loading"><img src="img/loader.png" /></span> </div>
+                              </div>
+                              <div class="col-sm-3">
                                  <a href="#" class="btn btn-default btn-block">See More</a>
                               </div>
                            </div>
@@ -1408,10 +1416,9 @@
                         <li>
                            <div class="row">
                               <div class="col-sm-9">
-                                 <div class="info"> <strong>Past Locations</strong> &nbsp;&nbsp; <span class="badge">4</span> &nbsp;&nbsp; <span class="links">Baltimore, MD &nbsp;&nbsp; / &nbsp;&nbsp; Chicago, IL &nbsp;&nbsp; / &nbsp;&nbsp; Skokie, IL...</span> <span class="found">Found &nbsp; <img src="img/check-blue.png"/ ></span> <span class="loading"><img src="img/loader.png" /></span> </div>
+                                 <div class="info"> <strong>Relatives</strong> &nbsp;&nbsp; <span class="badge">6</span> &nbsp;&nbsp; <span class="links">Joe Armstrong...</span> <span class="found">Found &nbsp; <img src="img/check-blue.png"/ ></span> <span class="loading"><img src="img/loader.png" /></span> </div>
                               </div>
                               <div class="col-sm-3">
-                                 <p class="visible-xs">&nbsp;</p>
                                  <a href="#" class="btn btn-default btn-block">See More</a>
                               </div>
                            </div>
@@ -1419,10 +1426,9 @@
                         <li>
                            <div class="row">
                               <div class="col-sm-9">
-                                 <div class="info"> <strong>Relatives</strong> &nbsp;&nbsp; <span class="badge">6</span> &nbsp;&nbsp; <span class="links">Joe Armstrong &nbsp;&nbsp; / &nbsp;&nbsp; Mary Armstrong &nbsp;&nbsp; / &nbsp;&nbsp; Alva Arm...</span> <span class="found">Found &nbsp; <img src="img/check-blue.png"/ ></span> <span class="loading"><img src="img/loader.png" /></span> </div>
+                                 <div class="info"> <strong>Phone Numbers</strong> &nbsp;&nbsp; <span class="badge">4</span> &nbsp;&nbsp; <span class="links">212-XXX-XXXX</span> <span class="found">Found &nbsp; <img src="img/check-blue.png"/ ></span> <span class="loading"><img src="img/loader.png" /></span> </div>
                               </div>
                               <div class="col-sm-3">
-                                 <p class="visible-xs">&nbsp;</p>
                                  <a href="#" class="btn btn-default btn-block">See More</a>
                               </div>
                            </div>
@@ -1430,21 +1436,9 @@
                         <li>
                            <div class="row">
                               <div class="col-sm-9">
-                                 <div class="info"> <strong>Phone Numbers</strong> &nbsp;&nbsp; <span class="badge">4</span> &nbsp;&nbsp; <span class="links">212-XXX-XXXX &nbsp;&nbsp; / &nbsp;&nbsp; 201-XXX-XXXX </span> <span class="found">Found &nbsp; <img src="img/check-blue.png"/ ></span> <span class="loading"><img src="img/loader.png" /></span> </div>
+                                 <div class="info"> <strong>Work History</strong> &nbsp;&nbsp; <span class="badge">4</span> &nbsp;&nbsp; <span class="links">Wal-Mart  /   K-Mart</span> <span class="found">Found &nbsp; <img src="img/check-blue.png"/ ></span> <span class="loading"><img src="img/loader.png" /></span> </div>
                               </div>
                               <div class="col-sm-3">
-                                 <p class="visible-xs">&nbsp;</p>
-                                 <a href="#" class="btn btn-default btn-block">See More</a>
-                              </div>
-                           </div>
-                        </li>
-                        <li>
-                           <div class="row">
-                              <div class="col-sm-9">
-                                 <div class="info"> <strong>Work History</strong> &nbsp;&nbsp; <span class="badge">4</span> &nbsp;&nbsp; <span class="links">Wal-Mart &nbsp;&nbsp; / &nbsp;&nbsp; K-Mart</span> <span class="found">Found &nbsp; <img src="img/check-blue.png"/ ></span> <span class="loading"><img src="img/loader.png" /></span> </div>
-                              </div>
-                              <div class="col-sm-3">
-                                 <p class="visible-xs">&nbsp;</p>
                                  <a href="#" class="btn btn-default btn-block">See More</a>
                               </div>
                            </div>
@@ -1455,7 +1449,6 @@
                                  <div class="info"> <strong>Associates & Colleagues</strong> &nbsp;&nbsp; <span class="badge">22</span> &nbsp;&nbsp; <span class="found" style="display:inline;">Found &nbsp; <img src="img/check-blue.png"/ ></span> <span class="loading"><img src="img/loader.png" /></span> </div>
                               </div>
                               <div class="col-sm-3">
-                                 <p class="visible-xs">&nbsp;</p>
                                  <a href="#" class="btn btn-default btn-block">See More</a>
                               </div>
                            </div>
@@ -1466,7 +1459,6 @@
                                  <div class="info"> <strong>Social Profiles</strong> &nbsp;&nbsp; <span class="badge">22</span> &nbsp;&nbsp; <span class="loading" style="display:inline;"><img src="img/loader.png" /></span> </div>
                               </div>
                               <div class="col-sm-3">
-                                 <p class="visible-xs">&nbsp;</p>
                                  <a href="#" class="btn btn-default btn-block">See More</a>
                               </div>
                            </div>
