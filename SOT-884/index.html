@@ -484,7 +484,7 @@
           <span>{{fullName}}</span> available...</span> <span>Information Available</span>
         </p>
       </div> <!-- /.modal-header -->
-	  
+
       <div class="modal-body hidden-xs">
         <h3 class="modal-body-header text-center hidden-xs"><strong><span class="hidden-xs">We're Currently </span>Searching Our Available Data Sources</strong></h3>
         <p class="text-center current-search-text" data-fr-bind="currentRecord">Please wait while we locate important information on <span class="strong text-success">{{fullName}}</span></p>
@@ -511,41 +511,34 @@
         </p>
       </div>
 
-	  
-	  
-	  
-<div class="col-xs-12 visible-xs popup-model">
-    <div class="search-data">
-        <strong>Please wait while we locate important information on <span class="text-success">{{fullName}}</span></strong>
-		
-          <div class="searching-progress-bar-group col-xs-12">
-            <div id="searching-progress-bar-database" class="progress checking-sources-progress mobile-bar">
-                <div class="progress-bar progress-bar-success" style="width: 1%"></div>
-                <p class="progress-bar-txt"><img src="img/icon-1.png" class="">Public Records</p>
-              </div>
-              <div id="searching-progress-bar-records" class="progress checking-sources-progress mobile-bar">
-                <div class="progress-bar progress-bar-success" style="width: 1%"></div>
-                <p class="progress-bar-txt"><img src="img/icon-2.png" class="">Court Records</p>
-              </div>
-              <div id="searching-progress-bar-datasets" class="progress checking-sources-progress mobile-bar">
-                <div class="progress-bar progress-bar-success" style="width: 1%"></div>
-                <p class="progress-bar-txt"><img src="img/icon-3.png" class="">Business Data</p>
-              </div>
-              <div id="searching-progress-bar-datasets" class="progress checking-sources-progress mobile-bar">
-                <div class="progress-bar progress-bar-danger" style="width: 1%"></div>
-                <p class="progress-bar-txt"><img src="img/icon-4.png" class="">Criminal Records</p>
+      <!-- XS-Modal -->
+      <div class="visible-xs popup-modal">
+          <div class="search-data">
+              <strong>Please wait while we locate important information on <span class="text-success">{{fullName}}</span></strong>
+              <div class="row">
+                <div class="searching-progress-bar-group col-xs-12">
+                  <div id="searching-progress-bar-database" class="progress checking-sources-progress mobile-bar">
+                    <div class="progress-bar progress-bar-success" style="width: 1%"></div>
+                    <p class="progress-bar-txt"><img src="img/icon-1.png" class="">Public Records</p>
+                  </div>
+                  <div id="searching-progress-bar-records" class="progress checking-sources-progress mobile-bar">
+                    <div class="progress-bar progress-bar-success" style="width: 1%"></div>
+                    <p class="progress-bar-txt"><img src="img/icon-2.png" class="">Court Records</p>
+                  </div>
+                  <div id="searching-progress-bar-datasets" class="progress checking-sources-progress mobile-bar">
+                    <div class="progress-bar progress-bar-success" style="width: 1%"></div>
+                    <p class="progress-bar-txt"><img src="img/icon-3.png" class="">Work History</p>
+                  </div>
+                  <div id="searching-progress-bar-datasets" class="progress checking-sources-progress mobile-bar">
+                    <div class="progress-bar progress-bar-danger" style="width: 1%"></div>
+                    <p class="progress-bar-txt"><img src="img/icon-4.png" class="">Criminal Records</p>
+                  </div>
+                </div>
               </div>
           </div>
-	<div class="clearfix"></div>
-
-
-	
-    </div>
-    <div class="search-footer"><i></i>Your search in anonymus</div>
-</div>
-	  
-	  
-	  
+          <div class="search-footer"><i></i>Your search of {{firstName}} is anonymous</div>
+      </div>
+      <!-- /XS-Modal -->
 
     </div>
   </div>
