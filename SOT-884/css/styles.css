@@ -2626,6 +2626,12 @@ span.highlight-text {
   .person-info {
     text-align: center;
   }
+  
+
+
+
+  /* XS Modal */
+  
 
   .popup-modal .text-success {
     color: #7bb33f;
@@ -2633,37 +2639,27 @@ span.highlight-text {
 
   .modal-header {
     font-family: 'Lato', Arial, Helvetica, sans-serif;
-
     background: #0072bc;
   }
 
   .popup-modal {
-    font-family: 'Lato', Arial, Helvetica, sans-serif;
-
-    padding-right: 0;
-    padding-left: 0;
+    font-family: 'Lato', Arial, Helvetica, sans-serif !important;
   }
 
 
   .progress-bar-txt {
     font-size: 14px !important;
     font-weight: 700;
-
     padding-left: 7px;
-
     text-align: left;
   }
 
   .progress-bar-txt img {
     float: left;
-
     margin-top: 3px;
     margin-right: 10px;
   }
 
-  .mobile-bar {
-    border-radius: 4px;
-  }
 
   .checking-sources-progress {
     background: #c8c8c8;
@@ -2678,47 +2674,47 @@ span.highlight-text {
     background: #75a205;
   }
 
-  .search-data {
-    padding: 25px 15px 35px 15px;
-
-    background: #fff;
+  .popup-modal .mobile-bar {
+    border-radius: 4px !important;
   }
 
-  .search-data strong {
-    font-size: 16px;
 
-    display: block;
-
-    padding-bottom: 25px;
-
-    text-align: center;
-
-    color: #555;
-  }
-
-  .search-footer {
+  .popup-modal .alert-warning {
     font-size: 14px;
-
+	font-weight:100 !important;
     min-height: 38px;
     padding-top: 8px;
-
+	margin-left:-30px;
+	margin-right:-30px;
+	margin-bottom:-30px;
     text-align: center;
-
     color: #186eb4;
     border-radius: 0 0 2px 2px;
-    background: #bde5f8;
+    background-color: #bde5f8;
+	border:none;
   }
 
-  .search-footer i {
+  .popup-modal .alert-warning i {
     display: inline-block;
-
     width: 15px;
     height: 25px;
     margin-right: 8px;
     margin-bottom: -7px;
-
     background: url(../img/i-icon.png) 0 5px no-repeat;
   }
+  
+  .alert-warning .visible-xs{display:inline-block !important;}
+
+.popup-modal p.current-search-text{
+	font-size:15px;
+	font-weight:bold;
+    font-family: 'Lato', Arial, Helvetica, sans-serif !important;
+  }
+  
+  
+
+
+
 }
 
 @media (min-width: 481px) {
