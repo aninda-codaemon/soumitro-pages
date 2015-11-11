@@ -707,14 +707,15 @@
 <div id="gen-report-modal4" class="modal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header header-alert">
+      <div class="modal-header header-alert orange-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#ffffff;">×</button>
-        <img src="img/alert-24.png" class="pull-left header-icon">
+        <img src="img/alert-24.png" class="pull-left header-icon hidden-xs">
         <p data-fr-bind="currentRecord">
-          <strong>We finished compiling the report. Enter the text below to continue...</strong>
+          <strong class="hidden-xs">We finished compiling the report. Enter the text below to continue...</strong>
+          <strong class="visible-xs">Report Compiled</strong>
         </p>
       </div>
-      <div class="modal-body">
+      <div class="modal-body popup-modal">
         <div class="row">
           <div class="col-sm-6">
             <p class="modal-top-text" data-fr-bind="currentRecord">Please prove that you are a human by filling out the easy captcha below.</p>
