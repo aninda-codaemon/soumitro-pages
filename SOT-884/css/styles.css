@@ -1079,6 +1079,12 @@ p.log-load {
 span.located img {
   margin-right: 5px;
 }
+
+.popup-modal #gen-report-message{
+	text-transform:uppercase;
+}
+
+
 /* == 3 == YOUR REPORT IS READY ================= */
 
 .file-icon-wrapper {
@@ -2756,8 +2762,9 @@ span.highlight-text {
 	border-radius:5px;
 	padding-top:10px;
 	padding-bottom:10px;
+	margin-left:-15px;
+	margin-right:-15px;
   }
-  
   
   .success-data-options ul{
 	padding-left:0px;
@@ -2797,6 +2804,12 @@ span.highlight-text {
   #gen-report-confirm{
 	box-shadow:none;
   }
+  
+  .popup-modal #gen-report-message{
+	text-transform:inherit;
+  }
+	
+	/* Modal 4 */
   
   .loader img{
 	width:auto;

@@ -481,7 +481,7 @@
         <button class="close" data-dismiss="modal" aria-hidden="true" style="color:#ffffff;">×</button>
         <img src="img/blue_spinner.gif" class="pull-left header-icon hidden-xs">
         <p data-fr-bind="currentRecord"><span class="hidden-xs">We have information on
-          <span>{{fullName}}</span> available...</span> <span>Information Available</span>
+          <span>{{fullName}}</span> available...</span> <span class="visible-xs">Information Available</span>
         </p>
       </div> <!-- /.modal-header -->
 
@@ -647,7 +647,7 @@
             </div>
           </div>
         </div>
-		<div class="success-data-options">
+		<div class="success-data-options visible-xs">
 			<ul>
 				<li><img src="img/sucess-icon1.png" />Personal Information</li>
 				<li><img src="img/sucess-icon2.png" />Current Address</li>
@@ -662,7 +662,7 @@
           <div class="col-sm-10 col-sm-offset-1">
             <button disabled id="gen-report-confirm" class="main-btn btn-lg btn-block" data-dismiss="modal">
               <img src="img/ref-32.png" class="download-now-icon">
-              <strong id="gen-report-message" data-enabled-text="CONTINUE TO BACKGROUND REPORT">LOADING...</strong>
+              <strong id="gen-report-message" data-enabled-text="Continue to <span class='hidden-xs'>Background</span> Report">LOADING...</strong>
               <img id="arrowhead-right" src="img/next-32.png" class="hidden-xs">
            </button>
           </div>
@@ -684,6 +684,7 @@
         <p class="visible-xs header-txt">Compiling Report</p>
       </div>
       <div class="modal-body popup-modal">
+	  <p class="visible-xs social-popup-txt"><strong>We are compiling your report. <br>It won’t take long :)</strong></p>
         <div class="loader">
           <img class="hidden-xs" src="img/ajax-login.gif">
           <img class="visible-xs" src="img/loader-2.gif">
