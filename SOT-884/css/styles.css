@@ -2626,12 +2626,12 @@ span.highlight-text {
   .person-info {
     text-align: center;
   }
-  
+
 
 
 
   /* XS Modal */
-  
+
 
   .popup-modal .text-success {
     color: #7bb33f;
@@ -2639,6 +2639,7 @@ span.highlight-text {
 
   .modal-header {
     font-family: 'Lato', Arial, Helvetica, sans-serif;
+
     background: #0072bc;
   }
 
@@ -2650,12 +2651,15 @@ span.highlight-text {
   .progress-bar-txt {
     font-size: 14px !important;
     font-weight: 700;
+
     padding-left: 7px;
+
     text-align: left;
   }
 
   .progress-bar-txt img {
     float: left;
+
     margin-top: 3px;
     margin-right: 10px;
   }
@@ -2681,52 +2685,58 @@ span.highlight-text {
 
   .popup-modal .alert-warning {
     font-size: 14px;
-	font-weight:100 !important;
+    font-weight: 100 !important;
+
     min-height: 38px;
+    margin-right: -30px;
+    margin-bottom: -30px;
+    margin-left: -30px;
     padding-top: 8px;
-	margin-left:-30px;
-	margin-right:-30px;
-	margin-bottom:-30px;
+
     text-align: center;
+
     color: #186eb4;
+    border: none;
     border-radius: 0 0 2px 2px;
     background-color: #bde5f8;
-	border:none;
   }
 
   .popup-modal .alert-warning i {
     display: inline-block;
+
     width: 15px;
     height: 25px;
     margin-right: 8px;
     margin-bottom: -7px;
+
     background: url(../img/i-icon.png) 0 5px no-repeat;
   }
-  
-  .alert-warning .visible-xs{display:inline-block !important;}
 
-.popup-modal p.current-search-text{
-	font-size:15px;
-	font-weight:bold;
-    font-family: 'Lato', Arial, Helvetica, sans-serif !important;
+  .alert-warning .visible-xs {
+    display: inline-block !important;
   }
-  
-  
-.social-header .visible-xs{
-	display:inline-block !important;
-}
-.social-popup-txt{
-	font-size:13px;
-}
 
-.social-popup-txt strong{
-	font-size:16px;
-}
+  .popup-modal p.current-search-text {
+    font-family: 'Lato', Arial, Helvetica, sans-serif !important;
+    font-size: 15px;
+    font-weight: bold;
+  }
 
-.social-widget-mobile{
-	text-align:center;
-}
 
+  .social-header .visible-xs {
+    display: inline-block !important;
+  }
+  .social-popup-txt {
+    font-size: 13px;
+  }
+
+  .social-popup-txt strong {
+    font-size: 16px;
+  }
+
+  .social-widget-mobile {
+    text-align: center;
+  }
 }
 
 @media (min-width: 481px) {
