@@ -2712,8 +2712,20 @@ span.highlight-text {
   }
   
   
+.social-header .visible-xs{
+	display:inline-block !important;
+}
+.social-popup-txt{
+	font-size:13px;
+}
 
+.social-popup-txt strong{
+	font-size:16px;
+}
 
+.social-widget-mobile{
+	text-align:center;
+}
 
 }
 

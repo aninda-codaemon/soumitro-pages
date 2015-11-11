@@ -560,10 +560,10 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <img src="img/blue_spinner.gif" class="pull-left header-icon">
-        <p class="social-header">Scanning Dozens of Social Media Profiles...</p>
+        <img src="img/blue_spinner.gif" class="pull-left header-icon hidden-xs">
+        <p class="social-header"><span class="visible-xs">Searching</span><span class="hidden-xs">Scanning Dozens of</span> Social Media Profiles<span class="hidden-xs">...</span></p>
       </div>
-      <div class="modal-body" data-fr-bind="currentRecord">
+      <div class="modal-body popup-modal" data-fr-bind="currentRecord">
         <div class="row">
           <div class="col-sm-4 hidden-xs" style="position:relative;">
             <div class="file-icon-wrapper">
@@ -580,8 +580,10 @@
             </ul>
           </div>
           <div class="col-sm-8">
-            <p>This search may reveal interesting information on <strong>{{fullName}}</strong> such as revealing photos, videos, family and friends, professional connections and more.</p>
-            <div class="social-widget">
+            <p class="hidden-xs">This search may reveal interesting information on <strong>{{fullName}}</strong> such as revealing photos, videos, family and friends, professional connections and more.</p>
+            <p class="visible-xs social-popup-txt"><strong>Please wait while we search dozens of social media profiles</strong><br>This may reveal information on {{fullName}} such as photos, videos, family & friends, and professional connections etc...</p>
+            <div class="visible-xs social-widget-mobile"><img src="img/social-loader.gif" alt="Loading" /></div>
+			<div class="social-widget hidden-xs">
               <div id="socialmedia-progress" class="publicRecord progress">
                 <p class="progress-msg"><span class="hidden-xs">Preparing Social Media Section - </span><span id="socialmedia-progress-percent"></span>% complete&nbsp;<img class="complete" src="img/checkWhite_24.png" width="24" alt="public" aria-hidden="true"></p>
                 <div class="progress-bar progress-bar-success" style="width:1%"></div>
@@ -602,6 +604,11 @@
                 </ul>
               </div>
             </div>
+			<p class="alert alert-this alert-warning text-center visible-xs">
+			  <small>
+				<i></i>Your search in anonymous.
+			  </small>
+			</p>
           </div>
         </div>
       </div>
