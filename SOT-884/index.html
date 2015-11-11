@@ -597,10 +597,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#ffffff;">×</button>
-        <img src="img/check-32.png" class="pull-left header-icon">
-        <p>Your In-Depth Background Report is Available...</p>
+        <img src="img/check-32.png" class="pull-left header-icon hidden-xs">
+        <p class="hidden-xs">Your In-Depth Background Report is Available...</p>
+		<p class="visible-xs">Detailed Report Available</p>
       </div>
-      <div class="modal-body">
+      <div class="modal-body popup-modal">
         <div class="row">
           <div class="col-sm-4 hidden-xs" style="position:relative;">
             <div class="file-icon-wrapper">
@@ -609,12 +610,13 @@
             </div>
           </div>
           <div data-fr-bind="currentRecord" class="col-sm-8">
-            <img class="pull-left hidden-xs" src="img/green-check-48.png"><h3 class="current-search-download" ><strong><span class="green">Success, Data Found!</span></strong></h3>
+            <img class="pull-left hidden-xs" src="img/green-check-48.png"><h3 class="current-search-download" ><img class="visible-xs" src="img/sucess-icon.png" /><strong><span class="green">Success, Data Found!</span></strong></h3>
             <p class="hidden-xs"><strong>Your background report on <span class="green">{{fullName}}</span> is available and ready to be viewed.</strong></p>
-            <p class="current-search-text-download">We were able to locate information on {{fullName}} from one or more of the categories below. Click button below to continue.</p>
-          </div>
+            <p class="current-search-text-download hidden-xs">We were able to locate information on {{fullName}} from one or more of the categories below. Click button below to continue.</p>
+			<p class="visible-xs social-popup-txt">We located information on <span class="blue"><strong>{{fullName}}</strong></span> from one or more of the categories below.</p>
+		  </div>
         </div>
-        <div class="row">
+        <div class="row hidden-xs">
           <div class="col-sm-12">
             <div class="row" id="gen-list-groups">
               <div class="col-sm-4">
@@ -645,8 +647,17 @@
             </div>
           </div>
         </div>
+		<div class="success-data-options">
+			<ul>
+				<li><img src="img/sucess-icon1.png" />Personal Information</li>
+				<li><img src="img/sucess-icon2.png" />Current Address</li>
+				<li><img src="img/sucess-icon3.png" />Email Addresses</li>
+				<li><img src="img/sucess-icon4.png" />Photos</li>
+				<li><img src="img/sucess-icon5.png" />Criminal Records</li>
+			</ul>
+		</div>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer popup-modal">
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1">
             <button disabled id="gen-report-confirm" class="main-btn btn-lg btn-block" data-dismiss="modal">
@@ -668,16 +679,22 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header section-header section-min">
-        <img src="img/login-24.png" class="pull-left header-icon">
-        <p>
-          Compiling your report, please wait...
-        </p>
+        <img src="img/login-24.png" class="pull-left header-icon hidden-xs">
+        <p class="hidden-xs">Compiling your report, please wait...</p>
+        <p class="visible-xs header-txt">Compiling Report</p>
       </div>
-      <div class="modal-body">
+      <div class="modal-body popup-modal">
         <div class="loader">
-          <img src="img/ajax-login.gif">
+          <img class="hidden-xs" src="img/ajax-login.gif">
+          <img class="visible-xs" src="img/loader-2.gif">
         </div>
         <p data-fr-bind="currentRecord" class="log-load"></p>
+        <p class="alert alert-this alert-warning text-center visible-xs">
+			<small>
+				<i></i><span class="hidden-xs">Reminder: </span>Your search is anonymous.
+            </small>
+        </p>
+		
       </div>
     </div>
   </div>
