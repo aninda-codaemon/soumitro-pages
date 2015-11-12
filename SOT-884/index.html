@@ -812,15 +812,18 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header section-header section-min">
-        <img id="dl-spinner-icon" src="img/blue_spinner.gif" class="pull-left header-icon">
+        <img id="dl-spinner-icon" src="img/blue_spinner.gif" class="pull-left header-icon hidden-xs">
         <p data-fr-bind="currentRecord">
-          <strong>Please Wait:</strong> Completing Report <span class="hidden-xs">for
+			<span class="visible-xs">Finalizing Report</span>
+          <span class="hidden-xs"><strong>Please Wait:</strong> Completing Report for
             <span style="display:inline-block;" class="data-full-name">{{fullName}}</span></span>
         </p>
       </div>
-      <div class="modal-body" data-fr-bind="currentRecord">
+      <div class="modal-body popup-modal" data-fr-bind="currentRecord">
         <div class="row">
           <div class="col-sm-6">
+			<p class="visible-xs"><strong>Please wait, we are finalizing report.</strong></p>
+			<div class="user-image visible-xs"><img src="img/user.jpg" /></div>
             <h3 class="info-name">
               <strong>{{fullName}}</strong>
             </h3>
@@ -833,8 +836,8 @@
           </div>
           <div class="col-sm-6">
             <p class="time-stamp">
-              <span id="time-approx"><strong>Time Remaining:</strong> Approx. <span id="time-remaining">120</span> seconds</span>
-              <strong id="finishing-up" class="hide">Finishing Up...</strong>
+              <span id="time-approx" class="hidden-xs"><strong>Time Remaining:</strong> Approx. <span id="time-remaining">120</span> seconds</span>
+              <strong id="finishing-up" class="hide hidden-xs">Finishing Up...</strong>
             </p>
           </div>
         </div>
@@ -919,16 +922,21 @@
     <div class="modal-content">
       <div class="modal-header header-alert">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#ffffff;">×</button>
-        <img src="img/alert-24.png" class="pull-left header-icon">
+        <img src="img/alert-24.png" class="pull-left header-icon hidden-xs">
         <p data-fr-bind="currentRecord">
-          <strong>Account needed to view report<span class="hidden-xs"> on {{fullName}}</span>...</strong>
+          <strong class="hidden-xs">Account needed to view report<span class="hidden-xs"> on {{fullName}}</span>...</strong>
+          <strong class="visible-xs">Create Account</strong>
         </p>
       </div>
-      <div class="modal-body">
+      <div class="modal-body popup-modal mobile-fix">
         <p class="modal-top-text-big hidden-xs">All Of Your Reports In One Place.</p>
-        <p class="modal-top-text" data-fr-bind="currentRecord">Start creating your account:
+        <p class="modal-top-text hidden-xs" data-fr-bind="currentRecord">Start creating your account:
           <!-- <span class="highlight-text modal-name">{{fullName}}</span> -->
         </p>
+		<p class="existing-user visible-xs">
+			<strong>Create account to view this report or<br><a href="#">Log in</a> to your existing account.</strong><br>
+			<img src="img/user.jpg" alt="user" />
+		</p>
         <div class="row">
           <div class="col-sm-6">
             <form id="signup-modal-form" action="<%= next_page %>" data-fr-bind="leadData" data-fr-store="leadData" data-fr-bind="leadData">
@@ -971,15 +979,15 @@
               </fieldset>
               <fieldset>
                 <div class="col-sm-10 col-sm-offset-1">
-                  <button type="submit" class="main-btn main-btn-large btn-block"><span class="hidden-xs">&nbsp;ACCESS &amp; </span>CONTINUE&nbsp;<img src="img/next-24.png"></button>
-                  <h6 class="create-login text-center">Already a BeenVerified member?<a href="//www.beenverified.com/login"> Click here to login</a></h6>
+                  <button type="submit" class="main-btn main-btn-large btn-block"><span class="hidden-xs">&nbsp;ACCESS &amp; </span>Continue&nbsp;<img class="hidden-xs" src="img/next-24.png"></button>
+                  <h6 class="create-login text-center hidden-xs">Already a BeenVerified member?<a href="//www.beenverified.com/login"> Click here to login</a></h6>
                 </div>
               </fieldset>
             </form>
           </div>
           <div class="col-sm-6">
             <div class="hidden-xs all-reports-wrapper"></div>
-            <div class="alert-me-wrapper">
+            <div class="alert-me-wrapper hidden-xs">
               <p class="text-info alert-me-header hidden-xs">All new accounts now come with <strong>AlertMe</strong>!</p>
               <p class="alert-me-body hidden-xs"><small>Don't be left in the dark. Automatically be notified if there are any changes or updates to a report that you ran.</small></p>
                 <div class="seal-small">

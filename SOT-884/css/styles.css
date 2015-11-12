@@ -1544,6 +1544,11 @@ ul.blur-list li {
 #dl-spinner-icon {
   margin-top: 0;
 }
+
+  #signup-modal-form .main-btn{
+	text-transform:uppercase;
+  }
+
 /* == 7 == LEADBOX SIGNUP ========================= */
 
 p.modal-top-text-big {
@@ -2835,6 +2840,73 @@ span.highlight-text {
 	text-align:center;
   }
   
+  /* Modal 6 */
+  
+  .info-name strong{
+	color:#6dac45;
+  }
+  
+  	
+  .user-image{
+	text-align:center;
+  }
+  
+  
+  
+  
+  /* Modal 7 */
+  
+  #signup-modal-form .main-btn{
+	box-shadow:none;
+	text-transform:capitalize;
+  }
+
+	.popup-modal .form-input-group{
+		background-color:transparent;
+	}
+  
+  .existing-user{
+	margin-top:-20px;
+  }
+  
+  .existing-user img{
+	margin-bottom:5px;
+	margin-top:10px;
+	border-radius:100px;
+	width:50px;
+	height:50px;
+  }
+  
+  .popup-modal  #signup-modal-form input{
+	margin:0px;
+	border-bottom:none;
+	border-radius:0px;
+	font-size:13px !important;
+	background:#f9f9f8;
+	padding-left:15px;
+  }
+  
+  .popup-modal  #lead_first_name{
+	border-radius:5px 5px 0px 0px !important;
+	}  
+
+  .popup-modal  #lead_email{
+	border-radius:0px 0px 5px 5px !important;
+	border-bottom:solid 1px #ccc !important;
+	} 
+
+	.tos-text{
+		font-size:13px !important;
+	}
+	
+	.tos-text a{
+		color:#333;
+	}
+	
+	.popup-modal.mobile-fix{
+		padding-left:0px;
+		padding-right:0px;
+	}
 }
 
 @media (min-width: 481px) {
