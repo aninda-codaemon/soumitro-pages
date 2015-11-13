@@ -814,7 +814,7 @@
       <div class="modal-header section-header section-min">
         <img id="dl-spinner-icon" src="img/blue_spinner.gif" class="pull-left header-icon hidden-xs">
         <p data-fr-bind="currentRecord">
-			<span class="visible-xs">Finalizing Report</span>
+			<span class="visible-xs size-fix">Finalizing Report</span>
           <span class="hidden-xs"><strong>Please Wait:</strong> Completing Report for
             <span style="display:inline-block;" class="data-full-name">{{fullName}}</span></span>
         </p>
@@ -853,38 +853,92 @@
             </ul>
           </div>
           <div class="col-sm-8">
-            <div class="modal-body-copy">
-              <div id="card-personal" class="card-single card-selected">
+		  
+        <div id="searching-progress-bar" class="progress mobile-progress visible-xs">
+          <div class="progress-bar progress-bar-success" style="width: 1%"></div>
+          <div id="searching-progress-bar-status">
+            <span id="searching-progress-bar-value">1%</span>
+          </div>
+        </div>
+		  
+            <div class="modal-body-copy popup-modal modal-white">
+			
+			
+			<div class="cards visible-xs">
+				<div class="single-card personal">
+					<strong>Personal</strong>
+					<p>Age, Address History, Education</p>
+				</div>
+
+				<div class="single-card contact">
+					<strong>Contact Info</strong>
+					<p>Phone Numbers, Email Addresses</p>
+				</div>
+
+				<div class="single-card criminal">
+					<strong>Criminal</strong>
+					<p>Arrests, Felonies, Traffic Records</p>
+				</div>
+
+				<div class="single-card social">
+					<strong>Social Media</strong>
+					<p>Photos, Profiles, Connections</p>
+				</div>
+
+				<div class="single-card property">
+					<strong>Property</strong>
+					<p>Values, Mortgages, Neighbor</p>
+				</div>
+
+				<div class="single-card relatives">
+					<strong>Relatives</strong>
+					<p>Also Associates & Imposters</p>
+				</div>
+
+				<div class="single-card court">
+					<strong>Court Records</strong>
+					<p>Bankruptcies, Judgments, licenses</p>
+				</div>
+
+				<div class="single-card muchmore">
+					<strong>Plus Much More!</strong>
+					<p>Now get alerts about new data</p>
+				</div>
+				</div>
+			
+			
+			
+              <div id="card-personal" class="card-single card-selected hidden-xs">
                 <h3 class="text-info body-copy-header copy-header-personal">
                   <strong>Personal</strong>
                 </h3>
                 <p class="hidden-xs">The Personal Information report may reveal, where available, a person’s full name, maiden name, phone numbers, age, known aliases, address history by “last seen” date, and current address location. The phone numbers may contain, where available, both potential owner names and information on possible persons associated with those numbers. The current address is displayed with an interactive map and satellite imagery and access to an in-depth property report including home values and sales.</p>
               </div>
-              <div id="card-property" class="card-single">
+              <div id="card-property" class="card-single hidden-xs">
                 <h3 class="text-info body-copy-header copy-header-prop">
                   <strong>Addresses and <br class="visible-xs">Property</strong>
                 </h3>
                 <p class="hidden-xs">These are records related to physical property associated with the person you are searching. This report may locate, where available, their current and historical real estate assets including detailed information on those properties. View satellite maps, parcel numbers, and country assessor data such as property tax amounts, home value, and building specifications. Even see buyer/seller info, sales prices, and co-owners, where available.</p>
               </div>
-              <div id="card-criminal" class="card-single">
+              <div id="card-criminal" class="card-single hidden-xs">
                 <h3 class="text-info body-copy-header copy-header-crim">
                   <strong>Criminal</strong>
                 </h3>
                 <p class="hidden-xs">Our Criminal History Report may contain, where available, arrest or conviction records as well as outstanding warrants and traffic violations such as speeding tickets. When a criminal record is found we detail the offense along with the date and location of the crime. Our detailed report is compiled using federal, state, county, and local databases including records from departments of corrections, federal and state courts, and Most Wanted lists. Criminal Records are found based on availability.</p>
               </div>
-              <div id="card-relatives" class="card-single">
+              <div id="card-relatives" class="card-single hidden-xs">
                 <h3 class="text-info body-copy-header copy-header-rel">
                   <strong>Relatives and <br class="visible-xs">Connections</strong>
                 </h3>
                 <p class="hidden-xs">Our access to hard to find public records may reveal individuals who have a close relationship to your search subject. In addition to relatives this report may show, where available, boyfriends/girlfriends, roommates, business associates as well as ex-husbands and ex-wives.</p>
               </div>
-              <div id="card-sex-offender" class="card-single">
+              <div id="card-sex-offender" class="card-single hidden-xs">
                 <h3 class="text-info body-copy-header copy-header-offend">
                   <strong>AlertMe</strong>
                 </h3>
                 <p class="hidden-xs">BeenVerified provides access to our proprietary AlertMe feature, which sends alerts and monitors potential changes we find in our data on an ongoing basis. AlertMe will monitor public record changes we find and send you an alert email, as we find them. No more having to stay on top of the data yourself, let BeenVerified assist you.</p>
               </div>
-              <div id="card-misc" class="card-single">
+              <div id="card-misc" class="card-single hidden-xs">
                 <h3 class="text-info body-copy-header copy-header-misc">
                   <strong>Miscellaneous</strong>
                 </h3>
@@ -895,7 +949,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <div id="searching-progress-bar" class="progress">
+        <div id="searching-progress-bar" class="progress hidden-xs">
           <div class="progress-bar progress-bar-success" style="width: 1%"></div>
           <div id="searching-progress-bar-status">
             <span id="searching-progress-bar-value">1%</span>

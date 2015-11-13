@@ -2851,6 +2851,100 @@ span.highlight-text {
 	text-align:center;
   }
   
+  .size-fix{
+	font-size:18px !important;
+  }
+  
+  .modal-white{
+	background:#f7f8f6;
+	margin-top:15px;
+  }
+  
+  .mobile-progress{
+	height:30px !important;
+	background:#446579 !important;
+	border-radius:3px !important;
+  }
+  
+  .mobile-progress #searching-progress-bar-status{
+	top:5px;
+  }
+  
+  .single-card{
+	background:#fff;
+	border:solid 1px #d2d3d1;
+	border-radius:5px;
+	margin-left:-10px;
+	margin-right:-10px;
+	margin-bottom:5px;
+	padding-left:10px;
+  }
+  
+  .cards strong{
+	color:#0072bc;
+	display:inline-block;
+	margin-left:25px;
+  }
+  
+  .criminal.single-card strong{
+	color:#ea344e;
+  }
+  
+  .cards p{
+	color:#555555;
+	font-size:13px;
+	text-align:left;
+	margin-left:25px;
+  }
+  
+
+  
+  .single-card:before{
+	content:'';
+	display:block;
+	width:17px;
+	height:16px;
+	background-size:16px;
+	position:absolute;
+	margin-top:5px;
+	background-repeat:no-repeat;
+  }
+
+
+  .personal.single-card:before{
+	background-image:url('../img/1_Personal.svg');
+  }
+
+  .contact.single-card:before{
+	background-image:url('../img/2_Contact.svg');
+  }
+
+  .criminal.single-card:before{
+	background-image:url('../img/criminal-icon.png');
+	background-size:18px;
+	width:19px;
+  }
+
+  .social.single-card:before{
+	background-image:url('../img/4_Social.svg');
+  }
+
+  .property.single-card:before{
+	background-image:url('../img/5_Property.svg');
+  }
+
+  .relatives.single-card:before{
+	background-image:url('../img/6_Relatives.svg');
+  }
+
+  .court.single-card:before{
+	background-image:url('../img/7_Court.svg');
+  }
+
+
+  .muchmore.single-card:before{
+	background-image:url('../img/8_More.svg');
+  }
   
   
   
