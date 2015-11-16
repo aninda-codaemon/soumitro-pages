@@ -1065,7 +1065,7 @@
            <img src="img/check-24.png" class="pull-left header-icon">
            <h1><span class="visible-xs">Data preview</span><span class="hidden-xs">Preview of {{fullName}}'s data</span></h1>
          </div>
-         <div class="modal-body">
+         <div class="modal-body popup-modal">
             <div class="row">
 
                <div class="col-md-12">
@@ -1096,13 +1096,21 @@
                            </div>
                            {{/if}}
                         </div>
-                        <div class="row visible-xs">
+                        <div class="row hidden">
                           <div class="btn-wrap">
                              <button class="data-modal-confirm btn btn-success btn-block"><span>Get the Full Report &nbsp; <img src="img/arrow.png" /></span></button>
                           </div>
                         </div>
                      </div>
 
+					 
+					 
+					 <div class="mobile-detail">
+						<a href="#">
+							<div></div>
+							<div></div>
+						</a>
+					 </div>
 
                      <div class="details" data-fr-bind="currentRecord extraTeaserData" data-total-cards-to-show="5" data-filler-cards-available="5">
                         <div class="row">
@@ -1359,9 +1367,19 @@
                    </div>
                </div>
              </form>
+			 
          </div>
          <div class="modal-footer">
-            <span data-fr-bind="currentRecord">{{firstName}} will not be notified of your search.</span>
+		 
+		 
+              <p class="alert alert-this alert-warning text-center visible-xs mobile-alert">
+                <small>
+                  <i></i><span data-fr-bind="currentRecord">{{firstName}} will not be notified of your search.
+                </small>
+              </p>
+		 
+		 
+            <span data-fr-bind="currentRecord" class="hidden-xs">{{firstName}} ddddwill not be notified of your search.</span>
          </div>
       </div>
    </div>

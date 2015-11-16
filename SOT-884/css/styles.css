@@ -2694,7 +2694,7 @@ span.highlight-text {
   }
 
 
-  .popup-modal .alert-warning {
+  .popup-modal .alert-warning, .mobile-alert {
     font-size: 14px;
     font-weight: 100 !important;
 
@@ -2711,8 +2711,15 @@ span.highlight-text {
     border-radius: 0 0 2px 2px;
     background-color: #bde5f8;
   }
+  
+  .mobile-alert {
+    margin-right: -0px !important;
+    margin-top: -10px !important;
+    margin-bottom: -10px !important;
+    margin-left: -0px !important;
+  }
 
-  .popup-modal .alert-warning i {
+  .popup-modal .alert-warning i, .mobile-alert i {
     display: inline-block;
 
     width: 15px;
@@ -2903,7 +2910,7 @@ span.highlight-text {
 	content:'';
 	display:block;
 	width:17px;
-	height:16px;
+	height:17px;
 	background-size:16px;
 	position:absolute;
 	margin-top:5px;
@@ -2911,12 +2918,13 @@ span.highlight-text {
   }
 
 
+  
   .personal.single-card:before{
-	background-image:url('../img/1_Personal.svg');
+	background-image:url('../img/4_Associates.svg');
   }
 
   .contact.single-card:before{
-	background-image:url('../img/2_Contact.svg');
+	background-image:url('../img/3_Phone.svg');
   }
 
   .criminal.single-card:before{
@@ -2926,15 +2934,15 @@ span.highlight-text {
   }
 
   .social.single-card:before{
-	background-image:url('../img/4_Social.svg');
+	background-image:url('../img/6_Social.svg');
   }
 
   .property.single-card:before{
-	background-image:url('../img/5_Property.svg');
+	background-image:url('../img/5_Bankruptcy.svg');
   }
 
   .relatives.single-card:before{
-	background-image:url('../img/6_Relatives.svg');
+	background-image:url('../img/7_Neighbors.svg');
   }
 
   .court.single-card:before{
