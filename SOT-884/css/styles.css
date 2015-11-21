@@ -3009,6 +3009,103 @@ span.highlight-text {
 		padding-left:0px;
 		padding-right:0px;
 	}
+	
+	
+	/* Modal 9 */
+	
+	
+	.preview-report{
+	
+	}
+	
+	.preview-report .user-img img{
+		margin-top:26px;
+		border-radius:50px;
+		width:57px;
+		height:57px;
+	}
+	
+	.preview-report .align-fix, .preview-report .align-fix h2{
+		text-align:left !important;
+		font-size:18px;
+	}
+	
+	.preview-report .align-fix{
+		padding:0px !important;
+	}
+	
+	.preview-report .person-relatives, .preview-report .person-cities, .preview-report .person-address{
+		font-weight:100;
+		color:#707070;
+		font-size:13px;
+	}
+	
+	.preview-report .person-relatives strong, .preview-report .person-cities strong{
+		color:#363636;
+	}
+	
+	
+	#gen-report-modal7 .detail-box{
+		border:solid 1px #d9d9d9;
+		box-shadow:none !important;
+		height:55px;
+	}
+	
+	.mobile-btn{
+		padding-top:25px;
+	}
+	
+	#gen-report-modal7 .modal-footer.no-bg{
+		background:none;
+		border:none;
+	}
+	
+	.mobile-detail img{
+		width:25px;
+	}
+	
+	.mobile-detail div{
+		color:#464646;
+		font-size:16px;
+		font-weight:bold;
+		display:inline-block;
+		float:left;
+		margin-top:-5px;
+	}
+
+	.mobile-detail span{
+		color:#555555;
+		font-size:13px;
+		font-weight:100;
+		display:block;
+	}
+	
+	.mobile-detail div:first-child{
+		border-right:solid 1px #d9d9d9;
+		padding-right:18px;
+		margin-right:13px;
+		height:35px;
+		padding-top:5px;
+	}
+	
+	.mobile-detail div:last-child{
+		margin-top:-9px;
+	}
+	
+	.criminal-detail{
+		border:solid 1px #ee5d71 !important;
+	}
+
+
+	.criminal-detail div{
+		color:#ed1c24 !important;
+	}
+	
+	.criminal-detail span{
+		color:#555555 !important;
+	}
+	
+	
 }
 
 @media (min-width: 481px) {

@@ -1062,8 +1062,8 @@
       <div class="modal-content">
          <div class="modal-header" data-fr-bind="currentRecord">
            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#ffffff;">×</button>
-           <img src="img/check-24.png" class="pull-left header-icon">
-           <h1><span class="visible-xs">Data preview</span><span class="hidden-xs">Preview of {{fullName}}'s data</span></h1>
+           <img src="img/check-24.png" class="pull-left header-icon hidden-xs">
+           <h1><span class="visible-xs">Preview of report</span><span class="hidden-xs">Data preview Preview of {{fullName}}'s data</span></h1>
          </div>
          <div class="modal-body popup-modal">
             <div class="row">
@@ -1071,30 +1071,36 @@
                <div class="col-md-12">
                   <div class="col-left">
                      <div class="person-info" data-fr-bind="currentRecord extraTeaserData">
-                        <div class="row">
-                           {{#if photo}}
-                           <div class="col-sm-2">
-                             <div class="person-photo-wrap">
-                               <div class="person-photo text-center" style="background-image: url({{photo}})"></div>
-                             </div>
-                           </div>
-                           {{/if}}
-                           <div class="{{#if photo}}col-sm-4{{else}}col-sm-5 col-sm-offset-1{{/if}}">
-                              <h2 class="person-name">{{fullName}}</h2>
-                              <div class="person-address">{{#if place}} <img src="img/pin.png" /> &nbsp; {{place}}{{/if}}{{#if age}}  /  Age {{age}} {{/if}}</div>
-                           </div>
-                           {{#if otherLocations}}
-                           <div class="col-sm-3 hidden-xs">
-                              <h3>Past Cities</h3>
-                              <div class="person-cities">{{shortList otherLocations}} {{#if evenMorePlacesCount}}<br><span class="moreCount">+ {{evenMorePlacesCount}} more</span>{{/if}}</div>
-                           </div>
-                           {{/if}}
-                           {{#if relatives}}
-                           <div class="col-sm-3 hidden-xs">
-                              <h3>Relatives</h3>
-                              <div class="person-relatives">{{shortList relatives}} {{#if moreRelativesCount}}<br><span class="moreCount">+ {{moreRelativesCount}} more</span>{{/if}}</div>
-                           </div>
-                           {{/if}}
+                        <div class="row preview-report">
+							<div class="col-xs-3 visible-xs user-img">
+								<img src="img/user.jpg" alt="" />
+							</div>
+							<div class="col-xs-9 col-md-12 align-fix">
+							   {{#if photo}}
+							   <div class="col-sm-2">
+								 <div class="person-photo-wrap">
+								   <div class="person-photo text-center" style="background-image: url({{photo}})"></div>
+								 </div>
+							   </div>
+							   {{/if}}
+							   <div class="{{#if photo}}col-sm-4{{else}}col-sm-5 col-sm-offset-1{{/if}}">
+								  <h2 class="person-name green">{{fullName}}</h2>
+								  <div class="person-address">{{#if place}} <img src="img/pin.png" /> &nbsp; {{place}}{{/if}}{{#if age}}  /  Age {{age}} {{/if}}</div>
+							   </div>
+							   {{#if otherLocations}}
+							   <div class="col-sm-3">
+								  <h3 class="hidden-xs">Past Cities</h3>
+								  <div class="person-cities"><strong>Past Cities:</strong> {{shortList otherLocations}} {{#if evenMorePlacesCount}}<br class="hidden-xs"><span class="moreCount">+ {{evenMorePlacesCount}} more</span>{{/if}}</div>
+							   </div>
+							   {{/if}}
+							   {{#if relatives}}
+							   <div class="col-sm-3">
+								  <h3 class="hidden-xs">Relatives</h3>
+								  <div class="person-relatives"><strong>Relatives:</strong> {{shortList relatives}} {{#if moreRelativesCount}}<br class="hidden-xs"><span class="moreCount">+ {{moreRelativesCount}} more</span>{{/if}}</div>
+							   </div>
+							   {{/if}}
+							</div>
+						   
                         </div>
                         <div class="row hidden">
                           <div class="btn-wrap">
@@ -1105,15 +1111,30 @@
 
 					 
 					 
-					 <div class="mobile-detail">
-						<a href="#">
-							<div></div>
-							<div></div>
-						</a>
-					 </div>
 
                      <div class="details" data-fr-bind="currentRecord extraTeaserData" data-total-cards-to-show="5" data-filler-cards-available="5">
-                        <div class="row">
+					 
+					 <div class="detail-box mobile-detail criminal-detail visible-xs">
+						<div><img src="img/criminal.png" alt="" /></div>
+						<div>Crime Records Records<span>10 Results found</span></div>
+					 </div>
+					 <div class="detail-box mobile-detail visible-xs">
+						<div><img src="img/2_Email.svg" alt="" /></div>
+						<div>Email Addresses<span>5 Results found</span></div>
+					 </div>
+					 <div class="detail-box mobile-detail visible-xs">
+						<div><img src="img/3_Phone.svg" alt="" /></div>
+						<div>Phone Numbers<span>5 Results found</span></div>
+					 </div>
+					 <div class="detail-box mobile-detail visible-xs">
+						<div><img src="img/7_Neighbors.svg" alt="" /></div>
+						<div>Associates, Neighbors<span>5 Results found</span></div>
+					 </div>
+					 
+					 
+					 
+					 
+                        <div class="row hidden-xs">
                           {{#each extraData}}
 
                             <div class="col-md-4">
@@ -1312,15 +1333,29 @@
                   </div>
                </div>-->
 
+			   
+			   
+			   
             </div>
          </div>
-         <div class="modal-footer">
+         <div class="modal-footer no-bg">
             <div class="row-fluid">
               <div class="col-xs-12">
-                <span id="crim-disc">*Includes felonies, misdemeanors, traffic violations and arrests.  Results are dependent on the accuracy of public records.</span>
-                <span id="no-crim">Please <strong>do not</strong> hit refresh or press the back button, as the information may be lost</span>
+				<span class="visible-xs">Report may also contain Property records, Court records, Social profiles and much more... </span>
+                <span id="crim-disc" class="hidden-xs">*Includes felonies, misdemeanors, traffic violations and arrests.  Results are dependent on the accuracy of public records.</span>
+                <span id="no-crim" class="hidden-xs">Please <strong>do not</strong> hit refresh or press the back button, as the information may be lost</span>
               </div>
             </div>
+			
+			<div class="clearfix"></div>
+			
+            <div class="col-md-4 visible-xs mobile-btn"><!-- mobile button -->
+                <div class="data-modal-confirm detail-box {{style}} CTA_card">
+                    <div class="row no-gutter">
+                        <h1>Access The Report</h1>
+                    </div>
+                </div>
+            </div><!--END CTA card -->
          </div>
       </div>
    </div>
