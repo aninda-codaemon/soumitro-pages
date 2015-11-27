@@ -1,0 +1,615 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic);
+
+body{
+	font-family: 'Lato', sans-serif;
+	background:#f7f6f4 ;
+}
+
+header{
+	background:#fff;
+	min-height:90px;
+}
+
+.logo{
+	padding-top:25px;	
+}
+
+.call{
+	font-size:15px;
+	text-align:right;
+	padding-top:35px;	
+}
+
+/* End header */
+
+.teaser{
+	background:#353167;
+	color:#fff;
+	padding-top:5px;
+	padding-bottom:15px;	
+}
+
+.teaser h1{
+	text-transform:uppercase;
+	font-size:32px;
+	font-weight:bold;
+	text-align:center;
+	padding-bottom:20px;
+	border-bottom:solid 1px #fff;
+	margin-bottom:20px;	
+}
+
+.user{
+	display:inline-block;
+	float:left;
+	margin-right:25px;
+	margin-left:10px;	
+}
+
+.user img{
+	border-radius:100px;
+	max-width:133px;	
+}
+
+.user-name{
+	display:inline-block;
+	font-size:18px;
+	font-weight:700;
+	float:left;
+	padding-bottom:5px;
+	padding-top:15px;
+}
+
+.teaser p{
+	font-size:15px;
+	float:left;	
+}
+
+.records{
+	color:#353167;
+	font-weight:700;
+	font-size:15px;
+	background:#fff;
+	border:solid 1px #feb912;
+	padding:7px 10px;
+	float:left;
+	margin-bottom:5px;
+	border-radius:3px;	
+}
+
+.records span{
+	font-weight:700;
+	font-size:24px;
+	background:#feb912;
+	display:block;
+	float:right;
+	padding-bottom:1px;
+	margin:-7px -10px;
+	margin-left:10px;
+	padding-left:10px;
+	padding-right:10px;	
+}
+
+div.ok{
+	background:url(../images/ok.png) no-repeat 0px 0px;
+	width:22px;
+	height:19px;
+	float:left;
+	margin-top:8px;
+	margin-left:13px;	
+}
+
+
+i.ok{
+	background:url(../images/ok.png) no-repeat 0px 0px;
+	width:22px;
+	height:19px;
+	margin-top:0px;
+	margin-left:13px;
+	display:inline-block;
+}
+
+.teaser ul{
+	padding-left:0px;
+	font-size:15px;	
+}
+
+.teaser ul li{
+	display:block;
+	line-height:30px;
+}
+
+.teaser ul li a{
+	color:#feb912;
+	margin-left:5px;
+	display:inline-block;	
+}
+
+.teaser ul li strong{
+	margin-right:5px;	
+}
+
+.teaser ul li img{
+	margin-left:2px;
+	margin-right:2px;	
+}
+
+/********* End Teaser section ***********/
+
+
+/********* Start Left section  ************/
+
+.left-section, .right-section{
+	background:#fff;
+	padding-top:35px;
+}
+
+.left-section h3{
+	color:#464646;
+	font-size:18px;
+	font-weight:700;	
+}
+
+/* Comments section */
+
+.comments::after{
+	clear:both;
+	content:'';
+	display:block;
+}
+
+.comments p{
+	font-size:15px;
+	font-style:italic;
+	padding-left:30px;
+	padding-right:15px;
+	padding-top:20px;	
+}
+
+
+.user-img{
+	color:#333333;
+	font-size:15px;
+	float:right;
+	margin-right:15px;
+}
+
+.user-img img{
+	width:54px;
+	border-radius:50px;
+	display:inline-block;
+	float:left;	
+}
+
+.user-img span{
+	padding-top:15px;
+	display:inline-block;
+	float:left;	
+	padding-left:15px;
+}
+
+
+/* End Testimonial    User comments  */
+
+
+/* Order Summery section */
+
+
+.order-summry{
+	background:#f7f6f4;
+	margin:10px;
+	padding:20px;
+		
+}
+
+.green-heading{
+	font-size:18px;
+	color:#7bb33f;
+	font-weight:700;
+	display:inline-block;
+	padding-bottom:10px;	
+}
+
+.cart{
+	background:url(../images/cart.png) no-repeat 0px 0px;
+	width:28px;
+	height:26px;
+	display:inline-block;
+	float:left;
+	margin-right:10px;
+	margin-top:-2px	
+}
+
+.order-summry strong.black{
+	font-size:15px;
+	color:#646464;
+	font-weight:700;
+	display:block;
+	padding-top:5px;
+	padding-bottom:5px;	
+	float:none;
+	text-transform:none;
+}
+
+
+.order-summry .heading{
+	color:#0072bc;
+	font-weight:700;
+	font-size:18px;
+	display:block;
+	
+}
+
+.order-summry p{
+	color:#646464;
+	font-size:15px;
+	display:block;
+}
+
+.order-summry strong{
+	font-size:15px;
+	color:#646464;
+	font-weight:700;
+	display:block;
+	padding-top:5px;
+	padding-bottom:5px;
+	float:right;
+	text-transform:uppercase;
+	display:inline-block;	
+}
+
+.order-summry strong span{
+	text-transform:none;
+	float:left;
+	margin-top:-10px;
+	display:inline-block;
+	padding-right:5px;
+}
+
+.green{
+	color:#7bb33f !important;	
+}
+
+.order-summry hr{
+	border-color:#d4d4d3;
+	margin-top:15px;
+	margin-bottom:10px;	
+}
+
+
+.order-summry .hr{
+	border:solid 2px #d4d4d3;
+}
+
+.total{
+	font-weight:700;	
+}
+
+/* End Order summry */
+
+
+/* Features */
+
+.features{
+	padding-top:45px;
+	padding-bottom:25px;
+}
+
+.features div{
+	border-right:solid 1px #cccccc;
+	text-align:center;
+}
+
+.features div:last-child{
+	border:none;
+}
+
+.features h2{
+	color:#7bb33f;
+	font-size:18px;
+	font-weight:700;	
+}
+
+.features p{
+	font-size:15px;
+	color:#646464;	
+}
+
+/* End feauters */
+
+
+
+.runners-heading{
+	color:#7bb33f;
+	font-size:25px;
+	font-weight:700;
+	margin-top:40px;	
+}
+
+
+.runners div{
+	display:inline-block;
+	float:left;
+	width:50%;
+	font-size:15px;
+	padding-top:20px;
+}
+
+.runners div:last-child{
+	padding-top:45px;
+}
+
+.runners img{
+	margin-bottom:-50px;
+}
+
+.gray-bar{
+	background:#ebebeb;
+	height:90px;
+	display:block;	
+	
+}
+
+/* End left section */
+
+.right-section{
+	padding-bottom:25px;	
+}
+
+
+/* Footer */
+
+.txt{
+	background:#fff;
+	padding-bottom:70px;	
+}
+
+.cc{
+	color:#464646;
+	font-size:18px;
+	font-weight:700;
+	text-align:center;
+	padding-top:60px;
+	padding-bottom:20px;	
+}
+
+.cc span{
+	color:#0072bc;	
+}
+
+.disclamer{
+	color:#646464;
+	text-align:center;	
+}
+
+.disclamer a{
+	text-decoration:underline;
+	color:#646464;
+	
+}
+
+footer{
+	height:100px;
+	border-top:solid 1px #dcdcdc;
+	background:#fff;
+	color:#646464;
+	font-size:14px;
+	padding-top:15px;
+}
+
+footer .links{
+	text-align:right;
+}
+
+footer .links a{
+	color:#646464;
+	margin-left:2px;
+	margin-right:2px;
+}
+
+
+/* Responsive Fixes */
+
+
+/* Medium Screens */
+@media (min-width:992px) and (max-width:1199px){
+
+.teaser h1{
+	font-size:28px;	
+}
+
+.user{
+	margin-left:0px;
+	margin-right:15px;
+	margin-top:20px;	
+}
+
+.user img{
+	max-width:105px;	
+}
+
+.teaser ul{
+	font-size:13px;
+}	
+
+}
+
+
+
+/* Small Screens */
+@media (min-width:768px) and (max-width:991px){
+
+.teaser h1{
+	font-size:22px;	
+}
+
+.searchs{
+	margin-left:50px;	
+}
+
+.teaser p{
+	margin-top:19px;
+	margin-left:25px;	
+}
+
+.user{
+	margin-bottom:25px;
+	margin-left:45px;	
+}
+
+.left-section{
+	border-bottom: solid 90px #EBEBEB;
+}
+
+.gray-bar{
+	display:none;	
+}
+
+.runners div{
+	width:30%;	
+}
+
+.runners div:first-child{
+	margin-left:145px;	
+}
+
+
+.runners-heading, .align-fix{
+	text-align:center;	
+}
+
+img.align-fix{
+	margin:auto;
+	margin-top:15px;	
+}
+
+
+}
+
+
+
+/* Mobiles */
+@media (max-width:767px){
+
+.call{
+	padding-top:20px;
+	padding-bottom:20px;
+	text-align:left;	
+}
+
+.teaser h1{
+	font-size:17px;	
+}
+	
+.user{
+	margin-right:5px;
+	margin-left:0px;	
+}
+	
+.user img{
+	width:70px;	
+}
+	
+
+.user-name{
+	padding-top:8px;
+	width:72%;	
+}
+
+.teaser p{
+	width:70%;	
+}
+
+.records{
+	margin-top:20px;
+	margin-bottom:20px;	
+}
+
+div.ok{
+	margin-top:28px;	
+}
+
+
+.comments p{
+	padding-left:10px;
+}
+
+.order-summry{
+	margin-left:-10px;
+	margin-right:-10px;
+	padding:10px;	
+}
+
+.order-summry strong{
+	font-size:13px;	
+}
+
+.order-summry p{
+	font-size:14px;	
+}
+
+.order-summry .heading{
+	font-size:15px;	
+}
+
+.order-summry strong span{
+	margin-top:-5px;	
+}
+
+.features div{
+	border:none;
+	margin-top:5px;
+	margin-bottom:5px;	
+}
+
+
+.left-section{
+	border-bottom: solid 90px #EBEBEB;
+}
+
+.gray-bar{
+	display:none;	
+}
+
+.runners div{
+	width:50%;	
+}
+
+
+
+.runners-heading, .align-fix{
+	text-align:center;	
+}
+
+.runners-heading{
+	font-size:17px;	
+}
+
+.runners div:last-child{
+	font-size:13px;
+	padding-left:10px;
+	width:55%;	
+}
+
+
+.runners div:first-child{
+	width:45%;
+}
+
+img.align-fix{
+	margin:auto;
+	margin-top:15px;	
+}
+
+
+.cc{
+	font-size:17px;	
+}
+	
+footer{
+	font-size:11px;	
+}
+}
