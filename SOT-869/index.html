@@ -178,8 +178,93 @@
             </div><!-- End left side    col-md-5 -->
             
         	<div class="col-sm-12 col-md-7 right-section">
-            	<img class="img-responsive" src="images/img.jpg" alt="" />
-            	<!-------------- Right section content goes here ------------------>
+            	<div class="step-heading">Step 1: Select Your Package</div>
+                <div class="package first-deal">
+                	<input type="radio" id="deal1" name="deal" value="" checked />
+                    <label for="deal1">1 Month of Unlimited Reports   <div>$22.86 <strong>/mo</strong> </div></label>
+                </div>
+                <div class="package">
+                	<input type="radio" id="deal2" name="deal" value="" />
+                    <label for="deal2">3 Months of Unlimited Reports   <div><span>35% <strong>off</strong></span>$14.88 <strong>/mo</strong> <small>($44.62 Today)</small></div></label>
+                </div>
+                <div class="package special-deal">
+                	<input type="radio" id="deal3" name="deal" value="" />
+                    <label for="deal3">6 Months of Unlimited Reports   <div><span>35% <strong>off</strong></span>$9.94 <strong>/mo</strong> <small>($59.62 Today)</small></div></label>
+                </div>
+                
+                <div class="step-heading">Step 2: Payment Information</div>
+                
+                <div class="payments-switch">
+                	<div class="text">Choose Your Payment Method</div>
+                    <span id="cards" class="checked"><i></i><img class="img-responsive cards" src="images/cards.png" alt="" /></span>
+                    <span id="paypal"><i></i><img class="img-responsive paypal" src="images/paypal.png" alt="" /></span>
+                    <img class="secure" src="images/norton.png" alt="" />
+                </div>
+                
+                
+                <div class="row card-inputs">
+                	<div class="col-sm-6 col-md-6">
+                        <label>First Name</label>
+                        <input class="form-control" type="text" name="" placeholder="John" />
+                    </div>
+                	<div class="col-sm-6 col-md-6">
+                        <label>Last Name</label>
+                        <input class="form-control" type="text" name="" placeholder="Doe" />
+                    </div>
+
+                	<div class="col-sm-6 col-md-6">
+                        <label>Card Number</label>
+                        <input class="form-control" type="text" name="" placeholder="Card Number" />
+                    </div>
+                	<div class="col-sm-6 col-md-6">
+                    	<label>Expiration</label>
+                        <div class="clearfix"></div>
+                    	<select class="form-control">
+                        	<option>Months</option>
+                        </select>
+                    	<select class="form-control years">
+                        	<option>years</option>
+                        </select>
+                    </div>
+
+                	<div class="col-sm-6 col-md-6">
+                        <label>CVV</label>	
+                        <input class="form-control cvv" type="text" name="" placeholder="CVV" />
+                    </div>
+                	<div class="col-sm-6 col-md-6">
+                        <label>Zip Code</label>
+                        <input class="form-control" type="text" name="" placeholder="123456" />
+                    </div>
+
+                	<div class="col-sm-12 col-md-12">
+                        <label>Confirm Your Email Below  <small>(Your will receive an invoice to this email)</small></label>
+                        <input class="form-control" type="email" name="" placeholder="johndoe@gmail.com" />
+                    </div>
+                	<div class="col-sm-12 col-md-12">
+                    	<label>Agree To Our Terms of Service</label>
+                        <div class="agree"><input type="checkbox" name="" value="" />
+                        <span>By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="#">Terms of Service, Member Agreement and Privacy Policy</a>. You agree to be billed $44.62 every 3 months until this subscription is canceled. You can cancel your membership at any time by contacting customer service at <a href="#">1-888-579-5910</a> or emailing <a href="#">support@beenverified.com</a>. You also agree that you will NOT use any information about an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance; or for any other purpose prohibited by our <a href="#">Terms of Service</a>.</span>
+                        <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                    	<input type="submit" name="" value="View Report" />
+                    </div>
+                    
+                </div>
+                
+                <!-- End input cards -->
+                
+                <!-- Paypal button -->
+                
+                <div class="row paypal-btn">
+                	<div class="col-md-12">
+                    	<a href="#">Go to paypal</a>
+                    </div>
+                </div>
+                
+                
+                
             </div><!-- End right side     col-md-7  -->
             
             <div class="clearfix"></div>
@@ -229,6 +314,26 @@
 				speed:600
             });
 		});
+    </script>
+    
+    
+    <script>
+// show hide paypal and cards inputs
+$(document).ready(function(){
+    $("#paypal").click(function(){
+        $(".card-inputs").hide();
+        $(".paypal-btn").fadeIn(700);
+		$( "#paypal" ).addClass( "checked" );
+		$( "#cards" ).removeClass();
+    });
+    $("#cards").click(function(){
+        $(".card-inputs").fadeIn(700);
+        $(".paypal-btn").hide();
+		$( "#cards" ).addClass( "checked" );
+		$( "#paypal" ).removeClass();
+    });
+
+ });
     </script>
     
   </body>

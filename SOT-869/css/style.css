@@ -359,6 +359,255 @@ i.ok{
 	padding-bottom:25px;	
 }
 
+.step-heading{
+	font-size:18px;
+	font-weight:400;
+	color:#fff;
+	background:#323d43;
+	padding-left:20px;
+	line-height:50px;	
+}
+
+.package{
+	border-left:solid 2px #323d43;
+	border-right:solid 2px #323d43;
+	border-bottom:solid 1px #b0d18c;
+}
+
+
+.package input{
+	display:inline-block;
+	position:absolute;
+	margin-left:50px;
+	margin-top:49px;
+	width:20px;
+	height:20px;
+}
+
+
+
+.package label{
+	font-size:18px;
+	color:#424242;
+	width:100%;
+	padding-top:45px;
+	height:123px;
+	padding-left:100px;
+	background:#f2f7eb;
+	margin-bottom:0px;
+}
+
+
+.special-deal label{
+	background:url(../images/deal.png) no-repeat -2px -2px #fff;
+}
+
+.package label:hover{
+/*	background:#7bb33f;
+	color:#fff;
+*/	cursor:pointer;
+}
+
+.special-deal label:hover{
+	background:url(../images/deal.png) no-repeat -2px -2px /*#7bb33f*/;
+}
+
+.first-deal label{
+	background:#7bb33f;
+	color:#fff;
+}
+
+
+.package label div{
+	font-weight:700;
+	font-size:24px;
+	float:right;
+	width:120px;
+	display:inline-block;
+}
+
+.package label div strong{
+	font-size:15px;
+}
+
+.package label div span{
+	font-size:21px;
+	color:#fff;
+	background:#feb912;
+	border-radius:3px;
+	display:block;
+	width:80px;
+	padding-right:7px;
+	padding-left:7px;
+	margin-left:5px;
+	margin-bottom:2px;
+	margin-top:-30px;
+}
+
+.package label div span strong {
+	font-size:14px;
+	font-weight:400;
+	float:right;
+}
+
+.package label div small{
+	font-size:11px;
+	opacity:0.7;
+	display:block;
+	margin-left:10px;
+}
+
+/* End 3 package deals */
+
+.payments-switch{
+	min-height:105px;
+	background:#f7f6f4;
+	padding-top:20px;
+	margin:auto;
+	border:solid 2px #323d43;
+	border-bottom:none;
+}
+
+.payments-switch i{
+	background:url(../images/check-checked.png) no-repeat;
+	width:25px;
+	height:31px;
+	display:inline-block;
+	float:left;
+	margin-top:0px;
+	margin-right:12px;
+	margin-left:30px;
+}
+
+
+.payments-switch .checked i{
+	background:url(../images/check.png) no-repeat;
+}
+
+
+.payments-switch span{
+	cursor:pointer;	
+}
+
+.payments-switch img{
+	display:inline-block;
+	float:left;	
+}
+
+
+.payments-switch .text{
+	color:#333333;
+	font-size:16px;
+	font-weight:700;
+	padding-left:33px;
+	padding-bottom:5px;	
+}
+
+.secure{
+	float:right !important;
+	margin-right:30px;
+	margin-top:-15px;	
+}
+
+.card-inputs, .paypal-btn{
+	margin-left:0px;
+	margin-right:0px;
+	border:solid 2px #323d43;
+	border-top:none;
+	padding-top:15px;
+	margin-bottom:92px;	
+}
+
+.card-inputs select{
+	width:48%;
+	display:inline-block;
+	float:left;
+	margin-bottom:20px;
+}
+
+.card-inputs .years{
+	float:right;	
+}
+
+.card-inputs label{
+	color:#333333;
+	font-size:15px;
+	font-weight:700;	
+}
+
+.card-inputs input{
+	margin-bottom:20px;
+}
+
+.card-inputs .cvv{
+	background-image:url(../images/ccv.png);
+	background-repeat:no-repeat;
+	background-position:98% 6px;	
+}
+
+.card-inputs label small{
+	font-weight:400;
+}
+
+.agree{
+	border:solid 1px #ccc;
+	border-radius:5px;
+	padding:20px;
+	margin-bottom:20px;
+	font-size:13px;
+	color:#646464;	
+}
+
+.agree input, .agree span{
+	display:inline-block;
+	float:left;	
+}
+
+.agree span{
+	float:right;
+	width:95%;	
+}
+
+.agree input{
+	width:20px;
+	height:20px;
+}
+
+.card-inputs input[type=submit]{
+	color:#fff;
+	font-size:22px;
+	font-weight:700;
+	background:#7bb33f;
+	width:100%;
+	height:70px;
+	border:none;
+	text-transform:uppercase;
+	border-radius:5px;
+	margin-top:5px;
+	margin-bottom:25px;	
+}
+
+.paypal-btn a{
+	color:#fff;
+	font-size:22px;
+	font-weight:700;
+	background:#7bb33f;
+	width:100%;
+	border:none;
+	text-transform:uppercase;
+	border-radius:5px;
+	margin-top:5px;
+	margin-bottom:25px;
+	display:block;
+	line-height:75px;
+	text-align:center;	
+	margin-top:25px;
+}
+
+.paypal-btn{
+	display:none;	
+}
+
 
 /* Footer */
 
@@ -612,4 +861,49 @@ img.align-fix{
 footer{
 	font-size:11px;	
 }
+
+.payments-switch span{
+	display:block;
+	height:50px;	
+}
+
+.secure{
+	margin-top:-55px;
+	width:60px !important;	
+}
+
+.payments-switch .text{
+	padding-bottom:15px;	
+}
+
+.package label{
+	font-size:14px;
+	padding-left:55px;
+	padding-top:25px;	
+}
+
+.package label div{
+	width:235px;
+	margin-top:10px;	
+}
+
+.package label div span{
+	display:inline-block;
+	margin-right:5px;	
+}
+
+.package label div small{
+	margin-left:92px;	
+}
+
+.package input{
+	margin-left:20px;	
+}
+
+.agree span{
+	width:90%;	
+}
+
+
+
 }
