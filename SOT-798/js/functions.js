@@ -63,3 +63,19 @@ $(document).ready(function(){
     });
 });
 
+
+
+
+//Show hide Advance filter for Tabs
+$(document).ready(function(){
+	if ($(window).width() > 767 && $(window).width() < 992) {
+		$(".tabs-expend").click(function(){
+			$(".tabs-style").slideToggle(700);
+			$(".tabs-expend").toggleClass('opend');
+		});
+		$(".tabs-expend2").click(function(){
+			$(".tabs-style2").slideToggle(700);
+			$(".tabs-expend2").toggleClass('opend');
+		});
+	}
+});

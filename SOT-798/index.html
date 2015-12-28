@@ -144,8 +144,10 @@
     	<div class="row"><!-- Sidebar start here -->
         	<div class="col-md-3" id="advance-filter">
             	<div class="sidebar">
-                    <div class="search-heading">Refine Your Search</div>
-                
+                    <div class="search-heading tabs-expend">Refine Your Search <strong>-</strong><strong>+</strong></div>
+					
+					<div class="tabs-style">
+					
                     <label>Select Age:</label>
                     <input type="text" id="age" readonly>
                     <input type="text" id="age2" readonly>
@@ -162,11 +164,15 @@
                     
                     <label>City</label>
                     <input class="form-control" type="text" name="city" value="" placeholder="City Name" />
+					
+					</div><!-- End tabs-style -->
+					
                 </div>
                 <!-- Sidebar filters -->
             	<div class="sidebar filters">
-                    <div class="search-heading">Filter Results by State</div>
-                    <div id="inner-content-div">
+                    <div class="search-heading tabs-expend2">Filter Results by State  <strong>-</strong><strong>+</strong></div>
+                    <div class="tabs-style2">
+					<div id="inner-content-div">
                         <div class="checkbox">
                             <input id="check1" type="checkbox" name="check" value="">
                             <label for="check1">California</label>
@@ -206,6 +212,7 @@
                             <div>72</div>
                         </div><!-- End check boxes -->
                     </div><!-- End scrollbar div -->
+					</div><!-- End tabs-style2 div -->
                 </div><!-- End .sidebar -->
             </div><!-- End sidebar -->
             
