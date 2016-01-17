@@ -90,6 +90,7 @@ header .btn-success{
 	min-height:280px;
 	text-align:center;	
 	padding-top:16px;
+	background-size:cover;
 }
 
 .hero h1{
