@@ -60,6 +60,11 @@ input {
   border-radius: 0 !important;
 }
 
+.wrapper {
+  postion: relative;
+  width: 100%;
+}
+
 .content {
   display: none;
 }
@@ -869,6 +874,8 @@ p.reason {
   top: 46px;
   left: 0;
   width: 60px;
+  padding-bottom: 360px;
+  float: left;
   z-index: 10;
 }
 
