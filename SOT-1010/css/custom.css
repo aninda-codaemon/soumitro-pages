@@ -1139,7 +1139,7 @@ p.reason {
   }
 
   .share_this {
-    display: none;
+    display: none !important;
     text-align: center;
   }
 

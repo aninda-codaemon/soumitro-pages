@@ -69,7 +69,7 @@ $(document).ready(function() {
 
   $(window).scroll(function() {
     if($(window).scrollTop() + $(window).height() == $(document).height()) {
-       $('.share_this').hide();
+      $('.share_this').hide();
     } else {
       $('.share_this').show();
     }
