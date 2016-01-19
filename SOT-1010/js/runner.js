@@ -24,6 +24,16 @@ $(document).ready(function() {
 
   $(".tab_content").hide();
   $(".tab_content:first").show();
+
+  // active testimonials tab in mobile
+  if (document.documentElement.clientWidth < 767) {
+    $('ul.tabs li.active').removeClass('active');
+    $('ul.tabs li:last').addClass('active');
+
+    $('.tab_content').hide();
+    $('.tab_content:last').show();
+  }
+
   $("ul.tabs li").click(function() {
     $("ul.tabs li").removeClass("active");
     $(this).addClass("active");
@@ -49,13 +59,35 @@ $(document).ready(function() {
     return (false);
   });
 
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 275) {
-      $('.share_this').addClass('fixed');
+  // $(window).scroll(function() {
+  //   if ($(this).scrollTop() > 275) {
+  //     $('.share_this').addClass('fixed');
+  //   } else {
+  //     $('.share_this').removeClass('fixed');
+  //   }
+  // });
+
+  // Reference: http://stackoverflow.com/questions/8653025/stop-fixed-position-at-footer
+
+  var top = $('.share_this').offset().top - parseFloat($('.share_this').css('marginTop').replace(/auto/, 0)),
+      footerTop = $('.searchbarWrapper').offset().top - parseFloat($('.searchbarWrapper').css('marginTop').replace(/auto/, 0)),
+      maxY = footerTop - $('.share_this').outerHeight(true);
+
+  $(window).scroll(function(event) {
+    var y = $(this).scrollTop();
+    if (y > top) {
+      if (y < maxY) {
+        $('.share_this').addClass('fixed').removeAttr('style');
+      } else {
+        $('.share_this').removeClass('fixed').css({
+          top: (maxY - top) + 'px'
+        });
+      }
     } else {
       $('.share_this').removeClass('fixed');
     }
   });
+
 });
 
 

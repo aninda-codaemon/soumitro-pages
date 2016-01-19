@@ -603,6 +603,10 @@ ul.tabs li:hover {
   color: #515560;
 }
 
+.cutomer_feedback .testimonial {
+  margin-top: 10px;
+}
+
 .show {
   font-family: 'Open Sans',sans-serif;
   font-size: 14px;
@@ -627,7 +631,8 @@ ul.tabs li:hover {
 }
 
 .cutomer_feedback.right h4,
-.cutomer_feedback.right h5 {
+.cutomer_feedback.right h5,
+.cutomer_feedback.right .testimonial {
   text-align: right;
 }
 
@@ -861,10 +866,10 @@ p.reason {
 
 .share_this {
   position: absolute;
-  top: 146px;
-  left: -85px;
-
+  top: 46px;
+  left: 0;
   width: 60px;
+  z-index: 10;
 }
 
 
@@ -950,35 +955,36 @@ p.reason {
   padding-right: 15px;
 }
 
+.share_this.fixed {
+  position: fixed;
+  top: 46px;
+  left: 46px;
+}
+
 @media(min-width:1800px) {
   .share_this.fixed {
     position: fixed;
     top: 105px;
-    left: 20%;
+    left: 17.5%;
   }
 }
 
 @media(min-width:1200px) and (max-width:1500px) {
   .share_this.fixed {
     position: fixed;
-    top: 105px;
-    left: 30px;
+    top: 46px;
+    left: 46px;
   }
 }
 
 @media(min-width:1500px) and (max-width:1800px) {
   .share_this.fixed {
     position: fixed;
-    top: 105px;
-    left: 10%;
+    left: 11%;
   }
 }
 
 @media(max-width:1200px) {
-  .share_this {
-    display: none;
-  }
-
   .main {
     padding-top: 0;
   }
@@ -1014,10 +1020,6 @@ p.reason {
   .main {
     padding-top: 1px;
     padding-bottom: 3px;
-  }
-
-  .share_this {
-    display: none;
   }
 
   div.col-sm-8.left_details {
@@ -1129,8 +1131,7 @@ p.reason {
   }
 
   .share_this {
-    left: -1px;
-
+    display: none;
     text-align: center;
   }
 
@@ -1269,7 +1270,7 @@ p.reason {
     min-height: 40px;
   }
 
-#searchbar h3 {
+  #searchbar h3 {
     font-size: 14px;
     margin: 15px 8px;
   	text-align: center;
