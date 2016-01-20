@@ -1614,7 +1614,7 @@ img.file-icon {
 
 .modal-body .case-image {
   display: block;
-  width: 65%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -1643,7 +1643,7 @@ img.file-icon {
     bottom: 15px;
     left: auto;
     right: 15px;
-    width: 40%;
+    width: 50%;
   }
 
   .modal-body .case-image {
