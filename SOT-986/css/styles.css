@@ -1521,21 +1521,134 @@ img.file-icon {
 /* == 4 == PROCCESSING YOUR REQUEST ================= */
 
 .loggingin .modal-dialog {
-  max-width: 500px;
+  max-width: 850px;
 }
 
-.loader img {
-  display: block;
+/* modal-header */
 
+#gen-report-modal3 .section-header p {
+  font-size: 14px;
+}
+
+/* loader */
+
+.loader {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 25px;
   width: 100%;
-  max-width: 250px;
-  height: 30px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
+  border: 0;
+  background: #b0d8ff;
 }
+
+.loader .bar {
+  position: absolute;
+  height: 100%;
+  background: #7ac749;
+}
+
+.loader .loading {
+  width: 100%;
+  box-shadow: 0px 0px 10px 1px rgba(122, 199, 73, 0.9);
+  -webkit-animation: pulse-glow 3s infinite, fillup 10s ease-out;
+  -moz-animation: pulse-glow 3s infinite, fillup 10s ease-out;
+  animation: pulse-glow 3s infinite, fillup 10s ease-out;
+}
+
+@-webkit-keyframes fillup {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100%;
+  }
+}
+@-webkit-keyframes pulse-glow {
+  from {
+    box-shadow: 0px 0px 10px 1px rgba(122, 199, 73, 0.9);
+  }
+  50% {
+    box-shadow: 0px 0px 2px 0px rgba(122, 199, 73, 0.9);
+  }
+  to {
+    box-shadow: 0px 0px 10px 1px rgba(122, 199, 73, 0.9);
+  }
+}
+
+/* modal-body */
 
 #gen-report-modal3 .modal-body {
-  margin-bottom: 30px;
+  margin: 0;
+  padding: 15px;
+}
+
+.modal-body .modal-body-headline {
+  text-align: left;
+}
+
+.modal-body .modal-body-sub-headline {
+  display: block;
+  margin-top: 5px;
+  font-size: 50%;
+}
+
+.modal-body .cases-list {
+  width: 100%;
+  margin: 20px 0 10px;
+  padding: 0;
+  font-size: 16px;
+}
+
+.modal-body .case-item {
+  margin-top: 15px;
+}
+
+.modal-body .case-images {
+  position: relative;
+  bottom: -15px;
+  left: 0;
+  width: 100%;
+}
+
+.modal-body .case-image {
+  display: block;
+  width: 65%;
+  margin: 0 auto;
+}
+
+@media (min-width: 767px) {
+
+  /* modal-header */
+
+  #gen-report-modal3 .section-header p {
+    font-size: 18px;
+  }
+
+  /* modal-body */
+
+  #gen-report-modal3 .modal-body {
+    padding: 30px;
+  }
+
+  .modal-body .cases-list {
+    width: 75%;
+    margin: 50px 0 10px;
+    font-size: 20px;
+  }
+
+  .modal-body .case-images {
+    position: absolute;
+    bottom: 15px;
+    left: auto;
+    right: 15px;
+    width: 40%;
+  }
+
+  .modal-body .case-image {
+    width: 100%;
+  }
 }
 
 /* == 5 == CAPTCHA MODAL ========================== */
