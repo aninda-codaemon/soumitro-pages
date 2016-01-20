@@ -713,6 +713,8 @@
               {{#if age}}<li><strong>Age: </strong>{{age}}</li>{{/if}}
               <li><strong>Location: </strong>{{#if city}}{{city}}, {{/if}}{{#if state}}{{state}}</li>{{/if}}
               {{#if relatives}}<li><strong>Relatives: </strong>{{shortList relatives}}</li>{{/if}}
+              <li> &nbsp;</li>
+              <li class="text-success"><strong>New For 2016</strong> - We now search job records, education history and more photos!</li>
             </ul>
           </div>
           <div class="col-sm-8">
@@ -772,34 +774,38 @@
           <div data-fr-bind="currentRecord" class="col-sm-8">
             <img class="pull-left hidden-xs" src="img/green-check-48.png"><h3 class="current-search-download" ><strong><span class="green">Success, Data Found!</span></strong></h3>
             <p class="hidden-xs"><strong>Your background report on <span class="green">{{fullName}}</span> is available and ready to be viewed.</strong></p>
-            <p class="current-search-text-download">We were able to locate information on {{fullName}} from one or more of the categories below. Click button below to continue.</p>
+            <p class="current-search-text-download">We were able to locate information on {{fullName}} from one or more of the categories below. Click the button below to continue.</p>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12">
             <div class="row" id="gen-list-groups">
-              <div class="col-sm-4">
+              <div class="col-sm-4 col-xs-6 col-xxs-12">
                 <ul class="gen-list-group list-unstyled">
                   <li>Personal Information</li>
                   <li>Current Address</li>
-                  <li class="hidden-xs">Historical Addresses</li>
-                  <li class="hidden-xs">Judgments &amp; Liens</li>
-                  <li class="visible-xs">And much more!</li>
+                  <li class="hidden-xxs">Historical Addresses</li>
+                  <li class="hidden-xxs">Judgments &amp; Liens</li>
+                  <li class="hidden-xxs">Distant Relatives &nbsp;<img src="img/new_blue.png"></li>
+                  <li class="visible-xxs hidden-lg hidden-md hidden-sm hidden-xs">Arrest Records</li>
+                  <li class="visible-xxs hidden-lg hidden-md hidden-sm hidden-xs">And much more!</li>
                 </ul>
               </div>
-              <div class="col-sm-4 hidden-xs">
+              <div class="col-sm-4 hidden-xs hidden-xxs">
                 <ul class="gen-list-group list-unstyled">
                   <li>Phone Numbers</li>
                   <li>Felonies</li>
                   <li>Licenses &amp; Permits</li>
                   <li>Bankruptcies</li>
+                  <li>Neighbors &nbsp;<img src="img/new_blue.png"></li>
                 </ul>
               </div>
-              <div class="col-sm-4 hidden-xs">
+              <div class="col-sm-4 col-xs-6 hidden-xxs">
                 <ul class="gen-list-group list-unstyled">
                   <li>Arrest Records</li>
                   <li>Email Addresses</li>
                   <li>Misdemeanors</li>
+                  <li>Job History &nbsp;<img src="img/new_blue.png"></li>
                   <li>And much more!</li>
                 </ul>
               </div>
@@ -931,12 +937,14 @@
                   <li>Phone Numbers</li>
                   <li>Bankruptcies</li>
                   <li>Email Addresses</li>
+                  <li>Photos</li>
                 </div>
                 <div class="blur-list-right">
                   <li>Address History</li>
                   <li>Criminal History</li>
                   <li>Judgments</li>
                   <li>Associates</li>
+                  <li>Social Media</li>
                 </div>
               </ul>
             </div>
@@ -988,7 +996,7 @@
               <li class="list-single">Criminal</li>
               <li class="list-single">Relatives</li>
               <li class="list-single">AlertMe</li>
-              <li class="list-single">Miscellaneous</li>
+              <li class="list-single">Miscellaneous &amp; New</li>
             </ul>
           </div>
           <div class="col-sm-8">
@@ -1025,9 +1033,10 @@
               </div>
               <div id="card-misc" class="card-single">
                 <h3 class="text-info body-copy-header copy-header-misc">
-                  <strong>Miscellaneous</strong>
+                  <strong>Miscellaneous &amp; New</strong>
                 </h3>
-                <p class="hidden-xs">We also give you the ability to run reverse telephone results, as well as run reverse email searches to see what social networks, where available, are attached to an email. Social networks are a potential way to uncover additional information about a search subject. </p>
+                <p class="hidden-xs">We also give you the ability to run reverse telephone results, as well as run reverse email searches to see what social networks, where available, are attached to an email. Social networks are a potential way to uncover additional information about a search subject.</p>
+                <p class="hidden-xs">Our social search now includes photos, career records and job history. We've also recently added information about neighbors, distant relatives and much more.</p>
               </div>
             </div>
           </div>

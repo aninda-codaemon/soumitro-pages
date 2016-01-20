@@ -3077,9 +3077,22 @@ span.highlight-text {
   .person-photo-wrap {
     margin-left: none;
   }
+  .hidden-xxs {
+    display: none;
+  }
+  .visible-xxs {
+    display: inline-block !important;
+  }
+  .col-xxs-12 {
+    width: 100%;
+  }
+  .col-xxs-12 ul {
+    margin: 0 auto;
+  }
 }
 
 /*
+
 Animate.css - http://daneden.me/animate
 Licensed under the ☺ license (http://licence.visualidiot.com/)
 
