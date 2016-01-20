@@ -1618,6 +1618,28 @@ img.file-icon {
   margin: 0 auto;
 }
 
+@media (min-width: 481px) {
+  .modal-body .case-images {
+    position: absolute;
+    bottom: 15px;
+    left: auto;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .modal-body .case-images {
+    right: 0;
+    width: 50%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+  .modal-body .case-images {
+    right: 0;
+    width: 65%;
+  }
+}
+
 @media (min-width: 767px) {
 
   /* modal-header */
@@ -1640,8 +1662,6 @@ img.file-icon {
 
   .modal-body .case-images {
     position: absolute;
-    bottom: 15px;
-    left: auto;
     right: 15px;
     width: 50%;
   }
