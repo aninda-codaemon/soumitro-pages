@@ -489,8 +489,7 @@
 
 }());
 
-// processing your request modal - use cases slider
-
+// use cases slider for 'processing your request' modal 4
 var useCasesSlider = function() {
   var $useCase = $('.cases-list .case-item'),
       index = 2, // case-item index - loop starts on 2nd child as 1st is active by default
@@ -499,15 +498,17 @@ var useCasesSlider = function() {
 
   // toggle active class for 3 seconds for each use case item
   var useCasesLoop = setInterval(function() {
-    var item = $('.case-item:nth-child(' + index + ')');
+    var $item = $('.case-item:nth-child(' + index + ')'),
+        $image = $('.case-image:nth-child(' + index + ')');
 
     $('.case-item').removeClass('active');
-    $(item).addClass('active');
+    $item.addClass('active');
+
+    // display the image of the current active use case
+    $('.case-image').removeClass('active');
+    $image.addClass('active');
 
     if (index === total) {
-      // resetting index to 1 will create an infinite loop - use with caution
-      //index = 1;
-
       // stop loop when index === total
       clearInterval(useCasesLoop);
       return;
@@ -515,8 +516,6 @@ var useCasesSlider = function() {
       index++;
     }
   }, duration);
-
-  // display the image of the current active use case
 };
 
 var initUseCasesModal = function() {

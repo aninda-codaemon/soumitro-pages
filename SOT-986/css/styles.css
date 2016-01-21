@@ -1627,6 +1627,9 @@ img.file-icon {
 .modal-body .case-item.active {
   color: #63428C;
   font-weight: 700;
+  -webkit-transition: all 500ms;
+  -moz-transition: all 500ms;
+  transition: all 500ms;
 }
 
 .modal-body .case-images {
@@ -1639,8 +1642,21 @@ img.file-icon {
 
 .modal-body .case-image {
   display: block;
+  position: absolute;
+  bottom: 0;
   width: 100%;
   margin: 0 auto;
+  opacity: 0;
+  -webkit-transition: all 500ms;
+  -moz-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.modal-body .case-image.active {
+  opacity: 1;
+  -webkit-transition: all 500ms;
+  -moz-transition: all 500ms;
+  transition: all 500ms;
 }
 
 @media (min-width: 481px) {
