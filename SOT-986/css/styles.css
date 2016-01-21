@@ -1561,9 +1561,9 @@ img.file-icon {
 .loader .loading {
   width: 100%;
   box-shadow: 0px 0px 10px 1px rgba(122, 199, 73, 0.9);
-  -webkit-animation: pulse-glow 3s infinite, fillup 10s ease-out;
-  -moz-animation: pulse-glow 3s infinite, fillup 10s ease-out;
-  animation: pulse-glow 3s infinite, fillup 10s ease-out;
+  -webkit-animation: pulse-glow 2s infinite, fillup 15s ease-out;
+  -moz-animation: pulse-glow 2s infinite, fillup 15s ease-out;
+  animation: pulse-glow 2s infinite, fillup 15s ease-out;
 }
 
 @-webkit-keyframes fillup {
@@ -1590,7 +1590,7 @@ img.file-icon {
 
 #gen-report-modal3 .modal-body {
   margin: 0;
-  padding: 15px;
+  padding: 30px;
 }
 
 .modal-body .modal-body-headline {
@@ -1619,6 +1619,14 @@ img.file-icon {
 
 .modal-body .case-item {
   margin-top: 15px;
+  -webkit-transition: all 500ms;
+  -moz-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.modal-body .case-item.active {
+  color: #63428C;
+  font-weight: 700;
 }
 
 .modal-body .case-images {
@@ -1673,10 +1681,6 @@ img.file-icon {
 @media (min-width: 767px) {
 
   /* modal-body */
-
-  #gen-report-modal3 .modal-body {
-    padding: 30px;
-  }
 
   .modal-body .modal-body-headline {
     font-size: 25px;
