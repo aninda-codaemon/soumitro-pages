@@ -444,6 +444,8 @@
     }
 
     if ($useCasesModal.hasClass('in')) {
+      // @NOTE: the loading animation duration is in styles.css
+      // @TODO: move animation duration hardcode from css to js
       $loader.addClass('loading');
 
       var intervalDuration = duration / total, // how long to wait before cycling to the next item
