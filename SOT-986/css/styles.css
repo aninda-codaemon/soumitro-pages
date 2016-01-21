@@ -1635,7 +1635,7 @@ img.file-icon {
 .modal-body .case-images {
   display: none;
   position: relative;
-  bottom: -15px;
+  bottom: 40px;
   left: 0;
   width: 100%;
 }
@@ -1675,7 +1675,6 @@ img.file-icon {
   .modal-body .case-images {
     display: block;
     position: absolute;
-    bottom: 15px;
     left: auto;
   }
 }
@@ -1683,6 +1682,7 @@ img.file-icon {
 @media (min-width: 500px) and (max-width: 600px) {
   .modal-body .case-images {
     right: 0;
+    bottom: 75px;
     width: 50%;
   }
 }
@@ -1714,7 +1714,7 @@ img.file-icon {
 
   .modal-body .case-images {
     right: 15px;
-    width: 50%;
+    width: 60%;
   }
 }
 

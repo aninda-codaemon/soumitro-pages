@@ -489,57 +489,6 @@
 
 }());
 
-// use cases slider for 'processing your request' modal 4
-var useCasesSlider = function() {
-  var $useCase = $('.cases-list .case-item'),
-      index = 2, // case-item index - loop starts on 2nd child as 1st is active by default
-      total = 5, // total number of case items in the list
-      duration = 3000; // how long to wait before cycling to the next item
-
-  // toggle active class for 3 seconds for each use case item
-  var useCasesLoop = setInterval(function() {
-    var $item = $('.case-item:nth-child(' + index + ')'),
-        $image = $('.case-image:nth-child(' + index + ')');
-
-    $('.case-item').removeClass('active');
-    $item.addClass('active');
-
-    // display the image of the current active use case
-    $('.case-image').removeClass('active');
-    $image.addClass('active');
-
-    if (index === total) {
-      // stop loop when index === total
-      clearInterval(useCasesLoop);
-      return;
-    } else {
-      index++;
-    }
-  }, duration);
-};
-
-var initUseCasesModal = function() {
-
-  var $useCasesModal = $('#gen-report-modal3'),
-      $loader = $('.loader .bar');
-
-      // remove after testing
-      $useCasesModal.show();
-      $useCasesModal.addClass('in');
-
-  // activate loader (15s duration) when modal is active
-  if ($useCasesModal.hasClass('in')) {
-    $loader.addClass('loading');
-    useCasesSlider();
-  } else {
-    $loader.removeClass('loading');
-  }
-
-};
-
-// remove after testing
-initUseCasesModal();
-
 /* Captcha */
 
 (function() {
