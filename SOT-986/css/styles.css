@@ -703,6 +703,10 @@ td.addressCheck {
   border-bottom: 1px solid #cecfd5;
 }
 
+.brand-color {
+  color: #63428C;
+}
+
 .time-stamp {
   text-align: right;
 }
@@ -1526,8 +1530,13 @@ img.file-icon {
 
 /* modal-header */
 
+#gen-report-modal3 .section-header .icon {
+  margin-right: 5px;
+}
+
 #gen-report-modal3 .section-header p {
   font-size: 14px;
+  text-align: left;
 }
 
 /* loader */
@@ -1585,18 +1594,25 @@ img.file-icon {
 }
 
 .modal-body .modal-body-headline {
+  margin-top: 25px;
+  font-weight: 700;
   text-align: left;
 }
 
 .modal-body .modal-body-sub-headline {
   display: block;
   margin-top: 5px;
-  font-size: 50%;
+  color: #333;
+  font-size: 75%;
+}
+
+.modal-body .modal-body-sub-headline span {
+  font-weight: 600;
 }
 
 .modal-body .cases-list {
   width: 100%;
-  margin: 20px 0 10px;
+  margin: 40px 0 10px;
   padding: 0;
   font-size: 16px;
 }
@@ -1606,6 +1622,7 @@ img.file-icon {
 }
 
 .modal-body .case-images {
+  display: none;
   position: relative;
   bottom: -15px;
   left: 0;
@@ -1614,19 +1631,32 @@ img.file-icon {
 
 .modal-body .case-image {
   display: block;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
 @media (min-width: 481px) {
+
+  /* modal-header */
+
+  #gen-report-modal3 .section-header p {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 500px) {
+
+  /* modal-body */
+
   .modal-body .case-images {
+    display: block;
     position: absolute;
     bottom: 15px;
     left: auto;
   }
 }
 
-@media (min-width: 481px) and (max-width: 600px) {
+@media (min-width: 500px) and (max-width: 600px) {
   .modal-body .case-images {
     right: 0;
     width: 50%;
@@ -1642,32 +1672,29 @@ img.file-icon {
 
 @media (min-width: 767px) {
 
-  /* modal-header */
-
-  #gen-report-modal3 .section-header p {
-    font-size: 18px;
-  }
-
   /* modal-body */
 
   #gen-report-modal3 .modal-body {
     padding: 30px;
   }
 
+  .modal-body .modal-body-headline {
+    font-size: 25px;
+  }
+
+  .modal-body .modal-body-sub-headline {
+    font-size: 65%;
+  }
+
   .modal-body .cases-list {
     width: 75%;
-    margin: 50px 0 10px;
+    margin-top: 50px;
     font-size: 20px;
   }
 
   .modal-body .case-images {
-    position: absolute;
     right: 15px;
     width: 50%;
-  }
-
-  .modal-body .case-image {
-    width: 100%;
   }
 }
 
