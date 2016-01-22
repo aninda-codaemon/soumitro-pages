@@ -638,3 +638,13 @@
     initialize();
 
 }());
+
+// move into flow.js when done testing
+$(document).ready(function() {
+
+  var $surveyItem = $('.survey-item');
+
+  $surveyItem.click(function() {
+    $(this).toggleClass('active');
+  });
+});

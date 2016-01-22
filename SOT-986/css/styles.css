@@ -1561,9 +1561,9 @@ img.file-icon {
 .loader .loading {
   width: 100%;
   box-shadow: 0px 0px 10px 1px rgba(122, 199, 73, 0.9);
-  -webkit-animation: pulse-glow 1s infinite, fillup 20s ease-out;
-  -moz-animation: pulse-glow 1s infinite, fillup 20s ease-out;
-  animation: pulse-glow 1s infinite, fillup 20s ease-out;
+  -webkit-animation: pulse-glow 1s infinite, fillup 10s ease-out;
+  -moz-animation: pulse-glow 1s infinite, fillup 10s ease-out;
+  animation: pulse-glow 1s infinite, fillup 10s ease-out;
 }
 
 @-webkit-keyframes fillup {
@@ -1731,6 +1731,12 @@ img.file-icon {
   }
 
   /* modal-body */
+
+  .loader .loading {
+    -webkit-animation: pulse-glow 1s infinite, fillup 20s ease-out;
+    -moz-animation: pulse-glow 1s infinite, fillup 20s ease-out;
+    animation: pulse-glow 1s infinite, fillup 20s ease-out;
+  }
 
   .modal-body .modal-body-headline {
     font-size: 25px;

@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <!-- STYLES -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,200' rel='stylesheet' type='text/css'>
@@ -645,6 +646,63 @@
     </div>
   </div>
 </div><!-- /#refine-modal -->
+
+<!-- ==================================== -->
+<!-- ========== SURVEY MODAL  =========== -->
+<!-- ==================================== -->
+
+<div id="survey-modal" class="survey-modal modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p data-fr-bind="currentRecord">To improve your experience, why are you using BeenVerified today?</p>
+      </div> <!-- /.modal-header -->
+      <div class="modal-body">
+        <ul class="survey-container">
+          <li class="survey-item" id="research">
+            <i class="fa fa-street-view icon"></i>
+            <p class="item-label">Research Myself</p>
+            <i class="fa fa-check selected"></i>
+          </li>
+          <li class="survey-item" id="reconnecting">
+            <i class="fa fa-history icon"></i>
+            <p class="item-label">Reconnecting</p>
+            <i class="fa fa-check selected"></i>
+          </li>
+          <li class="survey-item" id="genealogy">
+            <i class="fa fa-sitemap icon"></i>
+            <p class="item-label">Genealogy</p>
+            <i class="fa fa-check selected"></i>
+          </li>
+          <li class="survey-item" id="professionally">
+            <i class="fa fa-briefcase icon"></i>
+            <p class="item-label">Professionally</p>
+            <i class="fa fa-check selected"></i>
+          </li>
+          <li class="survey-item" id="dating">
+            <i class="fa fa-heart icon"></i>
+            <p class="item-label">Dating</p>
+            <i class="fa fa-check selected"></i>
+          </li>
+          <li class="survey-item" id="family">
+            <i class="fa fa-shield icon"></i>
+            <p class="item-label">Protect My Family</p>
+            <i class="fa fa-check selected"></i>
+          </li>
+          <li class="survey-item" id="other">
+            <i class="fa fa-question-circle icon"></i>
+            <p class="item-label">Other</p>
+            <i class="fa fa-check selected"></i>
+          </li>
+        </ul>
+        <p class="survey-callout">Select all that apply</p>
+      </div>
+      <form class="modal-footer" id="experience-survey">
+        <button type="submit" class="main-btn btn-lg">Submit</button>
+      </div>
+    </div>
+  </div>
+</div><!-- /#gen-report-modal1 -->
 
 <!-- ==================================== -->
 <!-- == 1 == GENERATING REPORT  ========= -->
