@@ -308,7 +308,7 @@
     // Logging in.
 
     $elem: $("#gen-report-modal3"),
-    duration: 20000, // Total animation time before moving to next modal.
+    duration: 15000, // Total animation time before moving to next modal.
     animate: function () {
       _.bind(loggingIn, this)();
     }
@@ -432,55 +432,13 @@
     trackNL('Viewed LoggingIn Modal');
 
     var self = this,
-        duration = this.duration,
-        $useCasesModal = $('#gen-report-modal3'),
-        $loader = $('.loader .bar'),
-        $useCase = $('.cases-list .case-item'),
-        index = 2, // case-item index - loop starts on 2nd child as 1st is active by default
-        total = 5; // total number of case items in the list
+        duration = this.duration;
 
     if (bv.isMobile) {
       duration *= bv.mobileTimeRatio;
     }
 
-    if ($useCasesModal.hasClass('in')) {
-      // @NOTE: the loading animation duration is in styles.css
-      // @TODO: move animation duration from css to js
-      $loader.addClass('loading');
-
-      var intervalDuration = duration / total, // how long to wait before cycling to the next item
-          useCasesLoop = setInterval(function() {
-
-            var $item = $('.case-item:nth-child(' + index + ')'),
-                $image = $('.case-image:nth-child(' + index + ')');
-
-            // toggle active class for each use case item
-            $('.case-item').removeClass('active');
-            $item.addClass('active');
-
-            // display the image of the current active use case
-            $('.case-image').removeClass('active');
-            $image.addClass('active');
-
-            if (index === total) {
-              // stop loop when index === total
-              clearInterval(useCasesLoop);
-              return;
-            } else {
-              index++;
-            }
-          }, intervalDuration);
-    } else {
-      $loader.removeClass('loading');
-    }
-
     timeoutId = window.setTimeout(function () {
-      // reset slider to default
-      $('.case-item').removeClass('active');
-      $('.case-item:nth-child(1)').addClass('active');
-      $('.case-image').removeClass('active');
-      $('.case-image:nth-child(1)').addClass('active');
-
       showNextModal();
     }, duration);
   }
