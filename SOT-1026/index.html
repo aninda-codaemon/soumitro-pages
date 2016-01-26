@@ -202,7 +202,11 @@
       <h3 class="text-center text-info">
         We found {{recordCount}} results for <strong>{{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}}{{#notEqual state 'all'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}!</strong> Choose a Result Below
       </h3>
-      <p class="text-center"><span class="bold">Next Steps:</span> Locate the person you are looking for in the results below or modify your search. Once you find the right match, click "That's The One" to access the report.</p>
+      <p class="text-center">
+        <span class="bold">Next Steps:</span>
+        <span class="hidden-xs">Locate the person you are looking for in the results below or modify your search. Once you find the right match, click "That's The One" to access the report.</span>
+        <span class="visible-xs">Locate the person you are looking for in the results. Once you find the right match, click "Access."</span>
+      </p>
     </div> <!-- /.row .section-header -->
   </div> <!-- #top-banner -->
   <div id="results-wrapper" class="wrap section-min section-light" style="">
@@ -235,6 +239,9 @@
                 <div class="place-single">
                   {{place}}
                 </div>
+                <div class="relative-single">
+                  Related to <strong>{{relative}}</strong>
+                </div>
                 <div class="hidden-xs hidden-sm">
                   <ul class="aka-list list-unstyled">
                     {{#hasAkas}}
@@ -264,7 +271,10 @@
                 </ul>
               </td>
               <td class="report-col align-center">
-                <a href="#" class="btn-block aux-btn generate_report_from_teaser text-center">THAT'S THE ONE</a>
+                <a href="#" class="btn-block aux-btn generate_report_from_teaser text-center">
+                  <span class="hidden-xs">THAT'S THE ONE</span>
+                  <span class="visible-xs">ACCESS</span>
+                </a>
               </td>
             </tr>
             <!-- THIS IS WHERE ALL THE ACTION ENDS -->

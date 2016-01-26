@@ -239,6 +239,11 @@
       }).uniq().value();
     };
 
+    TeaserRecord.prototype.relative = function() {
+      var relatives = this.relatives();
+      return (relatives && relatives.length !== 0) ? relatives[0] : '';
+    };
+
     TeaserRecord.prototype.moreRelativesCount = function() {
       if (this.relatives().length > 1) {
         return parseInt(this.relatives().length) - 1;

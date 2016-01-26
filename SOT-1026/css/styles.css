@@ -3032,6 +3032,12 @@ span.highlight-text {
     display: none;
   }
 }
+
+@media (min-width: 768px) {
+  .relative-single {
+    display: none;
+  }
+}
 /* Landscape phones and down */
 
 @media (max-width: 480px) {
@@ -3075,8 +3081,10 @@ span.highlight-text {
     margin-right: -25px;
     margin-left: -25px;
   }
-  .place-single {
+  .place-single,
+  .relative-single {
     display: block;
+    font-size: 14px;
   }
   .person-info {
     text-align: center;
