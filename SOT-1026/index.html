@@ -197,7 +197,7 @@
 <!-- = DATA PANEL = -->
 <!-- ============== -->
 <div id="data-panel" data-fr-bind="searchData teaserData">
-  <div id="top-banner" class="container-fluid section-alt section-min top-section">
+  <div id="top-banner" class="container section-alt section-min top-section">
     <div class="row section-header">
       <h3 class="text-center text-info">
         We found {{recordCount}} results for <strong>{{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}}{{#notEqual state 'all'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}!</strong> Choose a Result Below
@@ -210,7 +210,7 @@
     </div> <!-- /.row .section-header -->
   </div> <!-- #top-banner -->
   <div id="results-wrapper" class="wrap section-min section-light" style="">
-    <div class="container-fluid">
+    <div class="container">
     <div class="row">
       <!--TABLE FOR RESULTS -->
         <table id="results-table" class="table table-bordered table-striped table-hover tablesorter">

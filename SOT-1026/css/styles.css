@@ -868,22 +868,13 @@ table#results-table tr:hover td button {
           box-shadow: 0 -6px 0 #57992d inset;
 }
 
-/* sot-1026 */
 .photo-locked {
   width: 50%;
 }
 
-@media (min-width: 992px) {
-  .photo-locked {
-    width: 100%;
-  }
-}
-
 a.name-found {
   font-weight: bold !important;
-
   text-decoration: underline;
-
   color: #1865b1;
 }
 
@@ -2796,7 +2787,17 @@ span.highlight-text {
 /* == RESPONSIVE GOODIES ========================== */
 /* ================================================ */
 
+@media (min-width: 768px) {
+  a.name-found {
+    font-size: 20px;
+  }
+}
+
 @media (min-width: 992px) {
+  .photo-locked {
+    width: 100%;
+  }
+
   .modal-dialog {
     width: 850px;
   }
@@ -2926,7 +2927,6 @@ span.highlight-text {
   #bv-captcha-refresh {
     width: 25px;
   }
-  /* sot-1026 changes */
   #results-wrapper {
     padding: 0;
   }
@@ -2935,7 +2935,6 @@ span.highlight-text {
     margin-right: 15px;
     padding: 8px;
   }
-  /* end sot-1026 */
   .header-search-bar input,
   .header-search-bar select {
     margin-bottom: 8px;
