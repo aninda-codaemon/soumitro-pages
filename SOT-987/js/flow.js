@@ -366,27 +366,52 @@
   function surveyModal() {
     trackNL('Viewed Survey Modal');
 
-    var validateSurveyForm = function() {
-        // check if at least one option is selected
-        console.log('form validation');
-    };
+    var $surveyItem = $('.survey-container .survey-item'),
+        selectedItems = [],
+        surveyItemsLoop = function() {
+          // loop through active survey items
+          $surveyItem.each(function() {
+            var $currentItem = $(this);
 
-    validateSurveyForm();
+            // check if current item is active
+            if ($currentItem.hasClass('active')) {
+              // push this item into selected items array
+              var selectedItem = $(this).attr('id');
+              selectedItems.push(selectedItem);
+            }
+          });
 
-    var reportSurveyData = function(dataArray) {
-        // send survey data to json file
-
-        console.log('posting survey data to backend');
-
-        // use this after report is submitted successfully
-        showNextModal();
-    };
+        };
 
     $("#experience-survey").on('submit', function(evt) {
-        evt.preventDefault();
+      evt.preventDefault();
 
-        // submit data if valid
-        reportSurveyData();
+      // hide alert when submitting
+      $('.survey-alert').hide();
+
+      surveyItemsLoop();
+
+      if ($('.survey-item').hasClass('active')) {
+        trackNL('Submitted Survey Form - Success');
+
+        // data object to post
+        var surveyData = {selected: selectedItems};
+
+        // post survey data
+        $.post('/backend.json', surveyData, function() {
+          $surveyItem.removeClass('active');
+        }).done(function() {
+          // on success, show next modal
+          showNextModal();
+        }).fail(function() {
+          // log the error if fails
+          console.error('survey failed to post');
+        });
+
+      } else {
+        // show invalid alert
+        $('.survey-alert').show();
+      }
     });
   }
 

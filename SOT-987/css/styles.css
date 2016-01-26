@@ -1297,6 +1297,13 @@ p.already-a-member {
   padding: 20px 30px;
 }
 
+.survey-alert {
+  display: none;
+  color: #F16161;
+  font-weight: bold;
+  text-align: center;
+}
+
 .survey-container {
   margin: 0;
   padding: 0;
