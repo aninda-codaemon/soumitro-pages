@@ -894,7 +894,9 @@ table#results-table tr:hover td button {
 }
 
 .photo-locked {
+  display: block;
   width: 50%;
+  margin: 0 auto;
 }
 
 a.name-found {
