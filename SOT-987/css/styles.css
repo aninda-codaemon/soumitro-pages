@@ -1386,7 +1386,7 @@ p.already-a-member {
   /* modal-body */
 
   .survey-modal .modal-body {
-    padding: 20px 0 10px;
+    padding: 30px 0 10px;
   }
 
   .survey-container .survey-item {
@@ -1440,10 +1440,12 @@ p.already-a-member {
   }
 
   .survey-item .checkbox {
-    top: 5px;
-    right: 20px;
+    top: -5px;
+    right: auto;
     bottom: auto;
-    left: auto;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
     font-size: 20px;
   }
 }
