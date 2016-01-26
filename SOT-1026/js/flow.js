@@ -276,14 +276,8 @@
 
   var modals = [{
 
-    // Use Case Survey
-    $elem: $('#survey-modal'),
-    animate: function () {
-      _.bind(surveyModal, this)();
-    }
-  },
     // Progress Bars.
-  {
+
     $elem: $("#gen-report-modal1"),
     splits: [45000, 20000, 30000], // Progress bar times (these are shuffled)
     transitionDelay: 1000,         // After progress completion, amount of time before moving to next flow.
@@ -362,58 +356,6 @@
   }];
 
   /* Function statements, I want these hoisted. */
-
-  function surveyModal() {
-    trackNL('Viewed Survey Modal');
-
-    var $surveyItem = $('.survey-container .survey-item'),
-        selectedItems = [],
-        surveyItemsLoop = function() {
-          // loop through active survey items
-          $surveyItem.each(function() {
-            var $currentItem = $(this);
-
-            // check if current item is active
-            if ($currentItem.hasClass('active')) {
-              // push this item into selected items array
-              var selectedItem = $(this).attr('id');
-              selectedItems.push(selectedItem);
-            }
-          });
-
-        };
-
-    $("#experience-survey").on('submit', function(evt) {
-      evt.preventDefault();
-
-      // hide alert when submitting
-      $('.survey-alert').hide();
-
-      surveyItemsLoop();
-
-      if ($('.survey-item').hasClass('active')) {
-        trackNL('Submitted Survey Form - Success');
-
-        // data object to post
-        var surveyData = {selected: selectedItems};
-
-        // post survey data
-        $.post('/backend.json', surveyData, function() {
-          $surveyItem.removeClass('active');
-        }).done(function() {
-          // on success, show next modal
-          showNextModal();
-        }).fail(function() {
-          // log error if post fails
-          console.error('survey failed to post');
-        });
-
-      } else {
-        // show invalid alert
-        $('.survey-alert').show();
-      }
-    });
-  }
 
   function initializingSearchProgress() {
     trackNL('Viewed LocatingInfo Modal');
