@@ -440,7 +440,7 @@
 
     $('.navbar-toggle').click(function() {
       $('#nav-icon-closed').toggleClass('active');
-    })
+    });
 
     /* Init */
 

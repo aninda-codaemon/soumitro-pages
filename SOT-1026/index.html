@@ -202,9 +202,8 @@
         We found {{recordCount}} results for <strong>{{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}}{{#notEqual state 'all'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}!</strong> Choose a Result Below
       </h3>
       <p class="text-center">
-        <span class="bold">Next Steps:</span>
-        <span class="hidden-xs">Locate the person you are looking for in the results below or modify your search. Once you find the right match, click "That's The One" to access the report.</span>
-        <span class="visible-xs">Locate the person you are looking for in the results. Once you find the right match, click "Access."</span>
+        <span class="hidden-xs"><strong>Next Steps:</strong> Locate the person you are looking for in the results below or modify your search. Once you find the right match, click "That's The One" to access the report.</span>
+        <span class="visible-xs"><strong>Next Steps:</strong> Locate the person you are looking for in the results. Once you find the right match, click "Access."</span>
       </p>
     </div> <!-- /.row .section-header -->
   </div> <!-- #top-banner -->
@@ -237,10 +236,12 @@
                 <a href="#" class="name-found">{{fullName}}</a>
                 <div class="place-single">
                   {{place}}
+                  <br />
+                  {{place2}}
                 </div>
-                <div class="relative-single">
+                <!-- <div class="relative-single">
                   Related to <strong>{{relative}}</strong>
-                </div>
+                </div> -->
                 <div class="hidden-xs hidden-sm">
                   <ul class="aka-list list-unstyled">
                     {{#hasAkas}}

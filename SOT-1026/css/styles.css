@@ -2819,10 +2819,6 @@ span.highlight-text {
 }
 
 @media (min-width: 992px) {
-  .photo-locked {
-    width: 100%;
-  }
-
   .modal-dialog {
     width: 850px;
   }
@@ -2959,7 +2955,7 @@ span.highlight-text {
   #results-wrapper .container {
     padding: 0;
   }
-  
+
   p.alert {
     margin-left: 15px;
     margin-right: 15px;
@@ -2980,9 +2976,6 @@ span.highlight-text {
   }
   .no-results-icon img {
     width: 100px;
-  }
-  .report-col a {
-    font-size: 11px;
   }
   p.modal-top-text-big {
     font-size: 21px;

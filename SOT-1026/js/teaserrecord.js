@@ -309,6 +309,11 @@
       return (addresses && addresses.length !== 0) ? addresses[0] : '';
     };
 
+    TeaserRecord.prototype.place2 = function() {
+      var addresses = this.addresses();
+      return (addresses && addresses.length !== 0) ? addresses[1] : '';
+    };
+
     TeaserRecord.prototype.morePlacesCount = function() {
       if (this.addresses().length > 1) {
         return parseInt(this.addresses().length) - 1;
