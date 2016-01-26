@@ -216,7 +216,7 @@
         <table id="results-table" class="table table-bordered table-striped table-hover tablesorter">
           <thead class="table-header">
             <tr>
-              <th id="th-hash" class="col-md-1">#</th>
+              <th id="th-hash" class="col-md-1">Photo</th>
               <th class="name-col col-md-3">Name</th>
               <th class="col-md-1">Age</th>
               <th id="th-cities" class="col-md-2">Cities</th>
@@ -232,7 +232,8 @@
               data-fr-click="store currentRecord"
               class="results-row">
               <td class="td-hash">
-                <span class="index-col">{{index}}</span>
+                <!-- <span class="index-col">{{index}}</span> -->
+                <img class="photo-locked" src="img/photo-locked.png" />
               </td>
               <td class="name-col">
                 <a href="#" class="name-found">{{fullName}}</a>

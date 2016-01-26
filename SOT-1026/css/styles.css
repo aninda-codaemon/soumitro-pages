@@ -868,6 +868,17 @@ table#results-table tr:hover td button {
           box-shadow: 0 -6px 0 #57992d inset;
 }
 
+/* sot-1026 */
+.photo-locked {
+  width: 50%;
+}
+
+@media (min-width: 992px) {
+  .photo-locked {
+    width: 100%;
+  }
+}
+
 a.name-found {
   font-weight: bold !important;
 
