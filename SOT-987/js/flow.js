@@ -276,8 +276,14 @@
 
   var modals = [{
 
+    // Use Case Survey
+    $elem: $('#survey-modal'),
+    animate: function () {
+      _.bind(surveyModal, this)();
+    }
+  },
     // Progress Bars.
-
+  {
     $elem: $("#gen-report-modal1"),
     splits: [45000, 20000, 30000], // Progress bar times (these are shuffled)
     transitionDelay: 1000,         // After progress completion, amount of time before moving to next flow.
@@ -356,6 +362,33 @@
   }];
 
   /* Function statements, I want these hoisted. */
+
+  function surveyModal() {
+    trackNL('Viewed Survey Modal');
+
+    var validateSurveyForm = function() {
+        // check if at least one option is selected
+        console.log('form validation');
+    };
+
+    validateSurveyForm();
+
+    var reportSurveyData = function(dataArray) {
+        // send survey data to json file
+
+        console.log('posting survey data to backend');
+
+        // use this after report is submitted successfully
+        showNextModal();
+    };
+
+    $("#experience-survey").on('submit', function(evt) {
+        evt.preventDefault();
+
+        // submit data if valid
+        reportSurveyData();
+    });
+  }
 
   function initializingSearchProgress() {
     trackNL('Viewed LocatingInfo Modal');
