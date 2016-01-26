@@ -296,6 +296,15 @@ nav {
 
   color: white;
 }
+
+#nav-icon-closed .icon {
+  font-size: 24px;
+}
+
+#nav-icon-closed.active .icon::before {
+  content: "\f00d";
+}
+
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {
   border-color: #fff;
