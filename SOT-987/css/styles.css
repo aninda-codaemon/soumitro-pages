@@ -1291,6 +1291,12 @@ p.already-a-member {
 
 /* ======= SURVEY MODAL ======= */
 
+/* modal-header */
+
+.modal-header .icon {
+  margin-right: 8px;
+}
+
 /* modal-body */
 
 .survey-modal .modal-body {
