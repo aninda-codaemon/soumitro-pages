@@ -366,6 +366,9 @@
   function surveyModal() {
     trackNL('Viewed Survey Modal');
 
+    // hide alert on initial load
+    $('.survey-alert').hide();
+
     var $surveyItem = $('.survey-container .survey-item'),
         selectedItems = [],
         surveyItemsLoop = function() {
@@ -386,27 +389,33 @@
     $("#use-case-survey").on('submit', function(evt) {
       evt.preventDefault();
 
-      // hide alert when submitting
-      $('.survey-alert').fadeOut('fast');
-
       if ($('.survey-item').hasClass('active')) {
+        // hide alert if item is selected
+        $('.survey-alert').fadeOut('fast');
+
         surveyItemsLoop();
 
         // data object to post
         var surveyData = {signup_reason: selectedItems};
 
         // post survey data
-        $.post('/api/3_0_1/leads.json', surveyData, function() {
-          // reset survey
-          $surveyItem.removeClass('active');
-        }).done(function() {
-          trackNL('Submitted Survey Form - Success');
-          // on success, show next modal
-          showNextModal();
-        }).fail(function(error) {
-          // log error if post fails
-          console.error(error);
-        });
+        // @TODO: fix issues with post to leads.json
+        // $.post('/api/3_0_1/leads.json', surveyData, function() {
+        //   // reset survey
+        //   $surveyItem.removeClass('active');
+        // }).done(function() {
+        //   trackNL('Submitted Survey Form - Success');
+        //   // on success, show next modal
+        //   showNextModal();
+        // }).fail(function(error) {
+        //   // log error if post fails
+        //   console.error(error);
+        // });
+
+        // @NOTE: remove after post issues are fixed
+        trackNL('Submitted Survey Form - Success');
+        $surveyItem.removeClass('active');
+        showNextModal();
 
       } else {
         // show invalid alert
