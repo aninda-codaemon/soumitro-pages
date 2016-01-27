@@ -389,10 +389,8 @@
       // hide alert when submitting
       $('.survey-alert').fadeOut('fast');
 
-      surveyItemsLoop();
-
       if ($('.survey-item').hasClass('active')) {
-        trackNL('Submitted Survey Form - Success');
+        surveyItemsLoop();
 
         // data object to post
         var surveyData = {signup_reason: selectedItems};
@@ -402,6 +400,7 @@
           // reset survey
           $surveyItem.removeClass('active');
         }).done(function() {
+          trackNL('Submitted Survey Form - Success');
           // on success, show next modal
           showNextModal();
         }).fail(function(error) {
