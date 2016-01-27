@@ -895,8 +895,48 @@ table#results-table tr:hover td button {
 
 .photo-locked {
   display: block;
-  width: 50%;
+  position: relative;
+  width: 100%;
   margin: 0 auto;
+  text-align: center;
+}
+
+.photo-locked .fa-user {
+  color: #DCDCDC;
+  font-size: 40px;
+}
+
+.photo-locked .fa-lock {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  padding: 2px 4px 2px 5px;
+  border-radius: 50%;
+  background: #F9F9F9;
+  color: #3F3F3F;
+  font-size: 14px;
+  text-align: center;
+}
+
+.results-row:nth-child(even) .photo-locked .fa-lock {
+  background: #fff;
+}
+
+.results-row:hover .photo-locked .fa-lock {
+  background: #E9F1F5;
+  color: #6DAC45;
+}
+
+@media (min-width: 992px) {
+  .photo-locked .fa-lock {
+    right: 2px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .photo-locked .fa-lock {
+    right: 10px;
+  }
 }
 
 a.name-found {
