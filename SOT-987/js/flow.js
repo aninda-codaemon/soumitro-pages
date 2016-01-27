@@ -383,7 +383,7 @@
 
         };
 
-    $("#experience-survey").on('submit', function(evt) {
+    $("#use-case-survey").on('submit', function(evt) {
       evt.preventDefault();
 
       // hide alert when submitting
@@ -403,9 +403,9 @@
         }).done(function() {
           // on success, show next modal
           showNextModal();
-        }).fail(function() {
+        }).fail(function(error) {
           // log error if post fails
-          console.error('survey failed to post');
+          console.error(error);
         });
 
       } else {
