@@ -387,7 +387,7 @@
       evt.preventDefault();
 
       // hide alert when submitting
-      $('.survey-alert').hide();
+      $('.survey-alert').fadeOut('fast');
 
       surveyItemsLoop();
 
@@ -395,10 +395,11 @@
         trackNL('Submitted Survey Form - Success');
 
         // data object to post
-        var surveyData = {selected: selectedItems};
+        var surveyData = {signup_reason: selectedItems};
 
         // post survey data
-        $.post('/backend.json', surveyData, function() {
+        $.post('/api/3_0_1/leads.json', surveyData, function() {
+          // reset survey
           $surveyItem.removeClass('active');
         }).done(function() {
           // on success, show next modal
@@ -410,7 +411,7 @@
 
       } else {
         // show invalid alert
-        $('.survey-alert').show();
+        $('.survey-alert').fadeIn('fast');
       }
     });
   }
