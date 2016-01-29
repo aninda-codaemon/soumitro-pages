@@ -51,7 +51,7 @@
 
     $.when(xhrData).done(function(result) {
       trackNL("Person Data Teaser Called");
-      
+
       var res = result;
       var img = '';
 
@@ -70,7 +70,7 @@
         return item.type.nameize();
       });
 
-  
+
       // Data elements to display - Waterfall controlled here
       var data = [
         {
@@ -190,7 +190,7 @@
         return (item.type === 'addresses' && item.count > 0) || (item.type === 'neighbors' && item.count > 0);
       });
 
-          
+
       if (!hasCriminal) {
         $("#crim-disc").hide();
         $("#no-crim").show();
@@ -395,7 +395,7 @@
 
     trackNL('Viewed ReadyToDownload Modal');
 
-    var $lis = $("#gen-list-groups li"),
+    var $lis = $('.report-info-list .report-info-item'),
         listLen = $lis.length,
         listIdxs = _.shuffle(_.range(0, listLen)),
         currIdx = 0;
