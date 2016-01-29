@@ -1246,15 +1246,13 @@ span.located img {
   list-style: none;
 }
 
-.modal-body .report-info-list .report-info-item.negative-color,
-.modal-body .report-info-list .report-info-item.negative-color .icon {
+/*.modal-body .report-info-list .report-info-item.negative-color .icon {
   color: #E85858;
 }
 
-.modal-body .report-info-list .report-info-item.caution-color,
 .modal-body .report-info-list .report-info-item.caution-color .icon {
   color: #FBAC11;
-}
+}*/
 
 .modal-body .report-info-list .report-info-item .icon {
   color: #6DAC45;
