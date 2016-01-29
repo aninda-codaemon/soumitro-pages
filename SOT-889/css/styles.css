@@ -1246,6 +1246,10 @@ span.located img {
   list-style: none;
 }
 
+.modal-body .report-info-list .report-info-item .icon {
+  color: #6DAC45;
+}
+
 @media (min-width: 481px) {
 
   .mobile-heading .modal-headline .mobile-image {
@@ -1326,7 +1330,8 @@ span.located img {
 
 /* report-info-list display props */
 
-.report-info-list .report-info-item {
+.report-info-list .report-info-item,
+.report-info-list .report-info-item .icon {
   display: none;
 }
 
