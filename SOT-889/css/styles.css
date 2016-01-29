@@ -1246,8 +1246,28 @@ span.located img {
   list-style: none;
 }
 
+.modal-body .report-info-list .report-info-item.negative-color,
+.modal-body .report-info-list .report-info-item.negative-color .icon {
+  color: #E85858;
+}
+
+.modal-body .report-info-list .report-info-item.caution-color,
+.modal-body .report-info-list .report-info-item.caution-color .icon {
+  color: #FBAC11;
+}
+
 .modal-body .report-info-list .report-info-item .icon {
   color: #6DAC45;
+}
+
+.modal-body .report-info-list .report-info-item .new-label {
+  vertical-align: top;
+  margin-left: 3px;
+  padding: 0 3px 2px;
+  border-radius: 4px;
+  border: 1px solid #0072BC;
+  color: #0072BC;
+  font-size: 12px;
 }
 
 @media (min-width: 481px) {
