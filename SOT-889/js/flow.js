@@ -394,6 +394,7 @@
   function reportReadyForDownload() {
 
     trackNL('Viewed ReadyToDownload Modal');
+    $('.img-animation').addClass('animate');
 
     var $lis = $('.report-info-list .report-info-item'),
         listLen = $lis.length,
@@ -421,6 +422,9 @@
       }
       var listIdx = listIdxs[currIdx];
       $($lis[listIdx]).addClass('success');
+
+      // remove animation when going to next modal
+      //$('.img-animation').removeClass('animate');
 
       currIdx += 1;
 

@@ -1178,6 +1178,9 @@ span.located img {
     left: 25px;
     width: 130px;
     height: 130px;
+  }
+
+  #gen-report-modal2 .modal-header .jumbo-sidebar .img-animation.animate {
     background: url('../img/Animation.gif') no-repeat;
     background-size: cover;
   }
@@ -1231,11 +1234,14 @@ span.located img {
   text-align: center;
 }
 
-.mobile-heading .modal-headline .mobile-img-animation {
+.mobile-heading .modal-headline .img-animation {
   display: block;
   height: 70px;
   width: 80px;
   margin: 5px auto;
+}
+
+.mobile-heading .modal-headline .img-animation.animate {
   background: url('../img/success-icon.gif') no-repeat;
   background-size: cover;
 }
@@ -1283,7 +1289,7 @@ span.located img {
 
 @media (min-width: 481px) {
 
-  .mobile-heading .modal-headline .mobile-img-animation {
+  .mobile-heading .modal-headline .img-animation {
     position: absolute;
     top: 0;
     left: 0;
