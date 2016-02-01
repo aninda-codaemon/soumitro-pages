@@ -11,19 +11,19 @@
       this.age = this.record.age;
       this.index = null;
       this.personHash = base64.encode(JSON.stringify(this.record));
-      this.isDeceased = false;
-      var dods;
-      if (this.record.DODs !== void 0) {
-        if ($.type(this.record.DODs.Item.DeadAge) !== 'array') {
-          dods = [this.record.DODs.Item.DeadAge];
-        } else if ($.type(this.record.DODs.Item.DeadAge) === 'array') {
-          dods = this.record.DODs.Item.DeadAge;
-        }
-        if (_not_blank(dods[0])) {
-          this.age = dods[0];
-          this.isDeceased = true;
-        }
-      }
+      this.isDeceased = false;   
+      var dods;   
+      if (this.record.DODs !== void 0) {    
+        if ($.type(this.record.DODs.Item.DeadAge) !== 'array') {     
+          dods = [this.record.DODs.Item.DeadAge];    
+        } else if ($.type(this.record.DODs.Item.DeadAge) === 'array') {     
+          dods = this.record.DODs.Item.DeadAge;    
+        }    
+        if (_not_blank(dods[0])) {     
+          this.age = dods[0];     
+          this.isDeceased = true;    
+        }   
+      }
     }
 
     TeaserRecord.prototype.theInput = function() {
@@ -177,7 +177,7 @@
     };
 
     TeaserRecord.prototype.hasAkas = function() {
-        return this.allNames().length > 0;
+      return this.allNames().length > 0;
     };
 
     TeaserRecord.prototype.moreAkasCount = function() {
@@ -239,6 +239,11 @@
       }).uniq().value();
     };
 
+    TeaserRecord.prototype.relative = function() {
+      var relatives = this.relatives();
+      return (relatives && relatives.length !== 0) ? relatives[0] : '';
+    };
+
     TeaserRecord.prototype.moreRelativesCount = function() {
       if (this.relatives().length > 1) {
         return parseInt(this.relatives().length) - 1;
@@ -256,10 +261,10 @@
     };
 
     TeaserRecord.prototype.location = function() {
-      return (this.addresses()[0]||"");
+      return (this.addresses()[0] || "");
     };
 
-    TeaserRecord.prototype.otherLocations = function () {
+    TeaserRecord.prototype.otherLocations = function() {
       var addresses = this.addresses();
       if (addresses.length > 1) {
         return this.addresses().slice(1);
@@ -269,16 +274,16 @@
     };
 
     TeaserRecord.prototype.city = function() {
-      return (this.addresses()[0]||"").split(",")[0];
+      return (this.addresses()[0] || "").split(",")[0];
     };
 
     TeaserRecord.prototype.state = function() {
-      return (this.addresses()[0]||"").split(",")[1];
+      return (this.addresses()[0] || "").split(",")[1];
     };
 
     TeaserRecord.prototype.addresses = function() {
       var addresses;
-      if (typeof this.record.Addresses === "undefined"){
+      if (typeof this.record.Addresses === "undefined") {
         return [];
       } else if (this.record.Addresses === void 0) {
         return [];
@@ -290,7 +295,7 @@
       }
       return _.chain(addresses).map(function(address) {
         return this._makeAddress(address);
-      }, this).uniq().filter(function (address) {
+      }, this).uniq().filter(function(address) {
         return typeof address !== 'undefined';
       }).value();
     };
@@ -302,6 +307,11 @@
     TeaserRecord.prototype.place = function() {
       var addresses = this.addresses();
       return (addresses && addresses.length !== 0) ? addresses[0] : '';
+    };
+
+    TeaserRecord.prototype.place2 = function() {
+      var addresses = this.addresses();
+      return (addresses && addresses.length !== 0) ? addresses[1] : '';
     };
 
     TeaserRecord.prototype.morePlacesCount = function() {
@@ -327,23 +337,23 @@
     TeaserRecord.prototype.exactSearchMatch = function() {
 
       var firstName = this.firstName() || '',
-          //middleName = this.middleName() || '',
-          middleName = this.middleName().charAt(0) || '',
-          lastName = this.lastName() || '';
+        //middleName = this.middleName() || '',
+        middleName = this.middleName().charAt(0) || '',
+        lastName = this.lastName() || '';
 
       if (typeof amplify === 'undefined') {
         return false;
       }
 
       var result = '',
-          searchData = amplify.store('searchData');
+        searchData = amplify.store('searchData');
       if (typeof searchData.mi !== 'undefined' && searchData.mi.trim() !== '') {
         result = searchData.fn.trim().toLowerCase() === firstName.trim().toLowerCase() &&
-                 searchData.mi.trim().toLowerCase() === middleName.trim().toLowerCase() &&
-                 searchData.ln.trim().toLowerCase() === lastName.trim().toLowerCase();
+          searchData.mi.trim().toLowerCase() === middleName.trim().toLowerCase() &&
+          searchData.ln.trim().toLowerCase() === lastName.trim().toLowerCase();
       } else {
         result = searchData.fn.trim().toLowerCase() === firstName.trim().toLowerCase() &&
-                 searchData.ln.trim().toLowerCase() === lastName.trim().toLowerCase();
+          searchData.ln.trim().toLowerCase() === lastName.trim().toLowerCase();
       }
       return result;
     };

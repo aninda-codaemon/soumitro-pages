@@ -3,9 +3,10 @@
  * NOTE: This version hides any existing modal at the moment that a downsell modal is triggered.
  * Beware!
  */
-;(function ($, _) {
+;
+(function($, _) {
 
-  var noop = function () {};
+  var noop = function() {};
 
   var defaults = {
     onBlur: {
@@ -38,23 +39,23 @@
   };
 
   var isIE = navigator.userAgent.toLowerCase().indexOf('msie') > -1 || !!navigator.userAgent.match(/Trident.*rv\:11\./),
-      isFF = navigator.userAgent.toLowerCase().indexOf ('firefox') > -1,
-      isAndroid = navigator.userAgent.toLowerCase().indexOf ('android') > -1,
-      isIOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false;
+    isFF = navigator.userAgent.toLowerCase().indexOf('firefox') > -1,
+    isAndroid = navigator.userAgent.toLowerCase().indexOf('android') > -1,
+    isIOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false;
 
   var downsell = {},
-      opts = {},
-      stop = false; // stops triggering downsells.
+    opts = {},
+    stop = false; // stops triggering downsells.
 
   var activeModal;
 
-  var reportHeap = function (msg, prop) {
+  var reportHeap = function(msg, prop) {
     if (typeof window.heap !== "undefined" && heap.track) {
       heap.track(msg, prop);
     }
   };
 
-  var trackNL = function (evtName, props) {
+  var trackNL = function(evtName, props) {
     if (typeof nolimit !== 'undefined' && nolimit.track) {
       if (props) {
         nolimit.track(evtName, props);
@@ -71,10 +72,7 @@
     }
   };
 
-  var showModal = function (id, eventType, suppress, durSecs) {
-    if (window.hasClickedResult) {
-      return;
-    }
+  var showModal = function(id, eventType, suppress, durSecs) {
 
     if (eventType) {
       var props = {};
@@ -90,8 +88,8 @@
 
     // Don't show any other downsell if back/unload modals are already shown.
     if (stop ||
-        activeModal === opts.onBack.elem ||
-        activeModal === opts.onUnload.elem) {
+      activeModal === opts.onBack.elem ||
+      activeModal === opts.onUnload.elem) {
       return;
     }
 
@@ -99,9 +97,9 @@
       $(activeModal).modal('hide');
 
       $(id).modal({
-        backdrop:'static',
-        keyboard:false,
-        show:true
+        backdrop: 'static',
+        keyboard: false,
+        show: true
       });
 
       activeModal = id;
@@ -109,7 +107,7 @@
     }
   };
 
-  var determineDurationBucket = function (duration) {
+  var determineDurationBucket = function(duration) {
     var buckets = {
       30: "30s - 44s",
       45: "45s - 59s",
@@ -130,8 +128,9 @@
       return "More than 165s";
     }
 
-    var msg = "", found = false;
-    _.forEach(buckets, function (v, k) {
+    var msg = "",
+      found = false;
+    _.forEach(buckets, function(v, k) {
       var nextVal = (parseInt(k, 10) + 15);
       if (!found && duration >= parseInt(k, 10) && duration < nextVal) {
         found = true;
@@ -144,19 +143,19 @@
   /* OnBlur - Fired when the user returns to window after X amount of time. */
 
   var blurTime,
-      onBlurShown = false;
+    onBlurShown = false;
 
-  var onBlur = function () {
+  var onBlur = function() {
 
-    $(window).on("blur", function () {
+    $(window).on("blur", function() {
       if (onBlurShown) return;
       blurTime = Date.now();
     });
 
-    $(window).on("focus", function () {
+    $(window).on("focus", function() {
       if (onBlurShown) return;
       var timeNow = Date.now(),
-          outOfFocusDuration = timeNow - blurTime;
+        outOfFocusDuration = timeNow - blurTime;
       if (outOfFocusDuration > opts.onBlur.outOfFocusDuration) {
         onBlurShown = true;
         showModal(opts.onBlur.elem, "onBlur", true, (outOfFocusDuration / 1000));
@@ -166,22 +165,22 @@
 
   /* OnBack - Fired when the user hits the back button. */
 
-  var markHash = function (cb) {
+  var markHash = function(cb) {
     window.location.hash = "";
     $("#mark-hash").click();
-    window.setTimeout(function () {
-     window.location.hash = ".";
+    window.setTimeout(function() {
+      window.location.hash = ".";
       cb();
     }, 3000);
   };
 
   /* Poll for hash changes on IE. */
-  var pollForHashChange = function () {
+  var pollForHashChange = function() {
     var elem = opts.onBack.elem,
-        cb = opts.onBack.cb,
-        override = opts.onBack.override;
+      cb = opts.onBack.cb,
+      override = opts.onBack.override;
 
-    window.setInterval(function () {
+    window.setInterval(function() {
       if (window.location.hash === "#") {
         if (override) {
           cb();
@@ -193,16 +192,16 @@
     }, 400);
   };
 
-  var listenToHashChanges = function () {
+  var listenToHashChanges = function() {
     var elem = opts.onBack.elem,
-        cb = opts.onBack.cb,
-        override = opts.onBack.override;
+      cb = opts.onBack.cb,
+      override = opts.onBack.override;
 
     if (isIE) {
       pollForHashChange();
       return;
     }
-    $(window).on("hashchange", function () {
+    $(window).on("hashchange", function() {
       var hash = window.location.hash;
       if (!hash || hash === "#") {
         if (override) {
@@ -216,31 +215,31 @@
     });
   };
 
-  var onBack = function () {
-    markHash(function () {
+  var onBack = function() {
+    markHash(function() {
       listenToHashChanges();
     });
   };
 
   /* OnIdle - Fired when a user scrolls and then idles for X amount of time. */
   var lastActive = Date.now(),
-      onIdleShown = false;
+    onIdleShown = false;
 
-  var onIdle = function () {
+  var onIdle = function() {
 
-    $(window).on("touchstart", function () {
+    $(window).on("touchstart", function() {
       lastActive = Date.now();
     });
 
-    $(window).on("click", function () {
+    $(window).on("click", function() {
       lastActive = Date.now();
     });
 
-    $(window).on('scroll', function () {
+    $(window).on('scroll', function() {
       lastActive = Date.now();
     });
 
-    window.setInterval(function () {
+    window.setInterval(function() {
       if (onIdleShown) return;
       var timeDelta = Date.now() - lastActive;
       if (timeDelta >= opts.onIdle.inactiveThreshold) {
@@ -253,19 +252,19 @@
 
   /* OnUnload */
 
-  var beforeUnload = function () {
+  var beforeUnload = function() {
     trackNL("onBeforeUnload Popup - Viewed");
     if (stop) {
-      window.onbeforeunload = function () {};
+      window.onbeforeunload = function() {};
       return;
     }
     stop = true;
-    $('.modal.in').modal('hide') ;
+    $('.modal.in').modal('hide');
     // $(opts.onUnload.elem).addClass("force-show");
 
     var $subscribeBounceTB = $("#subscribe_bounce_text"),
-        text = null,
-        bounceRedirect = null;
+      text = null,
+      bounceRedirect = null;
 
     if ($subscribeBounceTB.length > 0) {
       text = $subscribeBounceTB.text();
@@ -276,9 +275,11 @@
 
     window.onbeforeunload = noop;
 
-    window.setTimeout(function () {
-      window.setTimeout(function () {
-        trackNL("onBeforeUnload Popup - Accepted", {redirected_to: redirectTo});
+    window.setTimeout(function() {
+      window.setTimeout(function() {
+        trackNL("onBeforeUnload Popup - Accepted", {
+          redirected_to: redirectTo
+        });
         window.location = redirectTo;
       }, 500);
     }, 5);
@@ -286,25 +287,25 @@
     return text || '\n*************************************************\nWANT UNLIMITED REPORTS FOR JUST $1?\n*************************************************\n\n\n*** Please stay on this page for more details. ***\n\n\n\n';
   };
 
-  var onUnload = function () {
+  var onUnload = function() {
     window.onbeforeunload = beforeUnload;
   };
 
-  var onBreakingPlane = function () {
+  var onBreakingPlane = function() {
     var elem = opts.onBreakingPlane.elem,
-        cb = opts.onBreakingPlane.cb,
-        override = opts.onBreakingPlane.override,
-        sensitivity = 20, // pixels from the top
-        threshold = 500,
-        thresholdId = null,
-        delayBeforeFiring = 0,
-        delayTimer,
-        firedBreakingPlaneAlready = false;
+      cb = opts.onBreakingPlane.cb,
+      override = opts.onBreakingPlane.override,
+      sensitivity = 20, // pixels from the top
+      threshold = 500,
+      thresholdId = null,
+      delayBeforeFiring = 0,
+      delayTimer,
+      firedBreakingPlaneAlready = false;
 
     var mouseleaveY,
-        mouseenterY;
+      mouseenterY;
 
-    var fireBounce = function () {
+    var fireBounce = function() {
       if (firedBreakingPlaneAlready) return;
       firedBreakingPlaneAlready = true;
 
@@ -316,12 +317,12 @@
       }
     };
 
-    $(document).on('mouseleave', function (evt) {
+    $(document).on('mouseleave', function(evt) {
       if (evt.clientY > sensitivity) return;
       delayTimer = setTimeout(fireBounce, delayBeforeFiring);
     });
 
-    $(document).on('mouseenter', function (evt) {
+    $(document).on('mouseenter', function(evt) {
       if (delayTimer) {
         clearTimeout(delayTimer);
         delayTimer = null;
@@ -329,14 +330,19 @@
     });
   };
 
+  downsell.stop = function() {
+    $(document).off('mouseleave');
+    $(document).off('mouseenter');
+    $(window).off('hashchange');
+  };
+
 
   /* Initialize */
 
-  downsell.init = function (options) {
+  downsell.init = function(options) {
     _.extend(opts, defaults, options);
     onBack();
     //onUnload();
-
     //onIdle();
     //onBlur();
     onBreakingPlane();
