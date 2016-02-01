@@ -823,7 +823,7 @@ p.already-a-member {
 }
 
 .green {
-  color: green;
+  color: #6DAC45;
 }
 
 .blue-txt{
@@ -965,7 +965,7 @@ p.current-search-text {
 p.current-search-text span {
   font-weight: bold;
 
-  color: green;
+  color: #6DAC45;
 }
 
 .alert-this {
@@ -1121,6 +1121,10 @@ span.located img {
   color: #8AC0F7;
 }
 
+#gen-report-modal2 .modal-header p .icon {
+  margin-right: 10px;
+}
+
 @media (min-width: 481px) {
 
   #gen-report-modal2 .modal-header .close {
@@ -1235,12 +1239,18 @@ span.located img {
 .mobile-heading .modal-headline .img-animation {
   display: none;
   height: 70px;
-  width: 80px;
-  margin: 5px auto;
+  width: 70px;
+  margin: 0 auto;
 }
 
 .mobile-heading .modal-headline strong {
   display: block;
+  margin-top: -15px;
+}
+
+.mobile-heading .modal-headline strong .icon {
+  margin: 0;
+  font-size: 35px;
 }
 
 .mobile-heading .modal-sub-headline {
@@ -1290,6 +1300,8 @@ span.located img {
     position: absolute;
     top: 0;
     left: 0;
+    width: 80px;
+    height: 80px;
     margin: 25px 20px;
   }
 
@@ -1298,6 +1310,7 @@ span.located img {
     top: 5px;
     left: 100px;
     width: 75%;
+    margin: 0;
     text-align: left;
   }
 
@@ -1405,7 +1418,8 @@ span.located img {
   margin: 0;
   padding: 15px;
   box-shadow: 0 -10px 0 #57992d inset;
-  font-size: 22px !important;
+  font-size: 18px !important;
+  text-transform: uppercase;
 }
 
 #gen-report-modal2 .modal-footer #gen-report-confirm[disabled=disabled],
@@ -1429,6 +1443,7 @@ span.located img {
 
   #gen-report-modal2 .modal-footer #gen-report-confirm {
     padding: 20px;
+    font-size: 22px !important;
   }
 }
 
@@ -2919,12 +2934,6 @@ span.highlight-text {
   .modal-body h3 {
     font-size: 21px;
     line-height: 28px;
-  }
-  #gen-report-confirm {
-    font-size: 18px !important;
-
-    padding-top: 18px;
-    padding-bottom: 18px;
   }
   .card-single {
     min-height: 0;
