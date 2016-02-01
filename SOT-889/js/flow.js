@@ -394,12 +394,30 @@
   function reportReadyForDownload() {
 
     trackNL('Viewed ReadyToDownload Modal');
-    $('.img-animation').addClass('animate');
 
     var $lis = $('.report-info-list .report-info-item'),
         listLen = $lis.length,
         listIdxs = _.shuffle(_.range(0, listLen)),
-        currIdx = 0;
+        currIdx = 0,
+        $animatedImage = $('.jumbo-sidebar .img-animation'),
+        imagePath = '../img/Animation.gif',
+        $mobileAnimatedImage = $('.mobile-heading .img-animation'),
+        mobileImagePath = '../img/success-icon.gif';
+
+    $animatedImage.hide();
+    $mobileAnimatedImage.hide();
+
+    var toggleAnimations = function() {
+      $animatedImage.css('display', 'block');
+      setTimeout(function() {
+        $animatedImage.attr('src', imagePath);
+      }, 0);
+
+      $mobileAnimatedImage.css('display', 'block');
+      setTimeout(function() {
+        $mobileAnimatedImage.attr('src', mobileImagePath);
+      }, 0);
+    };
 
     var duration = this.duration;
     if (window.bv.isMobile) {
@@ -423,12 +441,11 @@
       var listIdx = listIdxs[currIdx];
       $($lis[listIdx]).addClass('success');
 
-      // remove animation when going to next modal
-      //$('.img-animation').removeClass('animate');
-
       currIdx += 1;
 
     }, Math.round(duration / listLen));
+
+    toggleAnimations();
   }
 
   function loggingIn() {

@@ -1103,6 +1103,7 @@ span.located img {
 
   #gen-report-modal2 .modal-content {
     display: inline-block;
+    overflow: hidden;
   }
 }
 
@@ -1173,16 +1174,11 @@ span.located img {
   }
 
   #gen-report-modal2 .modal-header .jumbo-sidebar .img-animation {
+    display: none;
     position: absolute;
     bottom: 0;
     left: 25px;
     width: 130px;
-    height: 130px;
-  }
-
-  #gen-report-modal2 .modal-header .jumbo-sidebar .img-animation.animate {
-    background: url('../img/Animation.gif') no-repeat;
-    background-size: cover;
   }
 }
 
@@ -1202,7 +1198,7 @@ span.located img {
   #gen-report-modal2 .modal-header .jumbo-sidebar {
     position: absolute;
     width: 30%;
-    height: 448px;
+    height: 485px;
     box-shadow: -5px 0 10px -5px #424242 inset;
     border-radius: 4px 0 0 4px;
   }
@@ -1216,10 +1212,12 @@ span.located img {
   }
 
   #gen-report-modal2 .modal-header .jumbo-sidebar .img-animation {
+    position: absolute;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
-    height: 200px;
+    width: 75%;
+    margin: 60px auto 0
   }
 }
 
@@ -1235,15 +1233,14 @@ span.located img {
 }
 
 .mobile-heading .modal-headline .img-animation {
-  display: block;
+  display: none;
   height: 70px;
   width: 80px;
   margin: 5px auto;
 }
 
-.mobile-heading .modal-headline .img-animation.animate {
-  background: url('../img/success-icon.gif') no-repeat;
-  background-size: cover;
+.mobile-heading .modal-headline strong {
+  display: block;
 }
 
 .mobile-heading .modal-sub-headline {
@@ -1293,11 +1290,10 @@ span.located img {
     position: absolute;
     top: 0;
     left: 0;
-    margin: 20px;
+    margin: 25px 20px;
   }
 
   .mobile-heading .modal-headline strong {
-    display: block;
     position: relative;
     top: 5px;
     left: 100px;
@@ -1360,7 +1356,12 @@ span.located img {
     padding-top: 0;
   }
 
-  #gen-report-modal2 .modal-body .large-heading .modal-headline {
+  #gen-report-modal2 .modal-body .large-heading {
+    height: 150px;
+  }
+
+  #gen-report-modal2 .modal-body .large-heading .modal-headline,
+  .modal-body .report-info-list {
     margin-top: 0;
   }
 }
