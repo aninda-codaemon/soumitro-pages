@@ -1246,16 +1246,22 @@ span.located img {
   list-style: none;
 }
 
-/*.modal-body .report-info-list .report-info-item.negative-color .icon {
-  color: #E85858;
+.modal-body .report-info-list .report-info-item {
+  position: relative;
 }
 
-.modal-body .report-info-list .report-info-item.caution-color .icon {
-  color: #FBAC11;
-}*/
+.modal-body .report-info-list .report-info-item .fa {
+  position: absolute;
+  top: 5px;
+  margin: 0;
+}
 
 .modal-body .report-info-list .report-info-item .icon {
   color: #6DAC45;
+}
+
+.modal-body .report-info-list .report-info-item .item-label {
+  margin-left: 30px;
 }
 
 .modal-body .report-info-list .report-info-item .new-label {
