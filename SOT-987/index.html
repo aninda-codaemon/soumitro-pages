@@ -998,6 +998,12 @@
           <p class="survey-callout">Select all that apply</p>
         </div>
         <form class="modal-footer" id="use-case-survey">
+          <!-- @TODO: find a better aternative to fetch this data inside flow.js -->
+          <div class="hidden-data" data-fr-bind="currentRecord" style="display: none!important">
+            <span id="leadsFirstName">{{firstName}}</span>
+            <span id="leadsLastName">{{lastName}}</span>
+            <span id="leadsEmail">{{email}}</span>
+          </div>
           <button type="submit" class="main-btn btn-lg">Submit</button>
         </form>
       </div>

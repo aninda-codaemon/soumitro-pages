@@ -520,6 +520,11 @@
 
       };
 
+    // toggle active on survey item selection
+    $surveyItem.click(function() {
+      $(this).toggleClass('active');
+    });
+
     $("#use-case-survey").on('submit', function(evt) {
       evt.preventDefault();
 
