@@ -1166,17 +1166,20 @@ span.located img {
     text-align: center;
   }
 
-  #gen-report-modal2 .modal-header .jumbo-sidebar hr{
+  #gen-report-modal2 .modal-header .jumbo-sidebar hr {
   	width: 80px;
   	margin: 10px auto;
   	border-bottom: solid 2px #fff;
   }
 
-  #gen-report-modal2 .modal-header .jumbo-sidebar img {
+  #gen-report-modal2 .modal-header .jumbo-sidebar .img-animation {
     position: absolute;
     bottom: 0;
     left: 25px;
     width: 130px;
+    height: 130px;
+    background: url('../img/Animation.gif') no-repeat;
+    background-size: cover;
   }
 }
 
@@ -1196,6 +1199,7 @@ span.located img {
   #gen-report-modal2 .modal-header .jumbo-sidebar {
     position: absolute;
     width: 30%;
+    height: 448px;
     box-shadow: -5px 0 10px -5px #424242 inset;
     border-radius: 4px 0 0 4px;
   }
@@ -1208,12 +1212,11 @@ span.located img {
     margin-bottom: 30px;
   }
 
-  #gen-report-modal2 .modal-header .jumbo-sidebar img {
-    position: relative;
-    left: 0;
-    bottom: -15px;
-    width: 80%;
-    margin: 60px auto 0;
+  #gen-report-modal2 .modal-header .jumbo-sidebar .img-animation {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
   }
 }
 
@@ -1228,9 +1231,13 @@ span.located img {
   text-align: center;
 }
 
-.mobile-heading .modal-headline .mobile-image {
+.mobile-heading .modal-headline .mobile-img-animation {
   display: block;
+  height: 70px;
+  width: 80px;
   margin: 5px auto;
+  background: url('../img/success-icon.gif') no-repeat;
+  background-size: cover;
 }
 
 .mobile-heading .modal-sub-headline {
@@ -1276,11 +1283,11 @@ span.located img {
 
 @media (min-width: 481px) {
 
-  .mobile-heading .modal-headline .mobile-image {
+  .mobile-heading .modal-headline .mobile-img-animation {
     position: absolute;
     top: 0;
     left: 0;
-    margin: 25px 20px;
+    margin: 20px;
   }
 
   .mobile-heading .modal-headline strong {
