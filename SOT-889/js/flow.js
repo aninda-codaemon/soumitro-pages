@@ -400,9 +400,9 @@
         listIdxs = _.shuffle(_.range(0, listLen)),
         currIdx = 0,
         $animatedImage = $('.jumbo-sidebar .img-animation'),
-        imagePath = '../img/Animation.gif',
+        imagePath = 'img/Animation.gif',
         $mobileAnimatedImage = $('.mobile-heading .img-animation'),
-        mobileImagePath = '../img/success-icon.gif';
+        mobileImagePath = 'img/success-icon.gif';
 
     $animatedImage.hide();
     $mobileAnimatedImage.hide();
@@ -418,6 +418,8 @@
         $mobileAnimatedImage.attr('src', mobileImagePath);
       }, 0);
     };
+
+    toggleAnimations();
 
     var duration = this.duration;
     if (window.bv.isMobile) {
@@ -444,8 +446,6 @@
       currIdx += 1;
 
     }, Math.round(duration / listLen));
-
-    toggleAnimations();
   }
 
   function loggingIn() {

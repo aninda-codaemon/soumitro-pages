@@ -2790,26 +2790,6 @@ span.highlight-text {
     margin-top: 20px;
   }
 
-  .large-modal .bluebg{
-	height:180px;
-	margin-bottom:15px;
-	margin-top: -50px;
-    margin-left: -15px;
-    margin-right: -15px;
-	border-radius:5px 5px 0px 0px;
-  }
-
-  .large-modal .bluebg img{
-	position:absolute;
-	top:0;
-	width:173px;
-  }
-
-  .large-modal .bluebg h1{
-	padding-top:30px;
-  }
-
-
   button.close {
     position: absolute;
     right: 13px;

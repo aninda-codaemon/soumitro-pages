@@ -614,32 +614,32 @@
   <!-- ========================================== -->
   <div id="gen-report-modal2" class="modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog large-modal">
-      <div class="modal-content" data-fr-bind="currentRecord">
+      <div class="modal-content">
 
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
           <p class="visible-xs">Detailed Report Available</p>
-          <div class="jumbo-sidebar hidden-xs">
+          <div class="jumbo-sidebar hidden-xs" data-fr-bind="currentRecord">
             <h1>Success!</h1>
             <p>We found information about <span class="full-name">{{fullName}}</span>.</p>
             <hr class="divider">
-            <img class="img-animation" src="../img/Animation.gif" />
+            <img class="img-animation" src="img/Animation.gif" />
           </div>
         </div>
 
         <div class="modal-body">
           <div class="mobile-heading visible-xs">
             <h3 class="modal-headline">
-              <img class="img-animation" src="../img/success-icon.gif" />
+              <img class="img-animation" src="img/success-icon.gif" />
               <strong><span class="green">Success, Data Found!</span></strong>
             </h3>
-            <p class="modal-sub-headline">
+            <p class="modal-sub-headline" data-fr-bind="currentRecord">
               We located information on
               <span class="blue-txt"><strong>{{fullName}}</strong></span> from one or more of the categories below.
             </p>
           </div>
 
-          <div class="large-heading hidden-xs">
+          <div class="large-heading hidden-xs" data-fr-bind="currentRecord">
             <h3 class="modal-headline">Your Background Report For <span class="blue-txt">{{fullName}}</span> Is Ready</h3>
             <p class="modal-sub-headline">Click the button below to view the full report. Report may contain information from one or more of the following categories</p>
           </div>
