@@ -299,7 +299,7 @@
     // Report is ready for download.
 
     $elem: $("#gen-report-modal2"),
-    duration: 2000, // Total time to switch spinners for checkmarks. Value is divided by number of items.
+    duration: 3000, // Total time to switch spinners for checkmarks. Value is divided by number of items.
     animate: function () {
       _.bind(reportReadyForDownload, this)();
     }
@@ -404,9 +404,12 @@
         $mobileAnimatedImage = $('.mobile-heading .img-animation'),
         mobileImagePath = 'img/success-icon.gif';
 
+    // reset modal state to default
+    $lis.removeClass('success');
     $animatedImage.hide();
     $mobileAnimatedImage.hide();
 
+    // set gif src to ensure gif animation
     var toggleAnimations = function() {
       $animatedImage.css('display', 'block');
       setTimeout(function() {
