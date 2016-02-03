@@ -407,24 +407,16 @@
     var toggleAnimations = function() {
       if ($('.img-animation[src=""]')) {
 
-        $animatedImage.css('display', 'block');
+        $('.img-animation').css('display', 'block');
         setTimeout(function() {
           $animatedImage.attr('src', imagePath);
-        }, 0);
-
-        $mobileAnimatedImage.css('display', 'block');
-        setTimeout(function() {
           $mobileAnimatedImage.attr('src', mobileImagePath);
         }, 0);
       } else {
 
-        $animatedImage.hide();
+        $('.img-animation').hide();
         setTimeout(function() {
           $animatedImage.attr('src', '');
-        }, 0);
-
-        $mobileAnimatedImage.hide();
-        setTimeout(function() {
           $mobileAnimatedImage.attr('src', '');
         }, 0);
       }
