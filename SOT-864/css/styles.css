@@ -1150,6 +1150,9 @@ img.file-icon {
 }
 /* == 4 == PROCCESSING YOUR REQUEST ================= */
 
+
+/* old styles */
+
 .loggingin .modal-dialog {
   max-width: 500px;
 }
@@ -1166,6 +1169,101 @@ img.file-icon {
 
 #gen-report-modal3 .modal-body {
   margin-bottom: 30px;
+}
+
+.report-modal{
+max-width:700px !important;
+}
+
+.report-modal .progress{
+  height:40px;
+}
+
+  .report-modal .modal-body p{
+  text-align:center;
+  color:#555555;
+}
+
+  .report-modal .modal-body p a{
+  color:#428bca;
+}
+
+
+.checks div div{
+  color:#5cb75c;
+  font-size:15px;
+  font-weight:bold;
+  display:block;
+  text-align:center;
+  padding-top:25px;
+  padding-bottom:10px;
+}
+
+.checks div div span{
+  display:block;
+  color:#555555;
+  font-size:15px;
+  font-weight:100;
+
+}
+
+.checks div{
+  text-align:center;
+}
+
+
+.report-modal .alert-warning{
+  background:#ebebeb;
+  color:#555555;
+  border:none;
+  border-radius:0px;
+  margin:-30px;
+  margin-top:0px;
+}
+
+.report-modal .alert-warning  small{
+  line-height:30px;
+}
+
+.gurantee{
+  border:solid 1px #444545;
+  padding:10px;
+  color:#555555;
+  font-size:15px;
+  text-align:center;
+  border-radius:3px;
+  margin-bottom:10px;
+  min-height:150px;
+}
+
+.gurantee strong{
+  font-weight:bold;
+}
+
+.gurantee span.green{
+  font-weight:bold;
+  text-transform:uppercase;
+  color:#5cb75c;
+  display:block;
+}
+
+.gurantee div{
+  color:#fff;
+  font-weight:bold;
+  font-size:15px;
+  background:url(../img/corner-bg.png) no-repeat;
+  width:33px;
+  height:33px;
+  text-align: left;
+  position: absolute;
+  margin-left: -11px;
+  margin-top: -11px;
+  padding-left: 6px;
+}
+
+.grantee-icon img{
+  margin-top:10px;
+  margin-bottom:10px;
 }
 
 /* == 5 == CAPTCHA MODAL ========================== */
@@ -2409,111 +2507,6 @@ span.highlight-text {
   background-position: center center;
 }
 
-/* New Modal  */
-
-  .report-modal{
-	max-width:700px !important;
-  }
-
-  .report-modal .progress{
-		height:40px;
-  }
-  
-    .report-modal .modal-body p{
-		text-align:center;
-		color:#555555;
-	}
-
-    .report-modal .modal-body p a{
-		color:#428bca;
-	}
-	
-
-	.checks div div{
-		color:#5cb75c;
-		font-size:15px;
-		font-weight:bold;
-		display:block;
-		text-align:center;
-		padding-top:25px;
-		padding-bottom:10px;
-	}
-
-	.checks div div span{
-		display:block;
-		color:#555555;
-		font-size:15px;
-		font-weight:100;
-	
-	}
-	
-	.checks div{
-		text-align:center;
-	}
-	
-	
-	.report-modal .alert-warning{
-		background:#ebebeb;
-		color:#555555;
-		border:none;
-		border-radius:0px;
-		margin:-30px;
-		margin-top:0px;
-	}
-	
-	
-	
-	.report-modal .alert-warning  small{
-		line-height:30px;
-	}
-	
-	.gurantee{
-		border:solid 1px #444545;
-		padding:10px;
-		color:#555555;
-		font-size:15px;
-		text-align:center;
-		border-radius:3px;
-		margin-bottom:10px;
-		min-height:150px;
-	}
-	
-	.gurantee strong{
-		font-weight:bold;
-	}	
-	
-	.gurantee span.green{
-		font-weight:bold;
-		text-transform:uppercase;
-		color:#5cb75c;
-		display:block;
-	}
-	
-	.gurantee div{
-		color:#fff;
-		font-weight:bold;
-		font-size:15px;
-		background:url(../img/corner-bg.png) no-repeat;
-		width:33px;
-		height:33px;
-		text-align: left;
-		position: absolute;
-		margin-left: -11px;
-		margin-top: -11px;
-		padding-left: 6px;
-	}
-	
-	.grantee-icon img{
-		margin-top:10px;
-		margin-bottom:10px;
-	}
-	
-	
-	
-	
-/* =========== Step 1 ============== */
-
-
 /* ================================================ */
 /* == RESPONSIVE GOODIES ========================== */
 /* ================================================ */
@@ -2529,13 +2522,6 @@ span.highlight-text {
   #gen-report-modal7 .detail-box {
     min-height: 160px;
   }
-  
-  
-  
-  
-  
-  
-  
 }
 
 @media (max-width: 991px) {
@@ -2746,9 +2732,6 @@ span.highlight-text {
     text-align: center;
   }
 
-
-
-
   /* XS Modal */
 
 
@@ -2819,7 +2802,7 @@ span.highlight-text {
     border-radius: 0 0 2px 2px;
     background-color: #bde5f8;
   }
-  
+
   .mobile-alert {
     margin-right: -0px !important;
     margin-top: -10px !important;
@@ -2863,20 +2846,20 @@ span.highlight-text {
   .social-widget-mobile {
     text-align: center;
   }
-  
+
   /* Modal 3 */
-  
+
   h3.current-search-download{
 	text-align:center;
   }
-  
+
     h3.current-search-download img{
 		margin:auto;
 		margin-bottom:5px;
 		margin-top:-25px;
 	}
 
-  
+
   .success-data-options{
 	border:solid 1px #d9d9d9;
 	border-radius:5px;
@@ -2885,106 +2868,106 @@ span.highlight-text {
 	margin-left:-15px;
 	margin-right:-15px;
   }
-  
+
   .success-data-options ul{
 	padding-left:0px;
 	color:#464646;
 	font-size:15px;
   }
-  
-  
+
+
   .success-data-options ul li{
 	margin-bottom: 10px;
     padding-left: 15px;
   }
-  
+
   .success-data-options ul li:last-child{
 	color:3ea344e;
   }
-  
+
   .success-data-options ul li img{
 	margin-right:15px;
 	float:left;
 	margin-top:6px;
 	}
-  
+
   .modal-footer.popup-modal{
 	background-color:transparent;
 	border:none;
   }
-  
+
   .popup-modal .green{
 	color:#6dac45;
   }
-  
+
   .popup-modal .blue{
 	color:#0072bc;
   }
-  
+
   #gen-report-confirm{
 	box-shadow:none;
   }
-  
+
   .popup-modal #gen-report-message{
 	text-transform:inherit;
   }
-	
+
 	/* Modal 4 */
-  
+
   .loader img{
 	width:auto;
 	height:auto;
   }
-  
+
   p.header-txt{
 	font-size:18px !important;
   }
-  
+
   /* Modal 5 */
-  
+
   #bv-captcha-next{
 	text-transform:inherit;
 	box-shadow:none;
   }
-  
+
   .orange-header{
 	background:#f7941d;
   }
-  
+
   .why-text{
 	text-align:center;
   }
-  
+
   /* Modal 6 */
-  
+
   .info-name strong{
 	color:#6dac45;
   }
-  
-  	
+
+
   .user-image{
 	text-align:center;
   }
-  
+
   .size-fix{
 	font-size:18px !important;
   }
-  
+
   .modal-white{
 	background:#f7f8f6;
 	margin-top:15px;
   }
-  
+
   .mobile-progress{
 	height:30px !important;
 	background:#446579 !important;
 	border-radius:3px !important;
   }
-  
+
   .mobile-progress #searching-progress-bar-status{
 	top:5px;
   }
-  
+
   .single-card{
 	background:#fff;
 	border:solid 1px #d2d3d1;
@@ -2994,26 +2977,26 @@ span.highlight-text {
 	margin-bottom:5px;
 	padding-left:10px;
   }
-  
+
   .cards strong{
 	color:#0072bc;
 	display:inline-block;
 	margin-left:25px;
   }
-  
+
   .criminal.single-card strong{
 	color:#ea344e;
   }
-  
+
   .cards p{
 	color:#555555;
 	font-size:13px;
 	text-align:left;
 	margin-left:25px;
   }
-  
 
-  
+
+
   .single-card:before{
 	content:'';
 	display:block;
@@ -3026,7 +3009,7 @@ span.highlight-text {
   }
 
 
-  
+
   .personal.single-card:before{
 	background-image:url('../img/4_Associates.svg');
   }
@@ -3061,11 +3044,11 @@ span.highlight-text {
   .muchmore.single-card:before{
 	background-image:url('../img/8_More.svg');
   }
-  
-  
-  
+
+
+
   /* Modal 7 */
-  
+
   #signup-modal-form .main-btn{
 	box-shadow:none;
 	text-transform:capitalize;
@@ -3074,11 +3057,11 @@ span.highlight-text {
 	.popup-modal .form-input-group{
 		background-color:transparent;
 	}
-  
+
   .existing-user{
 	margin-top:-20px;
   }
-  
+
   .existing-user img{
 	margin-bottom:5px;
 	margin-top:10px;
@@ -3086,7 +3069,7 @@ span.highlight-text {
 	width:50px;
 	height:50px;
   }
-  
+
   .popup-modal  #signup-modal-form input{
 	margin:0px;
 	border-bottom:none;
@@ -3095,83 +3078,83 @@ span.highlight-text {
 	background:#f9f9f8;
 	padding-left:15px;
   }
-  
+
   .popup-modal  #lead_first_name{
 	border-radius:5px 5px 0px 0px !important;
-	}  
+	}
 
   .popup-modal  #lead_email{
 	border-radius:0px 0px 5px 5px !important;
 	border-bottom:solid 1px #ccc !important;
-	} 
+	}
 
 	.tos-text{
 		font-size:13px !important;
 	}
-	
+
 	.tos-text a{
 		color:#333;
 	}
-	
+
 	.popup-modal.mobile-fix{
 		padding-left:0px;
 		padding-right:0px;
 	}
-	
-	
+
+
 	/* Modal 9 */
-	
-	
+
+
 	.preview-report{
-	
+
 	}
-	
+
 	.preview-report .user-img img{
 		margin-top:26px;
 		border-radius:50px;
 		width:57px;
 		height:57px;
 	}
-	
+
 	.preview-report .align-fix, .preview-report .align-fix h2{
 		text-align:left !important;
 		font-size:18px;
 	}
-	
+
 	.preview-report .align-fix{
 		padding:0px !important;
 	}
-	
+
 	.preview-report .person-relatives, .preview-report .person-cities, .preview-report .person-address{
 		font-weight:100;
 		color:#707070;
 		font-size:13px;
 	}
-	
+
 	.preview-report .person-relatives strong, .preview-report .person-cities strong{
 		color:#363636;
 	}
-	
-	
+
+
 	#gen-report-modal7 .detail-box{
 		border:solid 1px #d9d9d9;
 		box-shadow:none !important;
 		height:55px;
 	}
-	
+
 	.mobile-btn{
 		padding-top:25px;
 	}
-	
+
 	#gen-report-modal7 .modal-footer.no-bg{
 		background:none;
 		border:none;
 	}
-	
+
 	.mobile-detail img{
 		width:25px;
 	}
-	
+
 	.mobile-detail div{
 		color:#464646;
 		font-size:16px;
@@ -3187,7 +3170,7 @@ span.highlight-text {
 		font-weight:100;
 		display:block;
 	}
-	
+
 	.mobile-detail div:first-child{
 		border-right:solid 1px #d9d9d9;
 		padding-right:18px;
@@ -3195,11 +3178,11 @@ span.highlight-text {
 		height:35px;
 		padding-top:5px;
 	}
-	
+
 	.mobile-detail div:last-child{
 		margin-top:-9px;
 	}
-	
+
 	.criminal-detail{
 		border:solid 1px #ee5d71 !important;
 	}
@@ -3208,23 +3191,23 @@ span.highlight-text {
 	.criminal-detail div{
 		color:#ed1c24 !important;
 	}
-	
+
 	.criminal-detail span{
 		color:#555555 !important;
 	}
-	
-	
+
+
 	/* New Modal  */
-	
+
 	.search-vector{
 		width:100px;
 	}
-	
+
 	.grantee-icon{
 		text-align:center;
-	}	
-	
-	
+	}
+
+
 }
 
 @media (min-width: 481px) {
