@@ -400,26 +400,24 @@
         listIdxs = _.shuffle(_.range(0, listLen)),
         currIdx = 0,
         $animatedImage = $('.jumbo-sidebar .img-animation'),
-        imagePath = 'img/Animation.gif',
+        imagePath = 'img/animation.gif',
         $mobileAnimatedImage = $('.mobile-heading .img-animation'),
         mobileImagePath = 'img/success-icon.gif';
 
-    var toggleAnimations = function() {
-      if ($('.img-animation[src=""]')) {
+    $('.img-animation').hide();
+    setTimeout(function() {
+      $animatedImage.attr('src', '');
+      $mobileAnimatedImage.attr('src', '');
+    }, 0);
 
-        $('.img-animation').css('display', 'block');
+    var toggleAnimations = function() {
+      setTimeout(function() {
+        $('.img-animation').show();
         setTimeout(function() {
           $animatedImage.attr('src', imagePath);
           $mobileAnimatedImage.attr('src', mobileImagePath);
         }, 0);
-      } else {
-
-        $('.img-animation').hide();
-        setTimeout(function() {
-          $animatedImage.attr('src', '');
-          $mobileAnimatedImage.attr('src', '');
-        }, 0);
-      }
+      }, 0);
     };
 
     toggleAnimations();
