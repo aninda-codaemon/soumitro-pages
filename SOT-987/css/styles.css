@@ -1524,7 +1524,6 @@ img.file-icon {
   transition: all 500ms;
 }
 
-.survey-container .survey-item:hover,
 .survey-container .survey-item.active {
   color: #6DAC45;
 }
@@ -1611,6 +1610,7 @@ img.file-icon {
   }
 
   .survey-container .survey-item:hover {
+    color: #6DAC45;
     -webkit-transform: scale(1.10);
     transform: scale(1.10);
   }
