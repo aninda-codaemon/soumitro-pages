@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <!-- STYLES -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,200' rel='stylesheet' type='text/css'>
@@ -707,50 +708,64 @@
         <div class="modal-body popup-modal">
           <p data-fr-bind="currentRecord">Please wait while we fill in details about {{fullName}}...</p>
           <div class="progress">
-            <div class="progress-bar progress-bar-success" style="width:90%"></div>
+            <div class="progress-bar progress-bar-success"></div>
           </div>
 
-          <div class="row">
-            <div class="col-xs-12 col-sm-3 col-md-3 grantee-icon"><img src="img/grrantee-icon.png" /></div>
-            <div class="col-xs-12 col-sm-9 col-md-9">
-              <div class="row">
-                <div class="col-sm-6 col-md-6">
-                  <div class="gurantee">
-                    <div>1</div>
-                    <span class="green">DataFusion Guarantee</span> We’re so confident in the quality of our data, that if one of our competitors has better data on your search subject, <strong>we’ll give you a full refund!</strong>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-6">
-                  <div class="gurantee">
-                    <div>2</div>
-                    <span class="green">results Guarantee</span> If we do not have any results for this report,
-                    <strong>we will gladly issue a refund.</strong> Just contact one of our friendly customer representatives.
-                  </div>
-                </div>
+          <div class="slider-container">
+            <div class="slider-item" id="services-slide">
+              <img class="search-image" src="img/search-vector.png" />
+
+              <div class="service-item">
+                <h4 class="serive-headline">
+                  UNLIMITED
+                  <small class="service-sub-headline">Background Checks</small>
+                </h4>
+                <img src="img/slide1Animation1.gif" />
+              </div>
+
+              <div class="service-item">
+                <h4 class="serive-headline">
+                  UNLIMITED
+                  <small class="service-sub-headline">Phone # Lookups</small>
+                </h4>
+                <img src="img/slide1Animation2.gif" />
+              </div>
+
+              <div class="service-item">
+                <h4 class="serive-headline">
+                  UNLIMITED
+                  <small class="service-sub-headline">Property Searches</small>
+                </h4>
+                <img src="img/slide1Animation3.gif" />
+              </div>
+            </div>
+
+            <div class="slider-item" id="gurantees-slide">
+              <img class="gurantee-image" src="img/grrantee-icon.png" />
+              <div class="gurantee-item">
+                <span class="number-label">1</span>
+                <h4 class="gurantee-headline">DataFusion Guarantee</h4>
+                <p class="gurantee-statement">We’re so confident in the quality of our data, that if one of our competitors has better data on your search subject, <strong>we’ll give you a full refund!</strong></p>
+              </div>
+              <div class="gurantee-item">
+                <span class="number-label">2</span>
+                <h4 class="gurantee-headline">Results Guarantee</h4>
+                <p class="gurantee-statement">If we do not have any results for this report, <strong>we will gladly issue a refund.</strong> Just contact one of our friendly customer representatives.</p>
               </div>
             </div>
           </div>
+        </div><!-- /.modal-body -->
 
-          <div class="row checks">
-            <div class="col-sm-3 col-md-3"><img class="search-vector" src="img/search-vector.png" /></div>
-            <div class="col-sm-3 col-md-3">
-              <div>UNLIMITED<span>Background Checks</span></div><img src="img/slide1Animation1.gif" /></div>
-            <div class="col-sm-3 col-md-3">
-              <div>UNLIMITED<span>Phone # Lookups</span></div><img src="img/slide1Animation2.gif" /></div>
-            <div class="col-sm-3 col-md-3">
-              <div>UNLIMITED<span>Property Searches</span></div><img src="img/slide1Animation3.gif" /></div>
-          </div>
-
+        <div class="modal-footer">
           <p class="alert alert-this alert-warning text-center">
             <small>
 				      Get ready to discover things you didn’t know before!
             </small>
           </p>
-
-        </div>
+        </div><!-- /.modal-footer -->
       </div>
     </div>
-  </div>
+  </div><!-- /#gen-report-modal3 -->
 
   <!-- ============================================== -->
   <!-- == 5 == CAPTCHA MODAL ======================== -->
