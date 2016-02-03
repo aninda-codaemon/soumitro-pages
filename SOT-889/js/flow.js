@@ -400,9 +400,9 @@
         listIdxs = _.shuffle(_.range(0, listLen)),
         currIdx = 0,
         $animatedImage = $('.jumbo-sidebar .img-animation'),
-        imagePath = 'img/animation.gif',
+        imagePath = $('.large-img-src').attr('src'),
         $mobileAnimatedImage = $('.mobile-heading .img-animation'),
-        mobileImagePath = 'img/success-icon.gif';
+        mobileImagePath = $('.mobile-img-src').attr('src');
 
     $('.img-animation').hide();
     setTimeout(function() {
