@@ -404,21 +404,30 @@
         $mobileAnimatedImage = $('.mobile-heading .img-animation'),
         mobileImagePath = 'img/success-icon.gif';
 
-    $animatedImage.hide();
-    $animatedImage.attr('src', '');
-    $mobileAnimatedImage.hide();
-    $mobileAnimatedImage.attr('src', '');
-
     var toggleAnimations = function() {
-      $animatedImage.css('display', 'block');
-      setTimeout(function() {
-        $animatedImage.attr('src', imagePath);
-      }, 0);
+      if ($('.img-animation[src=""]')) {
 
-      $mobileAnimatedImage.css('display', 'block');
-      setTimeout(function() {
-        $mobileAnimatedImage.attr('src', mobileImagePath);
-      }, 0);
+        $animatedImage.css('display', 'block');
+        setTimeout(function() {
+          $animatedImage.attr('src', imagePath);
+        }, 0);
+
+        $mobileAnimatedImage.css('display', 'block');
+        setTimeout(function() {
+          $mobileAnimatedImage.attr('src', mobileImagePath);
+        }, 0);
+      } else {
+
+        $animatedImage.hide();
+        setTimeout(function() {
+          $animatedImage.attr('src', '');
+        }, 0);
+
+        $mobileAnimatedImage.hide();
+        setTimeout(function() {
+          $mobileAnimatedImage.attr('src', '');
+        }, 0);
+      }
     };
 
     toggleAnimations();
