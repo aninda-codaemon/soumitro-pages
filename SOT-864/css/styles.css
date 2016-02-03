@@ -1174,10 +1174,70 @@ img.file-icon {
   padding: 15px;
 }
 
-#gen-report-modal3 .progress {
+#gen-report-modal3 .modal-body .slider-container,
+#gen-report-modal3 .modal-body .slider-container .slider-item {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.slider-container .slider-item .search-image {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 50%;
+}
+
+.slider-container .slider-item .service-item {
+  display: none;
+  position: relative;
+  right: 0;
+  width: 50%;
+  float: right;
+}
+
+.slider-container .slider-item .item-headline {
+  margin-bottom: 20px;
+  color: #5BB65B;
+  font-weight: bold;
+  text-align: center;
+}
+
+.slider-container .slider-item .item-sub-headline {
+  color: #555;
+}
+
+.slider-container .slider-item .item-image {
+  display: block;
+  width: 50%;
   margin: 0 auto;
 }
 
+/* slider display states */
+
+#gen-report-modal3 .modal-body .slider-container .slider-item {
+  display: none;
+}
+
+#gen-report-modal3 .modal-body .slider-container .slider-item.active {
+  display: inline-block;
+}
+
+#gen-report-modal3 .modal-body .slider-container .slider-item.active .service-item.active {
+  display: inline-block;
+}
+
+/* modal-footer */
+
+#gen-report-modal3 .modal-footer {
+  padding: 10px;
+}
+
+#gen-report-modal3 .modal-footer .footer-statement {
+  color: #777;
+  font-size: 11px;
+  text-align: center;
+}
 
 /* old styles */
 
