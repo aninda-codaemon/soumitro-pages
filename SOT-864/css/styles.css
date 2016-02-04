@@ -1174,6 +1174,10 @@ img.file-icon {
   padding: 15px;
 }
 
+#gen-report-modal3 .modal-body .progress {
+  height: 35px;
+}
+
 #gen-report-modal3 .modal-body .slider-container,
 #gen-report-modal3 .modal-body .slider-container .slider-item {
   position: relative;
@@ -1183,7 +1187,7 @@ img.file-icon {
 
 .slider-container .slider-item .search-image {
   position: absolute;
-  bottom: -50px;
+  bottom: -20px;
   left: 0;
   width: 50%;
 }
@@ -1191,7 +1195,7 @@ img.file-icon {
 .slider-container .slider-item .service-items {
   display: inline-block;
   position: relative;
-  top: 25px;
+  top: 5px;
   right: 0;
   width: 50%;
   height: 170px;
@@ -1257,121 +1261,6 @@ img.file-icon {
   color: #777;
   font-size: 11px;
   text-align: center;
-}
-
-/* old styles */
-
-.loggingin .modal-dialog {
-  max-width: 500px;
-}
-
-.loader img {
-  display: block;
-
-  width: 100%;
-  max-width: 250px;
-  height: 30px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-#gen-report-modal3 .modal-body {
-  margin-bottom: 30px;
-}
-
-.report-modal{
-max-width:700px !important;
-}
-
-.report-modal .progress{
-  height:40px;
-}
-
-  .report-modal .modal-body p{
-  text-align:center;
-  color:#555555;
-}
-
-  .report-modal .modal-body p a{
-  color:#428bca;
-}
-
-
-.checks div div{
-  color:#5cb75c;
-  font-size:15px;
-  font-weight:bold;
-  display:block;
-  text-align:center;
-  padding-top:25px;
-  padding-bottom:10px;
-}
-
-.checks div div span{
-  display:block;
-  color:#555555;
-  font-size:15px;
-  font-weight:100;
-
-}
-
-.checks div{
-  text-align:center;
-}
-
-
-.report-modal .alert-warning{
-  background:#ebebeb;
-  color:#555555;
-  border:none;
-  border-radius:0px;
-  margin:-30px;
-  margin-top:0px;
-}
-
-.report-modal .alert-warning  small{
-  line-height:30px;
-}
-
-.gurantee{
-  border:solid 1px #444545;
-  padding:10px;
-  color:#555555;
-  font-size:15px;
-  text-align:center;
-  border-radius:3px;
-  margin-bottom:10px;
-  min-height:150px;
-}
-
-.gurantee strong{
-  font-weight:bold;
-}
-
-.gurantee span.green{
-  font-weight:bold;
-  text-transform:uppercase;
-  color:#5cb75c;
-  display:block;
-}
-
-.gurantee div{
-  color:#fff;
-  font-weight:bold;
-  font-size:15px;
-  background:url(../img/corner-bg.png) no-repeat;
-  width:33px;
-  height:33px;
-  text-align: left;
-  position: absolute;
-  margin-left: -11px;
-  margin-top: -11px;
-  padding-left: 6px;
-}
-
-.grantee-icon img{
-  margin-top:10px;
-  margin-bottom:10px;
 }
 
 /* == 5 == CAPTCHA MODAL ========================== */

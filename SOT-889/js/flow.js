@@ -483,6 +483,24 @@
 
   function fcraConfirmation() {
     trackNL('Viewed FCRA Modal');
+
+    var fcraConfirm = function() {
+        $("#fcra-confirm").validate({
+            rules: {
+                "fcraCheckbox2": {
+                    required: true
+                }
+            },
+            messages: {
+                "fcraCheckbox2": "Please check the box to continue"
+            },
+            submitHandler: function(form) {
+               showNextModal();
+            }
+        });
+    };
+
+    fcraConfirm();
   }
 
   /* Helpers to show/hide modals */
