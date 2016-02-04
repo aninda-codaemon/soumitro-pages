@@ -51,7 +51,7 @@
 
     $.when(xhrData).done(function(result) {
       trackNL("Person Data Teaser Called");
-      
+
       var res = result;
       var img = '';
 
@@ -70,7 +70,7 @@
         return item.type.nameize();
       });
 
-  
+
       // Data elements to display - Waterfall controlled here
       var data = [
         {
@@ -190,7 +190,7 @@
         return (item.type === 'addresses' && item.count > 0) || (item.type === 'neighbors' && item.count > 0);
       });
 
-          
+
       if (!hasCriminal) {
         $("#crim-disc").hide();
         $("#no-crim").show();
@@ -432,11 +432,19 @@
     trackNL('Viewed LoggingIn Modal');
 
     var self = this,
-        duration = this.duration;
+        duration = this.duration,
+        $reportModal = $('#gen-report-modal3'),
+        $loader = $('.report-modal .progress .progress-bar'),
+        slideIndex = 2, // slider-item index - loop starts on 2nd child as 1st is active by default
+        slidesTotal = 2; // total number of slider items in the list
+
+    $loader.css('width', '0%');
 
     if (bv.isMobile) {
       duration *= bv.mobileTimeRatio;
     }
+
+    $loader.animate({'width': '100%'}, {duration: duration});
 
     timeoutId = window.setTimeout(function () {
       showNextModal();
