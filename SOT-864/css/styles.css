@@ -1183,17 +1183,33 @@ img.file-icon {
 
 .slider-container .slider-item .search-image {
   position: absolute;
-  bottom: -15px;
+  bottom: -50px;
   left: 0;
   width: 50%;
 }
 
-.slider-container .slider-item .service-item {
-  display: none;
+.slider-container .slider-item .service-items {
+  display: inline-block;
   position: relative;
+  top: 25px;
   right: 0;
   width: 50%;
+  height: 170px;
   float: right;
+}
+
+.slider-container .slider-item .service-items .service-item {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  -moz-opacity: 0;
+  -ms-filter: alpha(opacity=0);
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  filter: alpha(opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity: 500ms ease-in;
+  transition: opacity 500ms ease-in;
 }
 
 .slider-container .slider-item .item-headline {
@@ -1220,10 +1236,6 @@ img.file-icon {
 }
 
 #gen-report-modal3 .modal-body .slider-container .slider-item.active {
-  display: inline-block;
-}
-
-#gen-report-modal3 .modal-body .slider-container .slider-item.active .service-item.active {
   display: inline-block;
 }
 
