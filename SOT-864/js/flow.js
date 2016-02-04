@@ -436,7 +436,7 @@
         $reportModal = $('#gen-report-modal3'),
         $loader = $('.report-modal .progress .progress-bar'),
         slideIndex = 2, // slider-item index - loop starts on 2nd child as 1st is active by default
-        slidesTotal = 2; // total number of slider items in the list
+        slidesTotal = $('.slider-container .slider-item').length; // total number of slider items in the list
 
     $loader.css('width', '0%');
 
@@ -445,6 +445,44 @@
     }
 
     $loader.animate({'width': '100%'}, {duration: duration});
+
+    var slideDuration = duration / slidesTotal, // how long to wait before cycling to the next item
+        slider = setInterval(function() {
+
+          var $sliderItem = $('.slider-container .slider-item:nth-child(' + slideIndex + ')');
+
+          // toggle active class for each use case item
+          $('.slider-container .slider-item').removeClass('active');
+          $sliderItem.addClass('active');
+
+          if (slideIndex === slidesTotal) {
+            // stop loop when index === total
+            clearInterval(slider);
+            return;
+          } else {
+            slideIndex++;
+          }
+        }, slideDuration),
+
+        serviceIndex = 2, // first-child is active so set index to 2
+        servicesTotal = $('.service-items .service-item').length, // total number of services
+        servicesSlideDuration = slideDuration / servicesTotal, // divide slide duration by service total to get services slide duration
+        servicesSlider = setInterval(function() {
+
+          var $serviceItem = $('.service-items .service-item:nth-child(' + serviceIndex + ')');
+
+          // toggle active class for each use case item
+          $('.service-items .service-item').removeClass('active');
+          $serviceItem.addClass('active');
+
+          if (serviceIndex === servicesTotal) {
+            // stop loop when index === total
+            clearInterval(servicesSlider);
+            return;
+          } else {
+            serviceIndex++;
+          }
+        }, servicesSlideDuration);
 
     timeoutId = window.setTimeout(function () {
       showNextModal();

@@ -331,6 +331,15 @@
       _.bind(generatingReport, this)();
     }
   }, {
+
+    // LeadBox
+
+    $elem: $("#gen-report-modal6"),
+    animate: function () {
+      _.bind(whoopsAccountNeeded, this)();
+    }
+  }, {
+
     // FCRA
 
     $elem: $("#gen-report-modal11"),
@@ -340,18 +349,11 @@
   },{
 
     // Modal Teaser w/ data
+
     $elem: $("#gen-report-modal7"),
     duration: 10000,   // Total time to switch spinners. Value is divided by number of items.
     animate: function () {
       _.bind(foundDataModal, this)();
-    }
-  }, {
-
-    // LeadBox
-
-    $elem: $("#gen-report-modal6"),
-    animate: function () {
-      _.bind(whoopsAccountNeeded, this)();
     }
   }];
 
@@ -471,6 +473,75 @@
 
   function whoopsAccountNeeded() {
     trackNL('Viewed AccountNeeded Modal');
+
+    var validateLeadForm = function() {
+        var $signupModalForm = $("#signup-modal-form");
+        window.validator = $signupModalForm.validate({
+            "account[first_name]": "required",
+            "account[last_name]": "required",
+            "user[email]": {
+                required: true,
+                email: true
+            },
+            messages: {
+                "account[first_name]": "Please enter a first name",
+                "account[last_name]": "Please enter a last name",
+                "user[email]": "Please enter a valid email address"
+            }
+        });
+    };
+
+    validateLeadForm();
+
+    var reportLeadData = function(dataArray) {
+        var formVals = {};
+        _.forEach(dataArray, function(v, k) {
+            formVals[v.name] = v.value;
+        });
+
+        var srchData = amplify.store("searchData"),
+            firstName = "",
+            lastName = "";
+
+        if (srchData) {
+            firstName = srchData.fn || "";
+            lastName = srchData.ln || "";
+        }
+
+        var leadData = {};
+        leadData['lead[first_name]'] = formVals['account[first_name]'] || '';
+        leadData['lead[last_name]'] = formVals['account[last_name]'] || '';
+        leadData['lead[email]'] = formVals['user[email]'] || '';
+        leadData['lead[zip]'] = formVals['account[zip]'] || '';
+        leadData['lead[state]'] = formVals['account[state]'] || '';
+        leadData['record_search[first_name]'] = firstName;
+        leadData['record_search[last_name]'] = lastName;
+
+        var leadQueryArr = [];
+        _.forEach(leadData, function(v, k) {
+            leadQueryArr.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
+        });
+        var leadQueryString = leadQueryArr.join('&');
+        return $.post('/api/3_0_1/leads.json', leadQueryString);
+    };
+
+
+
+    $("#signup-modal-form").on('submit', function(evt) {
+        evt.preventDefault();
+        if (window.validator.form()) {
+            trackNL("Submitted Lead Form - Success");
+
+
+            try {
+                reportLeadData($(this).serializeArray());
+            } catch (err) {}
+
+            // window.setTimeout(function() {
+            //     window.location = $("body").data("next-page");
+            // }, 300);
+        }
+    });
   }
 
   function generatingReport() {
