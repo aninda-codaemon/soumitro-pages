@@ -1241,6 +1241,51 @@ img.file-icon {
   margin: 0 auto;
 }
 
+.slider-container .slider-item .gurantee-image {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.slider-container .slider-item .gurantee-item {
+  position: relative;
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid #555;
+  border-radius: 3px;
+  -moz-opacity: 0;
+  -ms-filter: alpha(opacity=0);
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  filter: alpha(opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity: 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+
+.slider-container .slider-item .gurantee-item.active {
+  -moz-opacity: 1;
+  -ms-filter: alpha(opacity=100);
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+
+.slider-container .slider-item .gurantee-item .number-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #555;
+  padding: 2.5px 5px;
+  color: #fff;
+}
+
+.slider-container .slider-item .gurantee-item .item-headline {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
 /* slider display states */
 
 #gen-report-modal3 .modal-body .slider-container .slider-item {

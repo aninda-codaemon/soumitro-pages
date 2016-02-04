@@ -446,6 +446,8 @@
 
     $loader.animate({'width': '100%'}, {duration: duration});
 
+    // @TODO: refactor this slider pattern into a reusable function with pluggable methods
+    
     var slideDuration = duration / slidesTotal, // how long to wait before cycling to the next item
         slider = setInterval(function() {
 
