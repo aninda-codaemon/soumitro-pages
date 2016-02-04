@@ -676,32 +676,6 @@
     </div>
   </div><!-- /#refine-modal -->
 
-  <!-- ================ -->
-  <!-- = Exit Pop = -->
-  <!-- ================ -->
-  <div id="exit-pop-skip" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header section-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h1 class="text-center"><strong>Wait, before you go</strong></h1>
-        </div><!-- /.modal-header -->
-        <div class="modal-body text-center">
-          <h3><strong>Preview a summary of your report.</strong></h3>
-          <div class="loader-big">
-            <img src="img/loader-big.gif">
-          </div>
-          <img class="img-responsive preview" src="img/preview.jpg">
-            <div class="row">
-              <div class="col-sm-6 col-sm-offset-3">
-                <button id="skip-to-preview" class="btn btn-success btn-lg btn-block">See The Summary Now</button>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div><!-- /#refine-modal -->
-
   <!-- ==================================== -->
   <!-- == 1 == GENERATING REPORT  ========= -->
   <!-- ==================================== -->
@@ -1010,117 +984,8 @@
     </div>
   </div><!-- /#survey-modal -->
 
-  <!-- ============================================== -->
-  <!-- == 6 == CAPTCHA MODAL ======================== -->
-  <!-- ============================================== -->
-  <div id="gen-report-modal4" class="modal" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-
-        <div class="modal-header header-alert">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#ffffff;">×</button>
-          <img src="img/alert-24.png" class="pull-left header-icon">
-          <p data-fr-bind="currentRecord">
-            <strong>We finished compiling the report. Enter the text below to continue...</strong>
-          </p>
-        </div><!-- /.modal-header -->
-
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-sm-6">
-              <p class="modal-top-text" data-fr-bind="currentRecord">Please prove that you are a human by filling out the easy captcha below.</p>
-              <form id="bv-catpcha-form">
-                <div id="bv-captcha">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div class="well">
-                        <div class="captcha-wrap">
-                          <div id="bv-captcha-imgs">
-                            <img src="img/degree.jpg" alt="degree">
-                            <img src="img/fact.jpg" alt="fact">
-                            <img src="img/glass.jpg" alt="glass">
-                            <img src="img/grip.jpg" alt="grip">
-                            <img src="img/nose.png" alt="nose">
-                            <img src="img/seed.png" alt="seed">
-                            <img src="img/snake.jpg" alt="snake">
-                            <img src="img/step.jpg" alt="step">
-                          </div>
-                          <a href="#" id="bv-captcha-refresh" title="Refresh Image"></a>
-                        </div>
-                        <div class="row">
-                          <div class="col-sm-12">
-                            <label for="captcha">Type the text shown into the box below.</label>
-                            <input name="captcha" id="bv-captcha-input" class="form-control input-lg" type="text" placeholder="Type text here">
-                          </div>
-                        </div>
-                        <p class="text-center" id="bv-captcha-msg"></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-10 col-sm-offset-1">
-                      <button type="submit" id="bv-captcha-next" class="main-btn btn-lg btn-block">
-                        <strong>Continue</strong>
-                        <img class="hidden-xs" src="img/next-32.png" style="display: inline;">
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-              <p class="why-text text-left">
-                <small>
-                  <strong>Why do I have to do this? </strong>
-                  <br>
-                  <span>We have data costs associated with our reports, therefore we try to make sure we only run searches for real people.</span>
-                </small>
-              </p>
-            </div>
-            <div class="col-sm-6 hidden-xs">
-              <div class="report-summary">
-                <div class="subject-summary">
-                  <div class="report-summary-header">
-                    <p>
-                      <strong>Report Summary</strong>
-                    </p>
-                  </div>
-                  <div class="subject-summary-text-bg">
-                    <div class="subject-summary-text text-left" data-fr-bind="currentRecord">
-                      <h3 class="modal-name"><strong>{{fullName}}</strong></h3>
-                      <p>Age: {{displayAge}}</p>
-                    </div>
-                  </div>
-                  <div id="map-goes-here">
-                    <img id="map" alt="map" />
-                  </div>
-                </div>
-                <ul class="blur-list clearfix text-left list-unstyled">
-                  <p>Includes, When Available:</p>
-                  <div class="blur-list-left">
-                    <li>Current Address</li>
-                    <li>Phone Numbers</li>
-                    <li>Bankruptcies</li>
-                    <li>Email Addresses</li>
-                    <li>Photos</li>
-                  </div>
-                  <div class="blur-list-right">
-                    <li>Address History</li>
-                    <li>Criminal History</li>
-                    <li>Judgments</li>
-                    <li>Associates</li>
-                    <li>Social Media</li>
-                  </div>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div><!-- /.modal-body -->
-
-      </div>
-    </div>
-  </div><!-- /#gen-report-modal4 -->
-
   <!-- ================================================== -->
-  <!-- == 7 == GENERATING REPORT ======================== -->
+  <!-- == 6 == GENERATING REPORT ======================== -->
   <!-- ================================================== -->
   <div id="gen-report-modal5" class="modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
@@ -1240,7 +1105,7 @@
   </div><!-- /#gen-report-modal5 -->
 
   <!-- ================================================== -->
-  <!-- == 8 == LEAD BOX SIGNUP ========================== -->
+  <!-- == 7 == LEAD BOX SIGNUP ========================== -->
   <!-- ================================================== -->
   <div id="gen-report-modal6" aria-hidden="true" class="modal">
     <div class="modal-dialog">
@@ -1331,7 +1196,7 @@
   </div><!-- /#signup-modal -->
 
   <!-- ================================================== -->
-  <!-- == 9 ==  FINAL CARD REPORT ======================= -->
+  <!-- == 8 ==  FINAL CARD REPORT ======================= -->
   <!-- ================================================== -->
   <div id="gen-report-modal7" aria-hidden="true" class="modal">
     <div class="modal-dialog">
@@ -1586,7 +1451,7 @@
   </div><!-- /#gen-report-modal7 -->
 
   <!-- ================================================== -->
-  <!-- == 10 == FCRA ===================================== -->
+  <!-- == 9 == FCRA ===================================== -->
   <!-- ================================================== -->
   <div id="gen-report-modal11" aria-hidden="true" class="modal">
     <div class="modal-dialog">

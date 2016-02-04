@@ -323,14 +323,6 @@
       }
     }, {
 
-      // Captcha.
-
-      $elem: $("#gen-report-modal4"),
-      animate: function() {
-        _.bind(captchaModal, this)();
-      }
-    }, {
-
       // Generating report progress.
 
       $elem: $("#gen-report-modal5"),
@@ -565,10 +557,6 @@
     });
   }
 
-  function captchaModal() {
-    trackNL('Viewed Captcha Modal');
-  }
-
   function whoopsAccountNeeded() {
     trackNL('Viewed AccountNeeded Modal');
 
@@ -753,39 +741,6 @@
     }, Math.round(duration / listLen));
   }
 
-  var exitPopSkip = function() {
-    if (window.shownExitPopSkip !== false) {
-      return;
-    }
-    window.shownExitPopSkip = true;
-    trackNL('Viewed Exit Pop Skip Modal');
-
-    $('.modal.in').modal('hide');
-    resetModalFlow();
-
-    $('#exit-pop-skip').on('show.bs.modal', function() {
-
-      $('#skip-to-preview').on('click', function() {
-        $('.loader-big').show();
-        if (typeof modalCtx !== 'undefined') {
-          getExtraTeaserData(modalCtx, function() {
-            $('#exit-pop-skip').modal('hide');
-            currModalIdx = 7;
-            $prevModal = 6;
-            showNextModal();
-          });
-        }
-
-      });
-    });
-    $('#exit-pop-skip').modal('show');
-
-    $('#exit-pop-skip .modal-dialog').on('click', function(e) {
-      trackNL('Exit Pop Skip Modal - Clicked');
-    });
-
-  };
-
   function foundDataModal() {
     trackNL('Viewed Found Data Modal V1 A');
 
@@ -835,12 +790,10 @@
       modalDownsellsActive = true;
       downsell.init({
         onBack: {
-          override: true,
-          cb: exitPopSkip
+          override: true
         },
         onBreakingPlane: {
-          override: true,
-          cb: exitPopSkip
+          override: true
         }
       });
     }
