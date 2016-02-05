@@ -1174,6 +1174,11 @@ img.file-icon {
   padding: 15px;
 }
 
+#gen-report-modal3 .modal-body .loading-statement {
+  margin: 10px 0;
+  text-align: center;
+}
+
 #gen-report-modal3 .modal-body .progress {
   height: 35px;
 }
@@ -1183,6 +1188,27 @@ img.file-icon {
   position: relative;
   display: inline-block;
   width: 100%;
+  -webkit-transition: opacity 1000ms ease-in;
+  -moz-transition: opacity: 1000ms ease-in;
+  transition: opacity 1000ms ease-in;
+}
+
+#gen-report-modal3 .modal-body .slider-container .slider-item {
+  display: none;
+  -moz-opacity: 0;
+  -ms-filter: alpha(opacity=0);
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+#gen-report-modal3 .modal-body .slider-container .slider-item.active {
+  display: inline-block;
+  -moz-opacity: 1;
+  -ms-filter: alpha(opacity=100);
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: alpha(opacity=100);
+  opacity: 1;
 }
 
 .slider-container .slider-item .search-image {
@@ -1235,6 +1261,10 @@ img.file-icon {
 .slider-container .slider-item .item-sub-headline {
   display: block;
   color: #555;
+}
+
+.slider-container .slider-item .item-statement {
+  text-align: center;
 }
 
 .slider-container .slider-item .item-image {
@@ -1341,22 +1371,118 @@ img.file-icon {
     filter: alpha(opacity=100);
     opacity: 1;
   }
+
+  .slider-container .slider-item .guarantee-image {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100px;
+    z-index: 2;
+  }
+
+  .slider-container .slider-item .guarantee-items {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    display: inline-block;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+  }
+
+  .slider-container .slider-item .guarantee-items .guarantee-item {
+    position: relative;
+    -webkit-box-flex: 0 0 50%;
+    -webkit-flex: 0 0 50%;
+    -moz-box-flex: 0 0 50%;
+    -moz-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    width: 48.5%;
+    margin-top: 25px;
+    float: left;
+    -moz-opacity: 1;
+    -ms-filter: alpha(opacity=100);
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    filter: alpha(opacity=100);
+    opacity: 1;
+  }
+
+  .slider-container .slider-item .guarantee-items .guarantee-item:last-child {
+    float: right;
+  }
+
+  .slider-container .slider-item .guarantee-items .guarantee-item:last-child .number-label {
+    left: auto;
+    right: 0;
+  }
+
+  .slider-container .slider-item .guarantee-items .guarantee-item:last-child .number-label::after {
+    left: auto;
+    right: 0;
+    border-right: 0 solid transparent;
+    border-left: 40px solid transparent;
+  }
 }
 
 @media (min-width: 768px) {
   .slider-container .slider-item .service-items {
     margin-top: 25px;
   }
+
+  #gen-report-modal3 .modal-body .slider-container .slider-item#guarantees-slide {
+    margin: 15px 0;
+  }
+
+  .slider-container .slider-item .guarantee-image {
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    transform: none;
+    width: 25%;
+    float: left;
+    margin-top: 10px;
+    padding: 15px;
+  }
+
+  .slider-container .slider-item .guarantee-items {
+    width: 75%;
+  }
+
+  .slider-container .slider-item .guarantee-items .guarantee-item {
+    height: 200px;
+    margin: 0;
+  }
+
+  .slider-container .slider-item .guarantee-items .guarantee-item:last-child .number-label {
+    left: 0;
+    right: auto;
+  }
+
+  .slider-container .slider-item .guarantee-items .guarantee-item:last-child .number-label::after {
+    left: 0;
+    right: auto;
+    border-right: 40px solid transparent;
+    border-left: 0 solid transparent;
+  }
 }
 
-/* slider display states */
-
-#gen-report-modal3 .modal-body .slider-container .slider-item {
-  display: none;
-}
-
-#gen-report-modal3 .modal-body .slider-container .slider-item.active {
-  display: inline-block;
+@media (min-width: 992px) {
+  .slider-container .slider-item .guarantee-items .guarantee-item .item-headline {
+    font-size: 18px;
+  }
 }
 
 /* modal-footer */
@@ -1369,6 +1495,13 @@ img.file-icon {
   color: #777;
   font-size: 11px;
   text-align: center;
+}
+
+@media (min-width: 481px) {
+
+  #gen-report-modal3 .modal-footer .footer-statement {
+    font-size: 14px;
+  }
 }
 
 /* == 5 == CAPTCHA MODAL ========================== */

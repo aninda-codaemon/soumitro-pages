@@ -438,8 +438,6 @@
         slideIndex = 2, // slider-item index - loop starts on 2nd child as 1st is active by default
         slidesTotal = $('.slider-container .slider-item').length; // total number of slider items in the list
 
-    $loader.css('width', '0%');
-
     if (bv.isMobile) {
       duration *= bv.mobileTimeRatio;
     }
@@ -447,7 +445,8 @@
     $loader.animate({'width': '100%'}, {duration: duration});
 
     // @TODO: refactor this slider pattern into a reusable function with pluggable methods
-    
+    // this whole thing can be condensed into a simpler function
+
     var slideDuration = duration / slidesTotal, // how long to wait before cycling to the next item
         slider = setInterval(function() {
 
@@ -486,7 +485,39 @@
           }
         }, servicesSlideDuration);
 
+        // wait for init slide to finish
+        setTimeout(function() {
+           var guaranteeIndex = 2,
+               guaranteesTotal = $('.guarantee-items .guarantee-item').length, // total number of services
+               guaranteeSlideDuration = slideDuration / guaranteesTotal,
+               guaranteeSlider = setInterval(function() {
+
+                 var $guaranteeItem = $('.guarantee-items .guarantee-item:nth-child(' + guaranteeIndex + ')');
+
+                 // toggle active class for each use case item
+                 $('.guarantee-items .guarantee-item').removeClass('active');
+                 $guaranteeItem.addClass('active');
+
+                 if (guaranteeIndex === guaranteesTotal) {
+                   // stop loop when index === total
+                   clearInterval(guaranteeSlider);
+                   return;
+                 } else {
+                   guaranteeIndex++;
+                 }
+               }, guaranteeSlideDuration);
+        }, slideDuration);
+
     timeoutId = window.setTimeout(function () {
+      // reset slider to default
+      // @TODO: create slider reset function and add it into refactored slider
+      $('.slider-container .slider-item').removeClass('active');
+      $('.slider-container .slider-item:nth-child(1)').addClass('active');
+      $('.service-items .service-item').removeClass('active');
+      $('.service-items .service-item:nth-child(1)').addClass('active');
+      $('.guarantee-items .guarantee-item').removeClass('active');
+      $('.guarantee-items .guarantee-item:nth-child(1)').addClass('active');
+
       showNextModal();
     }, duration);
   }
@@ -621,6 +652,8 @@
     $genReportMessage.html("Loading...");
     $downloadNowIcon.show();
     $("#arrowhead-right").hide();
+
+    $('.report-modal .progress .progress-bar').css('width', '0%');
 
     window.resetSearchingState();
     // window.refreshCaptchaState();

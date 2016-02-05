@@ -703,10 +703,10 @@
 
         <div class="modal-header section-header section-min">
           <p><i class="fa fa-share icon"></i> Compiling your report, please wait...</p>
-        </div>
+        </div><!-- /.modal-header -->
 
         <div class="modal-body popup-modal">
-          <p data-fr-bind="currentRecord">Please wait while we fill in details about {{fullName}}...</p>
+          <p class="loading-statement" data-fr-bind="currentRecord">Please wait while we fill in details about {{fullName}}...</p>
           <div class="progress">
             <div class="progress-bar progress-bar-success"></div>
           </div>
@@ -739,34 +739,34 @@
                   </h4>
                   <img class="item-image" src="img/slide1Animation3.gif" />
                 </div>
-              </div>
+              </div><!-- /.service-items -->
             </div>
 
             <div class="slider-item" id="guarantees-slide">
-              <img class="guarantee-image" src="img/grrantee-icon.png" />
+              <img class="guarantee-image" src="img/guarantee-icon.png" />
+
               <div class="guarantee-items">
                 <div class="guarantee-item active">
                   <span class="number-label">1</span>
                   <h4 class="item-headline">DataFusion Guarantee</h4>
                   <p class="item-statement">We’re so confident in the quality of our data, that if one of our competitors has better data on your search subject, <strong>we’ll give you a full refund!</strong></p>
                 </div>
+
                 <div class="guarantee-item">
                   <span class="number-label">2</span>
                   <h4 class="item-headline">Results Guarantee</h4>
                   <p class="item-statement">If we do not have any results for this report, <strong>we will gladly issue a refund.</strong> Just contact one of our friendly customer representatives.</p>
                 </div>
-              </div>
+              </div><!-- /.guarantee-items -->
             </div>
-          </div>
-        </div>
-        <!-- /.modal-body -->
+          </div><!-- /.slider-container -->
+        </div><!-- /.modal-body -->
 
         <div class="modal-footer">
           <p class="footer-statement">
             Get ready to discover things you didn’t know before!
           </p>
-        </div>
-        <!-- /.modal-footer -->
+        </div><!-- /.modal-footer -->
       </div>
     </div>
   </div>
