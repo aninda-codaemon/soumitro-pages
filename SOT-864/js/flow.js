@@ -435,6 +435,9 @@
         duration = this.duration,
         $reportModal = $('#gen-report-modal3'),
         $loader = $('.report-modal .progress .progress-bar'),
+        service1Path = $('.item-image-hidden.background-check').attr('src'),
+        service2Path = $('.item-image-hidden.phone').attr('src'),
+        service3Path = $('.item-image-hidden.property').attr('src'),
         slideIndex = 2, // slider-item index - loop starts on 2nd child as 1st is active by default
         slidesTotal = $('.slider-container .slider-item').length; // total number of slider items in the list
 
@@ -443,6 +446,25 @@
     }
 
     $loader.animate({'width': '100%'}, {duration: duration});
+
+    // reset gifs - has issues / needs fixing
+    $('.item-image').hide();
+    setTimeout(function() {
+      $('.item-image').attr('src', '');
+    }, 0);
+
+    var toggleAnimations = function() {
+      setTimeout(function() {
+        $('.item-image').show();
+        setTimeout(function() {
+          $('.item-image.background-check').attr('src', service1Path);
+          $('.item-image.phone').attr('src', service2Path);
+          $('.item-image.property').attr('src', service3Path);
+        }, 0);
+      }, 0);
+    };
+
+    toggleAnimations();
 
     // @TODO: refactor this slider pattern into a reusable function with pluggable methods
     // this whole thing can be condensed into a simpler function
