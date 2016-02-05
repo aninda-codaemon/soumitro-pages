@@ -102,6 +102,10 @@ a:focus {
   color: #195997;
 }
 
+.blue-text {
+  color: #1865b1;
+}
+
 .container-fluid {
   max-width: 960px;
 }
