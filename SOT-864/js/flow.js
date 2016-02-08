@@ -308,7 +308,7 @@
     // Logging in.
 
     $elem: $("#gen-report-modal3"),
-    duration: 15000, // Total animation time before moving to next modal.
+    duration: 20000, // Total animation time before moving to next modal.
     animate: function () {
       _.bind(loggingIn, this)();
     }
@@ -449,25 +449,16 @@
 
     // reset gifs - has issues / needs fixing
 
-    $('.item-image').removeAttr('src');
-    $('.item-image').hide();
-
     var toggleAnimations = function() {
       if ($('.item-image[src!=""]')) {
         $('.item-image').removeAttr('src');
-        $('.item-image').hide();
 
         setTimeout(function() {
-          $('.item-image').show();
-
-          setTimeout(function() {
-            $('.item-image.background-check').attr('src', service1Path);
-            $('.item-image.phone').attr('src', service2Path);
-            $('.item-image.property').attr('src', service3Path);
-          }, 0);
+          $('.item-image.background-check').attr('src', service1Path);
+          $('.item-image.phone').attr('src', service2Path);
+          $('.item-image.property').attr('src', service3Path);
         }, 0);
       } else {
-        $('.item-image').show();
 
         setTimeout(function() {
           $('.item-image.background-check').attr('src', service1Path);
@@ -482,12 +473,12 @@
     // @TODO: refactor this slider pattern into a reusable function with pluggable methods
     // this whole thing can be condensed into a simpler function
 
-    var slideDuration = duration / slidesTotal, // how long to wait before cycling to the next item
+    var slideDuration = (duration / slidesTotal) - 250, // how long to wait before cycling to the next item
         slider = setInterval(function() {
 
           var $sliderItem = $('.slider-container .slider-item:nth-child(' + slideIndex + ')');
 
-          // toggle active class for each use case item
+          // toggle active class for each slider item
           $('.slider-container .slider-item').removeClass('active');
           $sliderItem.addClass('active');
 
@@ -507,8 +498,7 @@
 
           var $serviceItem = $('.service-items .service-item:nth-child(' + serviceIndex + ')');
 
-          // toggle active class for each use case item
-          $('.service-items .service-item').removeClass('active');
+          // toggle active class for each service item
           $serviceItem.addClass('active');
 
           if (serviceIndex === servicesTotal) {
@@ -529,7 +519,7 @@
 
                  var $guaranteeItem = $('.guarantee-items .guarantee-item:nth-child(' + guaranteeIndex + ')');
 
-                 // toggle active class for each use case item
+                 // toggle active class for each guarantee item
                  $('.guarantee-items .guarantee-item').removeClass('active');
                  $guaranteeItem.addClass('active');
 
@@ -689,6 +679,8 @@
     $("#arrowhead-right").hide();
 
     $('.report-modal .progress .progress-bar').css('width', '0%');
+    $('.service-items .service-item').removeClass('active');
+    $('.service-items .service-item:first-child').addClass('active');
 
     window.resetSearchingState();
     // window.refreshCaptchaState();

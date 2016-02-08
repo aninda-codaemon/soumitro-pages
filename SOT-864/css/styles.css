@@ -1237,6 +1237,7 @@ img.file-icon {
   display: inline-block;
   position: absolute;
   width: 100%;
+  background-color: #fff;
   -moz-opacity: 0;
   -ms-filter: alpha(opacity=0);
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
@@ -1374,6 +1375,14 @@ img.file-icon {
     -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     filter: alpha(opacity=100);
     opacity: 1;
+  }
+
+  .slider-container .slider-item .service-items .service-item .item-image {
+    display: none;
+  }
+
+  .slider-container .slider-item .service-items .service-item.active .item-image {
+    display: block;
   }
 
   .slider-container .slider-item .guarantee-image {
