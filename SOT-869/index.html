@@ -19,6 +19,7 @@
 </head>
 
 <!-- update data-search-page attr with correct url -->
+
 <body data-next-page="<%= next_page %>" data-search-page="//www.beenverified.com/lp/c3a349/4/search-results">
 
   <header>
@@ -43,23 +44,24 @@
             <div class="row">
               <div class="col-sm-4">
                 <img class="user-image" src="images/user.jpg" alt="" />
-              </div><!-- end col-sm-4 -->
-              <div class="col-sm-8">
-                {{#if fullName}}
-                <h4 class="user-name">{{fullName}}</h4>
-                {{/if}}
-                <p class="user-info">
-                  {{#if age}}{{age}} years old{{/if}}
-                  {{#if place}} from {{place}}{{/if}}
-                </p>
-                <div class="user-records">
-                  <span class="records-label">
-                    Criminal Records Found
-                    <span class="records-count">3</span>
-                  </span>
-                  <span class="check-icon"></span>
+              </div>
+              <!-- end col-sm-4 -->
+              {{#if fullName}}
+                <div class="col-sm-8">
+                  <h4 class="user-name">{{fullName}}</h4>
+                  <p class="user-info">
+                    {{#if age}}{{age}} years old{{/if}} {{#if place}} from {{place}}{{/if}}
+                  </p>
+                  <div class="user-records">
+                    <span class="records-label">
+                      Criminal Records Found
+                      <span class="records-count">3</span>
+                    </span>
+                    <span class="check-icon"></span>
+                  </div>
                 </div>
-              </div><!-- end col-sm-8 -->
+                <!-- end col-sm-8 -->
+              {{/if}}
             </div>
           </div>
           <!-- end col-md-5 -->
@@ -69,23 +71,19 @@
               <div class="col-sm-6 col-md-6 searchs">
                 <ul class="user-meta">
                   <li class="user-meta-item">
-                    <strong>Past Locations: </strong>
-                    Baltimore, MD
+                    <strong>Past Locations: </strong> Baltimore, MD
                     <a href="#">+ 1 more</a>
                   </li>
                   <li class="user-meta-item">
-                    <strong>Relatives: </strong>
-                    Joe Rivera
+                    <strong>Relatives: </strong> Joe Rivera
                     <a href="#">+ 4 more</a>
                   </li>
                   <li class="user-meta-item">
-                    <strong>Phone Numbers: </strong>
-                    201-xxx-xxxx
+                    <strong>Phone Numbers: </strong> 201-xxx-xxxx
                     <a href="#">+ 2 more</a>
                   </li>
                   <li class="user-meta-item">
-                    <strong>Emails: </strong>
-                    xxxxxx@gmail.com
+                    <strong>Emails: </strong> xxxxxx@gmail.com
                     <a href="#">+ 3 more</a>
                   </li>
                   <li class="user-meta-item">
@@ -147,74 +145,99 @@
       <div class="col-sm-12 col-md-5 left-section">
         <h4 class="headline">What our customers say about us:</h4>
 
-        <div class="item">
-          <ul id="comments" class="content-slider">
-            <li>
-              <div class="comments">
-                <p>“I used BeenVerified to run a background check, just to be on the safe side. It helped give me peace of mind and confirmed that he wasn't hiding anything from me.”</p>
-                <div class="user-img">
-                  <img src="images/user.jpg" alt="" />
-                  <span><strong>Jennifer W</strong> - Misuori</span>
-                </div>
-              </div>
-            </li>
-            <!-- End 1st comment -->
-            <li>
-              <div class="comments">
-                <p>“I used BeenVerified to run a background check, just to be on the safe side. It helped give me peace of mind and confirmed that he wasn't hiding anything from me.”</p>
-                <div class="user-img">
-                  <img src="images/user.jpg" alt="" />
-                  <span><strong>Jennifer W</strong> - Misuori</span>
-                </div>
-              </div>
-            </li>
-            <!-- End 2nd comment -->
-            <li>
-              <div class="comments">
-                <p>“I used BeenVerified to run a background check, just to be on the safe side. It helped give me peace of mind and confirmed that he wasn't hiding anything from me.”</p>
-                <div class="user-img">
-                  <img src="images/user.jpg" alt="" />
-                  <span><strong>Jennifer W</strong> - Misuori</span>
-                </div>
-              </div>
-            </li>
-            <!-- End 3rd comment -->
-          </ul>
-          <!-- End Users Comments -->
-        </div>
-        <!-- End items div -->
+        <ul class="content-slider" id="comments">
+          <li class="comment-content">
+            <p class="comment">“I used BeenVerified to run a background check, just to be on the safe side. It helped give me peace of mind and confirmed that he wasn't hiding anything from me.”</p>
+            <div class="comment-author">
+              <img class="user-image" src="images/user.jpg" alt="" />
+              <span class="user-info">
+                <strong>Jennifer W</strong> - Misuori
+              </span>
+            </div>
+          </li>
+          <!-- End 1st comment -->
+          <li class="comment-content">
+            <p class="comment">“I used BeenVerified to run a background check, just to be on the safe side. It helped give me peace of mind and confirmed that he wasn't hiding anything from me.”</p>
+            <div class="comment-author">
+              <img class="user-image" src="images/user.jpg" alt="" />
+              <span class="user-info">
+                <strong>Jennifer W</strong> - Misuori
+              </span>
+            </div>
+          </li>
+          <!-- End 2nd comment -->
+          <li class="comment-content">
+            <p class="comment">“I used BeenVerified to run a background check, just to be on the safe side. It helped give me peace of mind and confirmed that he wasn't hiding anything from me.”</p>
+            <div class="comment-author">
+              <img class="user-image" src="images/user.jpg" alt="" />
+              <span class="user-info">
+                <strong>Jennifer W</strong> - Misuori
+              </span>
+            </div>
+          </li>
+          <!-- End 3rd comment -->
+        </ul>
+        <!-- End Users Comments -->
 
-        <div class="order-summry">
-          <i class="cart"></i><span class="green-heading">Your Order Summary:</span>
-          <strong class="black">Background Report on:</strong>
-          <div class="heading">James Rivera</div>
-          <p>24 years old, From Centerton, AR <strong>Included</strong></p>
+        <div class="order-summary" data-fr-bind="currentRecord">
+          <h4 class="headline"><i class="cart-icon"></i> Your Order Summary:</h4>
 
-          <hr>
+          <strong class="divider-headline">Background Report on:</strong>
 
-          <strong class="black">Membership Plan:</strong>
-          <div class="heading">1 Month of Unlimited Reports<strong>$22.86 /mo.</strong></div>
-          <div class="clearfix"></div>
-
-          <p>Reverse Name Search <strong>Included</strong></p>
-          <p>Reverse Phone Search <strong>Included</strong></p>
-          <p>Reverse Email Search <strong>Included</strong></p>
-          <p>Reverse Property Search <strong>Included</strong></p>
-
-          <hr>
-
-          <div class="heading">Alert Me Addon Feature</div>
-          <p>
-            Receive notifications for updates on
-            <br>
-            James Rivera <strong><span class="green">FREE</span> <span>for today!</span></strong>
+          <h4 class="data-headline">James Rivera</h4>
+          <p class="data-details">
+            24 years old, from Centerton, AR
+            <span class="right-label included-label">Included</span>
           </p>
 
-          <hr class="hr">
+          <hr class="divider" />
 
-          <p class="total">Total Today: <strong class="green">$22.86</strong></p>
+          <strong class="divider-headline">Membership Plan:</strong>
+
+          <h4 class="data-headline">
+            1 Month of Unlimited Reports
+            <span class="right-label price-label">$22.86 /mo.</span>
+          </h4>
+
+          <div class="clearfix"></div>
+
+          <p class="data-details">
+            Reverse Name Search
+            <span class="right-label included-label">Included</span>
+          </p>
+          <p class="data-details">
+            Reverse Phone Search
+            <span class="right-label included-label">Included</span>
+          </p>
+          <p class="data-details">
+            Reverse Email Search
+            <span class="right-label included-label">Included</span>
+          </p>
+          <p class="data-details">
+            Reverse Property Search
+            <span class="right-label included-label">Included</span>
+          </p>
+
+          <hr class="divider" />
+
+          <h4 class="data-headline">Alert Me Addon Feature</h4>
+
+          <p class="data-details">
+            Receive notifications for updates on
+            <strong class="data-name">James Rivera</strong>
+            <span class="right-label">
+              <span class="success-text">FREE</span> for today!
+            </span>
+          </p>
+
+          <hr class="divider divider-total">
+
+          <strong class="divider-headline total">
+            Total Today:
+            <span class="right-label success-text">$22.86</span>
+          </strong>
         </div>
-        <!-- End order-summry -->
+        <!-- End order-summary -->
 
         <div class="row features">
           <div class="col-xs-12 col-sm-6 col-md-6">

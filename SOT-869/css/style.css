@@ -1,9 +1,25 @@
 @charset "utf-8";
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic);
 
+/* global */
+
 body {
   font-family: 'Lato', sans-serif;
   background: #f7f6f4;
+}
+
+.success-text {
+  color: #7bb33f !important;
+}
+
+.divider {
+	border-color: #d4d4d3;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.divider.divider-total {
+	border: solid 2px #d4d4d3;
 }
 
 /* header */
@@ -27,12 +43,13 @@ header .call {
 /* teaser */
 
 .teaser {
-	padding: 15px;
+	padding: 30px 15px;
   background: #353167;
   color: #fff;
 }
 
 .teaser .headline {
+	margin: 0;
 	margin-bottom: 20px;
 	padding-bottom: 20px;
   border-bottom: solid 1px #fff;
@@ -134,8 +151,22 @@ header .call {
 
 @media (min-width: 768px) {
 
-	.teaser h1 {
-		font-size: 32px;
+	.teaser .headline {
+		font-size: 22px;
+	}
+}
+
+@media (min-width: 992px) {
+
+	.teaser .headline {
+		font-size: 28px;
+	}
+}
+
+@media (min-width: 1200px) {
+
+	.teaser .headline {
+		font-size: 34px;
 	}
 }
 
@@ -154,121 +185,104 @@ header .call {
 
 /* left-section comments */
 
-.comments::after {
-  clear: both;
-  content: '';
-  display: block;
-}
-.comments p {
-  font-size: 15px;
+.content-slider .comment-content .comment {
+	margin: 0;
+	padding: 15px;
   font-style: italic;
-  padding-left: 30px;
-  padding-right: 15px;
-  padding-top: 20px;
 }
-.user-img {
-  color: #333333;
-  font-size: 15px;
-  float: right;
-  margin-right: 15px;
+
+.content-slider .comment-content .comment-author {
+	margin-right: 15px;
+	float: right;
+	color: #333333;
 }
-.user-img img {
-  width: 54px;
+
+.content-slider .comment-content .comment-author .user-image {
+	display: inline-block;
+	width: 54px;
   border-radius: 50px;
-  display: inline-block;
   float: left;
 }
-.user-img span {
+
+.content-slider .comment-content .comment-author .user-info {
+	display: inline-block;
   padding-top: 15px;
-  display: inline-block;
+	padding-left: 15px;
   float: left;
-  padding-left: 15px;
 }
 
-/* End Testimonial    User comments  */
+/* left-section order-summary */
 
-
-/* Order Summery section */
-
-.order-summry {
-  background: #f7f6f4;
-  margin: 10px;
-  padding: 20px;
+.order-summary {
+  margin: 15px -15px;
+  padding: 30px 15px;
+	background-color: #f7f6f4;
 }
-.green-heading {
-  font-size: 18px;
-  color: #7bb33f;
+
+.order-summary .headline {
+	margin: 0;
+	margin-bottom: 15px;
+	color: #7bb33f;
   font-weight: 700;
-  display: inline-block;
-  padding-bottom: 10px;
 }
-.cart {
-  background: url(../images/cart.png) no-repeat 0px 0px;
-  width: 28px;
+
+.order-summary .headline .cart-icon {
+	display: inline-block;
+	position: relative;
+	top: -5px;
+	width: 28px;
   height: 26px;
-  display: inline-block;
-  float: left;
-  margin-right: 10px;
-  margin-top: -2px
+	margin-right: 10px;
+	float: left;
+  background: url(../images/cart.png) no-repeat 0px 0px;
 }
-.order-summry strong.black {
-  font-size: 15px;
+
+.order-summary .divider-headline {
+	display: block;
+	margin: 5px 0;
+	color: #646464;
+  font-weight: 700;
+}
+
+.order-summary .data-headline {
+	display: block;
+	margin: 5px 0;
+	color: #0072bc;
+  font-weight: 700;
+}
+
+.order-summary .data-details {
+	margin: 5px 0;
+	color: #646464;
+}
+
+.order-summary .data-name {
+	display: inline-block;
+}
+
+.order-summary .right-label {
+	display: inline-block;
   color: #646464;
   font-weight: 700;
-  display: block;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  float: none;
-  text-transform: none;
-}
-.order-summry .heading {
-  color: #0072bc;
-  font-weight: 700;
-  font-size: 18px;
-  display: block;
-}
-.order-summry p {
-  color: #646464;
-  font-size: 15px;
-  display: block;
-}
-.order-summry strong {
-  font-size: 15px;
-  color: #646464;
-  font-weight: 700;
-  display: block;
-  padding-top: 5px;
-  padding-bottom: 5px;
   float: right;
-  text-transform: uppercase;
-  display: inline-block;
-}
-.order-summry strong span {
-  text-transform: none;
-  float: left;
-  margin-top: -10px;
-  display: inline-block;
-  padding-right: 5px;
-}
-.green {
-  color: #7bb33f !important;
-}
-.order-summry hr {
-  border-color: #d4d4d3;
-  margin-top: 15px;
-  margin-bottom: 10px;
-}
-.order-summry .hr {
-  border: solid 2px #d4d4d3;
-}
-.total {
-  font-weight: 700;
 }
 
-/* End Order summry */
+.order-summary .right-label.included-label {
+	text-transform: uppercase;
+}
 
+.order-summary .right-label.price-label {
+	font-size: 14px;
+}
 
-/* Features */
+@media (min-width: 768px) {
+
+	.order-summary {
+		margin: 15px auto;
+	}
+}
+
+/* left-section features */
 
 .features {
   padding-top: 45px;
