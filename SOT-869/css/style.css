@@ -22,6 +22,12 @@ body {
 	border: solid 2px #d4d4d3;
 }
 
+.gray-bar {
+  background: #ebebeb;
+  height: 90px;
+  display: block;
+}
+
 /* header */
 
 header {
@@ -257,7 +263,7 @@ header .call {
 }
 
 .order-summary .data-name {
-	display: inline-block;
+	display: block;
 }
 
 .order-summary .right-label {
@@ -285,58 +291,57 @@ header .call {
 /* left-section features */
 
 .features {
-  padding-top: 45px;
-  padding-bottom: 25px;
+	margin-bottom: 30px;
+  padding: 15px;
 }
-.features div {
-  border-right: solid 1px #cccccc;
+
+.features .feature {
+	border: 0;
   text-align: center;
 }
-.features div:last-child {
-  border: none;
+
+.features .feature:first-child {
+  border-bottom: solid 1px #ccc;
 }
-.features h2 {
+
+.features .feature .feature-icon {
+	margin-top: 30px;
+}
+
+.features .feature .feature-headline {
   color: #7bb33f;
-  font-size: 18px;
   font-weight: 700;
 }
-.features p {
-  font-size: 15px;
+.features .feature .feature-description {
+	margin-bottom: 30px;
   color: #646464;
 }
 
-/* End feauters */
+@media (min-width: 768px) {
+	.features .feature:first-child {
+		border-bottom: 0;
+	  border-right: solid 1px #ccc;
+	}
+}
+
+/* left-section runners */
 
 .runners-heading {
+	margin: 40px 0 20px;
   color: #7bb33f;
-  font-size: 25px;
   font-weight: 700;
-  margin-top: 40px;
-}
-.runners div {
-  display: inline-block;
-  float: left;
-  width: 50%;
-  font-size: 15px;
-  padding-top: 20px;
-}
-.runners div:last-child {
-  padding-top: 45px;
-}
-.runners img {
-  margin-bottom: -50px;
-}
-.gray-bar {
-  background: #ebebeb;
-  height: 90px;
-  display: block;
 }
 
-/* End left section */
+.runners .runners-description {
+	margin: 20px 0;
+}
+
+/* right-section */
 
 .right-section {
   padding-bottom: 25px;
 }
+
 .step-heading {
   font-size: 18px;
   font-weight: 400;

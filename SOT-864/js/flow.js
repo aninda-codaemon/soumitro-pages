@@ -473,7 +473,7 @@
     // @TODO: refactor this slider pattern into a reusable function with pluggable methods
     // this whole thing can be condensed into a simpler function
 
-    var slideDuration = (duration / slidesTotal) - 250, // how long to wait before cycling to the next item
+    var slideDuration = (duration / slidesTotal) - 500, // how long to wait before cycling to the next item
         slider = setInterval(function() {
 
           var $sliderItem = $('.slider-container .slider-item:nth-child(' + slideIndex + ')');
