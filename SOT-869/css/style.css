@@ -63,7 +63,7 @@ header .call {
 	display: inline-block;
 	position: relative;
 	width: 100%;
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 }
 
 .teaser .user-records .records-label {
@@ -100,33 +100,36 @@ header .call {
 	background: url(../images/ok.png) no-repeat 0 0;
 }
 
-i.ok {
-  background: url(../images/ok.png) no-repeat 0px 0px;
-  width: 22px;
-  height: 19px;
-  margin-top: 0px;
-  margin-left: 13px;
-  display: inline-block;
+.teaser .user-meta {
+  margin: 0;
+	padding: 0;
 }
-.teaser ul {
-  padding-left: 0px;
-  font-size: 15px;
-}
-.teaser ul li {
+
+.teaser .user-meta .user-meta-item {
   display: block;
   line-height: 30px;
 }
-.teaser ul li a {
-  color: #feb912;
-  margin-left: 5px;
+
+.teaser .user-meta .user-meta-item a {
   display: inline-block;
+	margin-left: 3px;
+	color: #feb912;
 }
-.teaser ul li strong {
-  margin-right: 5px;
-}
-.teaser ul li img {
+
+.teaser .user-meta .user-meta-item img {
   margin-left: 2px;
   margin-right: 2px;
+}
+
+.teaser .user-meta .user-meta-item .check-icon {
+	display: inline-block;
+	position: relative;
+	top: 3px;
+	width: 22px;
+  height: 20px;
+	margin: 0;
+	margin-left: 10px;
+  background: url(../images/ok.png) no-repeat 0px 0px;
 }
 
 @media (min-width: 768px) {
@@ -138,17 +141,18 @@ i.ok {
 
 /* left-section */
 
-.left-section, .right-section {
+.left-section,
+.right-section {
+	padding-top: 35px;
   background: #fff;
-  padding-top: 35px;
 }
-.left-section h3 {
+
+.left-section .headline {
   color: #464646;
-  font-size: 18px;
   font-weight: 700;
 }
 
-/* Comments section */
+/* left-section comments */
 
 .comments::after {
   clear: both;
