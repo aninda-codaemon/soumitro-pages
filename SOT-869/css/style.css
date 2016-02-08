@@ -184,9 +184,19 @@ header .call {
   background: #fff;
 }
 
+.left-section {
+	border-bottom: solid 90px #EBEBEB;
+}
+
 .left-section .headline {
   color: #464646;
   font-weight: 700;
+}
+
+@media (min-width: 768px) {
+	.left-section {
+		border: 0;
+	}
 }
 
 /* left-section comments */
@@ -330,6 +340,10 @@ header .call {
 	margin: 40px 0 20px;
   color: #7bb33f;
   font-weight: 700;
+}
+
+.runners .runners-image {
+	margin-bottom: -50px;
 }
 
 .runners .runners-description {
