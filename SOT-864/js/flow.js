@@ -449,12 +449,12 @@
 
     // reset gifs - has issues / needs fixing
 
-    $('.item-image').attr('src', '');
+    $('.item-image').removeAttr('src');
     $('.item-image').hide();
 
     var toggleAnimations = function() {
       if ($('.item-image[src!=""]')) {
-        $('.item-image').attr('src', '');
+        $('.item-image').removeAttr('src');
         $('.item-image').hide();
 
         setTimeout(function() {
