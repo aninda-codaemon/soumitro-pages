@@ -448,20 +448,33 @@
     $loader.animate({'width': '100%'}, {duration: duration});
 
     // reset gifs - has issues / needs fixing
+
+    $('.item-image').attr('src', '');
     $('.item-image').hide();
-    setTimeout(function() {
-      $('.item-image').attr('src', '');
-    }, 0);
 
     var toggleAnimations = function() {
-      setTimeout(function() {
+      if ($('.item-image[src!=""]')) {
+        $('.item-image').attr('src', '');
+        $('.item-image').hide();
+
+        setTimeout(function() {
+          $('.item-image').show();
+
+          setTimeout(function() {
+            $('.item-image.background-check').attr('src', service1Path);
+            $('.item-image.phone').attr('src', service2Path);
+            $('.item-image.property').attr('src', service3Path);
+          }, 0);
+        }, 0);
+      } else {
         $('.item-image').show();
+
         setTimeout(function() {
           $('.item-image.background-check').attr('src', service1Path);
           $('.item-image.phone').attr('src', service2Path);
           $('.item-image.property').attr('src', service3Path);
         }, 0);
-      }, 0);
+      }
     };
 
     toggleAnimations();
