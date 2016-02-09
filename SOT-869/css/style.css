@@ -337,13 +337,15 @@ header .call {
 /* left-section runners */
 
 .runners-heading {
-	margin: 40px 0 20px;
+	margin-top: 50px;
   color: #7bb33f;
   font-weight: 700;
+	text-align: center;
 }
 
 .runners .runners-image {
-	margin-bottom: -50px;
+	position: relative;
+	bottom: -35px;
 }
 
 .runners .runners-description {
@@ -353,134 +355,177 @@ header .call {
 /* right-section */
 
 .right-section {
-  padding-bottom: 25px;
+  padding: 0;
 }
 
-.step-heading {
-  font-size: 18px;
+.right-section .step-heading {
+	margin: 0;
+  padding: 15px;
+	background-color: #323d43;
+	color: #fff;
+  line-height: 1;
   font-weight: 400;
-  color: #fff;
-  background: #323d43;
-  padding-left: 20px;
-  line-height: 50px;
 }
-.package {
-  border-left: solid 2px #323d43;
-  border-right: solid 2px #323d43;
-  border-bottom: solid 1px #b0d18c;
+
+.right-section .package {
+	position: relative;
+	height: 140px;
+	border: 0;
 }
-.package input {
-  display: inline-block;
+
+.right-section .package .deal-radio {
   position: absolute;
-  margin-left: 50px;
-  margin-top: 49px;
-  width: 20px;
-  height: 20px;
+	top: 50%;
+	left: 20px;
+	transform: translateY(-50%);
+	margin: 0;
 }
-.package label {
-  font-size: 18px;
-  color: #424242;
-  width: 100%;
-  padding-top: 45px;
-  height: 123px;
-  padding-left: 100px;
-  background: #f2f7eb;
-  margin-bottom: 0px;
+
+.right-section .package .deal-label {
+	cursor: pointer;
+	width: 100%;
+	height: 140px;
+	margin: 0;
+	padding: 30px;
+	padding-left: 45px;
+	padding-right: 15px;
+	background-color: #f2f7eb;
+	color: #424242;
+  font-size: 16px;
+	line-height: 1.25;
 }
-.special-deal label {
-  background: url(../images/deal.png) no-repeat -2px -2px #fff;
+
+.right-section .package .deal-label .offer-label {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
-.package label:hover {
-  /*	background:#7bb33f;
-	color:#fff;
-*/
-  cursor: pointer;
+
+.right-section .package .deal-label .price-label {
+	position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 20px;
+	font-weight: 700;
 }
-.special-deal label:hover {
-  background: url(../images/deal.png) no-repeat -2px -2px/*#7bb33f*/
-  ;
+
+.right-section .package .deal-label .price-label strong {
+  font-size: 12px;
 }
-.first-deal label {
-  background: #7bb33f;
-  color: #fff;
+
+.right-section .package .deal-label .discount-label {
+	display: inline-block;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	padding: 5px;
+	border-radius: 3px;
+	background-color: #feb912;
+	color: #fff;
+	font-size: 18px;
+	line-height: 1;
 }
-.package label div {
-  font-weight: 700;
-  font-size: 24px;
-  float: right;
-  width: 120px;
-  display: inline-block;
-}
-.package label div strong {
-  font-size: 15px;
-}
-.package label div span {
-  font-size: 21px;
-  color: #fff;
-  background: #feb912;
-  border-radius: 3px;
-  display: block;
-  width: 80px;
-  padding-right: 7px;
-  padding-left: 7px;
-  margin-left: 5px;
-  margin-bottom: 2px;
-  margin-top: -30px;
-}
-.package label div span strong {
-  font-size: 14px;
+
+.right-section .package .deal-label .discount-label strong {
+  font-size: 12px;
   font-weight: 400;
-  float: right;
+	vertical-align: top;
 }
-.package label div small {
-  font-size: 11px;
-  opacity: 0.7;
-  display: block;
+
+.right-section .package .deal-label .price-label small {
+	display: block;
   margin-left: 10px;
+  color: #828282;
+	font-size: 10px;
+  text-align: right;
 }
 
-/* End 3 package deals */
-
-.payments-switch {
-  min-height: 105px;
-  background: #f7f6f4;
-  padding-top: 20px;
-  margin: auto;
-  border: solid 2px #323d43;
-  border-bottom: none;
+.right-section .package.first-deal .deal-label {
+  background-color: #7bb33f;
+  color: #fff;
 }
-.payments-switch i {
-  background: url(../images/check-checked.png) no-repeat;
-  width: 25px;
+
+.right-section .package.special-deal .deal-label {
+  background-color: #fff;
+}
+
+.right-section .package.special-deal .deal-label .deal-image {
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	width: 55px;
+}
+
+@media (min-width: 480px) {
+	.right-section {
+	  padding: 35px 15px;
+	}
+
+	.right-section .package {
+		border-left: solid 2px #323d43;
+	  border-right: solid 2px #323d43;
+	  border-bottom: solid 1px #b0d18c;
+	}
+}
+
+/* right-section payments-switch */
+
+.right-section .payments-switch {
+	display: inline-block;
+	margin: 0 auto;
+  width: 100%;
+  padding: 15px;
+	border: 0;
+  background-color: #f7f6f4;
+}
+
+.right-section .payments-switch .payments-cta {
+	color: #333;
+	font-weight: 700;
+}
+
+.right-section .payments-switch .payment-option {
+	display: inline-block;
+  margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.right-section .payments-switch .payment-option .check-icon {
+	display: inline-block;
+	width: 25px;
   height: 31px;
-  display: inline-block;
-  float: left;
-  margin-top: 0px;
-  margin-right: 12px;
-  margin-left: 30px;
+	margin: 0;
+	margin-right: 15px;
+	float: left;
+  background: url(../images/check-checked.png) no-repeat;
 }
-.payments-switch .checked i {
+
+.right-section .payments-switch .payment-option.checked .check-icon {
   background: url(../images/check.png) no-repeat;
 }
-.payments-switch span {
-  cursor: pointer;
-}
-.payments-switch img {
+
+.right-section .payments-switch .payment-option .img-responsive {
   display: inline-block;
   float: left;
 }
-.payments-switch .text {
-  color: #333333;
-  font-size: 16px;
-  font-weight: 700;
-  padding-left: 33px;
-  padding-bottom: 5px;
+
+.right-section .payments-switch .secure {
+	display: inline-block;
+  width: 80px;
+  margin: 0;
+  float: right;
 }
-.secure {
-  float: right !important;
-  margin-right: 30px;
-  margin-top: -15px;
+
+@media (min-width: 480px) {
+
+	.right-section .payments-switch {
+		border: solid 2px #323d43;
+    border-bottom: none;
+	}
 }
+
+/* right-section cc form */
+
 .card-inputs, .paypal-btn {
   margin-left: 0px;
   margin-right: 0px;

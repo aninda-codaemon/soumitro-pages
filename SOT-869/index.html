@@ -47,20 +47,20 @@
               </div>
               <!-- end col-sm-4 -->
               {{#if fullName}}
-                <div class="col-sm-8">
-                  <h4 class="user-name">{{fullName}}</h4>
-                  <p class="user-info">
-                    {{#if age}}{{age}} years old{{/if}} {{#if place}} from {{place}}{{/if}}
-                  </p>
-                  <div class="user-records">
-                    <span class="records-label">
+              <div class="col-sm-8">
+                <h4 class="user-name">{{fullName}}</h4>
+                <p class="user-info">
+                  {{#if age}}{{age}} years old{{/if}} {{#if place}} from {{place}}{{/if}}
+                </p>
+                <div class="user-records">
+                  <span class="records-label">
                       Criminal Records Found
                       <span class="records-count">3</span>
-                    </span>
-                    <span class="check-icon"></span>
-                  </div>
+                  </span>
+                  <span class="check-icon"></span>
                 </div>
-                <!-- end col-sm-8 -->
+              </div>
+              <!-- end col-sm-8 -->
               {{/if}}
             </div>
           </div>
@@ -281,35 +281,48 @@
       <!-- End left-section    col-md-5 -->
 
       <div class="col-sm-12 col-md-7 right-section">
-        <div class="step-heading">Step 1: Select Your Package</div>
+
+        <h4 class="step-heading">Step 1: Select Your Package</h4>
+
         <div class="package first-deal">
-          <input type="radio" id="deal1" name="deal" value="" checked />
-          <label for="deal1">1 Month of Unlimited Reports
-            <div>$22.86 <strong>/mo</strong> </div>
-          </label>
-        </div>
-        <div class="package">
-          <input type="radio" id="deal2" name="deal" value="" />
-          <label for="deal2">3 Months of Unlimited Reports
-            <div><span>35% <strong>off</strong></span>$14.88 <strong>/mo</strong> <small>($44.62 Today)</small></div>
-          </label>
-        </div>
-        <div class="package special-deal">
-          <input type="radio" id="deal3" name="deal" value="" />
-          <label for="deal3">6 Months of Unlimited Reports
-            <div><span>35% <strong>off</strong></span>$9.94 <strong>/mo</strong> <small>($59.62 Today)</small></div>
+          <input type="radio" class="deal-radio" id="deal1" name="deal" value="" checked />
+          <label class="deal-label" for="deal1">
+            <span class="offer-label">1 Month of Unlimited Reports</span>
+            <span class="price-label">$22.86 <strong>/mo</strong></span>
           </label>
         </div>
 
-        <div class="step-heading">Step 2: Payment Information</div>
+        <div class="package">
+          <input type="radio" class="deal-radio" id="deal2" name="deal" value="" />
+          <label class="deal-label" for="deal2">
+            <span class="offer-label">3 Months of Unlimited Reports</span>
+            <span class="discount-label">35% <strong>off</strong></span>
+            <span class="price-label">$14.88 <strong>/mo</strong> <small>($44.62 Today)</small></span>
+          </label>
+        </div>
+
+        <div class="package special-deal">
+          <input type="radio" class="deal-radio" id="deal3" name="deal" value="" />
+          <label class="deal-label" for="deal3">
+            <img class="deal-image" src="images/deal.png" />
+            <span class="offer-label">6 Months of Unlimited Reports</span>
+            <span class="discount-label">35% <strong>off</strong></span>
+            <span class="price-label">$9.94 <strong>/mo</strong> <small>($59.62 Today)</small></span>
+          </label>
+        </div>
+
+        <h4 class="step-heading">Step 2: Payment Information</h4>
 
         <div class="payments-switch">
-          <div class="text">Choose Your Payment Method</div>
-          <span id="cards" class="checked"><i></i><img class="img-responsive cards" src="images/cards.png" alt="" /></span>
-          <span id="paypal"><i></i><img class="img-responsive paypal" src="images/paypal.png" alt="" /></span>
+          <p class="payments-cta">Choose Your Payment Method</p>
+          <div id="cards" class="payment-option checked">
+            <i class="check-icon"></i><img class="img-responsive cards" src="images/cards.png" alt="" />
+          </div>
+          <div id="paypal" class="payment-option">
+            <i class="check-icon"></i><img class="img-responsive paypal" src="images/paypal.png" alt="" />
+          </div>
           <img class="secure" src="images/norton.png" alt="" />
         </div>
-
 
         <div class="row card-inputs">
           <div class="col-sm-6 col-md-6">
@@ -346,9 +359,10 @@
           </div>
 
           <div class="col-sm-12 col-md-12">
-            <label>Confirm Your Email Below <small>(Your will receive an invoice to this email)</small></label>
+            <label>Confirm Your Email Below <small>(You will receive an invoice to this email)</small></label>
             <input class="form-control" type="email" name="" placeholder="johndoe@gmail.com" />
           </div>
+
           <div class="col-sm-12 col-md-12">
             <label>Agree To Our Terms of Service</label>
             <div class="agree">
@@ -357,6 +371,7 @@
               <div class="clearfix"></div>
             </div>
           </div>
+
           <div class="col-md-12">
             <input type="submit" name="" value="View Report" />
           </div>
@@ -381,21 +396,18 @@
   </div>
   <!-- End container -->
 
-  <div class="txt">
-    <div class="container">
-      <div class="cc"><span>Live Customer Care Hours:</span> M-F 8am - 9pm ET and Weekends 12pm - 8pm ET</div>
-      <p class="disclamer">Disclaimer: BeenVerified’s mission is to give people easy and affordable access to public record information. BeenVerified does not provide private investigator services, and is not a consumer reporting agency as defined by the <a href="#">Fair Credit Report</a>        Act because the information provided by BeenVerified is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses
-        of BeenVerified, please review our <a href="#">“Do’s & Don’ts”</a> and our <a href="#">Terms & Conditions.</a></p>
-    </div>
-  </div>
-
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6">BeenVerified © 2015</div>
-        <div class="col-xs-6 col-sm-6 col-md-6 links">
-          <a href="#">Privacy</a> . <a href="#">Terms</a> . <a href="#">Sitemap</a>
-        </div>
+  <footer class="container">
+    <h4 class="cc">
+      <span>Live Customer Care Hours:</span> M-F 8am - 9pm ET and Weekends 12pm - 8pm ET
+    </h4>
+    <p class="disclamer">Disclaimer: BeenVerified’s mission is to give people easy and affordable access to public record information. BeenVerified does not provide private investigator services, and is not a consumer reporting agency as defined by the <a href="#">Fair Credit Report</a>      Act because the information provided by BeenVerified is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses
+      of BeenVerified, please review our <a href="#">“Do’s &amp; Don’ts”</a> and our <a href="#">Terms &amp; Conditions.</a></p>
+    <div class="row legal">
+      <div class="col-sm-6">
+        <p class="copyright">BeenVerified © 2015</p>
+      </div>
+      <div class="col-sm-6 links">
+        <a href="#">Privacy</a> . <a href="#">Terms</a> . <a href="#">Sitemap</a>
       </div>
     </div>
   </footer>
@@ -446,13 +458,13 @@
         $(".card-inputs").hide();
         $(".paypal-btn").fadeIn(700);
         $("#paypal").addClass("checked");
-        $("#cards").removeClass();
+        $("#cards").removeClass('checked');
       });
       $("#cards").click(function() {
         $(".card-inputs").fadeIn(700);
         $(".paypal-btn").hide();
         $("#cards").addClass("checked");
-        $("#paypal").removeClass();
+        $("#paypal").removeClass('checked');
       });
 
     });
