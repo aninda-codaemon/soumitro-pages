@@ -625,6 +625,44 @@ header .header-cta {
 	  border-right: solid 2px #323d43;
 	  border-bottom: solid 1px #b0d18c;
 	}
+
+	.package .deal-radio {
+		left: 30px;
+	}
+
+	.package .deal-label {
+		padding-left: 65px;
+		font-size: 18px;
+	}
+
+	.package .deal-label .discount-label {
+		top: 30px;
+		right: 20px;
+    font-size: 20px;
+	}
+
+	.package .deal-label .price-label {
+		bottom: 30px;
+		font-size: 24px;
+	}
+
+	.package .deal-label .price-label strong {
+		font-size: 14px;
+	}
+
+	.package .deal-label .price-label small {
+		font-size: 12px;
+	}
+
+	.package.first-deal .deal-label .price-label {
+		top: 50%;
+		bottom: auto;
+    transform: translateY(-50%);
+	}
+
+	.package.special-deal .deal-label .deal-image {
+		width: 65px;
+	}
 }
 
 /* right-section payments-switch */
