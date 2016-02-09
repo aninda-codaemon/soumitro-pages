@@ -324,63 +324,88 @@
           <img class="secure" src="images/norton.png" alt="" />
         </div>
 
-        <div class="row card-inputs">
-          <div class="col-sm-6 col-md-6">
-            <label>First Name</label>
-            <input class="form-control" type="text" name="" placeholder="John" />
-          </div>
-          <div class="col-sm-6 col-md-6">
-            <label>Last Name</label>
-            <input class="form-control" type="text" name="" placeholder="Doe" />
-          </div>
+        <form class="cc-form">
+          <div class="row">
 
-          <div class="col-sm-6 col-md-6">
-            <label>Card Number</label>
-            <input class="form-control" type="text" name="" placeholder="Card Number" />
-          </div>
-          <div class="col-sm-6 col-md-6">
-            <label>Expiration</label>
-            <div class="clearfix"></div>
-            <select class="form-control">
-              <option>Months</option>
-            </select>
-            <select class="form-control years">
-              <option>years</option>
-            </select>
-          </div>
-
-          <div class="col-sm-6 col-md-6">
-            <label>CVV</label>
-            <input class="form-control cvv" type="text" name="" placeholder="CVV" />
-          </div>
-          <div class="col-sm-6 col-md-6">
-            <label>Zip Code</label>
-            <input class="form-control" type="text" name="" placeholder="123456" />
-          </div>
-
-          <div class="col-sm-12 col-md-12">
-            <label>Confirm Your Email Below <small>(You will receive an invoice to this email)</small></label>
-            <input class="form-control" type="email" name="" placeholder="johndoe@gmail.com" />
-          </div>
-
-          <div class="col-sm-12 col-md-12">
-            <label>Agree To Our Terms of Service</label>
-            <div class="agree">
-              <input type="checkbox" name="" value="" />
-              <span>By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="#">Terms of Service, Member Agreement and Privacy Policy</a>. You agree to be billed $44.62 every 3 months until this subscription is canceled. You can cancel your membership at any time by contacting customer service at <a href="#">1-888-579-5910</a> or emailing <a href="#">support@beenverified.com</a>. You also agree that you will NOT use any information about an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance; or for any other purpose prohibited by our <a href="#">Terms of Service</a>.</span>
-              <div class="clearfix"></div>
+            <div class="col-sm-6 form-group">
+              <label>First Name</label>
+              <input class="form-control" type="text" name="first-name" placeholder="John" />
             </div>
-          </div>
+            <div class="col-sm-6 form-group">
+              <label>Last Name</label>
+              <input class="form-control" type="text" name="last-name" placeholder="Doe" />
+            </div>
 
-          <div class="col-md-12">
-            <input type="submit" name="" value="View Report" />
-          </div>
-        </div>
-        <!-- End card-inputs -->
+            <div class="col-sm-6 form-group">
+              <label>Card Number</label>
+              <input class="form-control" type="text" name="cc-number" placeholder="Card Number" />
+            </div>
 
-        <div class="row paypal-btn">
+            <div class="col-sm-6 form-group">
+              <label>Expiration</label>
+              <div class="clearfix"></div>
+
+              <div class="row">
+                <div class="col-xs-6">
+                  <select class="form-control" name="cc-expiration-month">
+                    <option value="">Month</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                </div>
+                <div class="col-xs-6">
+                  <select class="form-control" name="cc-expiration-year">
+                    <option value="">Year</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 form-group">
+              <label>CVV</label>
+              <input class="form-control cvv" type="text" name="cvv" placeholder="CVV" />
+            </div>
+
+            <div class="col-sm-6 form-group">
+              <label>Zip Code</label>
+              <input class="form-control" type="text" name="zipcode" placeholder="123456" />
+            </div>
+
+            <div class="col-xs-12 form-group">
+              <label>Confirm Your Email Below <small>(You will receive an invoice to this email)</small></label>
+              <input class="form-control" type="email" name="email" placeholder="johndoe@gmail.com" />
+            </div>
+
+            <div class="col-xs-12 form-group">
+              <label>Agree To Our Terms of Service</label>
+              <div class="agreement-container">
+                <input type="checkbox" class="checkbox" name="tos" value="tos-agree" />
+                <p class="agreement">By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="#">Terms of Service, Member Agreement and Privacy Policy</a>. You agree to be billed $44.62 every 3 months until this subscription is canceled. You can cancel your membership at any time by contacting customer service at <a href="#">1-888-579-5910</a> or emailing <a href="#">support@beenverified.com</a>. You also agree that you will NOT use any information about an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance; or for any other purpose prohibited by our <a href="#">Terms of Service</a>.</p>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 form-group">
+              <input type="submit" class="submit-cc-form" name="submit-cc-form" value="View Report" />
+            </div>
+
+          </div>
+        </form>
+        <!-- End cc-form -->
+
+        <div class="row paypal-payment">
           <div class="col-md-12">
-            <a href="#">Go to paypal</a>
+            <a class="paypal-btn" href="#">Go to paypal</a>
           </div>
         </div>
         <!-- End Paypal button -->
@@ -455,14 +480,14 @@
     // show hide paypal and cards inputs
     $(document).ready(function() {
       $("#paypal").click(function() {
-        $(".card-inputs").hide();
-        $(".paypal-btn").fadeIn(700);
+        $(".cc-form").hide();
+        $(".paypal-payment").fadeIn(700);
         $("#paypal").addClass("checked");
         $("#cards").removeClass('checked');
       });
       $("#cards").click(function() {
-        $(".card-inputs").fadeIn(700);
-        $(".paypal-btn").hide();
+        $(".cc-form").fadeIn(700);
+        $(".paypal-payment").hide();
         $("#cards").addClass("checked");
         $("#paypal").removeClass('checked');
       });
