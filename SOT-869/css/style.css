@@ -393,6 +393,15 @@ header .call {
 	color: #424242;
   font-size: 16px;
 	line-height: 1.25;
+	-webkit-transition: all 500ms;
+	-moz-transition: all 500ms;
+	transition: all 500ms;
+}
+
+.right-section .package .deal-label:hover {
+	-webkit-box-shadow: 0 0 5px 0 rgba(50, 61, 67, 0.5) inset;
+	-moz-box-shadow: 0 0 5px 0 rgba(50, 61, 67, 0.5) inset;
+	box-shadow: 0 0 5px 0 rgba(50, 61, 67, 0.5) inset;
 }
 
 .right-section .package .deal-label .offer-label {
@@ -451,8 +460,8 @@ header .call {
 
 .right-section .package.special-deal .deal-label .deal-image {
 	position: absolute;
-	top: -2px;
-	left: -2px;
+	top: -1px;
+	left: -1px;
 	width: 55px;
 }
 
@@ -570,14 +579,38 @@ header .call {
 .paypal-payment .paypal-btn {
 	width: 100%;
   height: 70px;
+	outline: none;
 	border: 0;
 	border-radius: 5px;
+	-webkit-box-shadow: 0 -4px 0 #57992d inset;
+	-moz-box-shadow: 0 -4px 0 #57992d inset;
+	box-shadow: 0 -4px 0 #57992d inset;
 	background-color: #7bb33f;
   color: #fff;
   font-size: 22px;
   font-weight: 700;
   text-transform: uppercase;
 	text-decoration: none;
+}
+
+.cc-form .form-group .submit-cc-form:hover,
+.cc-form .form-group .submit-cc-form:focus,
+.paypal-payment .paypal-btn:hover,
+.paypal-payment .paypal-btn:focus {
+	background-color: #72b449;
+	-webkit-box-shadow: 0 -6px 0 #57992d inset;
+	-moz-box-shadow: 0 -6px 0 #57992d inset;
+	box-shadow: 0 -6px 0 #57992d inset;
+}
+
+.cc-form .form-group .submit-cc-form:active,
+.cc-form .form-group .submit-cc-form:active,
+.paypal-payment .paypal-btn:active,
+.paypal-payment .paypal-btn:active {
+	background-color: #68a342;
+	-webkit-box-shadow: 0 2px 0 #558c33 inset;
+	-moz-box-shadow: 0 2px 0 #558c33 inset;
+	box-shadow: 0 2px 0 #558c33 inset;
 }
 
 .paypal-payment {
@@ -601,47 +634,66 @@ header .call {
 
 /* footer */
 
-.txt {
-  background: #fff;
-  padding-bottom: 70px;
+footer {
+	padding: 15px;
+  background-color: #fff;
+  color: #646464;
 }
-.cc {
+
+footer .support-headline {
+	margin: 40px 0 60px;
   color: #464646;
   font-size: 18px;
   font-weight: 700;
   text-align: center;
-  padding-top: 60px;
-  padding-bottom: 20px;
 }
-.cc span {
+
+footer .support-headline .highlight {
+	display: block;
   color: #0072bc;
 }
-.disclamer {
+
+footer .disclamer {
   color: #646464;
   text-align: center;
 }
-.disclamer a {
+
+footer .disclamer a {
   text-decoration: underline;
   color: #646464;
 }
-footer {
-  height: 100px;
-  border-top: solid 1px #dcdcdc;
-  background: #fff;
-  color: #646464;
-  font-size: 14px;
-  padding-top: 15px;
+
+footer .legal {
+	padding-top: 15px;
+	margin-top: 20px;
+	border-top: solid 1px #dcdcdc;
 }
-footer .links {
-  text-align: right;
+
+footer .legal .copyright {
+	margin-bottom: 5px;
+	text-align: center;
 }
-footer .links a {
+
+footer .legal .links {
+  text-align: center;;
+}
+
+footer .legal .links a {
   color: #646464;
   margin-left: 2px;
   margin-right: 2px;
 }
 
-/* Responsive Fixes */
+@media (min-width: 480px) {
+
+  footer .legal .copyright {
+		text-align: left;
+	}
+
+	footer .legal .links {
+		text-align: right;
+	}
+}
 
 
 /* Medium Screens */
