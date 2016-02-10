@@ -147,7 +147,7 @@ header .header-cta {
   margin-top: 8px;
   margin-left: 15px;
 	float: left;
-	background: url(../images/ok.png) no-repeat 0 0;
+	background: url(../img/ok.png) no-repeat 0 0;
 }
 
 .teaser .user-meta {
@@ -179,7 +179,7 @@ header .header-cta {
   height: 20px;
 	margin: 0;
 	margin-left: 10px;
-  background: url(../images/ok.png) no-repeat 0px 0px;
+  background: url(../img/ok.png) no-repeat 0px 0px;
 }
 
 @media (min-width: 480px) and (max-width: 768px) {
@@ -328,7 +328,7 @@ header .header-cta {
   height: 26px;
 	margin-right: 10px;
 	float: left;
-  background: url(../images/cart.png) no-repeat 0px 0px;
+  background: url(../img/cart.png) no-repeat 0px 0px;
 }
 
 .order-summary .divider-headline {
@@ -643,6 +643,7 @@ header .header-cta {
 
 	.package .deal-label .price-label {
 		bottom: 30px;
+		right: 20px;
 		font-size: 24px;
 	}
 
@@ -696,11 +697,11 @@ header .header-cta {
 	margin: 0;
 	margin-right: 15px;
 	float: left;
-  background: url(../images/check-checked.png) no-repeat;
+  background: url(../img/check-checked.png) no-repeat;
 }
 
 .payments-switch .payment-option.checked .check-icon {
-  background: url(../images/check.png) no-repeat;
+  background: url(../img/check.png) no-repeat;
 }
 
 .payments-switch .payment-option .img-responsive {
@@ -744,6 +745,10 @@ header .header-cta {
   border: 0;
 }
 
+.payment-form .form-group {
+	margin-bottom: 20px;
+}
+
 .payment-form .form-group label {
   color: #333333;
   font-weight: 700;
@@ -757,8 +762,23 @@ header .header-cta {
   cursor: pointer;
 }
 
+.payment-form .form-group .error {
+	position: absolute;
+	right: 20px;
+  color: #F57777;
+  font-size: 11px;
+	text-align: right;
+}
+
+.payment-form .form-group .success.label-success {
+	position: absolute;
+	top: 2px;
+  right: 18px;
+	background: transparent;
+}
+
 .payment-form .form-group .cvv {
-  background-image: url(../images/ccv.png);
+  background-image: url(../img/ccv.png);
   background-repeat: no-repeat;
   background-position: 98% 6px;
 }
