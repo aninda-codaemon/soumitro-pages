@@ -44,10 +44,10 @@
                 <p class="user-info">
                   {{#if age}}{{age}} years old{{/if}} {{#if place}} from {{place}}{{/if}}
                 </p>
-                <div class="user-records">
+                <div class="user-records" data-fr-bind="extraTeaserData">
                   <span class="records-label">
                       Criminal Records Found
-                      <span class="records-count">3</span>
+                      <span class="records-count">{{criminalRecordsCount}}</span>
                   </span>
                   <span class="check-icon"></span>
                 </div>
@@ -62,27 +62,31 @@
             <div class="row">
               <div class="col-sm-6 col-md-6 searches">
                 <ul class="user-meta">
+                  {{#if place}}
                   <li class="user-meta-item">
-                    <strong>Past Locations: </strong> Baltimore, MD
-                    <a href="#">+ 1 more</a>
+                    <strong>Past Locations: </strong> {{place}}
+                    <a href="#" class="scroll-to-subscribe">+ {{placesCount}} more</a>
                   </li>
+                  {{/if}}
+                  {{#if relatives}}
                   <li class="user-meta-item">
-                    <strong>Relatives: </strong> Joe Rivera
-                    <a href="#">+ 4 more</a>
+                    <strong>Relatives: </strong> {{relative}}
+                    <a href="#" class="scroll-to-subscribe">+ 4 more</a>
                   </li>
+                  {{/if}}
                   <li class="user-meta-item">
                     <strong>Phone Numbers: </strong> 201-xxx-xxxx
-                    <a href="#">+ 2 more</a>
+                    <a href="#" class="scroll-to-subscribe">+ 2 more</a>
                   </li>
                   <li class="user-meta-item">
                     <strong>Emails: </strong> xxxxxx@gmail.com
-                    <a href="#">+ 3 more</a>
+                    <a href="#" class="scroll-to-subscribe">+ 3 more</a>
                   </li>
                   <li class="user-meta-item">
                     <strong>Social Profiles:</strong>
-                    <a href="#"><img src="images/fb.png" alt="" /> </a>
-                    <a href="#"><img src="images/twitter.png" alt="" /></a>
-                    <a href="#">+ 1 more</a>
+                    <a href="#" class="scroll-to-subscribe"><img src="images/fb.png" alt="" /> </a>
+                    <a href="#" class="scroll-to-subscribe"><img src="images/twitter.png" alt="" /></a>
+                    <a href="#" class="scroll-to-subscribe">+ 1 more</a>
                   </li>
                 </ul>
               </div>
@@ -92,27 +96,27 @@
                 <ul class="user-meta">
                   <li class="user-meta-item">
                     <strong>Felonies: </strong>
-                    <a href="#">Searched</a>
+                    <a href="#" class="scroll-to-subscribe">Searched</a>
                     <i class="check-icon"></i>
                   </li>
                   <li class="user-meta-item">
                     <strong>Relatives: </strong>
-                    <a href="#">Searched</a>
+                    <a href="#" class="scroll-to-subscribe">Searched</a>
                     <i class="check-icon"></i>
                   </li>
                   <li class="user-meta-item">
                     <strong>Arrest Records: </strong>
-                    <a href="#">Searched</a>
+                    <a href="#" class="scroll-to-subscribe">Searched</a>
                     <i class="check-icon"></i>
                   </li>
                   <li class="user-meta-item">
                     <strong>Sex Offenders: </strong>
-                    <a href="#">Searched</a>
+                    <a href="#" class="scroll-to-subscribe">Searched</a>
                     <i class="check-icon"></i>
                   </li>
                   <li class="user-meta-item">
                     <strong>Traffic Offenses and More: </strong>
-                    <a href="#">Searched</a>
+                    <a href="#" class="scroll-to-subscribe">Searched</a>
                     <i class="check-icon"></i>
                   </li>
                 </ul>
@@ -272,7 +276,7 @@
       </div>
       <!-- End left-section    col-md-5 -->
 
-      <div class="col-sm-12 col-md-7 right-section">
+      <div class="col-sm-12 col-md-7 right-section" id="subscribe">
 
         <h4 class="step-heading">Step 1: Select Your Package</h4>
 
@@ -467,6 +471,17 @@
         slideMove: 1,
         easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
         speed: 600
+      });
+    });
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      $('.scroll-to-subscribe').click(function(event) {
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: $('#subscribe').offset().top
+        }, 500);
       });
     });
   </script>

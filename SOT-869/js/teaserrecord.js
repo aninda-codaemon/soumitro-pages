@@ -165,13 +165,34 @@
       }, this).uniq().value();
     };
 
+    TeaserRecord.prototype.placesCount = function() {
+      var addresses = this.addresses();
+
+      if (addresses && addresses.length !== 0) {
+        return addresses.length;
+      } else {
+        return '';
+      }
+    };
+
     TeaserRecord.prototype.places = function() {
       return this.addresses();
     };
 
     TeaserRecord.prototype.place = function() {
       var addresses = this.addresses();
-      return (addresses && addresses.length !== 0) ? addresses[0] : '';
+
+      if (addresses && addresses.length !== 0) {
+        // @TODO: make a loop that returns an address that exists
+        if (addresses[0]) {
+          return addresses[0]
+        } else {
+          return addresses[1]
+        }
+      } else {
+        return '';
+      }
+      //return (addresses && addresses.length !== 0) ? addresses[0] : '';
     };
 
     TeaserRecord.prototype.hasAddresses = function() {
@@ -180,6 +201,18 @@
 
     TeaserRecord.prototype.hasPhone = function() {
       return true;
+    };
+
+    TeaserRecord.prototype.criminalRecordsCount = function() {
+      var criminalRecords;
+      if (this.record["hasCriminal"] === false) {
+        return [];
+      } else {
+        criminalRecords = this.record["extraData"];
+        console.log(criminalRecords);
+        console.log(this.record);
+        //return criminalRecords[0].count;
+      }
     };
 
     TeaserRecord.prototype.test = function() {
