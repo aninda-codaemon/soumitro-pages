@@ -794,9 +794,13 @@ header .header-cta {
 
 .payment-form .form-group .success.label-success {
 	position: absolute;
-	top: 2px;
+	top: 27px;
   right: 18px;
 	background: transparent;
+}
+
+.payment-form .form-group .cc-expiration .success.label-success {
+	top: 2px;
 }
 
 .payment-form .form-group .cvv {

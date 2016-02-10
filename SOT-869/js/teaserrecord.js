@@ -224,8 +224,8 @@
         return [];
       } else {
         criminalRecords = this.record["extraData"];
-        console.log(criminalRecords);
         console.log(this.record);
+        console.log(criminalRecords);
         //return criminalRecords[0].count;
       }
     };
