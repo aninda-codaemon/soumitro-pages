@@ -724,6 +724,17 @@ header .header-cta {
 	}
 }
 
+@media (min-width: 768px) {
+
+	.payments-switch .payment-option  {
+		width: auto;
+	}
+
+	.payments-switch .payment-option#paypal {
+		margin-left: 30px;
+	}
+}
+
 /* right-section cc form */
 
 .right-section .cc-form,

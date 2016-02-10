@@ -150,6 +150,21 @@
       }).uniq().value();
     };
 
+    TeaserRecord.prototype.relative = function() {
+      var relatives = this.relatives();
+
+      if (relatives && relatives.length !== 0) {
+        // @TODO: make a loop that returns a relative once it is found
+        if (relatives[0]) {
+          return relatives[0]
+        } else {
+          return relatives[1]
+        }
+      } else {
+        return '';
+      }
+    };
+
     TeaserRecord.prototype.addresses = function() {
       var addresses;
       if (this.record["Addresses"] === void 0) {
@@ -183,7 +198,7 @@
       var addresses = this.addresses();
 
       if (addresses && addresses.length !== 0) {
-        // @TODO: make a loop that returns an address that exists
+        // @TODO: make a loop that returns an address once it is found
         if (addresses[0]) {
           return addresses[0]
         } else {
