@@ -752,6 +752,10 @@ header .header-cta {
   font-weight: 400;
 }
 
+.cc-form .form-group label .cvv-tip {
+  cursor: pointer;
+}
+
 .cc-form .form-group .cvv {
   background-image: url(../images/ccv.png);
   background-repeat: no-repeat;

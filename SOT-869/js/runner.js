@@ -17,7 +17,7 @@
   };
 
   /* Initialize cvv popover for Bootstrap 3 */
-  $('.cvv-img').popover({
+  $('.cvv-tip').popover({
       container: 'body',
       trigger: 'hover focus',
       placement:'auto',
@@ -28,7 +28,7 @@
       }
   });
   /* Initialize security popover for Bootstrap 3 */
-  $('#secure-lock').popover({
+  $('.secure').popover({
       container: 'body',
       trigger: 'hover focus',
       placement:'auto',
@@ -36,9 +36,6 @@
       content: function () {
           return '<p><span class="glyphicon glyphicon-lock"></span> BeenVerified deploys the latest and greatest strategies, including Secure 256-bit SSL technology, to keep your personal information and payment data safe from unauthorized 3rd parties.</p>';
       }
-  });
-  $('#secure-text').on('hover' , function () {
-    $('#secure-lock').popover('toggle');
   });
 
   var $selectionWrap = $('.selection-wrap');
@@ -65,7 +62,7 @@
     $summaryMonthPriceHTML.html(monthlyPrice);
     $typeHTML.html(type);
     $summaryTermHTML.html(termLength);
-    
+
     $selectionWrap.removeClass('selection-selected');
     $selectionSelected.addClass('selection-selected');
   };
@@ -130,13 +127,13 @@
         $(this).replaceWith(video);
     });
   };
-  
+
   var reportHeap = function (evt, opt) {
     if (typeof window.heap !== "undefined" && heap.track) {
       heap.track(evt, opt);
     }
-  };  
-  
+  };
+
   var $bounceBackBtn = $('#iModal-back'),
       $bounceExitBtn = $('#iModal-exit'),
       $goToNextPage  = $('#show-dollar-trial'),
@@ -148,7 +145,7 @@
     trackNL('onBack Modal - Rejected');
     //window.location.href = $("body").data("search-page");
   };
-  
+
   var bounceExit = function () {
     $iOSModal.modal('hide');
     window.setTimeout(function () {
@@ -159,14 +156,14 @@
   $bounceBackBtn.on('click' , bounceBack);
   $bounceExitBtn.on('click' , bounceExit);
   $goToNextPage.on('click', function () {
-    trackNL('onBack Modal - Accepted');    
+    trackNL('onBack Modal - Accepted');
     window.location.href = $("body").data("next-page");
   });
 
   $iModalX.on('click', function() {
     trackNL('onBack Modal - Exited');
   });
-  
+
 
   var initDownsells = function () {
 
@@ -185,7 +182,7 @@
       }
     };
 
-    var vwoIntervalId, 
+    var vwoIntervalId,
         vwoExists = typeof _vwo_code !== "undefined" && typeof _vwo_code.finished === 'function';
 
     if (vwoExists) {
