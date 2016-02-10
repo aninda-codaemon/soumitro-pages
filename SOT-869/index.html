@@ -175,7 +175,10 @@
         <!-- End Users Comments -->
 
         <div class="order-summary" data-fr-bind="currentRecord">
-          <h4 class="headline"><i class="cart-icon"></i> Your Order Summary:</h4> {{#if fullName}}
+          <h4 class="headline"><i class="cart-icon"></i> Your Order Summary:</h4>
+
+          {{#if fullName}}
+
           <strong class="divider-headline">Background Report on:</strong>
 
           <h4 class="data-headline">{{fullName}}</h4>
@@ -184,7 +187,9 @@
             <span class="right-label included-label">Included</span>
           </p>
 
-          <hr class="divider" /> {{/if}}
+          <hr class="divider" />
+
+          {{/if}}
 
           <strong class="divider-headline">Membership Plan:</strong>
 
@@ -227,6 +232,7 @@
               </span>
             </strong>
           </p>
+          
           {{/if}}
 
           <hr class="divider divider-total">
@@ -290,6 +296,7 @@
           <div class="package first-deal">
             <input type="radio" class="deal-radio" id="22_1_month_nofree_afill_no_bjl" name="subscription_plan_name" value="<%= subscription_1 %>" checked />
             <label class="deal-label" for="22_1_month_nofree_afill_no_bjl">
+              <span class="radio-custom"></span>
               <span class="offer-label">1 Month of Unlimited Reports</span>
               <span class="price-label" data-plan-price="22.86" data-term-length="1 Month" data-monthly-price="22.86" data-plan-type="month">$22.86 <strong>/mo</strong></span>
             </label>
@@ -298,6 +305,7 @@
           <div class="package">
             <input type="radio" class="deal-radio" id="44_58_3_months_nofree_affil" name="subscription_plan_name" value="<%= subscription_2 %>" />
             <label class="deal-label" for="44_58_3_months_nofree_affil">
+              <span class="radio-custom"></span>
               <span class="offer-label">3 Months of Unlimited Reports</span>
               <span class="discount-label">35% <strong>off</strong></span>
               <span class="price-label" data-plan-price="44.58" data-term-length="3 Months" data-monthly-price="14.88" data-plan-type="3 months">$14.88 <strong>/mo</strong> <small>($44.62 Today)</small></span>
@@ -307,6 +315,7 @@
           <div class="package special-deal">
             <input type="radio" class="deal-radio" id="58_98_6_month_nofree_affil" name="subscription_plan_name" value="<%= subscription_3 %>" />
             <label class="deal-label" for="58_98_6_month_nofree_affil">
+              <span class="radio-custom"></span>
               <img class="deal-image" src="img/deal.png" />
               <span class="offer-label">6 Months of Unlimited Reports</span>
               <span class="discount-label">35% <strong>off</strong></span>
@@ -318,12 +327,23 @@
 
           <div class="payments-switch">
             <p class="payments-cta">Choose Your Payment Method</p>
-            <div id="cards" class="payment-option checked">
-              <i class="check-icon"></i><img class="img-responsive cards" src="img/cards.png" alt="" />
+
+            <div id="credit-radio" class="payment-option">
+              <input type="radio" class="payment-radio" id="credit" name="payment_method" value="credit_card" checked>
+              <label for="credit">
+                <span class="radio-custom"></span>
+                <img class="img-responsive cards" src="img/cards.png" alt="" />
+              </label>
             </div>
-            <div id="paypal" class="payment-option">
-              <i class="check-icon"></i><img class="img-responsive paypal" src="img/paypal.png" alt="" />
+
+            <div id="paypal-radio" class="payment-option">
+              <input type="radio" class="payment-radio" id="paypal" name="payment_method" value="paypal">
+              <label for="paypal">
+                <span class="radio-custom"></span>
+                <img class="img-responsive paypal" src="img/paypal.png" alt="" />
+              </label>
             </div>
+
             <img class="secure" src="img/norton.png" alt="" />
           </div>
 
@@ -431,10 +451,6 @@
 
               <div class="col-xs-12 form-group cc-inputs">
                 <button type="submit" id="create_button" class="submit-cc-form">View Report</button>
-              </div>
-
-              <div class="col-xs-12 paypal-payment">
-                <a class="paypal-btn" href="#">Go to Paypal</a>
               </div>
 
             </div>
@@ -612,6 +628,7 @@
       });
     });
   </script>
+
   <script>
     $(document).ready(function() {
       $('.scroll-to-subscribe').click(function(event) {
@@ -619,23 +636,6 @@
         $('html, body').animate({
           scrollTop: $('#subscribe').offset().top
         }, 500);
-      });
-    });
-  </script>
-  <script>
-    // show hide paypal and cards inputs
-    $(document).ready(function() {
-      $('#paypal').click(function() {
-        $('.cc-inputs').hide();
-        $('.paypal-payment').fadeIn(500);
-        $('#paypal').addClass('checked');
-        $('#cards').removeClass('checked');
-      });
-      $('#cards').click(function() {
-        $('.cc-inputs').fadeIn(500);
-        $('.paypal-payment').hide();
-        $('#cards').addClass('checked');
-        $('#paypal').removeClass('checked');
       });
     });
   </script>

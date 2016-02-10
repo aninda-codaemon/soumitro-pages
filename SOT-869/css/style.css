@@ -13,8 +13,29 @@ body {
 	background: #fff;
 }
 
+/* form elements */
+
+.radio-custom {
+	width: 25px;
+	height: 30px;
+	cursor: pointer;
+	background: url('../img/check-checked.png') no-repeat;
+}
+
+input[type="radio"]:checked + label .radio-custom {
+	background: url('../img/check.png') no-repeat;
+}
+
+/* helpers */
+
 .success-text {
   color: #7bb33f !important;
+}
+
+.gray-bar {
+  display: none;
+  height: 90px;
+	background-color: #ebebeb;
 }
 
 .divider {
@@ -25,12 +46,6 @@ body {
 
 .divider.divider-total {
 	border: solid 2px #d4d4d3;
-}
-
-.gray-bar {
-  display: none;
-  height: 90px;
-	background-color: #ebebeb;
 }
 
 @media (min-width: 992px) {
@@ -527,6 +542,7 @@ header .header-cta {
 }
 
 .package .deal-radio {
+	display: none;
   position: absolute;
 	top: 50%;
 	left: 20px;
@@ -555,6 +571,13 @@ header .header-cta {
 	-webkit-box-shadow: 0 0 5px 0 rgba(50, 61, 67, 0.5) inset;
 	-moz-box-shadow: 0 0 5px 0 rgba(50, 61, 67, 0.5) inset;
 	box-shadow: 0 0 5px 0 rgba(50, 61, 67, 0.5) inset;
+}
+
+.package .deal-label .radio-custom {
+	position: absolute;
+	top: 50%;
+	left: 15px;
+	transform: translateY(-50%);
 }
 
 .package .deal-label .offer-label {
@@ -603,7 +626,7 @@ header .header-cta {
 }
 
 .package.first-deal .deal-label {
-  background-color: #7bb33f;
+  background-color: #8FC346;
   color: #fff;
 }
 
@@ -684,29 +707,28 @@ header .header-cta {
 }
 
 .payments-switch .payment-option {
+	position: relative;
 	display: inline-block;
 	width: 100%;
   margin-bottom: 10px;
 	cursor: pointer;
 }
 
-.payments-switch .payment-option .check-icon {
-	display: inline-block;
-	width: 25px;
-  height: 31px;
-	margin: 0;
-	margin-right: 15px;
-	float: left;
-  background: url(../img/check-checked.png) no-repeat;
+.payments-switch .payment-option .payment-radio {
+	display: none;
 }
 
-.payments-switch .payment-option.checked .check-icon {
-  background: url(../img/check.png) no-repeat;
+.payments-switch .payment-option .radio-custom {
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .payments-switch .payment-option .img-responsive {
   display: inline-block;
+	margin-left: 35px;
   float: left;
+	cursor: pointer;
 }
 
 .payments-switch .secure {
@@ -732,8 +754,8 @@ header .header-cta {
 		width: auto;
 	}
 
-	.payments-switch .payment-option#paypal {
-		margin-left: 30px;
+	.payments-switch .payment-option#paypal-radio {
+		margin-left: 20px;
 	}
 }
 
@@ -803,8 +825,7 @@ header .header-cta {
   margin: 0;
 }
 
-.payment-form .form-group .submit-cc-form,
-.paypal-payment .paypal-btn {
+.payment-form .form-group .submit-cc-form {
 	width: 100%;
   height: 70px;
 	outline: none;
@@ -822,9 +843,7 @@ header .header-cta {
 }
 
 .payment-form .form-group .submit-cc-form:hover,
-.payment-form .form-group .submit-cc-form:focus,
-.paypal-payment .paypal-btn:hover,
-.paypal-payment .paypal-btn:focus {
+.payment-form .form-group .submit-cc-form:focus, {
 	background-color: #72b449;
 	-webkit-box-shadow: 0 -6px 0 #57992d inset;
 	-moz-box-shadow: 0 -6px 0 #57992d inset;
@@ -832,24 +851,11 @@ header .header-cta {
 }
 
 .payment-form .form-group .submit-cc-form:active,
-.payment-form .form-group .submit-cc-form:active,
-.paypal-payment .paypal-btn:active,
-.paypal-payment .paypal-btn:active {
+.payment-form .form-group .submit-cc-form:active {
 	background-color: #68a342;
 	-webkit-box-shadow: 0 2px 0 #558c33 inset;
 	-moz-box-shadow: 0 2px 0 #558c33 inset;
 	box-shadow: 0 2px 0 #558c33 inset;
-}
-
-.right-section .paypal-payment {
-  display: none;
-	border: 0;
-}
-
-.paypal-payment .paypal-btn {
-  display: block;
-	text-align: center;
-	line-height: 3.25;
 }
 
 @media (min-width: 480px) {
