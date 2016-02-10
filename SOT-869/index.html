@@ -67,8 +67,7 @@
                     <strong>Past Locations: </strong> {{place}}
                     <a href="#" class="scroll-to-subscribe">+ {{placesCount}} more</a>
                   </li>
-                  {{/if}}
-                  {{#if relatives}}
+                  {{/if}} {{#if relatives}}
                   <li class="user-meta-item">
                     <strong>Relatives: </strong> {{relative}}
                     <a href="#" class="scroll-to-subscribe">+ 4 more</a>
@@ -176,17 +175,16 @@
         <!-- End Users Comments -->
 
         <div class="order-summary" data-fr-bind="currentRecord">
-          <h4 class="headline"><i class="cart-icon"></i> Your Order Summary:</h4>
-
+          <h4 class="headline"><i class="cart-icon"></i> Your Order Summary:</h4> {{#if fullName}}
           <strong class="divider-headline">Background Report on:</strong>
 
-          <h4 class="data-headline">James Rivera</h4>
+          <h4 class="data-headline">{{fullName}}</h4>
           <p class="data-details">
-            24 years old, from Centerton, AR
+            {{#if age}}{{age}} years old{{/if}}{{#if place}}, from {{place}}{{/if}}
             <span class="right-label included-label">Included</span>
           </p>
 
-          <hr class="divider" />
+          <hr class="divider" /> {{/if}}
 
           <strong class="divider-headline">Membership Plan:</strong>
 
@@ -214,6 +212,8 @@
             <span class="right-label included-label">Included</span>
           </p>
 
+          {{#if fullName}}
+
           <hr class="divider" />
 
           <h4 class="data-headline">Alert Me Addon Feature</h4>
@@ -221,12 +221,13 @@
           <p class="data-details">
             Receive notifications for updates on
             <strong class="data-name">
-              James Rivera
+              {{fullName}}
               <span class="right-label">
                 <span class="success-text">FREE</span> for today!
               </span>
             </strong>
           </p>
+          {{/if}}
 
           <hr class="divider divider-total">
 
@@ -280,131 +281,145 @@
 
         <h4 class="step-heading">Step 1: Select Your Package</h4>
 
-        <div class="package first-deal">
-          <input type="radio" class="deal-radio" id="deal1" name="deal" value="" checked />
-          <label class="deal-label" for="deal1">
-            <span class="offer-label">1 Month of Unlimited Reports</span>
-            <span class="price-label">$22.86 <strong>/mo</strong></span>
-          </label>
-        </div>
+        <form class="subscribe-form" id="subscribe_form" action="/accounts" method="post" data-fr-bind="leadData currentRecord" data-sub-ignore-messages="false" data-sub-ignore-success="false" data-sub-success-class="input-success" data-sub-success-image="img/checked.gif"
+        data-sub-error-class="input-error">
 
-        <div class="package">
-          <input type="radio" class="deal-radio" id="deal2" name="deal" value="" />
-          <label class="deal-label" for="deal2">
-            <span class="offer-label">3 Months of Unlimited Reports</span>
-            <span class="discount-label">35% <strong>off</strong></span>
-            <span class="price-label">$14.88 <strong>/mo</strong> <small>($44.62 Today)</small></span>
-          </label>
-        </div>
+          <input id="promotion" name="promotion" type="hidden" value="view_report_trial">
+          <input name="authenticity_token" type="hidden" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=">
 
-        <div class="package special-deal">
-          <input type="radio" class="deal-radio" id="deal3" name="deal" value="" />
-          <label class="deal-label" for="deal3">
-            <img class="deal-image" src="images/deal.png" />
-            <span class="offer-label">6 Months of Unlimited Reports</span>
-            <span class="discount-label">35% <strong>off</strong></span>
-            <span class="price-label">$9.94 <strong>/mo</strong> <small>($59.62 Today)</small></span>
-          </label>
-        </div>
-
-        <h4 class="step-heading">Step 2: Payment Information</h4>
-
-        <div class="payments-switch">
-          <p class="payments-cta">Choose Your Payment Method</p>
-          <div id="cards" class="payment-option checked">
-            <i class="check-icon"></i><img class="img-responsive cards" src="images/cards.png" alt="" />
+          <div class="package first-deal">
+            <input type="radio" class="deal-radio" id="deal1" name="deal" value="" checked />
+            <label class="deal-label" for="deal1">
+              <span class="offer-label">1 Month of Unlimited Reports</span>
+              <span class="price-label">$22.86 <strong>/mo</strong></span>
+            </label>
           </div>
-          <div id="paypal" class="payment-option">
-            <i class="check-icon"></i><img class="img-responsive paypal" src="images/paypal.png" alt="" />
+
+          <div class="package">
+            <input type="radio" class="deal-radio" id="deal2" name="deal" value="" />
+            <label class="deal-label" for="deal2">
+              <span class="offer-label">3 Months of Unlimited Reports</span>
+              <span class="discount-label">35% <strong>off</strong></span>
+              <span class="price-label">$14.88 <strong>/mo</strong> <small>($44.62 Today)</small></span>
+            </label>
           </div>
-          <img class="secure" src="images/norton.png" alt="" />
-        </div>
 
-        <form class="cc-form">
-          <div class="row">
+          <div class="package special-deal">
+            <input type="radio" class="deal-radio" id="deal3" name="deal" value="" />
+            <label class="deal-label" for="deal3">
+              <img class="deal-image" src="images/deal.png" />
+              <span class="offer-label">6 Months of Unlimited Reports</span>
+              <span class="discount-label">35% <strong>off</strong></span>
+              <span class="price-label">$9.94 <strong>/mo</strong> <small>($59.62 Today)</small></span>
+            </label>
+          </div>
 
-            <div class="col-sm-6 form-group">
-              <label>First Name</label>
-              <input class="form-control" type="text" name="first-name" placeholder="John" />
+          <h4 class="step-heading">Step 2: Payment Information</h4>
+
+          <div class="payments-switch">
+            <p class="payments-cta">Choose Your Payment Method</p>
+            <div id="cards" class="payment-option checked">
+              <i class="check-icon"></i><img class="img-responsive cards" src="images/cards.png" alt="" />
             </div>
-            <div class="col-sm-6 form-group">
-              <label>Last Name</label>
-              <input class="form-control" type="text" name="last-name" placeholder="Doe" />
+            <div id="paypal" class="payment-option">
+              <i class="check-icon"></i><img class="img-responsive paypal" src="images/paypal.png" alt="" />
             </div>
+            <img class="secure" src="images/norton.png" alt="" />
+          </div>
 
-            <div class="col-sm-6 form-group">
-              <label>Card Number</label>
-              <input class="form-control" type="text" name="cc-number" placeholder="Card Number" />
-            </div>
+          <div class="payment-form">
+            <div class="row">
 
-            <div class="col-sm-6 form-group">
-              <label>Expiration</label>
-              <div class="clearfix"></div>
+              <div class="col-sm-6 form-group">
+                <label>First Name</label>
+                <input class="form-control" type="text" name="first-name" placeholder="John" />
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>Last Name</label>
+                <input class="form-control" type="text" name="last-name" placeholder="Doe" />
+              </div>
 
-              <div class="row">
-                <div class="col-xs-6">
-                  <select class="form-control" name="cc-expiration-month">
-                    <option value="">Month</option>
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                  </select>
+              <div class="cc-inputs">
+
+                <div class="col-sm-6 form-group">
+                  <label>Card Number</label>
+                  <input class="form-control" type="text" name="cc-number" placeholder="Card Number" />
                 </div>
-                <div class="col-xs-6">
-                  <select class="form-control" name="cc-expiration-year">
-                    <option value="">Year</option>
-                  </select>
+
+                <div class="col-sm-6 form-group">
+                  <label>Expiration</label>
+                  <div class="clearfix"></div>
+
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <select class="form-control" name="cc-expiration-month">
+                        <option value="">Month</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                      </select>
+                    </div>
+                    <div class="col-xs-6">
+                      <select class="form-control" name="cc-expiration-year">
+                        <option value="">Year</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 form-group">
+                  <label>CVV <small class="cvv-tip">(What is this?)</small></label>
+                  <input class="form-control cvv" type="text" name="cvv" placeholder="CVV" />
+                </div>
+
+                <div class="col-sm-6 form-group">
+                  <label>Zip Code</label>
+                  <input class="form-control" type="text" name="zipcode" placeholder="123456" />
+                </div>
+
+              </div>
+              <!-- End cc-inputs -->
+
+              <div class="col-xs-12 form-group">
+                <label>Confirm Your Email Below <small>(You will receive an invoice to this email)</small></label>
+                <input class="form-control" type="email" name="email" placeholder="johndoe@gmail.com" />
+              </div>
+
+              <div class="col-xs-12 form-group">
+                <label>Agree To Our Terms of Service</label>
+                <div class="agreement-container">
+                  <input type="checkbox" class="checkbox" name="tos" value="tos-agree" />
+                  <p class="agreement">By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="#">Terms of Service, Member Agreement and Privacy Policy</a>. You agree to be billed $44.62 every 3 months until this subscription
+                    is canceled. You can cancel your membership at any time by contacting customer service at <a href="#">1-888-579-5910</a> or emailing <a href="#">support@beenverified.com</a>. You also agree that you will NOT use any information about
+                    an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance; or for any other purpose prohibited
+                    by our <a href="#">Terms of Service</a>.</p>
+                  <div class="clearfix"></div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-sm-6 form-group">
-              <label>CVV <small class="cvv-tip">(What is this?)</small></label>
-              <input class="form-control cvv" type="text" name="cvv" placeholder="CVV" />
-            </div>
-
-            <div class="col-sm-6 form-group">
-              <label>Zip Code</label>
-              <input class="form-control" type="text" name="zipcode" placeholder="123456" />
-            </div>
-
-            <div class="col-xs-12 form-group">
-              <label>Confirm Your Email Below <small>(You will receive an invoice to this email)</small></label>
-              <input class="form-control" type="email" name="email" placeholder="johndoe@gmail.com" />
-            </div>
-
-            <div class="col-xs-12 form-group">
-              <label>Agree To Our Terms of Service</label>
-              <div class="agreement-container">
-                <input type="checkbox" class="checkbox" name="tos" value="tos-agree" />
-                <p class="agreement">By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="#">Terms of Service, Member Agreement and Privacy Policy</a>. You agree to be billed $44.62 every 3 months until this subscription is canceled. You can cancel your membership at any time by contacting customer service at <a href="#">1-888-579-5910</a> or emailing <a href="#">support@beenverified.com</a>. You also agree that you will NOT use any information about an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance; or for any other purpose prohibited by our <a href="#">Terms of Service</a>.</p>
-                <div class="clearfix"></div>
+              <div class="col-xs-12 form-group cc-inputs">
+                <input type="submit" class="submit-cc-form" name="submit-cc-form" value="View Report" />
               </div>
-            </div>
 
-            <div class="col-xs-12 form-group">
-              <input type="submit" class="submit-cc-form" name="submit-cc-form" value="View Report" />
-            </div>
+              <div class="col-xs-12 paypal-payment">
+                <a class="paypal-btn" href="#">Go to paypal</a>
+              </div>
 
+            </div>
           </div>
+          <!-- End payment-form -->
+
         </form>
-        <!-- End cc-form -->
-
-        <div class="row paypal-payment">
-          <div class="col-xs-12">
-            <a class="paypal-btn" href="#">Go to paypal</a>
-          </div>
-        </div>
-        <!-- End Paypal button -->
+        <!-- End subscribe-form -->
 
       </div>
       <!-- End right-section     col-md-7  -->
@@ -422,17 +437,19 @@
       <span class="highlight">Live Customer Care Hours:</span> M-F 8am - 9pm ET and Weekends 12pm - 8pm ET
     </h4>
 
-    <p class="disclamer">Disclaimer: BeenVerified’s mission is to give people easy and affordable access to public record information. BeenVerified does not provide private investigator services, and is not a consumer reporting agency as defined by the <a href="//www.beenverified.com/dos-donts" rel="nofollow" target="_blank">Fair Credit Report Act</a> because the information provided by BeenVerified is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses
-      of BeenVerified, please review our <a href="//www.beenverified.com/dos-donts" target="_blank" rel="nofollow">&ldquo;Do&rsquo;s &amp; Don&rsquo;ts&rdquo;</a> and our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank" rel="nofollow">Terms &amp; Conditions.</a></p>
+    <p class="disclamer">Disclaimer: BeenVerified’s mission is to give people easy and affordable access to public record information. BeenVerified does not provide private investigator services, and is not a consumer reporting agency as defined by the <a href="//www.beenverified.com/dos-donts"
+      rel="nofollow" target="_blank">Fair Credit Report Act</a> because the information provided by BeenVerified is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information
+      governing the permitted and prohibited uses of BeenVerified, please review our <a href="//www.beenverified.com/dos-donts" target="_blank" rel="nofollow">&ldquo;Do&rsquo;s &amp; Don&rsquo;ts&rdquo;</a> and our <a href="//www.beenverified.com/consumer-terms-of-service"
+      target="_blank" rel="nofollow">Terms &amp; Conditions.</a></p>
 
     <div class="row legal">
       <div class="container">
-      <div class="col-sm-6">
-        <p class="copyright">BeenVerified © 2015</p>
-      </div>
-      <div class="col-sm-6 links">
-        <a href="//www.beenverified.com/privacy" target="_blank">Privacy</a> . <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms</a> . <a href="#">Sitemap</a>
-      </div>
+        <div class="col-sm-6">
+          <p class="copyright">BeenVerified © <span class="current-year">2016</span></p>
+        </div>
+        <div class="col-sm-6 links">
+          <a href="//www.beenverified.com/privacy" target="_blank">Privacy</a> . <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms</a> . <a href="#">Sitemap</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -491,13 +508,13 @@
     // show hide paypal and cards inputs
     $(document).ready(function() {
       $("#paypal").click(function() {
-        $(".cc-form").hide();
-        $(".paypal-payment").fadeIn(700);
+        $(".cc-inputs").hide();
+        $(".paypal-payment").fadeIn(500);
         $("#paypal").addClass("checked");
         $("#cards").removeClass('checked');
       });
       $("#cards").click(function() {
-        $(".cc-form").fadeIn(700);
+        $(".cc-inputs").fadeIn(500);
         $(".paypal-payment").hide();
         $("#cards").addClass("checked");
         $("#paypal").removeClass('checked');

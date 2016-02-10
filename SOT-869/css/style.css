@@ -714,6 +714,7 @@ header .header-cta {
   right: 0;
   width: 80px;
   margin: 15px;
+	cursor: pointer;
 }
 
 @media (min-width: 480px) {
@@ -737,26 +738,26 @@ header .header-cta {
 
 /* right-section cc form */
 
-.right-section .cc-form,
+.right-section .payment-form,
 .right-section .paypal-payment {
 	padding: 15px;
   border: 0;
 }
 
-.cc-form .form-group label {
+.payment-form .form-group label {
   color: #333333;
   font-weight: 700;
 }
 
-.cc-form .form-group label small {
+.payment-form .form-group label small {
   font-weight: 400;
 }
 
-.cc-form .form-group label .cvv-tip {
+.payment-form .form-group label .cvv-tip {
   cursor: pointer;
 }
 
-.cc-form .form-group .cvv {
+.payment-form .form-group .cvv {
   background-image: url(../images/ccv.png);
   background-repeat: no-repeat;
   background-position: 98% 6px;
@@ -782,7 +783,7 @@ header .header-cta {
   margin: 0;
 }
 
-.cc-form .form-group .submit-cc-form,
+.payment-form .form-group .submit-cc-form,
 .paypal-payment .paypal-btn {
 	width: 100%;
   height: 70px;
@@ -800,8 +801,8 @@ header .header-cta {
 	text-decoration: none;
 }
 
-.cc-form .form-group .submit-cc-form:hover,
-.cc-form .form-group .submit-cc-form:focus,
+.payment-form .form-group .submit-cc-form:hover,
+.payment-form .form-group .submit-cc-form:focus,
 .paypal-payment .paypal-btn:hover,
 .paypal-payment .paypal-btn:focus {
 	background-color: #72b449;
@@ -810,8 +811,8 @@ header .header-cta {
 	box-shadow: 0 -6px 0 #57992d inset;
 }
 
-.cc-form .form-group .submit-cc-form:active,
-.cc-form .form-group .submit-cc-form:active,
+.payment-form .form-group .submit-cc-form:active,
+.payment-form .form-group .submit-cc-form:active,
 .paypal-payment .paypal-btn:active,
 .paypal-payment .paypal-btn:active {
 	background-color: #68a342;
@@ -822,26 +823,19 @@ header .header-cta {
 
 .right-section .paypal-payment {
   display: none;
+	border: 0;
 }
 
 .paypal-payment .paypal-btn {
   display: block;
-	margin-bottom: 15px;
 	text-align: center;
 	line-height: 3.25;
 }
 
 @media (min-width: 480px) {
-	.right-section .cc-form,
-	.right-section .paypal-payment {
+	.right-section .payment-form {
 		border: solid 2px #323d43;
 		border-top: 0;
-	}
-
-	.right-section .paypal-payment {
-		margin: 0;
-		padding-left: 0;
-		padding-right: 0;
 	}
 }
 

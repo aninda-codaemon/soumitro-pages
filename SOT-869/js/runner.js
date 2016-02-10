@@ -77,27 +77,6 @@
 
   $selectionWrap.on('click', highlightSelection);
 
-  // Secure Credit Card lock animation
-  var $secureLockIcon = $('#secure-lock'),
-    $ccInput = $('#credit_card_card_number'),
-    $secureText = $('#secure-text');
-
-  // $secureText.hide();
-
-  $ccInput.on('focus', function() {
-    $secureLockIcon.addClass('secure-this');
-    $secureText.fadeIn();
-  });
-
-  $ccInput.on('change blur', function() {
-    var ccInputLength = $ccInput.val().length;
-
-    if (!ccInputLength) {
-      $secureText.hide();
-      $secureLockIcon.removeClass('secure-this');
-    }
-  });
-
   /* Set current year inside footer */
   ;
   (function($) {
@@ -108,25 +87,11 @@
     $currentYear.html(currentYear);
   }(jQuery));
 
-  // Clicking Credit Card logo will focus on input field
-  var $ccAccept = $('.cc-accept');
-
-  $ccAccept.on('click', function() {
-    $ccInput.focus();
-  });
-
   var verifySeal = function() {
-    $(".verify-seal").on("click", function() {
+    $('.secure').on('click', function() {
       var left = ($(window).width() / 2) - (900 / 2),
         top = ($(window).height() / 2) - (600 / 2),
         popup = window.open("https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&dn=www.beenverified.com&lang=en", "popup", "width=900, height=600, top=" + top + ", left=" + left);
-    });
-  };
-
-  var playVideo = function() {
-    $('#youtube').click(function() {
-      var video = '<iframe src="' + $(this).attr('data-video') + '"></iframe>';
-      $(this).replaceWith(video);
     });
   };
 
@@ -208,7 +173,6 @@
 
   var initialize = function() {
     verifySeal();
-    playVideo();
     setLastVisit();
 
     var selectedPlan = $(".selection-selected");
