@@ -374,9 +374,9 @@ header .header-cta {
 	.order-summary {
 		margin: 15px auto;
     border-radius: 4px;
-		-webkit-box-shadow: 0 0 4px 0 rgba(50, 61, 67, 0.5);
-		-moz-box-shadow: 0 0 4px 0 rgba(50, 61, 67, 0.5);
-		box-shadow: 0 0 4px 0 rgba(50, 61, 67, 0.5);
+		-webkit-box-shadow: 0 0 4px 0 rgba(50, 61, 67, 0.25);
+		-moz-box-shadow: 0 0 4px 0 rgba(50, 61, 67, 0.25);
+		box-shadow: 0 0 4px 0 rgba(50, 61, 67, 0.25);
 	}
 }
 
@@ -514,7 +514,7 @@ header .header-cta {
 @media (min-width: 480px) {
 
 	.right-section {
-	  padding: 35px 15px;
+	  padding: 45px 15px;
 	}
 }
 
