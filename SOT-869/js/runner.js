@@ -39,12 +39,12 @@
     }
   });
 
-  var $selectionWrap = $('.selection-wrap');
+  var $selectionWrap = $('.package');
 
   // Update terms & conditions based on selected plan
   var updatePlanLegal = function($selectionSelected) {
 
-    var $planPrice = $selectionSelected.find(".plan-price");
+    var $planPrice = $selectionSelected.find(".price-label");
 
     var totalPrice = $planPrice.data('plan-price'),
       type = $planPrice.data('plan-type'),
@@ -64,14 +64,14 @@
     $typeHTML.html(type);
     $summaryTermHTML.html(termLength);
 
-    $selectionWrap.removeClass('selection-selected');
-    $selectionSelected.addClass('selection-selected');
+    $selectionWrap.removeClass('package-selected');
+    $selectionSelected.addClass('package-selected');
   };
 
   var highlightSelection = function() {
-    $selectionWrap.removeClass('selection-selected');
-    $(this).addClass('selection-selected');
-    $(this).find("input[type=radio].plan_name_radio").prop("checked", true);
+    $selectionWrap.removeClass('package-selected');
+    $(this).addClass('package-selected');
+    $(this).find("input[type=radio].deal-radio").prop("checked", true);
     updatePlanLegal($(this));
   };
 
@@ -175,7 +175,7 @@
     verifySeal();
     setLastVisit();
 
-    var selectedPlan = $(".selection-selected");
+    var selectedPlan = $(".package-selected");
     updatePlanLegal(selectedPlan);
 
     initDownsells();

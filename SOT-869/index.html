@@ -19,7 +19,6 @@
 </head>
 
 <!-- update data-search-page attr with correct url -->
-
 <body data-next-page="<%= next_page %>" data-search-page="//www.beenverified.com/lp/c3a349/4/search-results">
 
   <header class="container">
@@ -34,10 +33,12 @@
         <div class="row">
           <div class="col-md-5">
             <div class="row">
+
               <div class="col-sm-5 col-md-4">
                 <img class="user-image" src="img/user.jpg" alt="" />
               </div>
-              <!-- end col-sm-4 -->
+              <!-- end col-sm-5 -->
+
               {{#if fullName}}
               <div class="col-sm-7 col-md-8">
                 <h4 class="user-name">{{fullName}}</h4>
@@ -54,8 +55,9 @@
                 </div>
                 {{/if}}
               </div>
-              <!-- end col-sm-8 -->
+              <!-- end col-sm-7 -->
               {{/if}}
+
             </div>
           </div>
           <!-- end col-md-5 -->
@@ -64,31 +66,50 @@
             <div class="row">
               <div class="col-sm-6 col-md-6 searches">
                 <ul class="user-meta">
+
                   {{#if place}}
                   <li class="user-meta-item">
                     <strong>Past Locations: </strong> {{place}}
-                    <a href="#" class="scroll-to-subscribe">+ {{placesCount}} more</a>
-                  </li>
-                  {{/if}} {{#if relatives}}
-                  <li class="user-meta-item">
-                    <strong>Relatives: </strong> {{relative}}
-                    <a href="#" class="scroll-to-subscribe">+ 4 more</a>
+                    <a href="#" class="scroll-to-subscribe">+ {{placesCountTeaser}} more</a>
                   </li>
                   {{/if}}
+
+                  {{#if relatives}}
                   <li class="user-meta-item">
-                    <strong>Phone Numbers: </strong> 201-xxx-xxxx
-                    <a href="#" class="scroll-to-subscribe">+ 2 more</a>
+                    <strong>Relatives: </strong> {{relative}}
+                    <a href="#" class="scroll-to-subscribe">+ {{relativesCountTeaser}} more</a>
                   </li>
+                  {{/if}}
+
+                  {{#if phoneNumbers}}
                   <li class="user-meta-item">
-                    <strong>Emails: </strong> xxxxxx@gmail.com
-                    <a href="#" class="scroll-to-subscribe">+ 3 more</a>
+                    <strong>Phone Numbers: </strong> {{phoneNumber}}
+                    {{#if phoneNumbersCountTeaser}}
+                    <a href="#" class="scroll-to-subscribe">+ {{phoneNumbersCountTeaser}} more</a>
+                    {{/if}}
                   </li>
+                  {{/if}}
+
+                  {{#if emails}}
+                  <li class="user-meta-item">
+                    <strong>Emails: </strong> {{email}}
+                    {{#if emailsCountTeaser}}
+                    <a href="#" class="scroll-to-subscribe">+ {{emailsCountTeaser}} more</a>
+                    {{/if}}
+                  </li>
+                  {{/if}}
+
+                  {{#if socialProfiles}}
                   <li class="user-meta-item">
                     <strong>Social Profiles:</strong>
                     <a href="#" class="scroll-to-subscribe"><img src="img/fb.png" alt="" /> </a>
                     <a href="#" class="scroll-to-subscribe"><img src="img/twitter.png" alt="" /></a>
-                    <a href="#" class="scroll-to-subscribe">+ 1 more</a>
+                    {{#if socialProfilesCountTeaser}}
+                    <a href="#" class="scroll-to-subscribe">+ {{socialProfilesCountTeaser}} more</a>
+                    {{/if}}
                   </li>
+                  {{/if}}
+
                 </ul>
               </div>
               <!-- End col-md-6 -->
@@ -196,8 +217,8 @@
           <strong class="divider-headline">Membership Plan:</strong>
 
           <h4 class="data-headline">
-            1 Month of Unlimited Reports
-            <span class="right-label price-label">$22.86 /mo.</span>
+            <span id="summary-term"></span>
+            <span class="right-label price-label">$<span id="summary-month-price"></span> /mo.</span>
           </h4>
 
           <div class="clearfix"></div>
@@ -241,7 +262,7 @@
 
           <strong class="divider-headline total">
             Total Today:
-            <span class="right-label success-text">$22.86</span>
+            <span class="right-label success-text">$<span class="summary-total-price"></span></span>
           </strong>
         </div>
         <!-- End order-summary -->
@@ -295,12 +316,12 @@
           <input id="promotion" name="promotion" type="hidden" value="view_report_trial">
           <input name="authenticity_token" type="hidden" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=">
 
-          <div class="package first-deal">
+          <div class="package package-selected first-deal">
             <input type="radio" class="deal-radio" id="22_1_month_nofree_afill_no_bjl" name="subscription_plan_name" value="<%= subscription_1 %>" checked />
             <label class="deal-label" for="22_1_month_nofree_afill_no_bjl">
               <span class="radio-custom"></span>
               <span class="offer-label">1 Month of Unlimited Reports</span>
-              <span class="price-label" data-plan-price="22.86" data-term-length="1 Month" data-monthly-price="22.86" data-plan-type="month">$22.86 <strong>/mo</strong></span>
+              <span class="price-label" data-plan-price="22.86" data-term-length="1 Month of Unlimited Reports" data-monthly-price="22.86" data-plan-type="month">$22.86 <strong>/mo</strong></span>
             </label>
           </div>
 
@@ -310,7 +331,7 @@
               <span class="radio-custom"></span>
               <span class="offer-label">3 Months of Unlimited Reports</span>
               <span class="discount-label">35% <strong>off</strong></span>
-              <span class="price-label" data-plan-price="44.58" data-term-length="3 Months" data-monthly-price="14.88" data-plan-type="3 months">$14.88 <strong>/mo</strong> <small>($44.62 Today)</small></span>
+              <span class="price-label" data-plan-price="44.58" data-term-length="3 Months of Unlimited Reports" data-monthly-price="14.88" data-plan-type="3 months">$14.88 <strong>/mo</strong> <small>($44.62 Today)</small></span>
             </label>
           </div>
 
@@ -321,7 +342,7 @@
               <img class="deal-image" src="img/deal.png" />
               <span class="offer-label">6 Months of Unlimited Reports</span>
               <span class="discount-label">35% <strong>off</strong></span>
-              <span class="price-label" data-plan-price="58.98" data-term-length="6 Months" data-monthly-price="9.83" data-plan-type="6 months">$9.94 <strong>/mo</strong> <small>($59.62 Today)</small></span>
+              <span class="price-label" data-plan-price="58.98" data-term-length="6 Months of Unlimited Reports" data-monthly-price="9.83" data-plan-type="6 months">$9.94 <strong>/mo</strong> <small>($59.62 Today)</small></span>
             </label>
           </div>
 
@@ -435,7 +456,7 @@
                 <label>Agree To Our Terms of Service</label>
                 <div class="agreement-container">
                   <input type="checkbox" class="checkbox" id="account_tos" name="account[tos]" value="1" />
-                  <p class="agreement">By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="#">Terms of Service, Member Agreement and Privacy Policy</a>. You agree to be billed $44.62 every 3 months until this subscription
+                  <p class="agreement">By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="#">Terms of Service, Member Agreement and Privacy Policy</a>. You agree to be billed $<span class="legal-price"></span> every <span id="legal-type"></span> until this subscription
                     is canceled. You can cancel your membership at any time by contacting customer service at <a href="#">1-888-579-5910</a> or emailing <a href="#">support@beenverified.com</a>. You also agree that you will NOT use any information about
                     an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance; or for any other purpose prohibited
                     by our <a href="#">Terms of Service</a>.</p>

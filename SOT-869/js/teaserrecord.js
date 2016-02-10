@@ -165,6 +165,17 @@
       }
     };
 
+    TeaserRecord.prototype.relativesCountTeaser = function() {
+      var relatives = this.relatives();
+
+      if (relatives && relatives.length !== 0) {
+        // the - 1 on the count is because one relative is already shown on the page
+        return relatives.length -1;
+      } else {
+        return '';
+      }
+    };
+
     TeaserRecord.prototype.addresses = function() {
       var addresses;
       if (this.record["Addresses"] === void 0) {
@@ -180,11 +191,12 @@
       }, this).uniq().value();
     };
 
-    TeaserRecord.prototype.placesCount = function() {
+    TeaserRecord.prototype.placesCountTeaser = function() {
       var addresses = this.addresses();
 
       if (addresses && addresses.length !== 0) {
-        return addresses.length;
+        // the - 1 on the count is because one place is already shown on the page
+        return addresses.length - 1;
       } else {
         return '';
       }
@@ -218,6 +230,105 @@
       return true;
     };
 
+    TeaserRecord.prototype.phoneNumbers = function() {
+      var phoneNumbers;
+      if (this.record["hasPhone"] === false) {
+        return [];
+      } else {
+        phoneNumbers = this.record["extraData"];
+        return phoneNumbers[2];
+      }
+    };
+
+    TeaserRecord.prototype.phoneNumber = function() {
+      var phoneNumbers = this.phoneNumbers();
+
+      if (phoneNumbers && phoneNumbers.length !== 0) {
+        // @TODO: make a loop that returns a phone number once it is found
+        if (phoneNumbers.phoneNumber[0]) {
+          return phoneNumbers.phoneNumber[0]
+        } else {
+          return phoneNumbers.phoneNumber[1]
+        }
+      } else {
+        return '';
+      }
+    };
+
+    TeaserRecord.prototype.phoneNumbersCountTeaser = function() {
+      var phoneNumbers = this.phoneNumbers();
+      if (phoneNumbers.count <= 1) {
+        return false;
+      } else {
+        return phoneNumbers.count -1;
+      }
+    };
+
+    TeaserRecord.prototype.emails = function() {
+      var emails;
+      if (this.record["hasEmail"] === false) {
+        return [];
+      } else {
+        emails = this.record["extraData"];
+        return emails[1];
+      }
+    };
+
+    TeaserRecord.prototype.email = function() {
+      var emails = this.emails();
+
+      if (emails && emails.length !== 0) {
+        // @TODO: make a loop that returns a email once it is found
+        if (emails.emailAddress[0]) {
+          return emails.emailAddress[0]
+        } else {
+          return emails.emailAddress[1]
+        }
+      } else {
+        return '';
+      }
+    };
+
+    TeaserRecord.prototype.emailsCountTeaser = function() {
+      var emails = this.emails();
+      if (emails.count <= 1) {
+        return false;
+      } else {
+        return emails.count -1;
+      }
+    };
+
+    TeaserRecord.prototype.socialProfiles = function() {
+      var socialProfiles;
+      if (this.record["hasSocial"] === false) {
+        return [];
+      } else {
+        socialProfiles = this.record["extraData"];
+        return socialProfiles[4];
+      }
+    };
+
+    // @TODO: social profile when data is available
+    TeaserRecord.prototype.socialProfile = function() {
+      var socialProfiles = this.socialProfiles();
+
+      if (socialProfiles && socialProfiles.length !== 0) {
+        // @TODO: make a loop that returns a social profile once it is found
+
+      } else {
+        return '';
+      }
+    };
+
+    TeaserRecord.prototype.socialProfilesCountTeaser = function() {
+      var socialProfiles = this.socialProfiles();
+      if (socialProfiles.count <= 2) {
+        return false;
+      } else {
+        return socialProfiles.count -2;
+      }
+    };
+
     TeaserRecord.prototype.criminalRecords = function() {
       var criminalRecords;
       if (this.record["hasCriminal"] === false) {
@@ -230,7 +341,11 @@
 
     TeaserRecord.prototype.criminalRecordsCount = function() {
       var criminalRecords = this.criminalRecords();
-      return criminalRecords.count;
+      if (criminalRecords.count <= 1) {
+        return false;
+      } else {
+        return criminalRecords.count -1;
+      }
     };
 
     TeaserRecord.prototype.test = function() {
