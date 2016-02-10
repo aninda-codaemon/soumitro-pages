@@ -218,16 +218,19 @@
       return true;
     };
 
-    TeaserRecord.prototype.criminalRecordsCount = function() {
+    TeaserRecord.prototype.criminalRecords = function() {
       var criminalRecords;
       if (this.record["hasCriminal"] === false) {
         return [];
       } else {
         criminalRecords = this.record["extraData"];
-        console.log(this.record);
-        console.log(criminalRecords);
-        //return criminalRecords[0].count;
+        return criminalRecords[0];
       }
+    };
+
+    TeaserRecord.prototype.criminalRecordsCount = function() {
+      var criminalRecords = this.criminalRecords();
+      return criminalRecords.count;
     };
 
     TeaserRecord.prototype.test = function() {

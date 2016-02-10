@@ -982,8 +982,7 @@ var BVGetQueryVariable = function(variable) {
       w.BvValidateSubForm.disableAllValidation();
       w.BvValidateSubForm.enablePaypalValidation();
       paymentProcessor = new PaypalPaymentProcessor();
-      $('.cc-wrapper').slideUp();
-      $('#reports-anonymous').slideUp();
+      $('.cc-wrapper').hide();
       $('#create_button').html('Proceed to PayPal');
     });
 
@@ -992,8 +991,7 @@ var BVGetQueryVariable = function(variable) {
       $(this).find('input[type=radio]').prop('checked', true);
       w.BvValidateSubForm.enableAllValidation();
       paymentProcessor = new VerifiPaymentProcessor();
-      $('.cc-wrapper').slideDown();
-      $('#reports-anonymous').slideDown();
+      $('.cc-wrapper').fadeIn(500);
       $('#create_button').html(originalButtonText);
     });
 

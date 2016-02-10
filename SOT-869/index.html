@@ -28,7 +28,7 @@
   </header>
 
   <div class="container">
-    <div class="row" data-fr-bind="currentRecord">
+    <div class="row" data-fr-bind="currentRecord extraTeaserData">
       <div class="col-xs-12 teaser">
         <h1 class="headline">Your full Report Is Ready, activate your account below</h1>
         <div class="row">
@@ -44,13 +44,15 @@
                 <p class="user-info">
                   {{#if age}}{{age}} years old{{/if}} {{#if place}} from {{place}}{{/if}}
                 </p>
-                <div class="user-records" data-fr-bind="extraTeaserData">
+                {{#if criminalRecords}}
+                <div class="user-records">
                   <span class="records-label">
                       Criminal Records Found
                       <span class="records-count">{{criminalRecordsCount}}</span>
                   </span>
                   <span class="check-icon"></span>
                 </div>
+                {{/if}}
               </div>
               <!-- end col-sm-8 -->
               {{/if}}
@@ -360,7 +362,7 @@
                 <input type="text" class="form-control inspectletIgnore" id="account_last_name" name="account[last_name]" value="{{account[last_name]}}" placeholder="Doe" />
               </div>
 
-              <div class="cc-inputs">
+              <div class="cc-wrapper">
 
                 <div class="col-sm-6 form-group">
                   <label for="credit_card_card_number">Card Number</label>
