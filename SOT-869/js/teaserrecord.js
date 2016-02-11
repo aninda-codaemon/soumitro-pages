@@ -154,12 +154,12 @@
       var relatives = this.relatives();
 
       if (relatives && relatives.length !== 0) {
-        // @TODO: make a loop that returns a relative once it is found
-        if (relatives[0]) {
-          return relatives[0]
-        } else {
-          return relatives[1]
+        var index = 0;
+        // loops through array until one is found to prevent returning an undefined object
+        while (relatives[index] === undefined) {
+          index++
         }
+        return relatives[index];
       } else {
         return '';
       }
@@ -210,16 +210,14 @@
       var addresses = this.addresses();
 
       if (addresses && addresses.length !== 0) {
-        // @TODO: make a loop that returns an address once it is found
-        if (addresses[0]) {
-          return addresses[0]
-        } else {
-          return addresses[1]
+        var index = 0;
+        while (addresses[index] === undefined) {
+          index++
         }
+        return addresses[index];
       } else {
         return '';
       }
-      //return (addresses && addresses.length !== 0) ? addresses[0] : '';
     };
 
     TeaserRecord.prototype.hasAddresses = function() {
@@ -244,12 +242,11 @@
       var phoneNumbers = this.phoneNumbers();
 
       if (phoneNumbers && phoneNumbers.length !== 0) {
-        // @TODO: make a loop that returns a phone number once it is found
-        if (phoneNumbers.phoneNumber[0]) {
-          return phoneNumbers.phoneNumber[0]
-        } else {
-          return phoneNumbers.phoneNumber[1]
+        var index = 0;
+        while (phoneNumbers.phoneNumber[index] === undefined) {
+          index++
         }
+        return phoneNumbers.phoneNumber[index];
       } else {
         return '';
       }
@@ -278,12 +275,11 @@
       var emails = this.emails();
 
       if (emails && emails.length !== 0) {
-        // @TODO: make a loop that returns a email once it is found
-        if (emails.emailAddress[0]) {
-          return emails.emailAddress[0]
-        } else {
-          return emails.emailAddress[1]
+        var index = 0;
+        while (emails.emailAddress[index] === undefined) {
+          index++
         }
+        return emails.emailAddress[index];
       } else {
         return '';
       }

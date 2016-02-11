@@ -757,6 +757,13 @@ header .header-cta {
 	.payments-switch .payment-option#paypal-radio {
 		margin-left: 20px;
 	}
+
+	.payments-switch .secure {
+    top: 50%;
+		bottom: auto;
+    transform: translateY(-50%);
+		margin: 0 20px;
+	}
 }
 
 /* right-section cc form */
