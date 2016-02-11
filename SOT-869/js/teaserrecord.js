@@ -229,12 +229,13 @@
     };
 
     TeaserRecord.prototype.phoneNumbers = function() {
-      var phoneNumbers;
       if (this.record["hasPhone"] === false) {
         return [];
       } else {
-        phoneNumbers = this.record["extraData"];
-        return phoneNumbers[2];
+        var extraData = this.record["extraData"],
+            phoneNumbers = _.find(extraData, { 'type': 'phones' });
+
+        return phoneNumbers;
       }
     };
 
@@ -262,12 +263,13 @@
     };
 
     TeaserRecord.prototype.emails = function() {
-      var emails;
       if (this.record["hasEmail"] === false) {
         return [];
       } else {
-        emails = this.record["extraData"];
-        return emails[1];
+        var extraData = this.record["extraData"],
+            emails = _.find(extraData, { 'type': 'emails' });
+
+        return emails;
       }
     };
 
@@ -295,12 +297,13 @@
     };
 
     TeaserRecord.prototype.socialProfiles = function() {
-      var socialProfiles;
       if (this.record["hasSocial"] === false) {
         return [];
       } else {
-        socialProfiles = this.record["extraData"];
-        return socialProfiles[4];
+        var extraData = this.record["extraData"],
+            socialProfiles = _.find(extraData, { 'type': 'social' });
+
+        return socialProfiles;
       }
     };
 
@@ -318,20 +321,21 @@
 
     TeaserRecord.prototype.socialProfilesCountTeaser = function() {
       var socialProfiles = this.socialProfiles();
-      if (socialProfiles.count <= 2) {
+      if (socialProfiles.socialNetwork.count <= 2) {
         return false;
       } else {
-        return socialProfiles.count -2;
+        return socialProfiles.socialNetwork.count -2;
       }
     };
 
     TeaserRecord.prototype.criminalRecords = function() {
-      var criminalRecords;
       if (this.record["hasCriminal"] === false) {
         return [];
       } else {
-        criminalRecords = this.record["extraData"];
-        return criminalRecords[0];
+        var extraData = this.record["extraData"],
+            criminalRecords = _.find(extraData, { 'type': 'criminal' });
+
+        return criminalRecords;
       }
     };
 
