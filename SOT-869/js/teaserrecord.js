@@ -344,6 +344,15 @@
       }
     };
 
+    TeaserRecord.prototype.photo = function() {
+      var photo = this.record["photo"];
+      if (photo === "") {
+        return [];
+      } else {
+        return photo;
+      }
+    };
+
     TeaserRecord.prototype.test = function() {
       return this.record;
     };

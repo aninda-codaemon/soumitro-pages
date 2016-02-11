@@ -35,7 +35,12 @@
             <div class="row">
 
               <div class="col-sm-5 col-md-4">
-                <img class="user-image" src="img/user.jpg" alt="" />
+                {{#if photo}}
+                <!-- @TODO: fetch the image src with js -->
+                <img class="user-image" src="" alt="" />
+                {{else}}
+                <img class="user-image" src="img/user.png" alt="" />
+                {{/if}}
               </div>
               <!-- end col-sm-5 -->
 
@@ -167,7 +172,7 @@
           <li class="comment-content">
             <p class="comment">“I used BeenVerified to run a background check, just to be on the safe side. It helped give me peace of mind and confirmed that he wasn't hiding anything from me.”</p>
             <div class="comment-author">
-              <img class="user-image" src="img/user.jpg" alt="" />
+              <img class="user-image" src="img/user.png" alt="" />
               <span class="user-info">
                 <strong>Jennifer W</strong> - Misuori
               </span>
@@ -177,7 +182,7 @@
           <li class="comment-content">
             <p class="comment">“I used BeenVerified to run a background check, just to be on the safe side. It helped give me peace of mind and confirmed that he wasn't hiding anything from me.”</p>
             <div class="comment-author">
-              <img class="user-image" src="img/user.jpg" alt="" />
+              <img class="user-image" src="img/user.png" alt="" />
               <span class="user-info">
                 <strong>Jennifer W</strong> - Misuori
               </span>
@@ -187,7 +192,7 @@
           <li class="comment-content">
             <p class="comment">“I used BeenVerified to run a background check, just to be on the safe side. It helped give me peace of mind and confirmed that he wasn't hiding anything from me.”</p>
             <div class="comment-author">
-              <img class="user-image" src="img/user.jpg" alt="" />
+              <img class="user-image" src="img/user.png" alt="" />
               <span class="user-info">
                 <strong>Jennifer W</strong> - Misuori
               </span>
