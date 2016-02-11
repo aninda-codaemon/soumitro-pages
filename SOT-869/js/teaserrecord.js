@@ -307,13 +307,12 @@
       }
     };
 
-    // @TODO: social profile when data is available
-    TeaserRecord.prototype.socialProfile = function() {
+    TeaserRecord.prototype.socialProfileIcons = function() {
       var socialProfiles = this.socialProfiles();
 
       if (socialProfiles && socialProfiles.length !== 0) {
-        // @TODO: make a loop that returns a social profile once it is found
-
+        // @TODO: make a loop that returns two social profiles once found
+        
       } else {
         return '';
       }
@@ -321,10 +320,10 @@
 
     TeaserRecord.prototype.socialProfilesCountTeaser = function() {
       var socialProfiles = this.socialProfiles();
-      if (socialProfiles.socialNetwork.count <= 2) {
+      if (socialProfiles.socialNetwork.length <= 2) {
         return false;
       } else {
-        return socialProfiles.socialNetwork.count -2;
+        return socialProfiles.socialNetwork.length -2;
       }
     };
 
