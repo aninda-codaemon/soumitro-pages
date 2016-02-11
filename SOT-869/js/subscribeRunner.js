@@ -890,7 +890,7 @@ var BVGetQueryVariable = function(variable) {
       i = 0;
 
     if ((errors instanceof Array) == false) {
-      errors = ['Oops! Something went wrong. Please contact customer support at 1-888-579-5910 or try your payment again.'];
+      errors = ['Please contact customer support at 1-888-579-5910 or try your payment again.'];
     }
 
     errorLen = errors.length;

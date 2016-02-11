@@ -29,6 +29,7 @@
   $('#comments').lightSlider({
     item: 1,
     loop: true,
+    controls: false,
     slideMove: 1,
     easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
     speed: 600
