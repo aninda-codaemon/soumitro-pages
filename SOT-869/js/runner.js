@@ -17,7 +17,24 @@
     }
   };
 
-  /* Initialize cvv popover for Bootstrap 3 */
+  // teaser links event
+  $('.scroll-to-subscribe').click(function(event) {
+    event.preventDefault();
+    $('html, body').animate({
+      scrollTop: $('#subscribe').offset().top
+    }, 500);
+  });
+
+  // Initialize comments slider
+  $('#comments').lightSlider({
+    item: 1,
+    loop: true,
+    slideMove: 1,
+    easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+    speed: 600
+  });
+
+  // Initialize cvv popover for Bootstrap 3
   $('.cvv-tip').popover({
     container: 'body',
     trigger: 'hover focus',
@@ -28,7 +45,8 @@
       return '<p><strong>Visa, MasterCard, and Discover</strong></p><div class="row"><div class="col-xs-6"><img class="img-responsive" src="//manaron.s3.amazonaws.com/srg/hompage/web/img/cc-visa.png"></div><div class="col-xs-6 pop-text"><p><small><strong>Back of Card</strong><br>Three digits located on the right of the signature strip.</small></p></div></div><p><strong>American Express</strong></p><div class="row"><div class="col-xs-6"><img class="img-responsive" src="//manaron.s3.amazonaws.com/srg/hompage/web/img/cc-amex.png"></div><div class="col-xs-6 pop-text"><p><small><strong>Front of Card</strong><br>Four digits located on either the left or right side.</small></p></div>';
     }
   });
-  /* Initialize security popover for Bootstrap 3 */
+
+  // Initialize security popover for Bootstrap 3
   $('.secure').popover({
     container: 'body',
     trigger: 'hover focus',
@@ -44,7 +62,7 @@
   // Update terms & conditions based on selected plan
   var updatePlanLegal = function($selectionSelected) {
 
-    var $planPrice = $selectionSelected.find(".price-label");
+    var $planPrice = $selectionSelected.find('.price-label');
 
     var totalPrice = $planPrice.data('plan-price'),
       type = $planPrice.data('plan-type'),

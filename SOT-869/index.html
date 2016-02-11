@@ -642,32 +642,6 @@
   <script src="js/subscribeRunner.js"></script>
   <script src="js/runner.js"></script>
 
-
-  <!-- @TODO: move scripts into runner.js -->
-
-  <script>
-    $(document).ready(function() {
-      $('#comments').lightSlider({
-        item: 1,
-        loop: true,
-        slideMove: 1,
-        easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-        speed: 600
-      });
-    });
-  </script>
-
-  <script>
-    $(document).ready(function() {
-      $('.scroll-to-subscribe').click(function(event) {
-        event.preventDefault();
-        $('html, body').animate({
-          scrollTop: $('#subscribe').offset().top
-        }, 500);
-      });
-    });
-  </script>
-
 </body>
 
 </html>
