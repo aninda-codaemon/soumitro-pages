@@ -13,6 +13,18 @@ body {
 	background: #fff;
 }
 
+.headline {
+  color: #464646;
+  font-weight: 700;
+}
+
+@media (min-width: 992px) {
+
+	.container.main {
+		border-bottom: 90px solid #ebebeb;
+	}
+}
+
 /* form elements */
 
 .radio-custom {
@@ -157,12 +169,6 @@ input[type="radio"]:checked + label .radio-custom {
   color: #7bb33f !important;
 }
 
-.gray-bar {
-  display: none;
-  height: 90px;
-	background-color: #ebebeb;
-}
-
 .divider {
 	border-color: #d4d4d3;
   margin-top: 15px;
@@ -171,13 +177,6 @@ input[type="radio"]:checked + label .radio-custom {
 
 .divider.divider-total {
 	border: solid 2px #d4d4d3;
-}
-
-@media (min-width: 992px) {
-
-	.gray-bar {
-		display: block;
-	}
 }
 
 /* header */
@@ -226,6 +225,7 @@ header .header-cta {
 	margin-bottom: 20px;
 	padding-bottom: 20px;
   border-bottom: solid 1px #fff;
+	color: #fff;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -403,11 +403,6 @@ header .header-cta {
 	border-bottom: solid 90px #EBEBEB;
 }
 
-.left-section .headline {
-  color: #464646;
-  font-weight: 700;
-}
-
 @media (min-width: 992px) {
 	.left-section {
 		border: 0;
@@ -549,30 +544,10 @@ header .header-cta {
   color: #646464;
 }
 
-.featured-logos {
-	margin: 0 auto;
-}
-
-@media (min-width: 480px) {
-	.featured-logos {
-		width: 100%;
-	}
-}
-
 @media (min-width: 768px) {
 	.features .feature:first-child {
 		border-bottom: 0;
 	  border-right: solid 1px #ccc;
-	}
-
-	.featured-logos {
-		width: 75%;
-	}
-}
-
-@media (min-width: 992px) {
-	.featured-logos {
-		width: 100%;
 	}
 }
 
@@ -617,23 +592,19 @@ header .header-cta {
 
 @media (min-width: 992px) {
 
+	.runners-heading {
+		margin-top: 110px;
+    margin-bottom: -30px;
+		text-align: left;
+	}
+
 	.runners .runners-image {
-		bottom: -65px;
+		bottom: -75px;
 	}
 
 	.runners .runners-description {
-		margin: 60px 0;
+		margin: 90px 0 40px;
 	}
-
-	.runners-heading {
-		text-align: left;
-	}
-}
-
-@media (min-width: 1200px) {
-	.runners .runners-image {
-    bottom: -50px;
-  }
 }
 
 /* right-section */
@@ -1022,6 +993,11 @@ footer .support-headline .highlight {
   color: #0072bc;
 }
 
+footer .headline .featured-logos {
+	width: 100%;
+	margin: 5px auto 25px;
+}
+
 footer .disclamer {
 	max-width: 800px;
   margin: 0 auto;
@@ -1067,6 +1043,20 @@ footer .legal .links a {
 
 	footer .support-headline .highlight {
     display: inline-block;
+	}
+
+	footer .headline {
+		max-width: 800px;
+		margin: 10px auto;
+		text-align: center;
+	}
+
+	footer .headline .featured-logos {
+		display: inline;
+		width: auto;
+		margin: 0;
+		margin-left: 10px;
+		margin-bottom: 5px;
 	}
 
   footer .legal .copyright {
