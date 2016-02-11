@@ -857,15 +857,15 @@ var BVGetQueryVariable = function(variable) {
   var disableForm = function() {
     $('#create_button').attr('disabled', 'disabled');
     $('#create_button').hide();
-    $('#spinner').show();
-    $('#spinner').removeClass('hidden');
+    $('#loading').show();
+    $('#loading').removeClass('hidden');
     // $("#processing-payment").modal('show');
   };
 
   var enableForm = function() {
     $('#create_button').removeAttr('disabled');
     $('#create_button').show();
-    $('#spinner').hide();
+    $('#loading').hide();
   };
 
   var handleProcessingSuccess = function() {

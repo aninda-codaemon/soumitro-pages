@@ -163,6 +163,11 @@
   </div>
   <!-- End container -->
 
+  <div id="ppCanceled" class="container alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    Payment with PayPal Canceled.
+  </div>
+
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-5 left-section">
@@ -351,6 +356,14 @@
             </label>
           </div>
 
+          <div id="error_container" class="hidden">
+            <h4 class="step-heading">Something Went Wrong</h4>
+            <div class="error-details" id="errorExplanation">
+              <p><strong>There were problems with the following fields:</strong></p>
+              <ul id='messages'></ul>
+            </div>
+          </div>
+
           <h4 class="step-heading">Step 2: Payment Information</h4>
 
           <div class="payments-switch">
@@ -477,8 +490,11 @@
               <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
               <input id="tos2" name="tos2" type="hidden" value="1">
 
-              <div class="col-xs-12 form-group cc-inputs">
+              <div class="col-xs-12 form-group">
                 <button type="submit" id="create_button" class="submit-cc-form">View Report</button>
+                <div id="loading" class="hidden">
+                  <div class="loading-bar"></div>
+                </div>
               </div>
 
             </div>
