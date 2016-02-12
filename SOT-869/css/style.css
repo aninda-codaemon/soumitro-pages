@@ -179,6 +179,24 @@ input[type="radio"]:checked + label .radio-custom {
 	border: solid 2px #d4d4d3;
 }
 
+.break-xs {
+	display: block;
+}
+
+@media (max-width: 480px) {
+
+	.hidden-portrait {
+		display: none!important;
+	}
+}
+
+@media (min-width: 768px) {
+
+	.break-xs {
+		display: inline-block;
+	}
+}
+
 /* header */
 
 header {
@@ -221,7 +239,7 @@ header .header-cta {
 }
 
 .teaser .headline {
-	margin: 0;
+	margin: 0 auto;
 	margin-bottom: 20px;
 	padding-bottom: 20px;
   border-bottom: solid 1px #fff;
@@ -230,6 +248,10 @@ header .header-cta {
   font-weight: bold;
   text-align: center;
 	text-transform: uppercase;
+}
+
+.teaser .headline .break-xs {
+	font-size: 75%;
 }
 
 .teaser .user-image {
@@ -250,10 +272,11 @@ header .header-cta {
 }
 
 .teaser .user-records {
-	display: inline-block;
+	display: block;
 	position: relative;
 	width: 100%;
-	margin-bottom: 5px;
+	max-width: 265px;
+  margin: 0 auto;
 }
 
 .teaser .user-records .records-label {
@@ -291,8 +314,9 @@ header .header-cta {
 }
 
 .teaser .user-meta {
-  margin: 0;
+	margin: 0 auto;
 	padding: 0;
+	text-align: center;
 }
 
 .teaser .user-meta .user-meta-item {
@@ -322,6 +346,17 @@ header .header-cta {
   background: url(../img/ok.png) no-repeat 0px 0px;
 }
 
+@media (max-width: 480px) {
+
+	.teaser .user-image {
+		width: 100px;
+	}
+
+	.teaser .user-meta {
+		margin-top: 5px;
+	}
+}
+
 @media (min-width: 480px) and (max-width: 768px) {
 
 	.teaser .row .col-md-5 .row .col-sm-5 {
@@ -334,13 +369,23 @@ header .header-cta {
 		float: left;
 	}
 
-	.teaser .user-meta {
+	.teaser .user-details {
+		max-width: 450px;
 		margin: 0 auto;
-		max-width: 320px;
+	}
+
+	.teaser .user-meta {
+		margin-top: -15px;
 	}
 }
 
 @media (min-width: 480px) {
+
+	.teaser .user-records {
+		display: inline-block;
+		max-width: auto;
+		margin-bottom: 5px;
+	}
 
 	.teaser .row .col-md-5 .row .col-sm-7.col-md-8 {
 		padding: 0;
@@ -366,6 +411,14 @@ header .header-cta {
 
 	.teaser .headline {
 		font-size: 22px;
+	}
+
+	.teaser .headline .break-xs {
+		font-size: 100%;
+	}
+
+	.teaser .user-meta {
+		text-align: left;
 	}
 }
 

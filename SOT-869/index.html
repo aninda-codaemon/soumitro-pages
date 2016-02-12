@@ -29,17 +29,17 @@
   <div class="container">
     <div class="row" data-fr-bind="currentRecord extraTeaserData">
       <div class="col-xs-12 teaser">
-        <h1 class="headline">Your full Report Is Ready, activate your account below</h1>
+        <h1 class="headline">Your full Report Is Ready<span class="hidden-xs">,</span> <span class="break-xs">activate your account below</span></h1>
         <div class="row">
           <div class="col-md-5">
-            <div class="row">
+            <div class="row user-details">
 
               <div class="col-sm-5 col-md-4">
                 {{#if photo}}
                 <!-- @TODO: fetch the image src with js -->
                 <img class="user-image" src="" alt="" />
                 {{else}}
-                <img class="user-image hidden-xs" src="img/user.png" alt="" />
+                <img class="user-image hidden-portrait" src="img/user.png" alt="" />
                 {{/if}}
               </div>
               <!-- end col-sm-5 -->
@@ -67,7 +67,7 @@
           </div>
           <!-- end col-md-5 -->
 
-          <div class="col-md-7">
+          <div class="col-md-7 user-meta-list">
             <div class="row">
               <div class="col-sm-6 col-md-6 searches">
                 <ul class="user-meta">
