@@ -615,7 +615,7 @@ header .header-cta {
 
 @media (min-width: 768px) {
 	.features .feature:first-child {
-		border-bottom: 0;
+		display: block;
 	  border-right: solid 1px #ccc;
 	}
 }
@@ -623,11 +623,16 @@ header .header-cta {
 /* left-section runners */
 
 .runners-heading {
+	display: none;
 	margin-top: 50px;
 	margin-bottom: 0;
   color: #7bb33f;
   font-weight: 700;
 	text-align: center;
+}
+
+.runners {
+	display: none;
 }
 
 .runners .runners-image {
@@ -662,9 +667,14 @@ header .header-cta {
 @media (min-width: 992px) {
 
 	.runners-heading {
+		display: block;
 		margin-top: 110px;
     margin-bottom: -30px;
 		text-align: left;
+	}
+
+	.runners {
+		display: block;
 	}
 
 	.runners .runners-image {
