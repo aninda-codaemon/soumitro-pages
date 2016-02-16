@@ -509,6 +509,7 @@ header .header-cta {
 /* left-section order-summary */
 
 .order-summary {
+	display: none;
   margin: 15px -15px;
   padding: 30px 15px;
 	-webkit-box-shadow: 0 4px 4px -4px rgba(50, 61, 67, 0.5) inset, 0 -4px 4px -4px rgba(50, 61, 67, 0.5) inset;
@@ -581,6 +582,13 @@ header .header-cta {
 		-webkit-box-shadow: 0 0 4px 0 rgba(50, 61, 67, 0.25);
 		-moz-box-shadow: 0 0 4px 0 rgba(50, 61, 67, 0.25);
 		box-shadow: 0 0 4px 0 rgba(50, 61, 67, 0.25);
+	}
+}
+
+@media (min-width: 992px) {
+
+	.order-summary {
+		display: block;
 	}
 }
 

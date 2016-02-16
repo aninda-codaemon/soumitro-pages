@@ -500,6 +500,76 @@
         </form>
         <!-- End subscribe-form -->
 
+        <div class="order-summary mobile-order-summary hidden-md" data-fr-bind="currentRecord">
+          <h4 class="headline"><i class="cart-icon"></i> Your Order Summary:</h4>
+
+          {{#if fullName}}
+
+          <strong class="divider-headline">Background Report on:</strong>
+
+          <h4 class="data-headline">{{fullName}}</h4>
+          <p class="data-details">
+            {{#if age}}{{age}} years old{{/if}}{{#if place}}, from {{place}}{{/if}}
+            <span class="right-label included-label">Included</span>
+          </p>
+
+          <hr class="divider" />
+
+          {{/if}}
+
+          <strong class="divider-headline">Membership Plan:</strong>
+
+          <h4 class="data-headline">
+            <span id="summary-term"></span>
+            <span class="right-label price-label">$<span id="summary-month-price"></span> /mo.</span>
+          </h4>
+
+          <div class="clearfix"></div>
+
+          <p class="data-details">
+            Reverse Name Search
+            <span class="right-label included-label">Included</span>
+          </p>
+          <p class="data-details">
+            Reverse Phone Search
+            <span class="right-label included-label">Included</span>
+          </p>
+          <p class="data-details">
+            Reverse Email Search
+            <span class="right-label included-label">Included</span>
+          </p>
+          <p class="data-details">
+            Reverse Property Search
+            <span class="right-label included-label">Included</span>
+          </p>
+
+          {{#if fullName}}
+
+          <hr class="divider" />
+
+          <h4 class="data-headline">Alert Me Addon Feature</h4>
+
+          <p class="data-details">
+            Receive notifications for updates on
+            <strong class="data-name">
+              {{fullName}}
+              <span class="right-label">
+                <span class="success-text">FREE</span> for today!
+              </span>
+            </strong>
+          </p>
+
+          {{/if}}
+
+          <hr class="divider divider-total">
+
+          <strong class="divider-headline total">
+            Total Today:
+            <span class="right-label success-text">$<span class="summary-total-price"></span></span>
+          </strong>
+        </div>
+        <!-- End order-summary -->
+
       </div>
       <!-- End right-section     col-md-7  -->
 
