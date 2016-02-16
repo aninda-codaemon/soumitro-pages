@@ -595,7 +595,7 @@ header .header-cta {
 /* left-section features */
 
 .features {
-	margin-bottom: 30px;
+	margin: 0;
   padding: 15px;
 }
 
@@ -608,10 +608,6 @@ header .header-cta {
 	display: none;
 }
 
-.features .feature .feature-icon {
-	margin-top: 30px;
-}
-
 .features .feature .feature-headline {
   color: #7bb33f;
   font-weight: 700;
@@ -621,7 +617,15 @@ header .header-cta {
   color: #646464;
 }
 
+@media (min-width: 480px) {
+
+	.features .feature .feature-icon {
+		margin-top: 30px;
+	}
+}
+
 @media (min-width: 768px) {
+
 	.features .feature:first-child {
 		display: block;
 	  border-right: solid 1px #ccc;
@@ -738,12 +742,10 @@ header .header-cta {
 	width: 100%;
 	height: 140px;
 	margin: 0;
-	padding: 30px;
-	padding-left: 45px;
-	padding-right: 15px;
+	padding: 30px 0;
 	background-color: #f2f7eb;
 	color: #424242;
-  font-size: 16px;
+  font-size: 14px;
 	line-height: 1.25;
 	-webkit-transition: all 500ms;
 	-moz-transition: all 500ms;
@@ -759,7 +761,7 @@ header .header-cta {
 .package .deal-label .radio-custom {
 	position: absolute;
 	top: 50%;
-	left: 15px;
+	left: 10px;
 	transform: translateY(-50%);
 }
 
@@ -767,14 +769,16 @@ header .header-cta {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
+	width: 100%;
+  padding-right: 15px;
+  padding-left: 40px;
 }
 
 .package .deal-label .price-label {
-	position: absolute;
-  bottom: 15px;
-  right: 15px;
-  font-size: 20px;
-	font-weight: 700;
+	position: relative;
+	right: 0;
+	float: right;
+  text-align: right;
 }
 
 .package .deal-label .price-label strong {
@@ -784,8 +788,8 @@ header .header-cta {
 .package .deal-label .discount-label {
 	display: inline-block;
 	position: absolute;
-	top: 15px;
-	right: 15px;
+	top: 10px;
+	right: 10px;
 	padding: 5px;
 	border-radius: 3px;
 	background-color: #feb912;
@@ -802,7 +806,10 @@ header .header-cta {
 
 .package .deal-label .price-label small {
 	display: block;
-  margin-left: 10px;
+	position: absolute;
+	bottom: -15px;
+	right: 0;
+	width: 100px;
   color: #828282;
 	font-size: 10px;
   text-align: right;
@@ -837,20 +844,23 @@ header .header-cta {
 	}
 
 	.package .deal-label {
-		padding-left: 65px;
 		font-size: 18px;
 	}
 
+	.package .deal-label .radio-custom {
+		left: 15px;
+	}
+
+	.package .deal-label .offer-label {
+		padding-left: 50px;
+	}
+
 	.package .deal-label .discount-label {
-		top: 30px;
-		right: 20px;
     font-size: 20px;
 	}
 
 	.package .deal-label .price-label {
-		bottom: 30px;
-		right: 20px;
-		font-size: 24px;
+		font-size: 18px;
 	}
 
 	.package .deal-label .price-label strong {
@@ -859,12 +869,6 @@ header .header-cta {
 
 	.package .deal-label .price-label small {
 		font-size: 12px;
-	}
-
-	.package.first-deal .deal-label .price-label {
-		top: 50%;
-		bottom: auto;
-    transform: translateY(-50%);
 	}
 
 	.package.special-deal .deal-label .deal-image {
@@ -1003,12 +1007,14 @@ header .header-cta {
 	padding: 15px;
   border: solid 1px #ccc;
   border-radius: 5px;
+	background-color: #F7F6F4;
   color: #646464;
+	font-size: 11px;
 }
 
 .agreement-container .checkbox {
   display: inline-block;
-	margin: 4px 8px;
+	margin: 4px 12px;
 	margin-left: 0;
   float: left;
 	cursor: pointer;
@@ -1063,6 +1069,7 @@ header .header-cta {
 
 .mobile-order-summary {
 	display: block;
+	margin: 15px 0;
 }
 
 @media (min-width: 992px) {
@@ -1081,9 +1088,9 @@ footer {
 }
 
 footer .support-headline {
-	margin: 60px 0 30px;
+	margin: 30px 0 60px;
   color: #464646;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 700;
   text-align: center;
 }
@@ -1091,6 +1098,7 @@ footer .support-headline {
 footer .support-headline .highlight {
 	display: block;
   color: #0072bc;
+	font-size: 18px;
 }
 
 footer .headline .featured-logos {
@@ -1133,6 +1141,13 @@ footer .legal .links a {
   color: #646464;
   margin-left: 2px;
   margin-right: 2px;
+}
+
+@media (min-width: 480px) {
+
+	footer .support-headline {
+		font-size: 18px;
+	}
 }
 
 @media (min-width: 768px) {
