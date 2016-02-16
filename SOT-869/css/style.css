@@ -1059,6 +1059,19 @@ header .header-cta {
 	}
 }
 
+/* right-section order-summary */
+
+.mobile-order-summary {
+	display: block;
+}
+
+@media (min-width: 992px) {
+
+	.mobile-order-summary {
+		display: none;
+	}
+}
+
 /* footer */
 
 footer {

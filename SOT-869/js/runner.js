@@ -73,8 +73,8 @@
 
     var $priceHTML = $('#legal-price'),
       $typeHTML = $('#legal-type'),
-      $summaryTermHTML = $('#summary-term'),
-      $summaryMonthPriceHTML = $('#summary-month-price'),
+      $summaryTermHTML = $('.summary-term'),
+      $summaryMonthPriceHTML = $('.summary-month-price'),
       $summaryTotalPriceHTML = $('.summary-total-price');
 
     $priceHTML.html(totalPrice);
