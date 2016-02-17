@@ -308,11 +308,18 @@
     };
 
     TeaserRecord.prototype.socialProfileIcons = function() {
-      var socialProfiles = this.socialProfiles();
+      var socialProfiles = this.socialProfiles(),
+          socialProfileIcons = [];
 
       if (socialProfiles && socialProfiles.length !== 0) {
-        // @TODO: make a loop that returns two social profiles once found
-        
+        for (var i = 0; i < 2; i++) {
+          socialProfileIcons.push(
+            '<a href="#" class="scroll-to-subscribe"><i class="fa '
+            + socialProfiles.socialNetwork[i]
+            + ' icon"></i></a>'
+          );
+        }
+        return socialProfileIcons;
       } else {
         return '';
       }
