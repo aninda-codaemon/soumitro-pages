@@ -475,7 +475,7 @@ header .header-cta {
 .content-slider .comment-content .comment-author {
 	margin-right: 15px;
 	float: right;
-	color: #333333;
+	color: #333;
 }
 
 .content-slider .comment-content .comment-author .user-image {
@@ -492,7 +492,7 @@ header .header-cta {
   float: left;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 	.headline-comments {
 		display: none;
 	}
