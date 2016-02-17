@@ -9,7 +9,6 @@
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="css/lightslider.css" />
   <link rel="stylesheet" href="css/style.css" />
 
@@ -47,17 +46,11 @@
               {{#if fullName}}
               <div class="col-sm-8">
                 <h4 class="user-name">{{fullName}}</h4>
-                <p class="user-info">
-                  {{#if age}}{{age}} years old{{/if}} {{#if place}} from {{place}}{{/if}}
-                </p>
-                {{#if criminalRecords}}
-                <div class="user-records">
-                  <span class="records-label">
-                      Criminal Records Found
-                      <span class="records-count">{{criminalRecordsCount}}</span>
-                  </span>
-                  <span class="check-icon"></span>
-                </div>
+                {{#if age}}
+                  <p class="user-info">{{age}} years old</p>
+                {{/if}}
+                {{#if place}}
+                  <p class="user-info">from {{place}}</p>
                 {{/if}}
               </div>
               <!-- end col-sm-8 -->
@@ -69,22 +62,57 @@
 
           <div class="col-sm-5 col-md-7 user-meta-list">
             <div class="row">
-              <div class="col-md-6 searches">
+              <div class="col-md-6 searches hidden-xs">
                 <ul class="user-meta">
 
                   {{#if place}}
-                  <li class="user-meta-item">
-                    <strong>Past Locations: </strong> {{place}}
-                    <a href="#" class="scroll-to-subscribe">+ {{placesCountTeaser}} more</a>
-                  </li>
+                    <li class="user-meta-item">
+                      <strong>Past Locations: </strong> {{place}}
+                      <a href="#" class="scroll-to-subscribe">+ {{placesCountTeaser}} more</a>
+                    </li>
+                  {{else}}
+                    <li class="user-meta-item">
+                      <strong>Felonies: </strong>
+                      <a href="#" class="scroll-to-subscribe">Searched</a>
+                      <i class="check-icon"></i>
+                    </li>
                   {{/if}}
 
                   {{#if relatives}}
+                    <li class="user-meta-item">
+                      <strong>Relatives: </strong> {{relative}}
+                      <a href="#" class="scroll-to-subscribe">+ {{relativesCountTeaser}} more</a>
+                    </li>
+                  {{else}}
+                    <li class="user-meta-item">
+                      <strong>Bankruptices: </strong>
+                      <a href="#" class="scroll-to-subscribe">Searched</a>
+                      <i class="check-icon"></i>
+                    </li>
+                  {{/if}}
+
+                  {{#if socialProfiles}}
+                    <li class="user-meta-item">
+                      <strong>Social Profiles:</strong>
+                      {{{socialProfileIcons}}}
+                      {{#if socialProfilesCountTeaser}}
+                      <a href="#" class="scroll-to-subscribe">+ {{socialProfilesCountTeaser}} more</a>
+                      {{/if}}
+                    </li>
+                  {{else}}
                   <li class="user-meta-item">
-                    <strong>Relatives: </strong> {{relative}}
-                    <a href="#" class="scroll-to-subscribe">+ {{relativesCountTeaser}} more</a>
+                    <strong>Traffic Offenses and More: </strong>
+                    <a href="#" class="scroll-to-subscribe">Searched</a>
+                    <i class="check-icon"></i>
                   </li>
                   {{/if}}
+
+                </ul>
+              </div>
+              <!-- End col-md-6 -->
+
+              <div class="col-md-6 results">
+                <ul class="user-meta">
 
                   {{#if phoneNumbers}}
                   <li class="user-meta-item">
@@ -104,46 +132,20 @@
                   </li>
                   {{/if}}
 
-                  {{#if socialProfiles}}
-                  <li class="user-meta-item hidden-xs">
-                    <strong>Social Profiles:</strong>
-                    {{{socialProfileIcons}}}
-                    {{#if socialProfilesCountTeaser}}
-                    <a href="#" class="scroll-to-subscribe">+ {{socialProfilesCountTeaser}} more</a>
+                  <li class="user-meta-item">
+                    {{#if criminalRecords}}
+                      <div class="user-records">
+                        <span class="records-count">{{criminalRecordsCount}}</span>
+                        <span class="records-label">
+                          Criminal Records Found
+                        </span>
+                        <span class="check-icon"></span>
+                      </div>
+                    {{else}}
+                      <strong>Arrest Records: </strong>
+                      <a href="#" class="scroll-to-subscribe">Searched</a>
+                      <i class="check-icon"></i>
                     {{/if}}
-                  </li>
-                  {{/if}}
-
-                </ul>
-              </div>
-              <!-- End col-md-6 -->
-
-              <div class="col-md-6 results hidden-xs">
-                <ul class="user-meta">
-                  <li class="user-meta-item">
-                    <strong>Felonies: </strong>
-                    <a href="#" class="scroll-to-subscribe">Searched</a>
-                    <i class="check-icon"></i>
-                  </li>
-                  <li class="user-meta-item">
-                    <strong>Relatives: </strong>
-                    <a href="#" class="scroll-to-subscribe">Searched</a>
-                    <i class="check-icon"></i>
-                  </li>
-                  <li class="user-meta-item">
-                    <strong>Arrest Records: </strong>
-                    <a href="#" class="scroll-to-subscribe">Searched</a>
-                    <i class="check-icon"></i>
-                  </li>
-                  <li class="user-meta-item">
-                    <strong>Sex Offenders: </strong>
-                    <a href="#" class="scroll-to-subscribe">Searched</a>
-                    <i class="check-icon"></i>
-                  </li>
-                  <li class="user-meta-item">
-                    <strong>Traffic Offenses and More: </strong>
-                    <a href="#" class="scroll-to-subscribe">Searched</a>
-                    <i class="check-icon"></i>
                   </li>
                 </ul>
               </div>

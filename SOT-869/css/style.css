@@ -353,10 +353,15 @@ header .header-cta {
   background: url(../img/ok.png) no-repeat 0px 0px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
 	.teaser .user-image {
+		display: none;
 		width: 100px;
+	}
+
+	.teaser .user-details .user-name {
+		margin-top: 0;
 	}
 
 	.teaser .user-meta-list .user-meta {
@@ -371,36 +376,7 @@ header .header-cta {
 	}
 }
 
-@media (min-width: 480px) and (max-width: 768px) {
-
-	.teaser .row .col-md-5 .row .col-sm-4 {
-		width: 33.333%;
-		float: left;
-	}
-
-	.teaser .row .col-md-5 .row .col-sm-8 {
-		width: 66.666%;
-		float: left;
-	}
-
-	.teaser .user-details {
-		max-width: 450px;
-		margin: 0 auto;
-	}
-
-	.teaser .user-meta-list .user-meta {
-		margin-top: -15px;
-	}
-
-}
-
 @media (min-width: 480px) {
-
-	.teaser .user-records {
-		display: inline-block;
-		max-width: auto;
-		margin-bottom: 5px;
-	}
 
 	.teaser .row .col-md-5 .row .col-sm-8 {
 		padding-left: 0;
@@ -409,16 +385,6 @@ header .header-cta {
 	.teaser .user-image {
 		margin: 0;
 		margin-bottom: 15px;
-		float: right;
-	}
-
-	.teaser .user-name {
-		margin-top: 15px;
-		text-align: left;
-	}
-
-	.teaser .user-info {
-		text-align: left;
 	}
 }
 
@@ -432,8 +398,14 @@ header .header-cta {
 		font-size: 100%;
 	}
 
+	.teaser .user-name,
+	.teaser .user-info,
 	.teaser .user-meta-list .user-meta {
 		text-align: left;
+	}
+
+	.teaser .user-records {
+		float: left;
 	}
 }
 
@@ -1099,8 +1071,15 @@ header .header-cta {
 /* right-section order-summary */
 
 .mobile-order-summary {
-	display: block;
+	display: none;
 	margin: 15px 0;
+}
+
+@media (min-width: 768px) {
+
+	.mobile-order-summary {
+		display: block;
+	}
 }
 
 @media (min-width: 992px) {
