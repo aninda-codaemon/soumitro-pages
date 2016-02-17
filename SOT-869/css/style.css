@@ -456,6 +456,85 @@ header .header-cta {
 	}
 }
 
+/* teaser social icons */
+
+.user-meta-item a .icon {
+	color: #fff;
+  font-size: 18px;
+}
+
+.user-meta-item a .Facebook.icon::before {
+	content: '\f230';
+}
+
+.user-meta-item a .Twitter.icon::before {
+	content: '\f081';
+}
+
+.user-meta-item a .GooglePlus.icon::before {
+	content: '\f0d4';
+}
+
+.user-meta-item a .LinkedIn.icon::before {
+	content: '\f08c';
+}
+
+.user-meta-item a .Youtube.icon::before {
+	content: '\f167';
+}
+
+.user-meta-item a .Flickr.icon::before {
+	content: '\f16e';
+}
+
+.user-meta-item a .Picasa.icon::before {
+	content: '';
+}
+
+.user-meta-item a .Pinterest.icon::before {
+	content: '\f0d3';
+}
+
+.user-meta-item a .Reddit.icon::before {
+	content: '\f1a2';
+}
+
+.user-meta-item a .Gravatar.icon::before {
+	content: '';
+}
+
+.user-meta-item a .MySpace.icon::before {
+	content: '\f0c0';
+}
+
+.user-meta-item a .Kickstarter.icon::before {
+	content: '';
+}
+
+.user-meta-item a .Ancestry.icon::before {
+	content: '\f06c';
+}
+
+.user-meta-item a .Klout.icon::before {
+	content: '';
+}
+
+.user-meta-item a .Instagram.icon::before {
+	content: '\f16d';
+}
+
+.user-meta-item a .Amazon.icon::before {
+	content: '\f270';
+}
+
+.user-meta-item a .Vimeo.icon::before {
+	content: '\f194';
+}
+
+.user-meta-item a .Foursquare.icon::before {
+	content: '\f180';
+}
+
 /* left-section */
 
 .left-section,

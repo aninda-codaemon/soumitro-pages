@@ -319,7 +319,7 @@
             + ' icon"></i></a>'
           );
         }
-        return socialProfileIcons;
+        return socialProfileIcons.join('');
       } else {
         return '';
       }
@@ -356,10 +356,10 @@
 
     TeaserRecord.prototype.photo = function() {
       var photo = this.record["photo"];
-      if (photo === "") {
-        return [];
+      if (photo !== '') {
+        return '<img class="user-image" src="' + photo + '" alt="" />';
       } else {
-        return photo;
+        return [];
       }
     };
 
