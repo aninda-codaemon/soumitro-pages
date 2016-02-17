@@ -632,6 +632,13 @@ header .header-cta {
 	}
 }
 
+@media (min-width: 1200px) {
+
+	.features {
+		margin-top: 30px;
+	}
+}
+
 /* left-section runners */
 
 .runners-heading {
@@ -680,7 +687,7 @@ header .header-cta {
 
 	.runners-heading {
 		display: block;
-		margin-top: 110px;
+		margin-top: 10px;
     margin-bottom: -30px;
 		text-align: left;
 	}
@@ -695,6 +702,17 @@ header .header-cta {
 
 	.runners .runners-description {
 		margin: 90px 0 40px;
+	}
+}
+
+@media (min-width: 1200px) {
+
+	.runners-heading {
+		margin-top: 30px;
+	}
+
+	.runners .runners-image {
+		bottom: -70px;
 	}
 }
 
