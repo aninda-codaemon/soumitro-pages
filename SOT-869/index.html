@@ -307,7 +307,7 @@
           </div>
           <div class="col-xs-6 col-sm-8 col-md-6">
             <p class="runners-description">
-              <strong>The ability to get real-time criminal records direct from county court houses.</strong> (additional fee required)
+              The ability to get real-time criminal records direct from county court houses.
             </p>
           </div>
         </div>
@@ -483,31 +483,35 @@
                 <input type="email" maxsize="100" class="form-control inspectletIgnore" id="user_email" name="user[email]" value="{{user[email]}}" placeholder="johndoe@gmail.com" />
               </div>
 
-              <div class="col-xs-12 form-group">
-                <label>Agree To Our Terms of Service</label>
-                <div class="agreement-container">
-                  <input type="checkbox" class="checkbox" id="account_tos" name="account[tos]" value="1" />
-                  <p class="agreement">By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>, <a href="//www.beenverified.com/home/membership_agreement" target="_blank">Member Agreement</a> and <a href="//www.beenverified.com/home/privacy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price"></span> every <span id="legal-type"></span> until this subscription
-                    is canceled. You can cancel your membership at any time by contacting customer service at <a href="tel:1-888-579-5910">1-888-579-5910</a> or emailing <a href="mailto:support@beenverified.com">support@beenverified.com</a>. You also agree that you will NOT use any information about
-                    an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance; or for any other purpose prohibited
-                    by our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>.</p>
-                  <div class="clearfix"></div>
-                </div>
-              </div>
+              <div class="form-actions-container">
 
-              <input id="layout" name="layout" type="hidden" value="fresh">
-              <input id="user_password" name="user[password]" value="delay" type="hidden">
-              <input id="user_pwdelay" name="user[pwdelay]" value="true" type="hidden">
-              <input id="password" name="password" value="delay" type="hidden">
-              <input id="password_delay" name="pwdelay" value="true" type="hidden">
-              <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
-              <input id="tos2" name="tos2" type="hidden" value="1">
-
-              <div class="col-xs-12 form-group">
-                <button type="submit" id="create_button" class="submit-cc-form">View Report</button>
-                <div id="loading" class="hidden">
-                  <div class="loading-bar"></div>
+                <div class="col-xs-12 form-group">
+                  <label>Agree To Our Terms of Service</label>
+                  <div class="agreement-container">
+                    <input type="checkbox" class="checkbox" id="account_tos" name="account[tos]" value="1" />
+                    <p class="agreement">By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>, <a href="//www.beenverified.com/home/membership_agreement" target="_blank">Member Agreement</a> and <a href="//www.beenverified.com/home/privacy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price"></span> every <span id="legal-type"></span> until this subscription
+                      is canceled. You can cancel your membership at any time by contacting customer service at <a href="tel:1-888-579-5910">1-888-579-5910</a> or emailing <a href="mailto:support@beenverified.com">support@beenverified.com</a>. You also agree that you will NOT use any information about
+                      an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance; or for any other purpose prohibited
+                      by our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>.</p>
+                    <div class="clearfix"></div>
+                  </div>
                 </div>
+
+                <input id="layout" name="layout" type="hidden" value="fresh">
+                <input id="user_password" name="user[password]" value="delay" type="hidden">
+                <input id="user_pwdelay" name="user[pwdelay]" value="true" type="hidden">
+                <input id="password" name="password" value="delay" type="hidden">
+                <input id="password_delay" name="pwdelay" value="true" type="hidden">
+                <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
+                <input id="tos2" name="tos2" type="hidden" value="1">
+
+                <div class="col-xs-12 form-group">
+                  <button type="submit" id="create_button" class="submit-cc-form">View Report</button>
+                  <div id="loading" class="hidden">
+                    <div class="loading-bar"></div>
+                  </div>
+                </div>
+
               </div>
 
             </div>
