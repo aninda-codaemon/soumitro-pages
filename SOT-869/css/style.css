@@ -401,7 +401,7 @@ header .header-cta {
 	}
 
 	.teaser .user-image {
-		width: 95px;
+		width: 100px;
 		margin: 0;
 		margin-bottom: 15px;
 		float: right;
@@ -428,8 +428,9 @@ header .header-cta {
 		font-size: 100%;
 	}
 
-	.teaser .user-name {
+	.teaser .user-details .user-name {
 		margin-bottom: 5px;
+		line-height: 1.5;
 	}
 
 	.teaser .user-name,
@@ -438,8 +439,16 @@ header .header-cta {
 		text-align: left;
 	}
 
+	.teaser .user-info {
+		margin-bottom: 5px;
+	}
+
 	.teaser .user-records {
 		float: left;
+	}
+
+	.teaser .user-meta .user-meta-item {
+		line-height: 2;
 	}
 }
 
