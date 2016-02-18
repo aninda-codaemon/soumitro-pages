@@ -233,7 +233,7 @@ header .header-cta {
 /* teaser */
 
 .teaser {
-	padding: 25px 15px;
+	padding: 20px 15px;
 	background-color: #3f0282;
   background-image: url('//frcdn.beenverified.com/assets/img/a75b69b4b75129e7e6bab7cfa5cb82e5.png');
   color: #fff;
@@ -400,17 +400,29 @@ header .header-cta {
 		font-size: 22px;
 	}
 
-	.teaser .row .col-md-5 .row .col-sm-8 {
-		padding-left: 0;
-	}
-
 	.teaser .user-image {
+		width: 95px;
 		margin: 0;
 		margin-bottom: 15px;
+		float: right;
+	}
+
+	.teaser .user-details .user-name {
+		margin-top: 12px;
+	}
+
+	.teaser .user-meta-list .searches,
+	.teaser .user-meta-list .results {
+		margin-top: 11px;
 	}
 }
 
 @media (min-width: 768px) {
+
+	.teaser {
+		padding-top: 35px;
+		padding-bottom: 35px;
+	}
 
 	.teaser .headline .break-xs {
 		font-size: 100%;
@@ -463,6 +475,13 @@ header .header-cta {
 .right-section {
 	padding-top: 35px;
   background: #fff;
+}
+
+@media (max-width: 768px) {
+	.left-section,
+	.right-section  {
+		padding-top: 0;
+	}
 }
 
 /* left-section comments */
@@ -614,14 +633,25 @@ header .header-cta {
   font-weight: 700;
 }
 .features .feature .feature-description {
-	margin-bottom: 30px;
   color: #646464;
+}
+
+@media (max-width: 480px) {
+
+	.features .feature .feature-icon {
+		width: 35px;
+	}
+
+	.features .feature .feature-description {
+		margin-bottom: 5px;
+	}
 }
 
 @media (min-width: 480px) {
 
 	.features .feature .feature-icon {
-		margin-top: 30px;
+		width: 40px;
+		margin-top: 10px;
 	}
 }
 
@@ -630,6 +660,14 @@ header .header-cta {
 	.features .feature:first-child {
 		display: block;
 	  border-right: solid 1px #ccc;
+	}
+
+	.features .feature .feature-icon {
+		margin-top: 30px;
+	}
+
+	.features .feature .feature-description {
+		margin-bottom: 30px;
 	}
 }
 
@@ -735,7 +773,8 @@ header .header-cta {
 @media (min-width: 480px) {
 
 	.right-section {
-	  padding: 45px 15px;
+	  padding-left: 15px;
+		padding-right: 15px;
 	}
 }
 
