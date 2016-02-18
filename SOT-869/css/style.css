@@ -1181,15 +1181,16 @@ header .header-cta {
 	text-align: right;
 }
 
-.payment-form .form-group .success.label-success {
-	position: absolute;
-	top: 27px;
-  right: 18px;
-	background: transparent;
+.payment-form .form-group .form-control.input-success {
+	border: 1px solid #56b453!important;
+	background-image: url(../img/input-check.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+	color: #56b453;
 }
 
-.payment-form .form-group .cc-expiration .success.label-success {
-	top: 2px;
+.payment-form .form-group .success.label-success {
+	display: none !important;
 }
 
 .payment-form .form-group .cvv {
