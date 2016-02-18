@@ -314,9 +314,9 @@
       if (socialProfiles && socialProfiles.length !== 0) {
         for (var i = 0; i < 2; i++) {
           socialProfileIcons.push(
-            '<a href="#" class="scroll-to-subscribe"><img class="img-social-icon" src="img/'
+            '<a href="#" class="scroll-to-subscribe"><i class="social-icon '
             + socialProfiles.socialNetwork[i]
-            + '.png" alt="' + socialProfiles.socialNetwork[i] + '" /></a>'
+            + '"></i></a>'
           );
         }
         return socialProfileIcons.join('');
