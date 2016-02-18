@@ -233,8 +233,9 @@ header .header-cta {
 /* teaser */
 
 .teaser {
-	padding: 30px 15px;
-  background: #353167;
+	padding: 25px 15px;
+	background-color: #3f0282;
+  background-image: url('//frcdn.beenverified.com/assets/img/a75b69b4b75129e7e6bab7cfa5cb82e5.png');
   color: #fff;
 }
 
@@ -244,7 +245,7 @@ header .header-cta {
 	padding-bottom: 20px;
   border-bottom: solid 1px #fff;
 	color: #fff;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: bold;
   text-align: center;
 	text-transform: uppercase;
@@ -262,55 +263,14 @@ header .header-cta {
 }
 
 .teaser .user-name {
-	margin-bottom: 5px;
+	margin: 0;
   font-weight: 700;
   text-align: center;
 }
 
 .teaser .user-info {
+	margin: 0;
   text-align: center;
-}
-
-.teaser .user-records {
-	display: block;
-	position: relative;
-	width: 100%;
-	max-width: 265px;
-  margin: 0 auto;
-}
-
-.teaser .user-records .records-label {
-	position: relative;
-	width: 225px;
-	padding: 8px 12px;
-	border: solid 1px #feb912;
-  border-radius: 3px;
-	background-color: #fff;
-	color: #353167;
-	font-size: 15px;
-  font-weight: 700;
-	float: left;
-}
-
-.teaser .user-records .records-label .records-count {
-	display: block;
-	position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0;
-  padding: 2px 10px;
-	background-color: #feb912;
-  font-weight: 700;
-  font-size: 24px;
-}
-
-.teaser .user-records .check-icon {
-  width: 22px;
-  height: 20px;
-  margin-top: 8px;
-  margin-left: 15px;
-	float: left;
-	background: url(../img/ok.png) no-repeat 0 0;
 }
 
 .teaser .user-meta {
@@ -321,7 +281,7 @@ header .header-cta {
 
 .teaser .user-meta .user-meta-item {
   display: block;
-  line-height: 30px;
+  line-height: 1.5;
 }
 
 .teaser .user-meta .user-meta-item a {
@@ -353,6 +313,64 @@ header .header-cta {
   background: url(../img/ok.png) no-repeat 0px 0px;
 }
 
+.teaser .user-meta .user-meta-item .user-records-container {
+	display: inline-block;
+}
+
+.teaser .user-meta .user-meta-item .user-records {
+	display: block;
+	position: relative;
+	width: 100%;
+  margin: 0 auto;
+	margin-top: 5px;
+	line-height: 1;
+}
+
+.teaser .user-meta .user-meta-item .user-records .records-count {
+	position: relative;
+	padding: 8px;
+	float: left;
+	border-radius: 3px 0 0 3px;
+	border: 1px solid #feb912;
+	background-color: #feb912;
+	color: #353167;
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.teaser .user-meta .user-meta-item .user-records .records-label {
+	position: relative;
+	padding: 8px 12px;
+	padding-right: 5px;
+	float: left;
+	border: solid 1px #feb912;
+	border-right: 0;
+	background-color: #fff;
+	color: #353167;
+	font-size: 15px;
+  font-weight: 700;
+	line-height: 1;
+}
+
+.teaser .user-meta .user-meta-item .user-records .check-icon {
+	position: relative;
+	top: 0;
+	height: 33px;
+	width: 33px;
+	margin: 0;
+	padding: 8px 12px;
+	float: left;
+	border-radius: 0 3px 3px 0;
+	border: 1px solid #feb912;
+	border-left: 0;
+	background: url(../img/ok.png) no-repeat center center;
+	background-color: #fff;
+	color: #353167;
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 1;
+}
+
 @media (max-width: 768px) {
 
 	.teaser .user-image {
@@ -371,12 +389,16 @@ header .header-cta {
 
 @media (max-width: 992px) {
 
-	.teaser .user-meta-list .results {
+	.teaser .user-meta-list .searches {
 		display: none;
 	}
 }
 
 @media (min-width: 480px) {
+
+	.teaser .headline {
+		font-size: 22px;
+	}
 
 	.teaser .row .col-md-5 .row .col-sm-8 {
 		padding-left: 0;
@@ -390,12 +412,12 @@ header .header-cta {
 
 @media (min-width: 768px) {
 
-	.teaser .headline {
-		font-size: 22px;
-	}
-
 	.teaser .headline .break-xs {
 		font-size: 100%;
+	}
+
+	.teaser .user-name {
+		margin-bottom: 5px;
 	}
 
 	.teaser .user-name,
