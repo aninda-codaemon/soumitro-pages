@@ -61,47 +61,45 @@
               <div class="col-md-6 searches hidden-xs">
                 <ul class="user-meta">
 
-                  {{#if place}}
-                    <li class="user-meta-item">
+                  <li class="user-meta-item">
+                    {{#if place}}
                       <strong>Past Locations: </strong> {{place}}
-                      <a href="#" class="scroll-to-subscribe">+ {{placesCountTeaser}} more</a>
-                    </li>
-                  {{else}}
-                    <li class="user-meta-item">
+                      {{#if placesCountTeaser}}
+                         <a href="#" class="scroll-to-subscribe">+ {{placesCountTeaser}} more</a>
+                      {{/if}}
+                    {{else}}
                       <strong>Felonies: </strong>
                       <a href="#" class="scroll-to-subscribe">Searched</a>
                       <i class="check-icon"></i>
-                    </li>
-                  {{/if}}
+                    {{/if}}
+                  </li>
 
-                  {{#if relatives}}
-                    <li class="user-meta-item">
+                  <li class="user-meta-item">
+                    {{#if relatives}}
                       <strong>Relatives: </strong> {{relative}}
-                      <a href="#" class="scroll-to-subscribe">+ {{relativesCountTeaser}} more</a>
-                    </li>
-                  {{else}}
-                    <li class="user-meta-item">
+                      {{#if relativesCountTeaser}}
+                         <a href="#" class="scroll-to-subscribe">+ {{relativesCountTeaser}} more</a>
+                      {{/if}}
+                    {{else}}
                       <strong>Bankruptices: </strong>
                       <a href="#" class="scroll-to-subscribe">Searched</a>
                       <i class="check-icon"></i>
-                    </li>
-                  {{/if}}
+                    {{/if}}
+                  </li>
 
-                  {{#if socialProfiles}}
-                    <li class="user-meta-item">
+                  <li class="user-meta-item">
+                    {{#if socialProfiles}}
                       <strong>Social Profiles:</strong>
                       {{{socialProfileIcons}}}
                       {{#if socialProfilesCountTeaser}}
-                      <a href="#" class="scroll-to-subscribe">+ {{socialProfilesCountTeaser}} more</a>
+                        <a href="#" class="scroll-to-subscribe">+ {{socialProfilesCountTeaser}} more</a>
                       {{/if}}
-                    </li>
-                  {{else}}
-                  <li class="user-meta-item">
-                    <strong>Traffic Offenses and More: </strong>
-                    <a href="#" class="scroll-to-subscribe">Searched</a>
-                    <i class="check-icon"></i>
+                    {{else}}
+                      <strong>Traffic Offenses and More: </strong>
+                      <a href="#" class="scroll-to-subscribe">Searched</a>
+                      <i class="check-icon"></i>
+                    {{/if}}
                   </li>
-                  {{/if}}
 
                 </ul>
               </div>
@@ -110,23 +108,31 @@
               <div class="col-md-6 results">
                 <ul class="user-meta">
 
-                  {{#if phoneNumbers}}
                   <li class="user-meta-item">
-                    <strong>Phone #: </strong> {{phoneNumber}}
-                    {{#if phoneNumbersCountTeaser}}
-                    <a href="#" class="scroll-to-subscribe">+ {{phoneNumbersCountTeaser}} more</a>
+                    {{#if phoneNumbers}}
+                      <strong>Phone Numbers: </strong> {{phoneNumber}}
+                      {{#if phoneNumbersCountTeaser}}
+                        <a href="#" class="scroll-to-subscribe">+ {{phoneNumbersCountTeaser}} more</a>
+                      {{/if}}
+                    {{else}}
+                      <strong>Phone Numbers: </strong>
+                      <a href="#" class="scroll-to-subscribe">Searched</a>
+                      <i class="check-icon"></i>
                     {{/if}}
                   </li>
-                  {{/if}}
 
-                  {{#if emails}}
                   <li class="user-meta-item">
-                    <strong>Emails: </strong> {{email}}
-                    {{#if emailsCountTeaser}}
-                    <a href="#" class="scroll-to-subscribe">+ {{emailsCountTeaser}} more</a>
+                    {{#if emails}}
+                      <strong>Emails: </strong> {{email}}
+                      {{#if emailsCountTeaser}}
+                        <a href="#" class="scroll-to-subscribe">+ {{emailsCountTeaser}} more</a>
+                      {{/if}}
+                    {{else}}
+                      <strong>Emails: </strong>
+                      <a href="#" class="scroll-to-subscribe">Searched</a>
+                      <i class="check-icon"></i>
                     {{/if}}
                   </li>
-                  {{/if}}
 
                   <li class="user-meta-item">
                     {{#if criminalRecords}}
