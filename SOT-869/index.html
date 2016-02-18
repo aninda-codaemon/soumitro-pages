@@ -139,7 +139,7 @@
                         <div class="user-records">
                           <span class="records-count">{{criminalRecordsCount}}</span>
                           <span class="records-label">
-                            Criminal Records Found
+                            Criminal/Traffic Records
                           </span>
                           <span class="check-icon"></span>
                         </div>
@@ -261,7 +261,7 @@
         <div class="row features">
           <div class="col-sm-6 col-md-12 feature">
             <img class="feature-icon" src="img/icon2.png" alt="" />
-            <h4 class="feature-headline">Your Search Is 100% Private</h4>
+            <h4 class="feature-headline">Your Search Is Private</h4>
             <p class="feature-description">
               Rest assured your purchase is confidential and <strong data-fr-bind="currentRecord">{{fullName}}</strong> will
               <strong>Never</strong> be notified about your search.
@@ -295,7 +295,7 @@
             <label class="deal-label" for="22_1_month_nofree_afill_no_bjl">
               <span class="radio-custom"></span>
               <span class="offer-label">
-                1 Month of Unlimited Reports
+                1 Month <span class="visible-portrait">of Membership</span><span class="hidden-portrait">of Unlimited Reports</span>
                 <span class="price-label" data-plan-price="22.86" data-term-length="1 Month of Unlimited Reports" data-monthly-price="22.86" data-plan-type="month">
                   $22.86 <strong>/mo</strong>
                 </span>
@@ -308,7 +308,7 @@
             <label class="deal-label" for="44_58_3_months_nofree_affil">
               <span class="radio-custom"></span>
               <span class="offer-label">
-                3 Months of Unlimited Reports
+                3 Months <span class="visible-portrait">of Membership</span><span class="hidden-portrait">of Unlimited Reports</span>
                 <span class="price-label" data-plan-price="44.58" data-term-length="3 Months of Unlimited Reports" data-monthly-price="14.88" data-plan-type="3 months">
                   $14.88 <strong>/mo</strong> <small>($44.58 Today)</small>
                 </span>
@@ -323,7 +323,7 @@
               <span class="radio-custom"></span>
               <img class="deal-image" src="img/deal.png" />
               <span class="offer-label">
-                6 Months of Unlimited Reports
+                6 Months <span class="visible-portrait">of Membership</span><span class="hidden-portrait">of Unlimited Reports</span>
                 <span class="price-label" data-plan-price="58.98" data-term-length="6 Months of Unlimited Reports" data-monthly-price="9.83" data-plan-type="6 months">
                   $9.94 <strong>/mo</strong> <small>($58.98 Today)</small>
                 </span>
@@ -483,76 +483,6 @@
 
         </form>
         <!-- End subscribe-form -->
-
-        <div class="order-summary mobile-order-summary hidden-md" data-fr-bind="currentRecord">
-          <h4 class="headline"><i class="cart-icon"></i> Your Order Summary:</h4>
-
-          {{#if fullName}}
-
-          <strong class="divider-headline">Background Report on:</strong>
-
-          <h4 class="data-headline">{{fullName}}</h4>
-          <p class="data-details">
-            {{#if age}}{{age}} years old{{/if}}{{#if place}}, from {{place}}{{/if}}
-            <span class="right-label included-label">Included</span>
-          </p>
-
-          <hr class="divider" />
-
-          {{/if}}
-
-          <strong class="divider-headline">Membership Plan:</strong>
-
-          <h4 class="data-headline">
-            <span class="summary-term" id="summary-term"></span>
-            <span class="right-label price-label">$<span class="summary-month-price" id="summary-month-price"></span> /mo.</span>
-          </h4>
-
-          <div class="clearfix"></div>
-
-          <p class="data-details">
-            Reverse Name Search
-            <span class="right-label included-label">Included</span>
-          </p>
-          <p class="data-details">
-            Reverse Phone Search
-            <span class="right-label included-label">Included</span>
-          </p>
-          <p class="data-details">
-            Reverse Email Search
-            <span class="right-label included-label">Included</span>
-          </p>
-          <p class="data-details">
-            Reverse Property Search
-            <span class="right-label included-label">Included</span>
-          </p>
-
-          {{#if fullName}}
-
-          <hr class="divider" />
-
-          <h4 class="data-headline">Alert Me Addon Feature</h4>
-
-          <p class="data-details">
-            Receive notifications for updates on
-            <strong class="data-name">
-              {{fullName}}
-              <span class="right-label">
-                <span class="success-text">FREE</span> for today!
-              </span>
-            </strong>
-          </p>
-
-          {{/if}}
-
-          <hr class="divider divider-total">
-
-          <strong class="divider-headline total">
-            Total Today:
-            <span class="right-label success-text">$<span class="summary-total-price" id="summary-total-price"></span></span>
-          </strong>
-        </div>
-        <!-- End order-summary -->
 
       </div>
       <!-- End right-section     col-md-7  -->

@@ -176,10 +176,22 @@ input[type="radio"]:checked + label .radio-custom {
 	display: block;
 }
 
+.hidden-portrait {
+	display: inline-block;
+}
+
+.visible-portrait {
+	display: none;
+}
+
 @media (max-width: 480px) {
 
 	.hidden-portrait {
-		display: none!important;
+		display: none;
+	}
+
+	.visible-portrait {
+		display: inline-block;
 	}
 }
 
@@ -616,7 +628,7 @@ header .header-cta {
   float: left;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
 	.headline-comments {
 		display: none;
 	}
@@ -1266,27 +1278,6 @@ header .header-cta {
 	.right-section .payment-form {
 		border: solid 2px #323d43;
 		border-top: 0;
-	}
-}
-
-/* right-section order-summary */
-
-.mobile-order-summary {
-	display: none;
-	margin: 15px 0;
-}
-
-@media (min-width: 768px) {
-
-	.mobile-order-summary {
-		display: block;
-	}
-}
-
-@media (min-width: 992px) {
-
-	.mobile-order-summary {
-		display: none;
 	}
 }
 
