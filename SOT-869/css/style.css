@@ -493,28 +493,33 @@ header .header-cta {
 	}
 }
 
-/* left-section comments */
+/* left-section comment-content */
 
-.content-slider .comment-content .comment {
+.left-section .comment-content {
+	display: inline-block;
+	margin-bottom: 15px;
+}
+
+.comment-content .comment {
 	margin: 0;
 	padding: 15px;
   font-style: italic;
 }
 
-.content-slider .comment-content .comment-author {
+.comment-content .comment-author {
 	margin-right: 15px;
 	float: right;
 	color: #333;
 }
 
-.content-slider .comment-content .comment-author .user-image {
+.comment-content .comment-author .user-image {
 	display: inline-block;
 	width: 54px;
   border-radius: 50px;
   float: left;
 }
 
-.content-slider .comment-content .comment-author .user-info {
+.comment-content .comment-author .user-info {
 	display: inline-block;
   padding-top: 15px;
 	padding-left: 15px;
@@ -526,12 +531,8 @@ header .header-cta {
 		display: none;
 	}
 
-	.left-section .lSSlideOuter {
+	.left-section .comment-content {
 		display: none
-	}
-
-	.left-section .content-slider {
-		display: none;
 	}
 }
 
