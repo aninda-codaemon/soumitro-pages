@@ -398,9 +398,14 @@
               <span class="summary-details-wrapper clearfix">
                   <span class="order-summary-heading strong">Current Location:</span>
               <span class="pull-right">
-                    {{#if place}}
-                      <span class="report-owners-current-location truncate">{{place}}</span>
-              <span class="blue-check"></span> {{/if}}
+                    <span class="report-owners-current-location truncate">
+                      {{#if place}} {{place}}
+
+                      {{else}}
+                        Locations Searched
+                      {{/if}}
+                    </span>
+              <span class="blue-check"></span>
               </span>
               </span>
               <span class="summary-details-wrapper clearfix">
@@ -411,8 +416,7 @@
                         {{relative}}
 
                         {{#if relativesCountTeaser}}
-                          <span class="teaser-data-count">+ {{relativesCountTeaser}} more</span> {{/if}} {{else}}
-              <strong>Felonies:</strong> Searched {{/if}}
+                          <span class="teaser-data-count">+ {{relativesCountTeaser}} more</span> {{/if}} {{else}} Relatives Searched {{/if}}
               </span>
               <span class="blue-check"></span>
               </span>
@@ -425,8 +429,7 @@
                         {{phoneNumber}}
 
                         {{#if phoneNumbersCountTeaser}}
-                          <span class="teaser-data-count">+ {{phoneNumbersCountTeaser}} more</span> {{/if}} {{else}}
-              <strong>Bankruptices:</strong> Searched {{/if}}
+                          <span class="teaser-data-count">+ {{phoneNumbersCountTeaser}} more</span> {{/if}} {{else}} Phones Searched {{/if}}
               </span>
               <span class="blue-check"></span>
               </span>
@@ -439,8 +442,7 @@
                         {{email}}
 
                         {{#if emailsCountTeaser}}
-                          <span class="teaser-data-count">+ {{emailsCountTeaser}} more</span> {{/if}} {{else}}
-              <strong>Traffic Offenses: </strong> Searched {{/if}}
+                          <span class="teaser-data-count">+ {{emailsCountTeaser}} more</span> {{/if}} {{else}} Emails Searched {{/if}}
               </span>
               <span class="blue-check"></span>
               </span>
