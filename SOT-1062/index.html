@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,17 +14,23 @@
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
   <![endif]-->
-  
-    <!-- Hotjar Tracking Code for www.beenverified.com -->
+
+  <!-- Hotjar Tracking Code for www.beenverified.com -->
   <script>
-    (function(f,b){
-        var c;
-        f.hj=f.hj||function(){(f.hj.q=f.hj.q||[]).push(arguments)};
-        f._hjSettings={hjid:25826, hjsv:4};
-        c=b.createElement("script");c.async=1;
-        c.src="//static.hotjar.com/c/hotjar-"+f._hjSettings.hjid+".js?sv="+f._hjSettings.hjsv;
-        b.getElementsByTagName("head")[0].appendChild(c); 
-    })(window,document);
+    (function(f, b) {
+      var c;
+      f.hj = f.hj || function() {
+        (f.hj.q = f.hj.q || []).push(arguments)
+      };
+      f._hjSettings = {
+        hjid: 25826,
+        hjsv: 4
+      };
+      c = b.createElement("script");
+      c.async = 1;
+      c.src = "//static.hotjar.com/c/hotjar-" + f._hjSettings.hjid + ".js?sv=" + f._hjSettings.hjsv;
+      b.getElementsByTagName("head")[0].appendChild(c);
+    })(window, document);
   </script>
 </head>
 
@@ -54,7 +61,8 @@
         <p class="col-xs-12 text-center">Simply activate your account below to see your full report.</p>
       </div>
     </div>
-  </div><!-- /#report-bg -->
+  </div>
+  <!-- /#report-bg -->
 
   <div id="wrapper" class="container">
 
@@ -82,15 +90,11 @@
             <ul id='messages'>
             </ul>
           </div>
-        </div><!-- /#error-container -->
+        </div>
+        <!-- /#error-container -->
 
-        <form class="form-horizontal" action="/accounts" id="subscribe_form" method="post"
-              data-fr-bind="leadData currentRecord"
-              data-sub-ignore-messages="false"
-              data-sub-ignore-success="false"
-              data-sub-success-class="input-success"
-              data-sub-success-image="img/checked.gif"
-              data-sub-error-class="input-error">
+        <form class="form-horizontal" action="/accounts" id="subscribe_form" method="post" data-fr-bind="leadData currentRecord" data-sub-ignore-messages="false" data-sub-ignore-success="false" data-sub-success-class="input-success" data-sub-success-image="img/checked.gif"
+        data-sub-error-class="input-error">
 
           <input id="promotion" name="promotion" type="hidden" value="view_report_trial">
           <input name="authenticity_token" type="hidden" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=">
@@ -197,7 +201,8 @@
                 </div>
               </label>
             </div>
-          </div><!-- /#sub-step-1 -->
+          </div>
+          <!-- /#sub-step-1 -->
 
           <div id="sub-step-2">
             <div class="row form-heading">
@@ -226,7 +231,7 @@
 
             <div class="form-group payOptionSelect">
               <label for="user_email" class="col-sm-4 control-label">Payment</label>
-              
+
               <div id="paypal-radio" class="radio col-sm-8">
                 <label for="paypal">
                   <input type="radio" id="paypal" name="payment_method" value="paypal"> <img src="img/paypal2.png" alt="PayPal" /> The safer, easier way<span class="hidden-sm"> to pay</span>
@@ -238,23 +243,23 @@
                 </label>
               </div>
             </div>
-            
+
             <div class="row cc-wrapper">
               <div class="col-xs-12">
-              <div class="cc-wrapper-header row">
-                <div id="secure-wrapper" class="col-xs-6 col-sm-4">
-                  <span id="secure-lock" class="glyphicon glyphicon-lock"></span>
-                  <span id="secure-text" class="small text-success">Secure<span class="hidden-xs"> Server</span></span>
-                </div>
-                <div class="col-sm-4 hidden-xs">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-                <div class="col-xs-6 col-sm-4">
-                  <div class="seals verify-seal pull-right">
-                    <img class="pull-right" src="img/norton-xs.png" alt="Norton Secure">
+                <div class="cc-wrapper-header row">
+                  <div id="secure-wrapper" class="col-xs-6 col-sm-4">
+                    <span id="secure-lock" class="glyphicon glyphicon-lock"></span>
+                    <span id="secure-text" class="small text-success">Secure<span class="hidden-xs"> Server</span></span>
+                  </div>
+                  <div class="col-sm-4 hidden-xs">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  </div>
+                  <div class="col-xs-6 col-sm-4">
+                    <div class="seals verify-seal pull-right">
+                      <img class="pull-right" src="img/norton-xs.png" alt="Norton Secure">
+                    </div>
                   </div>
                 </div>
-              </div>
                 <div class="form-group">
                   <label for="credit_card_card_number" class="col-sm-4 control-label">Card Number</label>
                   <div class="col-sm-8">
@@ -327,7 +332,11 @@
                 <input id="account_tos" class="col-xs-1" name="account[tos]" type="checkbox" value="1">
                 <div class="col-xs-11">
                   <p class="small">
-                    By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>, <a href="//www.beenverified.com/home/membership_agreement" target="_blank">Member Agreement</a> and <a href="/home/privacy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price"></span> every <span id="legal-type"></span>&nbsp;until this subscription is canceled. You can cancel your membership at any time by contacting customer service at <span class="text-primary">1-888-579-5910</span> or emailing <a href="mailto:support@beenverified.com">support@beenverified.com</a>. You also agree that you will <u>NOT</u> use any information about an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance; or for any other purpose prohibited by our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>.
+                    By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>, <a href="//www.beenverified.com/home/membership_agreement"
+                    target="_blank">Member Agreement</a> and <a href="/home/privacy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price"></span> every <span id="legal-type"></span>&nbsp;until this subscription is canceled.
+                    You can cancel your membership at any time by contacting customer service at <span class="text-primary">1-888-579-5910</span> or emailing <a href="mailto:support@beenverified.com">support@beenverified.com</a>. You also agree that you
+                    will <u>NOT</u> use any information about an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance;
+                    or for any other purpose prohibited by our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>.
                   </p>
                 </div>
               </div>
@@ -350,10 +359,12 @@
               </div>
               <div class="right-ribbon hidden-xs">
                 <p>
-                  <span class="strong text-bv-blue">Satisfaction Guaranteed!</span><br/>
+                  <span class="strong text-bv-blue">Satisfaction Guaranteed!</span>
+                  <br/>
                   <span id="refund-text">If we do not have results for this report we will gladly issue a refund. <span class="hidden-sm">Just contact Customer Care.</span></span>
                 </p>
-              </div><!-- /.right-ribbon -->
+              </div>
+              <!-- /.right-ribbon -->
             </div>
             <div id="spinner" class="hidden text-center">
               <img class="spinner-inner" src="img/ajax-loader.gif" alt="Loading...">
@@ -369,95 +380,107 @@
 
 
         <div id="order-summary" class="panel side-panel info-snippet hidden-xs">
-            <div class="panel-heading">
-              <p class="panel-title strong" data-fr-bind="bv_searchData">
-                Your report for
-                {{#if fullName}}
-                  {{fullName}}
-                {{else}}
-                searched subject
-                {{/if}}
-              </p>
-            </div>
-            <div class="panel-body report" data-fr-bind="currentRecord extraTeaserData">
-              <div class="order-summary-section">
-                <span class="summary-details-wrapper clearfix">
+          <div class="panel-heading">
+            <p class="panel-title strong" data-fr-bind="bv_searchData">
+              Your report for {{#if fullName}} {{fullName}} {{else}} searched subject {{/if}}
+            </p>
+          </div>
+          <div class="panel-body report" data-fr-bind="currentRecord extraTeaserData">
+            <div class="order-summary-section">
+              <span class="summary-details-wrapper clearfix">
                   <span class="order-summary-heading strong">Age:</span>
-                  <span class="pull-right">
-                    <span class="report-owners-age text-success truncate">{{#if age}}{{age}}</span>
-                    <span class="blue-check"></span>{{/if}}
-                  </span>
-                </span>
-                <span class="summary-details-wrapper clearfix">
+              <span class="pull-right">
+                    {{#if age}}
+                      <span class="report-owners-age text-success truncate">{{age}}</span>
+              <span class="blue-check"></span> {{/if}}
+              </span>
+              </span>
+              <span class="summary-details-wrapper clearfix">
                   <span class="order-summary-heading strong">Current Location:</span>
-                  <span class="pull-right">
-                    <span class="report-owners-current-location truncate">{{#if place}}{{place}}</span>
-                    <span class="blue-check"></span>{{/if}}
-                  </span>
-                </span>
-                <span class="summary-details-wrapper clearfix">
+              <span class="pull-right">
+                    {{#if place}}
+                      <span class="report-owners-current-location truncate">{{place}}</span>
+              <span class="blue-check"></span> {{/if}}
+              </span>
+              </span>
+              <span class="summary-details-wrapper clearfix">
                   <span class="order-summary-heading strong">Relatives:</span>
-                  <span class="pull-right">
-                    <span class="report-owners-relatives truncate">{{#if relatives}}{{relative}}
-                      {{#if relativesCountTeaser}}
-                      <a href="#" class="scroll-to-subscribe">+ {{relativesCountTeaser}} more</a>{{/if}}{{/if}}</span>
-                    <span class="blue-check"></span>
-                  </span>
-                </span>
-                <span class="summary-details-wrapper clearfix">
-                  <span class="order-summary-heading strong">Phone:</span>
-                  <span class="pull-right">
-                    <span class="report-owners-phone truncate">{{#if phoneNumbers}}{{phoneNumber}}
-                    {{#if phoneNumbersCountTeaser}}
-                    <a href="#" class="scroll-to-subscribe">+ {{phoneNumbersCountTeaser}} more</a>{{/if}}{{/if}}</span>
-                    <span class="blue-check"></span>
-                  </span>
-                </span>
-                <span class="summary-details-wrapper clearfix">
-                  <span class="order-summary-heading strong">Emails:</span>
-                  <span class="pull-right">
-                    <span class="report-owners-emails truncate">{{#if emails}}{{email}}
-                    {{#if emailsCountTeaser}}
-                    <a href="#" class="scroll-to-subscribe">+ {{emailsCountTeaser}} more</a>
-                    {{/if}}{{/if}}</span>
-                    <span class="blue-check"></span>
-                  </span>
-                </span>
-                <span class="summary-details-wrapper clearfix">
-                  <span class="order-summary-heading strong">Arrest Records</span>
-                  <span class="pull-right">
-                    <span class="report-owners-arrest-records text-success"><a href="#" class="scroll-to-subscribe">Activate Account to Search</a></span>
-                  </span>
-                </span>
+              <span class="pull-right">
+                    <span class="report-owners-relatives truncate">
+                      {{#if relatives}}
+                        {{relative}}
 
-                <!--
+                        {{#if relativesCountTeaser}}
+                          <span class="teaser-data-count">+ {{relativesCountTeaser}} more</span> {{/if}} {{else}}
+              <strong>Felonies:</strong> Searched {{/if}}
+              </span>
+              <span class="blue-check"></span>
+              </span>
+              </span>
+              <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">Phone:</span>
+              <span class="pull-right">
+                    <span class="report-owners-phone truncate">
+                      {{#if phoneNumbers}}
+                        {{phoneNumber}}
+
+                        {{#if phoneNumbersCountTeaser}}
+                          <span class="teaser-data-count">+ {{phoneNumbersCountTeaser}} more</span> {{/if}} {{else}}
+              <strong>Bankruptices:</strong> Searched {{/if}}
+              </span>
+              <span class="blue-check"></span>
+              </span>
+              </span>
+              <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">Emails:</span>
+              <span class="pull-right">
+                    <span class="report-owners-emails truncate">
+                      {{#if emails}}
+                        {{email}}
+
+                        {{#if emailsCountTeaser}}
+                          <span class="teaser-data-count">+ {{emailsCountTeaser}} more</span> {{/if}} {{else}}
+              <strong>Traffic Offenses: </strong> Searched {{/if}}
+              </span>
+              <span class="blue-check"></span>
+              </span>
+              </span>
+              <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">Arrest Records</span>
+              <span class="pull-right">
+                    <span class="report-owners-arrest-records text-success"><a href="#" class="scroll-to-subscribe">Activate Account to Search</a></span>
+              </span>
+              </span>
+
+              <!--
                 <div id="map" class="hidden-xs hidden-sm map row">
                   <img src="img/map-pin.png" class="map-pin">
                 </div>
                 -->
 
-              </div>
-              <div class="order-summary-total">
-                <p class="text-right">
-                  <strong>Total Today: </strong>
-                  <span>$<span class="summary-total-price">1.00</span></span>
-                </p>
-              </div>
             </div>
-          </div><!-- /#order-summary -->
+            <div class="order-summary-total">
+              <p class="text-right">
+                <strong>Total Today: </strong>
+                <span>$<span class="summary-total-price">1.00</span></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- /#order-summary -->
 
-          <div class="alert money-back text-center" data-fr-bind="currentRecord extraTeaserData">
-            <img src="img/money-back-badge.png" class="center-block money-back-badge img-responsive" alt="money back guarantee">
-            <br>
-            <span class="text-bv-blue"><strong>100% Money Back Guarantee</strong></span>
-            <br>
-            <span class="text-center">If we can't find results for 
+        <div class="alert money-back text-center" data-fr-bind="currentRecord extraTeaserData">
+          <img src="img/money-back-badge.png" class="center-block money-back-badge img-responsive" alt="money back guarantee">
+          <br>
+          <span class="text-bv-blue"><strong>100% Money Back Guarantee</strong></span>
+          <br>
+          <span class="text-center">If we can't find results for
                 {{#if fullName}}
                   {{fullName}}
                 {{else}}
-                your subject
+                  your subject
                 {{/if}}, <strong>we will gladly issue a refund</strong>!</span>
-          </div>
+        </div>
 
 
         <!--
@@ -501,7 +524,7 @@
           </div>
           <div class="panel-body">
 
-          <!--
+            <!--
 
             {{#if fullName}}
             <div class="order-summary-section order-summary-full-report">
@@ -547,18 +570,16 @@
           <div class="col-xs-12">
             <p class="side-headline-header strong">
               <span class="glyphicon glyphicon-lock"></span>Confidential Searching!
-           	</p>
+            </p>
             <p data-fr-bind="currentRecord">
-              {{#if fullName}}
-              	{{fullName}} will <strong>not</strong> be notified of this search.
-              {{else}}
-              	Your subjects will <strong>not</strong> be notified.
-              {{/if}}
-           	</p>
+              {{#if fullName}} {{fullName}} will <strong>not</strong> be notified of this search. {{else}} Your subjects will <strong>not</strong> be notified. {{/if}}
+            </p>
           </div>
-        </div><!-- #reports-anonymous -->
+        </div>
+        <!-- #reports-anonymous -->
       </div>
-    </div><!-- /#body-wrap -->
+    </div>
+    <!-- /#body-wrap -->
     <div class="row visible-xs satisfied">
       <div class="col-xs-2">
         <span class="glyphicon glyphicon-ok-circle text-bv-blue"></span>
@@ -572,8 +593,9 @@
     <div class="row visible-xs">
       <p class="col-xs-12 phone text-center"><strong>Questions? </strong>Call 1-888-579-5910</p>
     </div>
-  </div><!-- /#wrapper -->
-  
+  </div>
+  <!-- /#wrapper -->
+
   <footer>
     <div class="container">
       <div id="service-hours" class="row">
@@ -586,7 +608,10 @@
       <div id="disclaimer" class="row">
         <div class="col-xs-12">
           <p>
-            Disclaimer: BeenVerified&rsquo;s mission is to give people easy and affordable access to public record information. BeenVerified does not provide private investigator services, and is not a consumer reporting agency as defined by the <a href="//www.beenverified.com/dos-donts" rel="nofollow" target="_blank">Fair Credit Report Act</a> because the information provided by BeenVerified is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses of BeenVerified, please review our <a href="//www.beenverified.com/dos-donts" target="_blank" rel="nofollow">&ldquo;Do&rsquo;s &amp; Don&rsquo;ts&rdquo;</a> and our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank" rel="nofollow">Terms &amp; Conditions</a>.
+            Disclaimer: BeenVerified&rsquo;s mission is to give people easy and affordable access to public record information. BeenVerified does not provide private investigator services, and is not a consumer reporting agency as defined by the <a href="//www.beenverified.com/dos-donts"
+            rel="nofollow" target="_blank">Fair Credit Report Act</a> because the information provided by BeenVerified is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more
+            information governing the permitted and prohibited uses of BeenVerified, please review our <a href="//www.beenverified.com/dos-donts" target="_blank" rel="nofollow">&ldquo;Do&rsquo;s &amp; Don&rsquo;ts&rdquo;</a> and our <a href="//www.beenverified.com/consumer-terms-of-service"
+            target="_blank" rel="nofollow">Terms &amp; Conditions</a>.
           </p>
         </div>
       </div>
@@ -606,11 +631,11 @@
       </div>
     </div>
   </footer>
-  
+
   <div id="iModal-trial" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
-         <div class="modal-header">
+        <div class="modal-header">
           <button id="imodal-x" type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         </div>
         <div class="modal-body text-center">
@@ -634,9 +659,10 @@
         </div>
       </div>
     </div>
-  </div><!-- /#iModal-trial -->
+  </div>
+  <!-- /#iModal-trial -->
 
-    <div id="PayPal-Success" class="modal fade">
+  <div id="PayPal-Success" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body text-center">
@@ -661,9 +687,10 @@
         </div>
       </div>
     </div>
-  </div><!-- /#iModal-trial -->
+  </div>
+  <!-- /#iModal-trial -->
 
-   <div id="PayPal-Failed" class="modal fade">
+  <div id="PayPal-Failed" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body text-center">
@@ -684,8 +711,9 @@
         </div>
       </div>
     </div>
-  </div><!-- /#iModal-trial -->
-  
+  </div>
+  <!-- /#iModal-trial -->
+
   <pre id="subscribe_bounce_text" data-sub-bounce-url="<%= next_page %>" class="hide">
 WAIT: WANT A SPECIAL LIMITED TIME OFFER?
 
@@ -726,4 +754,5 @@ Just click "Cancel" or "Stay On Page" to see your special offer.
   <script src="js/runner.js"></script>
 
 </body>
+
 </html>
