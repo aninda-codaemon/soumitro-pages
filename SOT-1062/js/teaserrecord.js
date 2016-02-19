@@ -150,6 +150,32 @@
       }).uniq().value();
     };
 
+    TeaserRecord.prototype.relative = function() {
+      var relatives = this.relatives();
+
+      if (relatives && relatives.length !== 0) {
+        var index = 0;
+        // loops through array until one is found to prevent returning an undefined object
+        while (relatives[index] === undefined) {
+          index++
+        }
+        return relatives[index];
+      } else {
+        return '';
+      }
+    };
+
+    TeaserRecord.prototype.relativesCountTeaser = function() {
+      var relatives = this.relatives();
+
+      if (relatives && relatives.length !== 0) {
+        // the - 1 on the count is because one relative is already shown on the page
+        return relatives.length -1;
+      } else {
+        return '';
+      }
+    };
+
     TeaserRecord.prototype.addresses = function() {
       var addresses;
       if (this.record["Addresses"] === void 0) {
@@ -165,13 +191,33 @@
       }, this).uniq().value();
     };
 
+    TeaserRecord.prototype.placesCountTeaser = function() {
+      var addresses = this.addresses();
+
+      if (addresses && addresses.length !== 0) {
+        // the - 1 on the count is because one place is already shown on the page
+        return addresses.length - 1;
+      } else {
+        return '';
+      }
+    };
+
     TeaserRecord.prototype.places = function() {
       return this.addresses();
     };
 
     TeaserRecord.prototype.place = function() {
       var addresses = this.addresses();
-      return (addresses && addresses.length !== 0) ? addresses[0] : '';
+
+      if (addresses && addresses.length !== 0) {
+        var index = 0;
+        while (addresses[index] === undefined) {
+          index++
+        }
+        return addresses[index];
+      } else {
+        return '';
+      }
     };
 
     TeaserRecord.prototype.hasAddresses = function() {
@@ -180,6 +226,141 @@
 
     TeaserRecord.prototype.hasPhone = function() {
       return true;
+    };
+
+    TeaserRecord.prototype.phoneNumbers = function() {
+      if (this.record["hasPhone"] === false) {
+        return [];
+      } else {
+        var extraData = this.record["extraData"],
+            phoneNumbers = _.find(extraData, { 'type': 'phones' });
+
+        return phoneNumbers;
+      }
+    };
+
+    TeaserRecord.prototype.phoneNumber = function() {
+      var phoneNumbers = this.phoneNumbers();
+
+      if (phoneNumbers && phoneNumbers.length !== 0) {
+        var index = 0;
+        while (phoneNumbers.phoneNumber[index] === undefined) {
+          index++
+        }
+        return phoneNumbers.phoneNumber[index];
+      } else {
+        return '';
+      }
+    };
+
+    TeaserRecord.prototype.phoneNumbersCountTeaser = function() {
+      var phoneNumbers = this.phoneNumbers();
+      if (phoneNumbers.count <= 1) {
+        return false;
+      } else {
+        return phoneNumbers.count -1;
+      }
+    };
+
+    TeaserRecord.prototype.emails = function() {
+      if (this.record["hasEmail"] === false) {
+        return [];
+      } else {
+        var extraData = this.record["extraData"],
+            emails = _.find(extraData, { 'type': 'emails' });
+
+        return emails;
+      }
+    };
+
+    TeaserRecord.prototype.email = function() {
+      var emails = this.emails();
+
+      if (emails && emails.length !== 0) {
+        var index = 0;
+        while (emails.emailAddress[index] === undefined) {
+          index++
+        }
+        return emails.emailAddress[index];
+      } else {
+        return '';
+      }
+    };
+
+    TeaserRecord.prototype.emailsCountTeaser = function() {
+      var emails = this.emails();
+      if (emails.count <= 1) {
+        return false;
+      } else {
+        return emails.count -1;
+      }
+    };
+
+    TeaserRecord.prototype.socialProfiles = function() {
+      if (this.record["hasSocial"] === false) {
+        return [];
+      } else {
+        var extraData = this.record["extraData"],
+            socialProfiles = _.find(extraData, { 'type': 'social' });
+
+        return socialProfiles;
+      }
+    };
+
+    TeaserRecord.prototype.socialProfileIcons = function() {
+      var socialProfiles = this.socialProfiles(),
+          socialProfileIcons = [];
+
+      if (socialProfiles && socialProfiles.length !== 0) {
+        for (var i = 0; i < 2; i++) {
+          socialProfileIcons.push(
+            '<a href="#" class="scroll-to-subscribe"><i class="social-icon '
+            + socialProfiles.socialNetwork[i]
+            + '"></i></a>'
+          );
+        }
+        return socialProfileIcons.join('');
+      } else {
+        return '';
+      }
+    };
+
+    TeaserRecord.prototype.socialProfilesCountTeaser = function() {
+      var socialProfiles = this.socialProfiles();
+      if (socialProfiles.socialNetwork.length <= 2) {
+        return false;
+      } else {
+        return socialProfiles.socialNetwork.length -2;
+      }
+    };
+
+    TeaserRecord.prototype.criminalRecords = function() {
+      if (this.record["hasCriminal"] === false) {
+        return [];
+      } else {
+        var extraData = this.record["extraData"],
+            criminalRecords = _.find(extraData, { 'type': 'criminal' });
+
+        return criminalRecords;
+      }
+    };
+
+    TeaserRecord.prototype.criminalRecordsCount = function() {
+      var criminalRecords = this.criminalRecords();
+      if (criminalRecords.count <= 1) {
+        return false;
+      } else {
+        return criminalRecords.count -1;
+      }
+    };
+
+    TeaserRecord.prototype.photo = function() {
+      var photo = this.record["photo"];
+      if (photo !== '') {
+        return '<img class="user-image" src="' + photo + '" alt="" />';
+      } else {
+        return [];
+      }
     };
 
     TeaserRecord.prototype.test = function() {
