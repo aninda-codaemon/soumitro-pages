@@ -345,6 +345,11 @@ label.error {
 .customer-test {
     margin-top: 20px;
 }
+
+.teaser-data-count {
+	color: #337ab7;
+}
+
 .video-wrapper {
     position: relative;
     padding-bottom: 50%;
@@ -509,7 +514,7 @@ footer a {
     }
     .main-left {
         padding-bottom: 1px;
-        border-radius: 0;   
+        border-radius: 0;
         margin-bottom: 0;
     }
     #main-wrap {

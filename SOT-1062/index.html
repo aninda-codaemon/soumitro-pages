@@ -376,9 +376,6 @@
 
       <div class="col-sm-5 hidden-xs">
 
-
-
-
         <div id="order-summary" class="panel side-panel info-snippet hidden-xs">
           <div class="panel-heading">
             <p class="panel-title strong" data-fr-bind="currentRecord">
@@ -388,79 +385,96 @@
           <div class="panel-body report" data-fr-bind="currentRecord extraTeaserData">
             <div class="order-summary-section">
               <span class="summary-details-wrapper clearfix">
-                  <span class="order-summary-heading strong">Age:</span>
-              <span class="pull-right">
-                    {{#if age}}
-                      <span class="report-owners-age text-success truncate">{{age}}</span>
-              <span class="blue-check"></span> {{/if}}
+                <span class="order-summary-heading strong">Age:</span>
+                <span class="pull-right">
+                  {{#if age}}
+                    <span class="report-owners-age truncate">{{age}}</span>
+                    <span class="blue-check"></span>
+                  {{/if}}
+                </span>
               </span>
-              </span>
-              <span class="summary-details-wrapper clearfix">
-                  <span class="order-summary-heading strong">Current Location:</span>
-              <span class="pull-right">
-                    <span class="report-owners-current-location truncate">
-                      {{#if place}} {{place}}
 
-                      {{else}}
-                        Locations Searched
-                      {{/if}}
-                    </span>
-              <span class="blue-check"></span>
-              </span>
-              </span>
               <span class="summary-details-wrapper clearfix">
-                  <span class="order-summary-heading strong">Relatives:</span>
-              <span class="pull-right">
-                    <span class="report-owners-relatives truncate">
-                      {{#if relatives}}
+                <span class="order-summary-heading strong">Current Location:</span>
+                <span class="pull-right">
+                  <span class="report-owners-current-location truncate">
+                    {{#if place}}
+                      {{place}}
+                    {{else}}
+                      Locations Searched
+                    {{/if}}
+                  </span>
+                  <span class="blue-check"></span>
+                </span>
+              </span>
+
+              <span class="summary-details-wrapper clearfix">
+                <span class="order-summary-heading strong">Relatives:</span>
+                <span class="pull-right">
+                  <span class="report-owners-relatives truncate">
+                    {{#if relatives}}
+                      <span class="teaser-data">
                         {{relative}}
+                      </span>
 
-                        {{#if relativesCountTeaser}}
-                          <span class="teaser-data-count">+ {{relativesCountTeaser}} more</span> {{/if}} {{else}} Relatives Searched {{/if}}
+                      {{#if relativesCountTeaser}}
+                        <span class="teaser-data-count">+{{relativesCountTeaser}} more</span>
+                      {{/if}}
+                    {{else}}
+                      Relatives Searched
+                    {{/if}}
+                  </span>
+                  <span class="blue-check"></span>
+                </span>
               </span>
-              <span class="blue-check"></span>
-              </span>
-              </span>
+
               <span class="summary-details-wrapper clearfix">
-                  <span class="order-summary-heading strong">Phone:</span>
-              <span class="pull-right">
-                    <span class="report-owners-phone truncate">
-                      {{#if phoneNumbers}}
-                        {{phoneNumber}}
+                <span class="order-summary-heading strong">Phone:</span>
+                <span class="pull-right">
+                  <span class="report-owners-phone truncate">
+                    {{#if phoneNumbers}}
+                      {{phoneNumber}}
 
-                        {{#if phoneNumbersCountTeaser}}
-                          <span class="teaser-data-count">+ {{phoneNumbersCountTeaser}} more</span> {{/if}} {{else}} Phones Searched {{/if}}
+                      {{#if phoneNumbersCountTeaser}}
+                        <span class="teaser-data-count">+{{phoneNumbersCountTeaser}} more</span>
+                      {{/if}}
+                    {{else}}
+                      Phones Searched
+                    {{/if}}
+                  </span>
+                  <span class="blue-check"></span>
+                </span>
               </span>
-              <span class="blue-check"></span>
-              </span>
-              </span>
+
               <span class="summary-details-wrapper clearfix">
-                  <span class="order-summary-heading strong">Emails:</span>
-              <span class="pull-right">
-                    <span class="report-owners-emails truncate">
-                      {{#if emails}}
-                        {{email}}
+                <span class="order-summary-heading strong">Emails:</span>
+                <span class="pull-right">
+                  <span class="report-owners-emails truncate">
+                    {{#if emails}}
+                      {{email}}
 
-                        {{#if emailsCountTeaser}}
-                          <span class="teaser-data-count">+ {{emailsCountTeaser}} more</span> {{/if}} {{else}} Emails Searched {{/if}}
+                      {{#if emailsCountTeaser}}
+                        <span class="teaser-data-count">+{{emailsCountTeaser}} more</span>
+                      {{/if}}
+                    {{else}}
+                      Emails Searched
+                    {{/if}}
+                  </span>
+                  <span class="blue-check"></span>
+                </span>
               </span>
-              <span class="blue-check"></span>
-              </span>
-              </span>
+
               <span class="summary-details-wrapper clearfix">
-                  <span class="order-summary-heading strong">Arrest Records</span>
-              <span class="pull-right">
-                    <span class="report-owners-arrest-records text-success"><a href="#" class="scroll-to-subscribe">Activate Account to Search</a></span>
+                <span class="order-summary-heading strong">Arrest Records</span>
+                <span class="pull-right">
+                  <span class="report-owners-arrest-records text-success">
+                    <span class="teaser-data-count ">Activate Account to Search</span>
+                  </span>
+                </span>
               </span>
-              </span>
-
-              <!--
-                <div id="map" class="hidden-xs hidden-sm map row">
-                  <img src="img/map-pin.png" class="map-pin">
-                </div>
-                -->
 
             </div>
+
             <div class="order-summary-total">
               <p class="text-right">
                 <strong>Total Today: </strong>

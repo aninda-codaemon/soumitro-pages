@@ -86,7 +86,7 @@ header {
 	background-repeat: no-repeat;
 	padding: 0 0 20px 60px;
 }
-.current-name, 
+.current-name,
 .current-teaser {
 	margin-bottom: 0;
 	line-height: 24px;
@@ -402,6 +402,13 @@ p.side-headline-header {
 }
 .now-included {
   font-style: italic;
+}
+.truncate {
+  position: relative;
+  bottom: 4px;
+}
+.teaser-data-count {
+	color: #337ab7;
 }
 .blue-check {
   display: inline-block;

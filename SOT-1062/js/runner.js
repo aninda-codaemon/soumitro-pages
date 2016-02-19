@@ -65,7 +65,7 @@
     $summaryMonthPriceHTML.html(monthlyPrice);
     $typeHTML.html(type);
     $summaryTermHTML.html(termLength);
-    
+
     $selectionWrap.removeClass('selection-selected');
     $selectionSelected.addClass('selection-selected');
   };
@@ -130,13 +130,13 @@
         $(this).replaceWith(video);
     });
   };
-  
+
   var reportHeap = function (evt, opt) {
     if (typeof window.heap !== "undefined" && heap.track) {
       heap.track(evt, opt);
     }
-  };  
-  
+  };
+
   var $bounceBackBtn = $('#iModal-back'),
       $bounceExitBtn = $('#iModal-exit'),
       $goToNextPage  = $('#show-dollar-trial'),
@@ -148,7 +148,7 @@
     trackNL('onBack Modal - Rejected');
     //window.location.href = $("body").data("search-page");
   };
-  
+
   var bounceExit = function () {
     $iOSModal.modal('hide');
     window.setTimeout(function () {
@@ -159,14 +159,14 @@
   $bounceBackBtn.on('click' , bounceBack);
   $bounceExitBtn.on('click' , bounceExit);
   $goToNextPage.on('click', function () {
-    trackNL('onBack Modal - Accepted');    
+    trackNL('onBack Modal - Accepted');
     window.location.href = $("body").data("next-page");
   });
 
   $iModalX.on('click', function() {
     trackNL('onBack Modal - Exited');
   });
-  
+
 
   var initDownsells = function () {
 
@@ -185,7 +185,7 @@
       }
     };
 
-    var vwoIntervalId, 
+    var vwoIntervalId,
         vwoExists = typeof _vwo_code !== "undefined" && typeof _vwo_code.finished === 'function';
 
     if (vwoExists) {
