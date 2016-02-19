@@ -320,8 +320,8 @@
       if (socialProfiles && socialProfiles.length !== 0) {
         for (var i = 0; i < 2; i++) {
           socialProfileIcons.push(
-            '<a href="#" class="scroll-to-subscribe"><i class="social-icon '
-            + socialProfiles.socialNetwork[i]
+            '<a href="#" class="scroll-to-subscribe social-icon"><i class="socicon-'
+            + socialProfiles.socialNetwork[i].toLowerCase()
             + '"></i></a>'
           );
         }
