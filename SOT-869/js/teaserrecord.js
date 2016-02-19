@@ -151,7 +151,8 @@
     };
 
     TeaserRecord.prototype.relative = function() {
-      var relatives = this.relatives();
+      var relatives = this.relatives(),
+          truncateLength = 20;
 
       if (relatives && relatives.length !== 0) {
         var index = 0;
@@ -159,7 +160,12 @@
         while (relatives[index] === undefined) {
           index++
         }
-        return relatives[index];
+
+        if (relatives[index].length > truncateLength) {
+          return relatives[index].substring(0, truncateLength) + '...';
+        } else {
+          return relatives[index]
+        }
       } else {
         return '';
       }
