@@ -412,13 +412,10 @@ header .header-cta {
 		float: right;
 	}
 
-	.teaser .user-details .user-name {
-		margin-top: 10px;
-	}
-
+	.teaser .user-details .user-name,
 	.teaser .user-meta-list .searches,
 	.teaser .user-meta-list .results {
-		margin-top: 10px;
+		margin-top: 8px;
 	}
 }
 
