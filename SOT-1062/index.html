@@ -381,7 +381,7 @@
 
         <div id="order-summary" class="panel side-panel info-snippet hidden-xs">
           <div class="panel-heading">
-            <p class="panel-title strong" data-fr-bind="bv_searchData">
+            <p class="panel-title strong" data-fr-bind="currentRecord">
               Your report for {{#if fullName}} {{fullName}} {{else}} searched subject {{/if}}
             </p>
           </div>
@@ -476,10 +476,10 @@
           <br>
           <span class="text-center">If we can't find results for
                 {{#if fullName}}
-                  {{fullName}}
+                  {{fullName}},
                 {{else}}
-                  your subject
-                {{/if}}, <strong>we will gladly issue a refund</strong>!</span>
+                  your subject,
+                {{/if}} <strong>we will gladly issue a refund</strong>!</span>
         </div>
 
 
