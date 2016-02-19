@@ -33,22 +33,22 @@
           <div class="col-sm-6 col-md-4">
             <div class="row user-details">
 
-              <div class="col-sm-6">
+              <div class="col-sm-4 user-details-column">
                 <img class="user-image hidden-portrait" src="img/user.png" alt="" />
               </div>
               <!-- end col-sm-4 -->
 
               {{#if fullName}}
-              <div class="col-sm-6">
-                <h4 class="user-name">{{fullName}}</h4>
-                {{#if age}}
-                  <p class="user-info">{{age}} years old</p>
-                {{/if}}
-                {{#if place}}
-                  <p class="user-info">from {{place}}</p>
-                {{/if}}
-              </div>
-              <!-- end col-sm-8 -->
+                <div class="col-sm-8 user-details-column">
+                  <h4 class="user-name">{{fullName}}</h4>
+                  {{#if age}}
+                    <p class="user-info">{{age}} years old</p>
+                  {{/if}}
+                  {{#if place}}
+                    <p class="user-info">from {{place}}</p>
+                  {{/if}}
+                </div>
+                <!-- end col-sm-8 -->
               {{/if}}
 
             </div>

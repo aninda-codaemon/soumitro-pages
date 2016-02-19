@@ -152,7 +152,7 @@
 
     TeaserRecord.prototype.relative = function() {
       var relatives = this.relatives(),
-          truncateLength = 20;
+          truncateLength = 18;
 
       if (relatives && relatives.length !== 0) {
         var index = 0;

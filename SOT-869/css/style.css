@@ -413,12 +413,12 @@ header .header-cta {
 	}
 
 	.teaser .user-details .user-name {
-		margin-top: 12px;
+		margin-top: 10px;
 	}
 
 	.teaser .user-meta-list .searches,
 	.teaser .user-meta-list .results {
-		margin-top: 11px;
+		margin-top: 10px;
 	}
 }
 
@@ -431,6 +431,10 @@ header .header-cta {
 
 	.teaser .headline .break-xs {
 		font-size: 100%;
+	}
+
+	.teaser .user-details-column {
+		padding-right: 0;
 	}
 
 	.teaser .user-details .user-name {
