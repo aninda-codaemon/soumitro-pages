@@ -549,6 +549,9 @@ footer a {
 
 }
 @media (min-width:768px) {
+  .mobile-subject-teaser {
+    display: none;
+  }
 	.plan-price-wrap {
 		text-align: right;
 	}
