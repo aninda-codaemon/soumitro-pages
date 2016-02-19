@@ -160,8 +160,8 @@
         while (relatives[index] === undefined) {
           index++
         }
-        
-        if (relatives[index].length > 20) {
+
+        if (relatives[index].length > truncateLength) {
           return relatives[index].substring(0, truncateLength) + '...';
         } else {
           return relatives[index]
