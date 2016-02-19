@@ -501,7 +501,7 @@ header .header-cta {
   background: #fff;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
 	.left-section,
 	.right-section  {
 		padding-top: 0;
@@ -693,14 +693,6 @@ header .header-cta {
 		display: block;
 	  border-right: solid 1px #ccc;
 	}
-
-	.features .feature .feature-icon {
-		margin-top: 30px;
-	}
-
-	.features .feature .feature-description {
-		margin-bottom: 30px;
-	}
 }
 
 @media (min-width: 992px) {
@@ -713,6 +705,14 @@ header .header-cta {
 
 	.features .feature:last-child {
 		padding-top: 30px;
+	}
+
+	.features .feature .feature-icon {
+		margin-top: 30px;
+	}
+
+	.features .feature .feature-description {
+		margin-bottom: 30px;
 	}
 }
 
