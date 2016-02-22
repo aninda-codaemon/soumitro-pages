@@ -749,11 +749,13 @@ var BVGetQueryVariable = function(variable) {
         "credit_card[first_name]": "Please enter your first name.",
         "credit_card[last_name]": "Please enter your Last name.",
         "address[address1]": "Please enter the credit card billing address.",
-        "address[city]": "Please enter the city associated with your card.",
-        "address[zip]": "Please enter the zip code associated with your card.",
+        "address[city]": "Enter the city associated with your card.",
+        "address[zip]": "Enter zip code associated with your card.",
         "account[phone_number]": "Please enter a phone number where you can be reached.",
+        "credit_card[card_number]": "Please enter a valid credit card #.",
+        "credit_card[expiration_date(1i)]": "Enter a valid expiration date.",
         "credit_card[verification_number]": {
-          required: "Please provide your card's verification number.",
+          required: "Provide your card's verification #.",
           number: "Card codes must be either 3 or 4 numerical digits"
         },
         "user[password]": {

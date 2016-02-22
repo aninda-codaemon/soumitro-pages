@@ -201,15 +201,19 @@
       var addresses = this.addresses();
 
       if (addresses && addresses.length !== 0) {
-        // the - 1 on the count is because one place is already shown on the page
-        return addresses.length - 1;
+        if (addresses.length <= 2) {
+          return false
+        } else {
+          return addresses.length - 1;
+        }
       } else {
-        return '';
+        return false;
       }
     };
 
     TeaserRecord.prototype.places = function() {
-      return this.addresses();
+      var places = this.addresses();
+      return places;
     };
 
     TeaserRecord.prototype.place = function() {
@@ -222,7 +226,26 @@
         }
         return addresses[index];
       } else {
-        return '';
+        return [];
+      }
+    };
+
+    TeaserRecord.prototype.previousPlace = function() {
+      var addresses = this.addresses();
+
+      if (addresses && addresses.length !== 0) {
+        var index = 1;
+        if (addresses.length <= 1) {
+          return [];
+        } else {
+          while (addresses[index] === undefined) {
+            index++
+          }
+          console.log(addresses[index]);
+          return addresses[index];
+        }
+      } else {
+        return [];
       }
     };
 
