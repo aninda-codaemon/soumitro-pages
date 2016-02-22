@@ -1300,3 +1300,10 @@ footer .legal .links a {
 		text-align: right;
 	}
 }
+
+/* modals */
+
+#paypal-spinner,
+#paypal-confirm-error {
+	display: none;
+}
