@@ -1143,15 +1143,22 @@ header .header-cta {
 
 .agreement-container .checkbox {
   display: inline-block;
-	margin: 4px 12px;
+	margin: 6px 16px;
 	margin-left: 0;
+	padding: 10px;
   float: left;
 	cursor: pointer;
+	-ms-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+  -o-transform: scale(1.25);
 }
 
 .agreement-container .agreement {
 	display: inline;
   margin: 0;
+	cursor: pointer;
+	font-weight: normal !important;
 }
 
 .payment-form .form-group .submit-cc-form {
