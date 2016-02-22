@@ -1082,7 +1082,7 @@ header .header-cta {
 }
 
 .payment-form .form-group {
-	margin-bottom: 20px;
+	margin-bottom: 25px;
 }
 
 .payment-form .form-group label {
@@ -1102,7 +1102,7 @@ header .header-cta {
 	position: absolute;
 	right: 20px;
   color: #F57777;
-  font-size: 11px;
+  font-size: 14px;
 	text-align: right;
 }
 

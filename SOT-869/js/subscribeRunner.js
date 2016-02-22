@@ -749,9 +749,9 @@ var BVGetQueryVariable = function(variable) {
         "credit_card[first_name]": "Please enter your first name.",
         "credit_card[last_name]": "Please enter your Last name.",
         "address[address1]": "Please enter the credit card billing address.",
-        "address[city]": "Please enter the city associated with your credit card.",
-        "address[zip]": "Please enter the zip code associated with your credit card.",
-        "account[phone_number]": "Please enter the phone number you can be reached at.",
+        "address[city]": "Please enter the city associated with your card.",
+        "address[zip]": "Please enter the zip code associated with your card.",
+        "account[phone_number]": "Please enter a phone number where you can be reached.",
         "credit_card[verification_number]": {
           required: "Please provide your card's verification number.",
           number: "Card codes must be either 3 or 4 numerical digits"
