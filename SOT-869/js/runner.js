@@ -24,47 +24,71 @@
   } catch (e) {
     trackNL('Safari Private Browsing');
 
-    console.log(amplify.store());
+    var query = amplify.store('query');
 
-    var query = amplify.store('query'),
-      baseUrl = '//www.beenverified.com/hk/teaser/?exporttype=jsonp&rc=100',
-      url = baseUrl + '&bvid=' + query.bvid + '&fn=' + query.fn + '&mi=' + query.mi + '&ln=' + query.ln + '&age=' + query.age + '&city=' + query.city + '&state=' + validState(query.state),
-      xhrData = $.ajax({
-        url: url,
-        dataType: 'jsonp',
-        jsonpCallback: 'parseResults'
-      });
+    var activated = false;
 
-    console.log(xhrData);
+    var activateRows = function() {
+        if (activated) return;
+        activated = true;
+        var $dataPanel = $('#data-panel');
+        $dataPanel.on("click", 'tr.results-row', function(e) {
+            e.preventDefault();
+            window.hasClickedResult = true;
+            generateMapLink(this);
+            window.startModalFlow(this);
+        });
+    };
+
+    var renderResults = function(teaserData) {
+        if (teaserData) {
+            hideSearchingAnimation();
+            if (teaserData.recordCount == 0) { //coerce
+                showNoResultsPanel();
+            } else {
+                showResultsPanel();
+            }
+        }
+        activateRows();
+    };
+    
+    var validState = function(state) {
+      if (state && state.toLowerCase() === "all") {
+        return "";
+      }
+      return state;
+    };
 
     // Get Teaser Data
 
-    // var getTeaserData = function(data, initiator) {
-    //
-    //   var baseUrl = "//www.beenverified.com/hk/teaser/?exporttype=jsonp&rc=100",
-    //     url = baseUrl + "&fn=" + data.fn + "&ln=" + data.ln + "&state=" + validState(data.state) + "&city=" + data.city + "&age=" + data.age + "&mi=" + data.mi,
-    //     xhrData = $.ajax({
-    //       url: url,
-    //       dataType: 'jsonp',
-    //       jsonpCallback: 'parseResults'
-    //     });
-    //
-    //   $.when(xhrData).done(function(result) {
-    //     var teaserRecords,
-    //       xhrResult = result;
-    //
-    //     teaserRecords = parseTeaser(xhrResult);
-    //
-    //     var teaserDataObj = {
-    //       recordCount: xhrResult.response.RecordCount,
-    //       teasers: teaserRecords
-    //     };
-    //
-    //     amplify.store('teaserData', teaserDataObj);
-    //     renderResults(teaserDataObj);
-    //     notifyRecordCount(initiator);
-    //   });
-    // };
+    var getTeaserData = function(data, initiator) {
+
+      var baseUrl = "//www.beenverified.com/hk/teaser/?exporttype=jsonp&rc=100",
+          url = baseUrl + '&bvid=' + query.bvid + '&fn=' + query.fn + '&mi=' + query.mi + '&ln=' + query.ln + '&age=' + query.age + '&city=' + query.city + '&state=' + validState(query.state),
+          xhrData = $.ajax({
+            url: url,
+            dataType: 'jsonp',
+            jsonpCallback: 'parseResults'
+          });
+
+      $.when(xhrData).done(function(result) {
+        var teaserRecords,
+          xhrResult = result;
+
+        // parseTeaser is undefined
+        //teaserRecords = parseTeaser(xhrResult);
+        teaserRecords = xhrResult;
+
+        var teaserDataObj = {
+          recordCount: xhrResult.response.RecordCount,
+          teasers: teaserRecords
+        };
+
+        amplify.store('teaserData', teaserDataObj);
+        renderResults(teaserDataObj);
+        notifyRecordCount(initiator);
+      });
+    };
     //
     // // Get Extra Teaser Data
     //
@@ -228,12 +252,12 @@
     //   });
     // };
     //
-    // var initData = function() {
-    //   getTeaserData();
-    //   getExtraTeaserData();
-    // }
-    //
-    // initData();
+    var initData = function() {
+      getTeaserData();
+      //getExtraTeaserData();
+    }
+
+    initData();
   }
 
   // teaser links event
@@ -321,13 +345,6 @@
         top = ($(window).height() / 2) - (600 / 2),
         popup = window.open("https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&dn=www.beenverified.com&lang=en", "popup", "width=900, height=600, top=" + top + ", left=" + left);
     });
-  };
-
-  var validState = function(state) {
-    if (state && state.toLowerCase() === "all") {
-      return "";
-    }
-    return state;
   };
 
   var reportHeap = function(evt, opt) {
