@@ -18,8 +18,8 @@
   "use strict";
 
   var fr = {},
-      store = amplify.store,
-      storage;
+    store = amplify.store,
+    storage;
 
   /* Keeps a mapping of dataSources to bound elements */
   var dataSourceDeps = {};
@@ -34,7 +34,7 @@
   /*
    * @private
    */
-  var interceptJQueryOnEvents = function () {
+  var interceptJQueryOnEvents = function() {
     var origOn = $.fn.on;
     $.fn.on = function() {
       var $selectedElems = $(this);
@@ -47,9 +47,9 @@
 
       if (arguments.length > 2) { // it's a delegated handler
         var hasFRClick = $selectedElems.find("[data-fr-click]").length > 0,
-            hasFRSubmit = $selectedElems.find("[data-fr-store]").length > 0;
+          hasFRSubmit = $selectedElems.find("[data-fr-store]").length > 0;
         if (hasFRClick) {
-      return origOn.apply($("body"), arguments);
+          return origOn.apply($("body"), arguments);
         }
       }
       return origOn.apply(this, arguments);
@@ -74,13 +74,13 @@
 
     amplify.store = function() {
       var result,
-          key = arguments[0],
-          val = arguments[1],
-          argsLen = arguments.length,
-          storageData = {
-              dataSource: key,
-              data: val
-          };
+        key = arguments[0],
+        val = arguments[1],
+        argsLen = arguments.length,
+        storageData = {
+          dataSource: key,
+          data: val
+        };
 
       if (argsLen === 1) {
         result = origStore(key);
@@ -132,7 +132,7 @@
   fr._template = function(html, data, templateId) {
     html = fr._applyHtmlFixes(html);
     if (!templates[templateId]) {
-        templates[templateId] = H.compile(html);
+      templates[templateId] = H.compile(html);
     }
     return templates[templateId](data);
   };
@@ -146,17 +146,17 @@
       return null;
     }
     var args = _
-        .chain(query.split('&'))
-        .map(function(params) {
-            var p = params.split('=');
-            var key = p[0];
-            var val = window.decodeURIComponent(p[1] || "");
-            val = val.replace(/\/+$/g, ""); // clean up trailing slash
-            val = val.replace(/\+/g, " "); // replace white spaces
-            return [key, val];
-        })
-        .object()
-        .value();
+      .chain(query.split('&'))
+      .map(function(params) {
+        var p = params.split('=');
+        var key = p[0];
+        var val = window.decodeURIComponent(p[1] || "");
+        val = val.replace(/\/+$/g, ""); // clean up trailing slash
+        val = val.replace(/\+/g, " "); // replace white spaces
+        return [key, val];
+      })
+      .object()
+      .value();
     return args;
   };
 
@@ -168,7 +168,7 @@
    */
   fr._checkQueryStringDeps = function(queryArgs) {
     var $meta = $("meta[data-fr-query]"),
-        dataSource = $meta.data('fr-query');
+      dataSource = $meta.data('fr-query');
     if ($meta.length === 0) return false;
     if (!queryArgs) {
       store(dataSource, "");
@@ -192,9 +192,9 @@
     });
   };
 
-  fr._tickCheckBoxes = function ($boundElem) {
+  fr._tickCheckBoxes = function($boundElem) {
     var $cbs = $boundElem.find("input[type=checkbox]");
-    $.each($cbs, function (idx, cb) {
+    $.each($cbs, function(idx, cb) {
       var checkedVal = $(cb).attr('data-fr-checked');
       if (checkedVal && checkedVal != "0") {
         $(cb).prop('checked', checkedVal);
@@ -209,7 +209,7 @@
    */
   fr._storeQueryArgs = function(queryString) {
     var args = fr._parseQueryArgs(queryString),
-        dataSource = fr._checkQueryStringDeps(args);
+      dataSource = fr._checkQueryStringDeps(args);
 
     if (args && args.frstore) {
       store(args.frstore, args);
@@ -274,7 +274,7 @@
   /*
    * Polyfill outerHTML for older versions of FF.
    */
-  var outerHTML = function (node) {
+  var outerHTML = function(node) {
     return node.outerHTML || new XMLSerializer().serializeToString(node);
   };
 
@@ -296,16 +296,16 @@
    */
   fr._processFrEachElems = function($eachStubElems, data, dataSource) {
     var collectionName, repeatedHtml,
-        dataSources = dataSource.split(' '),
-        multipleDataSources = dataSources.length > 0;
+      dataSources = dataSource.split(' '),
+      multipleDataSources = dataSources.length > 0;
 
     $eachStubElems.each(function(idx, eachStubElem) {
       var $eachStubElem = $(eachStubElem),
-          $eachStubParent = $eachStubElem.parent(),
-          stubId = _.uniqueId(),
-          mappingFunction = $eachStubElem.data("fr-map"),
-          sortingFunction = $eachStubElem.data("fr-sort"),
-          repeatedTpl, ds, dataPath;
+        $eachStubParent = $eachStubElem.parent(),
+        stubId = _.uniqueId(),
+        mappingFunction = $eachStubElem.data("fr-map"),
+        sortingFunction = $eachStubElem.data("fr-sort"),
+        repeatedTpl, ds, dataPath;
 
       collectionName = $eachStubElem.data('fr-each');
       $eachStubElem.removeAttr('data-fr-each');
@@ -363,32 +363,32 @@
    * own localStorage entry, losing its association with fr-click.
    */
   fr._transformWithMappingFn = function(data) {
-      // Store references to the original data before applying the mapping.
-      var originalDataSources = data._framerida_original_datasources,
-          originalFrameridaClick = data._framerida_click;
+    // Store references to the original data before applying the mapping.
+    var originalDataSources = data._framerida_original_datasources,
+      originalFrameridaClick = data._framerida_click;
 
-      if (originalFrameridaClick) {
-        originalFrameridaClick = originalFrameridaClick.split(' ')[1];
-      }
+    if (originalFrameridaClick) {
+      originalFrameridaClick = originalFrameridaClick.split(' ')[1];
+    }
 
-      // Apply the mapping function
-      data = new root[data._framerida_mapped](data);
+    // Apply the mapping function
+    data = new root[data._framerida_mapped](data);
 
-      // If we have multiple dataSources, applying the mapping function gets
-      // rid of data that it doesnt use. Here we add that data back.
-      if (originalFrameridaClick && originalDataSources) {
-        _.forEach(originalDataSources, function(originalDs) {
-          if (originalDs === originalFrameridaClick) return;
-          var dsData = store()[originalDs];
-          _.forEach(dsData, function(val, prop) {
-            var propName = prop;
-            if (data[prop]) {
-              propName = originalDs + "_" + prop; // namespace dups
-            }
-            data[propName] = val;
-          });
+    // If we have multiple dataSources, applying the mapping function gets
+    // rid of data that it doesnt use. Here we add that data back.
+    if (originalFrameridaClick && originalDataSources) {
+      _.forEach(originalDataSources, function(originalDs) {
+        if (originalDs === originalFrameridaClick) return;
+        var dsData = store()[originalDs];
+        _.forEach(dsData, function(val, prop) {
+          var propName = prop;
+          if (data[prop]) {
+            propName = originalDs + "_" + prop; // namespace dups
+          }
+          data[propName] = val;
         });
-      }
+      });
+    }
     return data;
   };
 
@@ -398,8 +398,8 @@
    */
   fr._insertData = function($boundElems, dataSource, storage) {
     var data = {},
-        dataSources = dataSource.split(' '),
-        multipleDataSources = dataSources.length > 1;
+      dataSources = dataSource.split(' '),
+      multipleDataSources = dataSources.length > 1;
 
     if (multipleDataSources) {
       data = fr._mergeDataSources(dataSources, storage);
@@ -409,10 +409,10 @@
 
     $boundElems.each(function(idx, boundElem) {
       var $boundElem = $(boundElem),
-          $boundElemClone = $boundElem.clone(),
-          $eachStubElems = $boundElemClone.find("[data-fr-each]"),
-          uid = _.uniqueId(),
-          html;
+        $boundElemClone = $boundElem.clone(),
+        $eachStubElems = $boundElemClone.find("[data-fr-each]"),
+        uid = _.uniqueId(),
+        html;
 
       fr._processFrEachElems($eachStubElems, data, dataSource);
 
@@ -436,10 +436,10 @@
 
         // Populate those fields with in-memory values.
         if (typeof boundElemId !== "undefined" && ignoredValues[boundElemId]) {
-          $ignoredElems.each(function (idx, ignoredElem) {
+          $ignoredElems.each(function(idx, ignoredElem) {
             var $ignoredElem = $(ignoredElem),
-                ignoredName = $ignoredElem.attr('name'),
-                inMemoryValue = ignoredValues[boundElemId][ignoredName];
+              ignoredName = $ignoredElem.attr('name'),
+              inMemoryValue = ignoredValues[boundElemId][ignoredName];
             if ($ignoredElem.is(":checkbox")) {
               $ignoredElem.prop('checked', inMemoryValue == 1);
             } else {
@@ -478,7 +478,7 @@
   fr._storeDataSourceDeps = function($boundElems) {
     $boundElems.each(function(idx, boundElem) {
       var $boundElem = $(boundElem),
-          dataSource = $boundElem.data('fr-bind');
+        dataSource = $boundElem.data('fr-bind');
       if (!dataSourceDeps[dataSource]) {
         dataSourceDeps[dataSource] = [];
       }
@@ -493,20 +493,20 @@
    * is that any validation plugin will mark inputs with the above
    * mentioned classes when validation fails.
    */
-  fr._hasInvalidClassNames = function (form) {
-     var hasInvalid = false,
-        $form = $(form),
-        $inputs = $form.find('input');
-     $inputs.each(function (idx, input) {
-       if (hasInvalid) return;
-       var classNames = ($(input).attr('class') || "").toLowerCase(),
-           hasInvalidName = classNames.indexOf("invalid")!== -1,
-           hasErrorName = classNames.indexOf("error") !== -1;
-       if (hasInvalidName || hasErrorName) {
-         hasInvalid = true;
-       }
-     });
-     return hasInvalid;
+  fr._hasInvalidClassNames = function(form) {
+    var hasInvalid = false,
+      $form = $(form),
+      $inputs = $form.find('input');
+    $inputs.each(function(idx, input) {
+      if (hasInvalid) return;
+      var classNames = ($(input).attr('class') || "").toLowerCase(),
+        hasInvalidName = classNames.indexOf("invalid") !== -1,
+        hasErrorName = classNames.indexOf("error") !== -1;
+      if (hasInvalidName || hasErrorName) {
+        hasInvalid = true;
+      }
+    });
+    return hasInvalid;
   };
 
   /*
@@ -520,30 +520,31 @@
         return;
       }
       var formVals = $(this).serializeArray(),
-          storageKey = $(this).data('fr-store'),
-          formId = $(this).data('fr-id'),
-          ignoredElems = $(this).find('[data-fr-ignore]');
+        storageKey = $(this).data('fr-store'),
+        formId = $(this).data('fr-id'),
+        ignoredElems = $(this).find('[data-fr-ignore]');
 
       formVals = fr._transformFormData(formVals);
 
       var cbs = $(this).find('[type=checkbox]');
 
       if (cbs.length > 0) {
-      // Make sure that unticked checkboxes are also included in form data
-      // jQuery ignores unticked cbs and doesnt list them in serialized results.
-        _.each(cbs, function (cb) {
-          var $cb = $(cb), cbName = $cb.attr('name');
+        // Make sure that unticked checkboxes are also included in form data
+        // jQuery ignores unticked cbs and doesnt list them in serialized results.
+        _.each(cbs, function(cb) {
+          var $cb = $(cb),
+            cbName = $cb.attr('name');
           if (!formVals[cbName]) {
             formVals[cbName] = "0"; // 0 for unchecked.
           }
         });
       }
 
-      ignoredElems = _.map(ignoredElems, function (ignored) {
+      ignoredElems = _.map(ignoredElems, function(ignored) {
         return $(ignored).attr('name');
       });
 
-      _.each(ignoredElems, function (ignoredName) {
+      _.each(ignoredElems, function(ignoredName) {
         if (formVals[ignoredName]) {
           if (!ignoredValues[formId]) {
             ignoredValues[formId] = {};
@@ -564,18 +565,18 @@
   fr._renderEachStubs = function(dataSource) {
     _.forEach(dataSourceDeps[dataSource], function(boundElem) {
       var $iteratedElems = $(boundElem).find('[data-fr-iterated]'),
-          mappingFunction = $iteratedElems.data('fr-mapped'),
-          sortingFunction = $iteratedElems.data('fr-sorted'),
-          collectionName = $iteratedElems.data('fr-iterated');
+        mappingFunction = $iteratedElems.data('fr-mapped'),
+        sortingFunction = $iteratedElems.data('fr-sorted'),
+        collectionName = $iteratedElems.data('fr-iterated');
 
       if ($iteratedElems.length > 0) {
         var boundTo = $iteratedElems.data('fr-bound');
 
         $iteratedElems.each(function(idx, iteratedElem) {
           var $iteratedElem = $(iteratedElem),
-              elemId = $iteratedElem.data('fr-template'),
-              data = fr._mergeDataSources(boundTo.split(' '), store()),
-              newHtml;
+            elemId = $iteratedElem.data('fr-template'),
+            data = fr._mergeDataSources(boundTo.split(' '), store()),
+            newHtml;
 
           if (mappingFunction) {
             data[collectionName] = fr._applyMapping(data[collectionName], mappingFunction);
@@ -600,9 +601,9 @@
   fr.dataFromDataPath = function(dataPathString) {
 
     var dataPathRgx = /(\w.*)\.(\w+)\[(\d+)\]/g,
-        rgxResults,
-        storage = store(),
-        boundData;
+      rgxResults,
+      storage = store(),
+      boundData;
 
     dataPathRgx.lastIndex = 0;
     rgxResults = dataPathRgx.exec(dataPathString);
@@ -612,8 +613,8 @@
     }
 
     var boundDataSource = rgxResults[1],
-        collectionName = rgxResults[2],
-        collectionIdx = rgxResults[3];
+      collectionName = rgxResults[2],
+      collectionIdx = rgxResults[3];
 
     var boundDataSources = boundDataSource.split(' ');
 
@@ -648,9 +649,9 @@
   fr._attachClickHandlers = function() {
     $("body").on("click", "[data-fr-click]", function(evt) {
       var dataPath = $(this).data("fr-bound-iterated"),
-          actionStr = $(this).data("fr-click"),
-          mapped = $(this).data("fr-map"),
-          actionSplit, action, targetStorage, boundData;
+        actionStr = $(this).data("fr-click"),
+        mapped = $(this).data("fr-map"),
+        actionSplit, action, targetStorage, boundData;
 
       if (actionStr) {
         actionSplit = actionStr.split(' ');
@@ -695,13 +696,13 @@
 
     $(document).on('storageChange', function(evt, data) {
       var dataSource = data.dataSource,
-          boundElemsColl = {};
+        boundElemsColl = {};
 
       // Find element sets that depend on this dataSource.
       // This includes elements that bind to multiple dataSources.
       _.forEach(dataSourceDeps, function(val, ds) {
         if (_.contains(ds.split(' '), dataSource)) {
-            boundElemsColl[ds] = dataSourceDeps[ds];
+          boundElemsColl[ds] = dataSourceDeps[ds];
         }
       });
 
@@ -718,7 +719,7 @@
 
   if (!root._framerida_test_mode) {
     try {
-     fr.initialize();
+      fr.initialize();
     } catch (error) {
       // Make sure the page gets displayed despite any errors.
       $("body").removeClass("hide").removeClass('fr-hide');

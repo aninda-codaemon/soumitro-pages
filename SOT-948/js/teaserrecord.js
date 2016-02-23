@@ -182,6 +182,18 @@
       return true;
     };
 
+    TeaserRecord.prototype.emailaddress = function() {
+      var socialCurrentRecord = this.record['socialCurrentRecord'],
+          emailaddress = socialCurrentRecord.emailaddress
+
+      console.log(emailaddress);
+      if (emailaddress !== '') {
+        return emailaddress;
+      } else {
+        return ''
+      }
+    };
+
     TeaserRecord.prototype.test = function() {
       return this.record;
     };
