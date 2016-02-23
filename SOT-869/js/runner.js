@@ -26,6 +26,35 @@
 
     // Get Teaser Data
 
+    var getTeaserData = function(data, initiator) {
+
+      var baseUrl = "//www.beenverified.com/hk/teaser/?exporttype=jsonp&rc=100",
+        url = baseUrl + "&fn=" + data.fn + "&ln=" + data.ln + "&state=" + validState(data.state) + "&city=" + data.city + "&age=" + data.age + "&mi=" + data.mi,
+        xhrData = $.ajax({
+          url: url,
+          dataType: 'jsonp',
+          jsonpCallback: 'parseResults'
+        });
+
+      $.when(xhrData).done(function(result) {
+        var teaserRecords,
+          xhrResult = result;
+
+        teaserRecords = parseTeaser(xhrResult);
+
+        var teaserDataObj = {
+          recordCount: xhrResult.response.RecordCount,
+          teasers: teaserRecords
+        };
+
+        amplify.store('teaserData', teaserDataObj);
+        renderResults(teaserDataObj);
+        notifyRecordCount(initiator);
+      });
+    };
+
+    // Get Extra Teaser Data
+
     var getExtraTeaserData = function(ctx, cb) {
       var dataPath = $(ctx).data("fr-bound2");
       var data = framerida.dataFromDataPath(dataPath);
@@ -41,7 +70,7 @@
       });
 
       $.when(xhrData).done(function(result) {
-        trackNL("Person Data Teaser Called");
+        trackNL('Person Data Teaser Called');
 
         var res = result;
         var img = '';
@@ -185,6 +214,13 @@
         }
       });
     };
+
+    var initData = function() {
+      getTeaserData();
+      getExtraTeaserData();
+    }
+
+    initData();
   }
 
   // teaser links event
