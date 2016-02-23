@@ -241,7 +241,6 @@
           while (addresses[index] === undefined) {
             index++
           }
-          console.log(addresses[index]);
           return addresses[index];
         }
       } else {
