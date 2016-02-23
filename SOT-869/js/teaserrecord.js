@@ -152,7 +152,7 @@
 
     TeaserRecord.prototype.relative = function() {
       var relatives = this.relatives(),
-          truncateLength = 20;
+        truncateLength = 20;
 
       if (relatives && relatives.length !== 0) {
         var index = 0;
@@ -176,7 +176,7 @@
 
       if (relatives && relatives.length !== 0) {
         // the - 1 on the count is because one relative is already shown on the page
-        return relatives.length -1;
+        return relatives.length - 1;
       } else {
         return '';
       }
@@ -261,7 +261,9 @@
         return [];
       } else {
         var extraData = this.record["extraData"],
-            phoneNumbers = _.find(extraData, { 'type': 'phones' });
+          phoneNumbers = _.find(extraData, {
+            'type': 'phones'
+          });
 
         return phoneNumbers;
       }
@@ -286,7 +288,7 @@
       if (phoneNumbers.count <= 1) {
         return false;
       } else {
-        return phoneNumbers.count -1;
+        return phoneNumbers.count - 1;
       }
     };
 
@@ -295,7 +297,9 @@
         return [];
       } else {
         var extraData = this.record["extraData"],
-            emails = _.find(extraData, { 'type': 'emails' });
+          emails = _.find(extraData, {
+            'type': 'emails'
+          });
 
         return emails;
       }
@@ -320,7 +324,7 @@
       if (emails.count <= 1) {
         return false;
       } else {
-        return emails.count -1;
+        return emails.count - 1;
       }
     };
 
@@ -329,7 +333,9 @@
         return [];
       } else {
         var extraData = this.record["extraData"],
-            socialProfiles = _.find(extraData, { 'type': 'social' });
+          socialProfiles = _.find(extraData, {
+            'type': 'social'
+          });
 
         return socialProfiles;
       }
@@ -337,15 +343,15 @@
 
     TeaserRecord.prototype.socialProfileIcons = function() {
       var socialProfiles = this.socialProfiles(),
-          socialProfileIcons = [];
+        socialProfileIcons = [];
 
       if (socialProfiles && socialProfiles.length !== 0) {
         for (var i = 0; i < 2; i++) {
-          socialProfileIcons.push(
-            '<a href="#" class="scroll-to-subscribe social-icon"><i class="socicon-'
-            + socialProfiles.socialNetwork[i].toLowerCase()
-            + '"></i></a>'
-          );
+          if (socialProfiles.socialNetwork[i] !== undefined) {
+            socialProfileIcons.push(
+              '<a href="#" class="scroll-to-subscribe social-icon"><i class="socicon-' + socialProfiles.socialNetwork[i].toLowerCase() + '"></i></a>'
+            );
+          }
         }
         return socialProfileIcons.join('');
       } else {
@@ -358,7 +364,7 @@
       if (socialProfiles.socialNetwork.length <= 2) {
         return false;
       } else {
-        return socialProfiles.socialNetwork.length -2;
+        return socialProfiles.socialNetwork.length - 2;
       }
     };
 
@@ -367,7 +373,9 @@
         return [];
       } else {
         var extraData = this.record["extraData"],
-            criminalRecords = _.find(extraData, { 'type': 'criminal' });
+          criminalRecords = _.find(extraData, {
+            'type': 'criminal'
+          });
 
         return criminalRecords;
       }
@@ -378,7 +386,7 @@
       if (criminalRecords.count <= 1) {
         return false;
       } else {
-        return criminalRecords.count -1;
+        return criminalRecords.count - 1;
       }
     };
 
