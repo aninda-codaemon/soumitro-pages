@@ -1,0 +1,660 @@
+/* @override http://flowrida.beenverified.com/pages/907/css/pretty.css */
+
+.fr-hide {
+  margin-top: -9999px;
+  margin-left: -9999px;
+  position: absolute;
+}
+
+.strong {
+	font-weight: 700;
+}
+.strikeout-this {
+	text-decoration: line-through;
+    color:#888;
+    font-weight:normal:
+}
+small, .small {
+	line-height: 1.33em;
+}
+.btn-lg {
+	border-radius: 4px;
+}
+.text-bv-blue {
+	color: #20418a;
+}
+body {
+	background-color: #e8ecee;
+}
+
+/* HEADER ================================== */
+
+header {
+	background-color: #fff;
+	padding-top: 13px;
+	padding-bottom: 13px;
+}
+#logo-wrap {
+    background-image: url('//dbivtdsofhpu6.cloudfront.net/assets/img/9667bb41e0ec8c3b69a8d8928d1aacc6.png');
+    background-image: url('//dbivtdsofhpu6.cloudfront.net/assets/img/ca891e68839a6b03705e530b3e9a223e.svg'), none;
+    background-repeat: no-repeat;
+    display: block;
+    height: 20px;
+    width: 225px;
+}
+.phone {
+	margin-bottom: 0;
+}
+
+/* BODY ================================== */
+
+#body-wrap {
+	margin-bottom: 20px;
+}
+#report-header {
+	background-color: #FFAA00;
+	color: #fff;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#report-header p {
+	margin-bottom: 0;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 400;
+}
+
+/* CURRENT PREVIEW ============================== */
+.dot {
+	width: 9px;
+	height: 9px;
+	background-color: #73b649;
+	display: inline-block;
+	margin-left: 8px;
+	border-radius:10px;
+	margin-top: 6px;
+}
+#current-preview {
+	font-size: 16px;
+	background-image: url('//dbivtdsofhpu6.cloudfront.net/assets/img/fad9e7c4599e93115e74afd027d15136.jpg');
+	background-position: 15px center;
+	background-repeat: no-repeat;
+	padding: 20px 0 20px 60px;
+}
+.current-name,
+.current-teaser {
+	margin-bottom: 0;
+	line-height: 24px;
+}
+/* DOWNSELL ================================== */
+#downsell-text-wrapper {
+	background: #616a7a url("//dbivtdsofhpu6.cloudfront.net/assets/img/73f88fd4c10d8319322ca28455f2d10f.jpg") repeat right top;
+    padding-top: 9px;
+    padding-bottom: 2px;
+    font-size: 28px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 20px;
+}
+#downsell-text {
+	line-height:80px;
+}
+#downsell-timer {
+	background-color: #0e2d54;
+	border-radius: 25px 0 0 25px;
+}
+#timer-text {
+	padding-left: 20px;
+	padding-top: 3px;
+	font-size: 32px;
+	margin-bottom: 0;
+}
+.digit-wrapper {
+	border-radius: 30px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-size: 12px;
+}
+#hours,
+#minutes,
+#seconds {
+	color: #ffa100;
+	font-size: 18px;
+}
+.downsell-letter {
+	color: #fff;
+	font-size: 16px;
+	margin-left: 4px;
+}
+.sale-img {
+	max-width:80px;
+}
+
+/* SUB FORM ================================== */
+
+#sub-form-wrapper {
+	background-color: #fff;
+	border: 1px solid #00458b;
+	border-radius: 4px;
+	padding-bottom: 20px;
+}
+#error_container {
+	margin-top: 15px;
+}
+#sub-form-wrapper label {
+	font-weight: normal;
+}
+.selection-wrap label {
+	width: 100%;
+}
+.selection-wrap {
+	padding: 0;
+	border: 1px solid #cfd9de;
+}
+.selection-wrap:hover,
+.selection-wrap:focus {
+	background-color: #f3f9ef;
+}
+.selection-wrap label {
+	padding: 10px 15px 0px;
+	cursor: hand;
+	cursor: pointer;
+}
+.selection-wrap p {
+	font-size: 18px;
+}
+.selection-wrap .text-muted {
+	color: #cacaca;
+}
+.selection-wrap .plan-selected-check {
+	font-size: 21px;
+	color: #6db240;
+}
+.selection-selected,
+.selection-selected:hover,
+.selection-selected:focus {
+	background-color: #eff4f9;
+	color: #20418a;
+}
+.selection-selected .text-muted,
+.selection-selected:hover .text-muted,
+.selection-selected:focus .text-muted {
+	color: #a9b3c0 !important;
+}
+.selection-wrap:hover .text-muted,
+.selection-wrap:focus .text-muted {
+	color: #b9c9b6;
+}
+.selection-top {
+	border-radius: 4px 4px 0 0;
+	border-bottom-width: 0;
+}
+.selection-mid {
+	border-bottom-width: 0;
+}
+.selection-bot {
+	border-radius: 0 0 4px 4px;
+	margin-bottom: 18px;
+}
+.selection-downsell {
+	border-radius: 4px;
+	margin-bottom: 50px;
+}
+.plan-type-heading {
+	margin-top: 18px;
+}
+.plan-type-sub-heading {
+	display: block;
+}
+.radio-wrap {
+	margin-top: 2px !important;
+}
+.radio label {
+  margin-bottom: 10px;
+}
+p.save-this {
+	color: #73b649;
+	font-size: 14px;
+}
+#membership-includes {
+	color: #212121 !important;
+    margin-bottom: 21px;
+}
+.membership-icon-wrapper {
+	margin-top: 12px;
+}
+#membership-includes .glyphicon {
+	font-size: 21px;
+}
+.membership-includes-text {
+	display: block;
+	font-size: 12px;
+	line-height: 14px;
+}
+.form-group {
+	margin-bottom: 10px;
+}
+.form-heading {
+	font-size: 18px;
+	font-weight: 300;
+	padding: 8px 0 2px;
+}
+.step-1-heading .glyphicon-time {
+	color: #ffaa00;
+}
+.step-1-heading,
+.step-2-heading {
+	background-color: #00458b;
+	color: #fff;
+	margin-bottom: 14px;
+}
+.cc-wrapper {
+	background-color: #f4f4f4;
+	border-top: 1px dashed #cfd9de;
+	border-bottom: 1px dashed #cfd9de;
+	padding-bottom: 4px;
+	margin-bottom: 18px;
+}
+.cc-wrapper-header {
+	margin-bottom: 10px;
+	padding-top: 8px;
+}
+#secure-text {
+	display: none;
+}
+#secure-lock {
+	font-size: 21px;
+	margin-top: 4px;
+}
+.secure-this {
+	color:#73b649;
+}
+.cc-accept {
+	margin-top: 7px;
+}
+.verify-seal img {
+	cursor: pointer;
+	cursor: hand;
+}
+.cvv-img {
+	cursor: hand;
+	cursor: pointer;
+}
+#cvv-img-min {
+	background-image: url('//dbivtdsofhpu6.cloudfront.net/assets/img/d40c5937ff558d407c2cffab74631bd0.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 28px;
+}
+#account_tos,
+#tos2 {
+	margin-top: 18px;
+	margin-right: 15px;
+}
+.terms-container {
+	border:1px solid #cfd9de;
+	border-radius: 4px;
+	margin-bottom: 16px;
+	padding: 20px 20px 10px 30px;
+}
+.terms {
+	margin-bottom: 6px !important;
+	cursor: hand;
+	cursor: pointer;
+}
+.terms-innertext {
+	margin-left: 10px;
+}
+.terms-container label,
+.terms input {
+	cursor: hand;
+	cursor: pointer;
+}
+.terms-container a {
+	font-weight: bold;
+	color: #111;
+}
+#spinner,
+#create_button {
+  	padding-top: 18px;
+	padding-bottom: 18px;
+}
+#create_button {
+	background-color: #73b649;
+	font-size: 24px;
+}
+#create_button:focus,
+#create_button:hover {
+	background-color: #6fc539;
+}
+#create_button_container {
+	position: relative;
+}
+.left-ribbon,
+.right-ribbon {
+	display: block;
+	position: absolute;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	bottom: 15px;
+	height: 84px;
+}
+.left-ribbon {
+	width: 28px;
+	background-image: url('//dbivtdsofhpu6.cloudfront.net/assets/img/f974cf860857d6376a204bef620f7dd3.jpg');
+	left: -30px;
+}
+.right-ribbon{
+	font-size: 16px;
+	padding-left: 15px;
+	padding-top: 13px;
+	width: 373px;
+	right: -375px;
+	background-image: url('//dbivtdsofhpu6.cloudfront.net/assets/img/35816df33afec10096ad097ca3a46f07.jpg');
+	padding-right: 77px;
+}
+
+/* ORDER SUMMARY ================================= */
+
+#order-summary .panel-body {
+	padding-bottom: 0;
+    padding-top: 0;
+}
+.side-panel .panel-heading {
+	background-color: #cfd9de;
+	border-color: #cfd9de;
+	padding-top: 11px;
+	padding-bottom: 12px;
+}
+.side-panel {
+	background: transparent;
+	border: 1px solid #cfd9de;
+	box-shadow: none;
+	padding-bottom: 0;
+}
+.order-summary-full-report {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+.order-summary-section {
+	border-bottom: 1px solid #cfd9de;
+}
+
+#order-summary div.panel-body div.order-summary-section {
+	padding-top: 8px;
+}
+.order-summary-heading {
+	line-height: 24px;
+}
+.order-summary-total {
+	border-top: 1px solid #cfd9de;
+	margin-top: 2px;
+	margin-bottom: 0;
+	padding-top: 8px;
+	font-size: 16px;
+}
+
+/* SIDE-HEADLINE ================================= */
+.side-headline {
+	padding-left: 15px;
+}
+p.side-headline-header{
+	font-size: 16px;
+	margin-bottom: 6px;
+}
+#reports-anonymous .side-headline-header {
+	margin-top: 8px;
+}
+#reports-anonymous {
+	margin-bottom: 12px;
+}
+#reports-unfiltered .glyphicon-warning-sign {
+	color: #ef3b3b;
+}
+#reports-anonymous .glyphicon-lock {
+	color: #ffae00;
+}
+#reports-unfiltered .glyphicon,
+#reports-anonymous .glyphicon,
+#full-report-checklist .glyphicon {
+	margin-right: 10px;
+}
+
+#full-report-checklist .panel-body {
+	padding-bottom: 6px;
+	font-size: 12px;
+}
+#full-report-checklist .glyphicon {
+	color: #6eae46;
+}
+#full-report-checklist li {
+	line-height: 24px;
+}
+#report-includes {
+	padding-left: 18px;
+}
+#refund-text {
+	font-size: 12px;
+}
+.now-included {
+	font-style: italic;
+}
+
+/* Form Validation ================================== */
+#errorExplanation {
+    border: 1px solid #e13d3d !important;
+    background-color: #fff7f7;
+    margin: 0 15px 15px;
+    padding: 0 15px 15px;
+    border-radius: 4px;
+}
+input.error {
+    border:1px solid #e13d3d !important;
+    background-color: #fff7f7;
+}
+#messages,
+label.error {
+    color: #dc2341;
+}
+input.input-success {
+    background-image: url('//dbivtdsofhpu6.cloudfront.net/assets/img/3ab645f82ae1c80d2383c63a6a2a85ae.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    border: 1px solid #56b453 !important;
+}
+select.input-success {
+    border: 1px solid #56b453 !important;
+}
+.label-success {
+    display:none !important;
+}
+#disclaimer {
+	padding-bottom: 12px;
+	margin-top: 30px;
+	text-align: center;
+}
+
+#service-hours {
+	margin-top: 20px;
+	text-align: center;
+}
+footer {
+	color: #758890;
+}
+#footer-terms {
+	background-color: #d0d9e0;
+	padding-top: 12px;
+  	padding-bottom:12px;
+}
+#footer-terms p {
+	margin-bottom: 0;
+}
+footer .logo,
+footer a {
+	color: #42616f;
+}
+.disclaimer {
+	margin-top: 12px;
+}
+
+/* == iMODAL == */
+#iModal-exit {
+    background:transparent !important;
+    color:#ec3732;
+    font-weight:300;
+}
+.iModal-btn-wrap {
+    margin-top: 30px;
+}
+#iModal-back {
+    display:block;
+    margin-top: 12px;
+}
+#iModal .modal-header,
+#iModal-trial .modal-header {
+    border-bottom: none;
+}
+#iModal .modal-body,
+#iModal-trial .modal-body {
+    padding-top: 5px;
+}
+.dollar-trial-img {
+    margin-bottom: 12px;
+}
+#show-dollar-trial {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-weight: 700;
+}
+
+/* == RESPONSIVENESS == */
+
+@media (min-width:1200px) {
+
+}
+@media (min-width:992px) {
+	.container {
+		width: 900px !important;
+	}
+}
+@media (max-width:992px) {
+	.right-ribbon{
+		width: 311px;
+		right: -313px;
+	}
+}
+@media (min-width:768px) and (max-width:992px) {
+
+}
+@media (min-width:768px) {
+	.plan-price-wrap {
+		text-align: right;
+	}
+}
+@media (max-width:767px) {
+	#logo-wrap {
+	    width: 143px;
+	}
+	#wrapper {
+		margin-right: 8px;
+		margin-left: 8px;
+	}
+	#report-header p {
+		font-size: 16px;
+		line-height: 21px;
+		font-weight: 300;
+	}
+	#downsell-text-wrapper {
+	    padding-top: 16px;
+	    padding-bottom: 8px;
+	    font-size: 18px;
+	    font-weight: 500;
+	    margin-bottom: 14px;
+	}
+	#current-preview {
+		font-size: 14px;
+		background-image: url('//dbivtdsofhpu6.cloudfront.net/assets/img/5e543a1abcf14546ec5de20801b3e88b.jpg');
+		background-position: 2px center;
+		padding: 20px 0 20px 40px;
+	}
+	.sale-img {
+		max-width: 50px;
+	}
+	.current-name, .current-teaser {
+		line-height: 21px;
+	}
+    #sub-form-wrapper {
+		border-width: 1px;
+	}
+	#sub-step-2 label {
+		margin-bottom: 1px;
+	}
+	.selection-wrap label {
+		padding-left: 20px;
+		margin-bottom: 8px;
+	}
+	.plan-type-heading {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 16px;
+	}
+	#downsell-timer {
+		border-radius: 0;
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
+    #downsell-text {
+      line-height:21px;
+  	}
+	.satisfied {
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+	.satisfied .glyphicon {
+		font-size: 21px;
+	}
+	.terms-container {
+		padding:15px;
+		padding-bottom: 8px;
+	}
+    #footer-terms,
+    #footer-terms .text-right {
+    	text-align: center !important;
+    }
+}
+@media (max-width:319px) {
+
+}
+/* == Paypal == */
+#paypal-confirm-error {
+	display: none;
+}
+
+#paypal-confirm-error {
+	margin-top: 10px;
+}
+#ppCanceled {
+	display: none;
+}
+
+#ppCanceled.alert {
+  	margin-bottom: 0px;
+  	border-radius: 0px;
+  	border: none;
+}
+#sub-form-wrapper label {
+	font-weight: normal;
+}
+div.radio {
+	font-size: 12px;
+	padding-bottom: 7px;
+}
+#confirm-paypal {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-weight: 700;
+}
+
+#paypal-spinner {
+	display: none;
+}
