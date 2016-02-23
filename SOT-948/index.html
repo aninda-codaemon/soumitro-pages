@@ -277,7 +277,8 @@
           <input id="user_pwdelay" name="user[pwdelay]" value="true" type="hidden">
           <input id="password" name="password" value="delay" type="hidden">
           <input id="password_delay" name="pwdelay" value="true" type="hidden">
-          <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
+          <input id="record_search_email" name="record_search[email]" type="hidden" value="{{emailaddress}}">
+          <!-- <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}"> -->
 
           <div class="submit-btn-wrapper" style="margin-top:30px;margin-bottom:15px;">
             <div id="create_button_container" class="row">
@@ -330,7 +331,7 @@
                 <span class="pull-right">Included</span>
               </p>
             </div>
-            {{/emailaddress}}
+            {{/if}}
 
             <div class="order-summary-total">
               <p class="text-right">
