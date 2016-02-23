@@ -58,6 +58,14 @@
     </div>
 
     <div id="wrapper" class="container">
+      <div class="row" data-fr-bind="socialCurrentRecord socialSearchData">
+        {{#if emailaddress}}
+          <div id="current-preview" class="col-sm-12">
+            <p class="current-name strong">Report on {{emailaddress}}<span class="dot"></span></p>
+          </div><!-- /#current-preview -->
+        {{/if}}
+      </div>
+
       <div id="body-wrap" class="row">
         <div id="sub-form-wrapper" class="col-sm-7">
 
@@ -149,7 +157,7 @@
             </div>
             <div class="form-group payOptionSelect">
               <label for="user_email" class="col-sm-4 control-label">Payment</label>
-              
+
               <div id="paypal-radio" class="radio col-sm-8">
                 <label for="paypal">
                   <input type="radio" id="paypal" name="payment_method" value="paypal"> <img src="img/paypal2.png" alt="PayPal" /> The safer, easier way<span class="hidden-sm"> to pay</span>
@@ -265,6 +273,7 @@
         <input id="user_pwdelay" name="user[pwdelay]" value="true" type="hidden">
         <input id="password" name="password" value="delay" type="hidden">
         <input id="password_delay" name="pwdelay" value="true" type="hidden">
+        <input id="record_search_email" name="record_search[email]" type="hidden" value="{{emailaddress}}">
         <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
 
         <div class="submit-btn-wrapper" style="margin-top:30px;margin-bottom:15px;">
@@ -289,7 +298,7 @@
     </div>
 
 
-    
+
 
     <div class="col-sm-5 hidden-xs">
         <div id="order-summary" class="panel side-panel hidden-xs">
@@ -305,20 +314,18 @@
                 <span class="pull-right"><span class="strikeout-this">&nbsp;&nbsp;$25.47&nbsp;&nbsp;</span>$<span id="summary-month-price">1.00</span></span>
               </p>
             </div>
-            {{#if fullName}}
+            {{#if emailaddress}}
             <div class="order-summary-section order-summary-full-report">
               <p>
                 <span class="order-summary-heading">Background &amp; Social Media Report On:</span>
                 <br/>
                 <span class="order-summary-name">
                     <span class="current-name text-bv-blue strong">{{emailaddress}}</span>
-                    <!--{{#if age}}<span><strong>{{age}}</strong> years old</span><br/>{{/if}}
-                    {{#if location}}<span>From <strong> {{location}}</strong></span>{{/if}}-->
                 </span>
                 <span class="pull-right">Included</span>
               </p>
             </div>
-            {{/if}}
+            {{/emailaddress}}
 
             <div class="order-summary-total">
               <p class="text-right">

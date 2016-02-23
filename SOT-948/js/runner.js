@@ -1,5 +1,5 @@
-(function ($) {
-  var trackNL = function (evtName, props) {
+(function($) {
+  var trackNL = function(evtName, props) {
     if (typeof nolimit !== 'undefined' && nolimit.track) {
       if (props) {
         nolimit.track(evtName, props);
@@ -16,9 +16,11 @@
     }
   };
 
-  window.onerror = function () {
+  window.onerror = function() {
     try {
-      trackNL('JS Error', {data: JSON.stringify(arguments)});
+      trackNL('JS Error', {
+        data: JSON.stringify(arguments)
+      });
     } catch (err) { /* Suppress any tracking issues. */ }
   };
 
@@ -30,34 +32,35 @@
 
   /* Initialize cvv popover for Bootstrap 3 */
   $('.cvv-img').popover({
-      container: 'body',
-      trigger: 'hover focus',
-      placement:'auto',
-      title:'<p><strong>What is a Security Code?</strong></p>',
-      html: true,
-      content: function () {
-          return '<p><strong>Visa, MasterCard, and Discover</strong></p><div class="row"><div class="col-xs-6"><img class="img-responsive" src="//cdn1.beenverified.com/srg/hompage/web/img/cc-visa.png"></div><div class="col-xs-6 pop-text"><p><small><strong>Back of Card</strong><br>Three digits located on the right of the signature strip.</small></p></div></div><p><strong>American Express</strong></p><div class="row"><div class="col-xs-6"><img class="img-responsive" src="//cdn1.beenverified.com/srg/hompage/web/img/cc-amex.png"></div><div class="col-xs-6 pop-text"><p><small><strong>Front of Card</strong><br>Four digits located on either the left or right side.</small></p></div>';
-      }
+    container: 'body',
+    trigger: 'hover focus',
+    placement: 'auto',
+    title: '<p><strong>What is a Security Code?</strong></p>',
+    html: true,
+    content: function() {
+      return '<p><strong>Visa, MasterCard, and Discover</strong></p><div class="row"><div class="col-xs-6"><img class="img-responsive" src="//cdn1.beenverified.com/srg/hompage/web/img/cc-visa.png"></div><div class="col-xs-6 pop-text"><p><small><strong>Back of Card</strong><br>Three digits located on the right of the signature strip.</small></p></div></div><p><strong>American Express</strong></p><div class="row"><div class="col-xs-6"><img class="img-responsive" src="//cdn1.beenverified.com/srg/hompage/web/img/cc-amex.png"></div><div class="col-xs-6 pop-text"><p><small><strong>Front of Card</strong><br>Four digits located on either the left or right side.</small></p></div>';
+    }
   });
   /* Initialize security popover for Bootstrap 3 */
   $('#secure-lock').popover({
-      container: 'body',
-      trigger: 'hover focus',
-      placement:'auto',
-      html: true,
-      content: function () {
-          return '<p><span class="glyphicon glyphicon-lock"></span> BeenVerified deploys the latest and greatest strategies, including Secure 256-bit SSL technology, to keep your personal information and payment data safe from unauthorized 3rd parties.</p>';
-      }
+    container: 'body',
+    trigger: 'hover focus',
+    placement: 'auto',
+    html: true,
+    content: function() {
+      return '<p><span class="glyphicon glyphicon-lock"></span> BeenVerified deploys the latest and greatest strategies, including Secure 256-bit SSL technology, to keep your personal information and payment data safe from unauthorized 3rd parties.</p>';
+    }
   });
-  $('#secure-text').on('hover' , function () {
+  $('#secure-text').on('hover', function() {
     $('#secure-lock').popover('toggle');
   });
-  
+
   // Set current year inside footer
-  ;(function ($) {
+  ;
+  (function($) {
     var currentDate = new Date(),
-        currentYear = currentDate.getFullYear(),
-        $currentYear = $('.current-year');
+      currentYear = currentDate.getFullYear(),
+      $currentYear = $('.current-year');
     $currentYear.html(currentYear);
   }(jQuery));
 
@@ -98,17 +101,17 @@
 
   // Secure Credit Card lock animation
   var $secureLockIcon = $('#secure-lock'),
-      $ccInput = $('#credit_card_card_number'),
-      $secureText = $('#secure-text');
+    $ccInput = $('#credit_card_card_number'),
+    $secureText = $('#secure-text');
 
-      // $secureText.hide();
+  // $secureText.hide();
 
-  $ccInput.on('focus' , function () {
-      $secureLockIcon.addClass('secure-this');
-      $secureText.fadeIn();
+  $ccInput.on('focus', function() {
+    $secureLockIcon.addClass('secure-this');
+    $secureText.fadeIn();
   });
 
-  $ccInput.on('change blur' , function () {
+  $ccInput.on('change blur', function() {
     var ccInputLength = $ccInput.val().length;
 
     if (!ccInputLength) {
@@ -128,55 +131,55 @@
   // Clicking Credit Card logo will focus on input field
   var $ccAccept = $('.cc-accept');
 
-  $ccAccept.on('click' , function () {
+  $ccAccept.on('click', function() {
     $ccInput.focus();
   });
 
-  var verifySeal = function () {
-    $(".verify-seal").on("click", function () {
-      var left  = ($(window).width()/2)-(900/2),
-          top   = ($(window).height()/2)-(600/2),
-          popup = window.open ("https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&dn=www.beenverified.com&lang=en", "popup", "width=900, height=600, top="+top+", left="+left);
+  var verifySeal = function() {
+    $(".verify-seal").on("click", function() {
+      var left = ($(window).width() / 2) - (900 / 2),
+        top = ($(window).height() / 2) - (600 / 2),
+        popup = window.open("https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&dn=www.beenverified.com&lang=en", "popup", "width=900, height=600, top=" + top + ", left=" + left);
     });
   };
 
-  var playVideo = function () {
-  	$('#youtube').click(function(){
-        var video = '<iframe src="'+ $(this).attr('data-video') +'"></iframe>';
-        $(this).replaceWith(video);
+  var playVideo = function() {
+    $('#youtube').click(function() {
+      var video = '<iframe src="' + $(this).attr('data-video') + '"></iframe>';
+      $(this).replaceWith(video);
     });
   };
 
-  var reportHeap = function (evt, opt) {
+  var reportHeap = function(evt, opt) {
     if (typeof window.heap !== "undefined" && heap.track) {
       try {
         heap.track(evt, opt);
-      } catch (err) { }
+      } catch (err) {}
     }
   };
 
   var $bounceBackBtn = $('#iModal-back'),
-      $bounceExitBtn = $('#iModal-exit'),
-      $goToNextPage  = $('#show-dollar-trial'),
-      $iOSModal      = $('#iModal'),
-      $iOSModalTrial = $('#iModal-trial'),
-      $iModalX       = $("#imodal-x");
+    $bounceExitBtn = $('#iModal-exit'),
+    $goToNextPage = $('#show-dollar-trial'),
+    $iOSModal = $('#iModal'),
+    $iOSModalTrial = $('#iModal-trial'),
+    $iModalX = $("#imodal-x");
 
-  var bounceBack = function () {
+  var bounceBack = function() {
     trackNL('onBack Modal - Rejected');
     window.location.href = $("body").data("search-page");
   };
 
-  var bounceExit = function () {
+  var bounceExit = function() {
     $iOSModal.modal('hide');
-    window.setTimeout(function () {
-        $iOSModalTrial.modal('show');
+    window.setTimeout(function() {
+      $iOSModalTrial.modal('show');
     }, 300);
   };
 
-  $bounceBackBtn.on('click' , bounceBack);
-  $bounceExitBtn.on('click' , bounceExit);
-  $goToNextPage.on('click', function () {
+  $bounceBackBtn.on('click', bounceBack);
+  $bounceExitBtn.on('click', bounceExit);
+  $goToNextPage.on('click', function() {
     trackNL('onBack Modal - Accepted');
     window.location.href = $("body").data("next-page");
   });
@@ -185,31 +188,35 @@
     trackNL('onBack Modal - Exited');
   });
 
-   var wrapOnbeforeunload = function () {
-       var originalOnbeforeunload = window.onbeforeunload;
+  var wrapOnbeforeunload = function() {
+    var originalOnbeforeunload = window.onbeforeunload;
 
-       window.onbeforeunload = function () {
-         var hours = $("#hours").html(),
-             mins = $("#minutes").html(),
-             secs = $("#seconds").html();
-         amplify.store("countdown", {hours: hours, mins: mins, secs: secs});
-         if (typeof originalOnbeforeunload !== "undefined") {
-           return originalOnbeforeunload();
-         }
-       };
-   };
+    window.onbeforeunload = function() {
+      var hours = $("#hours").html(),
+        mins = $("#minutes").html(),
+        secs = $("#seconds").html();
+      amplify.store("countdown", {
+        hours: hours,
+        mins: mins,
+        secs: secs
+      });
+      if (typeof originalOnbeforeunload !== "undefined") {
+        return originalOnbeforeunload();
+      }
+    };
+  };
 
 
   //Countdown Timer
-  var $hours   = $("#hours"),
-      $minutes = $("#minutes"),
-      $seconds = $("#seconds"),
-      hours    = 2,
-      minutes  = 59,
-      seconds  = 59;
+  var $hours = $("#hours"),
+    $minutes = $("#minutes"),
+    $seconds = $("#seconds"),
+    hours = 2,
+    minutes = 59,
+    seconds = 59;
 
-  var countingDown = function () {
-    var intervalTimer = setInterval(function () {
+  var countingDown = function() {
+    var intervalTimer = setInterval(function() {
 
       //Timer stops
       if (hours === 0 && minutes === 0 && seconds === 0) {
@@ -240,13 +247,13 @@
   };
 
 
-  var checkCountdownState = function () {
+  var checkCountdownState = function() {
     var countdown = amplify.store("countdown");
 
-    if (countdown) {  // its not undefined, null, "", 0, false
+    if (countdown) { // its not undefined, null, "", 0, false
       var hrs = parseInt(countdown.hours, 10),
-          mins = parseInt(countdown.mins, 10),
-          secs = parseInt(countdown.secs, 10);
+        mins = parseInt(countdown.mins, 10),
+        secs = parseInt(countdown.secs, 10);
 
       // Set the globals to stored time.
       hours = hrs;
@@ -255,7 +262,7 @@
     }
   };
 
-  var initialize = function () {
+  var initialize = function() {
     verifySeal();
     playVideo();
     checkCountdownState();
@@ -267,7 +274,7 @@
     downsell.init({
       onBack: {
         elem: "#iModal-trial",
-        cb: function () {}
+        cb: function() {}
       }
     });
     wrapOnbeforeunload();
