@@ -172,6 +172,10 @@ input[type="radio"]:checked + label .radio-custom {
 	border: solid 2px #d4d4d3;
 }
 
+.break-text {
+	display: block;
+}
+
 .break-xs {
 	display: block;
 }
@@ -1197,7 +1201,7 @@ header .header-cta {
 }
 
 @media (min-width: 480px) {
-	
+
 	.right-section .payment-form {
 		border: solid 2px #323d43;
 		border-top: 0;
@@ -1312,6 +1316,25 @@ footer .legal .links a {
 }
 
 /* modals */
+
+#iModal-trial .modal-header {
+	border: 0;
+}
+
+#iModal-trial .modal-body .dollar-trial-img {
+	margin-bottom: 12px;
+}
+
+#iModal-trial .modal-body #show-dollar-trial {
+	padding-top: 24px;
+  padding-bottom: 24px;
+  font-weight: 700;
+}
+
+#iModal-trial .modal-body #iModal-back {
+	display: block;
+  margin-top: 12px;
+}
 
 #paypal-spinner,
 #paypal-confirm-error {
