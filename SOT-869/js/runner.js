@@ -41,20 +41,37 @@
       $.when(xhrData).done(function(result) {
         trackNL('Queried Person Teaser Data Called');
 
+        console.log(result);
+
         var names = $.map(result.names, function(item) {
-          return item.full;
+          return {
+            'First': item.parts.first_name,
+            'Last': item.parts.last_name,
+            'Middle': item.parts.middle_name,
+            'Prefix': item.parts.suffix
+          };
         });
 
         var relatives = $.map(result.connections.relatives, function(item) {
-          return item.relatives;
+          return {
+            'First': item.names[0].parts.first_name,
+            'Last': item.names[0].parts.last_name,
+            'bvid': item.id
+          };
         });
 
         var ages = $.map(result.ages, function(item) {
+          // @TODO: loop and send age that is defined
           return item;
         });
 
         var addresses = $.map(result.addresses, function(item) {
-          return item.full;
+          return {
+            'City': item.parts.city,
+            'State': item.parts.state,
+            'Zip4': item.parts.zip4,
+            'Zip5': item.parts.zip
+          };
         });
 
         var phoneNumbers = $.map(result.phones, function(item) {
@@ -138,10 +155,16 @@
 
         // Store data
         var teaserData = {
-          // Addresses: addresses,
-          // Names: names,
-          // Relatives: relatives,
-          // age: ages[0],
+          Addresses: {
+            Address: addresses
+          },
+          Names: {
+            Name: names
+          },
+          Relatives: {
+            Relative: relatives
+          },
+          age: ages[0],
           recordCount: ($.type(result) !== 'array' ? 1 : 0),
           extraData: extraTeaserData,
           hasCriminal: hasCriminal,
