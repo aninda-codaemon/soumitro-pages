@@ -26,7 +26,42 @@
 
     var query = amplify.store('query');
 
-    
+    // Get Teaser Data
+
+    var getTeaserData = function() {
+
+      var baseUrl = "//www.beenverified.com/hk/dd/teaser/person?exporttype=jsonp",
+        url = baseUrl + '&bvid=' + query.bvid,
+        xhrData = $.ajax({
+          url: url,
+          dataType: 'jsonp',
+          jsonpCallback: 'parseResults'
+        });
+
+      $.when(xhrData).done(function(result) {
+        trackNL('Queried Person Teaser Data Called');
+
+        console.log(result);
+        //amplify.store('currentRecord', result);
+
+        var addresses = $.map(result.addresses, function(item) {
+          return item.address.formatAddress();
+        });
+
+        var phoneNumbers = $.map(result.phones, function(item) {
+          return item.number.formatPhone();
+        });
+
+        var emailAddresses = $.map(result.emails, function(item) {
+          return item.email_address.formatEmail().toLowerCase();
+        });
+
+        var socialNetworks = $.map(result.social, function(item) {
+          return item.type.nameize();
+        });
+      });
+    };
+    //
     // // Get Extra Teaser Data
     //
     // var getExtraTeaserData = function(ctx, cb) {

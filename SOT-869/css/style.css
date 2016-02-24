@@ -1197,6 +1197,7 @@ header .header-cta {
 }
 
 @media (min-width: 480px) {
+	
 	.right-section .payment-form {
 		border: solid 2px #323d43;
 		border-top: 0;
