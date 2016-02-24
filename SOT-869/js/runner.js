@@ -41,10 +41,20 @@
       $.when(xhrData).done(function(result) {
         trackNL('Queried Person Teaser Data Called');
 
-        console.log(result);
+        var names = $.map(result.names, function(item) {
+          return item.full;
+        });
+
+        var relatives = $.map(result.connections.relatives, function(item) {
+          return item.relatives;
+        });
+
+        var ages = $.map(result.ages, function(item) {
+          return item;
+        });
 
         var addresses = $.map(result.addresses, function(item) {
-          return item.address.formatAddress();
+          return item.full;
         });
 
         var phoneNumbers = $.map(result.phones, function(item) {
@@ -59,175 +69,119 @@
           return item.type.nameize();
         });
 
-        //amplify.store('currentRecord', result);
+        // Data elements to display - Waterfall controlled here
+        var extraTeaserData = [{
+          'type': 'criminal',
+          'name': 'Criminal or Traffic*',
+          'single': 'Criminal or Traffic*',
+          'style': ' crim-box',
+          'weight': 3,
+          'showIfEmpty': 0,
+          'count': result.courts.criminal.length
+        }, {
+          'type': 'bankruptcy',
+          'name': 'Bankruptcy Filings',
+          'single': 'Bankruptcy Filing',
+          'style': ' crim-box',
+          'weight': 3,
+          'showIfEmpty': 0,
+          'count': result.courts.bankruptcy.length
+        }, {
+          'type': 'emails',
+          'name': 'Email Addresses',
+          'single': 'Email Address',
+          'style': '',
+          'weight': 2,
+          'showIfEmpty': 0,
+          'count': result.emails.length,
+          'emailAddress': emailAddresses
+        }, {
+          'type': 'phones',
+          'name': 'Phone Numbers',
+          'single': 'Phone Number',
+          'style': ' phone-box',
+          'weight': 1,
+          'showIfEmpty': 0,
+          'count': result.phones.length,
+          'phoneNumber': phoneNumbers
+        }, {
+          'type': 'social',
+          'name': 'Social Media Profiles',
+          'single': 'Social Media Profile',
+          'style': ' social-box',
+          'weight': 1,
+          'showIfEmpty': 0,
+          'count': result.social.length,
+          'socialNetwork': socialNetworks
+        }, {
+          'type': 'associates',
+          'name': 'Associates & Relatives',
+          'single': 'Associates & Relatives',
+          'style': '',
+          'weight': 0,
+          'showIfEmpty': 0,
+          'count': result.connections.associates.length + result.connections.relatives.length
+        }];
+
+        // Booleans for templating & reporting
+        var hasCriminal = _.some(extraTeaserData, function(item) {
+          return item.type === 'criminal' && item.count > 0;
+        });
+        var hasBankruptcy = _.some(extraTeaserData, function(item) {
+          return item.type === 'bankruptcy' && item.count > 0;
+        });
+        var hasPhone = _.some(extraTeaserData, function(item) {
+          return item.type === 'phones' && item.count > 0;
+        });
+        var hasEmail = _.some(extraTeaserData, function(item) {
+          return item.type === 'emails' && item.count > 0;
+        });
+        var hasSocial = _.some(extraTeaserData, function(item) {
+          return item.type === 'social' && item.count > 0;
+        });
+        var hasProperty = _.some(extraTeaserData, function(item) {
+          return (item.type === 'addresses' && item.count > 0) || (item.type === 'neighbors' && item.count > 0);
+        });
+
+        // Force singular name here rather than in template... meh
+        extraTeaserData = _.forEach(extraTeaserData, function(item, key) {
+          if (item.count === 1) {
+            item.name = item.single;
+          }
+        });
+
+        // Scrub data for display
+        _.remove(extraTeaserData, function(item) {
+          return item.showIfEmpty === 0 && item.count === 0;
+        });
+
+        // Store data
+        var teaserData = {
+          Addresses: addresses,
+          Names: names,
+          Relatives: relatives,
+          age: ages[0],
+          recordCount: ($.type(res) !== 'array' ? 1 : 0),
+          extraData: extraTeaserData,
+          hasCriminal: hasCriminal,
+          hasBankruptcy: hasBankruptcy,
+          hasPhone: hasPhone,
+          hasEmail: hasEmail,
+          hasSocial: hasSocial,
+          filler: filler
+        };
+
+        console.log(teaserData);
+
+        amplify.store('currentRecord', teaserData);
+        if (cb !== 'undefined' && typeof cb === 'function') {
+          cb();
+        }
       });
     };
-    //
-    // // Get Extra Teaser Data
-    //
-    // var getExtraTeaserData = function(ctx, cb) {
-    //   var dataPath = $(ctx).data("fr-bound2");
-    //   var data = framerida.dataFromDataPath(dataPath);
-    //   var teaser = new TeaserRecord(data);
-    //   var bvid = teaser.bvid;
-    //
-    //   var baseUrl = "//www.beenverified.com/hk/dd/teaser/person?exporttype=jsonp";
-    //   var url = baseUrl + "&bvid=" + bvid + "&criminal=1&bankruptcy=1";
-    //   var xhrData = $.ajax({
-    //     url: url,
-    //     dataType: 'jsonp',
-    //     jsonpCallback: 'parseResults'
-    //   });
-    //
-    //   $.when(xhrData).done(function(result) {
-    //     trackNL('Person Data Teaser Called');
-    //
-    //     var res = result;
-    //     var img = '';
-    //
-    //     // Get profile image URL
-    //     if (res.images[0] && typeof(res.images[0].url !== 'undefined')) {
-    //       img = res.images[0].url;
-    //     }
-    //
-    //     var phoneNumbers = $.map(res.phones, function(item) {
-    //       return item.number.formatPhone();
-    //     });
-    //     var emailAddresses = $.map(res.emails, function(item) {
-    //       return item.email_address.formatEmail().toLowerCase();
-    //     });
-    //     var socialNetworks = $.map(res.social, function(item) {
-    //       return item.type.nameize();
-    //     });
-    //
-    //     // Data elements to display - Waterfall controlled here
-    //     var data = [{
-    //       'type': 'criminal',
-    //       'name': 'Criminal or Traffic*',
-    //       'single': 'Criminal or Traffic*',
-    //       'style': ' crim-box',
-    //       'weight': 3,
-    //       'showIfEmpty': 0,
-    //       'count': res.courts.criminal.length
-    //     }, {
-    //       'type': 'bankruptcy',
-    //       'name': 'Bankruptcy Filings',
-    //       'single': 'Bankruptcy Filing',
-    //       'style': ' crim-box',
-    //       'weight': 3,
-    //       'showIfEmpty': 0,
-    //       'count': res.courts.bankruptcy.length
-    //     }, {
-    //       'type': 'emails',
-    //       'name': 'Email Addresses',
-    //       'single': 'Email Address',
-    //       'style': '',
-    //       'weight': 2,
-    //       'showIfEmpty': 0,
-    //       'count': res.emails.length,
-    //       'emailAddress': emailAddresses
-    //     }, {
-    //       'type': 'phones',
-    //       'name': 'Phone Numbers',
-    //       'single': 'Phone Number',
-    //       'style': ' phone-box',
-    //       'weight': 1,
-    //       'showIfEmpty': 0,
-    //       'count': res.phones.length,
-    //       'phoneNumber': phoneNumbers
-    //     }, {
-    //       'type': 'social',
-    //       'name': 'Social Media Profiles',
-    //       'single': 'Social Media Profile',
-    //       'style': ' social-box',
-    //       'weight': 1,
-    //       'showIfEmpty': 0,
-    //       'count': res.social.length,
-    //       'socialNetwork': socialNetworks
-    //     }, {
-    //       'type': 'associates',
-    //       'name': 'Associates & Relatives',
-    //       'single': 'Associates & Relatives',
-    //       'style': '',
-    //       'weight': 0,
-    //       'showIfEmpty': 0,
-    //       'count': res.connections.associates.length + res.connections.relatives.length
-    //     }];
-    //
-    //     // Booleans for templating & reporting
-    //     var hasCriminal = _.some(data, function(item) {
-    //       return item.type === 'criminal' && item.count > 0;
-    //     });
-    //     var hasBankruptcy = _.some(data, function(item) {
-    //       return item.type === 'bankruptcy' && item.count > 0;
-    //     });
-    //     var hasPhone = _.some(data, function(item) {
-    //       return item.type === 'phones' && item.count > 0;
-    //     });
-    //     var hasEmail = _.some(data, function(item) {
-    //       return item.type === 'emails' && item.count > 0;
-    //     });
-    //     var hasSocial = _.some(data, function(item) {
-    //       return item.type === 'social' && item.count > 0;
-    //     });
-    //     var hasProperty = _.some(data, function(item) {
-    //       return (item.type === 'addresses' && item.count > 0) || (item.type === 'neighbors' && item.count > 0);
-    //     });
-    //
-    //     // Force singular name here rather than in template... meh
-    //     data = _.forEach(data, function(item, key) {
-    //       if (item.count === 1) {
-    //         item.name = item.single;
-    //       }
-    //     });
-    //
-    //     // Scrub data for display
-    //     _.remove(data, function(item) {
-    //       return item.showIfEmpty === 0 && item.count === 0;
-    //     });
-    //
-    //     data = _.sortByOrder(data, ['weight', 'count'], ['desc', 'desc']);
-    //
-    //     var totalCardsToShow = parseInt($('div.details').data('total-cards-to-show'));
-    //     var fillerCardsAvailable = parseInt($('div.details').data('filler-cards-available'));
-    //
-    //     data = _.slice(data, 0, totalCardsToShow);
-    //
-    //     var fillCount = totalCardsToShow - (data.length); // fillers to show
-    //     var fillers = _.range(1, fillerCardsAvailable + 1); // build array of filler card ids, start at 1, +1 because limit is 0 based
-    //     var filler = []; // array checked by ifIn handlebar helper in template
-    //
-    //     if (fillCount > 0 && fillCount <= fillerCardsAvailable) {
-    //       filler = _.slice(fillers, 0, fillCount); // no random
-    //     } else {
-    //       // if nearly all filler, limit to 2 rows... not needed now
-    //       //filler = _.slice(_.shuffle(fillers), 0, (fillCount - fillerCards) + 2);
-    //       //filler = _.slice(fillers, 0, (fillCount - fillerCards) + 2);
-    //     }
-    //
-    //     // Store data
-    //     var teaserDataObj = {
-    //       recordCount: ($.type(res) !== 'array' ? 1 : 0),
-    //       extraData: data,
-    //       photo: img,
-    //       hasCriminal: hasCriminal,
-    //       hasBankruptcy: hasBankruptcy,
-    //       hasPhone: hasPhone,
-    //       hasEmail: hasEmail,
-    //       hasSocial: hasSocial,
-    //       filler: filler
-    //     };
-    //
-    //     amplify.store('extraTeaserData', teaserDataObj);
-    //     if (cb !== "undefined" && typeof cb === "function") {
-    //       cb();
-    //     }
-    //   });
-    // };
-    //
+
     var initData = function() {
       getTeaserData();
-      //getExtraTeaserData();
     }
 
     initData();
