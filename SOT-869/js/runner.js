@@ -79,14 +79,6 @@
           'showIfEmpty': 0,
           'count': result.courts.criminal.length
         }, {
-          'type': 'bankruptcy',
-          'name': 'Bankruptcy Filings',
-          'single': 'Bankruptcy Filing',
-          'style': ' crim-box',
-          'weight': 3,
-          'showIfEmpty': 0,
-          'count': result.courts.bankruptcy.length
-        }, {
           'type': 'emails',
           'name': 'Email Addresses',
           'single': 'Email Address',
@@ -113,22 +105,11 @@
           'showIfEmpty': 0,
           'count': result.social.length,
           'socialNetwork': socialNetworks
-        }, {
-          'type': 'associates',
-          'name': 'Associates & Relatives',
-          'single': 'Associates & Relatives',
-          'style': '',
-          'weight': 0,
-          'showIfEmpty': 0,
-          'count': result.connections.associates.length + result.connections.relatives.length
         }];
 
         // Booleans for templating & reporting
         var hasCriminal = _.some(extraTeaserData, function(item) {
           return item.type === 'criminal' && item.count > 0;
-        });
-        var hasBankruptcy = _.some(extraTeaserData, function(item) {
-          return item.type === 'bankruptcy' && item.count > 0;
         });
         var hasPhone = _.some(extraTeaserData, function(item) {
           return item.type === 'phones' && item.count > 0;
@@ -157,26 +138,21 @@
 
         // Store data
         var teaserData = {
-          Addresses: addresses,
-          Names: names,
-          Relatives: relatives,
-          age: ages[0],
-          recordCount: ($.type(res) !== 'array' ? 1 : 0),
+          // Addresses: addresses,
+          // Names: names,
+          // Relatives: relatives,
+          // age: ages[0],
+          recordCount: ($.type(result) !== 'array' ? 1 : 0),
           extraData: extraTeaserData,
           hasCriminal: hasCriminal,
-          hasBankruptcy: hasBankruptcy,
           hasPhone: hasPhone,
           hasEmail: hasEmail,
-          hasSocial: hasSocial,
-          filler: filler
+          hasSocial: hasSocial
         };
 
         console.log(teaserData);
 
-        amplify.store('currentRecord', teaserData);
-        if (cb !== 'undefined' && typeof cb === 'function') {
-          cb();
-        }
+        amplify.store('extraTeaserData', teaserData);
       });
     };
 
