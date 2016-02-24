@@ -66,30 +66,6 @@
 
   var $selectionWrap = $('.selection-wrap');
 
-  // Update terms & conditions based on selected plan
-  // var updatePlanLegal = function ($selectionSelected) {
-
-  //   var $planPrice = $selectionSelected.find(".plan-price");
-
-  //   var totalPrice = $planPrice.data('plan-price'),
-  //       type = $planPrice.data('plan-type'),
-  //       monthlyPrice = $planPrice.data('monthly-price'),
-  //       termLength = $planPrice.data('term-length');
-
-
-  //   var $priceHTML = $('#legal-price'),
-  //       $typeHTML = $('#legal-type'),
-  //       $summaryTermHTML = $('#summary-term'),
-  //       $summaryMonthPriceHTML = $('#summary-month-price'),
-  //       $summaryTotalPriceHTML = $('.summary-total-price');
-
-  //   $priceHTML.html(totalPrice);
-  //   $summaryTotalPriceHTML.html(totalPrice);
-  //   $summaryMonthPriceHTML.html(monthlyPrice);
-  //   $typeHTML.html(type);
-  //   $summaryTermHTML.html(termLength);
-  // };
-
   var highlightSelection = function() {
     $selectionWrap.removeClass('selection-selected');
     $(this).addClass('selection-selected');
@@ -119,14 +95,6 @@
       $secureLockIcon.removeClass('secure-this');
     }
   });
-
-  // $ccInput.on('keyup' , function () {
-  //   var ccInputLength = $ccInput.val().length;
-
-  //   if (ccInputLength === 2) {
-  //     console.log('Bang!');
-  //   }
-  // });
 
   // Clicking Credit Card logo will focus on input field
   var $ccAccept = $('.cc-accept');
@@ -205,7 +173,6 @@
       }
     };
   };
-
 
   //Countdown Timer
   var $hours = $("#hours"),
