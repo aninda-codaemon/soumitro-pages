@@ -349,10 +349,10 @@
           <div class="panel-body">
 
             <div class="order-summary-section order-summary-full-report" data-fr-bind="socialCurrentRecord">
-              {{#if fullName}}
+              {{#if emailaddress}}
               <p>
                 <span class="now-included">Your report on</span>
-                <span class="order-summary-name now-included text-bv-blue">{{fullName}}</span>
+                <span class="order-summary-name now-included text-bv-blue">{{emailaddress}}</span>
                 <span class="now-included">may include, where available:</span>
               </p>
               <ul id="report-includes">
@@ -368,7 +368,7 @@
             </div>
 
 
-            <p data-fr-bind="socialCurrentRecord" class="now-included">{{#if fullName}}Plus, the following {{else}} {{/if}}Searches, where available:</p>
+            <p data-fr-bind="socialCurrentRecord" class="now-included">{{#if fullName}}Plus, the following {{/if}}Searches, where available:</p>
             <ul class="list-unstyled unlimited-list">
               <li><span class="glyphicon glyphicon-ok"></span>Unlimited Contact Information</li>
               <li><span class="glyphicon glyphicon-ok"></span>Unlimited Phone Lookups</li>

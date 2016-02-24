@@ -26,70 +26,7 @@
 
     var query = amplify.store('query');
 
-    var activated = false;
-
-    var activateRows = function() {
-        if (activated) return;
-        activated = true;
-        var $dataPanel = $('#data-panel');
-        $dataPanel.on("click", 'tr.results-row', function(e) {
-            e.preventDefault();
-            window.hasClickedResult = true;
-            generateMapLink(this);
-            window.startModalFlow(this);
-        });
-    };
-
-    var renderResults = function(teaserData) {
-        if (teaserData) {
-            hideSearchingAnimation();
-            if (teaserData.recordCount == 0) { //coerce
-                showNoResultsPanel();
-            } else {
-                showResultsPanel();
-            }
-        }
-        activateRows();
-    };
     
-    var validState = function(state) {
-      if (state && state.toLowerCase() === "all") {
-        return "";
-      }
-      return state;
-    };
-
-    // Get Teaser Data
-
-    var getTeaserData = function(data, initiator) {
-
-      var baseUrl = "//www.beenverified.com/hk/teaser/?exporttype=jsonp&rc=100",
-          url = baseUrl + '&bvid=' + query.bvid + '&fn=' + query.fn + '&mi=' + query.mi + '&ln=' + query.ln + '&age=' + query.age + '&city=' + query.city + '&state=' + validState(query.state),
-          xhrData = $.ajax({
-            url: url,
-            dataType: 'jsonp',
-            jsonpCallback: 'parseResults'
-          });
-
-      $.when(xhrData).done(function(result) {
-        var teaserRecords,
-          xhrResult = result;
-
-        // parseTeaser is undefined
-        //teaserRecords = parseTeaser(xhrResult);
-        teaserRecords = xhrResult;
-
-        var teaserDataObj = {
-          recordCount: xhrResult.response.RecordCount,
-          teasers: teaserRecords
-        };
-
-        amplify.store('teaserData', teaserDataObj);
-        renderResults(teaserDataObj);
-        notifyRecordCount(initiator);
-      });
-    };
-    //
     // // Get Extra Teaser Data
     //
     // var getExtraTeaserData = function(ctx, cb) {
