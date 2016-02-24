@@ -383,11 +383,7 @@
 
     TeaserRecord.prototype.criminalRecordsCount = function() {
       var criminalRecords = this.criminalRecords();
-      if (criminalRecords.count <= 1) {
-        return false;
-      } else {
-        return criminalRecords.count - 1;
-      }
+      return criminalRecords.count;
     };
 
     TeaserRecord.prototype.photo = function() {
