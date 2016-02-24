@@ -20,6 +20,36 @@
     return letters.join("");
   };
 
+  String.prototype.properCaps = function() {
+  return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+  };
+
+  String.prototype.despace = function() {
+    return this.replace(/\s\s+/g, ' ');
+  };
+
+  String.prototype.redact = function() {
+    //return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + "****"});
+    //return this.replace(/\*{4,}/g, "****");
+    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1,4).replace(/./g, '*');});
+  };
+
+  String.prototype.formatEmail = function() {
+    return this.replace(/[^@](X+)/g, '***');
+  };
+
+  String.prototype.formatPhone = function() {
+    return this.replace(/([\d|X]{3})([\d|X]{3})([\d|X]{4})/, '$1-$2-$3');
+  };
+
+  String.prototype.numberize = function() {
+    return this.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
+  String.prototype.addressize = function() {
+    return this.replace(/(\s|^)Nw|Ne|Sw|Se|Po|Af(\s|$)/g, function(txt){ return txt.toUpperCase(); });
+  };
+
   String.prototype.nameize = function() {
     var name;
     name = this;
@@ -47,6 +77,15 @@
       name = name.capitalize();
     }
     return name;
+  };
+
+  String.prototype.singularize = function() {
+    var word;
+    word = this;
+    if (word === null) {
+      return "";
+    }
+    name = name.replace(/^ma/, '');
   };
 
   root._blank = function(string) {

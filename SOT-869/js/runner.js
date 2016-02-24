@@ -42,7 +42,6 @@
         trackNL('Queried Person Teaser Data Called');
 
         console.log(result);
-        //amplify.store('currentRecord', result);
 
         var addresses = $.map(result.addresses, function(item) {
           return item.address.formatAddress();
@@ -59,6 +58,8 @@
         var socialNetworks = $.map(result.social, function(item) {
           return item.type.nameize();
         });
+
+        //amplify.store('currentRecord', result);
       });
     };
     //
