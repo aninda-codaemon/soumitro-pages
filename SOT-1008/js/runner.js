@@ -803,6 +803,16 @@ $(document).ready(function() {
 
   /* Initialization called on pageload */
   var initialize = function() {
+    downsell.init({
+      onBack: {
+        elem: "#iModal-trial",
+        cb: function () {}
+      },
+      onBreakingPlane: {
+        elem: "#iModal-trial",
+        cb: function () {}
+      }
+    });
     dupeSearchBar();
     insertBanner();
     collapseContent();
