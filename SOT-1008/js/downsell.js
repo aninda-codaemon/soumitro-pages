@@ -269,7 +269,7 @@
 
   downsell.init = function (options) {
     _.extend(opts, defaults, options);
-    //onBack();
+    onBack();
     // onUnload();
     onIdle();
     onBlur();
