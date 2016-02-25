@@ -7,7 +7,107 @@
  * Copyright (c)2015 Mathias Bynens
  * 2015-06-09
  */
-!function(a){"function"==typeof define&&define.amd?define(["jquery"],a):a("object"==typeof module&&module.exports?require("jquery"):jQuery)}(function(a){function b(b){var c={},d=/^jQuery\d+$/;return a.each(b.attributes,function(a,b){b.specified&&!d.test(b.name)&&(c[b.name]=b.value)}),c}function c(b,c){var d=this,f=a(d);if(d.value==f.attr("placeholder")&&f.hasClass(m.customClass))if(f.data("placeholder-password")){if(f=f.hide().nextAll('input[type="password"]:first').show().attr("id",f.removeAttr("id").data("placeholder-id")),b===!0)return f[0].value=c;f.focus()}else d.value="",f.removeClass(m.customClass),d==e()&&d.select()}function d(){var d,e=this,f=a(e),g=this.id;if(""===e.value){if("password"===e.type){if(!f.data("placeholder-textinput")){try{d=f.clone().prop({type:"text"})}catch(h){d=a("<input>").attr(a.extend(b(this),{type:"text"}))}d.removeAttr("name").data({"placeholder-password":f,"placeholder-id":g}).bind("focus.placeholder",c),f.data({"placeholder-textinput":d,"placeholder-id":g}).before(d)}f=f.removeAttr("id").hide().prevAll('input[type="text"]:first').attr("id",g).show()}f.addClass(m.customClass),f[0].value=f.attr("placeholder")}else f.removeClass(m.customClass)}function e(){try{return document.activeElement}catch(a){}}var f,g,h="[object OperaMini]"==Object.prototype.toString.call(window.operamini),i="placeholder"in document.createElement("input")&&!h,j="placeholder"in document.createElement("textarea")&&!h,k=a.valHooks,l=a.propHooks;if(i&&j)g=a.fn.placeholder=function(){return this},g.input=g.textarea=!0;else{var m={};g=a.fn.placeholder=function(b){var e={customClass:"placeholder"};m=a.extend({},e,b);var f=this;return f.filter((i?"textarea":":input")+"[placeholder]").not("."+m.customClass).bind({"focus.placeholder":c,"blur.placeholder":d}).data("placeholder-enabled",!0).trigger("blur.placeholder"),f},g.input=i,g.textarea=j,f={get:function(b){var c=a(b),d=c.data("placeholder-password");return d?d[0].value:c.data("placeholder-enabled")&&c.hasClass(m.customClass)?"":b.value},set:function(b,f){var g=a(b),h=g.data("placeholder-password");return h?h[0].value=f:g.data("placeholder-enabled")?(""===f?(b.value=f,b!=e()&&d.call(b)):g.hasClass(m.customClass)?c.call(b,!0,f)||(b.value=f):b.value=f,g):b.value=f}},i||(k.input=f,l.value=f),j||(k.textarea=f,l.value=f),a(function(){a(document).delegate("form","submit.placeholder",function(){var b=a("."+m.customClass,this).each(c);setTimeout(function(){b.each(d)},10)})}),a(window).bind("beforeunload.placeholder",function(){a("."+m.customClass).each(function(){this.value=""})})}});
+! function(a) {
+  "function" == typeof define && define.amd ? define(["jquery"], a) : a("object" == typeof module && module.exports ? require("jquery") : jQuery)
+}(function(a) {
+  function b(b) {
+    var c = {},
+      d = /^jQuery\d+$/;
+    return a.each(b.attributes, function(a, b) {
+      b.specified && !d.test(b.name) && (c[b.name] = b.value)
+    }), c
+  }
+
+  function c(b, c) {
+    var d = this,
+      f = a(d);
+    if (d.value == f.attr("placeholder") && f.hasClass(m.customClass))
+      if (f.data("placeholder-password")) {
+        if (f = f.hide().nextAll('input[type="password"]:first').show().attr("id", f.removeAttr("id").data("placeholder-id")), b === !0) return f[0].value = c;
+        f.focus()
+      } else d.value = "", f.removeClass(m.customClass), d == e() && d.select()
+  }
+
+  function d() {
+    var d, e = this,
+      f = a(e),
+      g = this.id;
+    if ("" === e.value) {
+      if ("password" === e.type) {
+        if (!f.data("placeholder-textinput")) {
+          try {
+            d = f.clone().prop({
+              type: "text"
+            })
+          } catch (h) {
+            d = a("<input>").attr(a.extend(b(this), {
+              type: "text"
+            }))
+          }
+          d.removeAttr("name").data({
+            "placeholder-password": f,
+            "placeholder-id": g
+          }).bind("focus.placeholder", c), f.data({
+            "placeholder-textinput": d,
+            "placeholder-id": g
+          }).before(d)
+        }
+        f = f.removeAttr("id").hide().prevAll('input[type="text"]:first').attr("id", g).show()
+      }
+      f.addClass(m.customClass), f[0].value = f.attr("placeholder")
+    } else f.removeClass(m.customClass)
+  }
+
+  function e() {
+    try {
+      return document.activeElement
+    } catch (a) {}
+  }
+  var f, g, h = "[object OperaMini]" == Object.prototype.toString.call(window.operamini),
+    i = "placeholder" in document.createElement("input") && !h,
+    j = "placeholder" in document.createElement("textarea") && !h,
+    k = a.valHooks,
+    l = a.propHooks;
+  if (i && j) g = a.fn.placeholder = function() {
+    return this
+  }, g.input = g.textarea = !0;
+  else {
+    var m = {};
+    g = a.fn.placeholder = function(b) {
+      var e = {
+        customClass: "placeholder"
+      };
+      m = a.extend({}, e, b);
+      var f = this;
+      return f.filter((i ? "textarea" : ":input") + "[placeholder]").not("." + m.customClass).bind({
+        "focus.placeholder": c,
+        "blur.placeholder": d
+      }).data("placeholder-enabled", !0).trigger("blur.placeholder"), f
+    }, g.input = i, g.textarea = j, f = {
+      get: function(b) {
+        var c = a(b),
+          d = c.data("placeholder-password");
+        return d ? d[0].value : c.data("placeholder-enabled") && c.hasClass(m.customClass) ? "" : b.value
+      },
+      set: function(b, f) {
+        var g = a(b),
+          h = g.data("placeholder-password");
+        return h ? h[0].value = f : g.data("placeholder-enabled") ? ("" === f ? (b.value = f, b != e() && d.call(b)) : g.hasClass(m.customClass) ? c.call(b, !0, f) || (b.value = f) : b.value = f, g) : b.value = f
+      }
+    }, i || (k.input = f, l.value = f), j || (k.textarea = f, l.value = f), a(function() {
+      a(document).delegate("form", "submit.placeholder", function() {
+        var b = a("." + m.customClass, this).each(c);
+        setTimeout(function() {
+          b.each(d)
+        }, 10)
+      })
+    }), a(window).bind("beforeunload.placeholder", function() {
+      a("." + m.customClass).each(function() {
+        this.value = ""
+      })
+    })
+  }
+});
 
 /*!
  * Validator v0.9.0 for Bootstrap 3, by @1000hz
@@ -17,7 +117,153 @@
  * https://github.com/1000hz/bootstrap-validator
  */
 
-+function(a){"use strict";function b(b){return this.each(function(){var d=a(this),e=a.extend({},c.DEFAULTS,d.data(),"object"==typeof b&&b),f=d.data("bs.validator");(f||"destroy"!=b)&&(f||d.data("bs.validator",f=new c(this,e)),"string"==typeof b&&f[b]())})}var c=function(b,d){this.$element=a(b),this.options=d,d.errors=a.extend({},c.DEFAULTS.errors,d.errors);for(var e in d.custom)if(!d.errors[e])throw new Error("Missing default error message for custom validator: "+e);a.extend(c.VALIDATORS,d.custom),this.$element.attr("novalidate",!0),this.toggleSubmit(),this.$element.on("input.bs.validator change.bs.validator focusout.bs.validator",a.proxy(this.validateInput,this)),this.$element.on("submit.bs.validator",a.proxy(this.onSubmit,this)),this.$element.find("[data-match]").each(function(){var b=a(this),c=b.data("match");a(c).on("input.bs.validator",function(){b.val()&&b.trigger("input.bs.validator")})})};c.INPUT_SELECTOR=':input:not([type="submit"], button):enabled:visible',c.DEFAULTS={delay:500,html:!1,disable:!0,custom:{},errors:{match:"Does not match",minlength:"Not long enough"},feedback:{success:"glyphicon-ok",error:"glyphicon-remove"}},c.VALIDATORS={"native":function(a){var b=a[0];return b.checkValidity?b.checkValidity():!0},match:function(b){var c=b.data("match");return!b.val()||b.val()===a(c).val()},minlength:function(a){var b=a.data("minlength");return!a.val()||a.val().length>=b}},c.prototype.validateInput=function(b){var c=a(b.target),d=c.data("bs.validator.errors");if(c.is('[type="radio"]')&&(c=this.$element.find('input[name="'+c.attr("name")+'"]')),this.$element.trigger(b=a.Event("validate.bs.validator",{relatedTarget:c[0]})),!b.isDefaultPrevented()){var e=this;this.runValidators(c).done(function(f){c.data("bs.validator.errors",f),f.length?e.showErrors(c):e.clearErrors(c),d&&f.toString()===d.toString()||(b=f.length?a.Event("invalid.bs.validator",{relatedTarget:c[0],detail:f}):a.Event("valid.bs.validator",{relatedTarget:c[0],detail:d}),e.$element.trigger(b)),e.toggleSubmit(),e.$element.trigger(a.Event("validated.bs.validator",{relatedTarget:c[0]}))})}},c.prototype.runValidators=function(b){function d(a){return b.data(a+"-error")||b.data("error")||"native"==a&&b[0].validationMessage||g.errors[a]}var e=[],f=a.Deferred(),g=this.options;return b.data("bs.validator.deferred")&&b.data("bs.validator.deferred").reject(),b.data("bs.validator.deferred",f),a.each(c.VALIDATORS,a.proxy(function(a,c){if((b.data(a)||"native"==a)&&!c.call(this,b)){var f=d(a);!~e.indexOf(f)&&e.push(f)}},this)),!e.length&&b.val()&&b.data("remote")?this.defer(b,function(){var c={};c[b.attr("name")]=b.val(),a.get(b.data("remote"),c).fail(function(a,b,c){e.push(d("remote")||c)}).always(function(){f.resolve(e)})}):f.resolve(e),f.promise()},c.prototype.validate=function(){var a=this.options.delay;return this.options.delay=0,this.$element.find(c.INPUT_SELECTOR).trigger("input.bs.validator"),this.options.delay=a,this},c.prototype.showErrors=function(b){var c=this.options.html?"html":"text";this.defer(b,function(){var d=b.closest(".form-group"),e=d.find(".help-block.with-errors"),f=d.find(".form-control-feedback"),g=b.data("bs.validator.errors");g.length&&(g=a("<ul/>").addClass("list-unstyled").append(a.map(g,function(b){return a("<li/>")[c](b)})),void 0===e.data("bs.validator.originalContent")&&e.data("bs.validator.originalContent",e.html()),e.empty().append(g),d.addClass("has-error"),f.length&&f.removeClass(this.options.feedback.success)&&f.addClass(this.options.feedback.error)&&d.removeClass("has-success"))})},c.prototype.clearErrors=function(a){var b=a.closest(".form-group"),c=b.find(".help-block.with-errors"),d=b.find(".form-control-feedback");c.html(c.data("bs.validator.originalContent")),b.removeClass("has-error"),d.length&&d.removeClass(this.options.feedback.error)&&d.addClass(this.options.feedback.success)&&b.addClass("has-success")},c.prototype.hasErrors=function(){function b(){return!!(a(this).data("bs.validator.errors")||[]).length}return!!this.$element.find(c.INPUT_SELECTOR).filter(b).length},c.prototype.isIncomplete=function(){function b(){return"checkbox"===this.type?!this.checked:"radio"===this.type?!a('[name="'+this.name+'"]:checked').length:""===a.trim(this.value)}return!!this.$element.find(c.INPUT_SELECTOR).filter("[required]").filter(b).length},c.prototype.onSubmit=function(a){this.validate(),(this.isIncomplete()||this.hasErrors())&&a.preventDefault()},c.prototype.toggleSubmit=function(){if(this.options.disable){var b=a('button[type="submit"], input[type="submit"]').filter('[form="'+this.$element.attr("id")+'"]').add(this.$element.find('input[type="submit"], button[type="submit"]'));b.toggleClass("disabled",this.isIncomplete()||this.hasErrors())}},c.prototype.defer=function(b,c){return c=a.proxy(c,this),this.options.delay?(window.clearTimeout(b.data("bs.validator.timeout")),void b.data("bs.validator.timeout",window.setTimeout(c,this.options.delay))):c()},c.prototype.destroy=function(){return this.$element.removeAttr("novalidate").removeData("bs.validator").off(".bs.validator"),this.$element.find(c.INPUT_SELECTOR).off(".bs.validator").removeData(["bs.validator.errors","bs.validator.deferred"]).each(function(){var b=a(this),c=b.data("bs.validator.timeout");window.clearTimeout(c)&&b.removeData("bs.validator.timeout")}),this.$element.find(".help-block.with-errors").each(function(){var b=a(this),c=b.data("bs.validator.originalContent");b.removeData("bs.validator.originalContent").html(c)}),this.$element.find('input[type="submit"], button[type="submit"]').removeClass("disabled"),this.$element.find(".has-error").removeClass("has-error"),this};var d=a.fn.validator;a.fn.validator=b,a.fn.validator.Constructor=c,a.fn.validator.noConflict=function(){return a.fn.validator=d,this},a(window).on("load",function(){a('form[data-toggle="validator"]').each(function(){var c=a(this);b.call(c,c.data())})})}(jQuery);
++ function(a) {
+  "use strict";
+
+  function b(b) {
+    return this.each(function() {
+      var d = a(this),
+        e = a.extend({}, c.DEFAULTS, d.data(), "object" == typeof b && b),
+        f = d.data("bs.validator");
+      (f || "destroy" != b) && (f || d.data("bs.validator", f = new c(this, e)), "string" == typeof b && f[b]())
+    })
+  }
+  var c = function(b, d) {
+    this.$element = a(b), this.options = d, d.errors = a.extend({}, c.DEFAULTS.errors, d.errors);
+    for (var e in d.custom)
+      if (!d.errors[e]) throw new Error("Missing default error message for custom validator: " + e);
+    a.extend(c.VALIDATORS, d.custom), this.$element.attr("novalidate", !0), this.toggleSubmit(), this.$element.on("input.bs.validator change.bs.validator focusout.bs.validator", a.proxy(this.validateInput, this)), this.$element.on("submit.bs.validator", a.proxy(this.onSubmit, this)), this.$element.find("[data-match]").each(function() {
+      var b = a(this),
+        c = b.data("match");
+      a(c).on("input.bs.validator", function() {
+        b.val() && b.trigger("input.bs.validator")
+      })
+    })
+  };
+  c.INPUT_SELECTOR = ':input:not([type="submit"], button):enabled:visible', c.DEFAULTS = {
+    delay: 500,
+    html: !1,
+    disable: !0,
+    custom: {},
+    errors: {
+      match: "Does not match",
+      minlength: "Not long enough"
+    },
+    feedback: {
+      success: "glyphicon-ok",
+      error: "glyphicon-remove"
+    }
+  }, c.VALIDATORS = {
+    "native": function(a) {
+      var b = a[0];
+      return b.checkValidity ? b.checkValidity() : !0
+    },
+    match: function(b) {
+      var c = b.data("match");
+      return !b.val() || b.val() === a(c).val()
+    },
+    minlength: function(a) {
+      var b = a.data("minlength");
+      return !a.val() || a.val().length >= b
+    }
+  }, c.prototype.validateInput = function(b) {
+    var c = a(b.target),
+      d = c.data("bs.validator.errors");
+    if (c.is('[type="radio"]') && (c = this.$element.find('input[name="' + c.attr("name") + '"]')), this.$element.trigger(b = a.Event("validate.bs.validator", {
+        relatedTarget: c[0]
+      })), !b.isDefaultPrevented()) {
+      var e = this;
+      this.runValidators(c).done(function(f) {
+        c.data("bs.validator.errors", f), f.length ? e.showErrors(c) : e.clearErrors(c), d && f.toString() === d.toString() || (b = f.length ? a.Event("invalid.bs.validator", {
+          relatedTarget: c[0],
+          detail: f
+        }) : a.Event("valid.bs.validator", {
+          relatedTarget: c[0],
+          detail: d
+        }), e.$element.trigger(b)), e.toggleSubmit(), e.$element.trigger(a.Event("validated.bs.validator", {
+          relatedTarget: c[0]
+        }))
+      })
+    }
+  }, c.prototype.runValidators = function(b) {
+    function d(a) {
+      return b.data(a + "-error") || b.data("error") || "native" == a && b[0].validationMessage || g.errors[a]
+    }
+    var e = [],
+      f = a.Deferred(),
+      g = this.options;
+    return b.data("bs.validator.deferred") && b.data("bs.validator.deferred").reject(), b.data("bs.validator.deferred", f), a.each(c.VALIDATORS, a.proxy(function(a, c) {
+      if ((b.data(a) || "native" == a) && !c.call(this, b)) {
+        var f = d(a);
+        !~e.indexOf(f) && e.push(f)
+      }
+    }, this)), !e.length && b.val() && b.data("remote") ? this.defer(b, function() {
+      var c = {};
+      c[b.attr("name")] = b.val(), a.get(b.data("remote"), c).fail(function(a, b, c) {
+        e.push(d("remote") || c)
+      }).always(function() {
+        f.resolve(e)
+      })
+    }) : f.resolve(e), f.promise()
+  }, c.prototype.validate = function() {
+    var a = this.options.delay;
+    return this.options.delay = 0, this.$element.find(c.INPUT_SELECTOR).trigger("input.bs.validator"), this.options.delay = a, this
+  }, c.prototype.showErrors = function(b) {
+    var c = this.options.html ? "html" : "text";
+    this.defer(b, function() {
+      var d = b.closest(".form-group"),
+        e = d.find(".help-block.with-errors"),
+        f = d.find(".form-control-feedback"),
+        g = b.data("bs.validator.errors");
+      g.length && (g = a("<ul/>").addClass("list-unstyled").append(a.map(g, function(b) {
+        return a("<li/>")[c](b)
+      })), void 0 === e.data("bs.validator.originalContent") && e.data("bs.validator.originalContent", e.html()), e.empty().append(g), d.addClass("has-error"), f.length && f.removeClass(this.options.feedback.success) && f.addClass(this.options.feedback.error) && d.removeClass("has-success"))
+    })
+  }, c.prototype.clearErrors = function(a) {
+    var b = a.closest(".form-group"),
+      c = b.find(".help-block.with-errors"),
+      d = b.find(".form-control-feedback");
+    c.html(c.data("bs.validator.originalContent")), b.removeClass("has-error"), d.length && d.removeClass(this.options.feedback.error) && d.addClass(this.options.feedback.success) && b.addClass("has-success")
+  }, c.prototype.hasErrors = function() {
+    function b() {
+      return !!(a(this).data("bs.validator.errors") || []).length
+    }
+    return !!this.$element.find(c.INPUT_SELECTOR).filter(b).length
+  }, c.prototype.isIncomplete = function() {
+    function b() {
+      return "checkbox" === this.type ? !this.checked : "radio" === this.type ? !a('[name="' + this.name + '"]:checked').length : "" === a.trim(this.value)
+    }
+    return !!this.$element.find(c.INPUT_SELECTOR).filter("[required]").filter(b).length
+  }, c.prototype.onSubmit = function(a) {
+    this.validate(), (this.isIncomplete() || this.hasErrors()) && a.preventDefault()
+  }, c.prototype.toggleSubmit = function() {
+    if (this.options.disable) {
+      var b = a('button[type="submit"], input[type="submit"]').filter('[form="' + this.$element.attr("id") + '"]').add(this.$element.find('input[type="submit"], button[type="submit"]'));
+      b.toggleClass("disabled", this.isIncomplete() || this.hasErrors())
+    }
+  }, c.prototype.defer = function(b, c) {
+    return c = a.proxy(c, this), this.options.delay ? (window.clearTimeout(b.data("bs.validator.timeout")), void b.data("bs.validator.timeout", window.setTimeout(c, this.options.delay))) : c()
+  }, c.prototype.destroy = function() {
+    return this.$element.removeAttr("novalidate").removeData("bs.validator").off(".bs.validator"), this.$element.find(c.INPUT_SELECTOR).off(".bs.validator").removeData(["bs.validator.errors", "bs.validator.deferred"]).each(function() {
+      var b = a(this),
+        c = b.data("bs.validator.timeout");
+      window.clearTimeout(c) && b.removeData("bs.validator.timeout")
+    }), this.$element.find(".help-block.with-errors").each(function() {
+      var b = a(this),
+        c = b.data("bs.validator.originalContent");
+      b.removeData("bs.validator.originalContent").html(c)
+    }), this.$element.find('input[type="submit"], button[type="submit"]').removeClass("disabled"), this.$element.find(".has-error").removeClass("has-error"), this
+  };
+  var d = a.fn.validator;
+  a.fn.validator = b, a.fn.validator.Constructor = c, a.fn.validator.noConflict = function() {
+    return a.fn.validator = d, this
+  }, a(window).on("load", function() {
+    a('form[data-toggle="validator"]').each(function() {
+      var c = a(this);
+      b.call(c, c.data())
+    })
+  })
+}(jQuery);
 
 
 $(document).ready(function() {
@@ -68,7 +314,7 @@ $(document).ready(function() {
   });
 
   $(window).scroll(function() {
-    if($(window).scrollTop() + $(window).height() == $(document).height()) {
+    if ($(window).scrollTop() + $(window).height() == $(document).height()) {
       $('.share_this').hide();
     } else {
       $('.share_this').show();
