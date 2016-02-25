@@ -35,7 +35,15 @@
         xhrData = $.ajax({
           url: url,
           dataType: 'jsonp',
-          jsonpCallback: 'parseResults'
+          jsonpCallback: 'parseResults',
+          beforeSend: function(xhr){
+            console.log(xhr);
+            $('#page-loader').show();
+          },
+          success: function(result) {
+            console.log(result);
+            $('#page-loader').hide();
+          }
         });
 
       $.when(xhrData).done(function(result) {
