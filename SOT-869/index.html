@@ -19,7 +19,23 @@
 </head>
 
 <!-- update data-search-page attr with correct url -->
+
 <body data-next-page="<%= next_page %>" data-search-page="//www.beenverified.com/lp/4c0e06/2/search-results">
+
+  <div id="page-loader">
+    <div class="allbar">
+      <p>Loading</p>
+      <div class="bar bar1"></div>
+      <div class="bar bar2"></div>
+      <div class="bar bar3"></div>
+      <div class="bar bar4"></div>
+      <div class="bar bar5"></div>
+      <div class="bar bar6"></div>
+      <div class="bar bar7"></div>
+      <div class="bar bar8"></div>
+      <div class="bar bar9"></div>
+    </div>
+  </div>
 
   <header class="container">
     <img class="logo" src="img/logo.png" alt="" />
@@ -40,16 +56,14 @@
               <!-- end col-sm-4 -->
 
               {{#if fullName}}
-                <div class="col-sm-8 user-details-column">
-                  <h4 class="user-name">{{fullName}}</h4>
-                  {{#if age}}
-                    <p class="user-info">{{age}} years old</p>
-                  {{/if}}
-                  {{#if place}}
-                    <p class="user-info">from {{place}}</p>
-                  {{/if}}
-                </div>
-                <!-- end col-sm-8 -->
+              <div class="col-sm-8 user-details-column">
+                <h4 class="user-name">{{fullName}}</h4> {{#if age}}
+                <p class="user-info">{{age}} years old</p>
+                {{/if}} {{#if place}}
+                <p class="user-info">from {{place}}</p>
+                {{/if}}
+              </div>
+              <!-- end col-sm-8 -->
               {{/if}}
 
             </div>
@@ -63,42 +77,29 @@
 
                   <li class="user-meta-item">
                     {{#if previousPlace}}
-                      <strong>Past Locations: </strong> {{previousPlace}}
-                      {{#if placesCountTeaser}}
-                         <a href="#" class="scroll-to-subscribe">+ {{placesCountTeaser}} more</a>
-                      {{/if}}
-                    {{else}}
-                      <strong>Felonies: </strong>
-                      <a href="#" class="scroll-to-subscribe">Searched</a>
-                      <i class="check-icon"></i>
-                    {{/if}}
+                    <strong>Past Locations: </strong> {{previousPlace}} {{#if placesCountTeaser}}
+                    <a href="#" class="scroll-to-subscribe">+ {{placesCountTeaser}} more</a> {{/if}} {{else}}
+                    <strong>Felonies: </strong>
+                    <a href="#" class="scroll-to-subscribe">Searched</a>
+                    <i class="check-icon"></i> {{/if}}
                   </li>
 
                   <li class="user-meta-item">
                     {{#if relatives}}
-                      <strong>Relatives: </strong> {{relative}}
-                      {{#if relativesCountTeaser}}
-                         <a href="#" class="scroll-to-subscribe">+ {{relativesCountTeaser}} more</a>
-                      {{/if}}
-                    {{else}}
-                      <strong>Bankruptices: </strong>
-                      <a href="#" class="scroll-to-subscribe">Searched</a>
-                      <i class="check-icon"></i>
-                    {{/if}}
+                    <strong>Relatives: </strong> {{relative}} {{#if relativesCountTeaser}}
+                    <a href="#" class="scroll-to-subscribe">+ {{relativesCountTeaser}} more</a> {{/if}} {{else}}
+                    <strong>Bankruptices: </strong>
+                    <a href="#" class="scroll-to-subscribe">Searched</a>
+                    <i class="check-icon"></i> {{/if}}
                   </li>
 
                   <li class="user-meta-item">
                     {{#if socialProfiles}}
-                      <strong>Social Profiles:</strong>
-                      {{{socialProfileIcons}}}
-                      {{#if socialProfilesCountTeaser}}
-                        <a href="#" class="scroll-to-subscribe">+ {{socialProfilesCountTeaser}} more</a>
-                      {{/if}}
-                    {{else}}
-                      <strong>Traffic Offenses and More: </strong>
-                      <a href="#" class="scroll-to-subscribe">Searched</a>
-                      <i class="check-icon"></i>
-                    {{/if}}
+                    <strong>Social Profiles:</strong> {{{socialProfileIcons}}} {{#if socialProfilesCountTeaser}}
+                    <a href="#" class="scroll-to-subscribe">+ {{socialProfilesCountTeaser}} more</a> {{/if}} {{else}}
+                    <strong>Traffic Offenses and More: </strong>
+                    <a href="#" class="scroll-to-subscribe">Searched</a>
+                    <i class="check-icon"></i> {{/if}}
                   </li>
 
                 </ul>
@@ -110,46 +111,37 @@
 
                   <li class="user-meta-item">
                     {{#if phoneNumbers}}
-                      <strong>Phone Numbers: </strong> {{phoneNumber}}
-                      {{#if phoneNumbersCountTeaser}}
-                        <a href="#" class="scroll-to-subscribe">+ {{phoneNumbersCountTeaser}} more</a>
-                      {{/if}}
-                    {{else}}
-                      <strong>Phone Numbers: </strong>
-                      <a href="#" class="scroll-to-subscribe">Searched</a>
-                      <i class="check-icon"></i>
-                    {{/if}}
+                    <strong>Phone Numbers: </strong> {{phoneNumber}} {{#if phoneNumbersCountTeaser}}
+                    <a href="#" class="scroll-to-subscribe">+ {{phoneNumbersCountTeaser}} more</a> {{/if}} {{else}}
+                    <strong>Phone Numbers: </strong>
+                    <a href="#" class="scroll-to-subscribe">Searched</a>
+                    <i class="check-icon"></i> {{/if}}
                   </li>
 
                   <li class="user-meta-item">
                     {{#if emails}}
-                      <strong>Emails: </strong> {{email}}
-                      {{#if emailsCountTeaser}}
-                        <a href="#" class="scroll-to-subscribe">+ {{emailsCountTeaser}} more</a>
-                      {{/if}}
-                    {{else}}
-                      <strong>Emails: </strong>
-                      <a href="#" class="scroll-to-subscribe">Searched</a>
-                      <i class="check-icon"></i>
-                    {{/if}}
+                    <strong>Emails: </strong> {{email}} {{#if emailsCountTeaser}}
+                    <a href="#" class="scroll-to-subscribe">+ {{emailsCountTeaser}} more</a> {{/if}} {{else}}
+                    <strong>Emails: </strong>
+                    <a href="#" class="scroll-to-subscribe">Searched</a>
+                    <i class="check-icon"></i> {{/if}}
                   </li>
 
                   <li class="user-meta-item">
                     {{#if criminalRecords}}
-                      <div class="user-records-container">
-                        <div class="user-records">
-                          <span class="records-count">{{criminalRecordsCount}}</span>
-                          <span class="records-label">
+                    <div class="user-records-container">
+                      <div class="user-records">
+                        <span class="records-count">{{criminalRecordsCount}}</span>
+                        <span class="records-label">
                             Criminal/Traffic Records
                           </span>
-                          <span class="check-icon"></span>
-                        </div>
+                        <span class="check-icon"></span>
                       </div>
+                    </div>
                     {{else}}
-                      <strong>Arrest Records: </strong>
-                      <a href="#" class="scroll-to-subscribe">Searched</a>
-                      <i class="check-icon"></i>
-                    {{/if}}
+                    <strong>Arrest Records: </strong>
+                    <a href="#" class="scroll-to-subscribe">Searched</a>
+                    <i class="check-icon"></i> {{/if}}
                   </li>
                 </ul>
               </div>
@@ -190,9 +182,7 @@
         <!-- End User Comments -->
 
         <div class="order-summary hidden-xs" data-fr-bind="currentRecord">
-          <h4 class="headline"><i class="cart-icon"></i> Your Order Summary:</h4>
-
-          {{#if fullName}}
+          <h4 class="headline"><i class="cart-icon"></i> Your Order Summary:</h4> {{#if fullName}}
 
           <strong class="divider-headline">Background Report on:</strong>
 
@@ -202,9 +192,7 @@
             <span class="right-label included-label">Included</span>
           </p>
 
-          <hr class="divider" />
-
-          {{/if}}
+          <hr class="divider" /> {{/if}}
 
           <strong class="divider-headline">Membership Plan:</strong>
 
@@ -297,7 +285,7 @@
               <span class="radio-custom"></span>
               <span class="offer-label">
                 1 Month <span class="visible-portrait">Membership</span><span class="hidden-portrait">of Unlimited Reports</span>
-                <span class="price-label" data-plan-price="22.86" data-term-length="1 Month of Unlimited Reports" data-monthly-price="22.86" data-plan-type="month">
+              <span class="price-label" data-plan-price="22.86" data-term-length="1 Month of Unlimited Reports" data-monthly-price="22.86" data-plan-type="month">
                   $22.86 <strong>/mo</strong>
                 </span>
               </span>
@@ -310,7 +298,7 @@
               <span class="radio-custom"></span>
               <span class="offer-label">
                 3 <span class="visible-portrait">Month Membership</span><span class="hidden-portrait">Months of Unlimited Reports</span>
-                <span class="price-label" data-plan-price="44.58" data-term-length="3 Months of Unlimited Reports" data-monthly-price="14.88" data-plan-type="3 months">
+              <span class="price-label" data-plan-price="44.58" data-term-length="3 Months of Unlimited Reports" data-monthly-price="14.88" data-plan-type="3 months">
                   $14.88 <strong>/mo</strong> <small>($44.58 Today)</small>
                 </span>
               </span>
@@ -325,7 +313,7 @@
               <img class="deal-image" src="img/deal.png" />
               <span class="offer-label">
                 6 <span class="visible-portrait">Month Membership</span><span class="hidden-portrait">Months of Unlimited Reports</span>
-                <span class="price-label" data-plan-price="58.98" data-term-length="6 Months of Unlimited Reports" data-monthly-price="9.83" data-plan-type="6 months">
+              <span class="price-label" data-plan-price="58.98" data-term-length="6 Months of Unlimited Reports" data-monthly-price="9.83" data-plan-type="6 months">
                   $9.94 <strong>/mo</strong> <small>($58.98 Today)</small>
                 </span>
               </span>
@@ -453,10 +441,11 @@
                   <label>Agree To Our Terms of Service</label>
                   <div class="agreement-container">
                     <input type="checkbox" class="checkbox" id="account_tos" name="account[tos]" value="1" />
-                    <label for="account_tos" class="agreement">By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>, <a href="//www.beenverified.com/home/membership_agreement" target="_blank">Member Agreement</a> and <a href="//www.beenverified.com/home/privacy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price"></span> every <span id="legal-type"></span> until this subscription
-                      is canceled. You can cancel your membership at any time by contacting customer service at <a href="tel:1-888-579-5910">1-888-579-5910</a> or emailing <a href="mailto:support@beenverified.com">support@beenverified.com</a>. You also agree that you will NOT use any information about
-                      an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance; or for any other purpose prohibited
-                      by our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>.</label>
+                    <label for="account_tos" class="agreement">By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>, <a href="//www.beenverified.com/home/membership_agreement"
+                      target="_blank">Member Agreement</a> and <a href="//www.beenverified.com/home/privacy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price"></span> every <span id="legal-type"></span> until this subscription
+                      is canceled. You can cancel your membership at any time by contacting customer service at <a href="tel:1-888-579-5910">1-888-579-5910</a> or emailing <a href="mailto:support@beenverified.com">support@beenverified.com</a>. You also
+                      agree that you will NOT use any information about an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans,
+                      or insurance; or for any other purpose prohibited by our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>.</label>
                     <div class="clearfix"></div>
                   </div>
                 </div>
@@ -641,6 +630,12 @@
 
   <script src="js/subscribeRunner.js"></script>
   <script src="js/runner.js"></script>
+
+  <script language="javascript" type="text/javascript">
+    $(window).load(function() {
+      $('#page-loader').hide();
+    });
+  </script>
 
 </body>
 
