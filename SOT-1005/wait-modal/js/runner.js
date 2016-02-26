@@ -81,6 +81,16 @@
           var percent = Math.floor(step);
           $('.progress-text-inner').html(percent.toString() + "%");
           $('.progress-text-outer').html("&nbsp; " + percent.toString() + "%");
+
+          // wip:
+          // var resultsCount = getResultCount();
+          var loadTime = percent.toString() / PROGRESS_DURATION;
+          $('#results-loaded-count').html('63');
+          console.log(PROGRESS_DURATION);
+          console.log(percent.toString());
+          console.log(loadTime);
+          $('#remaining-load-time').html(loadTime);
+
           if (percent === 50) {
             $('.progress-text-outer').fadeOut();
             $('.progress-text-inner').fadeIn();
@@ -88,6 +98,27 @@
           if (percent === 15 && !_.isUndefined(searchData) && excessResults == true && !validQueryData(searchData.city) && _.isUndefined(searchData.norefine) && !modalClosed) {
             $('#input-state').modal('show');
             trackNL("Show Location Refine Modal");
+          }
+          if (percent === 20) {
+            // initiate downsell
+            downsell.init({
+              onBack: {
+                elem: "#iModal-wait",
+                cb: function () {}
+              },
+              onBreakingPlane: {
+                elem: "#iModal-wait",
+                cb: function () {}
+              }
+            });
+
+            // downsell modal cta click event
+            $('#show-dollar-trial').on('click', function () {
+              //trackNL('onBack Modal - Accepted');
+              // @TODO: replace hardcoded url with a dynamic var
+              //window.location.href = 'https://www.beenverified.com/lp/32fc4f/5/subscribe'
+              console.log('cta click event');
+            });
           }
           if (percent === 98) {
             $('#input-state').modal('hide');
@@ -255,24 +286,4 @@
     		heap.track("Cookies Disabled");
     	}
     }
-
-    // initiate downsell
-    downsell.init({
-      onBack: {
-        elem: "#iModal-wait",
-        cb: function () {}
-      },
-      onBreakingPlane: {
-        elem: "#iModal-wait",
-        cb: function () {}
-      }
-    });
-
-    // downsell modal cta click event
-    $('#show-dollar-trial').on('click', function () {
-      //trackNL('onBack Modal - Accepted');
-      // @TODO: replace hardcoded url with a dynamic var
-      //window.location.href = 'https://www.beenverified.com/lp/32fc4f/5/subscribe'
-      console.log('cta click event');
-    });
   }());
