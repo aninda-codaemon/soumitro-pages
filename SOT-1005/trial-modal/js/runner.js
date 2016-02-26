@@ -89,6 +89,19 @@
             $('#input-state').modal('show');
             trackNL("Show Location Refine Modal");
           }
+          if (percent === 20) {
+            // initiate downsell
+            downsell.init({
+              onBack: {
+                elem: "#iModal-trial",
+                cb: function () {}
+              },
+              onBreakingPlane: {
+                elem: "#iModal-trial",
+                cb: function () {}
+              }
+            });
+          }
           if (percent === 98) {
             $('#input-state').modal('hide');
           }
@@ -255,18 +268,4 @@
     		heap.track("Cookies Disabled");
     	}
     }
-
-    // initiate downsell
-
-    downsell.init({
-      onBack: {
-        elem: "#iModal-trial",
-        cb: function () {}
-      },
-      onBreakingPlane: {
-        elem: "#iModal-trial",
-        cb: function () {}
-      }
-    });
-
   }());
