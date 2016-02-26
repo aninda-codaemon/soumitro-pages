@@ -255,4 +255,18 @@
     		heap.track("Cookies Disabled");
     	}
     }
+
+    // initiate downsell
+
+    downsell.init({
+      onBack: {
+        elem: "#iModal-trial",
+        cb: function () {}
+      },
+      onBreakingPlane: {
+        elem: "#iModal-trial",
+        cb: function () {}
+      }
+    });
+
   }());
