@@ -180,7 +180,7 @@
             hasSocial: hasSocial
           };
 
-          amplify.store('extraTeaserData', teaserData);
+          amplify.store('currentRecord', teaserData);
 
           $('#page-loader').hide();
         }
