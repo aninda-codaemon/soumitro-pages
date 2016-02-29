@@ -277,7 +277,7 @@
     //onUnload();
     onIdle();
     onBlur();
-    onBreakingPlane();
+    //onBreakingPlane();
   };
 
   // Expose downsell as a global.

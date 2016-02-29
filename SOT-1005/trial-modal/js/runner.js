@@ -89,26 +89,6 @@
             $('#input-state').modal('show');
             trackNL("Show Location Refine Modal");
           }
-          if (percent === 20) {
-            // initiate downsell
-            downsell.init({
-              onBack: {
-                elem: "#iModal-trial",
-                cb: function () {}
-              },
-              onBreakingPlane: {
-                elem: "#iModal-trial",
-                cb: function () {}
-              }
-            });
-
-            // downsell modal cta click event
-            $('#show-dollar-trial').on('click', function () {
-              trackNL('onBack Modal - Accepted');
-              // @TODO: replace hardcoded url with a dynamic var
-              window.location.href = 'https://www.beenverified.com/lp/32fc4f/5/subscribe'
-            });
-          }
           if (percent === 98) {
             $('#input-state').modal('hide');
           }
@@ -275,4 +255,23 @@
     		heap.track("Cookies Disabled");
     	}
     }
+
+    // initiate downsell
+    downsell.init({
+      onBack: {
+        elem: "#iModal-trial",
+        cb: function () {}
+      },
+      onBreakingPlane: {
+        elem: "#iModal-trial",
+        cb: function () {}
+      }
+    });
+
+    // downsell modal cta click event
+    $('#show-dollar-trial').on('click', function () {
+      trackNL('onBack Modal - Accepted');
+      // @TODO: replace hardcoded url with a dynamic var
+      window.location.href = 'https://www.beenverified.com/lp/32fc4f/5/subscribe'
+    });
   }());
