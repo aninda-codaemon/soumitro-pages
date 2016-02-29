@@ -270,7 +270,6 @@
 
     // downsell modal cta click event
     $('#show-dollar-trial').on('click', function () {
-      trackNL('onBack Modal - Accepted');
       // @TODO: replace hardcoded url with a dynamic var
       window.location.href = 'https://www.beenverified.com/lp/32fc4f/5/subscribe'
     });
