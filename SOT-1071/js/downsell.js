@@ -25,6 +25,7 @@
   };
 
   var isIE = navigator.userAgent.toLowerCase().indexOf('msie') > -1 || !!navigator.userAgent.match(/Trident.*rv\:11\./),
+      isEdge = navigator.userAgent.toLowerCase().indexOf('trident') === -1,
       isFF = navigator.userAgent.toLowerCase().indexOf ('firefox') > -1,
       isAndroid = navigator.userAgent.toLowerCase().indexOf ('android') > -1,
       isIOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false;
@@ -41,7 +42,7 @@
       heap.track(msg, prop);
     }
   };
-  
+
   var trackNL = function (evtName, props) {
     if (typeof nolimit !== 'undefined' && nolimit.track) {
       if (props) {
@@ -166,7 +167,7 @@
   };
 
   var listenToHashChanges = function () {
-    if (isIE) {
+    if (isIE || isEdge) {
       pollForHashChange();
       return;
     }
