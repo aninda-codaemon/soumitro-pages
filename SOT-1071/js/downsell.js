@@ -25,7 +25,7 @@
   };
 
   var isIE = navigator.userAgent.toLowerCase().indexOf('msie') > -1 || !!navigator.userAgent.match(/Trident.*rv\:11\./),
-      isEdge = navigator.userAgent.toLowerCase().indexOf('trident') === -1,
+      isEdge = navigator.userAgent.toLowerCase().indexOf('edge') > -1,
       isFF = navigator.userAgent.toLowerCase().indexOf ('firefox') > -1,
       isAndroid = navigator.userAgent.toLowerCase().indexOf ('android') > -1,
       isIOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false;
@@ -167,7 +167,7 @@
   };
 
   var listenToHashChanges = function () {
-    if (isIE || isEdge) {
+    if (isIE) {
       pollForHashChange();
       return;
     }
