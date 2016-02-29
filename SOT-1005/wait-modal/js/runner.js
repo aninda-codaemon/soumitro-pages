@@ -170,7 +170,15 @@
         var recordCount = xhrResult.response.RecordCount;
 
         // add results loaded count into wait modal
-        $('#results-loaded-count').html(recordCount - 10);
+        if (recordCount > 10) {
+          $('#results-loaded-count').html(recordCount - 10);
+        } else {
+          if (recordCount === 0) {
+            $(".results-loaded-statement").hide();
+          } else {
+            $('#results-loaded-count').html(recordCount);
+          }
+        }
 
         if (status === "0") {
           var recordCount = xhrResult.response.RecordCount;
