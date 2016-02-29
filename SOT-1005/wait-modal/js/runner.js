@@ -142,6 +142,7 @@
       amplify.store('searchData', '');
       amplify.store('teaserData', null);
       $("#header-message").html("Searching for your Subject");
+      $("#search-subject").html("your subject.");
       $.when(progress).done(function () {
         goToNextPage();
       });
@@ -171,6 +172,10 @@
         var xhrResult = result;
 
         var status = xhrResult.response.Header.Status;
+        var recordCount = xhrResult.response.RecordCount;
+
+        // add results loaded count into wait modal
+        $('#results-loaded-count').html(recordCount - 10);
 
         if (status === "0") {
           var recordCount = xhrResult.response.RecordCount;
@@ -229,9 +234,6 @@
           teaserData = teaserRecords;
 
           var recordCount = xhrResult.response.RecordCount;
-
-          // add results loaded count into wait modal
-          $('#results-loaded-count').html(recordCount - 10);
 
           trackNL("Refine Modal Final Result Count", {result_count: recordCount});
 

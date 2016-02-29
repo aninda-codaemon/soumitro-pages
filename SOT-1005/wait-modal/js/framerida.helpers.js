@@ -21,7 +21,7 @@
     if (!item) return "";
     return item.toUpperCase();
   });
-  
+
   H.registerHelper('nameize', function (item) {
     if (!item) return "";
     return item.nameize();
@@ -34,7 +34,7 @@
   H.registerHelper('index', function (item) {
     return item.data.index + 1;
   });
-  
+
   H.registerHelper('ifNot', function (x, y, options) {
      if (_.isString(x) && _.isString(y) && x.toUpperCase() !== y.toUpperCase()) {
        return options.fn(this);
@@ -50,5 +50,3 @@
   });
 
 }(Handlebars));
-
-
