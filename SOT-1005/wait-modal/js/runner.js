@@ -173,7 +173,7 @@
         if (recordCount > 10) {
           $('#results-loaded-count').html(recordCount - 10);
         } else {
-          if (recordCount === 0) {
+          if (recordCount == 0) {
             $(".results-loaded-statement").hide();
           } else {
             $('#results-loaded-count').html(recordCount);
