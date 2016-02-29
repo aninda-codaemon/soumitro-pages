@@ -82,9 +82,12 @@
           $('.progress-text-inner').html(percent.toString() + "%");
           $('.progress-text-outer').html("&nbsp; " + percent.toString() + "%");
 
-          // @TODO: use PROGRESS_DURATION and percentRemain to get remaining-load-time
-          var percentRemain = 100 - percent.toString();
-          $('#remaining-load-time').html(percentRemain);
+          // @TODO: make these into functions
+          var percentRemain = 100 - percent.toString(),
+              durationRemain = PROGRESS_DURATION * percentRemain / 100,
+              humanizeDurationRemain = Math.floor((durationRemain / 1000) % 60);
+              
+          $('#remaining-load-time').html(humanizeDurationRemain);
 
           if (percent === 50) {
             $('.progress-text-outer').fadeOut();
