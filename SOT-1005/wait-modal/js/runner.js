@@ -82,14 +82,9 @@
           $('.progress-text-inner').html(percent.toString() + "%");
           $('.progress-text-outer').html("&nbsp; " + percent.toString() + "%");
 
-          // wip:
-          // var resultsCount = getResultCount();
-          var loadTime = percent.toString() / PROGRESS_DURATION;
-          $('#results-loaded-count').html('63');
-          console.log(PROGRESS_DURATION);
-          console.log(percent.toString());
-          console.log(loadTime);
-          $('#remaining-load-time').html(loadTime);
+          // @TODO: use PROGRESS_DURATION and percentRemain to get remaining-load-time
+          var percentRemain = 100 - percent.toString();
+          $('#remaining-load-time').html(percentRemain);
 
           if (percent === 50) {
             $('.progress-text-outer').fadeOut();
@@ -148,19 +143,10 @@
       amplify.store('teaserData', null);
       $("#header-message").html("Searching for your Subject");
       $.when(progress).done(function () {
-        //goToNextPage();
+        goToNextPage();
       });
       return;
     }
-
-    $("#refine-modal-form").on('submit', function(evt) {
-      evt.preventDefault();
-      searchData.city = $(this).find('#city').val();
-      searchData.state = $(this).find('#state').val();
-      amplify.store("query", searchData);
-      $('#input-state').modal('hide' );
-    });
-
 
     var buildXhrUrl = function() {
       var baseUrl = "//www.beenverified.com/hk/teaser/?exporttype=jsonp&rc=100";
@@ -196,10 +182,17 @@
       });
     };
 
+    $("#refine-modal-form").on('submit', function(evt) {
+      evt.preventDefault();
+      searchData.city = $(this).find('#city').val();
+      searchData.state = $(this).find('#state').val();
+      amplify.store("query", searchData);
+      $('#input-state').modal('hide' );
+    });
 
     $.when(progress).done(function () {
       if (userThrottled) {
-        //goToNextPage();
+        goToNextPage();
       }
 
       window.setTimeout(function() {
@@ -237,6 +230,9 @@
 
           var recordCount = xhrResult.response.RecordCount;
 
+          // add results loaded count into wait modal
+          $('#results-loaded-count').html(recordCount - 10);
+
           trackNL("Refine Modal Final Result Count", {result_count: recordCount});
 
           var teaserDataObj = {recordCount: recordCount, teasers: teaserData};
@@ -256,7 +252,7 @@
             age: searchData.age || ''
           });
 
-          //goToNextPage();
+          goToNextPage();
 
         }
       });
