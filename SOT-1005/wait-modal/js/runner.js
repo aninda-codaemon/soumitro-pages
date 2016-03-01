@@ -275,15 +275,17 @@
     	}
     }
 
-    // initiate downsell
-    downsell.init({
-      onBack: {
-        elem: "#iModal-wait",
-        cb: function () {}
-      },
-      onBreakingPlane: {
-        elem: "#iModal-wait",
-        cb: function () {}
-      }
-    });
+    // initiate downsell after 1 second
+    setTimeout(function() {
+      downsell.init({
+        onBack: {
+          elem: "#iModal-wait",
+          cb: function () {}
+        },
+        onBreakingPlane: {
+          elem: "#iModal-wait",
+          cb: function () {}
+        }
+      });
+    }, 1000);
   }());
