@@ -97,7 +97,7 @@
             $('#input-state').modal('show');
             trackNL("Show Location Refine Modal");
           }
-          if (percent === 20) {
+          if (percent === 2) {
             // initiate downsell
             downsell.init({
               onBack: {
