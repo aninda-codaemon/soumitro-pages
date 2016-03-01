@@ -10,6 +10,7 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/socicons.css" />
+  <link rel="stylesheet" href="css/loaders.css" />
   <link rel="stylesheet" href="css/style.css" />
 
   <!--[if lt IE 9]>
@@ -57,11 +58,17 @@
 
               {{#if fullName}}
               <div class="col-sm-8 user-details-column">
-                <h4 class="user-name">{{fullName}}</h4> {{#if age}}
-                <p class="user-info">{{age}} years old</p>
-                {{/if}} {{#if place}}
-                <p class="user-info">from {{place}}</p>
-                {{/if}}
+                <h4 class="user-name">{{fullName}}</h4>
+                <p class="user-info">
+                  {{#if age}}
+                    {{age}} years old
+                  {{/if}}
+                  {{#if place}}
+                     <span class="break-md">
+                       from {{place}}
+                     </span>
+                  {{/if}}
+                </p>
               </div>
               <!-- end col-sm-8 -->
               {{/if}}
@@ -204,19 +211,19 @@
           <div class="clearfix"></div>
 
           <p class="data-details">
-            Reverse Name Search
+            Name Search
             <span class="right-label included-label">Included</span>
           </p>
           <p class="data-details">
-            Reverse Phone Search
+            Phone Search
             <span class="right-label included-label">Included</span>
           </p>
           <p class="data-details">
-            Reverse Email Search
+            Email Search
             <span class="right-label included-label">Included</span>
           </p>
           <p class="data-details">
-            Reverse Property Search
+            Property Search
             <span class="right-label included-label">Included</span>
           </p>
 
@@ -253,7 +260,7 @@
             <h4 class="feature-headline">Your Search Is Private</h4>
             <p class="feature-description">
               Rest assured your purchase is confidential and <strong data-fr-bind="currentRecord">{{fullName}}</strong> will
-              <strong>Never</strong> be notified about your search.
+              <strong>not</strong> be notified about your search.
             </p>
           </div>
           <div class="col-sm-6 col-md-12 feature">
@@ -283,6 +290,7 @@
             <input type="radio" class="deal-radio" id="22_1_month_nofree_afill_no_bjl" name="subscription_plan_name" value="<%= subscription_1 %>" checked />
             <label class="deal-label" for="22_1_month_nofree_afill_no_bjl">
               <span class="radio-custom"></span>
+              <img class="deal-image" src="img/deal.png" />
               <span class="offer-label">
                 1 Month <span class="visible-portrait">Membership</span><span class="hidden-portrait">of Unlimited Reports</span>
               <span class="price-label" data-plan-price="22.86" data-term-length="1 Month of Unlimited Reports" data-monthly-price="22.86" data-plan-type="month">
@@ -310,7 +318,6 @@
             <input type="radio" class="deal-radio" id="58_98_6_month_nofree_affil" name="subscription_plan_name" value="<%= subscription_3 %>" />
             <label class="deal-label" for="58_98_6_month_nofree_affil">
               <span class="radio-custom"></span>
-              <img class="deal-image" src="img/deal.png" />
               <span class="offer-label">
                 6 <span class="visible-portrait">Month Membership</span><span class="hidden-portrait">Months of Unlimited Reports</span>
               <span class="price-label" data-plan-price="58.98" data-term-length="6 Months of Unlimited Reports" data-monthly-price="9.83" data-plan-type="6 months">
@@ -329,7 +336,7 @@
             </div>
           </div>
 
-          <h4 class="step-heading">Step 2: Payment Information</h4>
+          <h4 class="step-heading">Step 2: Account Information</h4>
 
           <div class="payments-switch">
             <p class="payments-cta">Choose Your Payment Method</p>
@@ -473,6 +480,23 @@
 
         </form>
         <!-- End subscribe-form -->
+
+        <div class="row features">
+          <div class="col-sm-6 col-md-12 feature">
+            <img class="feature-icon" src="img/icon2.png" alt="" />
+            <h4 class="feature-headline">Your Search Is Private</h4>
+            <p class="feature-description">
+              Rest assured your purchase is confidential and <strong data-fr-bind="currentRecord">{{fullName}}</strong> will
+              <strong>not</strong> be notified about your search.
+            </p>
+          </div>
+          <div class="col-sm-6 col-md-12 feature">
+            <img class="feature-icon" src="img/icon1.png" alt="" />
+            <h4 class="feature-headline">100% Satisfaction Guaranteed</h4>
+            <p class="feature-description">If we do not have results for this report, we will gladly issue a refund. Just contact customer care.</p>
+          </div>
+        </div>
+        <!-- End features -->
 
       </div>
       <!-- End right-section     col-md-7  -->
