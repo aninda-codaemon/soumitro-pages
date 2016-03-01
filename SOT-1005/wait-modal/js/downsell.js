@@ -142,7 +142,7 @@
     window.setTimeout(function() {
       window.location.hash = ".";
       cb();
-    }, 3000);
+    }, 1000);
   };
 
   /* Poll for hash changes on IE. */
