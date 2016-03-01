@@ -646,6 +646,9 @@ header .header-cta {
   -webkit-transition: all 500ms;
   -moz-transition: all 500ms;
   transition: all 500ms;
+  -webkit-box-shadow: 0 -1px 4px -2px rgba(50, 61, 67, 0.5) inset;
+  -moz-box-shadow: 0 -1px 4px -2px rgba(50, 61, 67, 0.5) inset;
+  box-shadow: 0 -1px 4px -2px rgba(50, 61, 67, 0.5) inset;
 }
 .package .deal-label:hover {
   background-color: #f2f7eb;
