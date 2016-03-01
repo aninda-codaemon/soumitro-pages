@@ -256,17 +256,19 @@
     	}
     }
 
-    // initiate downsell
-    downsell.init({
-      onBack: {
-        elem: "#iModal-trial",
-        cb: function () {}
-      },
-      onBreakingPlane: {
-        elem: "#iModal-trial",
-        cb: function () {}
-      }
-    });
+    // initiate downsell after 1 second
+    setTimeout(function() {
+      downsell.init({
+        onBack: {
+          elem: "#iModal-trial",
+          cb: function () {}
+        },
+        onBreakingPlane: {
+          elem: "#iModal-trial",
+          cb: function () {}
+        }
+      });
+    }, 1000);
 
     // downsell modal cta click event
     $('#show-dollar-trial').on('click', function () {
