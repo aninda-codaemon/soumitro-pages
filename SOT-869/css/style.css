@@ -639,7 +639,7 @@ header .header-cta {
   height: 140px;
   margin: 0;
   padding: 30px 0;
-  background-color: #f2f7eb;
+  background-color: #fff;
   color: #424242;
   font-size: 16px;
   line-height: 1.25;
@@ -648,9 +648,17 @@ header .header-cta {
   transition: all 500ms;
 }
 .package .deal-label:hover {
-  -webkit-box-shadow: 0 0 5px 0 rgba(50, 61, 67, 0.5) inset;
-  -moz-box-shadow: 0 0 5px 0 rgba(50, 61, 67, 0.5) inset;
-  box-shadow: 0 0 5px 0 rgba(50, 61, 67, 0.5) inset;
+  background-color: #f2f7eb;
+  -webkit-box-shadow: 0 0 12px -5px rgba(50, 61, 67, 0.5) inset;
+  -moz-box-shadow: 0 0 12px -5px rgba(50, 61, 67, 0.5) inset;
+  box-shadow: 0 0 12px -5px rgba(50, 61, 67, 0.5) inset;
+}
+.package.package-selected .deal-label {
+  background-color: #A6D663;
+  color: #fff;
+  -webkit-box-shadow: 0 0 12px -5px rgba(50, 61, 67, 0.5) inset;
+  -moz-box-shadow: 0 0 12px -5px rgba(50, 61, 67, 0.5) inset;
+  box-shadow: 0 0 12px -5px rgba(50, 61, 67, 0.5) inset;
 }
 .package .deal-label .radio-custom {
   position: absolute;
@@ -708,12 +716,8 @@ header .header-cta {
   font-size: 10px;
   text-align: right;
 }
-.package.first-deal .deal-label {
-  background-color: #8FC346;
-  color: #fff;
-}
-.package.special-deal .deal-label {
-  background-color: #fff;
+.package.package-selected .deal-label .price-label small {
+  color: #5A5A5A;
 }
 @media (min-width: 480px) {
   .right-section .package {
