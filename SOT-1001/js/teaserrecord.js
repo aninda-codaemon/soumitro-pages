@@ -246,6 +246,9 @@
 
     // @TODO: create a loop that returns up to 4 relatives
     // returns checkbox markup with the name and a value with the bvid for this relative
+    TeaserRecord.prototype.relativesCheckboxes = function() {
+      console.log('this will return the checkboxes into the form');
+    };
 
     TeaserRecord.prototype.relative1 = function() {
       var relatives = this.relatives();

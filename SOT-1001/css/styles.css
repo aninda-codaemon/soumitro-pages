@@ -1683,6 +1683,21 @@ span.located img {
   text-align: left;
 }
 
+@media (min-width: 768px) {
+
+  .possible-relatives.modal .modal-header {
+    padding: 15px;
+  }
+
+  .possible-relatives.modal .modal-header .header-icon {
+    width: 28px;
+  }
+
+  .possible-relatives.modal .modal-header .header-headline {
+    font-size: 20px;
+  }
+}
+
 /* modal-body */
 
 .possible-relatives.modal .modal-body {
@@ -1699,10 +1714,12 @@ span.located img {
   padding: 10px;
   background: #f6f6f6;
   font-size: 14px;
+  text-align: center;
   line-height: 1.25;
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form {
+  position: relative;
   margin-top: 10px;
 }
 
@@ -1750,6 +1767,13 @@ span.located img {
   box-shadow: 0 0 10px 0 #DEDEDE inset;
 }
 
+.possible-relatives.modal .modal-body .possible-relatives-form .cta-arrow-image {
+  position: absolute;
+  left: -50px;
+  bottom: 15px;
+  width: 36px;
+}
+
 .possible-relatives.modal .modal-body .possible-relatives-form .main-btn {
   text-transform: uppercase;
   padding: 8px 10px 12px;
@@ -1764,6 +1788,59 @@ span.located img {
   margin-left: 10px;
 }
 
+@media (min-width: 768px) {
+
+  .possible-relatives.modal .modal-body {
+    display: inline-block;
+    width: 100%;
+    padding: 30px;
+    padding-bottom: 0;
+  }
+
+  .possible-relatives.modal .modal-body .hero-image {
+    width: 40%;
+    max-width: 320px;
+    margin: 80px 5% 0;
+    float: left;
+  }
+
+  .possible-relatives.modal .modal-body .form-instructions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 15px 10%;
+    font-size: 18px;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form {
+    width: 40%;
+    margin: 70px 5% 0;
+    float: right;
+  }
+}
+
+@media (min-width: 850px) {
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label {
+    padding: 10px 15px;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label .custom-checkbox {
+    top: 12px;
+    right: 15px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 849px) {
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label {
+    padding-top: 8px;
+    padding-left: 8px;
+  }
+}
+
 /* modal-footer */
 
 .possible-relatives.modal .modal-footer {
@@ -1774,9 +1851,18 @@ span.located img {
 }
 
 .possible-relatives.modal .modal-footer .footer-message {
-  color: #555;
+  color: #7F6F57;
   font-size: 12px;
+  text-align: center;
   line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+
+  .possible-relatives.modal .modal-footer {
+    margin-top: -4px;
+    padding: 15px;
+  }
 }
 
 /* == 3 == YOUR REPORT IS READY ================= */

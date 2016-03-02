@@ -826,9 +826,9 @@
     <div class="modal-dialog">
       <div class="modal-content">
 
-        <div class="modal-header">
+        <div class="modal-header" data-fr-bind="currentRecord">
           <img src="img/user_icon.svg" class="pull-left header-icon">
-          <p class="header-headline">Add Possible Relatives</p>
+          <p class="header-headline">Add <span class="hidden-xs">{{firstName}}'s</span> Possible Relatives</p>
         </div><!-- /.modal-header -->
 
         <div class="modal-body" data-fr-bind="currentRecord">
@@ -837,6 +837,7 @@
           <p class="form-instructions">Select as many relatives for <span class="highlight-text">{{firstName}}</span> as possible. You'll be able to access background and criminal reports for each of the relatives that you select.</p>
 
           <form class="form possible-relatives-form">
+
             <div class="checkbox">
               <input type="checkbox" class="input-checkbox hidden" id="relative1" value="" />
               <label for="relative1" class="input-label">
@@ -873,12 +874,13 @@
               </label>
             </div>
 
+            <img src="img/cursive_arrow.png" class="cta-arrow-image hidden-xs" />
             <button type="submit" id="addPossibleRelatives" class="main-btn btn-lg btn-block">Continue <img src="img/arrow.svg" class="button-icon" /></button>
           </form>
         </div><!-- /.modal-body -->
 
         <div class="modal-footer" data-fr-bind="currentRecord">
-          <p class="footer-message">Your search for {{firstName}} is anonymous.</p>
+          <p class="footer-message"><span class="hidden-xs">Reminder:</span> Your search for {{firstName}} is anonymous.</p>
         </div><!-- /.modal-footer -->
 
       </div><!-- /.modal-content -->
