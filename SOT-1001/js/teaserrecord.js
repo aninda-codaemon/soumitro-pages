@@ -244,6 +244,24 @@
       return (relatives && relatives.length !== 0) ? relatives[0] : '';
     };
 
+    // @TODO: create a loop that returns up to 4 relatives
+    // returns checkbox markup with the name and a value with the bvid for this relative
+
+    TeaserRecord.prototype.relative1 = function() {
+      var relatives = this.relatives();
+      return (relatives && relatives.length !== 0 || relatives.length < 2) ? relatives[1] : '';
+    };
+
+    TeaserRecord.prototype.relative2 = function() {
+      var relatives = this.relatives();
+      return (relatives && relatives.length !== 0 || relatives.length < 3) ? relatives[2] : '';
+    };
+
+    TeaserRecord.prototype.relative3 = function() {
+      var relatives = this.relatives();
+      return (relatives && relatives.length !== 0 || relatives.length < 4) ? relatives[3] : '';
+    };
+
     TeaserRecord.prototype.moreRelativesCount = function() {
       if (this.relatives().length > 1) {
         return parseInt(this.relatives().length) - 1;
