@@ -1788,6 +1788,48 @@ span.located img {
   margin-left: 10px;
 }
 
+@media (min-width: 480px) and (max-width: 768px) {
+
+  .possible-relatives.modal .modal-body {
+    padding-top: 0;
+  }
+
+  .possible-relatives.modal .modal-body .hero-image {
+    float: left;
+  }
+
+  .possible-relatives.modal .modal-body .form-instructions {
+    text-align: left;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 600px) {
+
+  .possible-relatives.modal .modal-body .hero-image {
+    width: 84px;
+    margin: 0 15px;
+  }
+
+  .possible-relatives.modal .modal-body .form-instructions {
+    height: 81px;
+    padding: 15px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+
+  .possible-relatives.modal .modal-body .hero-image {
+    width: 102px;
+    margin: 0 42px;
+  }
+
+  .possible-relatives.modal .modal-body .form-instructions {
+    height: 100px;
+    padding: 20px;
+    font-size: 16px;
+  }
+}
+
 @media (min-width: 768px) {
 
   .possible-relatives.modal .modal-body {
