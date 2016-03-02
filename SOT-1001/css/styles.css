@@ -159,6 +159,28 @@ span.bold {
   -webkit-appearance: none;
 }
 
+.custom-checkbox {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 5px 0 #DEDEDE inset;
+  -moz-box-shadow: 0 0 5px 0 #DEDEDE inset;
+  -ms-box-shadow: 0 0 5px 0 #DEDEDE inset;
+  box-shadow: 0 0 5px 0 #DEDEDE inset;
+  background-color: #F6F6F6;
+}
+
+input[type="checkbox"]:checked + label .custom-checkbox {
+  background: url('../img/checkmark.png') no-repeat center center;
+  background-color: #F6F6F6;
+}
+
+.highlight-text {
+  color: #63b02e;
+}
+
 label.error {
   line-height: 18px;
 
@@ -1565,7 +1587,7 @@ ul.profile li {
 
 #social-media-groups li p {
   position: absolute;
-  
+
   text-align: center;
   width: 100%;
   font-size: 13px;
@@ -1640,6 +1662,123 @@ p.log-load {
 span.located img {
   margin-right: 5px;
 }
+
+/* ======= POSSIBLE RELATIVES ================= */
+
+/* modal-header */
+
+.possible-relatives.modal .modal-header {
+  padding: 10px 15px;
+}
+
+.possible-relatives.modal .modal-header .header-icon {
+  width: 22px;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.possible-relatives.modal .modal-header .header-headline {
+  margin: 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+/* modal-body */
+
+.possible-relatives.modal .modal-body {
+  padding: 10px;
+}
+
+.possible-relatives.modal .modal-body .hero-image {
+  width: 132px;
+  margin: 0 auto;
+}
+
+.possible-relatives.modal .modal-body .form-instructions {
+  margin: 0 -10px;
+  padding: 10px;
+  background: #f6f6f6;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.possible-relatives.modal .modal-body .possible-relatives-form {
+  margin-top: 10px;
+}
+
+.possible-relatives.modal .modal-body .possible-relatives-form .checkbox {
+  border: 1px solid #ECECEC;
+  border-radius: 4px;
+}
+
+.possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label {
+  display: block;
+  padding: 5px 10px;
+  cursor: pointer;
+  -webkit-transition: all 500ms;
+  -moz-transition: all 500ms;
+  -ms-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label .relative-avatar {
+  width: 28px;
+  margin-right: 5px;
+}
+
+.possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label .custom-checkbox {
+  top: 7px;
+  right: 10px;
+  -webkit-transition: -webkit-box-shadow 500ms;
+  -moz-transition: -moz-box-shadow 500ms;
+  -ms-transition: -ms-box-shadow 500ms;
+  transition: box-shadow 500ms;
+}
+
+.possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label:hover {
+  -webkit-box-shadow: 0 1px 2px 0 #BBBBBB;
+  -moz-box-shadow: 0 1px 2px 0 #BBBBBB;
+  -ms-box-shadow: 0 1px 2px 0 #BBBBBB;
+  box-shadow: 0 1px 2px 0 #BBBBBB;
+  background-color: #FBFBFB;
+}
+
+.possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label:hover .custom-checkbox {
+  -webkit-box-shadow: 0 0 10px 0 #DEDEDE inset;
+  -moz-box-shadow: 0 0 10px 0 #DEDEDE inset;
+  -ms-box-shadow: 0 0 10px 0 #DEDEDE inset;
+  box-shadow: 0 0 10px 0 #DEDEDE inset;
+}
+
+.possible-relatives.modal .modal-body .possible-relatives-form .main-btn {
+  text-transform: uppercase;
+  padding: 8px 10px 12px;
+  outline: none;
+}
+
+.possible-relatives.modal .modal-body .possible-relatives-form .main-btn .button-icon {
+  display: inline-block;
+  position: relative;
+  bottom: 2px;
+  width: 20px;
+  margin-left: 10px;
+}
+
+/* modal-footer */
+
+.possible-relatives.modal .modal-footer {
+  padding: 5px;
+  border-radius: 0 0 4px 4px;
+  border-top: 1px solid #F3CB8C;
+  background-color: #f7d6a1;
+}
+
+.possible-relatives.modal .modal-footer .footer-message {
+  color: #555;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
 /* == 3 == YOUR REPORT IS READY ================= */
 
 /* modal */
@@ -1929,7 +2068,7 @@ span.located img {
   }
   .modal-body .report-info-list .report-info-item {
     margin-top: 7px;
-    margin-bottom: 7px; 
+    margin-bottom: 7px;
   }
 }
 
@@ -2055,7 +2194,28 @@ span.located img {
   box-shadow: 0px 0px 10px 1px rgba(122, 199, 73, 0.9);
   -webkit-animation: pulse-glow 1s infinite, fillup 10s ease-out;
   -moz-animation: pulse-glow 1s infinite, fillup 10s ease-out;
+  -ms-animation: pulse-glow 1s infinite, fillup 10s ease-out;
   animation: pulse-glow 1s infinite, fillup 10s ease-out;
+}
+
+@keyframes fillup {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0px 0px 10px 1px rgba(122, 199, 73, 0.9);
+  }
+  50% {
+    box-shadow: 0px 0px 2px 0px rgba(122, 199, 73, 0.9);
+  }
+  to {
+    box-shadow: 0px 0px 10px 1px rgba(122, 199, 73, 0.9);
+  }
 }
 
 @-webkit-keyframes fillup {
@@ -2087,6 +2247,26 @@ span.located img {
   }
 }
 @-moz-keyframes pulse-glow {
+  from {
+    box-shadow: 0px 0px 10px 1px rgba(122, 199, 73, 0.9);
+  }
+  50% {
+    box-shadow: 0px 0px 2px 0px rgba(122, 199, 73, 0.9);
+  }
+  to {
+    box-shadow: 0px 0px 10px 1px rgba(122, 199, 73, 0.9);
+  }
+}
+
+@-ms-keyframes fillup {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100%;
+  }
+}
+@-ms-keyframes pulse-glow {
   from {
     box-shadow: 0px 0px 10px 1px rgba(122, 199, 73, 0.9);
   }
@@ -2748,10 +2928,6 @@ h6.create-login {
   margin-top: 10px;
   padding-right: 0;
   padding-left: 0;
-}
-
-span.highlight-text {
-  color: #779d30;
 }
 
 #gen-report-modal6 .modal-body {

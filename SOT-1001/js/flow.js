@@ -284,15 +284,23 @@
     animate: function () {
       _.bind(initializingSearchProgress, this)();
     }
-  },
+  }, {
 
     // SCANNING SOCIAL MEDIA
-  {
+
     $elem: $("#scanningSocialMedia"),
     duration: 20000,   // Total time to switch spinners. Value is divided by number of items.
     transitionDelay: 1000,   // After progress completion, amount of time before moving to next flow.
     animate: function () {
       _.bind(scanningSocialMedia, this)();
+    }
+  }, {
+
+    // Add Possible Relatives
+
+    $elem: $("#possibleRelatives"),
+    animate: function () {
+      _.bind(possibleRelatives, this)();
     }
   }, {
 
@@ -339,7 +347,7 @@
       _.bind(whoopsAccountNeeded, this)();
     }
   }, {
-    
+
     // FCRA
 
     $elem: $("#gen-report-modal11"),
@@ -349,7 +357,7 @@
   },{
 
     // Modal Teaser w/ data
-    
+
     $elem: $("#gen-report-modal7"),
     duration: 10000,   // Total time to switch spinners. Value is divided by number of items.
     animate: function () {
@@ -405,13 +413,13 @@
         imagePath = $('.large-img-src').attr('src'),
         $mobileAnimatedImage = $('.mobile-heading .img-animation'),
         mobileImagePath = $('.mobile-img-src').attr('src');
-    
+
     $('.img-animation').hide();
     setTimeout(function() {
       $animatedImage.attr('src', '');
       $mobileAnimatedImage.attr('src', '');
     }, 0);
-    
+
     var toggleAnimations = function() {
       setTimeout(function() {
         $('.img-animation').show();
@@ -586,6 +594,12 @@
     });
   }
 
+  function possibleRelatives() {
+    trackNL('Viewed Possible Relatives Modal');
+
+    console.log('possible relatives modal');
+  }
+
   function generatingReport() {
     trackNL('Viewed DownloadingReport Modal');
 
@@ -699,7 +713,7 @@
 
   function foundDataModal() {
     trackNL('Viewed Found Data Modal V1 A');
-    
+
     //$("body").on('click', ".data-modal-confirm" , function() { showNextModal(); });
     //$("body").on('click', ".data-modal-confirm", function(){
     $(".data-modal-confirm").on('click', function(){
@@ -752,7 +766,7 @@
   $('.modal-backdrop').on('click', resetModalFlow);
 
   $("#gen-report-confirm").on('click', showNextModal);
-  
+
   $("#signup-modal-form").on('submit', showNextModal);
 
   // Force cache refresh when visiting page by hitting back button.

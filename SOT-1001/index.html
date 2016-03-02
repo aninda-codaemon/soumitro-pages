@@ -819,6 +819,72 @@
     </div>
   </div><!--/#scanningSocialMedia -->
 
+  <!-- ===================================== -->
+  <!-- ======= POSSIBLE RELATIVES  ========= -->
+  <!-- ===================================== -->
+  <div id="possibleRelatives" class="possible-relatives modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <img src="img/user_icon.svg" class="pull-left header-icon">
+          <p class="header-headline">Add Possible Relatives</p>
+        </div><!-- /.modal-header -->
+
+        <div class="modal-body" data-fr-bind="currentRecord">
+          <img src="img/family_tree.svg" class="hero-image img-responsive" />
+
+          <p class="form-instructions">Select as many relatives for <span class="highlight-text">{{firstName}}</span> as possible. You'll be able to access background and criminal reports for each of the relatives that you select.</p>
+
+          <form class="form possible-relatives-form">
+            <div class="checkbox">
+              <input type="checkbox" class="input-checkbox hidden" id="relative1" value="" />
+              <label for="relative1" class="input-label">
+                <img src="img/user_avatar.svg" class="relative-avatar" />
+                Relative1
+                <span class="custom-checkbox"></span>
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <input type="checkbox" class="input-checkbox hidden" id="relative2" value="" />
+              <label for="relative2" class="input-label">
+                <img src="img/user_avatar.svg" class="relative-avatar" />
+                Relative2
+                <span class="custom-checkbox"></span>
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <input type="checkbox" class="input-checkbox hidden" id="relative3" value="" />
+              <label for="relative3" class="input-label">
+                <img src="img/user_avatar.svg" class="relative-avatar" />
+                Relative3
+                <span class="custom-checkbox"></span>
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <input type="checkbox" class="input-checkbox hidden" id="relative4" value="" />
+              <label for="relative4" class="input-label">
+                <img src="img/user_avatar.svg" class="relative-avatar" />
+                Relative4
+                <span class="custom-checkbox"></span>
+              </label>
+            </div>
+
+            <button type="submit" id="addPossibleRelatives" class="main-btn btn-lg btn-block">Continue <img src="img/arrow.svg" class="button-icon" /></button>
+          </form>
+        </div><!-- /.modal-body -->
+
+        <div class="modal-footer" data-fr-bind="currentRecord">
+          <p class="footer-message">Your search for {{firstName}} is anonymous.</p>
+        </div><!-- /.modal-footer -->
+
+      </div><!-- /.modal-content -->
+    </div>
+  </div><!--/#possibleRelatives -->
+
   <!-- ========================================== -->
   <!-- == 3 == YOUR REPORT IS READY  ============ -->
   <!-- ========================================== -->
@@ -1172,15 +1238,15 @@
                   </div>
                   <div class="visible-xs hidden-xxs">
                     <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">The report may reveal, where available, a person’s full name, maiden name, age, known aliases, address history with “last seen” date, current address, and <strong>email addresses</strong>.</p></li> 
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">The report may reveal, where available, a person’s full name, maiden name, age, known aliases, address history with “last seen” date, current address, and <strong>email addresses</strong>.</p></li>
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left"><strong>Phone numbers</strong> may contain, where available, owner names and other possible persons associated with those numbers.</p></li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="hidden-xs">
                     <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">The report may reveal, where available, a person’s full name, maiden name, age, known aliases, address history with “last seen” date, current address, and <strong>email addresses</strong>.</p></li> 
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11"><strong>Phone numbers</strong> may contain, where available, owner names and other possible persons associated with those numbers.</p></li> 
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">The report may reveal, where available, a person’s full name, maiden name, age, known aliases, address history with “last seen” date, current address, and <strong>email addresses</strong>.</p></li>
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11"><strong>Phone numbers</strong> may contain, where available, owner names and other possible persons associated with those numbers.</p></li>
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">The <strong>current address</strong> is displayed with a map, satellite imagery and access to an in-depth property report.</p></li>
                     </ul>
                   </div>
@@ -1196,14 +1262,14 @@
                   <div class="visible-xs hidden-xxs">
                     <ul>
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">This report may locate, where available, their current and historical <strong>real estate assets</strong> including detailed information on those properties.</p></li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">View satellite maps, parcel numbers, and country assessor data such as <strong>property tax amounts</strong>, home value, and building specs.</p></li> 
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">View satellite maps, parcel numbers, and country assessor data such as <strong>property tax amounts</strong>, home value, and building specs.</p></li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="hidden-xs">
                     <ul>
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">This report may locate, where available, their current and historical <strong>real estate assets</strong> including detailed information on those properties.</p></li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">View satellite maps, parcel numbers, and country assessor data such as <strong>property tax amounts</strong>, home value, and building specs.</p></li> 
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">View satellite maps, parcel numbers, and country assessor data such as <strong>property tax amounts</strong>, home value, and building specs.</p></li>
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">Even see buyer/seller info, <strong>sales prices</strong>, and co-owners, where available.</p></li>
                     </ul>
                   </div>
@@ -1218,15 +1284,15 @@
                   </div>
                   <div class="visible-xs hidden-xxs">
                     <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">May contain, where available, <strong>arrest or conviction records</strong> as well as outstanding warrants, traffic violations and speeding tickets.</p></li> 
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">When a criminal record is found we detail the offense along with the <strong>date and location</strong> of the crime.</p></li> 
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">May contain, where available, <strong>arrest or conviction records</strong> as well as outstanding warrants, traffic violations and speeding tickets.</p></li>
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">When a criminal record is found we detail the offense along with the <strong>date and location</strong> of the crime.</p></li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="hidden-xs">
                     <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">May contain, where available, <strong>arrest or conviction records</strong> as well as outstanding warrants, traffic violations and speeding tickets.</p></li> 
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">When a criminal record is found we detail the offense along with the <strong>date and location</strong> of the crime.</p></li> 
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">May contain, where available, <strong>arrest or conviction records</strong> as well as outstanding warrants, traffic violations and speeding tickets.</p></li>
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">When a criminal record is found we detail the offense along with the <strong>date and location</strong> of the crime.</p></li>
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">We compile federal, state, county, and local databases including courts and <strong>Most Wanted lists</strong>. Criminal Records are found based on availability.</p></li>
                     </ul>
                   </div>
@@ -1241,14 +1307,14 @@
                   </div>
                   <div class="visible-xs hidden-xxs">
                     <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">Our access to hard to find public records may reveal individuals who have a <strong>close relationship</strong> to your search subject.</p></li> 
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">Our access to hard to find public records may reveal individuals who have a <strong>close relationship</strong> to your search subject.</p></li>
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">In addition to relatives this report may show, where available, <strong>boyfriends/girlfriends</strong>, roommates, business associates as well as ex-husbands and ex-wives.</p></li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="hidden-xs">
                     <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">Our access to hard to find public records may reveal individuals who have a <strong>close relationship</strong> to your search subject.</p></li> 
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">Our access to hard to find public records may reveal individuals who have a <strong>close relationship</strong> to your search subject.</p></li>
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">In addition to relatives this report may show, where available, <strong>boyfriends/girlfriends</strong>, roommates, business associates as well as ex-husbands and ex-wives.</p></li>
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">We've recently added relatives of relatives to help <strong>broaden your search</strong>.</p></li>
                     </ul>
