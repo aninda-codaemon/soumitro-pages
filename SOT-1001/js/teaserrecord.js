@@ -248,7 +248,10 @@
       var relatives,
           relativesCheckboxes = [],
           userAvatar = 'img/user_avatar.png',
-          middleName = '';
+          firstName = '',
+          middleName = '',
+          lastName = '',
+          fullName = '';
 
       if (typeof this.record.Relatives === "undefined") {
         return [];
@@ -265,10 +268,17 @@
         for (var i = 0; i < 4; i++) {
           if (relatives[i] !== undefined) {
 
-            if (relatives[i].Middle !== undefined) {
-              middleName = relatives[i].Middle.toLowerCase();
+            if (relatives[i].First !== undefined) {
+              firstName = relatives[i].First.toLowerCase() + ' ';
             }
-            var fullName = relatives[i].First.toLowerCase() + ' ' + middleName + ' ' + relatives[i].Last.toLowerCase();
+            if (relatives[i].Middle !== undefined) {
+              middleName = relatives[i].Middle.toLowerCase() + ' ';
+            }
+            if (relatives[i].Last !== undefined) {
+              lastName = relatives[i].Last.toLowerCase();
+            }
+
+            fullName = firstName + middleName + lastName;
 
             relativesCheckboxes.push(
               '<div class="checkbox"><label for="relative' + i + '" class="input-label"><img src="' + userAvatar + '" class="relative-avatar" />' + fullName + '<input type="checkbox" class="input-checkbox" id="relative' + i + '" value="' + relatives[i].bvid + '" /><span class="custom-checkbox"></span></label></div>'

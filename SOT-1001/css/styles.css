@@ -1752,6 +1752,8 @@ span.located img {
 .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-checkbox {
   position: absolute;
   position: static \9; /* ie8 fix */
+  top: 15px;
+  right: 0;
   margin-right: 999em;
   margin: 5px 0 \9; /* ie8 fix */
   float: right;
