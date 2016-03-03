@@ -24,7 +24,7 @@ body {
   cursor: pointer;
   background: url('../img/check-checked.png') no-repeat;
 }
-input[type="radio"]:checked + label .radio-custom {
+label input[type="radio"]:checked + .radio-custom {
   background: url('../img/check.png') no-repeat;
 }
 
@@ -626,12 +626,17 @@ header .header-cta {
   border: 0;
 }
 .package .deal-radio {
-  display: none;
   position: absolute;
+  position: static \9; /* ie8 fix */
   top: 50%;
   left: 20px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   margin: 0;
+  margin-left: -999em;
+  margin: 40px 20px \9; /* ie8 fix */
 }
 .package .deal-label {
   cursor: pointer;
@@ -664,9 +669,13 @@ header .header-cta {
   box-shadow: 0 0 12px -5px rgba(50, 61, 67, 0.5) inset;
 }
 .package .deal-label .radio-custom {
+  display: none \9; /* ie8 fix */
   position: absolute;
   top: 50%;
   left: 10px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 .package .deal-label .deal-image {
@@ -730,6 +739,7 @@ header .header-cta {
   }
   .package .deal-radio {
     left: 30px;
+    margin: 40px 20px \9; /* ie8 fix */
   }
   .package .deal-label {
     font-size: 20px;
@@ -780,9 +790,17 @@ header .header-cta {
   cursor: pointer;
 }
 .payments-switch .payment-option .payment-radio {
-  display: none;
+  display: inline-block;
+  position: absolute;
+  left: -999em;
+  position: static \9; /* ie8 fix */
+  left: 0 \9; /* ie8 fix */
+  float: left;
+  margin: 0;
+  margin-right: -20px \9; /* ie8 fix */
 }
 .payments-switch .payment-option .radio-custom {
+  display: none \9; /* ie8 fix */
   position: absolute;
   top: 0;
   left: 0;
