@@ -173,7 +173,7 @@ span.bold {
   background-color: #fff;
 }
 
-input[type="checkbox"]:checked + label .custom-checkbox {
+.checkbox label input[type="checkbox"]:checked + .custom-checkbox {
   background: url('../img/checkmark.png') no-repeat center center;
   background-color: #fff;
 }
@@ -1749,13 +1749,12 @@ span.located img {
   border-bottom: 1px solid #ececec;
 }
 
-.possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-checkbox.hidden {
-  display: block !important \9; /* ie8 fix */
+.possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-checkbox {
   position: absolute;
   position: static \9; /* ie8 fix */
-  top: 15px;
-  right: 15px;
-  margin: 0;
+  margin-right: 999em;
+  margin: 5px 0 \9; /* ie8 fix */
+  float: right;
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label {

@@ -271,7 +271,7 @@
             var fullName = relatives[i].First.toLowerCase() + ' ' + middleName + ' ' + relatives[i].Last.toLowerCase();
 
             relativesCheckboxes.push(
-              '<div class="checkbox"><input type="checkbox" class="input-checkbox hidden" id="relative' + i + '" value="' + relatives[i].bvid + '" /><label for="relative' + i + '" class="input-label"><img src="' + userAvatar + '" class="relative-avatar" />' + fullName + '<span class="custom-checkbox"></span></label></div>'
+              '<div class="checkbox"><label for="relative' + i + '" class="input-label"><img src="' + userAvatar + '" class="relative-avatar" />' + fullName + '<input type="checkbox" class="input-checkbox" id="relative' + i + '" value="' + relatives[i].bvid + '" /><span class="custom-checkbox"></span></label></div>'
             );
           }
         }
