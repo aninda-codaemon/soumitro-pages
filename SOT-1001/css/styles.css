@@ -1705,6 +1705,7 @@ span.located img {
 }
 
 .possible-relatives.modal .modal-body .hero-image {
+  display: block;
   width: 132px;
   margin: 0 auto;
 }
@@ -1827,6 +1828,35 @@ span.located img {
     height: 100px;
     padding: 20px;
     font-size: 16px;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form {
+    display: inline-block;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 49%;
+    width: 49%;
+    margin: 0 0 10px;
+    float: left;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(odd) {
+    margin-right: 5px;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(even) {
+    margin-left: 5px;
   }
 }
 
