@@ -244,25 +244,22 @@
       return (relatives && relatives.length !== 0) ? relatives[0] : '';
     };
 
-    // @TODO: create a loop that returns up to 4 relatives
-    // returns checkbox markup with the name and a value with the bvid for this relative
-    TeaserRecord.prototype.relativesCheckboxes = function() {
-      console.log('this will return the checkboxes into the form');
-    };
+    TeaserRecord.prototype.relativesForm = function() {
+      var relatives = this.record.Relatives.Relative,
+          relativesCheckboxes = [];
 
-    TeaserRecord.prototype.relative1 = function() {
-      var relatives = this.relatives();
-      return (relatives && relatives.length !== 0 || relatives.length < 2) ? relatives[1] : '';
-    };
-
-    TeaserRecord.prototype.relative2 = function() {
-      var relatives = this.relatives();
-      return (relatives && relatives.length !== 0 || relatives.length < 3) ? relatives[2] : '';
-    };
-
-    TeaserRecord.prototype.relative3 = function() {
-      var relatives = this.relatives();
-      return (relatives && relatives.length !== 0 || relatives.length < 4) ? relatives[3] : '';
+      if (relatives && relatives.length !== 0) {
+        for (var i = 0; i < 4; i++) {
+          if (relatives[i] !== undefined) {
+            relativesCheckboxes.push(
+              '<div class="checkbox"><input type="checkbox" class="input-checkbox hidden" id="relative' + i + '" value="' + relatives[i].bvid + '" /><label for="relative' + i + '" class="input-label"><img src="img/user_avatar.svg" class="relative-avatar" />' + relatives[i].First.toLowerCase() + ' ' + relatives[i].Middle.toLowerCase() + ' ' + relatives[i].Last.toLowerCase() + '<span class="custom-checkbox"></span></label></div>'
+            );
+          }
+        }
+        return relativesCheckboxes.join('');
+      } else {
+        return [];
+      }
     };
 
     TeaserRecord.prototype.moreRelativesCount = function() {

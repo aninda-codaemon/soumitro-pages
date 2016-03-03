@@ -837,43 +837,7 @@
           <p class="form-instructions">Select as many relatives for <span class="highlight-text">{{firstName}}</span> as possible. You'll be able to access background and criminal reports for each of the relatives that you select.</p>
 
           <form class="form possible-relatives-form">
-
-            <div class="checkbox">
-              <input type="checkbox" class="input-checkbox hidden" id="relative1" value="" />
-              <label for="relative1" class="input-label">
-                <img src="img/user_avatar.svg" class="relative-avatar" />
-                {{relative}}
-                <span class="custom-checkbox"></span>
-              </label>
-            </div>
-
-            <div class="checkbox">
-              <input type="checkbox" class="input-checkbox hidden" id="relative2" value="" />
-              <label for="relative2" class="input-label">
-                <img src="img/user_avatar.svg" class="relative-avatar" />
-                {{relative1}}
-                <span class="custom-checkbox"></span>
-              </label>
-            </div>
-
-            <div class="checkbox">
-              <input type="checkbox" class="input-checkbox hidden" id="relative3" value="" />
-              <label for="relative3" class="input-label">
-                <img src="img/user_avatar.svg" class="relative-avatar" />
-                {{relative2}}
-                <span class="custom-checkbox"></span>
-              </label>
-            </div>
-
-            <div class="checkbox">
-              <input type="checkbox" class="input-checkbox hidden" id="relative4" value="" />
-              <label for="relative4" class="input-label">
-                <img src="img/user_avatar.svg" class="relative-avatar" />
-                {{relative3}}
-                <span class="custom-checkbox"></span>
-              </label>
-            </div>
-
+            {{{relativesForm}}}
             <img src="img/cursive_arrow.png" class="cta-arrow-image hidden-xs" />
             <button type="submit" id="addPossibleRelatives" class="main-btn btn-lg btn-block">Continue <img src="img/arrow.svg" class="button-icon" /></button>
           </form>
