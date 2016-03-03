@@ -246,13 +246,20 @@
 
     TeaserRecord.prototype.relativesForm = function() {
       var relatives = this.record.Relatives.Relative,
-          relativesCheckboxes = [];
+          relativesCheckboxes = [],
+          middleName = '';
 
       if (relatives && relatives.length !== 0) {
         for (var i = 0; i < 4; i++) {
           if (relatives[i] !== undefined) {
+
+            if (relatives[i].Middle !== undefined) {
+              middleName = relatives[i].Middle.toLowerCase();
+            }
+            var fullName = relatives[i].First.toLowerCase() + ' ' + middleName + ' ' + relatives[i].Last.toLowerCase();
+
             relativesCheckboxes.push(
-              '<div class="checkbox"><input type="checkbox" class="input-checkbox hidden" id="relative' + i + '" value="' + relatives[i].bvid + '" /><label for="relative' + i + '" class="input-label"><img src="img/user_avatar.svg" class="relative-avatar" />' + relatives[i].First.toLowerCase() + ' ' + relatives[i].Middle.toLowerCase() + ' ' + relatives[i].Last.toLowerCase() + '<span class="custom-checkbox"></span></label></div>'
+              '<div class="checkbox"><input type="checkbox" class="input-checkbox hidden" id="relative' + i + '" value="' + relatives[i].bvid + '" /><label for="relative' + i + '" class="input-label"><img src="img/user_avatar.svg" class="relative-avatar" />' + fullName + '<span class="custom-checkbox"></span></label></div>'
             );
           }
         }
