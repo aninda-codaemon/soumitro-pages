@@ -245,9 +245,20 @@
     };
 
     TeaserRecord.prototype.relativesForm = function() {
-      var relatives = this.record.Relatives.Relative,
+      var relatives,
           relativesCheckboxes = [],
           middleName = '';
+
+      if (typeof this.record.Relatives === "undefined") {
+        return [];
+      } else if (this.record.Relatives === void 0) {
+        return [];
+      }
+      if ($.type(this.record.Relatives.Relative) !== 'array') {
+        relatives = [this.record.Relatives.Relative];
+      } else if ($.type(this.record.Relatives.Relative) === 'array') {
+        relatives = this.record.Relatives.Relative;
+      }
 
       if (relatives && relatives.length !== 0) {
         for (var i = 0; i < 4; i++) {

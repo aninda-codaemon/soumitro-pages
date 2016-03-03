@@ -296,14 +296,6 @@
     }
   }, {
 
-    // Add Possible Relatives
-
-    $elem: $("#possibleRelatives"),
-    animate: function () {
-      _.bind(possibleRelatives, this)();
-    }
-  }, {
-
     // Report is ready for download.
 
     $elem: $("#gen-report-modal2"),
@@ -364,6 +356,25 @@
       _.bind(foundDataModal, this)();
     }
   }];
+
+  // set relatives count and relatives modal
+  var relativesCount = 0,
+      relativesModal = {
+        $elem: $("#possibleRelatives"),
+        animate: function () {
+          _.bind(possibleRelatives, this)();
+        }
+      };
+
+  // check if Relatives is defined
+  if (amplify.store('currentRecord').Relatives !== undefined) {
+    relativesCount = amplify.store('currentRecord').Relatives.Relative.length;
+  }
+
+  // if relatives count is greater than 1, add relatives modal into modals array
+  if (relativesCount > 1) {
+    modals.splice(2, 0, relativesModal);
+  }
 
   /* Function statements, I want these hoisted. */
 
