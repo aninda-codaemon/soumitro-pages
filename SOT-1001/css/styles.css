@@ -1917,7 +1917,7 @@ span.located img {
 /* modal-footer */
 
 .possible-relatives.modal .modal-footer {
-  padding: 5px;
+  padding: 5px 15px;
   border-radius: 0 0 4px 4px;
   border-top: 1px solid #F3CB8C;
   background-color: #f7d6a1;
