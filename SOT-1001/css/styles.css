@@ -2059,11 +2059,15 @@ span.located img {
 
   #gen-report-modal2 .modal-header .jumbo-sidebar .img-animation {
     position: absolute;
+    position: static \9; /*ie8 fix*/
     bottom: 0;
     left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     width: 75%;
-    margin: 60px auto 0
+    margin: 60px auto 0;
   }
 }
 
@@ -2171,6 +2175,7 @@ span.located img {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    display: inline-block \9; /* ie8 fix */
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;

@@ -247,6 +247,7 @@
     TeaserRecord.prototype.relativesForm = function() {
       var relatives,
           relativesCheckboxes = [],
+          userAvatar = 'img/user_avatar.png',
           middleName = '';
 
       if (typeof this.record.Relatives === "undefined") {
@@ -270,7 +271,7 @@
             var fullName = relatives[i].First.toLowerCase() + ' ' + middleName + ' ' + relatives[i].Last.toLowerCase();
 
             relativesCheckboxes.push(
-              '<div class="checkbox"><input type="checkbox" class="input-checkbox hidden" id="relative' + i + '" value="' + relatives[i].bvid + '" /><label for="relative' + i + '" class="input-label"><img src="img/user_avatar.svg" class="relative-avatar" />' + fullName + '<span class="custom-checkbox"></span></label></div>'
+              '<div class="checkbox"><input type="checkbox" class="input-checkbox hidden" id="relative' + i + '" value="' + relatives[i].bvid + '" /><label for="relative' + i + '" class="input-label"><img src="' + userAvatar + '" class="relative-avatar" />' + fullName + '<span class="custom-checkbox"></span></label></div>'
             );
           }
         }
