@@ -613,7 +613,15 @@
     $('.possible-relatives-form').submit(function(event) {
       event.preventDefault();
 
-      console.log('submit relatives form and continue to next modal');
+      var selectedRelatives = $('.possible-relatives-form .input-checkbox:checked').map(function() {
+        return this.value;
+      }).get();
+
+      if (selectedRelatives.length !== 0) {
+        amplify.store('selectedRelatives', selectedRelatives);
+      }
+
+      showNextModal();
     });
   }
 
