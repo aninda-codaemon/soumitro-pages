@@ -360,6 +360,7 @@
   // define relatives count and relatives modal
   // this is for attaching the relatives modal into the flow
   var relativesCount = 0,
+      relativesModalIndex = 2,
       relativesModal = {
         $elem: $("#possibleRelatives"),
         animate: function () {
@@ -381,22 +382,32 @@
 
   // attach relatives modal to modals array
   // this is being called inside window.startModalFlow function (all the way at the bottom)
+  // @TODO: refactor this mess of a function (when there's more time)
   function attachRelativesModal() {
     // check if Relatives is defined
     // need to check if relatives is defined in currentRecord to prevent js errors from breaking flow
     if (amplify.store('currentRecord').Relatives !== undefined) {
+      // update relativesCount
       relativesCount = amplify.store('currentRecord').Relatives.Relative.length;
-    }
-    // if relatives count is greater than 1, add relatives modal into modals array
-    // only need to show relatives modal if selected subject has more than 1 relative
-    if (relativesCount > 1 && relativesCount !== undefined) {
-      modals.splice(2, 0, relativesModal);
-    } else {
-      // only remove relatives modal if it exists inside modals array
-      // this is to make sure no extra modals are removed from the flow
-      if (containsObject(relativesModal, modals) === true) {
-        modals.splice(2, 1);
+
+      // if relatives count is greater than 1, add relatives modal into modals array
+      // only need to show relatives modal if selected subject has more than 1 relative
+      if (relativesCount > 1 && relativesCount !== undefined && containsObject(relativesModal, modals) === false) {
+        // relatives modal is added into it's predefined index inside the modals array
+        modals.splice(relativesModalIndex, 0, relativesModal);
+
+        // only remove relatives modal if it exists inside modals array
+        // this is to make sure no extra modals are removed from the flow
+      } else if (relativesCount <= 1 || relativesCount === undefined && containsObject(relativesModal, modals) === true) {
+        // removing relatives Modal using it's index from modals array
+        modals.splice(relativesModalIndex, 1);
       }
+
+      // need to do this call to make sure relatives modal is removed when Relatives is undefined
+      // and the relativesModal still exists inside the flow
+    } else if (containsObject(relativesModal, modals) === true) {
+      // removing relatives Modal using it's index from modals array
+      modals.splice(relativesModalIndex, 1);
     }
   }
 
