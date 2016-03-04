@@ -1823,6 +1823,7 @@ span.located img {
   text-transform: uppercase;
   padding: 8px 10px 12px;
   outline: none;
+  font-size: 20px !important;
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .main-btn .button-icon {
