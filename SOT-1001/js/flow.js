@@ -366,6 +366,8 @@
         }
       };
 
+  // @TODO: init when user clicks on a report
+
   // check if Relatives is defined
   if (amplify.store('currentRecord').Relatives !== undefined) {
     relativesCount = amplify.store('currentRecord').Relatives.Relative.length;
@@ -608,7 +610,11 @@
   function possibleRelatives() {
     trackNL('Viewed Possible Relatives Modal');
 
-    console.log('possible relatives modal');
+    $('.possible-relatives-form').submit(function(event) {
+      event.preventDefault();
+
+      console.log('submit relatives form and continue to next modal');
+    });
   }
 
   function generatingReport() {

@@ -1743,6 +1743,23 @@ span.located img {
   background-color: #F9F9FF;
 }
 
+.possible-relatives.modal .modal-body .possible-relatives-form .form-header {
+  margin: -5px -5px 0;
+  padding: 10px 25px;
+  border-radius: 4px 4px 0 0;
+  -webkit-box-shadow: 0 -1px 3px 0 #9C9C9C;
+  -moz-box-shadow: 0 -1px 3px 0 #9C9C9C;
+  -ms-box-shadow: 0 -1px 3px 0 #9C9C9C;
+  box-shadow: 0 -1px 3px 0 #9C9C9C;
+  background-color: #353167;
+  color: #fff;
+}
+
+.possible-relatives.modal .modal-body .possible-relatives-form .form-header .icon {
+  margin: 0;
+  float: right;
+}
+
 .possible-relatives.modal .modal-body .possible-relatives-form .checkbox {
   margin: 0;
   margin-bottom: 5px;
@@ -1893,7 +1910,7 @@ span.located img {
 
   .possible-relatives.modal .modal-body .possible-relatives-form {
     width: 40%;
-    margin: 70px 5% 0;
+    margin: 60px 5% 0;
     float: right;
   }
 }

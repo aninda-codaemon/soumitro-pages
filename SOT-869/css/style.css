@@ -341,6 +341,7 @@ header .header-cta {
 /* left-section */
 
 .left-section, .right-section {
+  display: inline-block \9; /* ie8 fix */
   padding-top: 35px;
   background: #fff;
 }
@@ -360,6 +361,7 @@ header .header-cta {
   margin-bottom: 15px;
 }
 .comment-content .comment {
+  display: inline-block \9; /* ie8 fix */
   margin: 0;
   padding: 15px;
   font-style: italic;
@@ -391,7 +393,20 @@ header .header-cta {
 }
 @media (min-width: 992px) {
   .left-section .comment-content {
+    position: static \9; /* ie8 fix */
+    width: 100% \9; /* ie8 fix */
     margin-bottom: 30px;
+  }
+
+  .comment-content .comment-author  {
+    margin-left: 100px \9; /* ie8 fix */
+    float: left \9; /* ie8 fix */
+  }
+}
+
+@media (min-width: 1200px) {
+  .comment-content .comment-author  {
+    margin-left: 200px \9; /* ie8 fix */
   }
 }
 
@@ -687,6 +702,7 @@ header .header-cta {
 .package .deal-label .offer-label {
   position: absolute;
   top: 50%;
+  left: 0;
   transform: translateY(-50%);
   width: 100%;
   padding-right: 15px;
@@ -814,9 +830,11 @@ header .header-cta {
 }
 .payments-switch .payment-option .img-responsive.cards {
   width: 125px;
+  width: auto \9; /* ie8 fix */
 }
 .payments-switch .payment-option .img-responsive.paypal {
   width: 30px;
+  width: auto \9; /* ie8 fix */
 }
 .payments-switch .secure {
   position: absolute;
