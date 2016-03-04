@@ -357,7 +357,8 @@
     }
   }];
 
-  // set relatives count and relatives modal
+  // define relatives count and relatives modal
+  // this is for attaching the relatives modal into the flow
   var relativesCount = 0,
       relativesModal = {
         $elem: $("#possibleRelatives"),
@@ -366,16 +367,37 @@
         }
       };
 
-  // @TODO: init when user clicks on a report
+  // use this function to find a specific object inside an array
+  function containsObject(obj, array) {
+    var i;
+    for (i = 0; i < array.length; i++) {
+      if (array[i] === obj) {
+        return true;
+      }
+    }
 
-  // check if Relatives is defined
-  if (amplify.store('currentRecord').Relatives !== undefined) {
-    relativesCount = amplify.store('currentRecord').Relatives.Relative.length;
+    return false;
   }
 
-  // if relatives count is greater than 1, add relatives modal into modals array
-  if (relativesCount > 1) {
-    modals.splice(2, 0, relativesModal);
+  // attach relatives modal to modals array
+  // this is being called inside window.startModalFlow function (all the way at the bottom)
+  function attachRelativesModal() {
+    // check if Relatives is defined
+    // need to check if relatives is defined in currentRecord to prevent js errors from breaking flow
+    if (amplify.store('currentRecord').Relatives !== undefined) {
+      relativesCount = amplify.store('currentRecord').Relatives.Relative.length;
+    }
+    // if relatives count is greater than 1, add relatives modal into modals array
+    // only need to show relatives modal if selected subject has more than 1 relative
+    if (relativesCount > 1 && relativesCount !== undefined) {
+      modals.splice(2, 0, relativesModal);
+    } else {
+      // only remove relatives modal if it exists inside modals array
+      // this is to make sure no extra modals are removed from the flow
+      if (containsObject(relativesModal, modals) === true) {
+        modals.splice(2, 1);
+      }
+    }
   }
 
   /* Function statements, I want these hoisted. */
@@ -827,6 +849,7 @@
   window.startModalFlow = function (ctx) {
     modalCtx = ctx;
     resetModalFlow();
+    attachRelativesModal();
     showNextModal();
   };
 
