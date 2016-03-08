@@ -159,6 +159,40 @@ span.bold {
   -webkit-appearance: none;
 }
 
+.custom-checkbox {
+  display: none \9; /* ie8 fix */
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 5px 0 #A1A1A1 inset;
+  -moz-box-shadow: 0 0 5px 0 #A1A1A1 inset;
+  -ms-box-shadow: 0 0 5px 0 #A1A1A1 inset;
+  box-shadow: 0 0 5px 0 #A1A1A1 inset;
+  background-color: #fff;
+}
+
+.checkbox label input[type="checkbox"]:checked + .custom-checkbox {
+  background: url('../img/checkmark.png') no-repeat center center;
+  background-color: #fff;
+}
+
+.highlight-text {
+  color: #63b02e;
+}
+
+.break-text-xs {
+  display: block;
+}
+
+@media (min-width: 768px) {
+
+  .break-text-xs {
+    display: inline-block;
+  }
+}
+
 label.error {
   line-height: 18px;
 
@@ -1565,7 +1599,7 @@ ul.profile li {
 
 #social-media-groups li p {
   position: absolute;
-  
+
   text-align: center;
   width: 100%;
   font-size: 13px;
@@ -1640,6 +1674,7 @@ p.log-load {
 span.located img {
   margin-right: 5px;
 }
+
 /* == 3 == YOUR REPORT IS READY ================= */
 
 /* modal */
@@ -1766,11 +1801,16 @@ span.located img {
 
   #gen-report-modal2 .modal-header .jumbo-sidebar .img-animation {
     position: absolute;
+    position: static \9; /*ie8 fix*/
     bottom: 0;
     left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     width: 75%;
-    margin: 60px auto 0
+    margin: 60px auto 0;
+    margin-top: 110px \9; /* ie8 fix */
   }
 }
 
@@ -1878,6 +1918,7 @@ span.located img {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    display: inline-block \9; /* ie8 fix */
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -1932,7 +1973,7 @@ span.located img {
   }
   .modal-body .report-info-list .report-info-item {
     margin-top: 7px;
-    margin-bottom: 7px; 
+    margin-bottom: 7px;
   }
 }
 
@@ -2794,10 +2835,6 @@ h6.create-login {
   padding-left: 0;
 }
 
-span.highlight-text {
-  color: #779d30;
-}
-
 #gen-report-modal6 .modal-body {
   margin-bottom: 10px;
 }
@@ -3520,25 +3557,19 @@ span.highlight-text {
   /*background: #ebebeb;*/
 }
 #fcraCheckbox2 {
-  position: absolute;
-  /*ie8 fixes*/
-  position: static \9;
-
+  position: absolute !important;
+  position: static \9; /*ie8 fix*/
   display: inline-block;
-
   margin-left: -999em;
-  margin: 15px \9;
+  margin: 15px \9; /*ie8 fix*/
 }
 .fcraCheckbox-box {
   display: block;
-  /*ie8 fixes*/
-  display: none \9;
-
+  display: none \9; /*ie8 fix*/
   width: 32px;
   height: 32px;
   margin-right: 10px;
   margin-bottom: 0;
-
   border: 2px solid #848484;
   border-radius: 4px;
   background-color: #fff;
