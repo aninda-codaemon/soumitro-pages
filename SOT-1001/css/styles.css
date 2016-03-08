@@ -1765,10 +1765,6 @@ span.located img {
   border-bottom: 1px solid #ececec;
 }
 
-.possible-relatives.modal .modal-body .possible-relatives-form .checkbox:last-child {
-  margin-bottom: 5px;
-}
-
 .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-checkbox {
   position: absolute;
   position: static \9; /* ie8 fix */
@@ -1831,10 +1827,11 @@ span.located img {
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .main-btn {
-  text-transform: uppercase;
+  margin-top: 5px;
   padding: 8px 10px 12px;
   outline: none;
   font-size: 20px !important;
+  text-transform: uppercase;
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .main-btn .button-icon {
