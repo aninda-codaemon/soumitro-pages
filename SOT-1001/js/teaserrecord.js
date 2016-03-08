@@ -247,7 +247,6 @@
     TeaserRecord.prototype.relativesForm = function() {
       var relatives,
           relativesCheckboxes = [],
-          userAvatar = 'img/user_avatar.png',
           firstName = '',
           middleName = '',
           lastName = '',
@@ -281,7 +280,7 @@
             fullName = firstName + middleName + lastName;
 
             relativesCheckboxes.push(
-              '<div class="checkbox"><label for="relative' + i + '" class="input-label"><img src="' + userAvatar + '" class="relative-avatar" />' + fullName + '<input type="checkbox" class="input-checkbox" id="relative' + i + '" value="' + relatives[i].bvid + '" /><span class="custom-checkbox"></span></label></div>'
+              '<div class="checkbox"><label for="relative' + i + '" class="input-label"><span class="relative-avatar"></span>' + fullName + '<input type="checkbox" class="input-checkbox" id="relative' + i + '" value="' + relatives[i].bvid + '" /><span class="custom-checkbox"></span></label></div>'
             );
           }
         }

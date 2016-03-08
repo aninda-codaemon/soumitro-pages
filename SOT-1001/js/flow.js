@@ -411,6 +411,8 @@
     }
   }
 
+  attachRelativesModal();
+
   /* Function statements, I want these hoisted. */
 
   function initializingSearchProgress() {
@@ -688,35 +690,6 @@
     fcraConfirm();
   }
 
-  /* Helpers to show/hide modals */
-
-  var modalCount = modals.length,
-      currModalIdx = -1,
-      $prevModal, intervalId, timeoutId;
-
-  /*
-   * Display the next modal, while making sure to hide the previous modal.
-   * Returns false if there is no modal to show next.
-   */
-  var showNextModal = function () {
-    currModalIdx += 1;
-    if (currModalIdx < modalCount) {
-      if (currModalIdx > 0) {
-        modals[currModalIdx - 1].$elem.modal('hide');
-      }
-      var nextModal = modals[currModalIdx];
-      nextModal.$elem.modal({
-            backdrop: 'static',
-            keyboard: false
-          });
-      nextModal.animate();
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-
   function scanningSocialMedia() {
 
     trackNL('Viewed SocialMedia Modal');
@@ -785,6 +758,34 @@
     $("#social-media-groups li.loading").css('opacity', 1);
   }
 
+  /* Helpers to show/hide modals */
+
+  var modalCount = modals.length,
+      currModalIdx = -1,
+      $prevModal, intervalId, timeoutId;
+
+  /*
+   * Display the next modal, while making sure to hide the previous modal.
+   * Returns false if there is no modal to show next.
+   */
+  var showNextModal = function () {
+    currModalIdx += 1;
+    if (currModalIdx < modalCount) {
+      if (currModalIdx > 0) {
+        modals[currModalIdx - 1].$elem.modal('hide');
+      }
+      var nextModal = modals[currModalIdx];
+      nextModal.$elem.modal({
+            backdrop: 'static',
+            keyboard: false
+          });
+      nextModal.animate();
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   // function dataModalReset() {
   //   $('#gen-report-modal7 .report-wrap .blurred').css('height', '100%');
   // }
@@ -807,12 +808,13 @@
     $downloadNowIcon.show();
     $("#arrowhead-right").hide();
 
+    attachRelativesModal();
+
     window.resetSearchingState();
     // window.refreshCaptchaState();
     scanningSocialMediaReset();
     //dataModalReset();
   };
-
 
   /* Event Handlers */
 
@@ -860,7 +862,6 @@
   window.startModalFlow = function (ctx) {
     modalCtx = ctx;
     resetModalFlow();
-    attachRelativesModal();
     showNextModal();
   };
 
