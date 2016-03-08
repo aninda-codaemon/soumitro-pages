@@ -736,6 +736,8 @@
     $downloadNowIcon.show();
     $("#arrowhead-right").hide();
 
+    $('#processing-data-progress .progress-bar-success').css('width', '1%');
+
     window.resetSearchingState();
     // window.refreshCaptchaState();
     scanningSocialMediaReset();

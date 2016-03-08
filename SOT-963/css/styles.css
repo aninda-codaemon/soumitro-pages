@@ -2202,7 +2202,8 @@ span.located img {
   display: block;
   position: absolute;
   bottom: 0;
-  width: 100%;
+  right: 15px;
+  width: 80%;
   margin: 0 auto;
   -moz-opacity: 0;
   -ms-filter: alpha(opacity=0);
