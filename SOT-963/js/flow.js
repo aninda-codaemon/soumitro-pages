@@ -55,6 +55,8 @@
       var res = result;
       var img = '';
 
+      console.log(res);
+
       // Get profile image URL
       if (res.images[0] && typeof(res.images[0].url !== 'undefined')) {
         img = res.images[0].url;
@@ -69,7 +71,6 @@
       var socialNetworks = $.map(res.social, function(item){
         return item.type.nameize();
       });
-
 
       // Data elements to display - Waterfall controlled here
       var data = [
@@ -121,15 +122,15 @@
           'count': res.social.length,
           'socialNetwork': socialNetworks
         },
-        // {
-        //   'type': 'photos',
-        //   'name': 'Photos',
-        //   'single': 'Photo',
-        //   'style': '',
-        //   'weight': 0,
-        //   'showIfEmpty': 0,
-        //   'count': res.images.length
-        // },
+        {
+          'type': 'photos',
+          'name': 'Photos',
+          'single': 'Photo',
+          'style': '',
+          'weight': 0,
+          'showIfEmpty': 0,
+          'count': res.images.length
+        },
         {
           'type': 'associates',
           'name': 'Associates & Relatives',
@@ -138,17 +139,37 @@
           'weight': 0,
           'showIfEmpty': 0,
           'count': res.connections.associates.length + res.connections.relatives.length
-        }
-        /*
+        },
         {
           'type': 'neighbors',
           'name': 'Neighbors',
           'single': 'Neighbor',
           'style': '',
           'weight': 0,
-          'showIfEmpty': 1,
+          'showIfEmpty': 0,
           'count': res.connections.neighbors.length
         },
+        // jobs and education
+        {
+          'type': 'experiences',
+          'name': 'Experiences',
+          'single': 'Experience',
+          'style': '',
+          'weight': 0,
+          'showIfEmpty': 0,
+          'count': res.jobs.length + res.educations.length
+        },
+        // licenses and permits
+        {
+          'type': 'licenses',
+          'name': 'Licenses',
+          'single': 'License',
+          'style': '',
+          'weight': 0,
+          'showIfEmpty': 0,
+          'count': res.licenses.dea.length + res.licenses.faa.length + res.licenses.professional.length + res.licenses.voter.length + res.licenses.weapon.length
+        }
+        /*
         {
           'type': 'contacts',
           'name': 'Contact Info',
@@ -186,8 +207,20 @@
       var hasSocial = _.some(data, function(item){
         return item.type === 'social' && item.count > 0;
       });
+      var hasNeighbors = _.some(data, function(item) {
+        return (item.type === 'neighbors' && item.count > 0);
+      });
       var hasProperty = _.some(data, function(item){
         return (item.type === 'addresses' && item.count > 0) || (item.type === 'neighbors' && item.count > 0);
+      });
+      var hasPhotos = _.some(data, function(item) {
+        return (item.type === 'photos' && item.count > 0);
+      });
+      var hasExperiences = _.some(data, function(item) {
+        return (item.type === 'experiences' && item.count > 0);
+      });
+      var hasLicenses = _.some(data, function(item) {
+        return (item.type === 'licenses' && item.count > 0);
       });
 
 
@@ -214,6 +247,19 @@
       if (hasSocial) {
         trackNL("Data Modal Viewed Social");
       }
+      if (hasPhotos) {
+        trackNL("Data Modal Viewed Photos");
+      }
+      if (hasNeighbors) {
+        trackNL("Data Modal Viewed Neighbors");
+      }
+      if (hasExperiences) {
+        trackNL("Data Modal Viewed Jobs and Education");
+      }
+      if (hasLicenses) {
+        trackNL("Data Modal Viewed Licenses");
+      }
+
       // if (hasProperty) {
       //   trackNL("Data Modal Viewed Property");
       // }
@@ -268,6 +314,10 @@
           hasPhone: hasPhone,
           hasEmail: hasEmail,
           hasSocial: hasSocial,
+          hasNeighbors: hasNeighbors,
+          hasPhotos: hasPhotos,
+          hasExperiences: hasExperiences,
+          hasLicenses: hasLicenses,
           filler: filler
       };
       amplify.store('extraTeaserData', teaserDataObj);
