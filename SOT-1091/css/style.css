@@ -616,7 +616,7 @@ input.success {
       -ms-transform: skewY(-2.5deg);
        -o-transform: skewY(-2.5deg);
           transform: skewY(-2.5deg);
-  
+
   -webkit-backface-visibility: hidden;
      -moz-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -847,7 +847,7 @@ input.success {
       -ms-transform: skewY(2.5deg);
        -o-transform: skewY(2.5deg);
           transform: skewY(2.5deg);
-  
+
   -webkit-backface-visibility: hidden;
      -moz-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -1040,7 +1040,7 @@ input.success {
   padding-top: 20px;
   padding-bottom: 100px;
 }
-#timeline:before {
+/*#timeline:before {
   position: absolute;
   z-index: 1;
   top: -100px;
@@ -1055,7 +1055,7 @@ input.success {
       -ms-transform: skewY(-2.5deg);
        -o-transform: skewY(-2.5deg);
           transform: skewY(-2.5deg);
-  
+
   -webkit-backface-visibility: hidden;
      -moz-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -1067,7 +1067,7 @@ input.success {
   #timeline:before {
     top: -40px;
   }
-}
+}*/
 #timeline .container {
   position: relative;
   z-index: 99;
