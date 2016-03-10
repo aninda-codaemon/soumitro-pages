@@ -44,7 +44,7 @@
     var baseUrl = "//www.beenverified.com/hk/dd/teaser/person?exporttype=jsonp";
     var url = baseUrl + "&bvid=" + bvid + "&criminal=1&bankruptcy=1";
     var xhrData = $.ajax({
-      url: 'http://www.beenverified.com/hk/dd/teaser/person/thatipromisetoneverputintoproduction?bvid=N_1&criminal=1',
+      url: url,
       dataType: 'jsonp',
       jsonpCallback: 'parseResults'
     });

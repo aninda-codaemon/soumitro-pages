@@ -2925,14 +2925,25 @@ h6.create-login {
   height: auto;
   margin: 0 0 10px;
   padding: 15px;
-  /*cursor: pointer;*/
-
+  cursor: pointer;
   border: 1px #c4c4c4 solid;
   border-radius: 4px;
   background: #fff;
   -webkit-box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
-     -moz-box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
-          box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
+  -moz-box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
+  -ms-box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
+  box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
+  -webkit-transition: all 500ms;
+  -moz-transition: all 500ms;
+  -ms-transition: all 500ms;
+  transition: all 500ms;
+}
+#gen-report-modal7 .detail-box.detail-box:hover {
+  -webkit-box-shadow: 2px 2px 0 0 rgba(233,233,233,1);
+  -moz-box-shadow: 2px 2px 0 0 rgba(233,233,233,1);
+  -ms-box-shadow: 2px 2px 0 0 rgba(233,233,233,1);
+  box-shadow: 2px 2px 0 0 rgba(233,233,233,1);
+  background: #F7F7F7;
 }
 #gen-report-modal7 .detail-box.CTA_card {
   cursor: pointer;
@@ -2940,13 +2951,24 @@ h6.create-login {
   color: #fff !important;
   border-color: #57992d;
   background-color: #6dac45;
+  -webkit-box-shadow: 4px 4px 0 0 rgba(87, 153, 45, 1);
+  -moz-box-shadow: 4px 4px 0 0 rgba(87, 153, 45, 1);
+  -ms-box-shadow: 4px 4px 0 0 rgba(87, 153, 45, 1);
   box-shadow: 4px 4px 0 0 rgba(87, 153, 45, 1);
+}
+#gen-report-modal7 .detail-box.CTA_card:hover {
+  -webkit-box-shadow: 2px 2px 0 0 rgba(87, 153, 45, 1);
+  -moz-box-shadow: 2px 2px 0 0 rgba(87, 153, 45, 1);
+  -ms-box-shadow: 2px 2px 0 0 rgba(87, 153, 45, 1);
+  box-shadow: 2px 2px 0 0 rgba(87, 153, 45, 1);
 }
 #gen-report-modal7 .detail-box.CTA_card:hover,
 #gen-report-modal7 .detail-box.CTA_card:active,
 #gen-report-modal7 .detail-box.CTA_card:focus {
-  transition: all 0.5s ease;
-
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  transition: all 500ms ease;
   background-color: #84be5f;
 }
 #gen-report-modal7 .detail-box.CTA_card h1 {
