@@ -44,7 +44,7 @@
     var baseUrl = "//www.beenverified.com/hk/dd/teaser/person?exporttype=jsonp";
     var url = baseUrl + "&bvid=" + bvid + "&criminal=1&bankruptcy=1";
     var xhrData = $.ajax({
-      url: url,
+      url: 'http://www.beenverified.com/hk/dd/teaser/person/thatipromisetoneverputintoproduction?bvid=N_1&criminal=1',
       dataType: 'jsonp',
       jsonpCallback: 'parseResults'
     });
@@ -77,7 +77,7 @@
           'name': 'Criminal or Traffic*',
           'single': 'Criminal or Traffic*',
           'style': ' crim-box',
-          'weight': 3,
+          'weight': 9,
           'showIfEmpty': 0,
           'count': res.courts.criminal.length
         },
@@ -86,16 +86,25 @@
           'name': 'Bankruptcy Filings',
           'single': 'Bankruptcy Filing',
           'style': ' crim-box',
-          'weight': 3,
+          'weight': 8,
           'showIfEmpty': 0,
           'count': res.courts.bankruptcy.length
+        },
+        {
+          'type': 'associates',
+          'name': 'Associates & Relatives',
+          'single': 'Associates & Relatives',
+          'style': '',
+          'weight': 7,
+          'showIfEmpty': 0,
+          'count': res.connections.associates.length + res.connections.relatives.length
         },
         {
           'type': 'emails',
           'name': 'Email Addresses',
           'single': 'Email Address',
           'style': '',
-          'weight': 2,
+          'weight': 6,
           'showIfEmpty': 0,
           'count': res.emails.length,
           'emailAddress': emailAddresses
@@ -105,7 +114,7 @@
           'name': 'Phone Numbers',
           'single': 'Phone Number',
           'style': ' phone-box',
-          'weight': 1,
+          'weight': 5,
           'showIfEmpty': 0,
           'count': res.phones.length,
           'phoneNumber': phoneNumbers
@@ -115,7 +124,7 @@
           'name': 'Social Media Profiles',
           'single': 'Social Media Profile',
           'style': ' social-box',
-          'weight': 1,
+          'weight': 4,
           'showIfEmpty': 0,
           'count': res.social.length,
           'socialNetwork': socialNetworks
@@ -125,18 +134,18 @@
           'name': 'Photos',
           'single': 'Photo',
           'style': '',
-          'weight': 1,
+          'weight': 3,
           'showIfEmpty': 0,
           'count': res.images.length
         },
         {
-          'type': 'associates',
-          'name': 'Associates & Relatives',
-          'single': 'Associates & Relatives',
+          'type': 'careers',
+          'name': 'Jobs and Education',
+          'single': 'Career',
           'style': '',
-          'weight': 1,
+          'weight': 2,
           'showIfEmpty': 0,
-          'count': res.connections.associates.length + res.connections.relatives.length
+          'count': res.jobs.length + res.educations.length
         },
         {
           'type': 'neighbors',
@@ -147,46 +156,34 @@
           'showIfEmpty': 0,
           'count': res.connections.neighbors.length
         },
-        // jobs and education
-        {
-          'type': 'careers',
-          'name': 'Jobs and Education',
-          'single': 'Career',
-          'style': '',
-          'weight': 1,
-          'showIfEmpty': 0,
-          'count': res.jobs.length + res.educations.length
-        },
-        // licenses and permits
-        {
-          'type': 'licenses',
-          'name': 'Licenses and Permits',
-          'single': 'License',
-          'style': '',
-          'weight': 1,
-          'showIfEmpty': 0,
-          'count': res.licenses.dea.length + res.licenses.faa.length + res.licenses.professional.length + res.licenses.voter.length + res.licenses.weapon.length
-        }
-        /*
-        {
-          'type': 'contacts',
-          'name': 'Contact Info',
-          'single': 'Contact Info',
-          'style': '',
-          'weight': 0,
-          'showIfEmpty': 0,
-          'count': res.emails.length + res.phones.length
-        },
-        {
-          'type': 'addresses',
-          'name': 'Address Records',
-          'single': 'Address Records',
-          'style': '',
-          'weight': 0,
-          'showIfEmpty': 0,
-          'count': res.addresses.length
-        }
-        */
+        // {
+        //   'type': 'licenses',
+        //   'name': 'Licenses and Permits',
+        //   'single': 'License',
+        //   'style': '',
+        //   'weight': 0,
+        //   'showIfEmpty': 0,
+        //   'count': res.licenses.dea.length + res.licenses.faa.length + res.licenses.professional.length + res.licenses.voter.length + res.licenses.weapon.length
+        // },
+        // {
+        //   'type': 'contacts',
+        //   'name': 'Contact Info',
+        //   'single': 'Contact Info',
+        //   'style': '',
+        //   'weight': 0,
+        //   'showIfEmpty': 0,
+        //   'count': res.emails.length + res.phones.length
+        // },
+        // {
+        //   'type': 'addresses',
+        //   'name': 'Address Records',
+        //   'single': 'Address Records',
+        //   'style': '',
+        //   'weight': 0,
+        //   'showIfEmpty': 0,
+        //   'count': res.addresses.length
+        // }
+
       ];
 
       // Booleans for templating & reporting
@@ -208,18 +205,18 @@
       var hasNeighbors = _.some(data, function(item) {
         return (item.type === 'neighbors' && item.count > 0);
       });
-      var hasProperty = _.some(data, function(item){
-        return (item.type === 'addresses' && item.count > 0) || (item.type === 'neighbors' && item.count > 0);
-      });
+      // var hasProperty = _.some(data, function(item){
+      //   return (item.type === 'addresses' && item.count > 0) || (item.type === 'neighbors' && item.count > 0);
+      // });
       var hasPhotos = _.some(data, function(item) {
         return (item.type === 'photos' && item.count > 0);
       });
       var hasCareers = _.some(data, function(item) {
         return (item.type === 'careers' && item.count > 0);
       });
-      var hasLicenses = _.some(data, function(item) {
-        return (item.type === 'licenses' && item.count > 0);
-      });
+      // var hasLicenses = _.some(data, function(item) {
+      //   return (item.type === 'licenses' && item.count > 0);
+      // });
 
 
       if (!hasCriminal) {
@@ -254,10 +251,9 @@
       if (hasCareers) {
         trackNL("Data Modal Viewed Jobs and Education");
       }
-      if (hasLicenses) {
-        trackNL("Data Modal Viewed Licenses");
-      }
-
+      // if (hasLicenses) {
+      //   trackNL("Data Modal Viewed Licenses");
+      // }
       // if (hasProperty) {
       //   trackNL("Data Modal Viewed Property");
       // }
@@ -315,7 +311,7 @@
           hasNeighbors: hasNeighbors,
           hasPhotos: hasPhotos,
           hasCareers: hasCareers,
-          hasLicenses: hasLicenses,
+          // hasLicenses: hasLicenses,
           filler: filler
       };
       amplify.store('extraTeaserData', teaserDataObj);
