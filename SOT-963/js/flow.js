@@ -285,14 +285,14 @@
       // console.log("fillCount:"+fillCount+"\nfillers:");
       // console.log(fillers);
 
-      // if (data.length === 5 || data.length === 2) {
-      //   filler = [];
-      // }
-      if (data.length === 4 || data.length === 1) {
+      if (data.length === 5 || data.length === 2) {
+        filler = [];
+      }
+      else if (data.length === 4 || data.length === 1) {
         fillCount = 1;
         filler = _.slice(fillers, 0, fillCount);
       }
-      if (data.length === 6 || data.length === 3) {
+      else if (data.length === 6 || data.length === 3) {
         fillCount = 2
         filler = _.slice(fillers, 0, fillCount);
       } else {
