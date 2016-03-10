@@ -274,9 +274,9 @@
       var totalCardsToShow = parseInt($('div.details').data('total-cards-to-show'));
       var fillerCardsAvailable = parseInt($('div.details').data('filler-cards-available'));
 
-      //console.log("TCTS: "+totalCardsToShow+" FCA: "+fillerCardsAvailable+" DL: "+data.length);
+      // console.log("TCTS: "+totalCardsToShow+" FCA: "+fillerCardsAvailable+" DL: "+data.length);
       data = _.slice(data, 0, totalCardsToShow);
-      //console.log("new DL: "+ data.length);
+      // console.log("new DL: "+ data.length);
 
       var fillCount = totalCardsToShow - (data.length); // fillers to show
       var fillers = _.range(1, fillerCardsAvailable + 1); // build array of filler card ids, start at 1, +1 because limit is 0 based
@@ -285,18 +285,30 @@
       // console.log("fillCount:"+fillCount+"\nfillers:");
       // console.log(fillers);
 
-
-      if (fillCount > 0 && fillCount <= fillerCardsAvailable) {
-        // filler needed, and # needed available,
-        //filler = _.slice(_.shuffle(fillers), 0, fillCount);
-        filler = _.slice(fillers, 0, fillCount); // no random
-      } else {
-        // if nearly all filler, limit to 2 rows... not needed now
-        //filler = _.slice(_.shuffle(fillers), 0, (fillCount - fillerCards) + 2);
-        //filler = _.slice(fillers, 0, (fillCount - fillerCards) + 2);
+      // if (data.length === 5 || data.length === 2) {
+      //   filler = [];
+      // }
+      if (data.length === 4 || data.length === 1) {
+        fillCount = 1;
+        filler = _.slice(fillers, 0, fillCount);
       }
+      if (data.length === 6 || data.length === 3) {
+        fillCount = 2
+        filler = _.slice(fillers, 0, fillCount);
+      }
+      // if (fillCount > 0 && fillCount <= fillerCardsAvailable) {
+      //   // filler needed, and # needed available,
+      //   //filler = _.slice(_.shuffle(fillers), 0, fillCount);
+      //   filler = _.slice(fillers, 0, fillCount); // no random
+      // } else {
+      //   // if nearly all filler, limit to 2 rows... not needed now
+      //   // filler = _.slice(_.shuffle(fillers), 0, (fillCount - fillerCards) + 2);
+      //   filler = _.slice(fillers, 0, (fillCount - fillerCardsAvailable) + 2);
+      // }
+
       // console.log("filler:");
       // console.log(filler);
+      // console.log(fillCount);
 
       // Store data
       var teaserDataObj = {
