@@ -295,6 +295,8 @@
       if (data.length === 6 || data.length === 3) {
         fillCount = 2
         filler = _.slice(fillers, 0, fillCount);
+      } else {
+        filler = _.slice(fillers, 0, fillCount);
       }
       // if (fillCount > 0 && fillCount <= fillerCardsAvailable) {
       //   // filler needed, and # needed available,
