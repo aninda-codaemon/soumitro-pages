@@ -147,15 +147,15 @@
           'showIfEmpty': 0,
           'count': res.jobs.length + res.educations.length
         },
-        {
-          'type': 'neighbors',
-          'name': 'Neighbors',
-          'single': 'Neighbor',
-          'style': '',
-          'weight': 1,
-          'showIfEmpty': 0,
-          'count': res.connections.neighbors.length
-        },
+        // {
+        //   'type': 'neighbors',
+        //   'name': 'Neighbors',
+        //   'single': 'Neighbor',
+        //   'style': '',
+        //   'weight': 1,
+        //   'showIfEmpty': 0,
+        //   'count': res.connections.neighbors.length
+        // },
         // {
         //   'type': 'licenses',
         //   'name': 'Licenses and Permits',
@@ -202,9 +202,9 @@
       var hasSocial = _.some(data, function(item){
         return item.type === 'social' && item.count > 0;
       });
-      var hasNeighbors = _.some(data, function(item) {
-        return (item.type === 'neighbors' && item.count > 0);
-      });
+      // var hasNeighbors = _.some(data, function(item) {
+      //   return (item.type === 'neighbors' && item.count > 0);
+      // });
       // var hasProperty = _.some(data, function(item){
       //   return (item.type === 'addresses' && item.count > 0) || (item.type === 'neighbors' && item.count > 0);
       // });
@@ -245,9 +245,9 @@
       if (hasPhotos) {
         trackNL("Data Modal Viewed Photos");
       }
-      if (hasNeighbors) {
-        trackNL("Data Modal Viewed Neighbors");
-      }
+      // if (hasNeighbors) {
+      //   trackNL("Data Modal Viewed Neighbors");
+      // }
       if (hasCareers) {
         trackNL("Data Modal Viewed Jobs and Education");
       }
@@ -320,7 +320,7 @@
           hasPhone: hasPhone,
           hasEmail: hasEmail,
           hasSocial: hasSocial,
-          hasNeighbors: hasNeighbors,
+          // hasNeighbors: hasNeighbors,
           hasPhotos: hasPhotos,
           hasCareers: hasCareers,
           // hasLicenses: hasLicenses,
