@@ -55,8 +55,6 @@
       var res = result;
       var img = '';
 
-      console.log(res);
-
       // Get profile image URL
       if (res.images[0] && typeof(res.images[0].url !== 'undefined')) {
         img = res.images[0].url;
@@ -127,7 +125,7 @@
           'name': 'Photos',
           'single': 'Photo',
           'style': '',
-          'weight': 0,
+          'weight': 1,
           'showIfEmpty': 0,
           'count': res.images.length
         },
@@ -136,7 +134,7 @@
           'name': 'Associates & Relatives',
           'single': 'Associates & Relatives',
           'style': '',
-          'weight': 0,
+          'weight': 1,
           'showIfEmpty': 0,
           'count': res.connections.associates.length + res.connections.relatives.length
         },
@@ -145,27 +143,27 @@
           'name': 'Neighbors',
           'single': 'Neighbor',
           'style': '',
-          'weight': 0,
+          'weight': 1,
           'showIfEmpty': 0,
           'count': res.connections.neighbors.length
         },
         // jobs and education
         {
-          'type': 'experiences',
-          'name': 'Experiences',
-          'single': 'Experience',
+          'type': 'careers',
+          'name': 'Jobs and Education',
+          'single': 'Career',
           'style': '',
-          'weight': 0,
+          'weight': 1,
           'showIfEmpty': 0,
           'count': res.jobs.length + res.educations.length
         },
         // licenses and permits
         {
           'type': 'licenses',
-          'name': 'Licenses',
+          'name': 'Licenses and Permits',
           'single': 'License',
           'style': '',
-          'weight': 0,
+          'weight': 1,
           'showIfEmpty': 0,
           'count': res.licenses.dea.length + res.licenses.faa.length + res.licenses.professional.length + res.licenses.voter.length + res.licenses.weapon.length
         }
@@ -216,8 +214,8 @@
       var hasPhotos = _.some(data, function(item) {
         return (item.type === 'photos' && item.count > 0);
       });
-      var hasExperiences = _.some(data, function(item) {
-        return (item.type === 'experiences' && item.count > 0);
+      var hasCareers = _.some(data, function(item) {
+        return (item.type === 'careers' && item.count > 0);
       });
       var hasLicenses = _.some(data, function(item) {
         return (item.type === 'licenses' && item.count > 0);
@@ -253,7 +251,7 @@
       if (hasNeighbors) {
         trackNL("Data Modal Viewed Neighbors");
       }
-      if (hasExperiences) {
+      if (hasCareers) {
         trackNL("Data Modal Viewed Jobs and Education");
       }
       if (hasLicenses) {
@@ -316,7 +314,7 @@
           hasSocial: hasSocial,
           hasNeighbors: hasNeighbors,
           hasPhotos: hasPhotos,
-          hasExperiences: hasExperiences,
+          hasCareers: hasCareers,
           hasLicenses: hasLicenses,
           filler: filler
       };

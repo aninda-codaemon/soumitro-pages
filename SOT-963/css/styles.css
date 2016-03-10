@@ -3026,6 +3026,12 @@ h6.create-login {
 .detail-box .detail-img span.photos {
   background-image: url(../img/icon-blue-photos.png);
 }
+.detail-box .detail-img span.licenses {
+  background-image: url(../img/icon-blue-licenses.png);
+}
+.detail-box .detail-img span.careers {
+  background-image: url(../img/icon-blue-career.png);
+}
 #gen-report-modal7 .modal-dialog {
   /*margin-top: 5%!important;*/
 }
