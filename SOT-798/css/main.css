@@ -1,70 +1,26 @@
-@charset "utf-8";
-
-/* CSS Document */
-
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,900);
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', 'Helvetica', sans-serif;
   background: url(../images/bg.jpg);
 }
-header {
-  min-height: 92px;
-  color: #555555;
-  font-size: 15px;
-  background: #fff;
+
+/* header */
+
+.bv.header {
+  background-color: #fff;
+  color: #555;
 }
-.logo {
-  padding-top: 25px;
+
+/* header navbar */
+
+.bv.navbar {
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
-header input[type=search] {
-  border: solid 1px #d9d9d9;
-  border-radius: 50px;
-  background: #f8f8f8;
-  height: 45px;
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 25px;
-  display: inline-block;
-  float: left;
-  margin-top: 22px;
-  outline: none;
-}
-header input[type=submit] {
-  display: inline-block;
-  float: left;
-  margin-left: -30px;
-  background: url(../images/search.png) no-repeat 0px 0px;
-  width: 14px;
-  height: 16px;
-  border: none;
-  margin-top: 34px;
-  outline: none;
-}
-header .btn {
-  font-size: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  margin-left: 7px;
-}
-header .btn-success {
-  background: #6dac45;
-}
-header p {
-  display: inline-block;
-  padding-top: 35px;
-  text-align: right;
-  font-size: 15px;
-  width: 55%;
-  float: left;
-}
-header .btns {
-  display: inline-block;
-  float: right;
-  text-align: right;
-  padding-top: 25px;
-  width: 45%;
+
+.bv.navbar .navbar-brand {
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 /* Popup form */
