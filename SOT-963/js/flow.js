@@ -285,16 +285,25 @@
       // console.log("fillCount:"+fillCount+"\nfillers:");
       // console.log(fillers);
 
-      if (data.length === 5 || data.length === 2) {
-        filler = [];
+      // @TODO: refactor this (can make a function for this - no time now)
+      if (data.length === 1) {
+        fillCount = 4
+        filler = _.slice(fillers, 0, fillCount);
       }
-      else if (data.length === 4 || data.length === 1) {
+      else if (data.length === 2) {
+        fillCount = 3
+        filler = _.slice(fillers, 0, fillCount);
+      }
+      else if (data.length === 3 || data.length === 6) {
+        fillCount = 2
+        filler = _.slice(fillers, 0, fillCount);
+      }
+      else if (data.length === 4) {
         fillCount = 1;
         filler = _.slice(fillers, 0, fillCount);
       }
-      else if (data.length === 6 || data.length === 3) {
-        fillCount = 2
-        filler = _.slice(fillers, 0, fillCount);
+      else if (data.length === 5) {
+        filler = [];
       } else {
         filler = _.slice(fillers, 0, fillCount);
       }
