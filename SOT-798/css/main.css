@@ -409,7 +409,7 @@ input[type=checkbox]:not(:checked) + label:before {
   padding-bottom: 10px;
   margin-left: -5px;
 }
-.header {
+.results-header {
   background: #5158a0;
   border: solid 1px #9296c2;
   border-radius: 5px 5px 0px 0px;
@@ -418,26 +418,26 @@ input[type=checkbox]:not(:checked) + label:before {
   font-weight: 700;
   line-height: 47px;
 }
-.header > div > div > div, .result > div > div > div {
+.results-header > div > div > div, .result > div > div > div {
   display: inline-block;
   float: left;
 }
-.header .img, .result .img {
+.results-header .img, .result .img {
   width: 25%;
 }
-.header .name, .result .name {
+.results-header .name, .result .name {
   width: 55%;
 }
-.header .age, .result .age {
+.results-header .age, .result .age {
   width: 15%;
 }
-.header .location, .result .location {
+.results-header .location, .result .location {
   width: 30%;
 }
-.header .reletives, .result .reletives {
+.results-header .reletives, .result .reletives {
   width: 30%;
 }
-.header .report, .result .report {
+.results-header .report, .result .report {
   width: 38%;
 }
 .result {
