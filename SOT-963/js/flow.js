@@ -209,10 +209,10 @@
       //   return (item.type === 'addresses' && item.count > 0) || (item.type === 'neighbors' && item.count > 0);
       // });
       var hasPhotos = _.some(data, function(item) {
-        return (item.type === 'photos' && item.count > 0);
+        return item.type === 'photos' && item.count > 0;
       });
       var hasCareers = _.some(data, function(item) {
-        return (item.type === 'careers' && item.count > 0);
+        return item.type === 'careers' && item.count > 0;
       });
       // var hasLicenses = _.some(data, function(item) {
       //   return (item.type === 'licenses' && item.count > 0);
