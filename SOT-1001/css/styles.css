@@ -1717,9 +1717,16 @@ span.located img {
   padding-top: 0;
 }
 
-.possible-relatives.modal .modal-body .hero-image {
+.possible-relatives.modal .modal-body .hero-image-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.possible-relatives.modal .modal-body .hero-image-container .hero-image {
   display: block;
-  width: 132px;
+  width: 320px;
   margin: 0 auto;
 }
 
@@ -1742,7 +1749,10 @@ span.located img {
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .form-header {
-  margin: 0;
+  display: block;
+  z-index: 1;
+  position: relative;
+  margin: 0 auto;
   padding: 10px 25px;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 3px 0 #353167;
@@ -1760,14 +1770,24 @@ span.located img {
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .checkbox {
-  margin: 10px 0;
+  margin: 10px auto;
   border-radius: 4px;
-  border-bottom: 1px solid #ececec;
-  -webkit-box-shadow: 0 0 2px 0 #353167 inset;
-  -moz-box-shadow: 0 0 2px 0 #353167 inset;
-  -ms-box-shadow: 0 0 2px 0 #353167 inset;
-  box-shadow: 0 0 2px 0 #353167 inset;
   line-height: 1.5;
+}
+
+.possible-relatives.modal .modal-body .possible-relatives-form .checkbox .relation-line {
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 10px;
+  width: 5px;
+  margin: 0 auto;
+  background: #7F7D9F;
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-checkbox {
@@ -1782,8 +1802,16 @@ span.located img {
 
 .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label {
   display: block;
+  z-index: 1;
+  position: relative;
   padding: 5px 10px;
   cursor: pointer;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 2px 0 #353167 inset;
+  -moz-box-shadow: 0 0 2px 0 #353167 inset;
+  -ms-box-shadow: 0 0 2px 0 #353167 inset;
+  box-shadow: 0 0 2px 0 #353167 inset;
+  background-color: #fff;
   text-transform: capitalize;
   -webkit-transition: all 500ms;
   -moz-transition: all 500ms;
@@ -1814,6 +1842,10 @@ span.located img {
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label:hover {
+  -webkit-box-shadow: 0 0 6px 0 #353167;
+  -moz-box-shadow: 0 0 6px 0 #353167;
+  -ms-box-shadow: 0 0 6px 0 #353167;
+  box-shadow: 0 0 6px 0 #353167;
   color: #6DAC45;
 }
 
@@ -1846,43 +1878,9 @@ span.located img {
   margin-left: 10px;
 }
 
-@media (min-width: 480px) and (max-width: 768px) {
-
-  .possible-relatives.modal .modal-body {
-    padding-top: 0;
-  }
-
-  .possible-relatives.modal .modal-body .hero-image {
-    float: left;
-  }
-
-  .possible-relatives.modal .modal-body .form-instructions {
-    text-align: left;
-  }
-}
-
-@media (min-width: 480px) and (max-width: 600px) {
-
-  .possible-relatives.modal .modal-body .hero-image {
-    width: 84px;
-    margin: 0 15px;
-  }
-
-  .possible-relatives.modal .modal-body .form-instructions {
-    height: 81px;
-    padding: 15px;
-  }
-}
-
 @media (min-width: 600px) and (max-width: 768px) {
 
-  .possible-relatives.modal .modal-body .hero-image {
-    width: 102px;
-    margin: 0 42px;
-  }
-
   .possible-relatives.modal .modal-body .form-instructions {
-    height: 100px;
     padding: 20px;
     font-size: 16px;
   }
@@ -1901,30 +1899,70 @@ span.located img {
     display: inline-block;
     width: 100%;
     padding: 30px;
-    padding-bottom: 0;
-  }
-
-  .possible-relatives.modal .modal-body .hero-image {
-    width: 40%;
-    max-width: 320px;
-    margin: 80px 5% 0;
-    float: left;
+    padding-top: 0;
   }
 
   .possible-relatives.modal .modal-body .form-instructions {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    margin: 0;
+    margin: 0 -30px;
     padding: 15px 10%;
     font-size: 18px;
   }
 
   .possible-relatives.modal .modal-body .possible-relatives-form {
-    width: 40%;
-    margin: 60px 5% 0;
+    display: inline-block;
+    width: 100%;
+    margin: 15px 0 0;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .form-header {
+    width: 50%;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox {
+    width: 48%;
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(even) {
+    float: left;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(odd) {
     float: right;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .relation-line {
+    top: -30px;
+    height: 30px;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(2) .relation-line {
+    top: -45px;
+    left: 56%;
+    height: 60px;
+    -webkit-transform: rotate(55deg);
+    -moz-transform: rotate(55deg);
+    -ms-transform: rotate(55deg);
+    transform: rotate(55deg);
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(3) .relation-line {
+    top: -45px;
+    left: 44%;
+    height: 60px;
+    -webkit-transform: rotate(-55deg);
+    -moz-transform: rotate(-55deg);
+    -ms-transform: rotate(-55deg);
+    transform: rotate(-55deg);
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .main-btn {
+    display: block;
+    position: relative;
+    top: 30px;
+    width: 25%;
+    margin: 30px auto;
   }
 }
 
@@ -1948,6 +1986,30 @@ span.located img {
   }
 }
 
+@media (min-width: 992px) {
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox {
+    margin-top: 50px;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .relation-line {
+    top: -50px;
+    height: 50px;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(2) .relation-line {
+    top: -75px;
+    left: 59%;
+    height: 100px;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(3) .relation-line {
+    top: -75px;
+    left: 40%;
+    height: 100px;
+  }
+}
+
 /* modal-footer */
 
 .possible-relatives.modal .modal-footer {
@@ -1965,7 +2027,6 @@ span.located img {
 @media (min-width: 768px) {
 
   .possible-relatives.modal .modal-footer {
-    margin-top: -4px;
     padding: 15px;
   }
 
