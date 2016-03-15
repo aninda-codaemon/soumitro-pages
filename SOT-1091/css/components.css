@@ -94,9 +94,24 @@
 
 .footer-navbar {
     margin-top: 80px;
+    text-align: center;
+}
+
+.footer-navbar .text-right {
+    text-align: center;
 }
 
 .footer-navbar p,
 .footer-navbar a {
     font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    .footer-navbar {
+        text-align: left;
+    }
+
+    .footer-navbar .text-right {
+        text-align: right;
+    }
 }

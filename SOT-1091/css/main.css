@@ -71,6 +71,10 @@
   margin: 0 auto;
 }
 
+.content-section#pl-reasons .title {
+  margin-bottom: 80px;
+}
+
 .content-section#pl-reasons .text-secondary:first-child {
   margin-top: 0;
 }
@@ -92,6 +96,10 @@
 @media (min-width: 768px) {
   .content-section .img-logo {
     width: 175px;
+  }
+
+  .content-section#pl-reasons .title {
+    margin-bottom: 20px;
   }
 }
 
