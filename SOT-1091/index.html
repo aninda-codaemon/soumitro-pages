@@ -122,7 +122,7 @@
           <div class="col-lg-10 col-lg-offset-1">
 
             <img class="img-logo" src="img/binoculars.png" />
-            <h1 class="header-title">Search People. It's easy!</h1>
+            <h1 class="title">Search People. It's easy!</h1>
 
             <form action="<%= next_page %>" id="header-search-people" class="header-search">
               <div class="row">
@@ -198,7 +198,7 @@
               </div>
             </form>
 
-            <p class="header-sub-title">Try searching a relative, neighbor, friend or even yourself!</p>
+            <h6 class="sub-title hidden-xs">Try searching a relative, neighbor, friend or even yourself!</h6>
 
             <div class="header-mascots hidden-xs row">
               <div class="col-sm-3 header-mascot">
@@ -228,26 +228,26 @@
     <section class="content-section" id="pl-reasons">
       <div class="container">
 
-        <h2 class="section-title">So Many Reasons to Use <img class="img-logo" src="img/logo_section.png" />!</h2>
-        <p class="section-sub-title hidden-xs">The affordable way to lean more about people.</p>
+        <h2 class="title">So Many Reasons to Use <img class="img-logo" src="img/logo_section.png" />!</h2>
+        <h6 class="sub-title hidden-xs">The affordable way to lean more about people.</h6>
 
-        <div class="row">
-          <div class="col-sm-6 col-lg-7">
-            <h4 class="">Unlimited Searches, Anytime</h4>
-            <p>Use it for online dating, finding old friends, class reunions and much more. <a href="#">See our "Do's and Don'ts."</a></p>
+        <div class="reasons-container row">
+          <div class="col-sm-6">
+            <h6 class="text-secondary">Unlimited Searches, Anytime</h6>
+            <p>Use it for online dating, finding old friends, class reunions and much more. <a class="text-break" href="#">See our "Do's and Don'ts."</a></p>
 
-            <h4>Affordable &amp; Accessible</h4>
+            <h6 class="text-secondary">Affordable &amp; Accessible</h6>
             <p>PeopleLooker is the affordable way to learn more about people</p>
 
-            <h4>Respect For Privacy</h4>
-            <p>A privacy-friendly public record search is not an oxymoron. <a href="#">Learn how we do it.</a></p>
+            <h6 class="text-secondary">Respect For Privacy</h6>
+            <p>A privacy-friendly public record search is not an oxymoron. <a class="text-break" href="#">Learn how we do it.</a></p>
 
-            <h4>Tons of Records. One Report</h4>
+            <h6 class="text-secondary">Tons of Records. One Report</h6>
             <p>The quick &amp; easy way to find contact info, personal details and much more.</p>
 
-            <a href="#" class="btn btn-primary">Learn About Us</a>
+            <a href="#" class="btn btn-lg btn-primary">Learn About Us</a>
           </div>
-          <div class="col-sm-6 col-lg-5 hidden-xs">
+          <div class="col-sm-6 hidden-xs">
             <p class="text-secondary">This is what a report looks like:</p>
             <img class="img-report img-responsive" src="img/report.png" />
           </div>
@@ -259,15 +259,25 @@
     <section class="background-primary text-centered content-section" id="pl-what">
       <div class="container">
 
-        <h2 class="section-title">What is <img class="img-logo" src="img/logo_primary_section.png" />?</h2>
-        <p class="section-sub-title">PeopleLooker is a simple website that allows you to learn about people. We have records about ages, addresses, email addresses, phone numbers, criminal records and so much more. Try searching today. It's easy!</p>
+        <h2 class="title">What is <img class="img-logo" src="img/logo_primary_section.png" />?</h2>
+        <p class="sub-title">PeopleLooker is a simple website that allows you to learn about people. We have records about ages, addresses, email addresses, phone numbers, criminal records and so much more. Try searching today. It's easy!</p>
 
-        <div class="section-images">
-          <img class="img-inline" src="img/section_image01.png" />
-          <img class="img-inline" src="img/section_image02.png" />
-          <img class="img-inline" src="img/section_image03.png" />
-          <img class="img-inline" src="img/section_image04.png" />
-          <img class="img-inline" src="img/section_image05.png" />
+        <div class="section-images row">
+          <div class="col-xs-2 col-xs-offset-1">
+            <img class="img-responsive" src="img/section_image01.png" />
+          </div>
+          <div class="col-xs-2">
+            <img class="img-responsive" src="img/section_image02.png" />
+          </div>
+          <div class="col-xs-2">
+            <img class="img-responsive" src="img/section_image03.png" />
+          </div>
+          <div class="col-xs-2">
+            <img class="img-responsive" src="img/section_image04.png" />
+          </div>
+          <div class="col-xs-2">
+            <img class="img-responsive" src="img/section_image05.png" />
+          </div>
         </div>
 
       </div>
@@ -276,8 +286,8 @@
     <section class="text-centered content-section" id="pl-cta">
       <div class="container">
 
-        <h2 class="section-title">What are you waiting for?</h2>
-        <button type="button" class="btn btn-secondary btn-centered" id="scrollTop">Search Someone</button>
+        <h2 class="title">What are you waiting for?</h2>
+        <button type="button" class="btn btn-lg btn-secondary btn-centered" id="scrollTop">Search Someone</button>
 
       </div>
     </section>
@@ -287,13 +297,13 @@
 
         <div class="row">
           <div class="col-sm-3">
-            <h5 class="footer-column-title">About Us</h5>
+            <h6 class="footer-column-title">About Us</h6>
             <a class="footer-column-link" href="#">About PL</a>
             <a class="footer-column-link" href="#">Careers</a>
             <a class="footer-column-link" href="#">Leadership</a>
           </div>
           <div class="col-sm-3">
-            <h5 class="footer-column-title">Help</h5>
+            <h6 class="footer-column-title">Help</h6>
             <a class="footer-column-link" href="#">FAQ</a>
             <a class="footer-column-link" href="#">Contact Us</a>
             <a class="footer-column-link" href="#">Remove My Info</a>

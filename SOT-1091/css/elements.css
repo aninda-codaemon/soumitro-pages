@@ -66,6 +66,13 @@
     -moz-transition: all 500ms;
     -ms-transition: all 500ms;
     transition: all 500ms;
+    outline: 0;
+}
+
+.btn:focus,
+.btn:active,
+.btn:active:focus{
+    outline: 0;
 }
 
 .btn-primary {
@@ -76,6 +83,26 @@
     border: 1px solid #33d4c0;
     background-color: #33d4c0;
     color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #22C2AE;
+    border-color: #22C2AE;
+    -webkit-box-shadow: 0 3px 1px -1px #38AC9E;
+    -moz-box-shadow: 0 3px 1px -1px #38AC9E;
+    -ms-box-shadow: 0 3px 1px -1px #38AC9E;
+    box-shadow: 0 3px 1px -1px #38AC9E;
+}
+
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:active:focus {
+    background-color: #38AC9E;
+    border-color: #38AC9E;
+    -webkit-box-shadow: 0 2px 1px -1px #38AC9E;
+    -moz-box-shadow: 0 2px 1px -1px #38AC9E;
+    -ms-box-shadow: 0 2px 1px -1px #38AC9E;
+    box-shadow: 0 2px 1px -1px #38AC9E;
 }
 
 .btn-secondary {
@@ -121,4 +148,10 @@
     -moz-transition: all 500ms;
     -ms-transition: all 500ms;
     transition: all 500ms;
+}
+
+/* footer */
+
+.footer {
+    background-color: #ccf4ef;
 }
