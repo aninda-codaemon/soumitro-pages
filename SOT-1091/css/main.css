@@ -1,9 +1,27 @@
 /* header-hero */
 
+.header-hero {
+  padding-bottom: 30px;
+}
+
 .header-hero .img-logo {
   display: block;
   width: 80px;
   margin: 15px auto;
+}
+
+.header-hero .header-search {
+  margin: 40px auto;
+}
+
+.header-hero .header-mascots {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.header-hero .header-mascots .img-mascot {
+  width: 100px;
+  margin-bottom: 5px;
 }
 
 @media (min-width: 768px) {
