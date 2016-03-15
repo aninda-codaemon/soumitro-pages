@@ -73,19 +73,19 @@ h1 {
 
 @media (min-width: 480px) {
   h1 {
-    font-size: 28px;
+    font-size: 34px;
   }
 }
 
 @media (min-width: 768px) {
   h1 {
-    font-size: 34px;
+    font-size: 44px;
   }
 }
 
 @media (min-width: 992px) {
   h1 {
-    font-size: 48px;
+    font-size: 54px;
   }
 }
 
