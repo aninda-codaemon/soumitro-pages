@@ -83,6 +83,10 @@
     margin-bottom: 5px;
 }
 
+.footer .social-icons {
+    margin-top: 70px;
+}
+
 .footer .disclaimer,
 .footer .disclaimer a {
     font-size: 14px;
