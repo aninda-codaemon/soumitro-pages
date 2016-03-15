@@ -43,11 +43,15 @@
     }
   </script>
 
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
   <!-- fonts -->
   <link href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
   <!-- styles -->
   <link href="css/vendor/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="css/typography.css" rel="stylesheet" type="text/css" />
+  <link href="css/helpers.css" rel="stylesheet" type="text/css" />
   <link href="css/main.css" rel="stylesheet" type="text/css" />
 
   <script type="application/ld+json">
@@ -88,9 +92,9 @@
 
   <main class="pl layout-main">
 
-    <header class="header" id="header">
+    <header class="header background-primary" id="pl-header">
 
-      <nav class="navbar navbar-default navbar-static-top">
+      <nav class="navbar navbar-static-top">
         <div class="container">
           <div class="row">
             <div class="col-sm-3">
@@ -103,24 +107,15 @@
             </div>
             <div class="col-sm-9">
               <div class="navbar-collapse collapse navbar-right">
-                <ul class="nav navbar-nav navbar-right">
-                  <li>
-                    <p class="nav-phone text-center">Questions? 1-888-579-5910</p>
-                  </li>
-                  <li class="nav-btn">
-                    <a href="//www.beenverified.com/login" class="btn btn-block btn-login">Log In</a>
-                  </li>
-                  <li class="nav-btn">
-                    <a href="//www.beenverified.com/lp/32fc4f/4/subscribe" class="btn btn-block btn-register">Sign Up</a>
-                  </li>
-                </ul>
+                <p class="navbar-text">Questions? 1-888-579-5910</p>
+                <a href="#" class="btn btn-transparent navbar-btn">Login In</a>
+                <a href="#" class="btn btn-default navbar-btn">Sign Up</a>
               </div>
             </div>
           </div>
         </div>
       </nav>
-
-      <div class="header-hero container">
+      <div class="header-hero text-centered container">
         <div class="row">
           <div class="col-lg-10 col-lg-offset-1">
 
@@ -213,89 +208,106 @@
           </div>
         </div>
       </div>
+
     </header>
 
-    <section class="section container" id="background-checks">
-      <h2 class="section-title">Quick &amp; Easy Background Checks</h2>
-      <p class="section-sub-title hidden-xs">The affordable way to lean more about people.</p>
+    <section class="content-section" id="pl-reasons">
+      <div class="container">
 
-      <div class="row">
-        <div class="col-sm-7 col-md-6">
-          <h4 class="">Unlimited Searches, Anytime</h4>
-          <p>Looking for someone? Our intuitive public records search engine makes it easy. See our "<a href="#">Do's and Don'ts</a>."</p>
+        <h2 class="section-title">So Many Reasons to Use <img class="img-logo" src="img/logo_section.png" />!</h2>
+        <p class="section-sub-title hidden-xs">The affordable way to lean more about people.</p>
 
-          <h4>Affordable &amp; Accessible</h4>
-          <p>We don't want you to ask yourself if it's "worth it" to run a search.</p>
+        <div class="row">
+          <div class="col-sm-7 col-md-6">
+            <h4 class="">Unlimited Searches, Anytime</h4>
+            <p>Use it for online dating, finding old friends, class reunions and much more. <a href="#">See our "Do's and Don'ts."</a></p>
 
-          <h4>Respect For Privacy</h4>
-          <p>A privacy-friendly public record search is not an oxymoron. <a href="#">Learn how we do it.</a></p>
+            <h4>Affordable &amp; Accessible</h4>
+            <p>PeopleLooker is the affordable way to learn more about people</p>
 
-          <h4>All Public Records in One Report</h4>
-          <p>Search for what you are looking for and get all the data in one single report.</p>
+            <h4>Respect For Privacy</h4>
+            <p>A privacy-friendly public record search is not an oxymoron. <a href="#">Learn how we do it.</a></p>
 
-          <a href="#" class="btn btn-primary">Learn About Us</a>
+            <h4>Tons of Records. One Report</h4>
+            <p>The quick &amp; easy way to find contact info, personal details and much more.</p>
+
+            <a href="#" class="btn btn-primary">Learn About Us</a>
+          </div>
+          <div class="col-sm-5 col-md-6 hidden-xs">
+            <p class="text-secondary">This is what a report looks like:</p>
+          </div>
         </div>
-        <div class="col-sm-5 col-md-6 hidden-xs">
-          <img src="img/report.png" class="img-responsive img-report" alt="report" />
-        </div>
+
       </div>
     </section>
 
-    <section class="primary section container" id="what-is">
-      <h2 class="section-title">What is <img class="img-logo" src="img/logo_section.png" />?</h2>
-      <p class="section-sub-title">PeopleLooker is a simple website that allows you to learn about people. We have records about ages, addresses, email addresses, phone numbers, criminal records and so much more. Try searching today. It's easy!</p>
+    <section class="background-primary text-centered content-section" id="pl-what">
+      <div class="container">
 
-      <div class="section-images">
-        <img class="img-inline" src="img/section_image01.png" />
-        <img class="img-inline" src="img/section_image02.png" />
-        <img class="img-inline" src="img/section_image03.png" />
-        <img class="img-inline" src="img/section_image04.png" />
-        <img class="img-inline" src="img/section_image05.png" />
+        <h2 class="section-title">What is <img class="img-logo" src="img/logo_primary_section.png" />?</h2>
+        <p class="section-sub-title">PeopleLooker is a simple website that allows you to learn about people. We have records about ages, addresses, email addresses, phone numbers, criminal records and so much more. Try searching today. It's easy!</p>
+
+        <div class="section-images">
+          <img class="img-inline" src="img/section_image01.png" />
+          <img class="img-inline" src="img/section_image02.png" />
+          <img class="img-inline" src="img/section_image03.png" />
+          <img class="img-inline" src="img/section_image04.png" />
+          <img class="img-inline" src="img/section_image05.png" />
+        </div>
+
       </div>
     </section>
 
-    <section class="section container" id="cta">
-      <h2 class="section-title">What are you waiting for?</h2>
-      <button type="button" class="btn btn-secondary btn-centered" id="scrollTop">Search Someone</button>
+    <section class="text-centered content-section" id="pl-cta">
+      <div class="container">
+
+        <h2 class="section-title">What are you waiting for?</h2>
+        <button type="button" class="btn btn-secondary btn-centered" id="scrollTop">Search Someone</button>
+
+      </div>
     </section>
 
-    <footer class="footer container" id="footer">
-      <div class="row">
-        <div class="col-sm-3">
-          <h5 class="footer-column-title">About Us</h5>
-          <a class="footer-column-link" href="#">About PL</a>
-          <a class="footer-column-link" href="#">Careers</a>
-          <a class="footer-column-link" href="#">Leadership</a>
-        </div>
-        <div class="col-sm-3">
-          <h5 class="footer-column-title">Help</h5>
-          <a class="footer-column-link" href="#">FAQ</a>
-          <a class="footer-column-link" href="#">Contact Us</a>
-          <a class="footer-column-link" href="#">Remove My Info</a>
-        </div>
-        <div class="col-sm-6">
-          <blockquote class="footer-quote">We pride ourselves on offering friendly and helpful support!</blockquote>
-          <a class="phone-link" href="tel:1-888-579-5910">1-888-579-5910</a>
-          <a class="email-link" href="mailto:support@peoplelooker.com"></a>
-          <p class="hours-info">Monday - Friday: 8 am - 10 pm est</p>
-          <p class="hours-info">Saturday - SUnday: 10 am - 8 pm est</p>
-        </div>
-      </div>
+    <footer class="footer" id="pl-footer">
+      <div class="container">
 
-      <p class="disclaimer">
-        Disclaimer: PeopleLooker's mission is to give people easy and affordable access to public record information. PeopleLooker does not provide private investigator services, and is not a consumer reporting agency as defined by the Fair Credit Report Act
-        because the information provided by PeopleLooker is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses of
-        PeopleLooker, please review our <a href="#">“Do’s &amp; Don’ts”</a> and our <a href="#">Terms &amp; Conditions</a>.
-      </p>
+        <div class="row">
+          <div class="col-sm-3">
+            <h5 class="footer-column-title">About Us</h5>
+            <a class="footer-column-link" href="#">About PL</a>
+            <a class="footer-column-link" href="#">Careers</a>
+            <a class="footer-column-link" href="#">Leadership</a>
+          </div>
+          <div class="col-sm-3">
+            <h5 class="footer-column-title">Help</h5>
+            <a class="footer-column-link" href="#">FAQ</a>
+            <a class="footer-column-link" href="#">Contact Us</a>
+            <a class="footer-column-link" href="#">Remove My Info</a>
+          </div>
+          <div class="col-sm-6">
+            <blockquote class="footer-quote">We pride ourselves on offering friendly and helpful support!</blockquote>
+            <a class="phone-link" href="tel:1-888-579-5910">1-888-579-5910</a>
+            <a class="email-link" href="mailto:support@peoplelooker.com"></a>
+            <p class="hours-info">Monday - Friday: 8 am - 10 pm est</p>
+            <p class="hours-info">Saturday - SUnday: 10 am - 8 pm est</p>
+          </div>
+        </div>
 
-      <div class="row">
-        <div class="col-sm-6">
-          <p class="copyright">©2016 . <a href="//www.peoplelooker.com">PeopleLooker</a> . All Rights Reserved</p>
+        <p class="disclaimer">
+          Disclaimer: PeopleLooker's mission is to give people easy and affordable access to public record information. PeopleLooker does not provide private investigator services, and is not a consumer reporting agency as defined by the Fair Credit Report Act
+          because the information provided by PeopleLooker is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses
+          of PeopleLooker, please review our <a href="#">“Do’s &amp; Don’ts”</a> and our <a href="#">Terms &amp; Conditions</a>.
+        </p>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="copyright">©2016 . <a href="//www.peoplelooker.com">PeopleLooker</a> . All Rights Reserved</p>
+          </div>
+          <div class="col-sm-6">
+            <a href="#">Terms &amp; Conditions</a> .
+            <a href="#">Privacy Policy</a>
+          </div>
         </div>
-        <div class="col-sm-6">
-          <a href="#">Terms &amp; Conditions</a> .
-          <a href="#">Privacy Policy</a>
-        </div>
+
       </div>
     </footer>
   </main>

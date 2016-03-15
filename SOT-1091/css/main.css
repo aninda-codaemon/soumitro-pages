@@ -1,3 +1,35 @@
-body {
-  font-family: 'Karla', 'Helvetica', Arial, sans-serif;
+/* header */
+
+.header {
+
+}
+
+/* navbar */
+
+.navbar .navbar-toggle {
+  margin: 15px 0;
+}
+
+.navbar .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+
+/* header-hero */
+
+.header-hero .img-logo {
+  display: block;
+  width: 80px;
+  margin: 15px auto;
+}
+
+/* content */
+
+.content-section {
+
+}
+
+/* footer */
+
+.footer {
+  background-color: #ccf4ef;
 }

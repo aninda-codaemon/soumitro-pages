@@ -1,0 +1,25 @@
+/* text helpers */
+
+.text-primary {
+  color: #33d4c0;
+}
+
+.text-secondary {
+  color: #ef2742;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+/* background helpers */
+
+.background-primary {
+  background-color: #33d4c0;
+  color: #fff;
+}
+
+.background-secondary {
+  background-color: #ef2742;
+  color: #fff;
+}
