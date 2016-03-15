@@ -45,7 +45,17 @@
 /* content */
 
 .content-section {
+  padding: 40px 0;
+}
 
+.content-section .section-title {
+  margin: 40px auto;
+  color: #33d4c0;
+  text-align: center;
+}
+
+.content-section.background-primary .section-title {
+  color: #fff;
 }
 
 /* footer */

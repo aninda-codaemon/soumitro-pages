@@ -8,6 +8,7 @@ textarea, input, select,
 label, button {
   font-size: 16px;
   font-weight: normal;
+  letter-spacing: -0.3px;
 }
 
 @media (min-width: 480px) {
@@ -64,6 +65,7 @@ h1, h2, h3, h4, h5, h6,
 th, figcaption, button {
   font-weight: bold;
   line-height: 1;
+  letter-spacing: -0.3px;
 }
 
 h1 {
