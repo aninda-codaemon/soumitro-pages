@@ -1,11 +1,16 @@
 /* text helpers */
 
 .text-primary {
-  color: #33d4c0;
+  color: #33d4c0 !important;
 }
 
 .text-secondary {
-  color: #ef2742;
+  color: #ef2742 !important;
+  font-weight: bold;
+}
+
+.text-info {
+  color: #24c1db !important;
 }
 
 .text-centered {
