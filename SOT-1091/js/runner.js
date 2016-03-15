@@ -95,7 +95,7 @@
   // Back To Top
   $(".scrollTop").click(function () {
     $('html, body').animate({
-      scrollTop: $(".header-hero").offset().top
+      scrollTop: $(".header-search").offset().top
     }, 500);
   });
 

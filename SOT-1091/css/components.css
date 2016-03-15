@@ -65,6 +65,10 @@
     background-color: #ccf4ef;
 }
 
+.footer .container {
+    max-width: 992px;
+}
+
 .footer p {
     margin-bottom: 5px;
 }
@@ -85,6 +89,14 @@
 
 .footer .social-icons {
     margin-top: 70px;
+}
+
+.footer .social-icons .img-icon {
+    opacity: 0.75;
+}
+
+.footer .social-icons .img-icon:hover {
+    opacity: 1;
 }
 
 .footer .disclaimer,
