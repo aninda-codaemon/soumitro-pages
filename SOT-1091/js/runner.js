@@ -21,12 +21,12 @@
   try {
     localStorage.test = 2;
   } catch (e) {
-    trackNL("Safari Private Browsing");
+    trackNL('Safari Private Browsing');
   }
 
   var BrowserDetect = {
     init: function () {
-      this.browser = this.searchString(this.dataBrowser) || "Other";
+      this.browser = this.searchString(this.dataBrowser) || 'Other';
       this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "Unknown";
     },
     searchString: function (data) {
@@ -45,8 +45,8 @@
         return;
       }
 
-      var rv = dataString.indexOf("rv:");
-      if (this.versionSearchString === "Trident" && rv !== -1) {
+      var rv = dataString.indexOf('rv:');
+      if (this.versionSearchString === 'Trident' && rv !== -1) {
         return parseFloat(dataString.substring(rv + 3));
       } else {
         return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
@@ -56,38 +56,38 @@
     dataBrowser: [
       {
         string: navigator.userAgent,
-        subString: "Edge",
-        identity: "MS Edge"
+        subString: 'Edge',
+        identity: 'MS Edge'
       },
       {
         string: navigator.userAgent,
-        subString: "Chrome",
-        identity: "Chrome"
+        subString: 'Chrome',
+        identity: 'Chrome'
       },
       {
         string: navigator.userAgent,
-        subString: "MSIE",
-        identity: "Explorer"
+        subString: 'MSIE',
+        identity: 'Explorer'
       },
       {
         string: navigator.userAgent,
-        subString: "Trident",
-        identity: "Explorer"
+        subString: 'Trident',
+        identity: 'Explorer'
       },
       {
         string: navigator.userAgent,
-        subString: "Firefox",
-        identity: "Firefox"
+        subString: 'Firefox',
+        identity: 'Firefox'
       },
       {
         string: navigator.userAgent,
-        subString: "Safari",
-        identity: "Safari"
+        subString: 'Safari',
+        identity: 'Safari'
       },
       {
         string: navigator.userAgent,
-        subString: "Opera",
-        identity: "Opera"
+        subString: 'Opera',
+        identity: 'Opera'
       }
         ]
   };
@@ -182,8 +182,8 @@
 
     _.forEach($dynamicElems, function (elem) {
       var $elem = $(elem),
-        $defaults = $elem.find("[data-bv-ref=default]");
-      $target = $elem.find("[data-bv-ref=" + kw + "]");
+        $defaults = $elem.find('[data-bv-ref=default]');
+      $target = $elem.find('[data-bv-ref=' + kw + ']');
       if (!$target || $target.length === 0) {
         $defaults.show();
       } else {
@@ -194,7 +194,7 @@
   };
 
   var show = function () {
-    $("body").removeClass("hide");
+    $('body').removeClass('hide');
   };
 
   var decodeSearchArgs = function (keywordString) {
@@ -228,8 +228,6 @@
       $('#nav-icon-closed').hide();
       $('#nav-icon-open').show();
     });
-    //mask for phone input
-    $("#phone").mask('(000) 000-0000');
   };
 
   try {
