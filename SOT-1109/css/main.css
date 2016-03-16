@@ -6,6 +6,13 @@ body {
   height: 100%;
 }
 
+/* helpers */
+
+.text-secondary {
+  color: #ef2742 !important;
+  font-weight: bold;
+}
+
 /* navbar */
 
 .navbar.navbar-default {
@@ -24,9 +31,11 @@ body {
   background-color: #fff;
 }
 
+/* main-wrap */
+
 #main-wrap {
   min-height: 100%;
-  margin-bottom: -231px; /* equal to footer height */
+  margin-bottom: -360px; /* equal to footer height */
   padding: 0;
   padding-bottom: 40px;
   background: #fff;
@@ -35,7 +44,12 @@ body {
 #main-wrap:after {
   content: "";
   display: block;
-  height: 231px;
+  height: 360px;
+}
+
+.sub-title {
+  margin-bottom: 40px;
+  color: #ABABAB;
 }
 
 /* progress bar */
@@ -47,137 +61,123 @@ body {
   background: #f5f5f5;
 }
 
-.progress {
+.progress-wrap .progress {
   height: 60px;
   margin-bottom: 0;
+  -webkit-box-shadow: 0 4px 0 0 #C6C6C6;
+  -moz-box-shadow: 0 4px 0 0 #C6C6C6;
+  -ms-box-shadow: 0 4px 0 0 #C6C6C6;
+  box-shadow: 0 4px 0 0 #C6C6C6;
 }
 
-.progress span.progress-text {
-  font: 18px 'Open Sans', Helvetica, Arial, Geneva, sans-serif;
+.progress-wrap .progress .progress-bar {
+  background-color: #ef2742;
+}
+
+.progress-wrap .progress .progress-text {
+  font-size: 20px;
   font-weight: bold;
   line-height: 60px;
-
   position: static;
-
   display: block;
-
   margin-right: 8px;
-
   text-align: right;
-
   color: #fff;
 }
 
-.progress span.progress-text-outer {
-  font: 18px 'Open Sans', Helvetica, Arial, Geneva, sans-serif;
+.progress-wrap .progress .progress-text-outer {
+  font-size: 20px;
   font-weight: bold;
   line-height: 60px;
-
   position: static;
-
   display: block;
-
   margin-right: 8px;
-
   text-align: left;
-
-  color: #428bca;
+  color: #ef2742;
 }
+
+/* search-continue */
 
 #search-continue {
   display: none;
-
-  min-height: 60px;
-  margin: 20px 0 25px;
+  margin: 25px 0;
 }
 
-.copy {
-  font-family: Georgia, serif;
-}
+/* footer */
 
-.shadow {
-  height: 50px;
-  margin-bottom: 25px;
-
-  background-image: url('../img/shadow-up.png');
-  background-repeat: no-repeat;
-  background-position: center bottom;
-}
-
-.test-wrap {
-  margin-top: 30px;
-}
-
-.pub-wrap {
-  overflow: hidden;
-
-  margin-top: 30px;
-  margin-bottom: 20px;
-  padding: 15px 30px;
-
-  border-radius: 4px;
-  background-color: #f5f5f5;
-  -webkit-box-shadow: 0 2px 1px 0 rgba(50, 50, 50, 0.33);
-     -moz-box-shadow: 0 2px 1px 0 rgba(50, 50, 50, 0.33);
-          box-shadow: 0 2px 1px 0 rgba(50, 50, 50, 0.33);
-}
-
-.pub-wrap li {
-  padding: 0;
-
-  list-style-type: none;
-}
-
-
-#input-state {
-  font-family: 'Open Sans', Helvetica, Arial, Geneva, sans-serif;
-}
-#input-state .modal-content {
-  border-radius: 0;
-}
-#input-state .btn-success {
-  font-weight: bold;
-
-  border: none;
-  border-bottom: 3px solid #6dac45;
-  background: #6dac45;
-}
-#input-state .btn-success:hover,
-#input-state .btn-success:focus {
-  border-bottom: 3px solid #398439;
-  background: #72c83c;
-}
-
-footer {
-  font-size: 14px;
-  
-  height: 231px;
+.footer {
+  height: 360px;
   padding-top: 30px;
   padding-bottom: 30px;
-
-  color: #777;
-  background-color: #121212;
+  background-color: #ccf4ef;
+  color: #333;
+  text-align: center;
 }
-footer p.small {
+
+.footer p {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.footer a {
+  font-size: 16px;
+}
+
+.footer .disclaimer,
+.footer .disclaimer a {
   font-size: 14px;
-  line-height: 165%;
 }
-footer .support {
-  padding-left: 20px;
 
-  color: #a5a5a5;
-  border-left: 1px solid #777;
+.footer .footer-column-title {
+  margin-top: 0;
 }
-footer .support-quote {
-  margin-bottom: 15px;
+
+.footer .footer-quote {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  border: 0;
+  font-size: 16px;
 }
-footer .carla {
-  margin-bottom: 0;
-  padding-top: 5px;
+
+.footer-navbar {
+  margin-top: 80px;
+  text-align: center;
 }
-.carla-img {
-  margin-right: 15px;
+
+.footer-navbar .text-right {
+  text-align: center;
 }
+
+.footer-navbar p,
+.footer-navbar a {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    text-align: left;
+  }
+
+  .footer .footer-quote {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .footer-navbar {
+    text-align: left;
+  }
+
+  .footer-navbar .text-right {
+    text-align: right;
+  }
+}
+
+
+
+
+
 
 
 @media(max-width:992px) {

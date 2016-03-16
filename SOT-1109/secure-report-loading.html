@@ -6,8 +6,9 @@
     <title>Loading Your Search Results - PeopleLooker.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
 
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-    <link href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet'
+          type='text/css'>
 
     <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="css/typography.css" rel="stylesheet">
@@ -52,34 +53,32 @@
 
     <div class="container">
 
-        <div class="top-header">
-            <h1 class="text-center" id="header-message" data-fr-bind="query">
-                Looking for people named {{nameize fn}} {{nameize ln}} {{#validLocation city}}in {{city}}{{#validLocation state}},{{/validLocation}} {{/validLocation}}{{#validLocation state}}{{#unless city}}in {{/unless}}{{uppercase state}}{{/validLocation}}
-            </h1>
+        <h1 class="title" id="header-message" data-fr-bind="query">
+            Looking for people named <span class="text-secondary">{{nameize fn}} {{nameize ln}}</span> {{#validLocation
+            city}}in
+            {{city}}{{#validLocation state}},{{/validLocation}} {{/validLocation}}{{#validLocation state}}{{#unless
+            city}}in {{/unless}}{{uppercase state}}{{/validLocation}}
+        </h1>
 
-            <h4 class="text-center"><strong>Please be patient while we check billions of public records...</strong></h4>
+        <h5 class="sub-title">Less than <span class="time-remaining-count">30</span> seconds remaining</h5>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="search-main-progress" class="progress-wrap">
-                        <div class="progress progress-striped">
-                            <div class="progress-bar bar" role="progressbar" aria-valuemin="5" aria-valuemax="100"
-                                 style="width: 1%">
-                      <span class="progress-text">
-                            <span class="progress-text-inner"></span>
-                      </span>
-                            </div>
-                    <span class="progress-text-outer">
-                            <span class="progress-text-outer"></span>
-                      </span>
-                        </div>
-                    </div>
-                    <div id="search-continue" class="text-center">
-                        <a href="<%= next_page %>" class="btn btn-lg btn-default btn-success">Continue to Results <span
-                                class="glyphicon glyphicon-chevron-right"></span></a>
-                    </div>
+        <div id="search-main-progress" class="progress-wrap">
+            <div class="progress progress-striped">
+                <div class="progress-bar bar" role="progressbar" aria-valuemin="5" aria-valuemax="100" style="width: 1%">
+                    <span class="progress-text">
+                        <span class="progress-text-inner"></span>
+                    </span>
                 </div>
+                <span class="progress-text-outer">
+                    <span class="progress-text-outer"></span>
+                </span>
             </div>
+        </div>
+
+        <div id="search-continue" class="text-center">
+            <a href="<%= next_page %>" class="btn btn-lg btn-default btn-success">
+                Continue to Results <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
         </div>
 
     </div>
@@ -189,40 +188,36 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4 col-sm-push-8">
-                <div class="support">
-                    <div class="support-quote">
-                        <img src="img/carla.png" class="pull-left carla-img">
-
-                        <p class="carla"><strong>Carla</strong></p>
-
-                        <p>Director of Customer Care</p>
-                    </div>
-                    <p>
-                  <span class="phone-number">
-                    <a href="tel:+1-888-579-5910">1-888-579-5910</a>
-                  </span>
-                        <br>
-                  <span class="email-address">
-                      <a href="mailto:support@peoplelooker.com">support@peoplelooker.com</a>
-                  </span>
-                        <br>
-                        <span class="block-sm">Monday - Friday</span>
-                        8 am - 10 pm est
-                        <br>
-                        <span class="block-sm">Saturday - Sunday</span>
-                        10 am - 8 pm est
-                    </p>
-                </div>
+                <h6 class="footer-column-title">Customer Service</h6>
+                <blockquote class="footer-quote text-secondary">"We pride ourselves on offering friendly and helpful support!"</blockquote>
+                <ul class="list-unstyled">
+                    <li><a class="footer-column-link" href="tel:1-888-579-5910">1-888-579-5910</a></li>
+                    <li><a class="footer-column-link" href="mailto:support@peoplelooker.com">support@peoplelooker.com</a></li>
+                    <li><p>Monday - Friday: 8am - 10pm est</p></li>
+                    <li><p>Saturday - Sunday: 10am - 8pm est</p></li>
+                </ul>
             </div>
             <div class="col-sm-8 col-sm-pull-4">
-                <p class="small">Disclaimer: While we are constantly updating and refining our database and service, we
+                <p class="disclaimer">
+                    Disclaimer: While we are constantly updating and refining our database and service, we
                     do not represent or warrant that the results provided will be 100% accurate and up to date.
                     PeopleLooker is a database of publicly available sources of information aggregated for your
                     convenience. PeopleLooker does not provide private investigator services and this information should
                     not be used for employment, tenant screening, or any FCRA related purposes. PeopleLooker does not
                     make any representation or warranty as to the character or the integrity of the person, business, or
                     entity that is the subject of any search inquiry processed through our service. None of the
-                    above-featured companies either sponsor, endorse, or are in anyway affiliated with PeopleLooker.</p>
+                    above-featured companies either sponsor, endorse, or are in anyway affiliated with PeopleLooker.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-navbar row">
+            <div class="col-sm-6">
+                <p class="copyright">©2016 | <a class="text-info" href="//www.peoplelooker.com">PeopleLooker.com</a> | All Rights Reserved</p>
+            </div>
+            <div class="col-sm-6 text-right">
+                <a class="text-info" href="#">Privacy Policy</a> |
+                <a class="text-info" href="#">Terms &amp; Conditions</a>
             </div>
         </div>
     </div>
