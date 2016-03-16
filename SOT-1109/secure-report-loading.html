@@ -81,6 +81,32 @@
             </a>
         </div>
 
+        <div class="steps-images row" data-fr-bind="query">
+            <div class="col-xs-6 col-sm-3">
+                <img class="img-step img-responsive" src="img/step01.png" />
+                <h6 class="step-title">First</h6>
+                <p class="step-desc">We look up all people named {{#if query}}{{nameize fn}} {{nameize ln}}{{else}}after your subject{{/if}}</p>
+                <img class="img-arrow img-responsive" src="img/arrow_over.png" />
+            </div>
+            <div class="col-xs-6 col-sm-3">
+                <img class="img-step img-responsive" src="img/step02.png" />
+                <h6 class="step-title">Next</h6>
+                <p class="step-desc">You pick which {{#if query}}{{nameize fn}} {{nameize ln}}{{else}} subject{{/if}} you're looking for.</p>
+                <img class="img-arrow arrow-under img-responsive hidden-xs" src="img/arrow_under.png" />
+            </div>
+            <div class="col-xs-6 col-sm-3">
+                <img class="img-step img-responsive" src="img/step03.png" />
+                <h6 class="step-title">Then</h6>
+                <p class="step-desc">We search our database for info on {{#if query}}{{nameize fn}} {{nameize ln}}{{else}} your subject{{/if}}.</p>
+                <img class="img-arrow img-responsive" src="img/arrow_over.png" />
+            </div>
+            <div class="col-xs-6 col-sm-3">
+                <img class="img-step img-responsive" src="img/step04.png" />
+                <h6 class="step-title">Finally</h6>
+                <p class="step-desc">And finally you get your report!</p>
+            </div>
+        </div>
+
     </div>
 </main>
 
