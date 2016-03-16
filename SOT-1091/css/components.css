@@ -63,6 +63,7 @@
 
 .footer {
     background-color: #ccf4ef;
+    text-align: center;
 }
 
 .footer .container {
@@ -119,6 +120,15 @@
 }
 
 @media (min-width: 768px) {
+    .footer {
+        text-align: left;
+    }
+
+    .footer .social-icons {
+        position: relative;
+        left: -111%;
+    }
+
     .footer-navbar {
         text-align: left;
     }
