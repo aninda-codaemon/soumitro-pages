@@ -93,9 +93,9 @@
   };
 
   // Back To Top
-  $(".scrollTop").click(function () {
+  $('#scrollTop').click(function () {
     $('html, body').animate({
-      scrollTop: $(".header-search").offset().top
+      scrollTop: $('.header').offset().top
     }, 500);
   });
 
