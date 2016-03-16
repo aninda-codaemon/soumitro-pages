@@ -81,6 +81,13 @@
           var percent = Math.floor(step);
           $('.progress-text-inner').html(percent.toString() + "%");
           $('.progress-text-outer').html("&nbsp; " + percent.toString() + "%");
+
+          var percentRemain = 100 - percent.toString(),
+              durationRemain = PROGRESS_DURATION * percentRemain / 100,
+              humanizeDurationRemain = Math.floor((durationRemain / 1000) % 60);
+
+          $('.time-remaining-count').html(humanizeDurationRemain);
+
           if (percent === 50) {
             $('.progress-text-outer').fadeOut();
             $('.progress-text-inner').fadeIn();
