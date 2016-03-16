@@ -1,9 +1,5 @@
 /* header-hero */
 
-.header-hero {
-  padding-bottom: 30px;
-}
-
 .header-hero .img-logo {
   display: block;
   width: 80px;
@@ -36,6 +32,10 @@
 }
 
 @media (min-width: 768px) {
+  .header-hero {
+    padding-bottom: 30px;
+  }
+
   .header-hero .img-logo {
     width: 100px;
   }
@@ -107,10 +107,6 @@
 @media (min-width: 768px) {
   .content-section .img-logo {
     width: 175px;
-  }
-
-  .content-section#pl-reasons .title {
-    margin-bottom: 20px;
   }
 }
 
