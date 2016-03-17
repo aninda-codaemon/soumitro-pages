@@ -134,7 +134,7 @@
       $('#header-message').html('Searching for your Subject');
       $('.subject-name').html('after your subject');
       $.when(progress).done(function () {
-        //goToNextPage();
+        goToNextPage();
       });
       return;
     }
