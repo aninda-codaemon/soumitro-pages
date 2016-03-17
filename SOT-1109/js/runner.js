@@ -133,7 +133,7 @@
       amplify.store('teaserData', null);
       $("#header-message").html("Searching for your Subject");
       $.when(progress).done(function () {
-        //goToNextPage();
+        goToNextPage();
       });
       return;
     }
@@ -184,7 +184,7 @@
 
     $.when(progress).done(function () {
       if (userThrottled) {
-        //goToNextPage();
+        goToNextPage();
       }
 
       window.setTimeout(function() {
@@ -241,7 +241,7 @@
             age: searchData.age || ''
           });
 
-          //goToNextPage();
+          goToNextPage();
 
         }
       });
