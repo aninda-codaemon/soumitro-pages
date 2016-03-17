@@ -80,101 +80,93 @@
         <div class="header-search collapse navbar-collapse" id="search_bar">
             <div class="container">
 
-                <form class="header-search-bar bv-search" id="search-form" data-fr-bind="searchData"
-                      data-fr-store="searchData">
+                <form class="header-search-bar pl-search" id="search-form" data-fr-bind="searchData" data-fr-store="searchData">
                     <div class="row">
-                        <div class="col-sm-10">
-                            <div class="row">
-                                <div class="col-sm-3 col-search-bar">
-                                    <label for="fn" class="sr-only">First Name</label>
-                                    <input name="fn" id="fn" type="text" class="form-control" placeholder="First Name"
-                                           required value="{{nameize fn}}"/>
-                                </div>
-                                <div class="col-sm-1 col-search-bar hidden-xs">
-                                    <label for="mi" class="sr-only">Middle Initial</label>
-                                    <input name="mi" id="mi" type="text" class="form-control" placeholder="MI"
-                                           value="{{uppercase mi}}" maxlength="1"/>
-                                </div>
-                                <div class="col-sm-3 col-search-bar">
-                                    <label for="ln" class="sr-only">Last Name</label>
-                                    <input name="ln" id="ln" type="text" class="form-control" placeholder="Last Name"
-                                           required value="{{nameize ln}}"/>
-                                </div>
-                                <div class="col-sm-2 col-search-bar hidden-xs">
-                                    <label for="city" class="sr-only">City</label>
-                                    <input name="city" id="city" type="text" class="form-control" placeholder="City"
-                                           value="{{city}}"/>
-                                </div>
-                                <div class="col-sm-2 col-search-bar">
-                                    <label for="search-bar-state" class="sr-only">State</label>
-                                    <select class="custom-select form-control" id="search-bar-state" name="state"
-                                            value="{{state}}">
-                                        <option value="All">All States</option>
-                                        <option value="AL">Alabama</option>
-                                        <option value="AK">Alaska</option>
-                                        <option value="AZ">Arizona</option>
-                                        <option value="AR">Arkansas</option>
-                                        <option value="CA">California</option>
-                                        <option value="CO">Colorado</option>
-                                        <option value="CT">Connecticut</option>
-                                        <option value="DE">Delaware</option>
-                                        <option value="DC">District Of Columbia</option>
-                                        <option value="FL">Florida</option>
-                                        <option value="GA">Georgia</option>
-                                        <option value="HI">Hawaii</option>
-                                        <option value="ID">Idaho</option>
-                                        <option value="IL">Illinois</option>
-                                        <option value="IN">Indiana</option>
-                                        <option value="IA">Iowa</option>
-                                        <option value="KS">Kansas</option>
-                                        <option value="KY">Kentucky</option>
-                                        <option value="LA">Louisiana</option>
-                                        <option value="ME">Maine</option>
-                                        <option value="MD">Maryland</option>
-                                        <option value="MA">Massachusetts</option>
-                                        <option value="MI">Michigan</option>
-                                        <option value="MN">Minnesota</option>
-                                        <option value="MS">Mississippi</option>
-                                        <option value="MO">Missouri</option>
-                                        <option value="MT">Montana</option>
-                                        <option value="NE">Nebraska</option>
-                                        <option value="NV">Nevada</option>
-                                        <option value="NH">New Hampshire</option>
-                                        <option value="NJ">New Jersey</option>
-                                        <option value="NM">New Mexico</option>
-                                        <option value="NY">New York</option>
-                                        <option value="NC">North Carolina</option>
-                                        <option value="ND">North Dakota</option>
-                                        <option value="OH">Ohio</option>
-                                        <option value="OK">Oklahoma</option>
-                                        <option value="OR">Oregon</option>
-                                        <option value="PA">Pennsylvania</option>
-                                        <option value="RI">Rhode Island</option>
-                                        <option value="SC">South Carolina</option>
-                                        <option value="SD">South Dakota</option>
-                                        <option value="TN">Tennessee</option>
-                                        <option value="TX">Texas</option>
-                                        <option value="UT">Utah</option>
-                                        <option value="VT">Vermont</option>
-                                        <option value="VA">Virginia</option>
-                                        <option value="WA">Washington</option>
-                                        <option value="WV">West Virginia</option>
-                                        <option value="WI">Wisconsin</option>
-                                        <option value="WY">Wyoming</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-1 col-search-bar hidden-xs">
-                                    <label for="Age" class="sr-only">Age</label>
-                                    <input name="age" id="age" type="text" maxlength="3" class="form-control"
-                                           placeholder="Age" value="{{age}}"/>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="search-filter row clearfix"></div>
-                            </div>
+                        <div class="col-sm-2 form-group">
+                            <label for="fn" class="sr-only">First Name</label>
+                            <input name="fn" id="fn" type="text" class="form-control input-lg" placeholder="First Name"
+                                   required value="{{nameize fn}}"/>
                         </div>
-                        <div class="col-sm-2">
-                            <input type="submit" class="main-btn" value="Search"/>
+                        <div class="col-sm-1 form-group hidden-xs">
+                            <label for="mi" class="sr-only">Middle Initial</label>
+                            <input name="mi" id="mi" type="text" class="form-control input-lg" placeholder="MI"
+                                   value="{{uppercase mi}}" maxlength="1"/>
+                        </div>
+                        <div class="col-sm-2 form-group">
+                            <label for="ln" class="sr-only">Last Name</label>
+                            <input name="ln" id="ln" type="text" class="form-control input-lg" placeholder="Last Name"
+                                   required value="{{nameize ln}}"/>
+                        </div>
+                        <div class="col-sm-2 form-group hidden-xs">
+                            <label for="city" class="sr-only">City</label>
+                            <input name="city" id="city" type="text" class="form-control input-lg" placeholder="City"
+                                   value="{{city}}"/>
+                        </div>
+                        <div class="col-sm-2 form-group">
+                            <label for="search-bar-state" class="sr-only">State</label>
+                            <select class="form-control input-lg" id="search-bar-state" name="state"
+                                    value="{{state}}">
+                                <option value="All">All States</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="DC">District Of Columbia</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1 form-group hidden-xs">
+                            <label for="Age" class="sr-only">Age</label>
+                            <input name="age" id="age" type="text" maxlength="3" class="form-control input-lg"
+                                   placeholder="Age" value="{{age}}"/>
+                        </div>
+                        <div class="col-sm-2 form-group">
+                            <button type="submit" class="btn btn-lg btn-block btn-secondary">Search</button>
                         </div>
                     </div>
                 </form>
@@ -183,9 +175,6 @@
 
     </header>
 
-    <!-- ============== -->
-    <!-- = DATA PANEL = -->
-    <!-- ============== -->
     <div id="data-panel" data-fr-bind="searchData teaserData">
         <div id="top-banner" class="container section-alt section-min top-section">
             <div class="row section-header">
@@ -279,13 +268,8 @@
                 </div>
             </div>
         </div>
-        <!-- #results-wrapper -->
     </div>
-    <!--#data-panel-->
 
-    <!-- ============== -->
-    <!-- = NO RESULTS = -->
-    <!-- ============== -->
     <div id="no-results">
         <div class="container-fluid top-section section-alt section-min">
             <div class="row section-header">
@@ -295,14 +279,14 @@
         <div class="container-fluid section-min section-light">
             <div class="row no-results-content">
                 <div class="col-sm-4 no-results-icon">
-                    <img src="img/no-results.png"/>
+                    <img src="img/binoculars.png"/>
                 </div>
                 <div class="col-sm-8 no-results-text">
                     <h3 class="text-info">Try one of these tips to help improve your results:</h3>
                     <ul class="results-hints list-unstyled">
-                        <li><i class="icon-yes-check"></i>Expand your search to include all states.</li>
-                        <li><i class="icon-yes-check"></i>Double check your spelling.</li>
-                        <li><i class="icon-yes-check"></i>Try using their maiden name.</li>
+                        <li><i class="fa fa-check-circle icon"></i> Expand your search to include all states.</li>
+                        <li><i class="fa fa-check-circle icon"></i> Double check your spelling.</li>
+                        <li><i class="fa fa-check-circle icon"></i> Try using their maiden name.</li>
                     </ul>
                 </div>
                 <!--no-results-text-->
@@ -403,11 +387,7 @@
             </div>
         </div>
     </div>
-    <!-- /#no-results -->
 
-    <!-- ============================= -->
-    <!-- = RESULTS SEARCHING WRAPPER = -->
-    <!-- ============================= -->
     <div id="results-wrapper-searching" class="container-fluid section-min section-light">
         <div class="row section-header">
             <p class="text-center">
@@ -422,7 +402,6 @@
             <p class="text-center">Results should load shortly</p>
         </div>
     </div>
-    <!-- #results-wrapper-searching -->
 
     <footer class="footer" id="pl-footer">
         <div class="container">
