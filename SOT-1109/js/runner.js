@@ -71,6 +71,8 @@
       modalClosed = true;
     });
 
+    var timeRemaining = 50;
+
     $('.progress-text-inner').hide();
     var progress = $bar.animate({
         width: "100%"
@@ -83,10 +85,9 @@
           $('.progress-text-outer').html("&nbsp; " + percent.toString() + "%");
 
           var percentRemain = 100 - percent.toString(),
-              durationRemain = PROGRESS_DURATION * percentRemain / 100,
-              humanizeDurationRemain = Math.floor((durationRemain / 1000) % 60);
+              durationRemain = PROGRESS_DURATION * percentRemain / 100;
 
-          $('.time-remaining-count').html(humanizeDurationRemain);
+          timeRemaining = Math.floor((durationRemain / 1000) % 60);
 
           if (percent === 50) {
             $('.progress-text-outer').fadeOut();
@@ -110,6 +111,14 @@
         }
     });
 
+    // set initial time remaining
+    $('.time-remaining-count').html(timeRemaining);
+
+    // update time remaining every 15 seconds
+    setInterval(function(){
+      $('.time-remaining-count').html(timeRemaining);
+    }, 15000);
+
     var validSearchData = function (searchData) {
       if (!searchData) return false;
       var curlyRegex = /{.*?}/,
@@ -124,7 +133,7 @@
       amplify.store('teaserData', null);
       $("#header-message").html("Searching for your Subject");
       $.when(progress).done(function () {
-        goToNextPage();
+        //goToNextPage();
       });
       return;
     }
@@ -175,7 +184,7 @@
 
     $.when(progress).done(function () {
       if (userThrottled) {
-        goToNextPage();
+        //goToNextPage();
       }
 
       window.setTimeout(function() {
@@ -232,7 +241,7 @@
             age: searchData.age || ''
           });
 
-          goToNextPage();
+          //goToNextPage();
 
         }
       });

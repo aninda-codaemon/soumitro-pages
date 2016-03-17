@@ -96,17 +96,50 @@
 
 .content-section#pl-reasons p.text-secondary {
   margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.content-section#pl-what {
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+
+.content-section#pl-what .sub-title {
+  margin-bottom: 40px;
+}
+
+.content-section#pl-cta {
+  padding-top: 20px;
+  padding-bottom: 60px;
 }
 
 @media (min-width: 480px) {
   .content-section .img-logo {
     width: 165px;
   }
+
+  .content-section#pl-reasons .img-report-mobile {
+    width: 260px;
+  }
 }
 
 @media (min-width: 768px) {
   .content-section .img-logo {
     width: 175px;
+  }
+
+  .content-section#pl-reasons .reasons-container.text-center {
+    text-align: left;
+  }
+
+  .content-section#pl-what,
+  .content-section#pl-cta {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  .content-section#pl-what .sub-title {
+    margin-bottom: 80px;
   }
 }
 

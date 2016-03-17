@@ -10,6 +10,7 @@
 
 .navbar .navbar-header .navbar-brand {
     height: auto;
+    margin-left: 10px;
     padding: 15px;
     -webkit-box-shadow: 0 4px 1px -1px #38AC9E;
     -moz-box-shadow: 0 4px 1px -1px #38AC9E;
@@ -41,6 +42,10 @@
 
 @media (min-width: 768px) {
 
+    .navbar .navbar-header .navbar-brand {
+        margin-left: -5px;
+    }
+
     .navbar .navbar-text {
         text-align: left;
     }
@@ -56,6 +61,12 @@
     .navbar .navbar-btn.btn-default {
         margin-left: 4px;
         float: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar .navbar-header .navbar-brand {
+        margin-left: 0;
     }
 }
 
@@ -79,8 +90,8 @@
 }
 
 .footer .footer-column-title {
-    margin-top: 80px;
-    margin-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .footer .footer-column-link {
@@ -122,6 +133,11 @@
 @media (min-width: 768px) {
     .footer {
         text-align: left;
+    }
+
+    .footer .footer-column-title {
+        margin-top: 80px;
+        margin-bottom: 40px;
     }
 
     .footer .social-icons {

@@ -2,61 +2,63 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="content-type" content="text/html" />
-  <meta name="google-site-verification" content="VZZGPRY83YYAsGIDQuetAU3p7QvtcbbkEBD9RhdM6UE" />
-  <meta name="msvalidate.01" content="80A8CCCEE696E6B91D8EBC775D86A54A" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html"/>
+    <meta name="google-site-verification" content="VZZGPRY83YYAsGIDQuetAU3p7QvtcbbkEBD9RhdM6UE"/>
+    <meta name="msvalidate.01" content="80A8CCCEE696E6B91D8EBC775D86A54A"/>
 
-  <title>Online Background Checks | PeopleLooker</title>
-  <meta name="description" content="Find people online! Search for people by name, phone number, address and email. PeopleLooker is your ultimate background check answer.">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <title>Online Background Checks | PeopleLooker</title>
+    <meta name="description"
+          content="Find people online! Search for people by name, phone number, address and email. PeopleLooker is your ultimate background check answer.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
 
-  <!-- If user is logged in, do this -->
-  <script type="text/javascript">
-    function createCookie(name, value, days) {
-      if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        var expires = "; expires=" + date.toGMTString();
-      } else var expires = "";
-      document.cookie = name + "=" + value + expires + "; path=/";
-    }
+    <!-- If user is logged in, do this -->
+    <script type="text/javascript">
+        function createCookie(name, value, days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                var expires = "; expires=" + date.toGMTString();
+            } else var expires = "";
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
 
-    function readCookie(name) {
-      var nameEQ = name + "=";
-      var ca = document.cookie.split(';');
-      for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-      }
-      return null;
-    }
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
 
-    function eraseCookie(name) {
-      createCookie(name, "", -1);
-    }
+        function eraseCookie(name) {
+            createCookie(name, "", -1);
+        }
 
-    if (readCookie('loggedin') == 'true') {
-      window.location = '/accounts';
-    }
-  </script>
+        if (readCookie('loggedin') == 'true') {
+            window.location = '/accounts';
+        }
+    </script>
 
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
 
-  <!-- fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet'
+          type='text/css'>
 
-  <!-- styles -->
-  <link href="css/vendor/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="css/typography.css" rel="stylesheet" type="text/css" />
-  <link href="css/elements.css" rel="stylesheet" type="text/css" />
-  <link href="css/helpers.css" rel="stylesheet" type="text/css" />
-  <link href="css/components.css" rel="stylesheet" type="text/css" />
-  <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <!-- styles -->
+    <link href="css/vendor/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/typography.css" rel="stylesheet" type="text/css"/>
+    <link href="css/elements.css" rel="stylesheet" type="text/css"/>
+    <link href="css/helpers.css" rel="stylesheet" type="text/css"/>
+    <link href="css/components.css" rel="stylesheet" type="text/css"/>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
 
-  <script type="application/ld+json">
+    <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "Organization",
@@ -81,291 +83,320 @@
         "https://www.wikidata.org/wiki/Q16243673"
       ]
     }
-  </script>
 
-  <!--[if lt IE 9]>
-        <script src="js/html5shiv.min.js"></script>
-        <script src="js/respond.min.js"></script>
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
     <![endif]-->
 
 </head>
 
 <body>
 
-  <main class="pl layout-main">
+<main class="pl layout-main">
 
     <header class="header background-primary" id="pl-header">
 
-      <nav class="navbar navbar-static-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-3">
-              <div class="navbar-header">
-                <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a class="navbar-brand" href="/">
-                  <img class="img-logo" src="img/logo.png" />
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-9">
-              <div class="navbar-collapse collapse navbar-right">
-                <p class="navbar-text">Questions? 1-888-579-5910</p>
-                <a href="#" class="btn btn-transparent navbar-btn">Log In</a>
-                <a href="#" class="btn btn-default navbar-btn">Sign Up</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+        <nav class="navbar navbar-static-top">
+            <div class="container">
 
-      <div class="header-hero text-centered container">
-        <div class="row">
-          <div class="col-lg-10 col-lg-offset-1">
-
-            <img class="img-logo" src="img/binoculars.png" />
-            <h1 class="title">Search People. It's easy!</h1>
-
-            <form action="<%= next_page %>" id="header-search-people" class="header-search">
-              <div class="row">
-                <div class="col-sm-10">
-                  <div class="row">
-                    <div class="col-sm-4 form-group">
-                      <input type="text" name="fn" placeholder="First Name" id="fn" class="form-control input-lg first-input focus-me" autofocus>
-                    </div>
-                    <div class="col-sm-4 form-group">
-                      <input type="text" name="ln" placeholder="Last Name" id="ln" class="form-control input-lg" />
-                    </div>
-                    <div class="col-sm-4 form-group">
-                      <select name="state" id="state" class="form-control input-lg">
-                        <option value="All">State</option>
-                        <option value="AL">Alabama</option>
-                        <option value="AK">Alaska</option>
-                        <option value="AZ">Arizona</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="CA">California</option>
-                        <option value="CO">Colorado</option>
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="DC">District Of Columbia</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="ID">Idaho</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IN">Indiana</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI">Michigan</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="MT">Montana</option>
-                        <option value="NE">Nebraska</option>
-                        <option value="NV">Nevada</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="OH">Ohio</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="OR">Oregon</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="TX">Texas</option>
-                        <option value="UT">Utah</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WA">Washington</option>
-                        <option value="WV">West Virginia</option>
-                        <option value="WI">Wisconsin</option>
-                        <option value="WY">Wyoming</option>
-                      </select>
-                    </div>
-                  </div>
+                <div class="navbar-header">
+                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        <img class="img-logo" src="img/logo.png"/>
+                    </a>
                 </div>
-                <div class="col-sm-2 form-group">
-                  <button class="btn btn-block btn-lg btn-secondary btn-search" type="submit">Search</button>
+
+                <div class="navbar-collapse collapse navbar-right">
+                    <p class="navbar-text">Questions? 1-888-579-5910</p>
+                    <a href="#" class="btn btn-transparent navbar-btn">Log In</a>
+                    <a href="#" class="btn btn-default navbar-btn">Sign Up</a>
                 </div>
-              </div>
-            </form>
 
-            <h6 class="sub-title hidden-xs">Try searching a relative, neighbor, friend or even yourself!</h6>
-
-            <div class="header-mascots hidden-xs row">
-              <div class="col-sm-3 header-mascot">
-                <img class="img-mascot" src="img/mascot01.png" />
-                <p>Boyfriend</p>
-              </div>
-              <div class="col-sm-3 header-mascot">
-                <img class="img-mascot" src="img/mascot02.png" />
-                <p>Uncle</p>
-              </div>
-              <div class="col-sm-3 header-mascot">
-                <img class="img-mascot" src="img/mascot03.png" />
-                <p>Neighbor</p>
-              </div>
-              <div class="col-sm-3 header-mascot">
-                <img class="img-mascot" src="img/mascot04.png" />
-                <p>Friend</p>
-              </div>
             </div>
+        </nav>
 
-          </div>
+        <div class="header-hero text-centered container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+
+                    <img class="img-logo" src="img/binoculars.png"/>
+
+                    <h1 class="title">Search People. It's easy!</h1>
+
+                    <form action="<%= next_page %>" id="header-search-people" class="header-search">
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <div class="row">
+                                    <div class="col-sm-4 form-group">
+                                        <input type="text" name="fn" placeholder="First Name" id="fn"
+                                               class="form-control input-lg first-input focus-me" autofocus>
+                                    </div>
+                                    <div class="col-sm-4 form-group">
+                                        <input type="text" name="ln" placeholder="Last Name" id="ln"
+                                               class="form-control input-lg"/>
+                                    </div>
+                                    <div class="col-sm-4 form-group">
+                                        <select name="state" id="state" class="form-control input-lg">
+                                            <option value="All">State</option>
+                                            <option value="AL">Alabama</option>
+                                            <option value="AK">Alaska</option>
+                                            <option value="AZ">Arizona</option>
+                                            <option value="AR">Arkansas</option>
+                                            <option value="CA">California</option>
+                                            <option value="CO">Colorado</option>
+                                            <option value="CT">Connecticut</option>
+                                            <option value="DE">Delaware</option>
+                                            <option value="DC">District Of Columbia</option>
+                                            <option value="FL">Florida</option>
+                                            <option value="GA">Georgia</option>
+                                            <option value="HI">Hawaii</option>
+                                            <option value="ID">Idaho</option>
+                                            <option value="IL">Illinois</option>
+                                            <option value="IN">Indiana</option>
+                                            <option value="IA">Iowa</option>
+                                            <option value="KS">Kansas</option>
+                                            <option value="KY">Kentucky</option>
+                                            <option value="LA">Louisiana</option>
+                                            <option value="ME">Maine</option>
+                                            <option value="MD">Maryland</option>
+                                            <option value="MA">Massachusetts</option>
+                                            <option value="MI">Michigan</option>
+                                            <option value="MN">Minnesota</option>
+                                            <option value="MS">Mississippi</option>
+                                            <option value="MO">Missouri</option>
+                                            <option value="MT">Montana</option>
+                                            <option value="NE">Nebraska</option>
+                                            <option value="NV">Nevada</option>
+                                            <option value="NH">New Hampshire</option>
+                                            <option value="NJ">New Jersey</option>
+                                            <option value="NM">New Mexico</option>
+                                            <option value="NY">New York</option>
+                                            <option value="NC">North Carolina</option>
+                                            <option value="ND">North Dakota</option>
+                                            <option value="OH">Ohio</option>
+                                            <option value="OK">Oklahoma</option>
+                                            <option value="OR">Oregon</option>
+                                            <option value="PA">Pennsylvania</option>
+                                            <option value="RI">Rhode Island</option>
+                                            <option value="SC">South Carolina</option>
+                                            <option value="SD">South Dakota</option>
+                                            <option value="TN">Tennessee</option>
+                                            <option value="TX">Texas</option>
+                                            <option value="UT">Utah</option>
+                                            <option value="VT">Vermont</option>
+                                            <option value="VA">Virginia</option>
+                                            <option value="WA">Washington</option>
+                                            <option value="WV">West Virginia</option>
+                                            <option value="WI">Wisconsin</option>
+                                            <option value="WY">Wyoming</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <button class="btn btn-block btn-lg btn-secondary btn-search" type="submit">Search
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <h6 class="sub-title hidden-xs">Try searching a relative, neighbor, friend or even yourself!</h6>
+
+                    <div class="header-mascots hidden-xs row">
+                        <div class="col-sm-3 header-mascot">
+                            <img class="img-mascot" src="img/mascot01.png"/>
+
+                            <p>Boyfriend</p>
+                        </div>
+                        <div class="col-sm-3 header-mascot">
+                            <img class="img-mascot" src="img/mascot02.png"/>
+
+                            <p>Uncle</p>
+                        </div>
+                        <div class="col-sm-3 header-mascot">
+                            <img class="img-mascot" src="img/mascot03.png"/>
+
+                            <p>Neighbor</p>
+                        </div>
+                        <div class="col-sm-3 header-mascot">
+                            <img class="img-mascot" src="img/mascot04.png"/>
+
+                            <p>Friend</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-      </div>
 
     </header>
 
     <section class="content-section" id="pl-reasons">
-      <div class="container">
+        <div class="container">
 
-        <h2 class="title">So Many Reasons to Use <img class="img-logo" src="img/logo_section.png" />!</h2>
+            <h2 class="title">So Many Reasons to Use <img class="img-logo" src="img/logo_section.png"/>!</h2>
 
-        <div class="reasons-container row">
-          <div class="col-xs-8 col-sm-6">
-            <h6 class="text-secondary">Unlimited Searches, Anytime</h6>
-            <p>Use it for online dating, finding old friends, class reunions and much more. <a class="text-break" href="#">See our "Do's and Don'ts."</a></p>
+            <div class="reasons-container row">
+                <div class="col-xs-8 col-sm-6">
+                    <h5 class="text-secondary">Unlimited Searches, Anytime</h5>
 
-            <h6 class="text-secondary">Affordable &amp; Accessible</h6>
-            <p>PeopleLooker is the affordable way to learn more about people.</p>
+                    <p>Use it for online dating, finding old friends, class reunions and much more. <a
+                            class="text-break" href="#">See our "Do's and Don'ts."</a></p>
 
-            <h6 class="text-secondary">Respect For Privacy</h6>
-            <p>A privacy-friendly public record search is not an oxymoron. <a class="text-break" href="#">Learn how we do it.</a></p>
+                    <h5 class="text-secondary">Affordable &amp; Accessible</h5>
 
-            <h6 class="text-secondary">Tons of Records. One Report</h6>
-            <p>The quick &amp; easy way to find contact info, personal details and much more.</p>
+                    <p>PeopleLooker is the affordable way to learn more about people.</p>
 
-            <a href="#" class="btn btn-lg btn-primary">Learn About Us</a>
-          </div>
-          <div class="col-xs-4 col-sm-6">
-            <p class="text-secondary hidden-xs">This is what a report looks like:</p>
-            <img class="img-report-mobile img-responsive visible-xs" src="img/report_mobile.png" />
-            <img class="img-report img-responsive hidden-xs" src="img/report.png" />
-          </div>
+                    <h5 class="text-secondary">Respect For Privacy</h5>
+
+                    <p>A privacy-friendly public record search is not an oxymoron. <a class="text-break" href="#">Learn
+                        how we do it.</a></p>
+
+                    <h5 class="text-secondary">Tons of Records. One Report</h5>
+
+                    <p>The quick &amp; easy way to find contact info, personal details and much more.</p>
+                </div>
+
+                <div class="col-xs-4 col-sm-6">
+                    <img class="img-report-mobile visible-xs" src="img/report_mobile.png"/>
+                    <img class="img-report img-responsive hidden-xs" src="img/report.png"/>
+                    <p class="text-secondary text-center hidden-xs">Sample report</p>
+                </div>
+            </div>
+
+            <div class="reasons-container text-center">
+                <a href="#" class="btn btn-lg btn-primary">Learn About Us</a>
+            </div>
+
         </div>
-
-      </div>
     </section>
 
     <section class="background-primary text-centered content-section" id="pl-what">
-      <div class="container">
+        <div class="container">
 
-        <h2 class="title">What is <img class="img-logo" src="img/logo_primary_section.png" />?</h2>
-        <p class="sub-title">PeopleLooker is a simple website that allows you to learn about people. We have records about <strong>ages, addresses, email addresses, phone numbers, criminal records and so much more!</strong></p>
+            <h2 class="title">What is <img class="img-logo" src="img/logo_primary_section.png"/>?</h2>
 
-        <div class="section-images row">
-          <div class="col-xs-2 col-xs-offset-1">
-            <img class="img-responsive" src="img/section_image01.png" />
-          </div>
-          <div class="col-xs-2">
-            <img class="img-responsive" src="img/section_image02.png" />
-          </div>
-          <div class="col-xs-2">
-            <img class="img-responsive" src="img/section_image03.png" />
-          </div>
-          <div class="col-xs-2">
-            <img class="img-responsive" src="img/section_image04.png" />
-          </div>
-          <div class="col-xs-2">
-            <img class="img-responsive" src="img/section_image05.png" />
-          </div>
+            <p class="sub-title">PeopleLooker is a simple website that allows you to learn about people. We have records
+                about <strong>ages, addresses, email addresses, phone numbers, criminal records and so much
+                    more!</strong></p>
+
+            <div class="section-images row">
+                <div class="col-xs-2 col-xs-offset-1">
+                    <img class="img-responsive" src="img/section_image01.png"/>
+                </div>
+                <div class="col-xs-2">
+                    <img class="img-responsive" src="img/section_image02.png"/>
+                </div>
+                <div class="col-xs-2">
+                    <img class="img-responsive" src="img/section_image03.png"/>
+                </div>
+                <div class="col-xs-2">
+                    <img class="img-responsive" src="img/section_image04.png"/>
+                </div>
+                <div class="col-xs-2">
+                    <img class="img-responsive" src="img/section_image05.png"/>
+                </div>
+            </div>
+
         </div>
-
-      </div>
     </section>
 
     <section class="text-centered content-section" id="pl-cta">
-      <div class="container">
+        <div class="container">
 
-        <h2 class="title">Give us a try. It's easy!</h2>
-        <button type="button" class="btn btn-lg btn-secondary btn-centered" id="scrollTop">Search Someone</button>
+            <h2 class="title">Give us a try. It's easy!</h2>
+            <button type="button" class="btn btn-lg btn-secondary btn-centered" id="scrollTop">Search Someone</button>
 
-      </div>
+        </div>
     </section>
 
     <footer class="footer" id="pl-footer">
-      <div class="container">
+        <div class="container">
 
-        <div class="row">
-          <div class="col-sm-5 col-sm-push-7 col-sm-offset-0">
-            <h5 class="footer-column-title">Customer Service</h5>
-            <blockquote class="footer-quote text-secondary">"We pride ourselves on offering friendly and helpful support!"</blockquote>
-            <ul class="list-unstyled">
-              <li><a class="footer-column-link text-info" href="tel:1-888-579-5910">1-888-579-5910</a></li>
-              <li><a class="footer-column-link text-info" href="mailto:support@peoplelooker.com">support@peoplelooker.com</a></li>
-              <li><p>Monday - Friday: 8am - 10pm est</p></li>
-              <li><p>Saturday - Sunday: 10am - 8pm est</p></li>
-            </ul>
-          </div>
-          <div class="col-sm-7 col-sm-pull-5">
             <div class="row">
-              <div class="col-sm-6">
-                <h5 class="footer-column-title">About Us</h5>
-                <ul class="list-unstyled">
-                  <li><a class="footer-column-link" href="#">About PeopleLooker</a></li>
-                  <li><a class="footer-column-link" href="#">Careers</a></li>
-                  <li><a class="footer-column-link" href="#">Leadership</a></li>
-                </ul>
-              </div>
-              <div class="col-sm-6">
-                <h5 class="footer-column-title">Help</h5>
-                <ul class="list-unstyled">
-                  <li><a class="footer-column-link" href="#">FAQ</a></li>
-                  <li><a class="footer-column-link" href="#">Contact Us</a></li>
-                  <li><a class="footer-column-link" href="#">Remove My Info</a></li>
-                </ul>
-                <ul class="list-inline social-icons">
-                  <li><a href="#"><img class="img-icon" src="img/icon_facebook.png" /></a></li>
-                  <li><a href="#"><img class="img-icon" src="img/icon_twitter.png" /></a></li>
-                  <li><a href="#"><img class="img-icon" src="img/icon_instagram.png" /></a></li>
-                </ul>
-              </div>
+                <div class="col-sm-5 col-sm-push-7 col-sm-offset-0">
+                    <h5 class="footer-column-title">Customer Service</h5>
+                    <blockquote class="footer-quote text-secondary">"We pride ourselves on offering friendly and helpful
+                        support!"
+                    </blockquote>
+                    <ul class="list-unstyled">
+                        <li><a class="footer-column-link text-info" href="tel:1-888-579-5910">1-888-579-5910</a></li>
+                        <li><a class="footer-column-link text-info" href="mailto:support@peoplelooker.com">support@peoplelooker.com</a>
+                        </li>
+                        <li><p>Monday - Friday: 8am - 10pm est</p></li>
+                        <li><p>Saturday - Sunday: 10am - 8pm est</p></li>
+                    </ul>
+                </div>
+                <div class="col-sm-7 col-sm-pull-5">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h5 class="footer-column-title">About Us</h5>
+                            <ul class="list-unstyled">
+                                <li><a class="footer-column-link" href="#">About PeopleLooker</a></li>
+                                <li><a class="footer-column-link" href="#">Careers</a></li>
+                                <li><a class="footer-column-link" href="#">Leadership</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <h5 class="footer-column-title">Help</h5>
+                            <ul class="list-unstyled">
+                                <li><a class="footer-column-link" href="#">FAQ</a></li>
+                                <li><a class="footer-column-link" href="#">Contact Us</a></li>
+                                <li><a class="footer-column-link" href="#">Remove My Info</a></li>
+                            </ul>
+                            <ul class="list-inline social-icons">
+                                <li><a href="#"><img class="img-icon" src="img/icon_facebook.png"/></a></li>
+                                <li><a href="#"><img class="img-icon" src="img/icon_twitter.png"/></a></li>
+                                <li><a href="#"><img class="img-icon" src="img/icon_instagram.png"/></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <hr/>
+
+            <p class="disclaimer">
+                Disclaimer: PeopleLooker's mission is to give people easy and affordable access to public record
+                information. PeopleLooker does not provide private investigator services, and is not a consumer
+                reporting agency as defined by the Fair Credit Report Act
+                because the information provided by PeopleLooker is not collected or provided, in whole or in part, for
+                the purpose of furnishing consumer reports about those search subjects. For more information governing
+                the permitted and prohibited uses
+                of PeopleLooker, please review our <a href="#">“Do’s &amp; Don’ts”</a> and our <a href="#">Terms &amp;
+                Conditions</a>.
+            </p>
+
+            <div class="footer-navbar row">
+                <div class="col-sm-6">
+                    <p class="copyright">©2016 | <a class="text-info" href="//www.peoplelooker.com">PeopleLooker.com</a>
+                        | All Rights Reserved</p>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <a href="#">Privacy Policy</a> |
+                    <a href="#">Terms &amp; Conditions</a>
+                </div>
+            </div>
+
         </div>
-
-        <hr />
-
-        <p class="disclaimer">
-          Disclaimer: PeopleLooker's mission is to give people easy and affordable access to public record information. PeopleLooker does not provide private investigator services, and is not a consumer reporting agency as defined by the Fair Credit Report Act
-          because the information provided by PeopleLooker is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses
-          of PeopleLooker, please review our <a href="#">“Do’s &amp; Don’ts”</a> and our <a href="#">Terms &amp; Conditions</a>.
-        </p>
-
-        <div class="footer-navbar row">
-          <div class="col-sm-6">
-            <p class="copyright">©2016 | <a class="text-info" href="//www.peoplelooker.com">PeopleLooker.com</a> | All Rights Reserved</p>
-          </div>
-          <div class="col-sm-6 text-right">
-            <a href="#">Privacy Policy</a> |
-            <a href="#">Terms &amp; Conditions</a>
-          </div>
-        </div>
-
-      </div>
     </footer>
-  </main>
+</main>
 
-  <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
-  <script type="text/javascript" src="js/jquery.validate.min.js"></script>
-  <script type="text/javascript" src="js/jquery.mask.min.js"></script>
-  <script type="text/javascript" src="js/jquery.liveaddress.js"></script>
-  <script type="text/javascript" src="js/amplify.store.min.js"></script>
-  <script type="text/javascript" src="js/lodash.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/jquery.mask.min.js"></script>
+<script type="text/javascript" src="js/jquery.liveaddress.js"></script>
+<script type="text/javascript" src="js/amplify.store.min.js"></script>
+<script type="text/javascript" src="js/lodash.min.js"></script>
 
-  <script type="text/javascript" src="js/runner.js"></script>
+<script type="text/javascript" src="js/runner.js"></script>
 
 </body>
 

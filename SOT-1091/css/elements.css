@@ -157,6 +157,13 @@
     transition: all 500ms;
 }
 
+.form-control:focus {
+    -webkit-box-shadow: 0 4px 1px -1px #14897B;
+    -moz-box-shadow: 0 4px 1px -1px #14897B;
+    -ms-box-shadow: 0 4px 1px -1px #14897B;
+    box-shadow: 0 4px 1px -1px #14897B;
+}
+
 /* blockquotes */
 
 blockquote {
