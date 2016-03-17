@@ -164,6 +164,28 @@
     box-shadow: 0 4px 1px -1px #14897B;
 }
 
+
+/* pl-search form */
+
+.pl-search .form-group {
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .pl-search .form-group {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .pl-search .form-group:first-child {
+        padding-left: 15px;
+    }
+
+    .pl-search .form-group:last-child {
+        padding-right: 15px;
+    }
+}
+
 /* blockquotes */
 
 blockquote {
