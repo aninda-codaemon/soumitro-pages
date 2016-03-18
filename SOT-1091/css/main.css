@@ -82,8 +82,13 @@
   margin: 0 auto;
 }
 
+.content-section#pl-reasons {
+  padding-top: 15px;
+  padding-bottom: 40px;
+}
+
 .content-section#pl-reasons .title {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .content-section#pl-reasons .text-secondary:first-child {
@@ -118,6 +123,10 @@
     width: 165px;
   }
 
+  .content-section#pl-reasons .title {
+    margin-bottom: 60px;
+  }
+
   .content-section#pl-reasons .img-report-mobile {
     width: 260px;
   }
@@ -126,6 +135,15 @@
 @media (min-width: 768px) {
   .content-section .img-logo {
     width: 175px;
+  }
+
+  .content-section#pl-reasons {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  .content-section#pl-reasons .title {
+    margin-bottom: 80px;
   }
 
   .content-section#pl-reasons .reasons-container.text-center {
