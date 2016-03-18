@@ -84,10 +84,18 @@ body {
   background-color: #fff;
 }
 
+.navbar .navbar-header .navbar-brand .img-logo {
+  width: 180px;
+}
+
 @media (min-width: 768px) {
 
   .navbar .navbar-header .navbar-brand {
     margin-left: -5px;
+  }
+
+  .navbar .navbar-header .navbar-brand .img-logo {
+    width: auto;
   }
 }
 
@@ -172,7 +180,7 @@ body {
 /* steps-images */
 
 .steps-images {
-  margin-top: 120px;
+  margin-top: 100px;
   margin-bottom: 80px;
   text-align: center;
 }
