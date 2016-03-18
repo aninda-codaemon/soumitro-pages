@@ -375,18 +375,16 @@
         </div>
     </section>
 
-    <section id="results-wrapper-searching" class="container-fluid section-min section-light">
-        <div class="row section-header">
-            <p class="text-center">
-                <img src="img/loading.gif">
-            </p>
+    <section class="content-section" id="results-wrapper-searching">
+        <div class="container">
+            <img class="img-loader" src="img/loading.gif">
 
-            <h3 class="text-info text-center" data-fr-bind="searchData">
+            <h3 class="title" data-fr-bind="searchData">
                 Processing Records for {{uppercase fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{uppercase ln}}{{#ifNot state
                 'all'}} in {{uppercase state}}{{/ifNot}}
             </h3>
 
-            <p class="text-center">Results should load shortly</p>
+            <p class="sub-title">Results should load shortly</p>
         </div>
     </section>
 

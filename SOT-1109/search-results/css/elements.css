@@ -210,3 +210,10 @@ hr {
     margin-bottom: 40px;
     border-color: #33D4C0;
 }
+
+/* images */
+
+.img-loader {
+    display: block;
+    margin: 0 auto;
+}
