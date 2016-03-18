@@ -107,7 +107,7 @@
                             <label for="search-bar-state" class="sr-only">State</label>
                             <select class="form-control input-lg" id="search-bar-state" name="state"
                                     value="{{state}}">
-                                <option value="All">All States</option>
+                                <option value="All">State</option>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
                                 <option value="AZ">Arizona</option>
@@ -290,7 +290,7 @@
             </div>
         </div>
 
-        <div class="background-secondary no-results-form-container">
+        <div class="background-primary-light no-results-form-container">
             <form id="no-results-form" class="pl-search container" data-fr-bind="searchData"
                   data-fr-store="searchData">
                 <div class="col-sm-2 form-group">
@@ -303,10 +303,6 @@
                 <div class="col-sm-2 form-group">
                     <input name="ln" id="ln" type="text" class="form-control input-lg" placeholder="Last Name" required
                            value="{{ln}}"/>
-                </div>
-                <div class="col-sm-1 form-group">
-                    <input name="age" id="age" type="text" class="form-control input-lg input-age" placeholder="Age"
-                           value="{{age}}"/>
                 </div>
                 <div class="col-sm-2 form-group">
                     <input name="city" id="city" type="text" class="form-control input-lg" placeholder="City"
@@ -367,6 +363,10 @@
                         <option value="WI">Wisconsin</option>
                         <option value="WY">Wyoming</option>
                     </select>
+                </div>
+                <div class="col-sm-1 form-group">
+                    <input name="age" id="age" type="text" class="form-control input-lg input-age" placeholder="Age"
+                           value="{{age}}"/>
                 </div>
                 <div class="col-sm-2 form-group">
                     <button type="submit" class="btn btn-lg btn-block btn-primary">Search</button>

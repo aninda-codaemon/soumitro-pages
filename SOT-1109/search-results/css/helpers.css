@@ -33,6 +33,11 @@
   color: #fff;
 }
 
+.background-primary-light {
+  background-color: #EFFCFA;
+  color: #333;
+}
+
 /* image helpers */
 
 .img-responsive {
