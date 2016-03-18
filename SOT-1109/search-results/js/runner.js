@@ -448,7 +448,7 @@
     };
 
     $('.navbar-toggle').click(function() {
-      $('#nav-icon-closed').toggleClass('active');
+      $('#nav-icon').toggleClass('active');
     });
 
     /* Init */

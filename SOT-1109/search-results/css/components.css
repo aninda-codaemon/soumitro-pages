@@ -1,11 +1,23 @@
 /* navbar */
 
+.navbar {
+    padding-bottom: 5px;
+}
+
 .navbar .navbar-toggle {
     margin: 15px 0;
 }
 
 .navbar .navbar-toggle .icon-bar {
     background-color: #fff;
+}
+
+.navbar .navbar-toggle .icon {
+    font-size: 24px;
+}
+
+.navbar .navbar-toggle .icon.active::before {
+    content: "\f00d";
 }
 
 .navbar .navbar-header .navbar-brand {
@@ -17,6 +29,10 @@
     -ms-box-shadow: 0 4px 1px -1px #38AC9E;
     box-shadow: 0 4px 1px -1px #38AC9E;
     background-color: #fff;
+}
+
+.navbar .navbar-header .navbar-brand .img-logo {
+    width: 180px;
 }
 
 .navbar .navbar-collapse {
@@ -40,7 +56,17 @@
     float: right;
 }
 
+@media (min-width: 480px) {
+    .navbar .navbar-header .navbar-brand .img-logo {
+        width: auto;
+    }
+}
+
 @media (min-width: 768px) {
+
+    .navbar {
+        padding-bottom: 0;
+    }
 
     .navbar .navbar-header .navbar-brand {
         margin-left: -5px;
