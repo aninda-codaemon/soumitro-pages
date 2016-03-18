@@ -21,6 +21,10 @@
   display: block;
 }
 
+.text-underline {
+  text-decoration: underline;
+}
+
 /* background helpers */
 
 .background-primary {

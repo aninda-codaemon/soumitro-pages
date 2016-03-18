@@ -58,8 +58,55 @@
 
 /* data-panel content-section - search-results */
 
-.content-section#data-panel .search-results {
+.content-section#data-panel .search-results .table {
+    -webkit-box-shadow: 0 0 6px 3px #EAEAEA;
+    -moz-box-shadow: 0 0 6px 3px #EAEAEA;
+    -ms-box-shadow: 0 0 6px 3px #EAEAEA;
+    box-shadow: 0 0 6px 3px #EAEAEA;
+    border-radius: 5px;
+}
 
+.content-section#data-panel .search-results .table .table-header {
+    background-color: #7e8384;
+    color: #fff;
+}
+
+.content-section#data-panel .search-results .table tr th,
+.content-section#data-panel .search-results .table tr td {
+    padding: 15px;
+}
+
+.content-section#data-panel .search-results .table tr th {
+    border: 0;
+}
+
+.content-section#data-panel .search-results .table tr th:first-child {
+    border-top-left-radius: 5px;
+}
+
+.content-section#data-panel .search-results .table tr th:last-child {
+    border-top-right-radius: 5px;
+}
+
+.content-section#data-panel .search-results .table .results-table-row {
+    cursor: pointer;
+}
+
+.content-section#data-panel .search-results .table .results-table-row:nth-child(odd) {
+    background-color: #fff;
+}
+
+.content-section#data-panel .search-results .table .results-table-row:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+.content-section#data-panel .search-results .table .results-table-row:hover {
+    background-color: #F4F4F4;
+}
+
+.content-section#data-panel .search-results .table .td-name .text-secondary.text-underline {
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 /* data-panel content-section - refine-search-results */

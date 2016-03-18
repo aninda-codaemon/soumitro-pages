@@ -195,24 +195,24 @@
             </div>
         </div>
 
-        <div id="results-wrapper" class="wrap section-min section-light" style="">
+        <div id="results-wrapper" class="search-results">
             <div class="container">
 
-                <table id="results-table" class="table table-striped table-hover table-sorter">
+                <table id="results-table" class="table table-striped table-hover table-responsive table-sorter">
                     <thead class="table-header">
-                        <tr>
-                             <th id="th-photo" class="th-center col-md-1">Photo</th>
+                        <tr class="results-table-header-row">
+                             <th id="th-photo" class="col-md-1">Photo</th>
                              <th id="th-name" class="col-md-3">Name</th>
                              <th id="th-age" class="col-md-1">Age</th>
                              <th id="th-cities" class="col-md-2">Cities</th>
                              <th id="th-relatives" class="col-md-3">Relatives</th>
-                             <th id="th-access-report" class="th-center col-md-2">Access Report</th>
+                             <th id="th-access-report" class="col-md-2">Access Report</th>
                         </tr>
                     </thead>
                     <tbody class="table-body" id="results">
 
                         <tr data-fr-each="teasers" data-fr-map="TeaserRecord" data-fr-sort="teaserSorter"
-                            data-fr-click="store currentRecord" class="results-row">
+                            data-fr-click="store currentRecord" class="results-table-row">
                             <td class="td-photo">
                                 <div class="photo-locked">
                                     <i class="fa fa-user"></i>
@@ -220,7 +220,7 @@
                                 </div>
                             </td>
                             <td class="td-name">
-                                <a href="#" class="name-found">{{fullName}}</a>
+                                <h6 class="text-secondary text-underline">{{fullName}}</h6>
 
                                 <div class="place-single">
                                     {{place}}
@@ -230,11 +230,11 @@
                                 <div class="hidden-xs hidden-sm">
                                     <ul class="aka-list list-unstyled">
                                         {{#hasAkas}}
-                                        <li class="aka-list-heading">Also Seen As</li>
+                                        <li class="text-primary">Also Seen As</li>
                                         {{/hasAkas}} {{#allNames}}
                                         <li>- {{.}}</li>
                                         {{/allNames}}
-                                    </ul>
+                                    </ul>}
                                 </div>
                             </td>
                             <td class="td-age">
@@ -255,9 +255,9 @@
                                 </ul>
                             </td>
                             <td class="td-access-report text-center">
-                                <button type="button" class="btn btn-block btn-primary generate_report_from_teaser">
-                                    <span class="hidden-xs">THAT'S THE ONE</span>
-                                    <span class="visible-xs">ACCESS</span>
+                                <button type="button" class="btn btn-lg btn-block btn-primary generate_report_from_teaser">
+                                    <span class="hidden-xs">That's the One</span>
+                                    <span class="visible-xs">Access</span>
                                 </button>
                             </td>
                         </tr>
