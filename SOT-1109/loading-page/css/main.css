@@ -17,6 +17,54 @@ body {
   display: block;
 }
 
+/* buttons */
+
+.btn {
+  outline: 0;
+  -webkit-transition: all 250ms;
+  -moz-transition: all 250ms;
+  -ms-transition: all 250ms;
+  transition: all 250ms;
+}
+
+.btn:focus,
+.btn:active,
+.btn:active:focus{
+  outline: 0;
+}
+
+.btn-primary {
+  -webkit-box-shadow: 0 4px 1px -1px #38AC9E;
+  -moz-box-shadow: 0 4px 1px -1px #38AC9E;
+  -ms-box-shadow: 0 4px 1px -1px #38AC9E;
+  box-shadow: 0 4px 1px -1px #38AC9E;
+  border: 1px solid #33d4c0;
+  background-color: #33d4c0;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  -webkit-box-shadow: 0 3px 1px -1px #38AC9E;
+  -moz-box-shadow: 0 3px 1px -1px #38AC9E;
+  -ms-box-shadow: 0 3px 1px -1px #38AC9E;
+  box-shadow: 0 3px 1px -1px #38AC9E;
+  border-color: #47E3CF;
+  background-color: #47E3CF;
+  color: #fff;
+}
+
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:active:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+  border-color: #38AC9E;
+  background-color: #38AC9E;
+  color: #fff;
+}
+
 /* navbar */
 
 .navbar.navbar-default {
@@ -258,4 +306,10 @@ body {
   .footer-navbar .text-right {
     text-align: right;
   }
+}
+
+/* modals */
+
+#input-state .modal-md {
+  max-width: 500px;
 }
