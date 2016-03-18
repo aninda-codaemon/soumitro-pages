@@ -177,25 +177,26 @@
 
     </header>
 
-    <div id="data-panel" data-fr-bind="searchData teaserData">
-        <div id="top-banner" class="container section-alt section-min top-section">
-            <div class="row section-header">
-                <h3 class="text-center text-info">
-                    We found {{recordCount}} results for <strong>{{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}}
-                    {{nameize ln}}{{#notEqual state 'all'}} </strong> in <strong>{{uppercase
-                    state}}{{/notEqual}}!</strong> Choose a Result Below
-                </h3>
+    <section class="content-section" id="data-panel" data-fr-bind="searchData teaserData">
 
-                <p class="text-center">
-                    <span class="hidden-xs"><strong>Next Steps:</strong> Locate the person you are looking for in the results below or modify your search. Once you find the right match, click "That's The One" to access the report.</span>
-                    <span class="visible-xs"><strong>Next Steps:</strong> Locate the person you are looking for in the results. Once you find the right match, click "Access."</span>
+        <div class="results-header" id="top-banner">
+            <div class="container">
+                <h5 class="title">
+                    We found {{recordCount}} results for <strong class="text-secondary">{{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}}
+                    {{nameize ln}}</strong>{{#notEqual state 'all'}} in {{uppercase
+                    state}}{{/notEqual}}! Choose a Result Below
+                </h5>
+
+                <p class="sub-title">
+                    <span class="hidden-xs"><strong class="text-primary">Next Steps:</strong> Locate the person you are looking for in the results below or modify your search. Once you find the right match, click "That's The One" to access the report.</span>
+                    <span class="visible-xs"><strong class="text-primary">Next Steps:</strong> Locate the person you are looking for in the results. Once you find the right match, click "Access."</span>
                 </p>
             </div>
         </div>
 
         <div id="results-wrapper" class="wrap section-min section-light" style="">
             <div class="container">
-                <!--TABLE FOR RESULTS -->
+
                 <table id="results-table" class="table table-bordered table-striped table-hover tablesorter">
                     <thead class="table-header">
                     <tr>
@@ -208,7 +209,7 @@
                     </tr>
                     </thead>
                     <tbody id="results">
-                    <!-- THIS IS WHERE ALL THE ACTION HAPPENS -->
+
                     <tr data-fr-each="teasers" data-fr-map="TeaserRecord" data-fr-sort="teaserSorter"
                         data-fr-click="store currentRecord" class="results-row">
                         <td class="td-hash">
@@ -259,16 +260,20 @@
                             </a>
                         </td>
                     </tr>
-                    <!-- THIS IS WHERE ALL THE ACTION ENDS -->
+
                     </tbody>
                 </table>
-                <div class="refine-search-wrapper">
-                    <p class="alert alert-info">Can't find who you were looking for? <span class="refine-modal-trigger">Click here</span>
-                        to refine your search and narrow down the results.</p>
-                </div>
             </div>
         </div>
-    </div>
+
+        <div class="background-secondary refine-search-results">
+            <div class="text-center container">
+                <p class="title">Can't find who you were looking for? Refine your search and narrow down the results.</p>
+
+                <button class="btn btn-default btn-lg refine-modal-trigger">Refine Search Results</button>
+            </div>
+        </div>
+    </section>
 
     <section class="content-section" id="no-results">
         <div class="container">
