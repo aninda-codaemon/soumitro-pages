@@ -182,7 +182,8 @@
         <div class="results-header" id="top-banner">
             <div class="container">
                 <h5 class="title">
-                    We found {{recordCount}} results for <strong class="text-secondary">{{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}}
+                    We found {{recordCount}} results for <strong class="text-secondary">{{nameize fn}}{{#if mi}}
+                    {{uppercase mi}}{{/if}}
                     {{nameize ln}}</strong>{{#notEqual state 'all'}} in {{uppercase
                     state}}{{/notEqual}}! Choose a Result Below
                 </h5>
@@ -197,70 +198,69 @@
         <div id="results-wrapper" class="wrap section-min section-light" style="">
             <div class="container">
 
-                <table id="results-table" class="table table-bordered table-striped table-hover tablesorter">
+                <table id="results-table" class="table table-striped table-hover table-sorter">
                     <thead class="table-header">
-                    <tr>
-                        <th id="th-hash" class="th-center col-md-1">Photo</th>
-                        <th class="name-col col-md-3">Name</th>
-                        <th class="col-md-1">Age</th>
-                        <th id="th-cities" class="col-md-2">Cities</th>
-                        <th id="th-relatives" class="col-md-3">Relatives</th>
-                        <th id="th-view-btn" class="th-center col-md-2">Access Report</th>
-                    </tr>
+                        <tr>
+                             <th id="th-photo" class="th-center col-md-1">Photo</th>
+                             <th id="th-name" class="col-md-3">Name</th>
+                             <th id="th-age" class="col-md-1">Age</th>
+                             <th id="th-cities" class="col-md-2">Cities</th>
+                             <th id="th-relatives" class="col-md-3">Relatives</th>
+                             <th id="th-access-report" class="th-center col-md-2">Access Report</th>
+                        </tr>
                     </thead>
-                    <tbody id="results">
+                    <tbody class="table-body" id="results">
 
-                    <tr data-fr-each="teasers" data-fr-map="TeaserRecord" data-fr-sort="teaserSorter"
-                        data-fr-click="store currentRecord" class="results-row">
-                        <td class="td-hash">
-                            <div class="photo-locked">
-                                <i class="fa fa-user"></i>
-                                <i class="fa fa-lock"></i>
-                            </div>
-                        </td>
-                        <td class="name-col">
-                            <a href="#" class="name-found">{{fullName}}</a>
+                        <tr data-fr-each="teasers" data-fr-map="TeaserRecord" data-fr-sort="teaserSorter"
+                            data-fr-click="store currentRecord" class="results-row">
+                            <td class="td-photo">
+                                <div class="photo-locked">
+                                    <i class="fa fa-user"></i>
+                                    <i class="fa fa-lock"></i>
+                                </div>
+                            </td>
+                            <td class="td-name">
+                                <a href="#" class="name-found">{{fullName}}</a>
 
-                            <div class="place-single">
-                                {{place}}
-                                <br/>
-                                {{place2}}
-                            </div>
-                            <div class="hidden-xs hidden-sm">
-                                <ul class="aka-list list-unstyled">
-                                    {{#hasAkas}}
-                                    <li class="aka-list-heading">Also Seen As</li>
-                                    {{/hasAkas}} {{#allNames}}
-                                    <li>- {{.}}</li>
-                                    {{/allNames}}
+                                <div class="place-single">
+                                    {{place}}
+                                    <br/>
+                                    {{place2}}
+                                </div>
+                                <div class="hidden-xs hidden-sm">
+                                    <ul class="aka-list list-unstyled">
+                                        {{#hasAkas}}
+                                        <li class="aka-list-heading">Also Seen As</li>
+                                        {{/hasAkas}} {{#allNames}}
+                                        <li>- {{.}}</li>
+                                        {{/allNames}}
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="td-age">
+                                {{age}}
+                            </td>
+                            <td class="td-cities">
+                                <ul class="list-unstyled">
+                                    {{#places}}
+                                    <li>{{.}}</li>
+                                    {{/places}}
                                 </ul>
-                            </div>
-                        </td>
-                        <td class="age-col">
-                            {{age}}
-                        </td>
-                        <td>
-                            <ul class="list-unstyled">
-                                {{#places}}
-                                <li>{{.}}</li>
-                                {{/places}}
-                            </ul>
-                        </td>
-                        <td>
-                            <ul class="list-unstyled">
-                                {{#relatives}}
-                                <li>{{.}}</li>
-                                {{/relatives}}
-                            </ul>
-                        </td>
-                        <td class="report-col align-center">
-                            <a href="#" class="btn-block aux-btn generate_report_from_teaser text-center">
-                                <span class="hidden-xs">THAT'S THE ONE</span>
-                                <span class="visible-xs">ACCESS</span>
-                            </a>
-                        </td>
-                    </tr>
-
+                            </td>
+                            <td class="td-relatives">
+                                <ul class="list-unstyled">
+                                    {{#relatives}}
+                                    <li>{{.}}</li>
+                                    {{/relatives}}
+                                </ul>
+                            </td>
+                            <td class="td-access-report text-center">
+                                <button type="button" class="btn btn-block btn-primary generate_report_from_teaser">
+                                    <span class="hidden-xs">THAT'S THE ONE</span>
+                                    <span class="visible-xs">ACCESS</span>
+                                </button>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -268,7 +268,8 @@
 
         <div class="background-secondary refine-search-results">
             <div class="text-center container">
-                <p class="title">Can't find who you were looking for? Refine your search and narrow down the results.</p>
+                <p class="title">Can't find who you were looking for? Refine your search and narrow down the
+                    results.</p>
 
                 <button class="btn btn-default btn-lg refine-modal-trigger">Refine Search Results</button>
             </div>
