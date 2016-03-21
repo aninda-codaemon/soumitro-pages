@@ -208,7 +208,7 @@
         if (activated) return;
         activated = true;
         var $dataPanel = $('#data-panel');
-        $dataPanel.on("click", 'tr.results-row', function(e) {
+        $dataPanel.on("click", 'tr.results-table-row', function(e) {
             e.preventDefault();
             window.hasClickedResult = true;
             generateMapLink(this);

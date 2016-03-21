@@ -468,8 +468,6 @@
     }
 
     if ($useCasesModal.hasClass('in')) {
-      // @NOTE: the loading animation duration is in styles.css
-      // @TODO: move animation duration from css to js
 
       $loader.animate({'width': '100%'}, {duration: duration})
 
