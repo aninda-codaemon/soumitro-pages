@@ -613,10 +613,10 @@
 
         <div class="modal-header section-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h5 class="title" data-fr-bind="query teaserData">
+          <h6 class="title" data-fr-bind="query teaserData">
             <i class="fa fa-search"></i>
             Your search for {{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}} returned {{recordCount}} results!
-          </h5>
+          </h6>
         </div>
 
         <div class="modal-body">
@@ -728,7 +728,7 @@
           <h3><strong>Preview a summary of your report.</strong></h3>
 
           <div class="loader-big">
-            <!-- <img src="img/loader-big.gif"> -->
+            <img src="img/loading.gif">
           </div>
           <!-- <img class="img-responsive preview" src="img/preview.jpg"> -->
 
@@ -750,43 +750,56 @@
   <div id="gen-report-modal1" class="modal" data-fr-bind="currentRecord" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <button class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <img src="img/loading.gif" class="pull-left header-icon">
 
-          <p data-fr-bind="currentRecord">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+          <h6 class="title" data-fr-bind="currentRecord">
+            <img src="img/loading_white.gif" class="img-icon">
             We have information <span class="hidden-xs">on <span>{{fullName}}</span></span> available...
-          </p>
+          </h6>
         </div>
 
         <div class="modal-body">
-          <h3 class="modal-body-header text-center hidden-xs"><strong><span
-                        class="hidden-xs">We're Currently </span>Searching Our Available Data Sources</strong></h3>
+          <h4 class="title text-centered hidden-xs">
+            <span class="hidden-xs">We're Currently </span>Searching Our Available Data Sources
+          </h4>
 
-          <p class="text-center current-search-text" data-fr-bind="currentRecord">Please wait while we locate important information on <span class="strong text-success">{{fullName}}</span></p>
+          <p class="sub-title text-centered" data-fr-bind="currentRecord">Please wait while we locate important information on <span class="text-secondary">{{fullName}}</span></p>
 
-          <div class="row">
-            <div class="searching-progress-bar-group col-xs-12">
-              <div id="searching-progress-bar-database" class="progress checking-sources-progress">
-                <div class="progress-bar progress-bar-success" style="width: 1%"></div>
-                <p class="text-center"><img src="img/icon_court.png" class="bar-icon"><strong><span
-                                    class="hidden-xs">Various Public and Criminal Record Databases </span><span
-                                    class="hidden-lg">Public Records</span></strong></p>
-              </div>
-              <div id="searching-progress-bar-records" class="progress checking-sources-progress">
-                <div class="progress-bar progress-bar-success" style="width: 1%"></div>
-                <p class="text-center"><img src="img/icon_gavel.png" class="bar-icon"><strong><span><span
-                                    class="hidden-xs">County and State </span>Court Records</span></strong></p>
-              </div>
-              <div id="searching-progress-bar-datasets" class="progress checking-sources-progress">
-                <div class="progress-bar progress-bar-success" style="width: 1%"></div>
-                <p class="text-center"><img src="img/icon_data.png" class="bar-icon"><strong>Proprietary
-                                Data<span class="hidden-xs"> Sets</span></strong></p>
-              </div>
+          <div class="searching-progress-bar-group">
+
+            <div id="searching-progress-bar-database" class="progress checking-sources-progress">
+              <div class="progress-bar" style="width: 1%"></div>
+              <h6 class="progress-bar-title text-centered">
+                <img src="img/icon_court.png" class="progress-bar-icon">
+                <span class="hidden-xs">Various Public and Criminal Record Databases</span>
+                <span class="hidden-lg">Public Records</span>
+              </h6>
             </div>
+
+            <div id="searching-progress-bar-records" class="progress checking-sources-progress">
+              <div class="progress-bar" style="width: 1%"></div>
+              <h6 class="progress-bar-title text-centered">
+                <img src="img/icon_gavel.png" class="progress-bar-icon">
+                <span class="hidden-xs">County and State </span>Court Records
+              </h6>
+            </div>
+
+            <div id="searching-progress-bar-datasets" class="progress checking-sources-progress">
+              <div class="progress-bar" style="width: 1%"></div>
+              <h6 class="progress-bar-title text-centered">
+                <img src="img/icon_data.png" class="progress-bar-icon">
+                Proprietary Data <span class="hidden-xs">Sets</span>
+              </h6>
+            </div>
+
           </div>
-          <p class="alert alert-this alert-warning text-center">
-            <small><strong>Reminder: Your search of {{firstName}} is anonymous</strong>.</small>
+        </div>
+
+        <div class="modal-footer">
+          <p class="alert alert-warning text-centered">
+            <strong>Reminder:</strong> Your search for <strong>{{firstName}}</strong> is anonymous.
           </p>
         </div>
 
@@ -803,21 +816,20 @@
       <div class="modal-content">
 
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <img src="img/loading.gif" class="pull-left header-icon">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
-          <p class="social-header">Scanning Dozens of Social Media Profiles...</p>
+          <h6 class="title">
+            <img src="img/loading_white.gif" class="img-icon">
+            Scanning Dozens of Social Media Profiles...
+          </h6>
         </div>
 
         <div class="modal-body" data-fr-bind="currentRecord">
-          <div class="row">
-            <div class="col-sm-4 hidden-xs" style="position:relative;">
-              <div class="file-icon-wrapper">
-                <!-- <img src="img/stock-photo.jpg" alt="profile picture"> -->
-                <span class="located alert alert-success">Searched</span>
-              </div>
-              <ul class="profile list-unstyled">
-                <li class="fullName"><strong>{{fullName}}</strong></li>
+
+          <div class="row table-row">
+            <div class="col-sm-4 table-col profile-col hidden-xs">
+              <h5 class="title name">{{fullName}}</h5>
+              <ul class="profile-list list-unstyled">
                 {{#if hasAkas}}
                 <li><strong>AKA:</strong> {{shortList allNames}}</li>
                 {{/if}} {{#if age}}
@@ -828,64 +840,157 @@
                 {{#if relatives}}
                 <li><strong>Relatives: </strong>{{shortList relatives}}</li>
                 {{/if}}
-                <li class="text-success"><strong>New</strong> - We now search professional &amp; educational history and photos!
-                </li>
               </ul>
-              <!-- <img class="screenshot" src="img/instagram.gif"> -->
             </div>
-            <div class="col-sm-8">
-              <p>This search may reveal interesting information on <strong>{{fullName}}</strong> such as revealing photos, videos, family and friends, professional connections and more.</p>
+            <div class="col-sm-8 social-col">
+              <p class="sub-title">This search may reveal interesting information on <strong>{{fullName}}</strong> such as revealing photos, videos, family and friends, professional connections and more.</p>
 
               <div class="social-widget">
-                <div id="socialmedia-progress" class="publicRecord progress">
-                  <p class="progress-msg"><span class="hidden-xs">Preparing Social Media Section - </span><span id="socialmedia-progress-percent"></span>% complete
-                  </p>
 
-                  <div class="progress-bar progress-bar-success" style="width:1%"></div>
+                <div id="socialmedia-progress" class="publicRecord progress">
+                  <div class="progress-bar" style="width:1%"></div>
+                  <h6 class="progress-bar-title text-centered">
+                    <span class="hidden-xs">Preparing Social Media Section - </span>
+                    <span id="socialmedia-progress-percent"></span>% complete
+                  </h6>
                 </div>
-                <div class="row">
-                  <ul id="social-media-groups" class="socialMedias list-unstyled">
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social facebook"><img src="img/icon_facebook.png"><p
-                                            class="hidden-xs">Facebook</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social flickr"><img src="img/icon_flickr.png"><p
-                                            class="hidden-xs">Flickr</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social twitter"><img src="img/icon_twitter.png"><p
-                                            class="hidden-xs">Twitter</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social gplus"><img src="img/icon_gplus.png"><p
-                                            class="hidden-xs">Google+</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social myspace"><img src="img/icon_myspace.png"><p
-                                            class="hidden-xs">MySpace</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social kickstarter"><img
-                                            src="img/icon_kickstarter.png"><p class="hidden-xs">Kickstarter</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social linkedin"><img src="img/icon_linkedin.png"><p
-                                            class="hidden-xs">Linkedin</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social youtube"><img src="img/icon_youtube.png"><p
-                                            class="hidden-xs">Youtube</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social picasa"><img src="img/icon_picasa.png"><p
-                                            class="hidden-xs">Picasa</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social pinterest"><img src="img/icon_pinterest.png"><p
-                                            class="hidden-xs">Pinterest</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social reddit"><img src="img/icon_reddit.png"><p
-                                            class="hidden-xs">Reddit</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social gravatar"><img src="img/icon_gravatar.png"><p
-                                            class="hidden-xs">Gravatar</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social ancestry"><img src="img/icon_ancestry.png"><p
-                                            class="hidden-xs">Ancestry</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social klout"><img src="img/icon_klout.png"><p
-                                            class="hidden-xs">Klout</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social instagram"><img src="img/icon_instagram.png"><p
-                                            class="hidden-xs">Instagram</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social amazon"><img src="img/icon_amazon.png"><p
-                                            class="hidden-xs">Amazon</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social vimeo"><img src="img/icon_vimeo.png"><p
-                                            class="hidden-xs">Vimeo</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social foursquare"><img
-                                            src="img/icon_foursquare.png"><p class="hidden-xs">Foursquare</p></span></li>
-                  </ul>
-                </div>
+
+                <ul id="social-media-groups" class="social-media-list list-unstyled">
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social facebook">
+                      <img class="social-icon" src="img/icon_facebook.png">
+                      <p class="hidden-xs">Facebook</p>
+                    </span>
+                  </li>
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social flickr">
+                      <img class="social-icon" src="img/icon_flickr.png">
+                      <p class="hidden-xs">Flickr</p>
+                    </span>
+                  </li>
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social twitter">
+                      <img class="social-icon" src="img/icon_twitter.png">
+                      <p class="hidden-xs">Twitter</p>
+                    </span>
+                  </li>
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social gplus">
+                      <img class="social-icon" src="img/icon_gplus.png">
+                      <p class="hidden-xs">Google+</p>
+                    </span>
+                  </li>
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social myspace">
+                      <img class="social-icon" src="img/icon_myspace.png">
+                      <p class="hidden-xs">MySpace</p>
+                    </span>
+                  </li>
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social kickstarter">
+                      <img class="social-icon" src="img/icon_kickstarter.png">
+                      <p class="hidden-xs">Kickstarter</p>
+                    </span>
+                  </li>
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social linkedin">
+                      <img class="social-icon" src="img/icon_linkedin.png">
+                      <p class="hidden-xs">Linkedin</p>
+                    </span>
+                  </li>
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social youtube">
+                      <img class="social-icon" src="img/icon_youtube.png">
+                      <p class="hidden-xs">Youtube</p>
+                    </span>
+                  </li>
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social picasa">
+                      <img class="social-icon" src="img/icon_picasa.png">
+                      <p class="hidden-xs">Picasa</p>
+                    </span>
+                  </li>
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social pinterest">
+                      <img class="social-icon" src="img/icon_pinterest.png">
+                      <p class="hidden-xs">Pinterest</p>
+                    </span>
+                  </li>
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social reddit">
+                      <img class="social-icon" src="img/icon_reddit.png">
+                      <p class="hidden-xs">Reddit</p>
+                    </span>
+                  </li>
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social gravatar">
+                      <img class="social-icon" src="img/icon_gravatar.png">
+                      <p class="hidden-xs">Gravatar</p>
+                    </span>
+                  </li>
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social ancestry">
+                      <img class="social-icon" src="img/icon_ancestry.png">
+                      <p class="hidden-xs">Ancestry</p>
+                    </span>
+                  </li>
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social klout">
+                      <img class="social-icon" src="img/icon_klout.png">
+                      <p class="hidden-xs">Klout</p>
+                    </span>
+                  </li>
+                  <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social instagram">
+                      <img class="social-icon" src="img/icon_instagram.png">
+                      <p class="hidden-xs">Instagram</p>
+                    </span>
+                  </li>
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social amazon">
+                      <img class="social-icon" src="img/icon_amazon.png">
+                      <p class="hidden-xs">Amazon</p>
+                    </span>
+                  </li>
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social vimeo">
+                      <img class="social-icon" src="img/icon_vimeo.png">
+                      <p class="hidden-xs">Vimeo</p>
+                    </span>
+                  </li>
+                  <li>
+                    <img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning">
+                    <span class="social foursquare">
+                      <img class="social-icon" src="img/icon_foursquare.png">
+                      <p class="hidden-xs">Foursquare</p>
+                    </span>
+                  </li>
+                </ul>
               </div>
+
             </div>
           </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <p class="alert alert-warning text-centered"><strong>New -</strong> We now search professional and educational history and photos!</p>
         </div>
 
       </div>

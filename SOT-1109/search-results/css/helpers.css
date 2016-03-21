@@ -14,19 +14,19 @@
 }
 
 .text-centered {
-  text-align: center;
+  text-align: center !important;
 }
 
 .text-break {
-  display: block;
+  display: block !important;
 }
 
 .text-bold {
-  font-weight: bold;
+  font-weight: bold !important;
 }
 
 .text-underline {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 /* background helpers */
@@ -67,4 +67,24 @@
 .label-rounded {
   padding: 7px 15.5px;
   border-radius: 50%;
+}
+
+/* alerts */
+
+.alert-warning {
+  border: 0;
+  background-color: #fcc41c;
+  color: #333;
+}
+
+/* grid */
+
+.table-row {
+  display: table;
+  height: 100%;
+}
+
+.table-col {
+  display: table-cell;
+  height: 100%;
 }
