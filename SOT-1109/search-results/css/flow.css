@@ -2,39 +2,68 @@
 
 .modal-header {
   border: 0;
+  border-radius: 4px 4px 0 0;
+  background-color: #33D4C0;
+  color: #fff;
 }
 
 .modal-header .close {
   opacity: 1;
+  outline: 0;
+  color: #fff;
   font-size: 40px;
   font-weight: normal;
-  line-height: 0.75;
+  line-height: 0.5;
+  -webkit-transition: all 250ms;
+  -moz-transition: all 250ms;
+  -ms-transition: all 250ms;
+  transition: all 250ms;
+}
+
+.modal-header .close:hover {
+  opacity: 0.75;
 }
 
 .modal-header .title {
+  margin: 0;
+  text-align: left;
   font-weight: normal;
   line-height: 1.25;
 }
 
-/* exitPopRefine */
-
-.modal-body #exit-refine-modal-form {
-  padding: 15px;
+@media (min-width: 768px) {
+  .modal-header .close {
+    line-height: 0.65;
+  }
 }
 
-.modal-body #exit-refine-modal-form .col-xs-2 {
-  padding-right: 0;
+@media (min-width: 992px) {
+  .modal-header .close {
+    line-height: 0.75;
+  }
 }
 
-.modal-body #exit-refine-modal-form .tip-headline-label {
-  text-align: right;
+@media (min-width: 1200px) {
+  .modal-header .close {
+    line-height: 0.85;
+  }
 }
 
-.modal-body #exit-refine-modal-form .form-group {
+/* modal-body */
+
+.modal-body {
+  padding: 30px;
+}
+
+.modal-body .title {
+  text-align: left;
+}
+
+.modal-body .form-group {
   margin-top: 15px;
 }
 
-.modal-body #exit-refine-modal-form .form-control {
+.modal-body .form-control {
   border: 1px solid #DEDEDE;
   -webkit-box-shadow: 0 2px 0 0 #DEDEDE;
   -moz-box-shadow: 0 2px 0 0 #DEDEDE;
@@ -42,7 +71,41 @@
   box-shadow: 0 2px 0 0 #DEDEDE;
 }
 
-.modal-body #exit-refine-modal-form .btn {
+.modal-body .pl-search-refine .btn {
   width: auto;
   margin: 20px auto;
+}
+
+/* exitPopRefine */
+
+/* modal-header */
+
+#exitPopRefine .modal-header {
+  background-color: transparent;
+  color: #333;
+}
+
+#exitPopRefine .modal-header .close {
+  color: #333;
+  line-height: 0.75;
+}
+
+#exitPopRefine .modal-header .title {
+  text-align: center;
+}
+
+/* modal-body */
+
+#exitPopRefine .modal-body #exit-refine-modal-form .col-xs-2 {
+  padding-right: 0;
+}
+
+#exitPopRefine .modal-body #exit-refine-modal-form .tip-headline-label {
+  text-align: right;
+}
+
+/* refine-modal */
+
+#refine-modal .modal-body .refine-tips-list .icon {
+  color: #a9e963;
 }
