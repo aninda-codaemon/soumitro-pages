@@ -184,6 +184,8 @@
 
 /* scanningSocialMedia */
 
+/* modal-body */
+
 #scanningSocialMedia .modal-body {
   padding: 0 15px;
 }
@@ -211,8 +213,8 @@
 
 #scanningSocialMedia .modal-body .social-media-list li .loading {
   position: absolute;
+  top: 0;
   left: 50%;
-  top: 25px;
   max-width: 100%;
   margin-left: -16px;
 }
