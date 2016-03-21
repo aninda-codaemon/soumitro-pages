@@ -484,19 +484,17 @@
 
                     <div class="row bullets">
                         <div class="col-sm-12">
-                            <p>
-                                <strong>
-                    <span class="hidden-xs">
-                      <img src="img/1_32.png"> &nbsp;Make sure you have the right name
-                    </span>
-                    <span class="visible-xs">
-                      <img src="img/1_32.png"> &nbsp;Do you have the right name?
-                    </span>
-                                </strong>
-                            </p>
+                            <h6>
+                                <span class="hidden-xs">
+                                    Make sure you have the right name
+                                </span>
+                                <span class="visible-xs">
+                                    Do you have the right name?
+                                </span>
+                            </h6>
                             <ul class="refine-list-one refine-tips-list list-unstyled">
-                                <li class="tip1"><i class="icon-yes-check"></i> Try an alternate spelling</li>
-                                <li class="tip2"><i class="icon-yes-check"></i> Try a maiden name</li>
+                                <li class="tip">Try an alternate spelling</li>
+                                <li class="tip">Try a maiden name</li>
                             </ul>
                         </div>
                     </div>
@@ -517,34 +515,31 @@
                                            value="{{ln}}"/>
                                 </div>
                             </div>
-                            <!--END refine-input-wrapper-->
                         </fieldset>
                     </div>
 
                     <div class="row bullets">
                         <div class="col-sm-12">
-                            <p>
-                                <strong>
-                    <span class="hidden-xs">
-                      <img src="img/2_32.png"> &nbsp;Make sure you're searching the right place
-                    </span>
-                    <span class="visible-xs">
-                      <img src="img/2_32.png"> &nbsp;Are you looking in the right place
-                    </span>
-                                </strong>
-                            </p>
+                            <h6>
+                                <span class="hidden-xs">
+                                    Make sure you're searching the right place
+                                </span>
+                                <span class="visible-xs">
+                                    Are you looking in the right place
+                                </span>
+                            </h6>
                             <ul class="refine-list-two refine-tips-list list-unstyled">
-                                <li class="tip3"><span class="hidden-xs"><i class="icon-yes-check"></i> Try removing the city to do a broader search</span><span
-                                        class="visible-xs"><i class="icon-yes-check"></i> Remove the city to do a broader search</span>
+                                <li class="tip"><span class="hidden-xs">Try removing the city to do a broader search</span><span
+                                        class="visible-xs">Remove the city to do a broader search</span>
                                 </li>
-                                <li class="tip4"><span class="hidden-xs"><i class="icon-yes-check"></i> Try changing the state or doing a national search</span><span
-                                        class="visible-xs"><i class="icon-yes-check"></i> Change the state or doing a national search</span>
+                                <li class="tip"><span class="hidden-xs">Try changing the state or doing a national search</span><span
+                                        class="visible-xs">Change the state or doing a national search</span>
                                 </li>
-                                <li class="tip5"><span class="hidden-xs"><i class="icon-yes-check"></i> Try adding a city to narrow down your search</span><span
-                                        class="visible-xs"><i class="icon-yes-check"></i> Add a city to narrow down your search</span>
+                                <li class="tip"><span class="hidden-xs">Try adding a city to narrow down your search</span><span
+                                        class="visible-xs">Add a city to narrow down your search</span>
                                 </li>
-                                <li class="tip6"><span class="hidden-xs"><i class="icon-yes-check"></i> Try adding a state to narrow down your search</span><span
-                                        class="visible-xs"><i class="icon-yes-check"></i> Add a state to narrow down your search</span>
+                                <li class="tip"><span class="hidden-xs">Try adding a state to narrow down your search</span><span
+                                        class="visible-xs">Add a state to narrow down your search</span>
                                 </li>
                             </ul>
                         </div>
@@ -626,33 +621,29 @@
                         </div>
 
                     </div>
-                    <!--END refine-input-wrapper-->
                 </form>
 
                 <div class="clearfix"></div>
             </div>
-            <!--END modal body-->
         </div>
     </div>
 </div>
-<!-- END Exit Pop -->
 
 <!-- ================ -->
 <!-- = Refine Modal = -->
 <!-- ================ -->
+
 <div id="refine-modal" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
             <div class="modal-header section-header" data-fr-bind="teaserData">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#ffffff;">×
-                </button>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <p>
                     <strong>Your search for {{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}} returned
                         <strong>{{recordCount}}</strong> results!</strong>
                 </p>
             </div>
-            <!-- /.modal-header -->
 
             <div class="modal-body">
                 <div class="row refine-tips-wrapper">
@@ -661,13 +652,12 @@
                     <div class="col-sm-9">
                         <p><strong>Narrow down your results by adding more information.</strong></p>
                         <ul class="refine-tips-list list-unstyled">
-                            <li><i class="icon-yes-check"></i> Add a middle initial, if you know it.</li>
-                            <li><i class="icon-yes-check"></i> Add a current or previous city.</li>
-                            <li><i class="icon-yes-check"></i> Add an approximate current age.</li>
+                            <li><i class="fa fa-check icon"></i> Add a middle initial, if you know it.</li>
+                            <li><i class="fa fa-check icon"></i> Add a current or previous city.</li>
+                            <li><i class="fa fa-check icon"></i> Add an approximate current age.</li>
                         </ul>
                     </div>
                 </div>
-                <!-- /.row .refine-tips-wrapper -->
 
                 <form id="refine-modal-form" class="bv-search alt-search" data-fr-store="searchData"
                       data-fr-bind="searchData">
@@ -757,16 +747,15 @@
                     </fieldset>
                 </form>
             </div>
-            <!-- /.modal-body -->
 
         </div>
     </div>
 </div>
-<!-- /#refine-modal -->
 
 <!-- ================ -->
 <!-- = Exit Pop = -->
 <!-- ================ -->
+
 <div id="exit-pop-skip" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
@@ -774,14 +763,14 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h1 class="text-center"><strong>Wait, before you go</strong></h1>
             </div>
-            <!-- /.modal-header -->
+
             <div class="modal-body text-center">
                 <h3><strong>Preview a summary of your report.</strong></h3>
 
                 <div class="loader-big">
                     <img src="img/loader-big.gif">
                 </div>
-                <img class="img-responsive preview" src="img/preview.jpg">
+                <!-- <img class="img-responsive preview" src="img/preview.jpg"> -->
 
                 <div class="row">
                     <div class="col-sm-6 col-sm-offset-3">
@@ -793,23 +782,22 @@
         </div>
     </div>
 </div>
-<!-- /#refine-modal -->
 
 <!-- ==================================== -->
 <!-- == 1 == GENERATING REPORT  ========= -->
 <!-- ==================================== -->
+
 <div id="gen-report-modal1" class="modal" data-fr-bind="currentRecord" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button class="close" data-dismiss="modal" aria-hidden="true" style="color:#ffffff;">×</button>
-                <img src="img/blue_spinner.gif" class="pull-left header-icon">
+                <button class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <img src="img/loading.gif" class="pull-left header-icon">
 
                 <p data-fr-bind="currentRecord">
                     We have information <span class="hidden-xs">on <span>{{fullName}}</span></span> available...
                 </p>
             </div>
-            <!-- /.modal-header -->
 
             <div class="modal-body">
                 <h3 class="modal-body-header text-center hidden-xs"><strong><span
@@ -822,18 +810,18 @@
                     <div class="searching-progress-bar-group col-xs-12">
                         <div id="searching-progress-bar-database" class="progress checking-sources-progress">
                             <div class="progress-bar progress-bar-success" style="width: 1%"></div>
-                            <p class="text-center"><img src="img/records-24.png" class="bar-icon"><strong><span
+                            <p class="text-center"><img src="img/icon_court.png" class="bar-icon"><strong><span
                                     class="hidden-xs">Various Public and Criminal Record Databases </span><span
                                     class="hidden-lg">Public Records</span></strong></p>
                         </div>
                         <div id="searching-progress-bar-records" class="progress checking-sources-progress">
                             <div class="progress-bar progress-bar-success" style="width: 1%"></div>
-                            <p class="text-center"><img src="img/judge-24.png" class="bar-icon"><strong><span><span
+                            <p class="text-center"><img src="img/icon_gavel.png" class="bar-icon"><strong><span><span
                                     class="hidden-xs">County and State </span>Court Records</span></strong></p>
                         </div>
                         <div id="searching-progress-bar-datasets" class="progress checking-sources-progress">
                             <div class="progress-bar progress-bar-success" style="width: 1%"></div>
-                            <p class="text-center"><img src="img/dataset-24.png" class="bar-icon"><strong>Proprietary
+                            <p class="text-center"><img src="img/icon_data.png" class="bar-icon"><strong>Proprietary
                                 Data<span class="hidden-xs"> Sets</span></strong></p>
                         </div>
                     </div>
@@ -842,27 +830,25 @@
                     <small><strong>Reminder: Your search of {{firstName}} is anonymous</strong>.</small>
                 </p>
             </div>
-            <!-- /.modal-body -->
 
         </div>
     </div>
 </div>
-<!-- /#gen-report-modal1 -->
 
 <!-- ===================================== -->
 <!-- == 2 == SOCIAL NETWORKS  ============ -->
 <!-- ===================================== -->
+
 <div id="scanningSocialMedia" class="scanningSocialMedia modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <img src="img/blue_spinner.gif" class="pull-left header-icon">
+                <img src="img/loading.gif" class="pull-left header-icon">
 
                 <p class="social-header">Scanning Dozens of Social Media Profiles...</p>
             </div>
-            <!-- /.modal-header -->
 
             <div class="modal-body" data-fr-bind="currentRecord">
                 <div class="row">
@@ -910,75 +896,74 @@
                             <div class="row">
                                 <ul id="social-media-groups" class="socialMedias list-unstyled">
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
-                                             alt="scanning"><span class="social facebook"><img src="img/facebook.png"><p
+                                             alt="scanning"><span class="social facebook"><img src="img/icon_facebook.png"><p
                                             class="hidden-xs">Facebook</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
-                                             alt="scanning"><span class="social flickr"><img src="img/flickr.png"><p
+                                             alt="scanning"><span class="social flickr"><img src="img/icon_flickr.png"><p
                                             class="hidden-xs">Flickr</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
-                                             alt="scanning"><span class="social twitter"><img src="img/twitter.png"><p
+                                             alt="scanning"><span class="social twitter"><img src="img/icon_twitter.png"><p
                                             class="hidden-xs">Twitter</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
-                                             alt="scanning"><span class="social gplus"><img src="img/gplus2.png"><p
+                                             alt="scanning"><span class="social gplus"><img src="img/icon_gplus.png"><p
                                             class="hidden-xs">Google+</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
-                                             alt="scanning"><span class="social myspace"><img src="img/myspace.png"><p
+                                             alt="scanning"><span class="social myspace"><img src="img/icon_myspace.png"><p
                                             class="hidden-xs">MySpace</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
                                              alt="scanning"><span class="social kickstarter"><img
-                                            src="img/kickstarter.png"><p class="hidden-xs">Kickstarter</p></span></li>
+                                            src="img/icon_kickstarter.png"><p class="hidden-xs">Kickstarter</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
-                                             alt="scanning"><span class="social linkedin"><img src="img/linkedin.png"><p
+                                             alt="scanning"><span class="social linkedin"><img src="img/icon_linkedin.png"><p
                                             class="hidden-xs">Linkedin</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
-                                             alt="scanning"><span class="social youtube"><img src="img/youtube.png"><p
+                                             alt="scanning"><span class="social youtube"><img src="img/icon_youtube.png"><p
                                             class="hidden-xs">Youtube</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
-                                             alt="scanning"><span class="social picasa"><img src="img/picasa.png"><p
+                                             alt="scanning"><span class="social picasa"><img src="img/icon_picasa.png"><p
                                             class="hidden-xs">Picasa</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
-                                             alt="scanning"><span class="social pinterest"><img src="img/pinterest.png"><p
+                                             alt="scanning"><span class="social pinterest"><img src="img/icon_pinterest.png"><p
                                             class="hidden-xs">Pinterest</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
-                                             alt="scanning"><span class="social reddit"><img src="img/reddit.png"><p
+                                             alt="scanning"><span class="social reddit"><img src="img/icon_reddit.png"><p
                                             class="hidden-xs">Reddit</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
-                                             alt="scanning"><span class="social gravatar"><img src="img/gravatar.png"><p
+                                             alt="scanning"><span class="social gravatar"><img src="img/icon_gravatar.png"><p
                                             class="hidden-xs">Gravatar</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
-                                             alt="scanning"><span class="social ancestry"><img src="img/ancestry.png"><p
+                                             alt="scanning"><span class="social ancestry"><img src="img/icon_ancestry.png"><p
                                             class="hidden-xs">Ancestry</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
-                                             alt="scanning"><span class="social klout"><img src="img/klout.png"><p
+                                             alt="scanning"><span class="social klout"><img src="img/icon_klout.png"><p
                                             class="hidden-xs">Klout</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
-                                             alt="scanning"><span class="social instagram"><img src="img/instagram.png"><p
+                                             alt="scanning"><span class="social instagram"><img src="img/icon_instagram.png"><p
                                             class="hidden-xs">Instagram</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
-                                             alt="scanning"><span class="social amazon"><img src="img/amazon.png"><p
+                                             alt="scanning"><span class="social amazon"><img src="img/icon_amazon.png"><p
                                             class="hidden-xs">Amazon</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
-                                             alt="scanning"><span class="social vimeo"><img src="img/vimeo.png"><p
+                                             alt="scanning"><span class="social vimeo"><img src="img/icon_vimeo.png"><p
                                             class="hidden-xs">Vimeo</p></span></li>
                                     <li><img class="loading" src="img/loading.gif" width="32" height="32"
                                              alt="scanning"><span class="social foursquare"><img
-                                            src="img/foursquare.png"><p class="hidden-xs">Foursquare</p></span></li>
+                                            src="img/icon_foursquare.png"><p class="hidden-xs">Foursquare</p></span></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /.modal-body -->
 
         </div>
     </div>
 </div>
-<!--/#scanningSocialMedia -->
 
 <!-- ========================================== -->
 <!-- == 3 == YOUR REPORT IS READY  ============ -->
 <!-- ========================================== -->
+
 <div id="gen-report-modal2" class="modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog large-modal">
         <div class="modal-content">
@@ -996,14 +981,13 @@
                     <img class="img-animation" src="../img/animation.gif"/>
                 </div>
             </div>
-            <!-- /.modal-header -->
 
             <div class="modal-body">
                 <div class="mobile-heading visible-xs">
                     <h3 class="modal-headline">
                         <img class="mobile-img-src" src="img/success-icon.gif" style="display: none !important"/>
                         <img class="img-animation" src="../img/success-icon.gif"/>
-                        <strong class="green"><i class="fa fa-check icon"></i> Success, Data Found!</strong>
+                        <strong><i class="fa fa-check icon"></i> Success, Data Found!</strong>
                     </h3>
 
                     <p class="modal-sub-headline" data-fr-bind="currentRecord">
@@ -1104,7 +1088,6 @@
                     </li>
                 </ul>
             </div>
-            <!-- /.modal-body -->
 
             <div class="modal-footer">
                 <button disabled id="gen-report-confirm" class="main-btn btn-lg btn-block large-modal-btn"
@@ -1115,12 +1098,10 @@
                     <i class="fa fa-arrow-right hidden-xs" id="arrowhead-right"></i>
                 </button>
             </div>
-            <!-- /.modal-footer -->
 
         </div>
     </div>
 </div>
-<!-- /#gen-report-modal2 -->
 
 <!-- ============================================== -->
 <!-- == 4 == PROCCESSING YOUR REQUEST  ============ -->
@@ -1132,7 +1113,6 @@
             <div class="modal-header section-header section-min">
                 <p><i class="fa fa-share icon"></i> Compiling your report, please wait...</p>
             </div>
-            <!-- /.modal-header -->
 
             <div class="modal-body">
                 <div id="processing-data-progress" class="progress processing-data-progress">
@@ -1162,31 +1142,29 @@
                     </li>
                 </ul>
                 <div class="case-images">
-                    <img class="case-image active" src="img/use-case-image-01.jpg"/>
-                    <img class="case-image" src="img/use-case-image-02.jpg"/>
-                    <img class="case-image" src="img/use-case-image-03.jpg"/>
-                    <img class="case-image" src="img/use-case-image-04.jpg"/>
-                    <img class="case-image" src="img/use-case-image-05.jpg"/>
+                    <img class="case-image active" src="img/usecase01.png"/>
+                    <img class="case-image" src="img/usecase02.png"/>
+                    <img class="case-image" src="img/usecase03.png"/>
+                    <img class="case-image" src="img/usecase04.png"/>
+                    <img class="case-image" src="img/usecase05.png"/>
                 </div>
                 <p data-fr-bind="currentRecord" class="log-load"></p>
             </div>
-            <!-- /.modal-body -->
 
         </div>
     </div>
 </div>
-<!-- /#gen-report-modal3 -->
 
 <!-- ============================================== -->
 <!-- == 5 == CAPTCHA MODAL ======================== -->
 <!-- ============================================== -->
+
 <div id="gen-report-modal4" class="modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 
             <div class="modal-header header-alert">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#ffffff;">×
-                </button>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <img src="img/alert-24.png" class="pull-left header-icon">
 
                 <p data-fr-bind="currentRecord">
@@ -1208,14 +1186,14 @@
                                         <div class="well">
                                             <div class="captcha-wrap">
                                                 <div id="bv-captcha-imgs">
-                                                    <img src="img/degree.jpg" alt="degree">
-                                                    <img src="img/fact.jpg" alt="fact">
-                                                    <img src="img/glass.jpg" alt="glass">
-                                                    <img src="img/grip.jpg" alt="grip">
-                                                    <img src="img/nose.png" alt="nose">
-                                                    <img src="img/seed.png" alt="seed">
-                                                    <img src="img/snake.jpg" alt="snake">
-                                                    <img src="img/step.jpg" alt="step">
+                                                    <img src="img/captcha_degree.jpg" alt="degree">
+                                                    <img src="img/captcha_fact.jpg" alt="fact">
+                                                    <img src="img/captcha_glass.jpg" alt="glass">
+                                                    <img src="img/captcha_grip.jpg" alt="grip">
+                                                    <img src="img/captcha_nose.png" alt="nose">
+                                                    <img src="img/captcha_seed.png" alt="seed">
+                                                    <img src="img/captcha_snake.jpg" alt="snake">
+                                                    <img src="img/captcha_step.jpg" alt="step">
                                                 </div>
                                                 <a href="#" id="bv-captcha-refresh" title="Refresh Image"></a>
                                             </div>
@@ -1235,7 +1213,7 @@
                                     <div class="col-sm-10 col-sm-offset-1">
                                         <button type="submit" id="bv-captcha-next" class="main-btn btn-lg btn-block">
                                             <strong>Continue</strong>
-                                            <img class="hidden-xs" src="img/next-32.png" style="display: inline;">
+                                            <!-- <img class="hidden-xs" src="img/next-32.png" style="display: inline;"> -->
                                         </button>
                                     </div>
                                 </div>
@@ -1276,7 +1254,7 @@
                                     <li>Phone Numbers</li>
                                     <li>Bankruptcies</li>
                                     <li>Email Addresses</li>
-                                    <li>Photos&nbsp;<img src="img/new_blue.png"></li>
+                                    <li>Photos</li>
                                 </div>
                                 <div class="blur-list-right">
                                     <li>Address History</li>
@@ -1305,7 +1283,7 @@
         <div class="modal-content">
 
             <div class="modal-header section-header section-min">
-                <img id="dl-spinner-icon" src="img/blue_spinner.gif" class="pull-left header-icon">
+                <img id="dl-spinner-icon" src="img/loading.gif" class="pull-left header-icon">
 
                 <p data-fr-bind="currentRecord">
                     <strong>Please Wait:</strong> Completing Report
@@ -1655,7 +1633,6 @@
                     </div>
                 </div>
             </div>
-            <!-- /.modal-body -->
 
             <div class="modal-footer">
                 <div id="searching-progress-bar" class="progress">
@@ -1673,24 +1650,22 @@
                     <span data-fr-bind="currentRecord">Compiling Miscellaneous Info Section for {{fullName}}</span>
                 </p>
             </div>
-            <!-- /.modal-footer -->
 
         </div>
     </div>
 </div>
-<!-- /#gen-report-modal5 -->
 
 <!-- ================================================== -->
 <!-- == 7 == LEAD BOX SIGNUP ========================== -->
 <!-- ================================================== -->
+
 <div id="gen-report-modal6" aria-hidden="true" class="modal">
     <div class="modal-dialog">
         <div class="modal-content">
 
             <div class="modal-header header-alert">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#ffffff;">×
-                </button>
-                <img src="img/alert-24.png" class="pull-left header-icon">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <!-- <img src="img/alert-24.png" class="pull-left header-icon"> -->
 
                 <p data-fr-bind="currentRecord">
                     <strong>Account needed to view report<span class="hidden-xs"> on {{fullName}}</span>...</strong>
@@ -1757,8 +1732,7 @@
                             <fieldset>
                                 <div class="col-sm-10 col-sm-offset-1">
                                     <button type="submit" class="main-btn main-btn-large btn-block"><span
-                                            class="hidden-xs">&nbsp;ACCESS &amp; </span>CONTINUE&nbsp;<img
-                                            src="img/next-24.png"></button>
+                                            class="hidden-xs">&nbsp;ACCESS &amp; </span>CONTINUE</button>
                                 </div>
                             </fieldset>
                         </form>
@@ -1789,36 +1763,32 @@
                                 </small>
                             </p>
                             <div class="seal-small">
-                                <div class="verify-seal" style="cursor: pointer;cursor:hand; text-align:center;"><img
-                                        src="img/norton-secured.png"></div>
+                                <div class="verify-seal"><img src="img/norton.png" /></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /.modal-body -->
 
         </div>
     </div>
 </div>
-<!-- /#signup-modal -->
 
 <!-- ================================================== -->
 <!-- == 8 ==  FINAL CARD REPORT ======================= -->
 <!-- ================================================== -->
+
 <div id="gen-report-modal7" aria-hidden="true" class="modal">
     <div class="modal-dialog">
         <div class="modal-content">
 
             <div class="modal-header" data-fr-bind="currentRecord">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#ffffff;">×
-                </button>
-                <img src="img/check-24.png" class="pull-left header-icon">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <!-- <img src="img/check-24.png" class="pull-left header-icon"> -->
 
                 <h1><span class="visible-xs">Data preview</span><span
                         class="hidden-xs">Preview of {{fullName}}'s data</span></h1>
             </div>
-            <!-- /.modal-header -->
 
             <div class="modal-body">
                 <div class="row">
@@ -1868,19 +1838,16 @@
                                 </div>
                                 <div class="row visible-xs">
                                     <div class="btn-wrap">
-                                        <button class="data-modal-confirm btn btn-success btn-block"><span>Get the Full Report &nbsp; <img
-                                                src="img/arrow.png"/></span></button>
+                                        <button class="data-modal-confirm btn btn-success btn-block"><span>Get the Full Report</span></button>
                                     </div>
                                 </div>
                             </div>
-                            <!-- /.person-info -->
 
                             <div class="details" data-fr-bind="currentRecord extraTeaserData"
                                  data-total-cards-to-show="5" data-filler-cards-available="5">
                                 <div class="row">
 
                                     {{#each extraData}}
-                                    <!-- card repeat -->
                                     <div class="col-md-4">
                                         <div class="detail-box {{style}}">
                                             <div class="row no-gutter">
@@ -1900,87 +1867,63 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--END card repeat-->
                                     {{/each}}
 
                     <span class="fillers">
                       {{#ifIn filler 1}}
-                      <!-- filler card -->
                       <div class="col-md-4">
                           <div class="detail-box {{style}} fillerCard">
                               <div class="row no-gutter">
                                   <h1>We Searched Even More!</h1>
 
                                   <div class="col-xs-6 hidden-xs hidden-sm">
-                                      <div class="detail-img"><img class="center-block" src="img/838-icon-more3.png">
-                                      </div>
+                                      <!-- <div class="detail-img"><img class="center-block" src="img/838-icon-more3.png">
+                                      </div> -->
                                       <small class="small text-muted center-block text-center">May Contain</small>
                                   </div>
                                   <div class="col-md-6 col-sm-12">
                                       <ul>
                                           {{#unless hasCriminal}}
-                                          <li class="alertText"><span class="visible-xs visible-sm"><img
-                                                  src="img/mag_glass_10.png">&nbsp;</span>Crime Records
-                                          </li>
+                                          <li class="alertText">Crime Records</li>
                                           {{else}}
-                                          <li><span class="visible-xs visible-sm"><img src="img/mag_glass_10.png">&nbsp;</span>Address
-                                              Records
-                                          </li>
+                                          <li>Address Records</li>
                                           {{/unless}}
                                           {{#unless hasBankruptcy}}
-                                          <li class="alertText"><span class="visible-xs visible-sm"><img
-                                                  src="img/mag_glass_10.png">&nbsp;</span>Bankruptcies
-                                          </li>
+                                          <li class="alertText">Bankruptcies</li>
                                           {{else}}
-                                          <li><span class="visible-xs visible-sm"><img src="img/mag_glass_10.png">&nbsp;</span>Property
-                                              Records
-                                          </li>
+                                          <li>Property Records</li>
                                           {{/unless}}
                                           {{#unless hasProperty}}
-                                          <li class="hidden-xs"><span class="visible-xs visible-sm"><img
-                                                  src="img/mag_glass_10.png">&nbsp;</span>Properties
-                                          </li>
+                                          <li class="hidden-xs">Properties</li>
                                           {{else}}
-                                          <li class="hidden-xs"><span class="visible-xs visible-sm"><img
-                                                  src="img/mag_glass_10.png">&nbsp;</span>Neighbor Records
-                                          </li>
+                                          <li class="hidden-xs">Neighbor Records</li>
                                           {{/unless}}
                                           {{#unless hasSocial}}
-                                          <li class="hidden-xs"><span class="visible-xs visible-sm"><img
-                                                  src="img/mag_glass_10.png">&nbsp;</span>Social Profiles
-                                          </li>
+                                          <li class="hidden-xs">Social Profiles</li>
                                           {{else}}
-                                          <li class="hidden-xs"><span class="visible-xs visible-sm"><img
-                                                  src="img/mag_glass_10.png">&nbsp;</span>License Records
-                                          </li>
+                                          <li class="hidden-xs">License Records</li>
                                           {{/unless}}
                                           {{#unless hasPhone}}
-                                          <li class="hidden-xs"><span class="visible-xs visible-sm"><img
-                                                  src="img/mag_glass_10.png">&nbsp;</span>Phone Numbers
-                                          </li>
+                                          <li class="hidden-xs">Phone Numbers</li>
                                           {{else}}
-                                          <li class="hidden-xs"><span class="visible-xs visible-sm"><img
-                                                  src="img/mag_glass_10.png">&nbsp;</span>Permit Records
-                                          </li>
+                                          <li class="hidden-xs">Permit Records</li>
                                           {{/unless}}
                                       </ul>
                                   </div>
                               </div>
                           </div>
                       </div>
-                      <!--END filler card -->
                       {{/ifIn}}
 
                       {{#ifIn filler 2}}
-                      <!-- satisfaction filler card -->
                       <div class="col-md-4">
                           <div class="detail-box {{style}} fillerCard">
                               <div class="row no-gutter">
                                   <h1>Satisfaction Guarantee</h1>
 
                                   <div class="col-xs-6 hidden-xs hidden-sm">
-                                      <div class="detail-img"><img class="center-block" src="img/838-icon-thumbup.png">
-                                      </div>
+                                      <!-- <div class="detail-img"><img class="center-block" src="img/838-icon-thumbup.png">
+                                      </div> -->
                                   </div>
                                   <div class="col-md-6 col-sm-12">
                                       <p>If you are unhappy with the results of your report, we will gladly give you a
@@ -1989,19 +1932,17 @@
                               </div>
                           </div>
                       </div>
-                      <!-- END satisfaction filler card -->
                       {{/ifIn}}
 
                       {{#ifIn filler 3}}
-                      <!-- top rated filler card-->
                       <div class="col-md-4">
                           <div class="detail-box {{style}} fillerCard">
                               <div class="row no-gutter">
                                   <h1>Top Rated Service</h1>
 
                                   <div class="col-xs-6 hidden-xs hidden-sm">
-                                      <div class="detail-img"><img class="center-block"
-                                                                   src="img/838-icon-siteJabber.png"></div>
+                                      <!-- <div class="detail-img"><img class="center-block"
+                                                                   src="img/838-icon-siteJabber.png"></div> -->
                                   </div>
                                   <div class="col-md-6 col-sm-12">
                                       <p>Ranked #1 amongst competitors for customer service on SiteJabber.com.</p>
@@ -2009,19 +1950,17 @@
                               </div>
                           </div>
                       </div>
-                      <!--END top rated filler card-->
                       {{/ifIn}}
 
                       {{#ifIn filler 4}}
-                      <!-- Norton filler card-->
                       <div class="col-md-4">
                           <div class="detail-box {{style}} fillerCard">
                               <div class="row no-gutter">
                                   <h1>Secure Search</h1>
 
                                   <div class="col-xs-6 hidden-xs hidden-sm">
-                                      <div class="detail-img"><img class="center-block" src="img/838-icon-norton.png">
-                                      </div>
+                                      <!-- <div class="detail-img"><img class="center-block" src="img/838-icon-norton.png">
+                                      </div> -->
                                   </div>
                                   <div class="col-md-6 col-sm-12">
                                       <p>{{fullName}} will not be notified of this search.</p>
@@ -2029,19 +1968,17 @@
                               </div>
                           </div>
                       </div>
-                      <!-- END Norton filler card-->
                       {{/ifIn}}
 
                       {{#ifIn filler 5}}
-                      <!-- address search filler card-->
                       <div class="col-md-4">
                           <div class="detail-box {{style}} fillerCard">
                               <div class="row no-gutter">
                                   <h1>New Feature</h1>
 
                                   <div class="col-xs-6 hidden-xs hidden-sm">
-                                      <div class="detail-img"><img class="center-block"
-                                                                   src="img/838-icon-addressSearch.png"></div>
+                                      <!-- <div class="detail-img"><img class="center-block"
+                                                                   src="img/838-icon-addressSearch.png"></div> -->
                                   </div>
                                   <div class="col-md-6 col-sm-12">
                                       <p>Now you can also run UNLIMITED property searches.</p>
@@ -2049,7 +1986,6 @@
                               </div>
                           </div>
                       </div>
-                      <!--END address search filler card-->
                       {{/ifIn}}
                     </span>
 
@@ -2062,15 +1998,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--END CTA card -->
                                 </div>
 
                                 <div class="row seals">
                                     <div class="col-md-6">
                                         <div class="guarantee">
                                             <div class="row">
-                                                <div class="col-xs-4"><img src="img/guarantee.png"
-                                                                           class="center-block"/></div>
+                                                <!-- <div class="col-xs-4"><img src="img/guarantee.png"
+                                                                           class="center-block"/></div> -->
                                                 <div class="col-xs-8">
                                                     <p>Get a Refund if you are not happy. No questions will be
                                                         asked.</p>
@@ -2081,8 +2016,8 @@
                                     <div class="col-md-6">
                                         <div class="awards">
                                             <div class="row">
-                                                <div class="col-xs-4"><img src="img/awards.png" class="center-block"/>
-                                                </div>
+                                                <!-- <div class="col-xs-4"><img src="img/awards.png" class="center-block"/>
+                                                </div> -->
                                                 <div class="col-xs-8">
                                                     <p>Ranked ahead of competitor because we care about our
                                                         customers</p>
@@ -2091,17 +2026,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--END row-->
                             </div>
-                            <!-- /.details -->
 
                         </div>
-                        <!-- /.col-left -->
                     </div>
-                    <!-- END col-md-12-->
                 </div>
             </div>
-            <<!-- /.modal-body -->
 
             <div class="modal-footer">
                 <div class="row-fluid">
@@ -2111,21 +2041,20 @@
                     </div>
                 </div>
             </div>
-            <!-- /.modal-footer -->
         </div>
     </div>
 </div>
-<!-- /#gen-report-modal7 -->
 
 <!-- ================================================== -->
 <!-- == 11 == FCRA ===================================== -->
 <!-- ================================================== -->
+
 <div id="gen-report-modal11" aria-hidden="true" class="modal">
     <div class="modal-dialog">
         <div class="modal-content">
 
             <div class="modal-header">
-                <img src="img/icon-alert-lg.png" class="pull-left header-icon"/>
+                <!-- <img src="img/icon-alert-lg.png" class="pull-left header-icon"/> -->
 
                 <p class="huge hidden-xs">Warning: Please Read Before You Continue</p>
 
@@ -2163,8 +2092,7 @@
 
                             <div class="row">
                                 <div class="col-sm-6 col-sm-offset-3">
-                                    <button class="btn btn-success btn-block"><span>Continue &nbsp;<img
-                                            src="img/arrow.png"/></span></button>
+                                    <button class="btn btn-success btn-block"><span>Continue</button>
                                 </div>
                             </div>
                         </div>
