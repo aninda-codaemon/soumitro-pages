@@ -21,6 +21,10 @@
   display: block;
 }
 
+.text-bold {
+  font-weight: bold;
+}
+
 .text-underline {
   text-decoration: underline;
 }
@@ -46,4 +50,21 @@
 
 .img-responsive {
   margin: 0 auto;
+}
+
+.img-centered {
+  display: block;
+  margin: 15px auto;
+}
+
+/* labels */
+
+.label-primary {
+  background: #33D4C0;
+  color: #fff;
+}
+
+.label-rounded {
+  padding: 7px 15.5px;
+  border-radius: 50%;
 }

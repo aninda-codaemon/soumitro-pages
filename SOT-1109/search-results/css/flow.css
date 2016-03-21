@@ -1,0 +1,48 @@
+/* modal-header */
+
+.modal-header {
+  border: 0;
+}
+
+.modal-header .close {
+  opacity: 1;
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 0.75;
+}
+
+.modal-header .title {
+  font-weight: normal;
+  line-height: 1.25;
+}
+
+/* exitPopRefine */
+
+.modal-body #exit-refine-modal-form {
+  padding: 15px;
+}
+
+.modal-body #exit-refine-modal-form .col-xs-2 {
+  padding-right: 0;
+}
+
+.modal-body #exit-refine-modal-form .tip-headline-label {
+  text-align: right;
+}
+
+.modal-body #exit-refine-modal-form .form-group {
+  margin-top: 15px;
+}
+
+.modal-body #exit-refine-modal-form .form-control {
+  border: 1px solid #DEDEDE;
+  -webkit-box-shadow: 0 2px 0 0 #DEDEDE;
+  -moz-box-shadow: 0 2px 0 0 #DEDEDE;
+  -ms-box-shadow: 0 2px 0 0 #DEDEDE;
+  box-shadow: 0 2px 0 0 #DEDEDE;
+}
+
+.modal-body #exit-refine-modal-form .btn {
+  width: auto;
+  margin: 20px auto;
+}
