@@ -209,6 +209,11 @@
                 <td class="td-name">
                   <h6 class="text-secondary text-underline">{{fullName}}</h6>
 
+                  <ul class="mobile-places-list list-unstyled">
+                    <li>{{place}}</li>
+                    <li>{{place2}}</li>
+                  </ul>
+
                   <div class="hidden-xs hidden-sm">
                     <ul class="aka-list list-unstyled">
                       {{#hasAkas}}
@@ -1761,11 +1766,11 @@
               </div>
 
               <div class="col-md-4">
-                <div class="data-modal-confirm detail-box {{style}} CTA_card">
+                <div class="detail-box {{style}} CTA_card">
                   <div class="row no-gutter">
                     <h6 class="box-title">Access The Report</h6>
 
-                    <button type="button" class="btn btn-lg btn-block btn-secondary">Click Here!</button>
+                    <button type="button" class="btn btn-lg btn-block btn-secondary data-modal-confirm">Click Here!</button>
                   </div>
                 </div>
               </div>

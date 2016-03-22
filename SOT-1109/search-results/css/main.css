@@ -144,6 +144,10 @@
     .content-section#data-panel .search-results .table tr .td-cities {
         display: inline-block !important;
     }
+
+    .content-section#data-panel .search-results .table .td-name .mobile-places-list {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) {
