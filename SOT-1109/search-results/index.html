@@ -1511,41 +1511,28 @@
         </div>
 
         <div class="modal-body">
-          <h2 data-fr-bind="currentRecord">There are limits to how you can use {{firstName}}'s report.</h2>
+          <h5 class="text-centered title" data-fr-bind="currentRecord">There are limits to how you can use {{firstName}}'s report.</h5>
 
-          <p class="sub-head">Please check the box below<span class="hidden-xs"> to continue to your report</span>.</p>
+          <p class="text-centered text-bold sub-title">Please check the box below<span class="hidden-xs"> to continue to your report</span>.</p>
 
-          <form id="fcra-confirm">
-            <div class="row">
-              <div class="col-sm-8 col-sm-offset-2">
-                <div class="panel panel-default">
-                  <div class="row">
-                    <div class="col-sm-12 text-center">
-                      <p for="fcraCheckbox2">
-                        I will not use information provided by PeopleLooker for decisions about employment, insurance, tenant screening, consumer credit or any other purpose requiring Fair Credit Reporting Act (FCRA) compliance.
-                      </p>
-                      <label class="fcraCheckbox-wrapper" for="fcraCheckbox2">
-                        <input id="fcraCheckbox2" name="fcraCheckbox2" class="styled" type="checkbox" required>
-                        <label for="fcraCheckbox2" class="fcraCheckbox-box pull-left"></label>
-                        I Agree
-                      </label>
-                      <label for="fcraCheckbox2" class="error"></label>
-                    </div>
-                  </div>
-                </div>
+          <form class="text-centered" id="fcra-confirm">
+            <p or="fcraCheckbox2">
+              I will not use information provided by PeopleLooker for decisions about employment, insurance, tenant screening, consumer credit or any other purpose requiring Fair Credit Reporting Act (FCRA) compliance.
+            </p>
 
-                <div class="row">
-                  <div class="col-sm-6 col-sm-offset-3">
-                    <button class="btn btn-success btn-block"><span>Continue</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <label class="fcraCheckbox-wrapper" for="fcraCheckbox2">
+              <input id="fcraCheckbox2" name="fcraCheckbox2" class="styled" type="checkbox" required>
+              <label for="fcraCheckbox2" class="fcraCheckbox-box pull-left"></label>
+              I Agree
+            </label>
+            <label for="fcraCheckbox2" class="error"></label>
+
+            <button class="btn btn-lg btn-secondary">Continue</button>
           </form>
         </div>
 
         <div class="modal-footer">
-          <span data-fr-bind="currentRecord">{{firstName}} will not be notified of your search.</span>
+          <p class="alert alert-warning text-centered" data-fr-bind="currentRecord">{{firstName}} will not be notified of your search.</p>
         </div>
 
       </div>
