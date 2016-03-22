@@ -400,29 +400,7 @@
     var $lis = $('.report-info-list .report-info-item'),
         listLen = $lis.length,
         listIdxs = _.shuffle(_.range(0, listLen)),
-        currIdx = 0,
-        $animatedImage = $('.jumbo-sidebar .img-animation'),
-        imagePath = $('.large-img-src').attr('src'),
-        $mobileAnimatedImage = $('.mobile-heading .img-animation'),
-        mobileImagePath = $('.mobile-img-src').attr('src');
-
-    $('.img-animation').hide();
-    setTimeout(function() {
-      $animatedImage.attr('src', '');
-      $mobileAnimatedImage.attr('src', '');
-    }, 0);
-
-    var toggleAnimations = function() {
-      setTimeout(function() {
-        $('.img-animation').show();
-        setTimeout(function() {
-          $animatedImage.attr('src', imagePath);
-          $mobileAnimatedImage.attr('src', mobileImagePath);
-        }, 0);
-      }, 0);
-    };
-
-    toggleAnimations();
+        currIdx = 0;
 
     var duration = this.duration;
     if (window.bv.isMobile) {
@@ -458,7 +436,7 @@
     var self = this,
         duration = this.duration,
         $useCasesModal = $('#gen-report-modal3'),
-        $loader = $('#processing-data-progress .progress-bar-success'),
+        $loader = $('#processing-data-progress .progress-bar'),
         $useCase = $('.cases-list .case-item'),
         index = 2, // case-item index - loop starts on 2nd child as 1st is active by default
         total = 5; // total number of case items in the list
@@ -734,7 +712,7 @@
     $downloadNowIcon.show();
     $("#arrowhead-right").hide();
 
-    $('#processing-data-progress .progress-bar-success').css('width', '1%');
+    $('#processing-data-progress .progress-bar').css('width', '1%');
 
     window.resetSearchingState();
     // window.refreshCaptchaState();
