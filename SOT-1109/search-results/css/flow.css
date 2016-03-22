@@ -1106,7 +1106,6 @@
   width: 100%;
   margin-top: 10px;
   border-radius: 4px;
-  background-color: #f2dede;
   color: #c9302b;
   text-align: center;
   line-height: 18px;
@@ -1137,11 +1136,12 @@
   height: 32px;
   margin-right: 10px;
   margin-bottom: 0;
-  border: 2px solid #848484;
+  border: 2px solid #DEDEDE;
   border-radius: 4px;
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: center center;
+  cursor: pointer;
 }
 
 #gen-report-modal11 .modal-body #fcra-confirm #fcraCheckbox2:checked+label {
@@ -1151,114 +1151,55 @@
   background-position: center center;
 }
 
-/* == 7 ==  ========================= */
+/* == 7 == FINAL CARD REPORT ========================= */
 
-#gen-report-modal7 {
-  font-family: 'Lato', Arial, Helvetica, sans-serif !important;
-}
-.row.no-gutter {
-  margin-right: 0;
-  margin-left: 0;
-}
-.row.no-gutter>[class*='col-']:not(:first-child),
-.row.no-gutter>[class*='col-']:not(:last-child) {
-  padding-right: 0;
-  padding-left: 0;
-}
-#gen-report-modal7 .modal-header {
-  padding: 20px 15px 20px 15px;
+/* modal-body */
 
-  border-radius: 5px 5px 0 0;
-}
-#gen-report-modal7 .modal-header h1 {
-  font-size: 26px;
-  font-weight: bold;
-
-  margin: 0;
-  padding: 0 20px;
-
-  text-align: left;
-
-  color: #fff;
-}
 #gen-report-modal7 .modal-body {
   padding: 0;
 }
-#gen-report-modal7 .col-left {
-  margin-right: 1px;
-}
-#gen-report-modal7 .col-right {
-  min-height: 525px;
 
-  border-left: 1px #e4e4e4 solid;
-}
-.person-info {
+#gen-report-modal7 .modal-body .person-info {
+  margin: 0;
   padding: 10px 15px;
-
-  border-bottom: 1px #e4e4e4 solid;
-  background: #f7f7f7;
+  background-color: #ecf6f5;
 }
-#gen-report-modal7 .person-info .moreCount {
-  font-weight: normal;
 
-  color: #468dd1;
-}
-.person-info h3 {
-  font-size: 14px;
-  line-height: 18px;
-
-  margin: 15px 0 0;
-
-  color: #044789;
-}
-.person-name {
-  font-size: 20px;
-  font-weight: bold;
-
-  margin: 15px 0 0;
-
-  color: #484848;
-}
-.person-address {
-  font-size: 14px;
-  font-weight: 700;
-
-  color: #484848;
-}
-.person-cities {
-  font-size: 14px;
-  font-weight: 700;
-
-  color: #484848;
-}
-.person-relatives {
-  font-size: 14px;
-  font-weight: 700;
-
-  color: #484848;
-}
-.person-photo-wrap {
-  /*margin-left: 15px;*/
-}
-.person-photo img {
-  border-radius: 50%;
-}
-.person-photo {
+#gen-report-modal7 .modal-body .person-info .photo {
   width: 100%;
   max-width: 100px;
   height: auto;
   margin-right: auto;
   margin-left: auto;
-
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 100% auto;
 }
-.person-photo a {
-  display: block;
 
-  min-height: 100px;
+#gen-report-modal7 .modal-body .person-info .title {
+  margin: 15px 0;
 }
+
+#gen-report-modal7 .modal-body .person-info h6 {
+  margin-bottom: 5px;
+}
+
+#gen-report-modal7 .modal-body .person-info .data-modal-confirm {
+  margin-bottom: 20px;
+}
+
+
+
+#gen-report-modal7 .col-left {
+  margin-right: 1px;
+}
+
+#gen-report-modal7 .col-right {
+  min-height: 525px;
+
+  border-left: 1px #e4e4e4 solid;
+}
+
 #gen-report-modal7 .details {
   padding: 25px 15px 0;
 }
@@ -1274,8 +1215,8 @@
   border-radius: 4px;
   background: #fff;
   -webkit-box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
-     -moz-box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
-          box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
+  -moz-box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
+  box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
 }
 #gen-report-modal7 .detail-box.CTA_card {
   cursor: pointer;
@@ -1480,39 +1421,28 @@
   font-weight: bold;
 
   margin: 15px 0;
-  /*border-bottom: solid 7px #4cae4c;*/
-
   color: #fff !important;
   border-color: #57992d;
   background-color: #6dac45;
   box-shadow: 4px 4px 0 0 rgba(87, 153, 45, 1);
 }
-#gen-report-modal7 .modal-footer {
-  font-size: 14px;
 
-  padding: 10px 0;
-
-  text-align: center;
-
-  color: #555;
-  border-radius: 0 0 5px 5px;
-  background: #ebebeb;
-}
 #gen-report-modal7 .seals {
   display: none;
 }
+
 #gen-report-modal7 .more {
   font-size: 20px;
-
   color: #484848;
 }
+
 #gen-report-modal7 .detail-box.fillerCard p,
 #gen-report-modal7 .detail-box.fillerCard ul {
   line-height: 120%;
-
   padding-top: 5px;
   padding-left: 5px;
 }
+
 #gen-report-modal7 .detail-box.fillerCard small {
   font-size: 70%;
 }
