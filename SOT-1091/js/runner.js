@@ -1,6 +1,6 @@
-(function () {
+(function() {
   // NoLimit/Heap init
-  var trackNL = function (evtName, props) {
+  var trackNL = function(evtName, props) {
     if (typeof nolimit !== 'undefined' && nolimit.track) {
       if (props) {
         nolimit.track(evtName, props);
@@ -25,11 +25,11 @@
   }
 
   var BrowserDetect = {
-    init: function () {
+    init: function() {
       this.browser = this.searchString(this.dataBrowser) || 'Other';
       this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "Unknown";
     },
-    searchString: function (data) {
+    searchString: function(data) {
       for (var i = 0; i < data.length; i++) {
         var dataString = data[i].string;
         this.versionSearchString = data[i].subString;
@@ -39,7 +39,7 @@
         }
       }
     },
-    searchVersion: function (dataString) {
+    searchVersion: function(dataString) {
       var index = dataString.indexOf(this.versionSearchString);
       if (index === -1) {
         return;
@@ -53,82 +53,70 @@
       }
     },
 
-    dataBrowser: [
-      {
-        string: navigator.userAgent,
-        subString: 'Edge',
-        identity: 'MS Edge'
-      },
-      {
-        string: navigator.userAgent,
-        subString: 'Chrome',
-        identity: 'Chrome'
-      },
-      {
-        string: navigator.userAgent,
-        subString: 'MSIE',
-        identity: 'Explorer'
-      },
-      {
-        string: navigator.userAgent,
-        subString: 'Trident',
-        identity: 'Explorer'
-      },
-      {
-        string: navigator.userAgent,
-        subString: 'Firefox',
-        identity: 'Firefox'
-      },
-      {
-        string: navigator.userAgent,
-        subString: 'Safari',
-        identity: 'Safari'
-      },
-      {
-        string: navigator.userAgent,
-        subString: 'Opera',
-        identity: 'Opera'
-      }
-        ]
+    dataBrowser: [{
+      string: navigator.userAgent,
+      subString: 'Edge',
+      identity: 'MS Edge'
+    }, {
+      string: navigator.userAgent,
+      subString: 'Chrome',
+      identity: 'Chrome'
+    }, {
+      string: navigator.userAgent,
+      subString: 'MSIE',
+      identity: 'Explorer'
+    }, {
+      string: navigator.userAgent,
+      subString: 'Trident',
+      identity: 'Explorer'
+    }, {
+      string: navigator.userAgent,
+      subString: 'Firefox',
+      identity: 'Firefox'
+    }, {
+      string: navigator.userAgent,
+      subString: 'Safari',
+      identity: 'Safari'
+    }, {
+      string: navigator.userAgent,
+      subString: 'Opera',
+      identity: 'Opera'
+    }]
   };
 
   // Back To Top
-  $('#scrollTop').click(function () {
+  $('#scrollTop').click(function() {
     $('html, body').animate({
       scrollTop: $('.header').offset().top
     }, 500);
   });
 
-  // @TODO: validate search
+  var $headerSearchPeople = $('#header-search-people');
 
-  //if ($headerSearchPeople.length !== 0) {
-  //
-  //  $headerSearchPeople.validate({
-  //    validClass: "success",
-  //
-  //    rules: {
-  //      fn: "required",
-  //      ln: "required"
-  //    },
-  //    messages: {
-  //      fn: "Please enter a first name",
-  //      ln: "Please enter a last name"
-  //    },
-  //
-  //    onkeyup: false,
-  //    onclick: false,
-  //    onsubmit: true,
-  //    submitHandler: function (form) {
-  //      trackNL("Submitted Search Form - People");
-  //      window.setTimeout(function () {
-  //        form.submit();
-  //      }, REQUEST_DELAY);
-  //    }
-  //  });
-  //
-  //}
+  $headerSearchPeople.validate({
+    validClass: "success",
 
-  var init = function () {
+    rules: {
+      fn: "required",
+      ln: "required"
+    },
+    messages: {
+      fn: "Please enter a first name",
+      ln: "Please enter a last name"
+    },
+
+    onkeyup: false,
+    onclick: false,
+    onsubmit: true,
+    submitHandler: function(form) {
+      trackNL("Submitted Search Form - People");
+      window.setTimeout(function() {
+        form.submit();
+      }, REQUEST_DELAY);
+    }
+  });
+
+  var init = function() {
     BrowserDetect.init();
 
     $('.focus-me').focus();
@@ -141,7 +129,7 @@
 /**
  * Targeted Content P.O.C.
  */
-(function ($, _) {
+(function($, _) {
 
   var bv_info = {
 
@@ -151,13 +139,13 @@
    * @private
    * Parses query arguments and returns them as an object.
    */
-  var parseQueryArgs = function (query) {
+  var parseQueryArgs = function(query) {
     if (!query) {
       return null;
     }
     var args = _
       .chain(query.split('&'))
-      .map(function (params) {
+      .map(function(params) {
         var p = params.split('=');
         var key = p[0];
         var val = window.decodeURIComponent(p[1]);
@@ -170,17 +158,17 @@
     return args;
   };
 
-  var findDynamicContent = function () {
+  var findDynamicContent = function() {
     return $("[data-bv-content]");
   };
 
-  var displayTargetedContent = function (queryArgs, $dynamicElems) {
+  var displayTargetedContent = function(queryArgs, $dynamicElems) {
     var ref = queryArgs.pagetype,
       kw = ref && ref.toLowerCase().replace(' ', '');
 
     if (!ref) return;
 
-    _.forEach($dynamicElems, function (elem) {
+    _.forEach($dynamicElems, function(elem) {
       var $elem = $(elem),
         $defaults = $elem.find('[data-bv-ref=default]');
       $target = $elem.find('[data-bv-ref=' + kw + ']');
@@ -193,13 +181,13 @@
     });
   };
 
-  var show = function () {
+  var show = function() {
     $('body').removeClass('hide');
   };
 
-  var decodeSearchArgs = function (keywordString) {
+  var decodeSearchArgs = function(keywordString) {
     var keywords = keywordString.split('+');
-    keywords = _.map(keywords, function (kw) {
+    keywords = _.map(keywords, function(kw) {
       if (kw) {
         return kw.toLowerCase();
       }
@@ -208,7 +196,7 @@
     return keywords;
   };
 
-  var initialize = function () {
+  var initialize = function() {
     var query = window.location.search.substring(1),
       queryArgs = parseQueryArgs(query);
 
@@ -218,12 +206,12 @@
       $dynamicElems = findDynamicContent();
       displayTargetedContent(queryArgs, $dynamicElems);
     }
-    $('#navCollapse').on('hidden.bs.collapse', function () {
+    $('#navCollapse').on('hidden.bs.collapse', function() {
       // do something…
       $('#nav-icon-closed').show();
       $('#nav-icon-open').hide();
     });
-    $('#navCollapse').on('shown.bs.collapse', function () {
+    $('#navCollapse').on('shown.bs.collapse', function() {
       // do something…
       $('#nav-icon-closed').hide();
       $('#nav-icon-open').show();

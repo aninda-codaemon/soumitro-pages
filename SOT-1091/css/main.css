@@ -21,6 +21,18 @@
   font-size: 22px;
 }
 
+.header-hero .header-search input.error {
+  background-color: #FFEAED;
+}
+
+.header-hero .header-search label.error {
+  width: 100%;
+  margin: 5px 0px;
+  color: #ef2742;
+  font-size: 16px;
+  text-align: left;
+}
+
 .header-hero .header-mascots {
   max-width: 600px;
   margin: 30px auto;
