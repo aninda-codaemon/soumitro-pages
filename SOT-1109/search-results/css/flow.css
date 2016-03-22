@@ -1188,243 +1188,123 @@
   margin-bottom: 20px;
 }
 
-
-
-#gen-report-modal7 .col-left {
-  margin-right: 1px;
+#gen-report-modal7 .modal-body .details {
+  padding: 30px;
 }
 
-#gen-report-modal7 .col-right {
-  min-height: 525px;
-
-  border-left: 1px #e4e4e4 solid;
-}
-
-#gen-report-modal7 .details {
-  padding: 25px 15px 0;
-}
-#gen-report-modal7 .detail-box {
+#gen-report-modal7 .modal-body .details .detail-box {
   position: relative;
-
   height: auto;
-  margin: 0 0 10px;
+  margin: 0;
+  margin-bottom: 30px;
   padding: 15px;
-  /*cursor: pointer;*/
-
-  border: 1px #c4c4c4 solid;
-  border-radius: 4px;
-  background: #fff;
-  -webkit-box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
-  -moz-box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
-  box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
-}
-#gen-report-modal7 .detail-box.CTA_card {
   cursor: pointer;
-
-  color: #fff !important;
-  border-color: #57992d;
-  background-color: #6dac45;
-  box-shadow: 4px 4px 0 0 rgba(87, 153, 45, 1);
+  background-color: #ceede9;
 }
-#gen-report-modal7 .detail-box.CTA_card:hover,
-#gen-report-modal7 .detail-box.CTA_card:active,
-#gen-report-modal7 .detail-box.CTA_card:focus {
-  transition: all 0.5s ease;
 
-  background-color: #84be5f;
+#gen-report-modal7 .modal-body .details .detail-box.CTA_card {
+  border: 0;
+  background-color: transparent;
+  color: #333;
 }
-#gen-report-modal7 .detail-box.CTA_card h1 {
-  color: #fff !important;
+
+#gen-report-modal7 .modal-body .details .detail-box.crim-box {
+  background-color: #ffebad;
 }
-#gen-report-modal7 .detail-box.CTA_card span {
-  font-size: 24px;
 
-  display: block;
+#gen-report-modal7 .modal-body .details .detail-box .box-title {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
 
+#gen-report-modal7 .modal-body .details .detail-box .detail-img {
+  padding: 12px 0;
+  font-size: 40px;
   text-align: center;
 }
-#gen-report-modal7 .detail-box.CTA_card p {
-  font-size: 36px;
-  font-weight: bold;
 
-  margin-top: 35px;
-
-  color: #fff !important;
-}
-#gen-report-modal7 .detail-box.crim-box {
-  border: 1px #e7526b solid;
-}
-#gen-report-modal7 .detail-box.crim-box h1 {
-  color: #e7526b;
-}
-#gen-report-modal7 .detail-box.crim-box h2 {
-  color: #e7526b;
-}
-#gen-report-modal7 .detail-box.crim-box p {
-  color: #e7526b;
-}
-#gen-report-modal7 .detail-box .detail-img {
-  min-width: 109px;
-  min-height: 55px;
-  padding: 12px 0;
-
-  border-right: 1px #e1e1e1 solid;
-}
-.detail-box .detail-img span {
+#gen-report-modal7 .modal-body .details .detail-box .detail-img span {
   display: block;
-
-  width: 109px;
-  height: 55px;
-
+  width: 60px;
+  height: 60px;
+  margin: 0;
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: 85px 55px;
+  background-size: 100% 100%;
 }
-.detail-box .detail-img span.criminal {
-  background-image: url(../img/icon-blue-criminal.png);
-}
-.detail-box .detail-img span.bankruptcy {
-  background-image: url(../img/icon-blue-bankruptcy.png);
-}
-.detail-box .detail-img span.addresses {
-  background-image: url(../img/icon-blue-addresses.png);
-}
-.detail-box .detail-img span.associates {
-  background-image: url(../img/icon-blue-associates.png);
-}
-.detail-box .detail-img span.neighbors {
-  background-image: url(../img/icon-blue-neighbors.png);
-}
-.detail-box .detail-img span.contacts {
-  background-image: url(../img/icon-blue-contacts.png);
-}
-.detail-box .detail-img span.emails {
-  background-image: url(../img/icon-blue-emails.png);
-}
-.detail-box .detail-img span.phones {
-  background-image: url(../img/icon-blue-phones.png);
-}
-.detail-box .detail-img span.social {
-  background-image: url(../img/icon-blue-social.png);
-}
-.detail-box .detail-img span.photos {
-  background-image: url(../img/icon-blue-photos.png);
-}
-#gen-report-modal7 .modal-dialog {
-  /*margin-top: 5%!important;*/
-}
-#gen-report-modal7 .detail-box h1 {
-  font-size: 16px;
-  font-weight: bold;
 
-  margin: 0 0 2px;
-
-  text-align: center;
-  text-transform: uppercase;
-
-  color: #555;
+#gen-report-modal7 .modal-body .details .detail-box .detail-img span.criminal {
+  background-image: url(../img/icon_criminal.png);
 }
-#gen-report-modal7 .detail-box h2 {
-  font-size: 64px;
-  font-weight: 200;
-  line-height: 65px;
 
-  margin: 0;
-
-  text-align: center;
-
-  color: #468dd1;
+#gen-report-modal7 .modal-body .details .detail-box .detail-img span.bankruptcy {
+  background-image: url(../img/icon_bankruptcy.png);
 }
-#gen-report-modal7 .detail-box ul {
+
+#gen-report-modal7 .modal-body .details .detail-box .detail-img span.addresses {
+  background-image: url(../img/icon_addresses.png);
+}
+
+#gen-report-modal7 .modal-body .details .detail-box .detail-img span.associates {
+  background-image: url(../img/icon_relatives.png);
+}
+
+#gen-report-modal7 .modal-body .details .detail-box .detail-img span.neighbors {
+  background-image: url(../img/icon_neighbors.png);
+}
+
+#gen-report-modal7 .modal-body .details .detail-box .detail-img span.contacts {
+  background-image: url(../img/icon_contacts.png);
+}
+
+#gen-report-modal7 .modal-body .details .detail-box .detail-img span.emails {
+  background-image: url(../img/icon_email.png);
+}
+
+#gen-report-modal7 .modal-body .details .detail-box .detail-img span.phones {
+  background-image: url(../img/icon_phone.png);
+}
+
+#gen-report-modal7 .modal-body .details .detail-box .detail-img span.social {
+  background-image: url(../img/icon_social.png);
+}
+
+#gen-report-modal7 .modal-body .details .detail-box .detail-img span.photos {
+  background-image: url(../img/icon_photos.png);
+}
+
+#gen-report-modal7 .modal-body .details .detail-box .count small {
+  color: #333;
+  font-size: 35%;
+}
+
+#gen-report-modal7 .modal-body .details .detail-box .filler-list {
   padding-left: 20px;
 }
 
-#gen-report-modal7 .detail-box ul li {
-  font-size: 14px;
-  line-height: 20px;
-
+#gen-report-modal7 .modal-body .details .detail-box .filler-list li {
   margin-top: 0;
   margin-left: 5px;
-
   color: #555;
-}
-#gen-report-modal7 .detail-box ul li.alertText {
-  color: red;
-}
-#gen-report-modal7 .detail-box p {
   font-size: 14px;
-
-  margin: 0;
-
-  text-align: center;
-
-  color: #555;
+  line-height: 20px;
 }
-#gen-report-modal7 a.see-more {
-  text-decoration: underline;
+
+#gen-report-modal7 .modal-body .details .detail-box .filler-list li.alertText {
+  color: #ef2742;
 }
+
 #gen-report-modal7 .guarantee,
 #gen-report-modal7 .awards {
   margin: 0 0 15px;
 }
+
 #gen-report-modal7 .guarantee p,
 #gen-report-modal7 .awards p {
-  font-size: 12px;
-
   margin: 5px 0 0;
-
   color: #898989;
-}
-#gen-report-modal7 .sample-report {
-  padding: 15px 0;
-}
-.sample-report p {
-  font-size: 16px;
-
-  margin: 0 0 5px;
-
-  text-align: center;
-
-  color: #484848;
-}
-#gen-report-modal7 .sample-report .report-wrap {
-  position: relative;
-
-  padding: 0 10px;
-}
-#gen-report-modal7 .sample-report .blurred {
-  position: absolute;
-  z-index: 200;
-  bottom: 0;
-  left: 0;
-
-  overflow: hidden;
-
-  width: 100%;
-  height: 100%;
-
-  border-top: 4px green solid;
-  background-image: url(../img/report-blurred.jpg);
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 100% auto;
-}
-.sample-report .non-blurred {
-  position: relative;
-  z-index: 100;
-}
-.btn-wrap {
-  padding: 0 10px;
-}
-.btn-wrap .btn {
-  font-size: 16px;
-  font-weight: bold;
-
-  margin: 15px 0;
-  color: #fff !important;
-  border-color: #57992d;
-  background-color: #6dac45;
-  box-shadow: 4px 4px 0 0 rgba(87, 153, 45, 1);
+  font-size: 12px;
 }
 
 #gen-report-modal7 .seals {
@@ -1448,9 +1328,7 @@
 }
 
 /* == 8 ==  ========================= */
-#gen-report-modal8 {
-  font-family: 'Lato', Arial, Helvetica, sans-serif !important;
-}
+
 #gen-report-modal8 .modal-header {
   padding: 20px 0;
 
