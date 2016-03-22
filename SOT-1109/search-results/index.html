@@ -1197,106 +1197,88 @@
     <div class="modal-dialog">
       <div class="modal-content">
 
-        <div class="modal-header header-alert">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <!-- <img src="img/alert-24.png" class="pull-left header-icon"> -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
-          <p data-fr-bind="currentRecord">
-            <strong>We finished compiling the report. Enter the text below to continue...</strong>
-          </p>
+          <h6 class="title" data-fr-bind="currentRecord">
+            <i class="fa fa-shield"></i>
+            We finished compiling the report. Enter the text below to continue...
+          </h6>
         </div>
         <!-- /.modal-header -->
 
         <div class="modal-body">
-          <div class="row">
-            <div class="col-sm-6">
-              <p class="modal-top-text" data-fr-bind="currentRecord">Please prove that you are a human by filling out the easy captcha below.</p>
+          <div class="row table-row">
+
+            <div class="col-sm-6 captcha-col">
+              <h6 class="title">Please prove that you are a human by filling out the easy captcha below.</h6>
 
               <form id="bv-catpcha-form">
-                <div id="bv-captcha">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div class="well">
-                        <div class="captcha-wrap">
-                          <div id="bv-captcha-imgs">
-                            <img src="img/captcha_degree.jpg" alt="degree">
-                            <img src="img/captcha_fact.jpg" alt="fact">
-                            <img src="img/captcha_glass.jpg" alt="glass">
-                            <img src="img/captcha_grip.jpg" alt="grip">
-                            <img src="img/captcha_nose.png" alt="nose">
-                            <img src="img/captcha_seed.png" alt="seed">
-                            <img src="img/captcha_snake.jpg" alt="snake">
-                            <img src="img/captcha_step.jpg" alt="step">
-                          </div>
-                          <a href="#" id="bv-captcha-refresh" title="Refresh Image"></a>
-                        </div>
-                        <div class="row">
-                          <div class="col-sm-12">
-                            <label for="captcha">Type the text shown into the box below.</label>
-                            <input name="captcha" id="bv-captcha-input" class="form-control input-lg" type="text" placeholder="Type text here">
-                          </div>
-                        </div>
-                        <p class="text-center" id="bv-captcha-msg"></p>
-                      </div>
-                    </div>
+                <div class="bv-captcha-wrapper">
+                  <div id="bv-captcha-imgs">
+                    <img src="img/captcha_degree.jpg" alt="degree">
+                    <img src="img/captcha_fact.jpg" alt="fact">
+                    <img src="img/captcha_glass.jpg" alt="glass">
+                    <img src="img/captcha_grip.jpg" alt="grip">
+                    <img src="img/captcha_nose.png" alt="nose">
+                    <img src="img/captcha_seed.png" alt="seed">
+                    <img src="img/captcha_snake.jpg" alt="snake">
+                    <img src="img/captcha_step.jpg" alt="step">
                   </div>
-                  <div class="row">
-                    <div class="col-sm-10 col-sm-offset-1">
-                      <button type="submit" id="bv-captcha-next" class="main-btn btn-lg btn-block">
-                        <strong>Continue</strong>
-                        <!-- <img class="hidden-xs" src="img/next-32.png" style="display: inline;"> -->
-                      </button>
-                    </div>
-                  </div>
+                  <button type="button" id="bv-captcha-refresh"><i class="fa fa-refresh"></i></button>
                 </div>
+
+                <div class="form-group">
+                  <label for="captcha">Type the text shown into the box below.</label>
+                  <input name="captcha" id="bv-captcha-input" class="form-control input-lg" type="text" placeholder="Type text here">
+                </div>
+
+                <p class="text-centered" id="bv-captcha-msg"></p>
+
+                <button type="submit" id="bv-captcha-next" class="btn btn-lg btn-block btn-secondary">Continue</button>
               </form>
-              <p class="why-text text-left">
-                <small>
-                                <strong>Why do I have to do this? </strong>
-                                <br>
-                                <span>We have data costs associated with our reports, therefore we try to make sure we only run searches for real people.</span>
-                            </small>
+
+              <p class="text-caption">
+                <strong class="text-break">Why do I have to do this?</strong>
+                We have data costs associated with our reports, therefore we try to make sure we only run searches for real people.
               </p>
             </div>
-            <div class="col-sm-6 hidden-xs">
-              <div class="report-summary">
-                <div class="subject-summary">
-                  <div class="report-summary-header">
-                    <p>
-                      <strong>Report Summary</strong>
-                    </p>
-                  </div>
-                  <div class="subject-summary-text-bg">
-                    <div class="subject-summary-text text-left" data-fr-bind="currentRecord">
-                      <h3 class="modal-name"><strong>{{fullName}}</strong></h3>
 
-                      <p>Age: {{displayAge}}</p>
-                    </div>
-                  </div>
-                  <div id="map-goes-here">
-                    <img id="map" alt="map" />
-                  </div>
-                </div>
-                <ul class="blur-list clearfix text-left list-unstyled">
-                  <p>Includes, When Available:</p>
+            <div class="col-sm-6 table-col summary-col hidden-xs">
+              <h6 class="title text-mute">Report Summary</h6>
 
-                  <div class="blur-list-left">
+              <h5 class="title name" data-fr-bind="currentRecord">{{fullName}}</h5>
+              <p class="sub-title age" data-fr-bind="currentRecord"><strong>Age:</strong> {{displayAge}}</p>
+
+              <div id="map-goes-here">
+                <img id="map" alt="map" />
+              </div>
+
+              <p><strong>Includes, When Available:</strong></p>
+
+              <div class="row">
+                <div class="col-xs-6">
+                  <ul class="summary-list">
                     <li>Current Address</li>
                     <li>Phone Numbers</li>
                     <li>Bankruptcies</li>
                     <li>Email Addresses</li>
-                    <li>Photos</li>
-                  </div>
-                  <div class="blur-list-right">
+                    <li>Photos <span class="new-label">new</span></li>
+                  </ul>
+                </div>
+                <div class="col-xs-6">
+                  <ul class="summary-list">
                     <li>Address History</li>
                     <li>Criminal History</li>
                     <li>Imposters</li>
                     <li>Associates</li>
                     <li>Social Media</li>
-                  </div>
-                </ul>
+                  </ul>
+                </div>
               </div>
+
             </div>
+
           </div>
         </div>
         <!-- /.modal-body -->
@@ -1309,324 +1291,139 @@
   <!-- ================================================== -->
   <!-- == 6 == GENERATING REPORT ======================== -->
   <!-- ================================================== -->
+
   <div id="gen-report-modal5" class="modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
 
-        <div class="modal-header section-header section-min">
-          <img id="dl-spinner-icon" src="img/loading.gif" class="pull-left header-icon">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
-          <p data-fr-bind="currentRecord">
-            <strong>Please Wait:</strong> Completing Report
-            <span class="hidden-xs">
-              for <span style="display:inline-block;" class="data-full-name">{{fullName}}</span>
-            </span>
-          </p>
+          <h6 class="title" data-fr-bind="currentRecord">
+            <img src="img/loading_white.gif" class="img-icon">
+            Please Wait: Completing Report <span class="hidden-xs">for {{fullName}}</span>
+          </h6>
         </div>
-        <!-- /.modal-header -->
 
         <div class="modal-body" data-fr-bind="currentRecord">
-          <div class="row">
-            <div class="col-sm-6">
-              <h3 class="info-name">
-                            <strong>{{fullName}}</strong>
-                        </h3>
 
-              <p class="info-preview">
-                <span class="data-location-wrapper">{{#if state}}
-                <span class="info-preview-loc">{{#if city}} {{city}},</span>{{/if}} {{state}}{{/if}}</span>
-                {{#if age}} | Age: {{age}} {{/if}}
+          <div class="row">
+            <div class="col-sm-4">
+              <h5 class="title">{{fullName}}</h5>
+
+              <p class="sub-title">
+                {{#if state}}
+                  <i class="fa fa-map-marker text-secondary"></i>
+                  <span class="data-location">
+                    {{#if city}} {{city}},{{/if}} {{state}}
+                  </span>
+                {{/if}}
+                {{#if age}}
+                  <span class="data-age">
+                    | Age: {{age}}
+                  </span>
+                {{/if}}
               </p>
+
+              <ul class="modal-body-list list-unstyled hidden-xs">
+                <li class="list-single list-selected">Personal Info <i class="fa fa-spinner fa-spin icon"></i><i class="fa fa-search icon"></i></li>
+                <li class="list-single">Property <i class="fa fa-spinner fa-spin icon"></i><i class="fa fa-search icon"></i></li>
+                <li class="list-single">Criminal <i class="fa fa-spinner fa-spin icon"></i><i class="fa fa-search icon"></i></li>
+                <li class="list-single">Relatives <i class="fa fa-spinner fa-spin icon"></i><i class="fa fa-search icon"></i></li>
+                <li class="list-single">Social Media <i class="fa fa-spinner fa-spin icon"></i><i class="fa fa-search icon"></i></li>
+                <li class="list-single">Miscellaneous <i class="fa fa-spinner fa-spin icon"></i><i class="fa fa-search icon"></i></li>
+              </ul>
             </div>
-            <div class="col-sm-6">
+
+            <div class="col-sm-8">
+
               <p class="time-stamp">
                 <span id="time-approx"><strong>Time Remaining:</strong> Approx. <span id="time-remaining">120</span> seconds</span>
                 <strong id="finishing-up" class="hide">Finishing Up...</strong>
               </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-4 hidden-xs">
-              <ul class="modal-body-list list-unstyled">
-                <li class="list-single list-selected">Personal Info</li>
-                <li class="list-single">Property</li>
-                <li class="list-single">Criminal</li>
-                <li class="list-single">Relatives</li>
-                <li class="list-single">Social Media</li>
-                <li class="list-single">Miscellaneous</li>
-              </ul>
-            </div>
-            <div class="col-sm-8">
+
               <div class="modal-body-copy">
+
                 <div id="card-personal" class="card-single card-selected">
-                  <h3 class="text-info body-copy-header copy-header-personal">
-                                    <strong>Personal Info</strong>
-                                </h3>
+                  <img class="title-img" src="img/mascot01.png" />
+                  <h5 class="title">Personal Info</h5>
 
-                  <div class="hidden-lg hidden-md hidden-sm hidden-xs visible-xxs">
-                    <p>The report may reveal, where available, a person’s full name, maiden name, age, known aliases, address history with “last seen” date, current address, and
-                      <strong>email addresses</strong>.</p>
-
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="visible-xs hidden-xxs">
-                    <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11 text-left">The report may reveal, where available, a person’s full name, maiden name, age, known aliases, address history with “last seen” date, current address, and <strong>email
-                                                    addresses</strong>.</p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11 text-left"><strong>Phone numbers</strong> may contain, where available, owner names and other possible persons associated with those numbers.</p>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="hidden-xs">
-                    <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">The report may reveal, where available, a person’s full name, maiden name, age, known aliases, address history with “last seen” date, current address, and <strong>email addresses</strong>.</p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11"><strong>Phone numbers</strong> may contain, where available, owner names and other possible persons associated with those numbers.
-                        </p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">The <strong>current address</strong> is displayed with a map, satellite imagery and access to an in-depth property report.</p>
-                      </li>
-                    </ul>
-                  </div>
+                  <ul class="report-info-list">
+                    <li>The report may reveal, where available, a person’s full name, maiden name, age, known aliases, address history with “last seen” date, current address, and email addresses.</li>
+                    <li>Phone numbers may contain, where available, owner names and other possible persons associated with those numbers.</li>
+                    <li>The current address is displayed with a map, satellite imagery and access to an in-depth property report.</li>
+                  </ul>
                 </div>
+
                 <div id="card-property" class="card-single">
-                  <h3 class="text-info body-copy-header copy-header-prop">
-                                    <strong>Addresses and <br class="visible-xs">Property</strong>
-                                </h3>
+                  <img class="title-img" src="img/mascot01.png" />
+                  <h5 class="title">Addresses and Property</h5>
 
-                  <div class="hidden-lg hidden-md hidden-sm hidden-xs visible-xxs">
-                    <p>This report may locate, where available, their current and historical <strong>real
-                                        estate assets</strong> including detailed information on those properties.</p>
-
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="visible-xs hidden-xxs">
-                    <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11 text-left">This report may locate, where available, their current and historical <strong>real estate assets</strong> including detailed information on those properties.</p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11 text-left">View satellite maps, parcel numbers, and country assessor data such as <strong>property tax amounts</strong>, home value, and building specs.</p>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="hidden-xs">
-                    <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">This report may locate, where available, their current and historical <strong>real estate assets</strong> including detailed information on those properties.</p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">View satellite maps, parcel numbers, and country assessor data such as <strong>property tax amounts</strong>, home value, and building specs.</p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">Even see buyer/seller info, <strong>sales
-                                                prices</strong>, and co-owners, where available.</p>
-                      </li>
-                    </ul>
-                  </div>
+                  <ul class="report-info-list">
+                    <li>This report may locate, where available, their current and historical real estate assets including detailed information on those properties.</li>
+                    <li>View satellite maps, parcel numbers, and country assessor data such as property tax amounts, home value, and building specs.</li>
+                    <li>Even see buyer/seller info, sales prices, and co-owners, where available.</li>
+                  </ul>
                 </div>
+
                 <div id="card-criminal" class="card-single">
-                  <h3 class="text-info body-copy-header copy-header-crim">
-                                    <strong>Criminal</strong>
-                                </h3>
+                  <img class="title-img" src="img/mascot01.png" />
+                  <h5 class="title">Criminal</h5>
 
-                  <div class="hidden-lg hidden-md hidden-sm hidden-xs visible-xxs">
-                    <p>May contain, where available, <strong>arrest or conviction records</strong> as well as outstanding warrants, traffic violations and speeding tickets.</p>
-
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="visible-xs hidden-xxs">
-                    <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11 text-left">May contain, where available, <strong>arrest
-                                                or conviction records</strong> as well as outstanding warrants, traffic violations and speeding tickets.</p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11 text-left">When a criminal record is found we detail the offense along with the <strong>date and location</strong> of the crime.
-                        </p>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="hidden-xs">
-                    <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">May contain, where available, <strong>arrest or
-                                                conviction records</strong> as well as outstanding warrants, traffic violations and speeding tickets.</p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">When a criminal record is found we detail the offense along with the <strong>date and location</strong> of the crime.</p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">We compile federal, state, county, and local databases including courts and <strong>Most Wanted lists</strong>. Criminal Records are found based on availability.</p>
-                      </li>
-                    </ul>
-                  </div>
+                  <ul class="report-info-list">
+                    <li>May contain, where available, arrest or conviction records as well as outstanding warrants, traffic violations and speeding tickets.</li>
+                    <li>When a criminal record is found we detail the offense along with the date and location of the crime.</li>
+                    <li>We compile federal, state, county, and local databases including courts and Most Wanted lists. Criminal Records are found based on availability.</li>
+                  </ul>
                 </div>
+
                 <div id="card-relatives" class="card-single">
-                  <h3 class="text-info body-copy-header copy-header-rel">
-                                    <strong>Relatives and <br class="visible-xs">Connections</strong>
-                                </h3>
+                  <img class="title-img" src="img/mascot01.png" />
+                  <h5 class="title">Relatives and Connections</h5>
 
-                  <div class="hidden-lg hidden-md hidden-sm hidden-xs visible-xxs">
-                    <p>Our access to hard to find public records may reveal individuals who have a
-                      <strong>close relationship</strong> to your search subject.</p>
-
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="visible-xs hidden-xxs">
-                    <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11 text-left">Our access to hard to find public records may reveal individuals who have a <strong>close relationship</strong> to your search subject.</p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11 text-left">In addition to relatives this report may show, where available, <strong>boyfriends/girlfriends</strong>, roommates, business associates as well as ex-husbands and ex-wives.</p>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="hidden-xs">
-                    <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">Our access to hard to find public records may reveal individuals who have a <strong>close relationship</strong> to your search subject.</p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">In addition to relatives this report may show, where available, <strong>boyfriends/girlfriends</strong>, roommates, business associates as well as ex-husbands and ex-wives.</p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">We've recently added relatives of relatives to help
-                          <strong>broaden your search</strong>.</p>
-                      </li>
-                    </ul>
-                  </div>
+                  <ul class="report-info-list">
+                    <li>Our access to hard to find public records may reveal individuals who have a close relationship to your search subject.</li>
+                    <li>In addition to relatives this report may show, where available, boyfriends/girlfriends, roommates, business associates as well as ex-husbands and ex-wives.</li>
+                    <li>We've recently added relatives of relatives to help broaden your search.</li>
+                  </ul>
                 </div>
+
                 <div id="card-sex-offender" class="card-single">
-                  <h3 class="text-info body-copy-header copy-header-offend">
-                                    <strong>Social Media</strong>
-                                </h3>
+                  <img class="title-img" src="img/mascot01.png" />
+                  <h5 class="title">Social Media</h5>
 
-                  <div class="hidden-lg hidden-md hidden-sm hidden-xs visible-xxs">
-                    <p>Your report may uncover <strong>social media accounts</strong> owned by or associated with your search subject.</p>
-
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="visible-xs hidden-xxs">
-                    <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11 text-left">Your report may uncover <strong>social media
-                                                accounts</strong> owned by or associated with your search subject.</p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11 text-left">Social networks are a potentially helpful way to uncover <strong>additional information.</strong></p>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="hidden-xs">
-                    <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">Your report may uncover <strong>social media
-                                                accounts</strong> owned by or associated with your search subject.</p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">Social networks are a potentially helpful way to uncover <strong>additional information.</strong></p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">The social search now potentially uncovers <strong>photos</strong>, educational records and professional history.</p>
-                      </li>
-                    </ul>
-                  </div>
+                  <ul class="report-info-list">
+                    <li>Your report may uncover social media accounts owned by or associated with your search subject.</li>
+                    <li>Social networks are a potentially helpful way to uncover additional information.</li>
+                    <li>The social search now potentially uncovers photos, educational records and professional history.</li>
+                  </ul>
                 </div>
+
                 <div id="card-misc" class="card-single">
-                  <h3 class="text-info body-copy-header copy-header-misc">
-                                    <strong>Miscellaneous</strong>
-                                </h3>
+                  <img class="title-img" src="img/mascot01.png" />
+                  <h5 class="title">Miscellaneous</h5>
 
-                  <div class="hidden-lg hidden-md hidden-sm hidden-xs visible-xxs">
-                    <p>We also give you the ability to run <strong>reverse phone number lookups</strong>, email searches and property reports.</p>
-
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="visible-xs hidden-xxs">
-                    <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11 text-left">We also give you the ability to run <strong>reverse
-                                                phone number lookups</strong>, email searches and property reports.</p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11 text-left">You'll get access to PeopleLooker's <strong>proprietary
-                                                AlertMe feature</strong>, which sends alerts and monitors potential changes we find in our data on an ongoing basis.</p>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="hidden-xs">
-                    <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">We also give you the ability to run <strong>reverse
-                                                phone number lookups</strong>, email searches and property reports.</p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">You'll get access to PeopleLooker's <strong>proprietary
-                                                AlertMe feature</strong>, which sends alerts and monitors potential changes we find in our data on an ongoing basis.</p>
-                      </li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span>
-
-                        <p class="col-xs-11">No more having to stay on top of the data yourself,
-                          <strong>let PeopleLooker assist you.</strong></p>
-                      </li>
-                    </ul>
-                  </div>
+                  <ul class="report-info-list">
+                    <li>We also give you the ability to run reverse phone number lookups, email searches and property reports.</li>
+                    <li>You'll get access to PeopleLooker's proprietary AlertMe feature, which sends alerts and monitors potential changes we find in our data on an ongoing basis.</li>
+                    <li>No more having to stay on top of the data yourself, let PeopleLooker assist you.</li>
+                  </ul>
                 </div>
+
               </div>
+
             </div>
           </div>
         </div>
 
         <div class="modal-footer">
           <div id="searching-progress-bar" class="progress">
-            <div class="progress-bar progress-bar-success" style="width: 1%"></div>
-            <div id="searching-progress-bar-status">
-              <span id="searching-progress-bar-value">1%</span>
-            </div>
+            <div class="progress-bar" style="width: 1%"></div>
+            <h6 class="progress-bar-title text-centered" id="searching-progress-bar-status">
+              <span id="searching-progress-bar-value">1%</span> complete
+            </h6>
           </div>
+
           <p id="modal-msgs" class="text-center hidden-xs">
             <span data-fr-bind="currentRecord" class='msg-selected'>Compiling Personal Info Section for {{fullName}}</span>
             <span data-fr-bind="currentRecord">Compiling Property Section for {{fullName}}</span>
