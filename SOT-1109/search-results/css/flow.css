@@ -260,27 +260,7 @@
 }
 
 #gen-report-modal2 .modal-header .close {
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  outline: none;
-  color: #8AC0F7;
-}
-
-#gen-report-modal2 .modal-header p .icon {
-  margin-right: 10px;
-}
-
-@media (min-width: 481px) {
-
-  #gen-report-modal2 .modal-header .close {
-    top: 12px;
-    right: 12px;
-  }
-
-  #gen-report-modal2 .modal-header p {
-    text-align: left;
-  }
+  color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -290,96 +270,64 @@
   }
 
   #gen-report-modal2 .modal-header .close {
-    top: 5px;
-    right: 5px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #333;
   }
 
   #gen-report-modal2 .modal-header .jumbo-sidebar {
-    padding: 15px;
-    box-shadow: 0 -5px 10px -5px #424242 inset;
+    padding: 30px;
     border-radius: 4px 4px 0 0;
     background-color: #fcc41c;
     text-align: center;
   }
 
-  #gen-report-modal2 .modal-header .jumbo-sidebar h1 {
+  #gen-report-modal2 .modal-header .jumbo-sidebar .title {
     margin: 0;
-  	color: #fff;
-    font-size:45px;
-  	font-weight:700;
+  	color: #333;
+  	font-weight: bold;
   }
 
-  #gen-report-modal2 .modal-header .jumbo-sidebar p {
-    margin: 10px 0 15px;
-  	color: #fff;
-  	font-size: 20px;
-    font-weight: normal !important;
-    text-align: center;
-  }
-
-  #gen-report-modal2 .modal-header .jumbo-sidebar hr {
-  	width: 80px;
-  	margin: 10px auto;
-  	border-bottom: solid 2px #fff;
-  }
-
-  #gen-report-modal2 .modal-header .jumbo-sidebar .img-animation {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    left: 25px;
-    width: 130px;
+  #gen-report-modal2 .modal-header .jumbo-sidebar .sub-title {
+    margin: 10px 0 0;
+  	color: #333;
+    font-weight: bold;
+    text-align: left;
   }
 }
 
 @media (min-width: 992px) {
 
   #gen-report-modal2 .modal-header {
-    height: 35px;
+    height: 40px;
     border: 0;
     background: #fff;
-  }
-
-  #gen-report-modal2 .modal-header .close {
-    right: 3px;
-    color: #D8D8D8;
   }
 
   #gen-report-modal2 .modal-header .jumbo-sidebar {
     position: absolute;
     width: 30%;
-    height: 485px;
-    box-shadow: -5px 0 15px -5px #424242 inset;
-    border-radius: 0px;
+    height: 600px;
+    padding: 40px;
+    box-shadow: none;
+    border-radius: 0;
   }
 
-  #gen-report-modal2 .modal-header .jumbo-sidebar h1 {
-    margin-top: 10px;
+  #gen-report-modal2 .modal-header .jumbo-sidebar .title {
+    margin: 15px 0;
   }
 
-  #gen-report-modal2 .modal-header .jumbo-sidebar p {
-    margin-bottom: 30px;
-  }
-
-  #gen-report-modal2 .modal-header .jumbo-sidebar .img-animation {
-    position: absolute;
-    position: static \9; /*ie8 fix*/
-    bottom: 0;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    width: 75%;
-    margin: 60px auto 0;
-    margin-top: 110px \9; /* ie8 fix */
+  #gen-report-modal2 .modal-header .jumbo-sidebar .sub-title {
+    margin: 10px 0 15px;
   }
 }
 
 /* modal-body */
 
 #gen-report-modal2 .modal-body {
-  padding: 15px;
+  padding: 30px;
+  padding-top: 0;
 }
 
 .mobile-heading .modal-headline {
@@ -411,14 +359,19 @@
 
 .modal-body .report-info-list {
   margin: 0;
-  padding: 15px;
-  border-radius: 5px;
-  border: 1px solid #EBEBEB;
+  padding: 0;
+  border: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+  background-color: transparent;
   list-style: none;
 }
 
 .modal-body .report-info-list .report-info-item {
   position: relative;
+  font-size: 16px;
 }
 
 .modal-body .report-info-list .report-info-item .fa {
@@ -428,33 +381,24 @@
 }
 
 .modal-body .report-info-list .report-info-item .icon {
-  color: #6DAC45;
+  color: #33D4C0;
 }
 
 .modal-body .report-info-list .report-info-item .item-label {
-  margin-left: 30px;
+  margin-left: 25px;
 }
 
 .modal-body .report-info-list .report-info-item .new-label {
-  vertical-align: top;
+  vertical-align: text-bottom;
   margin-left: 3px;
   padding: 0 3px 2px;
   border-radius: 4px;
-  border: 1px solid #0072BC;
-  color: #0072BC;
+  background-color: #FCC41C;
+  color: #fff;
   font-size: 12px;
 }
 
 @media (min-width: 481px) {
-
-  .mobile-heading .modal-headline .img-animation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80px;
-    height: 80px;
-    margin: 25px 20px;
-  }
 
   .mobile-heading .modal-headline strong {
     position: relative;
@@ -467,9 +411,6 @@
 
   .mobile-heading .modal-sub-headline {
     display: inline-block;
-    position: relative;
-    top: 0;
-    left: 100px;
     width: 75%;
     margin: 5px 0 20px;
     text-align: left;
@@ -500,10 +441,6 @@
 
   .modal-body .report-info-list {
     margin-top: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-shadow: 0 0 5px 1px #B3B3B3 inset;
-    background: #F5F5F5;
   }
 
   .report-info-list .report-info-item {
@@ -522,7 +459,7 @@
     float: right;
     width: 70%;
     padding-top: 0;
-    background-color: white;
+    background-color: #fff;
   }
 
   #gen-report-modal2 .modal-body .large-heading {
@@ -533,6 +470,7 @@
   .modal-body .report-info-list {
     margin-top: 0;
   }
+
   .modal-body .report-info-list .report-info-item {
     margin-top: 7px;
     margin-bottom: 7px;
@@ -572,18 +510,17 @@
   }
 }
 
-/* modal-footer */
+/* continue button */
 
-#gen-report-modal2 .modal-footer #gen-report-confirm {
-  margin: 0;
-  padding: 15px;
-  box-shadow: 0 -10px 0 #57992d inset;
-  font-size: 18px !important;
+#gen-report-modal2 .modal-body #gen-report-confirm {
+  margin: 40px 0 20px;
+  padding: 20px;
+  font-size: 20px;
   text-transform: uppercase;
 }
 
-#gen-report-modal2 .modal-footer #gen-report-confirm[disabled=disabled],
-#gen-report-modal2 .modal-footer #gen-report-confirm:disabled {
+#gen-report-modal2 .modal-body #gen-report-confirm[disabled=disabled],
+#gen-report-modal2 .modal-body #gen-report-confirm:disabled {
   cursor: progress;
   opacity: 0.5;
   box-shadow: none;
@@ -592,32 +529,11 @@
   color: #c9c9c9 !important;
 }
 
-#gen-report-modal2 .modal-footer #arrowhead-right {
+#gen-report-modal2 .modal-body #arrowhead-right {
   display: none;
   position: relative;
   bottom: 1px;
   margin-left: 10px;
-}
-
-@media (min-width: 768px) {
-
-  #gen-report-modal2 .modal-footer #gen-report-confirm {
-    padding: 20px;
-    font-size: 22px !important;
-  }
-}
-
-@media (min-width: 992px) {
-
-  #gen-report-modal2 .modal-footer {
-    display: inline-block;
-    float: right;
-    width: 70%;
-  }
-
-  #gen-report-modal2 .modal-footer #gen-report-confirm {
-    padding: 25px;
-  }
 }
 
 /* == 4 == PROCCESSING YOUR REQUEST ================= */
