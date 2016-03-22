@@ -981,117 +981,766 @@
 
 /* == 7 == LEADBOX SIGNUP ========================= */
 
-p.modal-top-text-big {
-  font-size: 29px;
-  font-weight: bold !important;
-  line-height: 35px;
+/* modal-header */
 
-  color: #014a88;
+#gen-report-modal6 .modal-header {
+  background-color: #fcc41c;
+  color: #333;
 }
 
-.modal-top-text {
-  font-weight: bold !important;
-
-  margin-bottom: 17px;
+#gen-report-modal6 .modal-header .close {
+  color: #333;
 }
 
-.form-input-group {
+/* modal-body */
+
+#gen-report-modal6 .modal-body .btn {
+  margin: 20px 0;
+}
+
+/* == 11 == FCRA ===================== */
+
+
+
+#gen-report-modal11 {
+  font-family: 'Lato', Arial, Helvetica, sans-serif !important;
+}
+
+#gen-report-modal11 .modal-header {
+  /*padding: 15px 0;*/
+  border-radius: 5px 5px 0 0;
+  background: url(../img/header-modal11.png) repeat-y center center;
+  background-size: contain;
+}
+
+#gen-report-modal11 .modal-header .huge {
+  /*font-size: 26px;
+  font-weight: bold;
+  line-height: 30px;
+  margin: 0;
+  padding: 5px 20px 0;
+  text-align: center;*/
+  color: #fff;
+}
+#gen-report-modal11 .modal-body {
+  padding-top: 0;
+}
+#gen-report-modal11 .modal-body h2 {
+  font-size: 22px;
+  font-weight: bold;
+
+  margin: 20px 0 0;
+
+  text-align: center;
+
+  color: #464646;
+}
+#gen-report-modal11 .modal-body .sub-head {
+  font-size: 18px;
+
+  margin: 10px 0 20px;
+
+  text-align: center;
+
+  color: #0072bc;
+}
+#gen-report-modal11 .modal-body .row {
+  margin-top: 20px;
   margin-bottom: 10px;
-  padding: 15px;
-
-  background-color: #ededed;
 }
+#gen-report-modal11 .modal-body p {
+  font-size: 16px;
+  font-weight: 400;
 
-#signup-modal-form input {
-  height: 40px;
-  margin: 2.5px auto;
+  margin: 0;
+  /*padding: 0 20px 0 0;*/
+
+  text-align: left;
+
+  color: #484848;
 }
+#gen-report-modal11 .btn {
+  padding-top: 10px;
+  padding-bottom: 10px;
 
-#signup-modal-form .main-btn {
-  font-weight: 400 !important;
-
-  padding-top: 20px !important;
-
-  text-shadow: 0 2px 0 #309910;
+  background: #6dac45;
 }
-
-#signup-modal-form button>img {
-  margin-top: -5px;
-  margin-left: 9px;
+#gen-report-modal11 .btn span {
+  font-size: 26px;
+  font-weight: bold;
 }
+#gen-report-modal11 .modal-footer {
+  font-size: 14px;
 
-#signup-modal-form label.error {
-  margin: 0 0 10px;
+  padding: 10px 0;
+
+  text-align: center;
+
+  color: #555;
+  border-radius: 0 0 5px 5px;
+  background: #ebebeb;
 }
+#gen-report-modal11 .checkbox {
+  margin: 0;
+  padding-left: 20px;
 
-.signup-body-wrapper {
-  margin: 15px 0 20px;
+  cursor: pointer;
+  cursor: hand;
 }
+#gen-report-modal11 .checkbox label {
+  position: relative;
 
-p.input-label {
-  margin-top: 8px;
+  display: inline-block;
 
-  text-align: right;
+  padding-left: 5px;
+
+  vertical-align: middle;
 }
+#gen-report-modal11 .checkbox label::before {
+  position: absolute;
+  left: 0;
 
-#modal-seals {
-  margin-bottom: 20px;
+  display: inline-block;
+
+  width: 27px;
+  height: 27px;
+  margin-left: -20px;
+
+  content: '';
+  -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+       -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+          transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
 }
+#gen-report-modal11 .checkbox label::after {
+  font-size: 16px;
+  font-weight: bold;
 
-.all-reports-wrapper {
-  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: inline-block;
+
+  width: 16px;
+  height: 16px;
+  margin-left: -17px;
+  padding-top: 3px;
+  padding-left: 3px;
+
+  color: #0072bc;
+}
+#gen-report-modal11 .checkbox input[type='checkbox'],
+#gen-report-modal11 .checkbox input[type='radio'] {
+  z-index: 1;
+
+  opacity: 0;
+}
+#gen-report-modal11 .checkbox input[type='checkbox']:focus+label::before,
+#gen-report-modal11 .checkbox input[type='radio']:focus+label::before {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+#gen-report-modal11 .checkbox input[type='checkbox']:checked+label::after,
+#gen-report-modal11 .checkbox input[type='radio']:checked+label::after {
+  content: '✔';
+}
+#gen-report-modal11 .checkbox input[type='checkbox']:disabled+label,
+#gen-report-modal11 .checkbox input[type='radio']:disabled+label {
+  opacity: 0.65;
+}
+#gen-report-modal11 .checkbox input[type='checkbox']:disabled+label::before,
+#gen-report-modal11 .checkbox input[type='radio']:disabled+label::before {
+  cursor: not-allowed;
+
+  background-color: #eee;
+}
+#gen-report-modal11 .checkbox.checkbox-circle label::before {
+  border-radius: 50%;
+}
+#gen-report-modal11 .checkbox.checkbox-inline {
+  margin-top: 0;
+}
+#gen-report-modal11 label.error {
+  line-height: 18px;
+
+  display: none;
 
   width: 100%;
-  height: 180px;
-  margin-bottom: 20px;
+  margin-top: 10px;
 
-  background-image: url(../img/all-reports-2.png);
+  text-align: center;
+
+  color: #c9302b;
+  /* border: 1px solid #e9322d; */
+  border-radius: 4px;
+  background-color: #f2dede;
+}
+#fcra-confirm .panel {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0 25px;
+
+  border-color: #e5e5e5;
+  background: #efefef;
+}
+.fcraCheckbox-wrapper {
+  font-weight: 400;
+  line-height: text-align: center;
+  line-height: 32px;
+
+  margin-top: 10px;
+  padding: 18px 32px 18px 18px;
+  /*border: 1px solid #ccc;*/
+
+  border-radius: 4px;
+  /*background: #ebebeb;*/
+}
+#fcraCheckbox2 {
+  position: absolute !important;
+  position: static \9; /*ie8 fix*/
+  display: inline-block;
+  margin-left: -999em;
+  margin: 10px -25px \9; /*ie8 fix*/
+}
+.fcraCheckbox-box {
+  display: block;
+  display: none \9; /*ie8 fix*/
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  margin-bottom: 0;
+  border: 2px solid #848484;
+  border-radius: 4px;
+  background-color: #fff;
+  /*background-image: url('../img/tos-check-grey.png');*/
+  background-repeat: no-repeat;
+  background-position: center center;
+  /*background-size: 25px 25px;*/
+}
+#fcraCheckbox2:checked+label {
+  /*margin: 0;*/
+  border: 2px solid #56b453 !important;
+  background-image: url('../img/tos-check.png');
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-.alert-me-wrapper {
-  padding-left: 32px;
 
-  background-image: url(../img/icon_plus.png);
-  background-repeat: no-repeat;
-  background-position: 0 0;
+/* == 7 ==  ========================= */
+
+#gen-report-modal7 {
+  font-family: 'Lato', Arial, Helvetica, sans-serif !important;
 }
-
-.alert-me-header {
-  line-height: 28px;
+.row.no-gutter {
+  margin-right: 0;
+  margin-left: 0;
 }
-
-.alert-me-body small {
-  font-weight: 400!important;
-}
-
-p.tos-text {
-  font-size: 11px;
-  line-height: 14px;
-
-  margin-top: 10px;
-}
-
-h6.create-login {
-  font-weight: 200 !important;
-
-  text-align: center;
-}
-
-.main-btn-large {
-  margin-top: 10px;
+.row.no-gutter>[class*='col-']:not(:first-child),
+.row.no-gutter>[class*='col-']:not(:last-child) {
   padding-right: 0;
   padding-left: 0;
 }
+#gen-report-modal7 .modal-header {
+  padding: 20px 15px 20px 15px;
 
-#gen-report-modal6 .modal-body {
-  margin-bottom: 10px;
+  border-radius: 5px 5px 0 0;
+}
+#gen-report-modal7 .modal-header h1 {
+  font-size: 26px;
+  font-weight: bold;
+
+  margin: 0;
+  padding: 0 20px;
+
+  text-align: left;
+
+  color: #fff;
+}
+#gen-report-modal7 .modal-body {
+  padding: 0;
+}
+#gen-report-modal7 .col-left {
+  margin-right: 1px;
+}
+#gen-report-modal7 .col-right {
+  min-height: 525px;
+
+  border-left: 1px #e4e4e4 solid;
+}
+.person-info {
+  padding: 10px 15px;
+
+  border-bottom: 1px #e4e4e4 solid;
+  background: #f7f7f7;
+}
+#gen-report-modal7 .person-info .moreCount {
+  font-weight: normal;
+
+  color: #468dd1;
+}
+.person-info h3 {
+  font-size: 14px;
+  line-height: 18px;
+
+  margin: 15px 0 0;
+
+  color: #044789;
+}
+.person-name {
+  font-size: 20px;
+  font-weight: bold;
+
+  margin: 15px 0 0;
+
+  color: #484848;
+}
+.person-address {
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #484848;
+}
+.person-cities {
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #484848;
+}
+.person-relatives {
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #484848;
+}
+.person-photo-wrap {
+  /*margin-left: 15px;*/
+}
+.person-photo img {
+  border-radius: 50%;
+}
+.person-photo {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100% auto;
+}
+.person-photo a {
+  display: block;
+
+  min-height: 100px;
+}
+#gen-report-modal7 .details {
+  padding: 25px 15px 0;
+}
+#gen-report-modal7 .detail-box {
+  position: relative;
+
+  height: auto;
+  margin: 0 0 10px;
+  padding: 15px;
+  /*cursor: pointer;*/
+
+  border: 1px #c4c4c4 solid;
+  border-radius: 4px;
+  background: #fff;
+  -webkit-box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
+     -moz-box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
+          box-shadow: 4px 4px 0 0 rgba(233,233,233,1);
+}
+#gen-report-modal7 .detail-box.CTA_card {
+  cursor: pointer;
+
+  color: #fff !important;
+  border-color: #57992d;
+  background-color: #6dac45;
+  box-shadow: 4px 4px 0 0 rgba(87, 153, 45, 1);
+}
+#gen-report-modal7 .detail-box.CTA_card:hover,
+#gen-report-modal7 .detail-box.CTA_card:active,
+#gen-report-modal7 .detail-box.CTA_card:focus {
+  transition: all 0.5s ease;
+
+  background-color: #84be5f;
+}
+#gen-report-modal7 .detail-box.CTA_card h1 {
+  color: #fff !important;
+}
+#gen-report-modal7 .detail-box.CTA_card span {
+  font-size: 24px;
+
+  display: block;
+
+  text-align: center;
+}
+#gen-report-modal7 .detail-box.CTA_card p {
+  font-size: 36px;
+  font-weight: bold;
+
+  margin-top: 35px;
+
+  color: #fff !important;
+}
+#gen-report-modal7 .detail-box.crim-box {
+  border: 1px #e7526b solid;
+}
+#gen-report-modal7 .detail-box.crim-box h1 {
+  color: #e7526b;
+}
+#gen-report-modal7 .detail-box.crim-box h2 {
+  color: #e7526b;
+}
+#gen-report-modal7 .detail-box.crim-box p {
+  color: #e7526b;
+}
+#gen-report-modal7 .detail-box .detail-img {
+  min-width: 109px;
+  min-height: 55px;
+  padding: 12px 0;
+
+  border-right: 1px #e1e1e1 solid;
+}
+.detail-box .detail-img span {
+  display: block;
+
+  width: 109px;
+  height: 55px;
+
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 85px 55px;
+}
+.detail-box .detail-img span.criminal {
+  background-image: url(../img/icon-blue-criminal.png);
+}
+.detail-box .detail-img span.bankruptcy {
+  background-image: url(../img/icon-blue-bankruptcy.png);
+}
+.detail-box .detail-img span.addresses {
+  background-image: url(../img/icon-blue-addresses.png);
+}
+.detail-box .detail-img span.associates {
+  background-image: url(../img/icon-blue-associates.png);
+}
+.detail-box .detail-img span.neighbors {
+  background-image: url(../img/icon-blue-neighbors.png);
+}
+.detail-box .detail-img span.contacts {
+  background-image: url(../img/icon-blue-contacts.png);
+}
+.detail-box .detail-img span.emails {
+  background-image: url(../img/icon-blue-emails.png);
+}
+.detail-box .detail-img span.phones {
+  background-image: url(../img/icon-blue-phones.png);
+}
+.detail-box .detail-img span.social {
+  background-image: url(../img/icon-blue-social.png);
+}
+.detail-box .detail-img span.photos {
+  background-image: url(../img/icon-blue-photos.png);
+}
+#gen-report-modal7 .modal-dialog {
+  /*margin-top: 5%!important;*/
+}
+#gen-report-modal7 .detail-box h1 {
+  font-size: 16px;
+  font-weight: bold;
+
+  margin: 0 0 2px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #555;
+}
+#gen-report-modal7 .detail-box h2 {
+  font-size: 64px;
+  font-weight: 200;
+  line-height: 65px;
+
+  margin: 0;
+
+  text-align: center;
+
+  color: #468dd1;
+}
+#gen-report-modal7 .detail-box ul {
+  padding-left: 20px;
 }
 
-#login-redirect {
-  font-size: 12px !important;
-  font-weight: 200;
+#gen-report-modal7 .detail-box ul li {
+  font-size: 14px;
+  line-height: 20px;
 
-  padding: 0 0 2px 0;
+  margin-top: 0;
+  margin-left: 5px;
+
+  color: #555;
+}
+#gen-report-modal7 .detail-box ul li.alertText {
+  color: red;
+}
+#gen-report-modal7 .detail-box p {
+  font-size: 14px;
+
+  margin: 0;
+
+  text-align: center;
+
+  color: #555;
+}
+#gen-report-modal7 a.see-more {
+  text-decoration: underline;
+}
+#gen-report-modal7 .guarantee,
+#gen-report-modal7 .awards {
+  margin: 0 0 15px;
+}
+#gen-report-modal7 .guarantee p,
+#gen-report-modal7 .awards p {
+  font-size: 12px;
+
+  margin: 5px 0 0;
+
+  color: #898989;
+}
+#gen-report-modal7 .sample-report {
+  padding: 15px 0;
+}
+.sample-report p {
+  font-size: 16px;
+
+  margin: 0 0 5px;
+
+  text-align: center;
+
+  color: #484848;
+}
+#gen-report-modal7 .sample-report .report-wrap {
+  position: relative;
+
+  padding: 0 10px;
+}
+#gen-report-modal7 .sample-report .blurred {
+  position: absolute;
+  z-index: 200;
+  bottom: 0;
+  left: 0;
+
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+
+  border-top: 4px green solid;
+  background-image: url(../img/report-blurred.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+}
+.sample-report .non-blurred {
+  position: relative;
+  z-index: 100;
+}
+.btn-wrap {
+  padding: 0 10px;
+}
+.btn-wrap .btn {
+  font-size: 16px;
+  font-weight: bold;
+
+  margin: 15px 0;
+  /*border-bottom: solid 7px #4cae4c;*/
+
+  color: #fff !important;
+  border-color: #57992d;
+  background-color: #6dac45;
+  box-shadow: 4px 4px 0 0 rgba(87, 153, 45, 1);
+}
+#gen-report-modal7 .modal-footer {
+  font-size: 14px;
+
+  padding: 10px 0;
+
+  text-align: center;
+
+  color: #555;
+  border-radius: 0 0 5px 5px;
+  background: #ebebeb;
+}
+#gen-report-modal7 .seals {
+  display: none;
+}
+#gen-report-modal7 .more {
+  font-size: 20px;
+
+  color: #484848;
+}
+#gen-report-modal7 .detail-box.fillerCard p,
+#gen-report-modal7 .detail-box.fillerCard ul {
+  line-height: 120%;
+
+  padding-top: 5px;
+  padding-left: 5px;
+}
+#gen-report-modal7 .detail-box.fillerCard small {
+  font-size: 70%;
+}
+
+/* == 8 ==  ========================= */
+#gen-report-modal8 {
+  font-family: 'Lato', Arial, Helvetica, sans-serif !important;
+}
+#gen-report-modal8 .modal-header {
+  padding: 20px 0;
+
+  border-radius: 5px 5px 0 0;
+  background: #5158a0;
+}
+#gen-report-modal8 .modal-header h1 {
+  font-size: 26px;
+  font-weight: bold;
+
+  margin: 0;
+  padding: 0 20px;
+
+  text-align: center;
+
+  color: #fff;
+}
+#gen-report-modal8 .modal-body {
+  padding: 0;
+}
+
+#gen-report-modal8 .person-info h3 {
+  font-size: 12px;
+
+  margin: 15px 0;
+}
+#gen-report-modal8 .person-name {
+  font-size: 20px;
+  font-weight: bold;
+
+  margin: 0;
+
+  color: #484848;
+}
+#gen-report-modal8  .person-address {
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #898989;
+}
+#gen-report-modal8 .person-age {
+  font-size: 20px;
+  font-weight: bold;
+
+  color: #484848;
+}
+#gen-report-modal8 .person-cities {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+
+  color: #898989;
+}
+#gen-report-modal8 .person-relatives {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+
+  color: #898989;
+}
+.report-includes li {
+  padding: 0;
+}
+#gen-report-modal8 .col-left {
+  min-height: 525px;
+  margin-right: 1px;
+  padding: 40px;
+
+  border: 1px #e4e4e4 solid;
+}
+#gen-report-modal8 .col-right {
+  min-height: 525px;
+  padding: 40px;
+
+  border: 1px #e4e4e4 solid;
+}
+#gen-report-modal8 .col-left h1 {
+  font-size: 16px;
+  font-weight: bold;
+
+  margin: 0 0 25px;
+
+  color: #6dac45;
+}
+#gen-report-modal8 .detail-box {
+  margin-top: 10px;
+  padding: 15px 25px;
+
+  border-radius: 5px;
+  background: #0072bc;
+}
+#gen-report-modal8 .detail-box h2 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 25px;
+
+  margin: 0;
+
+  color: #fff;
+}
+#gen-report-modal8 .crim-box {
+  background: #ed1c24;
+}
+#gen-report-modal8 p.more-info {
+  font-size: 14px;
+
+  margin: 5px 0 0;
+
+  color: #9e9e9e;
+}
+#gen-report-modal8 .guarantee {
+  margin: 35px 0 15px;
+  padding: 0 0 15px;
+
+  border-bottom: 1px #ebebeb solid;
+}
+#gen-report-modal8 .guarantee h2,
+#gen-report-modal8 .awards h2 {
+  font-size: 18px;
+
+  margin: 0;
+
+  color: #484848;
+}
+#gen-report-modal8 .guarantee p,
+#gen-report-modal8 .awards p {
+  font-size: 14px;
+
+  margin: 0;
+
+  color: #484848;
+}
+#gen-report-modal8 .modal-footer {
+  font-size: 14px;
+
+  padding: 10px 0;
+
+  text-align: center;
+
+  color: #555;
+  border-radius: 0 0 5px 5px;
+  background: #ebebeb;
 }
