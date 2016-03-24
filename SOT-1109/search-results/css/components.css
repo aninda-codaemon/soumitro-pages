@@ -164,7 +164,11 @@
 
     .footer .social-icons {
         position: relative;
-        left: -111%;
+        left: -115%;
+    }
+
+    .footer .social-icons .img-icon {
+      width: 24px;
     }
 
     .footer-navbar {
@@ -174,4 +178,14 @@
     .footer-navbar .text-right {
         text-align: right;
     }
+}
+
+@media (min-width: 992px) {
+  .footer .social-icons {
+      left: -111%;
+  }
+
+  .footer .social-icons .img-icon {
+    width: auto;
+  }
 }
