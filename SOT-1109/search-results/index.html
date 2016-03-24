@@ -623,14 +623,14 @@
 
         <div class="modal-header section-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h6 class="title" data-fr-bind="query teaserData">
+          <h5 class="title" data-fr-bind="query teaserData">
             <i class="fa fa-search icon"></i>
             Your search for {{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}} returned {{recordCount}} results!
-          </h6>
+          </h5>
         </div>
 
         <div class="modal-body">
-          <h5 class="title">Narrow down your results by adding more information.</h5>
+          <h4 class="title">Narrow down your results by adding more information.</h4>
 
           <ul class="refine-tips-list list-unstyled">
             <li><i class="fa fa-check icon"></i> Add a middle initial, if you know it.</li>
@@ -731,11 +731,11 @@
       <div class="modal-content">
         <div class="modal-header section-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h6 class="title">Wait, before you go</h6>
+          <h5 class="title">Wait, before you go</h5>
         </div>
 
         <div class="modal-body text-center">
-          <h5 class="title">Preview a summary of your report.</h5>
+          <h4 class="title">Preview a summary of your report.</h4>
 
           <div class="loader-big">
             <img src="img/loading.gif">
@@ -762,10 +762,10 @@
         <div class="modal-header">
           <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
-          <h6 class="title" data-fr-bind="currentRecord">
+          <h5 class="title" data-fr-bind="currentRecord">
             <img src="img/loading_white.gif" class="img-icon">
             We have information <span class="hidden-xs">on <span>{{fullName}}</span></span> available...
-          </h6>
+          </h5>
         </div>
 
         <div class="modal-body">
@@ -826,17 +826,17 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
-          <h6 class="title">
+          <h5 class="title">
             <img src="img/loading_white.gif" class="img-icon">
             Scanning Dozens of Social Media Profiles...
-          </h6>
+          </h5>
         </div>
 
         <div class="modal-body" data-fr-bind="currentRecord">
 
           <div class="row table-row">
             <div class="col-sm-4 table-col profile-col hidden-xs">
-              <h5 class="title name">{{fullName}}</h5>
+              <h4 class="title name">{{fullName}}</h4>
               <ul class="profile-list list-unstyled">
                 {{#if hasAkas}}
                 <li><strong>AKA:</strong> {{shortList allNames}}</li>
@@ -1015,12 +1015,8 @@
 
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h6 class="title visible-xs">
-            <i class="fa fa-file-text-o icon"></i>
-            Your Detailed Report is Available
-          </h6>
 
-          <div class="jumbo-sidebar hidden-xs" data-fr-bind="currentRecord">
+          <div class="jumbo-sidebar" data-fr-bind="currentRecord">
             <h3 class="title">Success!</h1>
 
             <p class="sub-title">We found information about {{fullName}}.</p>
@@ -1028,25 +1024,14 @@
         </div>
 
         <div class="modal-body">
-          <div class="mobile-heading visible-xs">
-            <h3 class="title">
-              <i class="fa fa-check icon"></i>
-              Success, Data Found!
-            </h3>
+          <h4 class="title">
+            Your Background Report For
+            <span class="text-break"><span class="text-secondary" data-fr-bind="currentRecord">{{fullName}}</span> Is Available</span>
+          </h4>
 
-            <p class="modal-sub-headline" data-fr-bind="currentRecord">
-              We located information on <span class="text-secondary"><strong>{{fullName}}</strong></span> from one or more of the categories below.
-            </p>
-          </div>
-
-          <div class="large-heading hidden-xs" data-fr-bind="currentRecord">
-            <h5 class="title">
-              Your Background Report For
-              <span class="text-break"><span class="text-secondary">{{fullName}}</span> Is Available</span>
-            </h5>
-
-            <p class="sub-title">Click the button below to continue to the full report. The report may contain information from one or more of the following categories:</p>
-          </div>
+          <p class="sub-title">
+            Click the button below to continue to the full report. The report may contain information from one or more of the following categories:
+          </p>
 
           <ul class="report-info-list">
             <li class="report-info-item visible-always">
@@ -1150,10 +1135,10 @@
       <div class="modal-content">
 
         <div class="modal-header section-header section-min">
-          <h6 class="title">
+          <h5 class="title">
             <i class="fa fa-share icon"></i>
             Compiling your report, please wait...
-          </h6>
+          </h5>
         </div>
 
         <div class="modal-body">
@@ -1213,10 +1198,10 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
-          <h6 class="title" data-fr-bind="currentRecord">
+          <h5 class="title" data-fr-bind="currentRecord">
             <i class="fa fa-shield icon"></i>
             We finished compiling the report. Enter the text below to continue...
-          </h6>
+          </h5>
         </div>
         <!-- /.modal-header -->
 
@@ -1224,7 +1209,7 @@
           <div class="row table-row">
 
             <div class="col-sm-6 captcha-col">
-              <h6 class="title">Please prove that you are a human by filling out the easy captcha below.</h6>
+              <h5 class="title">Please prove that you are a human by filling out the easy captcha below.</h5>
 
               <form id="bv-catpcha-form">
                 <div class="bv-captcha-wrapper">
@@ -1258,9 +1243,9 @@
             </div>
 
             <div class="col-sm-6 table-col summary-col hidden-xs">
-              <h6 class="title text-mute">Report Summary</h6>
+              <h5 class="title text-mute">Report Summary</h5>
 
-              <h5 class="title name" data-fr-bind="currentRecord">{{fullName}}</h5>
+              <h6 class="title name" data-fr-bind="currentRecord">{{fullName}}</h6>
               <p class="sub-title age" data-fr-bind="currentRecord"><strong>Age:</strong> {{displayAge}}</p>
 
               <div id="map-goes-here">
@@ -1312,17 +1297,17 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
-          <h6 class="title" data-fr-bind="currentRecord">
+          <h5 class="title" data-fr-bind="currentRecord">
             <img src="img/loading_white.gif" class="img-icon">
             Please Wait: Completing Report <span class="hidden-xs">for {{fullName}}</span>
-          </h6>
+          </h5>
         </div>
 
         <div class="modal-body" data-fr-bind="currentRecord">
 
           <div class="row">
             <div class="col-sm-4">
-              <h5 class="title">{{fullName}}</h5>
+              <h4 class="title">{{fullName}}</h4>
 
               <p class="sub-title">
                 {{#if state}}
@@ -1359,67 +1344,67 @@
 
                 <div id="card-personal" class="card-single card-selected">
                   <img class="title-img" src="img/gen-personal.png" />
-                  <h5 class="title">Personal Info</h5>
+                  <h4 class="title">Personal Info</h4>
 
                   <ul class="report-info-list">
                     <li>The report may reveal, where available, a person’s full name, maiden name, age, known aliases, address history with “last seen” date, current address, and email addresses.</li>
-                    <li>Phone numbers may contain, where available, owner names and other possible persons associated with those numbers.</li>
-                    <li>The current address is displayed with a map, satellite imagery and access to an in-depth property report.</li>
+                    <li class="hidden-xs">Phone numbers may contain, where available, owner names and other possible persons associated with those numbers.</li>
+                    <li class="hidden-xs">The current address is displayed with a map, satellite imagery and access to an in-depth property report.</li>
                   </ul>
                 </div>
 
                 <div id="card-property" class="card-single">
                   <img class="title-img" src="img/gen-property.png" />
-                  <h5 class="title">Addresses and Property</h5>
+                  <h4 class="title">Addresses and Property</h4>
 
                   <ul class="report-info-list">
                     <li>This report may locate, where available, their current and historical real estate assets including detailed information on those properties.</li>
-                    <li>View satellite maps, parcel numbers, and country assessor data such as property tax amounts, home value, and building specs.</li>
-                    <li>Even see buyer/seller info, sales prices, and co-owners, where available.</li>
+                    <li class="hidden-xs">View satellite maps, parcel numbers, and country assessor data such as property tax amounts, home value, and building specs.</li>
+                    <li class="hidden-xs">Even see buyer/seller info, sales prices, and co-owners, where available.</li>
                   </ul>
                 </div>
 
                 <div id="card-criminal" class="card-single">
                   <img class="title-img" src="img/gen-criminal.png" />
-                  <h5 class="title">Criminal</h5>
+                  <h4 class="title">Criminal</h4>
 
                   <ul class="report-info-list">
                     <li>May contain, where available, arrest or conviction records as well as outstanding warrants, traffic violations and speeding tickets.</li>
-                    <li>When a criminal record is found we detail the offense along with the date and location of the crime.</li>
-                    <li>We compile federal, state, county, and local databases including courts and Most Wanted lists. Criminal Records are found based on availability.</li>
+                    <li class="hidden-xs">When a criminal record is found we detail the offense along with the date and location of the crime.</li>
+                    <li class="hidden-xs">We compile federal, state, county, and local databases including courts and Most Wanted lists. Criminal Records are found based on availability.</li>
                   </ul>
                 </div>
 
                 <div id="card-relatives" class="card-single">
                   <img class="title-img" src="img/gen-relatives.png" />
-                  <h5 class="title">Relatives and Connections</h5>
+                  <h4 class="title">Relatives and Connections</h4>
 
                   <ul class="report-info-list">
                     <li>Our access to hard to find public records may reveal individuals who have a close relationship to your search subject.</li>
-                    <li>In addition to relatives this report may show, where available, boyfriends/girlfriends, roommates, business associates as well as ex-husbands and ex-wives.</li>
-                    <li>We've recently added relatives of relatives to help broaden your search.</li>
+                    <li class="hidden-xs">In addition to relatives this report may show, where available, boyfriends/girlfriends, roommates, business associates as well as ex-husbands and ex-wives.</li>
+                    <li class="hidden-xs">We've recently added relatives of relatives to help broaden your search.</li>
                   </ul>
                 </div>
 
                 <div id="card-sex-offender" class="card-single">
                   <img class="title-img" src="img/gen-social.png" />
-                  <h5 class="title">Social Media</h5>
+                  <h4 class="title">Social Media</h4>
 
                   <ul class="report-info-list">
                     <li>Your report may uncover social media accounts owned by or associated with your search subject.</li>
-                    <li>Social networks are a potentially helpful way to uncover additional information.</li>
-                    <li>The social search now potentially uncovers photos, educational records and professional history.</li>
+                    <li class="hidden-xs">Social networks are a potentially helpful way to uncover additional information.</li>
+                    <li class="hidden-xs">The social search now potentially uncovers photos, educational records and professional history.</li>
                   </ul>
                 </div>
 
                 <div id="card-misc" class="card-single">
                   <img class="title-img" src="img/gen-misc.png" />
-                  <h5 class="title">Miscellaneous</h5>
+                  <h4 class="title">Miscellaneous</h4>
 
                   <ul class="report-info-list">
                     <li>We also give you the ability to run reverse phone number lookups, email searches and property reports.</li>
-                    <li>You'll get access to PeopleLooker's proprietary AlertMe feature, which sends alerts and monitors potential changes we find in our data on an ongoing basis.</li>
-                    <li>No more having to stay on top of the data yourself, let PeopleLooker assist you.</li>
+                    <li class="hidden-xs">You'll get access to PeopleLooker's proprietary AlertMe feature, which sends alerts and monitors potential changes we find in our data on an ongoing basis.</li>
+                    <li class="hidden-xs">No more having to stay on top of the data yourself, let PeopleLooker assist you.</li>
                   </ul>
                 </div>
 
@@ -1432,9 +1417,9 @@
         <div class="modal-footer">
           <div id="searching-progress-bar" class="progress">
             <div class="progress-bar" style="width: 1%"></div>
-            <h6 class="progress-bar-title text-centered" id="searching-progress-bar-status">
+            <h5 class="progress-bar-title text-centered" id="searching-progress-bar-status">
               <span id="searching-progress-bar-value">1%</span> complete
-            </h6>
+            </h5>
           </div>
 
           <p id="modal-msgs" class="text-center hidden-xs">
@@ -1462,17 +1447,17 @@
         <div class="modal-header header-alert">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 
-          <h6 class="title" data-fr-bind="currentRecord">
+          <h5 class="title" data-fr-bind="currentRecord">
             <i class="fa fa-shield icon"></i>
             Account needed to view report<span class="hidden-xs"> on {{fullName}}</span>...
-          </h6>
+          </h5>
         </div>
 
         <div class="modal-body">
           <div class="row">
             <div class="col-sm-6">
 
-              <h5 class="title" data-fr-bind="currentRecord">Start creating your account:</h5>
+              <h4 class="title" data-fr-bind="currentRecord">Start creating your account:</h4>
 
               <form id="signup-modal-form" action="<%= next_page %>" data-fr-bind="leadData" data-fr-store="leadData" data-fr-bind="leadData">
                 <div class="form-group">
@@ -1523,14 +1508,14 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 
-          <h6 class="title">
+          <h5 class="title">
             <i class="fa fa-exclamation-triangle icon"></i>
             Warning: Please Read<span class="hidden-xs"> Before You Continue</span>
-          </h6>
+          </h5>
         </div>
 
         <div class="modal-body">
-          <h5 class="text-centered title" data-fr-bind="currentRecord">There are limits to how you can use {{firstName}}'s report.</h5>
+          <h4 class="text-centered title" data-fr-bind="currentRecord">There are limits to how you can use {{firstName}}'s report.</h4>
 
           <p class="text-centered text-bold sub-title">Please check the box below<span class="hidden-xs"> to continue to your report</span>.</p>
 
@@ -1571,10 +1556,10 @@
         <div class="modal-header" data-fr-bind="currentRecord">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
-          <h6 class="title">
+          <h5 class="title">
             <i class="fa fa-file icon"></i>
             Preview of {{fullName}}'s data
-          </h6>
+          </h5>
         </div>
 
         <div class="modal-body">
@@ -1629,21 +1614,20 @@
           <div class="details" data-fr-bind="currentRecord extraTeaserData" data-total-cards-to-show="5" data-filler-cards-available="5">
             <div class="row">
               {{#each extraData}}
-                <div class="col-md-4">
+                <div class="col-sm-6 col-md-4">
                   <div class="detail-box {{style}}">
                     <div class="row no-gutter">
                       <h6 class="box-title">
-                        <span class="visible-xs visible-sm">{{count}}</span> {{name}}
-                        <span class="visible-xs visible-sm"> FOUND</span>
+                        {{name}}
                       </h6>
 
-                      <div class="col-xs-4 hidden-xs hidden-sm">
+                      <div class="col-xs-4">
                         <div class="detail-img">
-                          <span class="center-block {{type}}"></span>
+                          <span class="img-block {{type}}"></span>
                         </div>
                       </div>
 
-                      <div class="col-xs-8 hidden-xs hidden-sm">
+                      <div class="col-xs-8">
                         <h2 class="count">{{count}}</h2>
                         <p class="count-text">result{{#ifNot count 1}}s{{/ifNot}} found</p>
                       </div>
@@ -1654,25 +1638,25 @@
 
               <div class="fillers">
                 {{#ifIn filler 1}}
-                  <div class="col-md-4">
+                  <div class="col-sm-6 col-md-4">
                     <div class="detail-box {{style}} fillerCard">
                       <div class="row no-gutter">
                         <h6 class="box-title">We Searched Even More!</h6>
 
-                        <div class="col-xs-4 hidden-xs hidden-sm">
+                        <div class="col-xs-4">
                           <div class="detail-img">
-                            <img class="center-block" src="img/icon_search.png">
+                            <img class="img-block" src="img/icon_search.png">
                           </div>
                         </div>
 
-                        <div class="col-md-8 col-sm-12">
+                        <div class="col-xs-8">
                           <p class="filler-text">
                             May Contain:
                             {{#unless hasCriminal}}<span class="text-error"> Crime Records</span>,{{else}} Address Records,{{/unless}}
                             {{#unless hasBankruptcy}}<span class="text-error"> Bankruptcies</span>,{{else}} Property Records,{{/unless}}
-                            {{#unless hasProperty}}<span class="hidden-xs"> Properties,</span>{{else}}<span class="hidden-xs"> Neighbor Records,</span>{{/unless}}
-                            {{#unless hasSocial}}<span class="hidden-xs"> Social Profiles,</span>{{else}}<span class="hidden-xs"> License Records,</span>{{/unless}}
-                            {{#unless hasPhone}}<span class="hidden-xs"> Phone Numbers</span>{{else}}<span class="hidden-xs"> Permit Records</span>{{/unless}}
+                            {{#unless hasProperty}} Properties,{{else}} Neighbor Records,{{/unless}}
+                            {{#unless hasSocial}} Social Profiles,{{else}} License Records,{{/unless}}
+                            {{#unless hasPhone}} Phone Numbers{{else}} Permit Records{{/unless}}
                           </p>
                         </div>
                       </div>
@@ -1681,18 +1665,18 @@
                 {{/ifIn}}
 
                 {{#ifIn filler 2}}
-                  <div class="col-md-4">
+                  <div class="col-sm-6 col-md-4">
                     <div class="detail-box {{style}} fillerCard">
                       <div class="row no-gutter">
                         <h6 class="box-title">Satisfaction Guarantee</h6>
 
-                        <div class="col-xs-4 hidden-xs hidden-sm">
+                        <div class="col-xs-4">
                           <div class="detail-img">
-                            <img class="center-block" src="img/icon_like.png" />
+                            <img class="img-block" src="img/icon_like.png" />
                           </div>
                         </div>
 
-                        <div class="col-md-8 col-sm-12">
+                        <div class="col-xs-8">
                           <p class="filler-text">If you are unhappy with the results of your report, we will gladly give you a refund.</p>
                         </div>
                       </div>
@@ -1701,18 +1685,18 @@
                 {{/ifIn}}
 
                 {{#ifIn filler 3}}
-                  <div class="col-md-4">
+                  <div class="col-sm-6 col-md-4">
                     <div class="detail-box {{style}} fillerCard">
                       <div class="row no-gutter">
                         <h6 class="box-title">Top Rated Service</h6>
 
-                        <div class="col-xs-4 hidden-xs hidden-sm">
+                        <div class="col-xs-4">
                           <div class="detail-img">
-                            <img class="center-block" src="img/icon_sitejabber.png">
+                            <img class="img-block" src="img/icon_sitejabber.png">
                           </div>
                         </div>
 
-                        <div class="col-md-8 col-sm-12">
+                        <div class="col-xs-8">
                           <p class="filler-text">Ranked #1 amongst competitors for customer service on SiteJabber.com.</p>
                         </div>
                       </div>
@@ -1721,18 +1705,18 @@
                 {{/ifIn}}
 
                 {{#ifIn filler 4}}
-                  <div class="col-md-4">
+                  <div class="col-sm-6 col-md-4">
                     <div class="detail-box {{style}} fillerCard">
                       <div class="row no-gutter">
                         <h6 class="box-title">Secure Search</h6>
 
-                        <div class="col-xs-4 hidden-xs hidden-sm">
+                        <div class="col-xs-4">
                           <div class="detail-img">
-                            <img class="center-block" src="img/icon_norton.png">
+                            <img class="img-block" src="img/icon_norton.png">
                           </div>
                         </div>
 
-                        <div class="col-md-8 col-sm-12">
+                        <div class="col-xs-8">
                           <p class="filler-text">{{fullName}} will not be notified of this search.</p>
                         </div>
                       </div>
@@ -1741,18 +1725,18 @@
                 {{/ifIn}}
 
                 {{#ifIn filler 5}}
-                  <div class="col-md-4">
+                  <div class="col-sm-6 col-md-4">
                     <div class="detail-box {{style}} fillerCard">
                       <div class="row no-gutter">
                         <h6 class="box-title">New Feature</h6>
 
-                        <div class="col-xs-4 hidden-xs hidden-sm">
+                        <div class="col-xs-4">
                           <div class="detail-img">
-                            <img class="center-block" src="img/icon_property.png">
+                            <img class="img-block" src="img/icon_property.png">
                           </div>
                         </div>
 
-                        <div class="col-md-8 col-sm-12">
+                        <div class="col-xs-8">
                           <p class="filler-text">Now you can also run UNLIMITED property searches.</p>
                         </div>
                       </div>
@@ -1761,7 +1745,7 @@
                 {{/ifIn}}
               </div>
 
-              <div class="col-md-4">
+              <div class="col-sm-6 col-md-4">
                 <div class="detail-box {{style}} CTA_card">
                   <div class="row no-gutter">
                     <h6 class="box-title">Access The Report</h6>
@@ -1773,11 +1757,11 @@
             </div>
 
             <div class="row seals">
-              <div class="col-md-6">
+              <div class="col-sm-6">
                 <div class="guarantee">
                   <div class="row">
                     <div class="col-xs-4">
-                      <img src="img/guarantee.png" class="center-block"/>
+                      <img src="img/guarantee.png" class="img-block"/>
                     </div>
 
                     <div class="col-xs-8">
@@ -1787,11 +1771,11 @@
                 </div>
               </div>
 
-              <div class="col-md-6">
+              <div class="col-sm-6">
                 <div class="awards">
                   <div class="row">
                     <div class="col-xs-4">
-                      <img src="img/awards.png" class="center-block"/>
+                      <img src="img/awards.png" class="img-block"/>
                     </div>
 
                     <div class="col-xs-8">

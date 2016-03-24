@@ -80,7 +80,7 @@
   color: #fff;
   font-size: 40px;
   font-weight: 100;
-  line-height: 0.5;
+  line-height: 0.55;
   -webkit-transition: all 250ms;
   -moz-transition: all 250ms;
   -ms-transition: all 250ms;
@@ -110,20 +110,30 @@
 
 @media (min-width: 768px) {
   .modal-header .close {
-    line-height: 0.55;
+    line-height: 0.65;
   }
 }
 
 @media (min-width: 992px) {
   .modal-header .close {
-    line-height: 0.65;
+    line-height: 0.85;
+  }
+
+  .modal-header .title .img-icon {
+    width: 35px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .modal-header .close {
+    line-height: 0.95;
   }
 }
 
 /* modal-body */
 
 .modal-body {
-  padding: 30px;
+  padding: 15px;
 }
 
 .modal-body .title {
@@ -152,6 +162,13 @@
 .modal-body .pl-search-refine .btn {
   width: auto;
   margin: 20px auto;
+}
+
+@media (min-width: 768px) {
+
+  .modal-body {
+    padding: 30px;
+  }
 }
 
 /* modal-footer */
@@ -213,6 +230,7 @@
 }
 
 #scanningSocialMedia .modal-body .profile-col {
+  height: 470px;
   padding: 0 30px;
   background: #ecf6f5;
 }
@@ -221,15 +239,19 @@
   margin: 45px 0;
 }
 
+#scanningSocialMedia .modal-body .sub-title {
+  margin-bottom: 20px;
+}
+
 #scanningSocialMedia .modal-body .social-col {
-  padding: 45px 30px;
+  padding: 15px;
 }
 
 #scanningSocialMedia .modal-body .social-media-list li {
   position: relative;
   width: 16.666%;
   height: 32px;
-  margin-bottom: 6%;
+  margin-bottom: 30px;
   float: left;
 }
 
@@ -258,6 +280,17 @@
   text-align: center;
 }
 
+@media (min-width: 768px) {
+
+  #scanningSocialMedia .modal-body .sub-title {
+    margin-bottom: 40px;
+  }
+
+  #scanningSocialMedia .modal-body .social-col {
+    padding: 45px 30px;
+  }
+}
+
 /* ============== YOUR REPORT IS READY ================= */
 
 /* modal */
@@ -279,48 +312,48 @@
   position: relative;
 }
 
+#gen-report-modal2 .modal-header {
+  padding: 0;
+}
+
 #gen-report-modal2 .modal-header .close {
-  color: #fff;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #333;
+}
+
+#gen-report-modal2 .modal-header .jumbo-sidebar {
+  padding: 15px;
+  border-radius: 4px 4px 0 0;
+  background-color: #fcc41c;
+  text-align: center;
+}
+
+#gen-report-modal2 .modal-header .jumbo-sidebar .title {
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+}
+
+#gen-report-modal2 .modal-header .jumbo-sidebar .sub-title {
+  margin: 10px 0 0;
+  color: #333;
+  font-weight: bold;
+  text-align: left;
 }
 
 @media (min-width: 768px) {
 
-  #gen-report-modal2 .modal-header {
-    padding: 0;
-  }
-
-  #gen-report-modal2 .modal-header .close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    color: #333;
-  }
-
   #gen-report-modal2 .modal-header .jumbo-sidebar {
     padding: 30px;
-    border-radius: 4px 4px 0 0;
-    background-color: #fcc41c;
-    text-align: center;
-  }
-
-  #gen-report-modal2 .modal-header .jumbo-sidebar .title {
-    margin: 0;
-  	color: #333;
-  	font-weight: bold;
-  }
-
-  #gen-report-modal2 .modal-header .jumbo-sidebar .sub-title {
-    margin: 10px 0 0;
-  	color: #333;
-    font-weight: bold;
-    text-align: left;
   }
 }
 
 @media (min-width: 992px) {
 
   #gen-report-modal2 .modal-header {
-    height: 40px;
+    height: 45px;
     border: 0;
     background: #fff;
   }
@@ -346,20 +379,13 @@
 /* modal-body */
 
 #gen-report-modal2 .modal-body {
-  padding: 30px;
+  padding: 15px;
   padding-top: 0;
 }
 
 #gen-report-modal2 .mobile-heading .modal-headline {
   margin: 0;
   text-align: center;
-}
-
-#gen-report-modal2 .mobile-heading .modal-headline .img-animation {
-  display: none;
-  height: 70px;
-  width: 70px;
-  margin: 0 auto;
 }
 
 #gen-report-modal2 .mobile-heading .modal-headline strong {
@@ -375,6 +401,10 @@
 #gen-report-modal2 .mobile-heading .modal-sub-headline {
   display: block;
   margin: 15px 0;
+}
+
+#gen-report-modal2 .modal-body .large-heading .title {
+  margin-top: 15px;
 }
 
 #gen-report-modal2 .modal-body .report-info-list {
@@ -448,6 +478,11 @@
 }
 
 @media (min-width: 768px) {
+
+  #gen-report-modal2 .modal-body {
+    padding: 30px;
+    padding-top: 0;
+  }
 
   #gen-report-modal2 .modal-body .report-info-list {
     margin-top: 30px;
@@ -637,7 +672,7 @@
 
 #gen-report-modal3 .modal-body {
   margin: 0;
-  padding: 30px;
+  padding: 15px;
 }
 
 #gen-report-modal3 .modal-body .modal-body-headline {
@@ -768,7 +803,7 @@
   }
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
 
   /* modal-header */
 
@@ -777,6 +812,10 @@
   }
 
   /* modal-body */
+
+  #gen-report-modal3 .modal-body {
+    padding: 30px;
+  }
 
   #gen-report-modal3 .modal-body .modal-body-headline {
     font-size: 25px;
@@ -819,7 +858,7 @@
 }
 
 #gen-report-modal4 .modal-body .captcha-col {
-  padding: 15px 30px;
+  padding: 15px;
 }
 
 #gen-report-modal4 .modal-body .captcha-col .bv-captcha-wrapper {
@@ -924,6 +963,13 @@
   font-size: 16px;
 }
 
+@media (min-width: 768px) {
+
+  #gen-report-modal4 .modal-body .captcha-col {
+    padding: 15px 30px;
+  }
+}
+
 /* == 6 == GENERATING REPORT ====================== */
 
 /* modal-body */
@@ -972,7 +1018,7 @@
 #gen-report-modal5 .modal-body .time-stamp {
   position: absolute;
   top: -130px;
-  right: 5px;
+  right: 15px;
   font-size: 14px;
 }
 
@@ -989,26 +1035,30 @@
 }
 
 #gen-report-modal5 .modal-body .report-info-list {
-  padding-left: 20px;
+  list-style: none;
+  padding: 0;
 }
 
 @media (min-width: 768px) {
 
   #gen-report-modal5 .modal-body .time-stamp {
     top: 0;
-    right: 15px;
   }
 
   #gen-report-modal5 .modal-body .modal-body-copy {
     padding: 20px;
+  }
+
+  #gen-report-modal5 .modal-body .report-info-list {
+    list-style: initial;
+    padding-left: 20px;
   }
 }
 
 /* modal-footer */
 
 #gen-report-modal5 .modal-footer {
-  padding: 30px;
-  padding-top: 15px;
+  padding: 15px;
 }
 
 #gen-report-modal5 .modal-footer #modal-msgs span {
@@ -1019,6 +1069,13 @@
 
 #gen-report-modal5 .modal-footer #modal-msgs .msg-selected {
   display: block !important;
+}
+
+@media (min-width: 768px) {
+  #gen-report-modal5 .modal-footer {
+    padding: 30px;
+    padding-top: 15px;
+  }
 }
 
 /* == 7 == LEADBOX SIGNUP ========================= */
@@ -1074,7 +1131,7 @@
 
 #gen-report-modal11 .modal-body #fcra-confirm .btn {
   display: block;
-  width: 220px;
+  width: 100%;
   margin: 20px auto;
 }
 
@@ -1211,6 +1268,13 @@
   background-position: center center;
 }
 
+@media (min-width: 480px) {
+
+  #gen-report-modal11 .modal-body #fcra-confirm .btn {
+    width: 220px;
+  }
+}
+
 /* == 7 == FINAL CARD REPORT ========================= */
 
 /* modal-body */
@@ -1221,14 +1285,14 @@
 
 #gen-report-modal7 .modal-body .person-info {
   margin: 0;
-  padding: 10px 15px;
+  padding: 0;
   background-color: #ecf6f5;
 }
 
 #gen-report-modal7 .modal-body .person-info .photo {
-  width: 100%;
-  max-width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
+  margin-top: 15px;
   margin-right: auto;
   margin-left: auto;
   border-radius: 50%;
@@ -1239,10 +1303,13 @@
 
 #gen-report-modal7 .modal-body .person-info .title {
   margin: 15px 0;
+  text-align: center;
 }
 
 #gen-report-modal7 .modal-body .person-info .sub-title {
   margin-bottom: 10px;
+  font-size: 16px;
+  text-align: center;
 }
 
 #gen-report-modal7 .modal-body .person-info h6 {
@@ -1260,19 +1327,20 @@
 }
 
 #gen-report-modal7 .modal-body .details {
-  padding: 30px;
+  padding: 15px;
 }
 
 #gen-report-modal7 .modal-body .details .detail-box {
   position: relative;
   height: auto;
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   padding: 15px;
   background-color: #ceede9;
 }
 
 #gen-report-modal7 .modal-body .details .detail-box.CTA_card {
+  margin: 0;
   padding: 15px 0;
   border: 0;
   background-color: transparent;
@@ -1303,6 +1371,10 @@
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100% 100%;
+}
+
+#gen-report-modal7 .modal-body .details .detail-box .detail-img .img-block {
+  display: block;
 }
 
 #gen-report-modal7 .modal-body .details .detail-box .detail-img span.criminal {
@@ -1350,11 +1422,13 @@
 }
 
 #gen-report-modal7 .modal-body .details .detail-box .count {
+  display: inline-block;
   margin: 0;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 #gen-report-modal7 .modal-body .details .detail-box .count-text {
+  display: inline-block;
   margin: 0;
   font-size: 14px;
 }
@@ -1384,4 +1458,41 @@
 #gen-report-modal7 .more {
   font-size: 20px;
   color: #484848;
+}
+
+@media (min-width: 768px) {
+
+  #gen-report-modal7 .modal-body .person-info {
+    padding: 10px 15px;
+  }
+
+  #gen-report-modal7 .modal-body .person-info .photo {
+    width: 100%;
+    max-width: 100px;
+    height: 100px;
+    margin-top: 0;
+  }
+
+  #gen-report-modal7 .modal-body .person-info .title,
+  #gen-report-modal7 .modal-body .person-info .sub-title {
+    text-align: left;
+  }
+
+  #gen-report-modal7 .modal-body .details {
+    padding: 30px;
+  }
+
+  #gen-report-modal7 .modal-body .details .detail-box,
+  #gen-report-modal7 .modal-body .details .detail-box.CTA_card {
+    margin-bottom: 30px;
+  }
+
+  #gen-report-modal7 .modal-body .details .detail-box .count {
+    display: block;
+    margin-top: 10px;
+  }
+
+  #gen-report-modal7 .modal-body .details .detail-box .count-text {
+    display: block;
+  }
 }
