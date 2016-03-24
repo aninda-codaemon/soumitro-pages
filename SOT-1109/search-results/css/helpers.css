@@ -13,6 +13,14 @@
   color: #24c1db !important;
 }
 
+.text-warning {
+  color: #fcc41c !important;
+}
+
+.text-error {
+  color: #ef2742 !important; 
+}
+
 .text-mute {
   color: #6F6F6F !important;
   font-weight: normal;
