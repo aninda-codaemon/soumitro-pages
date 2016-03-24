@@ -414,19 +414,19 @@
                 </ul>
                 <ul class="list-inline social-icons">
                   <li>
-                    <a href="//www.facebook.com/peoplelooker"><img class="img-icon" src="img/Facebook.png" /></a>
+                    <a href="//www.facebook.com/peoplelooker" target="_blank"><img class="img-icon" src="img/Facebook.png" /></a>
                   </li>
                   <li>
-                    <a href="//www.twitter.com/peoplelooker"><img class="img-icon" src="img/Twitter.png" /></a>
+                    <a href="//www.twitter.com/peoplelooker" target="_blank"><img class="img-icon" src="img/Twitter.png" /></a>
                   </li>
                   <li>
-                    <a href="//www.instagram.com/peoplelooker"><img class="img-icon" src="img/Instagram.png" /></a>
+                    <a href="//plus.google.com/109012472178263427487" target="_blank"><img class="img-icon" src="img/GooglePlus.png" /></a>
                   </li>
                   <li>
-                    <a href="//www.pinterest.com/peoplelooker"><img class="img-icon" src="img/Pinterest.png" /></a>
+                    <a href="//www.instagram.com/peoplelooker" target="_blank"><img class="img-icon" src="img/Instagram.png" /></a>
                   </li>
                   <li>
-                    <a href="//plus.google.com/109012472178263427487"><img class="img-icon" src="img/GooglePlus.png" /></a>
+                    <a href="//www.pinterest.com/peoplelooker" target="_blank"><img class="img-icon" src="img/Pinterest.png" /></a>
                   </li>
                 </ul>
               </div>
@@ -480,7 +480,7 @@
                   <span class="label-primary label-rounded">1</span>
                 </h6>
               </div>
-              <div class="col-xs-10">
+              <div class="col-xs-8">
                 <h6 class="tip-headline">
                   <span class="hidden-xs">
                     Make sure you have the right name
@@ -496,13 +496,13 @@
 
                 <div class="row name-inputs">
                   <div class="col-sm-5 form-group">
-                    <input name="fn" type="text" class="form-control" placeholder="First Name" required value="{{fn}}" />
+                    <input name="fn" type="text" class="input-lg form-control" placeholder="First Name" required value="{{fn}}" />
                   </div>
                   <div class="col-sm-2 form-group hidden-xs">
-                    <input name="mi" type="text" class="form-control" placeholder="M.I." size="1" maxlength="1" value="{{mi}}" />
+                    <input name="mi" type="text" class="input-lg form-control" placeholder="M.I." size="1" maxlength="1" value="{{mi}}" />
                   </div>
                   <div class="col-sm-5 form-group">
-                    <input name="ln" type="text" class="form-control" placeholder="Last Name" required value="{{ln}}" />
+                    <input name="ln" type="text" class="input-lg form-control" placeholder="Last Name" required value="{{ln}}" />
                   </div>
                 </div>
               </div>
@@ -513,7 +513,7 @@
                   <span class="label-primary label-rounded">2</span>
                 </h6>
               </div>
-              <div class="col-xs-10">
+              <div class="col-xs-8">
                 <h6 class="tip-headline">
                   <span class="hidden-xs">
                     Make sure you're searching the right place
@@ -544,10 +544,10 @@
 
                 <div class="row location-inputs">
                   <div class="col-sm-8 form-group">
-                    <input name="city" type="text" class="form-control" placeholder="City" value="{{city}}" />
+                    <input name="city" type="text" class="input-lg form-control" placeholder="City" value="{{city}}" />
                   </div>
                   <div class="col-sm-4 form-group">
-                    <select class="custom-select a form-control" name="state" value="{{state}}">
+                    <select class="input-lg form-control" name="state" value="{{state}}">
                       <option value="All">State</option>
                       <option value="AK">AK</option>
                       <option value="AL">AL</option>
@@ -624,7 +624,7 @@
         <div class="modal-header section-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h6 class="title" data-fr-bind="query teaserData">
-            <i class="fa fa-search"></i>
+            <i class="fa fa-search icon"></i>
             Your search for {{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}} returned {{recordCount}} results!
           </h6>
         </div>
@@ -642,22 +642,22 @@
 
             <div class="row refine-inputs">
               <div class="col-sm-3 form-group">
-                <input name="fn" type="text" class="form-control" placeholder="First Name" required value="{{fn}}" />
+                <input name="fn" type="text" class="input-lg form-control" placeholder="First Name" required value="{{fn}}" />
               </div>
               <div class="col-sm-1 form-group">
-                <input name="mi" type="text" class="form-control" placeholder="M.I." value="{{mi}}" />
+                <input name="mi" type="text" class="input-lg form-control" placeholder="M.I." value="{{mi}}" />
               </div>
               <div class="col-sm-3 form-group">
-                <input name="ln" type="text" class="form-control" placeholder="Last Name" required value="{{ln}}" />
+                <input name="ln" type="text" class="input-lg form-control" placeholder="Last Name" required value="{{ln}}" />
               </div>
               <div class="col-sm-1 form-group">
-                <input name="age" type="text" class="form-control input-age" placeholder="Age" value="{{age}}" />
+                <input name="age" type="text" class="input-lg form-control input-age" placeholder="Age" value="{{age}}" />
               </div>
               <div class="col-sm-2 form-group">
-                <input name="city" type="text" class="form-control" placeholder="City" value="{{city}}" />
+                <input name="city" type="text" class="input-lg form-control" placeholder="City" value="{{city}}" />
               </div>
               <div class="col-sm-2 form-group">
-                <select class="form-control" name="state" value="{{state}}">
+                <select class="input-lg form-control" name="state" value="{{state}}">
                   <option value="All">All</option>
                   <option value="AK">AK</option>
                   <option value="AL">AL</option>
@@ -730,22 +730,20 @@
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header section-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h1 class="text-center"><strong>Wait, before you go</strong></h1>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h6 class="title">Wait, before you go</h6>
         </div>
 
         <div class="modal-body text-center">
-          <h3><strong>Preview a summary of your report.</strong></h3>
+          <h5 class="title">Preview a summary of your report.</h5>
 
           <div class="loader-big">
             <img src="img/loading.gif">
           </div>
-          <!-- <img class="img-responsive preview" src="img/preview.jpg"> -->
 
           <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
-              <button id="skip-to-preview" class="btn btn-success btn-lg btn-block">See The Summary Now
-              </button>
+              <button id="skip-to-preview" class="btn btn-lg btn-block btn-secondary">See The Summary Now</button>
             </div>
           </div>
         </div>
@@ -1170,19 +1168,24 @@
           </p>
           <ul class="cases-list list-unstyled">
             <li class="case-item active">
-              <i class="fa fa-child icon"></i> Find your birth parent!
+              <i class="fa fa-child icon"></i>
+              <span class="case-item-label">Find your birth parent!</span>
             </li>
             <li class="case-item">
-              <i class="fa fa-heart icon"></i> Check your online date!
+              <i class="fa fa-heart icon"></i>
+              <span class="case-item-label">Check your online date!</span>
             </li>
             <li class="case-item">
-              <i class="fa fa-shield icon"></i> Help protect your family!
+              <i class="fa fa-shield icon"></i>
+              <span class="case-item-label">Help protect your family!</span>
             </li>
             <li class="case-item">
-              <i class="fa fa-user-secret icon"></i> Monitor your online identity!
+              <i class="fa fa-user-secret icon"></i>
+              <span class="case-item-label">Monitor your online identity!</span>
             </li>
             <li class="case-item">
-              <i class="fa fa-home icon"></i> Inspect the value of houses!
+              <i class="fa fa-home icon"></i>
+              <span class="case-item-label">Inspect the value of houses!</span>
             </li>
           </ul>
           <div class="case-images">
@@ -1211,7 +1214,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
           <h6 class="title" data-fr-bind="currentRecord">
-            <i class="fa fa-shield"></i>
+            <i class="fa fa-shield icon"></i>
             We finished compiling the report. Enter the text below to continue...
           </h6>
         </div>
@@ -1303,7 +1306,7 @@
   <!-- ================================================== -->
 
   <div id="gen-report-modal5" class="modal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
 
         <div class="modal-header">
@@ -1460,7 +1463,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 
           <h6 class="title" data-fr-bind="currentRecord">
-            <i class="fa fa-shield"></i>
+            <i class="fa fa-shield icon"></i>
             Account needed to view report<span class="hidden-xs"> on {{fullName}}</span>...
           </h6>
         </div>
@@ -1473,20 +1476,23 @@
 
               <form id="signup-modal-form" action="<%= next_page %>" data-fr-bind="leadData" data-fr-store="leadData" data-fr-bind="leadData">
                 <div class="form-group">
-                  <input name="account[first_name]" value="{{account[first_name]}}" id="lead_first_name" type="text" class="form-control" placeholder="First Name" required/>
+                  <input name="account[first_name]" value="{{account[first_name]}}" id="lead_first_name" type="text" class="input-lg form-control" placeholder="First Name" required/>
                 </div>
                 <div class="form-group">
-                  <input name="account[last_name]" value="{{account[last_name]}}" id="lead_last_name" type="text" class="form-control" placeholder="Last Name" required/>
+                  <input name="account[last_name]" value="{{account[last_name]}}" id="lead_last_name" type="text" class="input-lg form-control" placeholder="Last Name" required/>
                 </div>
                 <div class="form-group">
-                  <input name="user[email]" value="{{user[email]}}" id="lead_email" type="email" class="form-control" placeholder="Email Address" required/>
+                  <input name="user[email]" value="{{user[email]}}" id="lead_email" type="email" class="input-lg form-control" placeholder="Email Address" required/>
                 </div>
 
                 <p class="text-caption">
                   By clicking "Continue" you represent you are over 18 years of age and have agreed to our <a class="text-caption" href="#" target="_blank">Terms of Service</a> and <a class="text-caption" href="#" target="_blank">Privacy Policy</a> and you agree to receive email from PeopleLooker.com. We'll never sell your information or use your data as apart of our search results.
                 </p>
 
-                <button type="submit" class="btn btn-lg btn-block btn-secondary"><span class="hidden-xs">ACCESS &amp; </span>CONTINUE</button>
+                <button type="submit" class="btn btn-lg btn-block btn-secondary">
+                  <span class="hidden-xs">ACCESS &amp; </span>CONTINUE
+                  <i class="fa fa-arrow-right icon"></i>
+                </button>
               </form>
 
               <p class="text-caption">Already a PeopleLooker member? <a href="#" class="text-caption">Click here to log in</a>.</p>
@@ -1515,7 +1521,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 
           <h6 class="title">
-            <i class="fa fa-exclamation-triangle"></i>
+            <i class="fa fa-exclamation-triangle icon"></i>
             Warning: Please Read<span class="hidden-xs"> Before You Continue</span>
           </h6>
         </div>
@@ -1526,18 +1532,20 @@
           <p class="text-centered text-bold sub-title">Please check the box below<span class="hidden-xs"> to continue to your report</span>.</p>
 
           <form class="text-centered" id="fcra-confirm">
-            <p or="fcraCheckbox2">
-              I will not use information provided by PeopleLooker for decisions about employment, insurance, tenant screening, consumer credit or any other purpose requiring Fair Credit Reporting Act (FCRA) compliance.
-            </p>
+            <div class="fcra-confirm-container">
+              <p for="fcraCheckbox2">
+                I will not use information provided by PeopleLooker for decisions about employment, insurance, tenant screening, consumer credit or any other purpose requiring Fair Credit Reporting Act (FCRA) compliance.
+              </p>
 
-            <label class="fcraCheckbox-wrapper" for="fcraCheckbox2">
-              <input id="fcraCheckbox2" name="fcraCheckbox2" class="styled" type="checkbox" required>
-              <label for="fcraCheckbox2" class="fcraCheckbox-box pull-left"></label>
-              I Agree
-            </label>
-            <label for="fcraCheckbox2" class="error"></label>
+              <label class="fcraCheckbox-wrapper" for="fcraCheckbox2">
+                <input id="fcraCheckbox2" name="fcraCheckbox2" class="styled" type="checkbox" required>
+                <label for="fcraCheckbox2" class="fcraCheckbox-box pull-left"></label>
+                I Agree
+              </label>
+              <label for="fcraCheckbox2" class="error"></label>
+            </div>
 
-            <button class="btn btn-lg btn-secondary">Continue</button>
+            <button class="btn btn-lg btn-secondary">Continue <i class="fa fa-arrow-right icon"></i></button>
           </form>
         </div>
 
@@ -1561,7 +1569,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
           <h6 class="title">
-            <i class="fa fa-file"></i>
+            <i class="fa fa-file icon"></i>
             Preview of {{fullName}}'s data
           </h6>
         </div>
@@ -1820,6 +1828,7 @@
             <span id="no-crim">Please <strong>do not</strong> hit refresh or press the back button, as the information may be lost</span>
           </p>
         </div>
+
       </div>
     </div>
   </div>

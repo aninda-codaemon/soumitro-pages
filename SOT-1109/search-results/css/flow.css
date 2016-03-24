@@ -8,11 +8,19 @@
   .modal-dialog {
     width: 750px;
   }
+
+  .modal-dialog.modal-lg {
+    width: 760px;
+  }
 }
 
 @media (min-width: 992px) {
   .modal-dialog {
     width: 850px;
+  }
+
+  .modal-dialog.modal-lg {
+    width: 980px;
   }
 }
 
@@ -41,12 +49,20 @@
   position: absolute;
   width: 100%;
   margin: 15px 0;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .modal-content .progress-bar-icon {
   width: 22px;
   margin-right: 5px;
+}
+
+/* modal buttons */
+
+.modal-content .btn-lg {
+  padding: 15px;
+  font-size: 22px;
+  text-transform: uppercase;
 }
 
 /* modal-header */
@@ -86,6 +102,10 @@
   width: 25px;
   margin-right: 5px;
   vertical-align: sub;
+}
+
+.modal-header .title .icon {
+  margin-right: 5px;
 }
 
 @media (min-width: 768px) {
@@ -503,9 +523,9 @@
 /* continue button */
 
 #gen-report-modal2 .modal-body #gen-report-confirm {
-  margin: 40px 0 20px;
+  margin-top: 40px;
   padding: 20px;
-  font-size: 20px;
+  font-size: 22px;
   text-transform: uppercase;
 }
 
@@ -515,7 +535,7 @@
   opacity: 0.5;
   box-shadow: none;
   border-color: #c9c9c9;
-  background: #e7e7e7;
+  background-color: #e7e7e7;
   color: #c9c9c9 !important;
 }
 
@@ -645,9 +665,11 @@
 }
 
 #gen-report-modal3 .modal-body .case-item {
+  position: relative;
   margin-top: 15px;
   -webkit-transition: all 500ms;
   -moz-transition: all 500ms;
+  -ms-transition: all 500ms;
   transition: all 500ms;
 }
 
@@ -656,7 +678,18 @@
   font-weight: 700;
   -webkit-transition: all 500ms;
   -moz-transition: all 500ms;
+  -ms-transition: all 500ms;
   transition: all 500ms;
+}
+
+#gen-report-modal3 .modal-body .case-item .icon {
+  position: absolute;
+  top: 3px;
+  left: 0;
+}
+
+#gen-report-modal3 .modal-body .case-item .case-item-label {
+  margin-left: 30px;
 }
 
 #gen-report-modal3 .modal-body .case-images {
@@ -895,6 +928,10 @@
 
 /* modal-body */
 
+#gen-report-modal5 .modal-body {
+  padding-bottom: 0;
+}
+
 #gen-report-modal5 .modal-body .modal-body-list {
   margin-left: -15px;
 }
@@ -947,6 +984,10 @@
   display: block;
 }
 
+#gen-report-modal5 .modal-body .card-single .title-img {
+  margin: 10px 0;
+}
+
 #gen-report-modal5 .modal-body .report-info-list {
   padding-left: 20px;
 }
@@ -967,6 +1008,7 @@
 
 #gen-report-modal5 .modal-footer {
   padding: 30px;
+  padding-top: 15px;
 }
 
 #gen-report-modal5 .modal-footer #modal-msgs span {
@@ -1009,12 +1051,18 @@
 /* modal-body */
 
 #gen-report-modal11 .modal-body #fcra-confirm {
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
+}
+
+#gen-report-modal11 .modal-body #fcra-confirm .fcra-confirm-container {
+  padding: 15px;
+  background-color: #EFEFEF;
 }
 
 #gen-report-modal11 .modal-body #fcra-confirm .btn {
   display: block;
+  width: 220px;
   margin: 20px auto;
 }
 

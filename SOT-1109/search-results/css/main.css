@@ -150,17 +150,6 @@
   margin-bottom: 10px;
 }
 
-@media (min-width: 480px) {
-  /*.content-section#data-panel .search-results .table tr #th-cities,
-    .content-section#data-panel .search-results .table tr .td-cities {
-        display: inline-block !important;
-    }*/
-
-  .content-section#data-panel .search-results .table .td-name .mobile-places-list {
-    display: none;
-  }
-}
-
 @media (min-width: 768px) {
   .content-section#data-panel .search-results .container {
     padding: 0 15px;
@@ -168,10 +157,9 @@
 
   .content-section#data-panel .search-results .table {
     -webkit-box-shadow: 0 0 6px 3px #eaeaea;
-       -moz-box-shadow: 0 0 6px 3px #eaeaea;
-            box-shadow: 0 0 6px 3px #eaeaea;
-
-        -ms-box-shadow: 0 0 6px 3px #eaeaea;
+    -moz-box-shadow: 0 0 6px 3px #eaeaea;
+    -ms-box-shadow: 0 0 6px 3px #eaeaea;
+    box-shadow: 0 0 6px 3px #eaeaea;
   }
 
   .content-section#data-panel .search-results .table tr th {
@@ -188,6 +176,10 @@
 
   .content-section#data-panel .search-results .table .td-photo .photo-locked .fa-lock {
     right: 0;
+  }
+
+  .content-section#data-panel .search-results .table .td-name .mobile-places-list {
+    display: none;
   }
 }
 
@@ -258,6 +250,7 @@
 /* no-results content-section */
 
 .content-section#no-results {
+  display: none;
   padding-bottom: 0;
 }
 
