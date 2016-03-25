@@ -1299,7 +1299,7 @@
   margin-top: 15px;
   margin-right: auto;
   margin-left: auto;
-  border-radius: 50%;
+  background-image: url('/img/icon_user.png');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
