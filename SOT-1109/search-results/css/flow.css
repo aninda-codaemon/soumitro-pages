@@ -213,6 +213,10 @@
   text-align: right;
 }
 
+#exitPopRefine .modal-body .refine-list-two .tip {
+  display: none;
+}
+
 /* ============== REFINE MODAL ================= */
 
 /* modal-body */
