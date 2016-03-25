@@ -289,7 +289,7 @@
     // SCANNING SOCIAL MEDIA
   {
     $elem: $("#scanningSocialMedia"),
-    duration: 20000,   // Total time to switch spinners. Value is divided by number of items.
+    duration: 30000,   // Total time to switch spinners. Value is divided by number of items.
     transitionDelay: 1000,   // After progress completion, amount of time before moving to next flow.
     animate: function () {
       _.bind(scanningSocialMedia, this)();

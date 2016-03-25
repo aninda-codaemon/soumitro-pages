@@ -78,9 +78,9 @@
   opacity: 1;
   outline: 0;
   color: #fff;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 100;
-  line-height: 0.55;
+  line-height: 0.85;
   -webkit-transition: all 250ms;
   -moz-transition: all 250ms;
   -ms-transition: all 250ms;
@@ -110,13 +110,13 @@
 
 @media (min-width: 768px) {
   .modal-header .close {
-    line-height: 0.65;
+    line-height: 0.95;
   }
 }
 
 @media (min-width: 992px) {
   .modal-header .close {
-    line-height: 0.85;
+    line-height: 1;
   }
 
   .modal-header .title .img-icon {
@@ -126,7 +126,7 @@
 
 @media (min-width: 1200px) {
   .modal-header .close {
-    line-height: 0.95;
+    line-height: 1.05;
   }
 }
 
