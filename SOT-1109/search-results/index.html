@@ -658,10 +658,10 @@
               </div>
               <div class="col-sm-2 form-group">
                 <select class="input-lg form-control" name="state" value="{{state}}">
-                  <option value="All">All</option>
+                  <option value="All">State</option>
                   <option value="AK">AK</option>
                   <option value="AL">AL</option>
-                  <option value="AR">Arizona</option>
+                  <option value="AR">AR</option>
                   <option value="AZ">AZ</option>
                   <option value="CA">CA</option>
                   <option value="CO">CO</option>
@@ -1324,18 +1324,18 @@
               </p>
 
               <ul class="modal-body-list list-unstyled hidden-xs">
-                <li class="list-single list-selected">Personal Info <i class="fa fa-spinner fa-spin icon"></i><i class="fa fa-search icon"></i></li>
-                <li class="list-single">Property <i class="fa fa-spinner fa-spin icon"></i><i class="fa fa-search icon"></i></li>
-                <li class="list-single">Criminal <i class="fa fa-spinner fa-spin icon"></i><i class="fa fa-search icon"></i></li>
-                <li class="list-single">Relatives <i class="fa fa-spinner fa-spin icon"></i><i class="fa fa-search icon"></i></li>
-                <li class="list-single">Social Media <i class="fa fa-spinner fa-spin icon"></i><i class="fa fa-search icon"></i></li>
-                <li class="list-single">Miscellaneous <i class="fa fa-spinner fa-spin icon"></i><i class="fa fa-search icon"></i></li>
+                <li class="list-single list-selected">Personal Info <i class="fa fa-spinner fa-spin icon"></i><img class="img-icon icon" src="img/icon_gen_personal.png" /></li>
+                <li class="list-single">Property <i class="fa fa-spinner fa-spin icon"></i><img class="img-icon icon" src="img/icon_gen_property.png" /></li>
+                <li class="list-single">Criminal <i class="fa fa-spinner fa-spin icon"></i><img class="img-icon icon" src="img/icon_gen_criminal.png" /></li>
+                <li class="list-single">Relatives <i class="fa fa-spinner fa-spin icon"></i><img class="img-icon icon" src="img/icon_gen_relatives.png" /></li>
+                <li class="list-single">Social Media <i class="fa fa-spinner fa-spin icon"></i><img class="img-icon icon" src="img/icon_gen_social.png" /></li>
+                <li class="list-single">Miscellaneous <i class="fa fa-spinner fa-spin icon"></i><img class="img-icon icon" src="img/icon_gen_misc.png" /></li>
               </ul>
             </div>
 
             <div class="col-sm-8">
 
-              <p class="time-stamp">
+              <p class="time-stamp hidden-xs">
                 <span id="time-approx"><strong>Time Remaining:</strong> Approx. <span id="time-remaining">120</span> seconds</span>
                 <strong id="finishing-up" class="hide">Finishing Up...</strong>
               </p>
@@ -1429,6 +1429,11 @@
             <span data-fr-bind="currentRecord">Compiling Relatives Info Section for {{fullName}}</span>
             <span data-fr-bind="currentRecord">Compiling Social Media Section</span>
             <span data-fr-bind="currentRecord">Compiling Miscellaneous Info Section for {{fullName}}</span>
+          </p>
+
+          <p class="time-stamp visible-xs">
+            <span id="time-approx"><strong>Time Remaining:</strong> Approx. <span id="time-remaining">120</span> seconds</span>
+            <strong id="finishing-up" class="hide">Finishing Up...</strong>
           </p>
         </div>
 

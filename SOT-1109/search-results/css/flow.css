@@ -159,6 +159,21 @@
   box-shadow: 0 2px 0 0 #DEDEDE;
 }
 
+.modal-body .form-control.error {
+  border-color: #EF2742;
+  -webskit-box-shadow: 0 2px 0 0 #C62E42;
+  -moz-box-shadow: 0 2px 0 0 #C62E42;
+  -ms-box-shadow: 0 2px 0 0 #C62E42;
+  box-shadow: 0 2px 0 0 #C62E42;
+  background-color: #FFF7F8;
+}
+
+.modal-body .form-group label.error {
+  margin: 5px 0;
+  color: #EF2742;
+  font-size: 14px;
+}
+
 .modal-body .pl-search-refine .btn {
   width: auto;
   margin: 20px auto;
@@ -223,6 +238,21 @@
 
 #refine-modal .modal-body .refine-tips-list .icon {
   color: #a9e963;
+}
+
+@media (min-width: 768px) {
+  #refine-modal .modal-body .refine-inputs .form-group {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  #refine-modal .modal-body .refine-inputs .form-group:first-child {
+    padding-left: 15px;
+  }
+
+  #refine-modal .modal-body .refine-inputs .form-group:last-child {
+    padding-right: 15px;
+  }
 }
 
 /* ============== SOCIAL NETWORKS ================= */
@@ -1006,24 +1036,24 @@
   font-weight: bold;
 }
 
-#gen-report-modal5 .modal-body .modal-body-list .list-selected .fa-spin.icon {
+#gen-report-modal5 .modal-body .modal-body-list .list-single.list-selected .fa-spin.icon {
   display: block;
   color: #33d4c0;
 }
 
-#gen-report-modal5 .modal-body .modal-body-list .list-completed .fa-spin.icon {
+#gen-report-modal5 .modal-body .modal-body-list .list-single.list-completed .fa-spin.icon {
   display: none;
 }
 
-#gen-report-modal5 .modal-body .modal-body-list .list-completed .fa-search.icon {
+#gen-report-modal5 .modal-body .modal-body-list .list-single.list-completed .img-icon.icon {
   display: block;
+  top: 11px;
+  right: 11px;
 }
 
 #gen-report-modal5 .modal-body .time-stamp {
-  position: absolute;
-  top: -130px;
-  right: 15px;
   font-size: 14px;
+  text-align: center;
 }
 
 #gen-report-modal5 .modal-body .card-single {
@@ -1035,7 +1065,14 @@
 }
 
 #gen-report-modal5 .modal-body .card-single .title-img {
+  display: inline-block;
+  width: 50px;
   margin: 10px 0;
+  margin-right: 5px;
+}
+
+#gen-report-modal5 .modal-body .card-single .title {
+  display: inline-block;
 }
 
 #gen-report-modal5 .modal-body .report-info-list {
@@ -1046,7 +1083,10 @@
 @media (min-width: 768px) {
 
   #gen-report-modal5 .modal-body .time-stamp {
+    position: absolute;
     top: 0;
+    right: 15px;
+    text-align: right;
   }
 
   #gen-report-modal5 .modal-body .modal-body-copy {
@@ -1056,6 +1096,16 @@
   #gen-report-modal5 .modal-body .report-info-list {
     list-style: initial;
     padding-left: 20px;
+  }
+
+  #gen-report-modal5 .modal-body .card-single .title-img {
+    display: block;
+    width: auto;
+    margin-right: 0;
+  }
+
+  #gen-report-modal5 .modal-body .card-single .title {
+    display: block;
   }
 }
 
