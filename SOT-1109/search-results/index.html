@@ -170,15 +170,15 @@
       <div class="results-header" id="top-banner">
         <div class="container">
           <h5 class="title">
-                    We found {{recordCount}} results for <strong class="text-secondary">{{nameize fn}}{{#if mi}}
+                    {{recordCount}} results for <strong class="text-secondary">{{nameize fn}}{{#if mi}}
                     {{uppercase mi}}{{/if}}
                     {{nameize ln}}</strong>{{#notEqual state 'all'}} in {{uppercase
-                    state}}{{/notEqual}}! Choose a Result Below
+                    state}}{{/notEqual}}. Choose One Below!
                 </h5>
 
           <p class="sub-title">
-            <span class="hidden-xs"><strong class="text-primary">Next Steps:</strong> Locate the person you are looking for in the results below or modify your search. Once you find the right match, click "That's The One" to access the report.</span>
-            <span class="visible-xs"><strong class="text-primary">Next Steps:</strong> Locate the person you are looking for in the results. Once you find the right match, click "Access."</span>
+            <span class="hidden-xs"><strong class="text-primary">Next Step:</strong> Fnd the right match and click "That's The One" to access the report.</span>
+            <span class="visible-xs"><strong class="text-primary">Next Step:</strong> Locate the person you are looking for and click "Access."</span>
           </p>
         </div>
       </div>
@@ -192,7 +192,7 @@
                 <th id="th-photo" class="col-md-1 hidden-xs">Photo</th>
                 <th id="th-name" class="col-md-3">Name</th>
                 <th id="th-age" class="col-md-1">Age</th>
-                <th id="th-cities" class="col-md-2 hidden-xs">Cities</th>
+                <th id="th-cities" class="col-md-2 hidden-xs">Locations</th>
                 <th id="th-relatives" class="col-md-3 hidden-xs">Relatives</th>
                 <th id="th-access-report" class="col-md-2">Access Report</th>
               </tr>
@@ -254,7 +254,7 @@
 
       <div class="background-secondary refine-search-results">
         <div class="text-center container">
-          <p class="title">Can't find who you were looking for? Refine your search and narrow down the results.
+          <p class="title">Can't find who you were looking for? Sometimes the right match doesn't show up until you refine your search.
           </p>
 
           <button class="btn btn-default btn-lg refine-modal-trigger">Refine Search Results</button>
@@ -380,7 +380,7 @@
 
         <div class="row">
           <div class="col-sm-5 col-sm-push-7 col-sm-offset-0">
-            <h5 class="footer-column-title">Customer Service</h5>
+            <h5 class="footer-column-title">Customer Support</h5>
             <blockquote class="footer-quote text-secondary">"We pride ourselves on offering friendly and helpful support!"
             </blockquote>
             <ul class="list-unstyled">
@@ -401,7 +401,7 @@
                 <h5 class="footer-column-title">About Us</h5>
                 <ul class="list-unstyled">
                   <li><a class="footer-column-link" href="//www.peoplelooker.com/about/">About PeopleLooker</a></li>
-                  <li><a class="footer-column-link" href="#">Careers</a></li>
+                  <li><a class="footer-column-link" href="#">Jobs</a></li>
                   <li><a class="footer-column-link" href="#">Leadership</a></li>
                 </ul>
               </div>
@@ -489,9 +489,9 @@
                     Do you have the right name?
                   </span>
                 </h6>
-                <ul class="refine-list-one refine-tips-list list-unstyled">
-                  <li class="tip tip1">Try an alternate spelling</li>
-                  <li class="tip tip2">Try a maiden name</li>
+                <ul class="tips-list list-unstyled">
+                  <li class="tip">Try an alternate spelling</li>
+                  <li class="tip">Try a maiden name</li>
                 </ul>
 
                 <div class="row name-inputs">
@@ -523,20 +523,20 @@
                   </span>
                 </h6>
 
-                <ul class="refine-list-two refine-tips-list list-unstyled">
-                  <li class="tip tip3">
+                <ul class="tips-list list-unstyled">
+                  <li class="tip">
                     <span class="hidden-xs">Try removing the city to do a broader search</span>
                     <span class="visible-xs">Remove the city to do a broader search</span>
                   </li>
-                  <li class="tip tip4">
+                  <li class="tip">
                     <span class="hidden-xs">Try changing the state or doing a national search</span>
                     <span class="visible-xs">Change the state or doing a national search</span>
                   </li>
-                  <li class="tip tip5">
+                  <li class="tip">
                     <span class="hidden-xs">Try adding a city to narrow down your search</span>
                     <span class="visible-xs">Add a city to narrow down your search</span>
                   </li>
-                  <li class="tip tip6">
+                  <li class="tip">
                     <span class="hidden-xs">Try adding a state to narrow down your search</span>
                     <span class="visible-xs">Add a state to narrow down your search</span>
                   </li>
@@ -634,7 +634,7 @@
 
           <ul class="refine-tips-list list-unstyled">
             <li><i class="fa fa-check icon"></i> Add a middle initial, if you know it.</li>
-            <li><i class="fa fa-check icon"></i> Add a current or previous city.</li>
+            <li><i class="fa fa-check icon"></i> Add a city or state.</li>
             <li><i class="fa fa-check icon"></i> Add an approximate current age.</li>
           </ul>
 
@@ -764,13 +764,13 @@
 
           <h5 class="title" data-fr-bind="currentRecord">
             <img src="img/loading_white.gif" class="img-icon">
-            We have information <span class="hidden-xs">on <span>{{fullName}}</span></span> available...
+            We have info <span class="hidden-xs">on <span>{{fullName}}</span></span> available...
           </h5>
         </div>
 
         <div class="modal-body">
           <h4 class="title text-centered hidden-xs">
-            <span class="hidden-xs">We're Currently </span>Searching Our Available Data Sources
+            <span class="hidden-xs">We're </span>Searching National Data Sources
           </h4>
 
           <p class="sub-title text-centered" data-fr-bind="currentRecord">Please wait while we locate important information on <span class="text-secondary">{{fullName}}</span></p>
@@ -781,7 +781,7 @@
               <div class="progress-bar" style="width: 1%"></div>
               <h6 class="progress-bar-title text-centered">
                 <img src="img/icon_court.png" class="progress-bar-icon">
-                <span class="hidden-xs">Various Public and Criminal Record Databases</span>
+                <span class="hidden-xs">Public and Criminal Records</span>
                 <span class="hidden-lg">Public Records</span>
               </h6>
             </div>
@@ -798,7 +798,7 @@
               <div class="progress-bar" style="width: 1%"></div>
               <h6 class="progress-bar-title text-centered">
                 <img src="img/icon_data.png" class="progress-bar-icon">
-                Proprietary Data <span class="hidden-xs">Sets</span>
+                Contact Information
               </h6>
             </div>
 
@@ -828,7 +828,7 @@
 
           <h5 class="title">
             <img src="img/loading_white.gif" class="img-icon">
-            Scanning Dozens of Social Media Profiles...
+            <span class="hidden-xs">Scanning Dozens of</span> Social Media Profiles...
           </h5>
         </div>
 
@@ -846,12 +846,12 @@
                 <li><strong>Location: </strong>{{#if city}}{{city}}, {{/if}}{{#if state}}{{state}}{{/if}}
                 </li>
                 {{#if relatives}}
-                <li><strong>Relatives: </strong>{{shortList relatives}}</li>
+                <li><strong>Relative: </strong>{{shortList relatives}}</li>
                 {{/if}}
               </ul>
             </div>
             <div class="col-sm-8 social-col">
-              <p class="sub-title">This search may reveal interesting information on <strong>{{fullName}}</strong> such as revealing photos, videos, family and friends, professional connections and more.</p>
+              <p class="sub-title">Our social search may reveal noteworthy details on <strong>{{fullName}}</strong> such as revealing photos, videos, family and friends, professional connections and more.</p>
 
               <div class="social-widget">
 
@@ -998,7 +998,7 @@
         </div>
 
         <div class="modal-footer">
-          <p class="alert alert-warning text-centered"><strong>New -</strong> We now search professional and educational history and photos!</p>
+          <p class="alert alert-warning text-centered"><strong>New -</strong> We now search professional, educational history and photos!</p>
         </div>
 
       </div>
@@ -1025,12 +1025,12 @@
 
         <div class="modal-body">
           <h4 class="title">
-            Your Background Report For
+            <span class="hidden-xs">Your</span> Background Report For
             <span class="text-break"><span class="text-secondary" data-fr-bind="currentRecord">{{fullName}}</span> Is Available</span>
           </h4>
 
           <p class="sub-title">
-            Click the button below to continue to the full report. The report may contain information from one or more of the following categories:
+            Information from one or more of the following categories will be added to your report:
           </p>
 
           <ul class="report-info-list">
@@ -1137,7 +1137,7 @@
         <div class="modal-header section-header section-min">
           <h5 class="title">
             <i class="fa fa-share icon"></i>
-            Compiling your report, please wait...
+            Compiling your report<span class="hidden-xs">, please wait</span>...
           </h5>
         </div>
 
@@ -1146,7 +1146,7 @@
             <div class="progress-bar" style="width: 1%"></div>
           </div>
           <h4 class="title">
-            Endless Ways to Use Public Data
+            How can our data help you?
           </h4>
           <p class="sub-title">
             While you wait, please review some of the most popular uses for <span class="text-bold">PeopleLooker</span>.
@@ -1170,7 +1170,7 @@
             </li>
             <li class="case-item">
               <i class="fa fa-home icon"></i>
-              <span class="case-item-label">Inspect the value of houses!</span>
+              <span class="case-item-label">Scope out your next home!</span>
             </li>
           </ul>
           <div class="case-images">
@@ -1200,7 +1200,7 @@
 
           <h5 class="title" data-fr-bind="currentRecord">
             <i class="fa fa-shield icon"></i>
-            We finished compiling the report. Enter the text below to continue...
+            Enter the text below <span class="hidden-xs">to continue</span>...
           </h5>
         </div>
         <!-- /.modal-header -->
@@ -1209,7 +1209,7 @@
           <div class="row table-row">
 
             <div class="col-sm-6 captcha-col">
-              <h5 class="title">Please prove that you are a human by filling out the easy captcha below.</h5>
+              <h5 class="title">Please prove that you are a real person by filling out the easy captcha:</h5>
 
               <form id="bv-catpcha-form">
                 <div class="bv-captcha-wrapper">
@@ -1299,7 +1299,7 @@
 
           <h5 class="title" data-fr-bind="currentRecord">
             <img src="img/loading_white.gif" class="img-icon">
-            Please Wait: Completing Report <span class="hidden-xs">for {{fullName}}</span>
+            <span class="hidden-xs">Please Wait: </span>Completing Report <span class="hidden-xs">for {{fullName}}</span>
           </h5>
         </div>
 
@@ -1347,9 +1347,9 @@
                   <h4 class="title">Personal Info</h4>
 
                   <ul class="report-info-list">
-                    <li>The report may reveal, where available, a person’s full name, maiden name, age, known aliases, address history with “last seen” date, current address, and email addresses.</li>
-                    <li class="hidden-xs">Phone numbers may contain, where available, owner names and other possible persons associated with those numbers.</li>
-                    <li class="hidden-xs">The current address is displayed with a map, satellite imagery and access to an in-depth property report.</li>
+                    <li>The report may reveal, where available, a person’s full name, maiden name, age, <strong>known aliases</strong>, address history with “last seen” date, current address, and <strong>email addresses.</strong></li>
+                    <li class="hidden-xs">Phone numbers may contain, where available, <strong>owner names</strong> and other possible persons associated with those numbers.</li>
+                    <li class="hidden-xs">The current address is displayed with a map, <strong>satellite imagery</strong> and access to an in-depth property report.</li>
                   </ul>
                 </div>
 
@@ -1358,9 +1358,9 @@
                   <h4 class="title">Addresses and Property</h4>
 
                   <ul class="report-info-list">
-                    <li>This report may locate, where available, their current and historical real estate assets including detailed information on those properties.</li>
-                    <li class="hidden-xs">View satellite maps, parcel numbers, and country assessor data such as property tax amounts, home value, and building specs.</li>
-                    <li class="hidden-xs">Even see buyer/seller info, sales prices, and co-owners, where available.</li>
+                    <li>This report may locate, where available, their current and historical <strong>real estate assets</strong> including detailed information on those properties.</li>
+                    <li class="hidden-xs">View satellite maps, parcel numbers, and country assessor data such as property tax amounts, <strong>home value</strong>, and building specs.</li>
+                    <li class="hidden-xs">Even see buyer/seller info, <strong>sales prices</strong>, and co-owners, where available.</li>
                   </ul>
                 </div>
 
@@ -1369,9 +1369,9 @@
                   <h4 class="title">Criminal</h4>
 
                   <ul class="report-info-list">
-                    <li>May contain, where available, arrest or conviction records as well as outstanding warrants, traffic violations and speeding tickets.</li>
-                    <li class="hidden-xs">When a criminal record is found we detail the offense along with the date and location of the crime.</li>
-                    <li class="hidden-xs">We compile federal, state, county, and local databases including courts and Most Wanted lists. Criminal Records are found based on availability.</li>
+                    <li>May contain, where available, arrest or conviction records as well as <strong>outstanding warrants</strong>, traffic violations and speeding tickets.</li>
+                    <li class="hidden-xs">When a criminal record is found we detail <strong>the offense</strong> along with the date and location of the crime.</li>
+                    <li class="hidden-xs">We compile federal, state, county, and local databases including courts and <strong>Most Wanted lists</strong>. Criminal Records are found based on availability.</li>
                   </ul>
                 </div>
 
@@ -1380,9 +1380,9 @@
                   <h4 class="title">Relatives and Connections</h4>
 
                   <ul class="report-info-list">
-                    <li>Our access to hard to find public records may reveal individuals who have a close relationship to your search subject.</li>
-                    <li class="hidden-xs">In addition to relatives this report may show, where available, boyfriends/girlfriends, roommates, business associates as well as ex-husbands and ex-wives.</li>
-                    <li class="hidden-xs">We've recently added relatives of relatives to help broaden your search.</li>
+                    <li>Our access to hard to find public records may reveal individuals who have a <strong>close relationship</strong> to your search subject.</li>
+                    <li class="hidden-xs">In addition to relatives this report may show, where available, boyfriends/girlfriends, roommates, business associates as well as <strong>ex-husbands</strong> and ex-wives.</li>
+                    <li class="hidden-xs">We've recently added more <strong>distant relatives</strong> to help broaden your search.</li>
                   </ul>
                 </div>
 
@@ -1391,9 +1391,9 @@
                   <h4 class="title">Social Media</h4>
 
                   <ul class="report-info-list">
-                    <li>Your report may uncover social media accounts owned by or associated with your search subject.</li>
+                    <li>Your report may uncover <strong>social media accounts</strong> owned by or associated with your search subject.</li>
                     <li class="hidden-xs">Social networks are a potentially helpful way to uncover additional information.</li>
-                    <li class="hidden-xs">The social search now potentially uncovers photos, educational records and professional history.</li>
+                    <li class="hidden-xs">The social search now potentially uncovers <strong>photos</strong>, educational records and professional history.</li>
                   </ul>
                 </div>
 
@@ -1402,8 +1402,8 @@
                   <h4 class="title">Miscellaneous</h4>
 
                   <ul class="report-info-list">
-                    <li>We also give you the ability to run reverse phone number lookups, email searches and property reports.</li>
-                    <li class="hidden-xs">You'll get access to PeopleLooker's proprietary AlertMe feature, which sends alerts and monitors potential changes we find in our data on an ongoing basis.</li>
+                    <li>We also give you the ability to run reverse phone number lookups, <strong>email searches</strong> and property reports.</li>
+                    <li class="hidden-xs">You'll get access to PeopleLooker's proprietary monitoring feature, which sends alerts and <strong>monitors</strong> potential changes we find in our data on an ongoing basis.</li>
                     <li class="hidden-xs">No more having to stay on top of the data yourself, let PeopleLooker assist you.</li>
                   </ul>
                 </div>
@@ -1471,7 +1471,7 @@
                 </div>
 
                 <p class="text-caption">
-                  By clicking "Continue" you represent you are over 18 years of age and have agreed to our <a class="text-caption" href="#" target="_blank">Terms of Service</a> and <a class="text-caption" href="#" target="_blank">Privacy Policy</a> and you agree to receive email from PeopleLooker.com. We'll never sell your information or use your data as apart of our search results.
+                  By clicking "Continue" you represent you are over 18 years of age and have agreed to our <a class="text-caption" href="//www.peoplelooker.com/faq/terms-conditions/" target="_blank">Terms of Service</a> and <a class="text-caption" href="//www.peoplelooker.com/faq/privacy/" target="_blank">Privacy Policy</a> and you agree to receive email from PeopleLooker.com. We'll never sell your information or use your data as apart of our search results.
                 </p>
 
                 <button type="submit" class="btn btn-lg btn-block btn-secondary">
@@ -1480,14 +1480,14 @@
                 </button>
               </form>
 
-              <p class="text-caption">Already a PeopleLooker member? <a href="#" class="text-caption">Click here to log in</a>.</p>
+              <p class="text-caption">Already a PeopleLooker member? <a href="//www.peoplelooker.com/login" class="text-caption">Click here to log in</a>.</p>
             </div>
 
             <div class="col-sm-6 hidden-xs">
               <img class="img-hero" src="img/alertme.png" />
 
-              <h6 class="title text-centered">All new accounts come with <span class="text-warning">Alert Me!</span></h6>
-              <p class="sub-title text-centered">Don't be left in the dark. Automatically be notified if there are any changes or updates to a report that you ran.</p>
+              <h6 class="title text-centered">New accounts come with <span class="text-warning">Monitoring!</span></h6>
+              <p class="sub-title text-centered">Public records are always changing. We'll notify you if there are updates to a report that you ran.</p>
             </div>
 
           </div>
@@ -1515,7 +1515,7 @@
         </div>
 
         <div class="modal-body">
-          <h4 class="text-centered title" data-fr-bind="currentRecord">There are limits to how you can use {{firstName}}'s report.</h4>
+          <h4 class="text-centered title" data-fr-bind="currentRecord">There are limits to how you can use public records.</h4>
 
           <p class="text-centered text-bold sub-title">Please check the box below<span class="hidden-xs"> to continue to your report</span>.</p>
 
@@ -1565,14 +1565,12 @@
         <div class="modal-body">
 
           <div class="person-info row" data-fr-bind="currentRecord extraTeaserData">
+            {{#if photo}}
               <div class="col-sm-2">
-                {{#if photo}}
-                  <div class="photo" style="background-image: url({{photo}}); border-radius: 50%;"></div>
-                {{else}}
-                  <div class="photo"></div>
-                {{/if}}
+                <div class="photo" style="background-image: url({{photo}})"></div>
               </div>
-              <div class="col-sm-4">
+            {{/if}}
+              <div class="{{#if photo}}col-sm-4{{else}}col-sm-6{{/if}}">
                 <h5 class="title name">{{fullName}}</h5>
 
                 {{#if place}}
@@ -1690,16 +1688,16 @@
                   <div class="col-sm-6 col-md-4">
                     <div class="detail-box {{style}} fillerCard">
                       <div class="row no-gutter">
-                        <h6 class="box-title">Top Rated Service</h6>
+                        <h6 class="box-title">Great Support</h6>
 
                         <div class="col-xs-4">
                           <div class="detail-img">
-                            <img class="img-block" src="img/icon_support.png">
+                            <img class="img-block" src="img/icon_sitejabber.png">
                           </div>
                         </div>
 
                         <div class="col-xs-8">
-                          <p class="filler-text">Ranked #1 amongst competitors for customer service on SiteJabber.com.</p>
+                          <p class="filler-text">Our friendly support team is able to help over phone or email.</p>
                         </div>
                       </div>
                     </div>
