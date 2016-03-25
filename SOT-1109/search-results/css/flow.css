@@ -1053,7 +1053,10 @@
 
 #gen-report-modal5 .modal-body .time-stamp {
   font-size: 14px;
-  text-align: center;
+}
+
+#gen-report-modal5 .modal-body .title {
+  margin-bottom: 5px;
 }
 
 #gen-report-modal5 .modal-body .card-single {
@@ -1073,6 +1076,7 @@
 
 #gen-report-modal5 .modal-body .card-single .title {
   display: inline-block;
+  margin: 15px 0;
 }
 
 #gen-report-modal5 .modal-body .report-info-list {
@@ -1106,6 +1110,7 @@
 
   #gen-report-modal5 .modal-body .card-single .title {
     display: block;
+    margin: 20px 0;
   }
 }
 
@@ -1123,6 +1128,11 @@
 
 #gen-report-modal5 .modal-footer #modal-msgs .msg-selected {
   display: block !important;
+}
+
+#gen-report-modal5 .modal-footer .time-stamp {
+  font-size: 15px;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
