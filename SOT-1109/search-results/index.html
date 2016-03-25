@@ -489,9 +489,9 @@
                     Do you have the right name?
                   </span>
                 </h6>
-                <ul class="tips-list list-unstyled">
-                  <li class="tip">Try an alternate spelling</li>
-                  <li class="tip">Try a maiden name</li>
+                <ul class="refine-list-one refine-tips-list list-unstyled">
+                  <li class="tip tip1">Try an alternate spelling</li>
+                  <li class="tip tip2">Try a maiden name</li>
                 </ul>
 
                 <div class="row name-inputs">
@@ -523,20 +523,20 @@
                   </span>
                 </h6>
 
-                <ul class="tips-list list-unstyled">
-                  <li class="tip">
+                <ul class="refine-list-two refine-tips-list list-unstyled">
+                  <li class="tip tip3">
                     <span class="hidden-xs">Try removing the city to do a broader search</span>
                     <span class="visible-xs">Remove the city to do a broader search</span>
                   </li>
-                  <li class="tip">
+                  <li class="tip tip4">
                     <span class="hidden-xs">Try changing the state or doing a national search</span>
                     <span class="visible-xs">Change the state or doing a national search</span>
                   </li>
-                  <li class="tip">
+                  <li class="tip tip5">
                     <span class="hidden-xs">Try adding a city to narrow down your search</span>
                     <span class="visible-xs">Add a city to narrow down your search</span>
                   </li>
-                  <li class="tip">
+                  <li class="tip tip6">
                     <span class="hidden-xs">Try adding a state to narrow down your search</span>
                     <span class="visible-xs">Add a state to narrow down your search</span>
                   </li>
@@ -1565,12 +1565,14 @@
         <div class="modal-body">
 
           <div class="person-info row" data-fr-bind="currentRecord extraTeaserData">
-            {{#if photo}}
               <div class="col-sm-2">
-                <div class="photo" style="background-image: url({{photo}})"></div>
+                {{#if photo}}
+                  <div class="photo" style="background-image: url({{photo}}); border-radius: 50%;"></div>
+                {{else}}
+                  <div class="photo"></div>
+                {{/if}}
               </div>
-            {{/if}}
-              <div class="{{#if photo}}col-sm-4{{else}}col-sm-6{{/if}}">
+              <div class="col-sm-4">
                 <h5 class="title name">{{fullName}}</h5>
 
                 {{#if place}}
@@ -1692,7 +1694,7 @@
 
                         <div class="col-xs-4">
                           <div class="detail-img">
-                            <img class="img-block" src="img/icon_sitejabber.png">
+                            <img class="img-block" src="img/icon_support.png">
                           </div>
                         </div>
 
