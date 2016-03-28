@@ -22,6 +22,11 @@
 }
 
 .header-hero .header-search input.error {
+  -webkit-box-shadow: 0 4px 1px -1px #EF2742;
+  -moz-box-shadow: 0 4px 1px -1px #EF2742;
+  -ms-box-shadow: 0 4px 1px -1px #EF2742;
+  -o-box-shadow: 0 4px 1px -1px #EF2742;
+  box-shadow: 0 4px 1px -1px #EF2742;
   background-color: #FFEAED;
 }
 

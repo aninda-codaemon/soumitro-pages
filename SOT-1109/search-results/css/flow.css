@@ -417,28 +417,8 @@
   padding-top: 0;
 }
 
-#gen-report-modal2 .mobile-heading .modal-headline {
-  margin: 0;
-  text-align: center;
-}
-
-#gen-report-modal2 .mobile-heading .modal-headline strong {
-  display: block;
-  margin-top: -15px;
-}
-
-#gen-report-modal2 .mobile-heading .modal-headline strong .icon {
-  margin: 0;
-  font-size: 35px;
-}
-
-#gen-report-modal2 .mobile-heading .modal-sub-headline {
-  display: block;
-  margin: 15px 0;
-}
-
-#gen-report-modal2 .modal-body .large-heading .title {
-  margin-top: 15px;
+#gen-report-modal2 .modal-body .sub-title  {
+  margin-bottom: 25px;
 }
 
 #gen-report-modal2 .modal-body .report-info-list {
@@ -473,22 +453,6 @@
 }
 
 @media (min-width: 481px) {
-
-  #gen-report-modal2 .mobile-heading .modal-headline strong {
-    position: relative;
-    top: 5px;
-    left: 100px;
-    width: 75%;
-    margin: 0;
-    text-align: left;
-  }
-
-  #gen-report-modal2 .mobile-heading .modal-sub-headline {
-    display: inline-block;
-    width: 75%;
-    margin: 5px 0 20px;
-    text-align: left;
-  }
 
   #gen-report-modal2 .modal-body .report-info-list {
     display: -webkit-box;
@@ -541,11 +505,10 @@
     background-color: #fff;
   }
 
-  #gen-report-modal2 .modal-body .large-heading {
-    height: auto;
+  #gen-report-modal2 .modal-body .title {
+    margin-top: 15px;
   }
 
-  #gen-report-modal2 .modal-body .large-heading .modal-headline,
   #gen-report-modal2 .modal-body .report-info-list {
     margin-top: 0;
   }
@@ -592,7 +555,7 @@
 /* continue button */
 
 #gen-report-modal2 .modal-body #gen-report-confirm {
-  margin-top: 40px;
+  margin-top: 30px;
   padding: 20px;
   font-size: 22px;
   text-transform: uppercase;
