@@ -220,6 +220,10 @@
 
 /* modal-body */
 
+#exitPopRefine .modal-body {
+  padding: 15px;
+}
+
 #exitPopRefine .modal-body #exit-refine-modal-form .col-xs-2 {
   padding-right: 0;
 }
