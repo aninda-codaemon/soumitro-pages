@@ -379,9 +379,16 @@
       self.transitionDelay *= window.bv.mobileTimeRatio;
     }
 
+    var setRadial = function(percent) {
+      $('.radial-progress .circle .mask.full').css('transform', 'rotate(' + 1.8 * percent + 'deg)');
+      $('.radial-progress .circle .mask .fill').css('transform', 'rotate(' + 1.8 * percent + 'deg)');
+      $('.radial-progress .circle .mask.half .fill.fix').css('transform', 'rotate(' + 3.6 * percent + 'deg)');
+    };
+
     _.forEach($progessBars, function ($elem, idx) {
       var duration = splits[idx];
-      animations.push($elem.animate({'width': '100%'}, {duration: duration}));
+      //animations.push($elem.animate({'width': '100%'}, {duration: duration}));
+      setRadial(100);
     });
 
     $.when.apply(self, animations).then(function () {

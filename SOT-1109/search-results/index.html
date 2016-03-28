@@ -205,7 +205,7 @@
                   <i class="fa fa-lock icon"></i>
                 </td>
                 <td class="td-name">
-                  <h6 class="text-secondary">{{fullName}}</h6>
+                  <h5 class="text-secondary">{{fullName}}</h5>
 
                   <ul class="mobile-places-list list-unstyled">
                     <li>{{place}}</li>
@@ -774,9 +774,9 @@
 
           <p class="sub-title text-centered" data-fr-bind="currentRecord">Please wait while we locate important information on <span class="text-secondary">{{fullName}}</span></p>
 
-          <div class="searching-progress-bar-group">
+          <div class="searching-progress-bar-group row">
 
-            <div id="searching-progress-bar-database" class="progress checking-sources-progress">
+            <!-- <div id="searching-progress-bar-database" class="progress checking-sources-progress">
               <div class="progress-bar" style="width: 1%"></div>
               <h6 class="progress-bar-title text-centered">
                 <img src="img/icon_court.png" class="progress-bar-icon">
@@ -799,6 +799,69 @@
                 <img src="img/icon_data.png" class="progress-bar-icon">
                 Contact Information
               </h6>
+            </div> -->
+
+            <div class="col-xs-4">
+              <div id="searching-progress-bar-database" class="radial-progress" data-progress="0">
+              	<div class="circle">
+              		<div class="mask full">
+              			<div class="fill"></div>
+              		</div>
+              		<div class="mask half">
+              			<div class="fill"></div>
+              			<div class="fill fix"></div>
+              		</div>
+              	</div>
+              	<div class="inset">
+              		<div class="icon">
+              			<img class="img-icon" src="img/icon_court.png" />
+              		</div>
+              	</div>
+              </div>
+
+              <p class="text-caption text-centered">Various Public and Criminal Record Databse</p>
+            </div>
+
+            <div class="col-xs-4">
+              <div id="searching-progress-bar-datasets" class="radial-progress" data-progress="0">
+              	<div class="circle">
+              		<div class="mask full">
+              			<div class="fill"></div>
+              		</div>
+              		<div class="mask half">
+              			<div class="fill"></div>
+              			<div class="fill fix"></div>
+              		</div>
+              	</div>
+              	<div class="inset">
+              		<div class="icon">
+              			<img class="img-icon" src="img/icon_gavel.png" />
+              		</div>
+              	</div>
+              </div>
+
+              <p class="text-caption text-centered">Country and State Court Records</p>
+            </div>
+
+            <div class="col-xs-4">
+              <div id="searching-progress-bar-database" class="radial-progress" data-progress="0">
+              	<div class="circle">
+              		<div class="mask full">
+              			<div class="fill"></div>
+              		</div>
+              		<div class="mask half">
+              			<div class="fill"></div>
+              			<div class="fill fix"></div>
+              		</div>
+              	</div>
+              	<div class="inset">
+              		<div class="icon">
+              			<img class="img-icon" src="img/icon_data.png" />
+              		</div>
+              	</div>
+              </div>
+
+              <p class="text-caption text-centered">Proprietary Data Sets</p>
             </div>
 
           </div>
@@ -1140,15 +1203,18 @@
         </div>
 
         <div class="modal-body">
-          <div id="processing-data-progress" class="progress processing-data-progress">
-            <div class="progress-bar" style="width: 1%"></div>
-          </div>
           <h4 class="title">
             How can our data help you?
           </h4>
+
           <p class="sub-title">
             While you wait, please review some of the most popular uses for <span class="text-bold">PeopleLooker</span>.
           </p>
+
+          <div id="processing-data-progress" class="progress processing-data-progress">
+            <div class="progress-bar" style="width: 1%"></div>
+          </div>
+
           <ul class="cases-list list-unstyled">
             <li class="case-item active">
               <i class="fa fa-child icon"></i>
@@ -1333,11 +1399,6 @@
 
             <div class="col-sm-8">
 
-              <p class="time-stamp hidden-xs">
-                <span id="time-approx"><strong>Time Remaining:</strong> Approx. <span id="time-remaining">120</span> seconds</span>
-                <strong id="finishing-up" class="hide">Finishing Up...</strong>
-              </p>
-
               <div class="modal-body-copy">
 
                 <div id="card-personal" class="card-single card-selected">
@@ -1420,16 +1481,7 @@
             </h5>
           </div>
 
-          <p id="modal-msgs" class="text-center hidden-xs">
-            <span data-fr-bind="currentRecord" class='msg-selected'>Compiling Personal Info Section for {{fullName}}</span>
-            <span data-fr-bind="currentRecord">Compiling Property Section for {{fullName}}</span>
-            <span data-fr-bind="currentRecord">Compiling Criminal Info Section</span>
-            <span data-fr-bind="currentRecord">Compiling Relatives Info Section for {{fullName}}</span>
-            <span data-fr-bind="currentRecord">Compiling Social Media Section</span>
-            <span data-fr-bind="currentRecord">Compiling Miscellaneous Info Section for {{fullName}}</span>
-          </p>
-
-          <p class="time-stamp visible-xs">
+          <p class="time-stamp">
             <span id="time-approx"><strong>Time Remaining:</strong> Approx. <span id="time-remaining">120</span> seconds</span>
             <strong id="finishing-up" class="hide">Finishing Up...</strong>
           </p>
@@ -1460,17 +1512,19 @@
           <div class="row">
             <div class="col-sm-6">
 
-              <h4 class="title" data-fr-bind="currentRecord">Start creating your account:</h4>
+              <h5 class="title" data-fr-bind="currentRecord">Start creating your account:</h5>
 
               <form id="signup-modal-form" action="<%= next_page %>" data-fr-bind="leadData" data-fr-store="leadData" data-fr-bind="leadData">
-                <div class="form-group">
-                  <input name="account[first_name]" value="{{account[first_name]}}" id="lead_first_name" type="text" class="input-lg form-control" placeholder="First Name" required/>
-                </div>
-                <div class="form-group">
-                  <input name="account[last_name]" value="{{account[last_name]}}" id="lead_last_name" type="text" class="input-lg form-control" placeholder="Last Name" required/>
-                </div>
-                <div class="form-group">
-                  <input name="user[email]" value="{{user[email]}}" id="lead_email" type="email" class="input-lg form-control" placeholder="Email Address" required/>
+                <div class="form-group-well">
+                  <div class="form-group">
+                    <input name="account[first_name]" value="{{account[first_name]}}" id="lead_first_name" type="text" class="input-lg form-control" placeholder="First Name" required/>
+                  </div>
+                  <div class="form-group">
+                    <input name="account[last_name]" value="{{account[last_name]}}" id="lead_last_name" type="text" class="input-lg form-control" placeholder="Last Name" required/>
+                  </div>
+                  <div class="form-group">
+                    <input name="user[email]" value="{{user[email]}}" id="lead_email" type="email" class="input-lg form-control" placeholder="Email Address" required/>
+                  </div>
                 </div>
 
                 <p class="text-caption">

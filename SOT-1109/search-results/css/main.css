@@ -60,12 +60,16 @@
 
 /* data-panel content-section - search-results */
 
+.content-section#data-panel .search-results .container {
+  padding: 0 5px;
+}
+
 .content-section#data-panel .search-results .table {
   margin: 0;
   border: 0;
   border-radius: 0;
   border-collapse: separate;
-  border-spacing: 0 20px;
+  border-spacing: 0 5px;
 }
 
 .content-section#data-panel .search-results .table .table-header {
@@ -138,7 +142,15 @@
 
 .content-section#data-panel .search-results .table .td-name .text-secondary {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.content-section#data-panel .search-results .table .td-name .mobile-places-list li {
+  font-size: 14px;
+}
+
+.content-section#data-panel .search-results .table .td-age {
+  font-weight: bold;
 }
 
 .content-section#data-panel .search-results .table .td-access-report .btn-primary {
@@ -147,12 +159,24 @@
 }
 
 @media (min-width: 768px) {
+  .content-section#data-panel .search-results .container {
+    padding: 0 15px;
+  }
+
+  .content-section#data-panel .search-results .table {
+    border-spacing: 0 20px;
+  }
+
   .content-section#data-panel .search-results .table tr th {
     font-size: 18px;
   }
 
   .content-section#data-panel .search-results .table .td-name .mobile-places-list {
     display: none;
+  }
+
+  .content-section#data-panel .search-results .table .td-age {
+    font-weight: normal;
   }
 }
 
