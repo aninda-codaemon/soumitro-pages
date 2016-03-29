@@ -85,6 +85,10 @@
   clip: rect(0px, 140px, 140px, 35px);
 }
 
+.modal-content .radial-progress .circle .mask.clip-fix {
+  clip: rect(0px, 140px, 140px, 34px);
+}
+
 .modal-content .radial-progress .circle .mask .fill {
   clip: rect(0px, 35px, 140px, 0px);
   background-color: #33d4c0;
@@ -124,6 +128,10 @@
     clip: rect(0px, 140px, 140px, 60px);
   }
 
+  .modal-content .radial-progress .circle .mask.clip-fix {
+    clip: rect(0px, 140px, 140px, 59px);
+  }
+
   .modal-content .radial-progress .circle .mask .fill {
     clip: rect(0px, 60px, 140px, 0px);
   }
@@ -150,6 +158,10 @@
 
   .modal-content .radial-progress .circle .mask {
     clip: rect(0px, 180px, 180px, 85px);
+  }
+
+  .modal-content .radial-progress .circle .mask.clip-fix {
+    clip: rect(0px, 180px, 180px, 84px);
   }
 
   .modal-content .radial-progress .circle .mask .fill {
@@ -371,6 +383,38 @@
 
   #refine-modal .modal-body .refine-inputs .form-group:last-child {
     padding-right: 15px;
+  }
+}
+
+/* ============= GENERATING REPORT ================ */
+
+/* modal-body */
+
+#gen-report-modal1 .modal-body .searching-progress-bar-group .progress-label {
+  font-size: 12px;
+}
+
+@media (min-width: 480px) {
+  #gen-report-modal1 .modal-body .searching-progress-bar-group .progress-label {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  #gen-report-modal1 .modal-body .searching-progress-bar-group .progress-label {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  #gen-report-modal1 .modal-body .searching-progress-bar-group .progress-label {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #gen-report-modal1 .modal-body .searching-progress-bar-group .progress-label {
+    font-size: 20px;
   }
 }
 

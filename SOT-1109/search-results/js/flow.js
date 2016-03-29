@@ -279,7 +279,8 @@
     // Progress Bars.
 
     $elem: $("#gen-report-modal1"),
-    splits: [45000, 20000, 30000], // Progress bar times (these are shuffled)
+    //splits: [45000, 20000, 30000], // Progress bar times (these are shuffled)
+    splits: [30000, 15000, 25000], // Progress bar times (these are shuffled)
     transitionDelay: 1000,         // After progress completion, amount of time before moving to next flow.
     animate: function () {
       _.bind(initializingSearchProgress, this)();
@@ -399,7 +400,7 @@
             $(this).css('transform', 'rotate(' + 1.8 *  now + 'deg)')
           },
           duration: duration
-        }, 'linear');
+        });
       };
 
       var circles = [
@@ -428,6 +429,11 @@
 
       });
 
+      // @TODO: find a better solution to this hacky way to fix the clip of the radial progress bars when loading ends
+      setTimeout(function() {
+        $('.modal-content .radial-progress .circle .mask').addClass('clip-fix');
+      }, 4000);
+
     }
     // @TODO: using arguments from animations is not working with circular progress
     // need to figure out a way to push animation using the parent elements only
@@ -446,7 +452,8 @@
     if (self.$elem.hasClass('in')) {
       timeoutId = window.setTimeout(function () {
         showNextModal();
-      }, 47000);
+        $('.modal-content .radial-progress .circle .mask').removeClass('clip-fix');
+      }, 32000);
     }
 
   }
