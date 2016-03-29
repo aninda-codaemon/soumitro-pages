@@ -362,10 +362,10 @@
   function initializingSearchProgress() {
     trackNL('Viewed LocatingInfo Modal');
 
-    var $progessBars = [
-      $('#searching-progress-bar-database .radial-progress'),
-      $('#searching-progress-bar-records .radial-progress'),
-      $('#searching-progress-bar-datasets .radial-progress')
+    var $progressBars = [
+      $('#searching-progress-bar-database.radial-progress'),
+      $('#searching-progress-bar-records.radial-progress'),
+      $('#searching-progress-bar-datasets.radial-progress')
     ];
 
     var self = this,
@@ -384,49 +384,71 @@
       return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
     };
 
-    var setRadial = function(percent) {
-      $('.radial-progress .circle .mask.full').css('transform', 'rotate(' + 1.8 * percent + 'deg)');
-      $('.radial-progress .circle .mask .fill').css('transform', 'rotate(' + 1.8 * percent + 'deg)');
-      $('.radial-progress .circle .mask.half .fill.fix').css('transform', 'rotate(' + 3.6 * percent + 'deg)');
-    };
-
-    //setRadial(100);
-    
     if (isIE () && isIE () <= 9) {
 
-      _.forEach($progessBars, function ($elem, idx) {
+      _.forEach($progressBars, function ($elem, idx) {
         var duration = splits[idx];
         animations.push($elem.animate({'width': '100%'}, {duration: duration}));
       });
 
     } else {
 
-      _.forEach($progessBars, function ($elem, idx) {
-        var duration = splits[idx];
-        animations.push(
-          $elem.animate({ textIndent: 0 }, {
-            step: function(now, fx) {
-              $(this).find('.circle .mask.full').css('transform', 'rotate(' + now + 'deg)');
-              // $(this).find('.circle .mask .fill').css('transform', 'rotate(' + now + 'deg)');
-              // $(this).find('.circle .mask.half .fill.fix').css('transform', 'rotate(' + now + 'deg)');
-            },
-            duration: duration
-          }, 'linear')
-        );
-        console.log(duration);
+      var setAnimation = function($parent, child, duration) {
+        $parent.find(child).animate({textIndent: 100}, {
+          step: function(now, fx) {
+            $(this).css('transform', 'rotate(' + 1.8 *  now + 'deg)')
+          },
+          duration: duration
+        }, 'linear');
+      };
+
+      var circles = [
+        '.circle .mask.full',
+        '.circle .mask .fill',
+        '.circle .mask.half .fill.fix'
+      ];
+
+      _.forEach($progressBars, function ($elem, idx) {
+        var duration = splits[idx],
+            parent = $elem,
+            child;
+
+        for (child = 0; child < 3; child++) {
+          // console.log(parent);
+          // console.log(circles[child]);
+          // console.log(duration);
+
+          setAnimation(parent, circles[child], duration);
+        };
+
+        // @TODO: need to push each element as a function into the animations array so that duration arguments can be passed
+
+        // animations.push(animationGroup);
+        // animationGroup will contain the main parent element with the three child elements set in setAnimation
+
       });
 
     }
+    // @TODO: using arguments from animations is not working with circular progress
+    // need to figure out a way to push animation using the parent elements only
+    // otherwise the timeout duration gets added together and the loading time becomes too long
 
-    console.log(animations);
+    // $.when.apply(self, animations).then(function () {
+    //   if (self.$elem.hasClass('in')) {
+    //     timeoutId = window.setTimeout(function () {
+    //       showNextModal();
+    //     }, self.transitionDelay);
+    //   }
+    // });
 
-    $.when.apply(self, animations).then(function () {
-      if (self.$elem.hasClass("in")) {
-        timeoutId = window.setTimeout(function () {
-          showNextModal();
-        }, self.transitionDelay);
-      }
-    });
+    // for now, this will do (agile, lol):
+
+    if (self.$elem.hasClass('in')) {
+      timeoutId = window.setTimeout(function () {
+        showNextModal();
+      }, 47000);
+    }
+
   }
 
   function reportReadyForDownload() {
