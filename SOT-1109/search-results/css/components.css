@@ -59,7 +59,7 @@
 
 @media (min-width: 480px) {
     .navbar .navbar-header .navbar-brand .img-logo {
-        width: auto;
+        width: 200px;
     }
 }
 
@@ -128,6 +128,7 @@
 
 .footer .social-icons .img-icon {
     opacity: 0.75;
+    width: 33px;
 }
 
 .footer .social-icons .img-icon:hover {
@@ -187,6 +188,6 @@
   }
 
   .footer .social-icons .img-icon {
-    width: auto;
+    width: 33px;
   }
 }
