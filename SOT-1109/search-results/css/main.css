@@ -153,11 +153,6 @@
   font-weight: bold;
 }
 
-.content-section#data-panel .search-results .table .td-access-report .btn-primary {
-  color: #333;
-  font-weight: bold;
-}
-
 @media (min-width: 768px) {
   .content-section#data-panel .search-results .container {
     padding: 0 15px;
