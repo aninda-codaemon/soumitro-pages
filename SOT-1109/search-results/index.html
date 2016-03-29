@@ -776,7 +776,9 @@
 
           <div class="searching-progress-bar-group row">
 
-            <!-- <div id="searching-progress-bar-database" class="progress checking-sources-progress">
+            <!--[if lte IE 9]>
+
+            <div id="searching-progress-bar-database" class="progress checking-sources-progress">
               <div class="progress-bar" style="width: 1%"></div>
               <h6 class="progress-bar-title text-centered">
                 <img src="img/icon_court.png" class="progress-bar-icon">
@@ -799,7 +801,11 @@
                 <img src="img/icon_data.png" class="progress-bar-icon">
                 Contact Information
               </h6>
-            </div> -->
+            </div>
+
+            <![endif]-->
+
+            <!--[if !IE]> -->
 
             <div class="col-xs-4">
               <div id="searching-progress-bar-database" class="radial-progress" data-progress="0">
@@ -863,6 +869,8 @@
 
               <p class="text-caption text-centered">Proprietary Data Sets</p>
             </div>
+
+            <!-- <![endif]-->
 
           </div>
         </div>

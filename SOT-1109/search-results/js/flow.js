@@ -363,9 +363,9 @@
     trackNL('Viewed LocatingInfo Modal');
 
     var $progessBars = [
-      $("#searching-progress-bar-database .progress-bar"),
-      $("#searching-progress-bar-records .progress-bar"),
-      $("#searching-progress-bar-datasets .progress-bar")
+      $('#searching-progress-bar-database .radial-progress'),
+      $('#searching-progress-bar-records .radial-progress'),
+      $('#searching-progress-bar-datasets .radial-progress')
     ];
 
     var self = this,
@@ -379,17 +379,46 @@
       self.transitionDelay *= window.bv.mobileTimeRatio;
     }
 
+    function isIE () {
+      var myNav = navigator.userAgent.toLowerCase();
+      return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+    };
+
     var setRadial = function(percent) {
       $('.radial-progress .circle .mask.full').css('transform', 'rotate(' + 1.8 * percent + 'deg)');
       $('.radial-progress .circle .mask .fill').css('transform', 'rotate(' + 1.8 * percent + 'deg)');
       $('.radial-progress .circle .mask.half .fill.fix').css('transform', 'rotate(' + 3.6 * percent + 'deg)');
     };
 
-    _.forEach($progessBars, function ($elem, idx) {
-      var duration = splits[idx];
-      //animations.push($elem.animate({'width': '100%'}, {duration: duration}));
-      setRadial(100);
-    });
+    //setRadial(100);
+    
+    if (isIE () && isIE () <= 9) {
+
+      _.forEach($progessBars, function ($elem, idx) {
+        var duration = splits[idx];
+        animations.push($elem.animate({'width': '100%'}, {duration: duration}));
+      });
+
+    } else {
+
+      _.forEach($progessBars, function ($elem, idx) {
+        var duration = splits[idx];
+        animations.push(
+          $elem.animate({ textIndent: 0 }, {
+            step: function(now, fx) {
+              $(this).find('.circle .mask.full').css('transform', 'rotate(' + now + 'deg)');
+              // $(this).find('.circle .mask .fill').css('transform', 'rotate(' + now + 'deg)');
+              // $(this).find('.circle .mask.half .fill.fix').css('transform', 'rotate(' + now + 'deg)');
+            },
+            duration: duration
+          }, 'linear')
+        );
+        console.log(duration);
+      });
+
+    }
+
+    console.log(animations);
 
     $.when.apply(self, animations).then(function () {
       if (self.$elem.hasClass("in")) {
