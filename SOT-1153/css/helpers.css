@@ -15,6 +15,10 @@
   font-size: 12px;
 }
 
+.text-primary {
+  color: #3f0282 !important;
+}
+
 .text-success {
   color: #6DAC45 !important;
 }
@@ -26,7 +30,7 @@
 /* @TODO: replace these with the above helpers */
 
 .green {
-  color: #6DAC45;
+  color: #5CB85C;
 }
 
 .blue-txt{
@@ -44,5 +48,11 @@
 .alert-warning {
   border: 0;
   background-color: #FFBA36;
+  color: #000;
+}
+
+.alert-success {
+  border: 0;
+  background-color: #5CB85C;
   color: #000;
 }

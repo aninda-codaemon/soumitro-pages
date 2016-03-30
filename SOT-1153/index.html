@@ -906,77 +906,203 @@
   <!-- ===================================== -->
   <!-- == 2 == SOCIAL NETWORKS  ============ -->
   <!-- ===================================== -->
-  <div id="scanningSocialMedia" class="scanningSocialMedia modal" tabindex="-1" aria-hidden="true">
+
+  <div id="scanningSocialMedia" class="modal modal-full" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
 
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <img src="img/blue_spinner.gif" class="pull-left header-icon">
-          <p class="social-header">Scanning Dozens of Social Media Profiles...</p>
-        </div><!-- /.modal-header -->
+          <h5 class="title">
+            Scanning Dozens of Social Media Profiles...
+          </h5>
+        </div>
 
         <div class="modal-body" data-fr-bind="currentRecord">
           <div class="row">
-            <div class="col-sm-4 hidden-xs" style="position:relative;">
-              <div class="file-icon-wrapper">
-                <img src="img/stock-photo.jpg" alt="profile picture">
-                <span class="located alert alert-success">
-                <img src="img/check_16.png" width="16" alt="data located">Searched</span>
-              </div>
-              <ul class="profile list-unstyled">
-                <li class="fullName"><strong>{{fullName}}</strong></li>
+
+            <div class="profile-col col-sm-4 hidden-xs">
+              <ul class="profile-list list-unstyled">
+                <li class="profile-list-item">
+                  <p class="sub-title text-primary">
+                    <i class="fa fa-user icon"></i>
+                    {{fullName}}
+                  </p>
+                </li>
                 {{#if hasAkas}}
-                  <li><strong>AKA:</strong> {{shortList allNames}}</li>
+                  <li class="profile-list-item">
+                    <strong>AKA:</strong> {{shortList allNames}}
+                  </li>
                 {{/if}}
                 {{#if age}}
-                  <li><strong>Age: </strong>{{age}}</li>
+                  <li class="profile-list-item">
+                    <strong>Age:</strong> {{age}}
+                  </li>
                 {{/if}}
-                <li><strong>Location: </strong>{{#if city}}{{city}}, {{/if}}{{#if state}}{{state}}{{/if}}</li>
+                <li class="profile-list-item">
+                  <strong>Location:</strong> {{#if city}}{{city}}, {{/if}}{{#if state}}{{state}}{{/if}}
+                </li>
                 {{#if relatives}}
-                  <li><strong>Relatives: </strong>{{shortList relatives}}</li>
+                  <li class="profile-list-item">
+                    <strong>Relatives:</strong> {{shortList relatives}}
+                  </li>
                 {{/if}}
-                <li class="text-success"><strong>New</strong> - We now search professional &amp; educational history and photos!</li>
               </ul>
+
               <img class="screenshot" src="img/instagram.gif">
             </div>
-            <div class="col-sm-8">
-              <p>This search may reveal interesting information on <strong>{{fullName}}</strong> such as revealing photos, videos, family and friends, professional connections and more.</p>
-              <div class="social-widget">
-                <div id="socialmedia-progress" class="publicRecord progress">
-                  <p class="progress-msg"><span class="hidden-xs">Preparing Social Media Section - </span><span id="socialmedia-progress-percent"></span>% complete&nbsp;<img class="complete" src="img/checkWhite_24.png" width="24" alt="public" aria-hidden="true"></p>
-                  <div class="progress-bar progress-bar-success" style="width:1%"></div>
-                </div>
-                <div class="row">
-                  <ul id="social-media-groups" class="socialMedias list-unstyled">
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social facebook"><img src="img/facebook.png"><p class="hidden-xs">Facebook</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social flickr"><img src="img/flickr.png"><p class="hidden-xs">Flickr</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social twitter"><img src="img/twitter.png"><p class="hidden-xs">Twitter</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social gplus"><img src="img/gplus2.png"><p class="hidden-xs">Google+</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social myspace"><img src="img/myspace.png"><p class="hidden-xs">MySpace</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social kickstarter"><img src="img/kickstarter.png"><p class="hidden-xs">Kickstarter</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social linkedin"><img src="img/linkedin.png"><p class="hidden-xs">Linkedin</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social youtube"><img src="img/youtube.png"><p class="hidden-xs">Youtube</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social picasa"><img src="img/picasa.png"><p class="hidden-xs">Picasa</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social pinterest"><img src="img/pinterest.png"><p class="hidden-xs">Pinterest</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social reddit"><img src="img/reddit.png"><p class="hidden-xs">Reddit</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social gravatar"><img src="img/gravatar.png"><p class="hidden-xs">Gravatar</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social ancestry"><img src="img/ancestry.png"><p class="hidden-xs">Ancestry</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social klout"><img src="img/klout.png"><p class="hidden-xs">Klout</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social instagram"><img src="img/instagram.png"><p class="hidden-xs">Instagram</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social amazon"><img src="img/amazon.png"><p class="hidden-xs">Amazon</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social vimeo"><img src="img/vimeo.png"><p class="hidden-xs">Vimeo</p></span></li>
-                    <li><img class="loading" src="img/loading.gif" width="32" height="32" alt="scanning"><span class="social foursquare"><img src="img/foursquare.png"><p class="hidden-xs">Foursquare</p></span></li>
-                  </ul>
-                </div>
+
+            <div class="social-col col-sm-8">
+              <p class="sub-title">
+                This search may reveal interesting information on <span class="text-success">{{fullName}}</span> such as revealing photos, videos, family and friends, professional connections and more.
+              </p>
+
+              <div id="socialmedia-progress" class="progress">
+                <div class="progress-bar progress-bar-success" style="width: 1%"></div>
+                <p class="progress-label">
+                  <span class="hidden-xs">Preparing Social Media Section - </span><span id="socialmedia-progress-percent"></span>% complete
+                  <i class="fa fa-check-circle complete" aria-hidden="true"></i>
+                </p>
               </div>
+
+              <ul id="social-media-groups" class="social-list list-unstyled">
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social facebook">
+                    <img class="img-icon" src="img/facebook.png">
+                    <p class="social-label hidden-xs">Facebook</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social flickr">
+                    <img class="img-icon" src="img/flickr.png">
+                    <p class="social-label hidden-xs">Flickr</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social twitter">
+                    <img class="img-icon" src="img/twitter.png">
+                    <p class="social-label hidden-xs">Twitter</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social gplus">
+                    <img class="img-icon" src="img/gplus2.png">
+                    <p class="social-label hidden-xs">Google+</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social myspace">
+                    <img class="img-icon" src="img/myspace.png">
+                    <p class="social-label hidden-xs">MySpace</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social kickstarter">
+                    <img class="img-icon" src="img/kickstarter.png">
+                    <p class="social-label hidden-xs">Kickstarter</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social linkedin">
+                    <img class="img-icon" src="img/linkedin.png">
+                    <p class="social-label hidden-xs">Linkedin</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social youtube">
+                    <img class="img-icon" src="img/youtube.png">
+                    <p class="social-label hidden-xs">Youtube</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social picasa">
+                    <img class="img-icon" src="img/picasa.png">
+                    <p class="social-label hidden-xs">Picasa</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social pinterest">
+                    <img class="img-icon" src="img/pinterest.png">
+                    <p class="social-label hidden-xs">Pinterest</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social reddit">
+                    <img class="img-icon" src="img/reddit.png">
+                    <p class="social-label hidden-xs">Reddit</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social gravatar">
+                    <img class="img-icon" src="img/gravatar.png">
+                    <p class="social-label hidden-xs">Gravatar</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social ancestry">
+                    <img class="img-icon" src="img/ancestry.png">
+                    <p class="social-label hidden-xs">Ancestry</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social klout">
+                    <img class="img-icon" src="img/klout.png">
+                    <p class="social-label hidden-xs">Klout</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social instagram">
+                    <img class="img-icon" src="img/instagram.png">
+                    <p class="social-label hidden-xs">Instagram</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social amazon">
+                    <img class="img-icon" src="img/amazon.png">
+                    <p class="social-label hidden-xs">Amazon</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social vimeo">
+                    <img class="img-icon" src="img/vimeo.png">
+                    <p class="social-label hidden-xs">Vimeo</p>
+                  </span>
+                </li>
+                <li class="social-list-item">
+                  <p class="loading text-center"><i class="fa fa-spin fa-spinner"></i></p>
+                  <span class="social foursquare">
+                    <img class="img-icon" src="img/foursquare.png">
+                    <p class="social-label hidden-xs">Foursquare</p>
+                  </span>
+                </li>
+              </ul>
             </div>
           </div>
-        </div><!-- /.modal-body -->
+        </div>
+
+        <div class="modal-footer alert-success">
+          <p class="text-caption text-center"><strong>New:</strong> We now search professional &amp; educational history and photos! <a href="#" class="exit-flow" data-dismiss="modal" aria-hidden="true">Cancel my search.</a></p>
+        </div>
 
       </div>
     </div>
-  </div><!--/#scanningSocialMedia -->
+  </div>
 
   <!-- ========================================== -->
   <!-- == 3 == YOUR REPORT IS READY  ============ -->
