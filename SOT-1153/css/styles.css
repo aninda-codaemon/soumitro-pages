@@ -63,21 +63,7 @@ button,
 select,
 .main-btn,
 .alt-btn {
-  font-size: 18px !important;
-}
-
-.modal-dialog {
-  /* why is this here? */
-  /*margin-top: 10% !important;*/
-}
-
-.modal.fade.in {
-  top: 50px;
-}
-
-.modal-backdrop {
-  opacity: 0.7 !important;
-  background: #000 !important;
+  font-size: 18px;
 }
 
 a,
@@ -1300,108 +1286,25 @@ p.already-a-member {
 }
 
 @media (min-width: 992px) {
-  .modal-dialog {
-    width: 850px;
-  }
   input#age {
     padding-right: 6px;
     padding-left: 6px;
   }
-  #gen-report-modal7 .detail-box {
-    min-height: 160px;
-  }
 }
 
 @media (max-width: 991px) {
-  #gen-report-modal7 .detail-box.fillerCard p,
-  #gen-report-modal7 .detail-box.fillerCard ul {
-    padding-left: 0;
-  }
-  #gen-report-modal7 .detail-box ul {
-    padding-left: 0;
-  }
-  #gen-report-modal7 .detail-box span.visible-xs.visible-sm {
-    display: inline-block !important;
-  }
-  #gen-report-modal7 .detail-box ul li {
-    text-align: center;
-  }
-  #gen-report-modal7 .detail-box.CTA_card p {
-    font-size: 24px;
-
-    margin-top: 13px;
-  }
-  #gen-report-modal7 .col-right {
-    min-height: auto;
-  }
-  #gen-report-modal7 .modal-header h1 {
-    text-align: center;
-  }
-  .gen-list-group {
-    max-width: 260px;
-    margin-top: 12px;
-    padding: 10px 10px 20px 32px;
-    padding-bottom: 5px;
-  }
-  #searching-progress-bar {
-    margin-bottom: 0;
-  }
-  .modal-body-copy {
-    height: auto;
-  }
-  .time-stamp {
-    text-align: center;
-  }
-  p.modal-top-text-big {
-    font-size: 21px;
-    line-height: 24px;
-  }
-  #signup-modal-form .main-btn {
-    font-size: 21px;
-  }
   .form-control {
     padding: 6px 3px;
-  }
-  .modal {
-    top: 0 !important;
-  }
-  .modal-dialog {
-    width: auto !important;
-    margin: 10px !important;
-  }
-  .loggingin .modal-dialog {
-    max-width: none !important;
-  }
-  #gen-report-modal5 .modal-footer p {
-    margin-top: 20px;
   }
 }
 /* Landscape phone to portrait tablet */
 
 @media (max-width: 767px) {
-  #gen-report-modal11 .modal-body h2 {
-    font-size: 19px;
-    line-height: 24px;
-  }
-  #gen-report-modal11 .modal-body {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  #gen-report-modal11 .fcraCheckbox-wrapper {
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-  #gen-report-modal7 .modal-header h1 {
-    font-size: 18px;
-  }
   h1,
   h2,
   p,
   footer li {
     text-align: center;
-  }
-  #exitPopRefine p strong span {
-    text-align: left;
   }
   #search_bar .col-sm-2 {
     padding-right: 15px;
@@ -1458,13 +1361,6 @@ p.already-a-member {
   .no-results-icon img {
     width: 100px;
   }
-  p.modal-top-text-big {
-    font-size: 21px;
-    line-height: 24px;
-  }
-  #signup-modal-form .main-btn {
-    font-size: 21px;
-  }
   .checking-sources-progress {
     width: 100%;
     margin-bottom: 6px;
@@ -1474,72 +1370,6 @@ p.already-a-member {
   }
   img.header-carrot {
     left: 45%;
-  }
-  /* MODALS */
-
-  .modal-header p {
-    font-size: 18px;
-    line-height: 21px;
-  }
-  .checking-sources-progress {
-    margin-bottom: 8px;
-  }
-  .checking-sources-progress p {
-    font-size: 16px;
-
-    top: 3px;
-  }
-  .gen-list-group {
-    padding-bottom: 0;
-    padding-left: 0;
-  }
-  #bv-captcha-imgs {
-    width: 75%;
-    min-width: 150px;
-  }
-  #bv-captcha-refresh {
-    width: 25px;
-  }
-  .modal-body h3 {
-    font-size: 21px;
-    line-height: 28px;
-  }
-  .card-single {
-    min-height: 0;
-  }
-  .info-name,
-  .info-preview {
-    text-align: center;
-  }
-  .alert-me-wrapper {
-    background-image: none !important;
-  }
-  #refine-modal .modal-body {
-    margin-bottom: 18px;
-  }
-  .xs-center {
-    text-align: center;
-  }
-
-  #refine-modal-form input {
-    margin-bottom: 6px !important;
-  }
-  .person-info {
-    text-align: center;
-  }
-  #footer p {
-    font-size: 16px;
-  }
-  #footer p.disclaimer {
-    text-align: left;
-  }
-  ul.socialMedias li {
-    margin-bottom:4%;
-  }
-  #social-media-groups li img {
-    top: 0px;
-
-    margin-left: -16px;
   }
 }
 

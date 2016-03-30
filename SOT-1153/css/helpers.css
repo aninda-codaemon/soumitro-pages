@@ -1,0 +1,48 @@
+/* button helpers */
+
+.btn-centered {
+  display: block;
+  margin: 20px auto;
+}
+
+/* text helpers */
+
+.text-break {
+  display: block !important;
+}
+
+.text-caption {
+  font-size: 12px;
+}
+
+.text-success {
+  color: #6DAC45 !important;
+}
+
+.text-info {
+  color: #0072bc !important;
+}
+
+/* @TODO: replace these with the above helpers */
+
+.green {
+  color: #6DAC45;
+}
+
+.blue-txt{
+	color: #0072bc;
+}
+
+@media (min-width: 992px) {
+  .text-caption {
+    font-size: 14px;
+  }
+}
+
+/* alerts */
+
+.alert-warning {
+  border: 0;
+  background-color: #FFBA36;
+  color: #000;
+}

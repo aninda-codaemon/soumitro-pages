@@ -1,110 +1,175 @@
+/* modal */
 
-#gen-report-modal1 .modal-body,
-#gen-report-modal2 .modal-body {
-  padding-bottom: 0;
+.modal-content {
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-.strong {
-  font-weight: bold;
-}
-
-.green {
-  color: #6DAC45;
-}
-
-.blue-txt{
-	color: #0072bc;
-}
-
-.large-modal{
-  font-family: 'Lato', Arial, Helvetica, sans-serif !important;
-}
+/* modal-header */
 
 .modal-header {
+  padding: 15px;
+  border: 0;
   border-radius: 4px 4px 0 0;
-  background-color: #353167;
-}
-
-.header-icon {
-  margin: 0 14px 16px 0;
+  background-color: #3f0282;
+  background-image: url('../img/shattered.png');
 }
 
 .modal-header .close {
-  padding: 6px 8px 10px 8px !important;
-
-  opacity: 1;
+  padding: 6px 8px 10px !important;
   color: #fff;
   text-shadow: none;
+  opacity: 1;
+  cursor: pointer;
 }
 
 .modal-header .close:hover,
 .modal-header .close:focus {
-  cursor: pointer;
-  cursor: hand;
-
   color: #4594e3;
+  text-decoration: none;
+  opacity: 0.75;
+  filter: alpha(opacity=75);
 }
 
-.modal-header p {
-  font-size: 22px;
-  font-weight: bold !important;
-  line-height: 28px;
-
-  margin-top: 2px;
-  margin-right: auto;
-  margin-bottom: 3px;
-  margin-left: auto;
-
+.modal-header .title {
   color: #fff;
 }
 
-.modal-dialog {
-  font-size: 16px;
-  line-height: 21px;
+@media (min-width: 768px) {
+  .modal-header {
+    padding: 30px;
+  }
 }
 
-.modal-body-header {
-  font-size: 25px;
-
-  margin-top: 10px;
-}
+/* modal-body */
 
 .modal-body {
-  overflow: visible;
-
-  max-height: none;
-  padding: 30px 30px 0;
+  padding: 15px;
 }
 
-.modal-body i {
-  margin-right: 10px;
+@media (min-width: 768px) {
+  .modal-body {
+    padding: 30px;
+  }
 }
 
-.main-btn.main-btn-large.btn-block {
-  padding: 20px 0 !important;
-}
-
-.modal form {
-  margin: 0;
-}
+/* modal-footer */
 
 .modal-footer {
-  font-size: 16px;
-
-  border-radius: 0 0 4px 0px;
-  background-color: #f5f5f5;
+  padding: 15px;
 }
 
 .modal-footer p {
-  margin-bottom: 0;
+  margin: 0;
 }
 
-.progress {
-  -webkit-border-radius: 0;
-     -moz-border-radius: 0;
-          border-radius: 0;
+@media (min-width: 768px) {
+  .modal-footer {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
 
-  filter: none !important;
+/* modal-full */
+
+.modal-full .modal-dialog {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background: #4E4E4E;
+  background-image: url('../img/bg_modal_01.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.modal-full .modal-content {
+  height: 100%;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (min-width: 992px) {
+  .modal-full .modal-content {
+    max-width: 970px;
+    background: rgba(255, 255, 255, 0.97);
+  }
+}
+
+@media (min-width: 1200px) {
+  .modal-full .modal-content {
+    max-width: 1170px;
+  }
+}
+
+/* modal-full modal-header */
+
+.modal-full .modal-header {
+  border-radius: 0;
+}
+
+.modal-full .modal-header .title {
+  margin-top: 40px;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .modal-full .modal-header {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+/* modal-full modal-body */
+
+.modal-full .modal-body {
+  padding-bottom: 40px;
+}
+
+@media (min-width: 992px) {
+  .modal-full .modal-body {
+    padding: 60px;
+  }
+}
+
+/* modal-full modal-footer */
+
+.modal-full .modal-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+  .modal-full .modal-footer {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-full .modal-footer {
+    left: 50%;
+    max-width: 970px;
+    padding-left: 60px;
+    padding-right: 60px;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 1200px) {
+  .modal-full .modal-footer {
+    max-width: 1170px;
+  }
 }
 
 /* == 1 == EXIT POP ========== */
@@ -186,7 +251,11 @@
   box-shadow: 0 -6px 0 #57992d inset;
 }
 
-/* == 1 == LOCATING AVAILABLE INFO MODAL ========== */
+/* ========== GENERATING REPORT ========== */
+
+#gen-report-modal1 .modal-body .title {
+  margin-top: 60px;
+}
 
 .checking-sources-progress {
   position: relative;
@@ -212,44 +281,12 @@
 }
 
 .searching-progress-bar-group {
-  margin-bottom: 10px;
+  margin: 10px auto;
 }
 
 .bar-icon {
   margin-right: 15px;
   margin-bottom: 5px;
-}
-
-p.current-search-text {
-  font-size: 17px;
-
-  padding-bottom: 10px;
-
-  text-align: center;
-}
-
-p.current-search-text span {
-  font-weight: bold;
-
-  color: green;
-}
-
-.alert-this {
-  margin-bottom: 20px;
-  padding: 14px;
-
-  color: #c17421;
-}
-
-.close:hover,
-.close:focus {
-  cursor: pointer;
-  text-decoration: none;
-
-  opacity: 0.4;
-  color: #000;
-
-  filter: alpha(opacity=40);
 }
 
 /* == 2 == SCANNING SOCIAL MEDIA ================= */
