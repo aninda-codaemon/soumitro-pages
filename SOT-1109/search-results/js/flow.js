@@ -450,10 +450,17 @@
     // for now, this will do (agile, lol):
 
     if (self.$elem.hasClass('in')) {
-      timeoutId = window.setTimeout(function () {
-        showNextModal();
-        $('.modal-content .radial-progress .circle .mask').removeClass('clip-fix');
-      }, 32000);
+      if (window.bv.isMobile) {
+        timeoutId = window.setTimeout(function () {
+          showNextModal();
+          $('.modal-content .radial-progress .circle .mask').removeClass('clip-fix');
+        }, 18000);
+      } else {
+        timeoutId = window.setTimeout(function () {
+          showNextModal();
+          $('.modal-content .radial-progress .circle .mask').removeClass('clip-fix');
+        }, 32000);
+      }
     }
 
   }
