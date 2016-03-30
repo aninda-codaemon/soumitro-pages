@@ -1,5 +1,10 @@
 /* modal */
 
+.modal,
+.modal-open {
+  padding: 0 !important;
+}
+
 .modal-content {
   overflow-y: auto;
   overflow-x: hidden;
@@ -173,6 +178,42 @@
   }
 }
 
+/* modal progress bars */
+
+.modal-content .progress {
+  position: relative;
+  height: 45px;
+  margin-bottom: 15px;
+  background: #4e4e4e;
+}
+
+.modal-content .progress .progress-label {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  margin: 12px 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.modal-content .progress .progress-label .icon {
+  margin-right: 15px;
+}
+
+@media (min-width: 768px) {
+  .modal-content .progress {
+    height: 65px;
+    margin-bottom: 25px;
+  }
+
+  .modal-content .progress .progress-label {
+    font-size: 22px;
+    margin: 18px auto;
+  }
+}
+
 /* == 1 == EXIT POP ========== */
 
 #exit-pop-skip .modal-header {
@@ -254,40 +295,32 @@
 
 /* ========== GENERATING REPORT ========== */
 
-#gen-report-modal1 .modal-body .title {
-  margin-top: 60px;
-}
+/* modal-body */
 
-.checking-sources-progress {
-  position: relative;
-
-  height: 45px;
-  margin-bottom: 14px;
-
-  background: #4e4e4e;
-}
-
-.checking-sources-progress p {
-  font-size: 18px;
-  font-weight: 700;
-
-  position: absolute;
-  z-index: 2;
-  top: 5px;
-
-  width: 99%;
-  margin-top: 7px;
-
-  color: #fff;
-}
-
-.searching-progress-bar-group {
+#gen-report-modal1 .modal-body .searching-progress-bar-group {
   margin: 10px auto;
 }
 
-.bar-icon {
-  margin-right: 15px;
-  margin-bottom: 5px;
+@media (min-width: 768px) {
+  #gen-report-modal1 .modal-body .title {
+    margin-top: 60px;
+  }
+}
+
+/* modal-footer */
+
+#gen-report-modal1 .modal-footer .exit-flow {
+  display: block;
+  width: 120px;
+  margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+  #gen-report-modal1 .modal-footer .exit-flow {
+    display: inline-block;
+    width: auto;
+    margin: 0;
+  }
 }
 
 /* == 2 == SCANNING SOCIAL MEDIA ================= */

@@ -867,26 +867,35 @@
           </p>
 
           <div class="searching-progress-bar-group">
-            <div id="searching-progress-bar-database" class="progress checking-sources-progress">
+            <div id="searching-progress-bar-database" class="progress">
               <div class="progress-bar progress-bar-success" style="width: 1%"></div>
-              <p class="text-center"><img src="img/records-24.png" class="bar-icon"><strong><span class="hidden-xs">Various Public and Criminal Record Databases </span><span class="hidden-lg">Public Records</span></strong></p>
+              <p class="progress-label">
+                <i class="fa fa-university icon"></i>
+                <span class="hidden-xs">Various Public and Criminal Record Databases </span><span class="hidden-lg">Public Records</span>
+              </p>
             </div>
-            <div id="searching-progress-bar-records" class="progress checking-sources-progress">
+
+            <div id="searching-progress-bar-records" class="progress">
               <div class="progress-bar progress-bar-success" style="width: 1%"></div>
-              <p class="text-center"><img src="img/judge-24.png" class="bar-icon"><strong><span><span class="hidden-xs">County and State </span>Court Records</span></strong></p>
+              <p class="progress-label">
+                <i class="fa fa-gavel icon"></i>
+                <span class="hidden-xs">County and State</span> Court Records
+              </p>
             </div>
-            <div id="searching-progress-bar-datasets" class="progress checking-sources-progress">
+
+            <div id="searching-progress-bar-datasets" class="progress">
               <div class="progress-bar progress-bar-success" style="width: 1%"></div>
-              <p class="text-center"><img src="img/dataset-24.png" class="bar-icon"><strong>Proprietary Data<span class="hidden-xs"> Sets</span></strong></p>
+              <p class="progress-label">
+                <i class="fa fa-database icon"></i>
+                Proprietary Data <span class="hidden-xs">Sets</span>
+              </p>
             </div>
           </div>
-
-          <button type="button" class="btn btn-sm btn-default btn-centered" data-dismiss="modal" aria-hidden="true">Cancel Search</button>
         </div>
 
         <div class="modal-footer alert-warning">
-          <p class="text-warning text-center text-caption">
-            Reminder: Your search of {{firstName}} is anonymous.
+          <p class="text-center text-caption">
+            Reminder: Your search of {{firstName}} is anonymous. <a href="#" class="exit-flow" data-dismiss="modal" aria-hidden="true">Cancel my search.</a>
           </p>
         </div>
 
