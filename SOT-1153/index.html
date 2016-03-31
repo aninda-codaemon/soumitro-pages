@@ -1507,7 +1507,7 @@
                 <ul class="report-details-list">
                   <li class="report-details-item">We also give you the ability to run <strong>reverse phone number lookups</strong>, email searches and property reports.</li>
                   <li class="report-details-item hidden-xs">You'll get access to BeenVerified's <strong>proprietary AlertMe feature</strong>, which sends alerts and monitors potential changes we find in our data on an ongoing basis.</li>
-                  <li class="report-details-item hidden-xs">No more having to stay on top of the data yourself, <strong>let BeenVerified assist you.</li>
+                  <li class="report-details-item hidden-xs">No more having to stay on top of the data yourself, <strong>let BeenVerified assist you</strong>.</li>
                 </ul>
               </div>
 
@@ -1534,97 +1534,78 @@
   <!-- ================================================== -->
   <!-- == 7 == LEAD BOX SIGNUP ========================== -->
   <!-- ================================================== -->
-  <div id="gen-report-modal6" aria-hidden="true" class="modal">
+
+  <div id="gen-report-modal6" class="modal modal-full" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
 
-        <div class="modal-header header-alert">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#ffffff;">×</button>
-          <img src="img/alert-24.png" class="pull-left header-icon">
-          <p data-fr-bind="currentRecord">
-            <strong>Account needed to view report<span class="hidden-xs"> on {{fullName}}</span>...</strong>
-          </p>
-        </div><!-- /.modal-header -->
+        <div class="modal-header">
+          <h5 class="title text-center" data-fr-bind="currentRecord">
+            Account needed to view report on {{fullName}}
+          </h5>
+        </div>
 
         <div class="modal-body">
-          <p class="modal-top-text-big hidden-xs">All Of Your Reports In One Place.</p>
-          <p class="modal-top-text" data-fr-bind="currentRecord">Start creating your account:</p>
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6 form-col">
+              <h6 class="title hidden-xs">Your Reports In One Place!</h6>
+
+              <p class="sub-title hidden-xs">Start creating your account:</p>
+
               <form id="signup-modal-form" action="<%= next_page %>" data-fr-bind="leadData" data-fr-store="leadData" data-fr-bind="leadData">
-                <fieldset class="form-input-group">
-                  <div class="row">
-                    <div class="col-sm-4 hidden-xs">
-                      <p class="input-label">
-                        <small>First Name:</small>
-                      </p>
-                    </div>
-                    <div class="col-sm-8">
-                      <input name="account[first_name]" value="{{account[first_name]}}" id="lead_first_name" type="text" class="form-control" placeholder="First Name" required/>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-4 hidden-xs">
-                      <p class="input-label">
-                        <small>Last Name:</small>
-                      </p>
-                    </div>
-                    <div class="col-sm-8">
-                      <input name="account[last_name]" value="{{account[last_name]}}" id="lead_last_name" type="text" class="form-control" placeholder="Last Name" required/>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-4 hidden-xs">
-                      <p class="input-label">
-                        <small>Email:</small>
-                      </p>
-                    </div>
-                    <div class="col-sm-8">
-                      <input name="user[email]" value="{{user[email]}}" id="lead_email" type="email" class="form-control" placeholder="Email Address" required/>
-                    </div>
-                  </div>
-                </fieldset>
-                <fieldset>
-                  <div class="col-sm-12">
-                    <p class="tos-text">By clicking "Continue" you represent you are over 18 years of age and have agreed to our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a> and <a href="//www.beenverified.com/privacy" target="_blank">Privacy Policy</a>                      and you agree to receive email from BeenVerified.com. We'll never sell your information or use your data as apart of our search results.</p>
-                  </div>
-                </fieldset>
-                <fieldset>
-                  <div class="col-sm-10 col-sm-offset-1">
-                    <button type="submit" class="main-btn main-btn-large btn-block"><span class="hidden-xs">&nbsp;ACCESS &amp; </span>CONTINUE&nbsp;<img src="img/next-24.png"></button>
-                  </div>
-                </fieldset>
-              </form>
-              <!-- new form for logging in -->
-              <form class="form-horizontal" action="https://www.beenverified.com/login" data-fr-bind="currentRecord" method="get">
-                <fieldset>
-                  <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
-                  <h6 class="create-login text-center">Already a BeenVerified member? <button class="btn btn-link btn-xs" id="login-redirect" type="submit">Click here to login</button>
-                </h6>
-                </fieldset>
-              </form>
-              <!-- end new form for logging in -->
-            </div>
-            <div class="col-sm-6">
-              <div class="hidden-xs all-reports-wrapper"></div>
-              <div class="alert-me-wrapper">
-                <p class="text-info alert-me-header hidden-xs">All new accounts now come with <strong>AlertMe</strong>!</p>
-                <p class="alert-me-body hidden-xs"><small>Don't be left in the dark. Automatically be notified if there are any changes or updates to a report that you ran.</small></p>
-                <div class="seal-small">
-                  <div class="verify-seal" style="cursor: pointer;cursor:hand; text-align:center;"><img src="img/norton-secured.png"></div>
+                <div class="form-group">
+                  <input name="account[first_name]" value="{{account[first_name]}}" id="lead_first_name" type="text" class="form-control" placeholder="First Name" required/>
                 </div>
-              </div>
+
+                <div class="form-group">
+                  <input name="account[last_name]" value="{{account[last_name]}}" id="lead_last_name" type="text" class="form-control" placeholder="Last Name" required/>
+                </div>
+
+                <div class="form-group">
+                  <input name="user[email]" value="{{user[email]}}" id="lead_email" type="email" class="form-control" placeholder="Email Address" required/>
+                </div>
+
+                <button type="submit" class="btn btn-lg btn-block btn-secondary">
+                  <span class="hidden-xs">ACCESS &amp; </span>CONTINUE <i class="fa fa-right-arrow icon"></i>
+                </button>
+              </form>
+
+              <form class="login-form" action="https://www.beenverified.com/login" data-fr-bind="currentRecord" method="get">
+                <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
+                <p class="text-caption text-center">
+                  Already a BeenVerified member? <button class="btn btn-link" id="login-redirect" type="submit">Click here to login</button>
+                </p>
+              </form>
             </div>
+
+            <div class="col-sm-6 teaser-col">
+              <img class="img-responsive hidden-xs" src="img/all-reports-2.png" />
+
+              <h6 class="title hidden-xs">All new accounts now come with <span class="text-primary">AlertMe!</span></h6>
+
+              <p class="sub-title hidden-xs"><small>Don't be left in the dark. Automatically be notified if there are any changes or updates to a report that you ran.</small></p>
+
+              <img class="img-secured" src="img/norton-secured.png">
+            </div>
+
           </div>
-        </div><!-- /.modal-body -->
+        </div>
+
+        <div class="modal-footer alert-warning">
+          <p class="text-caption text-center">
+            <strong>Note:</strong> By clicking "Continue" you represent you are over 18 years of age and have agreed to our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a> and <a href="//www.beenverified.com/privacy" target="_blank">Privacy Policy</a> and you agree to receive email from BeenVerified.com. We'll never sell your information or use your data as apart of our search results.
+            <a href="#" class="exit-flow" data-dismiss="modal" aria-hidden="true">Cancel my report.</a>
+          </p>
+        </div>
 
       </div>
     </div>
-  </div><!-- /#signup-modal -->
+  </div>
 
   <!-- ================================================== -->
   <!-- == 8 ==  FINAL CARD REPORT ======================= -->
   <!-- ================================================== -->
+  
   <div id="gen-report-modal7" aria-hidden="true" class="modal">
     <div class="modal-dialog">
       <div class="modal-content">
