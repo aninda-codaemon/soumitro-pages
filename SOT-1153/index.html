@@ -1228,24 +1228,23 @@
   <!-- ============================================== -->
   <!-- == 4 == PROCCESSING YOUR REQUEST  ============ -->
   <!-- ============================================== -->
-  <div id="gen-report-modal3" class="modal loggingin" tabindex="-1" aria-hidden="true">
+
+  <div id="gen-report-modal3" class="modal modal-full" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
 
-        <div class="modal-header section-header section-min">
-          <p><i class="fa fa-share icon"></i> Compiling your report, please wait...</p>
-        </div><!-- /.modal-header -->
+        <div class="modal-header">
+          <h5 class="title text-center">
+            Compiling your report, please wait...
+          </h5>
+        </div>
 
         <div class="modal-body">
-          <div id="processing-data-progress" class="progress processing-data-progress">
-            <div class="progress-bar progress-bar-success" style="width: 1%"></div>
-          </div>
-          <h3 class="modal-body-headline">
-            Endless Ways to Use Public Data
-            <small class="modal-body-sub-headline">
-              While you wait, please review some of the most popular uses for <span class="brand-color">BeenVerified</span>.
-            </small>
-          </h3>
+
+          <h3 class="title">Endless Ways to Use Public Data</h3>
+
+          <p class="sub-title">While you wait, please review some of the most popular uses for <span class="brand-color">BeenVerified</span>.</p>
+
           <ul class="cases-list">
             <li class="case-item active">
               <i class="fa fa-child icon"></i> Find your birth parent!
@@ -1271,11 +1270,17 @@
             <img class="case-image" src="img/use-case-image-05.jpg" />
           </div>
           <p data-fr-bind="currentRecord" class="log-load"></p>
-        </div><!-- /.modal-body -->
+        </div>
+
+        <div class="modal-footer">
+          <div id="processing-data-progress" class="progress">
+            <div class="progress-bar progress-bar-success" style="width: 1%"></div>
+          </div>
+        </div>
 
       </div>
     </div>
-  </div><!-- /#gen-report-modal3 -->
+  </div>
 
   <!-- ============================================== -->
   <!-- == 5 == CAPTCHA MODAL ======================== -->
