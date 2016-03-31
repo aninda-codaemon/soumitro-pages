@@ -1285,111 +1285,96 @@
   <!-- ============================================== -->
   <!-- == 5 == CAPTCHA MODAL ======================== -->
   <!-- ============================================== -->
-  <div id="gen-report-modal4" class="modal" aria-hidden="true">
+  <div id="gen-report-modal4" class="modal modal-full" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
 
-        <div class="modal-header header-alert">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#ffffff;">×</button>
-          <img src="img/alert-24.png" class="pull-left header-icon">
-          <p data-fr-bind="currentRecord">
-            <strong>We finished compiling the report. Enter the text below to continue...</strong>
-          </p>
-        </div><!-- /.modal-header -->
+        <div class="modal-header">
+          <h5 class="title text-center">
+            We finished compiling your report...
+          </h5>
+        </div>
 
         <div class="modal-body">
           <div class="row">
-            <div class="col-sm-6">
-              <p class="modal-top-text" data-fr-bind="currentRecord">Please prove that you are a human by filling out the easy captcha below.</p>
+            <div class="col-sm-6 captcha-col">
+              <p class="sub-title">Please prove that you're human by filling out the captcha below.</p>
+
               <form id="bv-catpcha-form">
-                <div id="bv-captcha">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div class="well">
-                        <div class="captcha-wrap">
-                          <div id="bv-captcha-imgs">
-                            <img src="img/degree.jpg" alt="degree">
-                            <img src="img/fact.jpg" alt="fact">
-                            <img src="img/glass.jpg" alt="glass">
-                            <img src="img/grip.jpg" alt="grip">
-                            <img src="img/nose.png" alt="nose">
-                            <img src="img/seed.png" alt="seed">
-                            <img src="img/snake.jpg" alt="snake">
-                            <img src="img/step.jpg" alt="step">
-                          </div>
-                          <a href="#" id="bv-captcha-refresh" title="Refresh Image"></a>
-                        </div>
-                        <div class="row">
-                          <div class="col-sm-12">
-                            <label for="captcha">Type the text shown into the box below.</label>
-                            <input name="captcha" id="bv-captcha-input" class="form-control input-lg" type="text" placeholder="Type text here">
-                          </div>
-                        </div>
-                        <p class="text-center" id="bv-captcha-msg"></p>
-                      </div>
-                    </div>
+                <div class="captcha-wrap">
+                  <div id="bv-captcha-imgs" class="captcha-images">
+                    <img class="img-captcha" src="img/degree.jpg" alt="degree">
+                    <img class="img-captcha" src="img/fact.jpg" alt="fact">
+                    <img class="img-captcha" src="img/glass.jpg" alt="glass">
+                    <img class="img-captcha" src="img/grip.jpg" alt="grip">
+                    <img class="img-captcha" src="img/nose.png" alt="nose">
+                    <img class="img-captcha" src="img/seed.png" alt="seed">
+                    <img class="img-captcha" src="img/snake.jpg" alt="snake">
+                    <img class="img-captcha" src="img/step.jpg" alt="step">
                   </div>
-                  <div class="row">
-                    <div class="col-sm-10 col-sm-offset-1">
-                      <button type="submit" id="bv-captcha-next" class="main-btn btn-lg btn-block">
-                        <strong>Continue</strong>
-                        <img class="hidden-xs" src="img/next-32.png" style="display: inline;">
-                      </button>
-                    </div>
-                  </div>
+                  <button type="button" class="btn btn-icon btn-primary" id="bv-captcha-refresh"><i class="fa fa-refresh icon"></i></button>
                 </div>
+
+                <div class="form-group">
+                  <input name="captcha" id="bv-captcha-input" class="form-control input-lg" type="text" placeholder="Type the text as shown above">
+                </div>
+
+                <p class="text-center" id="bv-captcha-msg"></p>
+
+                <button type="submit" id="bv-captcha-next" class="btn btn-lg btn-block btn-secondary">
+                  Continue <i class="fa fa-arrow-right hidden-xs"></i>
+                </button>
               </form>
-              <p class="why-text text-left">
-                <small>
-                  <strong>Why do I have to do this? </strong>
-                  <br>
-                  <span>We have data costs associated with our reports, therefore we try to make sure we only run searches for real people.</span>
-                </small>
-              </p>
             </div>
-            <div class="col-sm-6 hidden-xs">
-              <div class="report-summary">
-                <div class="subject-summary">
-                  <div class="report-summary-header">
-                    <p>
-                      <strong>Report Summary</strong>
-                    </p>
-                  </div>
-                  <div class="subject-summary-text-bg">
-                    <div class="subject-summary-text text-left" data-fr-bind="currentRecord">
-                      <h3 class="modal-name"><strong>{{fullName}}</strong></h3>
-                      <p>Age: {{displayAge}}</p>
-                    </div>
-                  </div>
-                  <div id="map-goes-here">
-                    <img id="map" alt="map" src="img/gen-map.jpg"/>
-                  </div>
-                </div>
-                <ul class="blur-list clearfix text-left list-unstyled">
-                  <p>Includes, When Available:</p>
-                  <div class="blur-list-left">
+
+            <div class="col-sm-6 report-col hidden-xs">
+
+              <h6 class="title text-primary" data-fr-bind="currentRecord">
+                <i class="fa fa-user icon"></i>
+                {{fullName}}
+                <small class="meta-age">Age: {{displayAge}}</small>
+              </h6>
+
+              <div id="map-goes-here" class="map-container">
+                <img id="map" class="img-map" alt="map" src="img/gen-map.jpg"/>
+              </div>
+
+              <p class="sub-title">Includes, When Available:</p>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <ul class="report-list">
                     <li>Current Address</li>
                     <li>Phone Numbers</li>
                     <li>Bankruptcies</li>
                     <li>Email Addresses</li>
-                    <li>Photos&nbsp;<img src="img/new_blue.png"></li>
-                  </div>
-                  <div class="blur-list-right">
+                    <li>Photos <span class="new-label">new</span></li>
+                  </ul>
+                </div>
+                <div class="col-sm-6">
+                  <ul class="report-list">
                     <li>Address History</li>
                     <li>Criminal History</li>
                     <li>Imposters</li>
                     <li>Associates</li>
                     <li>Social Media</li>
-                  </div>
-                </ul>
+                  </ul>
+                </div>
               </div>
+
             </div>
           </div>
-        </div><!-- /.modal-body -->
+        </div>
+
+        <div class="modal-footer alert-warning">
+          <p class="text-caption text-center">
+            <strong>Why:</strong> We have data costs associated with our reports, therefore we try to make sure we only run searches for real people. <a href="#" class="exit-flow" data-dismiss="modal" aria-hidden="true">Cancel my report.</a>
+          </p>
+        </div>
 
       </div>
     </div>
-  </div><!-- /#gen-report-modal4 -->
+  </div>
 
   <!-- ================================================== -->
   <!-- == 6 == GENERATING REPORT ======================== -->

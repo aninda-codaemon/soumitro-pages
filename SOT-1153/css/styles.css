@@ -1171,10 +1171,6 @@ ul.aka-list li {
   background-position: 20px center;
 }
 
-.form-control {
-  padding: 6px 8px;
-}
-
 .searchinput {
   width: 200px;
 }
@@ -1292,11 +1288,6 @@ p.already-a-member {
   }
 }
 
-@media (max-width: 991px) {
-  .form-control {
-    padding: 6px 3px;
-  }
-}
 /* Landscape phone to portrait tablet */
 
 @media (max-width: 767px) {

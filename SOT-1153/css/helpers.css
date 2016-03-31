@@ -47,16 +47,14 @@
   }
 }
 
-/* alerts */
+/* labels */
 
-.alert-warning {
-  border: 0;
-  background-color: #FFBA36;
-  color: #000;
-}
-
-.alert-success {
-  border: 0;
-  background-color: #5CB85C;
-  color: #000;
+.new-label {
+  vertical-align: top;
+  margin-left: 3px;
+  padding: 0 3px 2px;
+  border-radius: 4px;
+  border: 1px solid #0072BC;
+  color: #0072BC;
+  font-size: 12px;
 }
