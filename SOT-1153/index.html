@@ -1603,9 +1603,63 @@
   </div>
 
   <!-- ================================================== -->
-  <!-- == 8 ==  FINAL CARD REPORT ======================= -->
+  <!-- == 11 == FCRA ===================================== -->
   <!-- ================================================== -->
   
+  <div id="gen-report-modal11" aria-hidden="true" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <img src="img/icon-alert-lg.png" class="pull-left header-icon" />
+          <p class="huge hidden-xs">Warning: Please Read Before You Continue</p>
+          <p class="huge visible-xs">Warning: Please Read</p>
+        </div><!-- /.modal-header -->
+
+        <div class="modal-body">
+          <h2 data-fr-bind="currentRecord">There are limits to how you can use {{firstName}}'s report.</h2>
+          <p class="sub-head">Please check the box below<span class="hidden-xs"> to continue to your report</span>.</p>
+          <form id="fcra-confirm">
+            <div class="row">
+              <div class="col-sm-8 col-sm-offset-2">
+                <div class="panel panel-default">
+                  <div class="row">
+                    <div class="col-sm-12 text-center">
+                      <p for="fcraCheckbox2">
+                        I will not use information provided by BeenVerified for decisions about employment, insurance, tenant screening, consumer credit or any other purpose requiring Fair Credit Reporting Act (FCRA) compliance.
+                      </p>
+                      <label class="fcraCheckbox-wrapper" for="fcraCheckbox2">
+                        <input id="fcraCheckbox2" name="fcraCheckbox2" class="styled" type="checkbox" required>
+                        <label for="fcraCheckbox2" class="fcraCheckbox-box pull-left"></label>
+                        I Agree
+                      </label>
+                      <label for="fcraCheckbox2" class="error"></label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-6 col-sm-offset-3">
+                    <button class="btn btn-success btn-block"><span>Continue &nbsp;<img src="img/arrow.png" /></span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div><!-- /.modal-body -->
+
+        <div class="modal-footer">
+          <span data-fr-bind="currentRecord">{{firstName}} will not be notified of your search.</span>
+        </div><!-- /.modal-footer -->
+
+      </div>
+    </div>
+  </div><!-- /#gen-report-modal11 -->
+
+  <!-- ================================================== -->
+  <!-- == 8 ==  FINAL CARD REPORT ======================= -->
+  <!-- ================================================== -->
+
   <div id="gen-report-modal7" aria-hidden="true" class="modal">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -1857,59 +1911,6 @@
       </div>
     </div>
   </div><!-- /#gen-report-modal7 -->
-
-  <!-- ================================================== -->
-  <!-- == 11 == FCRA ===================================== -->
-  <!-- ================================================== -->
-  <div id="gen-report-modal11" aria-hidden="true" class="modal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-
-        <div class="modal-header">
-          <img src="img/icon-alert-lg.png" class="pull-left header-icon" />
-          <p class="huge hidden-xs">Warning: Please Read Before You Continue</p>
-          <p class="huge visible-xs">Warning: Please Read</p>
-        </div><!-- /.modal-header -->
-
-        <div class="modal-body">
-          <h2 data-fr-bind="currentRecord">There are limits to how you can use {{firstName}}'s report.</h2>
-          <p class="sub-head">Please check the box below<span class="hidden-xs"> to continue to your report</span>.</p>
-          <form id="fcra-confirm">
-            <div class="row">
-              <div class="col-sm-8 col-sm-offset-2">
-                <div class="panel panel-default">
-                  <div class="row">
-                    <div class="col-sm-12 text-center">
-                      <p for="fcraCheckbox2">
-                        I will not use information provided by BeenVerified for decisions about employment, insurance, tenant screening, consumer credit or any other purpose requiring Fair Credit Reporting Act (FCRA) compliance.
-                      </p>
-                      <label class="fcraCheckbox-wrapper" for="fcraCheckbox2">
-                        <input id="fcraCheckbox2" name="fcraCheckbox2" class="styled" type="checkbox" required>
-                        <label for="fcraCheckbox2" class="fcraCheckbox-box pull-left"></label>
-                        I Agree
-                      </label>
-                      <label for="fcraCheckbox2" class="error"></label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-sm-6 col-sm-offset-3">
-                    <button class="btn btn-success btn-block"><span>Continue &nbsp;<img src="img/arrow.png" /></span></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div><!-- /.modal-body -->
-
-        <div class="modal-footer">
-          <span data-fr-bind="currentRecord">{{firstName}} will not be notified of your search.</span>
-        </div><!-- /.modal-footer -->
-
-      </div>
-    </div>
-  </div><!-- /#gen-report-modal11 -->
 
   <!-- ========== -->
   <!-- = SCRIPTS = -->
