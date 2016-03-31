@@ -401,23 +401,19 @@
         listLen = $lis.length,
         listIdxs = _.shuffle(_.range(0, listLen)),
         currIdx = 0,
-        $animatedImage = $('.jumbo-sidebar .img-animation'),
-        imagePath = $('.large-img-src').attr('src'),
-        $mobileAnimatedImage = $('.mobile-heading .img-animation'),
-        mobileImagePath = $('.mobile-img-src').attr('src');
+        $animatedImage = $('.animation-container .img-animation'),
+        imagePath = $('.animation-container .img-animation-src').attr('src');
 
-    $('.img-animation').hide();
+    $animatedImage.hide();
     setTimeout(function() {
       $animatedImage.attr('src', '');
-      $mobileAnimatedImage.attr('src', '');
     }, 0);
 
     var toggleAnimations = function() {
       setTimeout(function() {
-        $('.img-animation').show();
+        $animatedImage.show();
         setTimeout(function() {
           $animatedImage.attr('src', imagePath);
-          $mobileAnimatedImage.attr('src', mobileImagePath);
         }, 0);
       }, 0);
     };

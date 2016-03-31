@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" type="text/css" href="css/typography.css" />
+  <link rel="stylesheet" type="text/css" href="css/elements.css" />
   <link rel="stylesheet" type="text/css" href="css/helpers.css" />
 
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
@@ -948,7 +949,7 @@
                 {{/if}}
               </ul>
 
-              <img class="screenshot" src="img/instagram.gif">
+              <img class="img-quote" src="img/instagram.gif">
             </div>
 
             <div class="social-col col-sm-8">
@@ -1107,39 +1108,26 @@
   <!-- ========================================== -->
   <!-- == 3 == YOUR REPORT IS READY  ============ -->
   <!-- ========================================== -->
-  <div id="gen-report-modal2" class="modal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog large-modal">
+
+  <div id="gen-report-modal2" class="modal modal-full" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
       <div class="modal-content">
 
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <p class="visible-xs"><i class="fa fa-file-text-o icon"></i> Your Detailed Report is Available</p>
-          <div class="jumbo-sidebar hidden-xs" data-fr-bind="currentRecord">
-            <h1>Success!</h1>
-            <p>We found information about <span class="full-name">{{fullName}}</span>.</p>
-            <hr class="divider">
-            <img class="large-img-src" src="img/animation.gif" style="display: none !important" />
-            <img class="img-animation" src="../img/animation.gif" />
+          <h5 class="title text-center">
+            Success!
+            <small class="sub-title text-center">We found what you're looking for</small>
+          </h5>
+          <div class="animation-container hidden-xs">
+            <img class="img-animation-src" src="img/animation.gif" style="display: none !important" />
+            <img class="img-animation" src="img/animation.gif" />
           </div>
-        </div><!-- /.modal-header -->
+        </div>
 
         <div class="modal-body">
-          <div class="mobile-heading visible-xs">
-            <h3 class="modal-headline">
-              <img class="mobile-img-src" src="img/success-icon.gif" style="display: none !important" />
-              <img class="img-animation" src="../img/success-icon.gif" />
-              <strong class="green"><i class="fa fa-check icon"></i> Success, Data Found!</strong>
-            </h3>
-            <p class="modal-sub-headline" data-fr-bind="currentRecord">
-              We located information on
-              <span class="blue-txt"><strong>{{fullName}}</strong></span> from one or more of the categories below.
-            </p>
-          </div>
+          <h3 class="title">Your Background Report For <span class="text-info" data-fr-bind="currentRecord">{{fullName}}</span> Is Available</h3>
 
-          <div class="large-heading hidden-xs" data-fr-bind="currentRecord">
-            <h3 class="modal-headline">Your Background Report For <span class="blue-txt">{{fullName}}</span> Is Available</h3>
-            <p class="modal-sub-headline">Click the button below to continue to the full report. The report may contain information from one or more of the following categories:</p>
-          </div>
+          <p class="sub-title">Click the button below to continue to the full report. The report may contain information from one or more of the following categories:</p>
 
           <ul class="report-info-list">
             <li class="report-info-item visible-always">
@@ -1223,19 +1211,19 @@
               <span class="item-label">And much more!</span>
             </li>
           </ul>
-        </div><!-- /.modal-body -->
+        </div>
 
         <div class="modal-footer">
-          <button disabled id="gen-report-confirm" class="main-btn btn-lg btn-block large-modal-btn" data-dismiss="modal">
+          <button disabled id="gen-report-confirm" class="btn btn-lg btn-block btn-secondary" data-dismiss="modal">
             <i class="fa fa-refresh fa-spin download-now-icon"></i>
             <strong id="gen-report-message" data-enabled-text="Continue to <span class='hidden-xs'>Background</span> Report">LOADING...</strong>
             <i class="fa fa-arrow-right hidden-xs" id="arrowhead-right"></i>
           </button>
-        </div><!-- /.modal-footer -->
+        </div>
 
       </div>
     </div>
-  </div><!-- /#gen-report-modal2 -->
+  </div>
 
   <!-- ============================================== -->
   <!-- == 4 == PROCCESSING YOUR REQUEST  ============ -->
