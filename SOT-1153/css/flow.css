@@ -1067,6 +1067,24 @@
   background-color: #eee;
 }
 
+#gen-report-modal6 .modal-body .form-col #signup-modal-form .form-control.error {
+  border-color: #e9322d;
+  background-color: #FFF4F3;
+  color: #e9322d;
+}
+
+#gen-report-modal6 .modal-body .form-col #signup-modal-form label.error {
+  margin: 0;
+  margin-top: 2px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  color: #e9322d;
+  font-size: 14px;
+  text-align: left;
+  line-height: 1;
+}
+
 #gen-report-modal6 .modal-body .form-col .login-form {
   margin-top: 15px;
 }
@@ -1111,6 +1129,68 @@
   #gen-report-modal6 .modal-body .teaser-col {
     padding-left: 60px;
   }
+}
+
+/* ========= FCRA ============ */
+
+#gen-report-modal11 .modal-dialog {
+  background-image: url('../img/bg_modal_08.jpg'); /* fallback */
+  background-image: linear-gradient(rgba(63, 2, 130, 0.25), rgba(63, 2, 130, 0.5)), url('../img/bg_modal_08.jpg');
+}
+
+/* modal-body */
+
+#gen-report-modal11 .modal-body #fcra-confirm .panel {
+  padding: 15px;
+  border: 1px solid #e5e5e5;
+  background-color: #efefef;
+}
+
+#gen-report-modal11 .modal-body #fcra-confirm .fcraCheckbox-wrapper {
+  margin: 0;
+  margin-top: 15px;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 2;
+}
+
+#gen-report-modal11 .modal-body #fcra-confirm #fcraCheckbox2 {
+  display: inline-block;
+  position: absolute !important;
+  position: static \9; /*ie8 fix*/
+  margin-left: -999em;
+  margin: 10px -25px \9; /*ie8 fix*/
+}
+
+#gen-report-modal11 .modal-body #fcra-confirm .fcraCheckbox-box {
+  display: block;
+  display: none \9; /*ie8 fix*/
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  margin-bottom: 0;
+  cursor: pointer;
+  border: 2px solid #848484;
+  border-radius: 4px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#gen-report-modal11 .modal-body #fcra-confirm #fcraCheckbox2:checked+label {
+  border: 2px solid #56b453 !important;
+  background-image: url('../img/tos-check.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#gen-report-modal11 .modal-body #fcra-confirm .checkbox-error {
+  display: none;
+  margin: 0;
+  margin-top: 15px;
+  border: 0;
+  background-color: transparent;
+  color: #e9322d;
 }
 
 /* == 7 ==  ========================= */
@@ -1625,230 +1705,4 @@
   color: #555;
   border-radius: 0 0 5px 5px;
   background: #ebebeb;
-}
-/* == 11 ==  ========================= */
-#gen-report-modal11 {
-  font-family: 'Lato', Arial, Helvetica, sans-serif !important;
-}
-#gen-report-modal11 .modal-header {
-  /*padding: 15px 0;*/
-  border-radius: 5px 5px 0 0;
-  background: url(../img/header-modal11.png) repeat-y center center;
-  background-size: contain;
-}
-#gen-report-modal11 .modal-header .huge {
-  /*font-size: 26px;
-  font-weight: bold;
-  line-height: 30px;
-  margin: 0;
-  padding: 5px 20px 0;
-  text-align: center;*/
-  color: #fff;
-}
-#gen-report-modal11 .modal-body {
-  padding-top: 0;
-}
-#gen-report-modal11 .modal-body h2 {
-  font-size: 22px;
-  font-weight: bold;
-
-  margin: 20px 0 0;
-
-  text-align: center;
-
-  color: #464646;
-}
-#gen-report-modal11 .modal-body .sub-head {
-  font-size: 18px;
-
-  margin: 10px 0 20px;
-
-  text-align: center;
-
-  color: #0072bc;
-}
-#gen-report-modal11 .modal-body .row {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-#gen-report-modal11 .modal-body p {
-  font-size: 16px;
-  font-weight: 400;
-
-  margin: 0;
-  /*padding: 0 20px 0 0;*/
-
-  text-align: left;
-
-  color: #484848;
-}
-#gen-report-modal11 .btn {
-  padding-top: 10px;
-  padding-bottom: 10px;
-
-  background: #6dac45;
-}
-#gen-report-modal11 .btn span {
-  font-size: 26px;
-  font-weight: bold;
-}
-#gen-report-modal11 .modal-footer {
-  font-size: 14px;
-
-  padding: 10px 0;
-
-  text-align: center;
-
-  color: #555;
-  border-radius: 0 0 5px 5px;
-  background: #ebebeb;
-}
-#gen-report-modal11 .checkbox {
-  margin: 0;
-  padding-left: 20px;
-
-  cursor: pointer;
-  cursor: hand;
-}
-#gen-report-modal11 .checkbox label {
-  position: relative;
-
-  display: inline-block;
-
-  padding-left: 5px;
-
-  vertical-align: middle;
-}
-#gen-report-modal11 .checkbox label::before {
-  position: absolute;
-  left: 0;
-
-  display: inline-block;
-
-  width: 27px;
-  height: 27px;
-  margin-left: -20px;
-
-  content: '';
-  -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
-       -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
-          transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
-
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-}
-#gen-report-modal11 .checkbox label::after {
-  font-size: 16px;
-  font-weight: bold;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  display: inline-block;
-
-  width: 16px;
-  height: 16px;
-  margin-left: -17px;
-  padding-top: 3px;
-  padding-left: 3px;
-
-  color: #0072bc;
-}
-#gen-report-modal11 .checkbox input[type='checkbox'],
-#gen-report-modal11 .checkbox input[type='radio'] {
-  z-index: 1;
-
-  opacity: 0;
-}
-#gen-report-modal11 .checkbox input[type='checkbox']:focus+label::before,
-#gen-report-modal11 .checkbox input[type='radio']:focus+label::before {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-#gen-report-modal11 .checkbox input[type='checkbox']:checked+label::after,
-#gen-report-modal11 .checkbox input[type='radio']:checked+label::after {
-  content: '✔';
-}
-#gen-report-modal11 .checkbox input[type='checkbox']:disabled+label,
-#gen-report-modal11 .checkbox input[type='radio']:disabled+label {
-  opacity: 0.65;
-}
-#gen-report-modal11 .checkbox input[type='checkbox']:disabled+label::before,
-#gen-report-modal11 .checkbox input[type='radio']:disabled+label::before {
-  cursor: not-allowed;
-
-  background-color: #eee;
-}
-#gen-report-modal11 .checkbox.checkbox-circle label::before {
-  border-radius: 50%;
-}
-#gen-report-modal11 .checkbox.checkbox-inline {
-  margin-top: 0;
-}
-#gen-report-modal11 label.error {
-  line-height: 18px;
-
-  display: none;
-
-  width: 100%;
-  margin-top: 10px;
-
-  text-align: center;
-
-  color: #c9302b;
-  /* border: 1px solid #e9322d; */
-  border-radius: 4px;
-  background-color: #f2dede;
-}
-#fcra-confirm .panel {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 0 25px;
-
-  border-color: #e5e5e5;
-  background: #efefef;
-}
-.fcraCheckbox-wrapper {
-  font-weight: 400;
-  line-height: text-align: center;
-  line-height: 32px;
-
-  margin-top: 10px;
-  padding: 18px 32px 18px 18px;
-  /*border: 1px solid #ccc;*/
-
-  border-radius: 4px;
-  /*background: #ebebeb;*/
-}
-#fcraCheckbox2 {
-  position: absolute !important;
-  position: static \9; /*ie8 fix*/
-  display: inline-block;
-  margin-left: -999em;
-  margin: 10px -25px \9; /*ie8 fix*/
-}
-.fcraCheckbox-box {
-  display: block;
-  display: none \9; /*ie8 fix*/
-  width: 32px;
-  height: 32px;
-  margin-right: 10px;
-  margin-bottom: 0;
-  border: 2px solid #848484;
-  border-radius: 4px;
-  background-color: #fff;
-  /*background-image: url('../img/tos-check-grey.png');*/
-  background-repeat: no-repeat;
-  background-position: center center;
-  /*background-size: 25px 25px;*/
-}
-#fcraCheckbox2:checked+label {
-  /*margin: 0;*/
-  border: 2px solid #56b453 !important;
-  background-image: url('../img/tos-check.png');
-  background-repeat: no-repeat;
-  background-position: center center;
 }

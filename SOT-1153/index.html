@@ -1605,56 +1605,52 @@
   <!-- ================================================== -->
   <!-- == 11 == FCRA ===================================== -->
   <!-- ================================================== -->
-  
-  <div id="gen-report-modal11" aria-hidden="true" class="modal">
+
+  <div id="gen-report-modal11" class="modal modal-full" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
 
         <div class="modal-header">
-          <img src="img/icon-alert-lg.png" class="pull-left header-icon" />
-          <p class="huge hidden-xs">Warning: Please Read Before You Continue</p>
-          <p class="huge visible-xs">Warning: Please Read</p>
-        </div><!-- /.modal-header -->
+          <h5 class="title text-center">
+            Warning: Please Read Before You Continue
+          </h5>
+        </div>
 
         <div class="modal-body">
-          <h2 data-fr-bind="currentRecord">There are limits to how you can use {{firstName}}'s report.</h2>
-          <p class="sub-head">Please check the box below<span class="hidden-xs"> to continue to your report</span>.</p>
+          <h5 class="title text-center" data-fr-bind="currentRecord">There are limits to how you can use {{firstName}}'s report.</h5>
+
+          <p class="sub-title text-center hidden-xs">Please check the box below to continue to your report.</p>
+
           <form id="fcra-confirm">
             <div class="row">
               <div class="col-sm-8 col-sm-offset-2">
-                <div class="panel panel-default">
-                  <div class="row">
-                    <div class="col-sm-12 text-center">
-                      <p for="fcraCheckbox2">
-                        I will not use information provided by BeenVerified for decisions about employment, insurance, tenant screening, consumer credit or any other purpose requiring Fair Credit Reporting Act (FCRA) compliance.
-                      </p>
-                      <label class="fcraCheckbox-wrapper" for="fcraCheckbox2">
-                        <input id="fcraCheckbox2" name="fcraCheckbox2" class="styled" type="checkbox" required>
-                        <label for="fcraCheckbox2" class="fcraCheckbox-box pull-left"></label>
-                        I Agree
-                      </label>
-                      <label for="fcraCheckbox2" class="error"></label>
-                    </div>
-                  </div>
+                <div class="text-center panel">
+                  <p for="fcraCheckbox2">
+                    I will not use information provided by BeenVerified for decisions about employment, insurance, tenant screening, consumer credit or any other purpose requiring Fair Credit Reporting Act (FCRA) compliance.
+                  </p>
+
+                  <label class="fcraCheckbox-wrapper" for="fcraCheckbox2">
+                    <input id="fcraCheckbox2" name="fcraCheckbox2" type="checkbox" required>
+                    <label for="fcraCheckbox2" class="fcraCheckbox-box pull-left"></label>
+                    I Agree
+                  </label>
+
+                  <label for="fcraCheckbox2" class="error checkbox-error"></label>
                 </div>
 
-                <div class="row">
-                  <div class="col-sm-6 col-sm-offset-3">
-                    <button class="btn btn-success btn-block"><span>Continue &nbsp;<img src="img/arrow.png" /></span></button>
-                  </div>
-                </div>
+                <button class="btn btn-lg btn-centered btn-secondary">Continue <i class="fa fa-arrow-right icon"></i></button>
               </div>
             </div>
           </form>
-        </div><!-- /.modal-body -->
+        </div>
 
-        <div class="modal-footer">
-          <span data-fr-bind="currentRecord">{{firstName}} will not be notified of your search.</span>
-        </div><!-- /.modal-footer -->
+        <div class="modal-footer alert-warning">
+          <p class="text-caption text-center" data-fr-bind="currentRecord">{{firstName}} will not be notified of your search.</p>
+        </div>
 
       </div>
     </div>
-  </div><!-- /#gen-report-modal11 -->
+  </div>
 
   <!-- ================================================== -->
   <!-- == 8 ==  FINAL CARD REPORT ======================= -->
