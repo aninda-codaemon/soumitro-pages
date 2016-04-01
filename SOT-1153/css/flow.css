@@ -268,10 +268,6 @@
   color: #333;
 }
 
-#exit-pop-skip .modal-dialog {
-  /*max-width: 600px;*/
-}
-
 #exit-pop-skip .modal-body {
   overflow: visible;
   max-height: none;
@@ -316,7 +312,9 @@
   margin-top: 15px;
 }
 
-#exit-pop-skip input:hover, #exit-pop-skip input:active, #exit-pop-skip input:focus {
+#exit-pop-skip input:hover,
+#exit-pop-skip input:active,
+#exit-pop-skip input:focus {
   -webkit-box-shadow: 0 -6px 0 #57992d inset;
   -moz-box-shadow: 0 -6px 0 #57992d inset;
   box-shadow: 0 -6px 0 #57992d inset;

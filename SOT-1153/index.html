@@ -545,6 +545,7 @@
   <!-- =================== -->
   <!-- = Exit Pop Refine = -->
   <!-- =================== -->
+
   <div id="exitPopRefine" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -555,11 +556,10 @@
             <strong>
               Can't find who you're looking for?
               <br>
-              <img src="img/lightbulb_y_24.png" width="24">
               <span class="tips">Try These Tips.</span>
             </strong>
           </p>
-        </div><!-- /.modal-header -->
+        </div>
 
         <div class="modal-body">
           <form id="exit-refine-modal-form" class="bv-search alt-search" data-fr-store="searchData" data-fr-bind="searchData">
@@ -577,8 +577,8 @@
                   </strong>
                 </p>
                 <ul class="refine-list-one refine-tips-list list-unstyled">
-                  <li class="tip1"><i class="icon-yes-check"></i> Try an alternate spelling</li>
-                  <li class="tip2"><i class="icon-yes-check"></i> Try a maiden name</li>
+                  <li class="tip1"><i class="fa fa-check-square-o text-success"></i> Try an alternate spelling</li>
+                  <li class="tip2"><i class="fa fa-check-square-o text-success"></i> Try a maiden name</li>
                 </ul>
               </div>
             </div>
@@ -595,7 +595,7 @@
                   <div class="col-sm-5">
                     <input name="ln" type="text" class="form-control" placeholder="Last Name" required value="{{ln}}" />
                   </div>
-                </div><!--END refine-input-wrapper-->
+                </div>
               </fieldset>
             </div>
 
@@ -612,10 +612,10 @@
                   </strong>
                 </p>
                 <ul class="refine-list-two refine-tips-list list-unstyled">
-                  <li class="tip3"><span class="hidden-xs"><i class="icon-yes-check"></i> Try removing the city to do a broader search</span><span class="visible-xs"><i class="icon-yes-check"></i> Remove the city to do a broader search</span></li>
-                  <li class="tip4"><span class="hidden-xs"><i class="icon-yes-check"></i> Try changing the state or doing a national search</span><span class="visible-xs"><i class="icon-yes-check"></i> Change the state or doing a national search</span></li>
-                  <li class="tip5"><span class="hidden-xs"><i class="icon-yes-check"></i> Try adding a city to narrow down your search</span><span class="visible-xs"><i class="icon-yes-check"></i> Add a city to narrow down your search</span></li>
-                  <li class="tip6"><span class="hidden-xs"><i class="icon-yes-check"></i> Try adding a state to narrow down your search</span><span class="visible-xs"><i class="icon-yes-check"></i> Add a state to narrow down your search</span></li>
+                  <li class="tip3"><span class="hidden-xs"><i class="fa fa-check-square-o text-success"></i> Try removing the city to do a broader search</span><span class="visible-xs"><i class="fa fa-check-square-o text-success"></i> Remove the city to do a broader search</span></li>
+                  <li class="tip4"><span class="hidden-xs"><i class="fa fa-check-square-o text-success"></i> Try changing the state or doing a national search</span><span class="visible-xs"><i class="fa fa-check-square-o text-success"></i> Change the state or doing a national search</span></li>
+                  <li class="tip5"><span class="hidden-xs"><i class="fa fa-check-square-o text-success"></i> Try adding a city to narrow down your search</span><span class="visible-xs"><i class="fa fa-check-square-o text-success"></i> Add a city to narrow down your search</span></li>
+                  <li class="tip6"><span class="hidden-xs"><i class="fa fa-check-square-o text-success"></i> Try adding a state to narrow down your search</span><span class="visible-xs"><i class="fa fa-check-square-o text-success"></i> Add a state to narrow down your search</span></li>
                 </ul>
               </div>
             </div>
@@ -693,18 +693,19 @@
                 <div class="clearfix"></div>
               </div>
 
-            </div><!--END refine-input-wrapper-->
+            </div>
           </form>
 
           <div class="clearfix"></div>
-        </div><!--END modal body-->
+        </div>
       </div>
     </div>
-  </div><!-- END Exit Pop -->
+  </div>
 
   <!-- ================ -->
   <!-- = Refine Modal = -->
   <!-- ================ -->
+
   <div id="refine-modal" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -723,9 +724,9 @@
             <div class="col-sm-9">
               <p><strong>Narrow down your results by adding more information.</strong></p>
               <ul class="refine-tips-list list-unstyled">
-                <li><i class="icon-yes-check"></i> Add a middle initial, if you know it.</li>
-                <li><i class="icon-yes-check"></i> Add a current or previous city.</li>
-                <li><i class="icon-yes-check"></i> Add an approximate current age.</li>
+                <li><i class="fa fa-check-square-o text-success"></i> Add a middle initial, if you know it.</li>
+                <li><i class="fa fa-check-square-o text-success"></i> Add a current or previous city.</li>
+                <li><i class="fa fa-check-square-o text-success"></i> Add an approximate current age.</li>
               </ul>
             </div>
           </div><!-- /.row .refine-tips-wrapper -->
@@ -812,22 +813,25 @@
               </div>
             </fieldset>
           </form>
-        </div><!-- /.modal-body -->
+        </div>
 
       </div>
     </div>
-  </div><!-- /#refine-modal -->
+  </div>
 
   <!-- ================ -->
   <!-- = Exit Pop = -->
   <!-- ================ -->
+
   <div id="exit-pop-skip" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
+
         <div class="modal-header section-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
           <h1 class="text-center"><strong>Wait, before you go</strong></h1>
-        </div><!-- /.modal-header -->
+        </div>
+
         <div class="modal-body text-center">
           <h3><strong>Preview a summary of your report.</strong></h3>
           <div class="loader-big">
@@ -840,9 +844,10 @@
               </div>
             </div>
         </div>
+
       </div>
     </div>
-  </div><!-- /#refine-modal -->
+  </div>
 
   <!-- ==================================== -->
   <!-- == 1 == GENERATING REPORT  ========= -->
