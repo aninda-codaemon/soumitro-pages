@@ -231,8 +231,8 @@
       });
       data = _.sortByOrder(data, ['weight', 'count'], ['desc', 'desc']);
 
-      var totalCardsToShow = parseInt($('div.details').data('total-cards-to-show'));
-      var fillerCardsAvailable = parseInt($('div.details').data('filler-cards-available'));
+      var totalCardsToShow = parseInt($('#gen-report-modal7 .modal-body').data('total-cards-to-show'));
+      var fillerCardsAvailable = parseInt($('#gen-report-modal7 .modal-body').data('filler-cards-available'));
 
       //console.log("TCTS: "+totalCardsToShow+" FCA: "+fillerCardsAvailable+" DL: "+data.length);
       data = _.slice(data, 0, totalCardsToShow);
