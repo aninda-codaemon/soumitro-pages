@@ -1576,7 +1576,7 @@ p.current-search-text span {
 }
 
 .center-images p{
-  text-align: center; 
+  text-align: center;
   padding-top: 20px;
 }
 
@@ -1606,7 +1606,7 @@ p.current-search-text span {
   -moz-transition: all 200ms;
   transition: all 200ms;
 }
-/* == 2 == SCANNING SOCIAL MEDIA ================= 
+/* == 2 == SCANNING SOCIAL MEDIA =================
 
 ul.socialMedias li {
   position: relative;
@@ -2133,7 +2133,7 @@ span.located img {
 
 .docu-load {
   height: 100px;
-  display: inline; 
+  display: inline;
 }
 
 /* loader */
@@ -2162,7 +2162,7 @@ span.located img {
   background-color: #EBECF0;
   height: inherit;
   border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px; 
+  border-bottom-right-radius: 5px;
 }
 
 .modal-body .modal-body-headline {
@@ -2312,13 +2312,25 @@ span.located img {
     margin-top: 20px;
     font-size: 18px;
   }
+
+#gen-report-modal3 ul.blur-list {
+  padding: 15px;
+  list-style: none;
+}
+
 #gen-report-modal3 ul.blur-list li {
   font-size: 18px;
   line-height: 25px;
-
-  margin: 20px 0 0 40px;
+  margin: 0;
   padding-left: 2px;
   list-style-type: none;
+}
+
+@media (min-width: 480px) {
+  #gen-report-modal3 ul.blur-list li  {
+    width: 50%;
+    float: left;
+  }
 }
 
   .modal-body .case-images {
@@ -2980,7 +2992,7 @@ h6.create-login {
   border-top: 3px #684A8F solid;
 }
 #gen-report-modal7 .detail-box.CTA_card {
-  
+
   margin: 0;
   color: #333;
   padding: 15px;
@@ -3097,7 +3109,7 @@ h6.create-login {
   text-transform: uppercase;
   text-align: center;
   padding-bottom: 15px;
-  
+
 }
 #gen-report-modal7 .detail-box ul {
   padding-left: 20px;

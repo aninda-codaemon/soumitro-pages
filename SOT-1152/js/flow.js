@@ -279,7 +279,7 @@
     // Progress Bars.
 
     $elem: $("#gen-report-modal1"),
-    transitionDelay: 12000,         // After progress completion, amount of time before moving to next flow.
+    duration: 20000,         // After progress completion, amount of time before moving to next flow.
     animate: function () {
       _.bind(initializingSearchProgress, this)();
     }
@@ -351,35 +351,64 @@
   function initializingSearchProgress() {
     trackNL('Viewed LocatingInfo Modal');
 
-    var $progessBars = [
-      $("#searching-progress-bar-database .progress-bar"),
-      $("#searching-progress-bar-records .progress-bar"),
-      $("#searching-progress-bar-datasets .progress-bar")
-    ];
-
     var self = this,
-        splits = _.shuffle(self.splits),
-        animations = [];
+        duration = this.duration,
+        $modal = $('#gen-report-modal1'),
+        $loader = $('#searching-progress-bar-records .progress-bar-success'),
+        $item = $('#gen-report-modal1 .list-single'),
+        $card = $('#gen-report-modal1 .card-single'),
+        index = 2, // case-item index - loop starts on 2nd child as 1st is active by default
+        total = 4; // total number of case items in the list
 
-    if (window.bv.isMobile) {
-      splits = _.map(splits, function(t) {
-        return t * window.bv.mobileTimeRatio;
-      });
-      self.transitionDelay *= window.bv.mobileTimeRatio;
+    if (bv.isMobile) {
+      duration *= bv.mobileTimeRatio;
     }
 
-    _.forEach($progessBars, function ($elem, idx) {
-      var duration = splits[idx];
-      animations.push($elem.animate({'width': '100%'}, {duration: duration}));
-    });
+    if ($modal.hasClass('in')) {
 
-    $.when.apply(self, animations).then(function () {
-      if (self.$elem.hasClass("in")) {
-        timeoutId = window.setTimeout(function () {
-          showNextModal();
-        }, self.transitionDelay);
-      }
-    });
+      $loader.animate({'width': '100%'}, {
+          duration: duration,
+          progress: function (animation, progress) {
+            var progression = Math.ceil(progress * 100);
+            $("#searching-progress-bar-value").html(progression);
+          }
+      });
+
+      var intervalDuration = duration / total, // how long to wait before cycling to the next item
+          cardsLoop = setInterval(function() {
+
+            var $selectedItem =  $('#gen-report-modal1 .list-single:nth-child(' + index + ')'),
+                $selectedCard = $('#gen-report-modal1 .card-single:nth-child(' + index + ')');
+
+            // toggle active class for each sidebar item
+            $('#gen-report-modal1 .list-single').removeClass('list-selected');
+            $selectedItem.addClass('list-selected');
+
+            // toggle active class for each card
+            $('#gen-report-modal1 .card-single').removeClass('card-selected');
+            $selectedCard.addClass('card-selected');
+
+            if (index === total) {
+              // stop loop when index === total
+              clearInterval(cardsLoop);
+              return;
+            } else {
+              index++;
+            }
+          }, intervalDuration);
+    } else {
+      $loader.css('width', '1%');
+    }
+
+    timeoutId = window.setTimeout(function () {
+      // reset slider to default
+      $('gen-report-modal1 .list-single').removeClass('list-selected');
+      $('gen-report-modal1 .list-single:nth-child(1)').addClass('list-selected');
+      $('gen-report-modal1 .card-single').removeClass('card-selected');
+      $('gen-report-modal1 .card-single:nth-child(1)').addClass('card-selected');
+
+      showNextModal();
+    }, duration);
   }
 
   function reportReadyForDownload() {
@@ -457,8 +486,6 @@
     }
 
     if ($useCasesModal.hasClass('in')) {
-      // @NOTE: the loading animation duration is in styles.css
-      // @TODO: move animation duration from css to js
 
       $loader.animate({'width': '100%'}, {duration: duration})
 
