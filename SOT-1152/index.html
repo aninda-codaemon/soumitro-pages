@@ -211,7 +211,7 @@
               <th class="col-md-1">Age</th>
               <th id="th-cities" class="col-md-2">Cities</th>
               <th id="th-relatives" class="col-md-3">Relatives</th>
-              <th id="th-view-btn" class="th-center col-md-2">Access Report  <span class="glyphicon glyphicon-circle-arrow-down"></span> </th>
+              <th id="th-view-btn" class="th-center col-md-2">Access Report  <span class="glyphicon glyphicon-circle-arrow-down hidden-xxs"></span> </th>
             </tr>
           </thead>
           <tbody id="results">
@@ -723,13 +723,13 @@
                 <li class="list-single">Social Media Profiles</li>
               </ul>
             </div>
-
             <div class= "col-sm-8">
+            
                <div id="card-public" class="card-single card-selected">
                <img class="center-image" src="img/modal1-publicdatabase.png">
                 <p>Public and Criminal Record Databases can reveal: Court records, Criminal records, Birth records, Death records, just to name a few.</p>
               </div>
-
+      
               <div id="card-county" class="card-single">
                   <img class="center-image" src="img/modal1-countyrecords.png">
                   <div>
@@ -737,7 +737,6 @@
                     <div class="clearfix"></div>
                   </div>
                   </div>
-
 
                   <div id="card-data" class="card-single">
                   <img class="center-image" src="img/modal1-data.png">
@@ -754,24 +753,22 @@
                     <div class="clearfix"></div>
                   </div>
                   </div>
-
+             
               <div id="searching-progress-bar-records" class="progress checking-sources-progress">
                 <div class="progress-bar progress-bar-success" style="width: 1%"></div>
                 <p class="text-center"><span id="searching-progress-bar-value">1</span>%</p>
               </div>
             </div>
           </div>
-          <p class="alert alert-this alert-warning text-center">
-            <small><strong>Reminder: Your search of {{firstName}} is anonymous</strong>.</small>
-          </p>
         </div><!-- /.modal-body -->
+        <div class="modal-footer alert-this">
+          <span data-fr-bind="currentRecord">Reminder: Your search of {{firstName}} is anonymous.</span>
+        </div><!-- /.modal-footer -->
 
       </div>
     </div>
   </div>
   <!-- /#gen-report-modal1 -->
-
-
 
   <!-- ========================================== -->
   <!-- == 3 == YOUR REPORT IS READY  ============ -->
@@ -903,18 +900,19 @@
       <div class="modal-content">
         <div class="modal-header2 section-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h3>Compiling your report...
+          <h3>Compiling your report... 
         <img src="img/compilingreport-2.gif" class="docu-load"></h3>
         </div><!-- /.modal-header -->
 
         <div class="modal-body">
          <div id="processing-data-progress" class="progress processing-data-progress">
             <div class="progress-bar progress-bar-success" style="width: 1%"></div>
+            <p class="text-center"><span id="searching-progress-bar-value">1</span>%</p>
           </div>
         </div>
 
         <div class="modal-body modal-background">
-         <h3 class="modal-body-headline">How can our data help you? <br> <small class="modal-body-sub-headline">
+         <h3 class="modal-body-headline">How can our data help you? <br> <small class="modal-body-sub-headline hidden-xs">
               While you wait, please review some of the most popular uses for <span class="brand-color">BeenVerified</span>.
             </small>
           </h3>
@@ -935,7 +933,7 @@
               <i class="fa fa-home icon"></i> Inspect the value of houses!
             </li>
           </ul>
-
+     
           <p data-fr-bind="currentRecord" class="log-load"></p>
         </div><!-- /.modal-body -->
 
@@ -1060,7 +1058,7 @@
 
         <div class="modal-header section-header section-min">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-
+         
           <p data-fr-bind="currentRecord">
             <strong>Please Wait:</strong> Completing Report
             <span class="hidden-xs">
@@ -1105,15 +1103,15 @@
                   </div>
                   <div class="visible-xs hidden-xxs">
                     <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">The report may reveal, where available, a person’s full name, maiden name, age, known aliases, address history with “last seen” date, current address, and <strong>email addresses</strong>.</p></li>
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">The report may reveal, where available, a person’s full name, maiden name, age, known aliases, address history with “last seen” date, current address, and <strong>email addresses</strong>.</p></li> 
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left"><strong>Phone numbers</strong> may contain, where available, owner names and other possible persons associated with those numbers.</p></li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="hidden-xs">
                     <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">The report may reveal, where available, a person’s full name, maiden name, age, known aliases, address history with “last seen” date, current address, and <strong>email addresses</strong>.</p></li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11"><strong>Phone numbers</strong> may contain, where available, owner names and other possible persons associated with those numbers.</p></li>
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">The report may reveal, where available, a person’s full name, maiden name, age, known aliases, address history with “last seen” date, current address, and <strong>email addresses</strong>.</p></li> 
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11"><strong>Phone numbers</strong> may contain, where available, owner names and other possible persons associated with those numbers.</p></li> 
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">The <strong>current address</strong> is displayed with a map, satellite imagery and access to an in-depth property report.</p></li>
                     </ul>
                   </div>
@@ -1129,14 +1127,14 @@
                   <div class="visible-xs hidden-xxs">
                     <ul>
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">This report may locate, where available, their current and historical <strong>real estate assets</strong> including detailed information on those properties.</p></li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">View satellite maps, parcel numbers, and country assessor data such as <strong>property tax amounts</strong>, home value, and building specs.</p></li>
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">View satellite maps, parcel numbers, and country assessor data such as <strong>property tax amounts</strong>, home value, and building specs.</p></li> 
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="hidden-xs">
                     <ul>
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">This report may locate, where available, their current and historical <strong>real estate assets</strong> including detailed information on those properties.</p></li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">View satellite maps, parcel numbers, and country assessor data such as <strong>property tax amounts</strong>, home value, and building specs.</p></li>
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">View satellite maps, parcel numbers, and country assessor data such as <strong>property tax amounts</strong>, home value, and building specs.</p></li> 
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">Even see buyer/seller info, <strong>sales prices</strong>, and co-owners, where available.</p></li>
                     </ul>
                   </div>
@@ -1151,15 +1149,15 @@
                   </div>
                   <div class="visible-xs hidden-xxs">
                     <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">May contain, where available, <strong>arrest or conviction records</strong> as well as outstanding warrants, traffic violations and speeding tickets.</p></li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">When a criminal record is found we detail the offense along with the <strong>date and location</strong> of the crime.</p></li>
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">May contain, where available, <strong>arrest or conviction records</strong> as well as outstanding warrants, traffic violations and speeding tickets.</p></li> 
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">When a criminal record is found we detail the offense along with the <strong>date and location</strong> of the crime.</p></li> 
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="hidden-xs">
                     <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">May contain, where available, <strong>arrest or conviction records</strong> as well as outstanding warrants, traffic violations and speeding tickets.</p></li>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">When a criminal record is found we detail the offense along with the <strong>date and location</strong> of the crime.</p></li>
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">May contain, where available, <strong>arrest or conviction records</strong> as well as outstanding warrants, traffic violations and speeding tickets.</p></li> 
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">When a criminal record is found we detail the offense along with the <strong>date and location</strong> of the crime.</p></li> 
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">We compile federal, state, county, and local databases including courts and <strong>Most Wanted lists</strong>. Criminal Records are found based on availability.</p></li>
                     </ul>
                   </div>
@@ -1174,14 +1172,14 @@
                   </div>
                   <div class="visible-xs hidden-xxs">
                     <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">Our access to hard to find public records may reveal individuals who have a <strong>close relationship</strong> to your search subject.</p></li>
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">Our access to hard to find public records may reveal individuals who have a <strong>close relationship</strong> to your search subject.</p></li> 
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11 text-left">In addition to relatives this report may show, where available, <strong>boyfriends/girlfriends</strong>, roommates, business associates as well as ex-husbands and ex-wives.</p></li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="hidden-xs">
                     <ul>
-                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">Our access to hard to find public records may reveal individuals who have a <strong>close relationship</strong> to your search subject.</p></li>
+                      <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">Our access to hard to find public records may reveal individuals who have a <strong>close relationship</strong> to your search subject.</p></li> 
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">In addition to relatives this report may show, where available, <strong>boyfriends/girlfriends</strong>, roommates, business associates as well as ex-husbands and ex-wives.</p></li>
                       <li class="row"><span class="glyphicon col-xs-1" aria-hidden="true">&bull;</span><p class="col-xs-11">We've recently added relatives of relatives to help <strong>broaden your search</strong>.</p></li>
                     </ul>
@@ -1422,14 +1420,14 @@
 
                     {{#each extraData}}
                     <!-- card repeat -->
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-6">
                       <div class="detail-box {{style}}">
                         <div class="row no-gutter">
-                          <h1><span class="visible-xs visible-sm">{{count}}&nbsp;</span>{{name}}<span class="visible-xs visible-sm">&nbsp;FOUND</span></h1>
-                          <div class="col-xs-6 hidden-xs hidden-sm">
+                          <h1><span class="visible-xs">{{count}}&nbsp;</span>{{name}}<span class="visible-xs visible-sm">&nbsp;FOUND</span></h1>
+                          <div class="col-xs-6 hidden-xs">
                             <div class="detail-img"> <span class="center-block {{type}}"></span> </div>
                           </div>
-                          <div class="col-xs-6 hidden-xs hidden-sm">
+                          <div class="col-sm-6 hidden-xs">
                             <h2>{{count}}</h2>
                             <p>result{{#ifNot count 1}}s{{/ifNot}} found</p>
                           </div>
@@ -1442,15 +1440,15 @@
                     <span class="fillers">
                       {{#ifIn filler 1}}
                       <!-- filler card -->
-                      <div class="col-md-4">
+                      <div class="col-md-4 col-sm-6">
                         <div class="detail-box {{style}} fillerCard">
                           <div class="row no-gutter">
                             <h1>We Searched Even More!</h1>
-                            <div class="col-xs-6 hidden-xs hidden-sm">
+                            <div class="col-sm-6 hidden-xs">
                               <div class="detail-img"><img class="center-block" src="img/icon-searchmore.png"></div>
                               <small class="small text-muted center-block text-center">May Contain</small>
                             </div>
-                            <div class="col-md-6 col-sm-12">
+                            <div class="col-md-6 col-sm-6">
                               <ul>
                                 {{#unless hasCriminal}}
                                 <li class="alertText"><span class="visible-xs visible-sm"><img src="img/mag_glass_10.png">&nbsp;</span>Crime Records</li>
@@ -1487,14 +1485,14 @@
 
                       {{#ifIn filler 2}}
                       <!-- satisfaction filler card -->
-                      <div class="col-md-4">
+                      <div class="col-md-4 col-sm-6">
                         <div class="detail-box {{style}} fillerCard">
                           <div class="row no-gutter">
                             <h1>Satisfaction Guarantee</h1>
-                            <div class="col-xs-6 hidden-xs hidden-sm">
+                            <div class="col-sm-6 hidden-xs">
                               <div class="detail-img"><img class="center-block" src="img/icon-thumb-up.png"></div>
                             </div>
-                            <div class="col-md-6 col-sm-12">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
                               <p>If you are unhappy with the results of your report, we will gladly give you a refund.</p>
                             </div>
                           </div>
@@ -1505,14 +1503,14 @@
 
                       {{#ifIn filler 3}}
                       <!-- top rated filler card-->
-                      <div class="col-md-4">
+                      <div class="col-md-4 col-sm-6">
                         <div class="detail-box {{style}} fillerCard">
                           <div class="row no-gutter">
                             <h1>Top Rated Service</h1>
-                            <div class="col-xs-6 hidden-xs hidden-sm">
+                            <div class="col-sm-6 hidden-xs">
                               <div class="detail-img"><img class="center-block" src="img/icon-sitejabber.png"></div>
                             </div>
-                            <div class="col-md-6 col-sm-12">
+                            <div class="col-md-6 col-sm-6">
                               <p>Ranked #1 amongst competitors for customer service on SiteJabber.com.</p>
                             </div>
                           </div>
@@ -1523,11 +1521,11 @@
 
                       {{#ifIn filler 4}}
                       <!-- Norton filler card-->
-                      <div class="col-md-4">
+                      <div class="col-md-4 col-sm-6">
                         <div class="detail-box {{style}} fillerCard">
                           <div class="row no-gutter">
                             <h1>Secure Search</h1>
-                            <div class="col-xs-6 hidden-xs hidden-sm">
+                            <div class="col-sm-6 hidden-xs">
                               <div class="detail-img"><img class="center-block" src="img/icon-norton.png"></div>
                             </div>
                             <div class="col-md-6 col-sm-12">
@@ -1541,14 +1539,14 @@
 
                       {{#ifIn filler 5}}
                       <!-- address search filler card-->
-                      <div class="col-md-4">
+                      <div class="col-md-4 col-sm-6">
                         <div class="detail-box {{style}} fillerCard">
                           <div class="row no-gutter">
                             <h1>New Feature</h1>
-                            <div class="col-xs-6 hidden-xs hidden-sm">
+                            <div class="col-sm-6 hidden-xs">
                               <div class="detail-img"><img class="center-block" src="img/icon-addressSearch.png"></div>
                             </div>
-                            <div class="col-md-6 col-sm-12">
+                            <div class="col-md-6 col-sm-6">
                               <p>Now you can also run UNLIMITED property searches.</p>
                             </div>
                           </div>
@@ -1558,7 +1556,7 @@
                       {{/ifIn}}
                     </span>
 
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-6">
                       <div class="detail-box {{style}} CTA_card">
                         <div class="row no-gutter">
                           <h3>Access The Report</h3>

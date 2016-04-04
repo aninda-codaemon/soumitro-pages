@@ -812,7 +812,7 @@ table {
 .table-bordered>thead>tr>td,
 .table-bordered>tbody>tr>td,
 .table-bordered>tfoot>tr>td {
-  border: 10px solid #efefef;
+  border: 3px solid #efefef;
   border-right-width: 0;
   border-left-width: 0;
   padding: 10px;
@@ -1389,6 +1389,19 @@ p.already-a-member {
   padding: 30px 30px 0;
 }
 
+@media (max-width: 481px) {
+  .modal-body {
+  overflow: visible;
+
+  max-height: none;
+  padding: 10px 10px 0;
+  }
+
+  .modal-body-header {
+    font-size: 20px;
+  }
+}
+
 .modal-body i {
   margin-right: 10px;
 }
@@ -1404,7 +1417,7 @@ p.already-a-member {
 .modal-footer {
   font-size: 16px;
 
-  border-radius: 0 0 4px 0px;
+  border-radius: 0 0 4px 4px;
   background-color: #f5f5f5;
 }
 
@@ -1549,6 +1562,8 @@ p.current-search-text span {
   color: #333;
   background-color: #FBE158;
   border: none;
+  text-align: center;
+  margin-top:30px;
 }
 
 .close:hover,
@@ -1566,34 +1581,30 @@ p.current-search-text span {
 .center-images {
     display: block;
     padding: 20px;
+
   }
 
 #gen-report-modal1 .card-single {
-  min-height: 50px;
-}
-  .center-images img {
-  height:70px;
+  min-height:60px;
 }
 
+#gen-report-modal1 .card-single img{
+  height: 80px;
+  margin-bottom:20px;
+  margin-top: 10px;
+}
+
+
 .center-images p{
-  text-align: center;
-  padding-top: 20px;
+  text-align: center; 
+  margin-bottom:20px;
+  margin-top:20px;
 }
 
 .center-image {
-  bottom: 0;
-  left: 50%;
-  height: 70px;
-  padding-top: 30px;
-  margin: auto;
-  -moz-opacity: 0;
-  -ms-filter: alpha(opacity=0);
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  filter: alpha(opacity=0);
-  opacity: 0;
-  -webkit-transition: all 200ms;
-  -moz-transition: all 200ms;
-  transition: all 200ms;
+  display: block;
+  margin: 0 auto;
+
 }
 
 .modal-body .center-image.active {
@@ -1606,136 +1617,7 @@ p.current-search-text span {
   -moz-transition: all 200ms;
   transition: all 200ms;
 }
-/* == 2 == SCANNING SOCIAL MEDIA =================
 
-ul.socialMedias li {
-  position: relative;
-
-  float: left;
-
-  width: 16.666%;
-  height: 32px;
-  margin-bottom:6%;
-}
-
-ul.profile {
-  margin-bottom: 20px;
-}
-
-ul.profile .text-success {
-  margin-top: 10px;
-}
-
-#scanningSocialMedia .screenshot {
-  border: #efefef 3px solid;
-  border-radius: 4px;
-  width: 100%;
-  padding: 7px;
-}
-
-ul.profile li {
-  font-size: 16px;
-  line-height: 21px;
-
-  margin-top: 4px;
-}
-
-.located {
-  padding-top: 8px;
-  padding-bottom: 12px;
-}
-
-#social-media-groups li span {
-  width: 16.66%;
-}
-
-#social-media-groups li img {
-  position: absolute;
-  left: 50%;
-  top: 25px;
-
-  max-width: 100%;
-  margin-left: -16px;
-}
-
-#social-media-groups li p {
-  position: absolute;
-
-  text-align: center;
-  width: 100%;
-  font-size: 13px;
-}
-
-#scanningSocialMedia .modal-body {
-  padding-bottom: 30px;
-}
-
-#socialmedia-progress img.complete,
-.social {
-  display: none;
-}
-
-#scanningSocialMedia .progress {
-  position: relative;
-
-  height: 50px;
-  margin-top: 5px;
-
-  color: white;
-  border-radius: 4px;
-  background: #434243;
-}
-
-#scanningSocialMedia .modal-footer img {
-  position: relative;
-  top: -2px;
-
-  margin-right: 8px;
-}
-
-.progress .progress-msg {
-  position: absolute;
-  z-index: 999;
-  top: 14px;
-
-  display: block;
-
-  width: 100%;
-
-  text-align: center;
-}
-
-.social-widget {
-  padding: 15px;
-
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-#scanningSocialMedia .fullName {
-  font-size: 18px;
-
-  margin-bottom: 8px;
-  padding-bottom: 6px;
-
-  border-bottom: 1px solid #ccc;
-}
-
-p.log-load {
-  font-size: 12px;
-  font-weight: bold !important;
-  line-height: 14px;
-
-  margin-top: 14px;
-  margin-bottom: 15px;
-
-  text-align: center;
-}
-
-span.located img {
-  margin-right: 5px;
-}
-*/
 /* == 3 == YOUR REPORT IS READY ================= */
 
 /* modal */
@@ -2132,8 +2014,14 @@ span.located img {
 
 
 .docu-load {
-  height: 100px;
-  display: inline;
+  display: inline; 
+  width: 100%;
+}
+
+@media (min-width: 480px){
+ .docu-load { 
+  width: 50%;
+  }
 }
 
 /* loader */
@@ -2162,7 +2050,7 @@ span.located img {
   background-color: #EBECF0;
   height: inherit;
   border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px; 
 }
 
 .modal-body .modal-body-headline {
@@ -2312,7 +2200,7 @@ span.located img {
     margin-top: 20px;
     font-size: 18px;
   }
-
+  
 #gen-report-modal3 ul.blur-list {
   padding: 15px;
   list-style: none;
@@ -2321,6 +2209,7 @@ span.located img {
 #gen-report-modal3 ul.blur-list li {
   font-size: 18px;
   line-height: 25px;
+  padding-bottom: 10px; 
   margin: 0;
   padding-left: 2px;
   list-style-type: none;
@@ -2330,8 +2219,9 @@ span.located img {
   #gen-report-modal3 ul.blur-list li  {
     width: 50%;
     float: left;
+    list-style-type: none;
   }
-}
+}  
 
   .modal-body .case-images {
     right: 15px;
@@ -2902,6 +2792,16 @@ h6.create-login {
 #gen-report-modal7 .modal-body {
   padding: 0;
 }
+
+@media (max-width: 481px) {
+  #gen-report-modal7 .modal-body {
+  overflow: visible;
+
+  max-height: none;
+  padding: 10px 10px 0;
+  }
+}
+
 #gen-report-modal7 .col-left {
   margin-right: 1px;
 }
@@ -2992,7 +2892,7 @@ h6.create-login {
   border-top: 3px #684A8F solid;
 }
 #gen-report-modal7 .detail-box.CTA_card {
-
+  
   margin: 0;
   color: #333;
   padding: 15px;
@@ -3109,7 +3009,7 @@ h6.create-login {
   text-transform: uppercase;
   text-align: center;
   padding-bottom: 15px;
-
+  
 }
 #gen-report-modal7 .detail-box ul {
   padding-left: 20px;
@@ -3196,7 +3096,7 @@ h6.create-login {
   font-size: 16px;
   font-weight: bold;
 
-  margin: 15px 10px 0 10px;
+  margin: 15px 0 0 0;
   /*border-bottom: solid 7px #4cae4c;*/
 
   color: #fff !important;
@@ -3565,12 +3465,12 @@ h6.create-login {
   margin-bottom: 20px;
   padding: 0 25px;
 
-  border-color: #e5e5e5;
+  border-color: #efefef;
   background: #efefef;
 }
 .fcraCheckbox-wrapper {
   font-weight: 400;
-  line-height: text-align: center;
+  text-align: center;
   line-height: 32px;
 
   margin-top: 10px;
@@ -3629,7 +3529,7 @@ h6.create-login {
     padding-left: 6px;
   }
   #gen-report-modal7 .detail-box {
-    min-height: 160px;
+    height:170px;
   }
 }
 
