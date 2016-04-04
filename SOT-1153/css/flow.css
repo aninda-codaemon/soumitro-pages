@@ -185,7 +185,7 @@
 
 .modal-full .modal-footer .exit-flow {
   display: block;
-  width: 120px;
+  width: 140px;
   margin: 0 auto;
 }
 
@@ -340,7 +340,11 @@
 /* modal-body */
 
 #gen-report-modal1 .modal-body .searching-progress-bar-group {
-  margin: 10px auto;
+  margin: 0 auto;
+}
+
+#gen-report-modal1 .modal-body .searching-progress-bar-group .progress:last-child {
+  margin: 0;
 }
 
 /* == 2 == SCANNING SOCIAL MEDIA ================= */
@@ -1067,6 +1071,7 @@
 
 #gen-report-modal5 .modal-footer .progress {
   margin: 0;
+  border-radius: 0;
 }
 
 #gen-report-modal5 .modal-footer .time-stamp {
@@ -1143,11 +1148,11 @@
 @media (min-width: 768px) {
   #gen-report-modal6 .modal-body .form-col {
     padding-right: 30px;
+    border-right: 1px solid #dadada;
   }
 
   #gen-report-modal6 .modal-body .teaser-col {
     padding-left: 30px;
-    border-left: 1px solid #dadada;
   }
 }
 
@@ -1159,6 +1164,14 @@
   #gen-report-modal6 .modal-body .teaser-col {
     padding-left: 60px;
   }
+}
+
+/* modal-footer */
+
+#gen-report-modal6 .modal-footer .img-secured {
+  position: relative;
+  top: -2px;
+  width: 40px;
 }
 
 /* ========= FCRA ============ */
