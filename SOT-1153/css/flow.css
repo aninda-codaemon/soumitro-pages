@@ -77,10 +77,15 @@
 
 /* modal-full */
 
+.modal-full {
+  overflow: hidden !important;
+}
+
 .modal-full .modal-dialog {
   height: 100%;
   width: 100%;
   margin: 0;
+  overflow: hidden;
   background-color: #4E4E4E;
   background-image: url('../img/bg_modal_01.jpg'); /* fallback */
   background-image: linear-gradient(rgba(63, 2, 130, 0.25), rgba(63, 2, 130, 0.5)), url('../img/bg_modal_01.jpg');
@@ -91,6 +96,7 @@
 .modal-full .modal-content {
   height: 100%;
   margin: 0 auto;
+  overflow-y: auto;
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -104,14 +110,14 @@
 
   .modal-full .modal-content {
     height: auto;
-    max-width: 900px;
+    max-width: 980px;
     background-color: transparent;
   }
 }
 
 @media (min-width: 1200px) {
   .modal-full .modal-content {
-    max-width: 1000px;
+    max-width: 1160px;
   }
 }
 
