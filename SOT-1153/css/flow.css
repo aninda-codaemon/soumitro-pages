@@ -43,7 +43,7 @@
 
 @media (min-width: 768px) {
   .modal-header {
-    padding: 30px;
+    padding: 20px 30px;
   }
 }
 
@@ -467,7 +467,6 @@
 #gen-report-modal2 .modal-header .sub-title {
   display: block;
   margin: 0;
-  margin-top: 10px;
   color: #fff;
 }
 
@@ -1279,7 +1278,8 @@
 
 @media (min-width: 768px) {
   #gen-report-modal7 .modal-teaser {
-    padding: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
