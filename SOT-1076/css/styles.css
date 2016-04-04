@@ -1402,81 +1402,26 @@ p.already-a-member {
 
 /* == 1 == EXIT POP ========== */
 
-#exit-pop-skip .modal-header {
-  background-color: transparent;
-  border-bottom: none;
-  padding-bottom: 0px;
-}
-
-#exit-pop-skip .modal-header h1 {
-  margin-bottom: 0px;
-  color: #e84e68;
-}
-
-@media (max-width: 481px) {
-  #exit-pop-skip .modal-header h1 {
-    font-size: 32px;
-  }
-}
-
-#exit-pop-skip .modal-header .close {
-  position: absolute;
-  right: 14px;
-  color: #333;
-}
-
 #exit-pop-skip .modal-dialog {
-  /*max-width: 600px;*/
+  max-width: 600px;
 }
 
 #exit-pop-skip .modal-body {
-  overflow: visible;
+  overflow-y: auto;
   max-height: none;
-  padding: 30px;
-  padding-top: 0px;
+  padding: 15px;
 }
 
-#exit-pop-skip .modal-body h3 {
-  margin-top: 5px;
-  margin-bottom: 30px;
-}
-
-#exit-pop-skip .loader-big {
-  display: none;
-  position: absolute;
-  z-index: 999;
-  margin-top: -60px;
-  margin-left: -60px;
-  top: 50%;
-  left: 50%;
-}
-
-#exit-pop-skip img.preview {
-  border: solid 13px #efefef;
-}
-
-@media (min-width: 768px) {
-  #exit-pop-skip img.preview {
-    width: 85%;
-    margin: 0 auto;
+@media (min-width: 640px) {
+  #exit-pop-skip .modal-dialog {
+    margin: 20px auto !important;
   }
 }
 
-#exit-pop-skip button#skip-to-preview {
-  border: 1px solid #57992d;
-  background-color: #6dac45;
-  -webkit-box-shadow: 0 -4px 0 #57992d inset;
-  -moz-box-shadow: 0 -4px 0 #57992d inset;
-  box-shadow: 0 -4px 0 #57992d inset;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-top: 15px;
-}
-
-#exit-pop-skip input:hover, #exit-pop-skip input:active, #exit-pop-skip input:focus {
-  -webkit-box-shadow: 0 -6px 0 #57992d inset;
-  -moz-box-shadow: 0 -6px 0 #57992d inset;
-  box-shadow: 0 -6px 0 #57992d inset;
+@media (min-width: 768px) {
+  #exit-pop-skip .modal-body {
+    padding: 30px;
+  }
 }
 
 /* == 1 == LOCATING AVAILABLE INFO MODAL ========== */

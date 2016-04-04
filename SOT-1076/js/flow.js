@@ -407,13 +407,13 @@
         imagePath = $('.large-img-src').attr('src'),
         $mobileAnimatedImage = $('.mobile-heading .img-animation'),
         mobileImagePath = $('.mobile-img-src').attr('src');
-    
+
     $('.img-animation').hide();
     setTimeout(function() {
       $animatedImage.attr('src', '');
       $mobileAnimatedImage.attr('src', '');
     }, 0);
-    
+
     var toggleAnimations = function() {
       setTimeout(function() {
         $('.img-animation').show();
@@ -601,7 +601,7 @@
     trackNL('Viewed FCRA Modal');
 
     downsell.stop();
-    
+
     var fcraConfirm = function() {
         $("#fcra-confirm").validate({
             rules: {
@@ -714,19 +714,85 @@
 
     $('#exit-pop-skip').on('show.bs.modal', function() {
 
-      $('#skip-to-preview').on('click', function() {
-        $('.loader-big').show();
-        if (typeof modalCtx !== 'undefined') {
-          getExtraTeaserData(modalCtx, function() {
-            $('#exit-pop-skip').modal('hide');
-            currModalIdx = 5;
-            $prevModal = 4;
-            showNextModal();
+      var validateLeadForm = function() {
+          var $signupModalForm = $("#exit-pop-skip #signup-modal-form");
+          window.validator = $signupModalForm.validate({
+              "account[first_name]": "required",
+              "account[last_name]": "required",
+              "user[email]": {
+                  required: true,
+                  email: true
+              },
+              messages: {
+                  "account[first_name]": "Please enter a first name",
+                  "account[last_name]": "Please enter a last name",
+                  "user[email]": "Please enter a valid email address"
+              }
           });
-        }
+      };
 
+      validateLeadForm();
+
+      var reportLeadData = function(dataArray) {
+          var formVals = {};
+          _.forEach(dataArray, function(v, k) {
+              formVals[v.name] = v.value;
+          });
+
+          var srchData = amplify.store("searchData"),
+              firstName = "",
+              lastName = "";
+
+          if (srchData) {
+              firstName = srchData.fn || "";
+              lastName = srchData.ln || "";
+          }
+
+          var leadData = {};
+          leadData['lead[first_name]'] = formVals['account[first_name]'] || '';
+          leadData['lead[last_name]'] = formVals['account[last_name]'] || '';
+          leadData['lead[email]'] = formVals['user[email]'] || '';
+          leadData['lead[zip]'] = formVals['account[zip]'] || '';
+          leadData['lead[state]'] = formVals['account[state]'] || '';
+          leadData['record_search[first_name]'] = firstName;
+          leadData['record_search[last_name]'] = lastName;
+
+          var leadQueryArr = [];
+          _.forEach(leadData, function(v, k) {
+              leadQueryArr.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
+          });
+          var leadQueryString = leadQueryArr.join('&');
+          return $.post('/api/3_0_1/leads.json', leadQueryString);
+      };
+
+      $("#exit-pop-skip #signup-modal-form").on('submit', function(evt) {
+          evt.preventDefault();
+          if (window.validator.form()) {
+              trackNL("Submitted Lead Form - Success");
+
+              try {
+                reportLeadData($(this).serializeArray());
+              } catch (err) {}
+
+               window.setTimeout(function() {
+
+                // @TODO: do we need this? - from old modal click event
+                //  if (typeof modalCtx !== 'undefined') {
+                //    getExtraTeaserData(modalCtx, function() {
+                //      $('#exit-pop-skip').modal('hide');
+                //      currModalIdx = 5;
+                //      $prevModal = 4;
+                //      showNextModal();
+                //    });
+                //  }
+
+                 window.location = $("body").data("next-page");
+               }, 300);
+          }
       });
+
     });
+
     $('#exit-pop-skip').modal('show');
 
     $('#exit-pop-skip .modal-dialog').on('click', function (e) {
@@ -770,7 +836,7 @@
     $genReportMessage.html("Loading...");
     $downloadNowIcon.show();
     $("#arrowhead-right").hide();
-    
+
     $('#processing-data-progress .progress-bar-success').css('width', '1%');
 
     window.resetSearchingState();
