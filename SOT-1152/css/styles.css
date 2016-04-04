@@ -1029,6 +1029,21 @@ ul.aka-list li {
   margin-right: 10px;
 }
 
+/* progress bars */
+
+.progress {
+  position: relative;
+}
+
+.progress .progress-inner-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 12px 0;
+  color: #fff;
+}
+
 /* -- Exit Pop Refine -- */
 
 #exitPopRefine .modal-dialog {
@@ -1596,7 +1611,7 @@ p.current-search-text span {
 
 
 .center-images p{
-  text-align: center; 
+  text-align: center;
   margin-bottom:20px;
   margin-top:20px;
 }
@@ -2014,12 +2029,12 @@ p.current-search-text span {
 
 
 .docu-load {
-  display: inline; 
+  display: inline;
   width: 100%;
 }
 
 @media (min-width: 480px){
- .docu-load { 
+ .docu-load {
   width: 50%;
   }
 }
@@ -2050,7 +2065,7 @@ p.current-search-text span {
   background-color: #EBECF0;
   height: inherit;
   border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px; 
+  border-bottom-right-radius: 5px;
 }
 
 .modal-body .modal-body-headline {
@@ -2200,7 +2215,7 @@ p.current-search-text span {
     margin-top: 20px;
     font-size: 18px;
   }
-  
+
 #gen-report-modal3 ul.blur-list {
   padding: 15px;
   list-style: none;
@@ -2209,7 +2224,7 @@ p.current-search-text span {
 #gen-report-modal3 ul.blur-list li {
   font-size: 18px;
   line-height: 25px;
-  padding-bottom: 10px; 
+  padding-bottom: 10px;
   margin: 0;
   padding-left: 2px;
   list-style-type: none;
@@ -2221,7 +2236,7 @@ p.current-search-text span {
     float: left;
     list-style-type: none;
   }
-}  
+}
 
   .modal-body .case-images {
     right: 15px;
@@ -2892,7 +2907,7 @@ h6.create-login {
   border-top: 3px #684A8F solid;
 }
 #gen-report-modal7 .detail-box.CTA_card {
-  
+
   margin: 0;
   color: #333;
   padding: 15px;
@@ -3009,7 +3024,7 @@ h6.create-login {
   text-transform: uppercase;
   text-align: center;
   padding-bottom: 15px;
-  
+
 }
 #gen-report-modal7 .detail-box ul {
   padding-left: 20px;

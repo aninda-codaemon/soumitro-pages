@@ -370,7 +370,7 @@
           duration: duration,
           progress: function (animation, progress) {
             var progression = Math.ceil(progress * 100);
-            $("#searching-progress-bar-value").html(progression);
+            $("#searching-progress-bar-records-value").html(progression);
           }
       });
 
@@ -487,7 +487,14 @@
 
     if ($useCasesModal.hasClass('in')) {
 
-      $loader.animate({'width': '100%'}, {duration: duration})
+      $loader.animate({'width': '100%'}, {
+          duration: duration,
+          progress: function (animation, progress) {
+            var progression = Math.ceil(progress * 100);
+            $('#processing-data-progress-bar-value').html(progression);
+          }
+      });
+
 
       var intervalDuration = duration / total, // how long to wait before cycling to the next item
           useCasesLoop = setInterval(function() {
