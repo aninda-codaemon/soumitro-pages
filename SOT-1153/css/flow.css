@@ -6,8 +6,9 @@
 }
 
 .modal-content {
-  overflow-y: auto;
+  overflow: auto;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* modal-header */
@@ -96,6 +97,8 @@
 .modal-full .modal-content {
   height: 100%;
   margin: 0 auto;
+  overflow: auto;
+  overflow-x: hidden;
   overflow-y: auto;
   border: 0;
   border-radius: 0;
@@ -105,6 +108,8 @@
 
 @media (min-width: 992px) {
   .modal-full .modal-dialog {
+    overflow: auto;
+    overflow-x: hidden;
     overflow-y: auto;
   }
 
@@ -603,8 +608,25 @@
   padding: 15px;
   border: 0;
   border-radius: 0;
+  -webkit-box-shadow: 0 0 0 4px #57992d;
+  -moz-box-shadow: 0 0 0 4px #57992d;
+  -ms-box-shadow: 0 0 0 4px #57992d;
+  -o-box-shadow: 0 0 0 4px #57992d;
+  box-shadow: 0 0 0 4px #57992d;
   font-size: 18px;
   text-transform: uppercase;
+}
+
+#gen-report-modal2 .modal-footer #gen-report-confirm:hover {
+  -webkit-box-shadow: 0 0 0 3px #6dac45;
+  -moz-box-shadow: 0 0 0 3px #6dac45;
+  -ms-box-shadow: 0 0 0 3px #6dac45;
+  -o-box-shadow: 0 0 0 3px #6dac45;
+  box-shadow: 0 0 0 3px #6dac45;
+}
+
+#gen-report-modal2 .modal-footer #gen-report-confirm:active {
+  box-shadow: none;
 }
 
 #gen-report-modal2 .modal-footer #gen-report-confirm[disabled=disabled],
@@ -624,16 +646,27 @@
   margin-left: 10px;
 }
 
+@media (min-width: 360px) {
+  #gen-report-modal2 .modal-footer #gen-report-confirm {
+    padding: 25px;
+  }
+}
+
+@media (min-width: 480px) {
+  #gen-report-modal2 .modal-footer #gen-report-confirm {
+    padding: 30px;
+    font-size: 20px;
+  }
+}
+
 @media (min-width: 768px) {
   #gen-report-modal2 .modal-footer #gen-report-confirm {
-    padding: 20px;
     font-size: 22px;
   }
 }
 
 @media (min-width: 992px) {
   #gen-report-modal2 .modal-footer #gen-report-confirm {
-    padding: 30px;
     font-size: 24px;
   }
 }
@@ -1381,7 +1414,7 @@
   }
 
   #gen-report-modal7 .modal-body .detail-box {
-    height: 220px;
+    height: 190px;
   }
 
   #gen-report-modal7 .modal-body .detail-box .sub-title {
@@ -1411,11 +1444,23 @@
 #gen-report-modal7 .modal-footer .data-modal-confirm {
   padding: 20px;
   border-radius: 0;
-  -webkit-box-shadow: 0 -2px 3px 0 #696969;
-  -moz-box-shadow: 0 -2px 3px 0 #696969;
-  -ms-box-shadow: 0 -2px 3px 0 #696969;
-  -o-box-shadow: 0 -2px 3px 0 #696969;
-  box-shadow: 0 -2px 3px 0 #696969;
+  -webkit-box-shadow: 0 -2px 0 3px #57992d;
+  -moz-box-shadow: 0 -2px 0 3px #57992d;
+  -ms-box-shadow: 0 -2px 0 3px #57992d;
+  -o-box-shadow: 0 -2px 0 3px #57992d;
+  box-shadow: 0 -2px 0 3px #57992d;
+}
+
+#gen-report-modal7 .modal-footer .data-modal-confirm:hover {
+  -webkit-box-shadow: 0 -1px 0 2px #6dac45;
+  -moz-box-shadow: 0 -1px 0 2px #6dac45;
+  -ms-box-shadow: 0 -1px 0 2px #6dac45;
+  -o-box-shadow: 0 -1px 0 2px #6dac45;
+  box-shadow: 0 -1px 0 2px #6dac45;
+}
+
+#gen-report-modal7 .modal-footer .data-modal-confirm:focus {
+  box-shadow: none;
 }
 
 #gen-report-modal7 .modal-footer .text-caption {
@@ -1431,7 +1476,6 @@
 @media (min-width: 992px) {
   #gen-report-modal7 .modal-footer .data-modal-confirm {
     padding: 40px;
-    box-shadow: none;
     font-size: 25px;
   }
 }
