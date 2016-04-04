@@ -836,6 +836,10 @@
 
 /* modal-body */
 
+#gen-report-modal4 .modal-body .captcha-col .sub-title .text-break {
+  margin-top: 10px;
+}
+
 #gen-report-modal4 .modal-body .captcha-col #bv-catpcha-form {
   padding: 15px;
   border: 1px solid #dadada;
