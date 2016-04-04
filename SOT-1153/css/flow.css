@@ -88,8 +88,8 @@
   margin: 0;
   overflow: hidden;
   background-color: #4E4E4E;
-  background-image: url('../img/bg_modal_01.jpg'); /* fallback */
-  background-image: linear-gradient(rgba(63, 2, 130, 0.25), rgba(63, 2, 130, 0.5)), url('../img/bg_modal_01.jpg');
+  background-image: url('../img/bg_modal_00.jpg');
+  background-image: linear-gradient(rgba(63, 2, 130, 0.25), rgba(63, 2, 130, 0.5)), url('../img/bg_modal_00.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -332,6 +332,11 @@
 
 /* ========== GENERATING REPORT ========== */
 
+/*#gen-report-modal1 .modal-dialog {
+  background-image: url('../img/bg_modal_01.jpg');
+  background-image: linear-gradient(rgba(63, 2, 130, 0.25), rgba(63, 2, 130, 0.5)), url('../img/bg_modal_01.jpg');
+}*/
+
 /* modal-body */
 
 #gen-report-modal1 .modal-body .searching-progress-bar-group {
@@ -340,10 +345,10 @@
 
 /* == 2 == SCANNING SOCIAL MEDIA ================= */
 
-#scanningSocialMedia .modal-dialog {
-  background-image: url('../img/bg_modal_02.jpg'); /* fallback */
+/*#scanningSocialMedia .modal-dialog {
+  background-image: url('../img/bg_modal_02.jpg');
   background-image: linear-gradient(rgba(63, 2, 130, 0.25), rgba(63, 2, 130, 0.5)), url('../img/bg_modal_02.jpg');
-}
+}*/
 
 /* modal-body */
 
@@ -444,10 +449,10 @@
 
 /* == 3 == YOUR REPORT IS READY ================= */
 
-#gen-report-modal2 .modal-dialog {
-  background-image: url('../img/bg_modal_03.jpg'); /* fallback */
+/*#gen-report-modal2 .modal-dialog {
+  background-image: url('../img/bg_modal_03.jpg');
   background-image: linear-gradient(rgba(63, 2, 130, 0.25), rgba(63, 2, 130, 0.5)), url('../img/bg_modal_03.jpg');
-}
+}*/
 
 /* modal-header */
 
@@ -505,6 +510,10 @@
 
 @media (min-width: 480px) {
 
+  #gen-report-modal2 .modal-body {
+    padding-bottom: 120px;
+  }
+
   #gen-report-modal2 .modal-body .report-info-list {
     display: -webkit-box;
     display: -webkit-flex;
@@ -552,6 +561,10 @@
 }
 
 @media (min-width: 992px) {
+
+  #gen-report-modal2 .modal-body {
+    padding-bottom: 60px;
+  }
 
   #gen-report-modal2 .modal-body .large-heading .modal-headline,
   #gen-report-modal2 .modal-body .report-info-list {
@@ -673,10 +686,10 @@
 
 /* == 4 == PROCCESSING YOUR REQUEST ================= */
 
-#gen-report-modal3 .modal-dialog {
-  background-image: url('../img/bg_modal_04.jpg'); /* fallback */
+/*#gen-report-modal3 .modal-dialog {
+  background-image: url('../img/bg_modal_04.jpg');
   background-image: linear-gradient(rgba(63, 2, 130, 0.25), rgba(63, 2, 130, 0.5)), url('../img/bg_modal_04.jpg');
-}
+}*/
 
 #gen-report-modal3.modal-full .modal-content {
   background-color: #fff;
@@ -813,10 +826,10 @@
 
 /* == 5 == CAPTCHA MODAL ========================== */
 
-#gen-report-modal4 .modal-dialog {
-  background-image: url('../img/bg_modal_05.jpg'); /* fallback */
+/*#gen-report-modal4 .modal-dialog {
+  background-image: url('../img/bg_modal_05.jpg');
   background-image: linear-gradient(rgba(63, 2, 130, 0.25), rgba(63, 2, 130, 0.5)), url('../img/bg_modal_05.jpg');
-}
+}*/
 
 /* modal-body */
 
@@ -957,10 +970,10 @@
 
 /* == 6 == GENERATING REPORT ====================== */
 
-#gen-report-modal5 .modal-dialog {
-  background-image: url('../img/bg_modal_06.jpg'); /* fallback */
+/*#gen-report-modal5 .modal-dialog {
+  background-image: url('../img/bg_modal_06.jpg');
   background-image: linear-gradient(rgba(63, 2, 130, 0.25), rgba(63, 2, 130, 0.5)), url('../img/bg_modal_06.jpg');
-}
+}*/
 
 /* modal-body */
 
@@ -1062,10 +1075,10 @@
 
 /* == 7 == LEADBOX SIGNUP ========================= */
 
-#gen-report-modal6 .modal-dialog {
-  background-image: url('../img/bg_modal_07.jpg'); /* fallback */
+/*#gen-report-modal6 .modal-dialog {
+  background-image: url('../img/bg_modal_07.jpg');
   background-image: linear-gradient(rgba(63, 2, 130, 0.25), rgba(63, 2, 130, 0.5)), url('../img/bg_modal_07.jpg');
-}
+}*/
 
 /* modal-body */
 
@@ -1150,10 +1163,10 @@
 
 /* ========= FCRA ============ */
 
-#gen-report-modal11 .modal-dialog {
-  background-image: url('../img/bg_modal_08.jpg'); /* fallback */
+/*#gen-report-modal11 .modal-dialog {
+  background-image: url('../img/bg_modal_08.jpg');
   background-image: linear-gradient(rgba(63, 2, 130, 0.25), rgba(63, 2, 130, 0.5)), url('../img/bg_modal_08.jpg');
-}
+}*/
 
 /* modal-body */
 
@@ -1212,10 +1225,10 @@
 
 /* ========== FINAL CARD REPORT ============= */
 
-#gen-report-modal7 .modal-dialog {
-  background-image: url('../img/bg_modal_09.jpg'); /* fallback */
+/*#gen-report-modal7 .modal-dialog {
+  background-image: url('../img/bg_modal_09.jpg');
   background-image: linear-gradient(rgba(63, 2, 130, 0.25), rgba(63, 2, 130, 0.5)), url('../img/bg_modal_09.jpg');
-}
+}*/
 
 /* modal-teaser */
 
