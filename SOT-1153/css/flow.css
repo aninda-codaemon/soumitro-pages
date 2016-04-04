@@ -1148,10 +1148,18 @@
   margin-top: 20px;
 }
 
+#gen-report-modal6 .modal-body .teaser-col .img-secured {
+  margin: 15px auto;
+}
+
 @media (min-width: 768px) {
   #gen-report-modal6 .modal-body .form-col {
     padding-right: 30px;
     border-right: 1px solid #dadada;
+  }
+
+  #gen-report-modal6 .modal-body .form-col .login-form .exit-flow {
+    display: none !important;  
   }
 
   #gen-report-modal6 .modal-body .teaser-col {
