@@ -1119,6 +1119,11 @@
   line-height: 1;
 }
 
+#gen-report-modal6 .modal-body .form-col .text-caption {
+  font-size: 12px;
+  line-height: 1.25;
+}
+
 #gen-report-modal6 .modal-body .form-col .login-form {
   margin-top: 15px;
 }
@@ -1137,11 +1142,6 @@
 #gen-report-modal6 .modal-body .teaser-col .img-responsive {
   margin: 0 auto;
   margin-top: 20px;
-}
-
-#gen-report-modal6 .modal-body .teaser-col .img-secured {
-  display: block;
-  margin: 15px auto 20px;
 }
 
 @media (min-width: 768px) {
@@ -1170,7 +1170,7 @@
 #gen-report-modal6 .modal-footer .img-secured {
   position: relative;
   top: -2px;
-  width: 40px;
+  width: 45px;
 }
 
 /* ========= FCRA ============ */
