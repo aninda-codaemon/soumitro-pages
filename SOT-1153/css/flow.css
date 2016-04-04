@@ -128,13 +128,13 @@
 }
 
 .modal-full .modal-header .title {
-  margin-top: 40px;
+  margin: 0;
   text-align: center;
 }
 
 @media (min-width: 992px) {
   .modal-full .modal-header {
-    margin-top: 60px;
+    margin-top: 30px;
     padding-left: 60px;
     padding-right: 60px;
   }
@@ -192,7 +192,6 @@
   }
 }
 
-
 @media (min-width: 768px) {
   .modal-full .modal-footer {
     padding-top: 15px;
@@ -203,13 +202,13 @@
 @media (min-width: 992px) {
   .modal-full .modal-footer {
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
   }
 }
 
 @media (min-width: 1200px) {
   .modal-full .modal-footer {
-    max-width: 1170px;
+    max-width: 1160px;
   }
 }
 
@@ -456,25 +455,6 @@
   margin: 0;
   margin-top: 10px;
   color: #fff;
-}
-
-@media (min-width: 768px) {
-
-  #gen-report-modal2 .modal-header .animation-container .img-animation {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    left: 25px;
-    width: 130px;
-  }
-}
-
-@media (min-width: 992px) {
-
-  #gen-report-modal2 .modal-header .animation-container .img-animation {
-    left: 40px;
-    width: 160px;
-  }
 }
 
 /* modal-body */

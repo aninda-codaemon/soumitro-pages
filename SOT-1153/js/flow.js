@@ -400,25 +400,7 @@
     var $lis = $('.report-info-list .report-info-item'),
         listLen = $lis.length,
         listIdxs = _.shuffle(_.range(0, listLen)),
-        currIdx = 0,
-        $animatedImage = $('.animation-container .img-animation'),
-        imagePath = $('.animation-container .img-animation-src').attr('src');
-
-    $animatedImage.hide();
-    setTimeout(function() {
-      $animatedImage.attr('src', '');
-    }, 0);
-
-    var toggleAnimations = function() {
-      setTimeout(function() {
-        $animatedImage.show();
-        setTimeout(function() {
-          $animatedImage.attr('src', imagePath);
-        }, 0);
-      }, 0);
-    };
-
-    toggleAnimations();
+        currIdx = 0;
 
     var duration = this.duration;
     if (window.bv.isMobile) {
