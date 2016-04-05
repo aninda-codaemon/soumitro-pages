@@ -767,6 +767,11 @@
 
       $("#exit-pop-skip #signup-modal-form").on('submit', function(evt) {
           evt.preventDefault();
+
+          $('#exit-pop-skip .loader-big').show();
+          $('#gen-report-modal1').modal('hide');
+          resetModalFlow();
+
           if (window.validator.form()) {
               trackNL("Submitted Lead Form - Success");
 
@@ -774,20 +779,15 @@
                 reportLeadData($(this).serializeArray());
               } catch (err) {}
 
-               window.setTimeout(function() {
-
-                // @TODO: do we need this? - from old modal click event
-                //  if (typeof modalCtx !== 'undefined') {
-                //    getExtraTeaserData(modalCtx, function() {
-                //      $('#exit-pop-skip').modal('hide');
-                //      currModalIdx = 5;
-                //      $prevModal = 4;
-                //      showNextModal();
-                //    });
-                //  }
-
-                 window.location = $("body").data("next-page");
-               }, 300);
+              if (typeof modalCtx !== 'undefined') {
+                getExtraTeaserData(modalCtx, function() {
+                  $('#exit-pop-skip').modal('hide');
+                  $('#exit-pop-skip .loader-big').hide();
+                  currModalIdx = 5;
+                  $prevModal = 4;
+                  showNextModal();
+                });
+              }
           }
       });
 

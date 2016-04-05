@@ -1412,6 +1412,27 @@ p.already-a-member {
   padding: 15px;
 }
 
+#exit-pop-skip .modal-body .loader-big {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+#exit-pop-skip .modal-body .loader-big .img-loader-big {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 @media (min-width: 640px) {
   #exit-pop-skip .modal-dialog {
     margin: 20px auto !important;
