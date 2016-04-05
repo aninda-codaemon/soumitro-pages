@@ -1922,6 +1922,11 @@ span.located img {
     width: 50%;
   }
 
+  .possible-relatives.modal .modal-body .possible-relatives-form .form-container {
+    display: inline-block;
+    width: 100%;
+  }
+
   .possible-relatives.modal .modal-body .possible-relatives-form .checkbox {
     width: 40%;
     margin-top: 30px;
@@ -1941,24 +1946,24 @@ span.located img {
     height: 30px;
   }
 
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(2) .relation-line {
-    top: -45px;
-    left: 58%;
-    height: 60px;
-    -webkit-transform: rotate(55deg);
-    -moz-transform: rotate(55deg);
-    -ms-transform: rotate(55deg);
-    transform: rotate(55deg);
-  }
-
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(3) .relation-line {
-    top: -45px;
-    left: 41%;
-    height: 60px;
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(1) .relation-line {
+    top: -50px;
+    left: 40%;
+    height: 80px;
     -webkit-transform: rotate(-55deg);
     -moz-transform: rotate(-55deg);
     -ms-transform: rotate(-55deg);
     transform: rotate(-55deg);
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(2) .relation-line {
+    top: -50px;
+    left: 58%;
+    height: 80px;
+    -webkit-transform: rotate(55deg);
+    -moz-transform: rotate(55deg);
+    -ms-transform: rotate(55deg);
+    transform: rotate(55deg);
   }
 
   .possible-relatives.modal .modal-body .possible-relatives-form .main-btn {
@@ -2006,15 +2011,15 @@ span.located img {
     height: 50px;
   }
 
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(2) .relation-line {
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(1) .relation-line {
     top: -75px;
-    left: 61%;
+    left: 36%;
     height: 100px;
   }
 
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(3) .relation-line {
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(2) .relation-line {
     top: -75px;
-    left: 38%;
+    left: 64%;
     height: 100px;
   }
 }

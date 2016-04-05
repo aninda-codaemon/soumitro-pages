@@ -838,9 +838,11 @@
           <p class="form-instructions">Select as many relatives for <span class="highlight-text">{{firstName}}</span> as possible. You'll be able to access these additional background reports within <span class="highlight-text">{{firstName}}'s</span> report.</p>
           <form class="form possible-relatives-form">
             <h4 class="form-header">{{fullName}}</h4>
-            {{{relativesForm}}}
+            <div class="form-container">
+              {{{relativesForm}}}
+            </div>
             <button type="submit" id="addPossibleRelatives" class="main-btn btn-lg btn-block">Continue</button>
-            <p class="text-center"><a href="#" class="skip-relatives-form">I don't want to add relatives!</a></p>
+            <p class="text-center"><a href="#" class="skip-relatives-form">I don't want to add relatives</a></p>
           </form>
         </div><!-- /.modal-body -->
 

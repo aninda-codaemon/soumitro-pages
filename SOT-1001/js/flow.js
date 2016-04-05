@@ -648,9 +648,13 @@
     $('.possible-relatives-form').submit(function(event) {
       event.preventDefault();
 
+      // @TODO: return id and name inside an object
+
       var selectedRelatives = $('.possible-relatives-form .input-checkbox:checked').map(function() {
         return this.value;
       }).get();
+
+      console.log(selectedRelatives);
 
       if (selectedRelatives.length !== 0) {
         amplify.store('selectedRelatives', selectedRelatives);
