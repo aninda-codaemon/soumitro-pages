@@ -335,27 +335,27 @@
       _.bind(generatingReport, this)();
     }
   }, {
-    // FCRA
-
-    $elem: $("#gen-report-modal11"),
-    animate: function () {
-      _.bind(fcraConfirmation, this)();
-    }
-  },{
-
-    // Modal Teaser w/ data
-    $elem: $("#gen-report-modal7"),
-    duration: 10000,   // Total time to switch spinners. Value is divided by number of items.
-    animate: function () {
-      _.bind(foundDataModal, this)();
-    }
-  }, {
 
     // LeadBox
 
     $elem: $("#gen-report-modal6"),
     animate: function () {
       _.bind(whoopsAccountNeeded, this)();
+    }
+  }, {
+    // FCRA
+
+    $elem: $("#gen-report-modal11"),
+    animate: function () {
+      _.bind(fcraConfirmation, this)();
+    }
+  }, {
+
+    // Modal Teaser w/ data
+    $elem: $("#gen-report-modal7"),
+    duration: 10000,   // Total time to switch spinners. Value is divided by number of items.
+    animate: function () {
+      _.bind(foundDataModal, this)();
     }
   }];
 
@@ -581,10 +581,6 @@
             try {
                 reportLeadData($(this).serializeArray());
             } catch (err) {}
-
-             window.setTimeout(function() {
-                 window.location = $("body").data("next-page");
-             }, 300);
         }
     });
   }
@@ -783,8 +779,8 @@
                 getExtraTeaserData(modalCtx, function() {
                   $('#exit-pop-skip').modal('hide');
                   $('#exit-pop-skip .loader-big').hide();
-                  currModalIdx = 5;
-                  $prevModal = 4;
+                  currModalIdx = 6;
+                  $prevModal = 5;
                   showNextModal();
                 });
               }
@@ -806,7 +802,7 @@
 
     $(".data-modal-confirm").on('click', function(){
       window.setTimeout(function() {
-            showNextModal();
+        window.location = $("body").data("next-page");
       }, 300);
     });
   }
