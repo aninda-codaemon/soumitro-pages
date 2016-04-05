@@ -483,10 +483,11 @@
 
     timeoutId = window.setTimeout(function () {
       // reset use cases slider to default
-      $('.case-item').removeClass('active');
-      $('.case-item:nth-child(1)').addClass('active');
-      $('.case-image').removeClass('active');
-      $('.case-image:nth-child(1)').addClass('active');
+      $('#gen-report-modal3 .case-item').removeClass('active');
+      $('#gen-report-modal3 .case-item:nth-child(1)').addClass('active');
+      $('#gen-report-modal3 .case-image').removeClass('active');
+      $('#gen-report-modal3 .case-image:nth-child(1)').addClass('active');
+      $('#processing-data-progress .progress-bar-success').css('width', '1%');
 
       showNextModal();
     }, duration);
@@ -708,6 +709,7 @@
     currModalIdx = -1;
     $prevModal = undefined;
     $("#gen-list-groups li").removeClass('success');
+    $('#gen-report-modal2 .report-info-list .report-info-item').removeClass('success');
 
     var $genReportButton = $("#gen-report-confirm");
     $genReportButton.attr('disabled', 'disabled');
@@ -719,10 +721,10 @@
     $("#arrowhead-right").hide();
 
     // reset use cases slider to default
-    $('.case-item').removeClass('active');
-    $('.case-item:nth-child(1)').addClass('active');
-    $('.case-image').removeClass('active');
-    $('.case-image:nth-child(1)').addClass('active');
+    $('#gen-report-modal3 .case-item').removeClass('active');
+    $('#gen-report-modal3 .case-item:nth-child(1)').addClass('active');
+    $('#gen-report-modal3 .case-image').removeClass('active');
+    $('#gen-report-modal3 .case-image:nth-child(1)').addClass('active');
     $('#processing-data-progress .progress-bar-success').css('width', '1%');
 
     window.resetSearchingState();
@@ -738,9 +740,12 @@
     resetModalFlow();
   });
 
+  $('body').on('click', '.exit-flow', function () {
+    resetModalFlow();
+  });
+
   $("#modal1Close").on('click', resetModalFlow);
   $('.modal-backdrop').on('click', resetModalFlow);
-  $('.exit-flow').on('click', resetModalFlow);
 
   $("#gen-report-confirm").on('click', showNextModal);
 
