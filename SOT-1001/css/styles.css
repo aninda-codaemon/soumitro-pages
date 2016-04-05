@@ -1785,9 +1785,9 @@ span.located img {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   height: 10px;
-  width: 5px;
+  width: 3px;
   margin: 0 auto;
-  background: #7F7D9F;
+  background: #E9E9E9;
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-checkbox {
@@ -1878,6 +1878,10 @@ span.located img {
   margin-left: 10px;
 }
 
+.possible-relatives.modal .modal-body .possible-relatives-form .text-center {
+  margin-top: 10px;
+}
+
 @media (min-width: 600px) and (max-width: 768px) {
 
   .possible-relatives.modal .modal-body .form-instructions {
@@ -1919,7 +1923,7 @@ span.located img {
   }
 
   .possible-relatives.modal .modal-body .possible-relatives-form .checkbox {
-    width: 48%;
+    width: 40%;
     margin-top: 30px;
     margin-bottom: 0;
   }
@@ -1939,7 +1943,7 @@ span.located img {
 
   .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(2) .relation-line {
     top: -45px;
-    left: 56%;
+    left: 58%;
     height: 60px;
     -webkit-transform: rotate(55deg);
     -moz-transform: rotate(55deg);
@@ -1949,7 +1953,7 @@ span.located img {
 
   .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(3) .relation-line {
     top: -45px;
-    left: 44%;
+    left: 41%;
     height: 60px;
     -webkit-transform: rotate(-55deg);
     -moz-transform: rotate(-55deg);
@@ -1963,6 +1967,11 @@ span.located img {
     top: 30px;
     width: 25%;
     margin: 30px auto;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .skip-relatives-form {
+    position: relative;
+    top: 5px;
   }
 }
 
@@ -1999,13 +2008,13 @@ span.located img {
 
   .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(2) .relation-line {
     top: -75px;
-    left: 59%;
+    left: 61%;
     height: 100px;
   }
 
   .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(3) .relation-line {
     top: -75px;
-    left: 40%;
+    left: 38%;
     height: 100px;
   }
 }

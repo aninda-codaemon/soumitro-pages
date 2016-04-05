@@ -658,6 +658,10 @@
 
       showNextModal();
     });
+
+    $('.skip-relatives-form').click(function() {
+      showNextModal();
+    });
   }
 
   function generatingReport() {
