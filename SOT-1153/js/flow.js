@@ -446,10 +446,14 @@
     }
 
     if ($useCasesModal.hasClass('in')) {
-      // @NOTE: the loading animation duration is in styles.css
-      // @TODO: move animation duration from css to js
 
-      $loader.animate({'width': '100%'}, {duration: duration})
+      $loader.animate({'width': '100%'}, {
+        duration: duration,
+        progress: function (animation, progress) {
+          var progression = Math.ceil(progress * 100);
+          $('#processing-data-progress .progress-value').html(progression);
+        }
+      });
 
       var intervalDuration = duration / total, // how long to wait before cycling to the next item
           useCasesLoop = setInterval(function() {
@@ -478,7 +482,7 @@
     }
 
     timeoutId = window.setTimeout(function () {
-      // reset slider to default
+      // reset use cases slider to default
       $('.case-item').removeClass('active');
       $('.case-item:nth-child(1)').addClass('active');
       $('.case-image').removeClass('active');
@@ -714,6 +718,11 @@
     $downloadNowIcon.show();
     $("#arrowhead-right").hide();
 
+    // reset use cases slider to default
+    $('.case-item').removeClass('active');
+    $('.case-item:nth-child(1)').addClass('active');
+    $('.case-image').removeClass('active');
+    $('.case-image:nth-child(1)').addClass('active');
     $('#processing-data-progress .progress-bar-success').css('width', '1%');
 
     window.resetSearchingState();
@@ -731,6 +740,7 @@
 
   $("#modal1Close").on('click', resetModalFlow);
   $('.modal-backdrop').on('click', resetModalFlow);
+  $('.exit-flow').on('click', resetModalFlow);
 
   $("#gen-report-confirm").on('click', showNextModal);
 

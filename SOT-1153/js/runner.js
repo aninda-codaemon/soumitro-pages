@@ -166,7 +166,7 @@
             duration: animateTime,
             progress: function(animation, progress, remainingMs) {
                 var progression = Math.ceil(progress * 100);
-                $("#searching-progress-bar-value").html(progression + '%');
+                $('#searching-progress-bar .progress-value').html(progression + '%');
             }
         });
         $.when(progressAnimate).done(function() {
