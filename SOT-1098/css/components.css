@@ -13,19 +13,33 @@ html, body {
   overflow-y: auto;
 }
 
-/* navbar */
+.layout#bv-layout-freemium {
+  background: rgb(75,83,172);
+  background: -webkit-linear-gradient(top, rgba(75,83,172,1) 0%,rgba(111,117,184,1) 100%);
+  background: -moz-linear-gradient(top, rgba(75,83,172,1) 0%, rgba(111,117,184,1) 100%);
+  background: -ms-linear-gradient(top, rgba(75,83,172,1) 0%, rgba(111,117,184,1) 100%);
+  background: -o-linear-gradient(top, rgba(75,83,172,1) 0%, rgba(111,117,184,1) 100%);
+  background: linear-gradient(to bottom, rgba(75,83,172,1) 0%,rgba(111,117,184,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b53ac', endColorstr='#6f75b8',GradientType=0 );
+}
 
-.navbar {
-  padding: 15px;
+/* header */
+
+.header {
   background-color: #fff;
 }
 
-.navbar .navbar-brand {
+.header .navbar {
+  padding: 15px;
+  border-radius: 0;
+}
+
+.header .navbar .navbar-brand {
   padding: 0;
   height: auto;
 }
 
-.navbar .navbar-text {
+.header .navbar .navbar-text {
   display: none;
   float: right;
   margin: 0;
@@ -33,7 +47,7 @@ html, body {
 }
 
 @media (min-width: 480px) {
-  .navbar .navbar-text {
+  .header .navbar .navbar-text {
     display: block;
   }
 }
@@ -42,6 +56,7 @@ html, body {
 
 .content {
   padding-bottom: 40px;
+  color: #fff;
 }
 
 /* footer */
@@ -52,4 +67,8 @@ html, body {
   left: 0;
   width: 100%;
   background: #fff;
+}
+
+.footer .container {
+  padding: 15px;
 }
