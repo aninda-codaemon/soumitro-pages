@@ -1,0 +1,40 @@
+/* text helpers */
+
+.text-primary {
+  color: #6dac45 !important;
+}
+
+.text-secondary {
+  color: #4b53ac !important;
+  font-weight: bold;
+}
+
+.text-info {
+  color: #24c1db !important;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.text-break {
+  display: block;
+}
+
+/* background helpers */
+
+.background-primary {
+  background-color: #6dac45;
+  color: #fff;
+}
+
+.background-secondary {
+  background-color: #4b53ac;
+  color: #fff;
+}
+
+/* image helpers */
+
+.img-responsive {
+  margin: 0 auto;
+}
