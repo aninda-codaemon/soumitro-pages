@@ -831,7 +831,7 @@
           <p class="header-headline">Add <span class="hidden-xs">{{firstName}}'s</span> Possible Relatives</p>
         </div><!-- /.modal-header -->
 
-        <div class="modal-body" data-fr-bind="currentRecord">
+        <div class="modal-body" data-fr-bind="currentRecord selectedRelatives">
           <div class="hero-image-container">
             <img src="img/family_tree.png" class="hero-image" />
           </div>
@@ -844,6 +844,7 @@
             <button type="submit" id="addPossibleRelatives" class="main-btn btn-lg btn-block">Continue</button>
             <p class="text-center"><a href="#" class="skip-relatives-form">I don't want to add relatives</a></p>
           </form>
+          <pre>{{selectedRelatives}}</pre>
         </div><!-- /.modal-body -->
 
         <div class="modal-footer" data-fr-bind="currentRecord">

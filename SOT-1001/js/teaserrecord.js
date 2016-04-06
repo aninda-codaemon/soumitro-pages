@@ -290,6 +290,36 @@
       }
     };
 
+    TeaserRecord.prototype.selectedRelatives = function() {
+      var relatives;
+
+      console.log(this.record.selectedRelatives);
+      console.log(this.record);
+
+      if (typeof this.record.selectedRelatives === "undefined") {
+        return [];
+      } else if (this.record.selectedRelatives === void 0) {
+        return [];
+      }
+      if ($.type(this.record.selectedRelatives) !== 'array') {
+        relatives = [this.record.selectedRelatives];
+        console.log(relatives);
+      } else if ($.type(this.record.selectedRelatives) === 'array') {
+        relatives = this.record.selectedRelatives;
+        console.log(relatives);
+      }
+      return _.chain(relatives).map(function(relative) {
+        console.log(relative);
+        return this.relative;
+      }, this).filter(function(relative) {
+        console.log(relative);
+        return relative !== null;
+      }).map(function(relative) {
+        console.log(relative);
+        return relative;
+      }).uniq().value();
+    };
+
     TeaserRecord.prototype.moreRelativesCount = function() {
       if (this.relatives().length > 1) {
         return parseInt(this.relatives().length) - 1;
