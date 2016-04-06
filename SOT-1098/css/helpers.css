@@ -17,6 +17,16 @@
   display: block;
 }
 
+.text-caption {
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  .text-caption {
+    font-size: 14px;
+  }
+}
+
 /* background helpers */
 
 .background-primary {

@@ -11,6 +11,10 @@ label, button {
   letter-spacing: -0.3px;
 }
 
+strong, b {
+  font-weight: normal;
+}
+
 @media (min-width: 480px) {
   p, a, li, td, th, pre, code,
   blockquote, article, figure,
@@ -178,6 +182,14 @@ h6 {
 
   h6 {
     font-size: 26px;
+  }
+
+  .title {
+    margin: 30px auto;
+  }
+
+  .sub-title {
+    margin: 20px auto;
   }
 }
 
