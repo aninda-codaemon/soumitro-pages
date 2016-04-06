@@ -1,1 +1,43 @@
 /* main styles */
+
+.main .title {
+  margin-bottom: 30px;
+}
+
+.main .title .text-break {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 50%;
+  font-weight: lighter;
+}
+
+.main .sub-title {
+  margin-bottom: 20px;
+}
+
+.main .account-perks-list .list-item {
+  position: relative;
+  margin: 10px 0;
+}
+
+.main .account-perks-list .list-item .icon {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  color: #9197d0;
+}
+
+.main .account-perks-list .list-item .item-label {
+  margin-left: 40px;
+}
+
+@media (min-width: 530px) and (max-width: 991px) {
+  .main .account-perks-list {
+    display: inline-block;
+  }
+
+  .main .account-perks-list .list-item {
+    float: left;
+    width: 50%;
+  }
+}
