@@ -291,10 +291,8 @@
     };
 
     TeaserRecord.prototype.selectedRelatives = function() {
-      var relatives;
-
-      console.log(this.record.selectedRelatives);
-      console.log(this.record);
+      var relatives,
+          relativesTeaser = [];
 
       if (typeof this.record.selectedRelatives === "undefined") {
         return [];
@@ -303,21 +301,19 @@
       }
       if ($.type(this.record.selectedRelatives) !== 'array') {
         relatives = [this.record.selectedRelatives];
-        console.log(relatives);
       } else if ($.type(this.record.selectedRelatives) === 'array') {
         relatives = this.record.selectedRelatives;
-        console.log(relatives);
       }
-      return _.chain(relatives).map(function(relative) {
-        console.log(relative);
-        return this.relative;
-      }, this).filter(function(relative) {
-        console.log(relative);
-        return relative !== null;
-      }).map(function(relative) {
-        console.log(relative);
-        return relative;
-      }).uniq().value();
+
+      if (relatives && relatives.length !== 0) {
+        for (var i = 0; i < relatives.length; i++) {
+          relativesTeaser.push(relatives[i].name);
+        }
+
+        return relativesTeaser.join(', ');
+      } else {
+        return [];
+      }
     };
 
     TeaserRecord.prototype.moreRelativesCount = function() {

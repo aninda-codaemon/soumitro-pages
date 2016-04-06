@@ -659,6 +659,8 @@
 
       if (selectedRelatives.length !== 0) {
         amplify.store('selectedRelatives', local);
+      } else {
+        amplify.store('selectedRelatives', {});
       }
 
       showNextModal();

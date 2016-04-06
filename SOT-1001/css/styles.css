@@ -3305,6 +3305,12 @@ h6.create-login {
 
   color: #484848;
 }
+.person-selected-relatives {
+  color: #484848;
+  font-size: 12px;
+  line-height: 1.25;
+  text-transform: capitalize;
+}
 .person-photo-wrap {
   /*margin-left: 15px;*/
 }

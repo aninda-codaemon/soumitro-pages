@@ -831,7 +831,7 @@
           <p class="header-headline">Add <span class="hidden-xs">{{firstName}}'s</span> Possible Relatives</p>
         </div><!-- /.modal-header -->
 
-        <div class="modal-body" data-fr-bind="currentRecord selectedRelatives">
+        <div class="modal-body" data-fr-bind="currentRecord">
           <div class="hero-image-container">
             <img src="img/family_tree.png" class="hero-image" />
           </div>
@@ -844,7 +844,6 @@
             <button type="submit" id="addPossibleRelatives" class="main-btn btn-lg btn-block">Continue</button>
             <p class="text-center"><a href="#" class="skip-relatives-form">I don't want to add relatives</a></p>
           </form>
-          <pre>{{selectedRelatives}}</pre>
         </div><!-- /.modal-body -->
 
         <div class="modal-footer" data-fr-bind="currentRecord">
@@ -1471,7 +1470,7 @@
             <div class="col-md-12">
               <div class="col-left">
 
-                <div class="person-info" data-fr-bind="currentRecord extraTeaserData">
+                <div class="person-info" data-fr-bind="currentRecord extraTeaserData selectedRelatives">
                   <div class="row">
                     {{#if photo}}
                     <div class="col-sm-2">
@@ -1497,14 +1496,22 @@
                         {{/if}}
                       </div>
                     </div>
-                    {{/if}} {{#if relatives}}
+                    {{/if}}
+                    {{#if relatives}}
                     <div class="col-sm-3 hidden-xs">
-                      <h3>Relatives</h3>
-                      <div class="person-relatives">{{shortList relatives}}
-                        {{#if moreRelativesCount}}
-                        <br><span class="moreCount">+ {{moreRelativesCount}} more</span>
-                        {{/if}}
-                      </div>
+                      {{#if selectedRelatives}}
+                        <h3>Selected Relatives</h3>
+                        <div class="person-selected-relatives">
+                          {{{selectedRelatives}}}
+                        </div>
+                      {{else}}
+                        <h3>Relatives</h3>
+                        <div class="person-relatives">{{shortList relatives}}
+                          {{#if moreRelativesCount}}
+                          <br><span class="moreCount">+ {{moreRelativesCount}} more</span>
+                          {{/if}}
+                        </div>
+                      {{/if}}
                     </div>
                     {{/if}}
                   </div>
