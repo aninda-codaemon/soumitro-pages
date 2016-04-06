@@ -72,3 +72,19 @@ html, body {
 .footer .container {
   padding: 15px;
 }
+
+.footer .container .copyright {
+  display: inline-block;
+  margin: 0;
+  font-size: 16px;
+}
+
+.footer .container .footer-links {
+  display: inline-block;
+  float: right;
+  margin: 0;
+}
+
+.footer .container .footer-links .footer-link {
+  font-size: 16px;
+}
