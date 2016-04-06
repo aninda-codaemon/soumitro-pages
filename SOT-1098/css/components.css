@@ -1,5 +1,55 @@
-/* global components */
+/* layout */
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.layout {
+  position: relative;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 
 /* navbar */
 
+.navbar {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.navbar .navbar-brand {
+  padding: 0;
+  height: auto;
+}
+
+.navbar .navbar-text {
+  display: none;
+  float: right;
+  margin: 0;
+  font-size: 16px;
+}
+
+@media (min-width: 480px) {
+  .navbar .navbar-text {
+    display: block;
+  }
+}
+
+/* content */
+
+.content {
+  padding-bottom: 40px;
+}
+
 /* footer */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+}
