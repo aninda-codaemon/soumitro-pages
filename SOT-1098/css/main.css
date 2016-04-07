@@ -50,8 +50,29 @@
 
 /* main free-account-form */
 
-.main .segment .title {
+.main .form .segment {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.main .form .segment .title {
   margin-top: 10px;
+}
+
+.main .form .segment .title .img-right {
+  width: 60px;
+}
+
+@media (min-width: 768px) {
+  .main .form .segment .title .img-right {
+    width: 70px;
+  }
+}
+
+@media (min-width: 992px) {
+  .main .form .segment .title .img-right {
+    width: 80px;
+  }
 }
 
 /* disclaimer */

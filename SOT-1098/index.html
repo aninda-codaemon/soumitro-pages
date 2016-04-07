@@ -99,19 +99,19 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
-                      <label for="account_first_name">First Name</label>
+                      <label for="account_first_name" class="form-label">First Name</label>
                       <input type="text" name="account[first_name]" class="form-control" id="account_first_name" value="{{account[first_name]}}" placeholder="First Name" />
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
-                      <label for="account_last_name">Last Name</label>
+                      <label for="account_last_name" class="form-label">Last Name</label>
                       <input type="text" name="account[last_name]" class="form-control" id="account_last_name" value="{{account[last_name]}}" placeholder="Last Name" />
                     </div>
                   </div>
                   <div class="col-xs-12">
                     <div class="form-group">
-                      <label for="user_email">Email Address</label>
+                      <label for="user_email" class="form-label">Email Address</label>
                       <input type="text" name="user[email]" class="form-control" id="user_email" value="{{user[email]}}" maxsize="100" placeholder="Email Address" />
                     </div>
                   </div>
@@ -125,13 +125,13 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
-                      <label for="password">Password</label>
+                      <label for="password" class="form-label">Password</label>
                       <input type="password" name="password" class="form-control" id="password" size="30" placeholder="Password" />
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
-                      <label for="confirm-password">Confirm Password</label>
+                      <label for="confirm-password" class="form-label">Confirm Password</label>
                       <input type="password" name="confirm-password" class="form-control" id="confirm-password" size="30" placeholder="Confirm Password" />
                     </div>
                   </div>
@@ -140,15 +140,15 @@
 
               <div class="segment">
                 <div class="checkbox">
-                  <label for="tos2">
-                    <input type="checkbox" name="tos2" id="tos2" value="1" />
+                  <label for="tos2" class="form-label">
+                    <input type="checkbox" name="tos2" class="checkbox-input" id="tos2" value="1" />
                     Your trials lasts until <%= (Time.now + 5.days).strftime('%m/%d/%Y') %>. If you would like to cancel before your trial ends, you may do so for any reason and you will not be charged again. Simply call 1-888-579-5910 or email support@beenverified.com, to speak with one of our Customer Service Representatives. Otherwise, your trial will end on <%= (Time.now + 5.days).strftime('%m/%d/%Y') %>, at which time you will be charged the standard monthly rate of $25.47. Your membership will automatically renew every 30 days thereafter until you cancel.
                   </label>
                 </div>
 
                 <div class="checkbox">
-                  <label for="account_tos">
-                    <input type="checkbox" name="account[tos]" id="account_tos" value="1" />
+                  <label for="account_tos" class="form-label">
+                    <input type="checkbox" name="account[tos]" class="checkbox-input" id="account_tos" value="1" />
                     By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Website Terms of Service</a>, <a href="//www.beenverified.com/home/membership_agreement" target="_blank">Member Agreement</a> and <a href="//www.beenverified.com/privacy" target="_blank">Privacy Policy</a>. I agree that I will not use any information about an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance; or for any other purpose prohibited by our Terms of Service. (For more information about whether a use of information falls under one of these categories, please review our Do's &amp; Don'ts or contact us at <a href="mailto:support@beenverified.com">support@beenverified.com</a>.)
                   </label>
                 </div>

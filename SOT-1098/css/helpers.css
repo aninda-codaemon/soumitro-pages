@@ -49,6 +49,10 @@
   margin: 0 auto;
 }
 
+.img-right {
+  float: right;
+}
+
 /* button helpers */
 
 .btn-centered {
