@@ -44,6 +44,11 @@ html, body {
   float: right;
   margin: 0;
   font-size: 16px;
+  font-weight: normal;
+}
+
+.header .navbar .navbar-text strong {
+  font-weight: bold;
 }
 
 @media (min-width: 480px) {
@@ -77,6 +82,7 @@ html, body {
   display: inline-block;
   margin: 0;
   font-size: 16px;
+  font-weight: bold;
 }
 
 .footer .container .copyright .current-year {
@@ -87,8 +93,11 @@ html, body {
 
 .footer .container .footer-links {
   display: inline-block;
+  position: relative;
+  top: 3px;
   float: right;
   margin: 0;
+  font-weight: normal;
 }
 
 .footer .container .footer-links .footer-link {
