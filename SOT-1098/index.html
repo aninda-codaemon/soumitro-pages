@@ -139,7 +139,21 @@
               </div>
 
               <div class="segment">
-                <button type="submit" class="btn btn-lg btn-primary">Access Report</button>
+                <div class="checkbox">
+                  <label for="">
+                    <input type="checkbox" name="" />
+                    Your trials lasts until <%= (Time.now + 5.days).strftime('%m/%d/%Y') %>. If you would like to cancel before your trial ends, you may do so for any reason and you will not be charged again. Simply call 1-888-579-5910 or email support@beenverified.com, to speak with one of our Customer Service Representatives. Otherwise, your trial will end on <%= (Time.now + 5.days).strftime('%m/%d/%Y') %>, at which time you will be charged the standard monthly rate of $25.47. Your membership will automatically renew every 30 days thereafter until you cancel.
+                  </label>
+                </div>
+
+                <div class="checkbox">
+                  <label for="">
+                    <input type="checkbox" name="" />
+                    By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Website Terms of Service</a>, <a href="//www.beenverified.com/home/membership_agreement" target="_blank">Member Agreement</a> and <a href="//www.beenverified.com/privacy" target="_blank">Privacy Policy</a>. I agree that I will not use any information about an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance; or for any other purpose prohibited by our Terms of Service. (For more information about whether a use of information falls under one of these categories, please review our Do's &amp; Don'ts or contact us at <a href="mailto:support@beenverified.com">support@beenverified.com</a>.)
+                  </label>
+                </div>
+
+                <button type="submit" class="btn btn-lg btn-centered btn-primary">Access Report</button>
               </div>
 
             </form>
@@ -150,7 +164,7 @@
         <div class="disclaimer row">
           <div class="col-xs-12">
             <p class="text-caption title"><strong>Live Customer Support Hours: M-F 8am - 10pm ET and Weekends 10am - 8pm ET</strong></p>
-            <p class="text-caption"><strong>Disclaimer:</strong> BeenVerified’s mission is to give people easy and affordable access to public record information. BeenVerified does not provide private investigator services, and is not a consumer reporting agency as defined by the Fair Credit Report Act because the information provided by BeenVerified is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses of BeenVerified, please review our “Do’s &amp; Don’ts” and our Terms &amp; Conditions.</p>
+            <p class="text-caption"><strong>Disclaimer:</strong> BeenVerified’s mission is to give people easy and affordable access to public record information. BeenVerified does not provide private investigator services, and is not a consumer reporting agency as defined by the <a href="//www.beenverified.com/dos-donts" rel="nofollow" target="_blank">Fair Credit Report Act</a> because the information provided by BeenVerified is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses of BeenVerified, please review our <a href="//www.beenverified.com/dos-donts" target="_blank" rel="nofollow">“Do’s &amp; Don’ts”</a> and our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank" rel="nofollow">Terms &amp; Conditions</a>.</p>
           </div>
         </div>
 
@@ -162,9 +176,9 @@
 
         <p class="copyright">BeenVerified &copy; 2016</p>
         <p class="footer-links text-right">
-          <a class="footer-link" href="#" target="_blank">Terms</a>
+          <a class="footer-link" href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms</a>
           |
-          <a class="footer-link" href="#" target="_blank">Privacy</a>
+          <a class="footer-link" href="//www.beenverified.com/privacy" target="_blank">Privacy</a>
         </p>
 
       </div>

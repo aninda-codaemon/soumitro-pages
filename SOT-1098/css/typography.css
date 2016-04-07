@@ -53,6 +53,7 @@ strong, b {
 
 a {
   color: #23527c;
+  font-size: inherit;
   text-decoration: none;
   -webkit-transition: all 500ms;
   -moz-transition: all 500ms;
