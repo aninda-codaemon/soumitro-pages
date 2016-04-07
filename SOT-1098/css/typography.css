@@ -9,6 +9,8 @@ label, button {
   font-size: 16px;
   font-weight: lighter;
   letter-spacing: 0.5px;
+  vertical-align: middle;
+  vertical-align: -webkit-baseline-middle;
 }
 
 strong, b {
@@ -54,7 +56,9 @@ strong, b {
 a {
   color: #23527c;
   font-size: inherit;
+  font-weight: inherit;
   text-decoration: none;
+  vertical-align: baseline;
   -webkit-transition: all 500ms;
   -moz-transition: all 500ms;
   -ms-transition: all 500ms;

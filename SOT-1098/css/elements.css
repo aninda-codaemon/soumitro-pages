@@ -147,6 +147,7 @@
 /* forms */
 
 .form-label {
+  margin: 10px 0;
   color: #2a2c2e;
   font-weight: normal;
 }
