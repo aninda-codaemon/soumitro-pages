@@ -59,3 +59,50 @@
   display: block;
   margin: 0 auto;
 }
+
+/* animations */
+
+@-webkit-keyframes loading {
+  0% {
+    width: 1%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-moz-keyframes loading {
+  0% {
+    width: 1%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-ms-keyframes loading {
+  0% {
+    width: 1%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-o-keyframes loading {
+  0% {
+    width: 1%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes loading {
+  0%{
+    width: 1%;
+  }
+  100%{
+    width: 100%;
+  }
+}

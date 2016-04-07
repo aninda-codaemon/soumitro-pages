@@ -33,7 +33,7 @@
   }(jQuery));
 
   var init = function() {
-    $('.focus-me').focus();
+    $('.focus-on').focus();
   };
 
   init();

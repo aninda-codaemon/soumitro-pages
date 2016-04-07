@@ -86,6 +86,14 @@
               </li>
             </ul>
 
+            <div class="form-errors hidden" id="error_container">
+              <h6 class="title">Something went wrong!</h6>
+              <p class="sub-title">We found some problems with the following:</p>
+
+              <ul class="errors-list" id="messages">
+              </ul>
+            </div>
+
           </div>
 
           <div class="col-md-7">
@@ -100,7 +108,7 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="account_first_name" class="form-label">First Name</label>
-                      <input type="text" name="account[first_name]" class="input-lg form-control" id="account_first_name" value="{{account[first_name]}}" placeholder="First Name" />
+                      <input type="text" name="account[first_name]" class="focus-on input-lg form-control" id="account_first_name" value="{{account[first_name]}}" placeholder="First Name" autofocus />
                     </div>
                   </div>
                   <div class="col-sm-6">
@@ -164,6 +172,10 @@
                 <input type="hidden" name="record_search[person_id]" id="record_search_person_id" value="{{bvid}}" />
 
                 <button type="submit" class="btn btn-lg btn-centered btn-primary" id="create_button">Access Report</button>
+
+                <div class="loading hidden" id="spinner">
+                  <span class="loading-bar"></span>
+                </div>
               </div>
 
             </form>
@@ -201,7 +213,16 @@
   <script type="text/javascript" src="js/vendor/jquery.validate.min.js"></script>
   <script type="text/javascript" src="js/vendor/amplify.store.min.js"></script>
   <script type="text/javascript" src="js/vendor/lodash.min.js"></script>
+  <script type="text/javascript" src="js/vendor/handlebars.min.js"></script>
 
+  <script type="text/javascript" src="js/utility.js"></script>
+  <script type="text/javascript" src="js/cookie.js"></script>
+  <script type="text/javascript" src="js/base64.js"></script>
+  <script type="text/javascript" src="js/teaserrecord.js"></script>
+
+  <script type="text/javascript" src="js/framerida.js"></script>
+  <script type="text/javascript" src="js/framerida.helpers.js"></script>
+  <script type="text/javascript" src="js/subscribe.js"></script>
   <script type="text/javascript" src="js/runner.js"></script>
 
 </body>
