@@ -79,6 +79,12 @@ html, body {
   font-size: 16px;
 }
 
+.footer .container .copyright .current-year {
+  font-size: inherit;
+  font-weight: normal;
+  vertical-align: baseline;
+}
+
 .footer .container .footer-links {
   display: inline-block;
   float: right;
