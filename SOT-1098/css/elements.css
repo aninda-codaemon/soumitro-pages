@@ -152,6 +152,7 @@
 }
 
 .form-control {
+  border-radius: 4px;
   -webkit-transition: all 500ms;
   -moz-transition: all 500ms;
   -ms-transition: all 500ms;
@@ -160,7 +161,6 @@
 }
 
 .checkbox {
-  margin: 0;
   margin-bottom: 30px;
 }
 
@@ -171,6 +171,12 @@
 
 .checkbox .form-label .checkbox-input {
   margin-left: -30px;
+}
+
+@media (min-width: 768px) {
+  .checkbox .form-label {
+    font-size: 14px;
+  }
 }
 
 /* labels */

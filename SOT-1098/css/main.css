@@ -63,13 +63,27 @@
   width: 60px;
 }
 
+.main .form .segment .btn {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+@media (min-width: 480px) {
+  .main .form .segment .btn {
+    width: auto;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
 @media (min-width: 768px) {
   .main .form .segment .title .img-right {
     width: 70px;
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .main .form .segment .title .img-right {
     width: 80px;
   }
