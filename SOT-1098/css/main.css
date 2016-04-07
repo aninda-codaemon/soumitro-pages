@@ -15,6 +15,12 @@
   margin-bottom: 20px;
 }
 
+/* main account-perks-list */
+
+.main .account-perks-list {
+  margin-bottom: 20px;
+}
+
 .main .account-perks-list .list-item {
   position: relative;
   margin: 10px 0;
@@ -31,7 +37,7 @@
   margin-left: 40px;
 }
 
-@media (min-width: 530px) and (max-width: 991px) {
+@media (min-width: 590px) and (max-width: 991px) {
   .main .account-perks-list {
     display: inline-block;
   }
@@ -40,6 +46,12 @@
     float: left;
     width: 50%;
   }
+}
+
+/* main free-account-form */
+
+.main .segment .title {
+  margin-top: 10px;
 }
 
 /* disclaimer */
