@@ -13,6 +13,10 @@
   color: #24c1db !important;
 }
 
+.text-light {
+  color: #fff !important;
+}
+
 .text-break {
   display: block;
 }

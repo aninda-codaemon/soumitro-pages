@@ -90,7 +90,7 @@
 
           <div class="col-md-7">
 
-            <form class="form" id="free-account-form">
+            <form class="form" action="/accounts" id="subscribe_form" method="post" data-fr-bind="leadData currentRecord" data-sub-ignore-messages="false" data-sub-ignore-success="false" data-sub-success-class="input-success" data-sub-success-image="img/checked.png" data-sub-error-class="input-error">
 
               <div class="segment segment-primary">
                 <span class="label label-transparent">STEP 1</span>
@@ -99,20 +99,20 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
-                      <label for="">First Name</label>
-                      <input type="text" name="" class="form-control" placeholder="First Name" />
+                      <label for="account_first_name">First Name</label>
+                      <input type="text" name="account[first_name]" class="form-control" id="account_first_name" value="{{account[first_name]}}" placeholder="First Name" />
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
-                      <label for="">Last Name</label>
-                      <input type="text" name="" class="form-control" placeholder="Last Name" />
+                      <label for="account_last_name">Last Name</label>
+                      <input type="text" name="account[last_name]" class="form-control" id="account_last_name" value="{{account[last_name]}}" placeholder="Last Name" />
                     </div>
                   </div>
                   <div class="col-xs-12">
                     <div class="form-group">
-                      <label for="">Email Address</label>
-                      <input type="text" name="" class="form-control" placeholder="Email Address" />
+                      <label for="user_email">Email Address</label>
+                      <input type="text" name="user[email]" class="form-control" id="user_email" value="{{user[email]}}" maxsize="100" placeholder="Email Address" />
                     </div>
                   </div>
                 </div>
@@ -120,19 +120,19 @@
 
               <div class="segment segment-primary">
                 <span class="label label-transparent">STEP 2</span>
-                <h4 class="title text-primary">Create password</h4>
+                <h4 class="title text-primary">Create password <img class="img-right" src="img/norton.png" /></h4>
 
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
-                      <label for="">Password</label>
-                      <input type="password" name="" class="form-control" placeholder="Password" />
+                      <label for="password">Password</label>
+                      <input type="password" name="password" class="form-control" id="password" size="30" placeholder="Password" />
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
-                      <label for="">Confirm Password</label>
-                      <input type="password" name="" class="form-control" placeholder="Confirm Password" />
+                      <label for="confirm-password">Confirm Password</label>
+                      <input type="password" name="confirm-password" class="form-control" id="confirm-password" size="30" placeholder="Confirm Password" />
                     </div>
                   </div>
                 </div>
@@ -140,20 +140,30 @@
 
               <div class="segment">
                 <div class="checkbox">
-                  <label for="">
-                    <input type="checkbox" name="" />
+                  <label for="tos2">
+                    <input type="checkbox" name="tos2" id="tos2" value="1" />
                     Your trials lasts until <%= (Time.now + 5.days).strftime('%m/%d/%Y') %>. If you would like to cancel before your trial ends, you may do so for any reason and you will not be charged again. Simply call 1-888-579-5910 or email support@beenverified.com, to speak with one of our Customer Service Representatives. Otherwise, your trial will end on <%= (Time.now + 5.days).strftime('%m/%d/%Y') %>, at which time you will be charged the standard monthly rate of $25.47. Your membership will automatically renew every 30 days thereafter until you cancel.
                   </label>
                 </div>
 
                 <div class="checkbox">
-                  <label for="">
-                    <input type="checkbox" name="" />
+                  <label for="account_tos">
+                    <input type="checkbox" name="account[tos]" id="account_tos" value="1" />
                     By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Website Terms of Service</a>, <a href="//www.beenverified.com/home/membership_agreement" target="_blank">Member Agreement</a> and <a href="//www.beenverified.com/privacy" target="_blank">Privacy Policy</a>. I agree that I will not use any information about an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance; or for any other purpose prohibited by our Terms of Service. (For more information about whether a use of information falls under one of these categories, please review our Do's &amp; Don'ts or contact us at <a href="mailto:support@beenverified.com">support@beenverified.com</a>.)
                   </label>
                 </div>
 
-                <button type="submit" class="btn btn-lg btn-centered btn-primary">Access Report</button>
+                <input type="hidden" name="promotion" id="promotion" value="view_report_trial" />
+                <input type="hidden" name="authenticity_token" id="authenticity_token" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=" />
+                <input type="hidden" name="subscription_plan_name" class="plan_name_radio" id="22_1_month_nofree_afill_no_bjl" value="<%= subscription_1 %>" checked />
+                <input type="hidden" name="layout" id="layout" value="fresh" />
+                <input type="hidden" name="user[password]" id="user_password" value="delay" />
+                <input type="hidden" name="user[pwdelay]" id="user_pwdelay" value="true" />
+                <input type="hidden" name="password" id="password" value="delay" />
+                <input type="hidden" name="pwdelay" id="password_delay" value="true" />
+                <input type="hidden" name="record_search[person_id]" id="record_search_person_id" value="{{bvid}}" />
+
+                <button type="submit" class="btn btn-lg btn-centered btn-primary" id="create_button">Access Report</button>
               </div>
 
             </form>
@@ -164,7 +174,7 @@
         <div class="disclaimer row">
           <div class="col-xs-12">
             <p class="text-caption title"><strong>Live Customer Support Hours: M-F 8am - 10pm ET and Weekends 10am - 8pm ET</strong></p>
-            <p class="text-caption"><strong>Disclaimer:</strong> BeenVerified’s mission is to give people easy and affordable access to public record information. BeenVerified does not provide private investigator services, and is not a consumer reporting agency as defined by the <a href="//www.beenverified.com/dos-donts" rel="nofollow" target="_blank">Fair Credit Report Act</a> because the information provided by BeenVerified is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses of BeenVerified, please review our <a href="//www.beenverified.com/dos-donts" target="_blank" rel="nofollow">“Do’s &amp; Don’ts”</a> and our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank" rel="nofollow">Terms &amp; Conditions</a>.</p>
+            <p class="text-caption"><strong>Disclaimer:</strong> BeenVerified’s mission is to give people easy and affordable access to public record information. BeenVerified does not provide private investigator services, and is not a consumer reporting agency as defined by the <a class="text-light" href="//www.beenverified.com/dos-donts" rel="nofollow" target="_blank">Fair Credit Report Act</a> because the information provided by BeenVerified is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses of BeenVerified, please review our <a class="text-light" href="//www.beenverified.com/dos-donts" target="_blank" rel="nofollow">“Do’s &amp; Don’ts”</a> and our <a class="text-light" href="//www.beenverified.com/consumer-terms-of-service" target="_blank" rel="nofollow">Terms &amp; Conditions</a>.</p>
           </div>
         </div>
 
