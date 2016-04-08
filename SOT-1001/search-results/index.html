@@ -1106,13 +1106,12 @@
             </div>
             <div class="col-sm-6 hidden-xs" data-fr-bind="currentRecord selectedRelatives">
               {{#if selectedRelativesSummary}}
-                <h4 class="report-summary-title"><span class="title-label">Summary of Reports</span></h4>
+                <h3 class="report-summary-title"><span class="title-label">Summary of Reports</span></h3>
                 <div class="report-summary">
-                  <div class="subject-summary-text-bg">
-                    <div class="subject-summary-text text-left">
-                      <h3 class="modal-name"><strong>{{fullName}}</strong> | Age: {{displayAge}}</h3>
-                    </div>
-                  </div>
+                  <h4 class="report-summary-name">
+                    <img class="img-icon" src="//dbivtdsofhpu6.cloudfront.net/assets/img/eafa2c2a7afe294e4718ab0c6b3546b8.jpg" />
+                    <strong>{{fullName}}</strong> | Age: {{displayAge}}
+                  </h4>
                   <div id="map-goes-here">
                     <img id="map" alt="map" />
                   </div>

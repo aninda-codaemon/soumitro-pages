@@ -2819,7 +2819,7 @@ p.why-text {
 }
 
 .report-summary {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 
   border: 1px solid #dadada;
   border-radius: 4px;
@@ -2855,6 +2855,25 @@ p.why-text {
   margin-left: 65px;
 }
 
+.report-summary-name {
+  margin: 10px 15px;
+  text-align: left;
+  text-transform: capitalize;
+}
+.report-summary-name .img-icon {
+  width: 34px;
+  margin-right: 10px;
+}
+
+.relative-label {
+  margin-top: 4px;  
+  padding: 5px 10px;
+  border: 1px solid #6DAC45;
+  border-radius: 4px;
+  color: #6DAC45;
+  font-size: 14px;
+  text-transform: uppercase;
+}
 .report-summary-header {
   padding: 8px 15px 4px;
 

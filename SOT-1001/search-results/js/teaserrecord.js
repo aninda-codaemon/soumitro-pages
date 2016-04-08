@@ -311,7 +311,7 @@
           name = relatives[i].name;
 
           relativesTeaser.push(
-            '<div class="report-summary"><div class="subject-summary-text-bg"><div class="subject-summary-text text-left"><h3 class="modal-name"><strong>' + name + '</strong><span class="relative-label pull-right">Relative</span></h3></div></div></div>'
+            '<div class="report-summary"><h4 class="report-summary-name"><img class="img-icon" src="//dbivtdsofhpu6.cloudfront.net/assets/img/eafa2c2a7afe294e4718ab0c6b3546b8.jpg" /><strong>' + name + '</strong><span class="relative-label pull-right">Relative</span></h4></div>'
           );
         }
 
