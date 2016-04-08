@@ -1104,42 +1104,59 @@
                 </small>
               </p>
             </div>
-            <div class="col-sm-6 hidden-xs">
-              <div class="report-summary">
-                <div class="subject-summary">
-                  <div class="report-summary-header">
-                    <p>
-                      <strong>Report Summary</strong>
-                    </p>
-                  </div>
+            <div class="col-sm-6 hidden-xs" data-fr-bind="currentRecord selectedRelatives">
+              {{#if selectedRelativesSummary}}
+                <h4 class="report-summary-title"><span class="title-label">Summary of Reports</span></h4>
+                <div class="report-summary">
                   <div class="subject-summary-text-bg">
-                    <div class="subject-summary-text text-left" data-fr-bind="currentRecord">
-                      <h3 class="modal-name"><strong>{{fullName}}</strong></h3>
-                      <p>Age: {{displayAge}}</p>
+                    <div class="subject-summary-text text-left">
+                      <h3 class="modal-name"><strong>{{fullName}}</strong> | Age: {{displayAge}}</h3>
                     </div>
                   </div>
                   <div id="map-goes-here">
                     <img id="map" alt="map" />
                   </div>
                 </div>
-                <ul class="blur-list clearfix text-left list-unstyled">
-                  <p>Includes, When Available:</p>
-                  <div class="blur-list-left">
-                    <li>Current Address</li>
-                    <li>Phone Numbers</li>
-                    <li>Bankruptcies</li>
-                    <li>Email Addresses</li>
-                    <li>Photos&nbsp;<img src="img/new_blue.png"></li>
+
+                {{{selectedRelativesSummary}}}
+
+              {{else}}
+                <div class="report-summary">
+                  <div class="subject-summary">
+                    <div class="report-summary-header">
+                      <p>
+                        <strong>Report Summary</strong>
+                      </p>
+                    </div>
+                    <div class="subject-summary-text-bg">
+                      <div class="subject-summary-text text-left">
+                        <h3 class="modal-name"><strong>{{fullName}}</strong></h3>
+                        <p>Age: {{displayAge}}</p>
+                      </div>
+                    </div>
+                    <div id="map-goes-here">
+                      <img id="map" alt="map" />
+                    </div>
                   </div>
-                  <div class="blur-list-right">
-                    <li>Address History</li>
-                    <li>Criminal History</li>
-                    <li>Judgments</li>
-                    <li>Associates</li>
-                    <li>Social Media</li>
-                  </div>
-                </ul>
-              </div>
+                  <ul class="blur-list clearfix text-left list-unstyled">
+                    <p>Includes, When Available:</p>
+                    <div class="blur-list-left">
+                      <li>Current Address</li>
+                      <li>Phone Numbers</li>
+                      <li>Bankruptcies</li>
+                      <li>Email Addresses</li>
+                      <li>Photos&nbsp;<img src="img/new_blue.png"></li>
+                    </div>
+                    <div class="blur-list-right">
+                      <li>Address History</li>
+                      <li>Criminal History</li>
+                      <li>Judgments</li>
+                      <li>Associates</li>
+                      <li>Social Media</li>
+                    </div>
+                  </ul>
+                </div>
+              {{/if}}
             </div>
           </div>
         </div><!-- /.modal-body -->

@@ -290,6 +290,37 @@
       }
     };
 
+    TeaserRecord.prototype.selectedRelativesSummary = function() {
+      var relatives,
+          relativesTeaser = [],
+          name = '';
+
+      if (typeof this.record.selectedRelatives === "undefined") {
+        return [];
+      } else if (this.record.selectedRelatives === void 0) {
+        return [];
+      }
+      if ($.type(this.record.selectedRelatives) !== 'array') {
+        relatives = [this.record.selectedRelatives];
+      } else if ($.type(this.record.selectedRelatives) === 'array') {
+        relatives = this.record.selectedRelatives;
+      }
+
+      if (relatives && relatives.length !== 0) {
+        for (var i = 0; i < relatives.length; i++) {
+          name = relatives[i].name;
+
+          relativesTeaser.push(
+            '<div class="report-summary"><div class="subject-summary-text-bg"><div class="subject-summary-text text-left"><h3 class="modal-name"><strong>' + name + '</strong><span class="relative-label pull-right">Relative</span></h3></div></div></div>'
+          );
+        }
+
+        return relativesTeaser.join('');
+      } else {
+        return [];
+      }
+    }
+
     TeaserRecord.prototype.selectedRelatives = function() {
       var relatives,
           relativesTeaser = [];
