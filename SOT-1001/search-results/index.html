@@ -1495,7 +1495,7 @@
                       </div>
                     </div>
                     {{/if}}
-                    <div class="{{#if photo}}col-sm-4{{else}}col-sm-5 col-sm-offset-1{{/if}}">
+                    <div class="{{#if photo}}col-sm-3{{else}}col-sm-3 col-sm-offset-2{{/if}}">
                       <h2 class="person-name">{{fullName}}</h2>
                       <div class="person-address">
                         {{#if place}}
@@ -1503,33 +1503,34 @@
                         {{/if}}
                       </div>
                     </div>
-                    {{#if otherLocations}}
-                    <div class="col-sm-3 hidden-xs">
-                      <h3>Past Cities</h3>
-                      <div class="person-cities">{{shortList otherLocations}}
-                        {{#if evenMorePlacesCount}}
-                        <br><span class="moreCount">+ {{evenMorePlacesCount}} more</span>
-                        {{/if}}
-                      </div>
-                    </div>
-                    {{/if}}
-                    {{#if relatives}}
-                    <div class="col-sm-3 hidden-xs">
-                      {{#if selectedRelatives}}
-                        <h3>Selected Relatives</h3>
-                        <div class="person-selected-relatives">
-                          {{{selectedRelatives}}}
-                        </div>
-                      {{else}}
-                        <h3>Relatives</h3>
-                        <div class="person-relatives">{{shortList relatives}}
-                          {{#if moreRelativesCount}}
-                          <br><span class="moreCount">+ {{moreRelativesCount}} more</span>
+                    <div class="col-sm-7 teaser-data-col">
+                      {{#if otherLocations}}
+                        <p class="teaser-data-text">
+                          <strong>Past Cities:</strong>
+                          {{shortList otherLocations}}
+                          {{#if evenMorePlacesCount}}
+                            <span class="moreCount">+ {{evenMorePlacesCount}} more</span>
                           {{/if}}
-                        </div>
+                        </p>
+                      {{/if}}
+                      {{#if relatives}}
+                        {{#if selectedRelatives}}
+                          <p class="teaser-data-text">
+                            <img class="img-icon" src="img/add_report.png" />
+                            <strong>Additional Relative Reports:</strong>
+                            <span class="selected-relatives">{{{selectedRelatives}}}</span>
+                          </p>
+                        {{else}}
+                          <p class="teaser-data-text">
+                            <strong>Relatives:</strong>
+                            {{shortList relatives}}
+                            {{#if moreRelativesCount}}
+                              <span class="moreCount">+ {{moreRelativesCount}} more</span>
+                            {{/if}}
+                          </p>
+                        {{/if}}
                       {{/if}}
                     </div>
-                    {{/if}}
                   </div>
                   <div class="row visible-xs">
                     <div class="btn-wrap">
