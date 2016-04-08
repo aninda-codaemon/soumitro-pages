@@ -295,13 +295,12 @@ span.save-this {
 /* ORDER SUMMARY ================================= */
 
 #order-summary .panel-body {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0;
 }
 .side-panel .panel-heading {
   padding-top: 11px;
   padding-bottom: 12px;
-  
+
   border-color: #747b91;
   background-color: #747b91;
   color: #fff;
@@ -309,8 +308,8 @@ span.save-this {
 .side-panel {
   padding-bottom: 0;
 
-  border: 1px solid #cfd9de;
-  background: transparent;
+  border: 1px solid #747B91;
+  background-color: #fff;
   box-shadow: none;
 }
 .order-summary-full-report {
@@ -322,17 +321,30 @@ span.save-this {
 }
 
 #order-summary div.panel-body div.order-summary-section {
-  padding-top: 8px;
+  padding: 15px;
 }
 .order-summary-heading {
-  line-height: 24px;
+  line-height: 1;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #353167;
+}
+.report-teaser-list {
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.report-teaser-list .list-item {
+  margin-bottom: 5px
 }
 .order-summary-total {
-  font-size: 16px;
+  line-height: 1;
+  font-size: 18px;
+  font-weight: bold;
+  color: #353167;
 
-  margin-top: 2px;
-  margin-bottom: 0;
-  padding-top: 8px;
+  margin: 0;
+  padding: 15px;
 
   border-top: 1px solid #cfd9de;
 }
@@ -402,10 +414,6 @@ p.side-headline-header {
 .now-included {
   font-style: italic;
 }
-.truncate {
-  position: relative;
-  bottom: 4px;
-}
 .teaser-data-count {
 	color: #337ab7;
 }
@@ -426,7 +434,8 @@ p.side-headline-header {
   display: block;
 
   min-height: 28px;
-  margin-top: 8px;
+  margin: 0;
+  padding: 10px 0;
 
   border-bottom: 1px dotted #cfd9de;
 }
@@ -434,9 +443,9 @@ p.side-headline-header {
   text-transform: capitalize;
 }
 .price-plan-row {
-  margin-top: 2px;
-  padding: 4px 0;
-  border-top: 1px solid #cfd9de;
+  margin: 0;
+  padding-bottom: 0;
+  border: 0;
 }
 .submit-btn-wrapper {
   margin-top: 30px;

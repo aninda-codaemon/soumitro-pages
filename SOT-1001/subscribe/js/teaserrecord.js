@@ -181,7 +181,7 @@
         return '';
       }
     };
-    
+
     TeaserRecord.prototype.selectedRelatives = function() {
       var relatives,
           relativesTeaser = [],
@@ -203,9 +203,9 @@
         for (var i = 0; i < relatives.length; i++) {
           id = relatives[i].id;
           name = relatives[i].name;
-          
+
           relativesTeaser.push(
-            '<span class="summary-details-wrapper clearfix selected-relative-row" id="' + id + '"><span class="order-summary-heading strong">+ Background Report on</span><span class="pull-right"><span class="teaser-data-count">' + name + '</span></span></span>'
+            '<span class="summary-details-wrapper clearfix selected-relative-row" id="' + id + '"><span class="order-summary-heading strong">Report for ' + name + '</span></span>'
           );
         }
 
