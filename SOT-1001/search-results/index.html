@@ -1105,57 +1105,39 @@
               </p>
             </div>
             <div class="col-sm-6 hidden-xs" data-fr-bind="currentRecord selectedRelatives">
+              <h3 class="report-summary-title"><span class="title-label">Summary of Reports</span></h3>
+              <div class="report-summary">
+                <h4 class="report-summary-name">
+                  <img class="img-icon" src="//dbivtdsofhpu6.cloudfront.net/assets/img/eafa2c2a7afe294e4718ab0c6b3546b8.jpg" />
+                  <strong>{{fullName}}</strong> | Age: {{displayAge}}
+                </h4>
+                <div class="captcha-map-container" id="map-goes-here">
+                  <img class="captcha-map" id="map" alt="map" />
+                </div>
+              </div>
+
               {{#if selectedRelativesSummary}}
-                <h3 class="report-summary-title"><span class="title-label">Summary of Reports</span></h3>
-                <div class="report-summary">
-                  <h4 class="report-summary-name">
-                    <img class="img-icon" src="//dbivtdsofhpu6.cloudfront.net/assets/img/eafa2c2a7afe294e4718ab0c6b3546b8.jpg" />
-                    <strong>{{fullName}}</strong> | Age: {{displayAge}}
-                  </h4>
-                  <div id="map-goes-here">
-                    <img id="map" alt="map" />
-                  </div>
-                </div>
-
                 {{{selectedRelativesSummary}}}
-
               {{else}}
-                <div class="report-summary">
-                  <div class="subject-summary">
-                    <div class="report-summary-header">
-                      <p>
-                        <strong>Report Summary</strong>
-                      </p>
-                    </div>
-                    <div class="subject-summary-text-bg">
-                      <div class="subject-summary-text text-left">
-                        <h3 class="modal-name"><strong>{{fullName}}</strong></h3>
-                        <p>Age: {{displayAge}}</p>
-                      </div>
-                    </div>
-                    <div id="map-goes-here">
-                      <img id="map" alt="map" />
-                    </div>
+                <ul class="blur-list clearfix text-left list-unstyled">
+                  <p>Includes, When Available:</p>
+                  <div class="blur-list-left">
+                    <li>Current Address</li>
+                    <li>Phone Numbers</li>
+                    <li>Bankruptcies</li>
+                    <li>Email Addresses</li>
+                    <li>Photos&nbsp;<img src="img/new_blue.png"></li>
                   </div>
-                  <ul class="blur-list clearfix text-left list-unstyled">
-                    <p>Includes, When Available:</p>
-                    <div class="blur-list-left">
-                      <li>Current Address</li>
-                      <li>Phone Numbers</li>
-                      <li>Bankruptcies</li>
-                      <li>Email Addresses</li>
-                      <li>Photos&nbsp;<img src="img/new_blue.png"></li>
-                    </div>
-                    <div class="blur-list-right">
-                      <li>Address History</li>
-                      <li>Criminal History</li>
-                      <li>Judgments</li>
-                      <li>Associates</li>
-                      <li>Social Media</li>
-                    </div>
-                  </ul>
-                </div>
+                  <div class="blur-list-right">
+                    <li>Address History</li>
+                    <li>Criminal History</li>
+                    <li>Judgments</li>
+                    <li>Associates</li>
+                    <li>Social Media</li>
+                  </div>
+                </ul>
               {{/if}}
+
             </div>
           </div>
         </div><!-- /.modal-body -->

@@ -2827,11 +2827,11 @@ p.why-text {
 }
 
 #map-goes-here {
-  height: 150px;
-  margin: 0 15px 10px;
+  height: 120px;
+  margin: 8px;
 
   border: solid 1px #dadada;
-  background-position: 50% 45%;
+  background-position: 50% 50%;
 }
 
 #map-goes-here img {
@@ -2855,23 +2855,37 @@ p.why-text {
   margin-left: 65px;
 }
 
+.report-summary-title {
+  margin: 10px 0 25px;
+  border-bottom: 1px solid #ccc;
+  font-size: 20px;
+  text-transform: uppercase;
+  line-height: 0;
+}
+
+.report-summary-title .title-label {
+  padding: 5px 10px;
+  background-color: #fff;
+}
+
 .report-summary-name {
-  margin: 10px 15px;
+  margin: 8px;
+  font-size: 16px;
   text-align: left;
   text-transform: capitalize;
 }
 .report-summary-name .img-icon {
-  width: 34px;
-  margin-right: 10px;
+  width: 28px;
+  margin-right: 5px;
 }
 
 .relative-label {
-  margin-top: 4px;
+  margin-top: 2px;
   padding: 5px 10px;
   border: 1px solid #6DAC45;
   border-radius: 4px;
   color: #6DAC45;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
 }
 .report-summary-header {
