@@ -667,6 +667,7 @@
     });
 
     $('.skip-relatives-form').click(function() {
+      amplify.store('selectedRelatives', {});
       showNextModal();
     });
   }
