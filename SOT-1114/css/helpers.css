@@ -44,3 +44,14 @@
   width: 100%;
   margin: 20px auto;
 }
+
+/* affix */
+
+.affix {
+  position: fixed;
+  top: 30px;
+}
+
+.affix-bottom {
+  position: absolute;
+}

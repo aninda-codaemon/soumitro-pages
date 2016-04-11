@@ -24,76 +24,9 @@
     trackNL('Safari Private Browsing');
   }
 
-  var BrowserDetect = {
-    init: function() {
-      this.browser = this.searchString(this.dataBrowser) || 'Other';
-      this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "Unknown";
-    },
-    searchString: function(data) {
-      for (var i = 0; i < data.length; i++) {
-        var dataString = data[i].string;
-        this.versionSearchString = data[i].subString;
+  var $searchForm = $('.search-form');
 
-        if (dataString.indexOf(data[i].subString) !== -1) {
-          return data[i].identity;
-        }
-      }
-    },
-    searchVersion: function(dataString) {
-      var index = dataString.indexOf(this.versionSearchString);
-      if (index === -1) {
-        return;
-      }
-
-      var rv = dataString.indexOf('rv:');
-      if (this.versionSearchString === 'Trident' && rv !== -1) {
-        return parseFloat(dataString.substring(rv + 3));
-      } else {
-        return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
-      }
-    },
-
-    dataBrowser: [{
-      string: navigator.userAgent,
-      subString: 'Edge',
-      identity: 'MS Edge'
-    }, {
-      string: navigator.userAgent,
-      subString: 'Chrome',
-      identity: 'Chrome'
-    }, {
-      string: navigator.userAgent,
-      subString: 'MSIE',
-      identity: 'Explorer'
-    }, {
-      string: navigator.userAgent,
-      subString: 'Trident',
-      identity: 'Explorer'
-    }, {
-      string: navigator.userAgent,
-      subString: 'Firefox',
-      identity: 'Firefox'
-    }, {
-      string: navigator.userAgent,
-      subString: 'Safari',
-      identity: 'Safari'
-    }, {
-      string: navigator.userAgent,
-      subString: 'Opera',
-      identity: 'Opera'
-    }]
-  };
-
-  // Back To Top
-  $('#scrollTop').click(function() {
-    $('html, body').animate({
-      scrollTop: $('.header').offset().top
-    }, 500);
-  });
-
-  var $headerSearchPeople = $('#header-search-people');
-
-  $headerSearchPeople.validate({
+  $searchForm.validate({
     validClass: "success",
 
     rules: {
@@ -116,9 +49,18 @@
     }
   });
 
-  var init = function() {
-    BrowserDetect.init();
+  // @TODO: fix affix (lol)
 
+  $('#share').affix({
+    offset: {
+      top: 180,
+      bottom: function () {
+        return (this.bottom = $('.search-footer').outerHeight(true))
+      }
+    }
+  });
+
+  var init = function() {
     $('.autofocus').focus();
   };
 
