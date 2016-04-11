@@ -10,11 +10,25 @@
 /* header-hero */
 
 .header-hero .logo {
+  text-decoration: none;
+}
+
+.header-hero .logo .img-logo {
   margin-top: 40px;
 }
 
-.header-hero .sub-title {
+.header-hero .logo .sub-title {
   margin: 0;
+  color: #030C0D;
+  -webkit-transition: all 250ms;
+  -moz-transition: all 250ms;
+  -ms-transition: all 250ms;
+  -o-transition: all 250ms;
+  transition: all 250ms;
+}
+
+.header-hero .logo:hover .sub-title {
+  color: #fff;
 }
 
 .header-hero .search-form {
@@ -22,7 +36,7 @@
 }
 
 @media (min-width: 1200px) {
-  .header-hero .logo {
+  .header-hero .logo .img-logo {
     margin-top: 35px;
   }
 }

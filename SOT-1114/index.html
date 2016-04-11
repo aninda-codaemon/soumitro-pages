@@ -59,12 +59,14 @@
       <div class="header-hero container">
         <div class="row">
           <div class="col-md-3">
-            <img class="img-responsive logo" src="img/logo.png" />
-            <p class="sub-title text-center"><strong>Search People. It's Easy!</strong></p>
+            <a class="logo" href="<%= next_page %>">
+              <img class="img-responsive img-logo" src="img/logo.png" />
+              <p class="sub-title text-center"><strong>Search People. It's Easy!</strong></p>
+            </a>
           </div>
 
           <div class="col-md-9">
-            <form action="<%= next_page %>" id="search-people-form" class="search-form">
+            <form role="form" method="get" action="https://www.peoplelooker.com/lp/<%=flow_unique_id%>/3/loading" class="search-form" id="search-people-form" data-disable="false">
               <div class="row">
                 <div class="col-sm-10">
                   <div class="row">
@@ -156,13 +158,19 @@
         </div>
 
         <div class="col-sm-10 col-md-11">
-          <h1 class="title">This site's deep search can reveal more than Google</h1>
+          <h1 class="title">
+            This site's deep search can reveal more than Google
+          </h1>
 
-          <p class="latest-update">Updated at 4:09pm on January 15th, 2016</p>
+          <p class="latest-update">
+            Updated at 4:09pm on January 15th, 2016
+          </p>
 
           <img class="img-hero" src="img/hero.jpg" />
 
-          <p class="article-tags">Tags: Safety | Criminal Records | Social Profiles | Background Checks</p>
+          <p class="article-tags">
+            Tags: Safety | Criminal Records | Social Profiles | Background Checks
+          </p>
 
           <p>
             <span class="geodemonym">Millions of Americans</span> <a href="<%= next_page %>"> have been using PeopleLooker</a> to simplify the process of revealing personal information that may be beyond what can be found on Google. It is now easier and more affordable to access publicly available information about friends, celebrities, family, neighbors or people you don’t trust.
@@ -183,6 +191,35 @@
           <p>
             <a href="<%= next_page %>">PeopleLooker’s public record database</a> tells you important information such as whether someone has a criminal record, where sex offenders are located, if they own a weapon, or if they have a mysterious background. These are just a few of the data points available:
           </p>
+
+          <p>
+            Information Available on PeopleLooker:
+          </p>
+
+          <ul class="info-list">
+            <li class="list-item">Arrest Records</li>
+            <li class="list-item">Traffic Tickets</li>
+            <li class="list-item">Bankruptcies</li>
+            <li class="list-item">Photos</li>
+            <li class="list-item">Email Addresses</li>
+            <li class="list-item">Phone Numbers</li>
+            <li class="list-item">Social Profiles</li>
+            <li class="list-item">Home Addresses</li>
+            <li class="list-item">Relatives &amp; Associates</li>
+            <li class="list-item">And More!</li>
+          </ul>
+
+          <p>
+            In the past, it might take days or weeks to go to court houses and pay fees to reveal public records. But now, all you need to get started, is a <a href="<%= next_page %>">simple online search.</a>
+          </p>
+
+          <p>
+            People may also be searching for information about you. It’s important that you run a search of your own name to find out what potentially harmful information others can find out about you. There is information in public records that may not be available on Google or on Facebook. Never be caught in a situation where others ask you “So, can you tell me about your drug possession charge?” “Is there a reason you have so many traffic violations?” “Why have you lived in ten different places?”
+          </p>
+
+          <p>
+            Try it yourself and see what you find out. Just search your name or someone you know, <a href="<%= next_page %>">click here</a>.
+          </p>
         </div>
       </div>
     </section>
@@ -191,12 +228,12 @@
       <div class="container">
         <h4 class="title text-center">Try It For Yourself - Search yourself, a friend, or anyone else you may know.</h4>
 
-        <form action="<%= next_page %>" id="search-people-form" class="search-form">
+        <form role="form" method="get" action="https://www.peoplelooker.com/lp/<%=flow_unique_id%>/3/loading" class="search-form" id="search-people-form" data-disable="false">
           <div class="row">
             <div class="col-sm-10">
               <div class="row">
                 <div class="col-sm-4 form-group">
-                  <input type="text" name="fn" placeholder="First Name" id="fn" class="form-control input-lg first-input autofocus" autofocus>
+                  <input type="text" name="fn" placeholder="First Name" id="fn" class="form-control input-lg first-input">
                 </div>
                 <div class="col-sm-4 form-group">
                   <input type="text" name="ln" placeholder="Last Name" id="ln" class="form-control input-lg" />

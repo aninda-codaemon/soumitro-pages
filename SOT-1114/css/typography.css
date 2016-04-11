@@ -7,6 +7,8 @@ p, a, li, td, th, pre, code,
 blockquote, article, figure,
 textarea, input, select,
 label, button {
+  margin-bottom: 20px;
+  color: #030C0D;
   font-size: 16px;
   font-weight: normal;
   letter-spacing: -0.3px;
@@ -62,12 +64,13 @@ a {
 
 a:hover,
 a:focus {
-  color: #333;
+  color: #030C0D;
   text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6,
 th, figcaption, button {
+  color: #000;
   font-weight: bold;
   line-height: 1;
   letter-spacing: -0.3px;
