@@ -38,3 +38,9 @@
 .img-responsive {
   margin: 0 auto;
 }
+
+.img-hero {
+  display: block;
+  width: 100%;
+  margin: 20px auto;
+}

@@ -10,7 +10,7 @@ label, button {
   font-size: 16px;
   font-weight: normal;
   letter-spacing: -0.3px;
-  line-height: 1;
+  line-height: 1.5;
 }
 
 @media (min-width: 480px) {
