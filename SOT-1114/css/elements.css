@@ -167,7 +167,6 @@
 /* hr */
 
 hr {
-    margin-top: 60px;
-    margin-bottom: 40px;
+    margin: 40px auto;
     border-color: #33D4C0;
 }

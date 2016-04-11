@@ -9,14 +9,17 @@
 
 /* header-hero */
 
-.header-hero .img-logo {
-  display: block;
-  width: 80px;
-  margin: 15px auto;
+.header-hero .logo {
+  margin-top: 40px;
+  margin-bottom: 5px;
+}
+
+.header-hero .sub-title {
+  margin: 0;
 }
 
 .header-hero .header-search {
-  margin: 40px auto;
+  margin: 40px auto 30px;
 }
 
 .header-hero .header-search .form-group {
@@ -47,36 +50,16 @@
   text-align: left;
 }
 
-.header-hero .header-mascots {
-  max-width: 600px;
-  margin: 30px auto;
-}
-
-.header-hero .header-mascots .img-mascot {
-  width: 100px;
-  margin-bottom: 5px;
-}
-
-@media (min-width: 768px) {
-  .header-hero {
-    padding-bottom: 30px;
-  }
-
-  .header-hero .img-logo {
-    width: 100px;
-  }
-}
-
-@media (min-width: 992px) {
-  .header-hero .img-logo {
-    width: 110px;
-  }
-}
-
 @media (min-width: 1200px) {
-  .header-hero .img-logo {
-    width: 120px;
+  .header-hero .logo {
+    margin-top: 35px;
   }
 }
 
 /* content */
+
+/* footer */
+
+.footer .title {
+  font-size: 18px;
+}

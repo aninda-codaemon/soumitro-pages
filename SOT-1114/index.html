@@ -53,15 +53,19 @@
 
         <div class="header-hero container">
             <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
+                <div class="col-md-3">
+                    <img class="img-responsive logo" src="img/logo.png" />
+                    <p class="sub-title text-center"><strong>Search People. It's Easy!</strong></p>
+                </div>
 
+                <div class="col-md-9">
                     <form action="<%= next_page %>" id="header-search-people" class="header-search">
                         <div class="row">
                             <div class="col-sm-10">
                                 <div class="row">
                                     <div class="col-sm-4 form-group">
                                         <input type="text" name="fn" placeholder="First Name" id="fn"
-                                               class="form-control input-lg first-input focus-me" autofocus>
+                                               class="form-control input-lg first-input autofocus" autofocus>
                                     </div>
                                     <div class="col-sm-4 form-group">
                                         <input type="text" name="ln" placeholder="Last Name" id="ln"
@@ -131,21 +135,20 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
 
     </header>
 
-    <section class="content">
+    <section class="content container">
       <p>content goes here</p>
     </section>
 
     <footer class="footer">
         <div class="container">
 
-            <h6 class="title text-uppercase">This is an advertisement and NOT an actual news article, blog, or consumer protection update.</h6>
+            <p class="title text-uppercase"><strong>This is an advertisement and NOT an actual news article, blog, or consumer protection update.</strong></p>
 
             <hr/>
 
