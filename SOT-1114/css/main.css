@@ -78,6 +78,7 @@
 .search-footer {
   padding-top: 60px;
   padding-bottom: 60px;
+  z-index: 1;
 }
 
 .search-footer .title {

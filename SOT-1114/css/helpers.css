@@ -49,14 +49,11 @@
 
 .affix-top {
   position: relative;
-  top: 0;
-  width: auto;
 }
 
 .affix {
   position: fixed;
-  top: 30px;
-  width: 65px;
+  z-index: -1;
 }
 
 .affix-bottom {

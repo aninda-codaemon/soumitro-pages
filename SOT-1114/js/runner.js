@@ -54,6 +54,9 @@ $(document).ready(function() {
   // @TODO: fix affix
   // window.scroll is not responding for some reason...
 
+  // remove this when affix is working
+  $('#share-it').addClass('affix');
+
   // $('#share-it').affix({
   //   offset: {
   //     top: 200,
