@@ -35,9 +35,19 @@
   margin: 40px auto 25px;
 }
 
+@media (min-width: 992px) {
+  .header-hero .logo .sub-title {
+    font-size: 18px;
+  }
+}
+
 @media (min-width: 1200px) {
   .header-hero .logo .img-logo {
     margin-top: 35px;
+  }
+
+  .header-hero .logo .sub-title {
+    font-size: 20px;
   }
 }
 

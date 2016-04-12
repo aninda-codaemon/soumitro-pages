@@ -52,7 +52,7 @@ $(document).ready(function() {
   });
 
   // @TODO: fix affix
-  // window.scroll is not responding for some reason...
+  // window.scroll func not responding...
 
   // remove this when affix is working
   $('#share-it').addClass('affix');
@@ -68,10 +68,13 @@ $(document).ready(function() {
 
   $(window).scroll(function() {
     if ($(this).scrollTop() > 275) {
+      debugger;
       $('#share-it').addClass('affix');
     } else if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+      debugger;
       $('#share-it').addClass('affix-bottom');
     } else {
+      debugger;
       $('#share-it').removeClass('affix');
     }
   });
