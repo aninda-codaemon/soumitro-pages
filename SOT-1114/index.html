@@ -25,8 +25,8 @@
   <link href="css/main.css" rel="stylesheet" type="text/css" />
 
   <!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
-      <script src="js/respond.min.js"></script>
+      <script src="js/vendor/html5shiv.min.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
     <![endif]-->
 
   <!-- Hotjar Tracking Code for www.PeopleLooker.com -->
@@ -48,7 +48,7 @@
   </script>
 </head>
 
-<body data-spy="scroll" data-target="#share">
+<body>
 
   <main class="layout" id="pl-layout-pr">
 
@@ -148,13 +148,13 @@
     <section class="content container">
       <div class="row">
         <div class="col-sm-2 col-md-1">
-          <div class="share_this hidden-xs" id="share">
-            <span class='st_facebook_vcount' displayText='Facebook'></span>
-            <span class='st_twitter_vcount' displayText='Tweet'></span>
-            <span class='st_linkedin_vcount' displayText='LinkedIn'></span>
-            <span class='st_pinterest_vcount' displayText='Pinterest'></span>
-            <span class='st_email_vcount' displayText='Email'></span>
-          </div>
+          <ul class="share-buttons list-unstyled hidden-xs" id="share">
+            <li class='st_facebook_vcount' displayText='Facebook'></li>
+            <li class='st_twitter_vcount' displayText='Tweet'></li>
+            <li class='st_linkedin_vcount' displayText='LinkedIn'></li>
+            <li class='st_pinterest_vcount' displayText='Pinterest'></li>
+            <li class='st_email_vcount' displayText='Email'></li>
+          </ul>
         </div>
 
         <div class="col-sm-10 col-md-11">
@@ -332,16 +332,12 @@
     </footer>
   </main>
 
-  <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
-  <script type="text/javascript" src="js/jquery.validate.min.js"></script>
-  <script type="text/javascript" src="js/amplify.store.min.js"></script>
-  <script type="text/javascript" src="js/lodash.min.js"></script>
-  <script type="text/javascript" src="js/geolocator.min.js"></script>
+  <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+  <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/vendor/geolocator.min.js"></script>
 
   <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
-
+  
   <script type="text/javascript" src="js/runner.js"></script>
 
 </body>
