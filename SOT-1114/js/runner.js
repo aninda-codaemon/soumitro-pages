@@ -18,27 +18,36 @@ $(document).ready(function() {
     }
   };
 
-  // Test for Safari private browsing mode
-  try {
-    localStorage.test = 2;
-  } catch (e) {
-    trackNL('Safari Private Browsing');
-  }
-
   // focus on input
   $('.autofocus').focus();
 
   // validate search form
   $('.search-form').submit(function() {
-    var searchForm = $(this);
+    var $searchForm = $(this),
+        $firstName = $searchForm.find('[name=fn]'),
+        $lastName = $searchForm.find('[name=ln]');
 
-    if (searchForm.find('[name=fn]').val() === '') {
-      console.log('first name error');
+    if ($firstName.val() === '') {
+      var $formGroup = $firstName.closest('.form-group');
+      $formGroup.addClass('error');
+
+      $firstName.on('keyup', function() {
+        $formGroup.removeClass('error');
+      });
+
       return false;
     }
-    if (searchForm.find('[name=ln]').val() === '') {
-      console.log('last name error');
+    else if ($lastName.val() === '') {
+      var $formGroup = $lastName.closest('.form-group');
+      $formGroup.addClass('error');
+
+      $lastName.on('keyup', function() {
+        $formGroup.removeClass('error');
+      });
+
       return false;
+    } else {
+      $searchForm.find('.form-group').removeClass('error');
     }
   });
 
