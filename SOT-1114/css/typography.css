@@ -85,6 +85,12 @@ th, figcaption, button {
   font-weight: normal;
 }
 
+.lead {
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
 h1 {
   font-size: 30px;
 }
@@ -146,6 +152,10 @@ h6 {
     margin-bottom: 15px;
   }
 
+  .lead {
+    font-size: 26px;
+  }
+
   h1 {
     font-size: 50px;
   }
@@ -172,6 +182,10 @@ h6 {
 }
 
 @media (min-width: 992px) {
+  .lead {
+    font-size: 28px;
+  }
+
   h1 {
     font-size: 60px;
   }
@@ -198,6 +212,10 @@ h6 {
 }
 
 @media (min-width: 1200px) {
+  .lead {
+    font-size: 30px;
+  }
+
   h1 {
     font-size: 70px;
   }
