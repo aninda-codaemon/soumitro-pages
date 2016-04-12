@@ -52,20 +52,28 @@ $(document).ready(function() {
   });
 
   // @TODO: fix affix
+  // window.scroll is not responding for some reason...
 
-  $('#share').affix({
-    offset: {
-      top: 180,
-      bottom: function () {
-        return (this.bottom = $('.search-footer').outerHeight(true))
-      }
-    }
-  });
+  // $('#share-it').affix({
+  //   offset: {
+  //     top: 200,
+  //     bottom: function () {
+  //       return (this.bottom = $('.search-footer').outerHeight(true))
+  //     }
+  //   }
+  // });
 
   $(window).scroll(function() {
     console.log($(window).scrollTop());
-    if ($(window).scrollTop() > 100 && $(window).scrollTop() < 150) {
-      console.log('scroll zone');
+  });
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 275) {
+      $('#share-it').addClass('affix');
+    } else if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+      $('#share-it').addClass('affix-bottom');
+    } else {
+      $('#share-it').removeClass('affix');
     }
   });
 

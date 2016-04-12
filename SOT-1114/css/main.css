@@ -43,6 +43,20 @@
 
 /* content */
 
+.content .share-buttons .share-button {
+  margin-bottom: 5px;
+}
+
+.content .share-buttons .share-button .stButton .stFb,
+.content .share-buttons .share-button .stButton .stMainServices,
+.content .share-buttons .share-button .stButton .stTwbutton {
+  height: auto !important;
+}
+
+.content .share-buttons .share-button .stButton .stBubble_count {
+  height: 42px !important;
+}
+
 .content .title {
   margin-top: 0;
   margin-bottom: 30px;
@@ -50,6 +64,13 @@
 
 .content .article-tags {
   margin-bottom: 40px;
+}
+
+@media (min-width: 992px) {
+  .content .content-col {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
 /* search-footer */
@@ -62,6 +83,7 @@
 .search-footer .title {
   margin: 0;
   margin-bottom: 40px;
+  color: #fff;
   font-weight: normal;
 }
 
