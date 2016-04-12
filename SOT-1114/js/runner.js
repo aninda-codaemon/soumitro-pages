@@ -64,10 +64,6 @@ $(document).ready(function() {
   // });
 
   $(window).scroll(function() {
-    console.log($(window).scrollTop());
-  });
-
-  $(window).scroll(function() {
     if ($(this).scrollTop() > 275) {
       $('#share-it').addClass('affix');
     } else if ($(window).scrollTop() + $(window).height() == $(document).height()) {
