@@ -13,12 +13,31 @@
   color: #24c1db !important;
 }
 
+.text-mute {
+  color: #7D7D7D;
+  font-size: 16px;
+}
+
+.text-caption {
+  font-size: 12px;
+}
+
 .text-uppercase {
   text-transform: uppercase;
 }
 
 .text-break {
   display: block;
+}
+
+@media (min-width: 768px) {
+  .text-mute {
+    font-size: 18px;
+  }
+
+  .text-caption {
+    font-size: 14px;
+  }
 }
 
 /* background helpers */
