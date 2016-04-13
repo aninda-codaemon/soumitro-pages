@@ -834,7 +834,9 @@
         <div class="modal-body" data-fr-bind="currentRecord">
           <p class="form-instructions">Select as many relatives for <span class="highlight-text">{{firstName}}</span> as possible. You'll be able to access these additional background reports within <span class="highlight-text">{{firstName}}'s</span> report.</p>
           <form class="form possible-relatives-form">
-            <h4 class="form-header">{{fullName}}</h4>
+            <div class="form-header hidden-xs">
+              <h4 class="form-header-name">{{fullName}}</h4>
+            </div>
             <div class="form-container">
               {{{relativesForm}}}
             </div>

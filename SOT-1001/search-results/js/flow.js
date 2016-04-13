@@ -645,9 +645,26 @@
   function possibleRelatives() {
     trackNL('Viewed Possible Relatives Modal');
 
+    // adjust checkbox alignments depending on how many relatives are found
+    if ($('.possible-relatives-form .checkbox').length === 2) {
+      // if there's two relatives, both checkboxes get the style adjustment
+      $('.possible-relatives-form .checkbox').addClass('duo');
+    }
+    else if ($('.possible-relatives-form .checkbox').length === 3) {
+      // if there's three relatives, only the even (floated right) checkbox gets adjusted
+      $('.possible-relatives-form .checkbox:nth-child(even)').addClass('duo');
+    } else {
+      // otherwise, remove any adjustments
+      $('.possible-relatives-form .checkbox').removeClass('duo');
+    }
+
+    // click events
+
+    // on form submit
     $('.possible-relatives-form').submit(function(event) {
       event.preventDefault();
 
+      // return only the selected relatives
       var selectedRelatives = $('.possible-relatives-form .input-checkbox:checked').map(function() {
         return {
           'id': this.value,
@@ -657,6 +674,8 @@
 
       var local = {selectedRelatives};
 
+      // if relatives were selected, store the returned data in local storage
+      // else clear the selected relatives local storage to update the flow
       if (selectedRelatives.length !== 0) {
         amplify.store('selectedRelatives', local);
       } else {
@@ -666,6 +685,16 @@
       showNextModal();
     });
 
+    // toggle active state on checkbox label
+    $('.possible-relatives-form .checkbox .input-label').click(function() {
+      if ($(this).find('.input-checkbox').is(':checked')) {
+        $(this).addClass('active');
+      } else {
+        $(this).removeClass('active');
+      }
+    });
+
+    // empty selected relatives local storage and show next modal
     $('.skip-relatives-form').click(function() {
       amplify.store('selectedRelatives', {});
       showNextModal();

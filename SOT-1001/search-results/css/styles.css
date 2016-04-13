@@ -1736,24 +1736,37 @@ span.located img {
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .form-header {
-  display: block;
+  display: table;
   z-index: 1;
-  position: relative;
+  position: absolute;;
+  top: 15px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 125px;
+  width: 125px;
   margin: 0 auto;
-  padding: 10px 25px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 3px 0 #353167;
-  -moz-box-shadow: 0 1px 3px 0 #353167;
-  -ms-box-shadow: 0 1px 3px 0 #353167;
-  box-shadow: 0 1px 3px 0 #353167;
-  background-color: #EDECF7;
+  padding: 15px 10px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 1px 0 #353167;
+  -moz-box-shadow: 0 0 1px 0 #353167;
+  -ms-box-shadow: 0 0 1px 0 #353167;
+  -o-box-shadow: 0 0 1px 0 #353167;
+  box-shadow: 0 0 1px 0 #353167;
+  border: 2px solid #353167;
+  background-color: #fff;
   color: #353167;
   text-align: center;
+  line-height: 1;
 }
 
-.possible-relatives.modal .modal-body .possible-relatives-form .form-header .icon {
-  margin: 0;
-  float: right;
+.possible-relatives.modal .modal-body .possible-relatives-form .form-header .form-header-name {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .checkbox {
@@ -1763,18 +1776,24 @@ span.located img {
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .relation-line {
-  display: block;
+  display: none;
   position: absolute;
-  top: -10px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  height: 10px;
-  width: 3px;
+  top: 17px;
+  left: auto;
+  right: auto;
+  height: 3px;
+  width: 120px;
   margin: 0 auto;
-  background: #E9E9E9;
+  border-bottom: 3px dotted #353167;
+  background-color: transparent;
+}
+
+.possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(odd) .relation-line {
+  right: -90px;
+}
+
+.possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(even) .relation-line {
+  left: -90px;
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-checkbox {
@@ -1792,13 +1811,16 @@ span.located img {
   z-index: 1;
   position: relative;
   padding: 5px 10px;
+  padding-left: 50px;
   cursor: pointer;
   border-radius: 4px;
-  -webkit-box-shadow: 0 0 2px 0 #353167 inset;
-  -moz-box-shadow: 0 0 2px 0 #353167 inset;
-  -ms-box-shadow: 0 0 2px 0 #353167 inset;
-  box-shadow: 0 0 2px 0 #353167 inset;
+  -webkit-box-shadow: 0 0 1px 0 #353167;
+  -moz-box-shadow: 0 0 1px 0 #353167;
+  -ms-box-shadow: 0 0 1px 0 #353167;
+  box-shadow: 0 0 1px 0 #353167;
+  border: 1px solid #353167;
   background-color: #fff;
+  color: #353167;
   text-transform: capitalize;
   -webkit-transition: all 500ms;
   -moz-transition: all 500ms;
@@ -1806,22 +1828,30 @@ span.located img {
   transition: all 500ms;
 }
 
-.possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label .relative-avatar {
-  display: inline-block;
-  position: relative;
-  top: 4px;
-  width: 22px;
-  height: 22px;
-  margin-right: 10px;
-  background: url('../img/user_avatar.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
+.possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label.active {
+  background-color: #d4d6ea;
+}
+
+.possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label .checkbox-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: auto;
+  padding: 8px;
+  height: 34px;
+  width: 44px;
+  background: #353167;
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label .custom-checkbox {
-  top: 7px;
-  right: 10px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
   -webkit-transition: -webkit-box-shadow 500ms;
   -moz-transition: -moz-box-shadow 500ms;
   -ms-transition: -ms-box-shadow 500ms;
@@ -1833,21 +1863,33 @@ span.located img {
   -moz-box-shadow: 0 0 6px 0 #353167;
   -ms-box-shadow: 0 0 6px 0 #353167;
   box-shadow: 0 0 6px 0 #353167;
-  color: #6DAC45;
+  background-color: #d4d6ea;
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label:hover .custom-checkbox {
-  -webkit-box-shadow: 0 0 8px 0 #8BC765 inset;
-  -moz-box-shadow: 0 0 8px 0 #8BC765 inset;
-  -ms-box-shadow: 0 0 8px 0 #8BC765 inset;
-  box-shadow: 0 0 8px 0 #8BC765 inset;
+  -webkit-box-shadow: 0 0 8px 0 #6f75b8 inset;
+  -moz-box-shadow: 0 0 8px 0 #6f75b8 inset;
+  -ms-box-shadow: 0 0 8px 0 #6f75b8 inset;
+  box-shadow: 0 0 8px 0 #6f75b8 inset;
 }
 
-.possible-relatives.modal .modal-body .possible-relatives-form .cta-arrow-image {
-  position: absolute;
-  left: -50px;
-  bottom: 15px;
-  width: 36px;
+.possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label .checkbox-container .input-checkbox:checked + .custom-checkbox {
+  background: url('../img/checked_circle.png') no-repeat center center;
+  background-size: contain;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 0 1px #fff;
+  -moz-box-shadow: 0 0 0 1px #fff;
+  -ms-box-shadow: 0 0 0 1px #fff;
+  -o-box-shadow: 0 0 0 1px #fff;
+  box-shadow: 0 0 0 1px #fff;
+}
+
+.possible-relatives.modal .modal-body .possible-relatives-form .form-actions-container {
+  position: relative;
+  bottom: -10px;
+  margin: 0 -10px;
+  padding: 15px;
+  background-color: #ECEBF1;
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .main-btn {
@@ -1866,7 +1908,10 @@ span.located img {
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .text-center {
-  margin-top: 10px;
+  margin: 0;
+  margin-top: 15px;
+  font-size: 14px;
+  line-height: 1;
 }
 
 @media (min-width: 600px) and (max-width: 768px) {
@@ -1876,11 +1921,11 @@ span.located img {
     font-size: 16px;
   }
 
-  .possible-relatives.modal .modal-body .possible-relatives-form {
+  .possible-relatives.modal .modal-body .possible-relatives-form .form-container,
+  .possible-relatives.modal .modal-body .possible-relatives-form .main-btn {
     display: block;
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 60%;
+    margin: 0 auto;
   }
 }
 
@@ -1902,11 +1947,7 @@ span.located img {
   .possible-relatives.modal .modal-body .possible-relatives-form {
     display: inline-block;
     width: 100%;
-    margin: 15px 0 0;
-  }
-
-  .possible-relatives.modal .modal-body .possible-relatives-form .form-header {
-    width: 50%;
+    margin: 0;
   }
 
   .possible-relatives.modal .modal-body .possible-relatives-form .form-container {
@@ -1915,99 +1956,52 @@ span.located img {
   }
 
   .possible-relatives.modal .modal-body .possible-relatives-form .checkbox {
-    width: 35%;
+    width: 40%;
     margin-top: 30px;
     margin-bottom: 0;
   }
 
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(even) {
-    float: left;
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox.duo {
+    margin-top: 60px;
+    margin-bottom: 30px;
   }
 
   .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(odd) {
+    float: left;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(even) {
     float: right;
   }
 
   .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .relation-line {
-    top: -30px;
-    height: 30px;
+    display: block;
   }
 
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(1) .relation-line {
-    top: -50px;
-    left: 40%;
-    height: 80px;
-    -webkit-transform: rotate(-55deg);
-    -moz-transform: rotate(-55deg);
-    -ms-transform: rotate(-55deg);
-    transform: rotate(-55deg);
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(odd) .input-label {
+    padding-left: 10px;
+    padding-right: 50px;
+    text-align: right;
   }
 
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(2) .relation-line {
-    top: -50px;
-    left: 58%;
-    height: 80px;
-    -webkit-transform: rotate(55deg);
-    -moz-transform: rotate(55deg);
-    -ms-transform: rotate(55deg);
-    transform: rotate(55deg);
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(odd) .input-label .checkbox-container {
+    right: 0;
+    left: auto;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(even) .input-label .checkbox-container {
+    left: 0;
+  }
+
+  .possible-relatives.modal .modal-body .possible-relatives-form .form-actions-container {
+    bottom: -30px;
+    margin: 0 -30px;
   }
 
   .possible-relatives.modal .modal-body .possible-relatives-form .main-btn {
     display: block;
-    position: relative;
-    top: 30px;
     width: 25%;
-    margin: 30px auto;
-  }
-
-  .possible-relatives.modal .modal-body .possible-relatives-form .skip-relatives-form {
-    position: relative;
-    top: 5px;
-  }
-}
-
-@media (min-width: 850px) {
-
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label {
-    padding: 10px 15px;
-  }
-
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label .custom-checkbox {
-    top: 12px;
-    right: 15px;
-  }
-}
-
-@media (min-width: 800px) and (max-width: 849px) {
-
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label {
-    padding-top: 8px;
-    padding-left: 8px;
-  }
-}
-
-@media (min-width: 992px) {
-
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox {
-    margin-top: 50px;
-  }
-
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .relation-line {
-    top: -50px;
-    height: 50px;
-  }
-
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(1) .relation-line {
-    top: -75px;
-    left: 36%;
-    height: 100px;
-  }
-
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(2) .relation-line {
-    top: -75px;
-    left: 64%;
-    height: 100px;
+    margin: 0 auto;
   }
 }
 
