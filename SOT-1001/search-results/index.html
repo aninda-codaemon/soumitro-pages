@@ -832,17 +832,16 @@
         </div><!-- /.modal-header -->
 
         <div class="modal-body" data-fr-bind="currentRecord">
-          <div class="hero-image-container">
-            <img src="img/family_tree.png" class="hero-image" />
-          </div>
           <p class="form-instructions">Select as many relatives for <span class="highlight-text">{{firstName}}</span> as possible. You'll be able to access these additional background reports within <span class="highlight-text">{{firstName}}'s</span> report.</p>
           <form class="form possible-relatives-form">
             <h4 class="form-header">{{fullName}}</h4>
             <div class="form-container">
               {{{relativesForm}}}
             </div>
-            <button type="submit" id="addPossibleRelatives" class="main-btn btn-lg btn-block">Continue</button>
-            <p class="text-center"><a href="#" class="skip-relatives-form">I don't want to add relatives</a></p>
+            <div class="form-actions-container">
+              <button type="submit" id="addPossibleRelatives" class="main-btn btn-lg btn-block">Continue</button>
+              <p class="text-center"><a href="#" class="skip-relatives-form">I don't want to add relatives</a></p>
+            </div>
           </form>
         </div><!-- /.modal-body -->
 
