@@ -316,28 +316,36 @@ $(document).ready(function() {
   // window.scroll func not responding...
 
   // remove this when affix is working
-  $('#share-it').addClass('affix');
+  // $('#share-it').addClass('affix');
 
-  // $('#share-it').affix({
-  //   offset: {
-  //     top: 200,
-  //     bottom: function () {
-  //       return (this.bottom = $('.search-footer').outerHeight(true))
-  //     }
-  //   }
-  // });
-
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 275) {
-      debugger;
-      $('#share-it').addClass('affix');
-    } else if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-      debugger;
-      $('#share-it').addClass('affix-bottom');
-    } else {
-      debugger;
-      $('#share-it').removeClass('affix');
+  $('#share-it').affix({
+    offset: {
+      top: 190,
+      bottom: function () {
+        return (this.bottom = $('.search-footer').outerHeight(true))
+      }
     }
   });
+
+  $(window).scroll(function() {
+    console.log($(this).scrollTop());
+  });
+
+  // $(window).scroll(function() {
+  //   console.log('scrolling');
+  //   if ($(this).scrollTop() > 275) {
+  //     //debugger;
+  //     $('#share-it').addClass('affix');
+  //     console.log($(this).scrollTop());
+  //   } else {
+  //     //debugger;
+  //     $('#share-it').removeClass('affix');
+  //   }
+  //
+  //   // else if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+  //   //   //debugger;
+  //   //   $('#share-it').addClass('affix-bottom');
+  //   // }
+  // });
 
 });
