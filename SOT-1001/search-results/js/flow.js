@@ -849,6 +849,7 @@
     $downloadNowIcon.show();
     $("#arrowhead-right").hide();
 
+    amplify.store('selectedRelatives', {});
     attachRelativesModal();
 
     window.resetSearchingState();
