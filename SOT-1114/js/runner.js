@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
   // get location by ip
-  // set demonym using fetched location
   $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?').done (function(location) {
     var geostate = location.state,
         geodemonym = 'Americans',
@@ -279,9 +278,6 @@ $(document).ready(function() {
 
   });
 
-  // focus on input
-  $('.autofocus').focus();
-
   // validate search form
   $('.search-form').submit(function() {
     var $searchForm = $(this),
@@ -312,40 +308,16 @@ $(document).ready(function() {
     }
   });
 
-  // @TODO: fix affix
-  // window.scroll func not responding...
+  // focus on input
+  $('.autofocus').focus();
 
-  // remove this when affix is working
-  // $('#share-it').addClass('affix');
+  // affix (bootstrap plugin)
 
   $('#share-it').affix({
     offset: {
-      top: 190,
-      bottom: function () {
-        return (this.bottom = $('.search-footer').outerHeight(true))
-      }
+      top: 225,
+      bottom: 850
     }
   });
-
-  $(window).scroll(function() {
-    console.log($(this).scrollTop());
-  });
-
-  // $(window).scroll(function() {
-  //   console.log('scrolling');
-  //   if ($(this).scrollTop() > 275) {
-  //     //debugger;
-  //     $('#share-it').addClass('affix');
-  //     console.log($(this).scrollTop());
-  //   } else {
-  //     //debugger;
-  //     $('#share-it').removeClass('affix');
-  //   }
-  //
-  //   // else if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-  //   //   //debugger;
-  //   //   $('#share-it').addClass('affix-bottom');
-  //   // }
-  // });
 
 });

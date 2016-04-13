@@ -53,7 +53,7 @@
 
 .affix {
   position: fixed;
-  top: 48px;
+  top: 50px;
   z-index: -1;
 }
 
