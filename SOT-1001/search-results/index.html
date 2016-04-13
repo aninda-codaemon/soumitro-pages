@@ -1105,7 +1105,15 @@
               </p>
             </div>
             <div class="col-sm-6 hidden-xs" data-fr-bind="currentRecord selectedRelatives">
-              <h3 class="report-summary-title"><span class="title-label">Summary of Reports</span></h3>
+              <h3 class="report-summary-title">
+                <span class="title-label">
+                  {{#if selectedRelatives}}
+                    Summary of Reports
+                  {{else}}
+                    Report Summary
+                  {{/if}}
+                </span>
+              </h3>
               <div class="report-summary">
                 <h4 class="report-summary-name">
                   <img class="img-icon" src="//dbivtdsofhpu6.cloudfront.net/assets/img/eafa2c2a7afe294e4718ab0c6b3546b8.jpg" />
