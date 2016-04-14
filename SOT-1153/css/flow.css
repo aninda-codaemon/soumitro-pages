@@ -541,10 +541,6 @@
 
 @media (min-width: 768px) {
 
-  #gen-report-modal2 .modal-body .title {
-    margin-top: 20px;
-  }
-
   #gen-report-modal2 .modal-body .sub-title {
     margin-bottom: 40px;
   }
@@ -622,27 +618,8 @@
 #gen-report-modal2 .modal-footer #gen-report-confirm {
   margin: 0;
   padding: 15px;
-  border: 0;
-  border-radius: 0;
-  -webkit-box-shadow: 0 0 0 4px #57992d;
-  -moz-box-shadow: 0 0 0 4px #57992d;
-  -ms-box-shadow: 0 0 0 4px #57992d;
-  -o-box-shadow: 0 0 0 4px #57992d;
-  box-shadow: 0 0 0 4px #57992d;
   font-size: 18px;
   text-transform: uppercase;
-}
-
-#gen-report-modal2 .modal-footer #gen-report-confirm:hover {
-  -webkit-box-shadow: 0 0 0 3px #6dac45;
-  -moz-box-shadow: 0 0 0 3px #6dac45;
-  -ms-box-shadow: 0 0 0 3px #6dac45;
-  -o-box-shadow: 0 0 0 3px #6dac45;
-  box-shadow: 0 0 0 3px #6dac45;
-}
-
-#gen-report-modal2 .modal-footer #gen-report-confirm:active {
-  box-shadow: none;
 }
 
 #gen-report-modal2 .modal-footer #gen-report-confirm[disabled=disabled],
@@ -660,6 +637,30 @@
   position: relative;
   bottom: 1px;
   margin-left: 10px;
+}
+
+@media (max-width: 991px) {
+  #gen-report-modal2 .modal-footer #gen-report-confirm {
+    border: 0;
+    border-radius: 0;
+    -webkit-box-shadow: 0 0 0 4px #57992d;
+    -moz-box-shadow: 0 0 0 4px #57992d;
+    -ms-box-shadow: 0 0 0 4px #57992d;
+    -o-box-shadow: 0 0 0 4px #57992d;
+    box-shadow: 0 0 0 4px #57992d;
+  }
+
+  #gen-report-modal2 .modal-footer #gen-report-confirm:hover {
+    -webkit-box-shadow: 0 0 0 3px #6dac45;
+    -moz-box-shadow: 0 0 0 3px #6dac45;
+    -ms-box-shadow: 0 0 0 3px #6dac45;
+    -o-box-shadow: 0 0 0 3px #6dac45;
+    box-shadow: 0 0 0 3px #6dac45;
+  }
+
+  #gen-report-modal2 .modal-footer #gen-report-confirm:active {
+    box-shadow: none;
+  }
 }
 
 @media (min-width: 360px) {
@@ -682,6 +683,10 @@
 }
 
 @media (min-width: 992px) {
+  #gen-report-modal2 .modal-footer {
+    padding: 15px 60px;
+  }
+
   #gen-report-modal2 .modal-footer #gen-report-confirm {
     font-size: 24px;
   }
@@ -1159,7 +1164,7 @@
   }
 
   #gen-report-modal6 .modal-body .form-col .login-form .exit-flow {
-    display: none !important;  
+    display: none !important;
   }
 
   #gen-report-modal6 .modal-body .teaser-col {
