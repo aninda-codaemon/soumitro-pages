@@ -382,6 +382,26 @@
       }
     };
 
+    TeaserRecord.prototype.bankruptcies = function() {
+      if (this.record["hasBankruptcy"] === false) {
+        return [];
+      } else {
+        var extraData = this.record["extraData"],
+            bankruptcies = _.find(extraData, { 'type': 'bankruptcy' });
+
+        return bankruptcies;
+      }
+    };
+
+    TeaserRecord.prototype.bankruptciesCount = function() {
+      var bankruptcies = this.bankruptcies();
+      if (bankruptcies.count <= 1) {
+        return false;
+      } else {
+        return bankruptcies.count -1;
+      }
+    };
+
     TeaserRecord.prototype.photo = function() {
       var photo = this.record["photo"];
       if (photo !== '') {

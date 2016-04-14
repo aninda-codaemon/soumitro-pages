@@ -73,7 +73,7 @@
   var highlightSelection = function() {
     $selectionWrap.removeClass('selection-selected');
     $(this).addClass('selection-selected');
-  $(this).find("input[type=radio].plan_name_radio").prop("checked", true);
+    $(this).find("input[type=radio].plan_name_radio").prop("checked", true);
     updatePlanLegal($(this));
   };
 
