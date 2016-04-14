@@ -74,8 +74,40 @@
   position: fixed;
   top: 50px;
   z-index: -1;
+  -webkit-animation: affixFadeIn 250ms ease-in;
+  -moz-animation: affixFadeIn 250ms ease-in;
+  -ms-animation: affixFadeIn 250ms ease-in;
+  -o-animation: affixFadeIn 250ms ease-in;
+  animation: affixFadeIn 250ms ease-in;
 }
 
 .affix-bottom {
   position: absolute;
+}
+
+/* animation keyframes */
+
+@-webkit-keyframes affixFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@-moz-keyframes affixFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@-ms-keyframes affixFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@-o-keyframes affixFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes affixFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
