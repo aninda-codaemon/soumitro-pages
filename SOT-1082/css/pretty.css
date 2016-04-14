@@ -79,9 +79,9 @@ header {
 }
 .teaser-preview {
   font-size: 16px;
-  background-position: 15px 10px;
+  background-position: 5px 3px;
   background-repeat: no-repeat;
-  padding: 0 0 20px 60px;
+  padding: 0 0 20px 50px;
 }
 #current-preview {
 	background-image: url('../img/mobile-personal-icon.png');
@@ -581,12 +581,6 @@ footer a {
 		line-height: 18px;
 		font-weight: 300;
 	}
-	#current-preview {
-      font-size: 14px;
-      background-image: url('//dbivtdsofhpu6.cloudfront.net/assets/img/5e543a1abcf14546ec5de20801b3e88b.jpg');
-      background-position: 2px 10px;
-      padding: 0 0 20px 40px;
-    }
 	.current-name, .current-teaser {
 		line-height: 21px;
 	}
