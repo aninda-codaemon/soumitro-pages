@@ -99,6 +99,12 @@ header {
 #phones-preview {
 	background-image: url('../img/mobile-phone-icon.png');
 }
+
+.teaser-preview:nth-child(4),
+.teaser-preview:nth-child(5) {
+  display: none;
+}
+
 .current-title,
 .current-teaser {
 	margin-bottom: 0;
