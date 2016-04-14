@@ -113,6 +113,21 @@ header {
 .money-back img {
   max-width: 100px;
 }
+
+@media (min-width: 550px) and (max-width: 768px) {
+  .teaser-preview {
+    width: 33%;
+  }
+
+  .teaser-preview#current-preview {
+    width: 34%;
+  }
+
+  .teaser-preview .current-teaser .more-count {
+    display: block;
+  }
+}
+
 /* SUB FORM ================================== */
 
 #sub-form-wrapper {
