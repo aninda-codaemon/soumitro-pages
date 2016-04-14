@@ -69,7 +69,7 @@
     <div class="row mobile-subject-teaser" data-fr-bind="currentRecord extraTeaserData">
       {{#if fullName}}
         <div class="teaser-preview col-xs-12" id="current-preview">
-          <p class="current-name strong">{{fullName}}</p>
+          <p class="current-title strong">{{fullName}}</p>
           <p class="current-teaser">
             {{#if age}}<strong>{{age}}</strong> years old{{/if}}
       		  {{#if place}}from <strong> {{place}}</strong>{{/if}}
@@ -77,16 +77,46 @@
         </div>
         {{#if criminalRecords}}
           <div class="teaser-preview col-xs-12" id="criminal-preview">
+            <p class="current-title strong">Criminal / Traffic Records</p>
+            <p class="current-teaser">
+              <strong>{{criminalRecordsCount}}</strong> results found
+            </p>
           </div>
         {{else}}
           <div class="teaser-preview col-xs-12" id="emails-preview">
+            {{#if emails}}
+              <p class="current-title strong">Emails</p>
+              <p class="current-teaser">
+                {{email}}
+                {{#if emailsCountTeaser}}
+                  <strong>+{{emailsCountTeaser}} more</strong>
+                {{/if}}
+              </p>
+            {{else}}
+              <p class="current-title strong">Emails searched</p>
+            {{/if}}
           </div>
         {{/if}}
         {{#if bankruptcies}}
           <div class="teaser-preview col-xs-12" id="bankruptcies-preview">
+            <p class="current-title strong">Bankruptcy Filing</p>
+            <p class="current-teaser">
+              <strong>{{bankruptciesCount}}</strong> results found
+            </p>
           </div>
         {{else}}
           <div class="teaser-preview col-xs-12" id="phones-preview">
+            {{#if phoneNumbers}}
+              <p class="current-title strong">Phone Numbers</p>
+              <p class="current-teaser">
+                {{phoneNumber}}
+                {{#if phoneNumbersCountTeaser}}
+                  <strong>+{{phoneNumbersCountTeaser}} more</strong>
+                {{/if}}
+              </p>
+            {{else}}
+              <p class="current-title strong">Phone Numbers searched</p>
+            {{/if}}
           </div>
         {{/if}}
       {{/if}}
