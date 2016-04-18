@@ -36,7 +36,7 @@
   var modalCtx;
   var modalDownsellsActive = false;
 
-  var getExtraTeaserData = function(ctx) {
+  var getExtraTeaserData = function(ctx, cb) {
     var dataPath = $(ctx).data("fr-bound2");
     var data = framerida.dataFromDataPath(dataPath);
     var teaser = new TeaserRecord(data);
@@ -339,6 +339,9 @@
           filler: filler
       };
       amplify.store('extraTeaserData', teaserDataObj);
+      if (cb !== "undefined" && typeof cb === "function") {
+        cb();
+      }
     });
   };
 
