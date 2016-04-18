@@ -185,7 +185,7 @@
 
 .modal-full .modal-footer .exit-flow {
   display: block;
-  width: 140px;
+  width: 220px;
   margin: 0 auto;
 }
 
@@ -612,7 +612,7 @@
 /* modal-footer */
 
 #gen-report-modal2 .modal-footer {
-  padding: 0;
+  padding: 10px 15px;
 }
 
 #gen-report-modal2 .modal-footer #gen-report-confirm {
@@ -637,30 +637,6 @@
   position: relative;
   bottom: 1px;
   margin-left: 10px;
-}
-
-@media (max-width: 991px) {
-  #gen-report-modal2 .modal-footer #gen-report-confirm {
-    border: 0;
-    border-radius: 0;
-    -webkit-box-shadow: 0 0 0 4px #57992d;
-    -moz-box-shadow: 0 0 0 4px #57992d;
-    -ms-box-shadow: 0 0 0 4px #57992d;
-    -o-box-shadow: 0 0 0 4px #57992d;
-    box-shadow: 0 0 0 4px #57992d;
-  }
-
-  #gen-report-modal2 .modal-footer #gen-report-confirm:hover {
-    -webkit-box-shadow: 0 0 0 3px #6dac45;
-    -moz-box-shadow: 0 0 0 3px #6dac45;
-    -ms-box-shadow: 0 0 0 3px #6dac45;
-    -o-box-shadow: 0 0 0 3px #6dac45;
-    box-shadow: 0 0 0 3px #6dac45;
-  }
-
-  #gen-report-modal2 .modal-footer #gen-report-confirm:active {
-    box-shadow: none;
-  }
 }
 
 @media (min-width: 360px) {
@@ -846,6 +822,7 @@
 }
 
 #gen-report-modal4 .modal-body .captcha-col #bv-catpcha-form {
+  margin-bottom: 10px;
   padding: 15px;
   border: 1px solid #dadada;
   border-radius: 4px;
@@ -1252,6 +1229,17 @@
   color: #e9322d;
 }
 
+#gen-report-modal11 .modal-body #fcra-confirm .btn-lg {
+  padding: 15px 30px;
+  font-size: 20px;
+}
+
+@media (max-width: 500px) {
+  #gen-report-modal11 .modal-body #fcra-confirm .btn-lg {
+    width: 100%;
+  }
+}
+
 /* ========== FINAL CARD REPORT ============= */
 
 /*#gen-report-modal7 .modal-dialog {
@@ -1291,6 +1279,10 @@
 
 #gen-report-modal7 .modal-teaser .meta-count {
   font-size: 14px;
+}
+
+#gen-report-modal7 .modal-teaser .data-modal-confirm {
+  margin-top: 5px;
 }
 
 @media (min-width: 768px) {
@@ -1418,6 +1410,11 @@
   display: none;
 }
 
+#gen-report-modal7 .modal-body .data-modal-confirm {
+  padding: 30px;
+  font-size: 20px;
+}
+
 @media (min-width: 480px) {
   #gen-report-modal7 .modal-body {
     padding-bottom: 140px;
@@ -1453,7 +1450,6 @@
 @media (min-width: 992px) {
   #gen-report-modal7 .modal-body {
     padding: 25px;
-    padding-bottom: 0;
   }
 
   #gen-report-modal7 .modal-body .detail-box {
@@ -1484,28 +1480,6 @@
   padding: 0;
 }
 
-#gen-report-modal7 .modal-footer .data-modal-confirm {
-  padding: 20px;
-  border-radius: 0;
-  -webkit-box-shadow: 0 -2px 0 3px #57992d;
-  -moz-box-shadow: 0 -2px 0 3px #57992d;
-  -ms-box-shadow: 0 -2px 0 3px #57992d;
-  -o-box-shadow: 0 -2px 0 3px #57992d;
-  box-shadow: 0 -2px 0 3px #57992d;
-}
-
-#gen-report-modal7 .modal-footer .data-modal-confirm:hover {
-  -webkit-box-shadow: 0 -1px 0 2px #6dac45;
-  -moz-box-shadow: 0 -1px 0 2px #6dac45;
-  -ms-box-shadow: 0 -1px 0 2px #6dac45;
-  -o-box-shadow: 0 -1px 0 2px #6dac45;
-  box-shadow: 0 -1px 0 2px #6dac45;
-}
-
-#gen-report-modal7 .modal-footer .data-modal-confirm:focus {
-  box-shadow: none;
-}
-
 #gen-report-modal7 .modal-footer .text-caption {
   padding: 5px;
 }
@@ -1513,12 +1487,5 @@
 @media (min-width: 768px) {
   #gen-report-modal7 .modal-footer .text-caption {
     padding: 10px;
-  }
-}
-
-@media (min-width: 992px) {
-  #gen-report-modal7 .modal-footer .data-modal-confirm {
-    padding: 40px;
-    font-size: 25px;
   }
 }

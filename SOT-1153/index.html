@@ -901,7 +901,7 @@
 
         <div class="modal-footer alert-warning">
           <p class="text-center text-caption">
-            Reminder: Your search of {{firstName}} is anonymous. <a href="#" class="exit-flow" data-dismiss="modal" aria-hidden="true">Search for another name.</a>
+            Reminder: Your search of {{firstName}} is anonymous. <a href="#" class="exit-flow" data-dismiss="modal" aria-hidden="true">Click here to search another name.</a>
           </p>
         </div>
 
@@ -1103,7 +1103,7 @@
         </div>
 
         <div class="modal-footer alert-warning">
-          <p class="text-caption text-center"><strong>New:</strong> We now search professional &amp; educational history and photos! <a href="#" class="exit-flow" data-dismiss="modal" aria-hidden="true">Search for another name.</a></p>
+          <p class="text-caption text-center"><strong>New:</strong> We now search professional &amp; educational history and photos! <a href="#" class="exit-flow" data-dismiss="modal" aria-hidden="true">Click here to search another name.</a></p>
         </div>
 
       </div>
@@ -1304,7 +1304,6 @@
             <div class="col-sm-6 captcha-col">
               <p class="sub-title">
                 Please prove that you're human by filling out the captcha below.
-                <small class="text-break"><strong>Why:</strong> We have data costs associated with our reports, therefore we try to make sure we only run searches for real people.</small>
               </p>
 
               <form id="bv-catpcha-form">
@@ -1332,6 +1331,7 @@
                   Continue <i class="fa fa-arrow-right hidden-xs"></i>
                 </button>
               </form>
+              <p class="text-caption"><strong>Why:</strong> We have data costs associated with our reports, therefore we try to make sure we only run searches for real people.</p>
             </div>
 
             <div class="col-sm-6 report-col hidden-xs">
@@ -1527,7 +1527,7 @@
           <p class="text-caption text-center time-stamp">
             <span id="time-approx"><strong>Time Remaining:</strong> Approx. <span id="time-remaining">120</span> seconds.</span>
             <strong id="finishing-up" class="hide">Finishing Up...</strong>
-            <a href="#" class="exit-flow" data-dismiss="modal" aria-hidden="true">Search for another name.</a>
+            <a href="#" class="exit-flow" data-dismiss="modal" aria-hidden="true">Click here to search another name.</a>
           </p>
         </div>
 
@@ -1601,7 +1601,7 @@
         <div class="modal-footer alert-warning hidden-xs">
           <p class="text-caption text-center">
             <strong>Note:</strong> All our searches are secured by Norton <img class="img-secured" src="img/norton-secured.png">
-            <a href="#" class="exit-flow" data-dismiss="modal" aria-hidden="true">Search for another name.</a>
+            <a href="#" class="exit-flow" data-dismiss="modal" aria-hidden="true">Click here to search another name.</a>
           </p>
         </div>
 
@@ -1653,7 +1653,7 @@
 
         <div class="modal-footer alert-warning">
           <p class="text-caption text-center" data-fr-bind="currentRecord">
-            {{firstName}} will not be notified of your search. <a href="#" class="exit-flow" data-dismiss="modal" aria-hidden="true">Search for another name.</a>
+            {{firstName}} will not be notified of your search. <a href="#" class="exit-flow" data-dismiss="modal" aria-hidden="true">Click here to search another name.</a>
           </p>
         </div>
 
@@ -1723,6 +1723,7 @@
               </div>
             {{/if}}
           </div>
+          <button type="button" class="btn btn-lg btn-block btn-secondary data-modal-confirm visible-xs" data-fr-bind="currentRecord">Click here to access report!</button>
         </div>
 
         <div class="modal-body" data-fr-bind="currentRecord extraTeaserData" data-total-cards-to-show="6" data-filler-cards-available="6">
@@ -1880,14 +1881,14 @@
               </div>
             </div>
 
+            <button type="button" class="btn btn-lg btn-block btn-secondary data-modal-confirm" data-fr-bind="currentRecord">Click Here to Access Report<span class="hidden-xs"> on {{fullName}}</span>!</button>
         </div>
 
         <div class="modal-footer alert-warning">
-          <button type="button" class="btn btn-lg btn-block btn-secondary data-modal-confirm" data-fr-bind="currentRecord">Click Here To Access Your Report<span class="hidden-xs"> On {{fullName}}</span>!</button>
           <p class="text-caption text-center">
             <span id="crim-disc">*Includes felonies, misdemeanors, traffic violations and arrests. Results are dependent on the accuracy of public records.</span>
-            <span id="no-crim">Please <strong>do not</strong> hit refresh or press the back button, as the information may be lost.</span>
-            <a href="#" class="exit-flow" data-dismiss="modal" aria-hidden="true">Search for another name.</a>
+            <span id="no-crim">Please <strong>do not</strong> hit refresh or press the back button, the info may be lost.</span>
+            <a href="#" class="exit-flow" data-dismiss="modal" aria-hidden="true">Click here to search another name.</a>
           </p>
         </div>
 
