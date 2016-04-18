@@ -36,7 +36,7 @@
   var modalCtx;
   var modalDownsellsActive = false;
 
-  var getExtraTeaserData = function(ctx, cb) {
+  var getExtraTeaserData = function(ctx) {
     var dataPath = $(ctx).data("fr-bound2");
     var data = framerida.dataFromDataPath(dataPath);
     var teaser = new TeaserRecord(data);
@@ -71,7 +71,6 @@
         return item.type.nameize();
       });
 
-
       // Data elements to display - Waterfall controlled here
       var data = [
         {
@@ -79,7 +78,7 @@
           'name': 'Criminal or Traffic*',
           'single': 'Criminal or Traffic*',
           'style': ' crim-box',
-          'weight': 3,
+          'weight': 9,
           'showIfEmpty': 0,
           'count': res.courts.criminal.length
         },
@@ -88,16 +87,25 @@
           'name': 'Bankruptcy Filings',
           'single': 'Bankruptcy Filing',
           'style': ' crim-box',
-          'weight': 3,
+          'weight': 8,
           'showIfEmpty': 0,
           'count': res.courts.bankruptcy.length
+        },
+        {
+          'type': 'associates',
+          'name': 'Associates & Relatives',
+          'single': 'Associates & Relatives',
+          'style': '',
+          'weight': 7,
+          'showIfEmpty': 0,
+          'count': res.connections.associates.length + res.connections.relatives.length
         },
         {
           'type': 'emails',
           'name': 'Email Addresses',
           'single': 'Email Address',
           'style': '',
-          'weight': 2,
+          'weight': 6,
           'showIfEmpty': 0,
           'count': res.emails.length,
           'emailAddress': emailAddresses
@@ -107,7 +115,7 @@
           'name': 'Phone Numbers',
           'single': 'Phone Number',
           'style': ' phone-box',
-          'weight': 1,
+          'weight': 5,
           'showIfEmpty': 0,
           'count': res.phones.length,
           'phoneNumber': phoneNumbers
@@ -117,58 +125,66 @@
           'name': 'Social Media Profiles',
           'single': 'Social Media Profile',
           'style': ' social-box',
-          'weight': 1,
+          'weight': 4,
           'showIfEmpty': 0,
           'count': res.social.length,
           'socialNetwork': socialNetworks
         },
+        {
+          'type': 'photos',
+          'name': 'Photos',
+          'single': 'Photo',
+          'style': '',
+          'weight': 3,
+          'showIfEmpty': 0,
+          'count': res.images.length
+        },
+        {
+          'type': 'careers',
+          'name': 'Jobs and Education',
+          'single': 'Career',
+          'style': '',
+          'weight': 2,
+          'showIfEmpty': 0,
+          'count': res.jobs.length + res.educations.length
+        },
         // {
-        //   'type': 'photos',
-        //   'name': 'Photos',
-        //   'single': 'Photo',
+        //   'type': 'neighbors',
+        //   'name': 'Neighbors',
+        //   'single': 'Neighbor',
+        //   'style': '',
+        //   'weight': 1,
+        //   'showIfEmpty': 0,
+        //   'count': res.connections.neighbors.length
+        // },
+        // {
+        //   'type': 'licenses',
+        //   'name': 'Licenses and Permits',
+        //   'single': 'License',
         //   'style': '',
         //   'weight': 0,
         //   'showIfEmpty': 0,
-        //   'count': res.images.length
+        //   'count': res.licenses.dea.length + res.licenses.faa.length + res.licenses.professional.length + res.licenses.voter.length + res.licenses.weapon.length
         // },
-        {
-          'type': 'associates',
-          'name': 'Associates & Relatives',
-          'single': 'Associates & Relatives',
-          'style': '',
-          'weight': 0,
-          'showIfEmpty': 0,
-          'count': res.connections.associates.length + res.connections.relatives.length
-        }
-        /*
-        {
-          'type': 'neighbors',
-          'name': 'Neighbors',
-          'single': 'Neighbor',
-          'style': '',
-          'weight': 0,
-          'showIfEmpty': 1,
-          'count': res.connections.neighbors.length
-        },
-        {
-          'type': 'contacts',
-          'name': 'Contact Info',
-          'single': 'Contact Info',
-          'style': '',
-          'weight': 0,
-          'showIfEmpty': 0,
-          'count': res.emails.length + res.phones.length
-        },
-        {
-          'type': 'addresses',
-          'name': 'Address Records',
-          'single': 'Address Records',
-          'style': '',
-          'weight': 0,
-          'showIfEmpty': 0,
-          'count': res.addresses.length
-        }
-        */
+        // {
+        //   'type': 'contacts',
+        //   'name': 'Contact Info',
+        //   'single': 'Contact Info',
+        //   'style': '',
+        //   'weight': 0,
+        //   'showIfEmpty': 0,
+        //   'count': res.emails.length + res.phones.length
+        // },
+        // {
+        //   'type': 'addresses',
+        //   'name': 'Address Records',
+        //   'single': 'Address Records',
+        //   'style': '',
+        //   'weight': 0,
+        //   'showIfEmpty': 0,
+        //   'count': res.addresses.length
+        // }
+
       ];
 
       // Booleans for templating & reporting
@@ -187,9 +203,21 @@
       var hasSocial = _.some(data, function(item){
         return item.type === 'social' && item.count > 0;
       });
-      var hasProperty = _.some(data, function(item){
-        return (item.type === 'addresses' && item.count > 0) || (item.type === 'neighbors' && item.count > 0);
+      // var hasNeighbors = _.some(data, function(item) {
+      //   return (item.type === 'neighbors' && item.count > 0);
+      // });
+      // var hasProperty = _.some(data, function(item){
+      //   return (item.type === 'addresses' && item.count > 0) || (item.type === 'neighbors' && item.count > 0);
+      // });
+      var hasPhotos = _.some(data, function(item) {
+        return item.type === 'photos' && item.count > 0;
       });
+      var hasCareers = _.some(data, function(item) {
+        return item.type === 'careers' && item.count > 0;
+      });
+      // var hasLicenses = _.some(data, function(item) {
+      //   return (item.type === 'licenses' && item.count > 0);
+      // });
 
 
       if (!hasCriminal) {
@@ -215,6 +243,18 @@
       if (hasSocial) {
         trackNL("Data Modal Viewed Social");
       }
+      if (hasPhotos) {
+        trackNL("Data Modal Viewed Photos");
+      }
+      // if (hasNeighbors) {
+      //   trackNL("Data Modal Viewed Neighbors");
+      // }
+      if (hasCareers) {
+        trackNL("Data Modal Viewed Jobs and Education");
+      }
+      // if (hasLicenses) {
+      //   trackNL("Data Modal Viewed Licenses");
+      // }
       // if (hasProperty) {
       //   trackNL("Data Modal Viewed Property");
       // }
@@ -235,9 +275,9 @@
       var totalCardsToShow = parseInt($('div.details').data('total-cards-to-show'));
       var fillerCardsAvailable = parseInt($('div.details').data('filler-cards-available'));
 
-      //console.log("TCTS: "+totalCardsToShow+" FCA: "+fillerCardsAvailable+" DL: "+data.length);
+      // console.log("TCTS: "+totalCardsToShow+" FCA: "+fillerCardsAvailable+" DL: "+data.length);
       data = _.slice(data, 0, totalCardsToShow);
-      //console.log("new DL: "+ data.length);
+      // console.log("new DL: "+ data.length);
 
       var fillCount = totalCardsToShow - (data.length); // fillers to show
       var fillers = _.range(1, fillerCardsAvailable + 1); // build array of filler card ids, start at 1, +1 because limit is 0 based
@@ -246,18 +286,41 @@
       // console.log("fillCount:"+fillCount+"\nfillers:");
       // console.log(fillers);
 
-
-      if (fillCount > 0 && fillCount <= fillerCardsAvailable) {
-        // filler needed, and # needed available,
-        //filler = _.slice(_.shuffle(fillers), 0, fillCount);
-        filler = _.slice(fillers, 0, fillCount); // no random
-      } else {
-        // if nearly all filler, limit to 2 rows... not needed now
-        //filler = _.slice(_.shuffle(fillers), 0, (fillCount - fillerCards) + 2);
-        //filler = _.slice(fillers, 0, (fillCount - fillerCards) + 2);
+      // @TODO: refactor this (can make a function for this - no time now)
+      if (data.length === 1) {
+        fillCount = 4
+        filler = _.slice(fillers, 0, fillCount);
       }
+      else if (data.length === 2) {
+        fillCount = 3
+        filler = _.slice(fillers, 0, fillCount);
+      }
+      else if (data.length === 3 || data.length === 6) {
+        fillCount = 2
+        filler = _.slice(fillers, 0, fillCount);
+      }
+      else if (data.length === 4) {
+        fillCount = 1;
+        filler = _.slice(fillers, 0, fillCount);
+      }
+      else if (data.length === 5) {
+        filler = [];
+      } else {
+        filler = _.slice(fillers, 0, fillCount);
+      }
+      // if (fillCount > 0 && fillCount <= fillerCardsAvailable) {
+      //   // filler needed, and # needed available,
+      //   //filler = _.slice(_.shuffle(fillers), 0, fillCount);
+      //   filler = _.slice(fillers, 0, fillCount); // no random
+      // } else {
+      //   // if nearly all filler, limit to 2 rows... not needed now
+      //   // filler = _.slice(_.shuffle(fillers), 0, (fillCount - fillerCards) + 2);
+      //   filler = _.slice(fillers, 0, (fillCount - fillerCardsAvailable) + 2);
+      // }
+
       // console.log("filler:");
       // console.log(filler);
+      // console.log(fillCount);
 
       // Store data
       var teaserDataObj = {
@@ -269,12 +332,13 @@
           hasPhone: hasPhone,
           hasEmail: hasEmail,
           hasSocial: hasSocial,
+          // hasNeighbors: hasNeighbors,
+          hasPhotos: hasPhotos,
+          hasCareers: hasCareers,
+          // hasLicenses: hasLicenses,
           filler: filler
       };
       amplify.store('extraTeaserData', teaserDataObj);
-      if (cb !== "undefined" && typeof cb === "function") {
-        cb();
-      }
     });
   };
 

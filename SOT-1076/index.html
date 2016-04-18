@@ -1537,13 +1537,13 @@
                   </div>
                 </div><!-- /.person-info -->
 
-                <div class="details" data-fr-bind="currentRecord extraTeaserData" data-total-cards-to-show="5" data-filler-cards-available="5">
+                <div class="details" data-fr-bind="currentRecord extraTeaserData" data-total-cards-to-show="8" data-filler-cards-available="5">
                   <div class="row">
 
                     {{#each extraData}}
                     <!-- card repeat -->
                     <div class="col-md-4">
-                      <div class="detail-box {{style}}">
+                      <div class="data-modal-confirm detail-box {{style}}">
                         <div class="row no-gutter">
                           <h1><span class="visible-xs visible-sm">{{count}}&nbsp;</span>{{name}}<span class="visible-xs visible-sm">&nbsp;FOUND</span></h1>
                           <div class="col-xs-6 hidden-xs hidden-sm">
@@ -1563,7 +1563,7 @@
                       {{#ifIn filler 1}}
                       <!-- filler card -->
                       <div class="col-md-4">
-                        <div class="detail-box {{style}} fillerCard">
+                        <div class="data-modal-confirm detail-box {{style}} fillerCard">
                           <div class="row no-gutter">
                             <h1>We Searched Even More!</h1>
                             <div class="col-xs-6 hidden-xs hidden-sm">
@@ -1575,7 +1575,7 @@
                                 {{#unless hasCriminal}}
                                 <li class="alertText"><span class="visible-xs visible-sm"><img src="img/mag_glass_10.png">&nbsp;</span>Crime Records</li>
                                 {{else}}
-                                <li><span class="visible-xs visible-sm"><img src="img/mag_glass_10.png">&nbsp;</span>Address Records</li>
+                                <li><span class="visible-xs visible-sm"><img src="img/mag_glass_10.png">&nbsp;</span>Addresses</li>
                                 {{/unless}}
                                 {{#unless hasBankruptcy}}
                                 <li class="alertText"><span class="visible-xs visible-sm"><img src="img/mag_glass_10.png">&nbsp;</span>Bankruptcies</li>
@@ -1608,7 +1608,7 @@
                       {{#ifIn filler 2}}
                       <!-- satisfaction filler card -->
                       <div class="col-md-4">
-                        <div class="detail-box {{style}} fillerCard">
+                        <div class="data-modal-confirm detail-box {{style}} fillerCard">
                           <div class="row no-gutter">
                             <h1>Satisfaction Guarantee</h1>
                             <div class="col-xs-6 hidden-xs hidden-sm">
@@ -1626,7 +1626,7 @@
                       {{#ifIn filler 3}}
                       <!-- top rated filler card-->
                       <div class="col-md-4">
-                        <div class="detail-box {{style}} fillerCard">
+                        <div class="data-modal-confirm detail-box {{style}} fillerCard">
                           <div class="row no-gutter">
                             <h1>Top Rated Service</h1>
                             <div class="col-xs-6 hidden-xs hidden-sm">
@@ -1644,7 +1644,7 @@
                       {{#ifIn filler 4}}
                       <!-- Norton filler card-->
                       <div class="col-md-4">
-                        <div class="detail-box {{style}} fillerCard">
+                        <div class="data-modal-confirm detail-box {{style}} fillerCard">
                           <div class="row no-gutter">
                             <h1>Secure Search</h1>
                             <div class="col-xs-6 hidden-xs hidden-sm">
@@ -1662,7 +1662,7 @@
                       {{#ifIn filler 5}}
                       <!-- address search filler card-->
                       <div class="col-md-4">
-                        <div class="detail-box {{style}} fillerCard">
+                        <div class="data-modal-confirm detail-box {{style}} fillerCard">
                           <div class="row no-gutter">
                             <h1>New Feature</h1>
                             <div class="col-xs-6 hidden-xs hidden-sm">
