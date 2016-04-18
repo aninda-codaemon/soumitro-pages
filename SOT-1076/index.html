@@ -1058,8 +1058,13 @@
         <div class="modal-body">
           <div class="row">
             <div class="col-sm-6">
-              <p class="modal-top-text" data-fr-bind="currentRecord">Please prove that you are a human by filling out the easy captcha below.</p>
-              <form id="bv-catpcha-form">
+              <p class="modal-top-text">
+                Please prove that you are a human by
+                <span class="visble-xs">clicking the green 'B'.</span>
+                <span class="hidden-xs">filling out the easy captcha below.</span>
+              </p>
+
+              <form class="hidden-xs" id="bv-catpcha-form">
                 <div id="bv-captcha">
                   <div class="row">
                     <div class="col-sm-12">
@@ -1097,6 +1102,23 @@
                   </div>
                 </div>
               </form>
+
+              <div class="visible-xs" id="bv-catpcha-form-mobile">
+                <div class="captcha-buttons-wrapper clearfix">
+                  <div class="row">
+                    <div class="col-xs-4 captcha-buttons-single">
+                      <button type="button" class="btn btn-default btn-block"><strong>Z</strong></button>
+                    </div>
+                    <div class="col-xs-4 captcha-buttons-single">
+                      <button type="button" id="captcha-success" class="btn btn-success btn-block"><strong>B</strong></button>
+                    </div>
+                    <div class="col-xs-4 captcha-buttons-single">
+                      <button type="button" class="btn btn-default btn-block"><strong>X</strong></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <p class="why-text text-left">
                 <small>
                   <strong>Why do I have to do this? </strong>

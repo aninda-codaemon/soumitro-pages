@@ -2467,6 +2467,14 @@ ul.blur-list li {
 #gen-report-modal4 .modal-body {
   margin-bottom: 40px;
 }
+
+.captcha-buttons-single .btn {
+  font-size: 24px;
+
+  margin-bottom: 15px;
+  padding: 36px 0;
+}
+
 /* == 6 == GENERATING REPORT ====================== */
 
 .gen-list-group li {
