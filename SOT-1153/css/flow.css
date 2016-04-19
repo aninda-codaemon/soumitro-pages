@@ -347,6 +347,12 @@
   margin: 0;
 }
 
+@media (max-width: 991px) {
+  #gen-report-modal1 .modal-body {
+    padding-bottom: 70px;
+  }
+}
+
 /* == 2 == SCANNING SOCIAL MEDIA ================= */
 
 /*#scanningSocialMedia .modal-dialog {
@@ -377,6 +383,12 @@
   padding: 10px;
   border: 5px solid #efefef;
   border-radius: 4px;
+}
+
+@media (max-width: 479px) {
+  #scanningSocialMedia .modal-body {
+    padding-bottom: 80px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -471,6 +483,10 @@
 }
 
 /* modal-body */
+
+#gen-report-modal2 .modal-body {
+  padding-bottom: 115px;
+}
 
 #gen-report-modal2 .modal-body .title {
   margin-top: 0;
@@ -1006,6 +1022,18 @@
   display: block;
 }
 
+@media (max-width: 479px) {
+  #gen-report-modal5 .modal-body {
+    padding-bottom: 115px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 991px) {
+  #gen-report-modal5 .modal-body {
+    padding-bottom: 100px;
+  }
+}
+
 /* modal-body details-col */
 
 #gen-report-modal5 .modal-body .details-col .card-single {
@@ -1121,6 +1149,12 @@
   line-height: 1;
   vertical-align: text-bottom;
   font-size: inherit;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #gen-report-modal6 .modal-body {
+    padding-bottom: 80px;
+  }
 }
 
 /* modal-body teaser-col */
