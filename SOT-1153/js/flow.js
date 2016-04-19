@@ -747,6 +747,7 @@
   $("#modal1Close").on('click', resetModalFlow);
   $('.modal-backdrop').on('click', resetModalFlow);
 
+  $('#gen-report-modal2 .text-info').on('click', showNextModal);
   $("#gen-report-confirm").on('click', showNextModal);
 
   $("#signup-modal-form").on('submit', showNextModal);

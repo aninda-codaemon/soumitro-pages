@@ -41,9 +41,10 @@
   color: #fff;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .modal-header {
-    padding: 20px 30px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
@@ -53,7 +54,7 @@
   padding: 15px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .modal-body {
     padding: 30px;
   }
@@ -140,8 +141,8 @@
 @media (min-width: 992px) {
   .modal-full .modal-header {
     margin-top: 30px;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
@@ -151,9 +152,13 @@
   padding-bottom: 40px;
 }
 
+.modal-full .modal-body .title {
+  margin-top: 0;
+}
+
 @media (min-width: 992px) {
   .modal-full .modal-body {
-    padding: 60px;
+    padding: 30px;
     background-color: rgba(255, 255, 255, 0.97);
   }
 }
@@ -393,13 +398,13 @@
 
 @media (min-width: 768px) {
   #scanningSocialMedia .modal-body .profile-col {
-    padding-right: 30px;
+    padding-right: 15px;
   }
 }
 
 @media (min-width: 992px) {
   #scanningSocialMedia .modal-body .profile-col {
-    padding-right: 50px;
+    padding-right: 30px;
   }
 }
 
@@ -452,14 +457,14 @@
 
 @media (min-width: 768px) {
   #scanningSocialMedia .modal-body .social-col {
-    padding-left: 30px;
+    padding-left: 15px;
     border-left: 1px solid #ccc;
   }
 }
 
 @media (min-width: 992px) {
   #scanningSocialMedia .modal-body .social-col {
-    padding-left: 50px;
+    padding-left: 30px;
   }
 }
 
@@ -490,6 +495,14 @@
 
 #gen-report-modal2 .modal-body .title {
   margin-top: 0;
+}
+
+#gen-report-modal2 .modal-body .title .text-info {
+  cursor: pointer;
+}
+
+#gen-report-modal2 .modal-body .title .text-info:hover {
+  text-decoration: underline;
 }
 
 #gen-report-modal2 .modal-body .sub-title {
@@ -558,7 +571,7 @@
 @media (min-width: 768px) {
 
   #gen-report-modal2 .modal-body .sub-title {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   #gen-report-modal2 .modal-body .report-info-list {
@@ -578,7 +591,7 @@
 @media (min-width: 992px) {
 
   #gen-report-modal2 .modal-body {
-    padding-bottom: 60px;
+    padding-bottom: 15px;
   }
 
   #gen-report-modal2 .modal-body .large-heading .modal-headline,
@@ -676,7 +689,7 @@
 
 @media (min-width: 992px) {
   #gen-report-modal2 .modal-footer {
-    padding: 15px 60px;
+    padding: 15px 30px 30px;
   }
 
   #gen-report-modal2 .modal-footer #gen-report-confirm {
@@ -950,11 +963,11 @@
 
 @media (min-width: 768px) {
   #gen-report-modal4 .modal-body .captcha-col {
-    padding-right: 30px;
+    padding-right: 15px;
   }
 
   #gen-report-modal4 .modal-body .report-col {
-    padding-left: 30px;
+    padding-left: 15px;
     border-left: 1px solid #dadada;
   }
 
@@ -965,11 +978,11 @@
 
 @media (min-width: 992px) {
   #gen-report-modal4 .modal-body .captcha-col {
-    padding-right: 60px;
+    padding-right: 30px;
   }
 
   #gen-report-modal4 .modal-body .report-col {
-    padding-left: 60px;
+    padding-left: 30px;
   }
 }
 
@@ -1062,7 +1075,7 @@
 
 @media (min-width: 768px) {
   #gen-report-modal5 .modal-body .details-col .card-single {
-    margin-top: 30px;
+    margin-top: 5px;
     padding: 15px 30px;
   }
 
@@ -1073,6 +1086,12 @@
 
   #gen-report-modal5 .modal-body .details-col .card-single .report-details-list .report-details-item {
     margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #gen-report-modal5 .modal-body .details-col .card-single {
+    margin-top: 20px;
   }
 }
 
@@ -1170,7 +1189,7 @@
 
 @media (min-width: 768px) {
   #gen-report-modal6 .modal-body .form-col {
-    padding-right: 30px;
+    padding-right: 15px;
     border-right: 1px solid #dadada;
   }
 
@@ -1179,17 +1198,17 @@
   }
 
   #gen-report-modal6 .modal-body .teaser-col {
-    padding-left: 30px;
+    padding-left: 15px;
   }
 }
 
 @media (min-width: 992px) {
   #gen-report-modal6 .modal-body .form-col {
-    padding-right: 60px;
+    padding-right: 30px;
   }
 
   #gen-report-modal6 .modal-body .teaser-col {
-    padding-left: 60px;
+    padding-left: 30px;
   }
 }
 
