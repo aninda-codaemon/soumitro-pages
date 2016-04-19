@@ -100,7 +100,20 @@
     }
   });
 
-  /* Set current year inside footer */
+  // set column state for mobile teaser data
+
+  var setColumnState = function() {
+    console.log('set column state for mobile teaser data');
+    var teaserPreview = $('.mobile-subject-teaser .teaser-preview');
+
+    if (teaserPreview.length === 1) {
+      teaserPreview.css('width', '100%');
+    } else {
+      teaserPreview.style.removeAttribute('width');
+    }
+  };
+
+  // Set current year inside footer
   ;(function ($) {
     var currentDate = new Date(),
         currentYear = currentDate.getFullYear(),
@@ -211,6 +224,7 @@
     verifySeal();
     playVideo();
     setLastVisit();
+    setColumnState();
 
     var selectedPlan = $(".selection-selected");
     updatePlanLegal(selectedPlan);
