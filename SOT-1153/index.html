@@ -1120,12 +1120,14 @@
 
         <div class="modal-header">
           <h5 class="title text-center">
-            Success!
-            <small class="sub-title text-center">We found what you're looking for</small>
+            <span class="visible-xs">We have liftoff!</span>
+            <span class="hidden-xs" data-fr-bind="currentRecord">Success! We found some info on {{firstName}}</span>
           </h5>
         </div>
 
         <div class="modal-body">
+          <img class="visible-xs img-animation" src="img/rocket.gif" />
+
           <h4 class="title">Your Background Report For <span class="text-info" data-fr-bind="currentRecord">{{fullName}}</span> Is Available</h4>
 
           <p class="sub-title">Click the button below to continue to the full report. The report may contain information from one or more of the following categories:</p>
@@ -1704,7 +1706,7 @@
                 <p class="report-text report-cities">
                   {{shortList otherLocations}}
                   {{#if evenMorePlacesCount}}
-                    <span class="text-info text-break meta-count">+ {{evenMorePlacesCount}} more</span>
+                    <span class="text-info text-break meta-count data-modal-confirm">+ {{evenMorePlacesCount}} more</span>
                   {{/if}}
                 </p>
               </div>
@@ -1717,7 +1719,7 @@
                 <p class="report-text report-relatives">
                   {{shortList relatives}}
                   {{#if moreRelativesCount}}
-                    <span class="text-info text-break meta-count">+ {{moreRelativesCount}} more</span>
+                    <span class="text-info text-break meta-count data-modal-confirm">+ {{moreRelativesCount}} more</span>
                   {{/if}}
                 </p>
               </div>
@@ -1732,7 +1734,7 @@
 
               {{#each extraData}}
                 <div class="col-sm-6 col-md-4">
-                  <div class="detail-box {{style}}">
+                  <div class="detail-box {{style}} data-modal-confirm">
                     <p class="sub-title text-center">{{name}}</p>
 
                     <h1 class="title text-center">
@@ -1748,7 +1750,7 @@
 
                 {{#ifIn filler 1}}
                   <div class="col-sm-6 col-md-4">
-                    <div class="detail-box {{style}} fillerCard">
+                    <div class="detail-box {{style}} fillerCard data-modal-confirm">
                       <p class="sub-title text-center">We Searched More!</p>
 
                       <h1 class="title">
@@ -1788,7 +1790,7 @@
 
                 {{#ifIn filler 2}}
                   <div class="col-sm-6 col-md-4">
-                    <div class="detail-box {{style}} fillerCard">
+                    <div class="detail-box {{style}} fillerCard data-modal-confirm">
                       <p class="sub-title text-center">Satisfaction Guarantee</p>
 
                       <h1 class="title">
@@ -1802,7 +1804,7 @@
 
                 {{#ifIn filler 3}}
                   <div class="col-sm-6 col-md-4">
-                    <div class="detail-box {{style}} fillerCard">
+                    <div class="detail-box {{style}} fillerCard data-modal-confirm">
                       <p class="sub-title text-center">Top Rated Service</p>
 
                       <h1 class="title">
@@ -1816,7 +1818,7 @@
 
                 {{#ifIn filler 4}}
                   <div class="col-sm-6 col-md-4">
-                    <div class="detail-box {{style}} fillerCard">
+                    <div class="detail-box {{style}} fillerCard data-modal-confirm">
                       <p class="sub-title text-center">Secure Search</p>
 
                       <h1 class="title">
@@ -1830,7 +1832,7 @@
 
                 {{#ifIn filler 5}}
                   <div class="col-sm-6 col-md-4">
-                    <div class="detail-box {{style}} fillerCard">
+                    <div class="detail-box {{style}} fillerCard data-modal-confirm">
                       <p class="sub-title text-center">New Feature</p>
 
                       <h1 class="title">
@@ -1844,7 +1846,7 @@
 
                 {{#ifIn filler 6}}
                   <div class="col-sm-6 col-md-4">
-                    <div class="detail-box {{style}} fillerCard">
+                    <div class="detail-box {{style}} fillerCard data-modal-confirm">
                       <p class="sub-title text-center">You Can Reconnect</p>
 
                       <h1 class="title">

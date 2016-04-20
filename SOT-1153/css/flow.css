@@ -493,6 +493,11 @@
   padding-bottom: 115px;
 }
 
+#gen-report-modal2 .modal-body .img-animation {
+  display: block;
+  margin: 0 auto 5px;
+}
+
 #gen-report-modal2 .modal-body .title {
   margin-top: 0;
 }
@@ -822,6 +827,13 @@
   #gen-report-modal3 .modal-body .case-image {
     right: 80px;
     width: 70%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #gen-report-modal3 .modal-body .case-image {
+    right: 140px;
+    width: 60%;
   }
 }
 
@@ -1331,6 +1343,7 @@
 }
 
 #gen-report-modal7 .modal-teaser .meta-count {
+  cursor: pointer;
   font-size: 14px;
 }
 
@@ -1360,6 +1373,7 @@
 
 #gen-report-modal7 .modal-body .detail-box {
   position: relative;
+  cursor: pointer;
   height: auto;
   margin: 0;
   margin-bottom: 15px;
@@ -1372,6 +1386,25 @@
   -o-box-shadow: 0 0 3px 1px #E6E5E6;
   box-shadow: 0 0 3px 1px #E6E5E6;
   background-color: rgba(248, 243, 255, 0.5);
+  -webkit-transition: all 250ms;
+  -moz-transition: all 250ms;
+  -ms-transition: all 250ms;
+  -o-transition: all 250ms;
+  transition: all 250ms;
+}
+
+#gen-report-modal7 .modal-body .detail-box:hover {
+  -webkit-box-shadow: 0 2px 6px 3px #D8D8D8;
+  -moz-box-shadow: 0 2px 6px 3px #D8D8D8;
+  -ms-box-shadow: 0 2px 6px 3px #D8D8D8;
+  -o-box-shadow: 0 2px 6px 3px #D8D8D8;
+  box-shadow: 0 2px 6px 3px #D8D8D8;
+  background-color: #F8F3FF;
+  -webkit-transform: scale3d(1.02, 1.02, 1.02);
+  -moz-transform: scale3d(1.02, 1.02, 1.02);
+  -ms-transform: scale3d(1.02, 1.02, 1.02);
+  -o-transform: scale3d(1.02, 1.02, 1.02);
+  transform: scale3d(1.02, 1.02, 1.02);
 }
 
 #gen-report-modal7 .modal-body .detail-box .sub-title {
@@ -1454,6 +1487,15 @@
   background-color: #FFF7F8;
 }
 
+#gen-report-modal7 .modal-body .detail-box.crim-box:hover {
+  -webkit-box-shadow: 0 2px 6px 3px #FFB8C3;
+  -moz-box-shadow: 0 2px 6px 3px #FFB8C3;
+  -ms-box-shadow: 0 2px 6px 3px #FFB8C3;
+  -o-box-shadow: 0 2px 6px 3px #FFB8C3;
+  box-shadow: 0 2px 6px 3px #FFB8C3;
+  border-color: #FFB8C3;
+}
+
 #gen-report-modal7 .modal-body .detail-box.crim-box .title,
 #gen-report-modal7 .modal-body .detail-box.crim-box .title .icon {
   color: #e9322d;
@@ -1476,7 +1518,7 @@
 
 @media (min-width: 768px) {
   #gen-report-modal7 .modal-body .detail-box {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     height: 130px;
   }
 
@@ -1506,11 +1548,8 @@
   }
 
   #gen-report-modal7 .modal-body .detail-box {
-    height: 190px;
-  }
-
-  #gen-report-modal7 .modal-body .detail-box .sub-title {
-    margin-bottom: 40px;
+    height: 160px;
+    padding: 15px;
   }
 
   #gen-report-modal7 .modal-body .detail-box .title .meta-text {
@@ -1524,6 +1563,12 @@
 
   #gen-report-modal7 .modal-body .detail-box.fillerCard .filler-text {
     width: 60%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #gen-report-modal7 .modal-body .detail-box {
+    height: 140px;
   }
 }
 
