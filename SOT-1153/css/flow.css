@@ -17,16 +17,17 @@
   padding: 15px;
   border: 0;
   border-radius: 4px 4px 0 0;
-  background-color: #3f0282;
+  background-color: #2E243A;
   background-image: url('../img/shattered.png');
 }
 
 .modal-header .close {
+  cursor: pointer;
   padding: 6px 8px 10px !important;
   color: #fff;
   text-shadow: none;
   opacity: 1;
-  cursor: pointer;
+  outline: 0;
 }
 
 .modal-header .close:hover,
@@ -38,6 +39,7 @@
 }
 
 .modal-header .title {
+  margin: 0;
   color: #fff;
 }
 
@@ -260,28 +262,24 @@
 
 /* == 1 == EXIT POP ========== */
 
+/* modal-header */
+
 #exit-pop-skip .modal-header {
-  background-color: transparent;
-  border-bottom: none;
-  padding-bottom: 0px;
+  background: none;
 }
 
-#exit-pop-skip .modal-header h1 {
-  margin-bottom: 0px;
+#exit-pop-skip .modal-header .title {
+  margin: 0;
   color: #e84e68;
-}
-
-@media (max-width: 481px) {
-  #exit-pop-skip .modal-header h1 {
-    font-size: 32px;
-  }
 }
 
 #exit-pop-skip .modal-header .close {
   position: absolute;
-  right: 14px;
+  right: 15px;
   color: #333;
 }
+
+/* modal-body */
 
 #exit-pop-skip .modal-body {
   overflow: visible;
@@ -290,12 +288,7 @@
   padding-top: 0px;
 }
 
-#exit-pop-skip .modal-body h3 {
-  margin-top: 5px;
-  margin-bottom: 30px;
-}
-
-#exit-pop-skip .loader-big {
+#exit-pop-skip .modal-body .loader-big {
   display: none;
   position: absolute;
   z-index: 999;
@@ -305,18 +298,20 @@
   left: 50%;
 }
 
-#exit-pop-skip img.preview {
-  border: solid 13px #efefef;
+#exit-pop-skip .modal-body .img-preview {
+  margin: 0 auto;
+  margin-bottom: 15px;
+  padding: 5px;
+  border: 1px solid #eee;
 }
 
 @media (min-width: 768px) {
-  #exit-pop-skip img.preview {
+  #exit-pop-skip .modal-body .img-preview {
     width: 85%;
-    margin: 0 auto;
   }
 }
 
-#exit-pop-skip button#skip-to-preview {
+/*#exit-pop-skip button#skip-to-preview {
   border: 1px solid #57992d;
   background-color: #6dac45;
   -webkit-box-shadow: 0 -4px 0 #57992d inset;
@@ -333,7 +328,7 @@
   -webkit-box-shadow: 0 -6px 0 #57992d inset;
   -moz-box-shadow: 0 -6px 0 #57992d inset;
   box-shadow: 0 -6px 0 #57992d inset;
-}
+}*/
 
 /* ========== GENERATING REPORT ========== */
 

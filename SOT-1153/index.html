@@ -712,14 +712,15 @@
 
         <div class="modal-header section-header" data-fr-bind="teaserData">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#ffffff;">×</button>
-          <p>
-            <strong>Your search for {{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}} returned <strong>{{recordCount}}</strong> results!</strong>
-          </p>
-        </div><!-- /.modal-header -->
+          <h6 class="title">
+            Your search for {{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}} returned <strong>{{recordCount}}</strong> results!
+          </h6>
+        </div>
 
         <div class="modal-body">
           <div class="row refine-tips-wrapper">
-            <div class="col-sm-3 search-icon-placeholder">
+            <div class="col-sm-3 hidden-xs">
+              <h1 class="large-search-icon"><i class="fa fa-search"></i></h1>
             </div>
             <div class="col-sm-9">
               <p><strong>Narrow down your results by adding more information.</strong></p>
@@ -729,89 +730,87 @@
                 <li><i class="fa fa-check-square-o text-success"></i> Add an approximate current age.</li>
               </ul>
             </div>
-          </div><!-- /.row .refine-tips-wrapper -->
+          </div>
 
           <form id="refine-modal-form" class="bv-search alt-search" data-fr-store="searchData" data-fr-bind="searchData">
-            <fieldset>
-              <div class="row refine-input-wrapper">
-                <div class="col-sm-3">
-                  <input name="fn" type="text" class="form-control" placeholder="First Name" required value="{{fn}}" />
-                </div>
-                <div class="col-sm-1">
-                  <input name="mi" type="text" class="form-control" placeholder="M.I." value="{{mi}}" />
-                </div>
-                <div class="col-sm-3">
-                  <input name="ln" type="text" class="form-control" placeholder="Last Name" required value="{{ln}}" />
-                </div>
-                <div class="col-sm-1">
-                  <input name="age" type="text" class="form-control input-age" placeholder="Age" value="{{age}}" />
-                </div>
-                <div class="col-sm-2">
-                  <input name="city" type="text" class="form-control" placeholder="City" value="{{city}}" />
-                </div>
-                <div class="col-sm-2">
-                  <select class="custom-select a form-control" name="state" value="{{state}}">
-                    <option value="All">All</option>
-                    <option value="AK">AK</option>
-                    <option value="AL">AL</option>
-                    <option value="AR">Arizona</option>
-                    <option value="AZ">AZ</option>
-                    <option value="CA">CA</option>
-                    <option value="CO">CO</option>
-                    <option value="CT">CT</option>
-                    <option value="DC">DC</option>
-                    <option value="DE">DE</option>
-                    <option value="FL">FL</option>
-                    <option value="GA">GA</option>
-                    <option value="HI">HI</option>
-                    <option value="IA">IA</option>
-                    <option value="ID">ID</option>
-                    <option value="IL">IL</option>
-                    <option value="IN">IN</option>
-                    <option value="KS">KS</option>
-                    <option value="KY">KY</option>
-                    <option value="LA">LA</option>
-                    <option value="MA">MA</option>
-                    <option value="MD">MD</option>
-                    <option value="ME">ME</option>
-                    <option value="MI">MI</option>
-                    <option value="MN">MN</option>
-                    <option value="MO">MO</option>
-                    <option value="MS">MS</option>
-                    <option value="MT">MT</option>
-                    <option value="NC">NC</option>
-                    <option value="ND">ND</option>
-                    <option value="NE">NE</option>
-                    <option value="NH">NH</option>
-                    <option value="NJ">NJ</option>
-                    <option value="NM">NM</option>
-                    <option value="NV">NV</option>
-                    <option value="NY">NY</option>
-                    <option value="OH">OH</option>
-                    <option value="OK">OK</option>
-                    <option value="OR">OR</option>
-                    <option value="PA">PA</option>
-                    <option value="RI">RI</option>
-                    <option value="SC">SC</option>
-                    <option value="SD">SD</option>
-                    <option value="TN">TN</option>
-                    <option value="TX">TX</option>
-                    <option value="UT">UT</option>
-                    <option value="VA">VA</option>
-                    <option value="VT">VT</option>
-                    <option value="WA">WA</option>
-                    <option value="WI">WI</option>
-                    <option value="WV">WV</option>
-                    <option value="WY">WY</option>
-                  </select>
-                </div>
+            <div class="row refine-input-wrapper">
+              <div class="col-xs-5 col-md-3 form-group">
+                <input name="fn" type="text" class="form-control" placeholder="First Name" required value="{{fn}}" />
               </div>
-              <div class="row">
-                <div class="col-sm-4 col-sm-offset-4">
-                  <input type="submit" class="main-btn form-control refine-search" value="Refine Search" />
-                </div>
+              <div class="col-xs-2 col-md-1 form-group">
+                <input name="mi" type="text" class="form-control" placeholder="M.I." value="{{mi}}" />
               </div>
-            </fieldset>
+              <div class="col-xs-5 col-md-3 form-group">
+                <input name="ln" type="text" class="form-control" placeholder="Last Name" required value="{{ln}}" />
+              </div>
+              <div class="col-xs-2 col-md-1 form-group">
+                <input name="age" type="text" class="form-control input-age" placeholder="Age" value="{{age}}" />
+              </div>
+              <div class="col-xs-6 col-md-2 form-group">
+                <input name="city" type="text" class="form-control" placeholder="City" value="{{city}}" />
+              </div>
+              <div class="col-xs-4 col-md-2 form-group">
+                <select class="custom-select a form-control" name="state" value="{{state}}">
+                  <option value="All">All</option>
+                  <option value="AK">AK</option>
+                  <option value="AL">AL</option>
+                  <option value="AR">Arizona</option>
+                  <option value="AZ">AZ</option>
+                  <option value="CA">CA</option>
+                  <option value="CO">CO</option>
+                  <option value="CT">CT</option>
+                  <option value="DC">DC</option>
+                  <option value="DE">DE</option>
+                  <option value="FL">FL</option>
+                  <option value="GA">GA</option>
+                  <option value="HI">HI</option>
+                  <option value="IA">IA</option>
+                  <option value="ID">ID</option>
+                  <option value="IL">IL</option>
+                  <option value="IN">IN</option>
+                  <option value="KS">KS</option>
+                  <option value="KY">KY</option>
+                  <option value="LA">LA</option>
+                  <option value="MA">MA</option>
+                  <option value="MD">MD</option>
+                  <option value="ME">ME</option>
+                  <option value="MI">MI</option>
+                  <option value="MN">MN</option>
+                  <option value="MO">MO</option>
+                  <option value="MS">MS</option>
+                  <option value="MT">MT</option>
+                  <option value="NC">NC</option>
+                  <option value="ND">ND</option>
+                  <option value="NE">NE</option>
+                  <option value="NH">NH</option>
+                  <option value="NJ">NJ</option>
+                  <option value="NM">NM</option>
+                  <option value="NV">NV</option>
+                  <option value="NY">NY</option>
+                  <option value="OH">OH</option>
+                  <option value="OK">OK</option>
+                  <option value="OR">OR</option>
+                  <option value="PA">PA</option>
+                  <option value="RI">RI</option>
+                  <option value="SC">SC</option>
+                  <option value="SD">SD</option>
+                  <option value="TN">TN</option>
+                  <option value="TX">TX</option>
+                  <option value="UT">UT</option>
+                  <option value="VA">VA</option>
+                  <option value="VT">VT</option>
+                  <option value="WA">WA</option>
+                  <option value="WI">WI</option>
+                  <option value="WV">WV</option>
+                  <option value="WY">WY</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 col-sm-offset-4">
+                <button type="submit" class="btn btn-lg btn-block btn-secondary refine-search">Refine Search</button>
+              </div>
+            </div>
           </form>
         </div>
 
@@ -829,18 +828,20 @@
 
         <div class="modal-header section-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h1 class="text-center"><strong>Wait, before you go</strong></h1>
+          <h3 class="title text-center">
+            Wait, before you go
+            <small class="text-break">Preview a summary of your report.</small>
+          </h3>
         </div>
 
         <div class="modal-body text-center">
-          <h3><strong>Preview a summary of your report.</strong></h3>
           <div class="loader-big">
             <img src="img/loader-big.gif">
           </div>
-          <img class="img-responsive preview" src="img/preview.jpg">
+          <img class="img-responsive img-preview" src="img/preview.jpg">
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
-                <button id="skip-to-preview" class="btn btn-success btn-lg btn-block">See The Summary Now</button>
+                <button id="skip-to-preview" class="btn btn-lg btn-block btn-secondary">Click Here to See the Summary</button>
               </div>
             </div>
         </div>
