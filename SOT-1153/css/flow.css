@@ -133,6 +133,7 @@
 
 .modal-full .modal-header {
   border-radius: 0;
+  background-color: #3f0282;
 }
 
 .modal-full .modal-header .title {
