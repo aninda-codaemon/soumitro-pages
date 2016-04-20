@@ -580,6 +580,13 @@
         }
     });
 
+    $("#captcha-success").on('click', function(event) {
+      event.preventDefault();
+
+      window.showNextModal();
+      window.runSearchProgression();
+    });
+
     $("#bv-captcha-refresh").on('click', function(evt) {
         evt.preventDefault();
         refreshCaptchaState();

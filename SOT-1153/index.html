@@ -1305,10 +1305,12 @@
           <div class="row">
             <div class="col-sm-6 captcha-col">
               <p class="sub-title">
-                Please prove that you're human by filling out the captcha below.
+                Please prove that you're human by
+                <span class="visible-xs">clicking the green 'B'.</span>
+                <span class="hidden-xs">filling out the captcha below.</span>
               </p>
 
-              <form id="bv-catpcha-form">
+              <form class="hidden-xs" id="bv-catpcha-form">
                 <div class="captcha-wrap">
                   <div id="bv-captcha-imgs" class="captcha-images">
                     <img class="img-captcha" src="img/degree.jpg" alt="degree">
@@ -1333,6 +1335,25 @@
                   Continue <i class="fa fa-arrow-right hidden-xs"></i>
                 </button>
               </form>
+
+              <div class="visible-xs mobile-captcha-buttons" id="bv-mobile-catpcha-form">
+                <div class="mobile-captcha-button">
+                  <button type="button" class="btn btn-lg btn-default">
+                    <strong>Z</strong>
+                  </button>
+                </div>
+                <div class="mobile-captcha-button">
+                  <button type="button" class="btn btn-lg btn-success" id="captcha-success">
+                    <strong>B</strong>
+                  </button>
+                </div>
+                <div class="mobile-captcha-button">
+                  <button type="button" class="btn btn-lg btn-default">
+                    <strong>X</strong>
+                  </button>
+                </div>
+              </div>
+
               <p class="text-caption"><strong>Why:</strong> We have data costs associated with our reports, therefore we try to make sure we only run searches for real people.</p>
             </div>
 
