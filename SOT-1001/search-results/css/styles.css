@@ -1956,7 +1956,7 @@ span.located img {
   }
 
   .possible-relatives.modal .modal-body .possible-relatives-form .checkbox {
-    width: 40%;
+    width: 38%;
     margin-top: 30px;
     margin-bottom: 0;
   }
@@ -2002,6 +2002,12 @@ span.located img {
     display: block;
     width: 25%;
     margin: 0 auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox {
+    width: 36%;
   }
 }
 
