@@ -2799,6 +2799,31 @@ p#bv-captcha-msg {
   margin-bottom: 0;
 }
 
+#gen-report-modal4 .modal-body .mobile-captcha-buttons .mobile-captcha-button {
+  display: inline-block;
+  float: left;
+  width: 100%;
+}
+
+#gen-report-modal4 .modal-body .mobile-captcha-buttons .mobile-captcha-button .btn {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 5px auto;
+  border-radius: 50%;
+  font-size: 40px;
+}
+
+@media (min-width: 480px) {
+  #gen-report-modal4 .modal-body .mobile-captcha-buttons .mobile-captcha-button {
+    width: 33.3333%;
+  }
+
+  #gen-report-modal4 .modal-body .mobile-captcha-buttons .mobile-captcha-button .btn {
+    margin-bottom: 15px;
+  }
+}
+
 p.why-text {
   line-height: 21px;
 
