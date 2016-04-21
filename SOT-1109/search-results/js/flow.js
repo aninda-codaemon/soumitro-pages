@@ -380,6 +380,8 @@
       self.transitionDelay *= window.bv.mobileTimeRatio;
     }
 
+    var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+
     function isIE () {
       var myNav = navigator.userAgent.toLowerCase();
       return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
@@ -397,7 +399,13 @@
       var setAnimation = function($parent, child, duration) {
         $parent.find(child).animate({textIndent: 100}, {
           step: function(now, fx) {
-            $(this).css('transform', 'rotate(' + 1.8 *  now + 'deg)')
+            $(this).css({
+              '-webkit-transform': 'rotate(' + 1.8 *  now + 'deg)',
+              '-moz-transform': 'rotate(' + 1.8 *  now + 'deg)',
+              '-ms-transform': 'rotate(' + 1.8 *  now + 'deg)',
+              '-o-transform': 'rotate(' + 1.8 *  now + 'deg)',
+              'transform': 'rotate(' + 1.8 *  now + 'deg)'
+            })
           },
           duration: duration
         });
