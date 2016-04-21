@@ -917,6 +917,7 @@
 
 #gen-report-modal4 .modal-body .captcha-col .form-control {
   height: 60px;
+  border-color: #3F0282;
 }
 
 #gen-report-modal4 .modal-body .captcha-col .form-control.bv-captcha-error {
@@ -1372,6 +1373,10 @@
   margin: 0;
 }
 
+#gen-report-modal7 .modal-teaser .title {
+  margin-top: 6px;
+}
+
 #gen-report-modal7 .modal-teaser .report-label {
   margin: 0;
   margin-top: 10px;
@@ -1543,7 +1548,7 @@
 }
 
 #gen-report-modal7 .modal-body .data-modal-confirm {
-  padding: 30px;
+  padding: 15px;
   font-size: 20px;
 }
 
