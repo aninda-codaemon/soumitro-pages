@@ -60,122 +60,43 @@
 /* radial progress bars */
 
 .modal-content .radial-progress {
+  position: relative;
   margin: 0 auto;
   margin-bottom: 10px;
   width: 70px;
   height: 70px;
-  background-color: #c0f6ef;
-  border-radius: 50%;
 }
 
-.modal-content .radial-progress .circle .mask,
-.modal-content .radial-progress .circle .fill {
+.modal-content .radial-progress .icon {
   position: absolute;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  -webkit-backface-visibility: hidden;
-  -webkit-transition: -webkit-transform 1s;
-  -moz-transition: -moz-transform 1s;
-  -ms-transition: -ms-transform 1s;
-  transition: transform 1s;
-}
-
-.modal-content .radial-progress .circle .mask {
-  clip: rect(0px, 140px, 140px, 35px);
-}
-
-.modal-content .radial-progress .circle .mask.clip-fix {
-  clip: rect(0px, 140px, 140px, 34px);
-}
-
-.modal-content .radial-progress .circle .mask .fill {
-  clip: rect(0px, 35px, 140px, 0px);
-  background-color: #33d4c0;
-}
-
-.modal-content .radial-progress .inset {
-  display: table-cell;
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  margin-left: 10px;
-  margin-top: 10px;
-  background-color: #fff;
-  border-radius: 50%;
-}
-
-.modal-content .radial-progress .inset .icon {
-  position: relative;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
-.modal-content .radial-progress .inset .icon .img-icon {
+.modal-content .radial-progress .icon .img-icon {
   width: 20px;
 }
 
 @media (min-width: 480px) {
-  .modal-content .radial-progress,
-  .modal-content .radial-progress .circle .mask,
-  .modal-content .radial-progress .circle .fill {
+  .modal-content .radial-progress {
     width: 120px;
     height: 120px;
   }
 
-  .modal-content .radial-progress .circle .mask {
-    clip: rect(0px, 140px, 140px, 60px);
-  }
-
-  .modal-content .radial-progress .circle .mask.clip-fix {
-    clip: rect(0px, 140px, 140px, 59px);
-  }
-
-  .modal-content .radial-progress .circle .mask .fill {
-    clip: rect(0px, 60px, 140px, 0px);
-  }
-
-  .modal-content .radial-progress .inset  {
-    width: 80px;
-    height: 80px;
-    margin-left: 20px;
-    margin-top: 20px;
-  }
-
-  .modal-content .radial-progress .inset .icon .img-icon {
+  .modal-content .radial-progress .icon .img-icon {
     width: 30px;
   }
 }
 
 @media (min-width: 768px) {
-  .modal-content .radial-progress,
-  .modal-content .radial-progress .circle .mask,
-  .modal-content .radial-progress .circle .fill {
+  .modal-content .radial-progress {
     width: 170px;
     height: 170px;
   }
 
-  .modal-content .radial-progress .circle .mask {
-    clip: rect(0px, 180px, 180px, 85px);
-  }
-
-  .modal-content .radial-progress .circle .mask.clip-fix {
-    clip: rect(0px, 180px, 180px, 84px);
-  }
-
-  .modal-content .radial-progress .circle .mask .fill {
-    clip: rect(0px, 85px, 180px, 0px);
-  }
-
-  .modal-content .radial-progress .inset  {
-    width: 100px;
-    height: 100px;
-    margin-left: 35px;
-    margin-top: 35px;
-  }
-
-  .modal-content .radial-progress .inset .icon .img-icon {
+  .modal-content .radial-progress .icon .img-icon {
     width: 40px;
   }
 }

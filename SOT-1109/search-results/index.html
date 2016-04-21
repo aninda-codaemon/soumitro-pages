@@ -809,20 +809,10 @@
 
             <div class="col-xs-4">
               <div id="searching-progress-bar-database" class="radial-progress" data-progress="0">
-              	<div class="circle">
-              		<div class="mask full">
-              			<div class="fill"></div>
-              		</div>
-              		<div class="mask half">
-              			<div class="fill"></div>
-              			<div class="fill fix"></div>
-              		</div>
-              	</div>
-              	<div class="inset">
-              		<div class="icon">
-              			<img class="img-icon" src="img/icon_court.png" />
-              		</div>
-              	</div>
+                <input type="text" value="100" class="knob-circle" />
+                <div class="icon">
+                  <img class="img-icon" src="img/icon_court.png" />
+                </div>
               </div>
 
               <p class="progress-label text-centered">Public <span class="hidden-xs">and Criminal </span>Records</p>
@@ -830,20 +820,10 @@
 
             <div class="col-xs-4">
               <div id="searching-progress-bar-records" class="radial-progress" data-progress="0">
-              	<div class="circle">
-              		<div class="mask full">
-              			<div class="fill"></div>
-              		</div>
-              		<div class="mask half">
-              			<div class="fill"></div>
-              			<div class="fill fix"></div>
-              		</div>
-              	</div>
-              	<div class="inset">
-              		<div class="icon">
-              			<img class="img-icon" src="img/icon_gavel.png" />
-              		</div>
-              	</div>
+                <input type="text" value="100" class="knob-circle" />
+                <div class="icon">
+                  <img class="img-icon" src="img/icon_gavel.png" />
+                </div>
               </div>
 
               <p class="progress-label text-centered"><span class="hidden-xs">County and State </span>Court Records</p>
@@ -851,20 +831,10 @@
 
             <div class="col-xs-4">
               <div id="searching-progress-bar-datasets" class="radial-progress" data-progress="0">
-              	<div class="circle">
-              		<div class="mask full">
-              			<div class="fill"></div>
-              		</div>
-              		<div class="mask half">
-              			<div class="fill"></div>
-              			<div class="fill fix"></div>
-              		</div>
-              	</div>
-              	<div class="inset">
-              		<div class="icon">
-              			<img class="img-icon" src="img/icon_data.png" />
-              		</div>
-              	</div>
+                <input type="text" value="100" class="knob-circle" />
+                <div class="icon">
+                  <img class="img-icon" src="img/icon_data.png" />
+                </div>
               </div>
 
               <p class="progress-label text-centered">Contact Information</p>
@@ -1321,7 +1291,7 @@
               <p class="sub-title age" data-fr-bind="currentRecord"><strong>Age:</strong> {{displayAge}}</p>
 
               <div id="map-goes-here">
-                <img id="map" alt="map" />
+                <img id="map" src="img/map_placeholder.jpg" alt="map" />
               </div>
 
               <p><strong>Includes, When Available:</strong></p>
@@ -1883,6 +1853,7 @@
   <script src="js/amplify.store.min.js"></script>
 
   <script src="js/jquery.validate.js"></script>
+  <script src="js/jquery.knob.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 
   <!-- framerida's frontend magic -->

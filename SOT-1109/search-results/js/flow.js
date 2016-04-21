@@ -364,9 +364,9 @@
     trackNL('Viewed LocatingInfo Modal');
 
     var $progressBars = [
-      $('#searching-progress-bar-database.radial-progress'),
-      $('#searching-progress-bar-records.radial-progress'),
-      $('#searching-progress-bar-datasets.radial-progress')
+      $('#searching-progress-bar-database .knob-circle'),
+      $('#searching-progress-bar-records .knob-circle'),
+      $('#searching-progress-bar-records .knob-circle')
     ];
 
     var self = this,
@@ -380,96 +380,112 @@
       self.transitionDelay *= window.bv.mobileTimeRatio;
     }
 
-    var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
-
-    function isIE () {
-      var myNav = navigator.userAgent.toLowerCase();
-      return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
-    };
-
-    if (isIE () && isIE () <= 9) {
-
-      _.forEach($progressBars, function ($elem, idx) {
-        var duration = splits[idx];
-        animations.push($elem.animate({'width': '100%'}, {duration: duration}));
+    _.forEach($progressBars, function ($elem, idx) {
+      // init knob plugin - radial progress bars
+      $elem.knob({
+        'value': 0,
+        'width': '100px',
+        'height': '100px',
+        'bgColor': '#c0f6ef',
+        'fgColor': '#33d4c0',
+        'readOnly': true,
+        'dynamicDraw': true,
+        'displayInput': false,
+        'change' : function (v) { console.log(v); }
       });
 
-    } else {
+      var duration = splits[idx];
+      animations.push($elem.attr({'value': '100'}, {duration: duration}));
+    });
 
-      var setAnimation = function($parent, child, duration) {
-        $parent.find(child).animate({textIndent: 100}, {
-          step: function(now, fx) {
-            $(this).css({
-              '-webkit-transform': 'rotate(' + 1.8 *  now + 'deg)',
-              '-moz-transform': 'rotate(' + 1.8 *  now + 'deg)',
-              '-ms-transform': 'rotate(' + 1.8 *  now + 'deg)',
-              '-o-transform': 'rotate(' + 1.8 *  now + 'deg)',
-              'transform': 'rotate(' + 1.8 *  now + 'deg)'
-            })
-          },
-          duration: duration
-        });
-      };
-
-      var circles = [
-        '.circle .mask.full',
-        '.circle .mask .fill',
-        '.circle .mask.half .fill.fix'
-      ];
-
-      _.forEach($progressBars, function ($elem, idx) {
-        var duration = splits[idx],
-            parent = $elem,
-            child;
-
-        for (child = 0; child < 3; child++) {
-          // console.log(parent);
-          // console.log(circles[child]);
-          // console.log(duration);
-
-          setAnimation(parent, circles[child], duration);
-        };
-
-        // @TODO: need to push each element as a function into the animations array so that duration arguments can be passed
-
-        // animations.push(animationGroup);
-        // animationGroup will contain the main parent element with the three child elements set in setAnimation
-
-      });
-
-      // @TODO: find a better solution to this hacky way to fix the clip of the radial progress bars when loading ends
-      setTimeout(function() {
-        $('.modal-content .radial-progress .circle .mask').addClass('clip-fix');
-      }, 4000);
-
-    }
+    // function isIE () {
+    //   var myNav = navigator.userAgent.toLowerCase();
+    //   return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+    // };
+    //
+    // if (isIE () && isIE () <= 9) {
+    //
+    //   _.forEach($progressBars, function ($elem, idx) {
+    //     var duration = splits[idx];
+    //     animations.push($elem.animate({'width': '100%'}, {duration: duration}));
+    //   });
+    //
+    // } else {
+    //
+    //   var setAnimation = function($parent, child, duration) {
+    //     $parent.find(child).animate({textIndent: 100}, {
+    //       step: function(now, fx) {
+    //         $(this).css({
+    //           '-webkit-transform': 'rotate(' + 1.8 *  now + 'deg)',
+    //           '-moz-transform': 'rotate(' + 1.8 *  now + 'deg)',
+    //           '-ms-transform': 'rotate(' + 1.8 *  now + 'deg)',
+    //           '-o-transform': 'rotate(' + 1.8 *  now + 'deg)',
+    //           'transform': 'rotate(' + 1.8 *  now + 'deg)'
+    //         })
+    //       },
+    //       duration: duration
+    //     });
+    //   };
+    //
+    //   var circles = [
+    //     '.circle .mask.full',
+    //     '.circle .mask .fill',
+    //     '.circle .mask.half .fill.fix'
+    //   ];
+    //
+    //   _.forEach($progressBars, function ($elem, idx) {
+    //     var duration = splits[idx],
+    //         parent = $elem,
+    //         child;
+    //
+    //     for (child = 0; child < 3; child++) {
+    //       // console.log(parent);
+    //       // console.log(circles[child]);
+    //       // console.log(duration);
+    //
+    //       setAnimation(parent, circles[child], duration);
+    //     };
+    //
+    //     // @TODO: need to push each element as a function into the animations array so that duration arguments can be passed
+    //
+    //     // animations.push(animationGroup);
+    //     // animationGroup will contain the main parent element with the three child elements set in setAnimation
+    //
+    //   });
+    //
+    //   // @TODO: find a better solution to this hacky way to fix the clip of the radial progress bars when loading ends
+    //   setTimeout(function() {
+    //     $('.modal-content .radial-progress .circle .mask').addClass('clip-fix');
+    //   }, 4000);
+    //
+    // }
     // @TODO: using arguments from animations is not working with circular progress
     // need to figure out a way to push animation using the parent elements only
     // otherwise the timeout duration gets added together and the loading time becomes too long
 
-    // $.when.apply(self, animations).then(function () {
-    //   if (self.$elem.hasClass('in')) {
-    //     timeoutId = window.setTimeout(function () {
-    //       showNextModal();
-    //     }, self.transitionDelay);
-    //   }
-    // });
+    $.when.apply(self, animations).then(function () {
+      if (self.$elem.hasClass('in')) {
+        timeoutId = window.setTimeout(function () {
+          showNextModal();
+        }, self.transitionDelay);
+      }
+    });
 
     // for now, this will do (agile, lol):
 
-    if (self.$elem.hasClass('in')) {
-      if (window.bv.isMobile) {
-        timeoutId = window.setTimeout(function () {
-          showNextModal();
-          $('.modal-content .radial-progress .circle .mask').removeClass('clip-fix');
-        }, 18000);
-      } else {
-        timeoutId = window.setTimeout(function () {
-          showNextModal();
-          $('.modal-content .radial-progress .circle .mask').removeClass('clip-fix');
-        }, 32000);
-      }
-    }
+    // if (self.$elem.hasClass('in')) {
+    //   if (window.bv.isMobile) {
+    //     timeoutId = window.setTimeout(function () {
+    //       showNextModal();
+    //       $('.modal-content .radial-progress .circle .mask').removeClass('clip-fix');
+    //     }, 18000);
+    //   } else {
+    //     timeoutId = window.setTimeout(function () {
+    //       showNextModal();
+    //       $('.modal-content .radial-progress .circle .mask').removeClass('clip-fix');
+    //     }, 32000);
+    //   }
+    // }
 
   }
 
