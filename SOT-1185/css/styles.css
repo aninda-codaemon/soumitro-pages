@@ -522,6 +522,16 @@ h3 {
   margin: 10px 0;
 }
 
+.results-filters {
+  margin-top: 20px;
+}
+
+.results-filters .input-group-addon {
+  border: 0;
+  background: none;
+  font-size: 18px;
+}
+
 .btn-round {
   margin: auto 12px;
   padding-right: 16px;
