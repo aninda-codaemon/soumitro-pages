@@ -328,7 +328,7 @@
 
     // define sort/filter options using class names of data elements
     var options = {
-      valueNames: [ 'name-found', 'age-found' ]
+      valueNames: [ 'name-found', 'age-found', 'places-item' ]
     };
 
     // create new list using table id
