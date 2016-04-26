@@ -328,16 +328,43 @@
 
     // define sort/filter options using class names of data elements
     var options = {
-      valueNames: [ 'name-found', 'age-found', 'places-item' ]
+      valueNames: [ 'name-found', 'age-found', 'places-item', 'ageGroup' ]
     };
 
     // create new list using table id
     var searchResultsList = new List('results-table', options);
 
+    $('#age-filter').change(function () {
+      var selection = this.value;
+
+      // @TODO: parse value into array of numbers that filter the age range found in array
+
+      if (selection && selection !== 'all') {
+        console.log(selection);
+
+        searchResultsList.filter(function(item) {
+            return (item.values().ageGroup == selection);
+        });
+      } else {
+        searchResultsList.filter();
+      }
+    });
+
+    $('#state-filter').change(function () {
+      var selection = this.value;
+
+      // @TODO: match state value with state inside places (state follows the comma)
+      // filter the table by the selected state
+
+      if (selection && selection !== 'all') {
+        console.log(selection);
+      } else {
+        searchResultsList.filter();
+      }
+    });
+
 
     /* Event Handlers */
-
-
 
     $(".bv-search").on('submit', function(evt) {
         evt.preventDefault();
