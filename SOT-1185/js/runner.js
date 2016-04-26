@@ -328,7 +328,7 @@
 
     // define sort/filter options using class names of data elements
     var options = {
-      valueNames: [ 'name-found', 'age-found', 'places-item', 'ageGroup' ]
+      valueNames: [ 'resultName', 'resultAge', 'resultPlace', 'ageGroup' ]
     };
 
     // create new list using table id
@@ -338,12 +338,52 @@
       var selection = this.value;
 
       // @TODO: parse value into array of numbers that filter the age range found in array
+      // ageGroup is undefined - need to match with age-found
 
-      if (selection && selection !== 'all') {
-        console.log(selection);
-
+      // @TODO: refactor this mess
+      if (selection === '18-25' && selection !== 'all') {
         searchResultsList.filter(function(item) {
-            return (item.values().ageGroup == selection);
+          return (item.values().resultAge <= 25);
+        });
+      }
+      else if (selection === '26-35' && selection !== 'all') {
+        searchResultsList.filter(function(item) {
+          return (item.values().resultAge > 25 && item.values().resultAge <= 35);
+        });
+      }
+      else if (selection === '36-45' && selection !== 'all') {
+        searchResultsList.filter(function(item) {
+          return (item.values().resultAge > 35 && item.values().resultAge <= 45);
+        });
+      }
+      else if (selection === '46-55' && selection !== 'all') {
+        searchResultsList.filter(function(item) {
+          return (item.values().resultAge > 45 && item.values().resultAge <= 55);
+        });
+      }
+      else if (selection === '56-65' && selection !== 'all') {
+        searchResultsList.filter(function(item) {
+          return (item.values().resultAge > 55 && item.values().resultAge <= 65);
+        });
+      }
+      else if (selection === '66-75' && selection !== 'all') {
+        searchResultsList.filter(function(item) {
+          return (item.values().resultAge > 65 && item.values().resultAge <= 75);
+        });
+      }
+      else if (selection === '76-85' && selection !== 'all') {
+        searchResultsList.filter(function(item) {
+          return (item.values().resultAge > 75 && item.values().resultAge <= 85);
+        });
+      }
+      else if (selection === '86-95' && selection !== 'all') {
+        searchResultsList.filter(function(item) {
+          return (item.values().resultAge > 85 && item.values().resultAge <= 95);
+        });
+      }
+      else if (selection === '96+' && selection !== 'all') {
+        searchResultsList.filter(function(item) {
+          return (item.values().resultAge > 95);
         });
       } else {
         searchResultsList.filter();
