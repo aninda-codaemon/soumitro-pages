@@ -334,12 +334,21 @@
     // define new list using table id
     var searchResultsList = new List('results-table', options);
 
+    //console.log(searchResultsList.search('resultPlace'));
+
     $('#age-filter').change(function () {
       var selection = this.value;
 
       // @TODO: refactor this mess
       if (selection === '18-25' && selection !== 'all') {
         searchResultsList.filter(function(item) {
+          if (item.values().resultAge <= 25) {
+            var count = $('#age-filter option[value=' + selection + ']').text();
+            console.log(count)
+            // this needs to be moved out of change
+            // ++1 to label with option value of 18-25
+          }
+
           return (item.values().resultAge <= 25);
         });
       }
