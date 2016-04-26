@@ -328,17 +328,14 @@
 
     // define sort/filter options using class names of data elements
     var options = {
-      valueNames: [ 'resultName', 'resultAge', 'resultPlace', 'ageGroup' ]
+      valueNames: [ 'resultName', 'resultAge', 'resultPlace' ]
     };
 
-    // create new list using table id
+    // define new list using table id
     var searchResultsList = new List('results-table', options);
 
     $('#age-filter').change(function () {
       var selection = this.value;
-
-      // @TODO: parse value into array of numbers that filter the age range found in array
-      // ageGroup is undefined - need to match with age-found
 
       // @TODO: refactor this mess
       if (selection === '18-25' && selection !== 'all') {
@@ -393,11 +390,10 @@
     $('#state-filter').change(function () {
       var selection = this.value;
 
-      // @TODO: match state value with state inside places (state follows the comma)
-      // filter the table by the selected state
-
       if (selection && selection !== 'all') {
-        console.log(selection);
+        searchResultsList.filter(function(item) {
+          return item.values().resultPlace.includes(selection);
+        });
       } else {
         searchResultsList.filter();
       }
