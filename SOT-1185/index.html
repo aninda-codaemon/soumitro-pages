@@ -207,14 +207,14 @@
           <thead class="table-header">
             <tr>
               <th id="th-hash" class="th-center col-md-1">Photo</th>
-              <th class="name-col col-md-3">Name</th>
-              <th class="col-md-1">Age</th>
-              <th id="th-cities" class="col-md-2">Cities</th>
-              <th id="th-relatives" class="col-md-3">Relatives</th>
+              <th class="name-col col-md-3 sort" data-sort="name-found">Name</th>
+              <th class="col-md-1 sort" data-sort="age-found">Age</th>
+              <th id="th-cities" class="col-md-2" data-sort="places-list">Cities</th>
+              <th id="th-relatives" class="col-md-3" data-sort="relatives-list">Relatives</th>
               <th id="th-view-btn" class="th-center col-md-2">Access Report</th>
             </tr>
           </thead>
-          <tbody id="results">
+          <tbody id="results" class="list">
             <!-- THIS IS WHERE ALL THE ACTION HAPPENS -->
             <tr data-fr-each="teasers" data-fr-map="TeaserRecord" data-fr-sort="teaserSorter" data-fr-click="store currentRecord" class="results-row">
               <td class="td-hash">
@@ -241,19 +241,19 @@
                 </div>
               </td>
               <td class="age-col">
-                {{age}}
+                <span class="age-found">{{age}}</span>
               </td>
               <td>
-                <ul class="list-unstyled">
+                <ul class="list-unstyled places-list">
                   {{#places}}
-                    <li>{{.}}</li>
+                    <li class="places-item">{{.}}</li>
                   {{/places}}
                 </ul>
               </td>
               <td>
-                <ul class="list-unstyled">
+                <ul class="list-unstyled relatives-list">
                   {{#relatives}}
-                    <li>{{.}}</li>
+                    <li class="relatives-item">{{.}}</li>
                   {{/relatives}}
                 </ul>
               </td>

@@ -324,10 +324,15 @@
         $("#no-results-form").validate(searchRules);
     };
 
+    /* list.js - sort and filter table data */
 
+    // define sort/filter options using class names of data elements
+    var options = {
+      valueNames: [ 'name-found', 'age-found' ]
+    };
 
-
-
+    // create new list using table id
+    var searchResultsList = new List('results-table', options);
 
 
     /* Event Handlers */
