@@ -381,7 +381,7 @@
   }
 
   // attach relatives modal to modals array
-  // this is being called inside window.startModalFlow function (all the way at the bottom)
+  // this is also being called inside window.startModalFlow and resetModalFlow (all the way at the bottom)
   // @TODO: refactor this mess of a function (when there's more time)
   function attachRelativesModal() {
     // check if Relatives is defined
@@ -722,9 +722,11 @@
       event.preventDefault();
 
       if ($fcraCheckbox.prop('checked') === true) {
+        console.log($fcraCheckbox.prop('checked'));
         $fcraError.hide();
         showNextModal();
       } else {
+        console.log($fcraCheckbox.prop('checked'));
         $fcraError.show();
       }
     });
@@ -810,7 +812,8 @@
    */
   var showNextModal = function () {
     currModalIdx += 1;
-    if (currModalIdx < modalCount) {
+
+    if (currModalIdx < modals.length) {
       if (currModalIdx > 0) {
         modals[currModalIdx - 1].$elem.modal('hide');
       }
@@ -902,6 +905,7 @@
 
   window.startModalFlow = function (ctx) {
     modalCtx = ctx;
+    attachRelativesModal();
     resetModalFlow();
     showNextModal();
   };
