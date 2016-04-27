@@ -386,7 +386,7 @@
   function attachRelativesModal() {
     // check if Relatives is defined
     // need to check if relatives is defined in currentRecord to prevent js errors from breaking flow
-    if (amplify.store('currentRecord').Relatives !== undefined) {
+    if (amplify.store('currentRecord') !== undefined && amplify.store('currentRecord').Relatives !== undefined) {
       // update relativesCount
       relativesCount = amplify.store('currentRecord').Relatives.Relative.length;
 
@@ -408,6 +408,8 @@
     } else if (containsObject(relativesModal, modals) === true) {
       // removing relatives Modal using it's index from modals array
       modals.splice(relativesModalIndex, 1);
+    } else {
+      return false;
     }
   }
 
