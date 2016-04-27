@@ -722,11 +722,9 @@
       event.preventDefault();
 
       if ($fcraCheckbox.prop('checked') === true) {
-        console.log($fcraCheckbox.prop('checked'));
         $fcraError.hide();
         showNextModal();
       } else {
-        console.log($fcraCheckbox.prop('checked'));
         $fcraError.show();
       }
     });
