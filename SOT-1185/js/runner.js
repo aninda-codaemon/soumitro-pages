@@ -337,12 +337,12 @@
     //console.log(searchResultsList.search('resultPlace'));
 
     $('#age-filter').change(function () {
-      var selection = this.value,
-          count = 0;
+      var selection = this.value;
 
       // @TODO: refactor this mess
       if (selection === '18-25' && selection !== 'all') {
-        var $label = $('#age-filter option[value=' + selection + ']');
+        var $label = $('#age-filter option[value=' + selection + ']'),
+            count = 0;
 
         searchResultsList.filter(function(item) {
           if (item.values().resultAge <= 25) {
