@@ -722,9 +722,11 @@
       event.preventDefault();
 
       if ($fcraCheckbox.is(':checked')) {
+        //console.log($fcraCheckbox.is(':checked'));
         $fcraError.hide();
         showNextModal();
       } else {
+        //console.log($fcraCheckbox.is(':checked'));
         $fcraError.show();
       }
     });
