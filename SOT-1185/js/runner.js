@@ -343,14 +343,25 @@
           group6Count = 0,
           group7Count = 0,
           group8Count = 0,
-          group9Count = 0;
+          group9Count = 0,
+          count = 0,
+          countTest = 0;
 
+      // get state values and names - wip
       var states = $('#state-filter option'),
+          state = {},
+          stateFilters = [],
           i;
 
       for (i = 1; i < states.length; i++) {
-        console.log(states[i].value);
+        state = {
+          state: states[i].text,
+          value: states[i].value
+        }
+        stateFilters.push(state);
       };
+
+      console.log(stateFilters);
 
       searchResultsList.filter(function(item) {
 
@@ -359,6 +370,7 @@
         // each age group is incremented by one number up to the length of age group options
         // the count is added by 1 each time the loop occurs
 
+        // age filters
         if (item.values().resultAge <= 25) {
           group1Count += 1;
           $('#age-filter #ageGroup1').text('18-25 (' + group1Count + ')');
@@ -394,6 +406,16 @@
         else if (item.values().resultAge > 95) {
           group9Count += 1;
           $('#age-filter #ageGroup9').text('96+ (' + group9Count + ')');
+        }
+
+        // state filters
+        if (item.values().resultPlace.includes('AL')) {
+          count += 1;
+          $('#state-filter option[value=AL]').text('Alabama (' + count + ')');
+        }
+        else if (item.values().resultPlace.includes('AK')) {
+          countTest += 1;
+          $('#state-filter option[value=AK]').text('Alaska (' + countTest + ')');
         }
 
         // set default filters at start
