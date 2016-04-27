@@ -334,26 +334,45 @@
     // define new list using table id
     var searchResultsList = new List('results-table', options);
 
-    searchResultsList.filter(function(item) {
-      console.log(item.values().resultAge <= 25);
+    var getFilterCounts = function() {
+      var count = 0;
 
-      searchResultsList.filter();
-    });
+      searchResultsList.filter(function(item) {
+
+        if (item.values().resultAge <= 25) {
+          count += 1;
+          $('#age-filter #ageGroup1').text('18-25 (' + count + ')');
+        }
+        else if (item.values().resultAge > 25 && item.values().resultAge <= 35) {
+          count += 1;
+          $('#age-filter #ageGroup2').text('26-35 (' + count + ')');
+        }
+        else if (item.values().resultAge > 35 && item.values().resultAge <= 45) {
+          count += 1;
+          $('#age-filter #ageGroup3').text('36-45 (' + count + ')');
+        }
+
+        // set default filters at start
+        searchResultsList.filter();
+      });
+    }
+
+    getFilterCounts();
 
     $('#age-filter').change(function () {
       var selection = this.value;
 
       // @TODO: refactor this mess
       if (selection === '18-25' && selection !== 'all') {
-        var $label = $('#age-filter option[value=' + selection + ']'),
-            count = 0;
+        // var $label = $('#age-filter option[value=' + selection + ']'),
+        //     count = 0;
 
         searchResultsList.filter(function(item) {
-          if (item.values().resultAge <= 25) {
-            // @TODO: this needs to be moved out of change
-            count += 1;
-            $label.text('18-25 (' + count + ')');
-          }
+          // if (item.values().resultAge <= 25) {
+          //   // @TODO: this needs to be moved out of change
+          //   count += 1;
+          //   $label.text('18-25 (' + count + ')');
+          // }
 
           return (item.values().resultAge <= 25);
         });

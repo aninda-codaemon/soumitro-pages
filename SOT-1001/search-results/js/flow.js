@@ -674,7 +674,8 @@
         };
       }).get();
 
-      var local = {selectedRelatives};
+      var local = new Object;
+      local.selectedRelatives = selectedRelatives;
 
       // if relatives were selected, store the returned data in local storage
       // else clear the selected relatives local storage to update the flow
