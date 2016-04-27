@@ -335,21 +335,65 @@
     var searchResultsList = new List('results-table', options);
 
     var getFilterCounts = function() {
-      var count = 0;
+      var group1Count = 0,
+          group2Count = 0,
+          group3Count = 0,
+          group4Count = 0,
+          group5Count = 0,
+          group6Count = 0,
+          group7Count = 0,
+          group8Count = 0,
+          group9Count = 0;
+
+      var states = $('#state-filter option'),
+          i;
+
+      for (i = 1; i < states.length; i++) {
+        console.log(states[i].value);
+      };
 
       searchResultsList.filter(function(item) {
 
+        // @TODO: refactor
+        // conditions can be looped in increments of 10 factoring in the age gap
+        // each age group is incremented by one number up to the length of age group options
+        // the count is added by 1 each time the loop occurs
+
         if (item.values().resultAge <= 25) {
-          count += 1;
-          $('#age-filter #ageGroup1').text('18-25 (' + count + ')');
+          group1Count += 1;
+          $('#age-filter #ageGroup1').text('18-25 (' + group1Count + ')');
         }
         else if (item.values().resultAge > 25 && item.values().resultAge <= 35) {
-          count += 1;
-          $('#age-filter #ageGroup2').text('26-35 (' + count + ')');
+          group2Count += 1;
+          $('#age-filter #ageGroup2').text('26-35 (' + group2Count + ')');
         }
         else if (item.values().resultAge > 35 && item.values().resultAge <= 45) {
-          count += 1;
-          $('#age-filter #ageGroup3').text('36-45 (' + count + ')');
+          group3Count += 1;
+          $('#age-filter #ageGroup3').text('36-45 (' + group3Count + ')');
+        }
+        else if (item.values().resultAge > 45 && item.values().resultAge <= 55) {
+          group4Count += 1;
+          $('#age-filter #ageGroup4').text('46-55 (' + group4Count + ')');
+        }
+        else if (item.values().resultAge > 55 && item.values().resultAge <= 65) {
+          group5Count += 1;
+          $('#age-filter #ageGroup5').text('56-65 (' + group5Count + ')');
+        }
+        else if (item.values().resultAge > 65 && item.values().resultAge <= 75) {
+          group6Count += 1;
+          $('#age-filter #ageGroup6').text('66-75 (' + group6Count + ')');
+        }
+        else if (item.values().resultAge > 75 && item.values().resultAge <= 85) {
+          group7Count += 1;
+          $('#age-filter #ageGroup7').text('76-85 (' + group7Count + ')');
+        }
+        else if (item.values().resultAge > 85 && item.values().resultAge <= 95) {
+          group8Count += 1;
+          $('#age-filter #ageGroup8').text('86-95 (' + group8Count + ')');
+        }
+        else if (item.values().resultAge > 95) {
+          group9Count += 1;
+          $('#age-filter #ageGroup9').text('96+ (' + group9Count + ')');
         }
 
         // set default filters at start
