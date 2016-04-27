@@ -714,23 +714,20 @@
   function fcraConfirmation() {
     trackNL('Viewed FCRA Modal');
 
-    var fcraConfirm = function() {
-        $("#fcra-confirm").validate({
-            rules: {
-                "fcraCheckbox2": {
-                    required: true
-                }
-            },
-            messages: {
-                "fcraCheckbox2": "Please check the box to continue"
-            },
-            submitHandler: function(form) {
-               showNextModal();
-            }
-        });
-    };
+    var $continueBtn = $('#fcra-confirm .btn'),
+        $fcraCheckbox = $('#fcraCheckbox2'),
+        $fcraError = $('.fcra-error');
 
-    fcraConfirm();
+    $continueBtn.click(function(event) {
+      event.preventDefault();
+
+      if ($fcraCheckbox.is(':checked')) {
+        $fcraError.hide();
+        showNextModal();
+      } else {
+        $fcraError.show();
+      }
+    });
   }
 
   function scanningSocialMedia() {
