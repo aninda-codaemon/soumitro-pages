@@ -337,16 +337,18 @@
     //console.log(searchResultsList.search('resultPlace'));
 
     $('#age-filter').change(function () {
-      var selection = this.value;
+      var selection = this.value,
+          count = 0;
 
       // @TODO: refactor this mess
       if (selection === '18-25' && selection !== 'all') {
+        var $label = $('#age-filter option[value=' + selection + ']');
+
         searchResultsList.filter(function(item) {
           if (item.values().resultAge <= 25) {
-            var count = $('#age-filter option[value=' + selection + ']').text();
-            console.log(count)
-            // this needs to be moved out of change
-            // ++1 to label with option value of 18-25
+            // @TODO: this needs to be moved out of change
+            count += 1;
+            $label.text('18-25 (' + count + ')');
           }
 
           return (item.values().resultAge <= 25);
