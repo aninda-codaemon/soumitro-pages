@@ -334,7 +334,11 @@
     // define new list using table id
     var searchResultsList = new List('results-table', options);
 
-    //console.log(searchResultsList.search('resultPlace'));
+    searchResultsList.filter(function(item) {
+      console.log(item.values().resultAge <= 25);
+
+      searchResultsList.filter();
+    });
 
     $('#age-filter').change(function () {
       var selection = this.value;

@@ -721,12 +721,10 @@
     $continueBtn.click(function(event) {
       event.preventDefault();
 
-      if ($fcraCheckbox.is(':checked')) {
-        //console.log($fcraCheckbox.is(':checked'));
+      if ($fcraCheckbox.prop('checked') === true) {
         $fcraError.hide();
         showNextModal();
       } else {
-        //console.log($fcraCheckbox.is(':checked'));
         $fcraError.show();
       }
     });
