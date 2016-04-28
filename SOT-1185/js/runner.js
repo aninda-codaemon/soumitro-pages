@@ -447,6 +447,9 @@
     $('#age-filter').change(function () {
       var selection = this.value;
 
+      // reset state filter
+      $('#state-filter option[value=all]').prop('selected', true);
+
       // @TODO: refactor this (too many conditions)
       if (selection === '18-25' && selection !== 'all') {
         searchResultsList.filter(function(item) {
@@ -499,6 +502,9 @@
 
     $('#state-filter').change(function () {
       var selection = this.value;
+
+      // reset age filter
+      $('#age-filter option[value=all]').prop('selected', true);
 
       if (selection && selection !== 'all') {
         searchResultsList.filter(function(item) {
