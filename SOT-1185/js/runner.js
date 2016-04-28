@@ -357,9 +357,16 @@
         state = {
           state: states[i].text,
           value: states[i].value
-        }
+        };
+
         stateFilters.push(state);
-      };
+      }
+
+      var test = searchResultsList.get();
+
+      console.log(test);
+
+      console.log(test[0]._values.resultPlace);
 
       console.log(stateFilters);
 
@@ -421,7 +428,7 @@
         // set default filters at start
         searchResultsList.filter();
       });
-    }
+    };
 
     getFilterCounts();
 
