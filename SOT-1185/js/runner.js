@@ -332,7 +332,19 @@
     };
 
     // define new list using table id
-    var searchResultsList = new List('results-table', options);
+    var searchResultsList = new List('results-table', options),
+        getList = searchResultsList.get();
+
+    var stateFilters = function(name, value) {
+      var count = 0;
+
+      searchResultsList.filter(function(item) {
+        if (item.values().resultPlace.includes(value)) {
+          count += 1;
+          $('#state-filter option[value=' + value + ']').text(name + ' (' + count + ')');
+        }
+      });
+    };
 
     var getFilterCounts = function() {
       var group1Count = 0,
@@ -343,32 +355,25 @@
           group6Count = 0,
           group7Count = 0,
           group8Count = 0,
-          group9Count = 0,
-          count = 0,
-          countTest = 0;
+          group9Count = 0;
 
       // get state values and names - wip
       var states = $('#state-filter option'),
           state = {},
-          stateFilters = [],
           i;
 
       for (i = 1; i < states.length; i++) {
         state = {
-          state: states[i].text,
+          name: states[i].text,
           value: states[i].value
         };
 
-        stateFilters.push(state);
+        stateFilters(state.name, state.value);
       }
 
-      var test = searchResultsList.get();
-
-      console.log(test);
-
-      console.log(test[0]._values.resultPlace);
-
-      console.log(stateFilters);
+      // console.log(getList);
+      //
+      // console.log(getList[0]._values.resultPlace);
 
       searchResultsList.filter(function(item) {
 
@@ -414,20 +419,10 @@
           group9Count += 1;
           $('#age-filter #ageGroup9').text('96+ (' + group9Count + ')');
         }
-
-        // state filters
-        if (item.values().resultPlace.includes('AL')) {
-          count += 1;
-          $('#state-filter option[value=AL]').text('Alabama (' + count + ')');
-        }
-        else if (item.values().resultPlace.includes('AK')) {
-          countTest += 1;
-          $('#state-filter option[value=AK]').text('Alaska (' + countTest + ')');
-        }
-
-        // set default filters at start
-        searchResultsList.filter();
       });
+
+      // set default filters
+      searchResultsList.filter();
     };
 
     getFilterCounts();
