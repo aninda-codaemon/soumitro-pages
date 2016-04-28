@@ -219,7 +219,7 @@
     var renderResults = function(teaserData) {
         if (teaserData) {
             hideSearchingAnimation();
-            if (teaserData.recordCount == 0) { //coerce
+            if (teaserData.recordCount === 0) { //coerce
                 showNoResultsPanel();
             } else {
                 showResultsPanel();
@@ -367,16 +367,21 @@
       });
     };
 
+    var ageFilterCounts = function(name, value, low, high) {
+      var count = 0;
+
+      searchResultsList.filter(function(item) {
+        if (item.values().resultAge >= low && item.values().resultAge <= high) {
+          count += 1;
+          $('#age-filter option[value=' + value + ']').text(name + ' (' + count + ')');
+        }
+
+      });
+    };
+
     var getFilterCounts = function() {
-      var group1Count = 0,
-          group2Count = 0,
-          group3Count = 0,
-          group4Count = 0,
-          group5Count = 0,
-          group6Count = 0,
-          group7Count = 0,
-          group8Count = 0,
-          group9Count = 0;
+
+      // @TODO: refactor both loops into one function since they are very similar
 
       // define variables for states loop
       var states = $('#state-filter option'),
@@ -390,55 +395,27 @@
           value: states[i].value
         };
 
-        // pass each state name and value into stateFilterCounts function
+        // pass each state name and value into stateFilterCounts()
         stateFilterCounts(state.name, state.value);
       }
 
-      searchResultsList.filter(function(item) {
+      // define variables for ages loop
+      var ages = $('#age-filter option'),
+          ageGroup = {},
+          n;
 
-        // @TODO: refactor
-        // conditions can be looped in increments of 10 factoring in the age gap
-        // each age group is incremented by one number up to the length of age group options
-        // the count is added by 1 each time the loop occurs
+      // for each age, set count from search results list
+      for (n = 1; n < ages.length; n++) {
+        ageGroup = {
+          name: ages[n].text,
+          value: ages[n].value,
+          low: ages[n].value.split('-')[0], // get low value by getting the first split
+          high: ages[n].value.split('-')[1] // get high value by getting the second split
+        };
 
-        // age filters
-        if (item.values().resultAge > 0 && item.values().resultAge <= 25) {
-          group1Count += 1;
-          $('#age-filter #ageGroup1').text('18-25 (' + group1Count + ')');
-        }
-        else if (item.values().resultAge > 25 && item.values().resultAge <= 35) {
-          group2Count += 1;
-          $('#age-filter #ageGroup2').text('26-35 (' + group2Count + ')');
-        }
-        else if (item.values().resultAge > 35 && item.values().resultAge <= 45) {
-          group3Count += 1;
-          $('#age-filter #ageGroup3').text('36-45 (' + group3Count + ')');
-        }
-        else if (item.values().resultAge > 45 && item.values().resultAge <= 55) {
-          group4Count += 1;
-          $('#age-filter #ageGroup4').text('46-55 (' + group4Count + ')');
-        }
-        else if (item.values().resultAge > 55 && item.values().resultAge <= 65) {
-          group5Count += 1;
-          $('#age-filter #ageGroup5').text('56-65 (' + group5Count + ')');
-        }
-        else if (item.values().resultAge > 65 && item.values().resultAge <= 75) {
-          group6Count += 1;
-          $('#age-filter #ageGroup6').text('66-75 (' + group6Count + ')');
-        }
-        else if (item.values().resultAge > 75 && item.values().resultAge <= 85) {
-          group7Count += 1;
-          $('#age-filter #ageGroup7').text('76-85 (' + group7Count + ')');
-        }
-        else if (item.values().resultAge > 85 && item.values().resultAge <= 95) {
-          group8Count += 1;
-          $('#age-filter #ageGroup8').text('86-95 (' + group8Count + ')');
-        }
-        else if (item.values().resultAge > 95) {
-          group9Count += 1;
-          $('#age-filter #ageGroup9').text('96+ (' + group9Count + ')');
-        }
-      });
+        // pass each ageGroup name, value, along with the low and high values of the age group into ageFilterCounts()
+        ageFilterCounts(ageGroup.name, ageGroup.value, ageGroup.low, ageGroup.high);
+      }
 
       // set default filters
       searchResultsList.filter();
@@ -490,7 +467,7 @@
           return (item.values().resultAge > 85 && item.values().resultAge <= 95);
         });
       }
-      else if (selection === '96+' && selection !== 'all') {
+      else if (selection === '96-200' && selection !== 'all') {
         searchResultsList.filter(function(item) {
           return (item.values().resultAge > 95);
         });
@@ -663,7 +640,7 @@
 
             hideSearchingAnimation();
 
-            if (!teaserData || teaserData.recordCount == 0) { //coerce
+            if (!teaserData || teaserData.recordCount === 0) { //coerce
                 showNoResultsPanel();
             } else {
                 activateRows();
