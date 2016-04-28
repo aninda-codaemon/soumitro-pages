@@ -843,6 +843,41 @@ th {
   background-color: #3f3f3f;
 }
 
+.sorting {
+  position: relative;
+  cursor: pointer;
+}
+
+.sorting:before,
+.sorting:after {
+  border: 4px solid transparent;
+	content: "";
+	display: block;
+	height: 0;
+	right: -15px;
+	top: 50%;
+	position: absolute;
+	width: 0;
+}
+
+.sorting:before {
+	border-bottom-color: #989898;
+	margin-top: -9px;
+}
+
+.sorting.top:before {
+  border-bottom-color: #fff;
+}
+
+.sorting:after {
+	border-top-color: #989898;
+	margin-top: 1px;
+}
+
+.sorting.bottom:after {
+  border-top-color: #fff;
+}
+
 table .th-center {
   text-align: center;
 }

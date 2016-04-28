@@ -515,6 +515,21 @@
       }
     });
 
+    // sorting arrows in table header
+    $('.sorting').click(function() {
+      if ($(this).hasClass('top')) {
+        $('.sorting').removeClass('top');
+        $('.sorting').removeClass('bottom');
+        $(this).removeClass('top');
+        $(this).addClass('bottom');
+      } else {
+        $('.sorting').removeClass('top');
+        $('.sorting').removeClass('bottom');
+        $(this).removeClass('bottom');
+        $(this).addClass('top');
+      }
+    });
+
     $(".bv-search").on('submit', function(evt) {
         evt.preventDefault();
         var formVals = {},
