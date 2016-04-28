@@ -335,7 +335,7 @@
     // define sort/filter options using the class names of the data elements
     // these classes are linked to the table data in index.html
     var options = {
-      valueNames: [ 'resultName', 'resultAge', 'resultPlace' ]
+      valueNames: [ 'resultName', 'resultAge', 'resultPlace', 'resultRelative' ]
     };
 
     // define new list using table id (results-table) with filter/sort options (table data classes)
@@ -512,21 +512,6 @@
         });
       } else {
         searchResultsList.filter();
-      }
-    });
-
-    // sorting arrows in table header
-    $('.sorting').click(function() {
-      if ($(this).hasClass('top')) {
-        $('.sorting').removeClass('top');
-        $('.sorting').removeClass('bottom');
-        $(this).removeClass('top');
-        $(this).addClass('bottom');
-      } else {
-        $('.sorting').removeClass('top');
-        $('.sorting').removeClass('bottom');
-        $(this).removeClass('bottom');
-        $(this).addClass('top');
       }
     });
 

@@ -843,13 +843,13 @@ th {
   background-color: #3f3f3f;
 }
 
-.sorting {
+.sort .sorting-arrows {
   position: relative;
   cursor: pointer;
 }
 
-.sorting:before,
-.sorting:after {
+.sort .sorting-arrows:before,
+.sort .sorting-arrows:after {
   border: 4px solid transparent;
 	content: "";
 	display: block;
@@ -860,21 +860,21 @@ th {
 	width: 0;
 }
 
-.sorting:before {
+.sort .sorting-arrows:before {
 	border-bottom-color: #989898;
 	margin-top: -9px;
 }
 
-.sorting.top:before {
+.sort.asc .sorting-arrows:before {
   border-bottom-color: #fff;
 }
 
-.sorting:after {
+.sort .sorting-arrows:after {
 	border-top-color: #989898;
 	margin-top: 1px;
 }
 
-.sorting.bottom:after {
+.sort.desc .sorting-arrows:after {
   border-top-color: #fff;
 }
 
