@@ -282,6 +282,8 @@
             amplify.store('teaserData', teaserDataObj);
             renderResults(teaserDataObj);
             notifyRecordCount(initiator);
+
+            getFilterCounts();
         });
     };
 
@@ -337,11 +339,9 @@
     };
 
     // define new list using table id (results-table) with filter/sort options (table data classes)
-    var searchResultsList = new List('results-table', options),
-        getList = searchResultsList.get(); // list of items inside array (may not need this)
+    var searchResultsList = new List('results-table', options);
 
-    // console.log(getList);
-    // console.log(getList[0]._values.resultPlace);
+    // @TODO: refactor both stateFilterCounts and ageFilterCounts functions into one since they're similar
 
     // filters the searchResultsList using state name and state value
     var stateFilterCounts = function(name, value) {
@@ -368,20 +368,37 @@
     };
 
     var ageFilterCounts = function(name, value, low, high) {
+      // start with default count of 0
       var count = 0;
 
+      // filtering each item in the searchResultsList
       searchResultsList.filter(function(item) {
+        // if the age in the item is between the low and high age group values
         if (item.values().resultAge >= low && item.values().resultAge <= high) {
+          // increase the count by 1
           count += 1;
+          // add the new count into the option label of the appropriate age group value
           $('#age-filter option[value=' + value + ']').text(name + ' (' + count + ')');
         }
+        // if count is 0 hide the age group option (dont need filters that show no results)
+        else if (count === 0) {
+          $('#age-filter option[value=' + value + ']').hide();
+        // else show the age group option (need this condition otherwise it will hide all the options)
+        } else {
+          $('#age-filter option[value=' + value + ']').show();
+        }
 
+        // @TODO: find out why age group of 96-200 doesnt pass as true sometimes
+        // console.log('age of person: ' + item.values().resultAge);
+        // console.log('age range value: ' + value);
+        // console.log('count of value matching age: ' + count);
       });
     };
 
     var getFilterCounts = function() {
 
       // @TODO: refactor both loops into one function since they are very similar
+      // pass methods into the getFilterCounts function and use one loop
 
       // define variables for states loop
       var states = $('#state-filter option'),
@@ -423,10 +440,14 @@
 
     getFilterCounts();
 
+
+
+    /* Event Handlers */
+
     $('#age-filter').change(function () {
       var selection = this.value;
 
-      // @TODO: refactor this mess
+      // @TODO: refactor this (too many conditions)
       if (selection === '18-25' && selection !== 'all') {
         searchResultsList.filter(function(item) {
           return (item.values().resultAge <= 25);
@@ -488,9 +509,6 @@
       }
     });
 
-
-    /* Event Handlers */
-
     $(".bv-search").on('submit', function(evt) {
         evt.preventDefault();
         var formVals = {},
@@ -500,10 +518,6 @@
         });
         trackNL("Searched");
         getTeaserData(formVals, recordCounts.RESEARCH);
-
-        // @TODO: getFilterCounts when new search results are found
-        // consider moving this call to getTeaserData function
-        getFilterCounts();
     });
 
     $('#data-panel').on('click', '.refine-modal-trigger', function(evt) {
