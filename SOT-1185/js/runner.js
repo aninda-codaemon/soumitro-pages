@@ -324,24 +324,45 @@
         $("#no-results-form").validate(searchRules);
     };
 
-    /* list.js - sort and filter table data */
 
-    // define sort/filter options using class names of data elements
+
+
+    // list.js - sort and filter table data
+    // docs: http://www.listjs.com/docs/
+
+    // define sort/filter options using the class names of the data elements
+    // these classes are linked to the table data in index.html
     var options = {
       valueNames: [ 'resultName', 'resultAge', 'resultPlace' ]
     };
 
-    // define new list using table id
+    // define new list using table id (results-table) with filter/sort options (table data classes)
     var searchResultsList = new List('results-table', options),
-        getList = searchResultsList.get();
+        getList = searchResultsList.get(); // list of items inside array (may not need this)
 
-    var stateFilters = function(name, value) {
+    // console.log(getList);
+    // console.log(getList[0]._values.resultPlace);
+
+    // filters the searchResultsList using state name and state value
+    var stateFilterCounts = function(name, value) {
+      // start with default count of 0
       var count = 0;
 
+      // filtering each item in the searchResultsList
       searchResultsList.filter(function(item) {
+        // if the place in the item includes the state value
         if (item.values().resultPlace.includes(value)) {
+          // increase the count by 1
           count += 1;
+          // add the new count into the option label of the appropriate state value
           $('#state-filter option[value=' + value + ']').text(name + ' (' + count + ')');
+        }
+        // if count is 0 hide the state option (dont need filters that show no results)
+        else if (count === 0) {
+          $('#state-filter option[value=' + value + ']').hide();
+        // else show the state option (need this condition otherwise it will hide all the options)
+        } else {
+          $('#state-filter option[value=' + value + ']').show();
         }
       });
     };
@@ -357,23 +378,21 @@
           group8Count = 0,
           group9Count = 0;
 
-      // get state values and names - wip
+      // define variables for states loop
       var states = $('#state-filter option'),
           state = {},
           i;
 
+      // for each state, set count from search results list
       for (i = 1; i < states.length; i++) {
         state = {
           name: states[i].text,
           value: states[i].value
         };
 
-        stateFilters(state.name, state.value);
+        // pass each state name and value into stateFilterCounts function
+        stateFilterCounts(state.name, state.value);
       }
-
-      // console.log(getList);
-      //
-      // console.log(getList[0]._values.resultPlace);
 
       searchResultsList.filter(function(item) {
 
