@@ -402,7 +402,7 @@
         // the count is added by 1 each time the loop occurs
 
         // age filters
-        if (item.values().resultAge <= 25) {
+        if (item.values().resultAge > 0 && item.values().resultAge <= 25) {
           group1Count += 1;
           $('#age-filter #ageGroup1').text('18-25 (' + group1Count + ')');
         }
@@ -451,16 +451,7 @@
 
       // @TODO: refactor this mess
       if (selection === '18-25' && selection !== 'all') {
-        // var $label = $('#age-filter option[value=' + selection + ']'),
-        //     count = 0;
-
         searchResultsList.filter(function(item) {
-          // if (item.values().resultAge <= 25) {
-          //   // @TODO: this needs to be moved out of change
-          //   count += 1;
-          //   $label.text('18-25 (' + count + ')');
-          // }
-
           return (item.values().resultAge <= 25);
         });
       }
@@ -532,6 +523,10 @@
         });
         trackNL("Searched");
         getTeaserData(formVals, recordCounts.RESEARCH);
+
+        // @TODO: getFilterCounts when new search results are found
+        // consider moving this call to getTeaserData function
+        getFilterCounts();
     });
 
     $('#data-panel').on('click', '.refine-modal-trigger', function(evt) {
