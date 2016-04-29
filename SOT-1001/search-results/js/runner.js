@@ -155,7 +155,6 @@
         if (runningTime >= completeRun) {
             window.clearInterval(intervalId);
         }
-
     };
 
     var mainTimer = function() {
@@ -185,19 +184,20 @@
     window.runSearchProgression = runSearchProgression;
 
     var generateMapLink = function(ctx) {
-        var dataPath = $(ctx).data("fr-bound2"),
-            data = framerida.dataFromDataPath(dataPath),
-            teaser = new TeaserRecord(data),
-            addresses = teaser.addresses(),
-            address = addresses[0] || "";
+      var dataPath = $(ctx).data("fr-bound2"),
+          data = framerida.dataFromDataPath(dataPath),
+          teaser = new TeaserRecord(data),
+          addresses = teaser.addresses(),
+          address = addresses[0] || "";
 
-      	var geoJSON = $.getJSON("https://api.mapbox.com/geocoding/v5/mapbox.places/" + encodeURIComponent(address) + ".json?country=us&access_token=pk.eyJ1IjoiYmVlbnZlcmlmaWVkIiwiYSI6InBLR3UwVG8ifQ.tCCuBmKzRqNMGKIY2C1YOw").done(function(response) {
+      var geoJSON = $.getJSON("https://api.mapbox.com/geocoding/v5/mapbox.places/" + encodeURIComponent(address) + ".json?country=us&access_token=pk.eyJ1IjoiYmVlbnZlcmlmaWVkIiwiYSI6InBLR3UwVG8ifQ.tCCuBmKzRqNMGKIY2C1YOw").done(function(response) {
 
         var lon = response.features[0].center[0] || -98.583333;
         var lat = response.features[0].center[1] || 39.833333;
 
       	var mapUrl = "https://api.tiles.mapbox.com/v4/beenverified.lnhdcee8/" + lon + "," + lat + ",14/345x148@2x.jpg?access_token=pk.eyJ1IjoiYmVlbnZlcmlmaWVkIiwiYSI6InBLR3UwVG8ifQ.tCCuBmKzRqNMGKIY2C1YOw";
 
+        amplify.store('currentRecordMap', mapUrl);
       	$("#map").attr("src", mapUrl);
       });
     };

@@ -686,6 +686,7 @@
       }
 
       showNextModal();
+      renderMap();
     });
 
     // toggle active state on checkbox label
@@ -701,6 +702,7 @@
     $('.skip-relatives-form').click(function() {
       amplify.store('selectedRelatives', {});
       showNextModal();
+      renderMap();
     });
   }
 
@@ -799,6 +801,16 @@
     $("#social-media-groups li.loading").css('opacity', 1);
   }
 
+  // render map
+
+  var renderMap = function() {
+    if (amplify.store('currentRecordMap')) {
+      $('#map').attr('src', amplify.store('currentRecordMap'));
+    } else {
+      return false;
+    }
+  };
+
   /* Helpers to show/hide modals */
 
   var modalCount = modals.length,
@@ -822,6 +834,7 @@
             keyboard: false
           });
       nextModal.animate();
+      
       return true;
     } else {
       return false;
