@@ -183,6 +183,8 @@
 
     window.runSearchProgression = runSearchProgression;
 
+    window.CurrentRecordMap = '';
+
     var generateMapLink = function(ctx) {
       var dataPath = $(ctx).data("fr-bound2"),
           data = framerida.dataFromDataPath(dataPath),
