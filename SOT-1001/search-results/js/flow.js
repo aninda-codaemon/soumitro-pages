@@ -804,7 +804,7 @@
   // render map
 
   var renderMap = function() {
-    if (amplify.store('currentRecordMap')) {
+    if (window.CurrentRecordMap && window.CurrentRecordMap.length > 0) {
       $('#map').attr('src', amplify.store('currentRecordMap'));
     } else {
       return false;
@@ -834,7 +834,7 @@
             keyboard: false
           });
       nextModal.animate();
-      
+
       return true;
     } else {
       return false;

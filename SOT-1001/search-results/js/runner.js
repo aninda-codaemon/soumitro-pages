@@ -197,7 +197,7 @@
 
       	var mapUrl = "https://api.tiles.mapbox.com/v4/beenverified.lnhdcee8/" + lon + "," + lat + ",14/345x148@2x.jpg?access_token=pk.eyJ1IjoiYmVlbnZlcmlmaWVkIiwiYSI6InBLR3UwVG8ifQ.tCCuBmKzRqNMGKIY2C1YOw";
 
-        amplify.store('currentRecordMap', mapUrl);
+        window.CurrentRecordMap = mapUrl;
       	$("#map").attr("src", mapUrl);
       });
     };
