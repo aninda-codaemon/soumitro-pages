@@ -381,6 +381,79 @@
 
       // set default filters
       searchResultsList.filter();
+
+      // age-filter action
+      $('#age-filter').change(function () {
+        var selection = this.value;
+
+        // reset state filter
+        $('#state-filter option[value=all]').prop('selected', true);
+
+        // @TODO: refactor this (too many conditions and repeating patterns)
+        if (selection === '18-25' && selection !== 'all') {
+          searchResultsList.filter(function(item) {
+            return (item.values().resultAge <= 25);
+          });
+        }
+        else if (selection === '26-35' && selection !== 'all') {
+          searchResultsList.filter(function(item) {
+            return (item.values().resultAge > 25 && item.values().resultAge <= 35);
+          });
+        }
+        else if (selection === '36-45' && selection !== 'all') {
+          searchResultsList.filter(function(item) {
+            return (item.values().resultAge > 35 && item.values().resultAge <= 45);
+          });
+        }
+        else if (selection === '46-55' && selection !== 'all') {
+          searchResultsList.filter(function(item) {
+            return (item.values().resultAge > 45 && item.values().resultAge <= 55);
+          });
+        }
+        else if (selection === '56-65' && selection !== 'all') {
+          searchResultsList.filter(function(item) {
+            return (item.values().resultAge > 55 && item.values().resultAge <= 65);
+          });
+        }
+        else if (selection === '66-75' && selection !== 'all') {
+          searchResultsList.filter(function(item) {
+            return (item.values().resultAge > 65 && item.values().resultAge <= 75);
+          });
+        }
+        else if (selection === '76-85' && selection !== 'all') {
+          searchResultsList.filter(function(item) {
+            return (item.values().resultAge > 75 && item.values().resultAge <= 85);
+          });
+        }
+        else if (selection === '86-95' && selection !== 'all') {
+          searchResultsList.filter(function(item) {
+            return (item.values().resultAge > 85 && item.values().resultAge <= 95);
+          });
+        }
+        else if (selection === '96-200' && selection !== 'all') {
+          searchResultsList.filter(function(item) {
+            return (item.values().resultAge > 95);
+          });
+        } else {
+          searchResultsList.filter();
+        }
+      });
+
+      // state-filter action
+      $('#state-filter').change(function () {
+        var selection = this.value;
+
+        // reset age filter
+        $('#age-filter option[value=all]').prop('selected', true);
+
+        if (selection && selection !== 'all') {
+          searchResultsList.filter(function(item) {
+            return item.values().resultPlace.includes(selection);
+          });
+        } else {
+          searchResultsList.filter();
+        }
+      });
     };
 
     // @TODO: refactor both stateFilterCounts and ageFilterCounts functions into one since they're similar
@@ -438,77 +511,6 @@
     };
 
     /* Event Handlers */
-
-    $('#age-filter').change(function () {
-      var selection = this.value;
-
-      // reset state filter
-      $('#state-filter option[value=all]').prop('selected', true);
-
-      // @TODO: refactor this (too many conditions and repeating patterns)
-      if (selection === '18-25' && selection !== 'all') {
-        searchResultsList.filter(function(item) {
-          return (item.values().resultAge <= 25);
-        });
-      }
-      else if (selection === '26-35' && selection !== 'all') {
-        searchResultsList.filter(function(item) {
-          return (item.values().resultAge > 25 && item.values().resultAge <= 35);
-        });
-      }
-      else if (selection === '36-45' && selection !== 'all') {
-        searchResultsList.filter(function(item) {
-          return (item.values().resultAge > 35 && item.values().resultAge <= 45);
-        });
-      }
-      else if (selection === '46-55' && selection !== 'all') {
-        searchResultsList.filter(function(item) {
-          return (item.values().resultAge > 45 && item.values().resultAge <= 55);
-        });
-      }
-      else if (selection === '56-65' && selection !== 'all') {
-        searchResultsList.filter(function(item) {
-          return (item.values().resultAge > 55 && item.values().resultAge <= 65);
-        });
-      }
-      else if (selection === '66-75' && selection !== 'all') {
-        searchResultsList.filter(function(item) {
-          return (item.values().resultAge > 65 && item.values().resultAge <= 75);
-        });
-      }
-      else if (selection === '76-85' && selection !== 'all') {
-        searchResultsList.filter(function(item) {
-          return (item.values().resultAge > 75 && item.values().resultAge <= 85);
-        });
-      }
-      else if (selection === '86-95' && selection !== 'all') {
-        searchResultsList.filter(function(item) {
-          return (item.values().resultAge > 85 && item.values().resultAge <= 95);
-        });
-      }
-      else if (selection === '96-200' && selection !== 'all') {
-        searchResultsList.filter(function(item) {
-          return (item.values().resultAge > 95);
-        });
-      } else {
-        searchResultsList.filter();
-      }
-    });
-
-    $('#state-filter').change(function () {
-      var selection = this.value;
-
-      // reset age filter
-      $('#age-filter option[value=all]').prop('selected', true);
-
-      if (selection && selection !== 'all') {
-        searchResultsList.filter(function(item) {
-          return item.values().resultPlace.includes(selection);
-        });
-      } else {
-        searchResultsList.filter();
-      }
-    });
 
     $(".bv-search").on('submit', function(evt) {
         evt.preventDefault();
