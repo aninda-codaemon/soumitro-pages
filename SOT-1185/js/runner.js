@@ -464,12 +464,16 @@
 
         if ($(this).is(':checked')) {
           searchResultsList.filter(function(item) {
+            // @TODO: ignore the middle name in resultName
+            // split resultName using the spaces in the names
+            // and match searchedName only with first and last name, ignoring the middle name
+            // unless the middle name is in the query
             if (item.values().resultName === searchedName) {
               return true;
             } else {
               return false;
             }
-         });
+          });
         } else {
           searchResultsList.filter();
         }
