@@ -329,37 +329,20 @@
     // list.js - sort and filter table data
     // docs: http://www.listjs.com/docs/
 
-    var listOptions,
-        searchResultsList;
+    var searchResultsList;
 
     var initSearchFilters = function() {
       // define sort/filter options using the class names of the data elements
       // these classes are linked to the table data in index.html
-      listOptions = {
-        valueNames: [ 'resultName', 'resultAge', 'resultPlace', 'resultRelative' ]
+      var options = {
+        valueNames: ['resultName', 'resultAge', 'resultPlace', 'resultRelative']
       };
 
       // define new list using table id (results-table) with filter/sort options (table data classes)
-      searchResultsList = new List('results-table', listOptions);
+      searchResultsList = new List('results-table', options);
 
       // @TODO: refactor both loops into one function since they are very similar
       // pass methods into the getFilterCounts function and use one loop
-
-      // define variables for states loop
-      var states = $('#state-filter option'),
-          state = {},
-          i;
-
-      // for each state, set count from search results list
-      for (i = 1; i < states.length; i++) {
-        state = {
-          name: states[i].text,
-          value: states[i].value
-        };
-
-        // pass each state name and value into stateFilterCounts()
-        stateFilterCounts(state.name, state.value);
-      }
 
       // define variables for ages loop
       var ages = $('#age-filter option'),
@@ -379,7 +362,23 @@
         ageFilterCounts(ageGroup.name, ageGroup.value, ageGroup.low, ageGroup.high);
       }
 
-      // set default filters
+      // define variables for states loop
+      var states = $('#state-filter option'),
+          state = {},
+          i;
+
+      // for each state, set count from search results list
+      for (i = 1; i < states.length; i++) {
+        state = {
+          name: states[i].text,
+          value: states[i].value
+        };
+
+        // pass each state name and value into stateFilterCounts()
+        stateFilterCounts(state.name, state.value);
+      }
+
+      // set default filter
       searchResultsList.filter();
 
       // age-filter action
@@ -450,6 +449,27 @@
           searchResultsList.filter(function(item) {
             return item.values().resultPlace.includes(selection);
           });
+        } else {
+          searchResultsList.filter();
+        }
+      });
+
+      var searchedName = '';
+      if (amplify.store('searchData')) {
+        searchedName = amplify.store('searchData').fn + ' ' + amplify.store('searchData').ln;
+      }
+
+      // exact match filter action
+      $('.exact-match-checkbox').click(function() {
+
+        if ($(this).is(':checked')) {
+          searchResultsList.filter(function(item) {
+            if (item.values().resultName === searchedName) {
+              return true;
+            } else {
+              return false;
+            }
+         });
         } else {
           searchResultsList.filter();
         }

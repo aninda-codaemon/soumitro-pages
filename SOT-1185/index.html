@@ -286,12 +286,28 @@
         <table id="results-table" class="table table-bordered table-striped table-hover tablesorter">
           <thead class="table-header">
             <tr>
-              <th id="th-hash" class="th-center col-md-1">Photo</th>
-              <th class="name-col col-md-3 sort" data-sort="resultName"><span class="sorting-arrows">Name</span></th>
-              <th class="col-md-1 sort" data-sort="resultAge"><span class="sorting-arrows">Age</span></th>
-              <th id="th-cities" class="sort" data-sort="resultPlace" class="col-md-2"><span class="sorting-arrows">Cities</span></th>
-              <th id="th-relatives" class="sort" data-sort="resultRelative" class="col-md-3"><span class="sorting-arrows">Relatives</span></th>
-              <th id="th-view-btn" class="th-center col-md-2">Access Report</th>
+              <th id="th-hash" class="th-center col-md-1">
+                Photo
+              </th>
+              <th class="name-col col-md-3 sort" data-sort="resultName">
+                <span class="sorting-arrows">Name</span>
+                <label for="exact-match-checkbox" class="exact-match">
+                  Exact Match Only
+                  <input type="checkbox" name="exact-match-checkbox" class="exact-match-checkbox" value="1" />
+                </label>
+              </th>
+              <th class="col-md-1 sort" data-sort="resultAge">
+                <span class="sorting-arrows">Age</span>
+              </th>
+              <th id="th-cities" class="sort" data-sort="resultPlace" class="col-md-2">
+                <span class="sorting-arrows">Cities</span>
+              </th>
+              <th id="th-relatives" class="sort" data-sort="resultRelative" class="col-md-3">
+                <span class="sorting-arrows">Relatives</span>
+              </th>
+              <th id="th-view-btn" class="th-center col-md-2">
+                Access Report
+              </th>
             </tr>
           </thead>
           <tbody id="results" class="list">

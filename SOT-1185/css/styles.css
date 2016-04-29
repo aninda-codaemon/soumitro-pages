@@ -878,6 +878,19 @@ th {
   border-top-color: #fff;
 }
 
+.exact-match {
+  z-index: 10;
+  margin: 0;
+  margin-left: 30px;
+  color: #D8C0F5;
+  font-size: 12px;
+}
+
+.exact-match .exact-match-checkbox {
+  cursor: pointer;
+  margin-left: 3px;
+}
+
 table .th-center {
   text-align: center;
 }
