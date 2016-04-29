@@ -283,7 +283,7 @@
             renderResults(teaserDataObj);
             notifyRecordCount(initiator);
 
-            getFilterCounts();
+            initSearchFilters();
         });
     };
 
@@ -326,20 +326,62 @@
         $("#no-results-form").validate(searchRules);
     };
 
-
-
-
     // list.js - sort and filter table data
     // docs: http://www.listjs.com/docs/
 
-    // define sort/filter options using the class names of the data elements
-    // these classes are linked to the table data in index.html
-    var options = {
-      valueNames: [ 'resultName', 'resultAge', 'resultPlace', 'resultRelative' ]
-    };
+    var listOptions,
+        searchResultsList;
 
-    // define new list using table id (results-table) with filter/sort options (table data classes)
-    var searchResultsList = new List('results-table', options);
+    var initSearchFilters = function() {
+      // define sort/filter options using the class names of the data elements
+      // these classes are linked to the table data in index.html
+      listOptions = {
+        valueNames: [ 'resultName', 'resultAge', 'resultPlace', 'resultRelative' ]
+      };
+
+      // define new list using table id (results-table) with filter/sort options (table data classes)
+      searchResultsList = new List('results-table', listOptions);
+
+      // @TODO: refactor both loops into one function since they are very similar
+      // pass methods into the getFilterCounts function and use one loop
+
+      // define variables for states loop
+      var states = $('#state-filter option'),
+          state = {},
+          i;
+
+      // for each state, set count from search results list
+      for (i = 1; i < states.length; i++) {
+        state = {
+          name: states[i].text,
+          value: states[i].value
+        };
+
+        // pass each state name and value into stateFilterCounts()
+        stateFilterCounts(state.name, state.value);
+      }
+
+      // define variables for ages loop
+      var ages = $('#age-filter option'),
+          ageGroup = {},
+          n;
+
+      // for each age, set count from search results list
+      for (n = 1; n < ages.length; n++) {
+        ageGroup = {
+          name: ages[n].text,
+          value: ages[n].value,
+          low: ages[n].value.split('-')[0], // get low value by getting the first split
+          high: ages[n].value.split('-')[1] // get high value by getting the second split
+        };
+
+        // pass each ageGroup name, value, along with the low and high values of the age group into ageFilterCounts()
+        ageFilterCounts(ageGroup.name, ageGroup.value, ageGroup.low, ageGroup.high);
+      }
+
+      // set default filters
+      searchResultsList.filter();
+    };
 
     // @TODO: refactor both stateFilterCounts and ageFilterCounts functions into one since they're similar
 
@@ -395,53 +437,6 @@
       });
     };
 
-    var getFilterCounts = function() {
-
-      // @TODO: refactor both loops into one function since they are very similar
-      // pass methods into the getFilterCounts function and use one loop
-
-      // define variables for states loop
-      var states = $('#state-filter option'),
-          state = {},
-          i;
-
-      // for each state, set count from search results list
-      for (i = 1; i < states.length; i++) {
-        state = {
-          name: states[i].text,
-          value: states[i].value
-        };
-
-        // pass each state name and value into stateFilterCounts()
-        stateFilterCounts(state.name, state.value);
-      }
-
-      // define variables for ages loop
-      var ages = $('#age-filter option'),
-          ageGroup = {},
-          n;
-
-      // for each age, set count from search results list
-      for (n = 1; n < ages.length; n++) {
-        ageGroup = {
-          name: ages[n].text,
-          value: ages[n].value,
-          low: ages[n].value.split('-')[0], // get low value by getting the first split
-          high: ages[n].value.split('-')[1] // get high value by getting the second split
-        };
-
-        // pass each ageGroup name, value, along with the low and high values of the age group into ageFilterCounts()
-        ageFilterCounts(ageGroup.name, ageGroup.value, ageGroup.low, ageGroup.high);
-      }
-
-      // set default filters
-      searchResultsList.filter();
-    };
-
-    getFilterCounts();
-
-
-
     /* Event Handlers */
 
     $('#age-filter').change(function () {
@@ -450,7 +445,7 @@
       // reset state filter
       $('#state-filter option[value=all]').prop('selected', true);
 
-      // @TODO: refactor this (too many conditions)
+      // @TODO: refactor this (too many conditions and repeating patterns)
       if (selection === '18-25' && selection !== 'all') {
         searchResultsList.filter(function(item) {
           return (item.values().resultAge <= 25);
@@ -667,6 +662,7 @@
             }
         }
 
+        initSearchFilters();
         initDownsells();
     };
 
