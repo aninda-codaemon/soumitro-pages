@@ -475,15 +475,24 @@
 
         if ($(this).is(':checked')) {
           searchResultsList.filter(function(item) {
-            // @TODO: ignore the middle name in resultName
-            // split resultName using the spaces in the names
-            // and match searchedName only with first and last name, ignoring the middle name
-            // unless the middle name is in the query
-            if (item.values().resultName === searchedName) {
-              return true;
+            // check if a middle initial is in the search
+            if (searchedName.split(' ').length === 3) {
+              // filter only the full result name if it matches both the first and last name from search
+              // the first letter of result's middle name must also match the middle initial from search
+              if (item.values().resultName.split(' ')[0] === searchedName.split(' ')[0] && item.values().resultName.split(' ')[2] === searchedName.split(' ')[2] && item.values().resultName.split(' ')[1].charAt(0).indexOf(searchedName.split(' ')[1]) > -1) {
+                return true;
+              } else {
+                return false;
+              }
             } else {
-              return false;
+              // filter only the result's first and last name if it matches the first and last name from search
+              if (item.values().resultName.split(' ')[0] === searchedName.split(' ')[0] && item.values().resultName.split(' ')[2] === searchedName.split(' ')[1]) {
+                return true;
+              } else {
+                return false;
+              }
             }
+
           });
         } else {
           searchResultsList.filter();
