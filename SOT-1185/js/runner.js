@@ -335,7 +335,7 @@
       // define sort/filter options using the class names of the data elements
       // these classes are linked to the table data in index.html
       var options = {
-        valueNames: ['resultName', 'resultAge', 'resultPlace', 'resultRelative']
+        valueNames: ['resultName', 'resultAge', 'resultPlace']
       };
 
       // define new list using table id (results-table) with filter/sort options (table data classes)

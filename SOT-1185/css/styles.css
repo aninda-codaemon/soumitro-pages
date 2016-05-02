@@ -861,7 +861,7 @@ th {
 }
 
 .sort .sorting-arrows:before {
-	border-bottom-color: #989898;
+	border-bottom-color: #C1C1C1;
 	margin-top: -9px;
 }
 
@@ -870,7 +870,7 @@ th {
 }
 
 .sort .sorting-arrows:after {
-	border-top-color: #989898;
+	border-top-color: #C1C1C1;
 	margin-top: 1px;
 }
 
@@ -1084,6 +1084,10 @@ ul.aka-list li {
   padding-top: 4px;
 
   color: #525253;
+}
+
+.places-list .resultPlace:first-child {
+  font-weight: bold;
 }
 /* -- NO RESULTS -- */
 
