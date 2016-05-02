@@ -481,6 +481,15 @@
           searchResultsList.filter();
         }
       });
+
+      // reset filters
+      $('.reset-filters').click(function() {
+        $('#city').val('');
+        $('#search-bar-state').val('All');
+        $('#age').val('');
+
+        $('#search-form').submit();
+      });
     };
 
     // @TODO: refactor conditions
@@ -496,12 +505,12 @@
       else if ($('#age').val() !== '' && $('#search-bar-state').val() !== 'All') {
         $('#age-filter').attr('disabled', true);
         $('#state-filter').attr('disabled', true);
-        $('.results-filters').hide();
+        //$('.results-filters').hide();
       }
       else {
         $('#age-filter').attr('disabled', false);
         $('#state-filter').attr('disabled', false);
-        $('.results-filters').show();
+        //$('.results-filters').show();
       }
     };
 

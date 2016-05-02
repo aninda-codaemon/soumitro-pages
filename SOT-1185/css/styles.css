@@ -532,6 +532,11 @@ h3 {
   font-size: 18px;
 }
 
+.results-filters .reset-filters {
+  float: right;
+  font-size: 15px !important;
+}
+
 .btn-round {
   margin: auto 12px;
   padding-right: 16px;
