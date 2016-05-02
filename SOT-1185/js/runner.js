@@ -459,7 +459,15 @@
 
       var searchedName = '';
       if (amplify.store('searchData')) {
-        searchedName = amplify.store('searchData').fn + ' ' + amplify.store('searchData').ln;
+        var first = amplify.store('searchData').fn + ' ',
+            middle = amplify.store('searchData').mi + ' ',
+            last = amplify.store('searchData').ln;
+
+        if (amplify.store('searchData').mi !== '') {
+          searchedName = first + middle + last;
+        } else {
+          searchedName = first + last;
+        }
       }
 
       // exact match filter action
@@ -484,10 +492,12 @@
 
       // reset filters
       $('.reset-filters').click(function() {
+        // set these values to default
         $('#city').val('');
         $('#search-bar-state').val('All');
         $('#age').val('');
 
+        // @TODO: call search function instead of simulating form submit
         $('#search-form').submit();
       });
     };
