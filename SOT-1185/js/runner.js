@@ -381,6 +381,9 @@
       // set default filter
       searchResultsList.filter();
 
+      // set filter states
+      setFilterStates();
+
       // age-filter action
       $('#age-filter').change(function () {
         var selection = this.value;
@@ -478,6 +481,28 @@
           searchResultsList.filter();
         }
       });
+    };
+
+    // @TODO: refactor conditions
+    var setFilterStates = function() {
+      if ($('#age').val() !== '' && $('#search-bar-state').val() === 'All') {
+        $('#age-filter').attr('disabled', true);
+        $('#state-filter').attr('disabled', false);
+      }
+      else if ($('#search-bar-state').val() !== 'All' && $('#age').val() === '') {
+        $('#state-filter').attr('disabled', true);
+        $('#age-filter').attr('disabled', false);
+      }
+      else if ($('#age').val() !== '' && $('#search-bar-state').val() !== 'All') {
+        $('#age-filter').attr('disabled', true);
+        $('#state-filter').attr('disabled', true);
+        $('.results-filters').hide();
+      }
+      else {
+        $('#age-filter').attr('disabled', false);
+        $('#state-filter').attr('disabled', false);
+        $('.results-filters').show();
+      }
     };
 
     // @TODO: refactor both stateFilterCounts and ageFilterCounts functions into one since they're similar
