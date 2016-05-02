@@ -666,15 +666,27 @@
     $('.possible-relatives-form').submit(function(event) {
       event.preventDefault();
 
-      // return only the selected relatives
-      var selectedRelatives = $('.possible-relatives-form .input-checkbox:checked').map(function() {
-        return {
-          'id': this.value,
-          'name': $(this).closest('label').text()
-        };
-      }).get();
+      // ES6 - doesn't work in older browsers
+      // var selectedRelatives = $('.possible-relatives-form .input-checkbox:checked').map(function() {
+      //   return {
+      //     'id': this.value,
+      //     'name': $(this).closest('label').text()
+      //   };
+      // }).get();
 
-      var local = new Object;
+      var relatives = $('.possible-relatives-form .input-checkbox:checked'),
+          selectedRelatives = [],
+          local = {},
+          i;
+
+      // return only the selected relatives
+      for (i = 0; i < relatives.length; i++) {
+        selectedRelatives.push({
+          'id': relatives[i].value,
+          'name': relatives[i].closest('label').innerText
+        });
+      }
+
       local.selectedRelatives = selectedRelatives;
 
       // if relatives were selected, store the returned data in local storage
