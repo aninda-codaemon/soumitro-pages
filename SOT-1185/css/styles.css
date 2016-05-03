@@ -550,6 +550,43 @@ h3 {
   outline: 0;
 }
 
+.filter-buttons .btn.exact-match .icon-off {
+  color: #FF4C4C;
+  -webkit-transition: all 250ms;
+  -moz-transition: all 250ms;
+  -ms-transition: all 250ms;
+  -o-transition: all 250ms;
+  transition: all 250ms;
+}
+
+.filter-buttons .btn.exact-match .icon-on {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  color: #6dac45;
+  -webkit-transition: all 250ms;
+  -moz-transition: all 250ms;
+  -ms-transition: all 250ms;
+  -o-transition: all 250ms;
+  transition: all 250ms;
+}
+
+.filter-buttons .btn.exact-match.active .icon-off {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.filter-buttons .btn.exact-match.active .icon-on {
+  width: 14px;
+  height: 14px;
+  opacity: 1;
+}
+
+.filter-buttons .btn.reset-filters .icon {
+  color: #FFC332;
+}
+
 @media (min-width: 480px) {
   .filter-buttons .col-xs-6:first-child {
     padding-right: 15px;
