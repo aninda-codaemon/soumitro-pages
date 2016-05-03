@@ -547,6 +547,7 @@ h3 {
   width: 100%;
   margin: 0;
   font-size: 12px !important;
+  outline: 0;
 }
 
 @media (min-width: 480px) {
@@ -569,14 +570,18 @@ h3 {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
+  .filter-buttons .col-xs-6:last-child {
+    padding-left: 15px;
+  }
+
   .filter-buttons .btn {
     position: relative;
     float: right;
   }
 
   .filter-buttons .btn.exact-match {
-    bottom: 15px;
+    bottom: 10px;
   }
 
   .filter-buttons .btn.reset-filters {
