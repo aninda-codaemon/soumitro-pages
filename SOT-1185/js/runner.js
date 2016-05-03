@@ -396,48 +396,58 @@
           searchResultsList.filter(function(item) {
             return (item.values().resultAge <= 25);
           });
+          updateRecordCount();
         }
         else if (selection === '26-35' && selection !== 'all') {
           searchResultsList.filter(function(item) {
             return (item.values().resultAge > 25 && item.values().resultAge <= 35);
           });
+          updateRecordCount();
         }
         else if (selection === '36-45' && selection !== 'all') {
           searchResultsList.filter(function(item) {
             return (item.values().resultAge > 35 && item.values().resultAge <= 45);
           });
+          updateRecordCount();
         }
         else if (selection === '46-55' && selection !== 'all') {
           searchResultsList.filter(function(item) {
             return (item.values().resultAge > 45 && item.values().resultAge <= 55);
           });
+          updateRecordCount();
         }
         else if (selection === '56-65' && selection !== 'all') {
           searchResultsList.filter(function(item) {
             return (item.values().resultAge > 55 && item.values().resultAge <= 65);
           });
+          updateRecordCount();
         }
         else if (selection === '66-75' && selection !== 'all') {
           searchResultsList.filter(function(item) {
             return (item.values().resultAge > 65 && item.values().resultAge <= 75);
           });
+          updateRecordCount();
         }
         else if (selection === '76-85' && selection !== 'all') {
           searchResultsList.filter(function(item) {
             return (item.values().resultAge > 75 && item.values().resultAge <= 85);
           });
+          updateRecordCount();
         }
         else if (selection === '86-95' && selection !== 'all') {
           searchResultsList.filter(function(item) {
             return (item.values().resultAge > 85 && item.values().resultAge <= 95);
           });
+          updateRecordCount();
         }
         else if (selection === '96-200' && selection !== 'all') {
           searchResultsList.filter(function(item) {
             return (item.values().resultAge > 95);
           });
+          updateRecordCount();
         } else {
           searchResultsList.filter();
+          updateRecordCount();
         }
       });
 
@@ -452,8 +462,10 @@
           searchResultsList.filter(function(item) {
             return item.values().resultPlace.includes(selection);
           });
+          updateRecordCount();
         } else {
           searchResultsList.filter();
+          updateRecordCount();
         }
       });
 
@@ -492,10 +504,11 @@
                 return false;
               }
             }
-
           });
+          updateRecordCount();
         } else {
           searchResultsList.filter();
+          updateRecordCount();
         }
       });
 
@@ -533,6 +546,11 @@
       }
     };
 
+    // update the record count - to use when table filters change
+    var updateRecordCount = function() {
+      $('.record-count').text($('#results .results-row').length);
+    };
+
     // @TODO: refactor both stateFilterCounts and ageFilterCounts functions into one since they're similar
 
     // filters the searchResultsList using state name and state value
@@ -549,10 +567,10 @@
           // add the new count into the option label of the appropriate state value
           $('#state-filter option[value=' + value + ']').text(name + ' (' + count + ')');
         }
-        // if count is 0 hide the state option (dont need filters that show no results)
+        // if count is 0 hide this state option (dont need filters that show no results)
         else if (count === 0) {
           $('#state-filter option[value=' + value + ']').hide();
-        // else show the state option (need this condition otherwise it will hide all the options)
+        // else show this state option (need this condition otherwise it will hide all the options)
         } else {
           $('#state-filter option[value=' + value + ']').show();
         }
@@ -572,10 +590,10 @@
           // add the new count into the option label of the appropriate age group value
           $('#age-filter option[value=' + value + ']').text(name + ' (' + count + ')');
         }
-        // if count is 0 hide the age group option (dont need filters that show no results)
+        // if count is 0 hide this age group option (dont need filters that show no results)
         else if (count === 0) {
           $('#age-filter option[value=' + value + ']').hide();
-        // else show the age group option (need this condition otherwise it will hide all the options)
+        // else show this age group option (need this condition otherwise it will hide all the options)
         } else {
           $('#age-filter option[value=' + value + ']').show();
         }
