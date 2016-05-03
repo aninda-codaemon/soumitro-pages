@@ -391,6 +391,9 @@
         // reset state filter
         $('#state-filter option[value=all]').prop('selected', true);
 
+        // reset exact match filter
+        $('.exact-match').removeClass('active');
+
         // @TODO: refactor this (too many conditions and repeating patterns)
         if (selection === '18-25' && selection !== 'all') {
           searchResultsList.filter(function(item) {
@@ -458,6 +461,9 @@
         // reset age filter
         $('#age-filter option[value=all]').prop('selected', true);
 
+        // reset exact match filter
+        $('.exact-match').removeClass('active');
+
         if (selection && selection !== 'all') {
           searchResultsList.filter(function(item) {
             return item.values().resultPlace.includes(selection);
@@ -485,6 +491,12 @@
       // exact match filter action
       $('.exact-match').click(function() {
         $(this).toggleClass('active');
+
+        // reset age filter
+        $('#age-filter option[value=all]').prop('selected', true);
+
+        // reset state filter
+        $('#state-filter option[value=all]').prop('selected', true);
 
         if ($(this).hasClass('active')) {
 
