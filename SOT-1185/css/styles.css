@@ -550,6 +550,11 @@ h3 {
   outline: 0;
 }
 
+.filter-buttons .btn:active,
+.filter-buttons .btn:focus {
+  outline: 0;
+}
+
 .filter-buttons .btn.exact-match .icon-off {
   color: #FF4C4C;
   -webkit-transition: all 250ms;
@@ -560,8 +565,7 @@ h3 {
 }
 
 .filter-buttons .btn.exact-match .icon-on {
-  width: 0;
-  height: 0;
+  display: none;
   opacity: 0;
   color: #6dac45;
   -webkit-transition: all 250ms;
@@ -572,14 +576,12 @@ h3 {
 }
 
 .filter-buttons .btn.exact-match.active .icon-off {
-  width: 0;
-  height: 0;
+  display: none;
   opacity: 0;
 }
 
 .filter-buttons .btn.exact-match.active .icon-on {
-  width: 14px;
-  height: 14px;
+  display: inline-block;
   opacity: 1;
 }
 

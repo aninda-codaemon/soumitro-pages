@@ -483,9 +483,10 @@
       }
 
       // exact match filter action
-      $('.exact-match-checkbox').click(function() {
+      $('.exact-match').click(function() {
+        $(this).toggleClass('active');
 
-        if ($(this).is(':checked')) {
+        if ($(this).hasClass('active')) {
           searchResultsList.filter(function(item) {
             // check if a middle initial is in the search
             if (searchedName.split(' ').length === 3) {
