@@ -522,6 +522,8 @@ h3 {
   margin: 10px 0;
 }
 
+/* search results filters */
+
 .results-filters {
   margin-top: 20px;
 }
@@ -532,9 +534,54 @@ h3 {
   font-size: 18px;
 }
 
-.results-filters .reset-filters {
-  float: right;
-  font-size: 15px !important;
+.filter-buttons .col-xs-6:first-child {
+  padding-right: 5px;
+}
+
+.filter-buttons .col-xs-6:last-child {
+  padding-left: 5px;
+}
+
+.filter-buttons .btn {
+  display: block;
+  width: 100%;
+  margin: 0;
+  font-size: 12px !important;
+}
+
+@media (min-width: 480px) {
+  .filter-buttons .col-xs-6:first-child {
+    padding-right: 15px;
+  }
+
+  .filter-buttons .col-xs-6:last-child {
+    padding-left: 28px;
+  }
+
+  .filter-buttons .col-xs-6:first-child .btn {
+    float: right;
+  }
+
+  .filter-buttons .btn {
+    display: inline-block;
+    width: auto;
+    font-size: 14px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .filter-buttons .btn {
+    position: relative;
+    float: right;
+  }
+
+  .filter-buttons .btn.exact-match {
+    bottom: 15px;
+  }
+
+  .filter-buttons .btn.reset-filters {
+    bottom: 5px;
+  }
 }
 
 .btn-round {
@@ -881,19 +928,6 @@ th {
 
 .sort.desc .sorting-arrows:after {
   border-top-color: #fff;
-}
-
-.exact-match {
-  z-index: 10;
-  margin: 0;
-  margin-left: 30px;
-  color: #D8C0F5;
-  font-size: 12px;
-}
-
-.exact-match .exact-match-checkbox {
-  cursor: pointer;
-  margin-left: 3px;
 }
 
 table .th-center {

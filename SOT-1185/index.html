@@ -276,8 +276,21 @@
               </select>
             </div>
           </div>
-          <div class="col-sm-2 col-lg-3">
-            <button type="button" class="btn btn-sm btn-default reset-filters">Reset Search Filters</button>
+          <div class="col-xs-12 col-lg-3">
+            <div class="row filter-buttons">
+              <div class="col-xs-6 col-lg-12">
+                <button type="button" class="btn btn-xs btn-default exact-match">Exact Match Only
+                  <i class="fa fa-toggle-off"></i>
+                  <i class="fa fa-toggle-on"></i>
+                </button>
+              </div>
+              <div class="col-xs-6 col-lg-12">
+                <button type="button" class="btn btn-xs btn-default reset-filters">
+                  Reset Search Filters
+                  <i class="fa fa-refresh"></i>
+                </button>
+              </div>
+            </div>
           </div>
         </form>
       </div><!-- /.row .section-header -->
@@ -294,10 +307,6 @@
               </th>
               <th class="name-col col-md-3 sort" data-sort="resultName">
                 <span class="sorting-arrows">Name</span>
-                <label for="exact-match-checkbox" class="exact-match">
-                  Exact Match Only
-                  <input type="checkbox" name="exact-match-checkbox" class="exact-match-checkbox" value="1" />
-                </label>
               </th>
               <th class="col-md-1 sort" data-sort="resultAge">
                 <span class="sorting-arrows">Age</span>
