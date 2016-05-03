@@ -487,6 +487,8 @@
         $(this).toggleClass('active');
 
         if ($(this).hasClass('active')) {
+
+          // @TODO: refactor into function
           searchResultsList.filter(function(item) {
             // check if a middle initial is in the search
             if (searchedName.split(' ').length === 3) {
@@ -498,11 +500,23 @@
                 return false;
               }
             } else {
-              // filter only the result's first and last name if it matches the first and last name from search
-              if (item.values().resultName.split(' ')[0] === searchedName.split(' ')[0] && item.values().resultName.split(' ')[2] === searchedName.split(' ')[1]) {
-                return true;
+              // @TODO: refactor these conditions - too much repeating
+              // check if result name has a middle name/initial
+              if (item.values().resultName.split(' ').length === 3) {
+                console.log('result name has middle name');
+                // filter only the result's first and last name if it matches the first and last name from search
+                if (item.values().resultName.split(' ')[0] === searchedName.split(' ')[0] && item.values().resultName.split(' ')[2] === searchedName.split(' ')[1]) {
+                  return true;
+                } else {
+                  return false;
+                }
               } else {
-                return false;
+                // filter only the result's first and last name if it matches the first and last name from search
+                if (item.values().resultName.split(' ')[0] === searchedName.split(' ')[0] && item.values().resultName.split(' ')[1] === searchedName.split(' ')[1]) {
+                  return true;
+                } else {
+                  return false;
+                }
               }
             }
           });
