@@ -620,11 +620,11 @@ h3 {
   }
 
   .filter-buttons .btn.exact-match {
-    bottom: 10px;
+    bottom: 6px;
   }
 
   .filter-buttons .btn.reset-filters {
-    bottom: 5px;
+    bottom: 2px;
   }
 }
 
