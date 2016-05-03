@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Phone Lookup</title>
+    <meta name="description" content="Reverse Phone Lookup at BeenVerified, your people search and background check answer: Find people and their addresses, arrest records, phone numbers and more on Beenverified.com">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css?2016050207">
+    <link rel="stylesheet" type="text/css" href="css/webfonts.css">
+    <link rel="stylesheet" type="text/css" href="css/search-main.css?2016050208" media="screen">
+
+    <script src='//api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+    <link href='//api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
+
+
+    <!--modernizr-->
+    <script src="js/modernizr.custom.js"></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body data-next-page="<%= next_page %>">
+    <header>
+        <div class="container">
+            <div class="row">
+              <div class="pull-left">
+                <a href="<%= flow_home_page %>">
+                    <div class="pull-left logo"></div>
+                    <span class="slogan">"Cheaters Beware!"</span>
+                </a>
+              </div>
+              <div class="pull-right hidden-xs">
+                <a>
+                    <div class="rpl-logo"></div>
+                </a>
+              </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+
+        <div id="map"></div>
+        <div class="modal-overlay"></div>
+
+        <div id="modal_container" class="container">
+            <div class="row partial_header lightText no-show">
+                <div class="hidden-xs col-sm-1">
+                    <a href="<%= flow_home_page %>">
+                        <img class="" src="img/icon-undo.png">
+                    </a>
+                </div>
+                <div class="col-sm-10">
+                    <span class="search-state">Enter the last four digits to find this number</span>
+                    <br><span class="partial_location"></span>
+                </div>
+            </div>
+            <div class="row partial_modal no-show">
+              <div class="col-xs-12">
+                <form id="partial_number" class="form-inline">
+                  <div class="form-group">
+                    <label for="partial_area_code"></label>
+                    <input type="text" class="form-control" id="partial_area_code" name="partial_area_code" size="3" maxlength="3">
+                    <label for="partial_exchange_code">-</label>
+                    <input type="text" class="form-control" id="partial_exchange_code" name="partial_exchange_code" size="3" maxlength="3">
+                    <label for="partial_subscriber_num">-</label>
+                    <input type="text" class="form-control" id="partial_subscriber_num" name="partial_subscriber_num" size="4" maxlength="4">
+                  </div>
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <button type="submit" class="btnLookup btn btn-lg btn-block btn-success lightText">Lookup Number
+                              <img src="img/arrowWhite.png">
+                          </button>
+                      </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+
+            <div class="row searching_header lightText no-show">
+                <div class="hidden-xs col-sm-1">
+                    <a href="<%= flow_home_page %>">
+                        <img class="" src="img/icon-undo.png">
+                    </a>
+                </div>
+                <div class="col-sm-10">
+                    <span class="search-state">Searching for</span>
+                    <span class="phone-number"></span>
+                </div>
+            </div>
+            <div class="row initial_modal">
+                <div class="col-md-12">
+                    <div class="row">
+                        <h2 class="col-md-12 darkText text-center">
+                            <strong>Processing Search...</strong>
+                        </h2>
+                    </div>
+                </div>
+                <!-- /.col12 -->
+                <div class="col-md-12 progress progress-striped active">
+                    <div class="row progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <!-- /.progress -->
+
+                <!-- <div class="initializing0 init-single">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <div class="searching-img searching-img-bg-1">
+
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+
+                <div class="initializing1 init-single">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="searching-img searching-img-bg-1">
+                                <img class="visible-xs small-icon" src="img/small-loader.gif">
+                                <img class="hidden-xs" src="img/grey-loader.gif" alt="Loading">
+                            </div>
+                        </div>
+                        <div class="init-content col-sm-9">
+                            <h3 class="text-info">Initializing Search</h3>
+                            <p class="lead">Please wait while we detect
+                                <strong><span class="phone-number"></span></strong>'s geographical location.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--END initializing1-->
+
+                <div class="initializing2 init-single">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="searching-img searching-img-bg-2">
+                                <img class="visible-xs small-icon" src="img/small-white-check.png">
+                                <img class="hidden-xs" src="img/check-white.png" alt="Success">
+                            </div>
+                        </div>
+                        <div class="init-content col-sm-9">
+                            <h3 class="text-info">Success!</h3>
+                            <p class="lead">We have successfully determined
+                                <strong><span class="phone-number"></span></strong>'s carrier and geographical location.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--END initializing2-->
+
+                <div class="initializing3 init-single">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img id="carrier-tmobile" class="carrier-logo no-show" src="img/logo-tm.jpg" alt="T-mobile">
+                            <img id="carrier-att" class="carrier-logo no-show" src="img/logo-att.jpg" alt="AT&amp;T">
+                            <img id="carrier-sprint" class="carrier-logo no-show" src="img/logo-sp.jpg" alt="Sprint">
+                            <img id="carrier-verizon" class="carrier-logo no-show" src="img/logo-vz.jpg" alt="Verizon">
+                            <img id="carrier-generic" class="carrier-logo no-show" src="img/logo-gen.jpg" alt="Carrier">
+                        </div>
+                        <div class="init-content col-sm-9">
+                            <h3 class="text-info">This number belongs to
+                                <span class="carrier-name"></span>
+                            </h3>
+                            <p class="lead">Please wait while we collect more data about
+                                <strong>
+                                    <span class="phone-number"></span>
+                                </strong>.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--END initializing3-->
+            </div>
+            <!-- END initial_modal -->
+
+            <div class="row generate_report_modal">
+                <div class="col-md-12 generating-result">
+                    <h2 class="row darkText text-center">Generating Result...This might take some time.</h2>
+                    <div class="row">
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.generating result -->
+
+                <div class="col-md-12 generating-ready">
+                    <h2 class="row darkText text-center">Your Report Is Now Ready For Download.</h2>
+                    <div class="row">
+                        <a href="<%= next_page %>" id="proceed-download" type="button" class="btnGenerate btn btn-lg btn-block btn-success lightText">
+                            <span class="blink">Proceed To Download
+                                <img src="img/arrowWhite.png" width="29" height="38" alt="next">
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- /.gen ready -->
+
+                <div class="report">
+                    <table>
+                        <tr class="report-owners-name">
+                            <td class="title">Owner's Name</td>
+                            <td class="report-data"></td>
+                            <td>
+                                <img class="loading-check" src="img/loadingIcon.gif" width="32" height="32" alt="success">
+                            </td>
+                        </tr>
+                        <tr class="report-carrier">
+                            <td class="title">Carrier</td>
+                            <td class="report-data"></td>
+                            <td>
+                                <img class="loading-check" src="img/loadingIcon.gif" width="32" height="32" alt="success">
+                            </td>
+                        </tr>
+                        <tr class="report-line-type">
+                            <td class="title">Line Type</td>
+                            <td class="report-data"></td>
+                            <td>
+                                <img class="loading-check" src="img/loadingIcon.gif" width="32" height="32" alt="success">
+                            </td>
+                        </tr>
+                        <!--
+                        <tr class="report-street-address">
+                            <td class="title">Street Address</td>
+                            <td class="report-data"></td>
+                            <td>
+                                <img class="loading-check" src="img/loadingIcon.gif" width="32" height="32" alt="success">
+                            </td>
+                        </tr>
+                        -->
+                        <tr class="report-city">
+                            <td class="title">City</td>
+                            <td class="report-data"></td>
+                            <td>
+                                <img class="loading-check" src="img/loadingIcon.gif" width="32" height="32" alt="success">
+                            </td>
+                        </tr>
+                        <tr class="report-state">
+                            <td class="title">State</td>
+                            <td class="report-data"></td>
+                            <td>
+                                <img class="loading-check" src="img/loadingIcon.gif" width="32" height="32" alt="success">
+                            </td>
+                        </tr>
+                        <tr class="report-zip-code">
+                            <td class="title">Zip Code</td>
+                            <td class="report-data"></td>
+                            <td>
+                                <img class="loading-check" src="img/loadingIcon.gif" width="32" height="32" alt="success">
+                            </td>
+                        </tr>
+                        <!--
+            <tr class="report-street-address">
+              <td class="title">Street Address</td>
+              <td class="report-data"></td>
+              <td>
+                <img class="loading-check" src="//manaron.s3.amazonaws.com/srg/Reverse-Phone/search/img/loadingIcon.gif" width="32" height="32" alt="success">
+              </td>
+            </tr>
+            <tr class="report-neighborhood">
+              <td class="title">Neighborhood</td>
+              <td class="report-data"></td>
+              <td>
+                <img class="loading-check" src="//manaron.s3.amazonaws.com/srg/Reverse-Phone/search/img/loadingIcon.gif" width="32" height="32" alt="success">
+              </td>
+            </tr>
+            <tr class="report-elevation">
+              <td class="title">Elevation</td>
+              <td class="report-data"></td>
+              <td>
+                <img class="loading-check" src="//manaron.s3.amazonaws.com/srg/Reverse-Phone/search/img/loadingIcon.gif" width="32" height="32" alt="success">
+              </td>
+            </tr>
+            <tr class="report-latitude">
+              <td class="title">Latitude</td>
+              <td class="report-data"></td>
+              <td>
+                <img class="loading-check" src="//manaron.s3.amazonaws.com/srg/Reverse-Phone/search/img/loadingIcon.gif" width="32" height="32" alt="success">
+              </td>
+            </tr>
+            <tr class="report-more">
+              <td class="title">More</td>
+              <td class="report-data"></td>
+              <td>
+                <img class="loading-check" src="//manaron.s3.amazonaws.com/srg/Reverse-Phone/search/img/loadingIcon.gif" width="32" height="32" alt="success">
+              </td>
+            </tr>
+            -->
+                    </table>
+                </div>
+                <!--END report-->
+
+            </div>
+            <!--END generate_report_modal-->
+
+            <div class="row personal_info_modal">
+                <div class="row">
+                    <div class="hidden-xs col-sm-2 col-sm-offet-1">
+                        <img class="img-responsive" src="img/person_found.png" alt="subject found">
+                    </div>
+                    <div class="col-sm-8">
+                        <h2 class="modal-header text-center darkText">
+                            <strong>
+                                <span class="text-info">Great News! </span>Number Located</strong>
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="personal-info-form-wrapper">
+                    <div class="personal_info_form">
+                        <form>
+                            <div class="row snippet-wrapper">
+                                <div class="col-sm-6 col-sm-push-6 profile-snippet">
+                                    <p class="row profile-snippet-header">
+                                        <strong>Create an account to access your report</strong>
+                                    </p>
+                                    <div class="row hidden-xs">
+                                        <div class="col-sm-4">
+                                            <img src="img/user-photo.png" class="img-responsive" alt="profile">
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <ul class="profile-snippet-list">
+                                                <li>Owner's Name</li>
+                                                <li>Carrier</li>
+                                                <li>Line Type</li>
+                                                <li>Location</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-sm-pull-6">
+                                    <div class="form-group">
+                                        <label id="account[first_name]_error" class="alert alert-danger error" generated="true" for="first_name">Please enter your first name.</label>
+                                        <input id="first_name" class="form-control input-lg" type="text" placeholder="First Name" name="account[first_name]">
+                                    </div>
+                                    <div class="form-group">
+                                        <label id="account[last_name]_error" class="alert alert-danger error rightCollumn" generated="true" for="last_name">Please enter your last name.</label>
+                                        <input id="last_name" class="form-control input-lg" type="text" placeholder="Last Name" name="account[last_name]">
+                                    </div>
+                                    <div class="form-group">
+                                        <label id="user[email]_error" class="alert alert-danger error" generated="true" for="first_name">Please enter your email address.</label>
+                                        <input id="email" class="form-control input-lg" type="text" placeholder="Email" name="user[email]">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button type="submit" class="btnGenerate btn btn-lg btn-block btn-success lightText">Generate Report
+                                        <img src="img/arrowWhite.png">
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="col-sm-12 terms-text">
+                                <p class="tos-text" style="padding-top: 14px;padding-left: 32px;padding-right: 28px;font-size: 12px;">By clicking "Generate Report" you represent you are over 18 years of age and have agreed to our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a> and <a href="//www.beenverified.com/privacy" target="_blank">Privacy Policy</a> and you agree to receive email from BeenVerified.com.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.personal info form -->
+                  <!-- new form for logging in -->
+                  <form class="form-horizontal" action="https://www.beenverified.com/login" id="login-form" data-fr-bind="bv_searchData" method="get">
+                    <fieldset>
+                      <input id="record_search_phone_number" name="record_search[phone_number]" type="hidden" value="{{phoneNumber}}">
+                      <h6 class="create-login" style="text-align:center;">Already a BeenVerified member? <button class="btn btn-link btn-xs" id="login-redirect" type="submit">Click here to login</button></h6>
+                    </fieldset>
+                  </form>
+                  <!-- end new form for logging in -->
+                </div>
+                <!-- /.personal-info-form-wrapper -->
+            </div>
+            <!-- /.personal info modal -->
+
+
+              <!-- ================================================== -->
+              <!-- == 11 == FCRA ===================================== -->
+              <!-- ================================================== -->
+              <div id="gen-report-modal11" aria-hidden="true" class="modal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+
+                    <div class="modal-header text-center">
+                      <p class="huge hidden-xs text-center"><img src="img/icon-alert-lg.png" class="header-icon" /> Warning: Please Read Before You Continue</p>
+                      <p class="huge visible-xs text-center">Warning: Please Read</p>
+                    </div><!-- /.modal-header -->
+
+                    <div class="modal-body"data-fr-bind="bv_searchData" method="get">
+                      <h2 data-fr-bind="currentRecord">There are limits to how you can use {{phoneNumber}}'s report.</h2>
+                      <p class="sub-head">Please check the box below<span class="hidden-xs"> to continue to your report</span>.</p>
+                      <form id="fcra-confirm">
+                        <div class="row">
+                          <div class="col-sm-8 col-sm-offset-2">
+                            <div class="panel panel-default"> 
+                              <div class="row">
+                                <div class="col-sm-12 text-center">
+                                  <p for="fcraCheckbox2">
+                                    I will not use information provided by BeenVerified for decisions about employment, insurance, tenant screening, consumer credit or any other purpose requiring Fair Credit Reporting Act (FCRA) compliance.
+                                  </p>
+                                  <label class="fcraCheckbox-wrapper" for="fcraCheckbox2">
+                                    <input id="fcraCheckbox2" name="fcraCheckbox2" class="styled" type="checkbox" required>
+                                    <label for="fcraCheckbox2" class="fcraCheckbox-box pull-left"></label>
+                                    I Agree
+                                  </label>
+                                  <label class="fcra-error error">Please check the box to continue</label>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-sm-6 col-sm-offset-3">
+                                <button type="submit" class="btn btn-success btn-block lightText"><span>Continue &nbsp;<img src="img/arrowWhite.png" /></span></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div><!--END row-->
+                      </form>
+                      <div class="row modal-footer">
+                        <span data-fr-bind="currentRecord">No one will not be notified of your search.</span>
+                      </div>
+                    </div><!-- /.modal-body -->
+
+                  </div>
+                </div>
+              </div><!-- /#gen-report-modal11 -->
+
+
+
+
+
+            <div class="row notFound">
+                <div class="row">
+                    <div class="hidden-xs col-sm-2">
+                        <img src="img/questionGirl.png" class="img-responsive" alt="Not Found">
+                    </div>
+                    <div class="col-sm-8">
+                        <h2 class="col-md-12 darkText text-center">
+                            <strong>Oops!</strong>
+                        </h2>
+                        <p class="text-center lead">We could not find
+                            <span class="phone-number"></span> in our database.</p>
+                    </div>
+                    <!-- <p>But don't worry!<br>You can do <span>unlimited</span> phone number lookups!</p> -->
+                </div>
+                <div class="row modal-body">
+                    <p class="text-center">Please make sure you entered the number correctly</p>
+                    <div class="col-md-6 col-md-offset-3">
+                        <a href="<%= flow_home_page %>" class="btn btn-lg btn-block btn-success">
+                            <img src="img/icon-undo.png">Search Again
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="row notFound">
+        <div class="alert alert-danger text-center">
+          Sorry, no information on <strong class="phone-number"></strong> can be found. Please check your number and <button onClick="/index.html" type="button" class="btn btn-link">Search Again</button>
+        </div>
+        <div class="col-sm-12">
+          <div class="row">
+            <div class="col-md-3 col-lg-3 hidden-xs hidden-sm not-found-img">
+              <img class="img-responsive" src="//manaron.s3.amazonaws.com/srg/Reverse-Phone/search/img/questionGirl.png" alt="number not found">
+            </div>
+            <div class="col-md-9 col-lg-9">
+              <h2 class="text-center"><strong>But WAIT, don’t give up just yet!</strong></h2>
+              <p class="">If the number you entered is correct, It could be that it’s a new number and doesn’t exist in our database yet. You can also try the following methods to find information on the person.</p>
+              <div class="row btn-wrapper">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                  <button type="button" class="btn btn-primary btn-block">Name Search</button>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                  <button type="button" class="btn btn-primary btn-block">Property Search</button>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                  <button type="button" class="btn btn-primary btn-block">Email Search</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>END notFound-->
+
+        </div>
+        <!-- modal_container -->
+
+        <div class="locating">Locating...</div>
+
+        <div class="container" style="position:relative;">
+            <div class="row">
+                <div class="secure lightText col-lg-12">
+                    <img class="secure-img pull-left" src="img/lock.png" alt="secure">
+                    <p class="secure-header">This search session is secured</p>
+                    <p class="hidden-xs">BeenVerified deploys the latest and greatest strategies, including Secure 256-bit SSL technology, to keep your personal information and payment data from unauthorized 3rd parties.</p>
+                </div>
+                <!--END secure-->
+            </div>
+        </div>
+    </div>
+    <!-- /.main -->
+
+    <!--javascripts-->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/placeholders.min.js"></script>
+    <script type="text/javascript" src="js/amplify.store.min.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/rafPoly.js"></script>
+    <script type="text/javascript" src="js/mapAnimation.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+  
+    <!-- framerida's frontend magic -->
+    <script src="js/handlebars.min.js"></script>
+    <script src="js/framerida.helpers.js"></script>
+    <script src="js/framerida.js"></script>
+    <!-- <script src="js/placeholders.min.js"></script> -->
+    <script src="js/flow.js"></script>
+    <script src="js/runner.js"></script>
+
+</body>
+
+</html>
