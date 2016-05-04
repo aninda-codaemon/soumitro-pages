@@ -515,7 +515,6 @@
               // @TODO: refactor these conditions - too much repeating
               // check if result name has a middle name/initial
               if (item.values().resultName.split(' ').length === 3) {
-                console.log('result name has middle name');
                 // filter only the result's first and last name if it matches the first and last name from search
                 if (item.values().resultName.split(' ')[0] === searchedName.split(' ')[0] && item.values().resultName.split(' ')[2] === searchedName.split(' ')[1]) {
                   return true;
