@@ -57,8 +57,7 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
       $partialModal = $(".partial_modal"),
       $searchState = $(".search-state"),
       $carrierName = $(".carrier-name"),
-      $fcraModal = $('#gen-report-modal11'),
-      $fcraForm = $('#fcra-confirm');
+      $fcraModal = $('#gen-report-modal11');
 
   var centerLocatingText = function () {
     var $locating = $('.locating-text'),
@@ -306,18 +305,6 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
     success: function () { }
   });
 
-  var fcraFormValidator = $fcraForm.validate({
-    rules: {
-      'fcraCheckbox2': {
-        required: true
-      }
-    },
-    errorElement: 'label',
-    errorClass: 'fcra-error',
-    errorPlacement: function(error, element) { },
-    success: function () { }
-  });
-
   var cookie = function (key, val) {
     if (arguments.length === 2) {
       document.cookie = key + "=" + escape(val) + "; path=/; domain=.beenverified.com";
@@ -412,14 +399,15 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
     }
   });
 
-  $fcraForm.on('submit', function (evt) {
+  $('#fcra-confirm .btn').click(function(evt) {
     evt.preventDefault();
 
-    var isValid = fcraFormValidator.form();
-    if (isValid) {
+    if ($('#fcraCheckbox2').prop('checked') === true) {
+      $('.fcra-error').hide();
       window.location = subscribeUrl;
+    } else {
+      $('.fcra-error').show();
     }
-    return false;
   });
 
   $('#proceed-download').click(function(evt) {
