@@ -3777,6 +3777,35 @@ h6.create-login {
 /* Landscape phone to portrait tablet */
 
 @media (max-width: 767px) {
+  .modal {
+    padding: 0 !important;
+    background-color: #fff;
+  }
+
+  .modal-dialog {
+    height: 100%;
+    margin: 0 !important;
+  }
+
+  .modal-content {
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .modal-header {
+    border-radius: 0;
+  }
+
+  .modal-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+
   #gen-report-modal11 .modal-body h2 {
     font-size: 19px;
     line-height: 24px;
@@ -3789,6 +3818,12 @@ h6.create-login {
     padding-top: 8px;
     padding-bottom: 8px;
   }
+
+  #gen-report-modal11 .modal-footer,
+  #gen-report-modal7 .modal-footer {
+    position: relative;
+  }
+  
   #gen-report-modal7 .modal-header h1 {
     font-size: 18px;
   }
