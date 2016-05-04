@@ -57,7 +57,8 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
       $partialModal = $(".partial_modal"),
       $searchState = $(".search-state"),
       $carrierName = $(".carrier-name"),
-      $fcraModal = $('#gen-report-modal11');
+      $fcraModal = $('#gen-report-modal11'),
+      $fcraForm = $('#fcra-confirm');
 
   var centerLocatingText = function () {
     var $locating = $('.locating-text'),
@@ -207,6 +208,11 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
     });
   };
 
+  var promptFCRA = function () {
+    $('.generate_report_modal').hide();
+    $fcraModal.fadeIn();
+  };
+
   var promptPersonalInfo = function () {
     $personalInfoModal.fadeIn();
     $searchState.text(searchStates.done);
@@ -295,6 +301,18 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
     },
     errorElement: 'span',
     errorClass: 'help-block',
+    errorPlacement: function(error, element) { },
+    success: function () { }
+  });
+
+  fcraFormValidator = $fcraForm.validate({
+    rules: {
+      'fcraCheckbox2': {
+        required: true
+      }
+    },
+    errorElement: 'label',
+    errorClass: 'fcra-error',
     errorPlacement: function(error, element) { },
     success: function () { }
   });
