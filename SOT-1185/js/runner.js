@@ -341,45 +341,13 @@
       // define new list using table id (results-table) with filter/sort options (table data classes)
       searchResultsList = new List('results-table', options);
 
-      // @TODO: refactor both loops into one function since they are very similar
-      // pass methods into the getFilterCounts function and use one loop
+      var ageFilters = $('#age-filter option'),
+          stateFilters = $('#state-filter option'),
+          results = searchResultsList.get();
 
-      // define variables for ages loop
-      var ages = $('#age-filter option'),
-          ageGroup = {},
-          n;
-
-      // for each age, set count from search results list
-      for (n = 1; n < ages.length; n++) {
-        ageGroup = {
-          name: ages[n].text,
-          value: ages[n].value,
-          low: ages[n].value.split('-')[0], // get low value by getting the first split
-          high: ages[n].value.split('-')[1] // get high value by getting the second split
-        };
-
-        // pass each ageGroup name, value, along with the low and high values of the age group into ageFilterCounts()
-        ageFilterCounts(ageGroup.name, ageGroup.value, ageGroup.low, ageGroup.high);
-      }
-
-      // define variables for states loop
-      var states = $('#state-filter option'),
-          state = {},
-          i;
-
-      // for each state, set count from search results list
-      for (i = 1; i < states.length; i++) {
-        state = {
-          name: states[i].text,
-          value: states[i].value
-        };
-
-        // pass each state name and value into stateFilterCounts()
-        stateFilterCounts(state.name, state.value);
-      }
-
-      // set default filter
-      searchResultsList.filter();
+      // update filter options based on results
+      updateFilterOptions(ageFilters, results);
+      updateFilterOptions(stateFilters, results);
 
       // set filter states
       setFilterStates();
@@ -466,6 +434,7 @@
 
         if (selection && selection !== 'all') {
           searchResultsList.filter(function(item) {
+            // @TODO: replace includes() with indexOf() for IE compatability
             return item.values().resultPlace.includes(selection);
           });
           updateRecordCount();
@@ -572,6 +541,29 @@
       }
     };
 
+    var updateFilterOptions = function(filter, list) {
+      var option = {}, i;
+
+      for (i = 1; i < filter.length; i++) {
+        option = {
+          name: filter[i].text,
+          value: filter[i].value
+        };
+
+        console.log(option);
+        // @TODO: remove options that return empty list
+        if (filter.selector === '#age-filter option') {
+          console.log('age filter');
+          // determine which age-range option should be removed
+        } else {
+          console.log('state filter');
+          // determine which state option should be removed
+        }
+      }
+
+      console.log(list);
+    };
+
     // update the record count - to use when table filters change
     var updateRecordCount = function() {
       $('.record-count').text($('#results .results-row').length);
@@ -580,56 +572,56 @@
     // @TODO: refactor both stateFilterCounts and ageFilterCounts functions into one since they're similar
 
     // filters the searchResultsList using state name and state value
-    var stateFilterCounts = function(name, value) {
-      // start with default count of 0
-      var count = 0;
-
-      // filtering each item in the searchResultsList
-      searchResultsList.filter(function(item) {
-        // if the place in the item includes the state value
-        if (item.values().resultPlace.includes(value)) {
-          // increase the count by 1
-          count += 1;
-          // add the new count into the option label of the appropriate state value
-          $('#state-filter option[value=' + value + ']').text(name + ' (' + count + ')');
-        }
-        // if count is 0 hide this state option (dont need filters that show no results)
-        else if (count === 0) {
-          $('#state-filter option[value=' + value + ']').hide();
-        // else show this state option (need this condition otherwise it will hide all the options)
-        } else {
-          $('#state-filter option[value=' + value + ']').show();
-        }
-      });
-    };
-
-    var ageFilterCounts = function(name, value, low, high) {
-      // start with default count of 0
-      var count = 0;
-
-      // filtering each item in the searchResultsList
-      searchResultsList.filter(function(item) {
-        // if the age in the item is between the low and high age group values
-        if (item.values().resultAge >= low && item.values().resultAge <= high) {
-          // increase the count by 1
-          count += 1;
-          // add the new count into the option label of the appropriate age group value
-          $('#age-filter option[value=' + value + ']').text(name + ' (' + count + ')');
-        }
-        // if count is 0 hide this age group option (dont need filters that show no results)
-        else if (count === 0) {
-          $('#age-filter option[value=' + value + ']').hide();
-        // else show this age group option (need this condition otherwise it will hide all the options)
-        } else {
-          $('#age-filter option[value=' + value + ']').show();
-        }
-
-        // @TODO: find out why age group of 96-200 doesnt pass as true sometimes
-        // console.log('age of person: ' + item.values().resultAge);
-        // console.log('age range value: ' + value);
-        // console.log('count of value matching age: ' + count);
-      });
-    };
+    // var stateFilterCounts = function(name, value) {
+    //   // start with default count of 0
+    //   var count = 0;
+    //
+    //   // filtering each item in the searchResultsList
+    //   searchResultsList.filter(function(item) {
+    //     // if the place in the item includes the state value
+    //     if (item.values().resultPlace.includes(value)) {
+    //       // increase the count by 1
+    //       count += 1;
+    //       // add the new count into the option label of the appropriate state value
+    //       $('#state-filter option[value=' + value + ']').text(name + ' (' + count + ')');
+    //     }
+    //     // if count is 0 hide this state option (dont need filters that show no results)
+    //     else if (count === 0) {
+    //       $('#state-filter option[value=' + value + ']').hide();
+    //     // else show this state option (need this condition otherwise it will hide all the options)
+    //     } else {
+    //       $('#state-filter option[value=' + value + ']').show();
+    //     }
+    //   });
+    // };
+    //
+    // var ageFilterCounts = function(name, value, low, high) {
+    //   // start with default count of 0
+    //   var count = 0;
+    //
+    //   // filtering each item in the searchResultsList
+    //   searchResultsList.filter(function(item) {
+    //     // if the age in the item is between the low and high age group values
+    //     if (item.values().resultAge >= low && item.values().resultAge <= high) {
+    //       // increase the count by 1
+    //       count += 1;
+    //       // add the new count into the option label of the appropriate age group value
+    //       $('#age-filter option[value=' + value + ']').text(name + ' (' + count + ')');
+    //     }
+    //     // if count is 0 hide this age group option (dont need filters that show no results)
+    //     else if (count === 0) {
+    //       $('#age-filter option[value=' + value + ']').hide();
+    //     // else show this age group option (need this condition otherwise it will hide all the options)
+    //     } else {
+    //       $('#age-filter option[value=' + value + ']').show();
+    //     }
+    //
+    //     // @TODO: find out why age group of 96-200 doesnt pass as true sometimes
+    //     // console.log('age of person: ' + item.values().resultAge);
+    //     // console.log('age range value: ' + value);
+    //     // console.log('count of value matching age: ' + count);
+    //   });
+    // };
 
     /* Event Handlers */
 
