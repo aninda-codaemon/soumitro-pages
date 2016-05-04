@@ -209,6 +209,7 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
   };
 
   var promptFCRA = function () {
+    $('.searching_header').hide();
     $('.generate_report_modal').hide();
     $fcraModal.fadeIn();
   };
@@ -305,7 +306,7 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
     success: function () { }
   });
 
-  fcraFormValidator = $fcraForm.validate({
+  var fcraFormValidator = $fcraForm.validate({
     rules: {
       'fcraCheckbox2': {
         required: true
@@ -411,7 +412,20 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
     }
   });
 
+  $fcraForm.on('submit', function (evt) {
+    evt.preventDefault();
 
+    var isValid = fcraFormValidator.form();
+    if (isValid) {
+      window.location = subscribeUrl;
+    }
+    return false;
+  });
+
+  $('#proceed-download').click(function(evt) {
+    evt.preventDefault();
+    promptFCRA();
+  });
 
   var onMapAnimationFinished = function () {
     $modalOverlay.fadeIn();
@@ -487,7 +501,7 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
     $(".partial_modal").show();
 
     $("#change-number").attr('href', bvRPL.config.landingUrl);
-    $("#proceed-download").attr('href', subscribeUrl);
+    //$("#proceed-download").attr('href', subscribeUrl);
 
     $("#partial_area_code").val(phoneNumber.slice(0, 3));
     $("#partial_exchange_code").val(phoneNumber.replace(/\D/g,'').slice(3, 6));
@@ -518,7 +532,7 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
     $(".initial_modal").show();
 
     $("#change-number").attr('href', bvRPL.config.landingUrl);
-    $("#proceed-download").attr('href', subscribeUrl);
+    //$("#proceed-download").attr('href', subscribeUrl);
 
     centerLocatingText();
     enforceMapHeight();

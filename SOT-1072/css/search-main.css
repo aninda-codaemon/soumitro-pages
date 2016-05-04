@@ -651,7 +651,6 @@ select.success {
 /* == 11 ==  ========================= */
 #gen-report-modal11 {
   font-family: 'Lato', Arial, Helvetica, sans-serif !important;
-  display: block;
   position: relative;
   overflow: visible;
   color: #555;
@@ -954,7 +953,7 @@ select.success {
     width: 750px;
     left: 50%;
     margin-left: -375px;
-  } 
+  }
   .initializing1,
   .initializing2,
   .initializing3 {
@@ -1164,7 +1163,7 @@ select.success {
   #gen-report-modal11 .modal-dialog {
     width: 100%;
     left: 0;
-  } 
+  }
 }
 
 #login-redirect {
