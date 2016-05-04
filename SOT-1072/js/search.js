@@ -56,7 +56,8 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
       $partialHeader = $(".partial_header"),
       $partialModal = $(".partial_modal"),
       $searchState = $(".search-state"),
-      $carrierName = $(".carrier-name");
+      $carrierName = $(".carrier-name"),
+      $fcraModal = $('#gen-report-modal11');
 
   var centerLocatingText = function () {
     var $locating = $('.locating-text'),
