@@ -332,220 +332,222 @@
     // define results list variable for list.js
     var searchResultsList;
 
+    // keep filters hidden by default
+    $('.results-filters').hide();
+
     // make this into a function so that it can be called each time the results data is updated
     var initSearchFilters = function() {
-      // define sort/filter options using the class names of the data elements
-      // these classes are linked to the table data in index.html
-      var options = {
-        valueNames: ['resultName', 'resultAge', 'resultPlace']
-      };
 
-      // define new list using table id (results-table) with filter/sort options (table data classes)
-      searchResultsList = new List('results-table', options);
+      // check if there are results from the search
+      if (amplify.store('teaserData').recordCount > 0) {
+        // show results filters if there are search results
+        $('.results-filters').show();
 
-      var results = searchResultsList.get();
+        // define sort/filter options using the class names of the data elements
+        // these classes are linked to the table data in index.html
+        var options = {
+          valueNames: ['resultName', 'resultAge', 'resultPlace']
+        };
 
-      // update filter options based on results
-      updateFilterOptions(results);
+        // define new list using table id (results-table) with filter/sort options (table data classes)
+        searchResultsList = new List('results-table', options);
 
-      // set filter states
-      setFilterStates();
+        var results = searchResultsList.get();
 
-      // age-filter action
-      $('#age-filter').change(function () {
-        var selection = this.value;
+        // update filter options based on results
+        updateFilterOptions(results);
 
-        // reset state filter
-        $('#state-filter option[value=all]').prop('selected', true);
+        // set filter states
+        setFilterStates();
 
-        // reset exact match filter
-        $('.exact-match').removeClass('active');
+        // age-filter action
+        $('#age-filter').change(function () {
+          var selection = this.value;
 
-        // @TODO: refactor this (too many conditions and repeating patterns)
-        if (selection === '18-25' && selection !== 'all') {
-          searchResultsList.filter(function(item) {
-            return (item.values().resultAge <= 25);
-          });
-          updateRecordCount();
+          // reset state filter
+          $('#state-filter option[value=all]').prop('selected', true);
+
+          // reset exact match filter
+          $('.exact-match').removeClass('active');
+
+          // @TODO: refactor this (too many conditions and repeating patterns)
+          if (selection === '18-25' && selection !== 'all') {
+            searchResultsList.filter(function(item) {
+              return (item.values().resultAge <= 25);
+            });
+            updateRecordCount();
+          }
+          else if (selection === '26-35' && selection !== 'all') {
+            searchResultsList.filter(function(item) {
+              return (item.values().resultAge > 25 && item.values().resultAge <= 35);
+            });
+            updateRecordCount();
+          }
+          else if (selection === '36-45' && selection !== 'all') {
+            searchResultsList.filter(function(item) {
+              return (item.values().resultAge > 35 && item.values().resultAge <= 45);
+            });
+            updateRecordCount();
+          }
+          else if (selection === '46-55' && selection !== 'all') {
+            searchResultsList.filter(function(item) {
+              return (item.values().resultAge > 45 && item.values().resultAge <= 55);
+            });
+            updateRecordCount();
+          }
+          else if (selection === '56-65' && selection !== 'all') {
+            searchResultsList.filter(function(item) {
+              return (item.values().resultAge > 55 && item.values().resultAge <= 65);
+            });
+            updateRecordCount();
+          }
+          else if (selection === '66-75' && selection !== 'all') {
+            searchResultsList.filter(function(item) {
+              return (item.values().resultAge > 65 && item.values().resultAge <= 75);
+            });
+            updateRecordCount();
+          }
+          else if (selection === '76-85' && selection !== 'all') {
+            searchResultsList.filter(function(item) {
+              return (item.values().resultAge > 75 && item.values().resultAge <= 85);
+            });
+            updateRecordCount();
+          }
+          else if (selection === '86-95' && selection !== 'all') {
+            searchResultsList.filter(function(item) {
+              return (item.values().resultAge > 85 && item.values().resultAge <= 95);
+            });
+            updateRecordCount();
+          }
+          else if (selection === '96-200' && selection !== 'all') {
+            searchResultsList.filter(function(item) {
+              return (item.values().resultAge > 95);
+            });
+            updateRecordCount();
+          } else {
+            searchResultsList.filter();
+            updateRecordCount();
+          }
+        });
+
+        // state-filter action
+        $('#state-filter').change(function () {
+          var selection = this.value;
+
+          // reset age filter
+          $('#age-filter option[value=all]').prop('selected', true);
+
+          // reset exact match filter
+          $('.exact-match').removeClass('active');
+
+          if (selection && selection !== 'all') {
+            searchResultsList.filter(function(item) {
+              // @TODO: replace includes() with indexOf() for IE compatability
+              return item.values().resultPlace.includes(selection);
+            });
+            updateRecordCount();
+          } else {
+            searchResultsList.filter();
+            updateRecordCount();
+          }
+        });
+
+        var searchedName = '';
+        if (amplify.store('searchData')) {
+          var first = amplify.store('searchData').fn + ' ',
+              middle = amplify.store('searchData').mi + ' ',
+              last = amplify.store('searchData').ln;
+
+          if (amplify.store('searchData').mi !== '') {
+            searchedName = first + middle + last;
+          } else {
+            searchedName = first + last;
+          }
         }
-        else if (selection === '26-35' && selection !== 'all') {
-          searchResultsList.filter(function(item) {
-            return (item.values().resultAge > 25 && item.values().resultAge <= 35);
-          });
-          updateRecordCount();
-        }
-        else if (selection === '36-45' && selection !== 'all') {
-          searchResultsList.filter(function(item) {
-            return (item.values().resultAge > 35 && item.values().resultAge <= 45);
-          });
-          updateRecordCount();
-        }
-        else if (selection === '46-55' && selection !== 'all') {
-          searchResultsList.filter(function(item) {
-            return (item.values().resultAge > 45 && item.values().resultAge <= 55);
-          });
-          updateRecordCount();
-        }
-        else if (selection === '56-65' && selection !== 'all') {
-          searchResultsList.filter(function(item) {
-            return (item.values().resultAge > 55 && item.values().resultAge <= 65);
-          });
-          updateRecordCount();
-        }
-        else if (selection === '66-75' && selection !== 'all') {
-          searchResultsList.filter(function(item) {
-            return (item.values().resultAge > 65 && item.values().resultAge <= 75);
-          });
-          updateRecordCount();
-        }
-        else if (selection === '76-85' && selection !== 'all') {
-          searchResultsList.filter(function(item) {
-            return (item.values().resultAge > 75 && item.values().resultAge <= 85);
-          });
-          updateRecordCount();
-        }
-        else if (selection === '86-95' && selection !== 'all') {
-          searchResultsList.filter(function(item) {
-            return (item.values().resultAge > 85 && item.values().resultAge <= 95);
-          });
-          updateRecordCount();
-        }
-        else if (selection === '96-200' && selection !== 'all') {
-          searchResultsList.filter(function(item) {
-            return (item.values().resultAge > 95);
-          });
-          updateRecordCount();
-        } else {
-          searchResultsList.filter();
-          updateRecordCount();
-        }
-      });
 
-      // state-filter action
-      $('#state-filter').change(function () {
-        var selection = this.value;
+        // exact match filter action
+        $('.exact-match').click(function() {
+          $(this).toggleClass('active');
 
-        // reset age filter
-        $('#age-filter option[value=all]').prop('selected', true);
+          // reset age filter
+          $('#age-filter option[value=all]').prop('selected', true);
 
-        // reset exact match filter
-        $('.exact-match').removeClass('active');
+          // reset state filter
+          $('#state-filter option[value=all]').prop('selected', true);
 
-        if (selection && selection !== 'all') {
-          searchResultsList.filter(function(item) {
-            // @TODO: replace includes() with indexOf() for IE compatability
-            return item.values().resultPlace.includes(selection);
-          });
-          updateRecordCount();
-        } else {
-          searchResultsList.filter();
-          updateRecordCount();
-        }
-      });
+          if ($(this).hasClass('active')) {
 
-      var searchedName = '';
-      if (amplify.store('searchData')) {
-        var first = amplify.store('searchData').fn + ' ',
-            middle = amplify.store('searchData').mi + ' ',
-            last = amplify.store('searchData').ln;
+            // @TODO: refactor into function
+            searchResultsList.filter(function(item) {
+              // check if a middle initial is in the search
+              if (searchedName.split(' ').length === 3) {
+                // filter only the full result name if it matches both the first and last name from search
+                // the first letter of result's middle name must also match the middle initial from search
+                if (item.values().resultName.split(' ')[0] === searchedName.split(' ')[0] && item.values().resultName.split(' ')[2] === searchedName.split(' ')[2] && item.values().resultName.split(' ')[1].charAt(0).indexOf(searchedName.split(' ')[1]) > -1) {
+                  return true;
+                } else {
+                  return false;
+                }
+              } else {
+                // @TODO: refactor these conditions - too much repeating
+                // check if result name has a middle name/initial
+                if (item.values().resultName.split(' ').length === 3) {
+                  // filter only the result's first and last name if it matches the first and last name from search
+                  if (item.values().resultName.split(' ')[0] === searchedName.split(' ')[0] && item.values().resultName.split(' ')[2] === searchedName.split(' ')[1]) {
+                    return true;
+                  } else {
+                    return false;
+                  }
+                } else {
+                  // filter only the result's first and last name if it matches the first and last name from search
+                  if (item.values().resultName.split(' ')[0] === searchedName.split(' ')[0] && item.values().resultName.split(' ')[1] === searchedName.split(' ')[1]) {
+                    return true;
+                  } else {
+                    return false;
+                  }
+                }
+              }
+            });
+            updateRecordCount();
+          } else {
+            searchResultsList.filter();
+            updateRecordCount();
+          }
+        });
 
-        if (amplify.store('searchData').mi !== '') {
-          searchedName = first + middle + last;
-        } else {
-          searchedName = first + last;
-        }
+        // reset filters
+        $('.reset-filters').click(function() {
+          // set these values to default
+          $('#city').val('');
+          $('#search-bar-state').val('All');
+          $('#age').val('');
+
+          // @TODO: call search function instead of simulating form submit
+          $('#search-form').submit();
+        });
+      } else {
+        // keep the filters hidden since no search results are found
+        $('.results-filters').hide();
       }
-
-      // exact match filter action
-      $('.exact-match').click(function() {
-        $(this).toggleClass('active');
-
-        // reset age filter
-        $('#age-filter option[value=all]').prop('selected', true);
-
-        // reset state filter
-        $('#state-filter option[value=all]').prop('selected', true);
-
-        if ($(this).hasClass('active')) {
-
-          // @TODO: refactor into function
-          searchResultsList.filter(function(item) {
-            // check if a middle initial is in the search
-            if (searchedName.split(' ').length === 3) {
-              // filter only the full result name if it matches both the first and last name from search
-              // the first letter of result's middle name must also match the middle initial from search
-              if (item.values().resultName.split(' ')[0] === searchedName.split(' ')[0] && item.values().resultName.split(' ')[2] === searchedName.split(' ')[2] && item.values().resultName.split(' ')[1].charAt(0).indexOf(searchedName.split(' ')[1]) > -1) {
-                return true;
-              } else {
-                return false;
-              }
-            } else {
-              // @TODO: refactor these conditions - too much repeating
-              // check if result name has a middle name/initial
-              if (item.values().resultName.split(' ').length === 3) {
-                // filter only the result's first and last name if it matches the first and last name from search
-                if (item.values().resultName.split(' ')[0] === searchedName.split(' ')[0] && item.values().resultName.split(' ')[2] === searchedName.split(' ')[1]) {
-                  return true;
-                } else {
-                  return false;
-                }
-              } else {
-                // filter only the result's first and last name if it matches the first and last name from search
-                if (item.values().resultName.split(' ')[0] === searchedName.split(' ')[0] && item.values().resultName.split(' ')[1] === searchedName.split(' ')[1]) {
-                  return true;
-                } else {
-                  return false;
-                }
-              }
-            }
-          });
-          updateRecordCount();
-        } else {
-          searchResultsList.filter();
-          updateRecordCount();
-        }
-      });
-
-      // reset filters
-      $('.reset-filters').click(function() {
-        // set these values to default
-        $('#city').val('');
-        $('#search-bar-state').val('All');
-        $('#age').val('');
-
-        // @TODO: call search function instead of simulating form submit
-        $('#search-form').submit();
-      });
     };
 
     var setFilterStates = function() {
-      // @TODO: move the record count condition a level higher
-      // (where new List is defined using list.js - otherwise list.js logs an error)
-
-      // if record count is 0, hide all filters
-      if (amplify.store('teaserData').recordCount === 0) {
-        $('.results-filters').hide();
-      // else show the filters
-      } else {
-        $('.results-filters').show();
-
-        // @TODO: refactor conditions
-        if ($('#age').val() !== '' && $('#search-bar-state').val() === 'All') {
-          $('#age-filter').attr('disabled', true);
-          $('#state-filter').attr('disabled', false);
-        }
-        else if ($('#search-bar-state').val() !== 'All' && $('#age').val() === '') {
-          $('#state-filter').attr('disabled', true);
-          $('#age-filter').attr('disabled', false);
-        }
-        else if ($('#age').val() !== '' && $('#search-bar-state').val() !== 'All') {
-          $('#age-filter').attr('disabled', true);
-          $('#state-filter').attr('disabled', true);
-        }
-        else {
-          $('#age-filter').attr('disabled', false);
-          $('#state-filter').attr('disabled', false);
-        }
+      // @TODO: refactor conditions
+      if ($('#age').val() !== '' && $('#search-bar-state').val() === 'All') {
+        $('#age-filter').attr('disabled', true);
+        $('#state-filter').attr('disabled', false);
+      }
+      else if ($('#search-bar-state').val() !== 'All' && $('#age').val() === '') {
+        $('#state-filter').attr('disabled', true);
+        $('#age-filter').attr('disabled', false);
+      }
+      else if ($('#age').val() !== '' && $('#search-bar-state').val() !== 'All') {
+        $('#age-filter').attr('disabled', true);
+        $('#state-filter').attr('disabled', true);
+      }
+      else {
+        $('#age-filter').attr('disabled', false);
+        $('#state-filter').attr('disabled', false);
       }
     };
 
