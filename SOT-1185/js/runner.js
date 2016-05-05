@@ -329,8 +329,10 @@
     // list.js - sort and filter table data
     // docs: http://www.listjs.com/docs/
 
+    // define results list variable for list.js
     var searchResultsList;
 
+    // make this into a function so that it can be called each time the results data is updated
     var initSearchFilters = function() {
       // define sort/filter options using the class names of the data elements
       // these classes are linked to the table data in index.html
@@ -341,13 +343,10 @@
       // define new list using table id (results-table) with filter/sort options (table data classes)
       searchResultsList = new List('results-table', options);
 
-      var ageFilters = $('#age-filter option'),
-          stateFilters = $('#state-filter option'),
-          results = searchResultsList.get();
+      var results = searchResultsList.get();
 
       // update filter options based on results
-      updateFilterOptions(ageFilters, results);
-      updateFilterOptions(stateFilters, results);
+      updateFilterOptions(results);
 
       // set filter states
       setFilterStates();
@@ -541,87 +540,52 @@
       }
     };
 
-    var updateFilterOptions = function(filter, list) {
-      var option = {}, i;
+    var updateFilterOptions = function(results) {
+      var item, option, stateFilters = $('#state-filter option');
 
-      for (i = 1; i < filter.length; i++) {
-        option = {
-          name: filter[i].text,
-          value: filter[i].value
-        };
+      // hide filter options except the all option
+      // this makes all options hidden by default so we show only the needed options below
+      $('.results-filters select option').hide();
+      $('.results-filters select option[value=all]').show();
 
-        console.log(option);
-        // @TODO: remove options that return empty list
-        if (filter.selector === '#age-filter option') {
-          console.log('age filter');
-          // determine which age-range option should be removed
-        } else {
-          console.log('state filter');
-          // determine which state option should be removed
+      // loop through results list and only show the matching filters
+      for (item = 0; item < results.length; item++) {
+
+        // show age filter options that match ages in the results list
+        // @TODO: make into a function / refactor conditions - too many repeating patterns
+        if (results[item]._values.resultAge >= 18 && results[item]._values.resultAge <= 25) {
+          $('#age-filter option[value=18-25]').show();
+        } else if (results[item]._values.resultAge >= 26 && results[item]._values.resultAge <= 35) {
+          $('#age-filter option[value=26-35]').show();
+        } else if (results[item]._values.resultAge >= 36 && results[item]._values.resultAge <= 45) {
+          $('#age-filter option[value=36-45]').show();
+        } else if (results[item]._values.resultAge >= 46 && results[item]._values.resultAge <= 55) {
+          $('#age-filter option[value=46-55]').show();
+        } else if (results[item]._values.resultAge >= 56 && results[item]._values.resultAge <= 65) {
+          $('#age-filter option[value=56-65]').show();
+        } else if (results[item]._values.resultAge >= 66 && results[item]._values.resultAge <= 75) {
+          $('#age-filter option[value=66-75]').show();
+        } else if (results[item]._values.resultAge >= 76 && results[item]._values.resultAge <= 85) {
+          $('#age-filter option[value=76-85]').show();
+        } else if (results[item]._values.resultAge >= 86 && results[item]._values.resultAge <= 95) {
+          $('#age-filter option[value=86-95]').show();
+        } else if (results[item]._values.resultAge >= 96 && results[item]._values.resultAge <= 200) {
+          $('#age-filter option[value=96-200]').show();
+        }
+
+        // loop through state options and show the state option that matches with the state in the results list
+        for (option = 1; option < stateFilters.length; option++) {
+          if (stateFilters[option].value === results[item]._values.resultPlace.split(', ')[1]) {
+            $('#state-filter option[value=' + stateFilters[option].value + ']').show();
+          }
         }
       }
-
-      console.log(list);
     };
 
     // update the record count - to use when table filters change
     var updateRecordCount = function() {
       $('.record-count').text($('#results .results-row').length);
     };
-
-    // @TODO: refactor both stateFilterCounts and ageFilterCounts functions into one since they're similar
-
-    // filters the searchResultsList using state name and state value
-    // var stateFilterCounts = function(name, value) {
-    //   // start with default count of 0
-    //   var count = 0;
-    //
-    //   // filtering each item in the searchResultsList
-    //   searchResultsList.filter(function(item) {
-    //     // if the place in the item includes the state value
-    //     if (item.values().resultPlace.includes(value)) {
-    //       // increase the count by 1
-    //       count += 1;
-    //       // add the new count into the option label of the appropriate state value
-    //       $('#state-filter option[value=' + value + ']').text(name + ' (' + count + ')');
-    //     }
-    //     // if count is 0 hide this state option (dont need filters that show no results)
-    //     else if (count === 0) {
-    //       $('#state-filter option[value=' + value + ']').hide();
-    //     // else show this state option (need this condition otherwise it will hide all the options)
-    //     } else {
-    //       $('#state-filter option[value=' + value + ']').show();
-    //     }
-    //   });
-    // };
-    //
-    // var ageFilterCounts = function(name, value, low, high) {
-    //   // start with default count of 0
-    //   var count = 0;
-    //
-    //   // filtering each item in the searchResultsList
-    //   searchResultsList.filter(function(item) {
-    //     // if the age in the item is between the low and high age group values
-    //     if (item.values().resultAge >= low && item.values().resultAge <= high) {
-    //       // increase the count by 1
-    //       count += 1;
-    //       // add the new count into the option label of the appropriate age group value
-    //       $('#age-filter option[value=' + value + ']').text(name + ' (' + count + ')');
-    //     }
-    //     // if count is 0 hide this age group option (dont need filters that show no results)
-    //     else if (count === 0) {
-    //       $('#age-filter option[value=' + value + ']').hide();
-    //     // else show this age group option (need this condition otherwise it will hide all the options)
-    //     } else {
-    //       $('#age-filter option[value=' + value + ']').show();
-    //     }
-    //
-    //     // @TODO: find out why age group of 96-200 doesnt pass as true sometimes
-    //     // console.log('age of person: ' + item.values().resultAge);
-    //     // console.log('age range value: ' + value);
-    //     // console.log('count of value matching age: ' + count);
-    //   });
-    // };
 
     /* Event Handlers */
 
