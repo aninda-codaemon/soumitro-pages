@@ -340,8 +340,12 @@
 
       // check if there are results from the search
       if (amplify.store('teaserData').recordCount > 0) {
-        // show results filters if there are search results
-        $('.results-filters').show();
+        // show results filters if there are more than 5 search results
+        if (amplify.store('teaserData').recordCount > 5) {
+          $('.results-filters').show();
+        } else {
+          $('.results-filters').hide();
+        }
 
         // hide refine modal
         $('#refine-modal').modal('hide');
