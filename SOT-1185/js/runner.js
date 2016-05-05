@@ -442,8 +442,7 @@
 
           if (selection && selection !== 'all') {
             searchResultsList.filter(function(item) {
-              // @TODO: replace includes() with indexOf() for IE compatability
-              return item.values().resultPlace.includes(selection);
+              return item.values().resultPlace.split(', ')[1] === selection;
             });
             updateRecordCount();
           } else {
