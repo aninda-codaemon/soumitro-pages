@@ -335,7 +335,7 @@
     // keep filters hidden by default
     $('.results-filters').hide();
 
-    // make this into a function so that it can be called each time the results data is updated
+    // making this into a function so that it can be called each time the results data is updated
     var initSearchFilters = function() {
 
       // check if there are results from the search
@@ -370,7 +370,7 @@
           // reset exact match filter
           $('.exact-match').removeClass('active');
 
-          // @TODO: refactor this (too many conditions and repeating patterns)
+          // @TODO: refactor this (too many conditions with repeating patterns)
           if (selection === '18-25' && selection !== 'all') {
             searchResultsList.filter(function(item) {
               return (item.values().resultAge <= 25);
