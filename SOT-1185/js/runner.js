@@ -343,6 +343,9 @@
         // show results filters if there are search results
         $('.results-filters').show();
 
+        // hide refine modal
+        $('#refine-modal').modal('hide');
+
         // define sort/filter options using the class names of the data elements
         // these classes are linked to the table data in index.html
         var options = {
@@ -527,6 +530,9 @@
       } else {
         // keep the filters hidden since no search results are found
         $('.results-filters').hide();
+
+        // show refine modal
+        $('#refine-modal').modal('show');
       }
     };
 
