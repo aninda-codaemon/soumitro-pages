@@ -329,11 +329,13 @@
     // list.js - sort and filter table data
     // docs: http://www.listjs.com/docs/
 
-    // define results list variable for list.js
-    var searchResultsList;
+    // define results list variables for list.js
+    var searchResultsList,
+        $resultsFilters = $('.results-filters'),
+        $refineModal = $('#refine-modal');
 
     // keep filters hidden by default
-    $('.results-filters').hide();
+    $resultsFilters.hide();
 
     // making this into a function so that it can be called each time the results data is updated
     var initSearchFilters = function() {
@@ -342,13 +344,13 @@
       if (amplify.store('teaserData').recordCount > 0) {
         // show results filters if there are more than 5 search results
         if (amplify.store('teaserData').recordCount > 5) {
-          $('.results-filters').show();
+          $resultsFilters.show();
         } else {
-          $('.results-filters').hide();
+          $resultsFilters.hide();
         }
 
         // hide refine modal
-        $('#refine-modal').modal('hide');
+        $refineModal.modal('hide');
 
         // define sort/filter options using the class names of the data elements
         // these classes are linked to the table data in index.html
@@ -369,6 +371,7 @@
 
         // custom age sort event so that empty age gets filtered to the bottom of list
         $('#th-age').click(function() {
+          // @TODO: make into function that can be called during other sort events
           if ($(this).hasClass('asc')) {
             searchResultsList.sort('resultAge', {order: 'asc'});
 
@@ -551,10 +554,9 @@
         });
       } else {
         // keep the filters hidden since no search results are found
-        $('.results-filters').hide();
-
+        $resultsFilters.hide();
         // show refine modal
-        $('#refine-modal').modal('show');
+        $refineModal.modal('show');
       }
     };
 
