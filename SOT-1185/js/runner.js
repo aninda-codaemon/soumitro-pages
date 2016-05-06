@@ -370,7 +370,6 @@
         // custom age sort event so that empty age gets filtered to the bottom of list
         $('#th-age').click(function() {
           if ($(this).hasClass('asc')) {
-            console.log('ascending order');
             searchResultsList.sort('resultAge', {order: 'asc'});
 
             var emptyAgeList = searchResultsList.get('resultAge', ''),
@@ -382,7 +381,6 @@
               emptyAgeList[i].hide();
             }
           } else {
-            console.log('descending order');
             searchResultsList.sort('resultAge', {order: 'desc'});
           }
         });
