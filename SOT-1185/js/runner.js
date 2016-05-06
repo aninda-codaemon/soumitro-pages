@@ -371,18 +371,11 @@
 
         // custom age sort event so that empty age gets filtered to the bottom of list
         $('#th-age').click(function() {
-          // @TODO: make into function that can be called during other sort events
           if ($(this).hasClass('asc')) {
             searchResultsList.sort('resultAge', {order: 'asc'});
 
-            var emptyAgeList = searchResultsList.get('resultAge', ''),
-                lastRow = $('#results .results-row:last-child'),
-                i;
-
-            for (i = 0; i < emptyAgeList.length; i++) {
-              // @TODO: instead of hiding - move the empty age rows to the bottom of table
-              emptyAgeList[i].hide();
-            }
+            var emptyAgeList = searchResultsList.get('resultAge', '');
+            deprioritizeEmptyAges(emptyAgeList);
           } else {
             searchResultsList.sort('resultAge', {order: 'desc'});
           }
@@ -624,6 +617,17 @@
             $('#state-filter option[value=' + stateFilters[option].value + ']').show();
           }
         }
+      }
+    };
+
+    // sends all empty ages to bottom of results
+    var deprioritizeEmptyAges = function(list) {
+      var item;
+      for (item = 0; item < list.length; item++) {
+        // hide empty age row
+        list[item].hide();
+        // append the row to the bottom of table
+        $('#results').append(list[item].elm);
       }
     };
 
