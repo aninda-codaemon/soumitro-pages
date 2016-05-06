@@ -361,7 +361,8 @@
         // define new list using table id (results-table) with filter/sort options (table data classes)
         searchResultsList = new List('results-table', options);
 
-        var results = searchResultsList.get();
+        var results = searchResultsList.get(),
+            emptyAgeList = searchResultsList.get('resultAge', '');
 
         // update filter options based on results
         updateFilterOptions(results);
@@ -373,8 +374,6 @@
         $('#th-age').click(function() {
           if ($(this).hasClass('asc')) {
             searchResultsList.sort('resultAge', {order: 'asc'});
-
-            var emptyAgeList = searchResultsList.get('resultAge', '');
             deprioritizeEmptyAges(emptyAgeList);
           } else {
             searchResultsList.sort('resultAge', {order: 'desc'});
@@ -589,8 +588,8 @@
       // loop through results list and only show the matching filters
       for (item = 0; item < results.length; item++) {
 
-        // show age filter options that match ages in the results list
-        // @TODO: make into a function / refactor conditions - too many repeating patterns
+        // show age filter options that match ages in the results lista
+        // refactored into the loop below but has issues with the last age-range option
         if (results[item]._values.resultAge >= 18 && results[item]._values.resultAge <= 25) {
           $('#age-filter option[value=18-25]').show();
         } else if (results[item]._values.resultAge >= 26 && results[item]._values.resultAge <= 35) {
@@ -610,6 +609,16 @@
         } else if (results[item]._values.resultAge >= 96 && results[item]._values.resultAge <= 200) {
           $('#age-filter option[value=96-200]').show();
         }
+
+        // @TODO: figure out why this loop always ignores the last option
+        //var ageFilters = $('#age-filter option'), ageOption;
+        // for (var ageOption = 1; ageOption < ageFilters.length; ageOption++) {
+        //   console.log(ageFilters[ageOption].value);
+        //   if (results[item]._values.resultAge >= ageFilters[ageOption].value.split('-')[0] && results[item]._values.resultAge <= ageFilters[ageOption].value.split('-')[1]) {
+        //     $('#age-filter option[value=' + ageFilters[ageOption].value + ']').show();
+        //     console.log($('#age-filter option[value=' + ageFilters[ageOption].value + ']'));
+        //   }
+        // }
 
         // loop through state options and show the state option that matches with the state in the results list
         for (option = 1; option < stateFilters.length; option++) {
