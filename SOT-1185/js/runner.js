@@ -479,12 +479,17 @@
           }
         });
 
+        // define searched name
         var searchedName = '';
+        // first check to see if search data exists
         if (amplify.store('searchData')) {
+          // define each name var based on search data
           var first = amplify.store('searchData').fn + ' ',
               middle = amplify.store('searchData').mi + ' ',
               last = amplify.store('searchData').ln;
 
+          // check if middle initial is in search data
+          // define search name var based on the middle initial condition
           if (amplify.store('searchData').mi !== '') {
             searchedName = first + middle + last;
           } else {

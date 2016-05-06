@@ -2653,6 +2653,7 @@ p.why-text {
 }
 
 #map-goes-here {
+  position: relative;
   height: 150px;
   margin: 0 15px 10px;
 
@@ -2663,6 +2664,24 @@ p.why-text {
 #map-goes-here img {
   width: 100%;
   max-height: 100%;
+}
+
+#map-goes-here .map-attribution {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 10px;
+  text-align: right;
+  line-height: 1;
+}
+
+#map-goes-here .map-attribution a {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .subject-summary-text-bg {
