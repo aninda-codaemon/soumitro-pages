@@ -329,9 +329,11 @@
     // list.js - sort and filter table data
     // docs: http://www.listjs.com/docs/
 
-    // define results list variables for list.js
+    // define variables to be used by filter functions
     var searchResultsList,
         $resultsFilters = $('.results-filters'),
+        $stateFilters = $('#state-filter option'),
+        $ageFilters = $('#age-filter option'),
         $refineModal = $('#refine-modal');
 
     // keep filters hidden by default
@@ -390,7 +392,26 @@
           // reset exact match filter
           $('.exact-match').removeClass('active');
 
-          // @TODO: refactor this (too many conditions with repeating patterns)
+          // @TODO: fix this loop to filter age groups
+          // consider moving the actual loop inside filterByAgeGroup()
+          // needs to be debugged
+
+          // var ageGroup, groupValue, lowAge, highAge;
+          // for (ageGroup = 1; ageGroup < $ageFilters.length; ageGroup++) {
+          //   groupValue = $ageFilters[ageGroup].value;
+          //   lowAge = groupValue.split('-')[0];
+          //   highAge = groupValue.split('-')[1];
+          //
+          //   if (selection === groupValue && selection !== 'all') {
+          //     filterByAgeGroup(searchResultsList, lowAge, highAge);
+          //     updateRecordCount();
+          //   } else {
+          //     searchResultsList.filter();
+          //     updateRecordCount();
+          //   }
+          // }
+
+          // @TODO: remove when the loop above is working with filterByAgeGroup;
           if (selection === '18-25' && selection !== 'all') {
             searchResultsList.filter(function(item) {
               return (item.values().resultAge <= 25);
@@ -556,6 +577,13 @@
         $refineModal.modal('show');
       }
     };
+
+    // @TODO: merge loop inside the age-filter change event with this function
+    // var filterByAgeGroup = function(results, lowAge, highAge) {
+    //   results.filter(function(item) {
+    //     return (item.values().resultAge >= lowAge && item.values().resultAge <= highAge);
+    //   });
+    // };
 
     var setFilterStates = function() {
       // @TODO: refactor conditions
