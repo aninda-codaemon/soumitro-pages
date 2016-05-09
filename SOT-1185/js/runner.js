@@ -405,9 +405,11 @@
           //   if (selection === groupValue && selection !== 'all') {
           //     filterByAgeGroup(searchResultsList, lowAge, highAge);
           //     updateRecordCount();
+          //     deprioritizeEmptyAges(emptyAgeList);
           //   } else {
           //     searchResultsList.filter();
           //     updateRecordCount();
+          //     deprioritizeEmptyAges(emptyAgeList);
           //   }
           // }
 
@@ -417,57 +419,67 @@
               return (item.values().resultAge <= 25);
             });
             updateRecordCount();
+            deprioritizeEmptyAges(emptyAgeList);
           }
           else if (selection === '26-35' && selection !== 'all') {
             searchResultsList.filter(function(item) {
               return (item.values().resultAge > 25 && item.values().resultAge <= 35);
             });
             updateRecordCount();
+            deprioritizeEmptyAges(emptyAgeList);
           }
           else if (selection === '36-45' && selection !== 'all') {
             searchResultsList.filter(function(item) {
               return (item.values().resultAge > 35 && item.values().resultAge <= 45);
             });
             updateRecordCount();
+            deprioritizeEmptyAges(emptyAgeList);
           }
           else if (selection === '46-55' && selection !== 'all') {
             searchResultsList.filter(function(item) {
               return (item.values().resultAge > 45 && item.values().resultAge <= 55);
             });
             updateRecordCount();
+            deprioritizeEmptyAges(emptyAgeList);
           }
           else if (selection === '56-65' && selection !== 'all') {
             searchResultsList.filter(function(item) {
               return (item.values().resultAge > 55 && item.values().resultAge <= 65);
             });
             updateRecordCount();
+            deprioritizeEmptyAges(emptyAgeList);
           }
           else if (selection === '66-75' && selection !== 'all') {
             searchResultsList.filter(function(item) {
               return (item.values().resultAge > 65 && item.values().resultAge <= 75);
             });
             updateRecordCount();
+            deprioritizeEmptyAges(emptyAgeList);
           }
           else if (selection === '76-85' && selection !== 'all') {
             searchResultsList.filter(function(item) {
               return (item.values().resultAge > 75 && item.values().resultAge <= 85);
             });
             updateRecordCount();
+            deprioritizeEmptyAges(emptyAgeList);
           }
           else if (selection === '86-95' && selection !== 'all') {
             searchResultsList.filter(function(item) {
               return (item.values().resultAge > 85 && item.values().resultAge <= 95);
             });
             updateRecordCount();
+            deprioritizeEmptyAges(emptyAgeList);
           }
           else if (selection === '96-200' && selection !== 'all') {
             searchResultsList.filter(function(item) {
               return (item.values().resultAge > 95);
             });
             updateRecordCount();
+            deprioritizeEmptyAges(emptyAgeList);
           } else {
             searchResultsList.filter();
             updateRecordCount();
+            deprioritizeEmptyAges(emptyAgeList);
           }
         });
 
@@ -486,9 +498,11 @@
               return item.values().resultPlace.split(', ')[1] === selection;
             });
             updateRecordCount();
+            deprioritizeEmptyAges(emptyAgeList);
           } else {
             searchResultsList.filter();
             updateRecordCount();
+            deprioritizeEmptyAges(emptyAgeList);
           }
         });
 
@@ -554,9 +568,11 @@
               }
             });
             updateRecordCount();
+            deprioritizeEmptyAges(emptyAgeList);
           } else {
             searchResultsList.filter();
             updateRecordCount();
+            deprioritizeEmptyAges(emptyAgeList);
           }
         });
 
