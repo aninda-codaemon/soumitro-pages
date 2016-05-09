@@ -382,12 +382,6 @@
           }
         });
 
-        // @TODO: merge all filter event conditions into this function and call it on event action
-        // this is to make multi filtering work
-        var updateFilter = function() {
-
-        };
-
         // age-filter action
         $('#age-filter').change(function () {
           var selection = this.value;
@@ -552,6 +546,14 @@
         $('#state-filter').attr('disabled', false);
       }
     };
+
+    // @TODO: merge all filter event conditions into this function and call it on event action
+    // this is to make multi filtering work
+    // var updateFilter = function(list, selection, current) {
+    //   // list is defined with new List using list.js
+    //   // selection is the value of the selected option (could be either filter dropdown)
+    //   // current is the currently selected filter option (only targets the filter that isn't being changed)
+    // };
 
     var updateFilterOptions = function(results) {
       var item, option, stateFilters = $('#state-filter option');
