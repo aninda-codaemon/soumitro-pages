@@ -382,6 +382,12 @@
           }
         });
 
+        // @TODO: merge all filter event conditions into this function and call it on event action
+        // this is to make multi filtering work
+        var updateFilter = function() {
+
+        };
+
         // age-filter action
         $('#age-filter').change(function () {
           var selection = this.value;
@@ -403,8 +409,7 @@
           // adding this extra condition as a fix to the above condition
           // above does not filter out the last age group for some reason - need to debug that
           // this else if condition is the solution for filtering ages above 95
-          else if (selection === '96-200' && selection !== 'all') {
-            console.log('last filter');
+          else if (selection && selection === '96-200' && selection !== 'all') {
             searchResultsList.filter(function(item) {
               return (item.values().resultAge > 95);
             });
