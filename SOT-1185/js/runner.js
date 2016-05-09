@@ -392,86 +392,30 @@
           // reset exact match filter
           $('.exact-match').removeClass('active');
 
-          // @TODO: fix this loop to filter age groups
-          // consider moving the actual loop inside filterByAgeGroup()
-          // needs to be debugged
-
-          // var ageGroup, groupValue, lowAge, highAge;
-          // for (ageGroup = 1; ageGroup < $ageFilters.length; ageGroup++) {
-          //   groupValue = $ageFilters[ageGroup].value;
-          //   lowAge = groupValue.split('-')[0];
-          //   highAge = groupValue.split('-')[1];
-          //
-          //   if (selection === groupValue && selection !== 'all') {
-          //     filterByAgeGroup(searchResultsList, lowAge, highAge);
-          //     updateRecordCount();
-          //     deprioritizeEmptyAges(emptyAgeList);
-          //   } else {
-          //     searchResultsList.filter();
-          //     updateRecordCount();
-          //     deprioritizeEmptyAges(emptyAgeList);
-          //   }
-          // }
-
-          // @TODO: remove when the loop above is working with filterByAgeGroup;
-          if (selection === '18-25' && selection !== 'all') {
+          // @TODO: fix the issue with the age group filter ignoring 96+ age group
+          // for now, ignoring the 96+ age group and creating a seperate condition seems to work
+          if (selection && selection !== 'all' && selection !== '96-200') {
             searchResultsList.filter(function(item) {
-              return (item.values().resultAge > 17 && item.values().resultAge <= 25);
+              return (item.values().resultAge >= selection.split('-')[0] && item.values().resultAge <= selection.split('-')[1]);
             });
             updateRecordCount();
           }
-          else if (selection === '26-35' && selection !== 'all') {
-            searchResultsList.filter(function(item) {
-              return (item.values().resultAge > 25 && item.values().resultAge <= 35);
-            });
-            updateRecordCount();
-          }
-          else if (selection === '36-45' && selection !== 'all') {
-            searchResultsList.filter(function(item) {
-              return (item.values().resultAge > 35 && item.values().resultAge <= 45);
-            });
-            updateRecordCount();
-          }
-          else if (selection === '46-55' && selection !== 'all') {
-            searchResultsList.filter(function(item) {
-              return (item.values().resultAge > 45 && item.values().resultAge <= 55);
-            });
-            updateRecordCount();
-          }
-          else if (selection === '56-65' && selection !== 'all') {
-            searchResultsList.filter(function(item) {
-              return (item.values().resultAge > 55 && item.values().resultAge <= 65);
-            });
-            updateRecordCount();
-          }
-          else if (selection === '66-75' && selection !== 'all') {
-            searchResultsList.filter(function(item) {
-              return (item.values().resultAge > 65 && item.values().resultAge <= 75);
-            });
-            updateRecordCount();
-          }
-          else if (selection === '76-85' && selection !== 'all') {
-            searchResultsList.filter(function(item) {
-              return (item.values().resultAge > 75 && item.values().resultAge <= 85);
-            });
-            updateRecordCount();
-          }
-          else if (selection === '86-95' && selection !== 'all') {
-            searchResultsList.filter(function(item) {
-              return (item.values().resultAge > 85 && item.values().resultAge <= 95);
-            });
-            updateRecordCount();
-          }
+          // adding this extra condition as a fix to the above condition
+          // above does not filter out the last age group for some reason - need to debug that
+          // this else if condition is the solution for filtering ages above 95
           else if (selection === '96-200' && selection !== 'all') {
+            console.log('last filter');
             searchResultsList.filter(function(item) {
               return (item.values().resultAge > 95);
             });
             updateRecordCount();
-          } else {
+          }
+          else {
             searchResultsList.filter();
             deprioritizeEmptyAges(emptyAgeList);
             updateRecordCount();
           }
+
         });
 
         // state-filter action
@@ -583,13 +527,6 @@
         $refineModal.modal('show');
       }
     };
-
-    // @TODO: merge loop inside the age-filter change event with this function
-    // var filterByAgeGroup = function(results, lowAge, highAge) {
-    //   results.filter(function(item) {
-    //     return (item.values().resultAge >= lowAge && item.values().resultAge <= highAge);
-    //   });
-    // };
 
     var setFilterStates = function() {
       // @TODO: refactor conditions
