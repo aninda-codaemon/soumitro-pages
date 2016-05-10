@@ -1736,64 +1736,46 @@ span.located img {
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .form-header {
-  display: table;
-  z-index: 1;
-  position: absolute;;
-  top: 15px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
-  height: 125px;
-  width: 125px;
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 100%;
   margin: 0 auto;
-  padding: 15px 10px;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 1px 0 #353167;
-  -moz-box-shadow: 0 0 1px 0 #353167;
-  -ms-box-shadow: 0 0 1px 0 #353167;
-  -o-box-shadow: 0 0 1px 0 #353167;
-  box-shadow: 0 0 1px 0 #353167;
-  border: 2px solid #353167;
-  background-color: #fff;
-  color: #353167;
-  text-align: center;
+  padding: 10px 25px;
+  border: 0;
+  border-radius: 4px 4px 0 0;
+  -webkit-box-shadow: 0 0 0 1px #6F77B6;
+  -moz-box-shadow: 0 0 0 1px #6F77B6;
+  -ms-box-shadow: 0 0 0 1px #6F77B6;
+  -o-box-shadow: 0 0 0 1px #6F77B6;
+  box-shadow: 0 0 0 1px #6F77B6;
+  background-color: #6F77B6;
+  color: #fff;
+  text-align: left;
   line-height: 1;
+  z-index: 1;
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .form-header .form-header-name {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+  display: block;
+  margin: 0;
+  text-align: left;
+}
+
+.possible-relatives.modal .modal-body .possible-relatives-form .form-header .form-header-name .icon {
+  position: relative;
+  top: -3px;
+  margin-right: 0;
+  float: right;
+  font-size: 28px;
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .checkbox {
   margin: 10px auto;
   border-radius: 4px;
   line-height: 1.5;
-}
-
-.possible-relatives.modal .modal-body .possible-relatives-form .checkbox .relation-line {
-  display: none;
-  position: absolute;
-  top: 17px;
-  left: auto;
-  right: auto;
-  height: 3px;
-  width: 120px;
-  margin: 0 auto;
-  border-bottom: 3px dotted #353167;
-  background-color: transparent;
-}
-
-.possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(odd) .relation-line {
-  right: -90px;
-}
-
-.possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(even) .relation-line {
-  left: -90px;
 }
 
 .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-checkbox {
@@ -1946,68 +1928,48 @@ span.located img {
 
   .possible-relatives.modal .modal-body .possible-relatives-form {
     display: inline-block;
-    width: 100%;
-    margin: 0;
+    width: 50%;
+    float: right;
+    margin-top: 30px;
+    -webkit-box-shadow: 0 2px 1px 0 #6F77B6;
+    -moz-box-shadow: 0 2px 1px 0 #6F77B6;
+    -ms-box-shadow: 0 2px 1px 0 #6F77B6;
+    -o-box-shadow: 0 2px 1px 0 #6F77B6;
+    box-shadow: 0 2px 1px 0 #6F77B6;
+    background-color: #F9F9FF;
   }
 
   .possible-relatives.modal .modal-body .possible-relatives-form .form-container {
     display: inline-block;
     width: 100%;
+    padding: 15px;
+    padding-bottom: 0;
   }
 
   .possible-relatives.modal .modal-body .possible-relatives-form .checkbox {
-    width: 38%;
-    margin-top: 30px;
-    margin-bottom: 0;
+    margin: 0;
+    margin-bottom: 15px;
   }
 
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox.duo {
-    margin-top: 60px;
-    margin-bottom: 30px;
-  }
-
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(odd) {
-    float: left;
-  }
-
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(even) {
-    float: right;
-  }
-
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .relation-line {
-    display: block;
-  }
-
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(odd) .input-label {
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label {
     padding-left: 10px;
-    padding-right: 50px;
-    text-align: right;
   }
 
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(odd) .input-label .checkbox-container {
+  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox .input-label .checkbox-container {
     right: 0;
     left: auto;
   }
 
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox:nth-child(even) .input-label .checkbox-container {
-    left: 0;
-  }
-
   .possible-relatives.modal .modal-body .possible-relatives-form .form-actions-container {
-    bottom: -30px;
-    margin: 0 -30px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin: 0;
   }
 
   .possible-relatives.modal .modal-body .possible-relatives-form .main-btn {
     display: block;
-    width: 25%;
     margin: 0 auto;
-  }
-}
-
-@media (min-width: 992px) {
-  .possible-relatives.modal .modal-body .possible-relatives-form .checkbox {
-    width: 36%;
   }
 }
 
