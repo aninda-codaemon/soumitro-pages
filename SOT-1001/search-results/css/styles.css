@@ -1726,6 +1726,11 @@ span.located img {
   line-height: 1.25;
 }
 
+.possible-relatives.modal .modal-body .relatives-img {
+  width: 45%;
+  margin: 30px auto 0;
+}
+
 .possible-relatives.modal .modal-body .possible-relatives-form {
   position: relative;
   margin-top: 10px;

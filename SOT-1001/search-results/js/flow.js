@@ -645,20 +645,7 @@
   }
 
   function possibleRelatives() {
-    trackNL('Viewed Possible Relatives Modal');
-
-    // adjust checkbox alignments depending on how many relatives are found
-    if ($('.possible-relatives-form .checkbox').length === 2) {
-      // if there's two relatives, both checkboxes get the style adjustment
-      $('.possible-relatives-form .checkbox').addClass('duo');
-    }
-    else if ($('.possible-relatives-form .checkbox').length === 3) {
-      // if there's three relatives, only the even (floated right) checkbox gets adjusted
-      $('.possible-relatives-form .checkbox:nth-child(even)').addClass('duo');
-    } else {
-      // otherwise, remove any adjustments
-      $('.possible-relatives-form .checkbox').removeClass('duo');
-    }
+    trackNL('Viewed Possible Relatives Modal'); 
 
     // click events
 
