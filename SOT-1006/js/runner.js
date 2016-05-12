@@ -298,8 +298,24 @@
 
     var searchRules = {
         rules: {
-            fn: "required",
-            ln: "required"
+            fn: {
+              required: true,
+              regex: /^[a-z ,.'-]+$/i
+            },
+            mi: {
+              required: false,
+              regex: /^[a-z ,.'-]+$/i
+            },
+            ln: {
+              required: true,
+              regex: /^[a-z ,.'-]+$/i
+            },
+            city: {
+              required: false
+            },
+            age: {
+              required: false
+            }
         },
         messages: {
             fn: "Please enter a first name",
