@@ -293,7 +293,7 @@
             var re = new RegExp(regexp);
             return this.optional(element) || re.test(value);
         },
-        "Please check your input."
+        'Please check your input.'
     );
 
     var searchRules = {
@@ -311,10 +311,12 @@
               regex: /^[a-z ,.'-]+$/i
             },
             city: {
-              required: false
+              required: false,
+              regex: /^[a-zA-Z]+(?:[\s-]+[a-zA-Z]+)*$/
             },
             age: {
-              required: false
+              required: false,
+              regex: /^-?\d+\.?\d*$/
             }
         },
         messages: {
