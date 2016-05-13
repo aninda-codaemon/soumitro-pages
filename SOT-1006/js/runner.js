@@ -300,15 +300,15 @@
         rules: {
             fn: {
               required: true,
-              regex: /^[a-z ,.'-]+$/i
+              regex: /^[a-z ,'-]+$/i
             },
             mi: {
               required: false,
-              regex: /^[a-z ,.'-]+$/i
+              regex: /^[a-z ,'-]+$/i
             },
             ln: {
               required: true,
-              regex: /^[a-z ,.'-]+$/i
+              regex: /^[a-z ,'-]+$/i
             },
             city: {
               required: false,
