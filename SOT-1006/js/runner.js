@@ -285,6 +285,40 @@
         });
     };
 
+    /* Search Form - Input Masks */
+
+    // @TODO: refactor this into one function
+
+    $('#fn').mask('SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS', {
+      'translation': {
+        S: { pattern: /^[a-z ,'-]+$/i }
+      }
+    });
+
+    $('#mi').mask('S', {
+      'translation': {
+        S: { pattern: /^[a-z ,'-]+$/i }
+      }
+    });
+
+    $('#li').mask('SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS', {
+      'translation': {
+        S: { pattern: /^[a-z ,'-]+$/i }
+      }
+    });
+
+    $('#city').mask('SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS', {
+      'translation': {
+        S: { pattern: /^[a-zA-Z]+(?:[\s-]+[a-zA-Z]+)*$/ }
+      }
+    });
+
+    $('#age').mask('NNN', {
+      'translation': {
+        N: { pattern: /^-?\d+\.?\d*$/ }
+      }
+    });
+
     /* Validations */
 
     $.validator.addMethod(
