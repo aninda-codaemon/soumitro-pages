@@ -363,7 +363,16 @@
       submitHandler: function (form) {
         trackNL("Submitted Search Form - People");
         window.setTimeout(function () {
-          form.submit();
+          dataArray = $(form).serializeArray();
+          var formVals = {};
+          _.forEach(dataArray, function(v, k) {
+              formVals[v.name] = v.value;
+          });
+          var data = _.mapValues(formVals, cleanSearchValues);
+          data = parseMiddleInitial(data);
+
+          // form.submit();
+          window.location.href = $(form).attr('action') + $.param(data);
         }, REQUEST_DELAY);
       }
     });
