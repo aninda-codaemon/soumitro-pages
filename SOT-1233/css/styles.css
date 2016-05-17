@@ -1856,11 +1856,11 @@ span.located img {
          -o-transform: translateX(-50%);
             transform: translateX(-50%);
   }
-  
+
   /* ie9 fix*/
   :root #gen-report-modal2 .modal-header .jumbo-sidebar .img-animation {
     top: 0 \0;
-    right: 0 \0;   
+    right: 0 \0;
     left: 0 \0;
     bottom: 0 \0;
     margin: auto \0;
@@ -1923,6 +1923,16 @@ span.located img {
 
 .modal-body .report-info-list .report-info-item {
   position: relative;
+  cursor: pointer;
+  -webkit-transition: color 250ms;
+  -moz-transition: color 250ms;
+  -ms-transition: color 250ms;
+  -o-transition: color 250ms;
+  transition: color 250ms;
+}
+
+.modal-body .report-info-list .report-info-item:hover {
+  color: #6dac45;
 }
 
 .modal-body .report-info-list .report-info-item .fa {
@@ -2091,7 +2101,7 @@ span.located img {
 /* modal-footer */
 
 #gen-report-modal2 .modal-footer #gen-report-confirm {
-  font-size: 18px !important;
+  font-size: 16px !important;
 
   margin: 0;
   padding: 15px;
@@ -2119,6 +2129,12 @@ span.located img {
   display: none;
 
   margin-left: 10px;
+}
+
+@media (min-width: 480px) {
+  #gen-report-modal2 .modal-footer #gen-report-confirm {
+    font-size: 18px !important;
+  }
 }
 
 @media (min-width: 768px) {
@@ -3857,7 +3873,7 @@ h6.create-login {
   #gen-report-modal7 .modal-footer {
     position: relative;
   }
-  
+
   #gen-report-modal7 .modal-header h1 {
     font-size: 18px;
   }
