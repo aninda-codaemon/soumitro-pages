@@ -2098,7 +2098,7 @@ span.located img {
 /* modal-footer */
 
 #gen-report-modal2 .modal-footer #gen-report-confirm {
-  font-size: 16px !important;
+  font-size: 18px !important;
 
   margin: 0;
   padding: 15px;
@@ -2126,12 +2126,6 @@ span.located img {
   display: none;
 
   margin-left: 10px;
-}
-
-@media (min-width: 480px) {
-  #gen-report-modal2 .modal-footer #gen-report-confirm {
-    font-size: 18px !important;
-  }
 }
 
 @media (min-width: 768px) {
