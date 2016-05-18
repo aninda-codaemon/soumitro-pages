@@ -108,8 +108,6 @@
 
     if (teaserPreview.length === 1) {
       teaserPreview.css('width', '100%');
-    } else {
-      teaserPreview.style.removeAttribute('width');
     }
   };
 
