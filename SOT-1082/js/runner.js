@@ -103,7 +103,6 @@
   // set column state for mobile teaser data
 
   var setColumnState = function() {
-    console.log('set column state for mobile teaser data');
     var teaserPreview = $('.mobile-subject-teaser .teaser-preview');
 
     if (teaserPreview.length === 1) {
