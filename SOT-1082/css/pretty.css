@@ -108,7 +108,8 @@ header {
 .current-title,
 .current-teaser {
 	margin-bottom: 0;
-	line-height: 24px;
+  font-size: 14px;
+	line-height: 1;
 }
 .money-back {
   margin-bottom: 20px;
@@ -122,15 +123,11 @@ header {
 
 @media (min-width: 500px) and (max-width: 768px) {
   .teaser-preview {
-    width: 30%;
+    width: 33.33333333%;
     padding: 15px 0;
     padding-top: 40px;
     background-position: center 5px;
     text-align: center;
-  }
-
-  .teaser-preview#current-preview {
-    width: 40%;
   }
 
   .teaser-preview .current-teaser .more-count {
