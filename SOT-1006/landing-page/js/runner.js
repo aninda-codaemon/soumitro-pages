@@ -372,7 +372,7 @@
           data = parseMiddleInitial(data);
 
           // form.submit();
-          window.location.href = $(form).attr('action') + $.param(data);
+          window.location.href = $(form).attr('action') + '?' + $.param(data);
         }, REQUEST_DELAY);
       }
     });
