@@ -645,7 +645,7 @@
   }
 
   function possibleRelatives() {
-    trackNL('Viewed Possible Relatives Modal'); 
+    trackNL('Viewed Possible Relatives Modal');
 
     // click events
 
@@ -669,8 +669,8 @@
       // return only the selected relatives
       for (i = 0; i < relatives.length; i++) {
         selectedRelatives.push({
-          'id': relatives[i].value,
-          'name': relatives[i].closest('label').innerText
+          'id': relatives[i].id,
+          'name': relatives[i].value
         });
       }
 

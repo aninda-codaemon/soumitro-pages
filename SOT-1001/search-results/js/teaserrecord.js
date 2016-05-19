@@ -280,7 +280,7 @@
             fullName = firstName + middleName + lastName;
 
             relativesCheckboxes.push(
-              '<div class="checkbox"><label for="relative' + i + '" class="input-label">' + fullName + '<span class="checkbox-container"><input type="checkbox" class="input-checkbox" id="relative' + i + '" value="' + relatives[i].bvid + '" /><span class="custom-checkbox"></span></span></label></div>'
+              '<div class="checkbox"><label for="' + relatives[i].bvid + '" class="input-label">' + fullName + '<span class="checkbox-container"><input type="checkbox" class="input-checkbox" id="' + relatives[i].bvid + '" value="' + fullName + '" /><span class="custom-checkbox"></span></span></label></div>'
             );
           }
         }
