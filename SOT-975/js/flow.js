@@ -648,7 +648,10 @@
                 "fcraCheckbox2": "Please check the box to continue"
             },
             submitHandler: function(form) {
-               showNextModal();
+              //  showNextModal();
+              window.setTimeout(function() {
+                  window.location = $("body").data("next-page");
+              }, 300);
             }
         });
     };
@@ -743,9 +746,10 @@
     //$("body").on('click', ".data-modal-confirm" , function() { showNextModal(); });
     //$("body").on('click', ".data-modal-confirm", function(){
     $(".data-modal-confirm").on('click', function(){
-      window.setTimeout(function() {
-          window.location = $("body").data("next-page");
-      }, 300);
+      // window.setTimeout(function() {
+      //     window.location = $("body").data("next-page");
+      // }, 300);
+      showNextModal();
     });
   }
 
