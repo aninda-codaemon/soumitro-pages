@@ -363,39 +363,12 @@
     }
   }, {
 
-    // Report is ready for download.
+    // Modal Teaser w/ data
 
-    $elem: $("#gen-report-modal2"),
-    duration: 2000, // Total time to switch spinners for checkmarks. Value is divided by number of items.
+    $elem: $("#gen-report-modal7"),
+    duration: 10000,   // Total time to switch spinners. Value is divided by number of items.
     animate: function () {
-      _.bind(reportReadyForDownload, this)();
-    }
-  }, {
-
-    // Logging in.
-
-    $elem: $("#gen-report-modal3"),
-    duration: 15000, // Total animation time before moving to next modal.
-    animate: function () {
-      _.bind(loggingIn, this)();
-    }
-  },
-
-  {
-
-    // Captcha.
-
-    $elem: $("#gen-report-modal4"),
-    animate: function () {
-      _.bind(captchaModal, this)();
-    }
-  }, {
-
-    // Generating report progress.
-
-    $elem: $("#gen-report-modal5"),
-    animate: function () {
-      _.bind(generatingReport, this)();
+      _.bind(foundDataModal, this)();
     }
   }, {
 
@@ -407,20 +380,19 @@
     }
   }, {
 
+    // Generating report progress.
+
+    $elem: $("#gen-report-modal5"),
+    animate: function () {
+      _.bind(generatingReport, this)();
+    }
+  }, {
+
     // FCRA
 
     $elem: $("#gen-report-modal11"),
     animate: function () {
       _.bind(fcraConfirmation, this)();
-    }
-  },{
-
-    // Modal Teaser w/ data
-
-    $elem: $("#gen-report-modal7"),
-    duration: 10000,   // Total time to switch spinners. Value is divided by number of items.
-    animate: function () {
-      _.bind(foundDataModal, this)();
     }
   }];
 
