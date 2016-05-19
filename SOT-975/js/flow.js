@@ -363,6 +363,15 @@
     }
   }, {
 
+    // Logging in.
+
+    $elem: $("#gen-report-modal3"),
+    duration: 15000, // Total animation time before moving to next modal.
+    animate: function () {
+      _.bind(loggingIn, this)();
+    }
+  }, {
+
     // Modal Teaser w/ data
 
     $elem: $("#gen-report-modal7"),
