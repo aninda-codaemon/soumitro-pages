@@ -11,12 +11,7 @@
 .navbar .navbar-header .navbar-brand {
     height: auto;
     margin-left: 10px;
-    padding: 15px;
-    -webkit-box-shadow: 0 4px 1px -1px #38AC9E;
-    -moz-box-shadow: 0 4px 1px -1px #38AC9E;
-    -ms-box-shadow: 0 4px 1px -1px #38AC9E;
-    box-shadow: 0 4px 1px -1px #38AC9E;
-    background-color: #fff;
+    padding: 15px 0;
 }
 
 .navbar .navbar-collapse {
@@ -27,17 +22,32 @@
 }
 
 .navbar .navbar-text {
-    color: #000;
+    color: #C2F6EF;;
     font-size: 16px;
     text-align: center;
 }
 
-.navbar .navbar-btn {
-    width: 49%;
+.navbar .navbar-text .icon {
+    font-size: 18px;
+    vertical-align: middle;
 }
 
-.navbar .navbar-btn.btn-default {
+.navbar .navbar-btn {
+    width: 49%;
+    color: #000;
+    font-weight: bold;
+}
+
+.navbar .navbar-btn:hover {
+  color: #C2F6EF;
+}
+
+.navbar .navbar-btn:last-child {
     float: right;
+}
+
+.navbar .navbar-btn .icon {
+    font-size: 10px;
 }
 
 @media (min-width: 768px) {
@@ -54,11 +64,11 @@
         width: auto;
     }
 
-    .navbar .navbar-btn.btn-transparent {
+    .navbar .navbar-btn:first-child {
         margin-right: 4px;
     }
 
-    .navbar .navbar-btn.btn-default {
+    .navbar .navbar-btn:last-child {
         margin-left: 4px;
         float: none;
     }
