@@ -378,7 +378,7 @@
       if (criminalRecords.count <= 1) {
         return false;
       } else {
-        return criminalRecords.count -1;
+        return criminalRecords.count;
       }
     };
 
@@ -398,7 +398,7 @@
       if (bankruptcies.count <= 1) {
         return false;
       } else {
-        return bankruptcies.count -1;
+        return bankruptcies.count;
       }
     };
 
