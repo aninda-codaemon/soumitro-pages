@@ -343,26 +343,6 @@
 
   var modals = [{
 
-    // Progress Bars.
-
-    $elem: $("#gen-report-modal1"),
-    splits: [45000, 20000, 30000], // Progress bar times (these are shuffled)
-    transitionDelay: 1000,         // After progress completion, amount of time before moving to next flow.
-    animate: function () {
-      _.bind(initializingSearchProgress, this)();
-    }
-  },
-
-    // SCANNING SOCIAL MEDIA
-  {
-    $elem: $("#scanningSocialMedia"),
-    duration: 20000,   // Total time to switch spinners. Value is divided by number of items.
-    transitionDelay: 1000,   // After progress completion, amount of time before moving to next flow.
-    animate: function () {
-      _.bind(scanningSocialMedia, this)();
-    }
-  }, {
-
     // Logging in.
 
     $elem: $("#gen-report-modal3"),
