@@ -375,10 +375,12 @@
 
     TeaserRecord.prototype.criminalRecordsCount = function() {
       var criminalRecords = this.criminalRecords();
-      if (criminalRecords.count <= 1) {
+      if (criminalRecords.count === 0) {
         return false;
+      } else if (criminalRecords.count === 1) {
+        return '<strong>' + criminalRecords.count + '</strong> result found';
       } else {
-        return criminalRecords.count;
+        return '<strong>' + criminalRecords.count + '</strong> results found';
       }
     };
 
@@ -395,10 +397,12 @@
 
     TeaserRecord.prototype.bankruptciesCount = function() {
       var bankruptcies = this.bankruptcies();
-      if (bankruptcies.count <= 1) {
+      if (bankruptcies.count === 0) {
         return false;
+      } else if (bankruptcies.count === 1) {
+        return '<strong>' + bankruptcies.count + '</strong> result found';
       } else {
-        return bankruptcies.count;
+        return '<strong>' + bankruptcies.count + '</strong> results found';
       }
     };
 
