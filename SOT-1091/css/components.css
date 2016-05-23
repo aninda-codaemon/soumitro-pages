@@ -15,8 +15,8 @@
 }
 
 .navbar .navbar-header .navbar-brand .img-logo {
-  width: 200px;
-  height: 37.5px;
+    width: 180px;
+    height: 33.75px;
 }
 
 .navbar .navbar-collapse {
@@ -27,24 +27,18 @@
 }
 
 .navbar .navbar-text {
-    color: #C2F6EF;;
-    font-size: 16px;
+    color: #C2F6EF;
     text-align: center;
 }
 
-.navbar .navbar-text .icon {
-    font-size: 18px;
-    vertical-align: middle;
-}
-
-.navbar .navbar-btn {
-    width: 49%;
+.navbar .btn-nav {
+    width: auto;
     color: #000;
     font-weight: bold;
 }
 
 .navbar .navbar-btn:hover {
-  color: #C2F6EF;
+    color: #C2F6EF;
 }
 
 .navbar .navbar-btn:last-child {
@@ -59,6 +53,11 @@
 
     .navbar .navbar-header .navbar-brand {
         margin-left: -5px;
+    }
+
+    .navbar .navbar-header .navbar-brand .img-logo {
+        width: 200px;
+        height: 37.5px;
     }
 
     .navbar .navbar-text {
