@@ -202,6 +202,11 @@
       });
     };
 
+    // navbar-toggle
+    $('.navbar-toggle').click(function() {
+      $(this).toggleClass('toggled');
+    });
+
     var activated = false;
 
     var activateRows = function() {
