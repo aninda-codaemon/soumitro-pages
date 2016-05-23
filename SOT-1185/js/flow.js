@@ -491,6 +491,10 @@
 
     toggleAnimations();
 
+    $('.report-info-item').click(function() {
+      showNextModal();
+    });
+
     var duration = this.duration;
     if (window.bv.isMobile) {
       duration *= window.bv.mobileTimeRatio;
