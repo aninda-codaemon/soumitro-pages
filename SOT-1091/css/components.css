@@ -23,16 +23,19 @@
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     -ms-box-shadow: none;
+    -o-box-shadow: none;
     box-shadow: none;
+    background-color: #2EBFAB;
 }
 
 .navbar .navbar-text {
+    float: right;
     color: #C2F6EF;
     text-align: center;
 }
 
 .navbar .btn-nav {
-    width: auto;
+    float: left;
     color: #000;
     font-weight: bold;
 }
@@ -45,8 +48,12 @@
     float: right;
 }
 
-.navbar .navbar-btn .icon {
-    font-size: 10px;
+.navbar .divider-pipe {
+  display: inline-block;
+  margin: 20px 10px;
+  float: left;
+  color: #65E0D1;
+  line-height: 1;
 }
 
 @media (min-width: 768px) {
@@ -60,7 +67,12 @@
         height: 37.5px;
     }
 
+    .navbar .navbar-collapse {
+        background-color: transparent;
+    }
+
     .navbar .navbar-text {
+        float: left;
         text-align: left;
     }
 
@@ -75,6 +87,10 @@
     .navbar .navbar-btn:last-child {
         margin-left: 4px;
         float: none;
+    }
+
+    .navbar .divider-pipe {
+        display: none;
     }
 }
 
