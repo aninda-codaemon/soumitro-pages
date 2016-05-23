@@ -3,11 +3,16 @@
 .navbar .navbar-toggle {
     margin: 5px 0;
     padding: 15px;
-    transition: .3s;
+    transition: 250ms;
 }
 
 .navbar .navbar-toggle.toggled {
+    padding-right: 10px;
+    padding-left: 10px;
     -webkit-transform: scale3d(0.8,0.8,0.8);
+    -moz-transform: scale3d(0.8,0.8,0.8);
+    -ms-transform: scale3d(0.8,0.8,0.8);
+    -o-transform: scale3d(0.8,0.8,0.8);
     transform: scale3d(0.8,0.8,0.8);
 }
 
@@ -18,12 +23,13 @@
     height: 5px;
     border-radius: 4px;
     background: #fff;
-    transition: background 0.3s 0.5s ease;
+    transition: background 250ms 500ms ease;
 }
 
 .navbar .navbar-toggle.toggled .icon-bars {
+    width: 35px;
     background: transparent;
-    transition: background 0.3s 0s ease;
+    transition: background 250ms 0s ease;
 }
 
 .navbar .navbar-toggle .icon-bars:before,
@@ -37,17 +43,26 @@
     border-radius: 4px;
     background: #fff;
     -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
-    transition: top 0.3s 0.6s ease, -webkit-transform 0.3s ease;
-    transition: top 0.3s 0.6s ease, transform 0.3s ease;
+    transition: top 250ms 500ms ease, -webkit-transform 250ms ease;
+    transition: top 250ms 500ms ease, -moz-transform 250ms ease;
+    transition: top 250ms 500ms ease, -ms-transform 250ms ease;
+    transition: top 250ms 500ms ease, -o-transform 250ms ease;
+    transition: top 250ms 500ms ease, transform 250ms ease;
 }
 
 .navbar .navbar-toggle.toggled .icon-bars:before,
 .navbar .navbar-toggle.toggled .icon-bars:after {
-    transition: top 0.3s ease,-webkit-transform 0.3s 0.5s ease;
-    transition: top 0.3s ease,transform 0.3s 0.5s ease;
     top: 0;
-    width: 30px;
+    width: 35px;
+    transition: top 250ms ease, -webkit-transform 250ms 500ms ease;
+    transition: top 250ms ease, -moz-transform 250ms 500ms ease;
+    transition: top 250ms ease, -ms-transform 250ms 500ms ease;
+    transition: top 250ms ease, -o-transform 250ms 500ms ease;
+    transition: top 250ms ease, transform 250ms 500ms ease;
 }
 
 .navbar .navbar-toggle .icon-bars:before {
@@ -61,6 +76,9 @@
 .navbar .navbar-toggle.toggled .icon-bars:before {
    top: 0;
    -webkit-transform: rotate3d(0,0,1,45deg);
+   -moz-transform: rotate3d(0,0,1,45deg);
+   -ms-transform: rotate3d(0,0,1,45deg);
+   -o-transform: rotate3d(0,0,1,45deg);
    transform: rotate3d(0,0,1,45deg);
 }
 
@@ -75,8 +93,13 @@
 .navbar .navbar-toggle.toggled .icon-bars:after {
     top: 0;
     -webkit-transform: rotate3d(0,0,1,-45deg);
+    -moz-transform: rotate3d(0,0,1,-45deg);
+    -ms-transform: rotate3d(0,0,1,-45deg);
+    -o-transform: rotate3d(0,0,1,-45deg);
     transform: rotate3d(0,0,1,-45deg);
 }
+
+/* navbar brand */
 
 .navbar .navbar-header .navbar-brand {
     height: auto;

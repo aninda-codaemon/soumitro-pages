@@ -84,6 +84,11 @@
     }]
   };
 
+  // navbar-toggle
+  $('.navbar-toggle').click(function() {
+    $(this).toggleClass('toggled');
+  });
+
   // Back To Top
   $('#scrollTop').click(function() {
     $('html, body').animate({
