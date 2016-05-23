@@ -68,7 +68,6 @@ body {
 /* navbar */
 
 .navbar.navbar-default {
-  padding-bottom: 25px;
   border: 0;
   background-color: #33d4c0;
 }
@@ -76,12 +75,7 @@ body {
 .navbar .navbar-header .navbar-brand {
   height: auto;
   margin-left: 15px;
-  padding: 15px;
-  -webkit-box-shadow: 0 4px 1px -1px #38AC9E;
-  -moz-box-shadow: 0 4px 1px -1px #38AC9E;
-  -ms-box-shadow: 0 4px 1px -1px #38AC9E;
-  box-shadow: 0 4px 1px -1px #38AC9E;
-  background-color: #fff;
+  padding: 15px 0;
 }
 
 .navbar .navbar-header .navbar-brand .img-logo {
@@ -95,7 +89,7 @@ body {
   }
 
   .navbar .navbar-header .navbar-brand .img-logo {
-    width: auto;
+    width: 200px;
   }
 }
 
@@ -231,7 +225,7 @@ body {
 
 @media (min-width: 1200px) {
   .steps-images .img-step {
-    width: auto;
+    width: 160px;
   }
 
   .steps-images .img-arrow {
@@ -320,4 +314,13 @@ body {
 
 #input-state .modal-md {
   max-width: 500px;
+}
+
+.modal-header {
+  border: 0;
+}
+
+.modal-body .btn {
+  padding: 15px 60px;
+  font-size: 20px;
 }
