@@ -166,6 +166,17 @@
   .content-section#pl-what .sub-title {
     margin-bottom: 80px;
   }
+
+  .content-section#pl-what .col-xs-2 {
+    padding: 0;
+  }
+}
+
+@media (min-width: 480px) {
+  .content-section#pl-what .col-xs-2 {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 }
 
 @media (min-width: 992px) {
