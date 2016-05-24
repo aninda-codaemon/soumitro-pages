@@ -337,9 +337,10 @@
         if (!data.mi || data.mi.length === 0) {
           data.mi = parsed_mi[1];
         }
-        data.fn = data.fn.replace(/\s[A-Za-z]$/, '');
+        data.fn = data.fn.replace(/\s[A-Za-z]$/, '').replace(/\s+/g, '');
+      } else {
+        data.fn = data.fn.replace(/\s+/g, '');
       }
-
       return data;
   };
 
