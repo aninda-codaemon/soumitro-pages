@@ -112,7 +112,7 @@
   var $subscribe_form = $("#subscribe_form"),
       $month = $("[name=credit_card\\[expiration_date\\(2i\\)\\]]"),
       $year = $("[name=credit_card\\[expiration_date\\(1i\\)\\]]"),
-      successURL = $subscribe_form.data('sub-success-image'),
+      successURL = $('.check-icon-img').attr('src'),
       errorClass = $subscribe_form.data('sub-error-class'),
       successClass = $subscribe_form.data('sub-success-class'),
       ignoreMessages = $subscribe_form.data('sub-ignore-messages'),
