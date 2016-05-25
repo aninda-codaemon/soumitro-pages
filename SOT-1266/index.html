@@ -52,58 +52,68 @@
         <div class="main row">
           <div class="col-md-5">
 
-            <h2>
-              Welcome Back!
-              </h2>
-              <h6 class="text-break hidden-xs hidden-sm">Because we’ve missed you, get 3 months for the price of 1!</h6>
-              <p class="hidden-md hidden-lg"> Because we've missed you, get 3 months of unlimited searches for the price of 1!</p>
-            <div class="price"><img class="img-right" src="img/66percent.png" />
-            <h1 class="title">
-            <smallcaps> ONE TIME OFFER </smallcaps></br>
-            $7.62/mo </br><small> for 3 months*</small>
-            </h1>
-            <p class="sub-p">*Total today: $22.86. Regularly: $68.58</p>
+            <h2>Welcome Back!</h2>
+            <h6 class="text-break hidden-xs hidden-sm">Because we’ve missed you, get 3 months for the price of 1!</h6>
+
+            <p class="hidden-md hidden-lg">Because we've missed you, get 3 months of unlimited searches for the price of 1!</p>
+
+            <div class="price">
+              <img class="img-right" src="img/66percent.png" />
+              <h1 class="title">
+                <smallcaps>ONE TIME OFFER</smallcaps></br>
+                $7.62/mo</br>
+                <small>for 3 months*</small>
+              </h1>
+              <p class="sub-p">*Total today: $22.86. Regularly: $68.58</p>
             </div>
+
             <div class= "hidden-xs hidden-sm">
-            <p class="sub-title">With your account you will get:</p>
-            <ul class="account-perks-list list-unstyled">
-              <li class="list-item">
-                <i class="fa fa-search icon"></i>
-                <span class="item-label">Unlimited Background Checks</span>
-              </li>
-              <li class="list-item">
-                <i class="fa fa-phone icon"></i>
-                <span class="item-label">Unlimited Phone Lookups</span>
-              </li>
-              <li class="list-item">
-                <i class="fa fa-home icon"></i>
-                <span class="item-label">Unlimited Property/Address Lookups</span>
-              </li>
-              <li class="list-item">
-                <i class="fa fa-envelope icon"></i>
-                <span class="item-label">Unlimited Email Lookups</span>
-              </li>
-              </ul>
-              <p> Plus:</p>
+              <p class="sub-title">With your account you will get:</p>
+
               <ul class="account-perks-list list-unstyled">
-              <li class="list-item">
-                <i class="fa fa-star icon"></i>
-                <span class="item-label">New: Photos, Job &amp; Education History</span>
-              </li>
-              <li class="list-item">
-                <i class="fa fa-file-pdf-o icon"></i>
-                <span class="item-label">Free PDF downloads</span>
-              </li>
                 <li class="list-item">
-                <i class="fa fa-ban icon"></i>
-                <span class="item-label">Easy Cancellations</span>
-              </li>
-            </ul>
+                  <i class="fa fa-search icon"></i>
+                  <span class="item-label">Unlimited Background Checks</span>
+                </li>
+                <li class="list-item">
+                  <i class="fa fa-phone icon"></i>
+                  <span class="item-label">Unlimited Phone Lookups</span>
+                </li>
+                <li class="list-item">
+                  <i class="fa fa-home icon"></i>
+                  <span class="item-label">Unlimited Property/Address Lookups</span>
+                </li>
+                <li class="list-item">
+                  <i class="fa fa-envelope icon"></i>
+                  <span class="item-label">Unlimited Email Lookups</span>
+                </li>
+              </ul>
+
+              <p>Plus:</p>
+              
+              <ul class="account-perks-list list-unstyled">
+                <li class="list-item">
+                  <i class="fa fa-star icon"></i>
+                  <span class="item-label">New: Photos, Job &amp; Education History</span>
+                </li>
+                <li class="list-item">
+                  <i class="fa fa-file-pdf-o icon"></i>
+                  <span class="item-label">Free PDF downloads</span>
+                </li>
+                  <li class="list-item">
+                  <i class="fa fa-ban icon"></i>
+                  <span class="item-label">Easy Cancellations</span>
+                </li>
+              </ul>
             </div>
-            <div class="customer hidden-sm hidden-xs"><img class="img-right" src="img/bubble.png" />
-            <p> <strong>Live Customer Support Hours:</strong> </br>
-            M-F 8am - 10pm ET </br>
-            S-S 10am - 8pm ET</p>
+
+            <div class="customer hidden-sm hidden-xs">
+              <img class="img-right" src="img/bubble.png" />
+              <p>
+                <strong>Live Customer Support Hours:</strong> </br>
+                M-F 8am - 10pm ET </br>
+                S-S 10am - 8pm ET
+              </p>
             </div>
 
             <div class="form-errors hidden" id="error_container">
@@ -225,15 +235,13 @@
                   </label>
                 </div>
 
-                <input type="hidden" name="promotion" id="promotion" value="view_report_trial" />
-                <input type="hidden" name="authenticity_token" id="authenticity_token" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=" />
-                <input type="hidden" name="subscription_plan_name" class="plan_name_radio" id="22_1_month_nofree_afill_no_bjl" value="<%= subscription_1 %>" checked />
-                <input type="hidden" name="layout" id="layout" value="fresh" />
-                <input type="hidden" name="user[password]" id="user_password" value="delay" />
-                <input type="hidden" name="user[pwdelay]" id="user_pwdelay" value="true" />
-                <input type="hidden" name="password" id="password" value="delay" />
-                <input type="hidden" name="pwdelay" id="password_delay" value="true" />
-                <input type="hidden" name="record_search[person_id]" id="record_search_person_id" value="{{bvid}}" />
+                <input id="layout" name="layout" type="hidden" value="fresh">
+                <input id="user_password" name="user[password]" value="delay" type="hidden">
+                <input id="user_pwdelay" name="user[pwdelay]" value="true" type="hidden">
+                <input id="password" name="password" value="delay" type="hidden">
+                <input id="password_delay" name="pwdelay" value="true" type="hidden">
+                <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
+                <input id="tos2" name="tos2" type="hidden" value="1">
                 <img class="hidden check-icon-img" src="img/checked.png" />
 
                 <button type="submit" class="btn btn-lg btn-centered btn-primary" id="create_button">Activate Account</button>
@@ -277,17 +285,19 @@
   <script type="text/javascript" src="js/vendor/jquery-1.9.1.min.js"></script>
   <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/vendor/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="js/vendor/jquery.validate.creditcard2.pack-1.0.0.js"></script>
   <script type="text/javascript" src="js/vendor/amplify.store.min.js"></script>
   <script type="text/javascript" src="js/vendor/lodash.min.js"></script>
   <script type="text/javascript" src="js/vendor/handlebars.min.js"></script>
 
+  <script type="text/javascript" src="js/check_cc.js"></script>
   <script type="text/javascript" src="js/utility.js"></script>
   <script type="text/javascript" src="js/cookie.js"></script>
   <script type="text/javascript" src="js/base64.js"></script>
   <script type="text/javascript" src="js/teaserrecord.js"></script>
-
   <script type="text/javascript" src="js/framerida.js"></script>
   <script type="text/javascript" src="js/framerida.helpers.js"></script>
+
   <script type="text/javascript" src="js/subscribe.js"></script>
   <script type="text/javascript" src="js/runner.js"></script>
 
