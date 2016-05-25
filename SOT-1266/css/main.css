@@ -1,0 +1,192 @@
+/* main */
+
+.main .title {
+  margin-bottom: 30px;
+}
+
+.main .title .text-break {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 50%;
+  font-weight: lighter;
+}
+
+.main .sub-title {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .main .title .text-break {
+    font-size: 40%;
+  }
+}
+.price {
+  width: 320px;
+  position: relative;
+}
+.price img{
+  width: 80px;
+  top:10px;
+  position: absolute;
+  right: 20px;
+}
+@media (min-width: 480px){
+  .price{
+    width: 480px;
+  }
+.price img{
+  width: 100px;
+  top:10px;
+  position: absolute;
+  left: 225px;
+}
+}
+
+@media (min-width: 768px) {
+   .price img{
+  width: 110px;
+  left: 275px;
+  }
+}
+
+@media (min-width: 1200px) {
+   .price img{
+  width: 130px;
+  left: 315px;
+  }
+}
+/* main account-perks-list */
+
+.main .account-perks-list {
+  margin-bottom: 20px;
+  padding-left: 5px;
+}
+
+.main .account-perks-list .list-item {
+  position: relative;
+  margin: 5px 0;
+}
+
+.main .account-perks-list .list-item .icon {
+  position: absolute;
+  top: 11px;s
+  left: 0;
+  color: #9197d0;
+}
+
+.main .account-perks-list .list-item .item-label {
+  margin-left: 35px;
+}
+
+@media (min-width: 590px) and (max-width: 991px) {
+  .main .account-perks-list {
+    display: inline-block;
+  }
+
+  .main .account-perks-list .list-item {
+    float: left;
+    width: 50%;
+  }
+}
+
+.customer {
+  position: relative;
+  padding-top: 30px;
+}
+.customer img{
+  width: 39px;
+  position: absolute;
+}
+.customer p{
+  padding-left: 55px;
+  font-size: 18px;
+}
+/* main free-account-form */
+
+.main .form-errors {
+  display: block;
+  margin-top: 50px;
+  padding: 30px;
+  border: 2px solid #F36666;
+}
+
+.main .form-errors .title {
+  margin: 0;
+}
+
+.main .form-errors .errors-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.main .form .segment {
+  margin-top: 30px;
+}
+
+.main .form .segment:last-child {
+  margin-bottom: 60px;
+}
+
+.main .form .segment .title {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.main .form .segment .title .img-right {
+  width: 60px;
+}
+
+.main .form .segment .btn {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.main .form .segment .loading {
+  margin-bottom: 15px;
+}
+
+.img-inline {
+  position: relative;
+  padding-top: 20px;
+}
+.img-form {
+  position: relative;
+  padding-top: 66px;
+}
+@media (min-width: 480px) {
+  .main .form .segment .btn {
+    width: auto;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .main .form .segment .loading {
+    width: 242px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main .form .segment .title .img-right {
+    width: 70px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main .form .segment .title .img-right {
+    width: 80px;
+  }
+}
+
+/* disclaimer */
+
+.disclaimer .title {
+  margin-bottom: 30px;
+}
+
+.disclaimer .sub-title {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
