@@ -25,6 +25,10 @@
   font-size: 12px;
 }
 
+.text-uppercase {
+  text-transform: uppercase;
+}
+
 @media (min-width: 768px) {
   .text-caption {
     font-size: 14px;
@@ -51,6 +55,21 @@
 
 .img-right {
   float: right;
+}
+
+.img-block {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.img-inline {
+  display: inline-block;
+  padding-top: 20px;
+}
+
+.img-form {
+  position: relative;
+  padding-top: 66px;
 }
 
 /* button helpers */
