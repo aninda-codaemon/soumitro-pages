@@ -115,13 +115,6 @@ h6 {
   font-weight: lighter;
 }
 
-.title-caption {
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  color: #9197D0;
-}
-
 @media (min-width: 480px) {
   h1 {
     font-size: 50px;

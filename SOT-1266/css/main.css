@@ -19,56 +19,65 @@
 
 /* price */
 
-.price {
-  width: 320px;
+.main .price {
   position: relative;
+  width: 320px;
   margin-top: 60px;
+  margin-bottom: 40px;
 }
 
-.price img {
-  width: 80px;
-  top:10px;
+.main .price .img-badge {
   position: absolute;
+  top: 10px;
   right: 20px;
+  width: 80px;
 }
 
-.price .caption-title {
+.main .price .sub-title {
   margin-bottom: 15px;
+  color: #9197D0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
 }
 
-.price .title {
-  margin-top: 0;
+.main .price .title {
+  margin: 0;
 }
 
-.sub-p {
-  color: #ABAFD8;
+.main .price .title .text-break {
+  font-size: 65%;
+}
+
+.main .price .price-caption {
   margin-bottom: 10px;
+  color: #ABAFD8;
 }
 
 @media (min-width: 480px) {
-  .price {
+  .main .price {
     width: 480px;
   }
 
-  .price img {
-    width: 100px;
+  .main .price .img-badge {
     position: absolute;
     top: 0;
     left: 225px;
+    width: 100px;
   }
 }
 
 @media (min-width: 768px) {
-  .price img{
-    width: 110px;
+  .main .price .img-badge {
     left: 275px;
+    width: 110px;
   }
 }
 
 @media (min-width: 1200px) {
-  .price img {
-    width: 130px;
+  .main .price .img-badge {
     left: 315px;
+    width: 130px;
   }
 }
 
