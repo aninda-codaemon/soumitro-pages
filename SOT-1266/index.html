@@ -129,7 +129,7 @@
 
           <div class="col-md-7">
 
-            <form class="form" action="/accounts" id="subscribe_form" method="post" data-fr-bind="leadData currentRecord" data-sub-ignore-messages="false" data-sub-ignore-success="false" data-sub-success-class="input-success" data-sub-success-image="//dbivtdsofhpu6.cloudfront.net/assets/img/38d068d9baff4935adac7d1500700c5e.gif" data-sub-error-class="input-error">
+            <form class="form" action="/accounts" id="subscribe_form" method="post" data-fr-bind="leadData currentRecord" data-sub-ignore-messages="false" data-sub-ignore-success="false" data-sub-success-class="input-success" data-sub-success-image="img/checked.gif" data-sub-error-class="input-error">
 
               <div class="segment segment-primary">
                 <h5 class="title text-primary">Reactivate your account now!</h5>
@@ -235,6 +235,9 @@
                   </label>
                 </div>
 
+                <input id="promotion" name="promotion" type="hidden" value="view_report_trial">
+                <input name="authenticity_token" type="hidden" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=">
+                <input id="22_86_3_months_nofree_affil_freshness_welcomeback" name="subscription_plan_name" type="hidden" value="<%= subscription_1 %>">
                 <input id="layout" name="layout" type="hidden" value="fresh">
                 <input id="user_password" name="user[password]" value="delay" type="hidden">
                 <input id="user_pwdelay" name="user[pwdelay]" value="true" type="hidden">

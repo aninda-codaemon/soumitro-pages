@@ -591,7 +591,7 @@ var BVGetQueryVariable = function (variable) {
 
       var $month = $("[name=credit_card\\[expiration_date\\(2i\\)\\]]"),
           $year  = $("[name=credit_card\\[expiration_date\\(1i\\)\\]]"),
-          successURL     = $subscribeForm.data('sub-success-image'),
+          successURL     = $('.check-icon-img').attr('src'),
           errorClass     = $subscribeForm.data('sub-error-class'),
           successClass   = $subscribeForm.data('sub-success-class'),
           ignoreMessages = $subscribeForm.data('sub-ignore-messages'),
@@ -729,7 +729,7 @@ var BVGetQueryVariable = function (variable) {
               required: "Please confirm your email.",
               equalTo: "Please enter the same email address as above."
           },
-          tos2: {
+          "tos2": {
               required: "You will need to agree in order to use our services."
           },
           "user[email]": "Please enter a valid email address."
