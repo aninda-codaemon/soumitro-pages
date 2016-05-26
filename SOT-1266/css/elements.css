@@ -209,6 +209,7 @@
 }
 
 .form-group.select-group .label-success {
+  display: none !important;
   top: 10px;
 }
 
