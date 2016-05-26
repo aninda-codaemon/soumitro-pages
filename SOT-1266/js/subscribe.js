@@ -178,10 +178,10 @@
         required: true,
         email: true
       },
-      tos2: {
+      "tos2": {
         required: true
       },
-      'account[tos]': {
+      "account[tos]": {
         required: true
       },
       "user[email_confirmation]": {
@@ -293,8 +293,11 @@
           required: "Please confirm your email.",
           equalTo: "Please enter the same email address as above."
       },
+      "tos2": {
+          required: "You will need to agree in order to use our services."
+      },
       "account[tos]": {
-          required: "Please agree to our terms before proceeding."
+          required: "You will need to agree in order to use our services."
       },
       "user[email]": "Please enter a valid email address."
     }

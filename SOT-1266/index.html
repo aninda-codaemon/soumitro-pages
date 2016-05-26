@@ -161,7 +161,7 @@
                 <img class="img-block" src="img/c-cards.png">
 
                 <div class="row">
-                <div class="col-xs-12">
+                  <div class="col-xs-12">
                     <div class="form-group">
                       <label for="credit_card_card_number" class="form-label">Card Number</label>
                       <input type="text" name="credit_card[card_number]" id="credit_card_card_number" class="input-lg form-control inspectletIgnore" size="30" placeholder="Card Number" />
@@ -282,6 +282,51 @@
 
   </main>
 
+  <div id="iModal-trial" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+          <button id="imodal-x" type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="img/dollar-trial.png" alt="$1" class="dollar-trial-img">
+          <p>
+            <strong class="h5 text-primary">SPECIAL LIMITED TIME OFFER!</strong>
+          </p>
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+              <p>
+                View your special <strong class="h5">Trial Offer!</strong><br>
+                Run unlimited background reports for the entire trial period.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <button type="button" id="show-dollar-trial" class="btn btn-lg btn-block btn-success text-center">Try BeenVerified</button>
+            </div>
+          </div>
+          <a href="#" id="iModal-back" class="text-muted"><span class="text-normal">or&nbsp;</span>Go back to Search Results</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <pre id="subscribe_bounce_text" data-sub-bounce-url="<%= next_page %>" class="hide">
+    WAIT: WANT A SPECIAL LIMITED TIME OFFER?
+
+    *************** CONGRATULATIONS ***************
+
+    YOU'VE BEEN SELECTED FOR A LIMITED TIME OFFER!
+
+    Stay on this page to take advantage of our special promotional offer.
+
+
+    Just click "Cancel" or "Stay On Page" to see your special offer.
+
+    *************** CONGRATULATIONS ***************
+  </pre>
+
   <script type="text/javascript" src="js/vendor/jquery-1.9.1.min.js"></script>
   <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/vendor/jquery.validate.min.js"></script>
@@ -298,6 +343,7 @@
   <script type="text/javascript" src="js/framerida.js"></script>
   <script type="text/javascript" src="js/framerida.helpers.js"></script>
 
+  <script type="text/javascript" src="js/downsell.js"></script>
   <script type="text/javascript" src="js/subscribe.js"></script>
   <script type="text/javascript" src="js/runner.js"></script>
 
