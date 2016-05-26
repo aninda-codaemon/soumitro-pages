@@ -115,19 +115,19 @@
   }
 }
 
-/* main customer */
+/* main customer-support */
 
-.customer {
+.customer-support {
   position: relative;
   padding-top: 30px;
 }
 
-.customer img {
-  width: 39px;
+.customer-support .img-icon {
   position: absolute;
+  width: 40px;
 }
 
-.customer p {
+.customer-support .support-info {
   padding-left: 55px;
   font-size: 18px;
 }
@@ -167,6 +167,10 @@
   width: 60px;
 }
 
+.main .form .segment .img-cards {
+  margin-top: 65px;
+}
+
 .main .form .segment .btn {
   width: 100%;
   margin-bottom: 15px;
@@ -175,6 +179,10 @@
 
 .main .form .segment .loading {
   margin-bottom: 15px;
+}
+
+.main .form label[for=tos2] {
+  display: none !important;
 }
 
 @media (min-width: 480px) {
