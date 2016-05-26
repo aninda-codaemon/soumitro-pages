@@ -1,24 +1,20 @@
 /* main */
 
 .main .title {
+  margin-top: 15px;
   margin-bottom: 30px;
 }
 
 .main .title .text-break {
-  margin-top: 20px;
+  margin-top: 15px;
   color: #fff;
   font-size: 50%;
   font-weight: lighter;
+  line-height: 1.5;
 }
 
 .main .sub-title {
   margin-bottom: 20px;
-}
-
-@media (min-width: 768px) {
-  .main .title .text-break {
-    font-size: 40%;
-  }
 }
 
 /* price */
@@ -44,6 +40,11 @@
   margin-top: 0;
 }
 
+.sub-p {
+  color: #ABAFD8;
+  margin-bottom: 10px;
+}
+
 @media (min-width: 480px) {
   .price {
     width: 480px;
@@ -58,18 +59,19 @@
 }
 
 @media (min-width: 768px) {
-   .price img{
-  width: 110px;
-  left: 275px;
+  .price img{
+    width: 110px;
+    left: 275px;
   }
 }
 
 @media (min-width: 1200px) {
-   .price img{
-  width: 130px;
-  left: 315px;
+  .price img {
+    width: 130px;
+    left: 315px;
   }
 }
+
 /* main account-perks-list */
 
 .main .account-perks-list {
@@ -84,7 +86,7 @@
 
 .main .account-perks-list .list-item .icon {
   position: absolute;
-  top: 11px;s
+  top: 5px;
   left: 0;
   color: #9197d0;
 }
@@ -104,18 +106,23 @@
   }
 }
 
+/* main customer */
+
 .customer {
   position: relative;
   padding-top: 30px;
 }
-.customer img{
+
+.customer img {
   width: 39px;
   position: absolute;
 }
-.customer p{
+
+.customer p {
   padding-left: 55px;
   font-size: 18px;
 }
+
 /* main free-account-form */
 
 .main .form-errors {

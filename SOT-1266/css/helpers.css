@@ -64,12 +64,6 @@
 
 .img-inline {
   display: inline-block;
-  padding-top: 20px;
-}
-
-.img-form {
-  position: relative;
-  padding-top: 66px;
 }
 
 /* button helpers */
