@@ -276,11 +276,11 @@
   margin: 0 auto;
   border-radius: 4px;
   background-color: #9197D0;
-  -webkit-box-shadow: 0 4px 1px -1px #7B80BF;
-  -moz-box-shadow: 0 4px 1px -1px #7B80BF;
-  -ms-box-shadow: 0 4px 1px -1px #7B80BF;
-  -o-box-shadow: 0 4px 1px -1px #7B80BF;
-  box-shadow: 0 4px 1px -1px #7B80BF;
+  -webkit-box-shadow: 0 4px 1px -1px #7B80BF inset;
+  -moz-box-shadow: 0 4px 1px -1px #7B80BF inset;
+  -ms-box-shadow: 0 4px 1px -1px #7B80BF inset;
+  -o-box-shadow: 0 4px 1px -1px #7B80BF inset;
+  box-shadow: 0 4px 1px -1px #7B80BF inset;
 }
 
 .loading .loading-bar {
