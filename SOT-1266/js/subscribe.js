@@ -293,8 +293,8 @@
           required: "Please confirm your email.",
           equalTo: "Please enter the same email address as above."
       },
-      tos2: {
-          required: "You will need to agree in order to use our services."
+      "account[tos]": {
+          required: "Please agree to our terms before proceeding."
       },
       "user[email]": "Please enter a valid email address."
     }

@@ -181,10 +181,6 @@
   margin-bottom: 15px;
 }
 
-.main .form label[for=tos2] {
-  display: none !important;
-}
-
 @media (min-width: 480px) {
   .main .form .segment .btn {
     width: auto;

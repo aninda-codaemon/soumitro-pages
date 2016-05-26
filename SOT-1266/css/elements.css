@@ -208,6 +208,10 @@
   width: 24px;
 }
 
+.form-group.select-group .label-success {
+  top: 10px;
+}
+
 .checkbox .form-label.input-error {
   color: #F36666;
 }
@@ -223,6 +227,16 @@
   display: none !important;
 }
 
+/* tos label states */
+
+.checkbox .label-tos.input-error {
+  color: inherit;
+}
+
+.form label[for=tos2] {
+  display: none !important;
+}
+
 /* labels */
 
 .label-transparent {
@@ -234,7 +248,6 @@
 }
 
 /* segments */
-
 
 .segment {
   margin: 20px auto;
