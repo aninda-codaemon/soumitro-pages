@@ -211,16 +211,6 @@
       $dynamicElems = findDynamicContent();
       displayTargetedContent(queryArgs, $dynamicElems);
     }
-    $('#navCollapse').on('hidden.bs.collapse', function() {
-      // do something…
-      $('#nav-icon-closed').show();
-      $('#nav-icon-open').hide();
-    });
-    $('#navCollapse').on('shown.bs.collapse', function() {
-      // do something…
-      $('#nav-icon-closed').hide();
-      $('#nav-icon-open').show();
-    });
   };
 
   try {

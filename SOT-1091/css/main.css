@@ -6,6 +6,18 @@
   margin: 15px auto;
 }
 
+/* header-hero targeted-titles */
+
+[data-bv-ref] {
+  display: none;
+}
+
+[data-bv-ref='default'] {
+  display: block;
+}
+
+/* header-hero header-search */
+
 .header-hero .header-search {
   margin: 40px auto;
 }
