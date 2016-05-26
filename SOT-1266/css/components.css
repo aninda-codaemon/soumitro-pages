@@ -103,3 +103,21 @@ html, body {
 .footer .container .footer-links .footer-link {
   font-size: 16px;
 }
+
+/* popover */
+
+.popover .title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.popover .sub-title {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.popover .popover-text {
+  margin: 0;
+  font-size: 12px;
+}
