@@ -30,12 +30,6 @@
     trackNL('Safari Private Browsing');
   }
 
-  // Make sure the first plan is selected - IE10 fix
-  var $planRows = $("input[name=subscription_plan_name]");
-  if ($planRows.length > 0) {
-    $planRows[0].click();
-  }
-
   // Initialize cvv popover for Bootstrap 3
   $('.img-cards').popover({
       container: 'body',
@@ -59,6 +53,14 @@
       }
   });
 
+  var verifySeal = function () {
+    $('.img-secure').on('click', function () {
+      var left  = ($(window).width()/2)-(900/2),
+          top   = ($(window).height()/2)-(600/2),
+          popup = window.open ("https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&dn=www.beenverified.com&lang=en", "popup", "width=900, height=600, top="+top+", left="+left);
+    });
+  };
+
   // Set current year inside footer
   ;(function ($) {
     var currentDate = new Date(),
@@ -68,6 +70,8 @@
   }(jQuery));
 
   var init = function() {
+    verifySeal();
+    
     $('.focus-on').focus();
   };
 

@@ -165,10 +165,12 @@
 
 .main .form .segment .title .img-right {
   width: 60px;
+  cursor: pointer;
 }
 
 .main .form .segment .img-cards {
   margin-top: 65px;
+  cursor: pointer;
 }
 
 .main .form .segment .btn {
