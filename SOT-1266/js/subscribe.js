@@ -58,7 +58,7 @@
 
     disableForm();
 
-    var formXHR = $.post("/accounts.json", $(form).serialize());
+    var formXHR = $.post("/api/v4/account.json", $(form).serialize());
     // var formXHR = $.ajax({
     //   type: "GET",
     //   url: "http://127.0.0.1:9000/accounts.json",
