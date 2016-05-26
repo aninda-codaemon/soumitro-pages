@@ -69,9 +69,80 @@
     $currentYear.html(currentYear);
   }(jQuery));
 
+  // downsells
+  var $bounceBackBtn = $('#iModal-back'),
+      $bounceExitBtn = $('#iModal-exit'),
+      $goToNextPage  = $('#show-dollar-trial'),
+      $iOSModal      = $('#iModal'),
+      $iOSModalTrial = $('#iModal-trial'),
+      $iModalX       = $("#imodal-x");
+
+  var bounceBack = function () {
+    reportHeap('onBack Modal - Rejected');
+    window.location.href = $("body").data("search-page");
+  };
+
+  var bounceExit = function () {
+    $iOSModal.modal('hide');
+    window.setTimeout(function () {
+        $iOSModalTrial.modal('show');
+    }, 300);
+  };
+
+  $bounceBackBtn.on('click' , bounceBack);
+  $bounceExitBtn.on('click' , bounceExit);
+  $goToNextPage.on('click', function () {
+    reportHeap('onBack Modal - Accepted');
+    window.location.href = $("body").data("next-page");
+  });
+
+  $iModalX.on('click', function() {
+    reportHeap('onBack Modal - Exited');
+  });
+
+  var initDownsells = function () {
+
+    var VWO_CHECK_INTERVAL = 3000,
+        CHECK_TIMEOUT = 5000,
+        timeElapsed = 1000;
+
+    var activateDownsells = function () {
+      if (typeof downsell !== "undefined" && typeof downsell.init === "function") {
+        downsell.init({
+          onBack: {
+            elem: "#iModal-trial",
+            cb: function () {}
+          }
+        });
+      }
+    };
+
+    var vwoIntervalId,
+        vwoExists = typeof _vwo_code !== "undefined" && typeof _vwo_code.finished === 'function';
+
+    if (vwoExists) {
+      vwoIntervalId = window.setInterval(function () {
+        timeElapsed += VWO_CHECK_INTERVAL;
+        if (timeElapsed > CHECK_TIMEOUT || _vwo_code.finished()) {
+          window.clearInterval(vwoIntervalId);
+          activateDownsells();
+        }
+      }, VWO_CHECK_INTERVAL);
+    } else {
+      activateDownsells();
+    }
+  };
+
+  var setLastVisit = function() {
+    Cookie.create("lastVisit", Date.now(), 30);
+    //amplify.store("lastVisit", Date.now());
+  };
+
   var init = function() {
     verifySeal();
-    
+    setLastVisit();
+    initDownsells();
+
     $('.focus-on').focus();
   };
 
