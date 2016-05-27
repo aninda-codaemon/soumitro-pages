@@ -42,7 +42,7 @@
         </div>
       </div>
     </header>
-    
+
     <div id="downsell-text-wrapper">
       <div class="container">
         <div class="row">
@@ -415,6 +415,36 @@
       </div>
     </footer>
 
+    <div id="iModal-trial" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button id="imodal-x" type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          </div>
+          <div class="modal-body text-center">
+            <img src="img/dollar-trial.png" alt="$1" class="dollar-trial-img">
+            <p>
+              <strong class="h1 text-primary">SPECIAL LIMITED TIME OFFER! $1 TRIAL!</strong>
+            </p>
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1">
+                <p>
+                  Run unlimited background reports for the entire trial period.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <button type="button" id="show-dollar-trial" class="btn btn-lg btn-block btn-success text-center">Try BeenVerified for $1!</button>
+              </div>
+            </div>
+            <a href="<%= previous_page %>" id="iModal-back" class="text-muted"><span class="text-normal">or&nbsp;</span>Go back to Search Results</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /#iModal-trial -->
+
     <div id="PayPal-Success" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -466,18 +496,18 @@
     </div><!-- /#Paypal Fail -->
 
     <pre id="subscribe_bounce_text" data-sub-bounce-url="<%= next_page %>" class="hide">
-WAIT: WANT A SPECIAL LIMITED TIME OFFER?
+      WAIT: WANT A SPECIAL LIMITED TIME OFFER?
 
-************ CONGRATULATIONS ************
+      ************ CONGRATULATIONS ************
 
-YOU'VE BEEN SELECTED FOR A LIMITED TIME OFFER!
+      YOU'VE BEEN SELECTED FOR A LIMITED TIME OFFER!
 
-Stay on this page to take advantage of our special promotional offer.
+      Stay on this page to take advantage of our special promotional offer.
 
 
-Just click "Cancel" or "Stay On Page" to see your special offer.
+      Just click "Cancel" or "Stay On Page" to see your special offer.
 
-************ CONGRATULATIONS *************
+      ************ CONGRATULATIONS *************
     </pre>
 
     <!-- SCRIPTS -->
