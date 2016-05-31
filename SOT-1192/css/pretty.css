@@ -267,12 +267,35 @@ span.save-this {
 }
 
 .callout-container {
-  display: none;
+  display: block;
   margin-top: 15px;
-  padding: 30px;
-  border: 1px solid #353167;
+  padding: 0;
+  border: 1px solid #CFD9DE;
   border-radius: 4px;
-  background-color: #F0EFFF;
+  background-color: #EFF4F9;
+  color: #20418A;
+}
+
+.callout-container .checkbox {
+  min-height: auto;
+  padding: 30px 20px;
+}
+
+.callout-container .checkbox-label {
+  display: block;
+  padding-left: 60px;
+  font-size: 18px;
+  font-weight: bold !important;
+}
+
+.callout-container .checkbox-input {
+  top: 35px;
+  left: 35px;
+  margin: 0 !important;
+}
+
+.callout-container .upsell-price {
+  float: right;
 }
 
 #account_tos {
