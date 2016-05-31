@@ -275,22 +275,6 @@ span.save-this {
   background-color: #F0EFFF;
 }
 
-.callout-container .callout-title {
-  margin: 0;
-  margin-bottom: 20px;
-  line-height: 1;
-}
-
-.callout-container .callout-sub-title {
-  display: block;
-  margin-top: 5px;
-}
-
-.callout-container .callout-description {
-  margin: 0;
-  font-size: 14px;
-}
-
 #account_tos {
 	margin-top: 18px;
 }
