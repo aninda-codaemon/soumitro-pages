@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Subscribe | NumberGuru.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+  <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" href="css/pretty.css" rel="stylesheet">
+
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- mapbox -->
+    <script src='//api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+    <link href='//api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
+  </head>
+
+  <body class="fr-hide" data-next-page="<%= next_page %>">
+
+    <div id="ppCanceled" class="alert alert-danger alert-dismissible text-center" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      Payment with PayPal Canceled.
+    </div>
+
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6">
+            <div id="logo-wrap">
+            </div>
+          </div>
+          <div class="hidden-xs col-sm-6 text-right">
+            <p class="phone"><strong>Questions? </strong>Call 1-800-505-7154</p>
+          </div>
+        </div>
+      </div><!--END container-->
+    </header>
+
+    <div id="downsell-text-wrapper">
+      <div class="container">
+        <div class="row">
+          <p id="downsell-text" class="col-sm-12 text-center">
+            <span>Congratulations! Your report
+              <span data-fr-bind="bv_searchData">
+                {{#if formattedPhoneNumber}}
+                  on
+                  {{formattedPhoneNumber}}
+                {{/if}}
+              </span>
+              is ready for $1.
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="wrapper" class="container">
+      <div id="body-wrap" class="row">
+        <div id="sub-form-wrapper" class="col-sm-7">
+
+          <div id="error_container" class="row hidden">
+            <div class="errorExplanation" id="errorExplanation">
+              <p class="h3">Oops, something went wrong.</p>
+              <p>There were problems with the following fields:</p>
+              <ul id='messages'>
+              </ul>
+            </div>
+          </div><!-- /#error-container -->
+
+          <form class="form-horizontal" id="subscribe_form" method="post"
+            data-fr-bind="leadData currentRecord bv_searchData"
+            data-sub-ignore-messages="false"
+            data-sub-ignore-success="false"
+            data-sub-success-class="input-success"
+            data-sub-success-image="img/checked.gif"
+            data-sub-error-class="input-error">
+
+            <input id="promotion" name="promotion" type="hidden" value="view_report_trial">
+            <input name="authenticity_token" type="hidden" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=">
+
+            <div id="sub-step-1">
+              <div class="row form-heading step-1-heading">
+                <p>
+                  <span class="hidden-xs">Last Step: </span>Activate account to search who owns this number
+                </p>
+              </div>
+
+              <div class="selection-wrap selection-downsell selection-selected">
+                <label>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <img src="img/sale.png" alt="SALE!" class="sale-img img-responsive center-block">
+                    </div>
+                    <input checked class="plan_name_radio" id="22_1_month_nofree_afill_no_bjl" name="subscription_plan_name" type="hidden" value="<%= subscription_1 %>">
+                    <div class="col-sm-9 plan-type-wrap">
+                      <div class="plan-type-heading" data-fr-bind="bv_searchData">
+                        <strong>
+                          <ul>
+                            <li>
+                              Complete report
+                              {{#if formattedPhoneNumber}}
+                                on {{formattedPhoneNumber}}
+                              {{/if}}
+                            </li>
+                            <li>
+                              Unlimited Phone Lookups
+                            </li>
+                            <li>
+                              5 Day Membership Trial*
+                            </li>
+                          </ul>
+                        </strong>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div><!-- /sub-step-1 -->
+
+            <div id="sub-step-2">
+              <div class="form-group">
+                <label for="account_first_name" class="col-sm-4 control-label">First Name</label>
+                <div class="col-sm-8">
+                  <input class="form-control" id="account_first_name" name="account[first_name]" type="text" value="{{account[first_name]}}">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="account_last_name" class="col-sm-4 control-label">Last Name</label>
+                <div class="col-sm-8">
+                  <input class="form-control inspectletIgnore" id="account_last_name" name="account[last_name]" type="text" value="{{account[last_name]}}">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="user_email" class="col-sm-4 control-label">Email Address</label>
+                <div class="col-sm-8">
+                  <input class="form-control inspectletIgnore" id="user_email" maxsize="100" name="user[email]" type="email" value="{{user[email]}}">
+                </div>
+              </div>
+              <div class="form-group payOptionSelect">
+                <label for="user_email" class="col-sm-4 control-label">Payment</label>
+                <div class="col-sm-8">
+                  <!--
+                  <% if false %>
+                  <div id="paypal-radio" class="radio">
+                    <label for="paypal">
+                      <input type="radio" id="paypal" name="payment_method" value="paypal"> <img src="img/paypal2.png" alt="PayPal" /> The safer, easier way<span class="hidden-sm"> to pay</span>
+                    </label>
+                  </div>
+                  <% end %>
+                  -->
+                  <div id="credit-radio" class="radio">
+                    <label for="credit">
+                      <input type="radio" id="credit" name="payment_method" value="credit_card" checked> <img src="img/c-cards.png" alt="We accept MasterCard, Visa, Discover, and American Express" width="115px"> Pay with credit/debit<span class="hidden-sm"> card</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row cc-wrapper">
+                <div class="col-xs-12">
+                  <div class="cc-wrapper-header row">
+                    <div id="secure-wrapper" class="col-xs-6">
+                      <span id="secure-lock" class="glyphicon glyphicon-lock"></span>
+                      <span id="secure-text" class="small text-success">Secure<span class="hidden-xs"> Server</span></span>
+                    </div>
+                    <div class="col-xs-6">
+                      <div class="seals verify-seal pull-right">
+                        <img class="pull-right" src="img/norton-xs.png" alt="Norton Secure">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="credit_card_card_number" class="col-sm-4 control-label">Card Number</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control inspectletIgnore" id="credit_card_card_number" name="credit_card[card_number]" size="30">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="credit_card[expiration_date(2i)]" class="col-xs-12 col-sm-4 control-label">Expiration</label>
+                    <input id="credit_card_expiration_date_3i" name="credit_card[expiration_date(3i)]" type="hidden" value="1">
+                    <div class="col-xs-6 col-sm-4 inspectlet-sensitive">
+                      <select id="credit_card_expiration_date_2i" name="credit_card[expiration_date(2i)]" class="form-control">
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option selected value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                      </select>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 inspectlet-sensitive">
+                      <select id="credit_card_expiration_date_1i" name="credit_card[expiration_date(1i)]" class="form-control form-control-second">
+                        <option selected value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="cvv2" class="col-xs-12 col-sm-4 control-label">CVV#
+                    </label>
+                    <div class="col-xs-6 col-sm-4">
+                      <input id="cvv2" maxlength="4" name="credit_card[verification_number]" size="4" type="text" class="form-control inspectletIgnore">
+                    </div>
+                    <div class="col-xs-6 col-sm-4 cvv-wrapper">
+                      <img class="cvv-img" src="img/c-cards-cvv.png" alt="CVV">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="zipcode" class="col-xs-12 col-sm-4 control-label">Zip Code</label>
+                    <div class="col-xs-6 col-sm-4">
+                      <input id="zipcode" class="form-control inspectletIgnore" maxsize="20" name="address[zip]" size="30" type="text">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- /sub-step-2 -->
+
+            <div class="terms-container">
+              <div class="terms terms_text relative checkbox">
+                <label>
+                  <input id="tos2" name="tos2" type="checkbox" value="1">
+                  <p class="terms-innertext small">Your trials lasts until <%= (Time.now + 5.days).strftime('%m/%d/%Y') %>. If you would like to cancel before your trial ends, you may do so for any reason and you will <span class="strong">not be charged again</span>. Simply call 1-888-579-5910 or email <a href="mailto:support@numberguru.com">support@numberguru.com</a>, to speak with one of our Customer Service Representatives. Otherwise, your trial will end on <%= (Time.now + 5.days).strftime('%m/%d/%Y') %>, at which time you will be charged the standard monthly rate of $25.47. Your membership will automatically renew every 30 days thereafter until you cancel.</p>
+                </label>
+              </div>
+              <div class="terms terms_text relative checkbox">
+                <label>
+                  <input id="account_tos" name="account[tos]" type="checkbox" value="1">
+                  <p class="terms-innertext small">By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Website Terms of Service</a> and <a href="/home/privacy" target="_blank">Privacy Policy</a>. I agree that I will <u>not</u> use any information about an individual obtained from NumberGuru as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance; or for any other purpose prohibited by our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>. (For more information about whether a use of information falls under one of these categories, please review our <a href="//www.beenverified.com/dos-donts" target="_blank">Do's &amp; Don'ts</a> or contact us at <a href="mailto:support@numberguru.com">support@numberguru.com</a>.)</p>
+                </label>
+              </div>
+            </div>
+
+            <input id="layout" name="layout" type="hidden" value="fresh">
+            <input id="user_password" name="user[password]" value="delay" type="hidden">
+            <input id="user_pwdelay" name="user[pwdelay]" value="true" type="hidden">
+            <input id="password" name="password" value="delay" type="hidden">
+            <input id="password_delay" name="pwdelay" value="true" type="hidden">
+            <input id="record_search_person_id" name="record_search[phone_number]" type="hidden" value="{{phoneNumber}}">
+
+            <div class="submit-btn-wrapper">
+              <div id="create_button_container" class="row">
+                <div class="col-sm-12">
+                  <button id="create_button" class="btn btn-block btn-lg btn-success" type="submit">View Report</button>
+                </div>
+              </div>
+              <div id="spinner" class="hidden text-center">
+                <img class="spinner-inner" src="img/ajax-loader.gif" alt="Loading...">
+              </div>
+            </div><!-- /submit-btn-wrapper -->
+          </form>
+        </div> <!--sub-form-wrapper-->
+
+        <div class="col-sm-5 hidden-xs">
+          <div id="order-summary" class="panel side-panel info-snippet hidden-xs">
+            <div class="panel-heading">
+              <p class="panel-title strong" data-fr-bind="bv_searchData">
+                Your report
+                {{#if formattedPhoneNumber}}
+                 for
+                  {{formattedPhoneNumber}}
+                {{else}}
+                summary
+                {{/if}}
+              </p>
+            </div>
+            <div class="panel-body report" data-fr-bind="currentRecord">
+              <div class="order-summary-section">
+                <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">Owner's Name</span>
+                  <span class="pull-right">
+                    <span class="report-owners-name text-success truncate"></span>
+                  </span>
+                </span>
+                <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">Carrier</span>
+                  <span class="pull-right">
+                    <span class="report-carrier truncate"></span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+                <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">Line Type</span>
+                  <span class="pull-right">
+                    <span class="report-line-type truncate"></span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+                <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">City</span>
+                  <span class="pull-right">
+                    <span class="report-city truncate"></span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+                <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">State</span>
+                  <span class="pull-right">
+                    <span class="report-state truncate"></span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+                <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">Zip Code</span>
+                  <span class="pull-right">
+                    <span class="report-zip-code text-success"></span>
+                  </span>
+                </span>
+                <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">Street Address</span>
+                  <span class="pull-right">
+                    <span class="report-street-address text-success"></span>
+                  </span>
+                </span>
+
+                <!-- MAP GOES HERE -->
+                <div id="map" class="hidden-xs hidden-sm map row">
+                  <img src="img/map-pin.png" class="map-pin">
+                </div>
+              </div>
+              <div class="order-summary-total">
+                <p class="text-right">
+                  <strong>Total Today: </strong>
+                  <span>$<span class="summary-total-price">1.00</span></span>
+                </p>
+              </div>
+            </div>
+          </div><!-- /#order-summary -->
+          <div class="alert money-back text-center">
+            <img src="img/money-back-badge.png" class="center-block money-back-badge img-responsive" alt="money back guarantee">
+            <br>
+            <span class=""><strong>100% Money Back Guarantee</strong></span>
+            <br>
+            <span class="text-center">If we can't find the number you're looking for, <strong>we will gladly issue a refund</strong>!</span>
+          </div>
+        </div> <!-- /.col-sm-5-->
+      </div><!-- /#body-wrap -->
+    </div><!-- /#wrapper -->
+    <div class="visible-xs">
+      <div class="satisfied">
+        <div class="row">
+          <div class="col-xs-2">
+            <span class="glyphicon glyphicon-ok-circle"></span>
+          </div>
+          <div class="col-xs-10">
+            <span class="satisfied-text">
+              <span class="strong">100% Satisfaction Gauaranteed</span> <span id="refund">If we do not have results for this search we will gladly issue a refund. Just contact our Customer Care.</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="visible-xs">
+      <p class="phone text-center"><strong>Questions? </strong>Call 1-888-579-5910</p>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div id="service-hours" class="row">
+          <div class="col-xs-12">
+            <p>
+              <strong>Live Customer Support Hours: M-F 8am - 10pm ET and Weekends 10am - 8pm ET</strong>
+            </p>
+          </div>
+        </div>
+        <div id="disclaimer" class="row">
+          <div class="col-xs-12">
+            <p>
+              Disclaimer: NumberGuru&rsquo;s mission is to give people easy and affordable access to public record information. NumberGuru does not provide private investigator services, and is not a consumer reporting agency as defined by the <a href="//www.beenverified.com/dos-donts" rel="nofollow" target="_blank">Fair Credit Report Act</a> because the information provided by NumberGuru is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses of NumberGuru, please review our <a href="//www.beenverified.com/dos-donts" target="_blank" rel="nofollow">&ldquo;Do&rsquo;s &amp; Don&rsquo;ts&rdquo;</a> and our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank" rel="nofollow">Terms &amp; Conditions</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="footer-terms">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>
+                <span class="logo"><span class="strong">NumberGuru</span> &copy; <span class="current-year">2014</span></span>
+              </p>
+            </div>
+            <div class="col-sm-6 text-right">
+              <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms</a> | <a href="//www.beenverified.com/privacy" target="_blank">Privacy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="iModal-trial" class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button id="imodal-x" type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <div class="row modalTrialHeader">
+              <div class="col-sm-3 text-right">
+                <img src="img/guru_80.png">
+              </div>
+              <div class="col-sm-9">
+                <h1><strong>Get Even More For $1!</strong></h1>
+                <h4>Unlimited Phone AND Background Checks</h4>
+              </div>
+            </div><!--END row-->
+            <div class="row">
+              <div class="col-sm-6">
+                <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp;&nbsp;<strong>UNLIMITED</strong> Contact Info<span class="hidden-xs">rmation</span></p>
+              </div>
+              <div class="col-sm-6">
+                <p><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> &nbsp;&nbsp;<strong>UNLIMITED</strong> Phone Lookups</p>
+              </div>
+              <div class="col-sm-6">
+                <p><span class="glyphicon glyphicon-home" aria-hidden="true"></span> &nbsp;&nbsp;<strong>UNLIMITED</strong> Address Lookups</p>
+              </div>
+              <div class="col-sm-6">
+                <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> &nbsp;&nbsp;<strong>UNLIMITED</strong> Email Lookups</p>
+              </div>
+              <div class="col-sm-6 hidden-xs">
+                <p><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> &nbsp;&nbsp;<strong>UNLIMITED</strong> Criminal Court Records</p>
+              </div>
+              <div class="col-sm-6 hidden-xs">
+                <p><span class="glyphicon glyphicon-flag" aria-hidden="true"></span> &nbsp;&nbsp;<strong>PLUS</strong> Access to Live Court Runners</p>
+              </div>
+            </div><!--END row-->
+            <div class="row">
+              <div class="col-sm-12 col-xs-12">
+                <button type="button" id="show-dollar-trial" class="btn btn-lg btn-block btn-success main-btn">Try It Now!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /#iModal-trial -->
+
+    <div id="PayPal-Success" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <h2 class="text-success"><img src="img/success_icon.png" alt="PayPal Success" width="30" height="30"> One Last Step!</h2>
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1">
+                <p>Just click the confirm button below to activate and view your report.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-10 col-xs-offset-1">
+                <button type="button" id="confirm-paypal" class="btn btn-lg btn-block btn-success text-center" style="margin:24px 0 10px">Confirm &amp; View Report <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+                <img id="paypal-spinner" class="spinner-inner" src="img/ajax-loader.gif" alt="Loading...">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <a href="#" id="iModal-dismiss" class="text-muted" style="cursor:hand;cursor:pointer;">Click Here to Cancel PayPal Payment</a>
+                <p id="paypal-confirm-error">Oops! Something went wrong. Please confirm your PayPal payment again or contact customer support at 1-888-579-5910.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /#Paypal Success -->
+
+    <div id="PayPal-Failed" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <h2 class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Error</h2>
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1">
+                <p>Unfortunately your payment did not go through using PayPal.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <button type="button" id="pay-CreditCard" class="btn btn-lg btn-block btn-primary text-center">Pay With A Credit Card</button>
+              </div>
+              <div class="col-md-6">
+                <button type="button" id="pay-PayPal" class="btn btn-lg btn-block btn btn-default text-center">Try Again Using PayPal</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /#Paypal Fail -->
+
+    <pre id="subscribe_bounce_text" data-sub-bounce-url="<%= next_page %>" class="hide">
+WAIT: WANT A SPECIAL LIMITED TIME OFFER?
+
+************ CONGRATULATIONS ************
+
+YOU'VE BEEN SELECTED FOR A LIMITED TIME OFFER!
+
+Stay on this page to take advantage of our special promotional offer.
+
+
+Just click "Cancel" or "Stay On Page" to see your special offer.
+
+************ CONGRATULATIONS *************
+    </pre>
+
+    <!-- SCRIPTS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/jquery.validate.creditcard2.pack-1.0.0.js"></script>
+
+    <script src="js/check_cc.js"></script>
+    <script src="js/utility.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="js/base64.js"></script>
+    <script src="js/teaserrecord.js"></script>
+
+    <script src="js/amplify.store.min.js"></script>
+    <script src="js/lodash.min.js"></script>
+    <script src="js/handlebars.min.js"></script>
+    <script src="js/framerida.helpers.js"></script>
+    <script src="js/framerida.js"></script>
+    <script src="js/downsell.js"></script>
+
+    <script src="js/subscribeRunner.js"></script>
+    <script src="js/runner.js"></script>
+  </body>
+  </html>
