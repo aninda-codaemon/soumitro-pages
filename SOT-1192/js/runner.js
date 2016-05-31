@@ -100,16 +100,22 @@
     }
   });
 
+  $('.payOptionSelect input').click(function() {
+    if ($('#paypal').is(':checked')) {
+      $('#upsellJL').show();
+    } else {
+      $('#upsellJL').hide();
+    }
+  });
+
   $('.cc-wrapper .form-control').on('change blur', function() {
     var inputCount = $('.cc-wrapper .form-control').length;
     var verifiedCount = $('.cc-wrapper .form-control.input-success').length;
 
     if (verifiedCount === inputCount) {
       $('#upsellJL').show();
-      console.log('show upsell');
     } else {
       $('#upsellJL').hide();
-      console.log('hide upsell');
     }
   });
 
