@@ -100,6 +100,7 @@
     }
   });
 
+  // when selecting payment option, if paypal is checked then show upsell
   $('.payOptionSelect input').click(function() {
     if ($('#paypal').is(':checked')) {
       $('#upsellJL').show();
@@ -108,6 +109,7 @@
     }
   });
 
+  // when filling out the cc form, if all fields are validated then show upsell
   $('.cc-wrapper .form-control').on('change blur', function() {
     var inputCount = $('.cc-wrapper .form-control').length;
     var verifiedCount = $('.cc-wrapper .form-control.input-success').length;
@@ -116,6 +118,22 @@
       $('#upsellJL').show();
     } else {
       $('#upsellJL').hide();
+    }
+  });
+
+  // @TODO: this has bugs that needs fixing
+  $('#upsellJL .checkbox').click(function() {
+    var currentTotal = $('.summary-total-price').text(),
+        upsellPrice = $('#upsellJL .upsell-price').text().slice(1),
+        upsellTotal = Number(currentTotal) + Number(upsellPrice),
+        defaultTotal = Number(currentTotal) - Number(upsellPrice);
+
+    if ($('#upsellCheckbox').is(':checked')) {
+      console.log('upsell checked');
+      $('.summary-total-price').html(upsellTotal);
+    } else {
+      console.log('upsell unchecked');
+      $('.summary-total-price').html(defaultTotal);
     }
   });
 
