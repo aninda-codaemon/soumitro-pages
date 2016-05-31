@@ -646,9 +646,6 @@ footer a:focus,
 
 /* == iMODAL == */
 
-#iModal-trial {
-  display: block;
-}
 #iModal-trial .modal-content {
   background-color: #fafafa;
   border: none;
