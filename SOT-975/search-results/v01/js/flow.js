@@ -287,15 +287,15 @@
 
       // @TODO: refactor this (can make a function for this - no time now)
       if (data.length === 1) {
-        fillCount = 4
+        fillCount = 4;
         filler = _.slice(fillers, 0, fillCount);
       }
       else if (data.length === 2) {
-        fillCount = 3
+        fillCount = 3;
         filler = _.slice(fillers, 0, fillCount);
       }
       else if (data.length === 3 || data.length === 6) {
-        fillCount = 2
+        fillCount = 2;
         filler = _.slice(fillers, 0, fillCount);
       }
       else if (data.length === 4) {
@@ -409,6 +409,10 @@
 
   function initializingSearchProgress() {
     trackNL('Viewed LocatingInfo Modal');
+
+    if (typeof modalCtx !== 'undefined') {
+      getExtraTeaserData(modalCtx);
+    }
 
     var $progessBars = [
       $("#searching-progress-bar-database .progress-bar"),
@@ -638,9 +642,9 @@
   function generatingReport() {
     trackNL('Viewed DownloadingReport Modal');
 
-    if (typeof modalCtx !== 'undefined') {
-      getExtraTeaserData(modalCtx);
-    }
+    // if (typeof modalCtx !== 'undefined') {
+    //   getExtraTeaserData(modalCtx);
+    // }
   }
 
   function fcraConfirmation() {

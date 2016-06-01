@@ -223,9 +223,9 @@
                 showNoResultsPanel();
             } else {
                 showResultsPanel();
+                activateRows();
             }
         }
-        activateRows();
     };
 
     var validState = function(state) {
