@@ -341,19 +341,20 @@
 
     // making this into a function so that it can be called each time the results data is updated
     var initSearchFilters = function() {
+      var recordCount = Number($('.record-count').text());
 
       // check if there are results from the search
-      if (amplify.store('teaserData').recordCount > 0) {
+      if (recordCount > 0) {
         // show results filters if there are more than 5 search results
         // in mobile show filters only if there are more than 20 search results
         if (window.bv.isMobile) {
-          if (amplify.store('teaserData').recordCount > 20) {
+          if (recordCount > 20) {
             $resultsFilters.show();
           } else {
             $resultsFilters.hide();
           }
         } else {
-          if (amplify.store('teaserData').recordCount > 5) {
+          if (recordCount > 5) {
             $resultsFilters.show();
           } else {
             $resultsFilters.hide();
@@ -529,10 +530,13 @@
           $('#search-form').submit();
         });
       } else {
-        // keep the filters hidden since no search results are found
-        $resultsFilters.hide();
         // show refine modal
         $refineModal.modal('show');
+        // keep the filters hidden since no search results are found
+        // hide entire top banner
+        $('#top-banner').hide();
+        // hide results container
+        $('#results-wrapper').hide();
       }
     };
 
