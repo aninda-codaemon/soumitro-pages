@@ -10,8 +10,8 @@
     var defaultRunningTime = 120;
     var countDown = defaultRunningTime; // beginning count time
     var runningTime = 0; // current running time
-    var runInterval = 20 * 1000;                 // header interval time (defaultRunningTime / number of Steps (6))
-    var completeRun = 120 * 1000;                 // total running time
+    var runInterval = 20 * 1000; // header interval time (defaultRunningTime / number of Steps (6))
+    var completeRun = 120 * 1000; // total running time
     var mobileRatio = 0.375;
 
     if (window.bv.isMobile) {
@@ -219,7 +219,7 @@
     var renderResults = function(teaserData) {
         if (teaserData) {
             hideSearchingAnimation();
-            if (teaserData.recordCount == 0) { //coerce
+            if (teaserData.recordCount === 0) { //coerce
                 showNoResultsPanel();
             } else {
                 showResultsPanel();
@@ -324,15 +324,7 @@
         $("#no-results-form").validate(searchRules);
     };
 
-
-
-
-
-
-
     /* Event Handlers */
-
-
 
     $(".bv-search").on('submit', function(evt) {
         evt.preventDefault();
@@ -479,7 +471,7 @@
 
             hideSearchingAnimation();
 
-            if (!teaserData || teaserData.recordCount == 0) { //coerce
+            if (!teaserData || teaserData.recordCount === 0) { //coerce
                 showNoResultsPanel();
             } else {
                 activateRows();

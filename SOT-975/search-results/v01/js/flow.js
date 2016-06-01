@@ -445,61 +445,55 @@
     });
   }
 
-  function reportReadyForDownload() {
+  function scanningSocialMedia() {
 
-    trackNL('Viewed ReadyToDownload Modal');
+    trackNL('Viewed SocialMedia Modal');
 
-    var $lis = $('.report-info-list .report-info-item'),
-        listLen = $lis.length,
-        listIdxs = _.shuffle(_.range(0, listLen)),
-        currIdx = 0,
-        $animatedImage = $('.jumbo-sidebar .img-animation'),
-        imagePath = $('.large-img-src').attr('src'),
-        $mobileAnimatedImage = $('.mobile-heading .img-animation'),
-        mobileImagePath = $('.mobile-img-src').attr('src');
-
-    $('.img-animation').hide();
-    setTimeout(function() {
-      $animatedImage.attr('src', '');
-      $mobileAnimatedImage.attr('src', '');
-    }, 0);
-
-    var toggleAnimations = function() {
-      setTimeout(function() {
-        $('.img-animation').show();
-        setTimeout(function() {
-          $animatedImage.attr('src', imagePath);
-          $mobileAnimatedImage.attr('src', mobileImagePath);
-        }, 0);
-      }, 0);
-    };
-
-    toggleAnimations();
+    var self = this;
 
     var duration = this.duration;
+
     if (window.bv.isMobile) {
       duration *= window.bv.mobileTimeRatio;
     }
 
+    var socialPromise = $("#socialmedia-progress .progress-bar").animate(
+      {'width': '100%'}, {
+        duration: duration,
+        progress: function (animation, progress) {
+          var progression = Math.ceil(progress * 100);
+          $("#socialmedia-progress-percent").html(progression);
+        }
+      }
+    );
+
+    $.when(socialPromise).done(function () {
+      self.$elem.parent().find(".complete").fadeIn();
+    });
+
+    var $lis = $("#social-media-groups li"),
+        listLen = $lis.length,
+        listIdxs = _.shuffle(_.range(0, listLen)),
+        currIdx = 0;
+
     intervalId = window.setInterval(function () {
       if (currIdx >= listLen) {
-        var $genReportButton = $("#gen-report-confirm");
 
-        var $downloadNowIcon = $genReportButton.find(".download-now-icon");
-        var $genReportMessage = $("#gen-report-message");
-        var genEnabledText = $genReportMessage.data('enabled-text');
-        $genReportMessage.html(genEnabledText || "ACCESS THE FULL BACKGROUND REPORT");
-        $downloadNowIcon.hide();
-        $("#arrowhead-right").fadeIn();
-        $genReportButton.removeAttr('disabled');
+        if (self.$elem.hasClass("in")) {
+          window.setTimeout(function () {
+            showNextModal();
+          }, self.transitionDelay);
+        }
 
         return window.clearInterval(intervalId);
       }
-      var listIdx = listIdxs[currIdx];
-      $($lis[listIdx]).addClass('success');
+      var listIdx = listIdxs[currIdx],
+          $loadingImg = $($lis[listIdx]).find(".loading");
+      $loadingImg.css('opacity', 0);
+      $loadingImg.next().fadeIn();
+      // addClass('success');
 
       currIdx += 1;
-
     }, Math.round(duration / listLen));
   }
 
@@ -523,7 +517,7 @@
       // @NOTE: the loading animation duration is in styles.css
       // @TODO: move animation duration from css to js
 
-      $loader.animate({'width': '100%'}, {duration: duration})
+      $loader.animate({'width': '100%'}, {duration: duration});
 
       var intervalDuration = duration / total, // how long to wait before cycling to the next item
           useCasesLoop = setInterval(function() {
@@ -562,8 +556,17 @@
     }, duration);
   }
 
-  function captchaModal() {
-    trackNL('Viewed Captcha Modal');
+  function foundDataModal() {
+    trackNL('Viewed Found Data Modal V1 A');
+
+    //$("body").on('click', ".data-modal-confirm" , function() { showNextModal(); });
+    //$("body").on('click', ".data-modal-confirm", function(){
+    $(".data-modal-confirm").on('click', function(){
+      // window.setTimeout(function() {
+      //     window.location = $("body").data("next-page");
+      // }, 300);
+      showNextModal();
+    });
   }
 
   function whoopsAccountNeeded() {
@@ -627,7 +630,7 @@
         if (window.validator.form()) {
             trackNL("Submitted Lead Form - Success");
 
-
+            window.runSearchProgression();
             try {
                 reportLeadData($(this).serializeArray());
             } catch (err) {}
@@ -640,7 +643,7 @@
   }
 
   function generatingReport() {
-    trackNL('Viewed DownloadingReport Modal');
+    trackNL('Viewed Downloading Report Modal');
 
     // if (typeof modalCtx !== 'undefined') {
     //   getExtraTeaserData(modalCtx);
@@ -699,72 +702,6 @@
       return false;
     }
   };
-
-
-  function scanningSocialMedia() {
-
-    trackNL('Viewed SocialMedia Modal');
-
-    var self = this;
-
-    var duration = this.duration;
-
-    if (window.bv.isMobile) {
-      duration *= window.bv.mobileTimeRatio;
-    }
-
-    var socialPromise = $("#socialmedia-progress .progress-bar").animate(
-      {'width': '100%'}, {
-        duration: duration,
-        progress: function (animation, progress) {
-          var progression = Math.ceil(progress * 100);
-          $("#socialmedia-progress-percent").html(progression);
-        }
-      }
-    );
-
-    $.when(socialPromise).done(function () {
-      self.$elem.parent().find(".complete").fadeIn();
-    });
-
-    var $lis = $("#social-media-groups li"),
-        listLen = $lis.length,
-        listIdxs = _.shuffle(_.range(0, listLen)),
-        currIdx = 0;
-
-    intervalId = window.setInterval(function () {
-      if (currIdx >= listLen) {
-
-        if (self.$elem.hasClass("in")) {
-          window.setTimeout(function () {
-            showNextModal();
-          }, self.transitionDelay);
-        }
-
-        return window.clearInterval(intervalId);
-      }
-      var listIdx = listIdxs[currIdx],
-          $loadingImg = $($lis[listIdx]).find(".loading");
-      $loadingImg.css('opacity', 0);
-      $loadingImg.next().fadeIn();
-      // addClass('success');
-
-      currIdx += 1;
-    }, Math.round(duration / listLen));
-  }
-
-  function foundDataModal() {
-    trackNL('Viewed Found Data Modal V1 A');
-
-    //$("body").on('click', ".data-modal-confirm" , function() { showNextModal(); });
-    //$("body").on('click', ".data-modal-confirm", function(){
-    $(".data-modal-confirm").on('click', function(){
-      // window.setTimeout(function() {
-      //     window.location = $("body").data("next-page");
-      // }, 300);
-      showNextModal();
-    });
-  }
 
   function scanningSocialMediaReset() {
     $("#social-media-groups li.loading").css('opacity', 1);
