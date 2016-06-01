@@ -530,20 +530,40 @@
     var setFilterStates = function() {
       // @TODO: refactor conditions
       if ($('#age').val() !== '' && $('#search-bar-state').val() === 'All') {
-        $('#age-filter').attr('disabled', true);
-        $('#state-filter').attr('disabled', false);
+        if (window.bv.isMobile) {
+          $('.age-filter-group').hide();
+          $('.state-filter-group').show();
+        } else {
+          $('#age-filter').attr('disabled', true);
+          $('#state-filter').attr('disabled', false);
+        }
       }
       else if ($('#search-bar-state').val() !== 'All' && $('#age').val() === '') {
-        $('#state-filter').attr('disabled', true);
-        $('#age-filter').attr('disabled', false);
+        if (window.bv.isMobile) {
+          $('.state-filter-group').hide();
+          $('.age-filter-group').show();
+        } else {
+          $('#state-filter').attr('disabled', true);
+          $('#age-filter').attr('disabled', false);
+        }
       }
       else if ($('#age').val() !== '' && $('#search-bar-state').val() !== 'All') {
-        $('#age-filter').attr('disabled', true);
-        $('#state-filter').attr('disabled', true);
+        if (window.bv.isMobile) {
+          $('.age-filter-group').hide();
+          $('.state-filter-group').hide();
+        } else {
+          $('#age-filter').attr('disabled', true);
+          $('#state-filter').attr('disabled', true);
+        }
       }
       else {
-        $('#age-filter').attr('disabled', false);
-        $('#state-filter').attr('disabled', false);
+        if (window.bv.isMobile) {
+          $('.age-filter-group').show();
+          $('.state-filter-group').show();
+        } else {
+          $('#age-filter').attr('disabled', false);
+          $('#state-filter').attr('disabled', false);
+        }
       }
     };
 
