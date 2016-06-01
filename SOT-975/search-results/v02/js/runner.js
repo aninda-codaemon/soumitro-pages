@@ -219,13 +219,13 @@
     var renderResults = function(teaserData) {
         if (teaserData) {
             hideSearchingAnimation();
-            if (teaserData.recordCount == 0) { //coerce
+            if (teaserData.recordCount === 0) { //coerce
                 showNoResultsPanel();
             } else {
                 showResultsPanel();
+                activateRows();
             }
         }
-        activateRows();
     };
 
     var validState = function(state) {
@@ -479,7 +479,7 @@
 
             hideSearchingAnimation();
 
-            if (!teaserData || teaserData.recordCount == 0) { //coerce
+            if (!teaserData || teaserData.recordCount === 0) { //coerce
                 showNoResultsPanel();
             } else {
                 activateRows();
