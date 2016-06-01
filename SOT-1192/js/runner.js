@@ -51,8 +51,8 @@
     var totalPrice = $planPrice.data('plan-price'),
         type = $planPrice.data('plan-type'),
         monthlyPrice = $planPrice.data('monthly-price'),
-        termLength = $planPrice.data('term-length');
-
+        termLength = $planPrice.data('term-length'),
+        upsellPrice = $('#upsellJL .upsell-price').data('upsell-price');
 
     var $priceHTML = $('#legal-price'),
         $typeHTML = $('#legal-type'),
@@ -60,8 +60,15 @@
         $summaryMonthPriceHTML = $('#summary-month-price'),
         $summaryTotalPriceHTML = $('.summary-total-price');
 
-    $priceHTML.html(totalPrice);
-    $summaryTotalPriceHTML.html(totalPrice);
+    // if upsell is checked, add price to total
+    if ($('#upsellCheckbox').is(':checked')) {
+      $priceHTML.html(totalPrice + upsellPrice);
+      $summaryTotalPriceHTML.html(totalPrice + upsellPrice);
+    } else {
+      $priceHTML.html(totalPrice);
+      $summaryTotalPriceHTML.html(totalPrice);
+    }
+
     $summaryMonthPriceHTML.html(monthlyPrice);
     $typeHTML.html(type);
     $summaryTermHTML.html(termLength);
@@ -121,9 +128,7 @@
     }
   });
 
-  // @TODO: merge with price update func above
-  // if plans are changed, the price must still be correct (currently price resets)
-  // price needs to be rounded up
+  // update price total and toggle summary into sidebar depending on upsell state
   $('#upsellCheckbox').change(function() {
     var $total = $('.summary-total-price'),
         $legalPrice = $('#legal-price'),
