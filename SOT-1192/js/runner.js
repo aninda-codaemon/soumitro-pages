@@ -126,6 +126,7 @@
   // price needs to be rounded up
   $('#upsellCheckbox').change(function() {
     var $total = $('.summary-total-price'),
+        $legalPrice = $('#legal-price'),
         $upsellSummary = $('#upsellSummary'),
         currentPrice = Number($total.text()),
         upsellPrice = $('#upsellJL .upsell-price').data('upsell-price'),
@@ -133,12 +134,16 @@
 
     if ($(this).is(':checked')) {
       updatedPrice = currentPrice + upsellPrice;
+
       $upsellSummary.css('display', 'block');
       $total.html(updatedPrice);
+      $legalPrice.html(updatedPrice);
     } else {
       updatedPrice = currentPrice - upsellPrice;
+
       $upsellSummary.hide();
       $total.html(updatedPrice);
+      $legalPrice.html(updatedPrice);
     }
   });
 
