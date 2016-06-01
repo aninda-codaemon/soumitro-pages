@@ -389,6 +389,10 @@
 
   function initializingSearchProgress() {
     trackNL('Viewed LocatingInfo Modal');
+    
+    if (typeof modalCtx !== 'undefined') {
+      getExtraTeaserData(modalCtx);
+    }
 
     var $progessBars = [
       $("#searching-progress-bar-database .progress-bar"),
@@ -618,9 +622,9 @@
   function generatingReport() {
     trackNL('Viewed DownloadingReport Modal');
 
-    if (typeof modalCtx !== 'undefined') {
-      getExtraTeaserData(modalCtx);
-    }
+    // if (typeof modalCtx !== 'undefined') {
+    //   getExtraTeaserData(modalCtx);
+    // }
   }
 
   function fcraConfirmation() {
