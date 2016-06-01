@@ -525,7 +525,7 @@ h3 {
 /* search results filters */
 
 .results-filters {
-  margin-top: 20px;
+  margin-top: -15px;
 }
 
 .results-filters .input-group-addon {
@@ -610,6 +610,10 @@ h3 {
 }
 
 @media (min-width: 768px) {
+  .results-filters {
+    margin-top: -10px;
+  }
+
   .filter-buttons .col-xs-6:last-child {
     padding-left: 15px;
   }

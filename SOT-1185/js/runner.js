@@ -345,10 +345,19 @@
       // check if there are results from the search
       if (amplify.store('teaserData').recordCount > 0) {
         // show results filters if there are more than 5 search results
-        if (amplify.store('teaserData').recordCount > 5) {
-          $resultsFilters.show();
+        // in mobile show filters only if there are more than 20 search results
+        if (window.bv.isMobile) {
+          if (amplify.store('teaserData').recordCount > 20) {
+            $resultsFilters.show();
+          } else {
+            $resultsFilters.hide();
+          }
         } else {
-          $resultsFilters.hide();
+          if (amplify.store('teaserData').recordCount > 5) {
+            $resultsFilters.show();
+          } else {
+            $resultsFilters.hide();
+          }
         }
 
         // hide refine modal
