@@ -121,19 +121,24 @@
     }
   });
 
-  // @TODO: this has bugs that needs fixing
-  $('#upsellJL .checkbox').click(function() {
-    var currentTotal = $('.summary-total-price').text(),
-        upsellPrice = $('#upsellJL .upsell-price').text().slice(1);
+  // @TODO: merge with price update func above
+  // if plans are changed, the price must still be correct (currently price resets)
+  // price needs to be rounded up
+  $('#upsellCheckbox').change(function() {
+    var $total = $('.summary-total-price'),
+        $upsellSummary = $('#upsellSummary'),
+        currentPrice = Number($total.text()),
+        upsellPrice = $('#upsellJL .upsell-price').data('upsell-price'),
+        updatedPrice;
 
-    if ($('#upsellCheckbox').is(':checked')) {
-      console.log('upsell checked');
-      var upsellTotal = Number(currentTotal) + Number(upsellPrice);
-      $('.summary-total-price').html(upsellTotal);
+    if ($(this).is(':checked')) {
+      updatedPrice = currentPrice + upsellPrice;
+      $upsellSummary.css('display', 'block');
+      $total.html(updatedPrice);
     } else {
-      console.log('upsell unchecked');
-      var defaultTotal = Number(currentTotal) - Number(upsellPrice);
-      $('.summary-total-price').html(defaultTotal);
+      updatedPrice = currentPrice - upsellPrice;
+      $upsellSummary.hide();
+      $total.html(updatedPrice);
     }
   });
 

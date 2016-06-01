@@ -266,6 +266,8 @@ span.save-this {
 	height: 28px;
 }
 
+/* upsell */
+
 .callout-container {
   display: none;
   margin-top: 15px;
@@ -325,6 +327,10 @@ span.save-this {
 .callout-container .upsell-details {
   color: #777;
   font-size: 11px;
+}
+
+#upsellSummary {
+  display: none;
 }
 
 #account_tos {
