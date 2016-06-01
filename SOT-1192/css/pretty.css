@@ -295,29 +295,29 @@ span.save-this {
   box-shadow: -4px 6px 6px -3px #9FA5A9;
   background-color: #FFAE00;
   color: #fff;
-  font-size: 12px;
+  font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .callout-container .checkbox-label {
   display: block;
-  padding-left: 60px;
-  font-size: 16px;
+  padding-left: 36px;
+  font-size: 12px;
   font-weight: bold !important;
   line-height: 1.25;
 }
 
 .callout-container .checkbox-input {
-  top: 55px;
-  left: 35px;
+  top: 49px;
+  left: 25px;
   margin: 0 !important;
 }
 
 .callout-container .upsell-label {
   display: block;
   color: #20418A;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .callout-container .upsell-price {
@@ -325,8 +325,52 @@ span.save-this {
 }
 
 .callout-container .upsell-details {
+  display: block;
+  margin-top: 10px;
   color: #777;
-  font-size: 11px;
+  font-size: 10px;
+  font-weight: normal;
+  line-height: 1;
+}
+
+@media (min-width: 480px) {
+  .callout-container .upsell-badge {
+    font-size: 12px;
+  }
+
+  .callout-container .checkbox-label {
+    padding-left: 55px;
+    font-size: 16px;
+  }
+
+  .callout-container .checkbox-input {
+    top: 55px;
+    left: 25px;
+  }
+
+  .callout-container .upsell-label {
+    font-size: 20px;
+  }
+
+  .callout-container .upsell-details {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .callout-container .checkbox-label {
+    padding-left: 58px;
+  }
+
+  .callout-container .checkbox-input {
+    left: 35px;
+  }
+}
+
+@media (min-width: 992px) {
+  .callout-container .checkbox-label {
+    padding-left: 65px;
+  }
 }
 
 #upsellSummary {
