@@ -124,21 +124,20 @@
   // @TODO: this has bugs that needs fixing
   $('#upsellJL .checkbox').click(function() {
     var currentTotal = $('.summary-total-price').text(),
-        upsellPrice = $('#upsellJL .upsell-price').text().slice(1),
-        upsellTotal = Number(currentTotal) + Number(upsellPrice),
-        defaultTotal = Number(currentTotal) - Number(upsellPrice);
+        upsellPrice = $('#upsellJL .upsell-price').text().slice(1);
 
     if ($('#upsellCheckbox').is(':checked')) {
       console.log('upsell checked');
+      var upsellTotal = Number(currentTotal) + Number(upsellPrice);
       $('.summary-total-price').html(upsellTotal);
     } else {
       console.log('upsell unchecked');
+      var defaultTotal = Number(currentTotal) - Number(upsellPrice);
       $('.summary-total-price').html(defaultTotal);
     }
   });
 
   // set column state for mobile teaser data
-
   var setColumnState = function() {
     var teaserPreview = $('.mobile-subject-teaser .teaser-preview');
 
