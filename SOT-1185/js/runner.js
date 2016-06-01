@@ -656,6 +656,12 @@
 
     $(".bv-search").on('submit', function(evt) {
         evt.preventDefault();
+
+        // close search menu if it's open (mobile)
+        if ($('#nav-icon-toggle').hasClass('active')) {
+          $('.navbar-toggle').click();
+        }
+
         var formVals = {},
             serialArray = $(this).serializeArray();
         _.forEach(serialArray, function(obj) {
@@ -683,6 +689,10 @@
     $("#gen-report-confirm").on('click', function(evt) {
         evt.preventDefault();
         //validateLeadForm();
+    });
+
+    $('.navbar-toggle').click(function() {
+      $('#nav-icon-toggle').toggleClass('active');
     });
 
     // exitPop
@@ -766,10 +776,6 @@
         activateDownsells();
       }
     };
-
-    $('.navbar-toggle').click(function() {
-      $('#nav-icon-closed').toggleClass('active');
-    });
 
     /* Init */
 

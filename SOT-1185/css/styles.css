@@ -344,17 +344,12 @@ nav {
 
   border-color: transparent;
 }
-#nav-icon-open {
-  display: none;
 
-  color: white;
-}
-
-#nav-icon-closed .icon {
+#nav-icon-toggle .icon {
   font-size: 24px;
 }
 
-#nav-icon-closed.active .icon::before {
+#nav-icon-toggle.active .icon::before {
   content: '\f00d';
 }
 
