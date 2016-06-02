@@ -300,6 +300,20 @@ span.save-this {
   letter-spacing: 1px;
 }
 
+.callout-container .close-upsell {
+  margin-right: -6px;
+  padding: 0 5px;
+  border: 0;
+  background: none;
+  color: #000;
+  font-weight: bold;
+  vertical-align: text-bottom;
+}
+
+.callout-container .close-upsell:hover {
+  color: #555;
+}
+
 .callout-container .checkbox-label {
   display: block;
   padding-left: 36px;
