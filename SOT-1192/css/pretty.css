@@ -277,6 +277,10 @@ span.save-this {
   background-color: #EFF4F9;
 }
 
+.callout-container.closed {
+  display: none !important;
+}
+
 .callout-container .checkbox {
   min-height: auto;
   padding: 30px 20px;
@@ -298,6 +302,20 @@ span.save-this {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.callout-container .close-upsell {
+  margin-right: -6px;
+  padding: 0 5px;
+  border: 0;
+  background: none;
+  color: #000;
+  font-weight: bold;
+  vertical-align: text-bottom;
+}
+
+.callout-container .close-upsell:hover {
+  color: #555;
 }
 
 .callout-container .checkbox-label {

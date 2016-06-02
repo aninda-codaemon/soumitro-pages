@@ -108,7 +108,7 @@
   });
 
   // when selecting payment option, if paypal is checked then show upsell
-  $('.payOptionSelect input').click(function() {
+  $('.payOptionSelect .radio').click(function() {
     if ($('#paypal').is(':checked')) {
       $('#upsellJL').show();
     } else {
@@ -127,6 +127,9 @@
       $('#upsellJL').hide();
     }
   });
+
+  // @TODO: make a function for adding/subtracting upsell into total
+  // also check if upsell was closed - recalculate total
 
   // update price total and toggle summary into sidebar depending on upsell state
   $('#upsellCheckbox').change(function() {
@@ -149,6 +152,27 @@
       $upsellSummary.hide();
       $total.html(updatedPrice);
       $legalPrice.html(updatedPrice);
+    }
+  });
+
+  // close (remove) upsell
+  $('#upsellJL .close-upsell').click(function() {
+    var $total = $('.summary-total-price'),
+        $legalPrice = $('#legal-price'),
+        $upsellSummary = $('#upsellSummary'),
+        currentPrice = Number($total.text()),
+        upsellPrice = $('#upsellJL .upsell-price').data('upsell-price'),
+        updatedPrice;
+
+    if ($('#upsellCheckbox').is(':checked')) {
+      updatedPrice = currentPrice - upsellPrice;
+      $upsellSummary.hide();
+      $total.html(updatedPrice);
+      $legalPrice.html(updatedPrice);
+
+      $('#upsellJL').remove();
+    } else {
+      $('#upsellJL').remove();
     }
   });
 
@@ -266,7 +290,7 @@
     Cookie.create("lastVisit", Date.now(), 30);
     trackNL('lastVisit Cookie Set');
     //amplify.store("lastVisit", Date.now());
-  }
+  };
 
   var initialize = function () {
     verifySeal();
