@@ -342,6 +342,7 @@
     // making this into a function so that it can be called each time the results data is updated
     var initSearchFilters = function() {
       var recordCount = Number($('.record-count').text());
+      //var recordCount = amplify.store('extraTeaserData').recordCount;
 
       // check if there are results from the search
       if (recordCount > 0) {
@@ -349,15 +350,15 @@
         // in mobile show filters only if there are more than 20 search results
         if (window.bv.isMobile) {
           if (recordCount > 20) {
-            $resultsFilters.show();
+            $('.results-filters').show();
           } else {
-            $resultsFilters.hide();
+            $('.results-filters').hide();
           }
         } else {
           if (recordCount > 5) {
-            $resultsFilters.show();
+            $('.results-filters').show();
           } else {
-            $resultsFilters.hide();
+            $('.results-filters').hide();
           }
         }
 
