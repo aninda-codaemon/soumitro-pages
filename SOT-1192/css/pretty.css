@@ -277,6 +277,10 @@ span.save-this {
   background-color: #EFF4F9;
 }
 
+.callout-container.closed {
+  display: none !important;
+}
+
 .callout-container .checkbox {
   min-height: auto;
   padding: 30px 20px;

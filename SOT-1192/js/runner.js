@@ -108,7 +108,7 @@
   });
 
   // when selecting payment option, if paypal is checked then show upsell
-  $('.payOptionSelect input').click(function() {
+  $('.payOptionSelect .radio').click(function() {
     if ($('#paypal').is(':checked')) {
       $('#upsellJL').show();
     } else {
@@ -150,6 +150,11 @@
       $total.html(updatedPrice);
       $legalPrice.html(updatedPrice);
     }
+  });
+
+  // close upsell
+  $('#upsellJL .close-upsell').click(function() {
+    $('#upsellJL').addClass('closed');
   });
 
   // set column state for mobile teaser data
