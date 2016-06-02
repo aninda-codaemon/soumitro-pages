@@ -375,14 +375,6 @@
     animate: function () {
       _.bind(fcraConfirmation, this)();
     }
-  }, {
-
-    // Generating report progress.
-
-    $elem: $("#gen-report-modal5"),
-    animate: function () {
-      _.bind(generatingReport, this)();
-    }
   }];
 
   /* Function statements, I want these hoisted. */
@@ -641,7 +633,10 @@
                 "fcraCheckbox2": "Please check the box to continue"
             },
             submitHandler: function(form) {
-              showNextModal();
+              // showNextModal();
+              window.setTimeout(function() {
+                  window.location = $("body").data("next-page");
+              }, 300);
             }
         });
     };
