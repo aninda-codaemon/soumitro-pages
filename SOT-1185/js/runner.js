@@ -570,6 +570,7 @@
         // define searched name
         var searchedName = '';
         // first check to see if search data exists
+        // @TODO: refactor this as a function
         if (amplify.store('searchData')) {
           // define each name var based on search data
           var first = amplify.store('searchData').fn + ' ',
@@ -580,15 +581,23 @@
           // define search name var based on the middle initial condition
           if (amplify.store('searchData').mi !== '') {
             searchedName = first + middle + last;
+          // if user typed in two first names,
+          // split the value and combine into one name
+          } else if (amplify.store('searchData').fn.split(' ').length === 2) {
+            first = amplify.store('searchData').fn.split(' ')[0] + amplify.store('searchData').fn.split(' ')[1].toLowerCase() + ' ';
+
+            searchedName = first + last;
+          // if user typed in two first names and a third initial
+          // split the value and seperate into first and middle
+          } else if (amplify.store('searchData').fn.split(' ').length === 3) {
+            first = amplify.store('searchData').fn.split(' ')[0] + amplify.store('searchData').fn.split(' ')[1].toLowerCase() + ' ';
+            middle = amplify.store('searchData').fn.split(' ')[2] + ' ';
+
+            searchedName = first + middle + last;
           } else {
             searchedName = first + last;
           }
         }
-
-        // @TODO: account for search scrubbing
-        // if user types in two first names and middle initial into fist name field
-        // amplify.store('searchData').fn.split(' ')
-        // and split that into searchedName vars
 
         // exact match filter action
         $('.exact-match').click(function() {
