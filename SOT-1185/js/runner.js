@@ -585,6 +585,11 @@
           }
         }
 
+        // @TODO: account for search scrubbing
+        // if user types in two first names and middle initial into fist name field
+        // amplify.store('searchData').fn.split(' ')
+        // and split that into searchedName vars
+
         // exact match filter action
         $('.exact-match').click(function() {
           $(this).toggleClass('active');
