@@ -352,22 +352,22 @@
       return str;
     };
 
-    // var cleanSearchValues = function(mapval) {
-    //   return removeDiacritics(mapval).replace(/[^A-Za-z'-\s]/gi, '');
-    // };
-    //
-    // var parseMiddleInitial = function(data) {
-    //   var parsed_mi = data.fn.match(/^.*\s([A-Za-z])$/);
-    //   if (parsed_mi) {
-    //     if (!data.mi || data.mi.length === 0) {
-    //       data.mi = parsed_mi[1];
-    //     }
-    //     data.fn = data.fn.replace(/\s[A-Za-z]$/, '').replace(/\s+/g, '');
-    //   } else {
-    //     data.fn = data.fn.replace(/\s+/g, '');
-    //   }
-    //   return data;
-    // };
+    var cleanSearchValues = function(mapval) {
+      return removeDiacritics(mapval).replace(/[^A-Za-z'-\s]/gi, '');
+    };
+
+    var parseMiddleInitial = function(data) {
+      var parsed_mi = data.fn.match(/^.*\s([A-Za-z])$/);
+      if (parsed_mi) {
+        if (!data.mi || data.mi.length === 0) {
+          data.mi = parsed_mi[1];
+        }
+        data.fn = data.fn.replace(/\s[A-Za-z]$/, '').replace(/\s+/g, '');
+      } else {
+        data.fn = data.fn.replace(/\s+/g, '');
+      }
+      return data;
+    };
 
     var getTeaserData = function(data, initiator) {
 
@@ -459,7 +459,7 @@
     // making this into a function so that it can be called each time the results data is updated
     var initSearchFilters = function() {
       var recordCount = Number($('.record-count').text());
-      //var recordCount = amplify.store('extraTeaserData').recordCount;
+      //var recordCount = amplify.store('teaserData').recordCount;
 
       // check if there are results from the search
       if (recordCount > 0) {
@@ -648,8 +648,10 @@
           $('#search-form').submit();
         });
       } else {
-        // show refine modal
-        $refineModal.modal('show');
+        // if extra teaser data is defined - show refine modal
+        if (amplify.store('teaserData') !== undefined) {
+          $refineModal.modal('show');
+        }
         // keep the filters hidden since no search results are found
         // hide entire top banner
         $('#top-banner').hide();
