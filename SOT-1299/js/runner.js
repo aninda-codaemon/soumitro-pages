@@ -479,7 +479,8 @@
           }
         }
 
-        // hide refine modal
+        // update and hide refine modal
+        updateRefineModal();
         $refineModal.modal('hide');
 
         // define sort/filter options using the class names of the data elements
@@ -662,10 +663,14 @@
           $('#search-form').submit();
         });
       } else {
-        // if extra teaser data is defined - show refine modal
-        if (amplify.store('teaserData') !== undefined) {
+        // if extra teaser data is defined - show refine modal only if not mobile
+        if (amplify.store('teaserData') !== undefined && !window.bv.isMobile) {
+          updateRefineModal();
           $refineModal.modal('show');
+          $('#no-results').show();
         }
+        updateRefineModal();
+        $('#no-results').show();
         // keep the filters hidden since no search results are found
         // hide entire top banner
         $('#top-banner').hide();
@@ -788,6 +793,19 @@
     // update the record count - to use when table filters change
     var updateRecordCount = function() {
       $('.record-count').text($('#results .results-row').length);
+    };
+
+    // update refine modal state
+    var updateRefineModal = function() {
+      var recordCount = Number(amplify.store('teaserData').recordCount);
+
+      if (recordCount <= 1) {
+        $('.hasResults').hide();
+        $('.noResults').show();
+      } else {
+        $('.noResults').hide();
+        $('.hasResults').show();
+      }
     };
 
     /* Event Handlers */

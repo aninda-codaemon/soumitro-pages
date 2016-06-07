@@ -1189,6 +1189,43 @@ ul.aka-list li {
   margin-right: 10px;
 }
 
+@media (max-width: 768px) {
+  #no-results .top-section {
+    padding-bottom: 0;
+  }
+
+  #no-results .section-min {
+    padding-top: 0;
+  }
+
+  .no-results-icon {
+    display: none;
+  }
+
+  .no-results-text {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .no-results-text .text-info {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .no-results-text .results-hints {
+    margin-top: 10px;
+  }
+
+  #no-results #no-results-form.section-min {
+    padding: 10px 0;
+  }
+
+  #no-results-form .row {
+    margin: 0;
+  }
+}
+
 /* -- Exit Pop Refine -- */
 
 #exitPopRefine .modal-dialog {
@@ -1325,6 +1362,10 @@ ul.aka-list li {
   line-height: 18px;
 
   margin-left: 20px;
+}
+
+#noResults {
+  display: none;
 }
 
 .refine-list-two li {
