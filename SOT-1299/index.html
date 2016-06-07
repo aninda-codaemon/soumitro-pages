@@ -188,10 +188,12 @@
     <div id="top-banner" class="container section-alt section-min top-section">
       <div class="row section-header">
         <h3 class="text-center text-info">
-          We found <span class="record-count">{{recordCount}}</span> results for <strong>{{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}}{{#notEqual state 'all'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}!</strong> Choose a Result <span class="hidden-xs">Below</span>
+          We found <span class="record-count">{{recordCount}}</span> results for <strong>{{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}}{{#notEqual state 'all'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}!</strong>
+          <span class="hasResults">Choose a Result <span class="hidden-xs">Below</span></span>
+          <span class="noResults">Click the Green Button <span class="hidden-xs">Below</span></span>
         </h3>
 
-        <p class="text-center">
+        <p class="text-center hasResults">
           <strong>Next Steps:</strong> Locate the person you're looking for in the results or modify your search using the filters.
         </p>
 
@@ -374,7 +376,8 @@
           </tbody>
         </table>
         <div class="refine-search-wrapper">
-          <p class="alert alert-info">Can't find who you were looking for? <span class="refine-modal-trigger">Click here</span> to refine your search and narrow down the results.</p>
+          <p class="alert alert-info hasResults">Can't find who you were looking for? <span class="refine-modal-trigger">Click here</span> to refine your search and narrow down the results.</p>
+          <p class="alert alert-info noResults">Can't find who you were looking for? <span class="refine-modal-trigger">Click here</span> to expand your search or try another name.</p>
         </div>
       </div>
     </div><!-- #results-wrapper -->
@@ -684,7 +687,7 @@
           <div class="row refine-tips-wrapper">
             <div class="col-sm-3 search-icon-placeholder">
             </div>
-            <div class="col-sm-9" id="hasResults">
+            <div class="col-sm-9 hasResults">
               <p><strong>Narrow down your results or double-check the spelling.</strong></p>
               <ul class="refine-tips-list list-unstyled">
                 <li><i class="icon-yes-check"></i> Try adding a middle initial.</li>
@@ -692,7 +695,7 @@
                 <li><i class="icon-yes-check"></i> Add an approximate current age.</li>
               </ul>
             </div>
-            <div class="col-sm-9" id="noResults">
+            <div class="col-sm-9 noResults">
               <p><strong>Try one of these tips to help improve your results:</strong></p>
               <ul class="refine-tips-list list-unstyled">
                 <li><i class="icon-yes-check"></i>Expand your search to include all states.</li>

@@ -479,7 +479,8 @@
           }
         }
 
-        // hide refine modal
+        // update and hide refine modal
+        updateRefineModal();
         $refineModal.modal('hide');
 
         // define sort/filter options using the class names of the data elements
@@ -798,12 +799,12 @@
     var updateRefineModal = function() {
       var recordCount = Number(amplify.store('teaserData').recordCount);
 
-      if (recordCount === 0) {
-        $('#hasResults').hide();
-        $('#noResults').show();
+      if (recordCount <= 1) {
+        $('.hasResults').hide();
+        $('.noResults').show();
       } else {
-        $('#noResults').hide();
-        $('#hasResults').show();
+        $('.noResults').hide();
+        $('.hasResults').show();
       }
     };
 
