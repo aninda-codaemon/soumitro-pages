@@ -709,6 +709,7 @@
     $('#mobile-captcha-next').on('click', function(evt) {
         evt.preventDefault();
         window.showNextModal();
+        window.runSearchProgression();
     });
 
     $("#bv-captcha-refresh").on('click', function(evt) {
