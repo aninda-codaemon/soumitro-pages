@@ -657,6 +657,12 @@ footer a {
 
 /* == RESPONSIVENESS == */
 
+@media (min-width: 768px) {
+  .mobile-teaser-text {
+    display: none;
+  }
+}
+
 @media (min-width:1200px) {
 
 }
@@ -695,12 +701,6 @@ footer a {
 		line-height: 18px;
 		font-weight: 300;
 	}
-	#current-preview {
-      font-size: 14px;
-      background-image: url('//dbivtdsofhpu6.cloudfront.net/assets/img/5e543a1abcf14546ec5de20801b3e88b.jpg');
-      background-position: 2px 10px;
-      padding: 0 0 20px 40px;
-    }
 	.current-name, .current-teaser {
 		line-height: 21px;
 	}
