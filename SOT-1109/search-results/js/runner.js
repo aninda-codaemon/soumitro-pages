@@ -706,6 +706,11 @@
         }
     });
 
+    $('#mobile-captcha-next').on('click', function(evt) {
+        evt.preventDefault();
+        window.showNextModal();
+    });
+
     $("#bv-captcha-refresh").on('click', function(evt) {
         evt.preventDefault();
         refreshCaptchaState();
