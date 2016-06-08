@@ -1219,12 +1219,16 @@
         <!-- /.modal-header -->
 
         <div class="modal-body">
-          <div class="row table-row">
+          <div class="row">
 
             <div class="col-sm-6 captcha-col">
-              <h5 class="title">Please prove that you are a real person by filling out the easy captcha:</h5>
+              <h5 class="title">
+                Please prove that you're human by
+                <span class="hidden-xs">filling out the captcha below:</span>
+                <span class="hidden-sm hidden-md hidden-lg">clicking on the red B:</span>
+              </h5>
 
-              <form id="bv-catpcha-form">
+              <form id="bv-catpcha-form" class="hidden-xs">
                 <div class="bv-captcha-wrapper">
                   <div id="bv-captcha-imgs">
                     <img src="img/captcha_degree.jpg" alt="degree">
@@ -1248,6 +1252,18 @@
 
                 <button type="submit" id="bv-captcha-next" class="btn btn-lg btn-block btn-secondary">Continue</button>
               </form>
+
+              <div class="mobile-captcha visible-xs row">
+                <div class="col-xs-4">
+                  <button type="button" class="btn btn-centered btn-circular btn-neutral">3</button>
+                </div>
+                <div class="col-xs-4">
+                  <button type="button" class="btn btn-centered btn-circular btn-secondary" id="mobile-captcha-next">B</button>
+                </div>
+                <div class="col-xs-4">
+                  <button type="button" class="btn btn-centered btn-circular btn-neutral">B</button>
+                </div>
+              </div>
 
               <p class="text-caption">
                 <strong class="text-break">Why do I have to do this?</strong>

@@ -901,6 +901,15 @@
   margin: 30px 0;
 }
 
+#gen-report-modal4 .modal-body .captcha-col .mobile-captcha {
+  margin-bottom: 20px;
+}
+
+#gen-report-modal4 .modal-body .captcha-col .mobile-captcha .btn-circular {
+  width: 60px;
+  height: 60px;
+}
+
 #gen-report-modal4 .modal-body .summary-col {
   padding: 30px;
   background-color: #ecf6f5;
@@ -936,6 +945,13 @@
 
 #gen-report-modal4 .modal-body .summary-col .summary-list li {
   font-size: 16px;
+}
+
+@media (min-width: 480px) {
+  #gen-report-modal4 .modal-body .captcha-col .mobile-captcha .btn-circular {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 @media (min-width: 768px) {
