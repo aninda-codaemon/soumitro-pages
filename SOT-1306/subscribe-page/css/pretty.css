@@ -81,17 +81,39 @@ header {
 	border-radius:10px;
 	margin-top: 6px;
 }
-#current-preview {
-	font-size: 16px;
-	background-image: url('//dbivtdsofhpu6.cloudfront.net/assets/img/fad9e7c4599e93115e74afd027d15136.jpg');
-	background-position: 15px 10px;
-	background-repeat: no-repeat;
-	padding: 0 0 20px 60px;
+.teaser-preview {
+  font-size: 16px;
+  background-position: 5px 3px;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  padding: 0 0 20px 50px;
 }
-.current-name,
+#current-preview {
+	background-image: url('../img/mobile-personal-icon.png');
+}
+#criminal-preview {
+	background-image: url('../img/mobile-criminal-icon.png');
+}
+#emails-preview {
+	background-image: url('../img/mobile-email-icon.png');
+}
+#bankruptcies-preview {
+	background-image: url('../img/mobile-bankruptcy-icon.png');
+}
+#phones-preview {
+	background-image: url('../img/mobile-phone-icon.png');
+}
+
+.teaser-preview:nth-child(4),
+.teaser-preview:nth-child(5) {
+  display: none;
+}
+
+.current-title,
 .current-teaser {
 	margin-bottom: 0;
-	line-height: 24px;
+  font-size: 14px;
+	line-height: 1;
 }
 .money-back {
   margin-bottom: 20px;
@@ -102,6 +124,20 @@ header {
 }
 .money-back img {
   max-width: 100px;
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+  .teaser-preview {
+    width: 33.33333333%;
+    padding: 15px 0;
+    padding-top: 40px;
+    background-position: center 5px;
+    text-align: center;
+  }
+
+  .teaser-preview .current-teaser .more-count {
+    display: block;
+  }
 }
 /* SUB FORM ================================== */
 
