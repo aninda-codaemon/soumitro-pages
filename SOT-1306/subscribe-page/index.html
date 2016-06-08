@@ -66,15 +66,53 @@
 
   <div id="wrapper" class="container">
 
-    <div class="row mobile-subject-teaser" data-fr-bind="currentRecord">
+    <div class="row mobile-subject-teaser" data-fr-bind="currentRecord extraTeaserData">
       {{#if fullName}}
-      <div id="current-preview" class="col-sm-12">
-        <p class="current-name strong">Report on {{fullName}}<span class="dot"></span></p>
-        <p class="current-teaser">
+        <div class="teaser-preview col-xs-12" id="current-preview">
+          <p class="current-title strong">{{fullName}}</p>
+          <p class="current-teaser">
             {{#if age}}<strong>{{age}}</strong> years old{{/if}}
-      		{{#if place}}from <strong> {{place}}</strong>{{/if}}
-        </p>
-      </div>
+      		  {{#if place}}from <strong> {{place}}</strong>{{/if}}
+          </p>
+        </div>
+        {{#if criminalRecords}}
+          <div class="teaser-preview col-xs-12" id="criminal-preview">
+            <p class="current-title strong">Criminal / Traffic Records</p>
+            <p class="current-teaser">
+              {{{criminalRecordsCount}}}
+            </p>
+          </div>
+        {{/if}}
+        {{#if bankruptcies}}
+          <div class="teaser-preview col-xs-12" id="bankruptcies-preview">
+            <p class="current-title strong">Bankruptcy Filing</p>
+            <p class="current-teaser">
+              {{{bankruptciesCount}}}
+            </p>
+          </div>
+        {{/if}}
+        {{#if emails}}
+          <div class="teaser-preview col-xs-12" id="emails-preview">
+            <p class="current-title strong">Emails</p>
+            <p class="current-teaser">
+              {{email}}
+              {{#if emailsCountTeaser}}
+                <strong class="more-count">+{{emailsCountTeaser}} more</strong>
+              {{/if}}
+            </p>
+          </div>
+        {{/if}}
+        {{#if phoneNumbers}}
+          <div class="teaser-preview col-xs-12" id="phones-preview">
+            <p class="current-title strong">Phone Numbers</p>
+            <p class="current-teaser">
+              {{phoneNumber}}
+              {{#if phoneNumbersCountTeaser}}
+                <strong class="more-count">+{{phoneNumbersCountTeaser}} more</strong>
+              {{/if}}
+            </p>
+          </div>
+        {{/if}}
       {{/if}}
     </div>
 
@@ -463,7 +501,7 @@
                   <span class="pull-right">
                     <span class="report-owners-arrest-records truncate">
                       {{#if criminalRecords}}
-                        <span class="teaser-data-count">{{criminalRecordsCount}} Found</span>
+                        <span class="teaser-data-count">{{{criminalRecordsCount}}} Found</span>
                       {{else}}
                         Searched
                       {{/if}}
@@ -764,7 +802,7 @@
               <button type="button" id="show-dollar-trial" class="btn btn-lg btn-primary text-center">Try PeopleLooker for $1!</button>
             </div>
           </div>
-          <a href="<%= previous_page %>" id="iModal-back" class="text-muted"><span class="text-normal">or&nbsp;</span>or Go back to Search Results</a>
+          <a href="<%= previous_page %>" id="iModal-back" class="text-muted"><span class="text-normal">or</span> Go back to Search Results</a>
         </div>
       </div>
     </div>

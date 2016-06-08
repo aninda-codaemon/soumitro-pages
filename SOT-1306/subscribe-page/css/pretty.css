@@ -81,17 +81,39 @@ header {
 	border-radius:10px;
 	margin-top: 6px;
 }
-#current-preview {
-	font-size: 16px;
-	background-image: url('//dbivtdsofhpu6.cloudfront.net/assets/img/fad9e7c4599e93115e74afd027d15136.jpg');
-	background-position: 15px 10px;
-	background-repeat: no-repeat;
-	padding: 0 0 20px 60px;
+.teaser-preview {
+  font-size: 16px;
+  background-position: 5px 3px;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  padding: 0 0 20px 50px;
 }
-.current-name,
+#current-preview {
+	background-image: url('../img/mobile-personal-icon.png');
+}
+#criminal-preview {
+	background-image: url('../img/mobile-criminal-icon.png');
+}
+#emails-preview {
+	background-image: url('../img/mobile-email-icon.png');
+}
+#bankruptcies-preview {
+	background-image: url('../img/mobile-bankruptcy-icon.png');
+}
+#phones-preview {
+	background-image: url('../img/mobile-phone-icon.png');
+}
+
+.teaser-preview:nth-child(4),
+.teaser-preview:nth-child(5) {
+  display: none;
+}
+
+.current-title,
 .current-teaser {
 	margin-bottom: 0;
-	line-height: 24px;
+  font-size: 14px;
+	line-height: 1;
 }
 .money-back {
   margin-bottom: 20px;
@@ -102,6 +124,20 @@ header {
 }
 .money-back img {
   max-width: 100px;
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+  .teaser-preview {
+    width: 33.33333333%;
+    padding: 15px 0;
+    padding-top: 40px;
+    background-position: center 5px;
+    text-align: center;
+  }
+
+  .teaser-preview .current-teaser .more-count {
+    display: block;
+  }
 }
 /* SUB FORM ================================== */
 
@@ -605,7 +641,27 @@ footer a {
     color: #fff;
 }
 
+@media (max-width: 480px) {
+  #iModal-trial .modal-body .title {
+    font-size: 20px;
+  }
+
+  #iModal-trial .modal-body .sub-title {
+    font-size: 16px;
+  }
+
+  #iModal-trial .modal-body #show-dollar-trial {
+    font-size: 17px;
+  }
+}
+
 /* == RESPONSIVENESS == */
+
+@media (min-width: 768px) {
+  .mobile-teaser-text {
+    display: none;
+  }
+}
 
 @media (min-width:1200px) {
 
@@ -645,12 +701,6 @@ footer a {
 		line-height: 18px;
 		font-weight: 300;
 	}
-	#current-preview {
-      font-size: 14px;
-      background-image: url('//dbivtdsofhpu6.cloudfront.net/assets/img/5e543a1abcf14546ec5de20801b3e88b.jpg');
-      background-position: 2px 10px;
-      padding: 0 0 20px 40px;
-    }
 	.current-name, .current-teaser {
 		line-height: 21px;
 	}

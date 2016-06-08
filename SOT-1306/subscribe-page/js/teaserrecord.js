@@ -375,10 +375,34 @@
 
     TeaserRecord.prototype.criminalRecordsCount = function() {
       var criminalRecords = this.criminalRecords();
-      if (criminalRecords.count <= 1) {
+      if (criminalRecords.count === 0) {
         return false;
+      } else if (criminalRecords.count === 1) {
+        return '<strong>' + criminalRecords.count + '</strong> <span class="mobile-teaser-text">result found</span>';
       } else {
-        return criminalRecords.count -1;
+        return '<strong>' + criminalRecords.count + '</strong> <span class="mobile-teaser-text">results found</span>';
+      }
+    };
+
+    TeaserRecord.prototype.bankruptcies = function() {
+      if (this.record["hasBankruptcy"] === false) {
+        return [];
+      } else {
+        var extraData = this.record["extraData"],
+            bankruptcies = _.find(extraData, { 'type': 'bankruptcy' });
+
+        return bankruptcies;
+      }
+    };
+
+    TeaserRecord.prototype.bankruptciesCount = function() {
+      var bankruptcies = this.bankruptcies();
+      if (bankruptcies.count === 0) {
+        return false;
+      } else if (bankruptcies.count === 1) {
+        return '<strong>' + bankruptcies.count + '</strong> <span class="mobile-teaser-text">result found</span>';
+      } else {
+        return '<strong>' + bankruptcies.count + '</strong> <span class="mobile-teaser-text">results found</span>';
       }
     };
 
