@@ -66,8 +66,8 @@
             </div>
 
             <div class="navbar-collapse collapse navbar-right">
-                <a href="tel:1-888-579-5910" class="navbar-text">1-888-579-5910</a>
-                <a href="//www.peoplelooker.com/login" class="navbar-text btn-nav">Log In</a>
+                <a href="tel:1-800-218-3309" class="navbar-text">1-800-218-3309</a>
+              <a href="//www.peoplelooker.com/f/login" class="navbar-text btn-nav">Log In</a>
                 <span class="divider-pipe">|</span>
                 <a href="//www.peoplelooker.com/lp/400200/4/subscribe" class="navbar-text btn-nav">Sign Up</a>
                 <span class="divider-pipe">|</span>
@@ -176,8 +176,8 @@
           <h5 class="title">
             {{recordCount}} results for
             <strong class="text-secondary">
-              {{nameize fn}} {{#if mi}}{{uppercase mi}}{{/if}} {{nameize ln}}</strong>
-              {{#notEqual state 'all'}} in {{uppercase state}}{{/notEqual}}
+              {{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}}{{#notEqual state 'all'}} in {{uppercase state}}{{/notEqual}}
+            </strong>
           </h5>
 
           <p class="sub-title">
@@ -476,7 +476,7 @@
         </div>
 
         <div class="modal-body">
-          <form id="exit-refine-modal-form" class="pl-search-refine alt-search" data-fr-store="searchData" data-fr-bind="searchData">
+          <form id="exit-refine-modal-form" class="pl-search pl-search-refine alt-search" data-fr-store="searchData" data-fr-bind="searchData">
             <div class="row">
               <div class="col-xs-2">
                 <h6 class="tip-headline-label">
@@ -641,7 +641,7 @@
             <li><i class="fa fa-check icon"></i> Add an approximate current age.</li>
           </ul>
 
-          <form id="refine-modal-form" class="pl-search-refine alt-search" data-fr-store="searchData" data-fr-bind="searchData">
+          <form id="refine-modal-form" class="pl-search pl-search-refine alt-search" data-fr-store="searchData" data-fr-bind="searchData">
 
             <div class="row refine-inputs">
               <div class="col-sm-3 form-group">
@@ -1477,7 +1477,7 @@
                 </div>
 
                 <p class="text-caption">
-                  By clicking "Continue" you represent you are over 18 years of age and have agreed to our <a class="text-caption" href="//www.peoplelooker.com/faq/terms-conditions/" target="_blank">Terms of Service</a> and <a class="text-caption" href="//www.peoplelooker.com/faq/privacy/" target="_blank">Privacy Policy</a> and you agree to receive email from PeopleLooker.com. We'll never sell your information or use your data as apart of our search results.
+                  By clicking "Continue" you represent you are over 18 years of age and have agreed to our <a class="text-caption" href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms of Service</a> and <a class="text-caption" href="//www.peoplelooker.com/privacy-policy" target="_blank">Privacy Policy</a> and you agree to receive email from PeopleLooker.com. We'll never sell your information or use your data as apart of our search results.
                 </p>
 
                 <button type="submit" class="btn btn-lg btn-block btn-secondary">
@@ -1486,7 +1486,7 @@
                 </button>
               </form>
 
-              <p class="text-caption">Already a PeopleLooker member? <a href="//www.peoplelooker.com/login" class="text-caption">Click here to log in</a>.</p>
+              <p class="text-caption">Already a PeopleLooker member? <a href="//www.peoplelooker.com/f/login" class="text-caption">Click here to log in</a>.</p>
             </div>
 
             <div class="col-sm-6 hidden-xs">
