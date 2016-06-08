@@ -605,6 +605,20 @@ footer a {
     color: #fff;
 }
 
+@media (max-width: 480px) {
+  #iModal-trial .modal-body .title {
+    font-size: 20px;
+  }
+
+  #iModal-trial .modal-body .sub-title {
+    font-size: 16px;
+  }
+
+  #iModal-trial .modal-body #show-dollar-trial {
+    font-size: 17px;
+  }
+}
+
 /* == RESPONSIVENESS == */
 
 @media (min-width:1200px) {
