@@ -176,8 +176,8 @@
           <h5 class="title">
             {{recordCount}} results for
             <strong class="text-secondary">
-              {{nameize fn}} {{#if mi}}{{uppercase mi}}{{/if}} {{nameize ln}}</strong>
-              {{#notEqual state 'all'}} in {{uppercase state}}{{/notEqual}}
+              {{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}}{{#notEqual state 'all'}} in {{uppercase state}}{{/notEqual}}
+            </strong>
           </h5>
 
           <p class="sub-title">

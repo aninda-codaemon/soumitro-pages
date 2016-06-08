@@ -224,7 +224,7 @@
     var renderResults = function(teaserData) {
         if (teaserData) {
             hideSearchingAnimation();
-            if (teaserData.recordCount == 0) { //coerce
+            if (teaserData.recordCount === 0) { //coerce
                 showNoResultsPanel();
             } else {
                 showResultsPanel();
@@ -455,7 +455,7 @@
 
 
 
-    $(".bv-search").on('submit', function(evt) {
+    $(".pl-search").on('submit', function(evt) {
         evt.preventDefault();
         var formVals = {},
             serialArray = $(this).serializeArray();
