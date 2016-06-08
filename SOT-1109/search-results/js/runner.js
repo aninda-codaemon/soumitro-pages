@@ -486,6 +486,11 @@
         //validateLeadForm();
     });
 
+    // Previous Button Selected
+    $('body').on('click', '.generate_report_from_teaser', function(){
+        $(this).addClass('visited');
+    });
+
     // exitPop
     var exitPop = function () {
       if (shownExitPop || window.hasClickedResult || $('#no-results').is(':visible')) {
