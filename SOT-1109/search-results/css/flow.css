@@ -908,6 +908,7 @@
 #gen-report-modal4 .modal-body .captcha-col .mobile-captcha .btn-circular {
   width: 60px;
   height: 60px;
+  font-size: 20px;
 }
 
 #gen-report-modal4 .modal-body .summary-col {
@@ -951,6 +952,7 @@
   #gen-report-modal4 .modal-body .captcha-col .mobile-captcha .btn-circular {
     width: 100px;
     height: 100px;
+    font-size: 30px;
   }
 }
 
