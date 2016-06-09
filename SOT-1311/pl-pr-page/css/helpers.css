@@ -1,0 +1,113 @@
+/* text helpers */
+
+.text-primary {
+  color: #33d4c0 !important;
+}
+
+.text-secondary {
+  color: #ef2742 !important;
+  font-weight: bold;
+}
+
+.text-info {
+  color: #24c1db !important;
+}
+
+.text-mute {
+  color: #7D7D7D;
+  font-size: 16px;
+}
+
+.text-caption {
+  font-size: 12px;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-break {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .text-mute {
+    font-size: 18px;
+  }
+
+  .text-caption {
+    font-size: 14px;
+  }
+}
+
+/* background helpers */
+
+.background-primary {
+  background-color: #33d4c0;
+  color: #fff;
+}
+
+.background-secondary {
+  background-color: #ef2742;
+  color: #fff;
+}
+
+/* image helpers */
+
+.img-responsive {
+  margin: 0 auto;
+}
+
+.img-hero {
+  display: block;
+  width: 100%;
+  margin: 20px auto;
+}
+
+/* affix */
+
+.affix-top {
+  position: relative;
+}
+
+.affix {
+  position: fixed;
+  top: 50px;
+  z-index: -1;
+  -webkit-animation: affixFadeIn 250ms ease-in;
+  -moz-animation: affixFadeIn 250ms ease-in;
+  -ms-animation: affixFadeIn 250ms ease-in;
+  -o-animation: affixFadeIn 250ms ease-in;
+  animation: affixFadeIn 250ms ease-in;
+}
+
+.affix-bottom {
+  position: absolute;
+}
+
+/* animation keyframes */
+
+@-webkit-keyframes affixFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@-moz-keyframes affixFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@-ms-keyframes affixFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@-o-keyframes affixFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes affixFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

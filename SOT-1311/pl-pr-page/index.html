@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html" />
+  <meta name="google-site-verification" content="VZZGPRY83YYAsGIDQuetAU3p7QvtcbbkEBD9RhdM6UE" />
+  <meta name="msvalidate.01" content="80A8CCCEE696E6B91D8EBC775D86A54A" />
+
+  <title>PeopleLooker Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <!-- fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- styles -->
+  <link href="css/vendor/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="css/typography.css" rel="stylesheet" type="text/css" />
+  <link href="css/elements.css" rel="stylesheet" type="text/css" />
+  <link href="css/helpers.css" rel="stylesheet" type="text/css" />
+  <link href="css/components.css" rel="stylesheet" type="text/css" />
+  <link href="css/main.css" rel="stylesheet" type="text/css" />
+
+  <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.min.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- Hotjar Tracking Code for www.PeopleLooker.com -->
+  <script>
+    (function(f, b) {
+      var c;
+      f.hj = f.hj || function() {
+        (f.hj.q = f.hj.q || []).push(arguments)
+      };
+      f._hjSettings = {
+        hjid: 25826,
+        hjsv: 4
+      };
+      c = b.createElement("script");
+      c.async = 1;
+      c.src = "//static.hotjar.com/c/hotjar-" + f._hjSettings.hjid + ".js?sv=" + f._hjSettings.hjsv;
+      b.getElementsByTagName("head")[0].appendChild(c);
+    })(window, document);
+  </script>
+</head>
+
+<body>
+
+  <main class="layout" id="pl-layout-pr">
+
+    <header class="header">
+
+      <!--<p class="fluid-message text-center">ADVERTISEMENT</p>-->
+
+      <div class="header-hero container">
+        <div class="row">
+          <div class="col-md-3">
+            <a class="logo" href="<%= next_page %>">
+              <img class="img-responsive img-logo" src="img/logo.png" />
+              <p class="sub-title text-center"><strong>Search People. It's Easy!</strong></p>
+            </a>
+          </div>
+
+          <div class="col-md-9">
+            <form role="form" method="get" action="https://www.peoplelooker.com/lp/<%=flow_unique_id%>/3/loading" class="search-form" id="search-people-form" data-disable="false">
+              <div class="row">
+                <div class="col-xs-6 col-sm-3 form-group">
+                  <input type="text" name="fn" placeholder="First Name" id="fn" class="form-control input-lg autofocus" autofocus>
+                  <label for="fn" class="error-label">Please enter a first name</label>
+                </div>
+                <div class="col-xs-6 col-sm-3 form-group">
+                  <input type="text" name="ln" placeholder="Last Name" id="ln" class="form-control input-lg" />
+                  <label for="ln" class="error-label">Please enter a last name</label>
+                </div>
+                <div class="col-xs-6 col-sm-3 form-group">
+                  <select name="state" id="state" class="form-control input-lg">
+                    <option value="All">State</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                  </select>
+                </div>
+                <div class="col-xs-6 col-sm-3 form-group">
+                  <button class="btn btn-block btn-lg btn-secondary btn-search" type="submit">Search</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+    <section class="content container">
+      <div class="row">
+        <div class="col-sm-2 col-md-1 sidebar-col">
+          <ul class="share-buttons list-unstyled hidden-xs" id="share-it">
+            <li class='share-button st_facebook_vcount' displayText='Facebook'></li>
+            <li class='share-button st_twitter_vcount' displayText='Tweet'></li>
+            <li class='share-button st_linkedin_vcount' displayText='LinkedIn'></li>
+            <li class='share-button st_pinterest_vcount' displayText='Pinterest'></li>
+            <li class='share-button st_email_vcount' displayText='Email'></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-10 content-col">
+          <h1 class="title">
+            It’s Never Been Easier to Find People &amp; Their Info Online
+          </h1>
+
+          <p class="text-mute latest-update">
+            Updated at 4:32pm on April 11th, 2016
+          </p>
+
+          <img class="img-hero" src="img/hero.jpg" />
+
+          <p class="text-mute article-tags">
+            Tags: Safety | Criminal Records | Social Profiles | Background Checks
+          </p>
+
+          <p class="lead">
+            Searching for someone online isn’t anything new. I search people all the time to find their social media pages, like Facebook or Twitter. Sometimes I search for their phone numbers, emails and addresses, or to learn more about who they are, especially to <a href="<%= next_page %>">see if they have arrest records</a>.
+          </p>
+
+          <p class="lead">
+            But like me, you’ve probably noticed that it’s not easy to find all of these details for one person.
+          </p>
+
+          <p class="lead">
+            Yes, googling someone and browsing through the results can get you some insights… if they happen to use the exact same name. For example, I get a page of results when I google my own name, but it often shows incorrect information and has pages related to someone else with my name.
+          </p>
+
+          <p class="lead">
+            What do you do when you need more accurate information? Simply searching someone on Google or Facebook may not have all of the answers. Here is the solution:
+          </p>
+
+          <p class="lead">
+            There is a new site that compiles billions of public records into easy-to-read reports so you don’t have to waste your time searching. The site has reports on millions of <span class="geodemonym">Americans</span>.
+          </p>
+
+          <p class="lead">
+            A subscription to the new site <a href="<%= next_page %>">PeopleLooker</a> goes beyond the standard search and can help you find more than you ever could. How much information though?
+          </p>
+
+          <p class="lead">
+            On PeopleLooker you can find:
+          </p>
+
+          <ul class="info-list">
+            <li class="lead list-item">Previous and current addresses</li>
+            <li class="lead list-item">Arrest records, traffic tickets and criminal offenses</li>
+            <li class="lead list-item">Phone numbers, emails and social profiles</li>
+            <li class="lead list-item">Bankruptcies</li>
+            <li class="lead list-item">Relatives &amp; Associates</li>
+            <li class="lead list-item">And More!</li>
+          </ul>
+
+          <p class="lead">
+            If it is on a public record, there is a strong chance you can <a href="<%= next_page %>">find it with PeopleLooker</a>.
+          </p>
+
+          <p class="lead">
+            It may sound crazy, but the truth is, public records have been around and available to the public for a long time. State and local governments and many private organizations maintain public records that are accessible to anyone…but only if you head all the way to a courthouse or pay large sums of money. So, even though public records are available, it can be an extremely difficult process.
+          </p>
+
+          <p class="lead">
+            PeopleLooker simplifies this for you and compiles all of these records into a single report, accessible right away on your phone, computer or tablet. You’re not limited to finding “important” documents like arrest records or gun permits. Searching on PeopleLooker can help you get contact information for a high school reunion or wedding. It can help you find someone from your past or a family member who you lost in touch with. I even used it to get a better understanding of a neighborhood I was moving to.
+          </p>
+
+          <p class="lead">
+            Regardless of the reason, the end goal is about connecting people to one another. <strong>If you would like to try it today, search your name or someone you know, <a href="<%= next_page %>">click here</a>.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-footer background-primary">
+      <div class="container">
+        <h5 class="title text-center">Try It For Yourself - Search yourself, a friend, or anyone else you may know.</h5>
+
+        <form role="form" method="get" action="https://www.beenverified.com/lp/<%=flow_unique_id%>/3/loading" class="search-form" id="search-people-form" data-disable="false">
+          <div class="row">
+            <div class="col-xs-6 col-sm-3 form-group">
+              <input type="text" name="fn" placeholder="First Name" id="fn" class="form-control input-lg">
+              <label for="fn" class="error-label">Please enter a first name</label>
+            </div>
+            <div class="col-xs-6 col-sm-3 form-group">
+              <input type="text" name="ln" placeholder="Last Name" id="ln" class="form-control input-lg" />
+              <label for="ln" class="error-label">Please enter a last name</label>
+            </div>
+            <div class="col-xs-6 col-sm-3 form-group">
+              <select name="state" id="state" class="form-control input-lg">
+                <option value="All">State</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District Of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+              </select>
+            </div>
+            <div class="col-xs-6 col-sm-3 form-group">
+              <button class="btn btn-block btn-lg btn-secondary btn-search" type="submit">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+
+        <p class="title text-uppercase"><strong>This is an advertisement and NOT an actual news article, blog, or consumer protection update.</strong></p>
+
+        <hr/>
+
+        <p class="disclaimer">
+          Disclaimer: PeopleLooker's mission is to give people easy and affordable access to public record information. PeopleLooker does not provide private investigator services, and is not a consumer reporting agency as defined by the Fair Credit Report Act
+          because the information provided by PeopleLooker is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses
+          of PeopleLooker, please review our <a href="https://www.peoplelooker.com/uses">“Do’s &amp; Don’ts”</a> and our <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms &amp; Conditions</a>.
+        </p>
+
+        <div class="footer-navbar row">
+          <div class="col-sm-6">
+            <p class="copyright">©2016 | <a class="text-info" href="//www.peoplelooker.com">PeopleLooker.com</a> | All Rights Reserved</p>
+          </div>
+          <div class="col-sm-6 text-right">
+            <a href="//www.peoplelooker.com/privacy-policy" target="_blank">Privacy Policy</a> |
+            <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms &amp; Conditions</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  </main>
+
+  <!-- Vendor Scripts -->
+  <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+  <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+
+  <!-- Share This -->
+  <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript">stLight.options({publisher: "75faeef4-34e7-46f7-ab41-d22d6e75fd19", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+  <script type="text/javascript" src="js/runner.js"></script>
+
+</body>
+
+</html>
