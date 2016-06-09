@@ -1,0 +1,17 @@
+/* Page Content */
+
+.content {
+	display: none;
+}
+
+.active-content {
+	display: block;
+}
+
+#hidden-banner {
+	display: none;
+}
+
+#hidden-readmore {
+	display: none;
+}
