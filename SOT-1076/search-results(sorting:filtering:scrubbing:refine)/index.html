@@ -666,7 +666,7 @@
         </div><!--END modal body-->
       </div>
     </div>
-  </div><!-- END Exit Pop -->
+  </div><!-- /#exitPopRefine -->
 
   <!-- ================ -->
   <!-- = Refine Modal = -->
@@ -798,25 +798,61 @@
   <div id="exit-pop-skip" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
-        <div class="modal-header section-header">
+        <div class="modal-header header-alert">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h1 class="text-center"><strong>Wait, before you go</strong></h1>
-        </div><!-- /.modal-header -->
-        <div class="modal-body text-center">
-          <h3><strong>Preview a summary of your report.</strong></h3>
-          <div class="loader-big">
-            <img src="img/loader-big.gif">
-          </div>
-          <img class="img-responsive preview" src="img/preview.jpg">
-            <div class="row">
-              <div class="col-sm-6 col-sm-offset-3">
-                <button id="skip-to-preview" class="btn btn-success btn-lg btn-block">See The Summary Now</button>
-              </div>
-            </div>
+          <img src="img/alert-24.png" class="pull-left header-icon">
+          <p data-fr-bind="currentRecord">
+            <strong>Wait, Before You Go...</strong>
+          </p>
         </div>
+
+        <div class="modal-body">
+
+          <p class="modal-top-text-big hidden-xs">Get a FREE preview of the report</p>
+          <p class="modal-top-text" data-fr-bind="currentRecord">Sign up to preview {{firstName}}'s report</p>
+
+          <form id="signup-modal-form" action="<%= next_page %>" data-fr-bind="leadData" data-fr-store="leadData" data-fr-bind="leadData">
+            <fieldset class="form-input-group">
+              <div class="form-group">
+                <label for="lead_first_name" class="hidden-xs">First Name:</label>
+                <input name="account[first_name]" value="{{account[first_name]}}" id="lead_first_name" type="text" class="form-control" placeholder="First Name" required/>
+              </div>
+
+              <div class="form-group">
+                <label for="lead_last_name" class="hidden-xs">Last Name:</label>
+                <input name="account[last_name]" value="{{account[last_name]}}" id="lead_last_name" type="text" class="form-control" placeholder="Last Name" required/>
+              </div>
+
+              <div class="form-group">
+                <label for="lead_email" class="hidden-xs">Email:</label>
+                <input name="user[email]" value="{{user[email]}}" id="lead_email" type="email" class="form-control" placeholder="Email Address" required/>
+              </div>
+            </fieldset>
+
+            <p class="tos-text">By clicking "Continue" you represent you are over 18 years of age and have agreed to our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a> and <a href="//www.beenverified.com/privacy" target="_blank">Privacy Policy</a> and you agree to receive email from BeenVerified.com. We'll never sell your information or use your data as apart of our search results.</p>
+
+            <button type="submit" class="main-btn main-btn-large btn-block">SEE PREVIEW <img src="img/next-24.png"></button>
+          </form>
+
+          <form class="form-horizontal" action="https://www.beenverified.com/login" data-fr-bind="currentRecord" method="get">
+
+              <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
+              <h6 class="create-login text-center">Already a BeenVerified member? <button class="btn btn-link btn-xs" id="login-redirect" type="submit">Click here to login</button></h6>
+
+          </form>
+
+          <div class="seal-small">
+            <div class="verify-seal" style="cursor: pointer;cursor:hand; text-align:center;"><img src="img/norton-secured.png"></div>
+          </div>
+
+          <div class="loader-big">
+            <img class="img-loader-big" src="img/loader-big.gif">
+          </div>
+        </div>
+
       </div>
     </div>
-  </div><!-- /#refine-modal -->
+  </div><!-- /#exit-pop-skip -->
 
   <!-- ==================================== -->
   <!-- == 1 == GENERATING REPORT  ========= -->

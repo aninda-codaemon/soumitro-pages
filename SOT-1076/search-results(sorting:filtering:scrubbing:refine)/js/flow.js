@@ -34,8 +34,9 @@
   };
 
   var modalCtx;
+  var modalDownsellsActive = false;
 
-  var getExtraTeaserData = function(ctx) {
+  var getExtraTeaserData = function(ctx, cb) {
     var dataPath = $(ctx).data("fr-bound2");
     var data = framerida.dataFromDataPath(dataPath);
     var teaser = new TeaserRecord(data);
@@ -70,6 +71,7 @@
         return item.type.nameize();
       });
 
+
       // Data elements to display - Waterfall controlled here
       var data = [
         {
@@ -77,7 +79,7 @@
           'name': 'Criminal or Traffic*',
           'single': 'Criminal or Traffic*',
           'style': ' crim-box',
-          'weight': 9,
+          'weight': 3,
           'showIfEmpty': 0,
           'count': res.courts.criminal.length
         },
@@ -86,25 +88,16 @@
           'name': 'Bankruptcy Filings',
           'single': 'Bankruptcy Filing',
           'style': ' crim-box',
-          'weight': 8,
+          'weight': 3,
           'showIfEmpty': 0,
           'count': res.courts.bankruptcy.length
-        },
-        {
-          'type': 'associates',
-          'name': 'Associates & Relatives',
-          'single': 'Associates & Relatives',
-          'style': '',
-          'weight': 7,
-          'showIfEmpty': 0,
-          'count': res.connections.associates.length + res.connections.relatives.length
         },
         {
           'type': 'emails',
           'name': 'Email Addresses',
           'single': 'Email Address',
           'style': '',
-          'weight': 6,
+          'weight': 2,
           'showIfEmpty': 0,
           'count': res.emails.length,
           'emailAddress': emailAddresses
@@ -114,7 +107,7 @@
           'name': 'Phone Numbers',
           'single': 'Phone Number',
           'style': ' phone-box',
-          'weight': 5,
+          'weight': 1,
           'showIfEmpty': 0,
           'count': res.phones.length,
           'phoneNumber': phoneNumbers
@@ -124,66 +117,58 @@
           'name': 'Social Media Profiles',
           'single': 'Social Media Profile',
           'style': ' social-box',
-          'weight': 4,
+          'weight': 1,
           'showIfEmpty': 0,
           'count': res.social.length,
           'socialNetwork': socialNetworks
         },
+        // {
+        //   'type': 'photos',
+        //   'name': 'Photos',
+        //   'single': 'Photo',
+        //   'style': '',
+        //   'weight': 0,
+        //   'showIfEmpty': 0,
+        //   'count': res.images.length
+        // },
         {
-          'type': 'photos',
-          'name': 'Photos',
-          'single': 'Photo',
+          'type': 'associates',
+          'name': 'Associates & Relatives',
+          'single': 'Associates & Relatives',
           'style': '',
-          'weight': 3,
+          'weight': 0,
           'showIfEmpty': 0,
-          'count': res.images.length
+          'count': res.connections.associates.length + res.connections.relatives.length
+        }
+        /*
+        {
+          'type': 'neighbors',
+          'name': 'Neighbors',
+          'single': 'Neighbor',
+          'style': '',
+          'weight': 0,
+          'showIfEmpty': 1,
+          'count': res.connections.neighbors.length
         },
         {
-          'type': 'careers',
-          'name': 'Jobs and Education',
-          'single': 'Career',
+          'type': 'contacts',
+          'name': 'Contact Info',
+          'single': 'Contact Info',
           'style': '',
-          'weight': 2,
+          'weight': 0,
           'showIfEmpty': 0,
-          'count': res.jobs.length + res.educations.length
+          'count': res.emails.length + res.phones.length
         },
-        // {
-        //   'type': 'neighbors',
-        //   'name': 'Neighbors',
-        //   'single': 'Neighbor',
-        //   'style': '',
-        //   'weight': 1,
-        //   'showIfEmpty': 0,
-        //   'count': res.connections.neighbors.length
-        // },
-        // {
-        //   'type': 'licenses',
-        //   'name': 'Licenses and Permits',
-        //   'single': 'License',
-        //   'style': '',
-        //   'weight': 0,
-        //   'showIfEmpty': 0,
-        //   'count': res.licenses.dea.length + res.licenses.faa.length + res.licenses.professional.length + res.licenses.voter.length + res.licenses.weapon.length
-        // },
-        // {
-        //   'type': 'contacts',
-        //   'name': 'Contact Info',
-        //   'single': 'Contact Info',
-        //   'style': '',
-        //   'weight': 0,
-        //   'showIfEmpty': 0,
-        //   'count': res.emails.length + res.phones.length
-        // },
-        // {
-        //   'type': 'addresses',
-        //   'name': 'Address Records',
-        //   'single': 'Address Records',
-        //   'style': '',
-        //   'weight': 0,
-        //   'showIfEmpty': 0,
-        //   'count': res.addresses.length
-        // }
-
+        {
+          'type': 'addresses',
+          'name': 'Address Records',
+          'single': 'Address Records',
+          'style': '',
+          'weight': 0,
+          'showIfEmpty': 0,
+          'count': res.addresses.length
+        }
+        */
       ];
 
       // Booleans for templating & reporting
@@ -202,21 +187,9 @@
       var hasSocial = _.some(data, function(item){
         return item.type === 'social' && item.count > 0;
       });
-      // var hasNeighbors = _.some(data, function(item) {
-      //   return (item.type === 'neighbors' && item.count > 0);
-      // });
-      // var hasProperty = _.some(data, function(item){
-      //   return (item.type === 'addresses' && item.count > 0) || (item.type === 'neighbors' && item.count > 0);
-      // });
-      var hasPhotos = _.some(data, function(item) {
-        return item.type === 'photos' && item.count > 0;
+      var hasProperty = _.some(data, function(item){
+        return (item.type === 'addresses' && item.count > 0) || (item.type === 'neighbors' && item.count > 0);
       });
-      var hasCareers = _.some(data, function(item) {
-        return item.type === 'careers' && item.count > 0;
-      });
-      // var hasLicenses = _.some(data, function(item) {
-      //   return (item.type === 'licenses' && item.count > 0);
-      // });
 
 
       if (!hasCriminal) {
@@ -242,18 +215,6 @@
       if (hasSocial) {
         trackNL("Data Modal Viewed Social");
       }
-      if (hasPhotos) {
-        trackNL("Data Modal Viewed Photos");
-      }
-      // if (hasNeighbors) {
-      //   trackNL("Data Modal Viewed Neighbors");
-      // }
-      if (hasCareers) {
-        trackNL("Data Modal Viewed Jobs and Education");
-      }
-      // if (hasLicenses) {
-      //   trackNL("Data Modal Viewed Licenses");
-      // }
       // if (hasProperty) {
       //   trackNL("Data Modal Viewed Property");
       // }
@@ -274,9 +235,9 @@
       var totalCardsToShow = parseInt($('div.details').data('total-cards-to-show'));
       var fillerCardsAvailable = parseInt($('div.details').data('filler-cards-available'));
 
-      // console.log("TCTS: "+totalCardsToShow+" FCA: "+fillerCardsAvailable+" DL: "+data.length);
+      //console.log("TCTS: "+totalCardsToShow+" FCA: "+fillerCardsAvailable+" DL: "+data.length);
       data = _.slice(data, 0, totalCardsToShow);
-      // console.log("new DL: "+ data.length);
+      //console.log("new DL: "+ data.length);
 
       var fillCount = totalCardsToShow - (data.length); // fillers to show
       var fillers = _.range(1, fillerCardsAvailable + 1); // build array of filler card ids, start at 1, +1 because limit is 0 based
@@ -285,41 +246,18 @@
       // console.log("fillCount:"+fillCount+"\nfillers:");
       // console.log(fillers);
 
-      // @TODO: refactor this (can make a function for this - no time now)
-      if (data.length === 1) {
-        fillCount = 4
-        filler = _.slice(fillers, 0, fillCount);
-      }
-      else if (data.length === 2) {
-        fillCount = 3
-        filler = _.slice(fillers, 0, fillCount);
-      }
-      else if (data.length === 3 || data.length === 6) {
-        fillCount = 2
-        filler = _.slice(fillers, 0, fillCount);
-      }
-      else if (data.length === 4) {
-        fillCount = 1;
-        filler = _.slice(fillers, 0, fillCount);
-      }
-      else if (data.length === 5) {
-        filler = [];
-      } else {
-        filler = _.slice(fillers, 0, fillCount);
-      }
-      // if (fillCount > 0 && fillCount <= fillerCardsAvailable) {
-      //   // filler needed, and # needed available,
-      //   //filler = _.slice(_.shuffle(fillers), 0, fillCount);
-      //   filler = _.slice(fillers, 0, fillCount); // no random
-      // } else {
-      //   // if nearly all filler, limit to 2 rows... not needed now
-      //   // filler = _.slice(_.shuffle(fillers), 0, (fillCount - fillerCards) + 2);
-      //   filler = _.slice(fillers, 0, (fillCount - fillerCardsAvailable) + 2);
-      // }
 
+      if (fillCount > 0 && fillCount <= fillerCardsAvailable) {
+        // filler needed, and # needed available,
+        //filler = _.slice(_.shuffle(fillers), 0, fillCount);
+        filler = _.slice(fillers, 0, fillCount); // no random
+      } else {
+        // if nearly all filler, limit to 2 rows... not needed now
+        //filler = _.slice(_.shuffle(fillers), 0, (fillCount - fillerCards) + 2);
+        //filler = _.slice(fillers, 0, (fillCount - fillerCards) + 2);
+      }
       // console.log("filler:");
       // console.log(filler);
-      // console.log(fillCount);
 
       // Store data
       var teaserDataObj = {
@@ -331,13 +269,12 @@
           hasPhone: hasPhone,
           hasEmail: hasEmail,
           hasSocial: hasSocial,
-          // hasNeighbors: hasNeighbors,
-          hasPhotos: hasPhotos,
-          hasCareers: hasCareers,
-          // hasLicenses: hasLicenses,
           filler: filler
       };
       amplify.store('extraTeaserData', teaserDataObj);
+      if (cb !== "undefined" && typeof cb === "function") {
+        cb();
+      }
     });
   };
 
@@ -406,17 +343,15 @@
       _.bind(whoopsAccountNeeded, this)();
     }
   }, {
-
     // FCRA
 
     $elem: $("#gen-report-modal11"),
     animate: function () {
       _.bind(fcraConfirmation, this)();
     }
-  },{
+  }, {
 
     // Modal Teaser w/ data
-
     $elem: $("#gen-report-modal7"),
     duration: 10000,   // Total time to switch spinners. Value is divided by number of items.
     animate: function () {
@@ -453,7 +388,7 @@
 
     $.when.apply(self, animations).then(function () {
       if (self.$elem.hasClass("in")) {
-        timeoutId = window.setTimeout(function () {
+        intervalId = window.setTimeout(function () {
           showNextModal();
         }, self.transitionDelay);
       }
@@ -490,10 +425,6 @@
     };
 
     toggleAnimations();
-
-    $('.report-info-item').click(function() {
-      showNextModal();
-    });
 
     var duration = this.duration;
     if (window.bv.isMobile) {
@@ -650,10 +581,6 @@
             try {
                 reportLeadData($(this).serializeArray());
             } catch (err) {}
-
-            // window.setTimeout(function() {
-            //     window.location = $("body").data("next-page");
-            // }, 300);
         }
     });
   }
@@ -668,6 +595,8 @@
 
   function fcraConfirmation() {
     trackNL('Viewed FCRA Modal');
+
+    downsell.stop();
 
     var fcraConfirm = function() {
         $("#fcra-confirm").validate({
@@ -692,7 +621,7 @@
 
   var modalCount = modals.length,
       currModalIdx = -1,
-      $prevModal, intervalId, timeoutId;
+      $prevModal, intervalId;
 
   /*
    * Display the next modal, while making sure to hide the previous modal.
@@ -769,14 +698,111 @@
     }, Math.round(duration / listLen));
   }
 
+  var exitPopSkip = function() {
+    if (window.shownExitPopSkip !== false) {
+      return;
+    }
+    window.shownExitPopSkip = true;
+    trackNL('Viewed Exit Pop Skip Modal');
+
+    $('.modal.in').modal('hide');
+    resetModalFlow();
+
+    $('#exit-pop-skip').on('show.bs.modal', function() {
+
+      var validateLeadForm = function() {
+          var $signupModalForm = $("#exit-pop-skip #signup-modal-form");
+          window.validator = $signupModalForm.validate({
+              "account[first_name]": "required",
+              "account[last_name]": "required",
+              "user[email]": {
+                  required: true,
+                  email: true
+              },
+              messages: {
+                  "account[first_name]": "Please enter a first name",
+                  "account[last_name]": "Please enter a last name",
+                  "user[email]": "Please enter a valid email address"
+              }
+          });
+      };
+
+      validateLeadForm();
+
+      var reportLeadData = function(dataArray) {
+          var formVals = {};
+          _.forEach(dataArray, function(v, k) {
+              formVals[v.name] = v.value;
+          });
+
+          var srchData = amplify.store("searchData"),
+              firstName = "",
+              lastName = "";
+
+          if (srchData) {
+              firstName = srchData.fn || "";
+              lastName = srchData.ln || "";
+          }
+
+          var leadData = {};
+          leadData['lead[first_name]'] = formVals['account[first_name]'] || '';
+          leadData['lead[last_name]'] = formVals['account[last_name]'] || '';
+          leadData['lead[email]'] = formVals['user[email]'] || '';
+          leadData['lead[zip]'] = formVals['account[zip]'] || '';
+          leadData['lead[state]'] = formVals['account[state]'] || '';
+          leadData['record_search[first_name]'] = firstName;
+          leadData['record_search[last_name]'] = lastName;
+
+          var leadQueryArr = [];
+          _.forEach(leadData, function(v, k) {
+              leadQueryArr.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
+          });
+          var leadQueryString = leadQueryArr.join('&');
+          return $.post('/api/3_0_1/leads.json', leadQueryString);
+      };
+
+      $("#exit-pop-skip #signup-modal-form").on('submit', function(evt) {
+          evt.preventDefault();
+
+          $('#exit-pop-skip .loader-big').show();
+          $('#gen-report-modal1').modal('hide');
+          resetModalFlow();
+
+          if (window.validator.form()) {
+              trackNL("Submitted Lead Form - Success");
+
+              try {
+                reportLeadData($(this).serializeArray());
+              } catch (err) {}
+
+              if (typeof modalCtx !== 'undefined') {
+                getExtraTeaserData(modalCtx, function() {
+                  $('#exit-pop-skip').modal('hide');
+                  $('#exit-pop-skip .loader-big').hide();
+                  currModalIdx = 6;
+                  $prevModal = 5;
+                  showNextModal();
+                });
+              }
+          }
+      });
+
+    });
+
+    $('#exit-pop-skip').modal('show');
+
+    $('#exit-pop-skip .modal-dialog').on('click', function (e) {
+      trackNL('Exit Pop Skip Modal - Clicked');
+    });
+
+  };
+
   function foundDataModal() {
     trackNL('Viewed Found Data Modal V1 A');
 
-    //$("body").on('click', ".data-modal-confirm" , function() { showNextModal(); });
-    //$("body").on('click', ".data-modal-confirm", function(){
     $(".data-modal-confirm").on('click', function(){
       window.setTimeout(function() {
-          window.location = $("body").data("next-page");
+        window.location = $("body").data("next-page");
       }, 300);
     });
   }
@@ -815,6 +841,21 @@
     //dataModalReset();
   };
 
+  var activateDownsells = function () {
+    if (!modalDownsellsActive && typeof downsell !== "undefined" && typeof downsell.init === "function") {
+      modalDownsellsActive = true;
+      downsell.init({
+        onBack: {
+          override: true,
+          cb: exitPopSkip
+        },
+        onBreakingPlane: {
+          override: true,
+          cb: exitPopSkip
+        }
+      });
+    }
+  };
 
   /* Event Handlers */
 
@@ -852,7 +893,7 @@
     $('.modal').removeClass('animated').removeClass('shake');
   });
 
-  function keyMap(){var maxKeyIndex=keys.length-1;if(nextKey>maxKeyIndex){window.clearInterval(intervalId);window.clearTimeout(timeoutId);showNextModal();nextKey=0;}}
+  function keyMap(){var maxKeyIndex=keys.length-1;if(nextKey>maxKeyIndex){window.clearInterval(intervalId);showNextModal();nextKey=0;}}
   var keys=[66,86,71,79];var nextKey=0;$(window).keydown(function(e){var key=e.which;if(key===keys[nextKey])
   nextKey++;else
   nextKey=0;keyMap();});
@@ -862,14 +903,10 @@
   window.startModalFlow = function (ctx) {
     modalCtx = ctx;
     resetModalFlow();
+    activateDownsells();
     showNextModal();
   };
 
   window.showNextModal = showNextModal;
-  
-  // ----- Previous Button Selected ----- //
-    $('body').on('click', 'a.btn-block', function(){         
-            $(this).addClass('visited');        
-    });
 
 } (jQuery));
