@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,26 +53,23 @@
     <header class="header background-primary" id="pl-header">
       <div class="container">
         <div class="row">
-          <div class="col-xs-6">
+          <div class="col-sm-6">
             <img class="logo" src="img/logo.png" />
           </div>
-          <div class="hidden-xs col-sm-6 text-right">
+          <div class="col-sm-6 hidden-xs text-right">
             <p class="phone"><strong>Questions? </strong>Call 1-800-218-3309</p>
           </div>
         </div>
       </div>
     </header>
 
-    <section class="cta" id="pl-cta">
-      <div class="container">
-        <h2 class="title text-center">Almost There!</h2>
-        <p class="sub-title">Activate your account to see your full report and do unlimited searches.</p>
-      </div>
+    <section class="container cta" id="pl-cta">
+      <h2 class="title text-primary">Almost There!</h2>
+      <p class="sub-title">Activate your account to see your full report and do unlimited searches.</p>
     </section>
 
-    <div id="wrapper" class="container">
-
-      <div class="row mobile-subject-teaser" data-fr-bind="currentRecord extraTeaserData">
+    <section class="container teaser-mobile visible-xs">
+      <div class="row" data-fr-bind="currentRecord extraTeaserData">
         {{#if fullName}}
           <div class="teaser-preview col-xs-12" id="current-preview">
             <p class="current-title strong">{{fullName}}</p>
@@ -123,6 +118,11 @@
           {{/if}}
         {{/if}}
       </div>
+    </section>
+
+    <div id="wrapper" class="container">
+
+
 
       <div id="body-wrap" class="row">
         <div id="sub-form-wrapper" class="col-sm-7">
