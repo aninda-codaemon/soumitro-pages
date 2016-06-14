@@ -63,6 +63,11 @@
   color: #333;
 }
 
+.background-neutral {
+  background-color: #eee;
+  color: #333;
+}
+
 /* image helpers */
 
 .img-responsive {

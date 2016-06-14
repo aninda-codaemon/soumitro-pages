@@ -1,7 +1,11 @@
 /* cta */
 
-.cta .title {
+#cta-header .title {
 	margin: 10px auto;
 }
 
 /* teaser-mobile */
+
+#teaser-mobile {
+	
+}

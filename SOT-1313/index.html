@@ -44,11 +44,12 @@
 
 <body class="hide" data-next-page="<%= next_page %>" data-search-page="//www.peoplelooker.com/lp/400200/5/subscribe">
 
-  <main class="pl main-layout">
-    <div id="ppCanceled" class="alert alert-danger alert-dismissible text-center" role="alert">
+  <main class="pl subscribe-layout">
+
+    <aside id="ppCanceled" class="alert alert-danger alert-dismissible text-center" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       Payment with PayPal Canceled.
-    </div>
+    </aside>
 
     <header class="header background-primary" id="pl-header">
       <div class="container">
@@ -63,57 +64,72 @@
       </div>
     </header>
 
-    <section class="container cta" id="pl-cta">
+    <section class="container" id="cta-header">
       <h2 class="title text-primary">Almost There!</h2>
       <p class="sub-title">Activate your account to see your full report and do unlimited searches.</p>
     </section>
 
-    <section class="container teaser-mobile visible-xs">
+    <section class="container background-neutral visible-xs" id="teaser-mobile">
       <div class="row" data-fr-bind="currentRecord extraTeaserData">
         {{#if fullName}}
-          <div class="teaser-preview col-xs-12" id="current-preview">
-            <p class="current-title strong">{{fullName}}</p>
-            <p class="current-teaser">
-              {{#if age}}<strong>{{age}}</strong> years old{{/if}}
-        		  {{#if place}}from <strong> {{place}}</strong>{{/if}}
-            </p>
+          <div class="teaser col-xs-12" id="teaserCurrent">
+            <img class="teaser-icon" src="img/icon_photo.png" />
+            <h6 class="teaser-title">
+              {{fullName}}
+              <small class="teaser-data">
+                {{#if age}}<strong>{{age}}</strong> years old{{/if}}
+          		  {{#if place}}from <strong> {{place}}</strong>{{/if}}
+              </small>
+            </h6>
           </div>
           {{#if criminalRecords}}
-            <div class="teaser-preview col-xs-12" id="criminal-preview">
-              <p class="current-title strong">Criminal / Traffic Records</p>
-              <p class="current-teaser">
-                {{{criminalRecordsCount}}}
-              </p>
+            <div class="teaser col-xs-12" id="teaserCriminal">
+              <img class="teaser-icon" src="img/icon_handcuffs.png" />
+              <h6 class="teaser-title">
+                Criminal / Traffic Records
+                <small class="teaser-data">
+                  {{{criminalRecordsCount}}}
+                </small>
+              </h6>
             </div>
           {{/if}}
           {{#if bankruptcies}}
-            <div class="teaser-preview col-xs-12" id="bankruptcies-preview">
-              <p class="current-title strong">Bankruptcy Filing</p>
-              <p class="current-teaser">
-                {{{bankruptciesCount}}}
-              </p>
+            <div class="teaser col-xs-12" id="teaserBankruptcies">
+              <img class="teaser-icon" src="img/icon_bankruptcy.png" />
+              <h6 class="teaser-title">
+                Bankruptcy Filing
+                <small class="teaser-data">
+                  {{{bankruptciesCount}}}
+                </small>
+              </h6>
             </div>
           {{/if}}
           {{#if emails}}
-            <div class="teaser-preview col-xs-12" id="emails-preview">
-              <p class="current-title strong">Emails</p>
-              <p class="current-teaser">
-                {{email}}
-                {{#if emailsCountTeaser}}
-                  <strong class="more-count">+{{emailsCountTeaser}} more</strong>
-                {{/if}}
-              </p>
+            <div class="teaser col-xs-12" id="teaserEmails">
+              <img class="teaser-icon" src="img/icon_email.png" />
+              <h6 class="teaser-title">
+                Emails
+                <small class="teaser-data">
+                  {{email}}
+                  {{#if emailsCountTeaser}}
+                    <strong class="more-count">+{{emailsCountTeaser}} more</strong>
+                  {{/if}}
+                </small>
+              </h6>
             </div>
           {{/if}}
           {{#if phoneNumbers}}
-            <div class="teaser-preview col-xs-12" id="phones-preview">
-              <p class="current-title strong">Phone Numbers</p>
-              <p class="current-teaser">
-                {{phoneNumber}}
-                {{#if phoneNumbersCountTeaser}}
-                  <strong class="more-count">+{{phoneNumbersCountTeaser}} more</strong>
-                {{/if}}
-              </p>
+            <div class="teaser col-xs-12" id="teaserPhones">
+              <img class="teaser-icon" src="img/icon_phone.png" />
+              <h6 class="teaser-title">
+                Phone Numbers
+                <small class="teaser-data">
+                  {{phoneNumber}}
+                  {{#if phoneNumbersCountTeaser}}
+                    <strong class="more-count">+{{phoneNumbersCountTeaser}} more</strong>
+                  {{/if}}
+                </small>
+              </h6>
             </div>
           {{/if}}
         {{/if}}
@@ -121,8 +137,6 @@
     </section>
 
     <div id="wrapper" class="container">
-
-
 
       <div id="body-wrap" class="row">
         <div id="sub-form-wrapper" class="col-sm-7">
