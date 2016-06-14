@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Subscribe | PeopleLooker.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+  <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" href="css/pretty.css" rel="stylesheet">
+
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Hotjar Tracking Code for www.peoplelooker.com -->
+  <script>
+    (function(f, b) {
+      var c;
+      f.hj = f.hj || function() {
+        (f.hj.q = f.hj.q || []).push(arguments)
+      };
+      f._hjSettings = {
+        hjid: 25826,
+        hjsv: 4
+      };
+      c = b.createElement("script");
+      c.async = 1;
+      c.src = "//static.hotjar.com/c/hotjar-" + f._hjSettings.hjid + ".js?sv=" + f._hjSettings.hjsv;
+      b.getElementsByTagName("head")[0].appendChild(c);
+    })(window, document);
+  </script>
+</head>
+
+<body class="hide" data-next-page="<%= next_page %>" data-search-page="//www.peoplelooker.com/lp/400200/5/subscribe">
+
+  <div id="ppCanceled" class="alert alert-danger alert-dismissible text-center" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    Payment with PayPal Canceled.
+  </div>
+
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <div id="logo-wrap">
+          </div>
+        </div>
+        <div class="hidden-xs col-sm-6 text-right">
+          <p class="phone"><strong>Questions? </strong>Call 1-800-218-3309</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="report-header">
+    <div class="container">
+      <div class="row">
+        <p class="col-xs-12 text-center">Activate your account to see your full report and to do unlimited searches.</p>
+      </div>
+    </div>
+  </div>
+  <!-- /#report-bg -->
+
+  <div id="wrapper" class="container">
+
+    <div class="row mobile-subject-teaser" data-fr-bind="currentRecord extraTeaserData">
+      {{#if fullName}}
+        <div class="teaser-preview col-xs-12" id="current-preview">
+          <p class="current-title strong">{{fullName}}</p>
+          <p class="current-teaser">
+            {{#if age}}<strong>{{age}}</strong> years old{{/if}}
+      		  {{#if place}}from <strong> {{place}}</strong>{{/if}}
+          </p>
+        </div>
+        {{#if criminalRecords}}
+          <div class="teaser-preview col-xs-12" id="criminal-preview">
+            <p class="current-title strong">Criminal / Traffic Records</p>
+            <p class="current-teaser">
+              {{{criminalRecordsCount}}}
+            </p>
+          </div>
+        {{/if}}
+        {{#if bankruptcies}}
+          <div class="teaser-preview col-xs-12" id="bankruptcies-preview">
+            <p class="current-title strong">Bankruptcy Filing</p>
+            <p class="current-teaser">
+              {{{bankruptciesCount}}}
+            </p>
+          </div>
+        {{/if}}
+        {{#if emails}}
+          <div class="teaser-preview col-xs-12" id="emails-preview">
+            <p class="current-title strong">Emails</p>
+            <p class="current-teaser">
+              {{email}}
+              {{#if emailsCountTeaser}}
+                <strong class="more-count">+{{emailsCountTeaser}} more</strong>
+              {{/if}}
+            </p>
+          </div>
+        {{/if}}
+        {{#if phoneNumbers}}
+          <div class="teaser-preview col-xs-12" id="phones-preview">
+            <p class="current-title strong">Phone Numbers</p>
+            <p class="current-teaser">
+              {{phoneNumber}}
+              {{#if phoneNumbersCountTeaser}}
+                <strong class="more-count">+{{phoneNumbersCountTeaser}} more</strong>
+              {{/if}}
+            </p>
+          </div>
+        {{/if}}
+      {{/if}}
+    </div>
+
+    <div id="body-wrap" class="row">
+      <div id="sub-form-wrapper" class="col-sm-7">
+
+        <div id="error_container" class="row hidden">
+          <div class="errorExplanation" id="errorExplanation">
+            <p class="h3">Oops, something went wrong.</p>
+            <p>There were problems with the following fields:</p>
+            <ul id='messages'>
+            </ul>
+          </div>
+        </div>
+        <!-- /#error-container -->
+
+        <form class="form-horizontal" action="/accounts" id="subscribe_form" method="post" data-fr-bind="leadData currentRecord" data-sub-ignore-messages="false" data-sub-ignore-success="false" data-sub-success-class="input-success" data-sub-success-image="img/checked.gif"
+        data-sub-error-class="input-error">
+
+          <input id="promotion" name="promotion" type="hidden" value="view_report_trial">
+          <input name="authenticity_token" type="hidden" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=">
+          <input type="hidden" id="credit" name="payment_method" value="credit_card" checked>
+
+          <div id="sub-step-1">
+            <div class="row form-heading">
+              <p class="col-xs-12">
+                Step 1: Select Your Unlimited Report Package
+              </p>
+            </div>
+            <div class="selection-wrap selection-top selection-selected">
+              <label>
+                <div class="row hidden-xs">
+                  <div class="col-sm-offset-8 col-sm-4 text-right">
+                    <span class="strong save-this">&nbsp;</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-2 col-sm-1">
+                    <div class="radio-wrap">
+                      <input checked class="plan_name_radio" id="22_1_month_nofree_afill_no_bjl" name="subscription_plan_name" type="radio" value="<%= subscription_1 %>">
+                    </div>
+                  </div>
+                  <div class="col-xs-10 col-sm-7 plan-type-wrap">
+                    <p class="plan-type-heading"><strong>1 Month Membership</strong></p>
+                  </div>
+                  <div class="col-xs-offset-2 col-xs-10 col-sm-offset-0 col-sm-4 plan-price-wrap">
+                    <div class="row">
+                      <div class="col-xs-6 col-sm-12">
+                        <p class="plan-price" data-plan-price="18.18" data-term-length="1 Month" data-monthly-price="18.18" data-plan-type="month"><strong>$18.18 </strong>/mo</p>
+                      </div>
+                      <div class="col-xs-6 col-sm-12">
+                        <p class="strong save-this text-right">&nbsp;</p>
+                      </div>
+                    </div>
+                    <p class="visible-xs text-muted"><small>($18.18 Today)</small></p>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="selection-wrap selection-mid">
+              <label>
+                <div class="row hidden-xs">
+                  <div class="col-sm-offset-8 col-sm-4 text-right">
+                    <span class="strong save-this">Save 35%</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-2 col-sm-1 radio-wrap">
+                    <input class="plan_name_radio" id="44_58_3_months_nofree_affil" name="subscription_plan_name" type="radio" value="<%= subscription_2 %>">
+                  </div>
+                  <div class="col-xs-10 col-sm-7 plan-type-wrap">
+                    <p class="plan-type-heading"><strong>3 Month Membership</strong></p>
+                  </div>
+                  <div class="col-xs-offset-2 col-xs-10 col-sm-offset-0 col-sm-4 plan-price-wrap">
+                    <div class="row">
+                      <div class="col-xs-6 col-sm-12">
+                        <p class="plan-price" data-plan-price="35.46" data-term-length="3 Months" data-monthly-price="11.82" data-plan-type="3 months"><strong>$11.82 </strong>/mo</p>
+                      </div>
+                      <div class="col-xs-6 visible-xs">
+                        <p class="strong save-this text-right">Save 35%</p>
+                      </div>
+                    </div>
+                    <p class="visible-xs text-muted"><small>($35.46 Today)</small></p>
+                  </div>
+                </div>
+                <div class="hidden-xs row">
+                  <div class="col-sm-offset-8 col-sm-4 text-right">
+                    <span class="text-muted">($35.46 Today)</span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="selection-wrap selection-bot">
+              <label>
+                <div class="row hidden-xs">
+                  <div class="col-sm-offset-8 col-sm-4 text-right">
+                    <span class="strong save-this">Save 57%</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-2 col-sm-1 radio-wrap">
+                    <input class="plan_name_radio" id="58_98_6_month_nofree_affil" name="subscription_plan_name" type="radio" value="<%= subscription_3 %>">
+                  </div>
+                  <div class="col-xs-10 col-sm-7 plan-type-wrap">
+                    <p class="plan-type-heading"><strong>6 Month Membership</strong></p>
+                  </div>
+                  <div class="col-xs-offset-2 col-xs-10 col-sm-offset-0 col-sm-4 plan-price-wrap">
+                    <div class="row">
+                      <div class="col-xs-6 col-sm-12">
+                        <p class="plan-price" data-plan-price="46.92" data-term-length="6 Months" data-monthly-price="7.82" data-plan-type="6 months"><strong>$7.82 </strong>/mo</p>
+                      </div>
+                      <div class="col-xs-6 visible-xs">
+                        <p class="strong save-this text-right">Save 57%</p>
+                      </div>
+                    </div>
+                    <p class="visible-xs text-muted"><small>($46.92 Today)</small></p>
+                  </div>
+                </div>
+                <div class="hidden-xs row">
+                  <div class="col-sm-offset-8 col-sm-4 text-right">
+                    <span class="text-muted">($46.92 Today)</span>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+          <!-- /#sub-step-1 -->
+
+          <div id="sub-step-2">
+            <div class="row form-heading">
+              <p class="col-xs-12">
+                Step 2: Create Your Account Below
+              </p>
+            </div>
+            <div class="form-group">
+              <label for="account_first_name" class="col-sm-4 control-label">First Name</label>
+              <div class="col-sm-8">
+                <input class="form-control" id="account_first_name" name="account[first_name]" type="text" value="{{account[first_name]}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="account_last_name" class="col-sm-4 control-label">Last Name</label>
+              <div class="col-sm-8">
+                <input class="form-control inspectletIgnore" id="account_last_name" name="account[last_name]" type="text" value="{{account[last_name]}}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="user_email" class="col-sm-4 control-label">Email Address</label>
+              <div class="col-sm-8">
+                <input class="form-control inspectletIgnore" id="user_email" maxsize="100" name="user[email]" type="email" value="{{user[email]}}">
+              </div>
+            </div>
+
+            <div class="row cc-wrapper">
+              <div class="col-xs-12">
+                <div class="cc-wrapper-header row">
+                  <div id="secure-wrapper" class="col-xs-6 col-sm-4">
+                    <span id="secure-lock" class="glyphicon glyphicon-lock"></span>
+                    <span id="secure-text" class="small text-success">Secure<span class="hidden-xs"> Server</span></span>
+                  </div>
+                  <div class="col-sm-4 hidden-xs">
+                    <img src="img/c-cards.png" alt="We accept MasterCard, Visa, Discover, and American Express" width="115px" style="margin-top: 10px;">
+                  </div>
+                  <div class="col-xs-6 col-sm-4">
+                    <div class="seals verify-seal pull-right">
+                      <img class="pull-right" src="img/norton-xs.png" alt="Norton Secure">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="credit_card_card_number" class="col-sm-4 control-label">Card Number</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control inspectletIgnore" id="credit_card_card_number" name="credit_card[card_number]" size="30">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="credit_card[expiration_date(2i)]" class="col-xs-12 col-sm-4 control-label">Expiration</label>
+                  <input id="credit_card_expiration_date_3i" name="credit_card[expiration_date(3i)]" type="hidden" value="1">
+                  <div class="col-xs-6 col-sm-4 inspectlet-sensitive">
+                    <select id="credit_card_expiration_date_2i" name="credit_card[expiration_date(2i)]" class="form-control">
+                      <option value="1">January</option>
+                      <option value="2">February</option>
+                      <option value="3">March</option>
+                      <option selected value="4">April</option>
+                      <option value="5">May</option>
+                      <option value="6">June</option>
+                      <option value="7">July</option>
+                      <option value="8">August</option>
+                      <option value="9">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </select>
+                  </div>
+                  <div class="col-xs-6 col-sm-4 inspectlet-sensitive">
+                    <select id="credit_card_expiration_date_1i" name="credit_card[expiration_date(1i)]" class="form-control form-control-second">
+                      <option selected value="2014">2014</option>
+                      <option value="2015">2015</option>
+                      <option value="2016">2016</option>
+                      <option value="2017">2017</option>
+                      <option value="2018">2018</option>
+                      <option value="2019">2019</option>
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                      <option value="2023">2023</option>
+                      <option value="2024">2024</option>
+                      <option value="2025">2025</option>
+                      <option value="2026">2026</option>
+                      <option value="2027">2027</option>
+                      <option value="2028">2028</option>
+                      <option value="2029">2029</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="cvv2" class="col-xs-12 col-sm-4 control-label">CVV#
+                  </label>
+                  <div class="col-xs-6 col-sm-4">
+                    <input id="cvv2" maxlength="4" name="credit_card[verification_number]" size="4" type="text" class="form-control inspectletIgnore">
+                  </div>
+                  <div class="col-xs-6 col-sm-4 cvv-wrapper">
+                    <img class="cvv-img" src="img/c-cards-cvv.png" alt="CVV">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="zipcode" class="col-xs-12 col-sm-4 control-label">Zip Code</label>
+                  <div class="col-xs-6 col-sm-4">
+                    <input id="zipcode" class="form-control inspectletIgnore" maxsize="20" name="address[zip]" size="30" type="text">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="terms-container">
+            <label>
+              <div class="row">
+                <input id="account_tos" class="col-xs-1" name="account[tos]" type="checkbox" value="1">
+                <div class="col-xs-11">
+                  <p class="small">
+                    By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms of Service</a> and <a href="//www.peoplelooker.com/privacy-policy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price"></span> every <span id="legal-type"></span>&nbsp;until this subscription is canceled.
+                    You can cancel your membership at any time by contacting customer service at <span class="text-primary">1-800-218-3309</span> or emailing <a href="mailto:support@peoplelooker.com">support@peoplelooker.com</a>. You also agree that you
+                    will <u>NOT</u> use any information about an individual obtained from PeopleLooker as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance;
+                    or for any other purpose prohibited by our <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms of Service</a>.
+                  </p>
+                </div>
+              </div>
+            </label>
+          </div>
+
+          <input id="layout" name="layout" type="hidden" value="fresh">
+          <input id="user_password" name="user[password]" value="delay" type="hidden">
+          <input id="user_pwdelay" name="user[pwdelay]" value="true" type="hidden">
+          <input id="password" name="password" value="delay" type="hidden">
+          <input id="password_delay" name="pwdelay" value="true" type="hidden">
+          <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
+          <input id="tos2" name="tos2" type="hidden" value="1">
+
+          <div class="submit-btn-wrapper">
+            <div id="create_button_container" class="row">
+              <!-- <div class="left-ribbon hidden-xs"></div> -->
+              <div class="col-sm-8 col-sm-offset-2">
+                <button id="create_button" class="btn btn-block btn-lg" type="submit">View Report</button>
+              </div>
+              <!-- <div class="right-ribbon hidden-xs">
+                <p>
+                  <span class="strong text-bv-blue">Satisfaction Guaranteed!</span>
+                  <br/>
+                  <span id="refund-text">If we do not have results for this report we will gladly issue a refund. <span class="hidden-sm">Just contact Customer Care.</span></span>
+                </p>
+              </div> -->
+              <!-- /.right-ribbon -->
+            </div>
+            <div id="spinner" class="hidden text-center">
+              <img class="spinner-inner" src="img/ajax-loader.gif" alt="Loading...">
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <div class="col-sm-5 hidden-xs">
+
+        <div id="order-summary" class="panel side-panel info-snippet hidden-xs">
+          <div class="panel-heading panel-tealish">
+            <p class="panel-title strong" data-fr-bind="currentRecord">
+              {{#if fullName}}
+                Includes report for {{fullName}}
+              {{else}}
+                Order Summary
+              {{/if}}
+            </p>
+          </div>
+          <div class="panel-body report" data-fr-bind="currentRecord extraTeaserData">
+            <div class="order-summary-section">
+
+              {{#if fullName}}
+
+                <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">Age:</span>
+                  <span class="pull-right">
+                    <span class="report-owners-age truncate">
+                      {{#if age}}
+                        {{age}}
+                      {{else}}
+                        Age Searched
+                      {{/if}}
+                    </span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+
+                <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">Current Location:</span>
+                  <span class="pull-right">
+                    <span class="report-owners-current-location truncate">
+                      {{#if place}}
+                        {{place}}
+                      {{else}}
+                        Locations Searched
+                      {{/if}}
+                    </span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+
+                <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">Relatives:</span>
+                  <span class="pull-right">
+                    <span class="report-owners-relatives truncate">
+                      {{#if relatives}}
+                        <span class="teaser-data">
+                          {{relative}}
+                        </span>
+
+                        {{#if relativesCountTeaser}}
+                          <span class="teaser-data-count">+{{relativesCountTeaser}} more</span>
+                        {{/if}}
+                      {{else}}
+                        Relatives Searched
+                      {{/if}}
+                    </span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+
+                <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">Phone:</span>
+                  <span class="pull-right">
+                    <span class="report-owners-phone truncate">
+                      {{#if phoneNumbers}}
+                        {{phoneNumber}}
+
+                        {{#if phoneNumbersCountTeaser}}
+                          <span class="teaser-data-count">+{{phoneNumbersCountTeaser}} more</span>
+                        {{/if}}
+                      {{else}}
+                        Phones Searched
+                      {{/if}}
+                    </span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+
+                <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">Emails:</span>
+                  <span class="pull-right">
+                    <span class="report-owners-emails truncate">
+                      {{#if emails}}
+                        {{email}}
+
+                        {{#if emailsCountTeaser}}
+                          <span class="teaser-data-count">+{{emailsCountTeaser}} more</span>
+                        {{/if}}
+                      {{else}}
+                        Emails Searched
+                      {{/if}}
+                    </span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+
+                <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">Criminal &amp; Traffic:</span>
+                  <span class="pull-right">
+                    <span class="report-owners-arrest-records truncate">
+                      {{#if criminalRecords}}
+                        <span class="teaser-data-count">{{{criminalRecordsCount}}} Found</span>
+                      {{else}}
+                        Searched
+                      {{/if}}
+                    </span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+
+                <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">Photos &amp; Much More:</span>
+                  <span class="pull-right">
+                    <span class="report-owners-arrest-records text-success">
+                      <span class="teaser-data-count">Activate to Search</span>
+                    </span>
+                  </span>
+                </span>
+
+              {{else}}
+
+                <span class="summary-details-wrapper clearfix">
+                  <span class="order-summary-heading strong">Background Reports Include:</span>
+                </span>
+
+                <span class="summary-details-wrapper clearfix">
+                  <span class="pull-right">
+                    <span class="report-owners-arrest-records truncate">
+                      Age Search
+                    </span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+
+                <span class="summary-details-wrapper clearfix">
+                  <span class="pull-right">
+                    <span class="report-owners-arrest-records truncate">
+                      Location Search
+                    </span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+
+                <span class="summary-details-wrapper clearfix">
+                  <span class="pull-right">
+                    <span class="report-owners-arrest-records truncate">
+                      Relatives Search
+                    </span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+
+                <span class="summary-details-wrapper clearfix">
+                  <span class="pull-right">
+                    <span class="report-owners-arrest-records truncate">
+                      Phone # Search
+                    </span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+
+                <span class="summary-details-wrapper clearfix">
+                  <span class="pull-right">
+                    <span class="report-owners-arrest-records truncate">
+                      Email Search
+                    </span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+
+                <span class="summary-details-wrapper clearfix">
+                  <span class="pull-right">
+                    <span class="report-owners-arrest-records truncate">
+                      Criminal Records Search
+                    </span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+
+                <span class="summary-details-wrapper clearfix">
+                  <span class="pull-right">
+                    <span class="report-owners-arrest-records truncate">
+                      Photos &amp; Social Media
+                    </span>
+                    <span class="blue-check"></span>
+                  </span>
+                </span>
+
+                <span class="summary-details-wrapper clearfix">
+                  <span class="pull-right">
+                    <span class="report-owners-arrest-records text-success">
+                      <span class="teaser-data-count">Activate to Search</span>
+                    </span>
+                  </span>
+                </span>
+
+              {{/if}}
+
+              <span class="summary-details-wrapper clearfix price-plan-row">
+                <span class="order-summary-heading strong">+ <span class="summary-term" id="summary-term"></span> Membership</span>
+                <span class="pull-right">
+                 <span class="teaser-data-count">Unlimited Reports</span>
+              </span>
+
+            </div>
+
+            <div class="order-summary-total">
+              <p class="text-right">
+                <strong>Total Today: </strong>
+                <span>$<span class="summary-total-price">1.00</span></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- /#order-summary -->
+
+
+        <!--
+        <div id="order-summary" class="panel side-panel hidden-xs">
+          <div class="panel-heading">
+            <p class="panel-title strong">Order Summary</p>
+          </div>
+          <div class="panel-body" data-fr-bind="currentRecord">
+            {{#if fullName}}
+            <div class="order-summary-section order-summary-full-report">
+              <p>
+                <span class="order-summary-heading">Background Report on:</span>
+                <br/>
+                <span class="order-summary-name strong text-bv-blue">{{#if fullName}} {{fullName}} {{else}} John Doe {{/if}}</span>
+                <span class="pull-right">Included</span>
+              </p>
+            </div>
+            {{/if}}
+            <div>
+              <p>
+                <span class="order-summary-heading">Membership:</span>
+                <br/>
+                <span class="order-summary-plan-length strong text-bv-blue"><span id="summary-term"></span></span>
+                <span class="pull-right">$<span id="summary-month-price"></span> /mo</span>
+              </p>
+            </div>
+            <div class="order-summary-total">
+              <p class="text-right">
+                <strong>Total Today: </strong>$<span class="summary-total-price"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        -->
+
+
+
+        <div id="full-report-checklist" class="panel side-panel" data-fr-bind="currentRecord">
+          <div class="panel-heading panel-greyish">
+            <p class="panel-title strong">All Memberships Include</p>
+          </div>
+          <div class="panel-body">
+
+            <!--
+
+            {{#if fullName}}
+            <div class="order-summary-section order-summary-full-report">
+              <p>
+                <span class="now-included">Your Background Report on</span>
+                <span class="order-summary-name now-included text-bv-blue">{{fullName}}</span>
+                <span class="now-included">may include, where available:</span>
+              </p>
+              <ul id="report-includes">
+                <li>Current &amp; Past Contact Info</li>
+                <li>Relatives &amp; Associates</li>
+                <li>Criminal Court Records</li>
+                <li>Bankruptcies</li>
+                <li>Properties, Social Networks &amp; More</li>
+                <li class="text-success"><strong>New:</strong> Photos, Job &amp; Education History</li>
+              </ul>
+            </div>
+            {{/if}}
+
+            -->
+
+            <p class="now-included">{{#if fullName}}The following {{/if}}Searches, where available:</p>
+            <ul class="list-unstyled unlimited-list">
+              <li><span class="glyphicon glyphicon-ok"></span>Unlimited Contact Information</li>
+              <li><span class="glyphicon glyphicon-ok"></span>Unlimited Phone Lookups</li>
+              <li><span class="glyphicon glyphicon-ok"></span>Unlimited Property/Address Lookups</li>
+              <li><span class="glyphicon glyphicon-ok"></span>Unlimited Email Lookups</li>
+              <li><span class="glyphicon glyphicon-ok"></span>Unlimited Criminal Court Lookups</li>
+            </ul>
+            <div id="premium_searches">
+              <p class="now-included">Also, now get access to:</p>
+              <p id="court-runner"><span class="glyphicon glyphicon-ok"></span> Live Court Runners - ability to get real-time criminal records direct from county court houses <span id="fee">(additional fee required)</span></p>
+              <p class="judgments-liens-licenses"><span class="glyphicon glyphicon-ok"></span> Judgments, Liens &amp; Licenses (additional fee required)</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="alert money-back text-center" data-fr-bind="currentRecord extraTeaserData">
+          <img src="img/money-back-badge.png" class="center-block money-back-badge img-responsive" alt="money back guarantee">
+          <br>
+          <span class="text-bv-blue"><strong>100% Money Back Guarantee</strong></span>
+          <br>
+          <span class="text-center">If we can't find results for
+                {{#if fullName}}
+                  {{fullName}},
+                {{else}}
+                  your subject,
+                {{/if}} <strong>we will gladly issue a refund</strong>!</span>
+        </div>
+
+
+
+        <div id="reports-anonymous" class="row side-headline">
+          <div class="col-xs-12">
+            <p class="side-headline-header strong">
+              <span class="glyphicon glyphicon-lock"></span>Confidential Searching!
+            </p>
+            <p data-fr-bind="currentRecord">
+              {{#if fullName}} {{fullName}} will <strong>not</strong> be notified of this search. {{else}} Your subjects will <strong>not</strong> be notified. {{/if}}
+            </p>
+          </div>
+        </div>
+        <!-- #reports-anonymous -->
+      </div>
+    </div>
+    <!-- /#body-wrap -->
+    <div class="row visible-xs satisfied">
+      <div class="col-xs-2">
+        <span class="glyphicon glyphicon-ok-circle text-bv-blue"></span>
+      </div>
+      <div class="col-xs-10">
+        <span class="satisfied-text">
+          <span class="strong">100% Satisfaction Guaranteed</span> <span id="refund">If we do not have results for this search we will gladly issue a refund. Just contact Customer Support.</span>
+        </span>
+      </div>
+    </div>
+    <div class="row visible-xs">
+      <p class="col-xs-12 phone text-center"><strong>Questions? </strong>Call 1-800-218-3309</p>
+    </div>
+  </div>
+  <!-- /#wrapper -->
+
+  <footer>
+    <div class="container">
+      <div id="service-hours" class="row">
+        <div class="col-xs-12">
+          <p>
+            <strong>Live Customer Support Hours: M-F 8am - 10pm ET and Weekends 10am - 8pm ET</strong>
+          </p>
+        </div>
+      </div>
+      <div id="disclaimer" class="row">
+        <div class="col-xs-12">
+          <p>
+            Disclaimer: PeopleLooker&rsquo;s mission is to give people easy and affordable access to public record information. PeopleLooker does not provide private investigator services, and is not a consumer reporting agency as defined by the <a href="//www.peoplelooker.com/fcra"
+            rel="nofollow" target="_blank">Fair Credit Reporting Act</a> because the information provided by PeopleLooker is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more
+            information governing the permitted and prohibited uses of PeopleLooker, please review our <a href="//www.peoplelooker.com/uses" target="_blank" rel="nofollow">&ldquo;Do&rsquo;s &amp; Don&rsquo;ts&rdquo;</a> and our <a href="//www.peoplelooker.com/terms-conditions"
+            target="_blank" rel="nofollow">Terms &amp; Conditions</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="footer-terms">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <p>
+              <span class="logo"><span class="strong">PeopleLooker, LLC</span> &copy; <span class="current-year">2016</span></span>
+            </p>
+          </div>
+          <div class="col-sm-6 text-right">
+            <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms</a> | <a href="//www.peoplelooker.com/privacy-policy" target="_blank">Privacy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="iModal-trial" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button id="imodal-x" type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="img/dollar-trial.png" alt="$1" class="dollar-trial-img">
+          <h1 class="title text-center">
+            Special Limited Time Offer!
+            <span class="text-break">$1 Trial!</span>
+          </h1>
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+              <p class="sub-title">
+                Run unlimited background reports for the entire trial period.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <button type="button" id="show-dollar-trial" class="btn btn-lg btn-primary text-center">Try PeopleLooker for $1!</button>
+            </div>
+          </div>
+          <a href="<%= previous_page %>" id="iModal-back" class="text-muted"><span class="text-normal">or</span> Go back to Search Results</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /#iModal-trial -->
+
+  <div id="PayPal-Success" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <h2 class="text-success"><img src="img/success_icon.png" alt="PayPal Success" width="30" height="30"> One Last Step!</h2>
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+              <p id="paypal-confirm-sub-text">Just click the confirm button below to activate and view your report.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+              <button type="button" id="confirm-paypal" class="btn btn-lg btn-block btn-success text-center" style="margin:24px 0 10px">Confirm &amp; View Report <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+              <img id="paypal-spinner" class="spinner-inner" src="img/ajax-loader.gif" alt="Loading...">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <a href="#" id="iModal-dismiss" class="text-muted" style="cursor:hand;cursor:pointer;">Click Here to Cancel PayPal Payment</a>
+              <p id="paypal-confirm-error">Oops! Something went wrong. Please confirm your PayPal payment again or contact customer support at 1-888-579-5910.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /#iModal-trial -->
+
+  <div id="PayPal-Failed" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <h2 class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Error</h2>
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+              <p>Unfortunately your payment did not go through using PayPal.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <button type="button" id="pay-CreditCard" class="btn btn-lg btn-block btn-primary text-center">Pay With A Credit Card</button>
+            </div>
+            <div class="col-md-6">
+              <button type="button" id="pay-PayPal" class="btn btn-lg btn-block btn btn-default text-center">Try Again Using PayPal</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /#iModal-trial -->
+
+  <pre id="subscribe_bounce_text" data-sub-bounce-url="<%= next_page %>" class="hide">
+WAIT: WANT A SPECIAL LIMITED TIME OFFER?
+
+*************** CONGRATULATIONS ***************
+
+YOU'VE BEEN SELECTED FOR A LIMITED TIME OFFER!
+
+Stay on this page to take advantage of our special promotional offer.
+
+
+Just click "Cancel" or "Stay On Page" to see your special offer.
+
+*************** CONGRATULATIONS ***************
+  </pre>
+
+  <!-- SCRIPTS -->
+
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <script src="js/jquery.validate.js"></script>
+  <script src="js/jquery.validate.creditcard2.pack-1.0.0.js"></script>
+
+  <script src="js/check_cc.js"></script>
+  <script src="js/utility.js"></script>
+  <script src="js/cookie.js"></script>
+  <script src="js/base64.js"></script>
+  <script src="js/teaserrecord.js"></script>
+
+  <script src="js/amplify.store.min.js"></script>
+  <script src="js/lodash.min.js"></script>
+  <script src="js/handlebars.min.js"></script>
+  <script src="js/framerida.helpers.js"></script>
+  <script src="js/framerida.js"></script>
+  <script src="js/downsell.js"></script>
+
+  <script src="js/subscribeRunner.js"></script>
+  <script src="js/runner.js"></script>
+
+</body>
+
+</html>
