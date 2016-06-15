@@ -51,7 +51,7 @@
 
 /* selection wrap */
 
-.subscribe-step .selection-wrap {
+.selection-wrap.radio {
 	position: relative;
 	min-height: auto;
 	margin: 20px 0;
@@ -59,18 +59,18 @@
 	background-color: #ecf6f5;
 }
 
-.subscribe-step .selection-wrap.selection-selected {
+.selection-wrap.selection-selected {
 	background-color: #d2f4f0;
 }
 
-.subscribe-step .selection-wrap .label-save {
+.selection-wrap .label-save {
 	position: absolute;
   top: -13px;
   right: 0;
 	font-size: 16px;
 }
 
-.subscribe-step .selection-wrap .label-save:before {
+.selection-wrap .label-save:before {
 	content: '';
 	display: block;
 	position: absolute;
@@ -82,36 +82,36 @@
 	border-left-color: transparent;
 }
 
-.subscribe-step .selection-wrap .radio-label {
+.selection-wrap .radio-label {
 	width: 100%;
 	padding: 20px;
 	padding-left: 50px;
 }
 
-.subscribe-step .selection-wrap .radio-label .radio-input {
+.selection-wrap .radio-label .radio-input {
 	margin-left: -30px;
 }
 
-.subscribe-step .selection-wrap .radio-label .plan-price {
+.selection-wrap .radio-label .plan-price {
 	display: block;
 }
 
-.subscribe-step .selection-wrap .radio-label .plan-price .price-label {
+.selection-wrap .radio-label .plan-price .price-label {
 	font-size: 18px;
 }
 
-.subscribe-step .selection-wrap .radio-label .plan-price .price-info {
+.selection-wrap .radio-label .plan-price .price-info {
 	color: #777;
 	font-size: 14px;
 }
 
 @media (min-width: 480px) {
-	.subscribe-step .selection-wrap .radio-label {
+	.selection-wrap .radio-label {
 		padding-top: 30px;
 		padding-bottom: 30px;
 	}
 
-	.subscribe-step .selection-wrap .radio-label .plan-price {
+	.selection-wrap .radio-label .plan-price {
 		position: absolute;
     top: 50%;
     right: 20px;
@@ -120,7 +120,28 @@
 		line-height: 1.25;
 	}
 
-	.subscribe-step .selection-wrap .radio-label .plan-price .price-info {
+	.selection-wrap .radio-label .plan-price .price-info {
 		display: block;
 	}
+}
+
+/* member-perks */
+.member-perks {
+	margin-bottom: 20px;
+}
+
+/*.member-perks .member-perk {
+	position: relative;
+	margin: 10px 0 20px;
+}*/
+
+.member-perks .member-perk .perk-icon {
+	position: absolute;
+	width: 45px;
+}
+
+.member-perks .member-perk .perk-label {
+	display: block;
+	max-width: 100px;
+	margin-left: 55px;
 }
