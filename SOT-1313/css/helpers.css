@@ -68,6 +68,11 @@
   color: #333;
 }
 
+.background-light {
+  background-color: #fff;
+  color: #333;
+}
+
 /* image helpers */
 
 .img-responsive {
@@ -95,7 +100,6 @@
   padding: 5px 20px;
   background-color: #a9e963;
   color: #417505;
-  font-size: 16px;
   line-height: 1;
 }
 

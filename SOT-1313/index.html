@@ -44,7 +44,7 @@
 
 <body class="hide" data-next-page="<%= next_page %>" data-search-page="//www.peoplelooker.com/lp/400200/5/subscribe">
 
-  <main class="pl subscribe-layout">
+  <main class="pl subscribe-layout background-neutral">
 
     <aside id="ppCanceled" class="alert alert-danger alert-dismissible text-center" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -64,9 +64,11 @@
       </div>
     </header>
 
-    <section class="container" id="cta-header">
-      <h2 class="title text-primary">Almost There!</h2>
-      <p class="sub-title">Activate your account to see your full report and do unlimited searches.</p>
+    <section class="cta background-light" id="cta-header">
+      <div class="container">
+        <h2 class="title text-primary">Almost There!</h2>
+        <p class="sub-title">Activate your account to see your full report and do unlimited searches.</p>
+      </div>
     </section>
 
     <section class="container background-neutral visible-xs" id="teaser-mobile">
@@ -150,14 +152,14 @@
             </div>
           </div>
 
-          <form class="form-horizontal" action="/accounts" id="subscribe_form" method="post" data-fr-bind="leadData currentRecord" data-sub-ignore-messages="false" data-sub-ignore-success="false" data-sub-success-class="input-success" data-sub-success-image="img/checked.gif"
+          <form class="form-horizontal row" action="/accounts" id="subscribe_form" method="post" data-fr-bind="leadData currentRecord" data-sub-ignore-messages="false" data-sub-ignore-success="false" data-sub-success-class="input-success" data-sub-success-image="img/checked.gif"
           data-sub-error-class="input-error">
 
             <input id="promotion" name="promotion" type="hidden" value="view_report_trial">
             <input name="authenticity_token" type="hidden" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=">
             <input type="hidden" id="credit" name="payment_method" value="credit_card" checked>
 
-            <div class="subscribe-step" id="sub-step-1">
+            <div class="subscribe-step background-light col-xs-12" id="sub-step-1">
               <h4 class="title text-secondary">Step 1: Select a Plan</h4>
 
               <div class="radio selection-wrap selection-top selection-selected">
@@ -195,7 +197,7 @@
               </div>
             </div>
 
-            <div class="subscribe-step" id="sub-step-2">
+            <div class="subscribe-step background-light col-xs-12" id="sub-step-2">
               <h4 class="title text-secondary">Step 2: Create an Account</h4>
 
               <div class="form-group">
