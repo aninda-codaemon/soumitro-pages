@@ -272,3 +272,21 @@ hr {
     display: block;
     margin: 0 auto;
 }
+
+/* alerts */
+
+.alert {
+  margin: 0;
+  border-radius: 0;
+  border: 0;
+}
+
+.alert .close {
+  opacity: 1;
+  text-shadow: none;
+}
+
+.alert.alert-danger {
+  background-color: #E45151;
+  color: #fff;
+}

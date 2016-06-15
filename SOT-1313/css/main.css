@@ -6,6 +6,33 @@
 
 /* teaser-mobile */
 
-#teaser-mobile {
-	
+#teaser-mobile .teaser {
+	margin: 10px 0;
+}
+
+#teaser-mobile .teaser .teaser-icon {
+	position: absolute;
+	width: 40px;
+}
+
+#teaser-mobile .teaser .teaser-title {
+	margin: 0;
+	margin-left: 50px;
+	line-height: 1.5;
+}
+
+#teaser-mobile .teaser .teaser-title .teaser-data {
+	display: block;
+	font-size: 85%;
+}
+
+@media (min-width: 480px) {
+	#teaser-mobile .teaser .teaser-icon {
+		width: 50px;
+	}
+
+	#teaser-mobile .teaser .teaser-title {
+		margin-left: 60px;
+		line-height: 1.75;
+	}
 }
