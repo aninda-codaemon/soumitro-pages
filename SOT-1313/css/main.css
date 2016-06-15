@@ -46,11 +46,18 @@
 
 .subscribe-step {
 	margin-bottom: 15px;
+	padding: 15px;
+	padding-bottom: 25px;
 }
 
 .subscribe-step .title {
-	margin-top: 25px;
 	text-align: left;
+}
+
+@media (min-width: 992px) {
+	.subscribe-step {
+		padding: 20px 30px 25px;
+	}
 }
 
 /* selection wrap */
@@ -130,6 +137,7 @@
 }
 
 /* member-perks */
+
 .member-perks {
 	margin-bottom: 20px;
 }
@@ -157,7 +165,6 @@
 }
 
 .member-perks .perks-list {
-	margin-bottom: 40px;
   padding-left: 15px;
 }
 

@@ -183,8 +183,8 @@
 }
 
 .btn-centered {
-  display: block;
-  margin: 0 auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .btn.visited {
@@ -220,6 +220,10 @@
 }
 
 /* forms */
+
+.form-group {
+  margin-bottom: 20px;
+}
 
 .form-control {
     border-radius: 0;
