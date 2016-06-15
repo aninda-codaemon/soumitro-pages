@@ -284,6 +284,7 @@ hr {
 .alert .close {
   opacity: 1;
   text-shadow: none;
+  outline: none;
 }
 
 .alert.alert-danger {

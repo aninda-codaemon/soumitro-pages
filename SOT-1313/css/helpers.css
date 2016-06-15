@@ -91,14 +91,12 @@
   border-radius: 50%;
 }
 
-.label-new {
-  vertical-align: text-bottom;
-  margin-left: 3px;
-  padding: 0 3px 2px;
-  border-radius: 4px;
-  background-color: #FCC41C;
-  color: #fff;
-  font-size: 12px;
+.label-save {
+  padding: 5px 20px;
+  background-color: #a9e963;
+  color: #417505;
+  font-size: 16px;
+  line-height: 1;
 }
 
 /* alerts */
