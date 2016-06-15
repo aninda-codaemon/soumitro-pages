@@ -23,6 +23,7 @@
 
 #teaser-mobile .teaser .teaser-title .teaser-data {
 	display: block;
+	color: #333;
 	font-size: 85%;
 }
 
@@ -42,4 +43,25 @@
 .subscribe-step .title {
 	margin: 10px auto;
 	text-align: left;
+}
+
+.subscribe-step .selection-wrap {
+	position: relative;
+	min-height: auto;
+	margin: 20px 0;
+	padding: 0;
+	background-color: #ecf6f5;
+}
+
+.subscribe-step .selection-wrap.selection-selected {
+	background-color: #d2f4f0;
+}
+
+.subscribe-step .selection-wrap .radio-label {
+	padding: 15px;
+	padding-left: 50px;
+}
+
+.subscribe-step .selection-wrap .radio-label .radio-input {
+	margin-left: -30px;
 }
