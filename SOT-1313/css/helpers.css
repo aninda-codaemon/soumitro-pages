@@ -84,33 +84,6 @@
   margin: 15px auto;
 }
 
-/* labels */
-
-.label-primary {
-  background: #33D4C0;
-  color: #fff;
-}
-
-.label-rounded {
-  padding: 7px 15.5px;
-  border-radius: 50%;
-}
-
-.label-save {
-  padding: 5px 20px;
-  background-color: #a9e963;
-  color: #417505;
-  line-height: 1;
-}
-
-/* alerts */
-
-.alert-warning {
-  border: 0;
-  background-color: #fcc41c;
-  color: #333;
-}
-
 /* grid */
 
 .table-row {

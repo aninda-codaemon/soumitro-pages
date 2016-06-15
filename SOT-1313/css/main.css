@@ -1,5 +1,9 @@
 /* cta */
 
+#cta-header {
+	margin-bottom: 15px;
+}
+
 #cta-header .title {
 	margin: 10px auto;
 }
