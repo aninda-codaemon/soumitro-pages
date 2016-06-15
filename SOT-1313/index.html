@@ -136,16 +136,16 @@
       </div>
     </section>
 
-    <div id="wrapper" class="container">
+    <div class="container" id="wrapper">
 
-      <div id="body-wrap" class="row">
-        <div id="sub-form-wrapper" class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-8" id="contentLeft">
 
-          <div id="error_container" class="row hidden">
+          <div class="row hidden" id="error_container">
             <div class="errorExplanation" id="errorExplanation">
               <p class="h3">Oops, something went wrong.</p>
               <p>There were problems with the following fields:</p>
-              <ul id='messages'>
+              <ul id="messages">
               </ul>
             </div>
           </div>
@@ -157,117 +157,47 @@
             <input name="authenticity_token" type="hidden" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=">
             <input type="hidden" id="credit" name="payment_method" value="credit_card" checked>
 
-            <div id="sub-step-1">
-              <div class="row form-heading">
-                <p class="col-xs-12">
-                  Step 1: Select Your Unlimited Report Package
-                </p>
-              </div>
-              <div class="selection-wrap selection-top selection-selected">
-                <label>
-                  <div class="row hidden-xs">
-                    <div class="col-sm-offset-8 col-sm-4 text-right">
-                      <span class="strong save-this">&nbsp;</span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-2 col-sm-1">
-                      <div class="radio-wrap">
-                        <input checked class="plan_name_radio" id="22_1_month_nofree_afill_no_bjl" name="subscription_plan_name" type="radio" value="<%= subscription_1 %>">
-                      </div>
-                    </div>
-                    <div class="col-xs-10 col-sm-7 plan-type-wrap">
-                      <p class="plan-type-heading"><strong>1 Month Membership</strong></p>
-                    </div>
-                    <div class="col-xs-offset-2 col-xs-10 col-sm-offset-0 col-sm-4 plan-price-wrap">
-                      <div class="row">
-                        <div class="col-xs-6 col-sm-12">
-                          <p class="plan-price" data-plan-price="18.18" data-term-length="1 Month" data-monthly-price="18.18" data-plan-type="month"><strong>$18.18 </strong>/mo</p>
-                        </div>
-                        <div class="col-xs-6 col-sm-12">
-                          <p class="strong save-this text-right">&nbsp;</p>
-                        </div>
-                      </div>
-                      <p class="visible-xs text-muted"><small>($18.18 Today)</small></p>
-                    </div>
-                  </div>
+            <div class="subscribe-step" id="sub-step-1">
+              <h4 class="title text-secondary">Step 1: Select a Plan</h4>
+
+              <div class="radio selection-wrap selection-top selection-selected">
+                <label class="radio-label">
+                  <input checked class="plan_name_radio" id="22_1_month_nofree_afill_no_bjl" name="subscription_plan_name" type="radio" value="<%= subscription_1 %>">
+                  <strong class="plan-title">1 Month Membership</strong>
+                  <span class="plan-price" data-plan-price="18.18" data-term-length="1 Month" data-monthly-price="18.18" data-plan-type="month">
+                    <strong class="price-label">$18.18/mo</strong>
+                  </span>
                 </label>
               </div>
-              <div class="selection-wrap selection-mid">
-                <label>
-                  <div class="row hidden-xs">
-                    <div class="col-sm-offset-8 col-sm-4 text-right">
-                      <span class="strong save-this">Save 35%</span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-2 col-sm-1 radio-wrap">
-                      <input class="plan_name_radio" id="44_58_3_months_nofree_affil" name="subscription_plan_name" type="radio" value="<%= subscription_2 %>">
-                    </div>
-                    <div class="col-xs-10 col-sm-7 plan-type-wrap">
-                      <p class="plan-type-heading"><strong>3 Month Membership</strong></p>
-                    </div>
-                    <div class="col-xs-offset-2 col-xs-10 col-sm-offset-0 col-sm-4 plan-price-wrap">
-                      <div class="row">
-                        <div class="col-xs-6 col-sm-12">
-                          <p class="plan-price" data-plan-price="35.46" data-term-length="3 Months" data-monthly-price="11.82" data-plan-type="3 months"><strong>$11.82 </strong>/mo</p>
-                        </div>
-                        <div class="col-xs-6 visible-xs">
-                          <p class="strong save-this text-right">Save 35%</p>
-                        </div>
-                      </div>
-                      <p class="visible-xs text-muted"><small>($35.46 Today)</small></p>
-                    </div>
-                  </div>
-                  <div class="hidden-xs row">
-                    <div class="col-sm-offset-8 col-sm-4 text-right">
-                      <span class="text-muted">($35.46 Today)</span>
-                    </div>
-                  </div>
+
+              <div class="radio selection-wrap selection-mid">
+                <span class="label-save">Save 35%</span>
+                <label class="radio-label">
+                  <input class="plan_name_radio" id="44_58_3_months_nofree_affil" name="subscription_plan_name" type="radio" value="<%= subscription_2 %>">
+                  <strong class="plan-title">3 Month Membership</strong>
+                  <span class="plan-price" data-plan-price="35.46" data-term-length="3 Months" data-monthly-price="11.82" data-plan-type="3 months">
+                    <strong class="price-label">$11.82/mo</strong>
+                    <span class="price-info">($35.46 Today)</span>
+                  </span>
                 </label>
               </div>
-              <div class="selection-wrap selection-bot">
-                <label>
-                  <div class="row hidden-xs">
-                    <div class="col-sm-offset-8 col-sm-4 text-right">
-                      <span class="strong save-this">Save 57%</span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-2 col-sm-1 radio-wrap">
-                      <input class="plan_name_radio" id="58_98_6_month_nofree_affil" name="subscription_plan_name" type="radio" value="<%= subscription_3 %>">
-                    </div>
-                    <div class="col-xs-10 col-sm-7 plan-type-wrap">
-                      <p class="plan-type-heading"><strong>6 Month Membership</strong></p>
-                    </div>
-                    <div class="col-xs-offset-2 col-xs-10 col-sm-offset-0 col-sm-4 plan-price-wrap">
-                      <div class="row">
-                        <div class="col-xs-6 col-sm-12">
-                          <p class="plan-price" data-plan-price="46.92" data-term-length="6 Months" data-monthly-price="7.82" data-plan-type="6 months"><strong>$7.82 </strong>/mo</p>
-                        </div>
-                        <div class="col-xs-6 visible-xs">
-                          <p class="strong save-this text-right">Save 57%</p>
-                        </div>
-                      </div>
-                      <p class="visible-xs text-muted"><small>($46.92 Today)</small></p>
-                    </div>
-                  </div>
-                  <div class="hidden-xs row">
-                    <div class="col-sm-offset-8 col-sm-4 text-right">
-                      <span class="text-muted">($46.92 Today)</span>
-                    </div>
-                  </div>
+
+              <div class="radio selection-wrap selection-bot">
+                <span class="label-save">Save 57%</span>
+                <label class="radio-label">
+                  <input class="plan_name_radio" id="58_98_6_month_nofree_affil" name="subscription_plan_name" type="radio" value="<%= subscription_3 %>">
+                  <strong class="plan-title">6 Month Membership</strong>
+                  <span class="plan-price" data-plan-price="46.92" data-term-length="6 Months" data-monthly-price="7.82" data-plan-type="6 months">
+                    <strong class="price-label">$7.82/mo</strong>
+                    <span class="price-info">($46.92 Today)</span>
+                  </strong>
                 </label>
               </div>
             </div>
-            <!-- /#sub-step-1 -->
 
-            <div id="sub-step-2">
-              <div class="row form-heading">
-                <p class="col-xs-12">
-                  Step 2: Create Your Account Below
-                </p>
-              </div>
+            <div class="subscribe-step" id="sub-step-2">
+              <h4 class="title text-secondary">Step 2: Create an Account</h4>
+
               <div class="form-group">
                 <label for="account_first_name" class="col-sm-4 control-label">First Name</label>
                 <div class="col-sm-8">
@@ -416,7 +346,7 @@
           </form>
         </div>
 
-        <div class="col-sm-5 hidden-xs">
+        <div class="col-sm-4 hidden-xs">
 
           <div id="order-summary" class="panel side-panel info-snippet hidden-xs">
             <div class="panel-heading panel-tealish">

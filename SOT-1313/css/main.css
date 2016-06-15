@@ -36,3 +36,10 @@
 		line-height: 1.75;
 	}
 }
+
+/* content left */
+
+.subscribe-step .title {
+	margin: 10px auto;
+	text-align: left;
+}
