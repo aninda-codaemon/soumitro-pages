@@ -130,10 +130,16 @@
 	margin-bottom: 20px;
 }
 
-/*.member-perks .member-perk {
+.member-perks .sub-title {
+	margin-top: 15px;
+	text-align: left;
+	font-weight: bold;
+}
+
+.member-perks .member-perk {
 	position: relative;
 	margin: 10px 0 20px;
-}*/
+}
 
 .member-perks .member-perk .perk-icon {
 	position: absolute;
@@ -142,6 +148,44 @@
 
 .member-perks .member-perk .perk-label {
 	display: block;
-	max-width: 100px;
+	max-width: 70px;
 	margin-left: 55px;
+}
+
+.member-perks .perks-list {
+	margin-bottom: 40px;
+  padding-left: 15px;
+}
+
+.member-perks .perks-list .perks-item {
+	color: #33d4c0;
+	font-size: 14px;
+}
+
+.member-perks .perks-list .perks-item .item-label {
+	color: #333;
+}
+
+@media (min-width: 480px) {
+	.member-perks .member-perk {
+		width: 25%;
+	}
+
+	.member-perks .member-perk .perk-label {
+		margin-top: 5px;
+		font-size: 11px;
+	}
+}
+
+@media (min-width: 992px) {
+	.member-perks .member-perk .perk-label {
+		margin-top: 0;
+		font-size: 16px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.member-perks .member-perk {
+		width: 20%;
+	}
 }
