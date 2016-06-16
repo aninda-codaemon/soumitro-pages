@@ -217,6 +217,21 @@
 	margin-bottom: 20px;
 }
 
+.cc-wrapper .checkbox .checkbox-label {
+	padding-left: 40px;
+}
+
+.cc-wrapper .checkbox .checkbox-input {
+	margin-left: -40px;
+}
+
+.cc-wrapper #create_button {
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	font-size: 32px;
+}
+
 /* money back callout */
 
 .callout.money-back .callout-img {
