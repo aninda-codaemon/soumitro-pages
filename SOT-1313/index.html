@@ -158,6 +158,13 @@
             <input id="promotion" name="promotion" type="hidden" value="view_report_trial">
             <input name="authenticity_token" type="hidden" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=">
             <input type="hidden" id="credit" name="payment_method" value="credit_card" checked>
+            <input id="layout" name="layout" type="hidden" value="fresh">
+            <input id="user_password" name="user[password]" value="delay" type="hidden">
+            <input id="user_pwdelay" name="user[pwdelay]" value="true" type="hidden">
+            <input id="password" name="password" value="delay" type="hidden">
+            <input id="password_delay" name="pwdelay" value="true" type="hidden">
+            <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
+            <input id="tos2" name="tos2" type="hidden" value="1">
 
             <section class="content-block step background-light col-xs-12" id="sub-step-1">
               <h4 class="title text-secondary">Step 1: Select a Plan</h4>
@@ -294,10 +301,12 @@
                   <label for="credit_card_card_number" class="control-label">Card Number</label>
                   <input type="text" class="form-control inspectletIgnore" id="credit_card_card_number" name="credit_card[card_number]" size="30" placeholder="Card Number" />
                 </div>
+
                 <div class="col-sm-4">
+                  <label for="cvv2" class="control-label">CVV</label>
+
                   <div class="row">
                     <div class="form-group col-xs-8 col-sm-6">
-                      <label for="cvv2" class="control-label">CVV</label>
                       <input id="cvv2" maxlength="4" name="credit_card[verification_number]" size="4" type="text" class="form-control inspectletIgnore" placeholder="CVV" />
                     </div>
                     <div class="col-xs-4 col-sm-6">
@@ -305,25 +314,16 @@
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="row cc-wrapper">
-                <div class="col-xs-12">
-                  <div class="form-group">
-                    <label for="credit_card_card_number" class="col-sm-4 control-label">Card Number</label>
-                    <div class="col-sm-8">
-                      <input type="text" class="form-control inspectletIgnore" id="credit_card_card_number" name="credit_card[card_number]" size="30">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="credit_card[expiration_date(2i)]" class="col-xs-12 col-sm-4 control-label">Expiration</label>
-                    <input id="credit_card_expiration_date_3i" name="credit_card[expiration_date(3i)]" type="hidden" value="1">
-                    <div class="col-xs-6 col-sm-4 inspectlet-sensitive">
+                <div class="col-sm-8">
+                  <label for="credit_card[expiration_date(2i)]" class="control-label">Expiration</label>
+                  <div class="row">
+                    <div class="col-sm-6 form-group inspectlet-sensitive">
                       <select id="credit_card_expiration_date_2i" name="credit_card[expiration_date(2i)]" class="form-control">
                         <option value="1">January</option>
                         <option value="2">February</option>
                         <option value="3">March</option>
-                        <option selected value="4">April</option>
+                        <option value="4">April</option>
                         <option value="5">May</option>
                         <option value="6">June</option>
                         <option value="7">July</option>
@@ -334,9 +334,8 @@
                         <option value="12">December</option>
                       </select>
                     </div>
-                    <div class="col-xs-6 col-sm-4 inspectlet-sensitive">
+                    <div class="col-sm-6 form-group inspectlet-sensitive">
                       <select id="credit_card_expiration_date_1i" name="credit_card[expiration_date(1i)]" class="form-control form-control-second">
-                        <option selected value="2014">2014</option>
                         <option value="2015">2015</option>
                         <option value="2016">2016</option>
                         <option value="2017">2017</option>
@@ -355,69 +354,31 @@
                       </select>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label for="cvv2" class="col-xs-12 col-sm-4 control-label">CVV#
-                    </label>
-                    <div class="col-xs-6 col-sm-4">
-                      <input id="cvv2" maxlength="4" name="credit_card[verification_number]" size="4" type="text" class="form-control inspectletIgnore">
-                    </div>
-                    <div class="col-xs-6 col-sm-4 cvv-wrapper">
-                      <img class="cvv-img" src="img/c-cards-cvv.png" alt="CVV">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="zipcode" class="col-xs-12 col-sm-4 control-label">Zip Code</label>
-                    <div class="col-xs-6 col-sm-4">
-                      <input id="zipcode" class="form-control inspectletIgnore" maxsize="20" name="address[zip]" size="30" type="text">
-                    </div>
+                </div>
+
+                <div class="col-sm-4 form-group">
+                  <label for="zipcode" class="control-label">Zip Code</label>
+                  <input id="zipcode" class="form-control inspectletIgnore" maxsize="20" name="address[zip]" size="30" type="text" placeholder="Zip Code" />
+                </div>
+
+                <div class="col-xs-12 form-group checkbox">
+                  <label for="account_tos" class="checkbox-label">
+                    <input id="account_tos" class="col-xs-1" name="account[tos]" type="checkbox" value="1">
+                    By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms of Service</a> and <a href="//www.peoplelooker.com/privacy-policy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price"></span> every <span id="legal-type"></span>&nbsp;until this subscription is canceled.
+                    You can cancel your membership at any time by contacting customer service at <span class="text-primary">1-800-218-3309</span> or emailing <a href="mailto:support@peoplelooker.com">support@peoplelooker.com</a>. You also agree that you
+                    will <u>NOT</u> use any information about an individual obtained from PeopleLooker as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance;
+                    or for any other purpose prohibited by our <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms of Service</a>.
+                  </label>
+                </div>
+
+                <div class="col-xs-12 form-group" id="create_button_container">
+                  <button id="create_button" class="btn btn-lg btn-primary" type="submit">Access Report</button>
+                  <div id="spinner" class="hidden text-center">
+                    <img class="spinner-inner" src="img/loader.gif" alt="Loading...">
                   </div>
                 </div>
               </div>
             </section>
-
-            <div class="terms-container">
-              <label>
-                <div class="row">
-                  <input id="account_tos" class="col-xs-1" name="account[tos]" type="checkbox" value="1">
-                  <div class="col-xs-11">
-                    <p class="small">
-                      By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms of Service</a> and <a href="//www.peoplelooker.com/privacy-policy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price"></span> every <span id="legal-type"></span>&nbsp;until this subscription is canceled.
-                      You can cancel your membership at any time by contacting customer service at <span class="text-primary">1-800-218-3309</span> or emailing <a href="mailto:support@peoplelooker.com">support@peoplelooker.com</a>. You also agree that you
-                      will <u>NOT</u> use any information about an individual obtained from PeopleLooker as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance;
-                      or for any other purpose prohibited by our <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms of Service</a>.
-                    </p>
-                  </div>
-                </div>
-              </label>
-            </div>
-
-            <input id="layout" name="layout" type="hidden" value="fresh">
-            <input id="user_password" name="user[password]" value="delay" type="hidden">
-            <input id="user_pwdelay" name="user[pwdelay]" value="true" type="hidden">
-            <input id="password" name="password" value="delay" type="hidden">
-            <input id="password_delay" name="pwdelay" value="true" type="hidden">
-            <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
-            <input id="tos2" name="tos2" type="hidden" value="1">
-
-            <div class="submit-btn-wrapper">
-              <div id="create_button_container" class="row">
-                <!-- <div class="left-ribbon hidden-xs"></div> -->
-                <div class="col-sm-8 col-sm-offset-2">
-                  <button id="create_button" class="btn btn-block btn-lg" type="submit">View Report</button>
-                </div>
-                <!-- <div class="right-ribbon hidden-xs">
-                  <p>
-                    <span class="strong text-bv-blue">Satisfaction Guaranteed!</span>
-                    <br/>
-                    <span id="refund-text">If we do not have results for this report we will gladly issue a refund. <span class="hidden-sm">Just contact Customer Care.</span></span>
-                  </p>
-                </div> -->
-                <!-- /.right-ribbon -->
-              </div>
-              <div id="spinner" class="hidden text-center">
-                <img class="spinner-inner" src="img/ajax-loader.gif" alt="Loading...">
-              </div>
-            </div>
 
           </form>
         </div>
