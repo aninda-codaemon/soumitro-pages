@@ -272,8 +272,32 @@ label.error {
 }
 
 label.label-success {
+  position: absolute;
+  top: 30px;
+  right: 15px;
+  width: auto;
   background-color: transparent;
   color: #33d4c0;
+}
+
+label.label-success img {
+  width: 20px;
+}
+
+/* custom error states */
+
+label[for='account[tos]'].error {
+  margin-top: 20px;
+}
+
+label[for='cvv2'].label-success {
+  top: 1px;
+}
+
+label[for='credit_card_expiration_date_2i'].label-success,
+label[for='credit_card_expiration_date_1i'].label-success,
+label[for='account[tos]'].label-success {
+  display: none !important;
 }
 
 /* blockquotes */
@@ -311,6 +335,7 @@ hr {
 /* alerts */
 
 .alert {
+  display: none;
   margin: 0;
   border-radius: 0;
   border: 0;
