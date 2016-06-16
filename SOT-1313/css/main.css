@@ -51,6 +51,7 @@
 }
 
 .content-block .title {
+	position: relative;
 	text-align: left;
 }
 
@@ -199,6 +200,21 @@
 	.member-perks .member-perk {
 		width: 20%;
 	}
+}
+
+/* payment step */
+
+#sub-step-3 .title .img-norton {
+	position: absolute;
+	top: -7px;
+	right: 0;
+	width: 80px;
+}
+
+#sub-step-3 .img-ccards {
+	display: block;
+	width: 150px;
+	margin-bottom: 20px;
 }
 
 /* money back callout */
