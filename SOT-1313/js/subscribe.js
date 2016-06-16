@@ -448,7 +448,7 @@ var BVGetQueryVariable = function (variable) {
         data = $.parseJSON(jqXHR.responseText);
       } catch (err) {
         w.BvEventReporters.report("BVPaymentProcessor - Failed to parse responseText", {data: jqXHR.responseText});
-        def.reject(['Sorry, something went wrong. Please contact customer support or try again.']);        
+        def.reject(['Sorry, something went wrong. Please contact customer support or try again.']);
         return;
       }
 
@@ -848,7 +848,7 @@ var BVGetQueryVariable = function (variable) {
     if ((errors instanceof Array) == false) {
       errors = ['Oops! Something went wrong. Please contact customer support at 1-888-579-5910 or try your payment again.'];
     }
-    
+
     errorLen = errors.length;
 
     $errorMessages.html('');
@@ -1024,7 +1024,7 @@ var BVGetQueryVariable = function (variable) {
         $(confirmButton).fadeIn();
         $('#iModal-dismiss').fadeIn();
         $('#paypal-confirm-error').fadeIn();
-        w.BvEventReporters.report("Paypal Payment Confirmation - Confirmed - Failed");  
+        w.BvEventReporters.report("Paypal Payment Confirmation - Confirmed - Failed");
       });
       handlePaymentProcessing(payment);
       payment.always(function () {
@@ -1052,7 +1052,7 @@ var BVGetQueryVariable = function (variable) {
 
       var formData = serializeToObject($(this).serializeArray()),
           payment = paymentProcessor.process(formData);
-      
+
       handlePaymentProcessing(payment);
     });
   };
