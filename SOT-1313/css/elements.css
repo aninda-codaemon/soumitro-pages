@@ -14,6 +14,10 @@
     outline: 0;
 }
 
+.btn-lg {
+    padding: 10px 30px;
+}
+
 .btn-primary {
     -webkit-box-shadow: 0 4px 1px -1px #38AC9E;
     -moz-box-shadow: 0 4px 1px -1px #38AC9E;
@@ -183,8 +187,8 @@
 }
 
 .btn-centered {
-  display: block;
-  margin: 0 auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .btn.visited {
@@ -220,6 +224,10 @@
 }
 
 /* forms */
+
+.form-group {
+  margin-bottom: 20px;
+}
 
 .form-control {
     border-radius: 0;

@@ -42,15 +42,36 @@
 	}
 }
 
-/* content left */
+/* content block */
 
-.subscribe-step {
+.content-block {
+	position: relative;
 	margin-bottom: 15px;
+	padding: 15px;
+	padding-bottom: 25px;
 }
 
-.subscribe-step .title {
-	margin-top: 25px;
+.content-block .title {
+	position: relative;
 	text-align: left;
+}
+
+.content-right .content-block {
+	margin-left: -15px;
+  margin-right: -15px;
+}
+
+@media (min-width: 768px) {
+	.content-right .content-block {
+		margin-left: 0;
+	  margin-right: -15px;
+	}
+}
+
+@media (min-width: 992px) {
+	.content-block {
+		padding: 20px 30px 25px;
+	}
 }
 
 /* selection wrap */
@@ -130,19 +151,20 @@
 }
 
 /* member-perks */
+
 .member-perks {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .member-perks .sub-title {
-	margin-top: 15px;
+	margin-top: 20px;
 	text-align: left;
 	font-weight: bold;
 }
 
 .member-perks .member-perk {
 	position: relative;
-	margin: 10px 0 20px;
+	margin: 10px 0;
 }
 
 .member-perks .member-perk .perk-icon {
@@ -157,7 +179,6 @@
 }
 
 .member-perks .perks-list {
-	margin-bottom: 40px;
   padding-left: 15px;
 }
 
@@ -191,5 +212,111 @@
 @media (min-width: 1200px) {
 	.member-perks .member-perk {
 		width: 20%;
+	}
+}
+
+/* payment step */
+
+#sub-step-3 .title .img-norton {
+	position: absolute;
+	top: -7px;
+	right: 0;
+	width: 80px;
+}
+
+#sub-step-3 .img-ccards {
+	display: block;
+	width: 150px;
+	margin-bottom: 20px;
+}
+
+.cc-wrapper .img-cvv {
+	width: 100%;
+	max-width: 70px;
+	margin: 0;
+	margin-top: 8px;
+}
+
+.cc-wrapper .checkbox .checkbox-label {
+	padding-left: 40px;
+	font-size: 14px;
+}
+
+.cc-wrapper .checkbox .checkbox-input {
+	margin-left: -40px;
+}
+
+.cc-wrapper #create_button {
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	font-size: 32px;
+}
+
+/* callout */
+
+.callout {
+	padding: 25px 15px;
+}
+
+.callout .callout-img {
+	display: block;
+	width: 100%;
+	max-width: 100px;
+	margin: 0 auto;
+}
+
+.callout .callout-title {
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.callout .callout-text {
+	margin: 0;
+	text-align: center;
+}
+
+/* money back callout */
+
+.callout.money-back .callout-img {
+	max-width: 150px;
+}
+
+.callout.money-back .callout-text {
+	margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+	/* money back callout */
+
+	.callout.money-back .callout-img {
+		width: 50%;
+    margin: 0;
+		margin-top: 10px;
+    padding-right: 15px;
+		float: left;
+	}
+
+	.callout.money-back .callout-text {
+		width: 50%;
+		margin: 0;
+		padding-left: 15px;
+		float: left;
+		text-align: left;
+	}
+
+	/* confidential searching callout */
+
+	.callout.confidential-searching .callout-img {
+		position: absolute;
+		top: 30px;
+		width: 35px;
+	}
+
+	.callout.confidential-searching .callout-title,
+	.callout.confidential-searching .callout-text {
+		margin-left: 40px;
+		margin-bottom: 10px;
+		text-align: left;
 	}
 }

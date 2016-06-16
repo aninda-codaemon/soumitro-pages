@@ -50,6 +50,7 @@ label, button {
 
 a {
   color: #24C1DB;
+  font-size: inherit;
   text-decoration: none;
   -webkit-transition: all 500ms;
   -moz-transition: all 500ms;

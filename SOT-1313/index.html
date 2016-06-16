@@ -152,14 +152,21 @@
             </div>
           </div>
 
-          <form class="form-horizontal row" action="/accounts" id="subscribe_form" method="post" data-fr-bind="leadData currentRecord" data-sub-ignore-messages="false" data-sub-ignore-success="false" data-sub-success-class="input-success" data-sub-success-image="img/checked.gif"
+          <form class="form row" action="/accounts" id="subscribe_form" method="post" data-fr-bind="leadData currentRecord" data-sub-ignore-messages="false" data-sub-ignore-success="false" data-sub-success-class="input-success" data-sub-success-image="img/checked.gif"
           data-sub-error-class="input-error">
 
             <input id="promotion" name="promotion" type="hidden" value="view_report_trial">
             <input name="authenticity_token" type="hidden" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=">
             <input type="hidden" id="credit" name="payment_method" value="credit_card" checked>
+            <input id="layout" name="layout" type="hidden" value="fresh">
+            <input id="user_password" name="user[password]" value="delay" type="hidden">
+            <input id="user_pwdelay" name="user[pwdelay]" value="true" type="hidden">
+            <input id="password" name="password" value="delay" type="hidden">
+            <input id="password_delay" name="pwdelay" value="true" type="hidden">
+            <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
+            <input id="tos2" name="tos2" type="hidden" value="1">
 
-            <div class="subscribe-step background-light col-xs-12" id="sub-step-1">
+            <section class="content-block step background-light col-xs-12" id="sub-step-1">
               <h4 class="title text-secondary">Step 1: Select a Plan</h4>
 
               <div class="radio selection-wrap selection-top selection-selected">
@@ -245,63 +252,74 @@
                   </li>
                 </ul>
               </div>
-            </div>
+            </section>
 
-            <div class="subscribe-step background-light col-xs-12" id="sub-step-2">
+            <section class="content-block step background-light col-xs-12" id="sub-step-2">
               <h4 class="title text-secondary">Step 2: Create an Account</h4>
 
-              <div class="form-group">
-                <label for="account_first_name" class="col-sm-4 control-label">First Name</label>
-                <div class="col-sm-8">
-                  <input class="form-control" id="account_first_name" name="account[first_name]" type="text" value="{{account[first_name]}}">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="account_first_name" class="control-label">First Name</label>
+                  <input class="form-control" id="account_first_name" name="account[first_name]" type="text" value="{{account[first_name]}}" placeholder="Enter First Name" />
                 </div>
-              </div>
 
-              <div class="form-group">
-                <label for="account_last_name" class="col-sm-4 control-label">Last Name</label>
-                <div class="col-sm-8">
-                  <input class="form-control inspectletIgnore" id="account_last_name" name="account[last_name]" type="text" value="{{account[last_name]}}">
+                <div class="form-group col-md-6">
+                  <label for="account_last_name" class="control-label">Last Name</label>
+                  <input class="form-control inspectletIgnore" id="account_last_name" name="account[last_name]" type="text" value="{{account[last_name]}}" placeholder="Enter Last Name" />
                 </div>
-              </div>
 
-              <div class="form-group">
-                <label for="user_email" class="col-sm-4 control-label">Email Address</label>
-                <div class="col-sm-8">
-                  <input class="form-control inspectletIgnore" id="user_email" maxsize="100" name="user[email]" type="email" value="{{user[email]}}">
+                <div class="form-group col-md-8">
+                  <label for="user_email" class="control-label">Email Address</label>
+                  <input class="form-control inspectletIgnore" id="user_email" maxsize="100" name="user[email]" type="email" value="{{user[email]}}" placeholder="Enter Email" />
                 </div>
               </div>
+            </section>
+
+            <section class="content-block callout money-back background-primary-pastel col-xs-12 visible-xs">
+              <div class="contain-center">
+                <img class="callout-img" src="img/money_back.png" />
+                <h5 class="callout-text" data-fr-bind="currentRecord">
+                  If we can't find results for {{fullName}}, we'll gladly issue a refund!
+                </h5>
+              </div>
+            </section>
+
+            <section class="content-block step background-light col-xs-12" id="sub-step-3">
+              <h4 class="title text-secondary">
+                Step 3: Payment Information
+                <img class="img-norton" src="img/norton.png" alt="Norton Secured" />
+              </h4>
+
+              <img class="img-ccards hidden-xs" src="img/credit_cards.png" alt="Credit Card" />
 
               <div class="row cc-wrapper">
-                <div class="col-xs-12">
-                  <div class="cc-wrapper-header row">
-                    <div id="secure-wrapper" class="col-xs-6 col-sm-4">
-                      <span id="secure-lock" class="glyphicon glyphicon-lock"></span>
-                      <span id="secure-text" class="small text-success">Secure<span class="hidden-xs"> Server</span></span>
+                <div class="form-group col-sm-8">
+                  <label for="credit_card_card_number" class="control-label">Card Number</label>
+                  <input type="text" class="form-control inspectletIgnore" id="credit_card_card_number" name="credit_card[card_number]" size="30" placeholder="Card Number" />
+                </div>
+
+                <div class="col-sm-4">
+                  <label for="cvv2" class="control-label">CVV</label>
+
+                  <div class="row">
+                    <div class="form-group col-xs-6">
+                      <input id="cvv2" maxlength="4" name="credit_card[verification_number]" size="4" type="text" class="form-control inspectletIgnore" placeholder="CVV" />
                     </div>
-                    <div class="col-sm-4 hidden-xs">
-                      <img src="img/c-cards.png" alt="We accept MasterCard, Visa, Discover, and American Express" width="115px" style="margin-top: 10px;">
-                    </div>
-                    <div class="col-xs-6 col-sm-4">
-                      <div class="seals verify-seal pull-right">
-                        <img class="pull-right" src="img/norton-xs.png" alt="Norton Secure">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="credit_card_card_number" class="col-sm-4 control-label">Card Number</label>
-                    <div class="col-sm-8">
-                      <input type="text" class="form-control inspectletIgnore" id="credit_card_card_number" name="credit_card[card_number]" size="30">
+                    <div class="col-xs-6">
+                      <img class="img-cvv" src="img/cvv.png" alt="CVV" />
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label for="credit_card[expiration_date(2i)]" class="col-xs-12 col-sm-4 control-label">Expiration</label>
-                    <input id="credit_card_expiration_date_3i" name="credit_card[expiration_date(3i)]" type="hidden" value="1">
-                    <div class="col-xs-6 col-sm-4 inspectlet-sensitive">
+                </div>
+
+                <div class="col-sm-8">
+                  <label for="credit_card[expiration_date(2i)]" class="control-label">Expiration</label>
+                  <div class="row">
+                    <div class="col-sm-6 form-group inspectlet-sensitive">
                       <select id="credit_card_expiration_date_2i" name="credit_card[expiration_date(2i)]" class="form-control">
                         <option value="1">January</option>
                         <option value="2">February</option>
                         <option value="3">March</option>
-                        <option selected value="4">April</option>
+                        <option value="4">April</option>
                         <option value="5">May</option>
                         <option value="6">June</option>
                         <option value="7">July</option>
@@ -312,9 +330,8 @@
                         <option value="12">December</option>
                       </select>
                     </div>
-                    <div class="col-xs-6 col-sm-4 inspectlet-sensitive">
+                    <div class="col-sm-6 form-group inspectlet-sensitive">
                       <select id="credit_card_expiration_date_1i" name="credit_card[expiration_date(1i)]" class="form-control form-control-second">
-                        <option selected value="2014">2014</option>
                         <option value="2015">2015</option>
                         <option value="2016">2016</option>
                         <option value="2017">2017</option>
@@ -333,454 +350,323 @@
                       </select>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label for="cvv2" class="col-xs-12 col-sm-4 control-label">CVV#
-                    </label>
-                    <div class="col-xs-6 col-sm-4">
-                      <input id="cvv2" maxlength="4" name="credit_card[verification_number]" size="4" type="text" class="form-control inspectletIgnore">
-                    </div>
-                    <div class="col-xs-6 col-sm-4 cvv-wrapper">
-                      <img class="cvv-img" src="img/c-cards-cvv.png" alt="CVV">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="zipcode" class="col-xs-12 col-sm-4 control-label">Zip Code</label>
-                    <div class="col-xs-6 col-sm-4">
-                      <input id="zipcode" class="form-control inspectletIgnore" maxsize="20" name="address[zip]" size="30" type="text">
-                    </div>
+                </div>
+
+                <div class="col-sm-4 form-group">
+                  <label for="zipcode" class="control-label">Zip Code</label>
+                  <input id="zipcode" class="form-control inspectletIgnore" maxsize="20" name="address[zip]" size="30" type="text" placeholder="Zip Code" />
+                </div>
+
+                <div class="col-xs-12 form-group checkbox">
+                  <label for="account_tos" class="checkbox-label">
+                    <input id="account_tos" class="checkbox-input" name="account[tos]" type="checkbox" value="1">
+                    By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms of Service</a> and <a href="//www.peoplelooker.com/privacy-policy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price"></span> every <span id="legal-type"></span>&nbsp;until this subscription is canceled.
+                    You can cancel your membership at any time by contacting customer service at <a href="tel:1-800-218-3309">1-800-218-3309</a> or emailing <a href="mailto:support@peoplelooker.com">support@peoplelooker.com</a>. You also agree that you
+                    will <strong>NOT</strong> use any information about an individual obtained from PeopleLooker as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance;
+                    or for any other purpose prohibited by our <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms of Service</a>.
+                  </label>
+                </div>
+
+                <div class="col-xs-12 form-group" id="create_button_container">
+                  <button id="create_button" class="btn btn-lg btn-primary" type="submit">Access Report</button>
+                  <div id="spinner" class="hidden text-center">
+                    <img class="spinner-inner" src="img/loader.gif" alt="Loading...">
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div class="terms-container">
-              <label>
-                <div class="row">
-                  <input id="account_tos" class="col-xs-1" name="account[tos]" type="checkbox" value="1">
-                  <div class="col-xs-11">
-                    <p class="small">
-                      By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms of Service</a> and <a href="//www.peoplelooker.com/privacy-policy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price"></span> every <span id="legal-type"></span>&nbsp;until this subscription is canceled.
-                      You can cancel your membership at any time by contacting customer service at <span class="text-primary">1-800-218-3309</span> or emailing <a href="mailto:support@peoplelooker.com">support@peoplelooker.com</a>. You also agree that you
-                      will <u>NOT</u> use any information about an individual obtained from PeopleLooker as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance;
-                      or for any other purpose prohibited by our <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms of Service</a>.
-                    </p>
-                  </div>
-                </div>
-              </label>
-            </div>
-
-            <input id="layout" name="layout" type="hidden" value="fresh">
-            <input id="user_password" name="user[password]" value="delay" type="hidden">
-            <input id="user_pwdelay" name="user[pwdelay]" value="true" type="hidden">
-            <input id="password" name="password" value="delay" type="hidden">
-            <input id="password_delay" name="pwdelay" value="true" type="hidden">
-            <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
-            <input id="tos2" name="tos2" type="hidden" value="1">
-
-            <div class="submit-btn-wrapper">
-              <div id="create_button_container" class="row">
-                <!-- <div class="left-ribbon hidden-xs"></div> -->
-                <div class="col-sm-8 col-sm-offset-2">
-                  <button id="create_button" class="btn btn-block btn-lg" type="submit">View Report</button>
-                </div>
-                <!-- <div class="right-ribbon hidden-xs">
-                  <p>
-                    <span class="strong text-bv-blue">Satisfaction Guaranteed!</span>
-                    <br/>
-                    <span id="refund-text">If we do not have results for this report we will gladly issue a refund. <span class="hidden-sm">Just contact Customer Care.</span></span>
-                  </p>
-                </div> -->
-                <!-- /.right-ribbon -->
-              </div>
-              <div id="spinner" class="hidden text-center">
-                <img class="spinner-inner" src="img/ajax-loader.gif" alt="Loading...">
-              </div>
-            </div>
+            </section>
 
           </form>
         </div>
 
-        <div class="col-sm-4 hidden-xs">
+        <div class="col-sm-4 content-right">
 
-          <div id="order-summary" class="panel side-panel info-snippet hidden-xs">
-            <div class="panel-heading panel-tealish">
-              <p class="panel-title strong" data-fr-bind="currentRecord">
-                {{#if fullName}}
-                  Includes report for {{fullName}}
-                {{else}}
-                  Order Summary
-                {{/if}}
-              </p>
-            </div>
-            <div class="panel-body report" data-fr-bind="currentRecord extraTeaserData">
-              <div class="order-summary-section">
-
-                {{#if fullName}}
-
-                  <span class="summary-details-wrapper clearfix">
-                    <span class="order-summary-heading strong">Age:</span>
-                    <span class="pull-right">
-                      <span class="report-owners-age truncate">
-                        {{#if age}}
-                          {{age}}
-                        {{else}}
-                          Age Searched
-                        {{/if}}
-                      </span>
-                      <span class="blue-check"></span>
-                    </span>
-                  </span>
-
-                  <span class="summary-details-wrapper clearfix">
-                    <span class="order-summary-heading strong">Current Location:</span>
-                    <span class="pull-right">
-                      <span class="report-owners-current-location truncate">
-                        {{#if place}}
-                          {{place}}
-                        {{else}}
-                          Locations Searched
-                        {{/if}}
-                      </span>
-                      <span class="blue-check"></span>
-                    </span>
-                  </span>
-
-                  <span class="summary-details-wrapper clearfix">
-                    <span class="order-summary-heading strong">Relatives:</span>
-                    <span class="pull-right">
-                      <span class="report-owners-relatives truncate">
-                        {{#if relatives}}
-                          <span class="teaser-data">
-                            {{relative}}
-                          </span>
-
-                          {{#if relativesCountTeaser}}
-                            <span class="teaser-data-count">+{{relativesCountTeaser}} more</span>
-                          {{/if}}
-                        {{else}}
-                          Relatives Searched
-                        {{/if}}
-                      </span>
-                      <span class="blue-check"></span>
-                    </span>
-                  </span>
-
-                  <span class="summary-details-wrapper clearfix">
-                    <span class="order-summary-heading strong">Phone:</span>
-                    <span class="pull-right">
-                      <span class="report-owners-phone truncate">
-                        {{#if phoneNumbers}}
-                          {{phoneNumber}}
-
-                          {{#if phoneNumbersCountTeaser}}
-                            <span class="teaser-data-count">+{{phoneNumbersCountTeaser}} more</span>
-                          {{/if}}
-                        {{else}}
-                          Phones Searched
-                        {{/if}}
-                      </span>
-                      <span class="blue-check"></span>
-                    </span>
-                  </span>
-
-                  <span class="summary-details-wrapper clearfix">
-                    <span class="order-summary-heading strong">Emails:</span>
-                    <span class="pull-right">
-                      <span class="report-owners-emails truncate">
-                        {{#if emails}}
-                          {{email}}
-
-                          {{#if emailsCountTeaser}}
-                            <span class="teaser-data-count">+{{emailsCountTeaser}} more</span>
-                          {{/if}}
-                        {{else}}
-                          Emails Searched
-                        {{/if}}
-                      </span>
-                      <span class="blue-check"></span>
-                    </span>
-                  </span>
-
-                  <span class="summary-details-wrapper clearfix">
-                    <span class="order-summary-heading strong">Criminal &amp; Traffic:</span>
-                    <span class="pull-right">
-                      <span class="report-owners-arrest-records truncate">
-                        {{#if criminalRecords}}
-                          <span class="teaser-data-count">{{{criminalRecordsCount}}} Found</span>
-                        {{else}}
-                          Searched
-                        {{/if}}
-                      </span>
-                      <span class="blue-check"></span>
-                    </span>
-                  </span>
-
-                  <span class="summary-details-wrapper clearfix">
-                    <span class="order-summary-heading strong">Photos &amp; Much More:</span>
-                    <span class="pull-right">
-                      <span class="report-owners-arrest-records text-success">
-                        <span class="teaser-data-count">Activate to Search</span>
-                      </span>
-                    </span>
-                  </span>
-
-                {{else}}
-
-                  <span class="summary-details-wrapper clearfix">
-                    <span class="order-summary-heading strong">Background Reports Include:</span>
-                  </span>
-
-                  <span class="summary-details-wrapper clearfix">
-                    <span class="pull-right">
-                      <span class="report-owners-arrest-records truncate">
-                        Age Search
-                      </span>
-                      <span class="blue-check"></span>
-                    </span>
-                  </span>
-
-                  <span class="summary-details-wrapper clearfix">
-                    <span class="pull-right">
-                      <span class="report-owners-arrest-records truncate">
-                        Location Search
-                      </span>
-                      <span class="blue-check"></span>
-                    </span>
-                  </span>
-
-                  <span class="summary-details-wrapper clearfix">
-                    <span class="pull-right">
-                      <span class="report-owners-arrest-records truncate">
-                        Relatives Search
-                      </span>
-                      <span class="blue-check"></span>
-                    </span>
-                  </span>
-
-                  <span class="summary-details-wrapper clearfix">
-                    <span class="pull-right">
-                      <span class="report-owners-arrest-records truncate">
-                        Phone # Search
-                      </span>
-                      <span class="blue-check"></span>
-                    </span>
-                  </span>
-
-                  <span class="summary-details-wrapper clearfix">
-                    <span class="pull-right">
-                      <span class="report-owners-arrest-records truncate">
-                        Email Search
-                      </span>
-                      <span class="blue-check"></span>
-                    </span>
-                  </span>
-
-                  <span class="summary-details-wrapper clearfix">
-                    <span class="pull-right">
-                      <span class="report-owners-arrest-records truncate">
-                        Criminal Records Search
-                      </span>
-                      <span class="blue-check"></span>
-                    </span>
-                  </span>
-
-                  <span class="summary-details-wrapper clearfix">
-                    <span class="pull-right">
-                      <span class="report-owners-arrest-records truncate">
-                        Photos &amp; Social Media
-                      </span>
-                      <span class="blue-check"></span>
-                    </span>
-                  </span>
-
-                  <span class="summary-details-wrapper clearfix">
-                    <span class="pull-right">
-                      <span class="report-owners-arrest-records text-success">
-                        <span class="teaser-data-count">Activate to Search</span>
-                      </span>
-                    </span>
-                  </span>
-
-                {{/if}}
-
-                <span class="summary-details-wrapper clearfix price-plan-row">
-                  <span class="order-summary-heading strong">+ <span class="summary-term" id="summary-term"></span> Membership</span>
-                  <span class="pull-right">
-                   <span class="teaser-data-count">Unlimited Reports</span>
-                </span>
-
-              </div>
-
-              <div class="order-summary-total">
-                <p class="text-right">
-                  <strong>Total Today: </strong>
-                  <span>$<span class="summary-total-price">1.00</span></span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- /#order-summary -->
-
-
-          <!--
-          <div id="order-summary" class="panel side-panel hidden-xs">
-            <div class="panel-heading">
-              <p class="panel-title strong">Order Summary</p>
-            </div>
-            <div class="panel-body" data-fr-bind="currentRecord">
-              {{#if fullName}}
-              <div class="order-summary-section order-summary-full-report">
-                <p>
-                  <span class="order-summary-heading">Background Report on:</span>
-                  <br/>
-                  <span class="order-summary-name strong text-bv-blue">{{#if fullName}} {{fullName}} {{else}} John Doe {{/if}}</span>
-                  <span class="pull-right">Included</span>
-                </p>
-              </div>
-              {{/if}}
-              <div>
-                <p>
-                  <span class="order-summary-heading">Membership:</span>
-                  <br/>
-                  <span class="order-summary-plan-length strong text-bv-blue"><span id="summary-term"></span></span>
-                  <span class="pull-right">$<span id="summary-month-price"></span> /mo</span>
-                </p>
-              </div>
-              <div class="order-summary-total">
-                <p class="text-right">
-                  <strong>Total Today: </strong>$<span class="summary-total-price"></span>
-                </p>
-              </div>
-            </div>
-          </div>
-          -->
-
-
-
-          <div id="full-report-checklist" class="panel side-panel" data-fr-bind="currentRecord">
-            <div class="panel-heading panel-greyish">
-              <p class="panel-title strong">All Memberships Include</p>
-            </div>
-            <div class="panel-body">
-
-              <!--
-
-              {{#if fullName}}
-              <div class="order-summary-section order-summary-full-report">
-                <p>
-                  <span class="now-included">Your Background Report on</span>
-                  <span class="order-summary-name now-included text-bv-blue">{{fullName}}</span>
-                  <span class="now-included">may include, where available:</span>
-                </p>
-                <ul id="report-includes">
-                  <li>Current &amp; Past Contact Info</li>
-                  <li>Relatives &amp; Associates</li>
-                  <li>Criminal Court Records</li>
-                  <li>Bankruptcies</li>
-                  <li>Properties, Social Networks &amp; More</li>
-                  <li class="text-success"><strong>New:</strong> Photos, Job &amp; Education History</li>
-                </ul>
-              </div>
-              {{/if}}
-
-              -->
-
-              <p class="now-included">{{#if fullName}}The following {{/if}}Searches, where available:</p>
-              <ul class="list-unstyled unlimited-list">
-                <li><span class="glyphicon glyphicon-ok"></span>Unlimited Contact Information</li>
-                <li><span class="glyphicon glyphicon-ok"></span>Unlimited Phone Lookups</li>
-                <li><span class="glyphicon glyphicon-ok"></span>Unlimited Property/Address Lookups</li>
-                <li><span class="glyphicon glyphicon-ok"></span>Unlimited Email Lookups</li>
-                <li><span class="glyphicon glyphicon-ok"></span>Unlimited Criminal Court Lookups</li>
-              </ul>
-              <div id="premium_searches">
-                <p class="now-included">Also, now get access to:</p>
-                <p id="court-runner"><span class="glyphicon glyphicon-ok"></span> Live Court Runners - ability to get real-time criminal records direct from county court houses <span id="fee">(additional fee required)</span></p>
-                <p class="judgments-liens-licenses"><span class="glyphicon glyphicon-ok"></span> Judgments, Liens &amp; Licenses (additional fee required)</p>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="alert money-back text-center" data-fr-bind="currentRecord extraTeaserData">
-            <img src="img/money-back-badge.png" class="center-block money-back-badge img-responsive" alt="money back guarantee">
-            <br>
-            <span class="text-bv-blue"><strong>100% Money Back Guarantee</strong></span>
-            <br>
-            <span class="text-center">If we can't find results for
+            <section id="order-summary" class="panel side-panel info-snippet hidden-xs">
+              <div class="panel-heading panel-tealish">
+                <p class="panel-title strong" data-fr-bind="currentRecord">
                   {{#if fullName}}
-                    {{fullName}},
+                    Includes report for {{fullName}}
                   {{else}}
-                    your subject,
-                  {{/if}} <strong>we will gladly issue a refund</strong>!</span>
-          </div>
+                    Order Summary
+                  {{/if}}
+                </p>
+              </div>
+              <div class="panel-body report" data-fr-bind="currentRecord extraTeaserData">
+                <div class="order-summary-section">
 
+                  {{#if fullName}}
 
+                    <span class="summary-details-wrapper clearfix">
+                      <span class="order-summary-heading strong">Age:</span>
+                      <span class="pull-right">
+                        <span class="report-owners-age truncate">
+                          {{#if age}}
+                            {{age}}
+                          {{else}}
+                            Age Searched
+                          {{/if}}
+                        </span>
+                        <span class="blue-check"></span>
+                      </span>
+                    </span>
 
-          <div id="reports-anonymous" class="row side-headline">
-            <div class="col-xs-12">
-              <p class="side-headline-header strong">
-                <span class="glyphicon glyphicon-lock"></span>Confidential Searching!
+                    <span class="summary-details-wrapper clearfix">
+                      <span class="order-summary-heading strong">Current Location:</span>
+                      <span class="pull-right">
+                        <span class="report-owners-current-location truncate">
+                          {{#if place}}
+                            {{place}}
+                          {{else}}
+                            Locations Searched
+                          {{/if}}
+                        </span>
+                        <span class="blue-check"></span>
+                      </span>
+                    </span>
+
+                    <span class="summary-details-wrapper clearfix">
+                      <span class="order-summary-heading strong">Relatives:</span>
+                      <span class="pull-right">
+                        <span class="report-owners-relatives truncate">
+                          {{#if relatives}}
+                            <span class="teaser-data">
+                              {{relative}}
+                            </span>
+
+                            {{#if relativesCountTeaser}}
+                              <span class="teaser-data-count">+{{relativesCountTeaser}} more</span>
+                            {{/if}}
+                          {{else}}
+                            Relatives Searched
+                          {{/if}}
+                        </span>
+                        <span class="blue-check"></span>
+                      </span>
+                    </span>
+
+                    <span class="summary-details-wrapper clearfix">
+                      <span class="order-summary-heading strong">Phone:</span>
+                      <span class="pull-right">
+                        <span class="report-owners-phone truncate">
+                          {{#if phoneNumbers}}
+                            {{phoneNumber}}
+
+                            {{#if phoneNumbersCountTeaser}}
+                              <span class="teaser-data-count">+{{phoneNumbersCountTeaser}} more</span>
+                            {{/if}}
+                          {{else}}
+                            Phones Searched
+                          {{/if}}
+                        </span>
+                        <span class="blue-check"></span>
+                      </span>
+                    </span>
+
+                    <span class="summary-details-wrapper clearfix">
+                      <span class="order-summary-heading strong">Emails:</span>
+                      <span class="pull-right">
+                        <span class="report-owners-emails truncate">
+                          {{#if emails}}
+                            {{email}}
+
+                            {{#if emailsCountTeaser}}
+                              <span class="teaser-data-count">+{{emailsCountTeaser}} more</span>
+                            {{/if}}
+                          {{else}}
+                            Emails Searched
+                          {{/if}}
+                        </span>
+                        <span class="blue-check"></span>
+                      </span>
+                    </span>
+
+                    <span class="summary-details-wrapper clearfix">
+                      <span class="order-summary-heading strong">Criminal &amp; Traffic:</span>
+                      <span class="pull-right">
+                        <span class="report-owners-arrest-records truncate">
+                          {{#if criminalRecords}}
+                            <span class="teaser-data-count">{{{criminalRecordsCount}}} Found</span>
+                          {{else}}
+                            Searched
+                          {{/if}}
+                        </span>
+                        <span class="blue-check"></span>
+                      </span>
+                    </span>
+
+                    <span class="summary-details-wrapper clearfix">
+                      <span class="order-summary-heading strong">Photos &amp; Much More:</span>
+                      <span class="pull-right">
+                        <span class="report-owners-arrest-records text-success">
+                          <span class="teaser-data-count">Activate to Search</span>
+                        </span>
+                      </span>
+                    </span>
+
+                  {{else}}
+
+                    <span class="summary-details-wrapper clearfix">
+                      <span class="order-summary-heading strong">Background Reports Include:</span>
+                    </span>
+
+                    <span class="summary-details-wrapper clearfix">
+                      <span class="pull-right">
+                        <span class="report-owners-arrest-records truncate">
+                          Age Search
+                        </span>
+                        <span class="blue-check"></span>
+                      </span>
+                    </span>
+
+                    <span class="summary-details-wrapper clearfix">
+                      <span class="pull-right">
+                        <span class="report-owners-arrest-records truncate">
+                          Location Search
+                        </span>
+                        <span class="blue-check"></span>
+                      </span>
+                    </span>
+
+                    <span class="summary-details-wrapper clearfix">
+                      <span class="pull-right">
+                        <span class="report-owners-arrest-records truncate">
+                          Relatives Search
+                        </span>
+                        <span class="blue-check"></span>
+                      </span>
+                    </span>
+
+                    <span class="summary-details-wrapper clearfix">
+                      <span class="pull-right">
+                        <span class="report-owners-arrest-records truncate">
+                          Phone # Search
+                        </span>
+                        <span class="blue-check"></span>
+                      </span>
+                    </span>
+
+                    <span class="summary-details-wrapper clearfix">
+                      <span class="pull-right">
+                        <span class="report-owners-arrest-records truncate">
+                          Email Search
+                        </span>
+                        <span class="blue-check"></span>
+                      </span>
+                    </span>
+
+                    <span class="summary-details-wrapper clearfix">
+                      <span class="pull-right">
+                        <span class="report-owners-arrest-records truncate">
+                          Criminal Records Search
+                        </span>
+                        <span class="blue-check"></span>
+                      </span>
+                    </span>
+
+                    <span class="summary-details-wrapper clearfix">
+                      <span class="pull-right">
+                        <span class="report-owners-arrest-records truncate">
+                          Photos &amp; Social Media
+                        </span>
+                        <span class="blue-check"></span>
+                      </span>
+                    </span>
+
+                    <span class="summary-details-wrapper clearfix">
+                      <span class="pull-right">
+                        <span class="report-owners-arrest-records text-success">
+                          <span class="teaser-data-count">Activate to Search</span>
+                        </span>
+                      </span>
+                    </span>
+
+                  {{/if}}
+
+                  <span class="summary-details-wrapper clearfix price-plan-row">
+                    <span class="order-summary-heading strong">+ <span class="summary-term" id="summary-term"></span> Membership</span>
+                    <span class="pull-right">
+                     <span class="teaser-data-count">Unlimited Reports</span>
+                  </span>
+
+                </div>
+
+                <div class="order-summary-total">
+                  <p class="text-right">
+                    <strong>Total Today: </strong>
+                    <span>$<span class="summary-total-price">1.00</span></span>
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-block callout confidential-searching background-primary-pastel">
+              <div class="contain-center">
+                <div class="callout-img-container">
+                  <img class="callout-img hidden-xs" src="img/confidential_search.png" />
+                  <img class="callout-img visible-xs" src="img/lock.png" />
+                </div>
+                <h5 class="callout-title">
+                  Confidential Searching!
+                </h5>
+                <p class="callout-text" data-fr-bind="currentRecord">
+                  {{#if fullName}}{{fullName}} will <strong>not</strong> be notified of this search. {{else}} Your subjects will <strong>not</strong> be notified.{{/if}}
+                </p>
+              </div>
+            </section>
+
+            <section class="content-block callout money-back background-primary-pastel hidden-xs">
+              <img class="callout-img" src="img/money_back.png" />
+              <p class="callout-text" data-fr-bind="currentRecord">
+                <strong>If we can't find results for {{fullName}}, we'll gladly issue a refund!</strong>
               </p>
-              <p data-fr-bind="currentRecord">
-                {{#if fullName}} {{fullName}} will <strong>not</strong> be notified of this search. {{else}} Your subjects will <strong>not</strong> be notified. {{/if}}
-              </p>
-            </div>
-          </div>
-          <!-- #reports-anonymous -->
+            </section>
+
+            <section class="content-block callout customer-support background-primary-pastel">
+              <img class="callout-img" src="img/customer_service.png" />
+              <h5 class="callout-title">
+                Live Customer Support Hours:
+              </h5>
+              <p class="callout-text">M-F 8am - 10pm ET</p>
+              <p class="callout-text">S-S 10am - 8pm ET</p>
+            </section>
+
         </div>
       </div>
-      <!-- /#body-wrap -->
-      <div class="row visible-xs satisfied">
-        <div class="col-xs-2">
-          <span class="glyphicon glyphicon-ok-circle text-bv-blue"></span>
-        </div>
-        <div class="col-xs-10">
-          <span class="satisfied-text">
-            <span class="strong">100% Satisfaction Guaranteed</span> <span id="refund">If we do not have results for this search we will gladly issue a refund. Just contact Customer Support.</span>
-          </span>
-        </div>
-      </div>
-      <div class="row visible-xs">
-        <p class="col-xs-12 phone text-center"><strong>Questions? </strong>Call 1-800-218-3309</p>
-      </div>
+
     </div>
-    <!-- /#wrapper -->
 
-    <footer>
-      <div class="container">
-        <div id="service-hours" class="row">
-          <div class="col-xs-12">
-            <p>
-              <strong>Live Customer Support Hours: M-F 8am - 10pm ET and Weekends 10am - 8pm ET</strong>
-            </p>
-          </div>
-        </div>
-        <div id="disclaimer" class="row">
-          <div class="col-xs-12">
-            <p>
-              Disclaimer: PeopleLooker&rsquo;s mission is to give people easy and affordable access to public record information. PeopleLooker does not provide private investigator services, and is not a consumer reporting agency as defined by the <a href="//www.peoplelooker.com/fcra"
-              rel="nofollow" target="_blank">Fair Credit Reporting Act</a> because the information provided by PeopleLooker is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more
-              information governing the permitted and prohibited uses of PeopleLooker, please review our <a href="//www.peoplelooker.com/uses" target="_blank" rel="nofollow">&ldquo;Do&rsquo;s &amp; Don&rsquo;ts&rdquo;</a> and our <a href="//www.peoplelooker.com/terms-conditions"
-              target="_blank" rel="nofollow">Terms &amp; Conditions</a>.
-            </p>
-          </div>
-        </div>
+    <footer class="footer">
+      <div class="container" id="disclaimer">
+        <p class="disclaimer">
+          Disclaimer: PeopleLooker&rsquo;s mission is to give people easy and affordable access to public record information. PeopleLooker does not provide private investigator services, and is not a consumer reporting agency as defined by the <a href="//www.peoplelooker.com/fcra"
+          rel="nofollow" target="_blank">Fair Credit Reporting Act</a> because the information provided by PeopleLooker is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more
+          information governing the permitted and prohibited uses of PeopleLooker, please review our <a href="//www.peoplelooker.com/uses" target="_blank" rel="nofollow">&ldquo;Do&rsquo;s &amp; Don&rsquo;ts&rdquo;</a> and our <a href="//www.peoplelooker.com/terms-conditions"
+          target="_blank" rel="nofollow">Terms &amp; Conditions</a>.
+        </p>
       </div>
-      <div id="footer-terms">
+
+      <div class="footer-navbar background-light">
         <div class="container">
           <div class="row">
-            <div class="col-sm-6">
-              <p>
-                <span class="logo"><span class="strong">PeopleLooker, LLC</span> &copy; <span class="current-year">2016</span></span>
+            <div class="col-sm-6 copyright">
+              <p class="logo">
+                PeopleLooker, LLC &copy;
+                <span class="current-year">2016</span>
               </p>
             </div>
-            <div class="col-sm-6 text-right">
-              <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms</a> | <a href="//www.peoplelooker.com/privacy-policy" target="_blank">Privacy</a>
+            <div class="col-sm-6 terms">
+              <a href="//www.peoplelooker.com/terms-conditions" target="_blank">
+                Terms
+              </a>
+              |
+              <a href="//www.peoplelooker.com/privacy-policy" target="_blank">
+                Privacy
+              </a>
             </div>
           </div>
         </div>
       </div>
+
     </footer>
   </main>
 
@@ -791,7 +677,7 @@
           <button id="imodal-x" type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         </div>
         <div class="modal-body text-center">
-          <img src="img/dollar-trial.png" alt="$1" class="dollar-trial-img">
+          <img src="img/dollar_trial.png" alt="$1" class="trial-img">
           <h1 class="title text-center">
             Special Limited Time Offer!
             <span class="text-break">$1 Trial!</span>
@@ -813,7 +699,6 @@
       </div>
     </div>
   </div>
-  <!-- /#iModal-trial -->
 
   <div id="PayPal-Success" class="modal fade">
     <div class="modal-dialog">
@@ -841,7 +726,6 @@
       </div>
     </div>
   </div>
-  <!-- /#iModal-trial -->
 
   <div id="PayPal-Failed" class="modal fade">
     <div class="modal-dialog">
@@ -865,7 +749,6 @@
       </div>
     </div>
   </div>
-  <!-- /#iModal-trial -->
 
   <pre id="subscribe_bounce_text" data-sub-bounce-url="<%= next_page %>" class="hide">
     WAIT: WANT A SPECIAL LIMITED TIME OFFER?
