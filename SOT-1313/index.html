@@ -276,15 +276,11 @@
             </section>
 
             <section class="content-block callout money-back background-primary-pastel col-xs-12 visible-xs">
-              <div class="row">
-                <div class="col-xs-6">
-                  <img class="callout-img" src="img/money_back.png" />
-                </div>
-                <div class="col-xs-6">
-                  <h5 class="callout-text" data-fr-bind="currentRecord">
-                    If we can't find results for {{fullName}}, we'll gladly issue a refund!
-                  </h5>
-                </div>
+              <div class="contain-center">
+                <img class="callout-img" src="img/money_back.png" />
+                <h5 class="callout-text" data-fr-bind="currentRecord">
+                  If we can't find results for {{fullName}}, we'll gladly issue a refund!
+                </h5>
               </div>
             </section>
 
@@ -365,8 +361,8 @@
                   <label for="account_tos" class="checkbox-label">
                     <input id="account_tos" class="checkbox-input" name="account[tos]" type="checkbox" value="1">
                     By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms of Service</a> and <a href="//www.peoplelooker.com/privacy-policy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price"></span> every <span id="legal-type"></span>&nbsp;until this subscription is canceled.
-                    You can cancel your membership at any time by contacting customer service at <span class="text-primary">1-800-218-3309</span> or emailing <a href="mailto:support@peoplelooker.com">support@peoplelooker.com</a>. You also agree that you
-                    will <u>NOT</u> use any information about an individual obtained from PeopleLooker as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance;
+                    You can cancel your membership at any time by contacting customer service at <a href="tel:1-800-218-3309">1-800-218-3309</a> or emailing <a href="mailto:support@peoplelooker.com">support@peoplelooker.com</a>. You also agree that you
+                    will <strong>NOT</strong> use any information about an individual obtained from PeopleLooker as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance;
                     or for any other purpose prohibited by our <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms of Service</a>.
                   </label>
                 </div>
@@ -385,9 +381,7 @@
 
         <div class="col-sm-4 content-right">
 
-          <div class="row">
-
-            <div id="order-summary" class="panel side-panel info-snippet hidden-xs">
+            <section id="order-summary" class="panel side-panel info-snippet hidden-xs">
               <div class="panel-heading panel-tealish">
                 <p class="panel-title strong" data-fr-bind="currentRecord">
                   {{#if fullName}}
@@ -603,46 +597,38 @@
                   </p>
                 </div>
               </div>
-            </div>
+            </section>
 
-            <div id="full-report-checklist" class="panel side-panel" data-fr-bind="currentRecord">
-              <div class="panel-heading panel-greyish">
-                <p class="panel-title strong">All Memberships Include</p>
-              </div>
-              <div class="panel-body">
-
-                <p class="now-included">{{#if fullName}}The following {{/if}}Searches, where available:</p>
-                <ul class="list-unstyled unlimited-list">
-                  <li><span class="glyphicon glyphicon-ok"></span>Unlimited Contact Information</li>
-                  <li><span class="glyphicon glyphicon-ok"></span>Unlimited Phone Lookups</li>
-                  <li><span class="glyphicon glyphicon-ok"></span>Unlimited Property/Address Lookups</li>
-                  <li><span class="glyphicon glyphicon-ok"></span>Unlimited Email Lookups</li>
-                  <li><span class="glyphicon glyphicon-ok"></span>Unlimited Criminal Court Lookups</li>
-                </ul>
-                <div id="premium_searches">
-                  <p class="now-included">Also, now get access to:</p>
-                  <p id="court-runner"><span class="glyphicon glyphicon-ok"></span> Live Court Runners - ability to get real-time criminal records direct from county court houses <span id="fee">(additional fee required)</span></p>
-                  <p class="judgments-liens-licenses"><span class="glyphicon glyphicon-ok"></span> Judgments, Liens &amp; Licenses (additional fee required)</p>
+            <section class="content-block callout confidential-searching background-primary-pastel">
+              <div class="contain-center">
+                <div class="callout-img-container">
+                  <img class="callout-img hidden-xs" src="img/confidential_search.png" />
+                  <img class="callout-img visible-xs" src="img/lock.png" />
                 </div>
-              </div>
-            </div>
-
-            <section class="content-block callout confidential-searching background-primary-pastel col-xs-12">
-              <div class="row">
-                <div class="col-xs-2 col-sm-12">
-                  <img class="callout-img" src="img/lock.png" />
-                </div>
-                <div class="col-xs-10 col-sm-12">
-                  <h5 class="callout-title">
-                    Confidential Searching!
-                  </h5>
-                  <p class="callout-text" data-fr-bind="currentRecord">
-                    {{#if fullName}}{{fullName}} will <strong>not</strong> be notified of this search. {{else}} Your subjects will <strong>not</strong> be notified.{{/if}}
-                  </p>
-                </div>
+                <h5 class="callout-title">
+                  Confidential Searching!
+                </h5>
+                <p class="callout-text" data-fr-bind="currentRecord">
+                  {{#if fullName}}{{fullName}} will <strong>not</strong> be notified of this search. {{else}} Your subjects will <strong>not</strong> be notified.{{/if}}
+                </p>
               </div>
             </section>
-          </div>
+
+            <section class="content-block callout money-back background-primary-pastel hidden-xs">
+              <img class="callout-img" src="img/money_back.png" />
+              <p class="callout-text" data-fr-bind="currentRecord">
+                <strong>If we can't find results for {{fullName}}, we'll gladly issue a refund!</strong>
+              </p>
+            </section>
+
+            <section class="content-block callout customer-support background-primary-pastel">
+              <img class="callout-img" src="img/customer_service.png" />
+              <h5 class="callout-title">
+                Live Customer Support Hours:
+              </h5>
+              <p class="callout-text">M-F 8am - 10pm ET</p>
+              <p class="callout-text">S-S 10am - 8pm ET</p>
+            </section>
 
         </div>
       </div>
@@ -650,39 +636,37 @@
     </div>
 
     <footer class="footer">
-      <div class="container">
-        <div id="service-hours" class="row">
-          <div class="col-xs-12">
-            <p>
-              <strong>Live Customer Support Hours: M-F 8am - 10pm ET and Weekends 10am - 8pm ET</strong>
-            </p>
-          </div>
-        </div>
-        <div id="disclaimer" class="row">
-          <div class="col-xs-12">
-            <p>
-              Disclaimer: PeopleLooker&rsquo;s mission is to give people easy and affordable access to public record information. PeopleLooker does not provide private investigator services, and is not a consumer reporting agency as defined by the <a href="//www.peoplelooker.com/fcra"
-              rel="nofollow" target="_blank">Fair Credit Reporting Act</a> because the information provided by PeopleLooker is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more
-              information governing the permitted and prohibited uses of PeopleLooker, please review our <a href="//www.peoplelooker.com/uses" target="_blank" rel="nofollow">&ldquo;Do&rsquo;s &amp; Don&rsquo;ts&rdquo;</a> and our <a href="//www.peoplelooker.com/terms-conditions"
-              target="_blank" rel="nofollow">Terms &amp; Conditions</a>.
-            </p>
-          </div>
-        </div>
+      <div class="container" id="disclaimer">
+        <p class="disclaimer">
+          Disclaimer: PeopleLooker&rsquo;s mission is to give people easy and affordable access to public record information. PeopleLooker does not provide private investigator services, and is not a consumer reporting agency as defined by the <a href="//www.peoplelooker.com/fcra"
+          rel="nofollow" target="_blank">Fair Credit Reporting Act</a> because the information provided by PeopleLooker is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more
+          information governing the permitted and prohibited uses of PeopleLooker, please review our <a href="//www.peoplelooker.com/uses" target="_blank" rel="nofollow">&ldquo;Do&rsquo;s &amp; Don&rsquo;ts&rdquo;</a> and our <a href="//www.peoplelooker.com/terms-conditions"
+          target="_blank" rel="nofollow">Terms &amp; Conditions</a>.
+        </p>
       </div>
-      <div id="footer-terms">
+
+      <div class="footer-navbar background-light">
         <div class="container">
           <div class="row">
-            <div class="col-sm-6">
-              <p>
-                <span class="logo"><span class="strong">PeopleLooker, LLC</span> &copy; <span class="current-year">2016</span></span>
+            <div class="col-sm-6 copyright">
+              <p class="logo">
+                PeopleLooker, LLC &copy;
+                <span class="current-year">2016</span>
               </p>
             </div>
-            <div class="col-sm-6 text-right">
-              <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms</a> | <a href="//www.peoplelooker.com/privacy-policy" target="_blank">Privacy</a>
+            <div class="col-sm-6 terms">
+              <a href="//www.peoplelooker.com/terms-conditions" target="_blank">
+                Terms
+              </a>
+              |
+              <a href="//www.peoplelooker.com/privacy-policy" target="_blank">
+                Privacy
+              </a>
             </div>
           </div>
         </div>
       </div>
+
     </footer>
   </main>
 
@@ -693,7 +677,7 @@
           <button id="imodal-x" type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         </div>
         <div class="modal-body text-center">
-          <img src="img/dollar-trial.png" alt="$1" class="dollar-trial-img">
+          <img src="img/dollar_trial.png" alt="$1" class="trial-img">
           <h1 class="title text-center">
             Special Limited Time Offer!
             <span class="text-break">$1 Trial!</span>
@@ -715,7 +699,6 @@
       </div>
     </div>
   </div>
-  <!-- /#iModal-trial -->
 
   <div id="PayPal-Success" class="modal fade">
     <div class="modal-dialog">
@@ -743,7 +726,6 @@
       </div>
     </div>
   </div>
-  <!-- /#iModal-trial -->
 
   <div id="PayPal-Failed" class="modal fade">
     <div class="modal-dialog">
@@ -767,7 +749,6 @@
       </div>
     </div>
   </div>
-  <!-- /#iModal-trial -->
 
   <pre id="subscribe_bounce_text" data-sub-bounce-url="<%= next_page %>" class="hide">
     WAIT: WANT A SPECIAL LIMITED TIME OFFER?

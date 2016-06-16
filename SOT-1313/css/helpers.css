@@ -111,3 +111,10 @@
   padding-right: 0;
   padding-left: 0;
 }
+
+.contain-center {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
