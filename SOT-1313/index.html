@@ -159,7 +159,7 @@
             <input name="authenticity_token" type="hidden" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=">
             <input type="hidden" id="credit" name="payment_method" value="credit_card" checked>
 
-            <div class="subscribe-step background-light col-xs-12" id="sub-step-1">
+            <section class="content-block step background-light col-xs-12" id="sub-step-1">
               <h4 class="title text-secondary">Step 1: Select a Plan</h4>
 
               <div class="radio selection-wrap selection-top selection-selected">
@@ -245,9 +245,9 @@
                   </li>
                 </ul>
               </div>
-            </div>
+            </section>
 
-            <div class="subscribe-step background-light col-xs-12" id="sub-step-2">
+            <section class="content-block step background-light col-xs-12" id="sub-step-2">
               <h4 class="title text-secondary">Step 2: Create an Account</h4>
 
               <div class="row">
@@ -266,9 +266,22 @@
                   <input class="form-control inspectletIgnore" id="user_email" maxsize="100" name="user[email]" type="email" value="{{user[email]}}" placeholder="Enter Email" />
                 </div>
               </div>
-            </div>
+            </section>
 
-            <div class="subscribe-step background-light col-xs-12" id="sub-step-3">
+            <section class="content-block callout money-back background-primary-pastel col-xs-12 visible-xs">
+              <div class="row">
+                <div class="col-xs-6">
+                  <img class="callout-img" src="img/money_back.png" />
+                </div>
+                <div class="col-xs-6">
+                  <h5 class="callout-text" data-fr-bind="currentRecord">
+                    If we can't find results for {{fullName}}, we'll gladly issue a refund!
+                  </h5>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-block step background-light col-xs-12" id="sub-step-3">
               <h4 class="title text-secondary">Step 3: Payment Information</h4>
 
               <div class="row cc-wrapper">
@@ -351,7 +364,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
 
             <div class="terms-container">
               <label>
