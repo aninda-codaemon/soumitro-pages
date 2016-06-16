@@ -286,7 +286,7 @@
 	margin-top: 15px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 	/* money back callout */
 
 	.callout.money-back .callout-img {
