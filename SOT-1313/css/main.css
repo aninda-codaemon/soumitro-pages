@@ -253,6 +253,25 @@
 	font-size: 32px;
 }
 
+/* order-summary */
+
+.order-summary {
+	margin-bottom: 30px;
+}
+
+.order-summary .order-item {
+	margin-bottom: 15px;
+}
+
+.order-summary .order-item .item-meta {
+	display: block;
+}
+
+.summary-total {
+	padding-top: 25px;
+	border-top: 1px solid #e8ecee;
+}
+
 /* callout */
 
 .callout {

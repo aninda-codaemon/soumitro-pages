@@ -388,212 +388,104 @@
             <section class="content-block background-light hidden-xs" id="order-summary">
               <h4 class="title text-secondary">Order Summary</h4>
 
-              <div class="panel-body report" data-fr-bind="currentRecord extraTeaserData">
-                <div class="order-summary-section">
-
-                  {{#if fullName}}
-
-                    <span class="summary-details-wrapper clearfix">
-                      <span class="order-summary-heading strong">Age:</span>
-                      <span class="pull-right">
-                        <span class="report-owners-age truncate">
-                          {{#if age}}
-                            {{age}}
-                          {{else}}
-                            Age Searched
-                          {{/if}}
-                        </span>
-                        <span class="blue-check"></span>
-                      </span>
-                    </span>
-
-                    <span class="summary-details-wrapper clearfix">
-                      <span class="order-summary-heading strong">Current Location:</span>
-                      <span class="pull-right">
-                        <span class="report-owners-current-location truncate">
-                          {{#if place}}
-                            {{place}}
-                          {{else}}
-                            Locations Searched
-                          {{/if}}
-                        </span>
-                        <span class="blue-check"></span>
-                      </span>
-                    </span>
-
-                    <span class="summary-details-wrapper clearfix">
-                      <span class="order-summary-heading strong">Relatives:</span>
-                      <span class="pull-right">
-                        <span class="report-owners-relatives truncate">
-                          {{#if relatives}}
-                            <span class="teaser-data">
-                              {{relative}}
-                            </span>
-
-                            {{#if relativesCountTeaser}}
-                              <span class="teaser-data-count">+{{relativesCountTeaser}} more</span>
-                            {{/if}}
-                          {{else}}
-                            Relatives Searched
-                          {{/if}}
-                        </span>
-                        <span class="blue-check"></span>
-                      </span>
-                    </span>
-
-                    <span class="summary-details-wrapper clearfix">
-                      <span class="order-summary-heading strong">Phone:</span>
-                      <span class="pull-right">
-                        <span class="report-owners-phone truncate">
-                          {{#if phoneNumbers}}
-                            {{phoneNumber}}
-
-                            {{#if phoneNumbersCountTeaser}}
-                              <span class="teaser-data-count">+{{phoneNumbersCountTeaser}} more</span>
-                            {{/if}}
-                          {{else}}
-                            Phones Searched
-                          {{/if}}
-                        </span>
-                        <span class="blue-check"></span>
-                      </span>
-                    </span>
-
-                    <span class="summary-details-wrapper clearfix">
-                      <span class="order-summary-heading strong">Emails:</span>
-                      <span class="pull-right">
-                        <span class="report-owners-emails truncate">
-                          {{#if emails}}
-                            {{email}}
-
-                            {{#if emailsCountTeaser}}
-                              <span class="teaser-data-count">+{{emailsCountTeaser}} more</span>
-                            {{/if}}
-                          {{else}}
-                            Emails Searched
-                          {{/if}}
-                        </span>
-                        <span class="blue-check"></span>
-                      </span>
-                    </span>
-
-                    <span class="summary-details-wrapper clearfix">
-                      <span class="order-summary-heading strong">Criminal &amp; Traffic:</span>
-                      <span class="pull-right">
-                        <span class="report-owners-arrest-records truncate">
-                          {{#if criminalRecords}}
-                            <span class="teaser-data-count">{{{criminalRecordsCount}}} Found</span>
-                          {{else}}
-                            Searched
-                          {{/if}}
-                        </span>
-                        <span class="blue-check"></span>
-                      </span>
-                    </span>
-
-                    <span class="summary-details-wrapper clearfix">
-                      <span class="order-summary-heading strong">Photos &amp; Much More:</span>
-                      <span class="pull-right">
-                        <span class="report-owners-arrest-records text-success">
-                          <span class="teaser-data-count">Activate to Search</span>
-                        </span>
-                      </span>
-                    </span>
-
-                  {{else}}
-
-                    <span class="summary-details-wrapper clearfix">
-                      <span class="order-summary-heading strong">Background Reports Include:</span>
-                    </span>
-
-                    <span class="summary-details-wrapper clearfix">
-                      <span class="pull-right">
-                        <span class="report-owners-arrest-records truncate">
-                          Age Search
-                        </span>
-                        <span class="blue-check"></span>
-                      </span>
-                    </span>
-
-                    <span class="summary-details-wrapper clearfix">
-                      <span class="pull-right">
-                        <span class="report-owners-arrest-records truncate">
-                          Location Search
-                        </span>
-                        <span class="blue-check"></span>
-                      </span>
-                    </span>
-
-                    <span class="summary-details-wrapper clearfix">
-                      <span class="pull-right">
-                        <span class="report-owners-arrest-records truncate">
-                          Relatives Search
-                        </span>
-                        <span class="blue-check"></span>
-                      </span>
-                    </span>
-
-                    <span class="summary-details-wrapper clearfix">
-                      <span class="pull-right">
-                        <span class="report-owners-arrest-records truncate">
-                          Phone # Search
-                        </span>
-                        <span class="blue-check"></span>
-                      </span>
-                    </span>
-
-                    <span class="summary-details-wrapper clearfix">
-                      <span class="pull-right">
-                        <span class="report-owners-arrest-records truncate">
-                          Email Search
-                        </span>
-                        <span class="blue-check"></span>
-                      </span>
-                    </span>
-
-                    <span class="summary-details-wrapper clearfix">
-                      <span class="pull-right">
-                        <span class="report-owners-arrest-records truncate">
-                          Criminal Records Search
-                        </span>
-                        <span class="blue-check"></span>
-                      </span>
-                    </span>
-
-                    <span class="summary-details-wrapper clearfix">
-                      <span class="pull-right">
-                        <span class="report-owners-arrest-records truncate">
-                          Photos &amp; Social Media
-                        </span>
-                        <span class="blue-check"></span>
-                      </span>
-                    </span>
-
-                    <span class="summary-details-wrapper clearfix">
-                      <span class="pull-right">
-                        <span class="report-owners-arrest-records text-success">
-                          <span class="teaser-data-count">Activate to Search</span>
-                        </span>
-                      </span>
-                    </span>
-
-                  {{/if}}
-
-                  <span class="summary-details-wrapper clearfix price-plan-row">
-                    <span class="order-summary-heading strong">+ <span class="summary-term" id="summary-term"></span> Membership</span>
-                    <span class="pull-right">
-                     <span class="teaser-data-count">Unlimited Reports</span>
-                  </span>
-
-                </div>
-
-                <div class="order-summary-total">
-                  <p class="text-right">
-                    <strong>Total Today: </strong>
-                    <span>$<span class="summary-total-price">1.00</span></span>
+              <ul class="order-summary list-unstyled" data-fr-bind="currentRecord extraTeaserData">
+                <li class="order-item">
+                  <p class="item-label">
+                    <strong>Age: </strong>
+                    {{#if age}}
+                      {{age}}
+                    {{else}}
+                      Searched
+                    {{/if}}
                   </p>
-                </div>
-              </div>
+                </li>
+
+                <li class="order-item">
+                  <p class="item-label">
+                    <strong>Current Location: </strong>
+                    {{#if place}}
+                      {{place}}
+                    {{else}}
+                      Searched
+                    {{/if}}
+                  </p>
+                </li>
+
+                <li class="order-item">
+                  <p class="item-label">
+                    <strong>Relatives: </strong>
+                    {{#if relatives}}
+                      {{relative}}
+
+                      {{#if relativesCountTeaser}}
+                        <span class="item-meta">+{{relativesCountTeaser}} more</span>
+                      {{/if}}
+                    {{else}}
+                      Searched
+                    {{/if}}
+                  </p>
+                </li>
+
+                <li class="order-item">
+                  <p class="item-label">
+                    <strong>Phone: </strong>
+                    {{#if phoneNumbers}}
+                      {{phoneNumber}}
+
+                      {{#if phoneNumbersCountTeaser}}
+                        <span class="item-meta">+{{phoneNumbersCountTeaser}} more</span>
+                      {{/if}}
+                    {{else}}
+                      Phones Searched
+                    {{/if}}
+                  </p>
+                </li>
+
+                <li class="order-item">
+                  <p class="item-label">
+                    <strong>Email: </strong>
+                    {{#if emails}}
+                      {{email}}
+
+                      {{#if emailsCountTeaser}}
+                        <span class="item-meta">+{{emailsCountTeaser}} more</span>
+                      {{/if}}
+                    {{else}}
+                      Searched
+                    {{/if}}
+                  </p>
+                </li>
+
+                <li class="order-item">
+                  <p class="item-label">
+                    <strong>Criminal &amp; Traffic: </strong>
+                    {{#if criminalRecords}}
+                      <span class="item-meta">{{{criminalRecordsCount}}} Found</span>
+                    {{else}}
+                      Searched
+                    {{/if}}
+                  </p>
+                </li>
+
+                <li class="order-item">
+                  <p class="item-label">
+                    <strong>Photos &amp; Much More: </strong>
+                    Activate to Search
+                  </p>
+                </li>
+
+                <li class="order-item">
+                  <p class="item-label">
+                    <strong>+ <span class="summary-term" id="summary-term"></span> Membership</strong>
+                    Unlimited Reports
+                  </p>
+                </li>
+              </ul>
+
+              <h6 class="summary-total text-center">
+                <span class="text-primary">Total Today: </span>
+                $<span class="summary-total-price"></span>
+              </h6>
             </section>
 
             <section class="content-block callout confidential-searching background-primary-pastel">
