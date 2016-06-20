@@ -191,18 +191,18 @@
 	color: #333;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 480px) and (max-width: 767px) {
 	.member-perks .member-perk {
 		width: 25%;
 	}
 
 	.member-perks .member-perk .perk-label {
 		margin-top: 5px;
-		font-size: 11px;
+		font-size: 12px;
 	}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 600px) {
 	.member-perks .member-perk .perk-label {
 		margin-top: 0;
 		font-size: 16px;
@@ -234,7 +234,7 @@
 	width: 100%;
 	max-width: 70px;
 	margin: 0;
-	margin-top: 8px;
+	margin-top: 15px;
 }
 
 .cc-wrapper .checkbox .checkbox-label {
@@ -242,8 +242,33 @@
 	font-size: 14px;
 }
 
+.cc-wrapper .checkbox .arrow-img {
+	position: absolute;
+	top: 25px;
+	left: 13px;
+	width: 30px;
+}
+
 .cc-wrapper .checkbox .checkbox-input {
 	margin-left: -40px;
+	-webkit-box-shadow: 0 0 10px 1px #ef2742;
+	-moz-box-shadow: 0 0 10px 1px #ef2742;
+	-ms-box-shadow: 0 0 10px 1px #ef2742;
+	-o-box-shadow: 0 0 10px 1px #ef2742;
+	box-shadow: 0 0 10px 1px #ef2742;
+  border-radius: 4px;
+}
+
+.cc-wrapper .checkbox .checkbox-label.input-success .arrow-img {
+	display: none;
+}
+
+.cc-wrapper .checkbox .checkbox-label.input-success .checkbox-input {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-ms-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
 }
 
 .cc-wrapper #create_button {
@@ -251,6 +276,12 @@
 	margin: 0 auto;
 	margin-top: 20px;
 	font-size: 32px;
+}
+
+@media (min-width: 480px) {
+	#sub-step-3 .title .text-break {
+		display: inline-block !important;
+	}
 }
 
 @media (min-width: 992px) {
@@ -328,16 +359,19 @@
 	.callout.money-back .callout-img {
 		width: 50%;
     margin: 0;
-		margin-top: 10px;
     padding-right: 15px;
 		float: left;
 	}
 
 	.callout.money-back .callout-text {
-		width: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: auto;
 		margin: 0;
+		margin-left: 140px;
+		padding-right: 15px;
 		padding-left: 15px;
-		float: left;
 		text-align: left;
 	}
 
@@ -345,35 +379,54 @@
 
 	.callout.confidential-searching .callout-img {
 		position: absolute;
-		top: 30px;
+		top: 32px;
+		width: 70px;
+	}
+
+	.callout.confidential-searching .callout-title,
+	.callout.confidential-searching .callout-text {
+		margin-left: 80px;
+		margin-bottom: 10px;
+		text-align: left;
+	}
+}
+
+@media (max-width: 479px) {
+	/* money back callout */
+
+	.callout.money-back .callout-img {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	/* confidential searching callout */
+
+	.callout.confidential-searching .callout-img {
 		width: 35px;
 	}
 
 	.callout.confidential-searching .callout-title,
 	.callout.confidential-searching .callout-text {
 		margin-left: 40px;
-		margin-bottom: 10px;
-		text-align: left;
 	}
 }
 
 @media (min-width: 768px) {
 	.callout {
-		padding-top: 53.5px;
-		padding-bottom: 53.5px;
+		padding-top: 75.5px;
+		padding-bottom: 75.5px;
 	}
 }
 
 @media (min-width: 992px) {
 	.callout {
-		padding-top: 47px;
-		padding-bottom: 47px;
+		padding: 50.5px 30px;
 	}
 }
 
 @media (min-width: 1200px) {
 	.callout {
-		padding-top: 47.5px;
-		padding-bottom: 47.5px;
+		padding-top: 46px;
+		padding-bottom: 46px;
 	}
 }

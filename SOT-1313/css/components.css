@@ -61,3 +61,17 @@
         text-align: right;
     }
 }
+
+/* modals */
+
+.modal .modal-header {
+  border: 0;
+}
+
+.modal .modal-header .close {
+  outline: 0;
+}
+
+.modal .modal-body .btn {
+  margin-bottom: 15px;
+}

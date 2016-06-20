@@ -253,6 +253,12 @@
     box-shadow: 0 2px 0 0 #33d4c0;
 }
 
+select.form-control {
+    text-indent: 10px;
+}
+
+/* form error states */
+
 .form-control.input-error {
   border-color: #EF2742;
   -webkit-box-shadow: 0 2px 0 0 #EF2742;
@@ -273,7 +279,7 @@ label.error {
 
 label.label-success {
   position: absolute;
-  top: 30px;
+  top: 40px;
   right: 15px;
   width: auto;
   background-color: transparent;
@@ -284,14 +290,12 @@ label.label-success img {
   width: 20px;
 }
 
-/* custom error states */
-
 label[for='account[tos]'].error {
   margin-top: 20px;
 }
 
 label[for='cvv2'].label-success {
-  top: 1px;
+  top: 7px;
 }
 
 label[for='credit_card_expiration_date_2i'].label-success,
