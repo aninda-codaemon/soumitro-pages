@@ -56,6 +56,10 @@
 	text-align: left;
 }
 
+.content-block .sub-title {
+	text-align: left;
+}
+
 .content-right .content-block {
 	margin-left: -15px;
   margin-right: -15px;
@@ -72,6 +76,16 @@
 	.content-block {
 		padding: 20px 30px 25px;
 	}
+}
+
+/* form errors */
+
+.errors-block .title {
+	margin-bottom: 5px;
+}
+
+.errors-block .errors-list {
+	padding-left: 20px;
 }
 
 /* selection wrap */
