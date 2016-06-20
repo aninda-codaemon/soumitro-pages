@@ -264,17 +264,17 @@
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="account_first_name" class="control-label">First Name</label>
-                  <input class="form-control" id="account_first_name" name="account[first_name]" type="text" value="{{account[first_name]}}" placeholder="Enter First Name" />
+                  <input class="form-control input-lg" id="account_first_name" name="account[first_name]" type="text" value="{{account[first_name]}}" placeholder="Enter First Name" />
                 </div>
 
                 <div class="form-group col-md-6">
                   <label for="account_last_name" class="control-label">Last Name</label>
-                  <input class="form-control inspectletIgnore" id="account_last_name" name="account[last_name]" type="text" value="{{account[last_name]}}" placeholder="Enter Last Name" />
+                  <input class="form-control input-lg inspectletIgnore" id="account_last_name" name="account[last_name]" type="text" value="{{account[last_name]}}" placeholder="Enter Last Name" />
                 </div>
 
                 <div class="form-group col-md-8">
                   <label for="user_email" class="control-label">Email Address</label>
-                  <input class="form-control inspectletIgnore" id="user_email" maxsize="100" name="user[email]" type="email" value="{{user[email]}}" placeholder="Enter Email" />
+                  <input class="form-control input-lg inspectletIgnore" id="user_email" maxsize="100" name="user[email]" type="email" value="{{user[email]}}" placeholder="Enter Email" />
                 </div>
               </div>
             </section>
@@ -299,7 +299,7 @@
               <div class="row cc-wrapper">
                 <div class="form-group col-sm-8">
                   <label for="credit_card_card_number" class="control-label">Card Number</label>
-                  <input type="text" class="form-control inspectletIgnore" id="credit_card_card_number" name="credit_card[card_number]" size="30" placeholder="Card Number" />
+                  <input type="text" class="form-control input-lg inspectletIgnore" id="credit_card_card_number" name="credit_card[card_number]" size="30" placeholder="Card Number" />
                 </div>
 
                 <div class="col-sm-4">
@@ -307,7 +307,7 @@
 
                   <div class="row">
                     <div class="form-group col-xs-6">
-                      <input id="cvv2" maxlength="4" name="credit_card[verification_number]" size="4" type="text" class="form-control inspectletIgnore" placeholder="CVV" />
+                      <input type="text" class="form-control input-lg inspectletIgnore" id="cvv2" name="credit_card[verification_number]" size="4"  maxlength="4" placeholder="CVV" />
                     </div>
                     <div class="col-xs-6">
                       <img class="img-cvv" src="img/cvv.png" alt="CVV" />
@@ -319,7 +319,7 @@
                   <label for="credit_card[expiration_date(2i)]" class="control-label">Expiration</label>
                   <div class="row">
                     <div class="col-sm-6 form-group inspectlet-sensitive">
-                      <select id="credit_card_expiration_date_2i" name="credit_card[expiration_date(2i)]" class="form-control">
+                      <select class="form-control input-lg" id="credit_card_expiration_date_2i" name="credit_card[expiration_date(2i)]">
                         <option value="1">January</option>
                         <option value="2">February</option>
                         <option value="3">March</option>
@@ -335,7 +335,7 @@
                       </select>
                     </div>
                     <div class="col-sm-6 form-group inspectlet-sensitive">
-                      <select id="credit_card_expiration_date_1i" name="credit_card[expiration_date(1i)]" class="form-control form-control-second">
+                      <select class="form-control input-lg" id="credit_card_expiration_date_1i" name="credit_card[expiration_date(1i)]">
                         <option value="2015">2015</option>
                         <option value="2016">2016</option>
                         <option value="2017">2017</option>
@@ -358,12 +358,12 @@
 
                 <div class="col-sm-4 form-group">
                   <label for="zipcode" class="control-label">Zip Code</label>
-                  <input id="zipcode" class="form-control inspectletIgnore" maxsize="20" name="address[zip]" size="30" type="text" placeholder="Zip Code" />
+                  <input type="text" class="form-control input-lg inspectletIgnore" id="zipcode" name="address[zip]" size="30" maxsize="20" placeholder="Zip Code" />
                 </div>
 
                 <div class="col-xs-12 form-group checkbox">
                   <label for="account_tos" class="checkbox-label">
-                    <input id="account_tos" class="checkbox-input" name="account[tos]" type="checkbox" value="1">
+                    <input class="checkbox-input" id="account_tos" name="account[tos]" type="checkbox" value="1">
                     By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms of Service</a> and <a href="//www.peoplelooker.com/privacy-policy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price"></span> every <span id="legal-type"></span>&nbsp;until this subscription is canceled.
                     You can cancel your membership at any time by contacting customer service at <a href="tel:1-800-218-3309">1-800-218-3309</a> or emailing <a href="mailto:support@peoplelooker.com">support@peoplelooker.com</a>. You also agree that you
                     will <strong>NOT</strong> use any information about an individual obtained from PeopleLooker as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance;
