@@ -359,21 +359,21 @@
 
 @media (min-width: 768px) {
 	.callout {
-		padding-top: 53.5px;
-		padding-bottom: 53.5px;
+		padding-top: 63.5px;
+		padding-bottom: 63.5px;
 	}
 }
 
 @media (min-width: 992px) {
 	.callout {
-		padding-top: 47px;
-		padding-bottom: 47px;
+		padding-top: 55px;
+		padding-bottom: 55px;
 	}
 }
 
 @media (min-width: 1200px) {
 	.callout {
-		padding-top: 47.5px;
-		padding-bottom: 47.5px;
+		padding-top: 55.5px;
+		padding-bottom: 55.5px;
 	}
 }
