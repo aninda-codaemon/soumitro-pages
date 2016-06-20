@@ -78,114 +78,108 @@
     })(window,document,'script','dataLayer','GTM-M72ZWB');</script>
     <!-- End Google Tag Manager -->
 
-      <header>
-      	<div class="container-fluid">
-        	<div class="row">
-            	<div class="col-xs-12 col-sm-3 col-md-3 logo"><a href="/"><img class="" src="<?php echo asset_url();?>img/images/logo.png" alt="" /></a></div>
-            	<div class="col-xs-12 col-sm-9 col-md-9">
-                    <nav class="navbar-default" role ="navigation">
+    <div class="wrapper">
+         <div class="container">
+              <section class="search">
+                  <div class="logo"><img class="img-responsive" src="assets/images/Logo.png" alt="Public Records" /></div>
+                  <h1>Lookup Public Records</h1>
 
-                       <div class="navbar-header">
-                          <button type = "button" class = "navbar-toggle"
-                             data-toggle = "collapse" data-target = "#pelissolo">
-                             <span class = "sr-only">Toggle navigation</span>
-                             <span class = "icon-bar"></span>
-                             <span class = "icon-bar"></span>
-                             <span class = "icon-bar"></span>
-                          </button>
-                       </div>
+                  <form class="search-form">
+                      <input type="text" name="f-name" placeholder="Name" />
+                      <input type="text" name="l-name" placeholder="Last Name" />
+                      <select name="state">
+                        <option value="All">Any State</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">Washington DC</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                      </select>
+                      <input type="submit" name="search" value="&nbsp;" />
+                  </form>
+              </section>
+              <!-- End Search Section -->
 
-                       <div class="collapse navbar-collapse" id="pelissolo">
-                            <ul class="nav navbar-nav">
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/people/">People Directory</a></li>
-                                <li><a href="/faqs/">FAQs</a></li>
-                                <li><a href="/contact/">Contact Us</a></li>
-                                <?php /*
-                                <a class="btn btn-default" href="#">Login</a>
-                                <a class="btn btn-success" href="#">Sign Up</a>
-                                */ ?>
-                            </ul>
-                       </div>
-                    </nav>
+              <div class="text-section-wrapper">
+                  <section class="text-section">
+                      <div class="row">
+                          <div class="col-xs-12 col-sm-12 col-md-7">
+                              <div class="left-column">
+                                  <h3>Access Premium Public Records</h3>
+                                  <div class="hidden-xs">Quickly search public records that could otherwise take you week or months to collect.
+                                  Find friends relatives, neighbors or even yourself. Comprehensive people search reports may contain:</div>
+                                  <ul>
+                                      <li>Name</li>
+                                      <li>Phone Number</li>
+                                      <li>Relatives</li>
+                                      <li>Crimnal Records</li>
+                                      <li>Addresses</li>
+                                      <li>Email Addresses</li>
+                                      <li>Date of Birth</li>
+                                      <li>Court Records</li>
+                                      <li>Much More!</li>
+                                  </ul>
+                              </div>
+                          </div><!-- End left block -->
 
-                </div>
-            </div>
-        </div>
-      </header>
-      <!-- End header -->
-
-
-
-      <section class="hero">
-      	<div class="container">
-        	<h1><?php echo $h1; ?></h1>
-            <p class="tagline"><?php echo $tagline; ?></p>
-            <?php /*
-            <div class="search">
-            	<form action="https://www.beenverified.com/lp/4b6122/1/loading" role="form" method="get" name="record_search_form">
-                	<input class="form-control" type="text" name="fn" placeholder="First Name" />
-                	<input class="form-control" type="text" name="ln" placeholder="Last Name" />
-                	<input class="form-control" type="text" name="city" placeholder="City Name" />
-                  <select class="form-control" name="state">
-                      <option value="All">Any State</option>
-                      <option value="AL">Alabama</option>
-                      <option value="AK">Alaska</option>
-                      <option value="AZ">Arizona</option>
-                      <option value="AR">Arkansas</option>
-                      <option value="CA">California</option>
-                      <option value="CO">Colorado</option>
-                      <option value="CT">Connecticut</option>
-                      <option value="DE">Delaware</option>
-                      <option value="DC">Washington DC</option>
-                      <option value="FL">Florida</option>
-                      <option value="GA">Georgia</option>
-                      <option value="HI">Hawaii</option>
-                      <option value="ID">Idaho</option>
-                      <option value="IL">Illinois</option>
-                      <option value="IN">Indiana</option>
-                      <option value="IA">Iowa</option>
-                      <option value="KS">Kansas</option>
-                      <option value="KY">Kentucky</option>
-                      <option value="LA">Louisiana</option>
-                      <option value="ME">Maine</option>
-                      <option value="MD">Maryland</option>
-                      <option value="MA">Massachusetts</option>
-                      <option value="MI">Michigan</option>
-                      <option value="MN">Minnesota</option>
-                      <option value="MS">Mississippi</option>
-                      <option value="MO">Missouri</option>
-                      <option value="MT">Montana</option>
-                      <option value="NE">Nebraska</option>
-                      <option value="NV">Nevada</option>
-                      <option value="NH">New Hampshire</option>
-                      <option value="NJ">New Jersey</option>
-                      <option value="NM">New Mexico</option>
-                      <option value="NY">New York</option>
-                      <option value="NC">North Carolina</option>
-                      <option value="ND">North Dakota</option>
-                      <option value="OH">Ohio</option>
-                      <option value="OK">Oklahoma</option>
-                      <option value="OR">Oregon</option>
-                      <option value="PA">Pennsylvania</option>
-                      <option value="RI">Rhode Island</option>
-                      <option value="SC">South Carolina</option>
-                      <option value="SD">South Dakota</option>
-                      <option value="TN">Tennessee</option>
-                      <option value="TX">Texas</option>
-                      <option value="UT">Utah</option>
-                      <option value="VT">Vermont</option>
-                      <option value="VA">Virginia</option>
-                      <option value="WA">Washington</option>
-                      <option value="WV">West Virginia</option>
-                      <option value="WI">Wisconsin</option>
-                      <option value="WY">Wyoming</option>
-                  </select>
-                	<input type="submit" name="submit" value="Search" />
-                </form>
-                <div class="clearfix"></div>
-            </div>
-            */ ?>
-        </div>
-      </section>
-      <!-- End hero section -->
+                          <div class="col-xs-12 col-sm-12 col-md-5">
+                              <div class="right-column">
+                                  <h3>The New Way to <br class="hidden-sm hidden-xs">Find People</h3>
+                                  <div>More than a regular search engine</div>
+                                  <p>Its the easy and quick way to look people up.
+                                  Do a deep public record search to uncover the important information you're looking for.
+                                  Now you'll never have to search someone on google again.</p>
+                              </div>
+                          </div><!-- End right block -->
+                      </div><!-- End row -->
+                  </section><!-- End section -->
+              </div><!-- End text section wrapper -->
+              <p class="credit">Image by Pierce, C.C., 1910</p>
+          </div><!-- End container -->
+      </div><!-- End wrapper -->

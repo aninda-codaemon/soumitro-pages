@@ -1,59 +1,55 @@
 <footer>
   <div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-md-5">
-            <div class="footer-logo"><img src="/people/assets/img/images/logo.png" alt="" /></div>
-              <p>Public-Records.net helps you find people and learn more about them.</p>
-              <p>Phone: <a href="tel:1-234-978-2542">1-234-9-PUBLIC</a></p>
-              <?php /*
-              <ul class="social-icons">
-                <li class="icon-twitter"><a href="#"></a></li>
-                <li class="icon-fb"><a href="#"></a></li>
-                <li class="icon-google"><a href="#"></a></li>
-                <li class="icon-in"><a href="#"></a></li>
-                <li class="icon-yt"><a href="#"></a></li>
-              </ul>
-              */ ?>
-          </div>
+      <div class="row">
+          <div class="col-sm-4 col-md-4">
+              <img class="footer-logo img-responsive" src="assets/images/Logo-Bottom.png" alt="Public Records" />
+                <p>Public-Records.net helps you find and <br>learn more about them</p>
+                <p>Phone: <a href="#">1-234-9-PUBLIC</a></p>
+            </div>
 
-          <div class="col-sm-12 col-md-7">
-            <div class="row">
-                <div class="col-xs-6 col-sm-4 col-md-4">
-                    <div class="footer-heading">About Us</div>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about/">About Public-Records</a></li>
-                        <li><a href="/contact/">Contact Us</a></li>
-                      </ul>
-                  </div>
-                <div class="col-xs-6 col-sm-4 col-md-4">
-                    <div class="footer-heading">Directories</div>
-                    <ul>
-                        <li><a href="/people/">People Directory</a></li>
-                        <!-- <li><a href="/">Name Directory</a></li> -->
-                      </ul>
-                  </div>
-                <div class="col-xs-12 col-sm-4 col-md-4">
-                    <div class="footer-heading">Help</div>
-                    <ul>
-                        <li><a href="/terms/">Terms Of Use</a></li>
-                        <li><a href="/privacy/">Privacy Policy</a></li>
-                        <li><a href="/faqs/">FAQs</a></li>
-                      </ul>
-                  </div>
-              </div><!-- End row -->
-          </div><!-- End col-md-7 -->
+          <div class="col-sm-8 col-md-7">
+              <ul class="footer-menu">
+                  <li>
+                      <div class="heading">About Us</div>
+                        <ul>
+                          <li><a href="/">Home</a></li>
+                          <li><a href="/about/">About Public-Records</a></li>
+                          <li><a href="/contact/">Contact Us</a></li>
+                        </ul>
+                    </li><!-- End first column -->
+                  <li>
+                      <div class="heading">Directories</div>
+                        <ul>
+                          <li><a href="/people/">People Directory</a></li>
+                        </ul>
+                    </li><!-- End middle column -->
+                  <li>
+                      <div class="heading">Help</div>
+                        <ul>
+                          <li><a href="/terms/">Term Of Use</a></li>
+                          <li><a href="/privacy/">Privacy Policy</a></li>
+                          <li><a href="/faqs/">FAQs</a></li>
+                        </ul>
+                    </li><!-- End last column -->
+                </ul>
+            </div><!-- End right column -->
+        </div><!-- End row -->
 
-      </div><!-- End row -->
-  </div><!-- End container -->
+        <p class="disclaimer">
+          Disclaimer: Public-records.net gives people easy and affordable access to public record information.
+            Public-records.net does not provide private investigator services, and is not a consumer reporting
+            agency as defined by Fair credit Report Act because the information provided by Public-records.net
+            is not collected or provided, in whole or in part, of the purpose of furnishing consumer reports
+            about those subjects. For more information governing the permitted and prohibited us of public-records.net,
+            please review our <a href="/privacy/">Privacy Policy</a> and our <a href="/terms/">Term of Use.</a>
+        </p>
 
-  <div class="footer-bottom">
-    <div class="container">
-      <p>Disclaimer: Public-Records.net gives people easy and affordable access to public record information. Public-Records.net does not provide private investigator services, and is not a consumer reporting agency as defined by the Fair Credit Report Act because the information provided by Public-Records.net is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses of Public-Records.net, please review our <a href="/privacy/">Privacy Policy</a> and our <a href="/terms/">Terms of Use</a>.</p>
-      <p>&copy; <?php echo date("Y") ?> <a href="https://public-records.net/">Public-Records.net</a>. All Rights Reserved.</p>
-    </div>
-  </div><!-- End footer bottom -->
-</footer>
+        <p class="copyrights">
+          &copy; <?php echo date("Y") ?> Public-Records.net. All Rights Reserved.
+        </p>
+
+    </div><!-- End container -->
+</footer><!-- End footer -->
 
 
 
