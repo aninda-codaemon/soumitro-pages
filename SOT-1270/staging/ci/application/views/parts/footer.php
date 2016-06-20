@@ -2,7 +2,7 @@
   <div class="container">
       <div class="row">
           <div class="col-sm-4 col-md-4">
-              <img class="footer-logo img-responsive" src="assets/images/Logo-Bottom.png" alt="Public Records" />
+              <img class="footer-logo img-responsive" src="/people/assets/img/Logo-Bottom.png" alt="Public Records" />
                 <p>Public-Records.net helps you find and <br>learn more about them</p>
                 <p>Phone: <a href="#">1-234-9-PUBLIC</a></p>
             </div>
@@ -58,7 +58,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinysort/2.2.4/tinysort.min.js"></script>
 <script src="<?php echo asset_url();?>js/scripts.js"></script>
-$()
 
 </script>
 <?php /*

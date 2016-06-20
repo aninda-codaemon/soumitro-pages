@@ -81,7 +81,7 @@
     <div class="wrapper">
          <div class="container">
               <section class="search">
-                  <div class="logo"><img class="img-responsive" src="assets/images/Logo.png" alt="Public Records" /></div>
+                  <div class="logo"><img class="img-responsive" src="/people/assets/img/Logo.png" alt="Public Records" /></div>
                   <h1>Lookup Public Records</h1>
 
                   <form class="search-form">
