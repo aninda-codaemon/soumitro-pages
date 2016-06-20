@@ -272,6 +272,12 @@
 	border-top: 1px solid #e8ecee;
 }
 
+@media (max-width: 991px) {
+	.order-summary .order-item .item-label {
+		font-size: 16px;
+	}
+}
+
 /* callout */
 
 .callout {
