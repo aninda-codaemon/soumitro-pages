@@ -191,18 +191,18 @@
 	color: #333;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 480px) and (max-width: 767px) {
 	.member-perks .member-perk {
 		width: 25%;
 	}
 
 	.member-perks .member-perk .perk-label {
 		margin-top: 5px;
-		font-size: 11px;
+		font-size: 12px;
 	}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 600px) {
 	.member-perks .member-perk .perk-label {
 		margin-top: 0;
 		font-size: 16px;
@@ -359,16 +359,19 @@
 	.callout.money-back .callout-img {
 		width: 50%;
     margin: 0;
-		margin-top: 10px;
     padding-right: 15px;
 		float: left;
 	}
 
 	.callout.money-back .callout-text {
-		width: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: auto;
 		margin: 0;
+		margin-left: 140px;
+		padding-right: 15px;
 		padding-left: 15px;
-		float: left;
 		text-align: left;
 	}
 
@@ -376,35 +379,54 @@
 
 	.callout.confidential-searching .callout-img {
 		position: absolute;
-		top: 30px;
+		top: 32px;
+		width: 70px;
+	}
+
+	.callout.confidential-searching .callout-title,
+	.callout.confidential-searching .callout-text {
+		margin-left: 80px;
+		margin-bottom: 10px;
+		text-align: left;
+	}
+}
+
+@media (max-width: 479px) {
+	/* money back callout */
+
+	.callout.money-back .callout-img {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	/* confidential searching callout */
+
+	.callout.confidential-searching .callout-img {
 		width: 35px;
 	}
 
 	.callout.confidential-searching .callout-title,
 	.callout.confidential-searching .callout-text {
 		margin-left: 40px;
-		margin-bottom: 10px;
-		text-align: left;
 	}
 }
 
 @media (min-width: 768px) {
 	.callout {
-		padding-top: 63.5px;
-		padding-bottom: 63.5px;
+		padding-top: 75.5px;
+		padding-bottom: 75.5px;
 	}
 }
 
 @media (min-width: 992px) {
 	.callout {
-		padding-top: 55px;
-		padding-bottom: 55px;
+		padding: 50.5px 30px;
 	}
 }
 
 @media (min-width: 1200px) {
 	.callout {
-		padding-top: 55.5px;
-		padding-bottom: 55.5px;
+		padding-top: 46px;
+		padding-bottom: 46px;
 	}
 }

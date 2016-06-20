@@ -219,27 +219,27 @@
                 <h6 class="title">All memberships include UNLIMITED:</h6>
 
                 <div class="row">
-                  <div class="member-perk col-xs-6 col-sm-3">
+                  <div class="member-perk col-xs-6 col-md-3">
                     <img class="perk-icon" src="img/icon_personal.png" />
                     <span class="perk-label">People Reports</span>
                   </div>
 
-                  <div class="member-perk col-xs-6 col-sm-3">
+                  <div class="member-perk col-xs-6 col-md-3">
                     <img class="perk-icon" src="img/icon_phone_lookup.png" />
                     <span class="perk-label">Phone Lookups</span>
                   </div>
 
-                  <div class="member-perk col-xs-6 col-sm-3">
+                  <div class="member-perk col-xs-6 col-md-3">
                     <img class="perk-icon" src="img/icon_property.png" />
                     <span class="perk-label">Property Lookups</span>
                   </div>
 
-                  <div class="member-perk col-xs-6 col-sm-3 visible-lg">
+                  <div class="member-perk col-xs-6 col-md-3 visible-lg">
                     <img class="perk-icon" src="img/icon_criminal.png" />
                     <span class="perk-label">Criminal Lookups</span>
                   </div>
 
-                  <div class="member-perk col-xs-6 col-sm-3">
+                  <div class="member-perk col-xs-6 col-md-3">
                     <img class="perk-icon" src="img/icon_email_lookup.png" />
                     <span class="perk-label">Email Lookups</span>
                   </div>
@@ -280,12 +280,10 @@
             </section>
 
             <section class="content-block callout money-back background-primary-pastel col-xs-12 visible-xs">
-              <div class="contain-center">
-                <img class="callout-img" src="img/money_back.png" />
-                <h5 class="callout-text" data-fr-bind="currentRecord">
-                  If we can't find results for {{fullName}}, we'll gladly issue a refund!
-                </h5>
-              </div>
+              <img class="callout-img" src="img/money_back.png" />
+              <h5 class="callout-text" data-fr-bind="currentRecord">
+                If we can't find results for {{fullName}}, we'll gladly issue a refund!
+              </h5>
             </section>
 
             <section class="content-block step background-light col-xs-12" id="sub-step-3">
@@ -490,18 +488,14 @@
             </section>
 
             <section class="content-block callout confidential-searching background-primary-pastel">
-              <div class="contain-center">
-                <div class="callout-img-container">
-                  <img class="callout-img hidden-xs" src="img/confidential_search.png" />
-                  <img class="callout-img visible-xs" src="img/lock.png" />
-                </div>
-                <h5 class="callout-title">
-                  Confidential Searching!
-                </h5>
-                <p class="callout-text" data-fr-bind="currentRecord">
-                  {{#if fullName}}{{fullName}} will <strong>not</strong> be notified of this search. {{else}} Your subjects will <strong>not</strong> be notified.{{/if}}
-                </p>
-              </div>
+              <img class="callout-img hidden-xs" src="img/confidential_search.png" />
+              <img class="callout-img visible-xs" src="img/lock.png" />
+              <h5 class="callout-title">
+                Search With Confidence!
+              </h5>
+              <p class="callout-text" data-fr-bind="currentRecord">
+                {{#if fullName}}{{fullName}} will <strong>not</strong> be notified of this search. {{else}} Your subjects will <strong>not</strong> be notified.{{/if}}
+              </p>
             </section>
 
             <section class="content-block callout money-back background-primary-pastel hidden-xs">
@@ -568,10 +562,10 @@
         </div>
         <div class="modal-body text-center">
           <img src="img/dollar_trial.png" alt="$1" class="trial-img">
-          <h1 class="title text-center">
+          <h4 class="title text-center">
             Special Limited Time Offer!
             <span class="text-break">$1 Trial!</span>
-          </h1>
+          </h4>
           <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
               <p class="sub-title">
