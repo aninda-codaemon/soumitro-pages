@@ -797,7 +797,11 @@
 
     // update refine modal state
     var updateRefineModal = function() {
-      var recordCount = Number(amplify.store('teaserData').recordCount);
+      var recordCount = 0;
+
+      if (amplify.store('teaserData') !== undefined) {
+        recordCount = Number(amplify.store('teaserData').recordCount);
+      }
 
       if (recordCount <= 1) {
         $('.hasResults').hide();
@@ -1031,11 +1035,7 @@
 
         $("#bv-captcha-imgs img").removeClass("bv-captcha-selected");
 
-        // slowing down add class method to make sure random image exists
-        // and all the captcha images are reset before selecting the new one
-        window.setTimeout(function() {
-          $selectedImg.addClass("bv-captcha-selected");
-        }, 1000);
+        $selectedImg.addClass("bv-captcha-selected");
     };
 
 
