@@ -295,28 +295,15 @@
               <img class="img-ccards hidden-xs" src="img/credit_cards.png" alt="Credit Card" />
 
               <div class="row cc-wrapper">
-                <div class="form-group col-sm-8">
-                  <label for="credit_card_card_number" class="control-label">Card Number</label>
-                  <input type="text" class="form-control input-lg inspectletIgnore" id="credit_card_card_number" name="credit_card[card_number]" size="30" placeholder="Card Number" />
-                </div>
-
-                <div class="col-sm-4">
-                  <label for="cvv2" class="control-label">CVV</label>
-
-                  <div class="row">
-                    <div class="form-group col-xs-6">
-                      <input type="text" class="form-control input-lg inspectletIgnore" id="cvv2" name="credit_card[verification_number]" size="4"  maxlength="4" placeholder="CVV" />
-                    </div>
-                    <div class="col-xs-6">
-                      <img class="img-cvv" src="img/cvv.png" alt="CVV" />
-                    </div>
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <label for="credit_card_card_number" class="control-label">Card Number</label>
+                    <input type="text" class="form-control input-lg inspectletIgnore" id="credit_card_card_number" name="credit_card[card_number]" size="30" placeholder="Card Number" />
                   </div>
-                </div>
 
-                <div class="col-sm-8">
                   <label for="credit_card[expiration_date(2i)]" class="control-label">Expiration</label>
                   <div class="row">
-                    <div class="col-sm-6 form-group inspectlet-sensitive">
+                    <div class="col-xs-7 form-group inspectlet-sensitive">
                       <select class="form-control input-lg" id="credit_card_expiration_date_2i" name="credit_card[expiration_date(2i)]">
                         <option value="1">January</option>
                         <option value="2">February</option>
@@ -332,7 +319,7 @@
                         <option value="12">December</option>
                       </select>
                     </div>
-                    <div class="col-sm-6 form-group inspectlet-sensitive">
+                    <div class="col-xs-5 form-group inspectlet-sensitive">
                       <select class="form-control input-lg" id="credit_card_expiration_date_1i" name="credit_card[expiration_date(1i)]">
                         <option value="2015">2015</option>
                         <option value="2016">2016</option>
@@ -354,9 +341,26 @@
                   </div>
                 </div>
 
-                <div class="col-sm-4 form-group">
-                  <label for="zipcode" class="control-label">Zip Code</label>
-                  <input type="text" class="form-control input-lg inspectletIgnore" id="zipcode" name="address[zip]" size="30" maxsize="20" placeholder="Zip Code" />
+                <div class="col-md-4">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-12">
+                      <label for="cvv2" class="control-label">CVV</label>
+
+                      <div class="row">
+                        <div class="form-group col-xs-7 col-sm-6">
+                          <input type="text" class="form-control input-lg inspectletIgnore" id="cvv2" name="credit_card[verification_number]" size="4"  maxlength="4" placeholder="CVV" />
+                        </div>
+                        <div class="col-xs-5 col-sm-6">
+                          <img class="img-cvv" src="img/cvv.png" alt="CVV" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-7 col-sm-6 col-md-12 form-group">
+                      <label for="zipcode" class="control-label">Zip Code</label>
+                      <input type="text" class="form-control input-lg inspectletIgnore" id="zipcode" name="address[zip]" size="30" maxsize="20" placeholder="Zip Code" />
+                    </div>
+                  </div>
                 </div>
 
                 <div class="col-xs-12 form-group checkbox">
