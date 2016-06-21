@@ -240,7 +240,7 @@
 
 #sub-step-3 .img-ccards {
 	display: block;
-	width: 110px;
+	width: 130px;
 	margin-bottom: 20px;
 }
 
@@ -298,12 +298,6 @@
 	}
 }
 
-@media (min-width: 992px) {
-	#sub-step-3 .img-ccards {
-		width: 130px;
-	}
-}
-
 /* order-summary */
 
 .order-summary {
@@ -324,13 +318,15 @@
 }
 
 @media (max-width: 991px) {
-	.order-summary .order-item .item-label {
-		font-size: 16px;
-	}
-
 	.summary-total {
 		padding-top: 40px;
     margin-top: 40px;
+	}
+}
+
+@media (min-width: 768px) {
+	.order-summary .order-item .item-label {
+		font-size: 16px;
 	}
 }
 
@@ -394,12 +390,12 @@
 	.callout.confidential-searching .callout-img {
 		position: absolute;
 		top: 32px;
-		width: 70px;
+		width: 100px;
 	}
 
 	.callout.confidential-searching .callout-title,
 	.callout.confidential-searching .callout-text {
-		margin-left: 80px;
+		margin-left: 115px;
 		margin-bottom: 10px;
 		text-align: left;
 	}
@@ -425,22 +421,42 @@
 	}
 }
 
+@media (min-width: 480px) and (max-width: 767px) {
+	/* confidential searching callout */
+
+	.callout.confidential-searching .callout-img.hidden-xs {
+		display: block!important;
+	}
+
+	.callout.confidential-searching .callout-img.visible-xs {
+		display: none!important;
+	}
+
+	.callout.confidential-searching .callout-title {
+		margin-top: 20px;
+	}
+
+	.callout.confidential-searching .callout-text {
+		margin-bottom: 25px;
+	}
+}
+
 @media (min-width: 768px) {
 	.callout {
-		padding-top: 74.5px;
-		padding-bottom: 74.5px;
+		padding-top: 65px;
+		padding-bottom: 65px;
 	}
 }
 
 @media (min-width: 992px) {
 	.callout {
-		padding: 43.5px 30px;
+		padding: 45px 30px;
 	}
 }
 
 @media (min-width: 1200px) {
 	.callout {
-		padding-top: 38px;
-		padding-bottom: 38px;
+		padding-top: 40px;
+		padding-bottom: 40px;
 	}
 }

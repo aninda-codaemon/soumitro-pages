@@ -16,8 +16,8 @@
     }
   };
 
-  /* Initialize cvv popover for Bootstrap 3 */
-  $('.cvv-img').popover({
+  // Initialize cvv popover for Bootstrap 3
+  $('.img-cvv').popover({
       container: 'body',
       trigger: 'hover focus',
       placement:'auto',
@@ -27,19 +27,16 @@
           return '<p><strong>Visa, MasterCard, and Discover</strong></p><div class="row"><div class="col-xs-6"><img class="img-responsive" src="//manaron.s3.amazonaws.com/srg/hompage/web/img/cc-visa.png"></div><div class="col-xs-6 pop-text"><p><small><strong>Back of Card</strong><br>Three digits located on the right of the signature strip.</small></p></div></div><p><strong>American Express</strong></p><div class="row"><div class="col-xs-6"><img class="img-responsive" src="//manaron.s3.amazonaws.com/srg/hompage/web/img/cc-amex.png"></div><div class="col-xs-6 pop-text"><p><small><strong>Front of Card</strong><br>Four digits located on either the left or right side.</small></p></div>';
       }
   });
-  /* Initialize security popover for Bootstrap 3 */
-  $('#secure-lock').popover({
-      container: 'body',
-      trigger: 'hover focus',
-      placement:'auto',
-      html: true,
-      content: function () {
-          return '<p><span class="glyphicon glyphicon-lock"></span> BeenVerified deploys the latest and greatest strategies, including Secure 256-bit SSL technology, to keep your personal information and payment data safe from unauthorized 3rd parties.</p>';
-      }
-  });
-  $('#secure-text').on('hover' , function () {
-    $('#secure-lock').popover('toggle');
-  });
+  // Initialize security popover for Bootstrap 3
+  // $('.img-norton').popover({
+  //     container: 'body',
+  //     trigger: 'hover focus',
+  //     placement:'auto',
+  //     html: true,
+  //     content: function () {
+  //         return '<p><span class="glyphicon glyphicon-lock"></span> BeenVerified deploys the latest and greatest strategies, including Secure 256-bit SSL technology, to keep your personal information and payment data safe from unauthorized 3rd parties.</p>';
+  //     }
+  // });
 
   var $selectionWrap = $('.selection-wrap');
 
