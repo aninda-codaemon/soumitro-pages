@@ -84,10 +84,10 @@
                   <div class="logo"><img class="img-responsive" src="/people/assets/img/Logo.png" alt="Public Records" /></div>
                   <h1>Lookup Public Records</h1>
 
-                  <form class="search-form">
-                      <input type="text" name="f-name" placeholder="Name" />
-                      <input type="text" name="l-name" placeholder="Last Name" />
-                      <select name="state">
+                  <form class="search-form" id="searchForm" action="http://jumptracker.com/aff_c?offer_id=61&aff_id=2203" method="POST">
+                      <input type="text" name="fn" id="fn" placeholder="Name" />
+                      <input type="text" name="ln" id="ln" placeholder="Last Name" />
+                      <select name="state" id="state">
                         <option value="All">Any State</option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
@@ -141,7 +141,7 @@
                         <option value="WI">Wisconsin</option>
                         <option value="WY">Wyoming</option>
                       </select>
-                      <input type="submit" name="search" value="&nbsp;" />
+                      <input type="submit" name="search" id="submitSearch" value="&nbsp;" />
                   </form>
               </section>
               <!-- End Search Section -->

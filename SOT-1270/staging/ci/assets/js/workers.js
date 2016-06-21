@@ -254,9 +254,9 @@
 
         if (!$headerSearch.hasClass('no-hide-header')) {
             $headerSearch.hide();
-        };
+        }
 
-    }
+    };
 
     var determineLayoutState = function () {
         if (windowWidth <= windowSmall) {
@@ -366,7 +366,7 @@
 
         if ($yVideo.length !== 0) {
             playVideo();
-        };
+        }
 
         $("#page-menu-sidebar a.list-group-item[href$='/" + location.pathname.replace(/\/$/, "").split('/').pop() + "/']").addClass('active');
     };
