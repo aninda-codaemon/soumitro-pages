@@ -1030,7 +1030,12 @@
             $selectedImg = $($captchaImgs[selectedIdx]);
 
         $("#bv-captcha-imgs img").removeClass("bv-captcha-selected");
-        $selectedImg.addClass("bv-captcha-selected");
+
+        // slowing down add class method to make sure random image exists
+        // and all the captcha images are reset before selecting the new one
+        window.setTimeout(function() {
+          $selectedImg.addClass("bv-captcha-selected");
+        }, 1000);
     };
 
 
