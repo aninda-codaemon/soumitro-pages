@@ -427,20 +427,20 @@
 
 @media (min-width: 768px) {
 	.callout {
-		padding-top: 75.5px;
-		padding-bottom: 75.5px;
+		padding-top: 74.5px;
+		padding-bottom: 74.5px;
 	}
 }
 
 @media (min-width: 992px) {
 	.callout {
-		padding: 50.5px 30px;
+		padding: 43.5px 30px;
 	}
 }
 
 @media (min-width: 1200px) {
 	.callout {
-		padding-top: 46px;
-		padding-bottom: 46px;
+		padding-top: 38px;
+		padding-bottom: 38px;
 	}
 }
