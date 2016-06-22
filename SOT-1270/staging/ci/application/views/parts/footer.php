@@ -3,7 +3,7 @@
       <div class="row">
           <div class="col-sm-4 col-md-4">
               <img class="footer-logo img-responsive" src="/people/assets/img/Logo-Bottom.png" alt="Public Records" />
-                <p>Public-Records.net helps you find and <br>learn more about them</p>
+                <p>Public-Records.net helps you find and <br>learn more about people.</p>
                 <p>Phone: <a href="#">1-234-9-PUBLIC</a></p>
             </div>
 

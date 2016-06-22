@@ -152,13 +152,13 @@
                           <div class="col-xs-12 col-sm-12 col-md-7">
                               <div class="left-column">
                                   <h3>Access Premium Public Records</h3>
-                                  <div class="hidden-xs">Quickly search public records that could otherwise take you week or months to collect.
-                                  Find friends relatives, neighbors or even yourself. Comprehensive people search reports may contain:</div>
+                                  <div class="hidden-xs">Quickly search public records that could otherwise take you weeks or months to collect.
+                                  Find friends, relatives, neighbors or even yourself. Comprehensive people search reports may contain:</div>
                                   <ul>
-                                      <li>Name</li>
-                                      <li>Phone Number</li>
+                                      <li>Names</li>
+                                      <li>Phone Numbers</li>
                                       <li>Relatives</li>
-                                      <li>Crimnal Records</li>
+                                      <li>Criminal Records</li>
                                       <li>Addresses</li>
                                       <li>Email Addresses</li>
                                       <li>Date of Birth</li>
