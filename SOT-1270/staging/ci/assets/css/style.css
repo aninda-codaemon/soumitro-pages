@@ -120,6 +120,9 @@ body{
   margin-top: -7px;
   margin-bottom: 4px;
 }
+.results a {
+  font-size: 16px;
+}
 .name p {
   color: #7f7f7f;
   font-size: 14px;
