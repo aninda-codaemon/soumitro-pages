@@ -460,13 +460,20 @@
     // keep all filters hidden by default
     $resultsFilters.hide();
 
+    // hide filters if search-results is in second step by checking url for 2
+    var hideFiltersOnTwo = function() {
+      if (locationStep === "2") {
+        $('.results-filters').hide();
+      }
+    };
+
     // making this into a function so that it can be called each time the results data is updated
     var initSearchFilters = function() {
       var recordCount = Number($('.record-count').text());
       //var recordCount = amplify.store('teaserData').recordCount;
 
       // check if there are results from the search
-      if (recordCount > 0 && locationStep !== "2" && locationStep !== undefined) {
+      if (recordCount > 0) {
         // show results filters if there are more than 5 search results
         // in mobile show filters only if there are more than 20 search results
         if (window.bv.isMobile) {
@@ -482,6 +489,8 @@
             $('.results-filters').hide();
           }
         }
+
+        hideFiltersOnTwo();
 
         // update and hide refine modal
         updateRefineModal();
