@@ -14,6 +14,14 @@ $this->load->view("parts/header", $info);
 // $this->load->view("parts/breadcrumbs", $info);
 ?>
 
+<div class="breadcrumb">
+  <div class="container">
+    <a href="/" class="logo">
+      <img class="img-responsive" src="/people/assets/img/Logo.png" alt="Public Records" />
+    </a>
+  </div>
+</div>
+
       <section class="more-detail">
         <div class="container">
           <div class="row text-center">
