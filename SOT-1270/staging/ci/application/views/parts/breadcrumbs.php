@@ -1,6 +1,9 @@
 <div class="breadcrumb">
 <?php foreach ($breadcrumbs as $breadcrumb) { ?>
   <div class="container">
+    <a href="/" class="logo">
+      <img class="img-responsive" src="/people/assets/img/Logo.png" alt="Public Records" />
+    </a>
     <?php foreach ($breadcrumb as $level) { ?>
       <?php if (!empty($level['url'])) { ?>
         <a href="<?php echo $level['url']; ?>">

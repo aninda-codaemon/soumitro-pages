@@ -3,6 +3,9 @@
   foreach ($breadcrumbs as $breadcrumb) {
   ?>
   <div class="container">
+    <a href="/" class="logo">
+      <img class="img-responsive" src="/people/assets/img/Logo.png" alt="Public Records" />
+    </a>
     <?php
     foreach ($breadcrumb as $level) {
     ?>
