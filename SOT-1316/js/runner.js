@@ -356,7 +356,7 @@
         var pattern = new RegExp("[^A-Za-z'-\s]", "gi");
         return removeDiacritics(mapval).replace(pattern, '');
     };
-  
+
     var parseMiddleInitial = function(data) {
       var parsed_mi = data.fn.match(/^.*\s([A-Za-z])$/);
       if (parsed_mi) {
@@ -447,12 +447,15 @@
     // list.js - sort and filter table data
     // docs: http://www.listjs.com/docs/
 
+    //@TODO: refactor into seperate plugin
+
     // define variables to be used by filter functions
     var searchResultsList,
         $resultsFilters = $('.results-filters'),
         $stateFilters = $('#state-filter option'),
         $ageFilters = $('#age-filter option'),
-        $refineModal = $('#refine-modal');
+        $refineModal = $('#refine-modal'),
+        locationStep = window.location.pathname.split('/')[3];
 
     // keep all filters hidden by default
     $resultsFilters.hide();
@@ -463,7 +466,7 @@
       //var recordCount = amplify.store('teaserData').recordCount;
 
       // check if there are results from the search
-      if (recordCount > 0) {
+      if (recordCount > 0 && locationStep !== "2" && locationStep !== undefined) {
         // show results filters if there are more than 5 search results
         // in mobile show filters only if there are more than 20 search results
         if (window.bv.isMobile) {
@@ -673,6 +676,7 @@
         updateRefineModal();
         $('#no-results').show();
         // keep the filters hidden since no search results are found
+        $('.results-filters').hide();
         // hide entire top banner
         $('#top-banner').hide();
         // hide results container
