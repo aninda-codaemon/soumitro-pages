@@ -26,7 +26,7 @@
                   <li>
                       <div class="heading">Help</div>
                         <ul>
-                          <li><a href="/terms/">Term Of Use</a></li>
+                          <li><a href="/terms/">Terms Of Use</a></li>
                           <li><a href="/privacy/">Privacy Policy</a></li>
                           <li><a href="/faqs/">FAQs</a></li>
                         </ul>

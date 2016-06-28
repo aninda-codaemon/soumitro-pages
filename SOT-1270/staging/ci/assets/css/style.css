@@ -433,6 +433,11 @@ strong.heading {
   position: relative;
 }
 
+#others .open>.dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
 /* End Map */
 
 .social-icons {
