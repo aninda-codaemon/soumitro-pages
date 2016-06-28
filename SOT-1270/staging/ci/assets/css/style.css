@@ -21,6 +21,11 @@ body{
   line-height: 37px;
 }
 
+.breadcrumb .logo {
+  display: block;
+  width: 100%;
+}
+
 .breadcrumb .logo img {
   width: 150px;
   margin-top: 5px;
@@ -53,6 +58,13 @@ body{
 }
 .breadcrumb a:last-child:hover {
   text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .breadcrumb .logo {
+    display: inline-block;
+    width: auto;
+  }
 }
 
 /** End Breadcrumb **/
