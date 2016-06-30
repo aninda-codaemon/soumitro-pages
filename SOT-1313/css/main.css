@@ -1,13 +1,3 @@
-/* cta */
-
-#cta-header {
-	margin-bottom: 15px;
-}
-
-#cta-header .title {
-	margin: 10px auto;
-}
-
 /* teaser-mobile */
 
 #teaser-mobile .teaser {
@@ -192,19 +182,6 @@
 	margin-left: 55px;
 }
 
-.member-perks .perks-list {
-  padding-left: 15px;
-}
-
-.member-perks .perks-list .perks-item {
-	color: #33d4c0;
-	font-size: 14px;
-}
-
-.member-perks .perks-list .perks-item .item-label {
-	color: #333;
-}
-
 @media (min-width: 480px) and (max-width: 767px) {
 	.member-perks .member-perk {
 		width: 25%;
@@ -338,106 +315,55 @@
 
 .callout .callout-img {
 	display: block;
+	position: absolute;
+	top: 50%;
+  left: 25px;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
 	width: 100%;
-	max-width: 100px;
-	margin: 0 auto;
+	max-width: 60px;
+	margin: 0;
 }
 
 .callout .callout-title {
+	margin-left: 100px;
 	margin-bottom: 5px;
-	text-align: center;
 }
 
 .callout .callout-text {
 	margin: 0;
-	text-align: center;
+	margin-left: 100px;
 }
 
-/* money back callout */
+/* money-back callout */
 
 .callout.money-back .callout-img {
-	max-width: 150px;
+	left: 15px;
+	max-width: 80px;
 }
 
-.callout.money-back .callout-text {
-	margin-top: 15px;
-}
+@media (min-width: 480px) {
+	.callout .callout-img {
+		max-width: 80px;
+	}
 
-@media (max-width: 767px) {
-	/* money back callout */
+	.callout .callout-title,
+	.callout .callout-text {
+		margin-left: 120px;
+	}
+
+	/* money-back callout */
 
 	.callout.money-back .callout-img {
-		width: 50%;
-    margin: 0;
-    padding-right: 15px;
-		float: left;
+		max-width: 100px;
 	}
 
 	.callout.money-back .callout-text {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		width: auto;
-		margin: 0;
-		margin-left: 140px;
-		padding-right: 15px;
-		padding-left: 15px;
-		text-align: left;
-	}
-
-	/* confidential searching callout */
-
-	.callout.confidential-searching .callout-img {
-		position: absolute;
-		top: 32px;
-		width: 100px;
-	}
-
-	.callout.confidential-searching .callout-title,
-	.callout.confidential-searching .callout-text {
-		margin-left: 115px;
-		margin-bottom: 10px;
-		text-align: left;
-	}
-}
-
-@media (max-width: 479px) {
-	/* money back callout */
-
-	.callout.money-back .callout-img {
-		margin-top: 20px;
-		margin-bottom: 20px;
-	}
-
-	/* confidential searching callout */
-
-	.callout.confidential-searching .callout-img {
-		width: 35px;
-	}
-
-	.callout.confidential-searching .callout-title,
-	.callout.confidential-searching .callout-text {
-		margin-left: 40px;
-	}
-}
-
-@media (min-width: 480px) and (max-width: 767px) {
-	/* confidential searching callout */
-
-	.callout.confidential-searching .callout-img.hidden-xs {
-		display: block!important;
-	}
-
-	.callout.confidential-searching .callout-img.visible-xs {
-		display: none!important;
-	}
-
-	.callout.confidential-searching .callout-title {
-		margin-top: 20px;
-	}
-
-	.callout.confidential-searching .callout-text {
-		margin-bottom: 25px;
+		margin-top: 15px;
+		margin-bottom: 15px;
 	}
 }
 
@@ -445,6 +371,29 @@
 	.callout {
 		padding-top: 65px;
 		padding-bottom: 65px;
+	}
+
+	.callout .callout-img {
+		position: relative;
+		top: 0;
+		left: 0;
+		transform: none;
+		max-width: 100px;
+		margin: 0 auto;
+	}
+
+	.callout .callout-title,
+	.callout .callout-text {
+		margin-left: 0;
+		text-align: center;
+	}
+
+	/* money back callout */
+
+	.callout.money-back .callout-img {
+		left: 0;
+		max-width: 140px;
+	  margin-bottom: 15px;
 	}
 }
 

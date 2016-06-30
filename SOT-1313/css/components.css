@@ -1,5 +1,9 @@
 /* header */
 
+.header {
+  margin-bottom: 10px;
+}
+
 .header .logo {
     width: 180px;
 }
@@ -13,6 +17,18 @@
   max-width: 20px;
   margin: 0;
   color: #c0f6ef;
+}
+
+@media (min-width: 992px) {
+  .header {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    margin-bottom: 30px;
+  }
 }
 
 /* container */
