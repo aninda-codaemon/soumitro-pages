@@ -34,7 +34,7 @@
       placement:'auto',
       html: true,
       content: function () {
-          return '<p><span class="fa fa-lock icon"></span> BeenVerified deploys the latest and greatest strategies, including Secure 256-bit SSL technology, to keep your personal information and payment data safe from unauthorized 3rd parties.</p>';
+          return '<p><span class="fa fa-lock icon"></span> PeopleLooker deploys the latest and greatest strategies, including Secure 256-bit SSL technology, to keep your personal information and payment data safe from unauthorized 3rd parties.</p>';
       }
   });
 
