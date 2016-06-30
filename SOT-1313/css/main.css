@@ -126,12 +126,12 @@
 }
 
 .selection-wrap .radio-label .plan-price .price-label {
-	font-size: 18px;
+	font-size: 14px;
 }
 
 .selection-wrap .radio-label .plan-price .price-info {
 	color: #777;
-	font-size: 14px;
+	font-size: 12px;
 }
 
 @media (min-width: 480px) {
@@ -151,6 +151,16 @@
 
 	.selection-wrap .radio-label .plan-price .price-info {
 		display: block;
+	}
+}
+
+@media (min-width: 768px) {
+	.selection-wrap .radio-label .plan-price .price-label {
+		font-size: 16px;
+	}
+
+	.selection-wrap .radio-label .plan-price .price-info {
+		font-size: 14px;
 	}
 }
 
@@ -292,13 +302,7 @@
 .summary-total {
 	padding-top: 25px;
 	border-top: 1px solid #e8ecee;
-}
-
-@media (max-width: 991px) {
-	.summary-total {
-		padding-top: 40px;
-    margin-top: 40px;
-	}
+	font-weight: bold;
 }
 
 @media (min-width: 768px) {
