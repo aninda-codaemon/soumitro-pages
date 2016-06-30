@@ -257,6 +257,13 @@ select.form-control {
     text-indent: 10px;
 }
 
+/* remove text-indent for firefox */
+@-moz-document url-prefix() { 
+  select.form-control {
+    text-indent: 0;
+  }
+}
+
 /* form error states */
 
 .form-control.input-error {
