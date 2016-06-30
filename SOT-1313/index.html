@@ -259,17 +259,20 @@
                   <input class="form-control input-lg inspectletIgnore" id="user_email" maxsize="100" name="user[email]" type="email" value="{{user[email]}}" placeholder="Enter Email" />
                 </div>
               </div>
-            </section>
 
-            <section class="content-block step background-light col-xs-12" id="sub-step-3">
-              <h5 class="title text-secondary">
-                Step 3: Payment <span class="text-break">Information</span>
-                <img class="img-norton" src="img/norton.png" alt="Norton Secured" />
-              </h5>
+              <div class="row background-primary-light" id="payment-images">
+                <div class="col-xs-6">
+                  <img class="img-lock" src="img/lock.png" alt="Secure Payment" />
+                </div>
+                <div class="col-xs-6">
+                  <img class="img-norton" src="img/norton.png" alt="Norton Secured" />
+                </div>
+                <div class="col-xs-12 hidden-xs">
+                  <img class="img-ccards" src="img/credit_cards.png" alt="Credit Card" />
+                </div>
+              </div>
 
-              <img class="img-ccards hidden-xs" src="img/credit_cards.png" alt="Credit Card" />
-
-              <div class="row cc-wrapper">
+              <div class="row background-primary-light" id="payment-info">
                 <div class="col-md-8">
                   <div class="form-group">
                     <label for="credit_card_card_number" class="control-label">Card Number</label>
@@ -336,7 +339,9 @@
                     </div>
                   </div>
                 </div>
+              </div>
 
+              <div class="row" id="payment-actions">
                 <div class="col-xs-12 form-group checkbox">
                   <label for="account_tos" class="checkbox-label">
                     <img class="arrow-img" src="img/arrow.png" />

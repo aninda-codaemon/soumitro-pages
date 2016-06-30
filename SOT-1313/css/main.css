@@ -216,41 +216,81 @@
 	}
 }
 
-/* payment step */
+/* payment-images */
 
-#sub-step-3 .title .img-norton {
-	position: absolute;
-	top: -7px;
-	right: 0;
-	width: 80px;
+#payment-images .img-lock {
+	width: 35px;
+	margin: 15px 0;
+	cursor: pointer;
 }
 
-#sub-step-3 .img-ccards {
+#payment-images .img-norton {
+	width: 80px;
+	margin: 15px 0;
+	float: right;
+}
+
+#payment-images .img-ccards {
 	display: block;
 	width: 130px;
 	margin-bottom: 20px;
 }
 
-.cc-wrapper .img-cvv {
+@media (min-width: 992px) {
+	#payment-images {
+		margin-left: -30px;
+    margin-right: -30px;
+    padding: 15px;
+		padding-bottom: 0;
+	}
+
+	#payment-images .img-lock,
+	#payment-images .img-norton {
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+
+	#payment-images .img-ccards {
+		margin-bottom: 5px;
+	}
+}
+
+/* payment-info */
+
+#payment-info .img-cvv {
 	width: 100%;
 	max-width: 70px;
 	margin: 0;
 	margin-top: 15px;
 }
 
-.cc-wrapper .checkbox .checkbox-label {
+@media (min-width: 992px) {
+	#payment-info {
+		margin-left: -30px;
+    margin-right: -30px;
+    padding: 15px;
+	}
+}
+
+/* payment-actions */
+
+#payment-actions .checkbox {
+	margin-top: 20px;
+}
+
+#payment-actions .checkbox .checkbox-label {
 	padding-left: 40px;
 	font-size: 14px;
 }
 
-.cc-wrapper .checkbox .arrow-img {
+#payment-actions .checkbox .arrow-img {
 	position: absolute;
 	top: 25px;
 	left: 13px;
 	width: 30px;
 }
 
-.cc-wrapper .checkbox .checkbox-input {
+#payment-actions .checkbox .checkbox-input {
 	margin-left: -40px;
 	-webkit-box-shadow: 0 0 10px 1px #ef2742;
 	-moz-box-shadow: 0 0 10px 1px #ef2742;
@@ -260,11 +300,11 @@
   border-radius: 4px;
 }
 
-.cc-wrapper .checkbox .checkbox-label.input-success .arrow-img {
+#payment-actions .checkbox .checkbox-label.input-success .arrow-img {
 	display: none;
 }
 
-.cc-wrapper .checkbox .checkbox-label.input-success .checkbox-input {
+#payment-actions .checkbox .checkbox-label.input-success .checkbox-input {
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	-ms-box-shadow: none;
@@ -272,17 +312,11 @@
 	box-shadow: none;
 }
 
-.cc-wrapper #create_button {
+#payment-actions #create_button {
 	display: block;
 	margin: 0 auto;
 	margin-top: 20px;
 	font-size: 32px;
-}
-
-@media (min-width: 480px) {
-	#sub-step-3 .title .text-break {
-		display: inline-block !important;
-	}
 }
 
 /* order-summary */

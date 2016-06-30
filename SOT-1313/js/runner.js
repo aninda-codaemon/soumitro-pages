@@ -28,15 +28,15 @@
       }
   });
   // Initialize security popover for Bootstrap 3
-  // $('.img-norton').popover({
-  //     container: 'body',
-  //     trigger: 'hover focus',
-  //     placement:'auto',
-  //     html: true,
-  //     content: function () {
-  //         return '<p><span class="glyphicon glyphicon-lock"></span> BeenVerified deploys the latest and greatest strategies, including Secure 256-bit SSL technology, to keep your personal information and payment data safe from unauthorized 3rd parties.</p>';
-  //     }
-  // });
+  $('.img-lock').popover({
+      container: 'body',
+      trigger: 'hover focus',
+      placement:'auto',
+      html: true,
+      content: function () {
+          return '<p><span class="fa fa-lock icon"></span> BeenVerified deploys the latest and greatest strategies, including Secure 256-bit SSL technology, to keep your personal information and payment data safe from unauthorized 3rd parties.</p>';
+      }
+  });
 
   var $selectionWrap = $('.selection-wrap');
 
