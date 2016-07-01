@@ -261,7 +261,7 @@
 #payment-images .img-ccards {
 	display: block;
 	width: 130px;
-	margin-bottom: 20px;
+	margin: 23px 10px;
 }
 
 @media (min-width: 992px) {
