@@ -1,3 +1,26 @@
+/* cta-header */
+
+#cta-header {
+	margin-bottom: 10px;
+}
+
+#cta-header .sub-title {
+	margin: 10px auto;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  #cta-header {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #cta-header {
+    margin-bottom: 30px;
+  }
+}
+
 /* teaser-mobile */
 
 #teaser-mobile .teaser {
