@@ -27,6 +27,11 @@
 	margin: 10px 0;
 }
 
+#teaser-mobile .teaser:nth-child(4),
+#teaser-mobile .teaser:nth-child(5) {
+	display: none;
+}
+
 #teaser-mobile .teaser .teaser-icon {
 	position: absolute;
 	width: 40px;
