@@ -82,6 +82,11 @@ header form input[type=text] {
     line-height: 40px;
     font-weight: 400;
     background: none;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		-ms-border-radius: 0;
+		-o-border-radius: 0;
+		border-radius: 0;
     border: none;
     border-bottom: solid 3px #303A43;
     width: 100%;
@@ -100,6 +105,11 @@ header form select {
     font-family: 'Overpass';
     font-weight: 600;
     float: left;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		-ms-border-radius: 0;
+		-o-border-radius: 0;
+		border-radius: 0;
     border: solid 3px #303A43;
     display: block;
     width: 100%;
