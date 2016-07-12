@@ -1,0 +1,380 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(https://fonts.googleapis.com/css?family=Capriola);
+
+@font-face {
+	font-family: 'Overpass';
+	src: url('../fonts/Overpass-ExtraLight.eot');
+	src: local('☺'), url('../fonts/Overpass-ExtraLight.woff') format('woff'), url('../fonts/Overpass-ExtraLight.ttf') format('truetype'), url('../fonts/Overpass-ExtraLight.svg') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+
+
+
+@font-face {
+	font-family: 'Overpass';
+	src: url('../fonts/Overpass-Light.eot');
+	src: local('☺'), url('../fonts/Overpass-Light.woff') format('woff'), url('../fonts/Overpass-Light.ttf') format('truetype'), url('../fonts/Overpass-Light.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Overpass';
+	src: url('../fonts/Overpass_Regular.eot');
+	src: local('☺'), url('../fonts/Overpass_Regular.woff') format('woff'), url('../fonts/Overpass_Regular.ttf') format('truetype'), url('../fonts/Overpass_Regular.svg') format('svg');
+	font-weight: 600;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Overpass';
+	src: url('../fonts/Overpass_Bold.eot');
+	src: local('☺'), url('../fonts/Overpass_Bold.woff') format('woff'), url('../fonts/Overpass_Bold.ttf') format('truetype'), url('../fonts/Overpass_Bold.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+a, .btn, button, input{
+    transition:all 0.5s ease;   
+}
+
+body{
+    font-family: 'Capriola', sans-serif;
+}
+
+
+header{
+	background:url(../images/Image.png) no-repeat top center;
+    background-size:cover;   
+}
+
+header .logo{
+	margin:40px 0px;   
+}
+
+header .logo img{
+ 	max-width:300px;   
+}
+
+header  p{
+    font-size:26px;
+    line-height:36px;
+    color:#fff;
+    max-width:608px;
+    font-weight:300;
+	font-family: 'Overpass';
+}
+
+header p strong{   
+	display:block;
+    font-weight:400;   
+
+}
+
+header form{
+ 	max-width:700px;
+    background:rgba(87,217,243,0.95);
+    padding:50px;
+    border-radius:3px;
+    margin-top:38px;
+    margin-bottom:78px;   
+}
+
+header form label{
+ 	color:#303A43;
+    font-size:38px;
+    line-height:40px;
+    font-weight:400; 
+    font-family: 'Capriola', sans-serif;
+    float:left;
+}
+
+header form input[type=text]{
+	color:#6F7C89;
+    font-size:36px;
+    line-height:40px;
+    font-weight:400;
+    background:none;
+    border:none;
+    border-bottom:solid 3px #303A43;
+    width:100%;   
+    margin-left:20px;
+    padding:8px 0px;
+    outline:none;
+	font-family: 'Overpass';
+    font-weight:600;
+    float:left;
+}
+
+header form select{
+	color:#6F7C89;
+    font-size:36px;
+    line-height:40px;
+    outline:none;
+	font-family: 'Overpass';
+    font-weight:600;
+    float:left;
+
+    border:solid 3px #303A43;
+    display:block;
+    width:100%;
+    margin-left:0px;
+    max-width:390px;
+    padding:0px;
+    margin-top:24px;
+    height:60px;
+    padding-left:8px;
+    margin-bottom:48px;
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    background-color:transparent;
+    background: url(../images/angle.png) no-repeat 97% 12px;
+    background-size: 30px;  
+}
+
+
+header .name{
+    max-width:315px;
+    margin-top:-20px;
+    margin-bottom:47px;
+}
+
+header .lname{
+    max-width:390px;
+    margin-left: 0px !important;
+    margin-right: 30px;
+    margin-top: -19px;
+    margin-bottom:49px;
+}
+
+header .city{
+    max-width:364px;
+    margin-top:-20px;
+}
+
+
+header ::-webkit-input-placeholder {
+	color:#6F7C89;
+}
+
+header :-moz-placeholder { /* Firefox 18- */
+	color:#6F7C89;
+}
+
+header ::-moz-placeholder {  /* Firefox 19+ */
+	color:#6F7C89;
+}
+
+header :-ms-input-placeholder {  
+	color:#6F7C89;
+}
+
+header input[type=submit]{
+	font-size:30px;
+    border:solid 3px #C1F988;
+    border-radius:100px;
+    padding:10px 30px 6px;
+    color:#fff;
+    font-weight:600;
+    background:none;
+    width:193px;
+    outline:none;
+    margin-top:32px;   
+}
+
+header input[type=submit]:hover, header input[type=submit]:active{
+	background:#C1F988;
+    color:#6F7C89;
+}
+
+/* End Header */
+
+.text-section{
+ 	background:#F1FFE3;
+    padding:60px 0px 90px;   
+}
+
+.text-section h1{
+	color:#303A43;
+    font-size:32px;
+    line-height:40px;
+    margin:0px;   
+}
+
+.text-section p{
+	color:#4ECAE2;
+    font-size:20px;
+    line-height:32px;
+    margin-top:22px;
+    margin-bottom:33px;
+	font-family: 'Overpass';
+    font-weight:600;
+}
+
+.text-section span{
+    display:block;
+    font-size:20px;
+    color:#303A43;
+    margin-bottom:10px;
+    line-height:27px;
+}
+
+
+/* Footer */
+
+footer{
+    padding-top:23px;
+    padding-bottom:45px;
+	font-family: 'Overpass';
+    font-weight:600;
+}
+
+footer p{
+	color:#4A4A4A;
+    font-size:16px;
+    line-height:21px;   
+}
+
+footer a {
+    color:#6FD812;
+    font-size:16px;
+    line-height:15px;
+    display:inline-block;
+    padding-left:5px;
+    padding-right:5px;
+    border-left:solid 1px #333;
+}
+
+footer a:first-child{
+ 	border:none;   
+}
+
+footer a:hover{
+    color:#6FD812;
+}
+
+
+
+@media (min-width:768px) and (max-width:991px){
+    footer{
+     	text-align:center;   
+    }
+    
+    footer .col-md-6{
+     	text-align:center;   
+    }
+    
+    header form{
+     	max-width:none;   
+    }
+}
+
+
+@media (max-width:767px){
+    
+    
+    header{
+    	background:url(../images/ImageMobile.png) no-repeat center -1px rgb(68, 87, 103) ;
+        background-size:100%;   
+    }
+    
+    header .logo{
+     	padding:24px 0px 29px;
+        margin:0px;
+    }
+    
+    header p {
+     	font-size:19px;
+        line-height:25px;
+        padding-right:70px;   
+    }
+    
+    header .logo img{
+     	max-width:201px;   
+    }
+    
+    header form{
+     	padding:30px 20px;
+        margin-bottom:20px;   
+    }
+    
+    header form label{
+     	font-size:27px;
+        float:none;
+        margin-bottom:15px;   
+    }
+    
+    header form input[type="text"], header form select{
+     	font-size:26px;
+        display:block;
+        margin-left:0px;
+        float:none;   
+    }
+    
+    header input[type="submit"]{
+    	font-size:26px;    
+        margin: 25px auto auto;
+        float: none;
+        display: block;
+    }
+    
+    header .lname{
+     	margin-bottom:23px;   
+    }
+    
+    header .name{
+     	margin-bottom:30px;   
+    }
+    
+    header form select{
+        margin-bottom:15px;
+        margin-top:0px;   
+    }
+    
+    .text-section{
+     	padding-bottom:30px;
+        padding-top:30px;   
+    }
+    
+    .text-section span{
+     	font-size:16px;
+        margin-bottom:5px;   
+    }
+    
+    .text-section p{
+     	font-size:16px;
+        margin-bottom:25px;
+        line-height:25px;
+        margin-top:15px;   
+    }
+    
+    .text-section h1{
+     	font-size:25px;
+        line-height:31px;   
+    }
+    
+    
+    footer{
+     	font-size:16px;
+        text-align:left;   
+    }
+    
+    footer .col-md-6{
+     	text-align:left;   
+    }
+    
+    footer a{
+     	display:table;
+        border:none;
+        margin-bottom:10px;   
+    }
+    
+    footer .visible-xs {
+     	padding-top:10px;   
+    }
+}
