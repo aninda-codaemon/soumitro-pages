@@ -39,7 +39,7 @@
 }
 
 a, .btn, button, input{
-    transition:all 0.5s ease;   
+    transition:all 0.5s ease;
 }
 
 body{
@@ -48,16 +48,16 @@ body{
 
 
 header{
-	background:url(../images/Image.png) no-repeat top center;
-    background-size:cover;   
+	background:url(../img/hero.png) no-repeat top center;
+    background-size:cover;
 }
 
 header .logo{
-	margin:40px 0px;   
+	margin:40px 0px;
 }
 
 header .logo img{
- 	max-width:300px;   
+ 	max-width:300px;
 }
 
 header  p{
@@ -69,9 +69,9 @@ header  p{
 	font-family: 'Overpass';
 }
 
-header p strong{   
+header p strong{
 	display:block;
-    font-weight:400;   
+    font-weight:400;
 
 }
 
@@ -81,14 +81,14 @@ header form{
     padding:50px;
     border-radius:3px;
     margin-top:38px;
-    margin-bottom:78px;   
+    margin-bottom:78px;
 }
 
 header form label{
  	color:#303A43;
     font-size:38px;
     line-height:40px;
-    font-weight:400; 
+    font-weight:400;
     font-family: 'Capriola', sans-serif;
     float:left;
 }
@@ -101,7 +101,7 @@ header form input[type=text]{
     background:none;
     border:none;
     border-bottom:solid 3px #303A43;
-    width:100%;   
+    width:100%;
     margin-left:20px;
     padding:8px 0px;
     outline:none;
@@ -133,8 +133,8 @@ header form select{
     -webkit-appearance:none;
     -moz-appearance:none;
     background-color:transparent;
-    background: url(../images/angle.png) no-repeat 97% 12px;
-    background-size: 30px;  
+    background: url(../img/angle.png) no-repeat 97% 12px;
+    background-size: 30px;
 }
 
 
@@ -170,7 +170,7 @@ header ::-moz-placeholder {  /* Firefox 19+ */
 	color:#6F7C89;
 }
 
-header :-ms-input-placeholder {  
+header :-ms-input-placeholder {
 	color:#6F7C89;
 }
 
@@ -184,7 +184,7 @@ header input[type=submit]{
     background:none;
     width:193px;
     outline:none;
-    margin-top:32px;   
+    margin-top:32px;
 }
 
 header input[type=submit]:hover, header input[type=submit]:active{
@@ -196,14 +196,14 @@ header input[type=submit]:hover, header input[type=submit]:active{
 
 .text-section{
  	background:#F1FFE3;
-    padding:60px 0px 90px;   
+    padding:60px 0px 90px;
 }
 
 .text-section h1{
 	color:#303A43;
     font-size:32px;
     line-height:40px;
-    margin:0px;   
+    margin:0px;
 }
 
 .text-section p{
@@ -237,7 +237,7 @@ footer{
 footer p{
 	color:#4A4A4A;
     font-size:16px;
-    line-height:21px;   
+    line-height:21px;
 }
 
 footer a {
@@ -251,7 +251,7 @@ footer a {
 }
 
 footer a:first-child{
- 	border:none;   
+ 	border:none;
 }
 
 footer a:hover{
@@ -262,119 +262,119 @@ footer a:hover{
 
 @media (min-width:768px) and (max-width:991px){
     footer{
-     	text-align:center;   
+     	text-align:center;
     }
-    
+
     footer .col-md-6{
-     	text-align:center;   
+     	text-align:center;
     }
-    
+
     header form{
-     	max-width:none;   
+     	max-width:none;
     }
 }
 
 
 @media (max-width:767px){
-    
-    
+
+
     header{
-    	background:url(../images/ImageMobile.png) no-repeat center -1px rgb(68, 87, 103) ;
-        background-size:100%;   
+    	background:url(../img/hero_mobile.png) no-repeat center -1px rgb(68, 87, 103) ;
+        background-size:100%;
     }
-    
+
     header .logo{
      	padding:24px 0px 29px;
         margin:0px;
     }
-    
+
     header p {
      	font-size:19px;
         line-height:25px;
-        padding-right:70px;   
+        padding-right:70px;
     }
-    
+
     header .logo img{
-     	max-width:201px;   
+     	max-width:201px;
     }
-    
+
     header form{
      	padding:30px 20px;
-        margin-bottom:20px;   
+        margin-bottom:20px;
     }
-    
+
     header form label{
      	font-size:27px;
         float:none;
-        margin-bottom:15px;   
+        margin-bottom:15px;
     }
-    
+
     header form input[type="text"], header form select{
      	font-size:26px;
         display:block;
         margin-left:0px;
-        float:none;   
+        float:none;
     }
-    
+
     header input[type="submit"]{
-    	font-size:26px;    
+    	font-size:26px;
         margin: 25px auto auto;
         float: none;
         display: block;
     }
-    
+
     header .lname{
-     	margin-bottom:23px;   
+     	margin-bottom:23px;
     }
-    
+
     header .name{
-     	margin-bottom:30px;   
+     	margin-bottom:30px;
     }
-    
+
     header form select{
         margin-bottom:15px;
-        margin-top:0px;   
+        margin-top:0px;
     }
-    
+
     .text-section{
      	padding-bottom:30px;
-        padding-top:30px;   
+        padding-top:30px;
     }
-    
+
     .text-section span{
      	font-size:16px;
-        margin-bottom:5px;   
+        margin-bottom:5px;
     }
-    
+
     .text-section p{
      	font-size:16px;
         margin-bottom:25px;
         line-height:25px;
-        margin-top:15px;   
+        margin-top:15px;
     }
-    
+
     .text-section h1{
      	font-size:25px;
-        line-height:31px;   
+        line-height:31px;
     }
-    
-    
+
+
     footer{
      	font-size:16px;
-        text-align:left;   
+        text-align:left;
     }
-    
+
     footer .col-md-6{
-     	text-align:left;   
+     	text-align:left;
     }
-    
+
     footer a{
      	display:table;
         border:none;
-        margin-bottom:10px;   
+        margin-bottom:10px;
     }
-    
+
     footer .visible-xs {
-     	padding-top:10px;   
+     	padding-top:10px;
     }
 }
