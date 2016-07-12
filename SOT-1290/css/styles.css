@@ -48,8 +48,9 @@ body{
 
 
 header{
-	background:url(../img/hero.png) no-repeat top center;
-    background-size:cover;
+	  background: url(../img/hero.png) no-repeat;
+    background-size: cover;
+		background-position: 0% 50%;
 }
 
 header .logo{
@@ -261,6 +262,10 @@ footer a:hover{
 
 
 @media (min-width:768px) and (max-width:991px){
+	  header{
+		  background:url(../img/hero_tablet.png) no-repeat center -1px rgb(68, 87, 103) ;
+			background-size:100%;
+	  }
     footer{
      	text-align:center;
     }
