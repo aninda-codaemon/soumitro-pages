@@ -31,7 +31,7 @@
             </div>
             <p><strong>Start searching your friends and relatives!</strong> Find where they live, how to contact them, photos and so much more. </p>
 
-            <form>
+            <form action="<%= next_page %>" id="header-search-people" class="header-search">
                 <label>I'm looking for my</label>
                 <select class="select-option">
                     <option>(Relationship)</option>
@@ -113,12 +113,14 @@
         </div>
     </footer>
 
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/amplify.store.min.js"></script>
+    <script type="text/javascript" src="js/lodash.min.js"></script>
 
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/runner.js"></script>
 </body>
 
 </html>
