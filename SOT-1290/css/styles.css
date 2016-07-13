@@ -176,8 +176,9 @@ header form .visible-label-mobile.input-group-addon {
 
 header form .form-control {
     width: 100%;
-		height: auto;
+    height: auto;
     margin: 0;
+    margin-top: 3px;
     padding: 0;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -192,15 +193,16 @@ header form .form-control {
     outline: 0;
     border: 0;
     background: none;
-    color: #6F7C89;
+    color: #303a43;
     font-family: 'Overpass', sans-serif;
-    font-size: 26px;
+    font-size: 27px;
     font-weight: 400;
     line-height: 1.25;
 }
 @media (min-width: 768px) {
     header form .form-control {
-        font-size: 34px;
+        margin-top: 6px;
+        font-size: 38px;
     }
 }
 
@@ -209,16 +211,18 @@ header form .form-control {
 header form select.form-control {
     border: solid 3px #303A43;
     height: auto;
+    margin: 0;
     padding: 8px;
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
     -o-appearance: none;
     appearance: none;
-    background: url(../img/angle.png) no-repeat 97% 12px;
+    background: url(../img/angle.png) no-repeat 95% 50%;
     background-color: transparent;
     background-size: 30px;
-		line-height: 1.5
+    color: #6F7C89;
+    line-height: 1.5;
 }
 @media (min-width: 480px) {
     header form select.form-control {
@@ -235,24 +239,46 @@ header form input.form-control {
 
 /* submit input */
 
-header form input[type=submit] {
-    font-size: 30px;
-    border: solid 3px #C1F988;
-    border-radius: 100px;
+header form input.btn-submit {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 25px;
     padding: 10px 30px 6px;
-    color: #fff;
-    font-weight: 600;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    border-radius: 100px;
+    border: solid 3px #C1F988;
+    outline: 0;
     background: none;
-    width: 193px;
-    outline: none;
-    margin-top: 32px;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 600;
 }
-header form input[type=submit]:hover, header input[type=submit]:active {
+header form input.btn-submit:hover, header input.btn-submit:active, header form input.btn-submit:focus {
+    outline: 0 !important;
     background: #C1F988;
     color: #6F7C89;
 }
+@media (min-width: 480px) {
+    header form input.btn-submit {
+        display: inline-block;
+    }
+}
+@media (min-width: 768px) {
+    header form input.btn-submit {
+        margin-top: 30px;
+        font-size: 30px;
+    }
+}
 
 /* form states */
+
+
+/* hover states */
 
 header form .form-control:hover, header form .form-control:focus {
     -webkit-box-shadow: none;
@@ -263,18 +289,40 @@ header form .form-control:hover, header form .form-control:focus {
     outline: 0;
     border-color: #C1F988;
 }
-header form input.error {}
-header form input.success {}
+
+/* label states */
+
 header form label.error, header form label.success {
-    font-family: 'Overpass';
+    margin: 0;
+    font-family: 'Overpass', sans-serif;
     font-size: 16px;
     line-height: 1;
 }
 header form label.error {
-    color: #CF3D3B;
+    color: #CF3D3B !important;
 }
 header form label.success {
-    color: #9EFF3B;
+    color: #9EFF3B !important;
+}
+
+/* input states */
+
+header form input.error {
+    border-color: #CF3D3B !important;
+}
+header form select.success, header form input.success {
+    border-color: #9EFF3B !important;
+    color: #303a43;
+}
+header form input.success {
+    background: url(../img/success.png) no-repeat 100% 50%;
+    background-color: transparent;
+    background-size: 25px;
+}
+@media (min-width: 480px) {
+    header form input.error {
+        margin-top: 23px;
+    }
 }
 
 /* form placeholders */
@@ -312,7 +360,7 @@ header form label.success {
     line-height: 32px;
     margin-top: 22px;
     margin-bottom: 33px;
-    font-family: 'Overpass';
+    font-family: 'Overpass', sans-serif;
     font-weight: 600;
 }
 .text-section span {
@@ -328,7 +376,7 @@ header form label.success {
 footer {
     padding-top: 23px;
     padding-bottom: 45px;
-    font-family: 'Overpass';
+    font-family: 'Overpass', sans-serif;
     font-weight: 600;
 }
 footer p {
@@ -351,6 +399,9 @@ footer a:first-child {
 footer a:hover {
     color: #6FD812;
 }
+
+/* @TODO: refactor for mobile first */
+
 @media (min-width:768px) and (max-width:991px) {
     header {
         background: url(../img/hero_tablet.png) no-repeat center -1px rgb(68, 87, 103);
@@ -382,16 +433,6 @@ footer a:hover {
     }
     header .logo img {
         max-width: 201px;
-    }
-    header input[type="submit"] {
-        font-size: 26px;
-        margin: 25px auto auto;
-        float: none;
-        display: block;
-    }
-    header form select {
-        margin-bottom: 15px;
-        margin-top: 0px;
     }
     .text-section {
         padding-bottom: 30px;
