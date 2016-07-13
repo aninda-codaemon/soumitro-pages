@@ -29,39 +29,46 @@
             <div class="logo">
                 <a href="/"><img src="img/logo.png" alt="" /></a>
             </div>
-            <p><strong>Start searching your friends and relatives!</strong> Find where they live, how to contact them, photos and so much more. </p>
+            <p><strong>Start searching your friends and relatives!</strong> Find where they live, how to contact them, photos and so much more.</p>
 
             <form action="<%= next_page %>" id="header-search-people" class="header-search">
-                <label>I'm looking for my</label>
-                <select name="relationship" id="relationship" class="select-option">
-                    <option value="">(Relationship)</option>
-                    <option value="parent">Parent</option>
-                    <option value="sibling">Sibling</option>
-                    <option value="grandchild">Grandchild</option>
-                    <option value="grandparent">Grandparent</option>
-                    <option value="other">Other Family Member</option>
-                    <option value="friend">Friend</option>
-                </select>
+                <div class="form-group">
+                    <label>I'm looking for my</label>
+                    <select name="relationship" id="relationship" class="select-option">
+                        <option value="">(Relationship)</option>
+                        <option value="parent">Parent</option>
+                        <option value="sibling">Sibling</option>
+                        <option value="grandchild">Grandchild</option>
+                        <option value="grandparent">Grandparent</option>
+                        <option value="other">Other Family Member</option>
+                        <option value="friend">Friend</option>
+                    </select>
+                </div>
 
-                <label>Their name is</label>
-                <input class="name" type="text" name="fn" id="fn" placeholder="(Name)" />
+                <div class="form-group">
+                  <label>Their name is</label>
+                  <input class="name" type="text" name="fn" id="fn" placeholder="(First Name)" />
+                </div>
 
-                <input class="lname" type="text" name="ln" id="ln" placeholder="(Lastname)" />
-                <label>and&nbsp;</label>
+                <div class="form-group">
+                  <input class="lname" type="text" name="ln" id="ln" placeholder="(Last Name)" />
+                  <label class="hidden-xs">and</label>
+                </div>
 
-                <label>they live in</label>
-                <input class="city" type="text" name="state" id="state" placeholder="(State)" />
+                <div class="form-group">
+                  <label><span class="hidden-sm hidden-md hidden-lg">and </span>they live in</label>
+                  <input class="city" type="text" name="state" id="state" placeholder="(State)" />
+                </div>
+
                 <div class="clearfix"></div>
                 <input type="submit" name="submit" value="SEARCH" />
             </form>
         </div>
     </header>
 
-
-
     <section class="text-section">
         <div class="container">
-            <h1>Catch up on what you’ve missed. </h1>
+            <h1>Catch up on what you’ve missed.</h1>
             <p>Discover a whole world of information by searching these public records:</p>
 
             <div class="row">
@@ -91,8 +98,6 @@
             </div>
         </div>
     </section>
-
-
 
     <footer>
         <div class="container">
