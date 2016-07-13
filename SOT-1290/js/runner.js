@@ -218,7 +218,7 @@
       onclick: false,
       onsubmit: true,
       submitHandler: function(form) {
-        trackNL("Submitted Search Form - People");
+        trackNL("Submitted Search Form - Relatives Finder");
         window.setTimeout(function() {
           dataArray = $(form).serializeArray();
           var formVals = {};
