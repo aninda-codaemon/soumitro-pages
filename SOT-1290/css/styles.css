@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* CSS Document */
+/* fonts */
 
 @import url(https://fonts.googleapis.com/css?family=Capriola);
 @font-face {
@@ -31,11 +31,14 @@
     font-weight: 700;
     font-style: normal;
 }
-a, .btn, button, input {
-    transition: all 0.5s ease;
-}
+
+/* global */
+
 body {
     font-family: 'Capriola', sans-serif;
+}
+a, .btn, button, input {
+    transition: all 0.5s ease;
 }
 
 /* header */
@@ -57,7 +60,7 @@ header p {
     color: #fff;
     max-width: 608px;
     font-weight: 300;
-    font-family: 'Overpass';
+    font-family: 'Overpass', sans-serif;
 }
 header p strong {
     display: block;
@@ -68,107 +71,171 @@ header p strong {
 
 header form {
     max-width: 700px;
-    background: rgba(87, 217, 243, 0.95);
-    padding: 50px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 30px 20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
     border-radius: 3px;
-    margin-top: 38px;
-    margin-bottom: 78px;
+    background: rgba(87, 217, 243, 0.95);
 }
-header form label {
+@media (min-width: 768px) {
+    header form {
+        margin-bottom: 80px;
+        padding: 50px;
+    }
+}
+
+/* form group */
+
+header form .form-group {
+    margin-bottom: 20px;
+}
+
+/* input group */
+
+header form .input-group .input-group-addon {
+    padding: 0;
+    border: 0;
+    background: none;
+    text-align: left;
+}
+header form .input-group .input-group-addon:first-child {
+    padding-right: 10px;
+}
+header form .input-group .input-group-addon:last-child {
+    padding-left: 10px;
+}
+@media (max-width: 479px) {
+    header form .input-group {
+        width: 100%;
+    }
+    header form .input-group .input-group-addon {
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+}
+@media (min-width: 480px) {
+    header form .input-group {
+        max-width: 500px;
+    }
+    header form .input-group#lnGroup {
+        max-width: 400px;
+    }
+}
+@media (min-width: 768px) {
+    header form .input-group {
+        max-width: 100%;
+    }
+    header form .input-group#lnGroup {
+        max-width: 500px;
+    }
+}
+
+/* form label */
+
+header form .form-label {
+    margin-bottom: 15px;
+    float: none;
     color: #303A43;
-    font-size: 38px;
-    line-height: 40px;
+    font-size: 27px;
+    line-height: 1.5;
     font-weight: 400;
     font-family: 'Capriola', sans-serif;
-    float: left;
 }
-header form label.error {
-    font-size: 16px;
-    line-height: 1;
-    color: #ff5119;
+header form .hidden-label-mobile {
+    display: none !important;
 }
-header form input[type=text] {
-    color: #6F7C89;
-    font-size: 36px;
-    line-height: 40px;
-    font-weight: 400;
+header form .visible-label-mobile {
+    display: inline !important;
+}
+header form .visible-label-mobile.input-group-addon {
+    display: table-cell !important;
+}
+@media (min-width: 480px) {
+    header form .hidden-label-mobile {
+        display: inline !important;
+    }
+    header form .hidden-label-mobile.input-group-addon {
+        display: table-cell !important;
+    }
+    header form .visible-label-mobile {
+        display: none !important;
+    }
+}
+@media (min-width: 768px) {
+    header form .form-label {
+        font-size: 38px;
+    }
+}
+
+/* form inputs */
+
+header form .form-control {
+    width: 100%;
+		height: auto;
+    margin: 0;
+    padding: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    outline: 0;
+    border: 0;
     background: none;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-    border-radius: 0;
-    border: none;
-    border-bottom: solid 3px #303A43;
-    width: 100%;
-    margin-left: 20px;
-    padding: 8px 0px;
-    outline: none;
-    font-family: 'Overpass';
-    font-weight: 600;
-    float: left;
-}
-header form select {
     color: #6F7C89;
-    font-size: 36px;
-    line-height: 40px;
-    outline: none;
-    font-family: 'Overpass';
-    font-weight: 600;
-    float: left;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-    border-radius: 0;
+    font-family: 'Overpass', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.25;
+}
+@media (min-width: 768px) {
+    header form .form-control {
+        font-size: 34px;
+    }
+}
+
+/* select input */
+
+header form select.form-control {
     border: solid 3px #303A43;
-    display: block;
-    width: 100%;
-    margin-left: 0px;
-    max-width: 390px;
-    padding: 0px;
-    margin-top: 24px;
-    height: 60px;
-    padding-left: 8px;
-    margin-bottom: 48px;
-    appearance: none;
+    height: auto;
+    padding: 8px;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-color: transparent;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
     background: url(../img/angle.png) no-repeat 97% 12px;
+    background-color: transparent;
     background-size: 30px;
+		line-height: 1.5
 }
-header .name {
-    max-width: 315px;
-    margin-top: -20px;
-    margin-bottom: 47px;
+@media (min-width: 480px) {
+    header form select.form-control {
+        max-width: 390px;
+    }
 }
-header .lname {
-    max-width: 390px;
-    margin-left: 0px !important;
-    margin-right: 30px;
-    margin-top: -19px;
-    margin-bottom: 49px;
+
+/* text input */
+
+header form input.form-control {
+    display: block;
+    border-bottom: solid 3px #303A43;
 }
-header .city {
-    max-width: 364px;
-    margin-top: -20px;
-}
-header::-webkit-input-placeholder {
-    color: #6F7C89;
-}
-header:-moz-placeholder {
-    /* Firefox 18- */
-    color: #6F7C89;
-}
-header::-moz-placeholder {
-    /* Firefox 19+ */
-    color: #6F7C89;
-}
-header:-ms-input-placeholder {
-    color: #6F7C89;
-}
-header input[type=submit] {
+
+/* submit input */
+
+header form input[type=submit] {
     font-size: 30px;
     border: solid 3px #C1F988;
     border-radius: 100px;
@@ -180,8 +247,50 @@ header input[type=submit] {
     outline: none;
     margin-top: 32px;
 }
-header input[type=submit]:hover, header input[type=submit]:active {
+header form input[type=submit]:hover, header input[type=submit]:active {
     background: #C1F988;
+    color: #6F7C89;
+}
+
+/* form states */
+
+header form .form-control:hover, header form .form-control:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    outline: 0;
+    border-color: #C1F988;
+}
+header form input.error {}
+header form input.success {}
+header form label.error, header form label.success {
+    font-family: 'Overpass';
+    font-size: 16px;
+    line-height: 1;
+}
+header form label.error {
+    color: #CF3D3B;
+}
+header form label.success {
+    color: #9EFF3B;
+}
+
+/* form placeholders */
+
+::-webkit-input-placeholder {
+    color: #6F7C89;
+}
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #6F7C89;
+}
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #6F7C89;
+}
+:-ms-input-placeholder {
     color: #6F7C89;
 }
 
@@ -274,32 +383,11 @@ footer a:hover {
     header .logo img {
         max-width: 201px;
     }
-    header form {
-        padding: 30px 20px;
-        margin-bottom: 20px;
-    }
-    header form label {
-        font-size: 27px;
-        float: none;
-        margin-bottom: 15px;
-    }
-    header form input[type="text"], header form select {
-        font-size: 26px;
-        display: block;
-        margin-left: 0px;
-        float: none;
-    }
     header input[type="submit"] {
         font-size: 26px;
         margin: 25px auto auto;
         float: none;
         display: block;
-    }
-    header .lname {
-        margin-bottom: 23px;
-    }
-    header .name {
-        margin-bottom: 30px;
     }
     header form select {
         margin-bottom: 15px;

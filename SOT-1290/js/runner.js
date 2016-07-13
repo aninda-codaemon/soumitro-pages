@@ -206,12 +206,10 @@
       validClass: "success",
 
       rules: {
-        relationship: "required",
         fn: "required",
         ln: "required"
       },
       messages: {
-        relationship: "Please select your relationship",
         fn: "Please enter a first name",
         ln: "Please enter a last name"
       },
