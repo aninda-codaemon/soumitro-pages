@@ -393,103 +393,106 @@ header form input.success {
 /* text section */
 
 .text-section {
+    padding-bottom: 30px;
+    padding-top: 30px;
     background: #F1FFE3;
-    padding: 60px 0px 90px;
 }
-.text-section h1 {
+.text-section .title {
+    margin: 0;
     color: #303A43;
-    font-size: 32px;
-    line-height: 40px;
-    margin: 0px;
+    font-size: 25px;
+    line-height: 1.5;
 }
-.text-section p {
+.text-section .summary {
+    margin-top: 15px;
+    margin-bottom: 25px;
     color: #4ECAE2;
-    font-size: 20px;
-    line-height: 32px;
-    margin-top: 22px;
-    margin-bottom: 33px;
+    font-size: 16px;
     font-family: 'Overpass', sans-serif;
     font-weight: 600;
+    line-height: 1.25;
 }
-.text-section span {
-    display: block;
-    font-size: 20px;
+.text-section ul {
+    margin: 0;
+}
+.text-section ul li {
+    margin-bottom: 5px;
     color: #303A43;
-    margin-bottom: 10px;
-    line-height: 27px;
+    font-size: 16px;
+    line-height: 1.25;
+}
+@media (min-width: 768px) {
+    .text-section {
+        padding: 60px 0px 90px;
+    }
+    .text-section .title {
+        font-size: 32px;
+    }
+    .text-section .summary {
+        margin-top: 22px;
+        margin-bottom: 33px;
+        font-size: 20px;
+    }
+    .text-section ul li {
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
 }
 
 /* footer */
 
 footer {
-    padding-top: 23px;
+    padding-top: 25px;
     padding-bottom: 45px;
+    font-size: 16px;
     font-family: 'Overpass', sans-serif;
     font-weight: 600;
+    text-align: left;
 }
-footer p {
+footer .copyright {
     color: #4A4A4A;
     font-size: 16px;
-    line-height: 21px;
+    line-height: 1;
 }
 footer a {
-    color: #6FD812;
-    font-size: 16px;
-    line-height: 15px;
-    display: inline-block;
+    display: table;
+    margin-bottom: 20px;
     padding-left: 5px;
     padding-right: 5px;
-    border-left: solid 1px #333;
-}
-footer a:first-child {
-    border: none;
+    border: 0;
+    color: #6FD812;
+    font-size: 16px;
+    line-height: 1;
 }
 footer a:hover {
     color: #6FD812;
 }
-
-/* @TODO: refactor for mobile first */
-
-@media (min-width:768px) and (max-width:991px) {
+footer .col-md-6 {
+    text-align: left;
+}
+footer .visible-xs {
+    padding-top: 10px;
+}
+@media (min-width: 768px) {
     footer {
         text-align: center;
+    }
+    footer a {
+        display: inline-block;
+        border-left: solid 1px #333;
+    }
+    footer a:first-child {
+        border: none;
     }
     footer .col-md-6 {
         text-align: center;
     }
 }
-@media (max-width:767px) {
-    .text-section {
-        padding-bottom: 30px;
-        padding-top: 30px;
-    }
-    .text-section span {
-        font-size: 16px;
-        margin-bottom: 5px;
-    }
-    .text-section p {
-        font-size: 16px;
-        margin-bottom: 25px;
-        line-height: 25px;
-        margin-top: 15px;
-    }
-    .text-section h1 {
-        font-size: 25px;
-        line-height: 31px;
-    }
-    footer {
-        font-size: 16px;
-        text-align: left;
-    }
+@media (min-width: 992px) {
     footer .col-md-6 {
         text-align: left;
     }
-    footer a {
-        display: table;
-        border: none;
-        margin-bottom: 20px;
-    }
-    footer .visible-xs {
-        padding-top: 10px;
+    footer .col-md-6.text-right {
+        text-align: right;
     }
 }
