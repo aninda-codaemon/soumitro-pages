@@ -44,33 +44,78 @@ a, .btn, button, input {
 /* header */
 
 header {
-    background: url(../img/hero.png) no-repeat;
+    background: url(../img/hero_mobile.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
     background-size: cover;
-    background-position: 0% 50%;
+    background-position: center 0;
 }
 header .logo {
-    margin: 40px 0px;
+    margin: 0;
+    padding: 20px 0;
+    max-width: 240px;
 }
 header .logo img {
-    max-width: 300px;
+    width: 100%;
 }
-header p {
-    font-size: 26px;
-    line-height: 36px;
+header .summary {
+    max-width: 240px;
+    margin-bottom: 20px;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.5;
     color: #fff;
-    max-width: 608px;
     font-weight: 300;
     font-family: 'Overpass', sans-serif;
 }
-header p strong {
+header .summary .text-break {
     display: block;
+    margin-bottom: 20px;
     font-weight: 400;
+}
+@media (min-width: 480px) {
+    header {
+        background: url(../img/hero_tablet.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-size: cover;
+        background-position: center 0;
+    }
+    header .logo {
+        max-width: 320px;
+        padding: 30px 0;
+    }
+    header .summary {
+        max-width: 320px;
+        font-size: 24px;
+    }
+}
+@media (min-width: 768px) {
+    header .summary {
+        max-width: 450px;
+    }
+}
+@media (min-width: 992px) {
+    header {
+        background: url(../img/hero.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-size: cover;
+        background-position: center 0;
+    }
+    header .logo {
+        padding: 40px 0;
+    }
+    header .summary {
+        max-width: 560px;
+        font-size: 26px;
+    }
 }
 
 /* form */
 
 header form {
-    max-width: 700px;
+    max-width: 480px;
     margin-top: 40px;
     margin-bottom: 20px;
     padding: 30px 20px;
@@ -83,8 +128,14 @@ header form {
 }
 @media (min-width: 768px) {
     header form {
-        margin-bottom: 80px;
+        max-width: 580px;
+        margin-bottom: 40px;
         padding: 50px;
+    }
+}
+@media (min-width: 992px) {
+    header form {
+        margin-bottom: 80px;
     }
 }
 
@@ -222,11 +273,11 @@ header form select.form-control {
     background-color: transparent;
     background-size: 30px;
     color: #6F7C89;
-    line-height: 1.5;
+    line-height: 1;
 }
 @media (min-width: 480px) {
     header form select.form-control {
-        max-width: 390px;
+        max-width: 320px;
     }
 }
 
@@ -276,9 +327,6 @@ header form input.btn-submit:hover, header input.btn-submit:active, header form 
 }
 
 /* form states */
-
-
-/* hover states */
 
 header form .form-control:hover, header form .form-control:focus {
     -webkit-box-shadow: none;
@@ -403,37 +451,14 @@ footer a:hover {
 /* @TODO: refactor for mobile first */
 
 @media (min-width:768px) and (max-width:991px) {
-    header {
-        background: url(../img/hero_tablet.png) no-repeat center -1px rgb(68, 87, 103);
-        background-size: 100%;
-    }
     footer {
         text-align: center;
     }
     footer .col-md-6 {
         text-align: center;
     }
-    header form {
-        max-width: none;
-    }
 }
 @media (max-width:767px) {
-    header {
-        background: url(../img/hero_mobile.png) no-repeat center -1px rgb(68, 87, 103);
-        background-size: 100%;
-    }
-    header .logo {
-        padding: 24px 0px 29px;
-        margin: 0px;
-    }
-    header p {
-        font-size: 19px;
-        line-height: 25px;
-        padding-right: 70px;
-    }
-    header .logo img {
-        max-width: 201px;
-    }
     .text-section {
         padding-bottom: 30px;
         padding-top: 30px;
