@@ -33,7 +33,7 @@
     <div id="main-wrap ">
 
     <div id="cust-wrap" class="container">
-  
+
         <div class="left-cont col-sm-8">
 
           <nav class="navbar navbar-default navbar-static-top">
@@ -70,17 +70,17 @@
 
 
     <!-- LEFT CONTENT  -->
-            
+
  <div class="top-header">
           <h1 class="text-center" data-fr-bind="query"><strong id="header-message">Searching for {{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}  {{#validLocation city}}in {{city}}{{#validLocation state}},{{/validLocation}} {{/validLocation}}{{#validLocation state}}{{#unless city}}in {{/unless}}{{uppercase state}}{{/validLocation}}</strong></h1>
-          <h4 class="text-center top-head-txt">Sorting through billions of public records... Please be patient.</h4>        
+          <h4 class="text-center top-head-txt">Sorting through billions of public records... Please be patient.</h4>
             <div class="row">
-              <div class="col-md-12">                                
-                <div class="loader-counter text-center">                
-                      <span class="count record_count">20</span>   
+              <div class="col-md-12">
+                <div class="loader-counter text-center">
+                      <span class="count record_count">1,000,000,000</span>
 
-      
-                <span class="pub-rec"><p> PUBLIC RECORDS</p></span>
+
+                <span class="pub-rec">PUBLIC RECORDS</span>
                   </div>
 
               <div id="search-main-progress" class="progress-wrap">
@@ -94,9 +94,9 @@
                             <span class="progress-text-outer"></span>
                       </span>
                   </div>
-                </div>          
-                
-               
+                </div>
+
+
                 <div id="search-continue" class="text-center">
                   <a href="<%= next_page %>" class="btn btn-lg btn-default btn-success">Continue to Results <span class="glyphicon glyphicon-chevron-right"></span></a>
                 </div>
@@ -107,7 +107,7 @@
 
         <div id="questions" class="col-md-12">
 
-          <div id="quest0" class="quest-cont">         
+          <div id="quest0" class="quest-cont">
             <div class="quest-top text-center">
               <div class="quest-icon">
                <img src="img/QuestionIcon.png"/>
@@ -116,14 +116,14 @@
             <div class="quest-body text-center">
               <p data-fr-bind="query">Is {{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}} between 30 and 50 years old  ? </p>
             </div>
-            <div class="quest-bot text-center">          
+            <div class="quest-bot text-center">
                 <button type="button" class="btn btn-primary btn-lg btn-sample">YES</button>
                 <button type="button" class="btn btn-primary btn-lg btn-sample">NOT SURE</button>
                 <button type="button" class="btn btn-primary btn-lg btn-sample">NO</button>
-            </div>        
+            </div>
           </div>
 
-          <div id="quest1" class="quest-cont">         
+          <div id="quest1" class="quest-cont">
             <div class="quest-top text-center">
               <div class="quest-icon">
                <img src="img/PublicRecord-icon.png"/>
@@ -132,11 +132,11 @@
             <div class="quest-body text-center">
               <p><strong>What is a public record?</strong> We search courthouses, social media profiles, criminal records, phone numbers, addresses and other  public sources. Much of this information is very hard to access, and that's were we come in!</p>
             </div>
-            <div class="quest-bot text-center">          
-            </div>        
+            <div class="quest-bot text-center">
+            </div>
           </div>
 
-          <div id="quest2" class="quest-cont">         
+          <div id="quest2" class="quest-cont">
             <div class="quest-top text-center">
               <div class="quest-icon">
                <img src="img/ContactInfo-icon.png"/>
@@ -149,10 +149,10 @@
                  <p id="difP"> <img src="img/Addressicon.png"/> Current and Past addresses </p>
                  <p> <img src="img/Phoneicon.png"/> Phone Numbers </p>
                  <p> <img src="img/Emailicon.png"/> Email Addresses </p>
-            </div>        
+            </div>
           </div>
 
-          <div id="quest3" class="quest-cont">         
+          <div id="quest3" class="quest-cont">
             <div class="quest-top text-center">
               <div class="quest-icon">
                <img src="img/Criminal-icon.png"/>
@@ -165,11 +165,11 @@
                 <p> <img src="img/Trafficicon.png"/> Traffic violations  </p>
                 <p> <img src="img/Misdeicon.png"/> Misdemeneors </p>
                 <p> <img src="img/Cuffsicon.png"/> Larcenies </p>
-            </div>        
+            </div>
           </div>
 
 
-          <div id="quest4" class="quest-cont">         
+          <div id="quest4" class="quest-cont">
             <div class="quest-top text-center">
               <div class="quest-icon">
                <img src="img/SocialMedia-icon.png"/>
@@ -182,14 +182,14 @@
                 <p> <img src="img/PhotosIcon.png"/> Photos </p>
                 <p> <img src="img/Eduicon.png"/> Education </p>
                 <p> <img src="img/Proficon.png"/> Professional Info </p>
-            </div>        
+            </div>
           </div>
 
         </div>
 
         <div class="press">
-            <h3 class="text-center"><strong>BeenVerified</strong> background checks have been featured in the following publications</h3>    
-            <div id="logos-cont" class="text-center">        
+            <h3 class="text-center"><strong>BeenVerified</strong> background checks have been featured in the following publications</h3>
+            <div id="logos-cont" class="text-center">
             <div id="logo1" class="logo"><img class="img-responsive center-block" src="img/MSNBC_logo_2015.png"></div>
             <div id="logo2" class="logo"><img class="img-responsive center-block" src="img/tc-techcrunch.png"></div>
             <div id="logo3" class="logo"><img class="img-responsive center-block" src="img/Aboutcom_logo14.png"></div>
@@ -201,17 +201,17 @@
 
               <!-- RIGHT CONTENT -->
 
-<div class="right-cont col-sm-4 pull-sm-right col-8-md-push">       
-            
+<div class="right-cont col-sm-4 pull-sm-right col-8-md-push">
+
  <div id="testimonials">
           <h3 class="test-title ">Real Customers, Real Stories</h3>
           <div class="test-wrap row">
 
             <div class="test3 hidden-xs">
               <div class="row">
-                
+
                 <div class="col-xs-12 col-md-12 test-txt">
-                  <i>"I'm a single mother dating online and I use BeenVerified to help protect my family."</i>          
+                  <i>"I'm a single mother dating online and I use BeenVerified to help protect my family."</i>
                 </div>
 
                 <div class="col-xs-12 col-md-12 test-adtxt">
@@ -227,7 +227,7 @@
 
                 <div class="col-xs-12 col-md-12 test-txt">
                   <i>"I'm a former police detective and I use BeenVerified."</i>
-                  <br>                 
+                  <br>
                 </div>
 
                 <div class="col-xs-12 col-md-12 test-adtxt">
@@ -241,10 +241,10 @@
             <div class="test1">
               <div class="row">
 
-                <div class="col-xs-12 col-md-12 test-txt">                  
+                <div class="col-xs-12 col-md-12 test-txt">
                   <i>"Someone offered to drive my daughter home from soccer practice... so I looked them up on BeenVerified and you won't believe what I found out."</i>
                   <br>
-                  
+
                 </div>
                 <div class="col-xs-12 col-md-12 test-adtxt">
                   <img src="img/img_natasha_small.png" class=" img-circle img-small">
@@ -254,7 +254,7 @@
               </div>
             </div>
 
-            
+
           </div>
         </div>
 
