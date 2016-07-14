@@ -121,7 +121,7 @@ header form {
     max-width: 480px;
     margin-top: 40px;
     margin-bottom: 20px;
-    padding: 30px 20px;
+    padding: 30px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
@@ -312,9 +312,21 @@ header form input.btn-submit {
     font-size: 26px;
     font-weight: 600;
 }
-header form input.btn-submit:hover, header input.btn-submit:active, header form input.btn-submit:focus, header form input.btn-submit.btn-success {
+header form input.btn-submit:hover, header input.btn-submit:active, header form input.btn-submit:focus {
     outline: 0 !important;
     background: #C1F988;
+    color: #6F7C89;
+}
+header form input.btn-submit.btn-success {
+    outline: 0 !important;
+    border-color: #C1F988;
+    background: #C1F988;
+    color: #6F7C89;
+}
+header form input.btn-submit.btn-success:hover, header form input.btn-submit.btn-success:focus {
+    outline: 0 !important;
+    border-color: #9EFF3B;
+    background: #9EFF3B;
     color: #6F7C89;
 }
 @media (min-width: 480px) {
