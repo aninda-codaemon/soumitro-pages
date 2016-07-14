@@ -198,6 +198,14 @@
       return data;
   };
 
+  $('.form-control').blur(function() {
+    if ($('.fn').hasClass('success') && $('.ln').hasClass('success')) {
+      $('.btn-submit').addClass('btn-success');
+    } else {
+      $('.btn-submit').removeClass('btn-success');
+    }
+  });
+
   var $headerSearchPeople = $('#header-search-people');
 
   if ($headerSearchPeople.length !== 0) {
