@@ -5,7 +5,7 @@
           <small class="bv-sub-headline">Lookup Owner Name, Address &amp; More</small>
         </h1>
     </div>
-    <form id="bvReversePhoneForm" class="bv-reverse-phone-form" name="bv-reverse-phone-form" method="get" target="_top" action="http://jumptracker.com/aff_c?" onSubmit="return validate_form(this);">
+    <form id="bvReversePhoneForm" class="bv-form" name="bv-reverse-phone-form" method="get" target="_top" action="http://jumptracker.com/aff_c?" onSubmit="return validate_form(this);">
         <input type="hidden" name="offer_id" value="xxx" />
         <input type="hidden" name="aff_id" value="xxxx" />
         <input type="hidden" name="file_id" value="xxx" />
@@ -32,8 +32,31 @@
 
 <style media="screen">
     .bv-banner#bvReversePhone {
+        padding: 3px;
+        background: #75b648;
         font-family: 'Lato', sans-serif;
     }
 
+    .bv-banner#bvReversePhone .bv-cta {
+        padding: 10px;
+        background: #fff;
+        text-align: center;
+        line-height: 1;
+    }
 
+    .bv-banner#bvReversePhone .bv-cta .bv-headline {
+        margin: 20px 0;
+        color: #363636;
+        font-size: 20px;
+        font-weight: normal;
+    }
+
+    .bv-banner#bvReversePhone .bv-cta .bv-headline .bv-sub-headline {
+        display: block;
+        margin-top: 15px;
+        color: #757575;
+        font-size: 65%;
+    }
+
+    .bv-banner#bvReversePhone .bv-form {}
 </style>
