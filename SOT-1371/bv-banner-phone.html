@@ -11,13 +11,19 @@
         <input type="hidden" name="file_id" value="xxx" />
 
         <div class="bv-form-group">
-            <span class="bv-input-label">(</span>
+          <span class="bv-input-label">(</span>
+        </div>
+        <div class="bv-form-group">
             <input type="text" name="bv-phone-area-code" class="bv-input area-code-input" size="3" maxlength="3" value="" />
-            <span class="bv-input-label">)</span>
+        </div>
+        <div class="bv-form-group">
+          <span class="bv-input-label">)</span>
         </div>
         <div class="bv-form-group">
             <input type="text" name="bv-phone-prefix" class="bv-input prefix-input" size="3" maxlength="3" value="" />
-            <span class="bv-input-label">-</span>
+        </div>
+        <div class="bv-form-group">
+          <span class="bv-input-label">-</span>
         </div>
         <div class="bv-form-group">
             <input type="text" name="bv-phone-line-number" class="bv-input line-number-input" size="4" maxlength="4" value="" />
@@ -65,7 +71,8 @@
         position: relative;
         display: block;
         margin: 0 auto;
-        padding: 15px;
+        margin-top: 20px;
+        padding: 10px;
         text-align: center;
     }
 
@@ -106,7 +113,7 @@
     .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input-label {
         display: table-cell;
         width: auto;
-        padding: 5px 10px;
+        padding: 0;
         color: #fff;
         font-size: 14px;
         font-weight: 400;
@@ -117,6 +124,8 @@
 
     .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-submit-button {
         cursor: pointer;
+        margin: 0;
+        margin-left: 3px;
         padding: 5px 10px;
         outline: 0;
         border: 0;
@@ -140,7 +149,7 @@
         background: #f3451c
     }
 
-    .bv-banner#bvReversePhone * {
+    .bv-banner#bvReversePhone *, .bv-banner#bvReversePhone :before, .bv-banner#bvReversePhone :after {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         -ms-box-sizing: border-box;
