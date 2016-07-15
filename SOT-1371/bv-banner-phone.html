@@ -10,22 +10,20 @@
         <input type="hidden" name="aff_id" value="xxxx" />
         <input type="hidden" name="file_id" value="xxx" />
 
-        <div class="bv-form-row">
-            <div class="bv-form-group">
-                <span class="bv-input-label">(</span>
-                <input type="text" name="bv-phone-area-code" class="bv-input area-code-input" size="3" maxlength="3" value="" />
-                <span class="bv-input-label">)</span>
-            </div>
-            <div class="bv-form-group">
-                <input type="text" name="bv-phone-prefix" class="bv-input prefix-input" size="3" maxlength="3" value="" />
-                <span class="bv-input-label">-</span>
-            </div>
-            <div class="bv-form-group">
-                <input type="text" name="bv-phone-line-number" class="bv-input line-number-input" size="4" maxlength="4" value="" />
-            </div>
-            <div class="bv-form-group">
-                <button type="submit" class="bv-submit-button">Search</button>
-            </div>
+        <div class="bv-form-group">
+            <span class="bv-input-label">(</span>
+            <input type="text" name="bv-phone-area-code" class="bv-input area-code-input" size="3" maxlength="3" value="" />
+            <span class="bv-input-label">)</span>
+        </div>
+        <div class="bv-form-group">
+            <input type="text" name="bv-phone-prefix" class="bv-input prefix-input" size="3" maxlength="3" value="" />
+            <span class="bv-input-label">-</span>
+        </div>
+        <div class="bv-form-group">
+            <input type="text" name="bv-phone-line-number" class="bv-input line-number-input" size="4" maxlength="4" value="" />
+        </div>
+        <div class="bv-form-group">
+            <button type="submit" class="bv-submit-button">Search</button>
         </div>
 
         <img src="img/bv_logo.png" class="bv-logo-img" />
@@ -42,6 +40,7 @@
 
     .bv-banner#bvReversePhone .bv-cta {
         position: relative;
+        display: block;
         padding: 10px;
         background: #fff;
         text-align: center;
@@ -64,20 +63,32 @@
 
     .bv-banner#bvReversePhone .bv-form {
         position: relative;
+        display: block;
         margin: 0 auto;
         padding: 15px;
+        text-align: center;
     }
 
-    .bv-banner#bvReversePhone .bv-form .bv-logo-img {}
-
-    .bv-banner#bvReversePhone .bv-form .bv-form-row .bv-form-group {}
-
-    .bv-banner#bvReversePhone .bv-form .bv-form-row .bv-form-group .bv-input {
+    .bv-banner#bvReversePhone .bv-form .bv-logo-img {
         display: block;
+        margin: 15px auto;
+    }
+
+    .bv-banner#bvReversePhone .bv-form .bv-form-group {
+        position: relative;
+        display: inline-block;
+        margin: 0;
+        vertical-align: middle;
+    }
+
+    .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input {
+        position: relative;
+        display: inline-table;
         width: 100%;
         padding: 5px 10px;
         outline: 0;
         border: 0;
+        border-collapse: separate;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         -ms-border-radius: 5px;
@@ -87,9 +98,43 @@
         color: #363636;
         font-size: 14px;
         line-height: 1.5;
+        vertical-align: middle;
     }
 
-    .bv-banner#bvReversePhone .bv-form .bv-form-row .bv-form-group .bv-input-label {}
+    .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input-label {
+        display: table-cell;
+        width: auto;
+        padding: 5px 10px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
 
-    .bv-banner#bvReversePhone .bv-form .bv-form-row .bv-form-group .bv-submit-button {}
+    .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-submit-button {
+        cursor: pointer;
+        padding: 5px 10px;
+        outline: 0;
+        border: 0;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+        background: #e63a11;
+        color: #fff;
+        font-size: 14px;
+        line-height: 1.5;
+        -webkit-transition: all 500ms;
+        -moz-transition: all 500ms;
+        -ms-transition: all 500ms;
+        -o-transition: all 500ms;
+        transition: all 500ms;
+    }
+
+    .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-submit-button:hover {
+        background: #f3451c
+    }
 </style>
