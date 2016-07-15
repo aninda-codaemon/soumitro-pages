@@ -79,12 +79,14 @@
         display: inline-block;
         margin: 0;
         vertical-align: middle;
+        border-collapse: separate;
     }
 
     .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input {
         position: relative;
-        display: inline-table;
+        display: table-cell;
         width: 100%;
+        float: left;
         padding: 5px 10px;
         outline: 0;
         border: 0;
@@ -136,5 +138,13 @@
 
     .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-submit-button:hover {
         background: #f3451c
+    }
+
+    .bv-banner#bvReversePhone * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        box-sizing: border-box;
     }
 </style>
