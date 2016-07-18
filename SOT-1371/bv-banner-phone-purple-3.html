@@ -80,9 +80,22 @@
         display: block;
         position: relative;
         margin: 0 auto;
-        padding: 30px 10px 50px;
+        padding: 40px 10px;
         background: #fff;
         text-align: center;
+    }
+
+    .bv-banner#bvReversePhone .bv-form:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 15px solid #7b57bc;
     }
 
     .bv-banner#bvReversePhone .bv-form .bv-logo-img {
@@ -112,11 +125,26 @@
         -ms-border-radius: 5px;
         -o-border-radius: 5px;
         border-radius: 5px;
+        -webkit-box-shadow: 0 0 5px 0 #cacaca inset;
+        -moz-box-shadow: 0 0 5px 0 #cacaca inset;
+        -ms-box-shadow: 0 0 5px 0 #cacaca inset;
+        -o-box-shadow: 0 0 5px 0 #cacaca inset;
+        box-shadow: 0 0 5px 0 #cacaca inset;
         background: #fff;
         color: #363636;
         font-size: 14px;
+        text-align: center;
         line-height: 1.5;
         vertical-align: middle;
+        -webkit-transition: border 500ms;
+        -moz-transition: border 500ms;
+        -ms-transition: border 500ms;
+        -o-transition: border 500ms;
+        transition: border 500ms;
+    }
+
+    .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input:focus {
+        border-color: #7b57bc;
     }
 
     .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input-label {
@@ -201,6 +229,14 @@
         }
         .bv-banner#bvReversePhone .bv-form {
             padding: 22px 10px;
+        }
+        .bv-banner#bvReversePhone .bv-form:before {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            border-bottom: 15px solid transparent;
+            border-top: 15px solid transparent;
+            border-left: 10px solid #7b57bc;
         }
         .bv-banner#bvReversePhone .bv-form .bv-logo-img {
             display: block;
