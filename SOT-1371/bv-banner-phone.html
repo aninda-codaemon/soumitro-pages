@@ -10,21 +10,24 @@
         <input type="hidden" name="aff_id" value="xxxx" />
         <input type="hidden" name="file_id" value="xxx" />
 
-        <div class="bv-form-group">
+        <!-- <div class="bv-form-group">
           <span class="bv-input-label">(</span>
-        </div>
+        </div> -->
         <div class="bv-form-group">
+            <span class="bv-input-label">(</span>
             <input type="text" name="bv-phone-area-code" class="bv-input area-code-input" size="3" maxlength="3" value="" />
+            <span class="bv-input-label">)</span>
         </div>
-        <div class="bv-form-group">
+        <!-- <div class="bv-form-group">
           <span class="bv-input-label">)</span>
-        </div>
+        </div> -->
         <div class="bv-form-group">
             <input type="text" name="bv-phone-prefix" class="bv-input prefix-input" size="3" maxlength="3" value="" />
+            <span class="bv-input-label">-</span>
         </div>
-        <div class="bv-form-group">
+        <!-- <div class="bv-form-group">
           <span class="bv-input-label">-</span>
-        </div>
+        </div> -->
         <div class="bv-form-group">
             <input type="text" name="bv-phone-line-number" class="bv-input line-number-input" size="4" maxlength="4" value="" />
         </div>
@@ -83,7 +86,7 @@
 
     .bv-banner#bvReversePhone .bv-form .bv-form-group {
         position: relative;
-        display: inline-block;
+        display: inline-table;
         margin: 0;
         vertical-align: middle;
         border-collapse: separate;
@@ -113,13 +116,21 @@
     .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input-label {
         display: table-cell;
         width: auto;
-        padding: 0;
+        padding: 4px;
         color: #fff;
         font-size: 14px;
         font-weight: 400;
         line-height: 1.5;
         white-space: nowrap;
         vertical-align: middle;
+    }
+
+    .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input-label:first-child {
+      padding-left: 0;
+    }
+
+    .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input-label:last-child {
+      padding-right: 0;
     }
 
     .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-submit-button {
