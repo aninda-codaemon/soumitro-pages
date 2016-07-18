@@ -23,8 +23,8 @@
             <input type="text" name="bv-phone-line-number" class="bv-input line-number-input" size="4" maxlength="4" value="" />
         </div>
         <div class="bv-form-group">
-            <img src="img/bv_logo.png" class="bv-logo-img" />
             <button type="submit" class="bv-submit-button">Search</button>
+            <img src="img/bv_logo.png" class="bv-logo-img" />
         </div>
     </form>
 </div>
@@ -34,9 +34,9 @@
         display: inline-block;
         position: relative;
         width: 100%;
-        padding: 2px;
+        padding: 0;
         overflow: hidden;
-        background: #75b648;
+        background: #7b57bc;
         font-family: 'Lato', sans-serif;
     }
 
@@ -44,14 +44,15 @@
         position: relative;
         display: block;
         padding: 10px;
-        background: #fff;
+        background: transparent;
         text-align: center;
         line-height: 1;
     }
 
     .bv-banner#bvReversePhone .bv-cta .bv-headline {
-        margin: 20px 0;
-        color: #363636;
+        margin: 0;
+        margin-top: 60px;
+        color: #fff;
         font-size: 20px;
         font-weight: normal;
     }
@@ -59,7 +60,7 @@
     .bv-banner#bvReversePhone .bv-cta .bv-headline .bv-sub-headline {
         display: block;
         margin-top: 10px;
-        color: #757575;
+        color: #fff;
         font-size: 65%;
     }
 
@@ -75,10 +76,13 @@
     .bv-banner#bvReversePhone .bv-form .bv-logo-img {
         display: block;
         position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 0;
+        bottom: 200px;
+        transform: none;
         margin: 0;
+        padding: 10px;
+        background: #573791;
+        border-bottom-right-radius: 5px;
     }
 
     .bv-banner#bvReversePhone .bv-form .bv-form-group {
@@ -136,11 +140,11 @@
         padding: 5px 10px;
         outline: 0;
         border: 0;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
-        border-radius: 5px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        -ms-border-radius: 100px;
+        -o-border-radius: 100px;
+        border-radius: 100px;
         background: #e63a11;
         color: #fff;
         font-size: 14px;
