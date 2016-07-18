@@ -1,5 +1,7 @@
 <div class="bv-banner" id="bvReversePhone">
     <div class="bv-cta">
+        <img src="img/bv_logo.png" class="bv-logo-img" />
+
         <h1 class="bv-headline">
           Search Any Phone Number
           <small class="bv-sub-headline">Lookup Owner Name, Address &amp; More</small>
@@ -24,7 +26,7 @@
         </div>
         <div class="bv-form-group">
             <button type="submit" class="bv-submit-button">Search</button>
-            <img src="img/bv_logo.png" class="bv-logo-img" />
+            <img src="img/bv_logo_2.png" class="bv-logo-img" />
         </div>
     </form>
 </div>
@@ -49,9 +51,19 @@
         line-height: 1;
     }
 
-    .bv-banner#bvReversePhone .bv-cta .bv-headline {
+    .bv-banner#bvReversePhone .bv-cta .bv-logo-img {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
         margin: 0;
-        margin-top: 60px;
+        padding: 10px;
+        background: #573791;
+        border-bottom-right-radius: 5px;
+    }
+
+    .bv-banner#bvReversePhone .bv-cta .bv-headline {
+        margin: 60px 0 30px;
         color: #fff;
         font-size: 20px;
         font-weight: normal;
@@ -69,20 +81,14 @@
         position: relative;
         margin: 0 auto;
         padding: 30px 10px 50px;
-        background: #7b57bc;
+        background: #fff;
         text-align: center;
     }
 
     .bv-banner#bvReversePhone .bv-form .bv-logo-img {
-        display: block;
-        position: absolute;
-        left: 0;
-        bottom: 200px;
-        transform: none;
-        margin: 0;
-        padding: 10px;
-        background: #573791;
-        border-bottom-right-radius: 5px;
+        display: none;
+        opacity: 0;
+        visibility: hidden;
     }
 
     .bv-banner#bvReversePhone .bv-form .bv-form-group {
@@ -99,7 +105,7 @@
         float: left;
         padding: 5px 10px;
         outline: 0;
-        border: 0;
+        border: 1px solid #cacaca;
         border-collapse: separate;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
@@ -117,7 +123,7 @@
         display: table-cell;
         width: auto;
         padding: 4px;
-        color: #fff;
+        color: #737373;
         font-size: 14px;
         font-weight: 400;
         line-height: 1.5;
@@ -179,6 +185,11 @@
             padding-right: 15px;
             float: left;
         }
+        .bv-banner#bvReversePhone .bv-cta .bv-logo-img {
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+        }
         .bv-banner#bvReversePhone .bv-cta .bv-headline {
             margin: 10px auto;
             margin-top: 5px;
@@ -192,11 +203,15 @@
             padding: 22px 10px;
         }
         .bv-banner#bvReversePhone .bv-form .bv-logo-img {
+            display: block;
+            position: absolute;
             bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
             max-width: 70px;
             padding: 0;
+            opacity: 1;
+            visibility: visible;
             background: none;
         }
         .bv-banner#bvReversePhone .bv-form .bv-form-group {
