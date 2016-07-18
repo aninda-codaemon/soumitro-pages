@@ -10,38 +10,30 @@
         <input type="hidden" name="aff_id" value="xxxx" />
         <input type="hidden" name="file_id" value="xxx" />
 
-        <!-- <div class="bv-form-group">
-          <span class="bv-input-label">(</span>
-        </div> -->
         <div class="bv-form-group">
             <span class="bv-input-label">(</span>
             <input type="text" name="bv-phone-area-code" class="bv-input area-code-input" size="3" maxlength="3" value="" />
             <span class="bv-input-label">)</span>
         </div>
-        <!-- <div class="bv-form-group">
-          <span class="bv-input-label">)</span>
-        </div> -->
         <div class="bv-form-group">
             <input type="text" name="bv-phone-prefix" class="bv-input prefix-input" size="3" maxlength="3" value="" />
             <span class="bv-input-label">-</span>
         </div>
-        <!-- <div class="bv-form-group">
-          <span class="bv-input-label">-</span>
-        </div> -->
         <div class="bv-form-group">
             <input type="text" name="bv-phone-line-number" class="bv-input line-number-input" size="4" maxlength="4" value="" />
         </div>
         <div class="bv-form-group">
+            <img src="img/bv_logo.png" class="bv-logo-img" />
             <button type="submit" class="bv-submit-button">Search</button>
         </div>
-
-        <img src="img/bv_logo.png" class="bv-logo-img" />
     </form>
 </div>
 
 <style media="screen">
     .bv-banner#bvReversePhone {
+        display: inline-block;
         position: relative;
+        width: 100%;
         padding: 2px;
         background: #75b648;
         font-family: 'Lato', sans-serif;
@@ -74,18 +66,20 @@
         position: relative;
         display: block;
         margin: 0 auto;
-        margin-top: 20px;
-        padding: 10px;
+        padding: 30px 10px 50px;
         text-align: center;
     }
 
     .bv-banner#bvReversePhone .bv-form .bv-logo-img {
         display: block;
-        margin: 15px auto;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
     }
 
     .bv-banner#bvReversePhone .bv-form .bv-form-group {
-        position: relative;
         display: inline-table;
         margin: 0;
         vertical-align: middle;
@@ -126,11 +120,11 @@
     }
 
     .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input-label:first-child {
-      padding-left: 0;
+        padding-left: 0;
     }
 
     .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input-label:last-child {
-      padding-right: 0;
+        padding-right: 0;
     }
 
     .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-submit-button {
@@ -160,11 +154,41 @@
         background: #f3451c
     }
 
-    .bv-banner#bvReversePhone *, .bv-banner#bvReversePhone :before, .bv-banner#bvReversePhone :after {
+    .bv-banner#bvReversePhone *,
+    .bv-banner#bvReversePhone:before,
+    .bv-banner#bvReversePhone:after {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         -ms-box-sizing: border-box;
         -o-box-sizing: border-box;
         box-sizing: border-box;
+    }
+
+    @media (min-width: 728px) {
+        .bv-banner#bvReversePhone .bv-cta,
+        .bv-banner#bvReversePhone .bv-form {
+            width: 50%;
+            margin: 0;
+            float: left;
+        }
+        .bv-banner#bvReversePhone .bv-cta .bv-headline {
+            margin: 10px auto;
+            margin-top: 5px;
+            font-size: 22px;
+            text-align: left;
+        }
+        .bv-banner#bvReversePhone .bv-cta .bv-headline .bv-sub-headline {
+            margin-top: 5px;
+        }
+        .bv-banner#bvReversePhone .bv-form {
+            padding: 22px 10px;
+        }
+        .bv-banner#bvReversePhone .bv-form .bv-logo-img {
+            max-width: 60px;
+            bottom: 35px;
+        }
+        .bv-banner#bvReversePhone .bv-form .bv-form-group {
+            position: relative;
+        }
     }
 </style>
