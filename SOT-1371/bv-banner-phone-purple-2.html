@@ -31,13 +31,18 @@
 
 <style media="screen">
     .bv-banner#bvReversePhone {
-        display: inline-block;
+        display: block;
         position: relative;
-        width: 100%;
+        width: auto;
         padding: 2px;
         overflow: hidden;
         background: #573791;
         font-family: 'Lato', sans-serif;
+    }
+
+    .bv-banner#bvReversePhone:before {
+        display: table;
+        content: '';
     }
 
     .bv-banner#bvReversePhone .bv-cta {
