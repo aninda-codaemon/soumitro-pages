@@ -12,11 +12,11 @@
 
         <div class="bv-form-group">
             <span class="bv-input-label">(</span>
-            <input type="text" name="bv-phone-area-code" class="bv-input area-code-input" size="3" maxlength="3" value="" />
+            <input type="text" name="bv-phone-area-code" class="bv-input area-code-input" size="3" maxlength="3" value="" oninput="autotab(this, document.getElementById('bvReversePhoneForm').getElementsByClassName('prefix-input')[0])" />
             <span class="bv-input-label">)</span>
         </div>
         <div class="bv-form-group">
-            <input type="text" name="bv-phone-prefix" class="bv-input prefix-input" size="3" maxlength="3" value="" />
+            <input type="text" name="bv-phone-prefix" class="bv-input prefix-input" size="3" maxlength="3" value="" oninput="autotab(this, document.getElementById('bvReversePhoneForm').getElementsByClassName('line-number-input')[0])" />
             <span class="bv-input-label">-</span>
         </div>
         <div class="bv-form-group">
@@ -29,7 +29,7 @@
     </form>
 </div>
 
-<style media="screen">
+<style media="screen" type="text/css">
     .bv-banner#bvReversePhone {
         display: block;
         position: relative;
@@ -214,3 +214,12 @@
         }
     }
 </style>
+
+<script type="text/javascript">
+    // auto tab from current input to next input when max character limit is reached
+    function autotab(current, to) {
+        if (current.getAttribute && current.value.length == current.getAttribute('maxlength')) {
+            to.focus();
+        }
+    }
+</script>
