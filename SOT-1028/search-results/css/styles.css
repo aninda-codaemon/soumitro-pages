@@ -2177,6 +2177,36 @@ ul.blur-list li {
     padding: 36px 0;
 }
 
+@media (max-width: 767px) {
+  #gen-report-modal4 .modal-dialog {
+    width: 100% !important;
+  }
+
+  #gen-report-modal4 #bv-catpcha-form-mobile {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30px 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+  }
+
+  #gen-report-modal4 .captcha-buttons-single .btn {
+    height: 60px;
+    width: 60px;
+    padding: 10px;
+    margin: 0 auto
+  }
+
+  #gen-report-modal4 p.why-text {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    margin: 0;
+    background: #eee;
+  }
+}
+
 /* == 6 == GENERATING REPORT ====================== */
 
 .gen-list-group li {
