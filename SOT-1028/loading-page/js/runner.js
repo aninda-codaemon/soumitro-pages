@@ -156,7 +156,7 @@
 
     var cleanQueryData = function(data) {
       if (typeof data === "undefined") {
-        return data
+        return data;
       }
 
       var orig = _.clone(data);
