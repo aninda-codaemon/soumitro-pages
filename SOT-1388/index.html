@@ -22,7 +22,7 @@
   <link href="css/components.css" rel="stylesheet" type="text/css" />
   <link href="css/flow.css" rel="stylesheet" type="text/css" />
   <link href="css/main.css" rel="stylesheet" type="text/css" />
-  
+
   <!--[if IE 8]>
     <html lang="en" class="ie8">
     <script type="text/javascript" src="js/excanvas.js"></script>
@@ -751,7 +751,7 @@
 
           <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
-              <button id="skip-to-preview" class="btn btn-lg btn-block btn-secondary">See The Summary Now</button>
+              <button id="skip-to-preview" class="btn btn-lg btn-block btn-primary">See The Summary Now</button>
             </div>
           </div>
         </div>
@@ -783,9 +783,8 @@
 
           <p class="sub-title text-centered" data-fr-bind="currentRecord">Please wait while we locate important information on <span class="text-secondary">{{fullName}}</span></p>
 
-          <div class="searching-progress-bar-group row">
-            
-            <!--[if lt IE 9]>
+          <div class="searching-progress-bar-group">
+
             <div id="searching-progress-bar-database" class="progress checking-sources-progress">
                <div class="progress-bar" style="width:1%"></div>
                <h6 class="progress-bar-title text-centered">
@@ -793,7 +792,7 @@
                   Public <span class="hidden-xs">and Criminal </span>Records
                </h6>
             </div>
-            
+
             <div id="searching-progress-bar-database" class="progress checking-sources-progress">
                <div class="progress-bar" style="width:1%"></div>
                <h6 class="progress-bar-title text-centered">
@@ -801,7 +800,7 @@
                   <span class="hidden-xs">County and State </span>Court Records
                </h6>
             </div>
-            
+
             <div id="searching-progress-bar-database" class="progress checking-sources-progress">
                <div class="progress-bar" style="width:1%"></div>
                <h6 class="progress-bar-title text-centered">
@@ -809,42 +808,6 @@
                   Contact Information
                </h6>
             </div>
-            <![endif]-->
-            
-            <!--[if gt IE 8]> <!-- -->
-            <div class="col-xs-4">
-              <div id="searching-progress-bar-database" class="radial-progress" data-progress="0">
-                <input type="text" value="100" class="knob-circle" />
-                <div class="icon">
-                  <img class="img-icon" src="img/icon_court.png" />
-                </div>
-              </div>
-
-              <p class="progress-label text-centered">Public <span class="hidden-xs">and Criminal </span>Records</p>
-            </div>
-
-            <div class="col-xs-4">
-              <div id="searching-progress-bar-records" class="radial-progress" data-progress="0">
-                <input type="text" value="100" class="knob-circle" />
-                <div class="icon">
-                  <img class="img-icon" src="img/icon_gavel.png" />
-                </div>
-              </div>
-
-              <p class="progress-label text-centered"><span class="hidden-xs">County and State </span>Court Records</p>
-            </div>
-
-            <div class="col-xs-4">
-              <div id="searching-progress-bar-datasets" class="radial-progress" data-progress="0">
-                <input type="text" value="100" class="knob-circle" />
-                <div class="icon">
-                  <img class="img-icon" src="img/icon_data.png" />
-                </div>
-              </div>
-
-              <p class="progress-label text-centered">Contact Information</p>
-            </div>
-            <!-- <![endif]-->
 
           </div>
         </div>
@@ -880,7 +843,11 @@
 
           <div class="row table-row">
             <div class="col-sm-4 table-col profile-col hidden-xs">
-              <h4 class="title name">{{fullName}}</h4>
+              <h5 class="title name">{{fullName}}
+                <span class="title-icon">
+                  <img class="img-icon-check" src="/img/icon_check.png" />
+                </span>
+              </h5>
               <ul class="profile-list list-unstyled">
                 {{#if hasAkas}}
                 <li><strong>AKA:</strong> {{shortList allNames}}</li>
@@ -1061,15 +1028,19 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
           <div class="jumbo-sidebar" data-fr-bind="currentRecord">
-            <h3 class="title">Success!</h1>
+            <img class="img-animation" src="/img/animation.gif" />
 
-            <p class="sub-title">We found information about {{fullName}}.</p>
+            <h3 class="title text-center">
+              Success<span class="mobile-title">, Data Found</span>!
+            </h3>
+
+            <p class="sub-title text-center">We found information about {{fullName}}.</p>
           </div>
         </div>
 
         <div class="modal-body">
           <h4 class="title">
-            <span class="hidden-xs">Your </span>Background Report For <span class="text-secondary" data-fr-bind="currentRecord">{{fullName}}</span> Is Available
+            <span class="hidden-xs">Your </span>Background Report For <span class="text-primary" data-fr-bind="currentRecord">{{fullName}}</span> Is Available
           </h4>
 
           <p class="sub-title">
@@ -1159,7 +1130,7 @@
             </li>
           </ul>
 
-          <button disabled id="gen-report-confirm" class="btn btn-lg btn-block btn-secondary" data-dismiss="modal">
+          <button disabled id="gen-report-confirm" class="btn btn-lg btn-block btn-primary" data-dismiss="modal">
             <i class="fa fa-refresh fa-spin download-now-icon"></i>
             <strong id="gen-report-message" data-enabled-text="Continue to <span class='hidden-xs'>Background</span> Report">LOADING...</strong>
             <i class="fa fa-arrow-right hidden-xs" id="arrowhead-right"></i>
@@ -1259,7 +1230,7 @@
               <h5 class="title">
                 Please prove that you're human by
                 <span class="hidden-xs">filling out the captcha below:</span>
-                <span class="hidden-sm hidden-md hidden-lg">clicking on the red B:</span>
+                <span class="hidden-sm hidden-md hidden-lg">clicking on the colored B:</span>
               </h5>
 
               <form id="bv-catpcha-form" class="hidden-xs">
@@ -1278,13 +1249,13 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="captcha">Type the text shown into the box below.</label>
+                  <label for="captcha" class="captcha-label">Type the text shown into the box below.</label>
                   <input name="captcha" id="bv-captcha-input" class="form-control input-lg" type="text" placeholder="Type text here">
                 </div>
 
                 <p class="text-centered" id="bv-captcha-msg"></p>
 
-                <button type="submit" id="bv-captcha-next" class="btn btn-lg btn-block btn-secondary">Continue</button>
+                <button type="submit" id="bv-captcha-next" class="btn btn-lg btn-block btn-primary">Continue</button>
               </form>
 
               <div class="mobile-captcha visible-xs row">
@@ -1292,7 +1263,7 @@
                   <button type="button" class="btn btn-centered btn-circular btn-neutral">3</button>
                 </div>
                 <div class="col-xs-4">
-                  <button type="button" class="btn btn-centered btn-circular btn-secondary" id="mobile-captcha-next">B</button>
+                  <button type="button" class="btn btn-centered btn-circular btn-primary" id="mobile-captcha-next">B</button>
                 </div>
                 <div class="col-xs-4">
                   <button type="button" class="btn btn-centered btn-circular btn-neutral">B</button>
@@ -1531,7 +1502,7 @@
                   By clicking "Continue" you represent you are over 18 years of age and have agreed to our <a class="text-caption" href="//www.peoplelooker.com/terms-conditions" target="_blank">Terms of Service</a> and <a class="text-caption" href="//www.peoplelooker.com/privacy-policy" target="_blank">Privacy Policy</a> and you agree to receive email from PeopleLooker.com. We'll never sell your information or use your data as apart of our search results.
                 </p>
 
-                <button type="submit" class="btn btn-lg btn-block btn-secondary">
+                <button type="submit" class="btn btn-lg btn-block btn-primary">
                   <span class="hidden-xs">ACCESS &amp; </span>CONTINUE
                   <i class="fa fa-arrow-right icon"></i>
                 </button>
@@ -1591,7 +1562,7 @@
               <label for="fcraCheckbox2" class="error"></label>
             </div>
 
-            <button class="btn btn-lg btn-secondary">Continue <i class="fa fa-arrow-right icon"></i></button>
+            <button class="btn btn-lg btn-primary">Continue <i class="fa fa-arrow-right icon"></i></button>
           </form>
         </div>
 
