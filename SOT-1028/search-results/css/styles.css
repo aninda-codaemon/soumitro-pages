@@ -1864,12 +1864,16 @@ span.located img {
 /* loader */
 
 .processing-data-progress {
+    position :relative;
     width: 100%;
     height: 50px;
     margin: 0 auto;
     border: 0;
     background: #434243;
     z-index: 1;
+}
+.processing-data-progress .progress-msg {
+    color: #fff;
 }
 @media (max-width: 767px) {
     #gen-report-modal3 .progress-container {
