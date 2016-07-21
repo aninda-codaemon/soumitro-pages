@@ -3072,12 +3072,10 @@ h6.create-login {
 }
 #fcraCheckbox2 {
     position: absolute !important;
-    position: static \9;
-    /*ie8 fix*/
+    position: static \9; /*ie8 fix*/
     display: inline-block;
-    margin: 10px -25px \9;
-    /*ie8 fix*/
     margin-left: -999em;
+    margin: 10px -25px \9; /*ie8 fix*/
 }
 
 /* IE 8 Fix */
@@ -3087,6 +3085,7 @@ h6.create-login {
         display: none;
     }
 }
+
 .fcraCheckbox-box {
     display: block;
     width: 32px;
