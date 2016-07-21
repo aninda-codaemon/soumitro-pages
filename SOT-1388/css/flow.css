@@ -498,7 +498,7 @@
     margin: 0;
 }
 #gen-report-modal2 .modal-body .report-info-list .report-info-item .icon {
-    color: #33D4C0;
+    color: #FF435D;
 }
 #gen-report-modal2 .modal-body .report-info-list .report-info-item .item-label {
     margin-left: 25px;
@@ -1340,9 +1340,9 @@
     }
     #gen-report-modal7 .modal-body .person-info .photo {
         width: 100%;
-        max-width: 100px;
-        height: 100px;
-        margin-top: 0;
+        max-width: 80px;
+        height: 80px;
+        margin-top: 5px;
     }
     #gen-report-modal7 .modal-body .person-info .title, #gen-report-modal7 .modal-body .person-info .sub-title {
         text-align: left;
