@@ -2,10 +2,13 @@
 
 .modal-dialog {
     width: auto;
+    height: 100%;
+    margin: 0;
 }
 @media (min-width: 768px) {
     .modal-dialog {
         width: 750px;
+        height: auto;
         margin: 10px auto;
     }
     .modal-dialog.modal-lg {
@@ -20,6 +23,30 @@
     .modal-dialog.modal-lg {
         width: 980px;
     }
+}
+
+/* modal content */
+
+.modal-content {
+  height: 100%;
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+
+@media (min-width: 768px) {
+  .modal-content {
+    height: auto;
+    border: 1px solid rgba(0,0,0,.25);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+  }
 }
 
 /* modal progress bars */
