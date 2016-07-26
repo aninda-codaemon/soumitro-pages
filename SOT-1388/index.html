@@ -1130,11 +1130,18 @@
             </li>
           </ul>
 
-          <button disabled id="gen-report-confirm" class="btn btn-lg btn-block btn-primary" data-dismiss="modal">
-            <i class="fa fa-refresh fa-spin download-now-icon"></i>
-            <strong id="gen-report-message" data-enabled-text="Continue to <span class='hidden-xs'>Background</span> Report">LOADING...</strong>
-            <i class="fa fa-arrow-right hidden-xs" id="arrowhead-right"></i>
-          </button>
+        </div>
+
+        <div class="modal-footer">
+
+          <div class="modal-footer-container">
+            <button disabled id="gen-report-confirm" class="btn btn-lg btn-block btn-primary" data-dismiss="modal">
+              <i class="fa fa-refresh fa-spin download-now-icon"></i>
+              <strong id="gen-report-message" data-enabled-text="Continue to <span class='hidden-xs'>Background</span> Report">LOADING...</strong>
+              <i class="fa fa-arrow-right hidden-xs" id="arrowhead-right"></i>
+            </button>
+          </div>
+
         </div>
 
       </div>
@@ -1445,17 +1452,19 @@
         </div>
 
         <div class="modal-footer">
-          <div id="searching-progress-bar" class="progress">
-            <div class="progress-bar" style="width: 1%"></div>
-            <h5 class="progress-bar-title text-centered" id="searching-progress-bar-status">
-              <span id="searching-progress-bar-value">1%</span> complete
-            </h5>
-          </div>
+          <div class="modal-footer-container">
+            <div id="searching-progress-bar" class="progress">
+              <div class="progress-bar" style="width: 1%"></div>
+              <h5 class="progress-bar-title text-centered" id="searching-progress-bar-status">
+                <span id="searching-progress-bar-value">1%</span> complete
+              </h5>
+            </div>
 
-          <p class="time-stamp">
-            <span id="time-approx"><strong>Time Remaining:</strong> Approx. <span id="time-remaining">120</span> seconds</span>
-            <strong id="finishing-up" class="hide">Finishing Up...</strong>
-          </p>
+            <p class="time-stamp">
+              <span id="time-approx"><strong>Time Remaining:</strong> Approx. <span id="time-remaining">120</span> seconds</span>
+              <strong id="finishing-up" class="hide">Finishing Up...</strong>
+            </p>
+          </div>
         </div>
 
       </div>
