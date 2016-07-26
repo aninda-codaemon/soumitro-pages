@@ -188,35 +188,35 @@
 
       // Booleans for templating & reporting
       var hasCriminal = _.some(data, function(item) {
-        if (item && item.type === 'criminal') {
+        if (_.has(item, 'type') && item.type === 'criminal') {
           return item.type === 'criminal' && item.count > 0;
         } else {
           return false;
         }
       });
       var hasBankruptcy = _.some(data, function(item) {
-        if (item && item.type === 'bankruptcy') {
+        if (_.has(item, 'type') && item.type === 'bankruptcy') {
           return item.type === 'bankruptcy' && item.count > 0;
         } else {
           return false;
         }
       });
       var hasPhone = _.some(data, function(item){
-        if (item && item.type === 'phones') {
+        if (_.has(item, 'type') && item.type === 'phones') {
           return item.type === 'phones' && item.count > 0;
         } else {
           return false;
         }
       });
       var hasEmail = _.some(data, function(item){
-        if (item && item.type === 'emails') {
+        if (_.has(item, 'type') && item.type === 'emails') {
           return item.type === 'emails' && item.count > 0;
         } else {
           return false;
         }
       });
       var hasSocial = _.some(data, function(item){
-        if (item && item.type === 'social') {
+        if (_.has(item, 'type') && item.type === 'social') {
           return item.type === 'social' && item.count > 0;
         } else {
           return false;
@@ -229,14 +229,14 @@
       //   return (item.type === 'addresses' && item.count > 0) || (item.type === 'neighbors' && item.count > 0);
       // });
       var hasPhotos = _.some(data, function(item) {
-        if (item && item.type === 'photos') {
+        if (_.has(item, 'type') && item.type === 'photos') {
           return item.type === 'photos' && item.count > 0;
         } else {
           return false;
         }
       });
       var hasCareers = _.some(data, function(item) {
-        if (item && item.type === 'careers') {
+        if (_.has(item, 'type') && item.type === 'careers') {
           return item.type === 'careers' && item.count > 0;
         } else {
           return false;
@@ -296,7 +296,7 @@
       // Scrub data for display
       _.remove(data, function(item) {
         if (item) {
-          return item.showIfEmpty === 0 && item.count === 0;  
+          return item.showIfEmpty === 0 && item.count === 0;
         }
       });
       data = _.sortByOrder(data, ['weight', 'count'], ['desc', 'desc']);
