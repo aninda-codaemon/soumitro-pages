@@ -14,7 +14,12 @@
     outline: 0;
 }
 
-.btn-primary {
+.btn[disabled] {
+    opacity: 0.5;
+}
+
+.btn-primary,
+.btn-primary[disabled] {
     -webkit-box-shadow: 0 4px 1px -1px #38AC9E;
     -moz-box-shadow: 0 4px 1px -1px #38AC9E;
     -ms-box-shadow: 0 4px 1px -1px #38AC9E;
@@ -46,7 +51,8 @@
     color: #fff;
 }
 
-.btn-secondary {
+.btn-secondary,
+.btn-secondary[disabled] {
     -webkit-box-shadow: 0 4px 1px -1px #C62E42;
     -moz-box-shadow: 0 4px 1px -1px #C62E42;
     -ms-box-shadow: 0 4px 1px -1px #C62E42;
@@ -78,7 +84,8 @@
     color: #fff;
 }
 
-.btn-default {
+.btn-default,
+.btn-default[disabled] {
     -webkit-box-shadow: 0 4px 1px -1px #38AC9E;
     -moz-box-shadow: 0 4px 1px -1px #38AC9E;
     -ms-box-shadow: 0 4px 1px -1px #38AC9E;
@@ -110,7 +117,8 @@
     color: #fff;
 }
 
-.btn-neutral {
+.btn-neutral,
+.btn-neutral[disabled] {
     -webkit-box-shadow: 0 4px 1px -1px #c0bfbf;
     -moz-box-shadow: 0 4px 1px -1px #c0bfbf;
     -ms-box-shadow: 0 4px 1px -1px #c0bfbf;
@@ -142,7 +150,8 @@
     color: #030c0d;
 }
 
-.btn-transparent {
+.btn-transparent,
+.btn-transparent[disabled] {
     -webkit-box-shadow: 0 4px 1px -1px #38AC9E;
     -moz-box-shadow: 0 4px 1px -1px #38AC9E;
     -ms-box-shadow: 0 4px 1px -1px #38AC9E;

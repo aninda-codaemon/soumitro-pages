@@ -79,7 +79,7 @@
 
 .content-section#data-panel .search-results .table tr th,
 .content-section#data-panel .search-results .table tr td {
-  padding: 15px;
+  padding: 10px;
 }
 
 .content-section#data-panel .search-results .table tr th {
@@ -176,6 +176,11 @@
 }
 
 @media (min-width: 992px) {
+  .content-section#data-panel .search-results .table tr th,
+  .content-section#data-panel .search-results .table tr td {
+    padding: 15px;
+  }
+
   .content-section#data-panel .search-results .table tr th {
     font-size: 20px;
   }

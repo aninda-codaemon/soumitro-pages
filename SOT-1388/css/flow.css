@@ -227,7 +227,7 @@
 }
 @media (min-width: 768px) {
     .modal-body {
-      padding-bottom: 15px;
+        padding-bottom: 15px;
     }
 }
 
@@ -645,6 +645,7 @@
         float: right;
         width: 70%;
         padding-top: 0;
+        padding-bottom: 100px;
         background-color: #fff;
     }
     #gen-report-modal2 .modal-body .title {
@@ -684,15 +685,18 @@
     }
 }
 
-/* continue button */
+/* modal-footer */
 
-#gen-report-modal2 .modal-body #gen-report-confirm {
-    margin-top: 30px;
+#gen-report-modal2 .modal-footer .modal-footer-container {
+    background-color: #fff;
+}
+#gen-report-modal2 .modal-footer #gen-report-confirm {
+    margin: 0;
     padding: 20px;
     font-size: 22px;
     text-transform: uppercase;
 }
-#gen-report-modal2 .modal-body #gen-report-confirm[disabled=disabled], #gen-report-modal2 .modal-body #gen-report-confirm:disabled {
+#gen-report-modal2 .modal-footer #gen-report-confirm[disabled=disabled], #gen-report-modal2 .modal-body #gen-report-confirm:disabled {
     cursor: progress;
     opacity: 0.5;
     box-shadow: none;
@@ -700,11 +704,19 @@
     background-color: #e7e7e7;
     color: #c9c9c9 !important;
 }
-#gen-report-modal2 .modal-body #arrowhead-right {
+#gen-report-modal2 .modal-footer #arrowhead-right {
     display: none;
     position: relative;
     bottom: 1px;
     margin-left: 10px;
+}
+@media (min-width: 992px) {
+    #gen-report-modal2 .modal-footer {
+        position: absolute;
+        left: auto;
+        right: 0;
+        width: 664px;
+    }
 }
 
 /* == 4 == PROCCESSING YOUR REQUEST ================= */
@@ -856,6 +868,9 @@
     margin: 0;
     padding: 0 15px;
 }
+#gen-report-modal4 .modal-body .title {
+    line-height: 1.25
+}
 #gen-report-modal4 .modal-body .captcha-col {
     padding: 15px;
 }
@@ -867,8 +882,8 @@
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
     border-radius: 5px;
-    border: 1px solid #eee;
-    background-color: #f9f9f9;
+    border: 1px solid #dcdcdc;
+    background-color: #eee;
 }
 #gen-report-modal4 .modal-body .captcha-col .bv-captcha-wrapper {
     position: relative;
@@ -1066,7 +1081,7 @@
 }
 @media (min-width: 768px) {
     #gen-report-modal5 .modal-body {
-      padding-bottom: 0;
+        padding-bottom: 0;
     }
     #gen-report-modal5 .modal-body .modal-body-copy {
         padding: 20px;
@@ -1088,6 +1103,9 @@
 
 /* modal-footer */
 
+#gen-report-modal5 .modal-footer .modal-footer-container {
+    background-color: #fff;
+}
 #gen-report-modal5 .modal-footer .progress {
     margin-bottom: 10px;
 }
@@ -1120,6 +1138,12 @@
 #gen-report-modal6 .modal-body .form-group-well {
     margin-bottom: 20px;
     padding: 5px 15px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #dcdcdc;
     background-color: #eee;
 }
 #gen-report-modal6 .modal-body .btn {
@@ -1155,7 +1179,13 @@
 }
 #gen-report-modal11 .modal-body #fcra-confirm .fcra-confirm-container {
     padding: 15px;
-    background-color: #EFEFEF;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #dcdcdc;
+    background-color: #eee;
 }
 #gen-report-modal11 .modal-body #fcra-confirm .btn {
     display: block;
