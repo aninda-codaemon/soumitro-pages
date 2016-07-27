@@ -379,6 +379,7 @@
 
         _.forEach($progessBars, function($elem, idx) {
             var duration = splits[idx];
+
             animations.push($elem.animate({
                 'width': '100%'
             }, {
@@ -452,8 +453,12 @@
             $loader.animate({
                 'width': '100%'
             }, {
-                duration: duration
-            })
+                duration: duration,
+                progress: function(animation, progress) {
+                    var progression = Math.ceil(progress * 100);
+                    $('#processing-data-progress-bar-value').html(progression);
+                }
+            });
 
             var intervalDuration = duration / total, // how long to wait before cycling to the next item
                 useCasesLoop = setInterval(function() {
