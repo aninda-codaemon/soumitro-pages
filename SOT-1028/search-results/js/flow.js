@@ -55,6 +55,8 @@
       var res = result;
       var img = '';
 
+      //console.log(res);
+
       // Get profile image URL
       if (res.images[0] && typeof(res.images[0].url !== 'undefined')) {
         img = res.images[0].url;
