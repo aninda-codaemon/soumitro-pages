@@ -117,17 +117,15 @@
                     'showIfEmpty': 0,
                     'count': res.social.length,
                     'socialNetwork': socialNetworks
-                },
-                // {
-                //   'type': 'photos',
-                //   'name': 'Photos',
-                //   'single': 'Photo',
-                //   'style': '',
-                //   'weight': 0,
-                //   'showIfEmpty': 0,
-                //   'count': res.images.length
-                // },
-                {
+                }, {
+                    'type': 'photos',
+                    'name': 'Photos',
+                    'single': 'Photo',
+                    'style': '',
+                    'weight': 0,
+                    'showIfEmpty': 0,
+                    'count': res.images.length
+                }, {
                     'type': 'associates',
                     'name': 'Associates & Relatives',
                     'single': 'Associates & Relatives',
