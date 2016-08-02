@@ -20,7 +20,11 @@
         }
 
         .bv-banner-address {
-            margin: 0;
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            overflow: hidden;
+            margin: 0 auto;
             padding: 10px;
             background-color: #fff;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -29,6 +33,7 @@
         }
 
         .bv-banner-header {
+            position: relative;
             margin-bottom: 5px;
             padding: 10px;
             background-color: #e7e7e7;
@@ -47,6 +52,10 @@
             color: #333;
             font-size: 50%;
             font-weight: normal;
+        }
+
+        .bv-banner-content {
+            position: relative;
         }
 
         .bv-input-group {
@@ -126,6 +135,86 @@
             margin: 0 auto;
             margin-top: 10px;
         }
+
+        @media (min-width: 728px) {
+            .bv-banner-address {
+                max-width: 100%;
+                padding: 0;
+            }
+            
+            .bv-banner-header {
+                margin: 0;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+
+            .bv-cta-title {
+                max-width: 628px;
+                margin: 0 auto;
+            }
+
+            .bv-cta-statement {
+                color: #75b648;
+                font-size: 24px;
+                font-weight: 500;
+            }
+
+            .bv-banner-content {
+                max-width: 628px;
+                margin: 0 auto;
+                padding: 10px;
+            }
+
+            .bv-input-group {
+                display: inline-block;
+                margin-bottom: 0;
+                vertical-align: middle;
+            }
+
+            .bv-input-group .bv-input-label {
+                font-size: 16px;
+            }
+
+            .bv-input-group .bv-input-field {
+                display: inline-block;
+                width: 230px;
+                vertical-align: middle;
+                line-height: 1.25;
+            }
+
+            .bv-submit-button {
+                display: inline-block;
+                width: auto;
+                margin-left: 5px;
+                vertical-align: middle;
+                line-height: 1.1;
+            }
+
+            .bv-logo-image {
+                position: absolute;
+                top: 8px;
+                right: 10px;
+                margin: 0;
+            }
+        }
+        /* helpers */
+
+        .bv-hide-small {
+            display: none;
+        }
+
+        .bv-hide-large {
+            display: block;
+        }
+
+        @media (min-width: 728px) {
+            .bv-hide-small {
+                display: block;
+            }
+            .bv-hide-large {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -134,7 +223,7 @@
     <main class="bv-banner-address">
         <header class="bv-banner-header">
             <h1 class="bv-cta-title">
-                Search by Address
+                <span class="bv-hide-large">Search by Address</span>
                 <small class="bv-cta-statement">
                     Lookup Property Owners, Records and Contact Details
                 </small>
@@ -144,13 +233,17 @@
         <section class="bv-banner-content">
             <form name="bv-address-form" action="https://www.beenverified.com/lp/e58cbf/2/landing">
                 <div class="bv-input-group">
-                    <label for="address" class="bv-input-label">Enter an Address Below:</label>
+                    <label for="address" class="bv-input-label">
+                        <span class="bv-hide-large">Enter an Address Below:</span>
+                        <span class="bv-hide-small">Search by Address:</span>
+                    </label>
                     <input type="text" name="address" class="bv-input-field" id="address" required />
                 </div>
                 <button type="submit" class="bv-submit-button">Start Search</button>
             </form>
 
-            <img class="bv-logo-image" src="/img/logo.png" />
+            <img class="bv-logo-image bv-hide-large" src="/img/logo.png" />
+            <img class="bv-logo-image bv-hide-small" src="/img/logo_lg.png" />
         </section>
     </main>
 
