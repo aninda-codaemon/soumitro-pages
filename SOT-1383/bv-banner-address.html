@@ -1,206 +1,44 @@
 <!doctype html>
-
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Address Search</title>
+    <title>Address Search</title>
 
-  <!-- Jquery is required - if it is already being loaded no need to load this version -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <style media="screen" type="text/css">
 
-  <!-- JS: This script IS required -->
-  <script type="text/javascript" src="https://d79i1fxsrar4t.cloudfront.net/jquery.liveaddress/3.0/jquery.liveaddress.min.js"></script>
-
-  <!-- CSS: These styles are required -->
-  <style media="screen">
-    #bv-wide {
-      font-family: 'Lato', sans-serif;
-      width: 300px;
-      height: 250px;
-    }
-
-    #bv-wide input,
-    #bv-wide .bv-wide-submit {
-      font-family: 'Lato', sans-serif;
-      display: block;
-      margin-top: 4px;
-      width: 100%;
-      height: 43px;
-      font-size: 18px;
-      padding: 10px;
-      border: solid 1px #dcdcdc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-    #bv-wide .bv-wide-submit {
-      background: #75b648;
-      color: #fff;
-    }
-
-    #bv-wide .bv-wide-submit:hover,
-    #bv-wide .bv-wide-submit:focus {
-      background-color: #5d9139;
-    }
-
-    #bv-wide input[type="text"]:focus {
-      outline: none;
-      border: solid 1px #5d9139;
-    }
-
-    #bv-wide .bv-wide-submit,
-    #bv-wide .search-btn {
-      cursor: pointer;
-      cursor: hand;
-      display: block;
-      text-decoration: none;
-    }
-
-    #bv-wide .top-headline {
-      background: #e7e7e7;
-      display: block;
-      padding: 12px;
-      margin-bottom: 10px;
-      min-height: 40px;
-      position: relative;
-      width: 100%;
-      background: #e7e7e7;
-      box-sizing: border-box;
-      text-align: center;
-    }
-
-    #bv-wide .branding {
-      color: #9d9797;
-      font-family: 'Lato', sans-serif;
-      font-size: 12px;
-      font-weight: 200;
-      text-align: right;
-      padding-bottom: 6px;
-      margin-right: 16px;
-    }
-
-    #bv-wide .subhead {
-      font-weight: bold;
-      width: 100%;
-    }
-
-    .smarty-tag {
-      display: none !important;
-    }
-
-    .smarty-popup {
-      border: 1px solid #e5e5e5;
-      height: auto !important;
-    }
-
-    .smarty-popup-header,
-    .smarty-choice,
-    .smarty-suggestion,
-    .smarty-no-suggestions {
-      font-family: Lato, sans-serif;
-      font-size: 14px;
-    }
-
-    a.smarty-suggestion {
-      line-height: 18px;
-      padding: 4px;
-    }
-
-    .smarty-active-suggestion {}
-
-    .smarty-popup-header {
-      background: #e5e5e5;
-      height: auto;
-      text-transform: none;
-      font-weight: 700;
-      line-height: auto;
-      padding: 12px;
-    }
-
-    .smarty-choice-list .smarty-choice {
-      color: #333;
-    }
-
-    .smarty-choice-list .smarty-choice:hover {
-      color: #EEE;
-      background-color: #337ab7;
-    }
-
-    .smarty-choice-alt {
-      border: none;
-    }
-
-    .smarty-choice-alt .smarty-choice-abort,
-    .smarty-choice-override {
-      padding: 6px 15px;
-    }
-
-    .smarty-choice-abort:hover {
-      /*color: #fff !important;*/
-    }
-
-    a.btn.smarty-choice {
-      margin: 8px;
-      color: #fff;
-    }
-
-    .smarty-choice-override {
-      display: none !important;
-    }
-
-    .smarty-popup-close {
-      font-size: 11px;
-      line-height: 11px;
-      text-transform: uppercase;
-      top: 5px;
-      border: 2px solid #cc0000;
-      border-radius: 50%;
-    }
-
-    .line_two {
-      font-weight: 400;
-      font-size: 12px;
-    }
-  </style>
-
+    </style>
 </head>
 
 <body>
 
-  <!-- BEGIN ad -->
+    <main class="bv-banner-address">
+        <header class="bv-banner-header">
+            <h1 class="bv-cta-title">
+                Search by Address
+                <small class="bv-cta-statement">
+                    Lookup Property Owners, Records and Contact Details
+                </small>
+             </h1>
+        </header>
 
-  <div class="container" id="bv-wide">
-    <div class="top-headline">
-      <div class="branding">Powered by: BeenVerified.com</div>
-      <span class="subhead">Search by Address to find property owners, records and contact details</span>
-    </div>
+        <section class="bv-banner-content">
+            <form name="bv-address-form" action="https://www.beenverified.com/lp/e58cbf/2/landing">
+                <div class="bv-input-group">
+                    <label for="address" class="bv-input-label">Enter an Address Below:</label>
+                    <input type="text" name="address" class="bv-input-field" id="address" placeholder="Enter an Address" />
+                </div>
+                <button type="submit" class="bv-submit-button">Start Search</button>
+            </form>
+        </section>
+    </main>
 
-    <form name="input_form" action="https://www.beenverified.com/lp/e58cbf/2/landing">
-      <input type="text" id="address" name="address" placeholder="Enter an Address">
-      <br>
-      <input type="submit" class="bv-wide-submit" value="Submit" autocomplete="smartystreets">
-    </form>
-  </div>
-
-  <script type="text/javascript">
-    jQuery.LiveAddress({
-      debug: false,
-      key: "536315053717831",
-      addresses: [{
-        freeform: "#address",
-        country: 'US'
-      }],
-      autocomplete: 5,
-      ambiguousMessage: "Choose the exact address",
-      invalidMessage: "We did not find that address<br><span class='line_two'>Be sure to include a building number and leave out resident names</span>",
-      stateFilter: "AL,AK,AZ,AR,CA,CO,CT,DE,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MA,MI,MN,MS,MO,MT,NE,NV,NH,NJ,NM,NY,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WA,WV,WI,WY",
-      submitVerify: true
-    });
-  </script>
-
-  <!-- END ad -->
+    <script type="text/javascript">
+        // autocomplete script
+    </script>
 
 </body>
 
