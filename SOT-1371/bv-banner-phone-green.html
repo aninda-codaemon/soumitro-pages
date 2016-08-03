@@ -1,258 +1,261 @@
-<div class="bv-banner" id="bvReversePhone">
-    <div class="bv-cta">
-        <h1 class="bv-headline">
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Phone Search</title>
+
+    <style media="screen" type="text/css">
+        .bv-banner#bvReversePhone {
+            display: block;
+            position: relative;
+            width: auto;
+            padding: 2px;
+            overflow: hidden;
+            background: #75b648;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .bv-banner#bvReversePhone:before {
+            display: table;
+            content: '';
+        }
+
+        .bv-banner#bvReversePhone .bv-cta {
+            display: block;
+            position: relative;
+            padding: 10px;
+            background: #fff;
+            text-align: center;
+            line-height: 1;
+        }
+
+        .bv-banner#bvReversePhone .bv-cta .bv-headline {
+            margin: 20px 0;
+            color: #363636;
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+        .bv-banner#bvReversePhone .bv-cta .bv-headline .bv-sub-headline {
+            display: block;
+            margin-top: 10px;
+            color: #757575;
+            font-size: 65%;
+        }
+
+        .bv-banner#bvReversePhone .bv-form {
+            display: block;
+            position: relative;
+            margin: 0 auto;
+            padding: 30px 10px 50px;
+            background: transparent;
+            text-align: center;
+        }
+
+        .bv-banner#bvReversePhone .bv-form .bv-logo-img {
+            display: block;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+        }
+
+        .bv-banner#bvReversePhone .bv-form .bv-form-group {
+            display: inline-table;
+            margin: 0;
+            vertical-align: middle;
+            border-collapse: separate;
+        }
+
+        .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input {
+            display: table-cell;
+            position: relative;
+            width: 100%;
+            float: left;
+            padding: 5px 10px;
+            outline: 0;
+            border: 0;
+            border-collapse: separate;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+            border-radius: 5px;
+            background: #fff;
+            color: #363636;
+            font-size: 14px;
+            text-align: center;
+            line-height: 1.5;
+            vertical-align: middle;
+        }
+
+        .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input-label {
+            display: table-cell;
+            width: auto;
+            padding: 4px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input-label:first-child {
+            padding-left: 0;
+        }
+
+        .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input-label:last-child {
+            padding-right: 0;
+        }
+
+        .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-submit-button {
+            cursor: pointer;
+            margin: 0;
+            margin-left: 3px;
+            padding: 5px 10px;
+            outline: 0;
+            border: 0;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+            border-radius: 5px;
+            background: #e63a11;
+            color: #fff;
+            font-size: 14px;
+            line-height: 1.5;
+            -webkit-transition: all 500ms;
+            -moz-transition: all 500ms;
+            -ms-transition: all 500ms;
+            -o-transition: all 500ms;
+            transition: all 500ms;
+        }
+
+        .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-submit-button:hover {
+            background: #f3451c
+        }
+
+        .bv-banner#bvReversePhone *,
+        .bv-banner#bvReversePhone:before,
+        .bv-banner#bvReversePhone:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        @media (min-width: 728px) {
+            .bv-banner#bvReversePhone .bv-cta,
+            .bv-banner#bvReversePhone .bv-form {
+                width: 50%;
+                margin: 0;
+                padding-left: 15px;
+                padding-right: 15px;
+                float: left;
+            }
+            .bv-banner#bvReversePhone .bv-cta .bv-headline {
+                margin: 10px auto;
+                margin-top: 5px;
+                font-size: 22px;
+                text-align: left;
+            }
+            .bv-banner#bvReversePhone .bv-cta .bv-headline .bv-sub-headline {
+                margin-top: 5px;
+            }
+            .bv-banner#bvReversePhone .bv-form {
+                padding: 22px 10px;
+            }
+            .bv-banner#bvReversePhone .bv-form .bv-logo-img {
+                bottom: 35px;
+                max-width: 70px;
+            }
+            .bv-banner#bvReversePhone .bv-form .bv-form-group {
+                position: relative;
+            }
+            .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-submit-button {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bv-banner" id="bvReversePhone">
+        <div class="bv-cta">
+            <h1 class="bv-headline">
           Search Any Phone Number
           <small class="bv-sub-headline">Lookup Owner Name, Address &amp; More</small>
         </h1>
+        </div>
+        <form id="bvReversePhoneForm" class="bv-form" name="bv-reverse-phone-form" target="_top" action="http://jumptracker.com/aff_c?" onSubmit="ajaxPost(event, this)">
+            <input type="hidden" name="offer_id" value="xxx" />
+            <input type="hidden" name="aff_id" value="xxxx" />
+            <input type="hidden" name="file_id" value="xxx" />
+
+            <div class="bv-form-group">
+                <span class="bv-input-label">(</span>
+                <input type="text" name="bv-phone-area-code" class="bv-input area-code-input" size="3" maxlength="3" value="" oninput="autotab(this, document.getElementById('bvReversePhoneForm').getElementsByClassName('prefix-input')[0])" />
+                <span class="bv-input-label">)</span>
+            </div>
+            <div class="bv-form-group">
+                <input type="text" name="bv-phone-prefix" class="bv-input prefix-input" size="3" maxlength="3" value="" oninput="autotab(this, document.getElementById('bvReversePhoneForm').getElementsByClassName('line-number-input')[0])" />
+                <span class="bv-input-label">-</span>
+            </div>
+            <div class="bv-form-group">
+                <input type="text" name="bv-phone-line-number" class="bv-input line-number-input" size="4" maxlength="4" value="" />
+            </div>
+            <div class="bv-form-group">
+                <img src="img/bv_logo.png" class="bv-logo-img" />
+                <button type="submit" class="bv-submit-button">Search</button>
+            </div>
+        </form>
     </div>
-    <form id="bvReversePhoneForm" class="bv-form" name="bv-reverse-phone-form" target="_top" action="http://jumptracker.com/aff_c?" onSubmit="ajaxPost(event, this)">
-        <input type="hidden" name="offer_id" value="xxx" />
-        <input type="hidden" name="aff_id" value="xxxx" />
-        <input type="hidden" name="file_id" value="xxx" />
 
-        <div class="bv-form-group">
-            <span class="bv-input-label">(</span>
-            <input type="text" name="bv-phone-area-code" class="bv-input area-code-input" size="3" maxlength="3" value="" oninput="autotab(this, document.getElementById('bvReversePhoneForm').getElementsByClassName('prefix-input')[0])" />
-            <span class="bv-input-label">)</span>
-        </div>
-        <div class="bv-form-group">
-            <input type="text" name="bv-phone-prefix" class="bv-input prefix-input" size="3" maxlength="3" value="" oninput="autotab(this, document.getElementById('bvReversePhoneForm').getElementsByClassName('line-number-input')[0])" />
-            <span class="bv-input-label">-</span>
-        </div>
-        <div class="bv-form-group">
-            <input type="text" name="bv-phone-line-number" class="bv-input line-number-input" size="4" maxlength="4" value="" />
-        </div>
-        <div class="bv-form-group">
-            <img src="img/bv_logo.png" class="bv-logo-img" />
-            <button type="submit" class="bv-submit-button">Search</button>
-        </div>
-    </form>
-</div>
+    <!-- remove if already loading jqeury -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
-<style media="screen" type="text/css">
-    .bv-banner#bvReversePhone {
-        display: block;
-        position: relative;
-        width: auto;
-        padding: 2px;
-        overflow: hidden;
-        background: #75b648;
-        font-family: 'Lato', sans-serif;
-    }
-
-    .bv-banner#bvReversePhone:before {
-        display: table;
-        content: '';
-    }
-
-    .bv-banner#bvReversePhone .bv-cta {
-        display: block;
-        position: relative;
-        padding: 10px;
-        background: #fff;
-        text-align: center;
-        line-height: 1;
-    }
-
-    .bv-banner#bvReversePhone .bv-cta .bv-headline {
-        margin: 20px 0;
-        color: #363636;
-        font-size: 20px;
-        font-weight: normal;
-    }
-
-    .bv-banner#bvReversePhone .bv-cta .bv-headline .bv-sub-headline {
-        display: block;
-        margin-top: 10px;
-        color: #757575;
-        font-size: 65%;
-    }
-
-    .bv-banner#bvReversePhone .bv-form {
-        display: block;
-        position: relative;
-        margin: 0 auto;
-        padding: 30px 10px 50px;
-        background: transparent;
-        text-align: center;
-    }
-
-    .bv-banner#bvReversePhone .bv-form .bv-logo-img {
-        display: block;
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 0;
-    }
-
-    .bv-banner#bvReversePhone .bv-form .bv-form-group {
-        display: inline-table;
-        margin: 0;
-        vertical-align: middle;
-        border-collapse: separate;
-    }
-
-    .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input {
-        display: table-cell;
-        position: relative;
-        width: 100%;
-        float: left;
-        padding: 5px 10px;
-        outline: 0;
-        border: 0;
-        border-collapse: separate;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
-        border-radius: 5px;
-        background: #fff;
-        color: #363636;
-        font-size: 14px;
-        text-align: center;
-        line-height: 1.5;
-        vertical-align: middle;
-    }
-
-    .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input-label {
-        display: table-cell;
-        width: auto;
-        padding: 4px;
-        color: #fff;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 1.5;
-        white-space: nowrap;
-        vertical-align: middle;
-    }
-
-    .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input-label:first-child {
-        padding-left: 0;
-    }
-
-    .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-input-label:last-child {
-        padding-right: 0;
-    }
-
-    .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-submit-button {
-        cursor: pointer;
-        margin: 0;
-        margin-left: 3px;
-        padding: 5px 10px;
-        outline: 0;
-        border: 0;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
-        border-radius: 5px;
-        background: #e63a11;
-        color: #fff;
-        font-size: 14px;
-        line-height: 1.5;
-        -webkit-transition: all 500ms;
-        -moz-transition: all 500ms;
-        -ms-transition: all 500ms;
-        -o-transition: all 500ms;
-        transition: all 500ms;
-    }
-
-    .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-submit-button:hover {
-        background: #f3451c
-    }
-
-    .bv-banner#bvReversePhone *,
-    .bv-banner#bvReversePhone:before,
-    .bv-banner#bvReversePhone:after {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -ms-box-sizing: border-box;
-        -o-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-
-    @media (min-width: 728px) {
-        .bv-banner#bvReversePhone .bv-cta,
-        .bv-banner#bvReversePhone .bv-form {
-            width: 50%;
-            margin: 0;
-            padding-left: 15px;
-            padding-right: 15px;
-            float: left;
+    <script type="text/javascript">
+        // auto tab from current input to next input when max character limit is reached
+        function autotab(current, to) {
+            if (current.getAttribute && current.value.length == current.getAttribute('maxlength')) {
+                to.focus();
+            }
         }
-        .bv-banner#bvReversePhone .bv-cta .bv-headline {
-            margin: 10px auto;
-            margin-top: 5px;
-            font-size: 22px;
-            text-align: left;
-        }
-        .bv-banner#bvReversePhone .bv-cta .bv-headline .bv-sub-headline {
-            margin-top: 5px;
-        }
-        .bv-banner#bvReversePhone .bv-form {
-            padding: 22px 10px;
-        }
-        .bv-banner#bvReversePhone .bv-form .bv-logo-img {
-            bottom: 35px;
-            max-width: 70px;
-        }
-        .bv-banner#bvReversePhone .bv-form .bv-form-group {
-            position: relative;
-        }
-        .bv-banner#bvReversePhone .bv-form .bv-form-group .bv-submit-button {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-    }
-</style>
+    </script>
 
-<script type="text/javascript">
-    // auto tab from current input to next input when max character limit is reached
-    function autotab(current, to) {
-        if (current.getAttribute && current.value.length == current.getAttribute('maxlength')) {
-            to.focus();
+    <script type="text/javascript">
+        // parse form data and post with ajax
+
+        function ajaxPost(event, form) {
+            event.preventDefault();
+
+            var url = form.action;
+            var data = {
+                key: 'test',
+                key2: 'test2'
+            };
+
+            console.log(url);
+            console.log(data);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: data,
+                success: function(msg, data) {
+                    console.log(msg, data);
+                }
+            });
         }
-    }
+    </script>
+</body>
 
-    // Takes a form node and sends it over AJAX. (IE9+)
-    // @param {HTMLFormElement} form - Form node to send
-    // @param {function} callback - Function to handle onload.
-    //                              this variable will be bound correctly.
-    function ajaxPost(event, form, callback) {
-        event.preventDefault();
-
-        var url = form.action,
-            xhr = new XMLHttpRequest();
-
-        //This is a bit tricky, [].fn.call(form.elements, ...) allows us to call .fn
-        //on the form's elements, even though it's not an array. Effectively
-        //Filtering all of the fields on the form
-        var params = [].filter.call(form.elements, function(el) {
-                //Allow only elements that don't have the 'checked' property
-                //Or those who have it, and it's checked for them.
-                return typeof(el.checked) === 'undefined' || el.checked;
-                //Practically, filter out checkboxes/radios which aren't checked.
-            })
-            .filter(function(el) {
-                return !!el.name;
-            }) //Nameless elements die.
-            .filter(function(el) {
-                return el.disabled;
-            }) //Disabled elements die.
-            .map(function(el) {
-                //Map each field into a name=value string, make sure to properly escape!
-                return encodeURIComponent(el.name) + '=' + encodeURIComponent(el.value);
-            }).join('&'); //Then join all the strings by &
-
-        xhr.open("POST", url);
-        // Changed from application/x-form-urlencoded to application/x-form-urlencoded
-        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-        //.bind ensures that this inside of the function is the XHR object.
-        xhr.onload = callback.bind(xhr);
-
-        //All preperations are clear, send the request!
-        xhr.send(params);
-    }
-</script>
+</html>
