@@ -219,9 +219,6 @@
         </form>
     </div>
 
-    <!-- remove if already loading jqeury -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
     <script type="text/javascript">
         // auto tab from current input to next input when max character limit is reached
         function autotab(current, to) {
@@ -267,12 +264,12 @@
             var async = true,
                 valid = false,
                 request = new XMLHttpRequest(),
-                offer_id = $('input[name=offer_id]').val(),
-                aff_id = $('input[name=aff_id]').val(),
-                file_id = $('input[name=file_id]').val(),
-                phone_area_code = $('input[name=bv-phone-area-code]').val(),
-                phone_prefix = $('input[name=bv-phone-prefix]').val(),
-                phone_line_number = $('input[name=bv-phone-line-number]').val(),
+                offer_id = document.querySelector('[name="offer_id"]').value,
+                aff_id = document.querySelector('[name="aff_id"]').value,
+                file_id = document.querySelector('[name="file_id"]').value,
+                phone_area_code = document.querySelector('[name="bv-phone-area-code"]').value,
+                phone_prefix = document.querySelector('[name="bv-phone-prefix"]').value,
+                phone_line_number = document.querySelector('[name="bv-phone-line-number"]').value,
                 method = form.method,
                 url = form.action,
                 data = {
