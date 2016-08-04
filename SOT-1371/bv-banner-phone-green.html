@@ -196,21 +196,21 @@
         </h1>
         </div>
         <form id="bvReversePhoneForm" class="bv-form" name="bv-reverse-phone-form" target="_top" action="http://jumptracker.com/aff_c?" onSubmit="ajaxPost(event, this)">
-            <input type="hidden" name="offer_id" value="xxx" />
-            <input type="hidden" name="aff_id" value="xxxx" />
-            <input type="hidden" name="file_id" value="xxx" />
+            <input type="hidden" name="offer_id" value="67" />
+            <input type="hidden" name="aff_id" value="2207" />
+            <input type="hidden" name="file_id" value="001" />
 
             <div class="bv-form-group">
                 <span class="bv-input-label">(</span>
-                <input type="text" name="bv-phone-area-code" class="bv-input area-code-input" size="3" maxlength="3" value="" oninput="autotab(this, document.getElementById('bvReversePhoneForm').getElementsByClassName('prefix-input')[0])" />
+                <input type="text" name="bv-phone-area-code" class="bv-input area-code-input" size="3" maxlength="3" value="" oninput="autotab(this, document.getElementById('bvReversePhoneForm').getElementsByClassName('prefix-input')[0])" required />
                 <span class="bv-input-label">)</span>
             </div>
             <div class="bv-form-group">
-                <input type="text" name="bv-phone-prefix" class="bv-input prefix-input" size="3" maxlength="3" value="" oninput="autotab(this, document.getElementById('bvReversePhoneForm').getElementsByClassName('line-number-input')[0])" />
+                <input type="text" name="bv-phone-prefix" class="bv-input prefix-input" size="3" maxlength="3" value="" oninput="autotab(this, document.getElementById('bvReversePhoneForm').getElementsByClassName('line-number-input')[0])" required />
                 <span class="bv-input-label">-</span>
             </div>
             <div class="bv-form-group">
-                <input type="text" name="bv-phone-line-number" class="bv-input line-number-input" size="4" maxlength="4" value="" />
+                <input type="text" name="bv-phone-line-number" class="bv-input line-number-input" size="4" maxlength="4" value="" required />
             </div>
             <div class="bv-form-group">
                 <img src="img/bv_logo.png" class="bv-logo-img" />
@@ -232,28 +232,59 @@
     </script>
 
     <script type="text/javascript">
-        // parse form data and post with ajax
+        function validate(form) {
+            // get all the inputs within the submitted form
+            var inputs = form.getElementsByTagName('input');
 
+            for (var i = 0; i < inputs.length; i++) {
+                // only validate the inputs that have the required attribute
+                if (inputs[i].hasAttribute('required')) {
+                    if (inputs[i].value == '') {
+                        // found an empty field that is required
+                        // console.error('form not filled out.');
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+    </script>
+
+    <script type="text/javascript">
+        // parse form data and post with ajax
         function ajaxPost(event, form) {
             event.preventDefault();
 
-            var url = form.action;
-            var data = {
-                key: 'test',
-                key2: 'test2'
-            };
+            var offer_id = $('input[name=offer_id]').val(),
+                aff_id = $('input[name=aff_id]').val(),
+                file_id = $('input[name=file_id]').val(),
+                phone_area_code = $('input[name=bv-phone-area-code]').val(),
+                phone_prefix = $('input[name=bv-phone-prefix]').val(),
+                phone_line_number = $('input[name=bv-phone-line-number]').val(),
+                url = form.action,
+                data = {
+                    offer_id: offer_id,
+                    aff_id: aff_id,
+                    file_id: file_id,
+                    phone: phone_area_code + phone_prefix + phone_line_number
+                },
+                valid = false;
 
-            console.log(url);
-            console.log(data);
+            valid = validate(form);
 
-            $.ajax({
-                type: 'POST',
-                url: url,
-                data: data,
-                success: function(msg, data) {
-                    console.log(msg, data);
-                }
-            });
+            if (valid) {
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: data,
+                    fail: function(error) {
+                        // console.error(error);
+                    },
+                    success: function(data) {
+                        // console.log(data);
+                    }
+                });
+            }
         }
     </script>
 </body>
