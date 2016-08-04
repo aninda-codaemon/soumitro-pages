@@ -232,6 +232,15 @@
     </script>
 
     <script type="text/javascript">
+        function transformData(obj) {
+            var str = [];
+            for (var param in obj)
+                str.push(encodeURIComponent(param) + '=' + encodeURIComponent(obj[param]));
+            return str.join('&');
+        }
+    </script>
+
+    <script type="text/javascript">
         function validate(form) {
             // get all the inputs within the submitted form
             var inputs = form.getElementsByTagName('input');
@@ -255,7 +264,10 @@
         function ajaxPost(event, form) {
             event.preventDefault();
 
-            var offer_id = $('input[name=offer_id]').val(),
+            var async = true,
+            valid = false,
+                request = new XMLHttpRequest(),
+                offer_id = $('input[name=offer_id]').val(),
                 aff_id = $('input[name=aff_id]').val(),
                 file_id = $('input[name=file_id]').val(),
                 phone_area_code = $('input[name=bv-phone-area-code]').val(),
@@ -267,23 +279,51 @@
                     aff_id: aff_id,
                     file_id: file_id,
                     phone: phone_area_code + phone_prefix + phone_line_number
-                },
-                valid = false;
+                };
 
             valid = validate(form);
 
             if (valid) {
-                $.ajax({
-                    type: 'POST',
-                    url: url,
-                    data: data,
-                    fail: function(error) {
-                        // console.error(error);
-                    },
-                    success: function(data) {
-                        // console.log(data);
-                    }
-                });
+
+                request.onload = function() {
+                    var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
+                    var response = request.responseText; // Returned data, e.g., an HTML document.
+                }
+
+                // var queryParams = transformData(data);
+
+                request.open(form.method, url, async);
+                request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                request.send(data);
+
+                // $http({
+                //     method: 'POST',
+                //     url: url,
+                //     headers: {
+                //         'Content-Type': 'application/x-www-form-urlencoded'
+                //     },
+                //     transformRequest: function(obj) {
+                //         var str = [];
+                //         for (var param in obj)
+                //             str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[param]));
+                //         return str.join('&');
+                //     },
+                //     data: data
+                // }).success(function(response) {
+                //     // console.log(response);
+                // });
+
+                // $.ajax({
+                //     type: 'POST',
+                //     url: url,
+                //     data: data,
+                //     fail: function(error) {
+                //         // console.error(error);
+                //     },
+                //     success: function(data) {
+                //         // console.log(data);
+                //     }
+                // });
             }
         }
     </script>
