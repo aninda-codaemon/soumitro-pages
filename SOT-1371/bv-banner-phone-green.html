@@ -195,7 +195,7 @@
           <small class="bv-sub-headline">Lookup Owner Name, Address &amp; More</small>
         </h1>
         </div>
-        <form id="bvReversePhoneForm" class="bv-form" name="bv-reverse-phone-form" target="_top" action="http://jumptracker.com/aff_c?" onSubmit="ajaxPost(event, this)">
+        <form id="bvReversePhoneForm" class="bv-form" name="bv-reverse-phone-form" target="_top" method="POST" action="http://jumptracker.com/aff_c?" onSubmit="handleSubmit(event, this)">
             <input type="hidden" name="offer_id" value="67" />
             <input type="hidden" name="aff_id" value="2207" />
             <input type="hidden" name="file_id" value="001" />
@@ -241,7 +241,7 @@
     </script>
 
     <script type="text/javascript">
-        function validate(form) {
+        function validateForm(form) {
             // get all the inputs within the submitted form
             var inputs = form.getElementsByTagName('input');
 
@@ -260,12 +260,12 @@
     </script>
 
     <script type="text/javascript">
-        // parse form data and post with ajax
-        function ajaxPost(event, form) {
+        // parse form data and post to url
+        function handleSubmit(event, form) {
             event.preventDefault();
 
             var async = true,
-            valid = false,
+                valid = false,
                 request = new XMLHttpRequest(),
                 offer_id = $('input[name=offer_id]').val(),
                 aff_id = $('input[name=aff_id]').val(),
@@ -273,6 +273,7 @@
                 phone_area_code = $('input[name=bv-phone-area-code]').val(),
                 phone_prefix = $('input[name=bv-phone-prefix]').val(),
                 phone_line_number = $('input[name=bv-phone-line-number]').val(),
+                method = form.method,
                 url = form.action,
                 data = {
                     offer_id: offer_id,
@@ -281,10 +282,9 @@
                     phone: phone_area_code + phone_prefix + phone_line_number
                 };
 
-            valid = validate(form);
+            valid = validateForm(form);
 
             if (valid) {
-
                 request.onload = function() {
                     var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
                     var response = request.responseText; // Returned data, e.g., an HTML document.
@@ -292,38 +292,9 @@
 
                 // var queryParams = transformData(data);
 
-                request.open(form.method, url, async);
+                request.open(method, url, async);
                 request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                 request.send(data);
-
-                // $http({
-                //     method: 'POST',
-                //     url: url,
-                //     headers: {
-                //         'Content-Type': 'application/x-www-form-urlencoded'
-                //     },
-                //     transformRequest: function(obj) {
-                //         var str = [];
-                //         for (var param in obj)
-                //             str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[param]));
-                //         return str.join('&');
-                //     },
-                //     data: data
-                // }).success(function(response) {
-                //     // console.log(response);
-                // });
-
-                // $.ajax({
-                //     type: 'POST',
-                //     url: url,
-                //     data: data,
-                //     fail: function(error) {
-                //         // console.error(error);
-                //     },
-                //     success: function(data) {
-                //         // console.log(data);
-                //     }
-                // });
             }
         }
     </script>
