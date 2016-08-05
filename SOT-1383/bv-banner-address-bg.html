@@ -22,10 +22,15 @@
         .bv-banner-address {
             position: relative;
             width: 100%;
-            max-width: 300px;
+            max-width: 100%;
             overflow: hidden;
             margin: 0 auto;
             padding: 10px;
+            background-image: url(/img/bg.jpg);
+            background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.25) 25%, rgba(255, 255, 255, 1) 100%), url('/img/bg.jpg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
             background-color: #fff;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             line-height: 1.25;
@@ -34,9 +39,11 @@
 
         .bv-banner-header {
             position: relative;
+            max-width: 300px;
+            margin: 0 auto;
             margin-bottom: 5px;
             padding: 10px;
-            background-color: #e7e7e7;
+            background-color: transparent;
         }
 
         .bv-cta-title {
@@ -56,6 +63,8 @@
 
         .bv-banner-content {
             position: relative;
+            max-width: 300px;
+            margin: 0 auto;
         }
 
         .bv-input-group {
@@ -140,48 +149,42 @@
             .bv-banner-address {
                 max-width: 100%;
                 padding: 0;
+                background-image: url(/img/bg_lg.jpg);
+                background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.25) 25%, rgba(255, 255, 255, 0.75) 100%), url(/img/bg_lg.jpg);
             }
-            
             .bv-banner-header {
-                margin: 0;
-                padding-top: 5px;
-                padding-bottom: 5px;
+                max-width: 628px;
+                margin: 0 auto;
+                padding: 5px 0;
             }
-
             .bv-cta-title {
                 max-width: 628px;
                 margin: 0 auto;
             }
-
             .bv-cta-statement {
                 color: #75b648;
                 font-size: 24px;
                 font-weight: 500;
             }
-
             .bv-banner-content {
                 max-width: 628px;
                 margin: 0 auto;
                 padding: 10px;
             }
-
             .bv-input-group {
                 display: inline-block;
                 margin-bottom: 0;
                 vertical-align: middle;
             }
-
             .bv-input-group .bv-input-label {
                 font-size: 16px;
             }
-
             .bv-input-group .bv-input-field {
                 display: inline-block;
                 width: 230px;
                 vertical-align: middle;
                 line-height: 1.25;
             }
-
             .bv-submit-button {
                 display: inline-block;
                 width: auto;
@@ -189,7 +192,6 @@
                 vertical-align: middle;
                 line-height: 1.1;
             }
-
             .bv-logo-image {
                 position: absolute;
                 top: 8px;
@@ -242,7 +244,7 @@
                 <button type="submit" class="bv-submit-button">Start Search</button>
             </form>
 
-            <img class="bv-logo-image bv-hide-large" src="/img/logo.png" />
+            <img class="bv-logo-image bv-hide-large" src="/img/logo_wh.png" />
             <img class="bv-logo-image bv-hide-small" src="/img/logo_lg.png" />
         </section>
     </main>
