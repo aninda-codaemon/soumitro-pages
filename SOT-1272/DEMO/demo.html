@@ -17,14 +17,53 @@
 <script>
 //https://api.mapbox.com/styles/v1/beenverified/cilnvi7je005t9nkujb0fpxue.html?title=true&access_token=pk.eyJ1IjoiYmVlbnZlcmlmaWVkIiwiYSI6InBLR3UwVG8ifQ.tCCuBmKzRqNMGKIY2C1YOw#5/47.247991605711775/-117.56218387013132/0
 mapboxgl.accessToken = 'pk.eyJ1IjoiYmVlbnZlcmlmaWVkIiwiYSI6InBLR3UwVG8ifQ.tCCuBmKzRqNMGKIY2C1YOw';
+
+// map variables
+var style = 'mapbox://styles/beenverified/cilnvi7je005t9nkujb0fpxue',
+    center = [-97.92, 39.87], // lat long (center of U.S.A.)
+    pitch = 0, // pitch in degrees
+    bearing = 0, // bearing in degrees
+    zoom = 3.5; // map zoom
+
+// map config
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/beenverified/cilnvi7je005t9nkujb0fpxue',
-    center: [-73.5804, 45.534830],
-    pitch: 60, // pitch in degrees
-    bearing: 0, // bearing in degrees
-    zoom: 10
+    style: style,
+    center: center,
+    pitch: pitch,
+    bearing: bearing,
+    zoom: zoom
 });
+
+var newCenter = [-73.97, 40.73],
+    newZoom = 12,
+    newPitch = 60;
+
+flyTo(newCenter, newZoom, newPitch)
+
+// fly to location animation
+function flyTo(center, zoom, pitch) {
+    map.flyTo({
+        // These options control the ending camera position: centered at
+        // the target, at zoom level 9, and north up.
+        center: center,
+        zoom: zoom,
+        pitch: pitch,
+        bearing: 0,
+
+        // These options control the flight curve, making it move
+        // slowly and zoom out almost completely before starting
+        // to pan.
+        speed: 0.2, // make the flying slow
+        curve: 1, // change the speed at which it zooms out
+
+        // This can be any easing function: it takes a number between
+        // 0 and 1 and returns another number between 0 and 1.
+        easing: function (t) {
+            return t;
+        }
+    });
+};
 </script>
 
 </body>
