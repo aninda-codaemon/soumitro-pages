@@ -6,9 +6,9 @@
   var map;
 
   var circleOpts = {
-    color: 'red',
+    color: '#b10810',
     opacity: 1,
-    fillColor: 'red',
+    fillColor: '#b10810',
     fillOpacity: 0.25,
     weight: 2,
     size: 0.5,
