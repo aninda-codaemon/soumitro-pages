@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Phone Lookup</title>
+    <meta name="description" content="Reverse Phone Lookup at NumberGuru, your people search and background check answer: Find people and their addresses, arrest records, phone numbers and more on NumberGuru.com">
+  
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/webfonts.css">
+    <link rel="stylesheet" type="text/css" href="css/search-main.css?0715201601" media="screen">
+
+    <script src='//api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+    <link href='//api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
+
+
+    <!--modernizr-->
+    <script src="js/modernizr.custom.js"></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/img/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/icons/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/img/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/img/icons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/img/icons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/img/icons/manifest.json">
+    <link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg" color="#b10810">
+    <link rel="shortcut icon" href="/img/icons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="NumberGuru">
+    <meta name="application-name" content="NumberGuru">
+    <meta name="msapplication-TileColor" content="#b10810">
+    <meta name="msapplication-TileImage" content="/img/icons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/img/icons/browserconfig.xml">
+
+</head>
+
+<body data-next-page="<%= next_page %>">
+    <header>
+        <div class="container">
+          <a href="<%= flow_home_page %>">
+              <div class="logo"></div>
+          </a>
+        </div>
+    </header>
+    <div class="main">
+
+        <div id="map"></div>
+        <div class="modal-overlay"></div>
+
+        <div id="modal_container" class="container">
+            <div class="row partial_header no-show">
+                <div class="hidden-xs col-sm-1">
+                    <a href="<%= flow_home_page %>">
+                        <img class="" src="img/icon-undo.png">
+                    </a>
+                </div>
+                <div class="col-sm-10">
+                    <span class="search-state">Enter the last four digits to find this number</span>
+                    <br><span class="partial_location"></span>
+                </div>
+            </div>
+
+            <div class="row partial_modal no-show">
+              <div class="col-xs-12">
+                <form id="partial_number" class="form-inline">
+                  <div class="form-group">
+                    <label for="partial_area_code"></label>
+                    <input type="text" class="form-control" id="partial_area_code" name="partial_area_code" size="3" maxlength="3">
+                    <label for="partial_exchange_code">-</label>
+                    <input type="text" class="form-control" id="partial_exchange_code" name="partial_exchange_code" size="3" maxlength="3">
+                    <label for="partial_subscriber_num">-</label>
+                    <input type="text" class="form-control" id="partial_subscriber_num" name="partial_subscriber_num" size="4" maxlength="4">
+                  </div>
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <button type="submit" class="btnLookup btn btn-lg btn-block btn-success">Lookup Number
+                              <img src="img/arrowWhite.png">
+                          </button>
+                      </div>
+                  </div>
+                </form>
+              </div>
+            </div><!--END partial_modal-->
+
+            <div class="row searching_header no-show">
+                <div class="hidden-xs col-sm-1">
+                    <a href="#" class="onBack">
+                        <span class="leave-comment-chevron glyphicon glyphicon-chevron-left pull-right"></span>
+                    </a>
+                </div>
+                <div class="col-sm-10">
+                    <span class="search-state">Searching for</span>
+                    <span class="phone-number">909-319-7662</span>
+                </div>
+            </div><!--END searching_header-->
+
+            <div class="row initial_modal">
+                <div class="col-md-12">
+                    <div class="row">
+                        <h2 class="col-md-12 text-center">
+                            <strong>Processing Search...</strong>
+                        </h2>
+                    </div>
+                </div>
+                <!-- /.col12 -->
+                <div class="col-md-12 progress active">
+                    <div class="row progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <!-- /.progress -->
+
+                <!-- <div class="initializing0 init-single">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <div class="searching-img searching-img-bg-1">
+
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+
+                <div class="initializing1 init-single">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="searching-img searching-img-bg-1">
+                                <img class="visible-xs small-icon" src="img/small-loader.gif">
+                                <img class="hidden-xs" src="img/circular_loader_128_red.gif" alt="Loading">
+                            </div>
+                        </div>
+                        <div class="init-content col-sm-9">
+                            <h3 class="text-info">Initializing Search</h3>
+                            <p class="lead">Please wait while we detect
+                                <strong><span class="phone-number"></span></strong>'s geographical location.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--END initializing1-->
+
+                <div class="initializing2 init-single">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="searching-img searching-img-bg-2">
+                                <img class="visible-xs small-icon" src="img/small-white-check.png">
+                                <img class="hidden-xs" src="img/check_128.png" alt="Success">
+                            </div>
+                        </div>
+                        <div class="init-content col-sm-9">
+                            <h3 class="text-info">Success!</h3>
+                            <p class="lead">We have successfully determined
+                                <strong><span class="phone-number"></span></strong>'s carrier and geographical location.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--END initializing2-->
+
+                <div class="initializing3 init-single">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img id="carrier-tmobile" class="carrier-logo no-show" src="img/logo-tm.png" alt="T-mobile">
+                            <img id="carrier-att" class="carrier-logo no-show" src="img/logo-att.png" alt="AT&amp;T">
+                            <img id="carrier-sprint" class="carrier-logo no-show" src="img/Sprint-logo.png" alt="Sprint">
+                            <img id="carrier-verizon" class="carrier-logo no-show" src="img/logo-verizon.png" alt="Verizon">
+                            <img id="carrier-generic" class="carrier-logo no-show" src="img/logo-gen.png" alt="Carrier">
+                        </div>
+                        <div class="init-content col-sm-9">
+                            <h3 class="text-info">This number belongs to
+                                <span class="carrier-name"></span>
+                            </h3>
+                            <p class="lead">Please wait while we collect more data about
+                                <strong>
+                                    <span class="phone-number"></span>
+                                </strong>.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--END initializing3-->
+            </div>
+            <!-- END initial_modal -->
+
+            <div class="row generate_report_modal">
+                <div class="col-md-12 generating-result">
+                    <h2 class="row text-center">Generating Result...This might take some time.</h2>
+                    <div class="row">
+                        <div class="progress active">
+                            <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.generating result -->
+
+                <div class="col-md-12 generating-ready">
+                    <h2 class="row text-center">Your Report Is Now Ready For Download.</h2>
+                    <div class="row">
+                        <a href="<%= next_page %>" id="proceed-download" type="button" class="btnGenerate btn btn-lg btn-block btn-success">
+                            <span class="blink">Proceed To Download</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- /.gen ready -->
+
+                <div class="report">
+                    <table>
+                        <tr class="report-owners-name">
+                            <td class="title"><span class="hidden-xs">Owner's </span>Name</td>
+                            <td class="report-data"></td>
+                            <td>
+                                <img class="loading-check" src="img/loadingIcon.gif" width="32" height="32" alt="success">
+                            </td>
+                        </tr>
+                        <tr class="report-carrier">
+                            <td class="title">Carrier</td>
+                            <td class="report-data"></td>
+                            <td>
+                                <img class="loading-check" src="img/loadingIcon.gif" width="32" height="32" alt="success">
+                            </td>
+                        </tr>
+                        <tr class="report-line-type">
+                            <td class="title"><span class="hidden-xs">Line </span>Type</td>
+                            <td class="report-data"></td>
+                            <td>
+                                <img class="loading-check" src="img/loadingIcon.gif" width="32" height="32" alt="success">
+                            </td>
+                        </tr>
+                        <tr class="report-city">
+                            <td class="title">City</td>
+                            <td class="report-data"></td>
+                            <td>
+                                <img class="loading-check" src="img/loadingIcon.gif" width="32" height="32" alt="success">
+                            </td>
+                        </tr>
+                        <tr class="report-state">
+                            <td class="title">State</td>
+                            <td class="report-data"></td>
+                            <td>
+                                <img class="loading-check" src="img/loadingIcon.gif" width="32" height="32" alt="success">
+                            </td>
+                        </tr>
+                        <tr class="report-zip-code">
+                            <td class="title">Zip<span class="hidden-xs"> Code</span></td>
+                            <td class="report-data"></td>
+                            <td>
+                                <img class="loading-check" src="img/loadingIcon.gif" width="32" height="32" alt="success">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--END report-->
+
+            </div>
+            <!--END generate_report_modal-->
+
+            <div class="row personal_info_modal">
+                <div class="row">
+                    <div class="hidden-xs col-sm-2 col-sm-offet-1">
+                        <img class="img-responsive" src="img/guru_found.png" alt="subject found">
+                    </div>
+                    <div class="col-sm-8">
+                        <h2 class="modal-header text-center">
+                            <strong>
+                                <span class="text-info">Great News! </span>Number Located</strong>
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="personal-info-form-wrapper">
+                    <div class="personal_info_form">
+                        <form>
+                            <div class="row snippet-wrapper">
+                                <div class="col-sm-6 col-sm-push-6 profile-snippet">
+                                    <p class="row profile-snippet-header">
+                                        <strong>Create an account to access your report</strong>
+                                    </p>
+                                    <div class="row hidden-xs">
+                                        <div class="col-sm-4">
+                                            <img src="img/user-photo.png" class="img-responsive" alt="profile">
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <ul class="profile-snippet-list">
+                                                <li>Owner's Name</li>
+                                                <li>Carrier</li>
+                                                <li>Line Type</li>
+                                                <li>Location</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-sm-pull-6">
+                                    <div class="form-group">
+                                        <label id="account[first_name]_error" class="alert alert-danger error" generated="true" for="first_name">Please enter your first name.</label>
+                                        <input id="first_name" class="form-control input-lg" type="text" placeholder="First Name" name="account[first_name]">
+                                    </div>
+                                    <div class="form-group">
+                                        <label id="account[last_name]_error" class="alert alert-danger error rightCollumn" generated="true" for="last_name">Please enter your last name.</label>
+                                        <input id="last_name" class="form-control input-lg" type="text" placeholder="Last Name" name="account[last_name]">
+                                    </div>
+                                    <div class="form-group">
+                                        <label id="user[email]_error" class="alert alert-danger error" generated="true" for="first_name">Please enter your email address.</label>
+                                        <input id="email" class="form-control input-lg" type="text" placeholder="Email" name="user[email]">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button type="submit" class="btnGenerate btn btn-lg btn-block">Generate Report
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="col-sm-12 terms-text">
+                                <p class="tos-text" style="padding-top: 14px;padding-left: 32px;padding-right: 28px;font-size: 12px;">By clicking "Generate Report" you represent you are over 18 years of age and have agreed to our <a href="https://www.numberguru.com/terms-of-service/" target="_blank">Terms of Service</a> and <a href="https://www.numberguru.com/privacy-policy/" target="_blank">Privacy Policy</a> and you agree to receive email from NumberGuru.com.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.personal info form -->
+                  <!-- new form for logging in -->
+                  <form class="form-horizontal" action="https://www.numberguru.com/f/login" id="login-form" data-fr-bind="bv_searchData" method="get">
+                    <fieldset>
+                      <input id="record_search_phone_number" name="record_search[phone_number]" type="hidden" value="{{phoneNumber}}">
+                      <h6 class="create-login" style="text-align:center;">Already a NumberGuru member? <button class="btn btn-link btn-xs" id="login-redirect" type="submit">Click here to login</button></h6>
+                    </fieldset>
+                  </form>
+                  <!-- end new form for logging in -->
+                </div>
+                <!-- /.personal-info-form-wrapper -->
+            </div>
+            <!-- /.personal info modal -->
+
+            <div class="row notFound">
+                <div class="row">
+                    <div class="hidden-xs col-sm-2">
+                        <img src="img/sad-guru.png" class="img-responsive" alt="Not Found">
+                    </div>
+                    <div class="col-sm-8">
+                        <h2 class="col-md-12 text-center">
+                            <strong>Oops!</strong>
+                        </h2>
+                        <p class="text-center lead">The Guru could not find
+                            <span class="phone-number"></span> in our database.</p>
+                    </div>
+                    <!-- <p>But don't worry!<br>You can do <span>unlimited</span> phone number lookups!</p> -->
+                </div>
+                <div class="row modal-body">
+                    <p class="text-center">Please make sure you entered the number correctly</p>
+                    <div class="col-md-6 col-md-offset-3">
+                        <a href="<%= flow_home_page %>" class="btn btn-lg btn-block btn-success">
+                            <img src="img/icon-undo.png">Search Again
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- modal_container -->
+
+        <div class="locating">Locating...</div>
+
+        <div class="container" style="position:relative;">
+            <div class="row">
+                <div class="secure col-lg-12">
+                    <img class="secure-img pull-left" src="img/lock_red.png" alt="secure">
+                    <p class="secure-header">This search session is secured</p>
+                    <p class="hidden-xs">NumberGuru deploys strategies including Secure 256-bit SSL technology, to keep your personal information and payment data from unauthorized 3rd parties.</p>
+                </div>
+                <!--END secure-->
+            </div>
+        </div>
+    </div>
+    <!-- /.main -->
+
+    <!--javascripts-->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/placeholders.min.js"></script>
+    <script type="text/javascript" src="js/amplify.store.min.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/rafPoly.js"></script>
+    <script type="text/javascript" src="js/mapAnimation.js"></script>
+    <script type="text/javascript" src="js/search.js?t=2"></script>
+  
+    <!-- framerida's frontend magic -->
+    <script src="js/handlebars.min.js"></script>
+    <script src="js/framerida.helpers.js"></script>
+    <script src="js/framerida.js"></script>
+    <!-- <script src="js/placeholders.min.js"></script> -->
+    <script src="js/flow.js"></script>
+    <script src="js/runner.js?t=2"></script>
+
+</body>
+
+</html>
