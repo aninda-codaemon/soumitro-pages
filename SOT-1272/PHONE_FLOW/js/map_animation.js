@@ -98,7 +98,7 @@
   //   zoom: 12
   // };
 
-  var flyToLocation = function (location) {
+  var flyToLocation = function (map, location) {
       map.flyTo({
           center: location, // location of camera after animation ends
           zoom: 12, // zoom of map after animation ends
@@ -119,7 +119,8 @@
       $('.modal-overlay').fadeOut();
       $locating.hide();
       targetLocation = location;
-      map.panTo(targetLocation);
+      // map.panTo(targetLocation);
+      flyToLocation(map, targetLocation);
       circle.setLatLng(targetLocation);
       circle.addTo(map);
       nextTask();
