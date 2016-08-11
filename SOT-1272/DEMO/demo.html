@@ -23,9 +23,9 @@ var style = 'mapbox://styles/beenverified/cilnvi7je005t9nkujb0fpxue',
     center = [-97.92, 39.87], // lat long (center of U.S.A.)
     pitch = 0, // pitch in degrees
     bearing = 0, // bearing in degrees
-    zoom = 3.5; // map zoom
+    zoom = 2; // map zoom
 
-// map config
+// init map
 var map = new mapboxgl.Map({
     container: 'map',
     style: style,
@@ -35,33 +35,25 @@ var map = new mapboxgl.Map({
     zoom: zoom
 });
 
-var newCenter = [-73.97, 40.73],
-    newZoom = 12,
-    newPitch = 60;
+// phone location
+var phoneLocation = {
+  center: [-73.97, 40.73],
+  pitch: 60,
+  bearing: 15,
+  zoom: 12
+}
 
-flyTo(newCenter, newZoom, newPitch)
+flyTo(phoneLocation)
 
 // fly to location animation
-function flyTo(center, zoom, pitch) {
+function flyTo(location) {
     map.flyTo({
-        // These options control the ending camera position: centered at
-        // the target, at zoom level 9, and north up.
-        center: center,
-        zoom: zoom,
-        pitch: pitch,
-        bearing: 0,
-
-        // These options control the flight curve, making it move
-        // slowly and zoom out almost completely before starting
-        // to pan.
-        speed: 0.2, // make the flying slow
-        curve: 1, // change the speed at which it zooms out
-
-        // This can be any easing function: it takes a number between
-        // 0 and 1 and returns another number between 0 and 1.
-        easing: function (t) {
-            return t;
-        }
+        center: location.center, // location of camera after animation ends
+        zoom: location.zoom, // zoom of map after animation ends
+        pitch: location.pitch, // pitch of map after animtion ends
+        bearing: location.bearing, // bearing of map after animation ends
+        speed: 0.25, // speed of fly animation
+        curve: 0.75 // speed of zoom animation
     });
 };
 </script>
