@@ -62,6 +62,7 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
     var $locating = $('.locating-text'),
         top = $locating.height() / 2,
         left = $locating.width() / 2;
+        
     $locating.css('margin', '-' + top + 'px 0 0 -' + left + 'px');
   };
 

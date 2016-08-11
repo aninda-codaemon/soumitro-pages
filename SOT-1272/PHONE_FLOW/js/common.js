@@ -10,6 +10,10 @@
   var blueCheckUrl = 'http://frcdn.beenverified.com/assets/img/d1c73bfcb2bc605825980a9e2095e758.png';
   //var blueCheckUrl = 'https://cdn1.beenverified.com/srg/Reverse-Phone/landing/img/blueCheck_32.png';
 
+  var mapAccessToken = 'pk.eyJ1IjoiYmVlbnZlcmlmaWVkIiwiYSI6InBLR3UwVG8ifQ.tCCuBmKzRqNMGKIY2C1YOw'; // mapbox access token
+  var mapStyle = 'mapbox://styles/beenverified/cilnvi7je005t9nkujb0fpxue'; // link to number guru mapbox style
+  var mapContainer = 'map'; // id of map container
+
   var mapOpts = {
     dragging: false,
     touchZoom: false,
@@ -18,8 +22,19 @@
     boxZoom: false,
     keyboard: false,
     zoomControl: false,
-    startZoom: 4,
+    startZoom: 2,
     attributionControl: false
+  };
+
+  // map options
+  var mapOptions = {
+    container: mapContainer,
+    style: mapStyle,
+    center: [-97.92, 39.87], // center of US
+    pitch: 0, // default pitch
+    bearing: 0, // default bearing
+    zoom: 2, // default zoom
+    interactive: false // disable user interactivity
   };
 
   var leaflet = {
