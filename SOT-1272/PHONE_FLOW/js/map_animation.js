@@ -67,8 +67,8 @@
   //   }
   // ];
 
-  // var finishedCb = function () {};
-  //
+  var finishedCb = function () {};
+
   // var onCompletion = function () {
   //   circle.setRadius(circleOpts.radius);
   //   window.setTimeout(function () {
@@ -109,7 +109,7 @@
 
   var run = function (mapInst, location, delay, cb) {
     map = mapInst;
-    // finishedCb = cb;
+    finishedCb = cb;
     $(".initial_modal").fadeOut();
     var $locating = $('.locating');
     $locating.show();
