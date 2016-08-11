@@ -129,7 +129,7 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
   // };
 
   var createMap = function () {
-    mapboxgl.accessToken = bvRPL.mapbox.accessToken;
+    mapboxgl.accessToken = bvRPL.mapbox.token;
     var map = new mapboxgl.Map(bvRPL.mapbox.options);
     return map;
   };

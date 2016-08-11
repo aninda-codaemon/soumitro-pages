@@ -45,7 +45,7 @@
 
   var mapbox = {
     options: mapOptions,
-    accesToken: mapAccessToken
+    token: mapAccessToken
   };
 
   var leaflet = {

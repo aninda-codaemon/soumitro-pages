@@ -98,16 +98,16 @@
   //   zoom: 12
   // };
 
-  var flyToLocation = function (map, location) {
-      map.flyTo({
-          center: location, // location of camera after animation ends
-          zoom: 12, // zoom of map after animation ends
-          pitch: 60, // pitch of map after animtion ends
-          bearing: 15, // bearing of map after animation ends
-          speed: 0.25, // speed of fly animation
-          curve: 0.75 // speed of zoom animation
-      });
-  };
+  // var flyToLocation = function (map, location) {
+  //     map.flyTo({
+  //         center: location, // location of camera after animation ends
+  //         zoom: 12, // zoom of map after animation ends
+  //         pitch: 60, // pitch of map after animtion ends
+  //         bearing: 15, // bearing of map after animation ends
+  //         speed: 0.25, // speed of fly animation
+  //         curve: 0.75 // speed of zoom animation
+  //     });
+  // };
 
   var run = function (mapInst, location, delay, cb) {
     map = mapInst;
@@ -120,7 +120,14 @@
       $locating.hide();
       targetLocation = location;
       // map.panTo(targetLocation);
-      flyToLocation(map, targetLocation);
+      map.flyTo({
+          center: targetLocation, // location of camera after animation ends
+          zoom: 12, // zoom of map after animation ends
+          pitch: 60, // pitch of map after animtion ends
+          bearing: 15, // bearing of map after animation ends
+          speed: 0.25, // speed of fly animation
+          curve: 0.75 // speed of zoom animation
+      });
       circle.setLatLng(targetLocation);
       circle.addTo(map);
       nextTask();
