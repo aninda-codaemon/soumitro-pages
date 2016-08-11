@@ -62,7 +62,7 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
     var $locating = $('.locating-text'),
         top = $locating.height() / 2,
         left = $locating.width() / 2;
-        
+
     $locating.css('margin', '-' + top + 'px 0 0 -' + left + 'px');
   };
 
@@ -122,9 +122,15 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
     usa: [38.505191, -97.734375]
   };
 
+  // var createMap = function () {
+  //   var map = L.mapbox.map('map', 'beenverified.i3k1i3cc', bvRPL.leaflet.mapOpts);
+  //   map.setView(locations.usa, 5);
+  //   return map;
+  // };
+
   var createMap = function () {
-    var map = L.mapbox.map('map', 'beenverified.i3k1i3cc', bvRPL.leaflet.mapOpts);
-    map.setView(locations.usa, 5);
+    mapboxgl.accessToken = bvRPL.mapbox.accessToken;
+    var map = new mapboxgl.Map(bvRPL.mapbox.options);
     return map;
   };
 

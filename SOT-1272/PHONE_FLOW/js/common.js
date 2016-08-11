@@ -1,5 +1,7 @@
 (function () {
 
+  // @TODO: remove unused code once new code is tested
+
   var url = 'https://www.beenverified.com/hk/dd/free/phoneinfo?&exporttype=jsonp';
   var subCheckUrl = 'https://www.beenverified.com/hk/dd/premium/phone/reverseteaser?exporttype=jsonp';
   var mapNum = 60352;
@@ -37,6 +39,15 @@
     interactive: false // disable user interactivity
   };
 
+  // init this in search.js using global bvRPL
+  // mapboxgl.accessToken = mapAccessToken;
+  // var map = new mapboxgl.Map(mapOptions);
+
+  var mapbox = {
+    options: mapOptions,
+    accesToken: mapAccessToken
+  };
+
   var leaflet = {
     mapOpts: mapOpts,
     tilesUrl: tilesUrl
@@ -55,6 +66,7 @@
   window.bvRPL = {
     config: config,
     leaflet: leaflet,
+    mapbox: mapbox
   };
 
 } ());

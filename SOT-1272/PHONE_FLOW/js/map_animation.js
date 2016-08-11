@@ -91,6 +91,24 @@
     }
   };
 
+  // var phoneLocation = {
+  //   center: [-73.97, 40.73],
+  //   pitch: 60,
+  //   bearing: 15,
+  //   zoom: 12
+  // };
+
+  var flyToLocation = function (location) {
+      map.flyTo({
+          center: location, // location of camera after animation ends
+          zoom: 12, // zoom of map after animation ends
+          pitch: 60, // pitch of map after animtion ends
+          bearing: 15, // bearing of map after animation ends
+          speed: 0.25, // speed of fly animation
+          curve: 0.75 // speed of zoom animation
+      });
+  };
+
   var run = function (mapInst, location, delay, cb) {
     map = mapInst;
     finishedCb = cb;
