@@ -38,10 +38,6 @@
     interactive: false // disable user interactivity
   };
 
-  // init this in search.js using global bvRPL
-  // mapboxgl.accessToken = mapAccessToken;
-  // var map = new mapboxgl.Map(mapOptions);
-
   var mapbox = {
     options: mapOptions,
     token: mapAccessToken

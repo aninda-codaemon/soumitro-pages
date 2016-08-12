@@ -128,7 +128,7 @@
       });
       // circle.setLatLng(targetLocation);
       // circle.addTo(map);
-      // nextTask();
+      nextTask();
     }, delay);
   };
 

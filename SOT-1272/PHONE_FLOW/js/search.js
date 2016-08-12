@@ -601,8 +601,10 @@ jQuery.validator.addMethod("exactlength", function(value, element, param) {
           latlng = [];
 
       if (success && !$.isEmptyObject(data)) {
-        latlng.push(data.latitude);
+
+        // longitude needs to be first in array (for mapbox-gl)
         latlng.push(data.longitude);
+        latlng.push(data.latitude);
 
         searchData = prepSearchData(data);
 
