@@ -15,7 +15,7 @@
     center: [-97.92, 39.87], // center of US
     pitch: 0, // default pitch
     bearing: 0, // default bearing
-    zoom: 3, // default zoom
+    zoom: 4, // default zoom
     interactive: false // disable user interactivity
   };
 

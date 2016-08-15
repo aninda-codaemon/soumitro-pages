@@ -55,7 +55,13 @@ This is the primary javascript file that has functions and methods pertaining to
 	* list items in modal are looped once (using index of item and duration)
 	* modal elements are reset and next modal is loaded when duration times out
 * captchaModal() - function binded to the fifth (5th) modal{} in modals[]
+	* trackNL tracks when modal is viewed
+	* rest of functionality is handled inside runner.js (need to update this)
 * whoopsAccountNeeded() - function binded to the seventh (7th) modal{} in modals[]
+	* trackNL tracks when modal is viewed
+	* validateLeadForm() - validates the lead form using jquery validate
+		* form selector: #signup-modal-form
+		* form fields: account[first_name], account[last_name], user[email]
 * generatingReport() - function binded to the sixth (6th) modal{} in modals[]
 * fcraConfirmation() - function binded to the eighth (8th) modal{} in modals[]
 * scanningSocialMedia() - function binded to the second (2nd) modal{} in modals[]
@@ -77,7 +83,7 @@ This is the primary javascript file that has functions and methods pertaining to
 	* resetModalFlow()
 	* showNextModal()
 * window.showNextModal = showNextModal
-	* not too sure why but it binds local var showNextModal to global showNextModal
+	* not too sure why but it sets global showNextModal to local showNextModal
 * body on click a.btn-block => add class visitied to (this) selector
 	* this is the code Alex added to update button style of previously clicked Access Report buttons
 

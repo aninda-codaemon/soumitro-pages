@@ -23,7 +23,7 @@
 
       window.setTimeout(function () {
         finishedCb();
-      }, 15000); // 15s until next modal is shown
+      }, 25000); // 25s until next modal is shown
 
     }, delay);
   };
