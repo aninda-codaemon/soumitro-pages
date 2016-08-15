@@ -28,7 +28,7 @@ This is the primary javascript file that has functions and methods pertaining to
 	* transitionDelay - set how long to wait until next modal is shown (optional)
 	* splits [] - an array to split duration time (replace duration with this if you want to have more than one progress bar - only the first modal uses this so far)
 	* animate - binds the modal function (what the modal actually does programatically) to the modal object
-* initializingSearchProgress() - function binded to the first (1st) modal{} in modals[]
+* initializingSearchProgress() - function binded to the first (1st) modal {} in modals []
 	* trackNL tracks when modal is viewed
 	* variables are defined, an array of progress bars (jquery selectors), randomizes durations (lodash)
 		* $progressBars[]
@@ -36,10 +36,19 @@ This is the primary javascript file that has functions and methods pertaining to
 		* splits (_.shuffle(self.splits))
 		* animations[]
 	* a condition checks if user has mobile device and speeds up the duration
-	* a loop defines animations using each split duration and pushes them into animations[]
+	* a loop defines animations using each split duration and pushes them into animations []
 		* this can be refactored into it's own function (splitDurationAnimations or something similar)
     * $.when.apply(self, animations) - applies the animations to the modal (triggers when modal is active) and then transitions to the next modal in the flow using showNextModal() - adds delay if transitionDelay exists. - this can also be made into a universal function
-* reportReadyForDownload() - function binded to the third (3rd) modal{} in modals[]
+* scanningSocialMedia() - function binded to the second (2nd) modal {} in modals []
+	* trackNL tracks when modal is viewed
+	* variables are defined
+		* self (this)
+		* duration (defined in modal {} in modals [])
+			* if mobile - duration is decreased
+	   * socialPromise - animation on progress bar
+	* waits for socialPromise animation to finish before showing element: .complete
+	setInterval function - default loading state of icons changes to various social media icons.		* once all icons are displayed (not in their default loading state) - showNextModal() is called
+* reportReadyForDownload() - function binded to the third (3rd) modal {} in modals []
 	* trackNL tracks when modal is viewed
 	* variables are defined (jquery selectors)
 	* reset image animations
@@ -47,25 +56,32 @@ This is the primary javascript file that has functions and methods pertaining to
 	* item click event - shows next modal
 	* define duration (lower duration if mobile)
 	* setInterval function - icons loading animation, enables continue button after duration
-* loggingIn() - function binded to the fouth (4th) modal{} in modals[]
+* loggingIn() - function binded to the fouth (4th) modal {} in modals []
 	* trackNL tracks when modal is viewed
 	* variables are defined (jquery selectors) 
 	* duration speed updated got mobile
 	* progress bar is animated if modal is active
 	* list items in modal are looped once (using index of item and duration)
 	* modal elements are reset and next modal is loaded when duration times out
-* captchaModal() - function binded to the fifth (5th) modal{} in modals[]
+* captchaModal() - function binded to the fifth (5th) modal {} in modals []
 	* trackNL tracks when modal is viewed
 	* rest of functionality is handled inside runner.js (need to update this)
-* whoopsAccountNeeded() - function binded to the seventh (7th) modal{} in modals[]
+* generatingReport() - function binded to the sixth (6th) modal {} in modals []
+	* trackNL tracks when modal is viewed
+	* checks if modalCtx is defined and  fetches extra teaser data:
+		* getExtraTeaserData(modalCtx)
+* whoopsAccountNeeded() - function binded to the seventh (7th) modal {} in modals []
 	* trackNL tracks when modal is viewed
 	* validateLeadForm() - validates the lead form using jquery validate
 		* form selector: #signup-modal-form
 		* form fields: account[first_name], account[last_name], user[email]
-* generatingReport() - function binded to the sixth (6th) modal{} in modals[]
-* fcraConfirmation() - function binded to the eighth (8th) modal{} in modals[]
-* scanningSocialMedia() - function binded to the second (2nd) modal{} in modals[]
-* foundDataModal() - function binded to the ninth (9th) modal{} in modals[]
+* fcraConfirmation() - function binded to the eighth (8th) modal {} in modals []
+	* trackNL tracks when modal is viewed
+	* fcraConfirm() - validates the fcra form using jquery validate
+		* form selector: #fcra-confirm
+		* form fields: fcraCheckbox2
+		* showNextModal() on form submit
+* foundDataModal() - function binded to the ninth (9th) modal {} in modals []
 * scanningSocialMediaReset()
 * resetModalFlow()
 * event handlers (not functions - jquery events)
