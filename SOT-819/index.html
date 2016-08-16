@@ -383,12 +383,14 @@
                                 <button id="create_button" class="btn btn-block btn-lg btn-success" type="submit">View Report</button>
                             </div>
                         </div>
+
                         <div id="spinner" class="hidden text-center">
                             <img class="spinner-inner" src="img/ajax-loader.gif" alt="Loading...">
                         </div>
                     </div>
 
                 </form>
+
             </div>
 
             <div class="col-sm-5 hidden-xs">
@@ -743,6 +745,17 @@
   </pre>
 
     <!-- SCRIPTS -->
+
+    <script>
+        // init paypal checkout button 
+        window.paypalCheckoutReady = function() {
+            paypal.checkout.setup('MERCHANT_ID', {
+                container: 'subscribe_form', // id of paypal form container
+                environment: 'sandbox' // change to prod env
+            });
+
+        }
+    </script>
 
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
