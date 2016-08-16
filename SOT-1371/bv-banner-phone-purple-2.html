@@ -205,9 +205,9 @@
         </h1>
         </div>
         <form id="bvReversePhoneForm" class="bv-form" name="bv-reverse-phone-form" target="_top" method="POST" action="http://jumptracker.com/aff_c?" onSubmit="handleSubmit(event, this)">
-            <input type="hidden" name="offer_id" value="xxx" />
-            <input type="hidden" name="aff_id" value="xxxx" />
-            <input type="hidden" name="file_id" value="xxx" />
+            <input type="hidden" name="offer_id" value="67" />
+            <input type="hidden" name="aff_id" value="2207" />
+            <input type="hidden" name="file_id" value="003" />
 
             <div class="bv-form-group">
                 <span class="bv-input-label">(</span>
@@ -266,20 +266,15 @@
     </script>
 
     <script type="text/javascript">
-        // parse form data and post to url
+        // parse form data, validate form, and submit form
         function handleSubmit(event, form) {
-            event.preventDefault();
-
-            var async = true,
-                valid = false,
-                request = new XMLHttpRequest(),
+            var valid = false,
                 offer_id = document.querySelector('[name="offer_id"]').value,
                 aff_id = document.querySelector('[name="aff_id"]').value,
                 file_id = document.querySelector('[name="file_id"]').value,
                 phone_area_code = document.querySelector('[name="bv-phone-area-code"]').value,
                 phone_prefix = document.querySelector('[name="bv-phone-prefix"]').value,
                 phone_line_number = document.querySelector('[name="bv-phone-line-number"]').value,
-                method = form.method,
                 url = form.action,
                 data = {
                     offer_id: offer_id,
@@ -288,19 +283,18 @@
                     phone: phone_area_code + phone_prefix + phone_line_number
                 };
 
+            // validate form
             valid = validateForm(form);
 
             if (valid) {
-                request.onload = function() {
-                    var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
-                    var response = request.responseText; // Returned data, e.g., an HTML document.
-                }
+                // parse form data (create phone number param)
+                var parsedParams = transformData(data);
 
-                // var queryParams = transformData(data);
-
-                request.open(method, url, async);
-                request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                request.send(data);
+                // update form action with parsed params
+                form.action = url + parsedParams;
+            } else {
+                // prevent form from submitting if not valid
+                return false;
             }
         }
     </script>
