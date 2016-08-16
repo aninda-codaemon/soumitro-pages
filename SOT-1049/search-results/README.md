@@ -12,7 +12,7 @@
 
 This is the primary javascript file that has functions and methods pertaining to the modal flow in the search-results page.
 
-#### Code Outline (+ Notes)
+#### Code Outline (notes/comments)
 
 * checkMobile() - checks to see if viewing site from a mobile device - returns a boolean (true/false) named check
 * trackNL(event, props) - a function used to track events - has two (2) methods to pass:
@@ -47,7 +47,8 @@ This is the primary javascript file that has functions and methods pertaining to
 			* if mobile - duration is decreased
 	   * socialPromise - animation on progress bar
 	* waits for socialPromise animation to finish before showing element: .complete
-	setInterval function - default loading state of icons changes to various social media icons.		* once all icons are displayed (not in their default loading state) - showNextModal() is called
+	setInterval function - default loading state of icons changes to various social media icons
+		* once all icons are displayed (not in their default loading state) - showNextModal() is called
 * reportReadyForDownload() - function binded to the third (3rd) modal {} in modals []
 	* trackNL tracks when modal is viewed
 	* variables are defined (jquery selectors)
@@ -82,6 +83,8 @@ This is the primary javascript file that has functions and methods pertaining to
 		* form fields: fcraCheckbox2
 		* showNextModal() on form submit
 * foundDataModal() - function binded to the ninth (9th) modal {} in modals []
+	* trackNL tracks when modal is viewed
+	* click event binded to `.data-modal-confirm` redirects to the next page (subscribe) after a 300ms timeout
 * scanningSocialMediaReset()
 * resetModalFlow()
 * event handlers (not functions - jquery events)
