@@ -215,7 +215,7 @@
     Cookie.create("lastVisit", Date.now(), 30);
     trackNL('lastVisit Cookie Set');
     //amplify.store("lastVisit", Date.now());
-  }
+  };
 
   var initialize = function () {
     verifySeal();
