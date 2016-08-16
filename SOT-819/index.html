@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Subscribe | BeenVerified.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+  <meta name="format-detection" content="telephone=no"/>
   <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
   <link type="text/css" href="css/pretty.css" rel="stylesheet">
 
@@ -323,9 +324,7 @@
                   </div>
                   <div class="col-xs-6 col-sm-4 inspectlet-sensitive">
                     <select id="credit_card_expiration_date_1i" name="credit_card[expiration_date(1i)]" class="form-control form-control-second">
-                      <option selected value="2014">2014</option>
-                      <option value="2015">2015</option>
-                      <option value="2016">2016</option>
+                      <option selected value="2016">2016</option>
                       <option value="2017">2017</option>
                       <option value="2018">2018</option>
                       <option value="2019">2019</option>
@@ -877,18 +876,18 @@
   <!-- /#iModal-trial -->
 
   <pre id="subscribe_bounce_text" data-sub-bounce-url="<%= next_page %>" class="hide">
-WAIT: WANT A SPECIAL LIMITED TIME OFFER?
+    WAIT: WANT A SPECIAL LIMITED TIME OFFER?
 
-*************** CONGRATULATIONS ***************
+    *************** CONGRATULATIONS ***************
 
-YOU'VE BEEN SELECTED FOR A LIMITED TIME OFFER!
+    YOU'VE BEEN SELECTED FOR A LIMITED TIME OFFER!
 
-Stay on this page to take advantage of our special promotional offer.
+    Stay on this page to take advantage of our special promotional offer.
 
 
-Just click "Cancel" or "Stay On Page" to see your special offer.
+    Just click "Cancel" or "Stay On Page" to see your special offer.
 
-*************** CONGRATULATIONS ***************
+    *************** CONGRATULATIONS ***************
   </pre>
 
   <!-- SCRIPTS -->
@@ -899,6 +898,7 @@ Just click "Cancel" or "Stay On Page" to see your special offer.
   <script src="js/jquery.validate.js"></script>
   <script src="js/jquery.validate.creditcard2.pack-1.0.0.js"></script>
 
+  <script src="//www.paypalobjects.com/api/checkout.js" async></script>
   <script src="js/check_cc.js"></script>
   <script src="js/utility.js"></script>
   <script src="js/cookie.js"></script>
@@ -907,7 +907,6 @@ Just click "Cancel" or "Stay On Page" to see your special offer.
 
   <script src="js/amplify.store.min.js"></script>
   <script src="js/lodash.min.js"></script>
-  <script src="js/braintree.min.js"></script>
   <script src="js/handlebars.min.js"></script>
   <script src="js/framerida.helpers.js"></script>
   <script src="js/framerida.js"></script>

@@ -74,18 +74,20 @@ This is the primary javascript file that has functions and methods pertaining to
 * whoopsAccountNeeded() - function binded to the seventh (7th) modal {} in modals []
 	* trackNL tracks when modal is viewed
 	* validateLeadForm() - validates the lead form using jquery validate
-		* form selector: #signup-modal-form
-		* form fields: account[first_name], account[last_name], user[email]
+		* form selector: `#signup-modal-form`
+		* form fields: `account[first_name], account[last_name], user[email]`
 * fcraConfirmation() - function binded to the eighth (8th) modal {} in modals []
 	* trackNL tracks when modal is viewed
 	* fcraConfirm() - validates the fcra form using jquery validate
-		* form selector: #fcra-confirm
-		* form fields: fcraCheckbox2
+		* form selector: `#fcra-confirm`
+		* form fields: `fcraCheckbox2`
 		* showNextModal() on form submit
 * foundDataModal() - function binded to the ninth (9th) modal {} in modals []
 	* trackNL tracks when modal is viewed
 	* click event binded to `.data-modal-confirm` redirects to the next page (subscribe) after a 300ms timeout
 * scanningSocialMediaReset()
+	* resets the social media icons to their default states (opacity 1)
+	* icon selector: `#social-media-groups li.loading`
 * resetModalFlow()
 * event handlers (not functions - jquery events)
 	* body on click close => resetModalFlow()
