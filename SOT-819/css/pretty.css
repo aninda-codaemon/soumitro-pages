@@ -8,6 +8,16 @@
 	display: none;
 }
 
+.paypal-button-widget {
+  display: none;
+}
+
+.paypal-button-widget .paypal-button {
+  display: block;
+  margin: 0 auto;
+  outline: 0;
+}
+
 #iModal-dismiss {
   margin-top: 12px;
   display: inline-block;
@@ -550,7 +560,7 @@ footer a {
 #iModal-trial .modal-content {
 	background: #fff;
 	border: 6px solid #FACB1B;
-	max-width: 598px;	
+	max-width: 598px;
 	max-height: 414px;
 	margin: auto;
 }

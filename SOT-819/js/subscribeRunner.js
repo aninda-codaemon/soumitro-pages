@@ -308,6 +308,7 @@ var BVGetQueryVariable = function (variable) {
  * bvpp - when present, indicates a paypal redirect
  * bvppcanc - when present, it implies that a paypal error ocurred.
  */
+
 ;(function (w, $, _) {
 
   var BV_PAYPAL_PREFLIGHT_URL = w.BV_PAYPAL_PREFLIGHT_URL || '/internal/api/signup_preflight.json',
@@ -928,7 +929,7 @@ var BVGetQueryVariable = function (variable) {
       $($planRows[0]).prop('checked', true);
     }
 
-    var originalButtonText = $('#create_button').html();
+    // var originalButtonText = $('#create_button').html();
 
     $('#paypal-radio').on('click', function () {
         isPaypalSelected = true;
@@ -938,7 +939,9 @@ var BVGetQueryVariable = function (variable) {
         paymentProcessor = new PaypalPaymentProcessor();
         $('.cc-wrapper').slideUp();
         $('#reports-anonymous').slideUp();
-        $('#create_button').html('Proceed to PayPal');
+        //$('#create_button').html('Proceed to PayPal');
+        $('.submit-btn-wrapper').hide();
+        $('.paypal-button-widget').show();
     });
 
     $('#credit-radio').on('click', function () {
@@ -948,7 +951,9 @@ var BVGetQueryVariable = function (variable) {
         paymentProcessor = new VerifiPaymentProcessor();
         $('.cc-wrapper').slideDown();
         $('#reports-anonymous').slideDown();
-        $('#create_button').html(originalButtonText);
+        //$('#create_button').html(originalButtonText);
+        $('.paypal-button-widget').hide();
+        $('.submit-btn-wrapper').show();
     });
 
     if (BVGetQueryVariable("bvpp")) {
