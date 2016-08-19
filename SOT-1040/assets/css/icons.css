@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?rudxur');
+  src:  url('../fonts/icomoon.eot?rudxur#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?rudxur') format('truetype'),
+    url('../fonts/icomoon.woff?rudxur') format('woff'),
+    url('../fonts/icomoon.svg?rudxur#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-searchicon-mobile:before {
+  content: "\e900";
+}
+.icon-Area:before {
+  content: "\e901";
+}
+.icon-Arrow-2:before {
+  content: "\e902";
+}
+.icon-Arrow-Green:before {
+  content: "\e903";
+}
+.icon-Bathroom:before {
+  content: "\e904";
+}
+.icon-Bedroom:before {
+  content: "\e905";
+}
+.icon-Contacticon:before {
+  content: "\e906";
+}
+.icon-Fence:before {
+  content: "\e907";
+}
+.icon-Garage:before {
+  content: "\e908";
+}
+.icon-Home:before {
+  content: "\e909";
+}
+.icon-Kitchen:before {
+  content: "\e90a";
+}
+.icon-Menu:before {
+  content: "\e90b";
+}
+.icon-Nearby:before {
+  content: "\e90c";
+}
+.icon-Neighborhood:before {
+  content: "\e90d";
+}
+.icon-Neighbors:before {
+  content: "\e90e";
+}
+.icon-Owners:before {
+  content: "\e90f";
+}
+.icon-RealStateAgents:before {
+  content: "\e910";
+}
+.icon-Records:before {
+  content: "\e911";
+}
+.icon-SearchBTNicon:before {
+  content: "\e912";
+}
+.icon-showless:before {
+  content: "\e913";
+}
+.icon-showmore:before {
+  content: "\e914";
+}
+.icon-star:before {
+  content: "\e915";
+}
+.icon-whiteArrow:before {
+  content: "\e916";
+}
+
