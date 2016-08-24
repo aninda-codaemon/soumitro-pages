@@ -245,12 +245,11 @@
                 <!-- End #Owners -->
                 
 				
+                <!-- Neighbors Sec Starts -->
                 <div id="neighbors">
                 	<h1>Neighbors</h1>
                     <h2>Demographics</h2>
                     <span class="tagline">Discover information about who lives in this neighborhood. You can search each person individually.</span>
-                    
-                    <!-- <div class="demographic">Demographics</div> -->
                     
                     <div class="row demographic-table">
                     	<div class="col-xs-12 col-sm-3 col-md-3">
@@ -266,42 +265,54 @@
                         	COLLEGE GRADUATES<span>$2,987,654</span>
                         </div>
                     </div><!-- ENd demographic-table -->
-                
-                    <div class="row neighbors">
-                        <div class="col-sm-4 col-md-4">
-                            <div class="heading">66 Woodcliff Lake</div>
-                            <a class="name" href="#">John Doe <i></i></a>
-                            <p><strong>Age:</strong> 49 Years</p>
-                            <p><strong>Birthday:</strong> 02/29/1967</p>
-    
-                            <a class="name" href="#">John Doe <i></i></a>
-                            <p><strong>Age:</strong> 49 Years</p>
-                            <p><strong>Birthday:</strong> 02/29/1967</p>
-                        </div>
-    
-                        <div class="col-sm-4 col-md-4">
-                            <div class="heading">9 Hunter Ridge</div>
-                            <a class="name" href="#">John Doe <i></i></a>
-                            <p><strong>Age:</strong> 49 Years</p>
-                            <p><strong>Birthday:</strong> 02/29/1967</p>
-                            
-                            <a class="name" href="#">John Doe <i></i></a>
-                            <p><strong>Age:</strong> 49 Years</p>
-                            <p><strong>Birthday:</strong> 02/29/1967</p>
-                        </div>
-    
-                        <div class="col-sm-4 col-md-4">
-                            <div class="heading">18 Blueberry Drive</div>
-                            <a class="name" href="#">John Doe <i></i></a>
-                            <p><strong>Age:</strong> 49 Years</p>
-                            <p><strong>Birthday:</strong> 02/29/1967</p>
-                            
-                            <a class="name" href="#">John Doe <i></i></a>
-                            <p><strong>Age:</strong> 49 Years</p>
-                            <p><strong>Birthday:</strong> 02/29/1967</p>
-                        </div>
+
+                    <!-- Map -->
+                    <div class="neigh-map-cont">
+                         <div class="neigh-txtB-cont">
+                             <div class="neigh-txtB-H text-center"><a href="#">9 Hunter Ridge<i class="glyphicon glyphicon-menu-right"></i></a></div>
+                             <div class="neigh-txtB-B">
+                                  <span><a href="#">John Doe<i></i></a></span>
+                                  <p><strong>Age:</strong> 49 Years</p>
+                                  <p><strong>Birthday:</strong> 02/29/1967</p>
+                             </div>
+                             <div class="neigh-txtB-F">
+                                  <span><a href="#">Samantha Doe<i></i></a></span>
+                                  <p><strong>Age:</strong> 49 Years</p>
+                                  <p><strong>Birthday:</strong> 02/29/1967</p>
+                             </div>
+                         </div>
+                         <div id="neigh-map" class="neigh-map col-xs-12"></div>
                     </div>
-                </div><!-- ENd row -->
+                    <!-- End Map -->
+
+                    <div class="neighbors">
+                        <ul class="neighbors-header">
+                            <li>OWNER NAME </li>
+                            <li>ADDRESS</li>
+                            <li class="hidden-xs">DISTANCE</li>
+                        </ul>                       
+                        <ul>
+                            <li><a class="name" href="#">John Doe </a></li>
+                            <li><a class="address" href="#">134 Woodcliff Ave, Woodcliff Lake, NJ</a></li>
+                            <li class="hidden-xs">0.90 Miles</li>
+                        </ul>
+                        <ul>
+                            <li><a class="name" href="#">John Doe </a></li>
+                            <li><a class="address" href="#">134 Woodcliff Ave, Woodcliff Lake, NJ</a></li>
+                            <li class="hidden-xs">0.90 Miles</li>
+                        </ul>
+                        <ul>
+                            <li><a class="name" href="#">John Doe </a></li>
+                            <li><a class="address" href="#">134 Woodcliff Ave, Woodcliff Lake, NJ</a></li>
+                            <li class="hidden-xs">0.90 Miles</li>
+                        </ul>
+                        <ul>
+                            <li><a class="name" href="#">John Doe </a></li>
+                            <li><a class="address" href="#">134 Woodcliff Ave, Woodcliff Lake, NJ</a></li>
+                            <li class="hidden-xs">0.90 Miles</li>
+                        </ul>
+                    </div>
+
                 <!-- End #Neighbors -->
                 
                 
@@ -752,59 +763,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script async defer
-         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBH20na531AG87w7TzkxtFL20vPgzek8&callback=initialize">
-    </script>
-
-  	<script type="text/javascript" src="assets/js/map.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBH20na531AG87w7TzkxtFL20vPgzek8&callback=initialize"></script>
+    <script type="text/javascript" src="assets/js/scripts.js"></script>
   	<script type="text/javascript" src="assets/js/nav.js"></script>
   	<script type="text/javascript" src="assets/js/jquery.sticky.js"></script>
-  <script>
-    $(window).load(function(){
-      $("#header").sticky({ topSpacing: 0 });
-    });
-  </script>
- 
- 
-  <script>
-   $(document).ready(function(){
-		 $("#view-more-schools").click(function(){
-			$(".nearby-schools ul").toggle();
-			$(".less").toggle();
-			$(".additional").toggle();
-		});
-    });
-  </script>
+    <script type="text/javascript" src="assets/js/map.js"></script>
 
-
-
-  <script>
-   $(document).ready(function(){
-		 $("#nav-btn").click(function(){
-			$(".side-nav").addClass("open");
-			$(".wrapper").addClass("nav-open");
-		});
-
-		 $(".side-nav div.active i.glyphicon").click(function(){
-			$(".side-nav").removeClass("open");
-			$(".wrapper").removeClass("nav-open");
-		});
-		
-		
-		
-		
-		 $("#search-btn img").click(function(){
-			$(".side-nav").addClass("search-open");
-		});
-
-		 $(".side-nav div i.glyphicon").click(function(){
-			$(".side-nav").removeClass("search-open");
-		});
-		
-    });
-  </script>
- 
- 
-    
   </body>
 </html>

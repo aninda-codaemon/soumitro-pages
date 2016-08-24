@@ -764,52 +764,131 @@ header{
  	border:none;   
 }
 
+/* -- NeighBors Map  Starts -- */
 
-.neighbors{
-    
+.neigh-map-cont{
+    position: relative;
+    width: 100%;
+    height: 450px;
+    margin-top:  50px;
 }
-
-.neighbors .name{
-	color:#2744A9;
-    font-size:22px;
-    margin-bottom:5px;
-    margin-top:29px;
-    display:block;
-	font-family: "publica_sansmedium";
+.neigh-map{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
 }
-
-.neighbors .name i{
-	background:url(../images/ArrowMDicon.png) no-repeat;
-    width:15px;
-    height:15px;
+.neigh-txtB-cont {
+    position: absolute;
+    height: 100%;
+    width: 350px;
+    top: -20px;
+    right: 0;
+    z-index: 2;
+}
+.neigh-txtB-cont div{
+   background-color: rgba(31, 47, 100, 0.75);
+   margin: 5px 20px;
+   color: #fff;
+   padding: 10px 30px;
+}
+.neigh-txtB-H {
+     margin-top: 40px !important;
+}
+.neigh-txtB-H a{
+    font-weight: bold;
+    height: 20%;
+    line-height: 70px;
+    font-size: 28px;
+    color: #fcc41c;
+}
+.neigh-txtB-H i{
+    vertical-align: middle;
+    margin-left: 5px;
+}
+.neigh-txtB-B{
+    height: 35%;
+    font-size: 18px;
+}
+.neigh-txtB-F{
+    height: 35%;
+    font-size: 18px;
+}
+.neigh-txtB-B a, .neigh-txtB-F a {
+    font-size: 26px !important;
+    font-weight: bolder;
+    color: #fff;
+}
+.neigh-txtB-B i, .neigh-txtB-F i{
+    background:url(../images/Arrowicon@2xW.png) no-repeat;
+    background-size: cover;
+    width:20px;
+    height:20px;
     display:inline-block;
     vertical-align:top;
     margin-top:9px;
-    margin-left:3px;   
+    margin-left:10px; 
 }
-
-.neighbors .name:hover{
-	text-decoration:none;   
+/* -- NeighBors Map  Ends -- */
+.neighbors .name{
+	color:#2744A9;
+    font-size:16px;
+    display:inline-block;
+	font-family: "publica_sansmedium";
 }
-
 .neighbors .heading{
     color:#44413D;
     font-size:26px;
     margin-top:54px;
 	font-family: "publica_sansmedium";
 }
-
 .neighbors p{
     color:#777777;
     font-size:16px;
     margin-bottom:0px;
 	font-family: 'Source Sans Pro', sans-serif;
 }
-
-.neighbors p strong{
+.neigh-map-cont p strong{
     font-weight:600;
 }
-
+.neighbors{
+    margin-bottom:25px;   
+}
+.neighbors ul{
+    padding-left:11px;
+    margin-bottom:0px;
+    padding-top:25px;
+    padding-bottom:25px;
+    border-bottom:solid 1px rgba(155, 155, 155, 0.49);
+    font-size:16px;
+    color:#777777;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.neighbors li{
+    display:inline-block;
+    float:left;
+    width:30%;
+}
+.neighbors li:nth-child(2){
+    width:55%;
+}
+.neighbors li:nth-child(3){
+    width:15%;
+}
+.neighbors ul.neighbors-header{
+    margin-bottom:0px;
+    background:#E4E4E5 ;
+    padding-top:0px;
+    border:none;
+    padding-bottom:0px;
+    line-height:32px;
+    color:#44413D;
+    font-size:12px;
+    font-family: "publica_sansbold";
+    padding-left:11px;
+    margin-top:19px;
+}
 /* End #Neighbors */
 
 
@@ -840,7 +919,7 @@ header{
     border-bottom:solid 1px rgba(155, 155, 155, 0.49);
 }
 
-.activity-table:after, .schools ul:after{
+.activity-table:after, .schools ul:after, .neighbors ul:after{
  	clear:both;
     content:'';
     display:block;   

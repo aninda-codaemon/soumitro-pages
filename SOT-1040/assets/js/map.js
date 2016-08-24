@@ -1,6 +1,8 @@
 /* Header Street View  */
 var panorama;
+
 function initialize() {
+
   panorama = new google.maps.StreetViewPanorama(
       document.getElementById('street-view'),
       {
@@ -33,8 +35,23 @@ function initialize() {
         zoom: 1
       });
 
+  initNeigh();
+
 }
 
+/*Neighbors Map*/
+
+function initNeigh() {
+  var initNeighPos = new google.maps.LatLng(-34.397, 150.644);
+  var mapOpts = {
+        zoom: 20,
+        center: initNeighPos,
+        mapTypeId: 'satellite',
+        disableDefaultUI: true
+  }
+  var neighMap = new google.maps.Map(document.getElementById('neigh-map'), mapOpts);
+
+}
 
 
 
