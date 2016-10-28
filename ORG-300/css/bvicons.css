@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'bvicons';
+  src:  url('../fonts/bvicons.eot?ua2xlo');
+  src:  url('../fonts/bvicons.eot?ua2xlo#iefix') format('embedded-opentype'),
+    url('../fonts/bvicons.ttf?ua2xlo') format('truetype'),
+    url('../fonts/bvicons.woff?ua2xlo') format('woff'),
+    url('../fonts/bvicons.svg?ua2xlo#bvicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="bvicon-"], [class*=" bvicon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'bvicons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bvicon-close:before {
+  content: "\e90b";
+}
+.bvicon-search:before {
+  content: "\e90c";
+}
+.bvicon-angle-left:before {
+  content: "\e900";
+}
+.bvicon-angle-right:before {
+  content: "\e901";
+}
+.bvicon-aka:before {
+  content: "\e902";
+}
+.bvicon-cake:before {
+  content: "\e903";
+}
+.bvicon-location:before {
+  content: "\e904";
+}
+.bvicon-users:before {
+  content: "\e905";
+}
+.bvicon-caret:before {
+  content: "\e906";
+}
+.bvicon-email:before {
+  content: "\e907";
+}
+.bvicon-user:before {
+  content: "\e908";
+}
+.bvicon-phone:before {
+  content: "\e909";
+}
+.bvicon-home:before {
+  content: "\e90a";
+}
+
