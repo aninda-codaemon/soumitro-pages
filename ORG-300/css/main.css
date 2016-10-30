@@ -38,7 +38,6 @@ a:hover {
 	color:#337AB7;
 }
 
-
 .dropdown-menu {
 	box-shadow:0 1px 6px rgba(0,0,0,.1);
 }
@@ -59,18 +58,44 @@ a:hover {
 }
 .btn-default {
 	color:#337AB7;
+	background:none;
+	padding-left:0;
+	padding-right:0;	
 }
 .btn-default:hover {
 	background:none;
 }
+.btn-default span {
+	text-decoration: underline;
+}
+
+.btn-default .bvicon-angle-right {
+	font-size:10px;
+}
 .btn-success {
 	box-shadow:0 3px #52902a;
+	background:#6DAC45;
 }
-.btn-success:active {
+.btn-success:active,
+.btn-success.active {
 	box-shadow:0 3px #52902a;
+	background:#7FC552 !important;
+}
+.btn-success:hover {
+	background:#7FC552;
 }
 .btn-primary {
 	box-shadow: 0px 3px 0px 0px #353167;
+}
+.btn-danger {
+	background:#F2583E;
+	box-shadow:0 3px #C54029;
+}
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger:hover:active {
+	background:#fb5235;
+	box-shadow:0 3px #C54029;
 }
 .btn-sm {
 	font-size:14px;
@@ -393,6 +418,9 @@ a:hover {
 	background:#f1f1f1;
 	overflow:hidden;
 }
+.other-info {
+	margin-bottom:30px;
+}
 .other-info h3 {
 	margin-top:0;
 }
@@ -463,7 +491,7 @@ a:hover {
 }
 .record-item a {
 	font-weight:bold;
-	color: #23527C;
+	color: #337AB7;
 	text-decoration: underline;
 	line-height:16px;
 }
@@ -646,6 +674,9 @@ hr {
 .result-info .map {
 	margin-bottom:26px;
 }
+#map {
+	height:215px;
+}
 .result-info .map img {
 	max-width:100%
 }
@@ -675,6 +706,14 @@ hr {
 .table a.icon.bvicon-email {
 	font-size:12px;
 }
+
+.underline-link span{
+	text-decoration: underline;
+}
+.underline-link .bvicon-angle-right {
+	font-size:10px;
+}
+
 /* ********************************************************************** */
 /* ***************************** Footer ********************************* */
 /* ********************************************************************** */
@@ -767,6 +806,7 @@ hr {
 }
 #footer a {
     color: #747b91;
+    text-decoration: none;
 }
 #footer a:hover,
 #footer a:focus {
@@ -985,6 +1025,10 @@ hr {
 	    -moz-transform: translateX(-80%);
 	    -webkit-transform: translateX(-80%);
 	}
+	.btn {
+		padding:8px 20px;
+		line-height:21px
+	}
 	#header {
 		min-height:20px;
 		padding:5px 0 0;
@@ -1042,6 +1086,7 @@ hr {
 	.search-bar .form-group  .form-control {
 		height:45px;
 		background:rgba(0,0,0,0.07);
+		box-shadow: inset 0px -1px 2px 0px rgba(0,0,0,0.07);
 		font-size:17px;
 		border:none;
 	}
@@ -1337,9 +1382,31 @@ hr {
 	.result-info p {
 		font-size: 16px;
 	}
+	.result-info p strong {
+		font-weight:400;
+	}
+	.map {
+		display:none;
+	}
+	.result-info p.active strong {
+		font-weight:bold;
+	}
 	.panel-title-img {
 		width:26px;
 		margin-right:10px;
+		margin-bottom:10px;
+		float:left;
+	}
+	h3.centered-icon-xs {
+		text-align:center;
+		margin-left:10px;
+		margin-right:10px;
+	}
+	.other-info .centered-icon-xs img {
+		display:block;
+		margin:0 auto 15px;
+		width:40px;
+		float:none;
 	}
 	.other-info .btn {
 		width:100%;
@@ -1359,5 +1426,27 @@ hr {
 	.other-info .table .btn {
 		margin-bottom:0;
 		width:auto;
+	}
+	.table tr {
+		overflow:hidden;
+	}
+	.table.reflow-table tbody tr td.name {
+		display:block;
+	}
+	.table.reflow-table tbody tr td.state {
+		display:block;
+		
+	}
+	.table.reflow-table tbody tr td.contact {
+		display:block;
+		float:right;
+		margin-top:-45px;
+		left:-40px;
+		position:relative;
+	}
+	.table.reflow-table tbody tr td.report-link {
+		display:block;
+		float:right;
+		margin-top:-24px
 	}
 }

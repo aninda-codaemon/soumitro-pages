@@ -5,8 +5,14 @@ $(function() {
 	
 	$('.dropdown-menu a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 	  $(e.target).parent().siblings().removeClass('active');
-	  $(e.target).parents('.dropdown').find('.dropdown-toggle').children('span').html($(e.target).html())
-	})
+	  $(e.target).parents('.dropdown').find('.dropdown-toggle').children('span').html($(e.target).html());
+	});
+	
+	$('#show-map').click(function() {
+		$('.map').slideToggle().next('p').toggleClass('active');
+		initMap();
+		return false;
+	});
 });
 
 
