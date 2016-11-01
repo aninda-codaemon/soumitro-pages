@@ -1449,4 +1449,7 @@ hr {
 		float:right;
 		margin-top:-24px
 	}
+	#show-map {
+		font-size:14px;
+	}
 }

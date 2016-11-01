@@ -9,7 +9,15 @@ $(function() {
 	});
 	
 	$('#show-map').click(function() {
-		$('.map').slideToggle().next('p').toggleClass('active');
+		$('.map').slideToggle(500).next('p').toggleClass('active');
+		setTimeout(function() {
+			if ($('.map').is(':visible')) {
+				$('#show-map strong').text('HIDE MAP');
+			} else {
+				$('#show-map strong').text('SHOW MAP');
+			}	
+		}, 600);
+			
 		initMap();
 		return false;
 	});
