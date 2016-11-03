@@ -1305,6 +1305,10 @@ hr {
 	.mobile-nav ul li a .icon.bvicon-email {
 		font-size:16px;
 	}
+	
+	.mobile-nav ul li a .icon.bvicon-question-circle  em {
+		font-style:normal;
+	}
 	.mobile-nav .user-nav {
 		background:#684891;
 		padding:8px 12px;
