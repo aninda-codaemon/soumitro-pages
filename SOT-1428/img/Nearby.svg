@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75px" height="47px" viewBox="0 0 75 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+    <title>Nearby</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="LandingPage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="NW-Landing-1400" transform="translate(-1128.000000, -681.000000)" stroke-width="4.5" stroke="#000000">
+            <g id="Group" transform="translate(100.000000, 508.000000)">
+                <g id="Section-1" transform="translate(0.000000, 163.000000)">
+                    <g id="Nearby" transform="translate(1031.000000, 13.000000)">
+                        <g id="hood">
+                            <polygon id="Stroke-1" fill="#FFFFFF" points="3.4375 37 3.4375 31.5 3.4375 15.95625 15.625 4.93333333 27.8125 15.95625 27.8125 37"></polygon>
+                            <polyline id="Stroke-1" points="-3.55271368e-15 17.9111111 15.7286828 3.93333333 30.875 17.9111111"></polyline>
+                            <polygon id="Stroke-1" fill="#FFFFFF" points="20.5 37 20.5 12.71875 34.71875 7.10542736e-15 48.9375 12.71875 48.9375 37"></polygon>
+                            <polyline id="Stroke-1" points="17.25 14.8 34.6343336 0 51.375 14.8"></polyline>
+                        </g>
+                        <g id="Crime" transform="translate(40.000000, 9.000000)">
+                            <path d="M14.4342667,2.80829894 C11.1975905,2.80829894 8.56190476,2.27085117 6.15600952,0 C4.18276667,1.50404757 2.52424286,3.38121826 1.29284762,5.52241016 C2.20952381,6.5704333 2.93866667,8.19285374 2.9,9.66075796 C2.83095238,12.2808158 0,15.6398644 0,18.7824558 C0,25.7944024 7.23439524,31.4045509 14.4342667,32.6289913 C21.6341381,31.4045509 28.8685333,25.7944024 28.8685333,18.7824558 C28.8685333,15.6398644 26.037581,12.2808158 25.9685333,9.66075796 C25.9298667,8.19285374 26.6590095,6.5704333 27.5756857,5.52241016 C26.3442905,3.38121826 24.6857667,1.50404757 22.7125238,0 C20.3066286,2.27085117 17.6709429,2.80829894 14.4342667,2.80829894 L14.4342667,2.80829894 Z" id="Stroke-1" fill="#FFFFFF"></path>
+                            <polygon id="Stroke-3" points="14.3467435 8.85365854 16.1596361 13.7463308 21.4434869 13.8703429 17.2800238 17.1013149 18.7328202 21.9874846 14.3467435 19.1748406 9.96066672 21.9874846 11.4134631 17.1013149 7.25 13.8703429 12.5338508 13.7463308"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
