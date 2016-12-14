@@ -11,18 +11,25 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 <body data-spy="scroll" data-target="#content-nav">
-
+<div class="collapse navbar-collapse" id="top-nav-mobile">
+	<nav class="top-nav">
+		<ul>
+			<li><a href="#">About Us</a></li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+	</nav>
+</div>
 <header class="public-header buildings-bg">
 	<div class="container">
 		<div class="clearfix">
 			<span class="logo"></span>
-			<a class="top-nav-toggle visible-xs collapsed" data-toggle="collapse" data-target="#top-nav" aria-expanded="false">
+			<a class="top-nav-toggle visible-xs collapsed" data-toggle="collapse" data-target="#top-nav-mobile" aria-expanded="false">
 				<em></em>
 				<em></em>
 				<em></em>
 				<i class="bvicon-close"></i>
 			</a>
-			<div class="collapse navbar-collapse" id="top-nav">
+			<div class="collapse navbar-collapse hidden-xs" id="top-nav">
 				<nav class="top-nav">
 					<ul>
 						<li><a href="#">About Us</a></li>
