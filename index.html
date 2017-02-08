@@ -1,0 +1,516 @@
+  <!DOCTYPE html>
+
+  <html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sign Up | KnowThyCustomer.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel='shortcut icon' type='image/x-icon' href='img/1_favicon.ico' />
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="css/pretty.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+      <![endif]-->
+
+
+    </head>
+
+    <!-- Start of Async Drift Code -->
+<script>
+!function() {
+  var t;
+  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0,
+  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
+  t.factory = function(e) {
+    return function() {
+      var n;
+      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+    };
+  }, t.methods.forEach(function(e) {
+    t[e] = t.factory(e);
+  }), t.load = function(t) {
+    var e, n, o, i;
+    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"),
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js",
+    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+  });
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('rgvdm473vfx2');
+</script>
+<!-- End of Async Drift Code -->
+
+    <body class="hide signup" data-next-page="<%= next_page %>">
+      <!-- Header Container -->
+      <div class="modal fade" id="company-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" name="button" data-dismiss="modal">X</button>
+              <h3>KnowThyCustomer is the Easiest Way to Search Customers</h3>
+            </div>
+
+            <div class="modal-body">
+              <h4>Tell Us About Your Company to Get Started</h4>
+              <form id="company_size" class="" action="" method="post">
+                <select class="form-control" name="company_select">
+                  <option value="" disabled selected>Company Size</option>
+                  <option value="1-4">1-4</option>
+                  <option value="5-10">5-10</option>
+                  <option value="11-50">11-50</option>
+                  <option value="51-500">51-500</option>
+                  <option value="500+">501+</option>
+                </select>
+
+                <button type="submit" name="button" class="btn btn-primary btn-small btn-success">TRY OUR SEARCH FOR FREE</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wallpaper"></div>
+      <section class="top">
+        <div class="top-inner">
+          <nav class="navbar" id="header">
+            <div class="container">
+              <div class="navbar-header clearfix">
+                <a class="logo" href="https://www.knowthycustomer.com"></a>
+                <span></span>
+                <button class="navbar-toggle collapsed visible-xs" data-toggle="collapse" data-target="#main-nav">
+                  <span>toggle menu</span>
+                </button>
+              </div>
+
+              <div class="navbar-right">
+                <div class="collapse navbar-collapse" id="main-nav">
+                  <ul class="nav navbar-nav">
+
+                    <li>
+                      <a href="https://www.knowthycustomer.com/lp/fdafcf/6/uncategorized">Contact </a>
+                    </li>
+                    <li>
+                      <a href="https://docs.knowthycustomer.com">API Docs </a>
+                    </li>
+                    <li>
+                      <a href="https://www.knowthycustomer.com/f/login">Log In</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1">
+                <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0">
+                    <h1>Start Searching for Free!</h1>
+                      <p>Try one of our seach options. Search a customer, lead, contact, or anyone.</p>
+
+                      <article class="contact-panel">
+                        <div class="row">
+                          <div class="col-sm-2">
+                            <img src="img/PeopleSearch.svg" alt="" />
+                            <img src="img/PeopleSearch-teal.svg" alt="" class="teal-icon"/>
+                          </div>
+                          <div class="col-sm-10">
+                            <h3>People Search</h3>
+                            <p>Got a lead? Search for them and get their contact info.</p>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <form class="" id="people_search" action="" method="post">
+                            <div class="col-sm-4">
+                              <label for="fn">FIRST NAME</label>
+                              <input class="form-control" type="text" name="fn" id="fn" value="" placeholder="First Name">
+                            </div>
+
+                            <div class="col-sm-3">
+                              <label for="ln">LAST NAME</label>
+                              <input class="form-control" type="text" name="ln" id="ln" value="" placeholder="Last Name">
+                            </div>
+
+                            <div class="col-sm-3">
+                              <label for="city">CITY</label>
+                              <input class="form-control" type="text" name="city" id="city" value="" placeholder="City">
+                            </div>
+
+                            <div class="col-sm-2">
+                              <label for="state">STATE</label>
+                              <select class="form-control" name="state">
+                                <option value="AL">AL</option>
+                                <option value="AK">AK</option>
+                                <option value="AZ">AZ</option>
+                                <option value="AR">AR</option>
+                                <option value="CA">CA</option>
+                                <option value="CO">CO</option>
+                                <option value="CT">CT</option>
+                                <option value="DE">DE</option>
+                                <option value="DC">DC</option>
+                                <option value="FL">FL</option>
+                                <option value="GA">GA</option>
+                                <option value="HI">HI</option>
+                                <option value="ID">ID</option>
+                                <option value="IL">IL</option>
+                                <option value="IN">IN</option>
+                                <option value="IA">IA</option>
+                                <option value="KS">KS</option>
+                                <option value="KY">KY</option>
+                                <option value="LA">LA</option>
+                                <option value="ME">ME</option>
+                                <option value="MD">MD</option>
+                                <option value="MA">MA</option>
+                                <option value="MI">MI</option>
+                                <option value="MN">MN</option>
+                                <option value="MS">MS</option>
+                                <option value="MO">MO</option>
+                                <option value="MT">MT</option>
+                                <option value="NE">NE</option>
+                                <option value="NV">NV</option>
+                                <option value="NH">NH</option>
+                                <option value="NJ">NJ</option>
+                                <option value="NM">NM</option>
+                                <option value="NY">NY</option>
+                                <option value="NC">NC</option>
+                                <option value="ND">ND</option>
+                                <option value="OH">OH</option>
+                                <option value="OK">OK</option>
+                                <option value="OR">OR</option>
+                                <option value="PA">PA</option>
+                                <option value="RI">RI</option>
+                                <option value="SC">SC</option>
+                                <option value="SD">SD</option>
+                                <option value="TN">TN</option>
+                                <option value="TX">TX</option>
+                                <option value="UT">UT</option>
+                                <option value="VT">VT</option>
+                                <option value="VA">VA</option>
+                                <option value="WA">WA</option>
+                                <option value="WV">WV</option>
+                                <option value="WI">WI</option>
+                                <option value="WY">WY</option>
+                              </select>
+                            </div>
+                            <div class="col-sm-12">
+                              <button type="submit" class="btn btn-primary btn-small btn-success">Search</button>
+                            </div>
+                          </form>
+                        </div>
+                      </article>
+
+                      <article class="contact-panel">
+                        <div class="row">
+                          <div class="col-sm-2">
+                            <img src="img/Phone-Search.svg" alt="" />
+                            <img src="img/Phone-Search-Teal.svg" alt="" class="teal-icon"/>
+                          </div>
+                          <div class="col-sm-10">
+                            <h3>Phone Search</h3>
+                            <p>Verify Phone numbers.</p>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <form class="" action="" method="post" id="phone_search">
+                            <div class="col-sm-10">
+                              <label for="phone">PHONE NUMBER</label>
+                              <input class="form-control" type="text" name="phone" value="" id="phone" placeholder="Phone Number">
+                            </div>
+                            <div class="col-sm-12">
+                              <button type="submit" class="btn btn-primary btn-small btn-success">Search</button>
+                            </div>
+                          </form>
+                        </div>
+
+                      </article>
+
+                      <article class="contact-panel">
+                        <div class="row">
+                          <div class="col-sm-2">
+                            <img src="img/email-search.svg" alt="" />
+                            <img src="img/email-search-teal.svg" alt="" class="teal-icon"/>
+                          </div>
+                          <div class="col-sm-10">
+                            <h3>E-mail Search</h3>
+                            <p>See social media profiles associated with an email address.</p>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <form class="" action="" method="post" id="email_search">
+                            <div class="col-sm-10">
+                              <label for="email">E-MAIL</label>
+                              <input class="form-control" type="text" name="email" value="" placeholder="E-mail">
+                            </div>
+                            <div class="col-sm-12">
+                              <button type="submit" class="btn btn-primary btn-small btn-success">Search</button>
+                            </div>
+                          </form>
+
+                        </div>
+                      </article>
+
+                      <article class="contact-panel">
+                        <div class="row">
+                          <div class="col-sm-2">
+                            <img src="img/property-search.svg" alt="" />
+                            <img src="img/property-search-teal.svg" alt="" class="teal-icon"/>
+                          </div>
+                          <div class="col-sm-10">
+                            <h3>Property Search</h3>
+                            <p>Look for an address and see who lives there.</p>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <form class="" action="" method="post" id="property_search">
+                            <div class="col-sm-10">
+                              <label for="address">ADDRESS</label>
+                              <input class="form-control" type="text" name="address" value="" placeholder="Address">
+                            </div>
+                            <div class="col-sm-12">
+                              <button type="submit" class="btn btn-primary btn-small btn-success">Search</button>
+                            </div>
+                          </form>
+                        </div>
+                      </article>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- /#body-wrap -->
+
+<!-- /#wrapper -->
+
+
+<footer id="footer">
+  <div class="footer-teal-triangle visible-xs">
+					<img src="img/teal.svg" alt="" />
+		</div>
+
+		<div class="clip-wrap footer-blue-triangle col-sm-7 visible-xs">
+
+			<svg class="clip-svg" width="0" height="0">
+
+				<clipPath id="clip-shape6" clipPathUnits="objectBoundingBox" >
+					<polygon id="footer-blue-triangle" points="0 0, 1 0, 1 1"/>
+				</clipPath>
+
+			</svg>
+		</div>
+
+		<div class="clip-wrap footer-teal col-sm-7 hidden-xs">
+
+			<svg class="clip-svg" width="0" height="0">
+
+				<clipPath id="clip-shape4" clipPathUnits="objectBoundingBox" >
+					<polygon id="footer-right" points="1 1, 0 1, 1 0"/>
+				</clipPath>
+
+			</svg>
+		</div>
+
+		<div class="clip-wrap footer-white col-sm-9 hidden-xs">
+			<svg class="clip-svg" width="0" height="0">
+				<clipPath id="clip-shape3" clipPathUnits="objectBoundingBox" >
+					<polygon id="footer-left" points="0 1, 0 0.35, 1 1"/>
+				</clipPath>
+			</svg>
+		</div>
+
+
+  <div class="container">
+    <div class="quick-contact">
+      <p>Questions? Call 1-844-823-2869</p>
+
+      <p>Live Customer Support Hours:<br />
+        M-F 8am - 10pm ET<br />
+        Weekends 10am - 8pm ET</p>
+      </div>
+
+
+      <div class="footer-bottom row">
+        <div class="col-md-6 col-sm-4">
+          <a href="https://www.knowthycustomer.com" class="logo"></a>
+
+          <p>KnowThyCustomer LLC. ©2016 All rights reserved</p>
+        </div>
+        <div class="col-md-6 col-sm-5 col-md-offset-0 col-sm-offset-3 text-right">
+          <nav class="social-nav">
+            <span>Follow Us</span>
+
+            <a href="https://twitter.com/knowthycustomer">
+              <img src="img/twitter.svg" alt="twitter" />
+            </a>
+            <a href="https://www.facebook.com/knowthycustomer">
+              <img src="img/facebook.svg" alt="facebook" />
+            </a>
+            <a href="https://www.instagram.com/knowthycustomer/">
+              <img src="img/instagram.svg" alt="instagram" />
+            </a>
+            <a href="https://www.pinterest.com/knowthycustomer/">
+              <img src="img/pinterest.svg" alt="pinterest" />
+            </a>
+          </nav>
+
+
+          <nav class="footer-nav">
+            <a href="https://www.knowthycustomer.com/lp/fdafcf/8/uncategorized">Privacy Policy</a>
+            <span>|</span>
+            <a href="https://www.knowthycustomer.com/lp/fdafcf/7/uncategorized">Terms & Conditions</a>
+            <span class="hidden-sm">|</span>
+            <a href="https://www.knowthycustomer.com/lp/fdafcf/6/uncategorized">Contact</a>
+            <span>|</span>
+            <a href="https://docs.knowthycustomer.com">API Docs</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+ <!----
+  <div id="iModal-trial" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button id="imodal-x" type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        </div>
+        <div class="modal-body text-center">
+          <h1>
+            <strong>SPECIAL LIMITED TIME OFFER!</strong>
+          </h1>
+          <h1>$1 TRIAL!</h1>
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+              <p>
+                Run unlimited background reports for the entire trial period.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+              <button type="button" id="show-dollar-trial" class="btn btn-lg btn-block btn-success text-center">Try KnowThyCustomer for $1!</button>
+            </div>
+          </div>
+          <p><a href="<%= previous_page %>" id="iModal-back"><span class="text-normal">or&nbsp;</span>go back to search results</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+
+  <!-- /#iModal-trial -->
+  <!--
+  <div id="PayPal-Success" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <h2 class="text-success"><img src="img/success_icon.png" alt="PayPal Success" width="30" height="30"> One Last Step!</h2>
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+              <p id="paypal-confirm-sub-text">Just click the confirm button below to activate and view your report.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+              <button type="button" id="confirm-paypal" class="btn btn-lg btn-block btn-success text-center" style="margin:24px 0 10px">Confirm &amp; View Report <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+              <img id="paypal-spinner" class="spinner-inner" src="img/ajax-loader.gif" alt="Loading...">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <a href="#" id="iModal-dismiss" class="text-muted" style="cursor:hand;cursor:pointer;">Click Here to Cancel PayPal Payment</a>
+              <p id="paypal-confirm-error">Oops! Something went wrong. Please confirm your PayPal payment again or contact customer support at 1-888-579-5910.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- /#iModal-trial -->
+<!--
+  <div id="PayPal-Failed" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <h2 class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Error</h2>
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+              <p>Unfortunately your payment did not go through using PayPal.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <button type="button" id="pay-CreditCard" class="btn btn-lg btn-block btn-primary text-center">Pay With A Credit Card</button>
+            </div>
+            <div class="col-md-6">
+              <button type="button" id="pay-PayPal" class="btn btn-lg btn-block btn btn-default text-center">Try Again Using PayPal</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- /#iModal-trial -->
+
+<!--
+
+  <pre id="subscribe_bounce_text" data-sub-bounce-url="<%= next_page %>" class="hide">
+    WAIT: WANT A SPECIAL LIMITED TIME OFFER?
+
+    *************** CONGRATULATIONS ***************
+
+    YOU'VE BEEN SELECTED FOR A LIMITED TIME OFFER!
+
+    Stay on this page to take advantage of our special promotional offer.
+
+
+    Just click "Cancel" or "Stay On Page" to see your special offer.
+
+    *************** CONGRATULATIONS ***************
+  </pre>
+-->
+  <!-- SCRIPTS -->
+
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/amplify.store.min.js"></script>
+  <script src="js/lodash.min.js"></script>
+  <script src="js/handlebars.min.js"></script>
+
+  <script src="js/jquery.validate.js"></script>
+  <script src="js/jquery.validate.creditcard2.pack-1.0.0.js"></script>
+
+  <!-- <script src="js/ie_fix.js"></script> -->
+  <script src="js/check_cc.js"></script>
+  <script src="js/utility.js"></script>
+  <script src="js/cookie.js"></script>
+  <script src="js/base64.js"></script>
+  <script src="js/teaserrecord.js"></script>
+
+  <script src="js/framerida.helpers.js"></script>
+  <script src="js/framerida.js"></script>
+
+  <script src="js/subscribeRunner.js"></script>
+  <script src="js/runner.js"></script>
+
+  <script src="js/triangle_animations.js"></script>
+
+</body>
+
+</html>

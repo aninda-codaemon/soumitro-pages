@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="68px" viewBox="0 0 60 68" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>PropertySearch-teal</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M30.947389,0.219649328 C30.4241605,-0.07319655 29.5759106,-0.0732363343 29.052611,0.219649328 L0.947389025,15.949867 C0.424160514,16.2427129 0,16.9728063 0,17.5794039 L0,48.4205961 C0,49.0277186 0.424089432,49.7572473 0.947389025,50.050133 L29.052611,65.7803507 C29.5758395,66.0731966 30.4240894,66.0732363 30.947389,65.7803507 L59.052611,50.050133 C59.5758395,49.7572871 60,49.0271937 60,48.4205961 L60,17.5794039 C60,16.9722814 59.5759106,16.2427527 59.052611,15.949867 L30.947389,0.219649328 Z" id="path-1"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.0391775165   0 0 0 0 0.337129789   0 0 0 0 0.387781675  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Search" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="KTC-FreeSearch-6A" transform="translate(-339.000000, -1051.000000)">
+            <g id="SearchBox" transform="translate(279.000000, 362.000000)">
+                <g id="Property-Search" transform="translate(60.000000, 684.000000)">
+                    <g id="PropertySearch-teal" transform="translate(0.000000, 5.000000)">
+                        <g id="Page-1-Copy-2">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#19B2CC" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <g id="Page-1" transform="translate(8.250000, 13.500000)" stroke-linejoin="round">
+                            <polygon id="Stroke-5" stroke="#263348" stroke-width="2" points="17.0361397 35.1530268 25.1581544 35.1530268 25.1581544 20.65035 17.0361397 20.65035"></polygon>
+                            <path d="M37.5,9.80967805 L37.5,33.8554098 C37.5,34.4320134 36.9731786,34.8980927 36.3214286,34.8980927 L5.67857143,34.8980927 C5.028,34.8980927 4.5,34.4320134 4.5,33.8554098 L4.5,9.80967805" id="Stroke-1" stroke="#FFFFFF" stroke-width="3"></path>
+                            <path d="M42.5625,12.5625 L22.5804522,0.766929927 C21.8629226,0.343366224 20.700991,0.342531762 19.9820478,0.766929927 L0,12.5625" id="Stroke-3" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
