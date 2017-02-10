@@ -74,6 +74,51 @@
     //amplify.store("lastVisit", Date.now());
   }
 
+// Local sotrage object prep functions
+  var parseTeaser = function(data) {
+    var recordCount = parseInt(data["response"]["RecordCount"]),
+        records;
+
+    if (recordCount === 1) {
+      records = [data["response"]["Records"]['Record']];
+    } else {
+      records = data["response"]["Records"]['Record'];
+    }
+
+    return records;
+  }
+
+  var parseEmailTeaser = function(data) {
+    var recordCount, records, status = 0;
+    if (data.results && typeof data.results.status !== 'undefined') {
+      status = parseInt(data.results.status);
+    }
+    recordCount = (status === 200 ? 1 : 0);
+
+    data.results.emailaddress = data.query.email;
+    records = data.results;
+    return records;
+  }
+
+  var prepPhoneData = function (data) {
+
+    var prepped = {
+      ownersName: "subscribe to see",
+      carrier: data.company,
+      lineType: (data.nxxusetype == "L") ? "Landline" : "Cellphone",
+      city: data.city,
+      state: data.state,
+      zipCode: "subscribe to see",
+      streetAddress: "subscribe to see",
+      neighborhood: "subscribe to see",
+      elevation: "subscribe to see",
+      latitude: data.latitude,
+      longitude: data.longitude
+    };
+
+  return prepped;
+};
+
   // Form Validations
 
   var hideSearches = function() {
@@ -84,7 +129,7 @@
     var fn = formData.fn || "",
         ln = formData.ln || "",
         city = formData.city || "",
-        state = formData.city || "";
+        state = formData.state || "";
 
     var baseUrl = "//www.beenverified.com/hk/teaser/?exporttype=jsonp&rc=100";
     var url = baseUrl + "&fn=" + fn + "&ln=" + ln + "&state=" + state + "&city=" + city;
@@ -110,22 +155,88 @@
           teaserRecords = parseTeaser(xhrResult);
           teaserData = teaserRecords;
 
-          // var recordCount = xhrResult.response.RecordCount;
+          var recordCount = xhrResult.response.RecordCount;
 
           // trackNL("Refine Modal Final Result Count", {result_count: recordCount});
 
           var teaserDataObj = {recordCount: recordCount, teasers: teaserData};
-          amplify.store('teaserData', teaserDataObj);
+          amplify.store('peopleData', teaserDataObj);
 
           amplify.store('searchData', {
             fn: fn || '',
             ln: ln || '',
             state: state,
             city: city || '',
-
           });
         }
-          console.log("we did shit");
+    });
+  }
+
+  var getPhoneData = function(formData){
+
+    var url = 'https://www.beenverified.com/hk/dd/free/phoneinfo?&exporttype=jsonp' + "&phone=" + formData.phone
+
+    var xhrData = $.ajax({
+      url: url,
+      dataType : 'jsonp',
+    })
+
+    $.when(xhrData).then(function(result, status){
+
+        var data = result.results;
+
+        if ((status === "success") && !$.isEmptyObject(data)) {
+          // latlng.push(data.latitude);
+          // latlng.push(data.longitude);
+
+          teaserData = prepPhoneData(data);
+          amplify.store('phoneData', teaserData);
+
+          amplify.store('searchData', {
+            phone: result.query.phone || '',
+          });
+        }
+    });
+  }
+
+  var getEmailData = function(formData){
+
+    var baseUrl = 'https://www.beenverified.com/hk/dd/source/fxgJg56p?exporttype=jsonp',
+        url = baseUrl + "&email=" + formData.email;
+
+    var xhrData = $.ajax({
+      url: url,
+      dataType : 'jsonp',
+      jsonpCallback: 'parseEmailTeaser'
+    })
+
+    $.when(xhrData).then(function(result){
+
+      var xhrResult = result,
+      teaserRecords = [],
+      status = 0;
+
+      if (xhrResult.results && typeof xhrResult.results.status !== 'undefined') {
+        status = parseInt(xhrResult.results.status);
+      }
+
+      if (status === 200 || status === 404 || status === 202) {
+        teaserRecords[0] = parseEmailTeaser(xhrResult);
+
+        var recordCount = (status === 200 ? 1 : 0);
+
+        var teaserDataObj = {
+          recordCount: recordCount,
+          email: result.query.email,
+          teasers: teaserRecords
+        };
+
+        amplify.store('emailData', teaserDataObj);
+
+        amplify.store('searchData', {
+          emailaddress: result.query.email
+        });
+      }
     });
   }
 
@@ -149,7 +260,7 @@
     submitHandler: function(form, e) {
       e.preventDefault();
       hideSearches();
-      var formData = ($(form).serializeArray());
+      var formData = serializeToObject(($(form).serializeArray()));
       getPeople(formData);
     }
   });
@@ -177,6 +288,8 @@
 
     submitHandler: function(form, e) {
       e.preventDefault();
+      var formData = serializeToObject(($(form).serializeArray()));
+      getPhoneData(formData);
       hideSearches();
     }
   });
@@ -195,6 +308,8 @@
 
       submitHandler: function(form, e) {
         e.preventDefault();
+        var formData = serializeToObject(($(form).serializeArray()));
+        getEmailData(formData);
         hideSearches();
       }
     });
