@@ -926,6 +926,9 @@ var BVGetQueryVariable = function (variable) {
     return o;
   };
 
+//expose for runner.js
+  window.serializeToObject = serializeToObject;
+
   /**
    * Entrypoint.
    */
@@ -1022,7 +1025,7 @@ var BVGetQueryVariable = function (variable) {
         return;
       }
 
-      var formData = serializeToObject($(formSelector).serializeArray()),
+      var formData = serializeToObjec($(formSelector).serializeArray()),
           payment = paymentProcessor.process(formData),
           confirmButton = this;
 

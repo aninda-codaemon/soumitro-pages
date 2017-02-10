@@ -49,17 +49,17 @@ drift.load('rgvdm473vfx2');
 
     <body class="hide signup" data-next-page="<%= next_page %>">
       <!-- Header Container -->
-      <div class="modal fade" id="company-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal fade" id="company-modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" name="button" data-dismiss="modal">X</button>
+              <!-- <button type="button" name="button" data-dismiss="modal">X</button> -->
               <h3>KnowThyCustomer is the Easiest Way to Search Customers</h3>
             </div>
 
             <div class="modal-body">
               <h4>Tell Us About Your Company to Get Started</h4>
-              <form id="company_size" class="" action="" method="post">
+              <form id="company_form" class="" action="" method="post">
                 <select class="form-control" name="company_select">
                   <option value="" disabled selected>Company Size</option>
                   <option value="1-4">1-4</option>
@@ -119,10 +119,10 @@ drift.load('rgvdm473vfx2');
                       <article class="contact-panel">
                         <div class="row">
                           <div class="col-sm-2">
-                            <img src="img/PeopleSearch.svg" alt="" />
+                            <img src="img/PeopleSearch.svg" alt="" class="white-icon"/>
                             <img src="img/PeopleSearch-teal.svg" alt="" class="teal-icon"/>
                           </div>
-                          <div class="col-sm-10">
+                          <div class="col-sm-10 no-pad-left">
                             <h3>People Search</h3>
                             <p>Got a lead? Search for them and get their contact info.</p>
                           </div>
@@ -211,10 +211,10 @@ drift.load('rgvdm473vfx2');
                       <article class="contact-panel">
                         <div class="row">
                           <div class="col-sm-2">
-                            <img src="img/Phone-Search.svg" alt="" />
+                            <img src="img/Phone-Search.svg" alt="" class="white-icon"/>
                             <img src="img/Phone-Search-Teal.svg" alt="" class="teal-icon"/>
                           </div>
-                          <div class="col-sm-10">
+                          <div class="col-sm-10 no-pad-left">
                             <h3>Phone Search</h3>
                             <p>Verify Phone numbers.</p>
                           </div>
@@ -237,10 +237,10 @@ drift.load('rgvdm473vfx2');
                       <article class="contact-panel">
                         <div class="row">
                           <div class="col-sm-2">
-                            <img src="img/email-search.svg" alt="" />
+                            <img src="img/email-search.svg" alt="" class="white-icon"/>
                             <img src="img/email-search-teal.svg" alt="" class="teal-icon"/>
                           </div>
-                          <div class="col-sm-10">
+                          <div class="col-sm-10 no-pad-left">
                             <h3>E-mail Search</h3>
                             <p>See social media profiles associated with an email address.</p>
                           </div>
@@ -263,10 +263,10 @@ drift.load('rgvdm473vfx2');
                       <article class="contact-panel">
                         <div class="row">
                           <div class="col-sm-2">
-                            <img src="img/property-search.svg" alt="" />
+                            <img src="img/property-search.svg" alt="" class="white-icon"/>
                             <img src="img/property-search-teal.svg" alt="" class="teal-icon"/>
                           </div>
-                          <div class="col-sm-10">
+                          <div class="col-sm-10 no-pad-left">
                             <h3>Property Search</h3>
                             <p>Look for an address and see who lives there.</p>
                           </div>

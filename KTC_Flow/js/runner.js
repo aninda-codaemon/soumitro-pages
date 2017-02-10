@@ -76,12 +76,64 @@
 
   // Form Validations
 
+  var hideSearches = function() {
+    $('article.contact-panel').hide();
+    startLoading();
+  }
+  var getPeople = function(formData){
+    var fn = formData.fn || "",
+        ln = formData.ln || "",
+        city = formData.city || "",
+        state = formData.city || "";
+
+    var baseUrl = "//www.beenverified.com/hk/teaser/?exporttype=jsonp&rc=100";
+    var url = baseUrl + "&fn=" + fn + "&ln=" + ln + "&state=" + state + "&city=" + city;
+
+    var xhrData = $.ajax({
+      url: url,
+      dataType : 'jsonp',
+      jsonpCallback: 'parseResults',
+      statuscode: {
+        503: function () {
+
+        }
+      }
+    })
+
+    $.when(xhrData).then(function(result){
+      var teaserRecords;
+        var teaserData;
+        var xhrResult = result;
+        var status = xhrResult.response.Header.Status;
+
+        if (status === "0") {
+          teaserRecords = parseTeaser(xhrResult);
+          teaserData = teaserRecords;
+
+          // var recordCount = xhrResult.response.RecordCount;
+
+          // trackNL("Refine Modal Final Result Count", {result_count: recordCount});
+
+          var teaserDataObj = {recordCount: recordCount, teasers: teaserData};
+          amplify.store('teaserData', teaserDataObj);
+
+          amplify.store('searchData', {
+            fn: fn || '',
+            ln: ln || '',
+            state: state,
+            city: city || '',
+
+          });
+        }
+          console.log("we did shit");
+    });
+  }
 
   $peopleSearchForm = $('#people_search');
   $phoneSearchForm = $('#phone_search');
   $emailSearchForm = $('#email_search');
   $propertySearchForm = $('#property_search');
-  $companyForm = $('#company-form');
+  $companyForm = $('#company_form');
 
 
   $peopleSearchForm.validate({
@@ -97,13 +149,12 @@
     submitHandler: function(form, e) {
       e.preventDefault();
       hideSearches();
+      var formData = ($(form).serializeArray());
+      getPeople(formData);
     }
   });
 
-  var hideSearches = function() {
-    $('article.contact-panel').hide();
-    startLoading();
-  }
+
 
   $.validator.addMethod("phoneUS", function (phone_number, element) {
       phone_number = phone_number.replace(/\s+/g, "");
@@ -170,10 +221,12 @@
     },
     submitHandler: function(form, e) {
       e.preventDefault()
-      amplify.store("userData", {
-        
-      })
+      $('#company-modal').modal('hide');
+      var formData = serializeToObject($(form).serializeArray());
+      amplify.store("companyData", {
+      companySize : formData.company_select});
     }
+
   })
 
   //Transition to search animation
@@ -182,13 +235,23 @@ var startLoading = function() {
 
 }
 
-  // Set the content to show based on the price tag from the URL
+var clickedPanel;
+$('.contact-panel').click(function(){
+  if (clickedPanel) {
+    $(clickedPanel).removeClass("focused-panel");
+  }
+  // $(this).find('button').show();
+  $(this).addClass("focused-panel");
+  clickedPanel = this;
+})
+
+
 
 
   var initialize = function () {
     setLastVisit();
     setColumnState();
-    $('#company-modal').modal('show');
+    // $('#company-modal').modal('show');
 
   /* initDownsells(); */
 

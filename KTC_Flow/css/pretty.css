@@ -511,8 +511,6 @@ h2 .hidden-xs {
 
   content: '';
   transform: rotate(-28.8deg);
-
-  background: url('../img/BG-teal.png') right bottom repeat;
 }
 .price-box {
   margin-bottom: 30px;
@@ -642,7 +640,7 @@ h2 .hidden-xs {
 
 
 .contact-panel {
-  font-size: 22px;
+  font-size: 20px;
 
   margin-bottom: 30px;
   padding: 55px 50px;
@@ -685,8 +683,7 @@ h2 .hidden-xs {
 }
 .contact-panel h3 {
   font-size: 36px;
-
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 .contact-panel strong {
   font-weight: 600;
@@ -1030,23 +1027,64 @@ div.footer-white {
 #company-modal select {
   margin-bottom: 50px;
 }
+
+#company-modal label.error {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+  float: none;
+}
+
+article.contact-panel .btn {
+  margin-top: 35px;
+  display: none;
+}
+
+article.contact-panel.focused-panel .btn {
+  display: block;
+}
+
+article.contact-panel label {
+  font-size: 16px;
+}
+
+.teal-icon {
+  display: none;
+}
+.focused-panel {
+  border: 4px solid #19B2CC;
+  box-shadow: 0 0 14px 0 rgba(0,0,0,0.22);
+  border-radius: 2px;
+}
+
+.focused-panel .teal-icon {
+  display: block;
+}
+
+.focused-panel .white-icon {
+  display: none;
+}
+.no-pad-left {
+  padding-left: 0px !important;
+}
+
+.no-pad-right {
+  padding-right: 0px !important;
+}
+
 /* ********************************************************************** */
 /* *****************************  Responsive  *************************** */
 /* ********************************************************************** */
 
 @media (min-width: 1400px) {
-  .container {
-    width: 1368px;
-  }
+
   #footer {
     height: 600px;
     padding-top: 200px;
   }
 }
 @media screen and (max-width: 1399px) {
-  #header {
-    margin-bottom: 40px;
-  }
+
   .top-inner {
     padding-bottom: 50px;
   }
@@ -1122,9 +1160,21 @@ div.footer-white {
 }
 @media screen and (max-width: 992px) {
 
+  #company-modal .modal-content {
+    padding: 60px 70px;
+  }
   #company-modal .modal-dialog{
     width: 80%;
   }
+
+  #company-modal h3 {
+    font-size: 36px;
+  }
+
+  #company-modal label.error {
+    font-size: 16px;
+  }
+
   body {
     font-size: 18px;
   }
@@ -1341,10 +1391,14 @@ div.footer-white {
     margin-bottom: 40px;
   }
   .contact-panel {
-    padding: 35px 50px;
+    padding: 35px 30px;
   }
   .contact-panel h2 {
     margin-bottom: 20px;
+  }
+
+  .contact-panel h3 {
+    font-size: 32px;
   }
   .signup #footer .quick-contact {
     margin-bottom: 49px;
@@ -1363,8 +1417,23 @@ div.footer-white {
 
 @media (max-width: 767px) {
 
+  #company-modal .modal-content {
+    padding: 40px 5px;
+  }
   #company-modal .modal-dialog{
-    width: 97%;
+    width: 95%;
+  }
+
+  #company-modal select {
+    margin-bottom: 30px;
+  }
+
+  #company-modal h3 {
+    font-size: 30px;
+  }
+
+  #company-modal label.error {
+    font-size: 14px;
   }
   body {
     font-size: 18px;
@@ -2020,8 +2089,9 @@ div.footer-white {
   }
 }
 
-/* Added styles */
+@media (max-width: 340px){
+  #company-modal button {
+  margin: -15px;
+  }
 
-.teal-icon {
-  display: none;
 }
