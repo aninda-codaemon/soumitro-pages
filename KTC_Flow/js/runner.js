@@ -161,13 +161,6 @@
 
           var teaserDataObj = {recordCount: recordCount, teasers: teaserData};
           amplify.store('peopleData', teaserDataObj);
-
-          amplify.store('searchData', {
-            fn: fn || '',
-            ln: ln || '',
-            state: state,
-            city: city || '',
-          });
         }
     });
   }
@@ -191,10 +184,6 @@
 
           teaserData = prepPhoneData(data);
           amplify.store('phoneData', teaserData);
-
-          amplify.store('searchData', {
-            phone: result.query.phone || '',
-          });
         }
     });
   }
@@ -232,10 +221,6 @@
         };
 
         amplify.store('emailData', teaserDataObj);
-
-        amplify.store('searchData', {
-          emailaddress: result.query.email
-        });
       }
     });
   }
@@ -337,9 +322,6 @@
     submitHandler: function(form, e) {
       e.preventDefault()
       $('#company-modal').modal('hide');
-      var formData = serializeToObject($(form).serializeArray());
-      amplify.store("companyData", {
-      companySize : formData.company_select});
     }
 
   })
@@ -347,7 +329,7 @@
   //Transition to search animation
 
 var startLoading = function() {
-
+  $('.loading-animation').show();
 }
 
 var clickedPanel;

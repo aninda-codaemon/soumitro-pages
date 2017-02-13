@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
     <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="css/pretty.css" rel="stylesheet">
-
+    <script src = "js/HYPE-526.thin.min.js"></script>
     <!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
@@ -59,7 +59,7 @@ drift.load('rgvdm473vfx2');
 
             <div class="modal-body">
               <h4>Tell Us About Your Company to Get Started</h4>
-              <form id="company_form" class="" action="" method="post">
+              <form id="company_form" class="" action="" method="post" data-fr-store="companySize">
                 <select class="form-control" name="company_select">
                   <option value="" disabled selected>Company Size</option>
                   <option value="1-4">1-4</option>
@@ -129,7 +129,7 @@ drift.load('rgvdm473vfx2');
                         </div>
 
                         <div class="row">
-                          <form class="" id="people_search" action="" method="post">
+                          <form class="" id="people_search" action="" method="post" data-fr-store="searchData">
                             <div class="col-sm-4">
                               <label for="fn">FIRST NAME</label>
                               <input class="form-control" type="text" name="fn" id="fn" value="" placeholder="First Name">
@@ -221,7 +221,7 @@ drift.load('rgvdm473vfx2');
                         </div>
 
                         <div class="row">
-                          <form class="" action="" method="post" id="phone_search">
+                          <form class="" action="" method="post" id="phone_search" data-fr-store="searchData">
                             <div class="col-sm-10">
                               <label for="phone">PHONE NUMBER</label>
                               <input class="form-control" type="text" name="phone" value="" id="phone" placeholder="Phone Number">
@@ -247,7 +247,7 @@ drift.load('rgvdm473vfx2');
                         </div>
 
                         <div class="row">
-                          <form class="" action="" method="post" id="email_search">
+                          <form class="" action="" method="post" id="email_search" data-fr-store="searchData">
                             <div class="col-sm-10">
                               <label for="email">E-MAIL</label>
                               <input class="form-control" type="text" name="email" value="" placeholder="E-mail">
@@ -273,7 +273,7 @@ drift.load('rgvdm473vfx2');
                         </div>
 
                         <div class="row">
-                          <form class="" action="" method="post" id="property_search">
+                          <form class="" action="" method="post" id="property_search" data-fr-store="searchData">
                             <div class="col-sm-10">
                               <label for="address">ADDRESS</label>
                               <input class="form-control" type="text" name="address" value="" placeholder="Address">
@@ -285,6 +285,19 @@ drift.load('rgvdm473vfx2');
                         </div>
                       </article>
 
+                      <!-- <div class="teaser-man" data-fr-bind="peopleData">
+                        <div data-fr-each="teasers" data-fr-map="TeaserRecord">
+                          <p>{{firstName}}</p>
+                          <p>{{displayAge}}</p>
+                          <p>{{relative}}</p>
+                        </div>
+                        {{sdkhjfdskjf}}
+                      </div> -->
+                      <div class="loading-animation">
+                        <div id="ktclogoanimation_hype_container" style="margin:auto;position:relative;width:150px;height:150px;overflow:hidden;" aria-live="polite">
+                      	   <script type="text/javascript" charset="utf-8" src="js/ktclogoanimation_hype_generated_script.js?67886"></script>
+                    	</div>
+                      </div>
               </div>
             </div>
           </div>
