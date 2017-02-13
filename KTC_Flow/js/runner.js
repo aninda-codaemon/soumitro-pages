@@ -1,4 +1,11 @@
 ;(function ($) {
+
+  var LOADING_TEXT = {
+    "people": "Use our People Search API to validate data, reduce risk, update records, enhance contact lists, and so much more.",
+    "phone": "Use our Phone Search API to see the owner's name, validate data, reduce risk, update records, enchance contact lists, and so much more.",
+    "email": "Use our Email Search API to validate data, update records, enchance, contact lists, and so much more.",
+    "property": "Use our Property Search API to validate data, reduce risk, update your records, enhance contact lists, and so much more."
+  }
   var trackNL = function (evtName, props) {
     if (typeof nolimit !== 'undefined' && nolimit.track) {
       if (props) {
@@ -121,10 +128,12 @@
 
   // Form Validations
 
-  var hideSearches = function() {
+  var hideSearches = function(searchType) {
     $('article.contact-panel').hide();
-    startLoading();
+    $('.start-header').hide();
+    startLoading(searchType);
   }
+
   var getPeople = function(formData){
     var fn = formData.fn || "",
         ln = formData.ln || "",
@@ -196,7 +205,6 @@
     var xhrData = $.ajax({
       url: url,
       dataType : 'jsonp',
-      jsonpCallback: 'parseEmailTeaser'
     })
 
     $.when(xhrData).then(function(result){
@@ -225,6 +233,31 @@
     });
   }
 
+  var getPropertyData = function(formData) {
+    var baseUrl = "https://www.beenverified.com/hk/dd/teaser/property?exporttype=jsonp&address=",
+        url = baseUrl + encodeURIComponent(formData.address);
+
+    var xhrData = $.ajax({
+      url: url,
+      dataType: 'jsonp'
+    })
+
+    $.when(xhrData).done(function(result){
+      var teaserRecords = [],
+      xhrResult = result;
+
+      teaserRecords[0] = xhrResult;
+
+      var teaserDataObj = {
+        recordCount: _.isEmpty(xhrResult) ? 0 : 1,
+        address: formData.address,
+        teasers: teaserRecords
+      }
+
+      amplify.store('propertyData', teaserDataObj);
+    })
+  }
+
   $peopleSearchForm = $('#people_search');
   $phoneSearchForm = $('#phone_search');
   $emailSearchForm = $('#email_search');
@@ -244,9 +277,9 @@
     },
     submitHandler: function(form, e) {
       e.preventDefault();
-      hideSearches();
       var formData = serializeToObject(($(form).serializeArray()));
       getPeople(formData);
+      hideSearches("people");
     }
   });
 
@@ -275,7 +308,7 @@
       e.preventDefault();
       var formData = serializeToObject(($(form).serializeArray()));
       getPhoneData(formData);
-      hideSearches();
+      hideSearches("phone");
     }
   });
 
@@ -295,7 +328,7 @@
         e.preventDefault();
         var formData = serializeToObject(($(form).serializeArray()));
         getEmailData(formData);
-        hideSearches();
+        hideSearches("email");
       }
     });
 
@@ -308,7 +341,9 @@
     },
     submitHandler: function(form, e){
       e.preventDefault();
-      hideSearches();
+      var formData = serializeToObject(($(form).serializeArray()));
+      getPropertyData(formData);
+      hideSearches("property");
     }
   });
 
@@ -328,8 +363,21 @@
 
   //Transition to search animation
 
-var startLoading = function() {
+var startLoading = function(searchType) {
+  $loadingHeader = $('.loading-animation h1');
+  switch (searchType) {
+    case 'phone':
+      $loadingHeader.text('Searching ' + amplify.store().searchData.phone);
+      break;
+    case 'email':
+      console.log('');
+      break;
+    case 'property':
+      console.log('');
+      break;
+  }
   $('.loading-animation').show();
+
 }
 
 var clickedPanel;

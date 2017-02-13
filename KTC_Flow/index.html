@@ -113,8 +113,10 @@ drift.load('rgvdm473vfx2');
               <div class="col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1">
                 <div class="row">
                   <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0">
-                    <h1>Start Searching for Free!</h1>
+                    <div class="start-header">
+                      <h1>Start Searching for Free!</h1>
                       <p>Try one of our seach options. Search a customer, lead, contact, or anyone.</p>
+                    </div>
 
                       <article class="contact-panel">
                         <div class="row">
@@ -123,8 +125,8 @@ drift.load('rgvdm473vfx2');
                             <img src="img/PeopleSearch-teal.svg" alt="" class="teal-icon"/>
                           </div>
                           <div class="col-sm-10 no-pad-left">
-                            <h3>People Search</h3>
-                            <p>Got a lead? Search for them and get their contact info.</p>
+                            <h3>People Search API</h3>
+                            <p>Enter a name to see their addresses, contact information, and so much more.</p>
                           </div>
                         </div>
 
@@ -215,8 +217,8 @@ drift.load('rgvdm473vfx2');
                             <img src="img/Phone-Search-Teal.svg" alt="" class="teal-icon"/>
                           </div>
                           <div class="col-sm-10 no-pad-left">
-                            <h3>Phone Search</h3>
-                            <p>Verify Phone numbers.</p>
+                            <h3>Phone Search API</h3>
+                            <p>Enter a phone number to discover the owner's name and where they live.</p>
                           </div>
                         </div>
 
@@ -241,8 +243,8 @@ drift.load('rgvdm473vfx2');
                             <img src="img/email-search-teal.svg" alt="" class="teal-icon"/>
                           </div>
                           <div class="col-sm-10 no-pad-left">
-                            <h3>E-mail Search</h3>
-                            <p>See social media profiles associated with an email address.</p>
+                            <h3>E-mail Search API</h3>
+                            <p>Enter an email to see the owner's name, social media profiles, and much more.</p>
                           </div>
                         </div>
 
@@ -267,8 +269,8 @@ drift.load('rgvdm473vfx2');
                             <img src="img/property-search-teal.svg" alt="" class="teal-icon"/>
                           </div>
                           <div class="col-sm-10 no-pad-left">
-                            <h3>Property Search</h3>
-                            <p>Look for an address and see who lives there.</p>
+                            <h3>Property Search API</h3>
+                            <p>Enter an address to see owners, deeds, tax records, and much more.</p>
                           </div>
                         </div>
 
@@ -285,18 +287,16 @@ drift.load('rgvdm473vfx2');
                         </div>
                       </article>
 
-                      <!-- <div class="teaser-man" data-fr-bind="peopleData">
-                        <div data-fr-each="teasers" data-fr-map="TeaserRecord">
-                          <p>{{firstName}}</p>
-                          <p>{{displayAge}}</p>
-                          <p>{{relative}}</p>
-                        </div>
-                        {{sdkhjfdskjf}}
-                      </div> -->
+
                       <div class="loading-animation">
+                        <div class="" data-fr-bind="searchData">
+                          <h1>Searching {{fn}} {{ln}} in {{state}}</h1>
+                        </div>
                         <div id="ktclogoanimation_hype_container" style="margin:auto;position:relative;width:150px;height:150px;overflow:hidden;" aria-live="polite">
-                      	   <script type="text/javascript" charset="utf-8" src="js/ktclogoanimation_hype_generated_script.js?67886"></script>
-                    	</div>
+                          <script type="text/javascript" charset="utf-8" src="js/ktclogoanimation_hype_generated_script.js?67886"></script>
+                        </div>
+
+                        <!-- <h3>API Request Sent...</h3> -->
                       </div>
               </div>
             </div>
@@ -348,13 +348,6 @@ drift.load('rgvdm473vfx2');
 
 
   <div class="container">
-    <div class="quick-contact">
-      <p>Questions? Call 1-844-823-2869</p>
-
-      <p>Live Customer Support Hours:<br />
-        M-F 8am - 10pm ET<br />
-        Weekends 10am - 8pm ET</p>
-      </div>
 
 
       <div class="footer-bottom row">
