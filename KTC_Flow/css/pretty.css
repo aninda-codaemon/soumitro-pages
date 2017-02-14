@@ -352,8 +352,8 @@ hr {
 #footer {
   position: relative;
 
-  height: 415px;
-  padding-bottom: 40px;
+  height: 275px;
+  /*padding-bottom: 40px;*/
 
   background: rgb(37,52,75);
   background:    -moz-linear-gradient(left, rgba(37,52,75,1) 0%, rgba(36,63,106,1) 100%);
@@ -1079,7 +1079,7 @@ article.contact-panel label {
 @media (min-width: 1400px) {
 
   #footer {
-    height: 600px;
+    height: 500px;
     padding-top: 200px;
   }
 }
@@ -1124,7 +1124,7 @@ article.contact-panel label {
     font-size: 34px;
   }
   #footer {
-    height: 370px;
+    height: 275px;
     padding-top: 0;
   }
   #footer h2 {
@@ -1304,7 +1304,7 @@ article.contact-panel label {
     margin-left: 20px;
   }
   #footer {
-    height: 420px;
+    height: 300px;
   }
   #footer h2 {
     font-size: 38px;
@@ -1751,7 +1751,7 @@ article.contact-panel label {
     margin-right: 0;
   }
   #footer {
-    height: 750px;
+    height: 775px;
     padding-right: 20px;
     padding-left: 20px;
 
@@ -1802,7 +1802,7 @@ article.contact-panel label {
   .footer-bottom {
     position: relative;
 
-    margin: 90px 0 30px;
+    margin: 200px 0 30px;
   }
 
   .footer-teal-triangle {
@@ -2097,5 +2097,26 @@ article.contact-panel label {
 }
 
 .loading-animation {
+  display: none;
+  text-align: center;
+}
+.loading-animation h2,
+.loading-animation h3 {
+  color: white;
+}
+
+.loading-animation h2 {
+  margin-bottom: 40px;
+  font-size: 46px;
+}
+
+.loading-animation p {
+  margin-bottom: 80px;
+}
+
+.loading-animation h3 {
+  margin-top: 45px;
+}
+.loading-hidden {
   display: none;
 }

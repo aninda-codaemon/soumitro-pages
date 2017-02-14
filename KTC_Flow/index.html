@@ -289,14 +289,29 @@ drift.load('rgvdm473vfx2');
 
 
                       <div class="loading-animation">
-                        <div class="" data-fr-bind="searchData">
-                          <h1>Searching {{fn}} {{ln}} in {{state}}</h1>
+                        <div class="">
+                          <div class="loading-headers loading-hidden" id="people_loading" data-fr-bind="searchData">
+                            <h2>Searching {{fn}} {{ln}} in {{state}}</h2>
+                            <p>Use our People Search API to validate data, reduce risk, update records, enhance contact lists, and so much more</p>
+                          </div>
+                          <div class="loading-headers loading-hidden" id="phone_loading" data-fr-bind="searchData">
+                            <h2>Searching {{phone}}</h2>
+                            <p>Use our Phone Search API to see the owner's name, validate data, reduce risk, update records, enchance contact lists, and so much more.</p>
+                          </div>
+                          <div class="loading-headers loading-hidden" id="email_loading" data-fr-bind="searchData">
+                            <h2>Searching {{email}}</h2>
+                            <p>Use our Email Search API to validate data, update records, enchance, contact lists, and so much more.</p>
+                          </div>
+                          <div class="loading-headers loading-hidden" id="property_loading" data-fr-bind="searchData">
+                            <h2>Searching {{address}}</h2>
+                            <p>Use our Property Search API to validate data, reduce risk, update your records, enhance contact lists, and so much more.</p>
+                          </div>
                         </div>
                         <div id="ktclogoanimation_hype_container" style="margin:auto;position:relative;width:150px;height:150px;overflow:hidden;" aria-live="polite">
                           <script type="text/javascript" charset="utf-8" src="js/ktclogoanimation_hype_generated_script.js?67886"></script>
                         </div>
 
-                        <!-- <h3>API Request Sent...</h3> -->
+                        <h3>API Request Sent...</h3>
                       </div>
               </div>
             </div>
@@ -493,7 +508,7 @@ drift.load('rgvdm473vfx2');
 -->
   <!-- SCRIPTS -->
 
-  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/jquery-3.1.0.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/amplify.store.min.js"></script>
   <script src="js/lodash.min.js"></script>

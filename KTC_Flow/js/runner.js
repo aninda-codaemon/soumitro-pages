@@ -265,7 +265,7 @@
   $companyForm = $('#company_form');
 
 
-  $peopleSearchForm.validate({
+ $peopleSearchForm.validate({
 
     rules: {
       fn: "required",
@@ -282,6 +282,13 @@
       hideSearches("people");
     }
   });
+
+ // $peopleSearchForm.submit(function(e){
+ //   e.preventDefault();
+ //   var formData = serializeToObject(($(e.target).serializeArray()));
+ //    getPeople(formData);
+ //    hideSearches("people");
+ // })
 
 
 
@@ -309,6 +316,7 @@
       var formData = serializeToObject(($(form).serializeArray()));
       getPhoneData(formData);
       hideSearches("phone");
+      return false;
     }
   });
 
@@ -362,22 +370,40 @@
   })
 
   //Transition to search animation
+var changeLoadingText = function(searchType) {
+    $loadingText = $('.loading-animation h3');
+    window.setTimeout(function(){
+      $loadingText.hide();
+      $loadingText.text('Looking Up Billions of Records...').fadeIn();
+      window.setTimeout(function(){
+        $loadingText.hide()
+        $loadingText.text('Building Sample Report...').fadeIn();
+        window.setTimeout(function(){
+          showResults(searchType);
+        }, 10000)
+      }, 10000)
+    },10000)
+}
 
 var startLoading = function(searchType) {
-  $loadingHeader = $('.loading-animation h1');
-  switch (searchType) {
-    case 'phone':
-      $loadingHeader.text('Searching ' + amplify.store().searchData.phone);
-      break;
-    case 'email':
-      console.log('');
-      break;
-    case 'property':
-      console.log('');
-      break;
-  }
+  $('body').scrollTop(0);
   $('.loading-animation').show();
 
+  switch (searchType) {
+    case 'people':
+    $('#people_loading').removeClass('loading-hidden');
+      break;
+    case 'phone':
+      $('#phone_loading').removeClass('loading-hidden');
+      break;
+    case 'email':
+      $('#email_loading').removeClass('loading-hidden');
+      break;
+    case 'property':
+      $('#property_loading').removeClass('loading-hidden');
+      break;
+  }
+  changeLoadingText(searchType);
 }
 
 var clickedPanel;
@@ -385,7 +411,7 @@ $('.contact-panel').click(function(){
   if (clickedPanel) {
     $(clickedPanel).removeClass("focused-panel");
   }
-  // $(this).find('button').show();
+
   $(this).addClass("focused-panel");
   clickedPanel = this;
 })
@@ -396,7 +422,7 @@ $('.contact-panel').click(function(){
   var initialize = function () {
     setLastVisit();
     setColumnState();
-    // $('#company-modal').modal('show');
+
 
   /* initDownsells(); */
 
