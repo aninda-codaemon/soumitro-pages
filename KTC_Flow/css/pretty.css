@@ -79,8 +79,6 @@ h1 {
   font-weight: 400;
   line-height: 1;
 
-  margin: 0 0 50px;
-
   color: #263348;
 }
 h2 {
@@ -107,24 +105,13 @@ h4 {
 
   margin: 0 0 30px;
 }
-h5 {
-  font-size: 24px;
-  font-weight: 700;
 
-  margin: 0 0 15px;
-}
-.nowrap {
-  white-space: nowrap;
-}
 .form-control {
   /*-webkit-appearance: none;*/
 }
 .form-control:focus {
   border-color: #fff;
   box-shadow: none;
-}
-.control-label {
-  text-align: left !important;
 }
 .btn {
   font-family: 'halis_rblack';
@@ -149,24 +136,6 @@ h5 {
 .btn-primary.active {
   background: #17315b;
   box-shadow: 0 4px 0 0 #17315b;
-}
-
-.btn-default {
-  color: #2164d0;
-  background: #fff;
-  box-shadow: 0 3px 0 0 #17315b;
-}
-.btn-warning:hover {
-  color: #2164d0;
-  background: rgba(255,255,255,0.79);
-  box-shadow: 0 3px 0 0 #17315b;
-}
-.btn-warning:active,
-.btn-warning:focus,
-.btn-warning.active {
-  color: #2164d0;
-  background: rgba(255,255,255,0.5);
-  box-shadow: 0 3px 0 0 #17315b;
 }
 .btn-small {
   font-family: 'Work Sans', sans-serif;
@@ -229,13 +198,6 @@ hr {
 #header .navbar-nav {
   margin-right: 30px;
 }
-#header .btn.btn-small {
-  font-size: 18px;
-
-  padding: 5px 20px;
-
-  color: #f9f9f9;
-}
 
 #header .navbar-nav>li {
   margin: 0 20px;
@@ -255,95 +217,35 @@ hr {
 #header .navbar-nav>li>a:hover {
   color: #0e46a2;
 }
-.top h4 {
-  width: 457px;
-}
 
-.top .start-btn {
-  margin-bottom: 210px;
-}
 .top .row {
   position: relative;
 }
-.top .screens {
-  position: absolute;
-  top: 0;
-  right: 0;
 
-  height: 100%;
+
+.loading-animation {
+  display: none;
+  text-align: center;
 }
-.top .screen2 {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  right: 0;
-
-  text-align: right;
-}
-.top .screen1 {
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  left: 0;
-}
-.top figcaption {
-  font-family: 'halis_rblack';
-  font-size: 32px;
-  line-height: 35px;
-
-  margin-top: 20px;
-
-  color: #fff;
-}
-.top .screens img {
-  display: block;
-
-  max-width: 100%;
-}
-.top .screen2 img {
-  margin: 0 0 0 auto;
-}
-.top .screen2 figcaption {
-  display: inline-block;
-
-  width: 40%;
-  margin-right: 50px;
-
-  text-align: left;
+.loading-animation h2,
+.loading-animation h3 {
+  color: white;
 }
 
-.features {
-  padding: 90px 0;
+.loading-animation h2 {
+  margin-bottom: 40px;
+  font-size: 46px;
 }
-.features h3 {
-  margin-bottom: 25px;
-}
-.developers {
-  padding: 82px 0;
 
-  color: #fff;
+.loading-animation p {
+  margin-bottom: 80px;
 }
-.developers h2,
-.developers h3 {
-  color: #fff;
-}
-.developers p {
-  margin-right: 60px;
-  margin-left: 60px;
-}
-.developers figure {
-  margin-bottom: 45px;
-}
-.section {
-  padding: 80px 0;
-}
-.responsive-img img {
-  display: block;
 
-  max-width: 100%;
+.loading-animation h3 {
+  margin-top: 45px;
 }
-.mr50 {
-  margin-right: 50px;
+.loading-hidden {
+  display: none;
 }
 
 /* ********************************************************************** */
@@ -359,11 +261,6 @@ hr {
   background:    -moz-linear-gradient(left, rgba(37,52,75,1) 0%, rgba(36,63,106,1) 100%);
   background: -webkit-linear-gradient(left, rgba(37,52,75,1) 0%,rgba(36,63,106,1) 100%);
   background:         linear-gradient(to right, rgba(37, 52, 75, 1) 0%, rgba(36, 63, 106, 1) 100%);
-}
-#footer h2 {
-  font-size: 44px;
-
-  color: #fff;
 }
 
 .footer-bottom {
@@ -414,10 +311,6 @@ hr {
 
   color: #fff;
 }
-h2 .hidden-xs {
-  display: inline !important;
-}
-
 .pricing .top,
 .signup .top {
   overflow: hidden;
@@ -432,8 +325,6 @@ h2 .hidden-xs {
 }
 .pricing .top h1,
 .signup .top h1 {
-  margin: 0 0 30px;
-
   text-align: center;
 
   color: #fff;
@@ -512,132 +403,6 @@ h2 .hidden-xs {
   content: '';
   transform: rotate(-28.8deg);
 }
-.price-box {
-  margin-bottom: 30px;
-  padding: 30px 25px 15px;
-
-  text-align: center;
-
-  color: #375271;
-  border-radius: 2px;
-  background: #fff;
-  box-shadow: 0 0 6px 0 rgba(0,0,0,0.22);
-}
-.price-box h2 {
-  font-size: 46px;
-
-  margin: 0 0 10px;
-
-  color: #19b2cc;
-}
-.price-box h4 {
-  position: relative;
-
-  width: auto;
-  margin: 0 0 18px;
-
-  text-transform: uppercase;
-}
-.price-box h4:before {
-  position: absolute;
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  left: 0;
-
-  width: 100%;
-
-  content: '';
-
-  border-top: 2px dashed #375271;
-}
-.price-box h4 span {
-  font-size: 18px;
-  font-weight: 500;
-
-  position: relative;
-  z-index: 2;
-
-  display: inline-block;
-
-  padding: 0 20px;
-
-  color: #263348;
-  background: #fff;
-}
-.price-box ul,
-.price-box ul li {
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
-}
-.price-box ul,
-.price-box p {
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 29px;
-
-  margin-bottom: 25px;
-
-  color: #375271;
-}
-.price-box small {
-  font-family: WorkSans-Medium;
-  font-size: 14px;
-  line-height: 16px;
-
-  display: block;
-
-  margin-top: 14px;
-
-  color: #375271;
-}
-.price-box .btn:last-child {
-  margin-bottom: 30px;
-}
-
-.top .include h2 {
-  font-size: 38px;
-
-  margin: 20px 0 30px;
-
-  color: #fff;
-}
-.include h4 {
-  font-size: 20px;
-
-  width: auto;
-  margin: 0 0 20px;
-}
-.include ul {
-  margin-left: 18px;
-}
-.include ul li {
-  font-size: 18px;
-  line-height: 22px;
-
-  margin-bottom: 8px;
-
-  list-style: disc;
-}
-.pricing #footer {
-  padding-top: 100px;
-}
-.pricing #footer h2 {
-  font-size: 56px;
-
-  margin-bottom: 50px;
-}
-.pricing #footer h4 {
-  font-size: 28px;
-  font-weight: 500;
-
-  margin-bottom: 50px;
-
-  color: #fff;
-}
-
 
 .contact-panel {
   font-size: 20px;
@@ -651,113 +416,9 @@ h2 .hidden-xs {
   box-shadow: 0 0 6px 0 rgba(0,0,0,0.22);
 }
 
-.contact-panel h2 {
-  margin-bottom: 40px;
-
-  text-align: center;
-}
-.contact-panel ul,
-.contact-panel li {
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
-}
-.contact-panel li {
-  font-size: 28px;
-  font-weight: 500;
-
-  margin-bottom: 22px;
-
-  color: #375271;
-}
-.contact-panel li img {
-  display: inline-block;
-
-  margin-right: 10px;
-
-  vertical-align: middle;
-}
-.contact-panel li a {
-  color: #375271;
-}
 .contact-panel h3 {
   font-size: 36px;
   margin-bottom: 5px;
-}
-.contact-panel strong {
-  font-weight: 600;
-
-  display: block;
-}
-.signup .contact-panel li {
-  font-size: 22px;
-
-  margin: 0;
-
-  text-align: center;
-}
-.signup .contact-panel h2 {
-  position: relative;
-
-  margin-bottom: 15px;
-}
-.signup .contact-panel {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-.signup .contact-panel h2:before {
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  left: 0;
-
-  width: 100%;
-  height: 2px;
-  margin-top: -1px;
-
-  content: '';
-
-  border-top: 2px dashed #375271;
-}
-.signup .contact-panel h2 span {
-  position: relative;
-  z-index: 2;
-
-  display: inline-block;
-
-  padding: 0 20px 0 40px;
-
-  background: #fff;
-}
-.signup .contact-panel h2 em {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  font-style: normal;
-
-  display: inline-block;
-
-  margin: 4px 0 0 4px;
-
-  vertical-align: top;
-
-  color: #263348;
-}
-.form-group {
-  margin-right: 15px !important;
-  margin-bottom: 28px;
-  margin-left: 15px !important;
-}
-.form-group label {
-  font-size: 16px;
-  font-weight: 500;
-
-  display: inline-block;
-
-  text-transform: uppercase;
-
-  color: #263348;
 }
 
 .form-control {
@@ -780,31 +441,8 @@ select.form-control {
   border-color: #02d553;
   box-shadow: none;
 }
-textarea.form-control {
-  resize: vertical;
-}
 
 /*Form Validation Styling*/
-#errorExplanation {
-  font-size: 13px;
-
-  margin: 0 15px 15px;
-  padding: 0 15px 15px;
-
-  border: 1px solid #e13d3d !important;
-  border-radius: 4px;
-  background-color: #fff7f7;
-}
-#errorExplanation .messages li {
-  font-size: 15px;
-
-  color: #ef1a1d;
-}
-
-.form-control.input-error {
-  border-width: 2px;
-  border-color: #ef1a1d;
-}
 
 label.error {
   font-size: 14px;
@@ -868,11 +506,6 @@ label.custom-checkbox.input-error {
   }
 }
 
-
-.contact textarea {
-  height: 156px;
-}
-
 .contact #footer .container,
 .signup #footer .container {
   position: relative;
@@ -882,18 +515,8 @@ label.custom-checkbox.input-error {
 .signup #footer .container {
   padding-top: 0;
 }
-.signup #footer .quick-contact {
-  font-size: 22px;
 
-  margin-bottom: 40px;
 
-  text-align: center;
-
-  color: #fff;
-}
-.signup #footer .quick-contact p {
-  margin-bottom: 30px;
-}
 .footer-teal {
   position: absolute;
   z-index: 0;
@@ -921,9 +544,7 @@ label.custom-checkbox.input-error {
   background-image: url('../img/BG.svg');
   background-attachment: fixed;
 }
-.footer-logo {
-  display: inline-block;
-}
+
 div.footer-teal {
   -webkit-clip-path: url('#clip-shape4'); /* required for Webkit/Blink browsers if you're using only inline SVG clipping paths, but not CSS clip-path */
           clip-path: url(#clip-shape4);
@@ -1064,6 +685,11 @@ article.contact-panel label {
 .focused-panel .white-icon {
   display: none;
 }
+
+.start-header {
+  text-align: center;
+}
+
 .no-pad-left {
   padding-left: 0px !important;
 }
@@ -1101,43 +727,23 @@ article.contact-panel label {
   .top {
     background-position: 100% -19%;
   }
-  .top .start-btn {
-    margin-bottom: 0;
+
+  .pricing .top h1,
+  .signup .top h1 {
+    margin: 30px 0 30px;
   }
 
-  .top .screens .screen1,
-  .top .screens .screen2 {
-    width: 70%;
-  }
-  .top .screens figcaption {
-    font-size: 20px;
-    line-height: 26px;
-
-    margin-right: 0;
-  }
-  .top h1 {
-    font-size: 49px;
-
-    margin-bottom: 30px;
-  }
-  .developers h3 {
-    font-size: 34px;
-  }
   #footer {
     height: 275px;
     padding-top: 0;
   }
-  #footer h2 {
-    font-size: 42px;
-  }
+
   #footer p,
   .footer-nav,
   .footer-nav a {
     font-size: 12px;
   }
-  .signup #footer .quick-contact p {
-    font-size: 20px;
-  }
+
   #footer .logo {
     margin-bottom: 10px;
   }
@@ -1149,14 +755,7 @@ article.contact-panel label {
   }
 }
 @media screen and (min-width: 993px) {
-  .features .responsive-img {
-    display: block;
 
-    margin-top: 20px;
-  }
-  .signup .form-group .pull-right img {
-    height: 15px;
-  }
 }
 @media screen and (max-width: 992px) {
 
@@ -1181,7 +780,7 @@ article.contact-panel label {
   p {
     line-height: 26px;
 
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
   h1 {
     font-size: 54px;
@@ -1203,12 +802,7 @@ article.contact-panel label {
 
     margin: 0 0 20px;
   }
-  h5 {
-    font-size: 20px;
-    font-weight: 600;
 
-    margin: 0 0 15px;
-  }
   .btn {
     font-size: 24px;
     line-height: 26px;
@@ -1242,76 +836,25 @@ article.contact-panel label {
   .top {
     background-position: 100% -165%;
   }
-  .top .start-btn {
-    margin-bottom: 0;
-  }
+
   .top h1 {
     margin-right: 50px;
   }
-  .top .screens {
-    position: relative;
-    top: 0;
-    right: 0;
 
-    height: 450px;
-  }
-  .top .screens figcaption {
-    font-size: 24px;
-    line-height: 28px;
-
-    color: #fff;
-  }
-  .top .screens .screen1,
-  .top .screens .screen2 {
-    width: 50%;
-  }
-  .top .screens .screen2 {
-    right: 45px;
-  }
-  .top .screens .screen2 figcaption {
-    width: 70%;
-    margin-right: 20px;
-  }
   hr {
     border: none;
   }
-  .mr50 {
-    margin-right: 0;
-  }
-  .sm-pull-right {
-    float: right !important;
 
-    text-align: right;
-  }
-  .features .responsive-img img {
-    margin: 0 0 0 auto;
-  }
-  .features .feature-img {
-    width: 100%;
-  }
-  .features .responsive-img {
-    display: block;
-
-    margin-top: 80px;
-  }
-  .features h3 {
-    margin-bottom: 15px;
-
-    white-space: nowrap;
-  }
-  .developers p {
-    margin-right: 20px;
-    margin-left: 20px;
-  }
   #footer {
     height: 300px;
-  }
-  #footer h2 {
-    font-size: 38px;
   }
   #footer p {
     font-size: 16px;
     line-height: 22px;
+  }
+
+  .footer-bottom {
+    margin-top: 115px;
   }
   .footer-nav,
   .footer-nav a {
@@ -1328,21 +871,7 @@ article.contact-panel label {
   .social-nav {
     margin-top: -15px;
   }
-  .price-box {
-    padding: 30px 20px 15px;
-  }
-  .price-box h2 {
-    margin: 0 0 4px;
-  }
-  .top .include h2 {
-    font-size: 30px;
 
-    text-align: left;
-  }
-  .include p,
-  .include ul {
-    margin-bottom: 30px;
-  }
   .pricing .logo+span,
   .signup .logo+span {
     margin-left: -257px;
@@ -1369,41 +898,49 @@ article.contact-panel label {
   }
   .pricing .top h1,
   .signup .top h1 {
-    margin: 40px 0 80px;
+    margin: 40px 0 30px;
   }
-  .signup .top h1 {
+  /*.signup .top h1 {
     margin-bottom: 40px 0 40px;
-  }
-  .pricing #footer,
-  .signup #footer {
-    padding-top: 60px;
-  }
-  .pricing #footer h2,
-  .signup #footer h2 {
-    font-size: 38px;
+  }*/
 
-    margin-bottom: 30px;
-  }
-  .pricing #footer h4,
-  .signup #footer h4 {
+  .start-header p {
     font-size: 24px;
-
-    margin-bottom: 40px;
   }
   .contact-panel {
-    padding: 35px 30px;
-  }
-  .contact-panel h2 {
-    margin-bottom: 20px;
+    padding: 20px 30px 30px;
+    text-align: center;
   }
 
   .contact-panel h3 {
     font-size: 32px;
-  }
-  .signup #footer .quick-contact {
-    margin-bottom: 49px;
+    margin-bottom: 15px;
   }
 
+  .contact-panel img {
+    height: 60px;
+  }
+
+  .contact-panel img,
+  .contact-panel button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact-panel form {
+    text-align: left;
+  }
+
+  .contact-panel #fn,
+  .contact-panel #ln {
+    margin-bottom: 15px;
+  }
+  .contact-panel .no-pad-left {
+    padding-left: 15px !important;
+  }
+
+  .contact-panel .no-pad-right {
+    padding-right: 15px !important;
+  }
   .footer-teal {
     width: 65%;
     height: 500px;
@@ -1463,12 +1000,7 @@ article.contact-panel label {
 
     margin: 0 0 20px;
   }
-  h5 {
-    font-size: 18px;
-    font-weight: 400;
 
-    margin: 0 0 15px;
-  }
   .btn {
     font-size: 20px;
     line-height: 26px;
@@ -1487,35 +1019,7 @@ article.contact-panel label {
     padding-top: 15px;
     padding-bottom: 20px;
   }
-  .top .screens {
-    position: static;
 
-    height: auto;
-    margin-top: 100px;
-  }
-  .top .screens .screen1,
-  .top .screens .screen2 {
-    position: static;
-
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  .top .screens .screen2 {
-    margin-bottom: 40px;
-  }
-  .top .screens figcaption,
-  .top .screens .screen2 figcaption {
-    width: auto;
-    margin: 15px 0 0;
-
-    text-align: center;
-  }
-  .top .start-btn {
-    font-size: 20px;
-
-    margin-bottom: 40px;
-    padding: 10px 20px;
-  }
   .logo {
     width: 120px;
     height: 43px;
@@ -1559,6 +1063,9 @@ article.contact-panel label {
     display: inline-block;
 
     color: #2164d0;
+  }
+  .start-header p {
+    font-size: 20px;
   }
   .navbar-toggle {
     font-size: 0;
@@ -1692,64 +1199,7 @@ article.contact-panel label {
   #header .btn {
     margin-top: 0;
   }
-  .features {
-    padding: 40px 0;
 
-    text-align: center;
-  }
-  h2 .visible-xs {
-    display: inline !important;
-  }
-  h2 .hidden-xs {
-    display: none !important;
-  }
-  .top h4 {
-    width: auto;
-  }
-  .features {
-    text-align: center;
-  }
-  .features h3.nowrap {
-    white-space: normal;
-  }
-  .features h3 img {
-    display: block;
-
-    margin: 0 auto 10px;
-  }
-  .features .btn {
-    margin-bottom: 30px;
-  }
-  .features h3 {
-    white-space: normal;
-  }
-  .responsive-img img {
-    width: 100%;
-  }
-  .developers {
-    padding: 50px 0 10px;
-  }
-  .developers h3 {
-    font-size: 28px;
-  }
-  .developers  .btn {
-    margin-bottom: 50px;
-  }
-  .developers figure {
-    margin-bottom: 20px;
-  }
-  .developers figure img {
-    max-width: 40%;
-  }
-  .no-pull-xs {
-    float: none !important;
-  }
-  .section {
-    text-align: center;
-  }
-  .mr50 {
-    margin-right: 0;
-  }
   #footer {
     height: 775px;
     padding-right: 20px;
@@ -1757,23 +1207,7 @@ article.contact-panel label {
 
     background: none;
   }
-  #footer h2 {
-    font-size: 32px;
 
-    margin-right: -20px;
-    margin-left: -20px;
-  }
-  #footer h2 br {
-    display: block;
-
-    margin-bottom: 26px;
-
-    content: '';
-  }
-  #footer .btn {
-    width: 80%;
-    margin-bottom: 80px;
-  }
   #footer .logo {
     width: 116px;
     height: 42px;
@@ -1861,19 +1295,6 @@ article.contact-panel label {
   .signup #footer p {
     margin-bottom: 104px;
   }
-  .pricing #footer .text-center,
-  .signup #footer .text-center {
-    position: relative;
-    z-index: 9;
-  }
-  .pricing #footer h4,
-  .signup #footer h4 {
-    font-size: 20px;
-
-    margin-right: -10px;
-    margin-bottom: 40px;
-    margin-left: -10px;
-  }
 
   .social-nav {
     position: absolute;
@@ -1883,17 +1304,6 @@ article.contact-panel label {
     margin: 0 15px 0 0;
   }
 
-  .pricing .top h1 {
-    font-size: 44px;
-
-    margin: 60px 30px 20px;
-  }
-  .pricing .top h1+p {
-    font-size: 20px;
-    line-height: 26px;
-
-    margin: 0 10px 40px;
-  }
   .pricing .top,
   .signup .top {
     background: rgb(37,52,75);
@@ -1903,32 +1313,7 @@ article.contact-panel label {
 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#263348', endColorstr='#2164d0',GradientType=0 );
   }
-  .price-box {
-    margin: 0 10px 29px;
-    padding-bottom: 20px;
-  }
-  .price-box small {
-  }
-  .price-box .btn {
-    display: block;
-  }
-  .include {
-    margin: 0 15px;
-  }
-  .include h2 {
-    font-size: 28px;
 
-    text-align: left !important;
-  }
-  .include h4 {
-    font-size: 20px;
-  }
-  .include .pull-right {
-    float: none !important;
-  }
-  .price-box .btn:last-child {
-    margin: 0;
-  }
   .pricing .navbar-toggle.collapsed span,
   .pricing .navbar-toggle span::after,
   .pricing .navbar-toggle span::before,
@@ -1995,9 +1380,6 @@ article.contact-panel label {
     position: relative;
     z-index: 5;
   }
-  .include .row .row ul {
-    margin-bottom: 0;
-  }
 
   .contact-panel {
     font-size: 18px;
@@ -2009,22 +1391,8 @@ article.contact-panel label {
   .contact-panel h3 {
     font-size: 28px;
 
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
-  .contact-panel li {
-    font-size: 20px;
-
-    text-align: center;
-  }
-  .contact-panel li img {
-    display: block;
-
-    margin: 0 auto;
-  }
-  .contact-panel strong {
-    margin-top: 10px;
-  }
-
   .contact-panel form {
     text-align: left;
   }
@@ -2038,85 +1406,35 @@ article.contact-panel label {
     margin-bottom: 15px;
   }
 
-  .signup .contact-panel .form-group,
-  .signup .contact-panel .custom-checkbox {
-    text-align: left;
-  }
+
   .signup #footer {
     margin: 0;
   }
 
-  .signup #footer .quick-contact {
-    margin-bottom: 89px;
-  }
   .signup #footer .footer-bottom:after {
     border-color: #234f96 transparent transparent transparent;
-  }
-  .signup #footer .quick-contact p {
-    font-size: 18px;
-
-    width: auto;
   }
 
   .signup .top h1 {
     font-size: 44px;
     line-height: 49px;
 
-    margin: 75px 0 20px;
+    margin: 75px 0 30px;
   }
-  .signup .contact-panel h2 span {
-    padding: 0 10px;
-  }
-  .signup .contact-panel h2:before {
-    top: auto;
-    bottom: 14px;
-  }
-  .signup .contact-panel h2 em {
-    font-size: 16px;
 
-    display: block !important;
+  .contact-panel .no-pad-mobile {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
-  .signup .contact-panel h2 em.hidden-xs {
-    display: none !important;
-  }
-  .signup .contact-panel .text-right {
-    margin-bottom: 20px;
 
-    text-align: center;
+  .contact-panel img {
+    margin-bottom: 10px;
   }
-  .signup .contact-panel .text-right .visible-xs {
-    display: inline-block !important;
-  }
+
 }
 
 @media (max-width: 340px){
   #company-modal button {
   margin: -15px;
   }
-
-}
-
-.loading-animation {
-  display: none;
-  text-align: center;
-}
-.loading-animation h2,
-.loading-animation h3 {
-  color: white;
-}
-
-.loading-animation h2 {
-  margin-bottom: 40px;
-  font-size: 46px;
-}
-
-.loading-animation p {
-  margin-bottom: 80px;
-}
-
-.loading-animation h3 {
-  margin-top: 45px;
-}
-.loading-hidden {
-  display: none;
 }

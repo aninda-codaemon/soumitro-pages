@@ -110,21 +110,26 @@ drift.load('rgvdm473vfx2');
 
           <div class="container">
             <div class="row">
-              <div class="col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1">
+              <div class="col-sm-12">
                 <div class="row">
                   <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0">
-                    <div class="start-header">
-                      <h1>Start Searching for Free!</h1>
-                      <p>Try one of our seach options. Search a customer, lead, contact, or anyone.</p>
+                    <div class="row">
+                      <div class="start-header col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0">
+
+                          <h1>Start Searching for Free!</h1>
+                          <p>Try one of our seach options. Search a customer, lead, contact, or anyone.</p>
+
+                      </div>
+
                     </div>
 
                       <article class="contact-panel">
                         <div class="row">
-                          <div class="col-sm-2">
+                          <div class="col-sm-12 col-md-2">
                             <img src="img/PeopleSearch.svg" alt="" class="white-icon"/>
                             <img src="img/PeopleSearch-teal.svg" alt="" class="teal-icon"/>
                           </div>
-                          <div class="col-sm-10 no-pad-left">
+                          <div class="col-sm-offset-1 col-sm-10 col-md-offset-0 no-pad-left">
                             <h3>People Search API</h3>
                             <p>Enter a name to see their addresses, contact information, and so much more.</p>
                           </div>
@@ -132,76 +137,78 @@ drift.load('rgvdm473vfx2');
 
                         <div class="row">
                           <form class="" id="people_search" action="" method="post" data-fr-store="searchData">
-                            <div class="col-sm-4">
-                              <label for="fn">FIRST NAME</label>
-                              <input class="form-control" type="text" name="fn" id="fn" value="" placeholder="First Name">
-                            </div>
+                            <div class="col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0 no-pad-left no-pad-right no-pad-mobile">
+                              <div class="col-sm-6 col-md-4">
+                                <label for="fn">FIRST NAME</label>
+                                <input class="form-control" type="text" name="fn" id="fn" value="" placeholder="First Name">
+                              </div>
 
-                            <div class="col-sm-3">
-                              <label for="ln">LAST NAME</label>
-                              <input class="form-control" type="text" name="ln" id="ln" value="" placeholder="Last Name">
-                            </div>
+                              <div class="col-sm-6 col-md-3">
+                                <label for="ln">LAST NAME</label>
+                                <input class="form-control" type="text" name="ln" id="ln" value="" placeholder="Last Name">
+                              </div>
 
-                            <div class="col-sm-3">
-                              <label for="city">CITY</label>
-                              <input class="form-control" type="text" name="city" id="city" value="" placeholder="City">
-                            </div>
+                              <div class="col-sm-6 col-md-3">
+                                <label for="city">CITY</label>
+                                <input class="form-control" type="text" name="city" id="city" value="" placeholder="City">
+                              </div>
 
-                            <div class="col-sm-2">
-                              <label for="state">STATE</label>
-                              <select class="form-control" name="state">
-                                <option value="AL">AL</option>
-                                <option value="AK">AK</option>
-                                <option value="AZ">AZ</option>
-                                <option value="AR">AR</option>
-                                <option value="CA">CA</option>
-                                <option value="CO">CO</option>
-                                <option value="CT">CT</option>
-                                <option value="DE">DE</option>
-                                <option value="DC">DC</option>
-                                <option value="FL">FL</option>
-                                <option value="GA">GA</option>
-                                <option value="HI">HI</option>
-                                <option value="ID">ID</option>
-                                <option value="IL">IL</option>
-                                <option value="IN">IN</option>
-                                <option value="IA">IA</option>
-                                <option value="KS">KS</option>
-                                <option value="KY">KY</option>
-                                <option value="LA">LA</option>
-                                <option value="ME">ME</option>
-                                <option value="MD">MD</option>
-                                <option value="MA">MA</option>
-                                <option value="MI">MI</option>
-                                <option value="MN">MN</option>
-                                <option value="MS">MS</option>
-                                <option value="MO">MO</option>
-                                <option value="MT">MT</option>
-                                <option value="NE">NE</option>
-                                <option value="NV">NV</option>
-                                <option value="NH">NH</option>
-                                <option value="NJ">NJ</option>
-                                <option value="NM">NM</option>
-                                <option value="NY">NY</option>
-                                <option value="NC">NC</option>
-                                <option value="ND">ND</option>
-                                <option value="OH">OH</option>
-                                <option value="OK">OK</option>
-                                <option value="OR">OR</option>
-                                <option value="PA">PA</option>
-                                <option value="RI">RI</option>
-                                <option value="SC">SC</option>
-                                <option value="SD">SD</option>
-                                <option value="TN">TN</option>
-                                <option value="TX">TX</option>
-                                <option value="UT">UT</option>
-                                <option value="VT">VT</option>
-                                <option value="VA">VA</option>
-                                <option value="WA">WA</option>
-                                <option value="WV">WV</option>
-                                <option value="WI">WI</option>
-                                <option value="WY">WY</option>
-                              </select>
+                              <div class="col-sm-6 col-md-2">
+                                <label for="state">STATE</label>
+                                <select class="form-control" name="state">
+                                  <option value="AL">AL</option>
+                                  <option value="AK">AK</option>
+                                  <option value="AZ">AZ</option>
+                                  <option value="AR">AR</option>
+                                  <option value="CA">CA</option>
+                                  <option value="CO">CO</option>
+                                  <option value="CT">CT</option>
+                                  <option value="DE">DE</option>
+                                  <option value="DC">DC</option>
+                                  <option value="FL">FL</option>
+                                  <option value="GA">GA</option>
+                                  <option value="HI">HI</option>
+                                  <option value="ID">ID</option>
+                                  <option value="IL">IL</option>
+                                  <option value="IN">IN</option>
+                                  <option value="IA">IA</option>
+                                  <option value="KS">KS</option>
+                                  <option value="KY">KY</option>
+                                  <option value="LA">LA</option>
+                                  <option value="ME">ME</option>
+                                  <option value="MD">MD</option>
+                                  <option value="MA">MA</option>
+                                  <option value="MI">MI</option>
+                                  <option value="MN">MN</option>
+                                  <option value="MS">MS</option>
+                                  <option value="MO">MO</option>
+                                  <option value="MT">MT</option>
+                                  <option value="NE">NE</option>
+                                  <option value="NV">NV</option>
+                                  <option value="NH">NH</option>
+                                  <option value="NJ">NJ</option>
+                                  <option value="NM">NM</option>
+                                  <option value="NY">NY</option>
+                                  <option value="NC">NC</option>
+                                  <option value="ND">ND</option>
+                                  <option value="OH">OH</option>
+                                  <option value="OK">OK</option>
+                                  <option value="OR">OR</option>
+                                  <option value="PA">PA</option>
+                                  <option value="RI">RI</option>
+                                  <option value="SC">SC</option>
+                                  <option value="SD">SD</option>
+                                  <option value="TN">TN</option>
+                                  <option value="TX">TX</option>
+                                  <option value="UT">UT</option>
+                                  <option value="VT">VT</option>
+                                  <option value="VA">VA</option>
+                                  <option value="WA">WA</option>
+                                  <option value="WV">WV</option>
+                                  <option value="WI">WI</option>
+                                  <option value="WY">WY</option>
+                                </select>
+                              </div>
                             </div>
                             <div class="col-sm-12">
                               <button type="submit" class="btn btn-primary btn-small btn-success">Search</button>
@@ -212,11 +219,11 @@ drift.load('rgvdm473vfx2');
 
                       <article class="contact-panel">
                         <div class="row">
-                          <div class="col-sm-2">
+                          <div class="col-sm-12 col-md-2">
                             <img src="img/Phone-Search.svg" alt="" class="white-icon"/>
                             <img src="img/Phone-Search-Teal.svg" alt="" class="teal-icon"/>
                           </div>
-                          <div class="col-sm-10 no-pad-left">
+                          <div class="col-sm-offset-1 col-sm-10 col-md-offset-0 no-pad-left">
                             <h3>Phone Search API</h3>
                             <p>Enter a phone number to discover the owner's name and where they live.</p>
                           </div>
@@ -224,7 +231,7 @@ drift.load('rgvdm473vfx2');
 
                         <div class="row">
                           <form class="" action="" method="post" id="phone_search" data-fr-store="searchData">
-                            <div class="col-sm-10">
+                            <div class="col-sm-10 col-sm-offset-1 col-md-offset-0">
                               <label for="phone">PHONE NUMBER</label>
                               <input class="form-control" type="text" name="phone" value="" id="phone" placeholder="Phone Number">
                             </div>
@@ -238,11 +245,11 @@ drift.load('rgvdm473vfx2');
 
                       <article class="contact-panel">
                         <div class="row">
-                          <div class="col-sm-2">
+                          <div class="col-sm-12 col-md-2">
                             <img src="img/email-search.svg" alt="" class="white-icon"/>
                             <img src="img/email-search-teal.svg" alt="" class="teal-icon"/>
                           </div>
-                          <div class="col-sm-10 no-pad-left">
+                          <div class="col-sm-offset-1 col-sm-10 col-md-offset-0 no-pad-left">
                             <h3>E-mail Search API</h3>
                             <p>Enter an email to see the owner's name, social media profiles, and much more.</p>
                           </div>
@@ -250,7 +257,7 @@ drift.load('rgvdm473vfx2');
 
                         <div class="row">
                           <form class="" action="" method="post" id="email_search" data-fr-store="searchData">
-                            <div class="col-sm-10">
+                            <div class="col-sm-10 col-sm-offset-1 col-md-offset-0">
                               <label for="email">E-MAIL</label>
                               <input class="form-control" type="text" name="email" value="" placeholder="E-mail">
                             </div>
@@ -264,11 +271,11 @@ drift.load('rgvdm473vfx2');
 
                       <article class="contact-panel">
                         <div class="row">
-                          <div class="col-sm-2">
+                          <div class="col-sm-12 col-md-2">
                             <img src="img/property-search.svg" alt="" class="white-icon"/>
                             <img src="img/property-search-teal.svg" alt="" class="teal-icon"/>
                           </div>
-                          <div class="col-sm-10 no-pad-left">
+                          <div class="col-sm-offset-1 col-sm-10 col-md-offset-0 no-pad-left">
                             <h3>Property Search API</h3>
                             <p>Enter an address to see owners, deeds, tax records, and much more.</p>
                           </div>
@@ -276,7 +283,7 @@ drift.load('rgvdm473vfx2');
 
                         <div class="row">
                           <form class="" action="" method="post" id="property_search" data-fr-store="searchData">
-                            <div class="col-sm-10">
+                            <div class="col-sm-10 col-sm-offset-1 col-md-offset-0">
                               <label for="address">ADDRESS</label>
                               <input class="form-control" type="text" name="address" value="" placeholder="Address">
                             </div>
