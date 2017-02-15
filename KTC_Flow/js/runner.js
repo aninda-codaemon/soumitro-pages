@@ -377,7 +377,7 @@ var hideSearches = function(searchType) {
 }
 
 var showResults = function() {
-  // window.location.href = "https://www.knowthycustomer.com/lp/fdafcf/2/landing";
+  window.location.href = "https://www.knowthycustomer.com/lp/fdafcf/2/landing";
 }
 
 var startLoading = function(searchType) {
@@ -401,7 +401,7 @@ var startLoading = function(searchType) {
   changeLoadingText(searchType);
 }
 
-$addressField = $('address_field');
+$addressField = $('#address_field');
 // smarty address stuff
 var liveaddress = $.LiveAddress({
   debug: false,
@@ -430,6 +430,26 @@ liveaddress.on("AddressChanged", function(event, data, previousHandler) {
   previousHandler(event, data);
 });
 
+liveaddress.on("AddressAccepted", function(event, data, previousHandler) {
+  var chosen = data.response.chosen;
+
+  amplify.store('propertySearchData', {
+    address: chosen.delivery_line_1 + " " + chosen.last_line,
+    street: chosen.delivery_line_1 || "",
+    last_line: chosen.last_line || "",
+    city: chosen.components.city_name || "",
+    state: chosen.components.state_abbreviation || "",
+    unit: chosen.components.secondary_number || "",
+    zip5: chosen.components.zipcode || "",
+    zip4: chosen.components.plus4_code || ""
+  });
+
+  $addressField.addClass("success");
+  $addressField.focus();
+
+  previousHandler(event, data);
+});
+
 var clickedPanel;
 $('.contact-panel').click(function(){
   if (clickedPanel) {
@@ -443,7 +463,7 @@ $('.contact-panel').click(function(){
   var initialize = function () {
     setLastVisit();
     setColumnState();
-    // $('#company-modal').modal('show');
+    $('#company-modal').modal('show');
 
   /* initDownsells(); */
 
