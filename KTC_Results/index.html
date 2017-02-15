@@ -112,7 +112,7 @@ drift.load('rgvdm473vfx2');
             <div class="row">
               <div class="col-sm-12">
                 <div class="row">
-                  <div class="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0">
+                  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0">
                     <div class="row">
                       <div class="start-header col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0">
 
@@ -156,7 +156,6 @@ drift.load('rgvdm473vfx2');
                               <div class="col-sm-6 col-md-2">
                                 <label for="state">STATE</label>
                                 <select class="form-control" name="state">
-                                  <option value="ALL">ALL</option>
                                   <option value="AL">AL</option>
                                   <option value="AK">AK</option>
                                   <option value="AZ">AZ</option>
@@ -286,7 +285,7 @@ drift.load('rgvdm473vfx2');
                           <form class="" action="" method="post" id="property_search" data-fr-store="searchData">
                             <div class="col-sm-10 col-sm-offset-1 col-md-offset-0">
                               <label for="address">ADDRESS</label>
-                              <input class="form-control" type="text" name="address" value="" placeholder="Address" id="address_field">
+                              <input class="form-control" type="text" name="address" value="" placeholder="Address">
                             </div>
                             <div class="col-sm-12">
                               <button type="submit" class="btn btn-primary btn-small btn-success">Search</button>
@@ -299,19 +298,16 @@ drift.load('rgvdm473vfx2');
                       <div class="loading-animation">
                         <div class="">
                           <div class="loading-headers loading-hidden" id="people_loading" data-fr-bind="searchData">
-                            <h2>Searching {{fn}} {{ln}}
-                              {{allState state}}
+                            <h2>Searching {{fn}} {{ln}} in
                               {{#if city}}
-                                {{city}},
+                              {{city}},
                               {{/if}}
                               {{#fullState state}}{{/fullState}}</h2>
                             <p>Use our People Search API to validate data, reduce risk, update records, enhance contact lists, and so much more</p>
                           </div>
                           <div class="loading-headers loading-hidden" id="phone_loading" data-fr-bind="searchData">
-                            {{#if phone}}
-                              <h2>Searching <br>{{#phonify phone}}{{/phonify}}</h2>
-                              <p>Use our Phone Search API to see the owner's name, validate data, reduce risk, update records, enchance contact lists, and so much more.</p>
-                              {{/if}}
+                            <h2>Searching <br>{{#phonify phone}}{{/phonify}}</h2>
+                            <p>Use our Phone Search API to see the owner's name, validate data, reduce risk, update records, enchance contact lists, and so much more.</p>
                           </div>
                           <div class="loading-headers loading-hidden" id="email_loading" data-fr-bind="searchData">
                             <h2>Searching {{email}}</h2>
@@ -531,9 +527,7 @@ drift.load('rgvdm473vfx2');
 
   <script src="js/jquery.validate.js"></script>
   <script src="js/jquery.validate.creditcard2.pack-1.0.0.js"></script>
-  <script src="js/jquery.liveaddress.min.js"></script>
 
-  <script>jQuery.LiveAddress({ key: "536315927505668", addresses: [{id: address1: "#street", locality: "#locality", administrative_area: "#administrativearea", postal_code: "#postalcode", country: "#country"}] });</script>
   <!-- <script src="js/ie_fix.js"></script> -->
   <script src="js/check_cc.js"></script>
   <script src="js/utility.js"></script>
@@ -548,9 +542,6 @@ drift.load('rgvdm473vfx2');
   <script src="js/runner.js"></script>
 
   <script src="js/triangle_animations.js"></script>
-
-
-  </script>
 
 </body>
 

@@ -1,5 +1,11 @@
 ;(function ($) {
 
+  var LOADING_TEXT = {
+    "people": "Use our People Search API to validate data, reduce risk, update records, enhance contact lists, and so much more.",
+    "phone": "Use our Phone Search API to see the owner's name, validate data, reduce risk, update records, enchance contact lists, and so much more.",
+    "email": "Use our Email Search API to validate data, update records, enchance, contact lists, and so much more.",
+    "property": "Use our Property Search API to validate data, reduce risk, update your records, enhance contact lists, and so much more."
+  }
   var trackNL = function (evtName, props) {
     if (typeof nolimit !== 'undefined' && nolimit.track) {
       if (props) {
@@ -75,7 +81,7 @@
     //amplify.store("lastVisit", Date.now());
   }
 
-// Local storage object prep functions
+// Local sotrage object prep functions
   var parseTeaser = function(data) {
     var recordCount = parseInt(data["response"]["RecordCount"]),
         records;
@@ -120,8 +126,13 @@
   return prepped;
 };
 
+  // Form Validations
 
-// Teaser Data requests
+  var hideSearches = function(searchType) {
+    $('article.contact-panel').hide();
+    $('.start-header').hide();
+    startLoading(searchType);
+  }
 
   var getPeople = function(formData){
     var fn = formData.fn || "",
@@ -247,9 +258,6 @@
     })
   }
 
-
-  // Form Validations
-
   $peopleSearchForm = $('#people_search');
   $phoneSearchForm = $('#phone_search');
   $emailSearchForm = $('#email_search');
@@ -274,6 +282,14 @@
       hideSearches("people");
     }
   });
+
+ // $peopleSearchForm.submit(function(e){
+ //   e.preventDefault();
+ //   var formData = serializeToObject(($(e.target).serializeArray()));
+ //    getPeople(formData);
+ //    hideSearches("people");
+ // })
+
 
 
   $.validator.addMethod("phoneUS", function (phone_number, element) {
@@ -353,10 +369,8 @@
 
   })
 
-
-  //Transition to loading  animation
-
-  var changeLoadingText = function(searchType) {
+  //Transition to search animation
+var changeLoadingText = function(searchType) {
     $loadingText = $('.loading-animation h3');
     window.setTimeout(function(){
       $loadingText.hide();
@@ -369,15 +383,6 @@
         }, 7000)
       }, 7000)
     },7000)
-  }
-var hideSearches = function(searchType) {
-  $('article.contact-panel').hide();
-  $('.start-header').hide();
-  startLoading(searchType);
-}
-
-var showResults = function() {
-  // window.location.href = "https://www.knowthycustomer.com/lp/fdafcf/2/landing";
 }
 
 var startLoading = function(searchType) {
@@ -401,35 +406,6 @@ var startLoading = function(searchType) {
   changeLoadingText(searchType);
 }
 
-$addressField = $('address_field');
-// smarty address stuff
-var liveaddress = $.LiveAddress({
-  debug: false,
-  key: "536315927505668",
-  addresses: [{
-    street: $addressField
-  }],
-  ambiguousMessage: "Choose the exact address",
-  invalidMessage: "We did not find that address in our records<br><span class='line_two'>Be sure to include a building number and leave out resident names</span>",
-  stateFilter: "AL,AK,AZ,AR,CA,CO,CT,DE,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MA,MI,MN,MS,MO,MT,NE,NV,NH,NJ,NM,NY,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WA,WV,WI,WY",
-  submitVerify: true
-});
-
-liveaddress.on("AddressWasAmbiguous", function(event, data, previousHandler) {
-  // $('a.smarty-popup-close').html('<span class="glyphicon glyphicon-remove-circle"></span>');
-  previousHandler(event, data);
-});
-
-// refocus search form if invalid
-liveaddress.on("InvalidAddressRejected", function(event, data, previousHandler) {
-  $addressField.focus();
-});
-
-liveaddress.on("AddressChanged", function(event, data, previousHandler) {
-  $addressField.removeClass("success");
-  previousHandler(event, data);
-});
-
 var clickedPanel;
 $('.contact-panel').click(function(){
   if (clickedPanel) {
@@ -443,7 +419,7 @@ $('.contact-panel').click(function(){
   var initialize = function () {
     setLastVisit();
     setColumnState();
-    // $('#company-modal').modal('show');
+
 
   /* initDownsells(); */
 

@@ -84,27 +84,13 @@
   });
 
   H.registerHelper('fullState', function(item){
-    if (item === "ALL" || !item) {
-      return false;
-    }
     return states[item];
   })
 
   H.registerHelper('phonify', function(item){
-    if (!item){
-      return "";
-    }
     var justNumbers = item.replace(/\D/g, ""),
     phonified = "(" + justNumbers.slice(0,3) + ") " + justNumbers.slice(3,6) +"-" + justNumbers.slice(6,10);
     return phonified;
-  })
-
-  H.registerHelper('allState', function(item){
-    if (item === "ALL") {
-      return;
-    } else {
-      return "in";
-    }
   })
 
 }(Handlebars));

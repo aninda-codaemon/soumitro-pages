@@ -6,12 +6,12 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
         <g id="BG" stroke="#FFFFFF">
-            <polyline id="Stroke-195" stroke-width="2" opacity="0.175" points="57.655 20 57.655 50.678 30 66.209"></polyline>
-            <polyline id="Stroke-196" stroke-width="2" opacity="0.175" transform="translate(230.655000, 42.800500) scale(1, -1) translate(-230.655000, -42.800500) " points="203 50.601 230.655 35 258.31 50.601"></polyline>
-            <polyline id="Stroke-210" stroke-width="2" opacity="0.175" points="194.655 146.21 167 130.678 167 100"></polyline>
-            <path d="M137,28 L137,58.655" id="Stroke-193" stroke-dasharray="2,4" opacity="0.5"></path>
-            <path d="M73,115 L100.655,130.555" id="Stroke-211" stroke-dasharray="2,4" opacity="0.25"></path>
-            <path d="M260,130.555 L287.655,115" id="Stroke-212" stroke-dasharray="2,4" opacity="0.25"></path>
+            <polyline id="Stroke-195" stroke-width="2" opacity="0.08" points="57.655 20 57.655 50.678 30 66.209"></polyline>
+            <polyline id="Stroke-196" stroke-width="2" opacity="0.08" transform="translate(230.655000, 42.800500) scale(1, -1) translate(-230.655000, -42.800500) " points="203 50.601 230.655 35 258.31 50.601"></polyline>
+            <polyline id="Stroke-210" stroke-width="2" opacity="0.08" points="194.655 146.21 167 130.678 167 100"></polyline>
+            <path d="M137,28 L137,58.655" id="Stroke-193" stroke-dasharray="2,4" opacity="0.12"></path>
+            <path d="M73,115 L100.655,130.555" id="Stroke-211" stroke-dasharray="2,4" opacity="0.12"></path>
+            <path d="M260,130.555 L287.655,115" id="Stroke-212" stroke-dasharray="2,4" opacity="0.12"></path>
         </g>
     </g>
 </svg>

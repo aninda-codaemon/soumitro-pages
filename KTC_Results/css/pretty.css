@@ -999,7 +999,7 @@ article.contact-panel label {
     font-size: 44px;
     margin: 70px 0 25px;
     text-overflow: ellipsis;
-    overflow: hidden;
+    overflow-x: hidden;
     padding-bottom: 5px;
   }
   h3 {
@@ -1482,6 +1482,6 @@ article.contact-panel label {
 
 @media (min-height: 1215px) and (min-width: 1400px) {
   .loading-animation {
-    min-height: 800px;
+    min-height: 600px;
   }
 }
