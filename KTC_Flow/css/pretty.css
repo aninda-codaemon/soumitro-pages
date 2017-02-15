@@ -233,12 +233,13 @@ hr {
 }
 
 .loading-animation h2 {
-  margin-bottom: 40px;
-  font-size: 46px;
+  margin: 40px 0px;
+  font-size: 64px;
 }
 
 .loading-animation p {
   margin-bottom: 80px;
+  font-size: 24px;
 }
 
 .loading-animation h3 {
@@ -785,7 +786,7 @@ article.contact-panel label {
   h1 {
     font-size: 54px;
 
-    margin: 0 0 40px;
+    margin: 40px 0;
   }
   h2 {
     font-size: 46px;
@@ -801,6 +802,15 @@ article.contact-panel label {
     font-size: 24px;
 
     margin: 0 0 20px;
+  }
+
+  .loading-animation h2 {
+    font-size: 54px;
+  }
+
+  .loading-animation p {
+    margin-bottom: 50px;
+    font-size: 20px;
   }
 
   .btn {
@@ -917,9 +927,9 @@ article.contact-panel label {
     margin-bottom: 15px;
   }
 
-  .contact-panel img {
-    height: 60px;
-  }
+  /*.contact-panel img {
+    height: 66px;
+  }*/
 
   .contact-panel img,
   .contact-panel button {
@@ -985,10 +995,12 @@ article.contact-panel label {
 
     margin: 0 0 30px;
   }
-  h2 {
-    font-size: 36px;
-
-    margin: 0 0 30px;
+  .loading-animation h2 {
+    font-size: 44px;
+    margin: 70px 0 25px;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    padding-bottom: 5px;
   }
   h3 {
     font-size: 28px;
@@ -1001,9 +1013,19 @@ article.contact-panel label {
     margin: 0 0 20px;
   }
 
+  .loading-animation p {
+    margin-bottom: 40px;
+    font-size: 18px;
+  }
+
+  .loading-animation h3 {
+    margin-top: 30px;
+    margin-bottom: 0px;
+  }
   .btn {
     font-size: 20px;
     line-height: 26px;
+    width: 100%;
   }
   .btn-small {
     font-size: 18px;
@@ -1236,7 +1258,7 @@ article.contact-panel label {
   .footer-bottom {
     position: relative;
 
-    margin: 200px 0 30px;
+    margin: 210px 0 30px;
   }
 
   .footer-teal-triangle {
@@ -1384,7 +1406,7 @@ article.contact-panel label {
   .contact-panel {
     font-size: 18px;
 
-    padding: 20px 20px 40px;
+    padding: 20px 20px 30px;
 
     text-align: center;
   }
@@ -1395,6 +1417,11 @@ article.contact-panel label {
   }
   .contact-panel form {
     text-align: left;
+  }
+
+  .contact-panel #fn,
+  .contact-panel #ln {
+    margin-bottom: 0px;
   }
   .form-group label {
     font-size: 15px;
@@ -1436,5 +1463,25 @@ article.contact-panel label {
 @media (max-width: 340px){
   #company-modal button {
   margin: -15px;
+  }
+}
+
+/*Force min height for loading page depending on window size*/
+
+@media (min-height: 1050px) and (min-width: 768px) {
+  .loading-animation {
+    min-height: 800px;
+  }
+}
+
+@media (min-height: 1080px) and (min-width: 992px) {
+  .loading-animation {
+    min-height: 750px;
+  }
+}
+
+@media (min-height: 1215px) and (min-width: 1400px) {
+  .loading-animation {
+    min-height: 600px;
   }
 }

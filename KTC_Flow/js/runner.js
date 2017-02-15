@@ -380,9 +380,9 @@ var changeLoadingText = function(searchType) {
         $loadingText.text('Building Sample Report...').fadeIn();
         window.setTimeout(function(){
           showResults(searchType);
-        }, 10000)
-      }, 10000)
-    },10000)
+        }, 7000)
+      }, 7000)
+    },7000)
 }
 
 var startLoading = function(searchType) {
@@ -415,9 +415,6 @@ $('.contact-panel').click(function(){
   $(this).addClass("focused-panel");
   clickedPanel = this;
 })
-
-
-
 
   var initialize = function () {
     setLastVisit();
