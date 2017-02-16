@@ -433,7 +433,7 @@ liveaddress.on("AddressChanged", function(event, data, previousHandler) {
 liveaddress.on("AddressAccepted", function(event, data, previousHandler) {
   var chosen = data.response.chosen;
 
-  amplify.store('propertySearchData', {
+  amplify.store('searchData', {
     address: chosen.delivery_line_1 + " " + chosen.last_line,
     street: chosen.delivery_line_1 || "",
     last_line: chosen.last_line || "",
@@ -463,7 +463,7 @@ $('.contact-panel').click(function(){
   var initialize = function () {
     setLastVisit();
     setColumnState();
-    $('#company-modal').modal('show');
+    // $('#company-modal').modal('show');
 
   /* initDownsells(); */
 

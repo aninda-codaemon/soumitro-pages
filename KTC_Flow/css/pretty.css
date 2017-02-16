@@ -454,6 +454,11 @@ label.error {
   color: #ef1a1d;
 }
 
+.form-control.error {
+    border-color: #EF1A1D;
+    border-width: 2px;
+}
+
 .form-group .label-success {
   position: absolute;
   top: 58px;
@@ -1484,4 +1489,65 @@ article.contact-panel label {
   .loading-animation {
     min-height: 800px;
   }
+}
+
+.smarty-ui {
+
+}
+
+.smarty-autocomplete {
+  border: 3px solid #19B2CA !important;
+}
+
+.smarty-suggestion {
+  font-size: 15px;
+  color: #263348;
+}
+.smarty-suggestion:hover {
+  color: #19B2CC;
+}
+
+.smarty-popup {
+  border-color: #EF1A1D;
+  background: white !important;
+  margin-right: 15px;
+}
+
+.smarty-popup-header {
+  font-family: 'Work Sans', sans-serif;
+  color: #EF1A1D;
+  font-size: 16px;
+  background: none;
+  padding-right: 25px;
+}
+
+.smarty-popup-close {
+  color: #EF1A1D !important;
+}
+
+.smarty-popup-close:hover {
+  background: none !important;
+  color: #EF1A1D !important;
+}
+
+.smarty-popup-close .glyphicon {
+  font-size: 20px;
+}
+
+.smarty-choice-alt {
+  border: none;
+  box-shadow: none;
+  background: none !important
+}
+
+.smarty-choice-override:hover {
+  color: #EF1A1D !important;
+}
+
+.smarty-button {
+  text-align: center;
+  margin: 15px;
+}
+
+.smarty-button .btn {
 }
