@@ -57,6 +57,8 @@
     'WI': 'Wisconsin',
     'WY': 'Wymoing'
   }
+
+  var searchType;
   /*
     Check if the supplied argument is not 'all' or a falsy value.
     {{#validState state}} It's a state {{else}} All selected {{/validState}}
@@ -87,7 +89,7 @@
     if (item === "ALL" || !item) {
       return false;
     }
-    return states[item];
+    return "in " + states[item];
   })
 
   H.registerHelper('phonify', function(item){
@@ -101,9 +103,10 @@
 
   H.registerHelper('allState', function(item){
     if (item === "ALL") {
-      return;
-    } else {
-      return "in";
+      return "";
+    }
+    else {
+      return ", " + item;
     }
   })
 

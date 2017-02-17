@@ -1,5 +1,6 @@
 ;(function ($) {
 
+
   var trackNL = function (evtName, props) {
     if (typeof nolimit !== 'undefined' && nolimit.track) {
       if (props) {
@@ -47,7 +48,7 @@
 
   var bounceBack = function () {
     trackNL('onBack Modal - Rejected');
-    //window.location.href = $("body").data("search-page");
+    // window.location.href = $("body").data("search-page");
   };
 
   var bounceExit = function () {
@@ -300,7 +301,6 @@
       var formData = serializeToObject(($(form).serializeArray()));
       getPhoneData(formData);
       hideSearches("phone");
-      return false;
     }
   });
 
@@ -377,7 +377,8 @@ var hideSearches = function(searchType) {
 }
 
 var showResults = function() {
-  window.location.href = "https://www.knowthycustomer.com/lp/fdafcf/2/landing";
+  window.location.href = "https://www.knowthycustomer.com/lp/22cc56/3/landing"
+
 }
 
 var startLoading = function(searchType) {
@@ -463,7 +464,7 @@ $('.contact-panel').click(function(){
   var initialize = function () {
     setLastVisit();
     setColumnState();
-    // $('#company-modal').modal('show');
+    $('#company-modal').modal('show');
 
   /* initDownsells(); */
 

@@ -299,26 +299,28 @@ drift.load('rgvdm473vfx2');
                       <div class="loading-animation">
                         <div class="">
                           <div class="loading-headers loading-hidden" id="people_loading" data-fr-bind="searchData">
-                            <h2>Searching {{fn}} {{ln}}
-                              {{allState state}}
+                            <h2>Searching <span class="search-data">{{fn}} {{ln}}
+
                               {{#if city}}
-                                {{city}},
+                                in {{city}}{{allState state}}
+                              {{else}}
+                                {{#fullState state}}{{/fullState}}
                               {{/if}}
-                              {{#fullState state}}{{/fullState}}</h2>
+                            </span></h2>
                             <p>Use our People Search API to validate data, reduce risk, update records, enhance contact lists, and so much more</p>
                           </div>
                           <div class="loading-headers loading-hidden" id="phone_loading" data-fr-bind="searchData">
                             {{#if phone}}
-                              <h2>Searching <br>{{#phonify phone}}{{/phonify}}</h2>
+                              <h2>Searching <br><span class="search-data">{{#phonify phone}}{{/phonify}}</span></h2>
                               <p>Use our Phone Search API to see the owner's name, validate data, reduce risk, update records, enchance contact lists, and so much more.</p>
                               {{/if}}
                           </div>
                           <div class="loading-headers loading-hidden" id="email_loading" data-fr-bind="searchData">
-                            <h2>Searching {{email}}</h2>
+                            <h2>Searching <span class="search-data">{{email}}</span></h2>
                             <p>Use our Email Search API to validate data, update records, enchance, contact lists, and so much more.</p>
                           </div>
                           <div class="loading-headers loading-hidden" id="property_loading" data-fr-bind="searchData">
-                            <h2>Searching {{street}}</h2>
+                            <h2>Searching <span class="search-data">{{street}}</span></h2>
                             <p>Use our Property Search API to validate data, reduce risk, update your records, enhance contact lists, and so much more.</p>
                           </div>
                         </div>
@@ -384,7 +386,7 @@ drift.load('rgvdm473vfx2');
         <div class="col-md-6 col-sm-4">
           <a href="https://www.knowthycustomer.com" class="logo"></a>
 
-          <p>KnowThyCustomer LLC. ©2016 All rights reserved</p>
+          <p>KnowThyCustomer LLC. <%= Date.today.year%> All rights reserved</p>
         </div>
         <div class="col-md-6 col-sm-5 col-md-offset-0 col-sm-offset-3 text-right">
           <nav class="social-nav">

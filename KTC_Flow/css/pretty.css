@@ -190,6 +190,10 @@ hr {
 
   background: url('../img/logo.png') 0 0 no-repeat;
 }
+
+.search-data {
+  color: #19B2CC;
+}
 #header {
   min-height: 0;
   max-height: 200px;
