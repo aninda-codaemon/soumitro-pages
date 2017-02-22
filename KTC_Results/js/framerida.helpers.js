@@ -88,6 +88,9 @@
   })
 
   H.registerHelper('phonify', function(item){
+    if (!item) {
+      return;
+    }
     var justNumbers = item.replace(/\D/g, ""),
     phonified = "(" + justNumbers.slice(0,3) + ") " + justNumbers.slice(3,6) +"-" + justNumbers.slice(6,10);
     return phonified;

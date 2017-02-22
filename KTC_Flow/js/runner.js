@@ -77,6 +77,254 @@
   }
 
 // Local storage object prep functions
+var bestTeaserSorter = function(records, fn, ln) {
+  var name = (fn + ln).toLowerCase();
+  if (records.length < 5) {
+    return records;
+  }
+  records = _.chain(records).sortBy(function(record) {
+    var addresses = 100,
+        relatives = 999,
+        addressCount = 0,
+        relativeCount = 0;
+
+    if (record.Addresses) {
+      addressCount = record.Addresses.Address.length
+      addresses -= addressCount;
+    }
+
+    if (record.Relatives) {
+      relativeCount = record.Relatives.Relative.length;
+      relatives -= relativeCount;
+      }
+
+    return parseFloat("" + addresses + "." + relatives);
+  }, this).value();
+  return records.slice(0,5);
+};
+var recordsWithTeaser = [];
+var getExtraTeaserData = function(records) {
+
+  // var dataPath = $(ctx).data("fr-bound2");
+  // var dataPath = amplify.store().currentRecord._framerida_boundTo;
+  // var data = framerida.dataFromDataPath(dataPath);
+  records.forEach(function(record, index){
+
+
+  var teaser = new TeaserRecord(record);
+  var bvid = teaser.bvid;
+
+  var baseUrl = "//www.beenverified.com/hk/dd/teaser/person?exporttype=jsonp";
+  var url = baseUrl + "&bvid=" + bvid;
+  var xhrData = $.ajax({
+    url: url,
+    dataType: 'jsonp',
+  });
+
+  $.when(xhrData).done(function(result) {
+    trackNL("Person Data Teaser Called");
+
+    var res = result;
+    var img = '';
+
+    // Get profile image URL
+    if (res.images[0] && typeof(res.images[0].url !== 'undefined')) {
+      img = res.images[0].url;
+    }
+
+    var phoneNumbers = $.map(res.phones, function(item){
+      return item.number.formatPhone();
+    });
+    var emailAddresses = $.map(res.emails, function(item){
+      return item.email_address.formatEmail().toLowerCase();
+    });
+    var socialNetworks = $.map(res.social, function(item){
+      return item.type.nameize();
+    });
+
+    // Data elements to display - Waterfall controlled here
+    var data = [
+      // {
+      //   'type': 'criminal',
+      //   'name': 'Criminal or Traffic*',
+      //   'single': 'Criminal or Traffic*',
+      //   'style': ' crim-box',
+      //   'weight': 9,
+      //   'showIfEmpty': 0,
+      //   'count': res.courts.criminal.length
+      // },
+      // {
+      //   'type': 'bankruptcy',
+      //   'name': 'Bankruptcy Filings',
+      //   'single': 'Bankruptcy Filing',
+      //   'style': ' crim-box',
+      //   'weight': 8,
+      //   'showIfEmpty': 0,
+      //   'count': res.courts.bankruptcy.length
+      // },
+      {
+        'type': 'associates',
+        'name': 'Associates & Relatives',
+        'single': 'Associates & Relatives',
+        'style': '',
+        'weight': 7,
+        'showIfEmpty': 0,
+        'count': res.connections.associates.length + res.connections.relatives.length
+      },
+      {
+        'type': 'emails',
+        'name': 'Email Addresses',
+        'single': 'Email Address',
+        'style': '',
+        'weight': 6,
+        'showIfEmpty': 0,
+        'count': res.emails.length,
+        'emailAddress': emailAddresses
+      },
+      {
+        'type': 'phones',
+        'name': 'Phone Numbers',
+        'single': 'Phone Number',
+        'style': ' phone-box',
+        'weight': 5,
+        'showIfEmpty': 0,
+        'count': res.phones.length,
+        'phoneNumber': phoneNumbers
+      },
+      {
+        'type': 'social',
+        'name': 'Social Media Profiles',
+        'single': 'Social Media Profile',
+        'style': ' social-box',
+        'weight': 4,
+        'showIfEmpty': 0,
+        'count': res.social.length,
+        'socialNetwork': socialNetworks
+      },
+      {
+        'type': 'photos',
+        'name': 'Photos',
+        'single': 'Photo',
+        'style': '',
+        'weight': 3,
+        'showIfEmpty': 0,
+        'count': res.images.length
+      },
+      {
+        'type': 'careers',
+        'name': 'Jobs and Education',
+        'single': 'Career',
+        'style': '',
+        'weight': 2,
+        'showIfEmpty': 0,
+        'count': res.jobs.length + res.educations.length
+      },
+
+    ];
+
+    // Booleans for templating & reporting
+    // var hasCriminal = _.some(data, function(item) {
+    //   if (item && item.type === 'criminal') {
+    //     return item.type === 'criminal' && item.count > 0;
+    //   } else {
+    //     return false;
+    //   }
+    // });
+    // var hasBankruptcy = _.some(data, function(item) {
+    //   if (item && item.type === 'bankruptcy') {
+    //     return item.type === 'bankruptcy' && item.count > 0;
+    //   } else {
+    //     return false;
+    //   }
+    // });
+    var hasPhone = _.some(data, function(item){
+      if (item && item.type === 'phones') {
+        return item.type === 'phones' && item.count > 0;
+      } else {
+        return false;
+      }
+    });
+    var hasEmail = _.some(data, function(item){
+      if (item && item.type === 'emails') {
+        return item.type === 'emails' && item.count > 0;
+      } else {
+        return false;
+      }
+    });
+    var hasSocial = _.some(data, function(item){
+      if (item && item.type === 'social') {
+        return item.type === 'social' && item.count > 0;
+      } else {
+        return false;
+      }
+    });
+
+    var hasPhotos = _.some(data, function(item) {
+      if (item && item.type === 'photos') {
+        return item.type === 'photos' && item.count > 0;
+      } else {
+        return false;
+      }
+    });
+    var hasCareers = _.some(data, function(item) {
+      if (item && item.type === 'careers') {
+        return item.type === 'careers' && item.count > 0;
+      } else {
+        return false;
+      }
+    });
+
+    // Reporting
+    if (hasPhone) {
+      trackNL("Data Modal Viewed Phone");
+    }
+    if (hasEmail) {
+      trackNL("Data Modal Viewed Email");
+    }
+    if (hasSocial) {
+      trackNL("Data Modal Viewed Social");
+    }
+    if (hasPhotos) {
+      trackNL("Data Modal Viewed Photos");
+    }
+
+    if (hasCareers) {
+      trackNL("Data Modal Viewed Jobs and Education");
+    }
+
+
+    // Force singular name here rather than in template... meh
+    data = _.forEach(data, function(item, key) {
+      if (item && item.count === 1) {
+        item.name = item.single;
+      }
+    });
+
+    // Scrub data for display
+    _.remove(data, function(item) {
+      if (item) {
+        return item.showIfEmpty === 0 && item.count === 0;
+      }
+    });
+    data = _.sortByOrder(data, ['weight', 'count'], ['desc', 'desc']);
+
+    var teaserDataObj = {
+        recordCount: ($.type(res) !== 'array' ? 1 : 0),
+        extraData: _(data).omit(_.isUndefined).omit(_.isNull).value(),
+        photo: img,
+        hasPhone: hasPhone,
+        hasEmail: hasEmail,
+        hasSocial: hasSocial,
+        hasPhotos: hasPhotos,
+        hasCareers: hasCareers,
+    };
+
+    record.teaserData = teaserDataObj;
+    recordsWithTeaser.push(record);
+  });
+  })
+
+};
   var parseTeaser = function(data) {
     var recordCount = parseInt(data["response"]["RecordCount"]),
         records;
@@ -100,6 +348,12 @@
     data.results.emailaddress = data.query.email;
     records = data.results;
     return records;
+  }
+
+  var getTeaserData = function(records) {
+    records.forEach(function(record, index){
+
+    })
   }
 
   var prepPhoneData = function (data) {
@@ -158,8 +412,11 @@
 
           // trackNL("Refine Modal Final Result Count", {result_count: recordCount});
 
-          var teaserDataObj = {recordCount: recordCount, teasers: teaserData};
-          amplify.store('peopleData', teaserDataObj);
+          var bestRecords = bestTeaserSorter(teaserData, fn, ln),
+              teaserDataObj = {recordCount: recordCount, teasers: bestRecords};
+
+          // amplify.store('peopleData', teaserDataObj);
+          getExtraTeaserData(bestRecords);
         }
     });
   }
@@ -362,7 +619,8 @@
       $loadingText.hide();
       $loadingText.text('Looking Up Billions of Records...').fadeIn();
       window.setTimeout(function(){
-        $loadingText.hide()
+        amplify.store('peopleData', {"teasers" : recordsWithTeaser});
+        $loadingText.hide();
         $loadingText.text('Building Sample Report...').fadeIn();
         window.setTimeout(function(){
           showResults(searchType);

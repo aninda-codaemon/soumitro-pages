@@ -20,6 +20,14 @@
     return letters.join("");
   };
 
+  String.prototype.formatEmail = function() {
+    return this.replace(/[^@](X+)/g, '***');
+  };
+
+  String.prototype.formatPhone = function() {
+    return this.replace(/([\d|X]{3})([\d|X]{3})([\d|X]{4})/, '$1-$2-$3');
+  };
+
   String.prototype.nameize = function() {
     var name;
     name = this;
