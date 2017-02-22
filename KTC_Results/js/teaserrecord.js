@@ -175,8 +175,7 @@
       var relatives = this.relatives();
 
       if (relatives && relatives.length !== 0) {
-        // the - 1 on the count is because one relative is already shown on the page
-        return relatives.length -1;
+        return relatives.length;
       } else {
         return '';
       }
@@ -196,6 +195,16 @@
         return this._makeAddress(address);
       }, this).uniq().value();
     };
+
+    TeaserRecord.prototype.addressCount = function() {
+      var addresses = this.addresses();
+      if (addresses && addresses.length !== 0){
+        return addresses.length;
+      }
+      else {
+        return false;
+      }
+    }
 
     TeaserRecord.prototype.placesCountTeaser = function() {
       var addresses = this.addresses();
@@ -224,7 +233,7 @@
         while (addresses[index] === undefined) {
           index++
         }
-        return addresses[index];
+        return addresses[index].toUpperCase();
       } else {
         return [];
       }

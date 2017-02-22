@@ -23,6 +23,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
 }
 body {
   font-family: 'Work Sans', sans-serif;
@@ -69,9 +70,7 @@ a:hover {
   color: #19b2cc;
 }
 p {
-  line-height: 28px;
-
-  margin: 0 0 30px;
+  margin: 0 0 10px;
 }
 h1 {
   font-family: 'halis_rblack';
@@ -80,6 +79,7 @@ h1 {
   line-height: 1;
 
   color: #263348;
+  margin-bottom: 55px;
 }
 h2 {
   font-family: 'halis_rblack';
@@ -104,6 +104,23 @@ h4 {
   font-weight: 500;
 
   margin: 0 0 30px;
+}
+
+h5 {
+  font-size: 24px;
+  color: white;
+  font-family: 'halis_rblack';
+
+}
+
+h3.result-age {
+  color: #19B2CC;
+}
+
+.place {
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-family: 'halis_rblack';
 }
 
 .form-control {
@@ -312,7 +329,7 @@ hr {
 
   color: #fff;
 }
-.pricing .top,
+
 .signup .top {
   overflow: hidden;
 
@@ -324,35 +341,35 @@ hr {
 
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#25344b', endColorstr='#243f6a',GradientType=1 );
 }
-.pricing .top h1,
+
 .signup .top h1 {
   text-align: center;
 
   color: #fff;
 }
-.pricing .top-inner,
+
 .signup .top-inner {
   position: relative;
   z-index: 3;
 }
-.pricing #header .navbar-nav>li>a:not(.btn),
+
 .signup #header .navbar-nav>li>a:not(.btn) {
   color: #fff;
   background: none;
 }
-.pricing .navbar-header,
+
 .signup .navbar-header {
   position: relative;
 }
 
-.pricing .navbar-header  .logo,
+
 .signup .navbar-header  .logo {
   position: relative;
   z-index: 5;
 
   background-color: #fff;
 }
-.pricing .logo+span,
+
 .signup .logo+span {
   position: absolute;
   z-index: 4;
@@ -370,7 +387,7 @@ hr {
   border-style: solid;
   border-color: #fff transparent transparent transparent;
 }
-.pricing .navbar-header:after,
+
 .signup .navbar-header:after {
   position: absolute;
   z-index: 1;
@@ -387,7 +404,7 @@ hr {
   border-style: solid;
   border-color: transparent transparent transparent #2dc4e9;
 }
-.pricing .navbar-header:before,
+
 .signup .navbar-header:before {
   position: absolute;
   z-index: 3;
@@ -408,18 +425,22 @@ hr {
 .contact-panel {
   font-size: 20px;
 
-  margin-bottom: 30px;
-  padding: 55px 50px;
+  padding: 30px 40px;
 
   color: #375271;
-  border-radius: 2px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
   background: #fff;
-  box-shadow: 0 0 6px 0 rgba(0,0,0,0.22);
+  /*box-shadow: 0 0 6px 0 rgba(0,0,0,0.22);*/
 }
 
 .contact-panel h3 {
   font-size: 36px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.contact-panel .btn {
+  margin-top: 10px;
 }
 
 .form-control {
@@ -657,15 +678,6 @@ div.footer-white {
   float: none;
 }
 
-article.contact-panel .btn {
-  margin-top: 35px;
-  display: none;
-}
-
-article.contact-panel.focused-panel .btn {
-  display: block;
-}
-
 article.contact-panel label {
   font-size: 16px;
 }
@@ -673,7 +685,7 @@ article.contact-panel label {
 .teal-icon {
   display: none;
 }
-.focused-panel {
+.flexbox-row:hover {
   border: 4px solid #19B2CC;
   box-shadow: 0 0 14px 0 rgba(0,0,0,0.22);
   border-radius: 2px;
@@ -691,12 +703,37 @@ article.contact-panel label {
   text-align: center;
 }
 
+.start-header p {
+  margin-bottom: 50px;
+}
 .no-pad-left {
   padding-left: 0px !important;
 }
 
 .no-pad-right {
   padding-right: 0px !important;
+}
+
+.api-box {
+  background: #263348;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  overflow-y: scroll;
+}
+
+.flexbox-row {
+  box-shadow: 0 0 6px 0 rgba(0,0,0,0.22);
+  margin-bottom: 30px;
+  display: flex;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+}
+
+.data-box {
+  background: red;
+  color: #19B2CC;
 }
 
 /* ********************************************************************** */
@@ -729,10 +766,6 @@ article.contact-panel label {
     background-position: 100% -19%;
   }
 
-  .pricing .top h1,
-  .signup .top h1 {
-    margin: 30px 0 30px;
-  }
 
   #footer {
     height: 275px;
@@ -786,7 +819,6 @@ article.contact-panel label {
   h1 {
     font-size: 54px;
 
-    margin: 40px 0;
   }
   h2 {
     font-size: 46px;
@@ -847,10 +879,6 @@ article.contact-panel label {
     background-position: 100% -165%;
   }
 
-  .top h1 {
-    margin-right: 50px;
-  }
-
   hr {
     border: none;
   }
@@ -882,13 +910,13 @@ article.contact-panel label {
     margin-top: -15px;
   }
 
-  .pricing .logo+span,
+
   .signup .logo+span {
     margin-left: -257px;
 
     border-width: 170px 250px 0 250px;
   }
-  .pricing .navbar-header:after,
+
   .signup .navbar-header:after {
     top: -68px;
     left: 50%;
@@ -898,7 +926,7 @@ article.contact-panel label {
     border-width: 195px 0 195px 280px;
   }
 
-  .pricing .navbar-header:before,
+
   .signup .navbar-header:before {
     display: none;
   }
@@ -906,13 +934,6 @@ article.contact-panel label {
   .signup .top {
     padding-bottom: 0;
   }
-  .pricing .top h1,
-  .signup .top h1 {
-    margin: 40px 0 30px;
-  }
-  /*.signup .top h1 {
-    margin-bottom: 40px 0 40px;
-  }*/
 
   .start-header p {
     font-size: 24px;
@@ -993,7 +1014,6 @@ article.contact-panel label {
   h1 {
     font-size: 44px;
 
-    margin: 0 0 30px;
   }
   .loading-animation h2 {
     font-size: 44px;
@@ -1031,9 +1051,7 @@ article.contact-panel label {
     font-size: 18px;
     line-height: 21px;
   }
-  .top h1 {
-    margin-right: 0;
-  }
+
   .top {
     background: none;
   }
@@ -1298,7 +1316,7 @@ article.contact-panel label {
     -webkit-clip-path: url('#clip-shape6'); /* required for Webkit/Blink browsers if you're using only inline SVG clipping paths, but not CSS clip-path */
             clip-path: url(#clip-shape6);
   }
-  .pricing #footer,
+
   .signup #footer {
     position: relative;
 
@@ -1308,12 +1326,12 @@ article.contact-panel label {
   }
 
 
-  .pricing #footer .footer-bottom .social-nav,
+
   .signup #footer .footer-bottom .social-nav {
     position: absolute;
     bottom: -130px;
   }
-  .pricing #footer p,
+
   .signup #footer p {
     margin-bottom: 104px;
   }
@@ -1326,7 +1344,6 @@ article.contact-panel label {
     margin: 0 15px 0 0;
   }
 
-  .pricing .top,
   .signup .top {
     background: rgb(37,52,75);
     background:    -moz-linear-gradient(left,  rgba(37,52,75,1) 0%, rgba(36,63,106,1) 100%);
@@ -1336,31 +1353,23 @@ article.contact-panel label {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#263348', endColorstr='#2164d0',GradientType=0 );
   }
 
-  .pricing .navbar-toggle.collapsed span,
-  .pricing .navbar-toggle span::after,
-  .pricing .navbar-toggle span::before,
   .signup .navbar-toggle.collapsed span,
   .signup .navbar-toggle span::after,
   .signup .navbar-toggle span::before {
     background: #fff;
   }
-  .pricing #header .navbar-nav,
   .signup #header .navbar-nav {
     background: #fff;
   }
-  .pricing #header .navbar-nav>li>a:not(.btn),
   .signup #header .navbar-nav>li>a:not(.btn) {
     color: #000;
   }
-  .pricing #header .navbar-nav>li>a.btn,
   .signup #header .navbar-nav>li>a.btn {
     color: #fff;
   }
-  .pricing .navbar-header,
   .signup .navbar-header {
     z-index: 3;
   }
-  .pricing .logo+span,
   .signup .logo+span {
     z-index: 1;
     left: -300px;
@@ -1370,7 +1379,6 @@ article.contact-panel label {
     border-width: 324px 600px 0 0;
     border-color: #fff transparent transparent transparent;
   }
-  .pricing .navbar-header:after,
   .signup .navbar-header:after {
     z-index: 3;
     top: -58px;
@@ -1380,11 +1388,9 @@ article.contact-panel label {
 
     border-width: 140px 0 153px 282px;
   }
-  .pricing .navbar-header:before,
   .signup .navbar-header:before {
     display: none;
   }
-  .pricing .navbar-right,
   .signup .navbar-right {
     position: relative;
     z-index: 4;
@@ -1392,12 +1398,10 @@ article.contact-panel label {
 
     margin: 0 -15px;
   }
-  .pricing .navbar-collapse,
   .signup .navbar-collapse {
     width: 100%;
     margin: 0;
   }
-  .pricing .navbar-collapse,
   .signup .navbar-collapse {
     position: relative;
     z-index: 5;
@@ -1445,8 +1449,6 @@ article.contact-panel label {
   .signup .top h1 {
     font-size: 44px;
     line-height: 49px;
-
-    margin: 75px 0 30px;
   }
 
   .contact-panel .no-pad-mobile {

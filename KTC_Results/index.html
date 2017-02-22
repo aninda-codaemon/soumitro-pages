@@ -121,16 +121,58 @@ drift.load('rgvdm473vfx2');
 
                 </div>
 
-                <div class="results">
+                <div class="results" data-fr-bind="peopleData">
 
-                <article class="result">
+                  <div class="row flexbox-row" data-fr-each="teasers" data-fr-map="TeaserRecord">
+                <article class="result contact-panel col-sm-8">
                   <div class="row">
 
+                        <div class="col-sm-7">
+                          <h3>{{fullName}}</h3>
+                        </div>
+
+                        {{#if age}}
+                        <div class="col-sm-3">
+
+                          <h3 class="result-age"> {{age}} y/o</h3>
+                        </div>
+                        {{/if}}
+                        <div class="col-sm-12">
+                          <p class="place">
+                            {{place}}
+                          </p>
+                        </div>
+
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-12">
+                          {{#if hasAddresses}}
+                            <p>Addresses: {{addressCount}}</p>
+                          {{/if}}
+
+                          {{#if relatives}}
+                            <p>Relatives: {{relativesCountTeaser}}</p>
+                          {{/if}}
+                        </div>
+                      </div>
+
+                      <div class="row">
+                          <a href="#" class="btn btn-primary btn-small btn-success">See full report</a>
+                      </div>
+                    </article>
+
+                  <div class="col-sm-4 api-box">
+                    <h5>API Data</h5>
+                    <div class="data-box">
+                      {{teasers}}
+                    </div>
                   </div>
-                </article>
+
+              </div>
               </div>
 
-                      <article class="contact-panel">
+                      <!-- <article class="contact-panel">
                         <div class="row">
                           <div class="col-sm-12 col-md-2">
                             <img src="img/PeopleSearch.svg" alt="" class="white-icon"/>
@@ -299,7 +341,7 @@ drift.load('rgvdm473vfx2');
                             </div>
                           </form>
                         </div>
-                      </article>
+                      </article> -->
 
 
                       <div class="loading-animation">

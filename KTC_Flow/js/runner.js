@@ -452,7 +452,7 @@ liveaddress.on("AddressAccepted", function(event, data, previousHandler) {
 });
 
 var clickedPanel;
-$('.contact-panel').click(function(){
+$('.contact-panel').click(function(e){
   if (clickedPanel) {
     $(clickedPanel).removeClass("focused-panel");
   }
@@ -464,7 +464,7 @@ $('.contact-panel').click(function(){
   var initialize = function () {
     setLastVisit();
     setColumnState();
-    $('#company-modal').modal('show');
+    /*$('#company-modal').modal('show');*/
 
   /* initDownsells(); */
 
