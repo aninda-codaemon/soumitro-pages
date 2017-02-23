@@ -96,4 +96,23 @@
     return phonified;
   })
 
+  H.registerHelper('prettyCarrier', function(item){
+    if (!item) {
+      return;
+    }
+
+    var words = item.split(),
+        prettied =[]
+    words.forEach(function(word){
+      var capitalized = word.toLowerCase().replace(/\b\w/g, function(l){ return l.toUpperCase()})
+      prettied.push(capitalized);
+    })
+    return prettied;
+  })
+
+  H.registerHelper('prettyDataObject', function(){
+    return JSON.stringify(this, null, 2);
+  })
+
+
 }(Handlebars));

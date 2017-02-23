@@ -121,41 +121,115 @@ drift.load('rgvdm473vfx2');
 
                 </div>
 
-                <div class="results" data-fr-bind="peopleData">
+                <!-- <div class="results" data-fr-bind="peopleData" id="people-results">
 
                   <div class="row" data-fr-each="teasers" data-fr-map="TeaserRecord">
                     <div class="col-sm-12">
 
 
-                <article class="result contact-panel col-sm-7 col-md-8">
-                  <div class="row">
+                      <article class="result contact-panel col-sm-7 col-md-8">
+                        <div class="row">
 
-                        <div class="col-sm-8 col-md-9">
-                          <h3>{{fullName}}</h3>
+                          <div class="col-sm-8 col-md-9">
+                            <h3>{{fullName}}</h3>
+                          </div>
+
+                          {{#if age}}
+                          <div class="col-sm-4 col-md-3">
+
+                            <h3 class="result-age"> {{age}} y/o</h3>
+                          </div>
+                          {{/if}}
+                          <div class="col-sm-12">
+                            <p class="place">
+                              {{place}}
+                            </p>
+                          </div>
+
                         </div>
 
-                        {{#if age}}
-                        <div class="col-sm-4 col-md-3">
+                        <div class="row">
+                          <div class="col-sm-12">
+                            {{#if hasAddresses}}
+                              <p>Addresses: {{addressCount}}</p>
+                            {{/if}}
 
-                          <h3 class="result-age"> {{age}} y/o</h3>
+                            {{#if emails}}
+                              <p>Emails: {{emailsCountTeaser}}</p>
+                            {{/if}}
+
+                            {{#if phoneNumbers}}
+                              <p>Phone Numbers: {{phoneNumbersCountTeaser}}</p>
+                            {{/if}}
+
+                            {{#if careers}}
+                              <p>Jobs: {{careersCountTeaser}}</p>
+                            {{/if}}
+
+                            {{#if relatives}}
+                              <p>Relatives: {{relativesCountTeaser}}</p>
+                            {{/if}}
+
+                            {{#if socialProfiles}}
+                              <p>Social Profiles: {{socialProfilesCountTeaser}}</p>
+                            {{/if}}
+
+                            {{#if photos}}
+                              <p>Images: {{photosCountTeaser}}</p>
+                            {{/if}}
+                          </div>
                         </div>
-                        {{/if}}
+
+                        <div class="row">
+                          <div class="col-xs-12">
+
+                            <a href="#" class="btn btn-primary btn-small btn-success">See full report</a>
+                          </div>
+                        </div>
+                      </article>
+
+                      <div class="col-sm-5 col-md-4 api-box">
+                        <h5>API Data</h5>
+                        <div class="data-box">
+                          <pre>
+                            {{test}}
+                          </pre>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div> -->
+
+              <!-- <div class="results" data-fr-bind="phoneData" id="phone-results">
+
+                <div class="row">
+                  <div class="col-sm-12">
+
+
+                    <article class="result contact-panel col-sm-7 col-md-8">
+                      <div class="row">
+
+                        <div class="col-sm-12">
+                          <h3>{{phonify phone}}</h3>
+                        </div>
+
+                        {{#if city}}
                         <div class="col-sm-12">
                           <p class="place">
-                            {{place}}
+                            {{city}}, {{state}}
                           </p>
                         </div>
-
+                        {{/if}}
                       </div>
 
                       <div class="row">
                         <div class="col-sm-12">
-                          {{#if hasAddresses}}
-                            <p>Addresses: {{addressCount}}</p>
+                          {{#if lineType}}
+                            <p>Line Type: {{lineType}}</p>
                           {{/if}}
 
-                          {{#if emails}}
-                            <p>Emails: {{emailsCountTeaser}}</p>
+                          {{#if carrier}}
+                            <p>Carrier: {{prettyCarrier carrier}}</p>
                           {{/if}}
 
                           {{#if phoneNumbers}}
@@ -188,6 +262,81 @@ drift.load('rgvdm473vfx2');
                       </div>
                     </article>
 
+                    <div class="col-sm-5 col-md-4 api-box">
+                      <h5>API Data</h5>
+                      <div class="data-box">
+                        <pre>
+                          {{prettyDataObject}}
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div> -->
+
+            <div class="results" data-fr-bind="emailData" id="email-results">
+
+              <div class="row" data-fr-each="teasers" data-fr-map="EmailRecord">
+                <div class="col-sm-12">
+
+
+                  <article class="result contact-panel col-sm-7 col-md-8">
+                    <div class="row">
+
+                      <div class="col-sm-8 col-md-9">
+                        <h3>{{email}}</h3>
+                      </div>
+
+
+                      {{#if fullName}}
+                      <div class="col-sm-12">
+                        <p class="place">
+                          {{fullName}}
+                        </p>
+                      </div>
+                      {{/if}}
+                    </div>
+
+                    <!-- <div class="row">
+                      <div class="col-sm-12">
+                        {{#if hasAddresses}}
+                          <p>Addresses: {{addressCount}}</p>
+                        {{/if}}
+
+                        {{#if emails}}
+                          <p>Emails: {{emailsCountTeaser}}</p>
+                        {{/if}}
+
+                        {{#if phoneNumbers}}
+                          <p>Phone Numbers: {{phoneNumbersCountTeaser}}</p>
+                        {{/if}}
+
+                        {{#if careers}}
+                          <p>Jobs: {{careersCountTeaser}}</p>
+                        {{/if}}
+
+                        {{#if relatives}}
+                          <p>Relatives: {{relativesCountTeaser}}</p>
+                        {{/if}}
+
+                        {{#if socialProfiles}}
+                          <p>Social Profiles: {{socialProfilesCountTeaser}}</p>
+                        {{/if}}
+
+                        {{#if photos}}
+                          <p>Images: {{photosCountTeaser}}</p>
+                        {{/if}}
+                      </div>
+                    </div> -->
+
+                    <div class="row">
+                      <div class="col-xs-12">
+
+                        <a href="#" class="btn btn-primary btn-small btn-success">See full report</a>
+                      </div>
+                    </div>
+                  </article>
+
                   <div class="col-sm-5 col-md-4 api-box">
                     <h5>API Data</h5>
                     <div class="data-box">
@@ -196,10 +345,88 @@ drift.load('rgvdm473vfx2');
                       </pre>
                     </div>
                   </div>
+                </div>
+            </div>
+          </div>
+
+          <!-- <div class="results" data-fr-bind="propertyData" id="property-results">
+
+            <div class="row" data-fr-each="teasers" data-fr-map="TeaserRecord">
+              <div class="col-sm-12">
+
+
+                <article class="result contact-panel col-sm-7 col-md-8">
+                  <div class="row">
+
+                    <div class="col-sm-8 col-md-9">
+                      <h3>{{fullName}}</h3>
                     </div>
 
+                    {{#if age}}
+                    <div class="col-sm-4 col-md-3">
+
+                      <h3 class="result-age"> {{age}} y/o</h3>
+                    </div>
+                    {{/if}}
+                    <div class="col-sm-12">
+                      <p class="place">
+                        {{place}}
+                      </p>
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      {{#if hasAddresses}}
+                        <p>Addresses: {{addressCount}}</p>
+                      {{/if}}
+
+                      {{#if emails}}
+                        <p>Emails: {{emailsCountTeaser}}</p>
+                      {{/if}}
+
+                      {{#if phoneNumbers}}
+                        <p>Phone Numbers: {{phoneNumbersCountTeaser}}</p>
+                      {{/if}}
+
+                      {{#if careers}}
+                        <p>Jobs: {{careersCountTeaser}}</p>
+                      {{/if}}
+
+                      {{#if relatives}}
+                        <p>Relatives: {{relativesCountTeaser}}</p>
+                      {{/if}}
+
+                      {{#if socialProfiles}}
+                        <p>Social Profiles: {{socialProfilesCountTeaser}}</p>
+                      {{/if}}
+
+                      {{#if photos}}
+                        <p>Images: {{photosCountTeaser}}</p>
+                      {{/if}}
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12">
+
+                      <a href="#" class="btn btn-primary btn-small btn-success">See full report</a>
+                    </div>
+                  </div>
+                </article>
+
+                <div class="col-sm-5 col-md-4 api-box">
+                  <h5>API Data</h5>
+                  <div class="data-box">
+                    <pre>
+                      {{test}}
+                    </pre>
+                  </div>
+                </div>
               </div>
-              </div>
+          </div>
+        </div> -->
 
               <div class="search-more">
                 <h3>Like what you see?<br>Subscribe to search more. </h3>

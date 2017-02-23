@@ -356,9 +356,10 @@ var getExtraTeaserData = function(records) {
     })
   }
 
-  var prepPhoneData = function (data) {
+  var prepPhoneData = function (data, phone) {
 
     var prepped = {
+      phone: phone,
       ownersName: "subscribe to see",
       carrier: data.company,
       lineType: (data.nxxusetype == "L") ? "Landline" : "Cellphone",
@@ -438,7 +439,7 @@ var getExtraTeaserData = function(records) {
           // latlng.push(data.latitude);
           // latlng.push(data.longitude);
 
-          teaserData = prepPhoneData(data);
+          teaserData = prepPhoneData(data, formData.phone);
           amplify.store('phoneData', teaserData);
         }
     });
@@ -624,9 +625,9 @@ var getExtraTeaserData = function(records) {
         $loadingText.text('Building Sample Report...').fadeIn();
         window.setTimeout(function(){
           showResults(searchType);
-        }, 7000)
-      }, 7000)
-    },7000)
+        }, 6000)
+      }, 6000)
+    },6000)
   }
 var hideSearches = function(searchType) {
   $('article.contact-panel').hide();

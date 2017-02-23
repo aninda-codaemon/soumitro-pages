@@ -240,6 +240,7 @@ hr {
   font-size: 64px;
   text-overflow: ellipsis;
   overflow: hidden;
+  padding-bottom: 5px;
 }
 
 .loading-animation p {
