@@ -29,9 +29,14 @@ var apiBoxHeight = function(){
     $apiBox = $(article).next();
     // $apiBox.css({'max-height' : $(article).innerHeight()})
     $dataBox = $apiBox.find('.data-box');
-    $dataBox.css({'max-height' : $(article).innerHeight() - $apiBox.find('h5').outerHeight(true)});
+    //-20 is for the padding
+    $dataBox.css({'max-height' : $(article).innerHeight() - $apiBox.find('h5').outerHeight(true) - 20});
   })
 }
+
+window.addEventListener('resize', function(){
+  apiBoxHeight();
+})
 
   // set column state for mobile teaser data
 
