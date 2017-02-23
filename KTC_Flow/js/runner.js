@@ -709,6 +709,7 @@ liveaddress.on("AddressAccepted", function(event, data, previousHandler) {
   previousHandler(event, data);
 });
 
+// autofocus the first input on click of box
 var clickedPanel;
 $('.contact-panel').click(function(e){
   if (clickedPanel) {
@@ -717,6 +718,13 @@ $('.contact-panel').click(function(e){
 
   $(this).addClass("focused-panel");
   clickedPanel = this;
+
+  if ($(e.target).is('#ln') || $(e.target).is('#city') || $(e.target).is('#state') || $(e.target).is('button')){
+    return;
+  }
+  $article = $(e.currentTarget);
+  $firstInput = $article.find('input:first');
+  $firstInput.focus();
 })
 
   var initialize = function () {

@@ -23,6 +23,15 @@
     }
   };
 
+//sets max-width for api boxes to be neighbor height
+var apiBoxHeight = function(){
+  $('.results article').each(function(index, article){
+    $apiBox = $(article).next();
+    // $apiBox.css({'max-height' : $(article).innerHeight()})
+    $dataBox = $apiBox.find('.data-box');
+    $dataBox.css({'max-height' : $(article).innerHeight() - $apiBox.find('h5').outerHeight(true)});
+  })
+}
 
   // set column state for mobile teaser data
 
@@ -417,6 +426,7 @@ $('.contact-panel').click(function(){
 })
 
   var initialize = function () {
+    apiBoxHeight();
     setLastVisit();
     setColumnState();
 

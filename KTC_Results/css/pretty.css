@@ -431,6 +431,7 @@ hr {
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
   background: #fff;
+  margin-bottom: 30px;
   /*box-shadow: 0 0 6px 0 rgba(0,0,0,0.22);*/
 }
 
@@ -718,7 +719,7 @@ article.contact-panel label {
   background: #263348;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
-  overflow-y: scroll;
+
 }
 
 .flexbox-row {
@@ -732,8 +733,18 @@ article.contact-panel label {
 }
 
 .data-box {
-  background: red;
+  /*background: red;*/
+  font-size: 16px;
+
+  overflow-y: scroll;
+}
+
+.data-box pre {
+  background: inherit;
   color: #19B2CC;
+  border: none;
+  overflow-x: hidden;
+
 }
 
 /* ********************************************************************** */

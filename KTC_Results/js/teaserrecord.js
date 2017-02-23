@@ -261,15 +261,12 @@
       return this.addresses().length > 0;
     };
 
-    TeaserRecord.prototype.hasPhone = function() {
-      return true;
-    };
 
     TeaserRecord.prototype.phoneNumbers = function() {
-      if (this.record["hasPhone"] === false) {
+      if (this.record['teaserData']["hasPhone"] === false) {
         return [];
       } else {
-        var extraData = this.record["extraData"],
+        var extraData = this.record['teaserData']["extraData"],
             phoneNumbers = _.find(extraData, { 'type': 'phones' });
 
         return phoneNumbers;
@@ -292,18 +289,38 @@
 
     TeaserRecord.prototype.phoneNumbersCountTeaser = function() {
       var phoneNumbers = this.phoneNumbers();
-      if (phoneNumbers.count <= 1) {
+      if (phoneNumbers.count < 1) {
         return false;
       } else {
-        return phoneNumbers.count -1;
+        return phoneNumbers.count;
       }
     };
 
-    TeaserRecord.prototype.emails = function() {
-      if (this.record["hasEmail"] === false) {
+    TeaserRecord.prototype.careers = function() {
+      if (this.record['teaserData']['hasCareers'] === false) {
         return [];
       } else {
-        var extraData = this.record["extraData"],
+        var extraData = this.record['teaserData']['extraData'],
+            careers = _.find(extraData, {'type' : 'careers'});
+        return careers;
+      }
+    }
+
+    TeaserRecord.prototype.careersCountTeaser = function() {
+      var careers = this.careers();
+
+      if (careers.count < 1) {
+        return false;
+      } else {
+        return careers.count;
+      }
+    }
+
+    TeaserRecord.prototype.emails = function() {
+      if (this.record['teaserData']["hasEmail"] === false) {
+        return [];
+      } else {
+        var extraData = this.record['teaserData']["extraData"],
             emails = _.find(extraData, { 'type': 'emails' });
 
         return emails;
@@ -326,18 +343,49 @@
 
     TeaserRecord.prototype.emailsCountTeaser = function() {
       var emails = this.emails();
-      if (emails.count <= 1) {
+      if (emails.count < 1) {
         return false;
       } else {
-        return emails.count -1;
+        return emails.count;
       }
     };
 
-    TeaserRecord.prototype.socialProfiles = function() {
-      if (this.record["hasSocial"] === false) {
+    TeaserRecord.prototype.photo = function() {
+      var photo = this.record["photo"];
+      if (photo !== '') {
+        return '<img class="user-image" src="' + photo + '" alt="" />';
+      } else {
+        return [];
+      }
+    };
+
+    TeaserRecord.prototype.photos = function() {
+      if (this.record['teaserData']['hasPhotos'] === false){
         return [];
       } else {
-        var extraData = this.record["extraData"],
+        var extraData = this.record['teaserData']['extraData'],
+            photos = _.find(extraData, {'type' : 'photos'});
+
+        return photos;
+      }
+    }
+
+    TeaserRecord.prototype.photosCountTeaser = function() {
+      var photos = this.photos();
+
+      if (photos.count < 1) {
+        return false;
+      } else {
+        return photos.count;
+      }
+    }
+
+
+    TeaserRecord.prototype.socialProfiles = function() {
+      if (this.record['teaserData']["hasSocial"] === false) {
+        return [];
+      } else {
+        var extraData = this.record['teaserData']["extraData"],
             socialProfiles = _.find(extraData, { 'type': 'social' });
 
         return socialProfiles;
@@ -364,10 +412,10 @@
 
     TeaserRecord.prototype.socialProfilesCountTeaser = function() {
       var socialProfiles = this.socialProfiles();
-      if (socialProfiles.socialNetwork.length <= 2) {
+      if (socialProfiles.socialNetwork.length < 1) {
         return false;
       } else {
-        return socialProfiles.socialNetwork.length -2;
+        return socialProfiles.socialNetwork.length;
       }
     };
 
@@ -415,17 +463,8 @@
       }
     };
 
-    TeaserRecord.prototype.photo = function() {
-      var photo = this.record["photo"];
-      if (photo !== '') {
-        return '<img class="user-image" src="' + photo + '" alt="" />';
-      } else {
-        return [];
-      }
-    };
-
     TeaserRecord.prototype.test = function() {
-      return this.record;
+      return JSON.stringify(this.record, null, 2);
     };
 
     return TeaserRecord;
