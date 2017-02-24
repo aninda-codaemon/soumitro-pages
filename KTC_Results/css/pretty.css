@@ -142,6 +142,8 @@ h3.result-age {
 #email-results h3 {
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .form-control {
