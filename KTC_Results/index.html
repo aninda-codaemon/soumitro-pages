@@ -192,7 +192,7 @@ drift.load('rgvdm473vfx2');
                         <h5>API Data</h5>
                         <div class="data-box">
                           <pre>
-                            {{test}}
+                            {{prettyRecord}}
                           </pre>
                         </div>
                       </div>
@@ -274,7 +274,7 @@ drift.load('rgvdm473vfx2');
               </div>
             </div> -->
 
-            <div class="results" data-fr-bind="emailData" id="email-results">
+            <!-- <div class="results" data-fr-bind="emailData" id="email-results">
 
               <div class="row" data-fr-each="teasers" data-fr-map="EmailRecord">
                 <div class="col-sm-12">
@@ -283,51 +283,47 @@ drift.load('rgvdm473vfx2');
                   <article class="result contact-panel col-sm-7 col-md-8">
                     <div class="row">
 
-                      <div class="col-sm-8 col-md-9">
+                      <div class="col-sm-12">
                         <h3>{{email}}</h3>
                       </div>
 
+                      {{#if location}}
+                      <div class="col-sm-12">
+                        <p class="head-place">
+                          {{location}}
+                        </p>
+                      </div>
+                      {{/if}}
 
                       {{#if fullName}}
                       <div class="col-sm-12">
-                        <p class="place">
+                        <p class="head-name">
                           {{fullName}}
                         </p>
                       </div>
                       {{/if}}
+
                     </div>
 
-                    <!-- <div class="row">
+                    <div class="row">
                       <div class="col-sm-12">
-                        {{#if hasAddresses}}
-                          <p>Addresses: {{addressCount}}</p>
+                        {{#if socialProfiles}}
+                          <p>Social Profiles: {{profilesCountTeaser}}</p>
                         {{/if}}
 
-                        {{#if emails}}
-                          <p>Emails: {{emailsCountTeaser}}</p>
-                        {{/if}}
-
-                        {{#if phoneNumbers}}
-                          <p>Phone Numbers: {{phoneNumbersCountTeaser}}</p>
+                        {{#if photos}}
+                          <p>Images: {{photosCountTeaser}}</p>
                         {{/if}}
 
                         {{#if careers}}
                           <p>Jobs: {{careersCountTeaser}}</p>
                         {{/if}}
 
-                        {{#if relatives}}
-                          <p>Relatives: {{relativesCountTeaser}}</p>
-                        {{/if}}
-
-                        {{#if socialProfiles}}
-                          <p>Social Profiles: {{socialProfilesCountTeaser}}</p>
-                        {{/if}}
-
-                        {{#if photos}}
-                          <p>Images: {{photosCountTeaser}}</p>
+                        {{#if footprints}}
+                          <p>Digital Footprints: {{footprintsCountTeaser}}</p>
                         {{/if}}
                       </div>
-                    </div> -->
+                    </div>
 
                     <div class="row">
                       <div class="col-xs-12">
@@ -341,15 +337,15 @@ drift.load('rgvdm473vfx2');
                     <h5>API Data</h5>
                     <div class="data-box">
                       <pre>
-                        {{test}}
+                        {{prettyRecord}}
                       </pre>
                     </div>
                   </div>
                 </div>
             </div>
-          </div>
+          </div> -->
 
-          <!-- <div class="results" data-fr-bind="propertyData" id="property-results">
+          <div class="results" data-fr-bind="propertyData" id="property-results">
 
             <div class="row" data-fr-each="teasers" data-fr-map="TeaserRecord">
               <div class="col-sm-12">
@@ -426,7 +422,7 @@ drift.load('rgvdm473vfx2');
                 </div>
               </div>
           </div>
-        </div> -->
+        </div>
 
               <div class="search-more">
                 <h3>Like what you see?<br>Subscribe to search more. </h3>
@@ -844,6 +840,7 @@ drift.load('rgvdm473vfx2');
   <script src="js/cookie.js"></script>
   <script src="js/base64.js"></script>
   <script src="js/teaserrecord.js"></script>
+  <script src="js/EmailRecord.js"></script>
 
   <script src="js/framerida.helpers.js"></script>
   <script src="js/framerida.js"></script>

@@ -123,6 +123,23 @@ h3.result-age {
   font-family: 'halis_rblack';
 }
 
+.head-name,
+.head-place {
+  font-size: 20px;
+  margin-bottom: 0px;
+  font-family: 'halis_rblack';
+  color: #19B2CC;
+}
+
+.head-name {
+  margin-bottom: 15px;
+}
+
+#email-results h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .form-control {
   /*-webkit-appearance: none;*/
 }
