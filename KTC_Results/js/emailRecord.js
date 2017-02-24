@@ -106,10 +106,10 @@
         return false;
       }
 
-      if (!this.record['demographics']['locationGeneral']){
+      if (!this.record['demographics']['locationDeduced']){
         return '';
       } else {
-        return this.record['demographics']['locationGeneral'];
+        return this.record['demographics']['locationDeduced'].city.name +", " + this.record['demographics']['locationDeduced'].city.name;
       }
     };
 

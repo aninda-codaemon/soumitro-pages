@@ -131,8 +131,12 @@ h3.result-age {
   color: #19B2CC;
 }
 
-.head-name {
+.head-place {
   margin-bottom: 15px;
+}
+
+.head-name {
+  font-size: 22px;
 }
 
 #email-results h3 {

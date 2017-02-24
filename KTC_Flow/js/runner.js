@@ -625,9 +625,9 @@ var getExtraTeaserData = function(records) {
         $loadingText.text('Building Sample Report...').fadeIn();
         window.setTimeout(function(){
           showResults(searchType);
-        }, 6000)
-      }, 6000)
-    },6000)
+        }, 5000)
+      }, 5000)
+    },5000)
   }
 var hideSearches = function(searchType) {
   $('article.contact-panel').hide();
