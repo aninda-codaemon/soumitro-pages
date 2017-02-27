@@ -146,6 +146,10 @@ h3.result-age {
   margin-bottom: 5px;
 }
 
+.results {
+  display: none;
+}
+
 .form-control {
   /*-webkit-appearance: none;*/
 }
@@ -216,6 +220,56 @@ hr {
 /* ********************************************************************** */
 /* *************************** Main Content ***************************** */
 /* ********************************************************************** */
+
+#leadBox-modal .modal-content{
+  padding: 50px 100px;
+}
+
+#leadBox-modal .modal-dialog {
+  width: 880px;
+}
+
+#leadBox-modal h3 {
+  margin-bottom: 10px;
+}
+
+#leadBox-modal label {
+  font-family: 'halis_rblack';
+  font-size: 16px;
+}
+
+#leadBox-modal input {
+  margin-bottom: 20px;
+}
+
+#leadBox-modal select {
+  margin-bottom: 50px;
+}
+
+.the-buttoner {
+  text-align: center;
+}
+.modal-header {
+  border: none;
+}
+
+input.form-control.error, select.form-control.error {
+  border-color: #EF1A1D;
+  border-width: 2px;
+}
+
+label.error {
+  float: right;
+}
+
+.custom-checkbox label.error {
+  float: none;
+  display: block;
+}
+
+.lock {
+  text-align: right;
+}
 
 .top-inner {
   position: relative;
@@ -537,7 +591,7 @@ label.custom-checkbox.input-error {
   display: none !important;
 }
 
-@media (max-width: 767px) {
+/*@media (max-width: 767px) {
   label.error {
     float: right;
   }
@@ -550,7 +604,7 @@ label.custom-checkbox.input-error {
   label.error {
     float: none;
   }
-}
+}*/
 
 .contact #footer .container,
 .signup #footer .container {
@@ -605,7 +659,7 @@ div.footer-white {
 }
 
 .custom-checkbox {
-  font-size: 14px;
+  font-size: 13px !important;
   font-weight: normal;
   line-height: 18px;
 
@@ -614,9 +668,11 @@ div.footer-white {
   overflow: hidden;
 
   margin-bottom: 30px;
-  padding-left: 30px;
+  padding-left: 45px;
+  padding-right: 15px;
 
   color: #375271;
+  font-family: 'Work Sans', sans-serif !important;
 }
 .custom-checkbox input {
   position: absolute;
@@ -630,7 +686,7 @@ div.footer-white {
 .custom-checkbox em {
   position: absolute;
   top: 2px;
-  left: 0;
+  left: 15px;
 
   width: 14px;
   height: 14px;
@@ -668,28 +724,8 @@ div.footer-white {
   padding: 60px 100px 80px;
 }
 
-#company-modal .modal-header {
-  border: none;
-  padding: 0px;
-}
 
-#company-modal .modal-header button {
-  background: none;
-  border: none;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
 
-#company-modal h3 {
-  color: #19B2CC;
-  font-size: 42px;
-}
-
-#company-modal h4 {
-  color: #375271;
-  margin-bottom: 25px;
-}
 
 #company-modal select {
   margin-bottom: 50px;
@@ -862,19 +898,24 @@ article.contact-panel label {
 }
 @media screen and (max-width: 992px) {
 
-  #company-modal .modal-content {
+  #leadBox-modal .modal-content {
     padding: 60px 70px;
   }
-  #company-modal .modal-dialog{
+  #leadBox-modal .modal-dialog{
     width: 80%;
   }
 
-  #company-modal h3 {
+  #leadBox-modal h3 {
     font-size: 36px;
   }
 
-  #company-modal label.error {
+  #leadBox-modal label.error {
     font-size: 16px;
+  }
+
+  .form-names label.error {
+    float: none;
+    display: block;
   }
 
   body {
@@ -1054,23 +1095,32 @@ article.contact-panel label {
 
 @media (max-width: 767px) {
 
-  #company-modal .modal-content {
+  #leadBox-modal .modal-content {
     padding: 40px 5px;
   }
-  #company-modal .modal-dialog{
+  #leadBox-modal .modal-dialog{
     width: 95%;
   }
 
-  #company-modal select {
+  #leadBox-modal select {
     margin-bottom: 30px;
   }
 
-  #company-modal h3 {
+  #leadBox-modal h3 {
     font-size: 30px;
   }
 
-  #company-modal label.error {
+  #leadBox-modal label.error {
     font-size: 14px;
+  }
+
+  #leadBox-modal .btn {
+    width: 100%;
+  }
+
+  .form-names label.error {
+    float: left;
+    display: inline-block;
   }
   body {
     font-size: 18px;

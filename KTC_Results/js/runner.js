@@ -1,11 +1,5 @@
 ;(function ($) {
 
-  var LOADING_TEXT = {
-    "people": "Use our People Search API to validate data, reduce risk, update records, enhance contact lists, and so much more.",
-    "phone": "Use our Phone Search API to see the owner's name, validate data, reduce risk, update records, enchance contact lists, and so much more.",
-    "email": "Use our Email Search API to validate data, update records, enchance, contact lists, and so much more.",
-    "property": "Use our Property Search API to validate data, reduce risk, update your records, enhance contact lists, and so much more."
-  }
   var trackNL = function (evtName, props) {
     if (typeof nolimit !== 'undefined' && nolimit.track) {
       if (props) {
@@ -95,293 +89,71 @@ window.addEventListener('resize', function(){
     //amplify.store("lastVisit", Date.now());
   }
 
-// Local sotrage object prep functions
-  var parseTeaser = function(data) {
-    var recordCount = parseInt(data["response"]["RecordCount"]),
-        records;
-
-    if (recordCount === 1) {
-      records = [data["response"]["Records"]['Record']];
-    } else {
-      records = data["response"]["Records"]['Record'];
-    }
-
-    return records;
-  }
-
-  var parseEmailTeaser = function(data) {
-    var recordCount, records, status = 0;
-    if (data.results && typeof data.results.status !== 'undefined') {
-      status = parseInt(data.results.status);
-    }
-    recordCount = (status === 200 ? 1 : 0);
-
-    data.results.emailaddress = data.query.email;
-    records = data.results;
-    return records;
-  }
-
-  var prepPhoneData = function (data) {
-
-    var prepped = {
-      ownersName: "subscribe to see",
-      carrier: data.company,
-      lineType: (data.nxxusetype == "L") ? "Landline" : "Cellphone",
-      city: data.city,
-      state: data.state,
-      zipCode: "subscribe to see",
-      streetAddress: "subscribe to see",
-      neighborhood: "subscribe to see",
-      elevation: "subscribe to see",
-      latitude: data.latitude,
-      longitude: data.longitude
-    };
-
-  return prepped;
-};
 
   // Form Validations
-
-  var hideSearches = function(searchType) {
-    $('article.contact-panel').hide();
-    $('.start-header').hide();
-    startLoading(searchType);
+  var postLeadForm = function(dataArray) {
+    // var formVals = {};
+    //   _.forEach(dataArray, function(v, k) {
+    //       formVals[v.name] = v.value;
+    //   });
+    //
+    //   var leadData = {};
+    //     leadData['lead[first_name]'] = formVals['account[first_name]'] || '';
+    //     leadData['lead[last_name]'] = formVals['account[last_name]'] || '';
+    //     leadData['lead[email]'] = formVals['user[email]'] || '';
+    //     leadData['lead[zip]'] = formVals['account[zip]'] || '';
+    //     leadData['lead[state]'] = formVals['account[state]'] || '';
+    //     leadData['record_search[first_name]'] = firstName;
+    //     leadData['record_search[last_name]'] = lastName;
   }
-
-  var getPeople = function(formData){
-    var fn = formData.fn || "",
-        ln = formData.ln || "",
-        city = formData.city || "",
-        state = formData.state || "";
-
-    var baseUrl = "//www.beenverified.com/hk/teaser/?exporttype=jsonp&rc=100";
-    var url = baseUrl + "&fn=" + fn + "&ln=" + ln + "&state=" + state + "&city=" + city;
-
-    var xhrData = $.ajax({
-      url: url,
-      dataType : 'jsonp',
-      jsonpCallback: 'parseResults',
-      statuscode: {
-        503: function () {
-
-        }
-      }
-    })
-
-    $.when(xhrData).then(function(result){
-      var teaserRecords;
-        var teaserData;
-        var xhrResult = result;
-        var status = xhrResult.response.Header.Status;
-
-        if (status === "0") {
-          teaserRecords = parseTeaser(xhrResult);
-          teaserData = teaserRecords;
-
-          var recordCount = xhrResult.response.RecordCount;
-
-          // trackNL("Refine Modal Final Result Count", {result_count: recordCount});
-
-          var teaserDataObj = {recordCount: recordCount, teasers: teaserData};
-          amplify.store('peopleData', teaserDataObj);
-        }
-    });
-  }
-
-  var getPhoneData = function(formData){
-
-    var url = 'https://www.beenverified.com/hk/dd/free/phoneinfo?&exporttype=jsonp' + "&phone=" + formData.phone
-
-    var xhrData = $.ajax({
-      url: url,
-      dataType : 'jsonp',
-    })
-
-    $.when(xhrData).then(function(result, status){
-
-        var data = result.results;
-
-        if ((status === "success") && !$.isEmptyObject(data)) {
-          // latlng.push(data.latitude);
-          // latlng.push(data.longitude);
-
-          teaserData = prepPhoneData(data);
-          amplify.store('phoneData', teaserData);
-        }
-    });
-  }
-
-  var getEmailData = function(formData){
-
-    var baseUrl = 'https://www.beenverified.com/hk/dd/source/fxgJg56p?exporttype=jsonp',
-        url = baseUrl + "&email=" + formData.email;
-
-    var xhrData = $.ajax({
-      url: url,
-      dataType : 'jsonp',
-    })
-
-    $.when(xhrData).then(function(result){
-
-      var xhrResult = result,
-      teaserRecords = [],
-      status = 0;
-
-      if (xhrResult.results && typeof xhrResult.results.status !== 'undefined') {
-        status = parseInt(xhrResult.results.status);
-      }
-
-      if (status === 200 || status === 404 || status === 202) {
-        teaserRecords[0] = parseEmailTeaser(xhrResult);
-
-        var recordCount = (status === 200 ? 1 : 0);
-
-        var teaserDataObj = {
-          recordCount: recordCount,
-          email: result.query.email,
-          teasers: teaserRecords
-        };
-
-        amplify.store('emailData', teaserDataObj);
-      }
-    });
-  }
-
-  var getPropertyData = function(formData) {
-    var baseUrl = "https://www.beenverified.com/hk/dd/teaser/property?exporttype=jsonp&address=",
-        url = baseUrl + encodeURIComponent(formData.address);
-
-    var xhrData = $.ajax({
-      url: url,
-      dataType: 'jsonp'
-    })
-
-    $.when(xhrData).done(function(result){
-      var teaserRecords = [],
-      xhrResult = result;
-
-      teaserRecords[0] = xhrResult;
-
-      var teaserDataObj = {
-        recordCount: _.isEmpty(xhrResult) ? 0 : 1,
-        address: formData.address,
-        teasers: teaserRecords
-      }
-
-      amplify.store('propertyData', teaserDataObj);
-    })
-  }
-
-  $peopleSearchForm = $('#people_search');
-  $phoneSearchForm = $('#phone_search');
-  $emailSearchForm = $('#email_search');
-  $propertySearchForm = $('#property_search');
-  $companyForm = $('#company_form');
-
-
- $peopleSearchForm.validate({
-
-    rules: {
-      fn: "required",
-      ln: "required"
-    },
-    messages: {
-      fn: "Please enter a first name",
-      ln: "Please enter a last name"
-    },
-    submitHandler: function(form, e) {
-      e.preventDefault();
-      var formData = serializeToObject(($(form).serializeArray()));
-      getPeople(formData);
-      hideSearches("people");
-    }
-  });
-
- // $peopleSearchForm.submit(function(e){
- //   e.preventDefault();
- //   var formData = serializeToObject(($(e.target).serializeArray()));
- //    getPeople(formData);
- //    hideSearches("people");
- // })
-
-
+  $leadForm = $('#leadBox-form');
 
   $.validator.addMethod("phoneUS", function (phone_number, element) {
-      phone_number = phone_number.replace(/\s+/g, "");
-      return this.optional(element) || phone_number.length > 9 &&
-        phone_number.match(/^(\+?1-?)?(\([2-9]([02-9]\d|1[02-9])\)|[2-9]([02-9]\d|1[02-9]))-?[2-9]([02-9]\d|1[02-9])-?\d{4}$/);
-    }, "Please specify a valid phone number");
+    phone_number = phone_number.replace(/\s+/g, "");
+    return this.optional(element) || phone_number.length > 9 &&
+    phone_number.match(/^(\+?1-?)?(\([2-9]([02-9]\d|1[02-9])\)|[2-9]([02-9]\d|1[02-9]))-?[2-9]([02-9]\d|1[02-9])-?\d{4}$/);
+  }, "Please specify a valid phone number");
 
-  $phoneSearchForm.validate({
-    validClass: "success",
+ $leadForm.validate({
 
     rules: {
-      "phone": {
+      "lead[first_name]": "required",
+      "lead[last_name]": "required",
+      "lead[email]": {
+        required: true,
+        email: true
+      },
+      "lead[phone]": {
         required: true,
         phoneUS: true
-      }
+      },
+      "lead[company]": "required",
+      "lead[role]": "required",
+      "lead[use]": "required",
+      tos: "required"
     },
+
     messages: {
-      phone: "Please enter a phone number. e.g., (212) 555-6789"
+      "lead[first_name]": "Please enter a first name",
+      "lead[last_name]": "Please enter a last name",
+      "lead[email]": "Please enter a valid email",
+      "lead[phone]": "Please enter a valid phone",
+      "lead[company]": "Please enter a company",
+      "lead[role]": "Please enter a role",
+      "lead[use]": "Please select an option",
+      tos: "Please accept our Terms of Service"
+    },
+
+    errorPlacement: function(error, element){
+      error.insertBefore(element);
     },
 
     submitHandler: function(form, e) {
       e.preventDefault();
-      var formData = serializeToObject(($(form).serializeArray()));
-      getPhoneData(formData);
-      hideSearches("phone");
-      return false;
+      postLeadForm($(form).serializeArray());
+      $leadForm.modal('hide');
     }
   });
-
-  $emailSearchForm.validate({
-
-      rules: {
-        "email": {
-          required: true,
-          email: true
-        },
-      },
-      messages: {
-        "email": "Please enter an Email Address"
-      },
-
-      submitHandler: function(form, e) {
-        e.preventDefault();
-        var formData = serializeToObject(($(form).serializeArray()));
-        getEmailData(formData);
-        hideSearches("email");
-      }
-    });
-
-  $propertySearchForm.validate({
-    rules: {
-      address: "required"
-    },
-    messages: {
-      address: "Please enter an address"
-    },
-    submitHandler: function(form, e){
-      e.preventDefault();
-      var formData = serializeToObject(($(form).serializeArray()));
-      getPropertyData(formData);
-      hideSearches("property");
-    }
-  });
-
-  $companyForm.validate({
-    rules: {
-      company_select: "required"
-    },
-    messages: {
-      company_select: "Please select your company's size"
-    },
-    submitHandler: function(form, e) {
-      e.preventDefault()
-      $('#company-modal').modal('hide');
-    }
-
-  })
 
   //Transition to search animation
 var changeLoadingText = function(searchType) {
@@ -430,10 +202,27 @@ $('.contact-panel').click(function(){
   clickedPanel = this;
 })
 
+var showResults = function() {
+  var searched,
+      data = amplify.store().searchData;
+
+  if (data.fn) {
+    $('#people-results').show();
+  } else if (data.phone) {
+    $('#phone-results').show();
+  } else if (data.email){
+    $('#email-results').show();
+  } else if (data.address) {
+    $('#property-results').show();
+  }
+}
+
   var initialize = function () {
+    showResults();
     apiBoxHeight();
     setLastVisit();
     setColumnState();
+    $('#leadBox-modal').modal('show');
 
 
   /* initDownsells(); */

@@ -48,6 +48,88 @@ drift.load('rgvdm473vfx2');
 <!-- End of Async Drift Code -->
 
     <body class="hide signup" data-next-page="<%= next_page %>">
+
+      <!-- LeadBox Modal -->
+
+      <div class="modal fade" id="leadBox-modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="row">
+              <div class="col-xs-10">
+                <h3>Tell us about yourself.</h3>
+              </div>
+
+              <div class="col-xs-2 lock">
+                <img src="img/Lock.svg" alt="" class=""/>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="modal-body">
+            <form id="leadBox-form" class="" action="https://knowthycustomer.com/api/v4/enterprise_leads.json" method="post" data-fr-store="leadData">
+              <div class="row">
+                <div class="form-names">
+                  <div class="col-sm-6">
+                    <label for="fn">FIRST NAME</label>
+                    <input id="fn" type="text" name="lead[first_name]" value="" placeholder="First Name" class="form-control">
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="ln">LAST NAME</label>
+                    <input id="ln" type="text" name="lead[last_name]" value="" placeholder="Last Name" class="form-control">
+                  </div>
+              </div>
+
+                <div class="col-sm-12">
+                  <label for="email">BUSINESS EMAIL ADDRESS</label>
+                  <input type="text" name="lead[email]" value="" placeholder="Email Address" class="form-control">
+                </div>
+
+                <div class="col-sm-12">
+                  <label for="phone">BUSINESS PHONE NUMBER</label>
+                  <input type="text" name="lead[phone]" value="" placeholder="Phone Number" class="form-control">
+                </div>
+
+                <div class="col-sm-12">
+                  <label for="company">COMPANY</label>
+                  <input type="text" name="lead[company]" value="" placeholder="Company" class="form-control">
+                </div>
+
+                <div class="col-sm-12">
+                  <label for="role">ROLE</label>
+                  <input type="text" name="lead[role]" value="" placeholder="Role" class="form-control">
+                </div>
+
+                <div class="col-sm-12">
+                  <label for="use">HOW DO YOU PLAN ON USING KTC?</label>
+                  <select class="form-control" name="use">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="1-4">To spite my archnemesis: WhitePages</option>
+                    <option value="5-10">To use my 5 free searches and then dont sign up</option>
+                    <option value="11-50">To know mine customer</option>
+                    <option value="51-500">I'm not using it, you are!</option>
+                  </select>
+                </div>
+
+                <div id="tos">
+                  <label class="custom-checkbox">
+
+                    <input type="checkbox" name="tos" value="" class="col-xs-1">
+                    <em></em>
+                    By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="https://www.knowthycustomer.com/lp/fdafcf/7/uncategorized">Terms of Service</a> and <a href="https://www.knowthycustomer.com/lp/fdafcf/8/uncategorized">Privacy Policy</a>. I agree that I will not use any information about an individual obtained from KnowThyCustomer as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance; or for any other purpose prohibited by our Terms of Service. (For more information about whether a use of information falls under one of these categories, please contact us at <a href="mailto:support@KnowThyCustomer.com">support@KnowThyCustomer.com</a>)
+                  </label>
+                </div>
+
+              </div>
+              <div class="the-buttoner">
+                <button type="submit" name="button" class="btn btn-primary btn-success">SEE RESULTS</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
       <!-- Header Container -->
       <div class="modal fade" id="company-modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
         <div class="modal-dialog" role="document">
@@ -294,7 +376,7 @@ drift.load('rgvdm473vfx2');
                         </p>
                       </div>
                       {{/if}}
-                      
+
                       {{#if location}}
                       <div class="col-sm-12">
                         <p class="head-place">
@@ -637,14 +719,13 @@ drift.load('rgvdm473vfx2');
 -->
   <!-- SCRIPTS -->
 
-  <script src="js/jquery-3.1.0.min.js"></script>
+  <script src="js/jquery-1.12.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/amplify.store.min.js"></script>
   <script src="js/lodash.min.js"></script>
   <script src="js/handlebars.min.js"></script>
 
   <script src="js/jquery.validate.js"></script>
-  <script src="js/jquery.validate.creditcard2.pack-1.0.0.js"></script>
 
   <!-- <script src="js/ie_fix.js"></script> -->
   <script src="js/check_cc.js"></script>
