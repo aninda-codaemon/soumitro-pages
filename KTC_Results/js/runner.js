@@ -129,7 +129,7 @@ window.addEventListener('resize', function(){
       },
       "lead[company]": "required",
       "lead[role]": "required",
-      "lead[use]": "required",
+      "use": "required",
       tos: "required"
     },
 
@@ -140,7 +140,7 @@ window.addEventListener('resize', function(){
       "lead[phone]": "Please enter a valid phone",
       "lead[company]": "Please enter a company",
       "lead[role]": "Please enter a role",
-      "lead[use]": "Please select an option",
+      "use": "Please select an option",
       tos: "Please accept our Terms of Service"
     },
 
@@ -150,7 +150,8 @@ window.addEventListener('resize', function(){
 
     submitHandler: function(form, e) {
       e.preventDefault();
-      postLeadForm($(form).serializeArray());
+      // postLeadForm($(form).serializeArray());
+      // form.submit()
       $leadForm.modal('hide');
     }
   });

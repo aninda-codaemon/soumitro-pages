@@ -1,5 +1,6 @@
 ;(function ($) {
 
+noResults = false;
 
   var trackNL = function (evtName, props) {
     if (typeof nolimit !== 'undefined' && nolimit.track) {
@@ -331,6 +332,8 @@ var getExtraTeaserData = function(records) {
 
     if (recordCount === 1) {
       records = [data["response"]["Records"]['Record']];
+    } else if (recordCount === '0') {
+      return [];
     } else {
       records = data["response"]["Records"]['Record'];
     }
@@ -404,21 +407,24 @@ var getExtraTeaserData = function(records) {
         var teaserData;
         var xhrResult = result;
         var status = xhrResult.response.Header.Status;
+        var recordCount = xhrResult.response.RecordCount;
 
-        if (status === "0") {
+        if (status === "0" && recordCount !== "0") {
           teaserRecords = parseTeaser(xhrResult);
           teaserData = teaserRecords;
 
-          var recordCount = xhrResult.response.RecordCount;
-
-          // trackNL("Refine Modal Final Result Count", {result_count: recordCount});
 
           var bestRecords = bestTeaserSorter(teaserData, fn, ln),
-              teaserDataObj = {recordCount: recordCount, teasers: bestRecords};
+          teaserDataObj = {recordCount: recordCount, teasers: bestRecords};
 
           // amplify.store('peopleData', teaserDataObj);
+          noResults = false;
           getExtraTeaserData(bestRecords);
+        } else {
+          noResults = true;
         }
+          // trackNL("Refine Modal Final Result Count", {result_count: recordCount});
+
     });
   }
 
@@ -436,11 +442,14 @@ var getExtraTeaserData = function(records) {
         var data = result.results;
 
         if ((status === "success") && !$.isEmptyObject(data)) {
+          noResults = false;
           // latlng.push(data.latitude);
           // latlng.push(data.longitude);
 
           teaserData = prepPhoneData(data, formData.phone);
           amplify.store('phoneData', teaserData);
+        } else {
+          noResults = true;
         }
     });
   }
@@ -470,13 +479,18 @@ var getExtraTeaserData = function(records) {
 
         var recordCount = (status === 200 ? 1 : 0);
 
-        var teaserDataObj = {
-          recordCount: recordCount,
-          email: result.query.email,
-          teasers: teaserRecords
-        };
+        if (recordCount === 0) {
+          noResults = true;
+        } else {
+          noResults = false;
+          var teaserDataObj = {
+            recordCount: recordCount,
+            email: result.query.email,
+            teasers: teaserRecords
+          };
 
-        amplify.store('emailData', teaserDataObj);
+          amplify.store('emailData', teaserDataObj);
+        }
       }
     });
   }
@@ -502,7 +516,19 @@ var getExtraTeaserData = function(records) {
         teasers: teaserRecords
       }
 
-      amplify.store('propertyData', teaserDataObj);
+      // seems like address request never returns no results, check if there is a mailing address attribute, if no we
+      // assume this isnt a real address and set the count to 0
+      //
+      if (!teaserDataObj.teasers[0].mailing_address.full === "") {
+        teaserDataObj['recordCount'] = 0;
+      }
+
+      if (teaserDataObj.recordCount === 0) {
+        noResults = true;
+      } else {
+        amplify.store('propertyData', teaserDataObj);
+        noResults = false;
+      }
     })
   }
 
@@ -624,10 +650,14 @@ var getExtraTeaserData = function(records) {
         $loadingText.hide();
         $loadingText.text('Building Sample Report...').fadeIn();
         window.setTimeout(function(){
-          showResults(searchType);
-        }, 5000)
-      }, 5000)
-    },5000)
+          if (noResults) {
+            resetSearch();
+          } else {
+            showResults(searchType);
+          }
+        }, 4000)
+      }, 4000)
+    },4000)
   }
 var hideSearches = function(searchType) {
   $('article.contact-panel').hide();
@@ -636,8 +666,17 @@ var hideSearches = function(searchType) {
 }
 
 var showResults = function() {
-  window.location.href = "https://www.knowthycustomer.com/lp/22cc56/3/landing"
+  window.location.href = "https://www.knowthycustomer.com/lp/b56a8b/3/search-results";
+}
 
+var resetSearch = function() {
+  $('.loading-headers').addClass('loading-hidden');
+  $startHeader = $('.start-header');
+  $startHeader.find('h1').text("Sorry, We Couldn't Find Any Results");
+  $startHeader.find('p').text("Try refining your search or trying a new search to built your report.");
+  $('.loading-animation').hide();
+  $('article.contact-panel').show();
+  $startHeader.show();
 }
 
 var startLoading = function(searchType) {
@@ -693,16 +732,23 @@ liveaddress.on("AddressChanged", function(event, data, previousHandler) {
 liveaddress.on("AddressAccepted", function(event, data, previousHandler) {
   var chosen = data.response.chosen;
 
-  amplify.store('searchData', {
-    address: chosen.delivery_line_1 + " " + chosen.last_line,
-    street: chosen.delivery_line_1 || "",
-    last_line: chosen.last_line || "",
-    city: chosen.components.city_name || "",
-    state: chosen.components.state_abbreviation || "",
-    unit: chosen.components.secondary_number || "",
-    zip5: chosen.components.zipcode || "",
-    zip4: chosen.components.plus4_code || ""
-  });
+  if (chosen) {
+    amplify.store('searchData', {
+      address: chosen.delivery_line_1 + " " + chosen.last_line,
+      street: chosen.delivery_line_1 || "",
+      last_line: chosen.last_line || "",
+      city: chosen.components.city_name || "",
+      state: chosen.components.state_abbreviation || "",
+      unit: chosen.components.secondary_number || "",
+      zip5: chosen.components.zipcode || "",
+      zip4: chosen.components.plus4_code || ""
+    });
+
+  } else {
+    amplify.store('searchData', {
+      address: $('#property_search input').val()
+    });
+  }
 
   $addressField.addClass("success");
   $addressField.focus();

@@ -223,6 +223,7 @@ hr {
 
 #leadBox-modal .modal-content{
   padding: 50px 100px;
+  border-radius: 2px;
 }
 
 #leadBox-modal .modal-dialog {
@@ -260,6 +261,7 @@ input.form-control.error, select.form-control.error {
 
 label.error {
   float: right;
+  font-family: 'Work Sans' !important;
 }
 
 .custom-checkbox label.error {
@@ -1118,9 +1120,12 @@ article.contact-panel label {
     width: 100%;
   }
 
-  .form-names label.error {
+  label.error {
+    display: block ;
     float: left;
-    display: inline-block;
+  }
+  label {
+    display: block;
   }
   body {
     font-size: 18px;
