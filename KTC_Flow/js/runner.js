@@ -103,7 +103,8 @@ var bestTeaserSorter = function(records, fn, ln) {
   }, this).value();
   return records.slice(0,5);
 };
-var recordsWithTeaser = [];
+var recordsWithTeaser = [],
+    peopleRecordCount;
 var getExtraTeaserData = function(records) {
 
   // var dataPath = $(ctx).data("fr-bound2");
@@ -407,15 +408,14 @@ var getExtraTeaserData = function(records) {
         var teaserData;
         var xhrResult = result;
         var status = xhrResult.response.Header.Status;
-        var recordCount = xhrResult.response.RecordCount;
+        peopleRecordCount = xhrResult.response.RecordCount;
 
-        if (status === "0" && recordCount !== "0") {
+        if (status === "0" && peopleRecordCount !== "0") {
           teaserRecords = parseTeaser(xhrResult);
           teaserData = teaserRecords;
 
 
           var bestRecords = bestTeaserSorter(teaserData, fn, ln),
-          teaserDataObj = {recordCount: recordCount, teasers: bestRecords};
 
           // amplify.store('peopleData', teaserDataObj);
           noResults = false;
@@ -646,7 +646,7 @@ var getExtraTeaserData = function(records) {
       $loadingText.hide();
       $loadingText.text('Looking Up Billions of Records...').fadeIn();
       window.setTimeout(function(){
-        amplify.store('peopleData', {"teasers" : recordsWithTeaser});
+        amplify.store('peopleData', {"teasers" : recordsWithTeaser, "recordCount" : peopleRecordCount});
         $loadingText.hide();
         $loadingText.text('Building Sample Report...').fadeIn();
         window.setTimeout(function(){
@@ -673,7 +673,7 @@ var resetSearch = function() {
   $('.loading-headers').addClass('loading-hidden');
   $startHeader = $('.start-header');
   $startHeader.find('h1').text("Sorry, We Couldn't Find Any Results");
-  $startHeader.find('p').text("Try refining your search or trying a new search to built your report.");
+  $startHeader.find('p').text("Check for typos, refine your search, or try a different search input.");
   $('.loading-animation').hide();
   $('article.contact-panel').show();
   $startHeader.show();

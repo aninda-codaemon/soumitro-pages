@@ -92,20 +92,31 @@ window.addEventListener('resize', function(){
 
   // Form Validations
   var postLeadForm = function(dataArray) {
-    // var formVals = {};
-    //   _.forEach(dataArray, function(v, k) {
-    //       formVals[v.name] = v.value;
-    //   });
-    //
-    //   var leadData = {};
-    //     leadData['lead[first_name]'] = formVals['account[first_name]'] || '';
-    //     leadData['lead[last_name]'] = formVals['account[last_name]'] || '';
-    //     leadData['lead[email]'] = formVals['user[email]'] || '';
-    //     leadData['lead[zip]'] = formVals['account[zip]'] || '';
-    //     leadData['lead[state]'] = formVals['account[state]'] || '';
-    //     leadData['record_search[first_name]'] = firstName;
-    //     leadData['record_search[last_name]'] = lastName;
+    var formVals = {};
+      _.forEach(dataArray, function(v, k) {
+          formVals[v.name] = v.value;
+      });
+
+    var leadData = {};
+      leadData['lead[first_name]'] = formVals['account[first_name]'] || '';
+      leadData['lead[last_name]'] = formVals['account[last_name]'] || '';
+      leadData['lead[email]'] = formVals['user[email]'] || '';
+      leadData['lead[zip]'] = formVals['account[zip]'] || '';
+      leadData['lead[state]'] = formVals['account[state]'] || '';
+      leadData['record_search[first_name]'] = firstName;
+      leadData['record_search[last_name]'] = lastName;
+
+
+    var leadQueryArr = [];
+
+    _.forEach(leadData, function(v, k) {
+        leadQueryArr.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
+    });
+
+    var leadQueryString = leadQueryArr.join('&');
+    $.post("https://knowthycustomer.com/api/v4/enterprise_leads.json", leadQueryString);
   }
+
   $leadForm = $('#leadBox-form');
 
   $.validator.addMethod("phoneUS", function (phone_number, element) {
@@ -150,7 +161,7 @@ window.addEventListener('resize', function(){
 
     submitHandler: function(form, e) {
       e.preventDefault();
-      // postLeadForm($(form).serializeArray());
+      postLeadForm($(form).serializeArray());
       // form.submit()
       $leadForm.modal('hide');
     }
@@ -217,6 +228,14 @@ var showResults = function() {
     $('#property-results').show();
   }
 }
+
+$('.flip-dat-shit').click(function(){
+  $('.flip_panel').addClass('flip');
+})
+
+$('.flip-back').click(function(){
+  $('.flip_panel').removeClass('flip');
+})
 
   var initialize = function () {
     showResults();

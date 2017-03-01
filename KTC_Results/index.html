@@ -171,17 +171,19 @@ drift.load('rgvdm473vfx2');
                 <div class="row">
                   <div class="start-header col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0">
 
-                      <h1>Results from our API</h1>
-                      <p>Start a free trial to access full reports, PDF downloads, advanced search options, and to try our API. Full reports may include more data points.</p>
+                      <h1>Free Preview Results</h1>
+                      <p>Sign up to access full reports, PDF downloads, advanced search options, and to try our API. Full reports may include many more data points!</p>
 
                   </div>
 
                 </div>
 
+
+
                 <div class="results" data-fr-bind="peopleData" id="people-results">
 
                   <div class="row" data-fr-each="teasers" data-fr-map="TeaserRecord">
-                    <div class="col-sm-12">
+                    <div class="col-sm-12 hidden-xs">
 
 
                       <article class="result contact-panel col-sm-7 col-md-8">
@@ -257,8 +259,90 @@ drift.load('rgvdm473vfx2');
                         </div>
                       </div>
                     </div>
+
+                    <div class="col-sm-12 visible-xs flip_panel">
+
+
+                      <article class="result contact-panel col-sm-7 col-md-8 front">
+                        <div class="row">
+
+                          <div class="col-sm-8 col-md-9">
+                            <h3>{{fullName}}</h3>
+                          </div>
+
+                          {{#if age}}
+                          <div class="col-sm-4 col-md-3">
+
+                            <h3 class="result-age"> {{age}} y/o</h3>
+                          </div>
+                          {{/if}}
+                          <div class="col-sm-12">
+                            <p class="place">
+                              {{place}}
+                            </p>
+                          </div>
+
+                        </div>
+
+                        <div class="row">
+                          <div class="col-sm-12">
+                            {{#if hasAddresses}}
+                              <p>Addresses: {{addressCount}}</p>
+                            {{/if}}
+
+                            {{#if emails}}
+                              <p>Emails: {{emailsCountTeaser}}</p>
+                            {{/if}}
+
+                            {{#if phoneNumbers}}
+                              <p>Phone Numbers: {{phoneNumbersCountTeaser}}</p>
+                            {{/if}}
+
+                            {{#if careers}}
+                              <p>Jobs: {{careersCountTeaser}}</p>
+                            {{/if}}
+
+                            {{#if relatives}}
+                              <p>Relatives: {{relativesCountTeaser}}</p>
+                            {{/if}}
+
+                            {{#if socialProfiles}}
+                              <p>Social Profiles: {{socialProfilesCountTeaser}}</p>
+                            {{/if}}
+
+                            {{#if photos}}
+                              <p>Images: {{photosCountTeaser}}</p>
+                            {{/if}}
+                            <p>
+                              Plus more!
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-xs-12">
+
+                            <a href="#" class="btn btn-primary btn-small btn-success">See full report</a>
+                            <a class="flip-dat-shit">Flipper</a>
+                          </div>
+                        </div>
+                      </article>
+
+                      <div class="col-sm-5 col-md-4 api-box back">
+                        <h5>API Data</h5>
+                        <div class="data-box">
+                          <pre>
+                            {{prettyRecord}}
+                          </pre>
+                        </div>
+                        <a class="flip-back">Flip Back</a>
+                      </div>
+                    </div>
                 </div>
               </div>
+            </div>
+
+
 
               <div class="results" data-fr-bind="phoneData" id="phone-results">
 

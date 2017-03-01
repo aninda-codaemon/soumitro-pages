@@ -88,6 +88,7 @@
 
       var name;
       name = null;
+      
       if ($.type(this.record["Names"]["Name"]) === 'array') {
         name = this.record["Names"]["Name"][0];
       } else if ($.type(this.record["Names"]["Name"]) === 'object') {
