@@ -104,7 +104,8 @@ var bestTeaserSorter = function(records, fn, ln) {
   return records.slice(0,5);
 };
 var recordsWithTeaser = [],
-    peopleRecordCount;
+    peopleRecordCount,
+    searchName;
 var getExtraTeaserData = function(records) {
 
   // var dataPath = $(ctx).data("fr-bound2");
@@ -384,10 +385,14 @@ var getExtraTeaserData = function(records) {
 // Teaser Data requests
 
   var getPeople = function(formData){
-    var fn = formData.fn || "",
-        ln = formData.ln || "",
+    var fn = formData.fn.toLowerCase() || "",
+        ln = formData.ln.toLowerCase() || "",
         city = formData.city || "",
         state = formData.state || "";
+
+    fn = fn[0].toUpperCase() + fn.slice(1);
+    ln = ln[0].toUpperCase() + ln.slice(1);
+    searchName = fn + " " + ln;
 
     var baseUrl = "//www.beenverified.com/hk/teaser/?exporttype=jsonp&rc=100";
     var url = baseUrl + "&fn=" + fn + "&ln=" + ln + "&state=" + state + "&city=" + city;
@@ -646,7 +651,11 @@ var getExtraTeaserData = function(records) {
       $loadingText.hide();
       $loadingText.text('Looking Up Billions of Records...').fadeIn();
       window.setTimeout(function(){
-        amplify.store('peopleData', {"teasers" : recordsWithTeaser, "recordCount" : peopleRecordCount});
+        amplify.store('peopleData', {
+          "teasers" : recordsWithTeaser,
+          "recordCount" : peopleRecordCount,
+          "searchedName" : searchName
+        });
         $loadingText.hide();
         $loadingText.text('Building Sample Report...').fadeIn();
         window.setTimeout(function(){
@@ -672,7 +681,7 @@ var showResults = function() {
 var resetSearch = function() {
   $('.loading-headers').addClass('loading-hidden');
   $startHeader = $('.start-header');
-  $startHeader.find('h1').text("Sorry, We Couldn't Find Any Results");
+  $startHeader.find('h1').text("We Didn't Find a Match. Please Try Again.");
   $startHeader.find('p').text("Check for typos, refine your search, or try a different search input.");
   $('.loading-animation').hide();
   $('article.contact-panel').show();

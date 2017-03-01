@@ -243,7 +243,7 @@ hr {
   margin-bottom: 20px;
 }
 
-#leadBox-modal select {
+#leadBox-modal textarea {
   margin-bottom: 50px;
 }
 
@@ -254,7 +254,7 @@ hr {
   border: none;
 }
 
-input.form-control.error, select.form-control.error {
+input.form-control.error, textarea.form-control.error {
   border-color: #EF1A1D;
   border-width: 2px;
 }
@@ -747,6 +747,19 @@ article.contact-panel label {
 .teal-icon {
   display: none;
 }
+
+#more-results {
+  text-align: center;
+}
+
+#more-results h3 {
+
+  color: white;
+}
+
+.turn-blue {
+  color: #19B2CC;
+}
 .flexbox-row:hover {
   border: 4px solid #19B2CC;
   box-shadow: 0 0 14px 0 rgba(0,0,0,0.22);
@@ -1104,7 +1117,7 @@ article.contact-panel label {
     width: 95%;
   }
 
-  #leadBox-modal select {
+  #leadBox-modal textarea {
     margin-bottom: 30px;
   }
 

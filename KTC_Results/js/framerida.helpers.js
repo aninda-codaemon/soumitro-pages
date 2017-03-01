@@ -85,7 +85,7 @@
 
   H.registerHelper('fullState', function(item){
     return states[item];
-  })
+  });
 
   H.registerHelper('phonify', function(item){
     if (!item) {
@@ -94,7 +94,7 @@
     var justNumbers = item.replace(/\D/g, ""),
     phonified = "(" + justNumbers.slice(0,3) + ") " + justNumbers.slice(3,6) +"-" + justNumbers.slice(6,10);
     return phonified;
-  })
+  });
 
   H.registerHelper('prettyCarrier', function(item){
     if (!item) {
@@ -108,11 +108,22 @@
       prettied.push(capitalized);
     })
     return prettied;
-  })
+  });
 
   H.registerHelper('prettyDataObject', function(){
     return JSON.stringify(this, null, 2);
-  })
+  });
+
+  H.registerHelper('moreThanFive', function(){
+    var recordCount = parseInt(this.recordCount);
+
+    if (recordCount <= 5) {
+      return "";
+    } else {
+      var string = 'Sign up to see at least <span class="turn-blue">' + (recordCount - 5).toString() + "</span>" + ' more results for ' + '<span class="turn-blue">"' + this.searchedName + '"</span>';
+      return new H.SafeString(string);
+    }
+  });
 
 
 }(Handlebars));

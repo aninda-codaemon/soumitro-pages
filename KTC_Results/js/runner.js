@@ -140,7 +140,7 @@ window.addEventListener('resize', function(){
       },
       "lead[company]": "required",
       "lead[role]": "required",
-      "use": "required",
+      "lead[use]": "required",
       tos: "required"
     },
 
@@ -151,7 +151,7 @@ window.addEventListener('resize', function(){
       "lead[phone]": "Please enter a valid phone",
       "lead[company]": "Please enter a company",
       "lead[role]": "Please enter a role",
-      "use": "Please select an option",
+      "lead[use]": "Please select an option",
       tos: "Please accept our Terms of Service"
     },
 
@@ -220,6 +220,7 @@ var showResults = function() {
 
   if (data.fn) {
     $('#people-results').show();
+    $('#more-results').show();
   } else if (data.phone) {
     $('#phone-results').show();
   } else if (data.email){
@@ -243,6 +244,11 @@ $('.flip-back').click(function(){
     setLastVisit();
     setColumnState();
     $('#leadBox-modal').modal('show');
+
+    /* IE10/11 inserts textarea placeholder content as actual innerHTML.
+   Override this by clearing textarea value onload */
+
+   $('textarea').val('');
 
 
   /* initDownsells(); */

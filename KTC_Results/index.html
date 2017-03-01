@@ -101,16 +101,10 @@ drift.load('rgvdm473vfx2');
                   <input type="text" name="lead[role]" value="" placeholder="Role" class="form-control">
                 </div>
 
-                <!-- <div class="col-sm-12">
-                  <label for="use">HOW DO YOU PLAN ON USING KTC?</label>
-                  <select class="form-control" name="use">
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="1-4">To spite my archnemesis: WhitePages</option>
-                    <option value="5-10">To use my 5 free searches and then dont sign up</option>
-                    <option value="11-50">To know mine customer</option>
-                    <option value="51-500">I'm not using it, you are!</option>
-                  </select>
-                </div> -->
+                <div class="col-sm-12">
+                  <label for="lead[use]">HOW DO YOU PLAN ON USING KTC?</label>
+                  <textarea name="lead[use]" rows="4" class= "form-control" placeholder="Enter Feedback" maxlength="255"></textarea>
+                </div>
 
                 <div id="tos">
                   <label class="custom-checkbox">
@@ -178,25 +172,34 @@ drift.load('rgvdm473vfx2');
 
                 </div>
 
+                <div id="more-results" data-fr-bind="peopleData">
+                  <h3>
+                    {{moreThanFive}}
+                  </h3>
+                </div>
+
 
 
                 <div class="results" data-fr-bind="peopleData" id="people-results">
 
                   <div class="row" data-fr-each="teasers" data-fr-map="TeaserRecord">
-                    <div class="col-sm-12 hidden-xs">
+                    <div class="col-sm-12">
 
 
                       <article class="result contact-panel col-sm-7 col-md-8">
                         <div class="row">
 
-                          <div class="col-sm-8 col-md-9">
+                          <div class="col-sm-8">
                             <h3>{{fullName}}</h3>
                           </div>
 
                           {{#if age}}
-                          <div class="col-sm-4 col-md-3">
-
-                            <h3 class="result-age"> {{age}} y/o</h3>
+                          <div class="col-sm-4">
+                            {{#if youDead}}
+                              <h3 class="result-age">DOD: {{youDead}}</h3>
+                            {{else}}
+                              <h3 class="result-age"> {{age}} y/o</h3>
+                            {{/if}}
                           </div>
                           {{/if}}
                           <div class="col-sm-12">
@@ -260,7 +263,7 @@ drift.load('rgvdm473vfx2');
                       </div>
                     </div>
 
-                    <div class="col-sm-12 visible-xs flip_panel">
+                    <!-- <div class="col-sm-12 visible-xs flip_panel">
 
 
                       <article class="result contact-panel col-sm-7 col-md-8 front">
@@ -337,7 +340,7 @@ drift.load('rgvdm473vfx2');
                         </div>
                         <a class="flip-back">Flip Back</a>
                       </div>
-                    </div>
+                    </div> -->
                 </div>
               </div>
             </div>

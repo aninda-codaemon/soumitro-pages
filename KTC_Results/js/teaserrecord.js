@@ -88,7 +88,7 @@
 
       var name;
       name = null;
-      
+
       if ($.type(this.record["Names"]["Name"]) === 'array') {
         name = this.record["Names"]["Name"][0];
       } else if ($.type(this.record["Names"]["Name"]) === 'object') {
@@ -464,6 +464,14 @@
         return '<strong>' + bankruptcies.count + '</strong> <span class="mobile-teaser-text">results found</span>';
       }
     };
+
+    TeaserRecord.prototype.youDead = function() {
+      if (!this.record['DODs']) {
+        return false;
+      } else {
+        return this.record['DODs']['Item']['DOD']['Year'];
+      }
+    }
 
     TeaserRecord.prototype.prettyRecord = function() {
       return JSON.stringify(this.record, null, 2);
