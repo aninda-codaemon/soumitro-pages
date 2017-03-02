@@ -75,7 +75,7 @@ noResults = false;
     Cookie.create("lastVisit", Date.now(), 30);
     trackNL('lastVisit Cookie Set');
     //amplify.store("lastVisit", Date.now());
-  }
+  };
 
 // Local storage object prep functions
 var bestTeaserSorter = function(records, name) {
@@ -90,7 +90,7 @@ var bestTeaserSorter = function(records, name) {
         relativeCount = 0;
 
     if (record.Addresses) {
-      addressCount = record.Addresses.Address.length
+      addressCount = record.Addresses.Address.length;
       addresses -= addressCount;
     }
 
@@ -785,9 +785,17 @@ $('.contact-panel').click(function(e){
     return;
   }
   $article = $(e.currentTarget);
+  $('article').each(function(i, article){
+    if ($article.is($(article))) {
+      return;
+    }
+    var inputs = $(article).find('input');
+    inputs.val('');
+  });
+
   $firstInput = $article.find('input:first');
   $firstInput.focus();
-})
+});
 
   var initialize = function () {
     setLastVisit();

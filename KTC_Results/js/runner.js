@@ -110,17 +110,19 @@ window.addEventListener('resize', function(){
     firstName = "",
     lastName = "";
 
-    if (srchData) {
+    if (srchData && srchData.fn) {
       firstName = srchData.fn || "";
       lastName = srchData.ln || "";
     }
 
     var leadData = {};
-      leadData['lead[first_name]'] = formVals['account[first_name]'] || '';
-      leadData['lead[last_name]'] = formVals['account[last_name]'] || '';
-      leadData['lead[email]'] = formVals['user[email]'] || '';
-      leadData['lead[zip]'] = formVals['account[zip]'] || '';
-      leadData['lead[state]'] = formVals['account[state]'] || '';
+      leadData['lead[first_name]'] = formVals['lead[first_name]'] || '';
+      leadData['lead[last_name]'] = formVals['lead[last_name]'] || '';
+      leadData['lead[email]'] = formVals['lead[email]'] || '';
+      leadData['lead[company]'] = formVals['lead[company]'] || '';
+      leadData['lead[phone]'] = formVals['lead[phone]'] || '';
+      leadData['lead[role]'] = formVals['lead[role]'] || '';
+      leadData['lead[comment]'] = formVals['lead[comment]'] || '';
       leadData['record_search[first_name]'] = firstName;
       leadData['record_search[last_name]'] = lastName;
 
@@ -158,7 +160,7 @@ window.addEventListener('resize', function(){
       },
       "lead[company]": "required",
       "lead[role]": "required",
-      "lead[use]": "required",
+      "lead[comment]": "required",
       tos: "required"
     },
 
@@ -169,7 +171,7 @@ window.addEventListener('resize', function(){
       "lead[phone]": "Please enter a valid phone",
       "lead[company]": "Please enter a company",
       "lead[role]": "Please enter a role",
-      "lead[use]": "Please select an option",
+      "lead[comment]": "Please select an option",
       tos: "Please accept our Terms of Service"
     },
 
@@ -179,7 +181,7 @@ window.addEventListener('resize', function(){
 
     submitHandler: function(form, e) {
       e.preventDefault();
-      // postLeadForm($(form).serializeArray());
+      postLeadForm($(form).serializeArray());
       // form.submit()
       $('#leadBox-modal').modal('hide');
     }
