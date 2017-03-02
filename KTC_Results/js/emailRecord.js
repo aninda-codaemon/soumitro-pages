@@ -12,7 +12,7 @@
       return this.email;
     };
     EmailRecord.prototype.fullName = function() {
-      if (!this.record['contactInfo']['fullName']) {
+      if (!this.record['contactInfo']) {
         return '';
       } else {
         return this.record['contactInfo']['fullName'];

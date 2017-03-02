@@ -120,7 +120,7 @@
     if (recordCount <= 5) {
       return "";
     } else {
-      var string = 'Sign up to see at least <span class="turn-blue">' + (recordCount - 5).toString() + "</span>" + ' more results for ' + '<span class="turn-blue">"' + this.searchedName + '"</span>';
+      var string = '<a href="https://www.knowthycustomer.com/lp/b56a8b/4/landing">Sign up</a> to see at least <span class="turn-blue">' + (recordCount - 5).toString() + "</span>" + ' more results for ' + '<span class="turn-blue">"' + this.searchedName + '"</span>';
       return new H.SafeString(string);
     }
   });

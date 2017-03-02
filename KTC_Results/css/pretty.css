@@ -750,11 +750,20 @@ article.contact-panel label {
 
 #more-results {
   text-align: center;
+  display: none;
 }
 
 #more-results h3 {
 
   color: white;
+}
+
+#more-results a {
+  color: rgb(33, 100, 208);
+}
+
+#more-results a:hover {
+  color: #19B2CC;
 }
 
 .turn-blue {

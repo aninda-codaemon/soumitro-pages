@@ -28,6 +28,15 @@ var apiBoxHeight = function(){
   })
 }
 
+var checkForLead = function() {
+  var leadData = amplify.store()['leadData'];
+  if (leadData) {
+    $('#leadBox-modal').modal('hide');
+  } else {
+    $('#leadBox-modal').modal('show');
+  }
+}
+
 window.addEventListener('resize', function(){
   apiBoxHeight();
 })
@@ -97,6 +106,15 @@ window.addEventListener('resize', function(){
           formVals[v.name] = v.value;
       });
 
+    var srchData = amplify.store("searchData"),
+    firstName = "",
+    lastName = "";
+
+    if (srchData) {
+      firstName = srchData.fn || "";
+      lastName = srchData.ln || "";
+    }
+
     var leadData = {};
       leadData['lead[first_name]'] = formVals['account[first_name]'] || '';
       leadData['lead[last_name]'] = formVals['account[last_name]'] || '';
@@ -114,7 +132,7 @@ window.addEventListener('resize', function(){
     });
 
     var leadQueryString = leadQueryArr.join('&');
-    $.post("https://knowthycustomer.com/api/v4/enterprise_leads.json", leadQueryString);
+    $.post("https://www.knowthycustomer.com/api/v4/enterprise_leads.json", leadQueryString);
   }
 
   $leadForm = $('#leadBox-form');
@@ -161,9 +179,9 @@ window.addEventListener('resize', function(){
 
     submitHandler: function(form, e) {
       e.preventDefault();
-      postLeadForm($(form).serializeArray());
+      // postLeadForm($(form).serializeArray());
       // form.submit()
-      $leadForm.modal('hide');
+      $('#leadBox-modal').modal('hide');
     }
   });
 
@@ -243,7 +261,8 @@ $('.flip-back').click(function(){
     apiBoxHeight();
     setLastVisit();
     setColumnState();
-    $('#leadBox-modal').modal('show');
+    checkForLead();
+    // $('#leadBox-modal').modal('show');
 
     /* IE10/11 inserts textarea placeholder content as actual innerHTML.
    Override this by clearing textarea value onload */

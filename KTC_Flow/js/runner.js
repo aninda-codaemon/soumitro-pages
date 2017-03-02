@@ -78,8 +78,8 @@ noResults = false;
   }
 
 // Local storage object prep functions
-var bestTeaserSorter = function(records, fn, ln) {
-  var name = (fn + ln).toLowerCase();
+var bestTeaserSorter = function(records, name) {
+  var name = name.toLowerCase()
   if (records.length < 5) {
     return records;
   }
@@ -101,6 +101,9 @@ var bestTeaserSorter = function(records, fn, ln) {
 
     return parseFloat("" + addresses + "." + relatives);
   }, this).value();
+  var exactNames = records.filter(function(record) {
+    var mikey;
+  })
   return records.slice(0,5);
 };
 var recordsWithTeaser = [],
@@ -390,6 +393,9 @@ var getExtraTeaserData = function(records) {
         city = formData.city || "",
         state = formData.state || "";
 
+    if (state === "ALL") {
+      state = "";
+    }
     fn = fn[0].toUpperCase() + fn.slice(1);
     ln = ln[0].toUpperCase() + ln.slice(1);
     searchName = fn + " " + ln;
@@ -420,8 +426,8 @@ var getExtraTeaserData = function(records) {
           teaserData = teaserRecords;
 
 
-          var bestRecords = bestTeaserSorter(teaserData, fn, ln),
-
+          var bestRecords = bestTeaserSorter(teaserData, searchName),
+          teaserDataObj = {recordCount : peopleRecordCount, teasers: bestRecords};
           // amplify.store('peopleData', teaserDataObj);
           noResults = false;
           getExtraTeaserData(bestRecords);
