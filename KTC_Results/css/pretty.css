@@ -759,11 +759,12 @@ article.contact-panel label {
 }
 
 #more-results a {
-  color: rgb(33, 100, 208);
+  color: white;
+  text-decoration: underline;
 }
 
 #more-results a:hover {
-  color: #19B2CC;
+  color: rgb(33, 100, 208);
 }
 
 .turn-blue {

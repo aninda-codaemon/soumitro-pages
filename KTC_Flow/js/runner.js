@@ -78,34 +78,55 @@ noResults = false;
   };
 
 // Local storage object prep functions
+var addOrderNumber = function(array){
+  array.forEach(function(record, index){
+    record.orderNumber = index;
+  });
+  return array;
+};
+
 var bestTeaserSorter = function(records, name) {
-  var name = name.toLowerCase()
+  var joinedName = name.toLowerCase().split(" ").join("");
   if (records.length < 5) {
     return records;
   }
   records = _.chain(records).sortBy(function(record) {
-    var addresses = 100,
-        relatives = 999,
+    var dataTotal = 100,
         addressCount = 0,
         relativeCount = 0;
 
     if (record.Addresses) {
       addressCount = record.Addresses.Address.length;
-      addresses -= addressCount;
+      dataTotal -= addressCount;
     }
 
     if (record.Relatives) {
       relativeCount = record.Relatives.Relative.length;
-      relatives -= relativeCount;
+      dataTotal -= relativeCount;
       }
 
-    return parseFloat("" + addresses + "." + relatives);
+    return dataTotal;
   }, this).value();
   var exactNames = records.filter(function(record) {
-    var mikey;
-  })
-  return records.slice(0,5);
+    return record.exactMatch === "1";
+  });
+
+  if (exactNames.length < 5) {
+    records.forEach(function(record){
+      if (exactNames.length === 5) {
+        return;
+      }
+      if (record.exactMatch === "0"){
+        exactNames.push(record);
+      }
+    });
+    return addOrderNumber(exactNames);
+  } else {
+    return addOrderNumber(exactNames.slice(0,5));
+  }
+
 };
+
 var recordsWithTeaser = [],
     peopleRecordCount,
     searchName;
@@ -312,7 +333,7 @@ var getExtraTeaserData = function(records) {
         return item.showIfEmpty === 0 && item.count === 0;
       }
     });
-    data = _.sortByOrder(data, ['weight', 'count'], ['desc', 'desc']);
+    // data = _.sortByOrder(data, ['weight', 'count'], ['desc', 'desc']);
 
     var teaserDataObj = {
         recordCount: ($.type(res) !== 'array' ? 1 : 0),
@@ -328,7 +349,7 @@ var getExtraTeaserData = function(records) {
     record.teaserData = teaserDataObj;
     recordsWithTeaser.push(record);
   });
-  })
+});
 
 };
   var parseTeaser = function(data) {
@@ -356,27 +377,21 @@ var getExtraTeaserData = function(records) {
     data.results.emailaddress = data.query.email;
     records = data.results;
     return records;
-  }
-
-  var getTeaserData = function(records) {
-    records.forEach(function(record, index){
-
-    })
-  }
+  };
 
   var prepPhoneData = function (data, phone) {
 
     var prepped = {
       phone: phone,
-      ownersName: "subscribe to see",
+      ownersName: "subscribe to search",
       carrier: data.company,
       lineType: (data.nxxusetype == "L") ? "Landline" : "Cellphone",
       city: data.city,
       state: data.state,
-      zipCode: "subscribe to see",
-      streetAddress: "subscribe to see",
-      neighborhood: "subscribe to see",
-      elevation: "subscribe to see",
+      zipCode: "subscribe to search",
+      streetAddress: "subscribe to search",
+      neighborhood: "subscribe to search",
+      elevation: "subscribe to search",
       latitude: data.latitude,
       longitude: data.longitude
     };
@@ -446,7 +461,7 @@ var getExtraTeaserData = function(records) {
     var xhrData = $.ajax({
       url: url,
       dataType : 'jsonp',
-    })
+    });
 
     $.when(xhrData).then(function(result, status){
 
@@ -513,7 +528,7 @@ var getExtraTeaserData = function(records) {
     var xhrData = $.ajax({
       url: url,
       dataType: 'jsonp'
-    })
+    });
 
     $.when(xhrData).done(function(result){
       var teaserRecords = [],
@@ -525,12 +540,12 @@ var getExtraTeaserData = function(records) {
         recordCount: _.isEmpty(xhrResult) ? 0 : 1,
         address: formData.address,
         teasers: teaserRecords
-      }
+      };
 
       // seems like address request never returns no results, check if there is a mailing address attribute, if no we
       // assume this isnt a real address and set the count to 0
       //
-      if (!teaserDataObj.teasers[0].mailing_address.full === "") {
+      if (teaserDataObj.teasers[0].mailing_address.full === "") {
         teaserDataObj['recordCount'] = 0;
       }
 
@@ -540,8 +555,8 @@ var getExtraTeaserData = function(records) {
         amplify.store('propertyData', teaserDataObj);
         noResults = false;
       }
-    })
-  }
+    });
+  };
 
 
   // Form Validations

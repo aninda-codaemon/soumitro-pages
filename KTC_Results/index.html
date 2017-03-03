@@ -45,6 +45,15 @@
 drift.SNIPPET_VERSION = '0.3.1';
 drift.load('rgvdm473vfx2');
 </script>
+
+<script type="text/javascript">
+  window.teaserSorter = function(records){
+    records = _.chain(records).sortBy(function(record){
+      return record.record.orderNumber;
+    },this).value();
+    return records;
+  };
+</script>
 <!-- End of Async Drift Code -->
 
     <body class="hide signup" data-next-page="<%= next_page %>">
@@ -182,7 +191,7 @@ drift.load('rgvdm473vfx2');
 
                 <div class="results" data-fr-bind="peopleData" id="people-results">
 
-                  <div class="row" data-fr-each="teasers" data-fr-map="TeaserRecord">
+                  <div class="row" data-fr-each="teasers" data-fr-map="TeaserRecord" data-fr-sort="teaserSorter">
                     <div class="col-sm-12">
 
 

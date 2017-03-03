@@ -25,8 +25,8 @@ var apiBoxHeight = function(){
     $dataBox = $apiBox.find('.data-box');
     //-20 is for the padding
     $dataBox.css({'max-height' : $(article).innerHeight() - $apiBox.find('h5').outerHeight(true) - 20});
-  })
-}
+  });
+};
 
 var checkForLead = function() {
   var leadData = amplify.store()['leadData'];
@@ -194,14 +194,14 @@ var changeLoadingText = function(searchType) {
       $loadingText.hide();
       $loadingText.text('Looking Up Billions of Records...').fadeIn();
       window.setTimeout(function(){
-        $loadingText.hide()
+        $loadingText.hide();
         $loadingText.text('Building Sample Report...').fadeIn();
         window.setTimeout(function(){
           showResults(searchType);
-        }, 7000)
-      }, 7000)
-    },7000)
-}
+        }, 7000);
+      }, 7000);
+    },7000);
+};
 
 var startLoading = function(searchType) {
   $('body').scrollTop(0);
