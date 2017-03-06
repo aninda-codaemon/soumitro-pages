@@ -484,6 +484,10 @@ drift.load('rgvdm473vfx2');
                           <p>Digital Footprints: {{footprintsCountTeaser}}</p>
                         {{/if}}
 
+                        {{#if websites}}
+                          <p>Websites: {{websites}}</p>
+                        {{/if}}
+                        
                         <p>
                           Plus more!
                         </p>
@@ -527,6 +531,10 @@ drift.load('rgvdm473vfx2');
 
                   <div class="row">
                     <div class="col-sm-12">
+                      {{#if yearBuilt}}
+                      <p>Year Built: {{yearBuilt}}</p>
+                      {{/if}}
+
                       {{#if deeds}}
                         <p>Deeds: {{deedsCountTeaser}}</p>
                       {{/if}}
@@ -535,14 +543,28 @@ drift.load('rgvdm473vfx2');
                         <p>Owners: {{ownersCountTeaser}}</p>
                       {{/if}}
 
+                      {{#if owners}}
+                        <p>Owner's Names: {{owners}}</p>
+                      {{/if}}
+
                       {{#if residents}}
                         <p>Residents: {{residentsCountTeaser}}</p>
                       {{/if}}
+
                       {{#if assessment}}
                         <p>Assessment: {{assessment}}</p>
                       {{/if}}
-                      {{#if yearBuilt}}
-                        <p>Year Built: {{yearBuilt}}</p>
+
+                      {{#if assessedYear}}
+                        <p> Year Assessed: {{assessedYear}}</p>
+                      {{/if}}
+
+                      {{#if squareFootage}}
+                        <p>Square Footage: {{squareFootage}}</p>
+                      {{/if}}
+
+                      {{#if county}}
+                      <p>County: {{county}}</p>
                       {{/if}}
 
                       <p>

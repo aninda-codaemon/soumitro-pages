@@ -113,6 +113,14 @@
       }
     };
 
+    EmailRecord.prototype.websites = function() {
+      if (!this.record.contactInfo.websites){
+        return false;
+      } else {
+        return this.record.contactInfo.websites.length;
+      }
+    };
+
     EmailRecord.prototype.prettyRecord = function() {
       return JSON.stringify(this.record, null, 2);
     };

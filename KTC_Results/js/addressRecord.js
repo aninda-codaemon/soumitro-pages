@@ -32,7 +32,7 @@
     };
 
     AddressRecord.prototype.deedsCountTeaser = function() {
-      var deeds = this.deeds();
+      var owners = this.deeds();
 
       if (deeds && deeds.length !== 0) {
         return deeds.length;
@@ -43,11 +43,11 @@
 
     AddressRecord.prototype.ownersCountTeaser = function() {
       var count = 0,
-          owners = this.record['owners']
+          owners = this.record.owners;
 
-      Object.keys(this.record['owners']).forEach(function(key){
+      Object.keys(this.record.owners).forEach(function(key){
         count += owners[key].names.length;
-      })
+      });
 
       if (count < 1) {
         return false;
@@ -56,11 +56,22 @@
       }
     };
 
+    AddressRecord.prototype.owners = function() {
+      var owners = [],
+      names = this.record.owners[0].names;
+
+      Object.keys(names).forEach(function(key){
+        owners.push(names[key].full.nameize());
+      });
+
+      return owners.join(", ");
+    };
+
     AddressRecord.prototype.residents = function() {
-      if (!this.record['residents']) {
+      if (!this.record.residents) {
         return [];
       } else {
-        return this.record['residents'];
+        return this.record.residents;
       }
     };
 
@@ -75,10 +86,10 @@
     };
 
     AddressRecord.prototype.deeds = function() {
-      if (!this.record['deeds']) {
+      if (!this.record.deeds) {
         return [];
       } else {
-        return this.record['deeds'];
+        return this.record.deeds;
       }
     };
 
@@ -93,20 +104,45 @@
     };
 
     AddressRecord.prototype.yearBuilt = function() {
-      if (!this.record['year_built']) {
+      if (!this.record.year_built) {
         return '';
       } else {
-        return this.record['year_built'];
+        return this.record.year_built;
       }
 
     };
 
     AddressRecord.prototype.assessment = function() {
-      if (!this.record['assessment']['total']) {
+      if (!this.record.assessment.total) {
         return false;
       } else {
-        var iGotMoney = this.record['assessment']['total'].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        var iGotMoney = this.record.assessment.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         return '$' + iGotMoney;
+      }
+    };
+
+    AddressRecord.prototype.assessedYear = function() {
+      if (!this.record.assessed_year) {
+        return false;
+      } else {
+        return this.record.assessed_year;
+      }
+    };
+
+    AddressRecord.prototype.squareFootage = function() {
+      if (!this.record.square_footage.total){
+        return false;
+      } else {
+        var footage = this.record.square_footage.total;
+        return footage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " ft";
+      }
+    };
+
+    AddressRecord.prototype.county = function() {
+      if (!this.record.county_name){
+        return false;
+      } else {
+        return this.record.county_name;
       }
     };
 
