@@ -815,7 +815,7 @@ $('.contact-panel').click(function(e){
   var initialize = function () {
     setLastVisit();
     setColumnState();
-    /*$('#company-modal').modal('show');*/
+    $('#company-modal').modal('show');
 
   /* initDownsells(); */
 

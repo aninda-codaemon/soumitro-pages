@@ -99,7 +99,7 @@ window.addEventListener('resize', function(){
     Cookie.create("lastVisit", Date.now(), 30);
     trackNL('lastVisit Cookie Set');
     //amplify.store("lastVisit", Date.now());
-  }
+  };
 
 
   // Form Validations
@@ -138,7 +138,7 @@ window.addEventListener('resize', function(){
 
     var leadQueryString = leadQueryArr.join('&');
     $.post("https://www.knowthycustomer.com/api/v4/enterprise_leads.json", leadQueryString);
-  }
+  };
 
   $leadForm = $('#leadBox-form');
 
@@ -184,6 +184,7 @@ window.addEventListener('resize', function(){
 
     submitHandler: function(form, e) {
       e.preventDefault();
+      trackNL('KTC LeadBox - Submitted');
       postLeadForm($(form).serializeArray());
       // form.submit()
       $('#leadBox-modal').modal('hide');
@@ -271,12 +272,17 @@ $('#email-input').blur(function(){
   $('.carrot').fadeOut();
 });
 
+//mousetrap.js plugin to hide the leadbox modal
+Mousetrap.bind("s h o o m o d a l", function(){
+  $('#leadBox-modal').modal('hide');
+}, 'keyup');
+
   var initialize = function () {
     showResults();
     apiBoxHeight();
     setLastVisit();
     setColumnState();
-    // checkForLead();
+    checkForLead();
 
     /* IE10/11 inserts textarea placeholder content as actual innerHTML.
    Override this by clearing textarea value onload */
