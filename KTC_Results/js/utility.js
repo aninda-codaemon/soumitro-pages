@@ -49,6 +49,18 @@
     return name;
   };
 
+  String.prototype.phonify = function() {
+    var phone;
+    phone = this;
+    if (phone === null){
+      return "";
+    }
+
+    var justNumbers = phone.replace(/\D/g, ""),
+    phonified = "(" + justNumbers.slice(0,3) + ") " + justNumbers.slice(3,6) +"-" + justNumbers.slice(6,10);
+    return phonified;
+  };
+
   root._blank = function(string) {
     if (typeof string === 'undefined') {
       return true;

@@ -114,6 +114,9 @@
     };
 
     EmailRecord.prototype.websites = function() {
+      if (!this.record.contactInfo){
+        return false;
+      }
       if (!this.record.contactInfo.websites){
         return false;
       } else {

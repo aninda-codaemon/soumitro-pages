@@ -363,7 +363,7 @@ drift.load('rgvdm473vfx2');
 
               <div class="results" data-fr-bind="phoneData" id="phone-results">
 
-                <div class="row">
+                <div class="row" data-fr-each="teasers" data-fr-map="PhoneRecord">
                   <div class="col-sm-12">
 
 
@@ -371,13 +371,17 @@ drift.load('rgvdm473vfx2');
                       <div class="row">
 
                         <div class="col-sm-12">
-                          <h3>{{phonify phone}}</h3>
+                          <h3>{{ownerName}}</h3>
+                        </div>
+
+                        <div class="col-sm-12">
+                          <h3>{{phone}}</h3>
                         </div>
 
                         {{#if city}}
                         <div class="col-sm-12">
                           <p class="place">
-                            {{city}}, {{state}}
+                            {{location}}
                           </p>
                         </div>
                         {{/if}}
@@ -390,29 +394,25 @@ drift.load('rgvdm473vfx2');
                           {{/if}}
 
                           {{#if carrier}}
-                            <p>Carrier: {{prettyCarrier carrier}}</p>
+                            <p>Carrier: {{carrier}}</p>
                           {{/if}}
 
                           {{#if phoneNumbers}}
-                            <p>Phone Numbers: {{phoneNumbersCountTeaser}}</p>
+                            <p>Phone Numbers: {{phoneNumbers}}</p>
                           {{/if}}
 
-                          {{#if careers}}
-                            <p>Jobs: {{careersCountTeaser}}</p>
+                          {{#if businesses}}
+                            <p>Business: {{businesses}}</p>
                           {{/if}}
 
-                          {{#if relatives}}
-                            <p>Relatives: {{relativesCountTeaser}}</p>
+                          {{#if spamScore}}
+                            <p>Spam Score: {{spamScore}}</p>
                           {{/if}}
 
-                          {{#if socialProfiles}}
-                            <p>Social Profiles: {{socialProfilesCountTeaser}}</p>
+                          {{#if comments}}
+                            <p>Comments: {{comments}}</p>
                           {{/if}}
-
-                          {{#if photos}}
-                            <p>Images: {{photosCountTeaser}}</p>
-                          {{/if}}
-
+                          
                           <p>
                             Plus more!
                           </p>
@@ -848,6 +848,7 @@ drift.load('rgvdm473vfx2');
   <script src="js/teaserrecord.js"></script>
   <script src="js/emailRecord.js"></script>
   <script src="js/addressRecord.js"></script>
+  <script src="js/phoneRecord.js"></script>
 
   <script src="js/framerida.helpers.js"></script>
   <script src="js/framerida.js"></script>

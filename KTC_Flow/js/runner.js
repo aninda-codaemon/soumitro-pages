@@ -379,25 +379,25 @@ var getExtraTeaserData = function(records) {
     return records;
   };
 
-  var prepPhoneData = function (data, phone) {
-
-    var prepped = {
-      phone: phone,
-      ownersName: "subscribe to search",
-      carrier: data.company,
-      lineType: (data.nxxusetype == "L") ? "Landline" : "Cellphone",
-      city: data.city,
-      state: data.state,
-      zipCode: "subscribe to search",
-      streetAddress: "subscribe to search",
-      neighborhood: "subscribe to search",
-      elevation: "subscribe to search",
-      latitude: data.latitude,
-      longitude: data.longitude
-    };
-
-  return prepped;
-};
+//   var prepPhoneData = function (data, phone) {
+//
+//     var prepped = {
+//       phone: phone,
+//       ownersName: "subscribe to search",
+//       carrier: data.company,
+//       lineType: (data.nxxusetype == "L") ? "Landline" : "Cellphone",
+//       city: data.city,
+//       state: data.state,
+//       zipCode: "subscribe to search",
+//       streetAddress: "subscribe to search",
+//       neighborhood: "subscribe to search",
+//       elevation: "subscribe to search",
+//       latitude: data.latitude,
+//       longitude: data.longitude
+//     };
+//
+//   return prepped;
+// };
 
 
 // Teaser Data requests
@@ -427,7 +427,7 @@ var getExtraTeaserData = function(records) {
 
         }
       }
-    })
+    });
 
     $.when(xhrData).then(function(result){
       var teaserRecords;
@@ -452,11 +452,11 @@ var getExtraTeaserData = function(records) {
           // trackNL("Refine Modal Final Result Count", {result_count: recordCount});
 
     });
-  }
+  };
 
   var getPhoneData = function(formData){
 
-    var url = 'https://www.beenverified.com/hk/dd/free/phoneinfo?&exporttype=jsonp' + "&phone=" + formData.phone
+    var url = 'https://www.beenverified.com/hk/dd/phone?phone=' + formData.phone;
 
     var xhrData = $.ajax({
       url: url,
@@ -465,20 +465,20 @@ var getExtraTeaserData = function(records) {
 
     $.when(xhrData).then(function(result, status){
 
-        var data = result.results;
+        var xhrResult = result,
+            records = [];
 
-        if ((status === "success") && !$.isEmptyObject(data)) {
+        if ((status === "success") && !$.isEmptyObject(xhrResult)) {
           noResults = false;
           // latlng.push(data.latitude);
           // latlng.push(data.longitude);
-
-          teaserData = prepPhoneData(data, formData.phone);
-          amplify.store('phoneData', teaserData);
+          records[0] = xhrResult;
+          amplify.store('phoneData', {'teasers' : records});
         } else {
           noResults = true;
         }
     });
-  }
+  };
 
   var getEmailData = function(formData){
 
@@ -488,7 +488,7 @@ var getExtraTeaserData = function(records) {
     var xhrData = $.ajax({
       url: url,
       dataType : 'jsonp',
-    })
+    });
 
     $.when(xhrData).then(function(result){
 
@@ -519,7 +519,7 @@ var getExtraTeaserData = function(records) {
         }
       }
     });
-  }
+  };
 
   var getPropertyData = function(formData) {
     var baseUrl = "https://www.beenverified.com/hk/dd/teaser/property?exporttype=jsonp&address=",
@@ -546,7 +546,7 @@ var getExtraTeaserData = function(records) {
       // assume this isnt a real address and set the count to 0
       //
       if (teaserDataObj.teasers[0].mailing_address.full === "") {
-        teaserDataObj['recordCount'] = 0;
+        teaserDataObj.recordCount = 0;
       }
 
       if (teaserDataObj.recordCount === 0) {
@@ -657,11 +657,11 @@ var getExtraTeaserData = function(records) {
       company_select: "Please select your company's size"
     },
     submitHandler: function(form, e) {
-      e.preventDefault()
+      e.preventDefault();
       $('#company-modal').modal('hide');
     }
 
-  })
+  });
 
 
   //Transition to loading  animation
@@ -685,19 +685,19 @@ var getExtraTeaserData = function(records) {
           } else {
             showResults(searchType);
           }
-        }, 4000)
-      }, 4000)
-    },4000)
-  }
+        }, 4000);
+      }, 4000);
+    },4000);
+  };
 var hideSearches = function(searchType) {
   $('article.contact-panel').hide();
   $('.start-header').hide();
   startLoading(searchType);
-}
+};
 
 var showResults = function() {
   window.location.href = "https://www.knowthycustomer.com/lp/b56a8b/3/search-results";
-}
+};
 
 var resetSearch = function() {
   $('.loading-headers').addClass('loading-hidden');
@@ -707,7 +707,7 @@ var resetSearch = function() {
   $('.loading-animation').hide();
   $('article.contact-panel').show();
   $startHeader.show();
-}
+};
 
 var startLoading = function(searchType) {
   $('body').scrollTop(0);
@@ -728,7 +728,7 @@ var startLoading = function(searchType) {
       break;
   }
   changeLoadingText(searchType);
-}
+};
 
 $addressField = $('#address_field');
 // smarty address stuff

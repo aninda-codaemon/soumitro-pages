@@ -276,8 +276,7 @@ $('#email-input').blur(function(){
     apiBoxHeight();
     setLastVisit();
     setColumnState();
-    checkForLead();
-    // $('#leadBox-modal').modal('show');
+    // checkForLead();
 
     /* IE10/11 inserts textarea placeholder content as actual innerHTML.
    Override this by clearing textarea value onload */
