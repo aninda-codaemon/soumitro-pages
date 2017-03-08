@@ -92,7 +92,12 @@ drift.load('rgvdm473vfx2');
 
                 <div class="col-sm-12">
                   <label for="email">BUSINESS EMAIL ADDRESS</label>
-                  <input type="text" name="lead[email]" value="" placeholder="Email Address" class="form-control">
+                  <input id="email-input" type="text" name="lead[email]" value="" placeholder="Email Address" class="form-control">
+                  <span class="carrot"></span>
+                  <div class="explain-box why-closed">
+                    <!-- <span class="visible-xs why-exit">X</span> -->
+                    <p>We strongly encourage you to use a business email such as name@companyname.com instead of a webmail address. This helps us ensure you're using KnowThycustomer for business purposes.</p>
+                  </div>
                 </div>
 
                 <div class="col-sm-12">
@@ -487,7 +492,7 @@ drift.load('rgvdm473vfx2');
                         {{#if websites}}
                           <p>Websites: {{websites}}</p>
                         {{/if}}
-                        
+
                         <p>
                           Plus more!
                         </p>

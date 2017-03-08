@@ -29,17 +29,20 @@ var apiBoxHeight = function(){
 };
 
 var checkForLead = function() {
-  var leadData = amplify.store()['leadData'];
+  var leadData = amplify.store().leadData;
   if (leadData) {
     $('#leadBox-modal').modal('hide');
   } else {
     $('#leadBox-modal').modal('show');
   }
-}
+};
 
 window.addEventListener('resize', function(){
   apiBoxHeight();
-})
+  if ($('.explain-box').hasClass('why-closed')){
+      $('.carrot').hide();
+  }
+});
 
   // set column state for mobile teaser data
 
@@ -248,15 +251,25 @@ var showResults = function() {
   } else if (data.address) {
     $('#property-results').show();
   }
-}
+};
 
 $('.flip-dat-shit').click(function(){
   $('.flip_panel').addClass('flip');
-})
+});
 
 $('.flip-back').click(function(){
   $('.flip_panel').removeClass('flip');
-})
+});
+
+$('#email-input').focus(function(){
+  $('.explain-box').fadeIn().removeClass('why-closed');
+  $('.carrot').fadeIn();
+});
+
+$('#email-input').blur(function(){
+  $('.explain-box').fadeOut().addClass('why-closed');
+  $('.carrot').fadeOut();
+});
 
   var initialize = function () {
     showResults();
