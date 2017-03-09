@@ -186,8 +186,9 @@ window.addEventListener('resize', function(){
       e.preventDefault();
       trackNL('KTC LeadBox - Submitted');
       postLeadForm($(form).serializeArray());
-      // form.submit()
+
       $('#leadBox-modal').modal('hide');
+      dataLayer.push({'event': 'ktc-lead-submit'});
     }
   });
 

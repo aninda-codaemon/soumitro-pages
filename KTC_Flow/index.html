@@ -50,11 +50,11 @@ drift.load('rgvdm473vfx2');
     <!-- the following x-ms-format-detection="none" is to prevent stupid IE/Edge from automatically turning phone numbers into a link -->
     <body class="hide signup" data-next-page="<%= next_page %>">
       <!-- Header Container -->
-      <div class="modal fade" id="company-modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
+      <!-- <div class="modal fade" id="company-modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <!-- <button type="button" name="button" data-dismiss="modal">X</button> -->
+              <button type="button" name="button" data-dismiss="modal">X</button>
               <h3>KTC is the Easiest Way to Know More About Customers</h3>
             </div>
 
@@ -72,6 +72,71 @@ drift.load('rgvdm473vfx2');
 
                 <button type="submit" name="button" class="btn btn-primary btn-small btn-success">TRY SEARCHING FOR FREE</button>
               </form>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="modal fade" id="company-modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- <button type="button" name="button" data-dismiss="modal">X</button> -->
+              <h3>To get started, tell us how you plan to use KnowThyCustomer:</h3>
+            </div>
+
+            <div class="modal-body">
+              <form id="company_form" class="" action="" method="post" data-fr-store="companySize">
+                <select class="form-control" name="company_select">
+                  <option class="dropdown-default" value="" disabled selected>- Select a use case -</option>
+                  <option value="Business">Business Use</option>
+                  <option value="Personal">Personal Use</option>
+                  <option value="Employment">Employee Backround Check</option>
+                </select>
+
+                <button type="submit" name="button" class="btn btn-primary btn-success">CONTINUE</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="good-hire-modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- <button type="button" name="button" data-dismiss="modal">X</button> -->
+              <p>It is against our terms of service to use KnowThyCustomer for hiring purposes.</p>
+            </div>
+
+            <div class="modal-body">
+
+              <img src="img/GoodHire_logo.png" alt="">
+              <h3>We're redirecting you to GoodHire.com, our suggested partner for employee background checks.</h3>
+
+              <div class="redirect-counter">
+                Redirecting in <span id="counter-ticker">5</span> sec...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="bv-redirect-modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                <img src="img/BV-logo-modal.svg" alt="">
+              <!-- <button type="button" name="button" data-dismiss="modal">X</button> -->
+            </div>
+
+            <div class="modal-body">
+              <div class="">
+                <h3>We're redirecting you to BeenVerified, our suggested partner for personal background checks.</h3>
+              </div>
+              <div class="redirect-counter">
+                Redirecting in <span id="counter-ticker2">5</span> sec...
+              </div>
             </div>
           </div>
         </div>
@@ -117,8 +182,8 @@ drift.load('rgvdm473vfx2');
                     <div class="row">
                       <div class="start-header col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0">
 
-                          <h1>Try One of Our Search Options!</h1>
-                          <p>Search a customer, lead, contact, client or anyone. We'll start building your first report.</p>
+                          <h1>We Help Improve Your Data</h1>
+                          <p>Try us for free. Enter your own info, a customer's, a client, or a lead. We'll start building your first report.</p>
 
                       </div>
 

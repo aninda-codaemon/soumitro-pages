@@ -659,6 +659,19 @@ var getExtraTeaserData = function(records) {
     submitHandler: function(form, e) {
       e.preventDefault();
       $('#company-modal').modal('hide');
+      var useCase = $(form).find('select').val();
+      switch (useCase) {
+        case 'Business':
+          break;
+        case 'Personal':
+          $('#bv-redirect-modal').modal('show');
+          redirectTime('bv');
+          break;
+        case 'Employment':
+          $('#good-hire-modal').modal('show');
+          redirectTime('gh');
+          break;
+      }
     }
 
   });
@@ -672,23 +685,52 @@ var getExtraTeaserData = function(records) {
       $loadingText.hide();
       $loadingText.text('Looking Up Billions of Records...').fadeIn();
       window.setTimeout(function(){
-        amplify.store('peopleData', {
-          "teasers" : recordsWithTeaser,
-          "recordCount" : peopleRecordCount,
-          "searchedName" : searchName
-        });
         $loadingText.hide();
         $loadingText.text('Building Sample Report...').fadeIn();
         window.setTimeout(function(){
           if (noResults) {
             resetSearch();
           } else {
+            amplify.store('peopleData', {
+              "teasers" : recordsWithTeaser,
+              "recordCount" : peopleRecordCount,
+              "searchedName" : searchName
+            });
             showResults(searchType);
           }
-        }, 4000);
-      }, 4000);
-    },4000);
+        }, 2000);
+      }, 2000);
+    },2000);
   };
+
+var tickerTime = function(i){
+  $('#counter-ticker').text(i.toString()).fadeIn();
+
+};
+
+
+var redirectTime = function(where){
+  var url,
+      selector;
+  if (where === 'bv') {
+    selector = '#counter-ticker2';
+    url = 'https://www.beenverified.com';
+  } else {
+    selector = '#counter-ticker';
+    url = 'https://goodhire.com';
+  }
+  var timer = 5;
+
+  window.setInterval(function(){
+
+    $(selector).text(timer.toString()).fadeIn();
+    if (timer === 0){
+      window.location.href = url;
+    }
+    timer--;
+  }, 1000);
+};
+
 var hideSearches = function(searchType) {
   $('article.contact-panel').hide();
   $('.start-header').hide();
