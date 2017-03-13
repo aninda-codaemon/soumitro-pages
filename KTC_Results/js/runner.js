@@ -278,6 +278,11 @@ Mousetrap.bind("s h o o m o d a l", function(){
   $('#leadBox-modal').modal('hide');
 }, 'keyup');
 
+$('#leadBox-modal').scroll(function(){
+  $('#leadBox-modal input').toggleClass('force-redraw');
+  $('#leadBox-modal textarea').toggleClass('force-redraw');
+});
+
   var initialize = function () {
     showResults();
     apiBoxHeight();

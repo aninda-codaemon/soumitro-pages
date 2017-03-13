@@ -35,6 +35,10 @@ body {
 
   color: #375271;
 }
+
+.modal-open {
+  position: fixed;
+}
 .wallpaper {
   position: fixed;
   z-index: 2;
@@ -1201,6 +1205,19 @@ article.contact-panel label {
 
   #leadBox-modal .btn {
     width: 100%;
+  }
+
+  /*this is a fix for floating cursors on mobile, when input is focused, if you
+  scroll the cursor/autofill options dont scroll with field, i'm forcing a redraw*/
+
+  #leadBox-modal input,
+  #leadBox-modal textarea {
+    text-shadow: rgba(0,0,0,0) 0px 0px 0px;
+  }
+
+  #leadBox-modal input.force-redraw,
+  #leadBox-modal textarea.force-redraw {
+    text-shadow: none;
   }
 
   label.error {
