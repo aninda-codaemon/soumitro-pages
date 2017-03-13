@@ -108,8 +108,10 @@
 
       if (!this.record['demographics']['locationDeduced']){
         return '';
+      } else if (!this.record.demographics.locationDeduced.city){
+        return this.record.demographics.locationDeduced.state.name;
       } else {
-        return this.record['demographics']['locationDeduced'].city.name +", " + this.record['demographics']['locationDeduced'].state.code;
+        return this.record.demographics.locationDeduced.city.name +", " + this.record.demographics.locationDeduced.state.code;
       }
     };
 

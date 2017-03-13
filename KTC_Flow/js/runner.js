@@ -698,9 +698,9 @@ var getExtraTeaserData = function(records) {
             });
             showResults(searchType);
           }
-        }, 2000);
-      }, 2000);
-    },2000);
+        }, 3000);
+      }, 3000);
+    },3000);
   };
 
 var tickerTime = function(i){
@@ -857,7 +857,7 @@ $('.contact-panel').click(function(e){
   var initialize = function () {
     setLastVisit();
     setColumnState();
-    $('#company-modal').modal('show');
+    // $('#company-modal').modal('show');
 
   /* initDownsells(); */
 
