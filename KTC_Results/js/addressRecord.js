@@ -57,6 +57,9 @@
     };
 
     AddressRecord.prototype.owners = function() {
+      if (this.record.owners.length === 0){
+        return false;
+      }
       var owners = [],
       names = this.record.owners[0].names;
 
