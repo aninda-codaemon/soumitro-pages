@@ -714,18 +714,21 @@ var redirectTime = function(where){
       selector;
   if (where === 'bv') {
     selector = '#counter-ticker2';
-    url = 'https://www.beenverified.com';
+    url = 'https://www.beenverified.com/lp/1e6b8b/1/landing';
   } else {
     selector = '#counter-ticker';
     url = 'https://goodhire.com';
   }
   var timer = 5;
 
-  window.setInterval(function(){
+  var redirectTimer = window.setInterval(function(){
 
     $(selector).text(timer.toString()).fadeIn();
     if (timer === 0){
+      window.clearInterval(redirectTimer);
       window.location.href = url;
+      $('.modal').modal('hide');
+      $('#company-modal').modal('show');
     }
     timer--;
   }, 1000);
@@ -771,6 +774,20 @@ var startLoading = function(searchType) {
   }
   changeLoadingText(searchType);
 };
+
+// adds modal-open class to body after first modal is "bumitted", this fixes scrolling
+//issues on mobile iOS
+$('#good-hire-modal').on('show.bs.modal', function(){
+  setTimeout(function(){
+    $('body').addClass('modal-open');
+  }, 800);
+});
+
+$('#bv-redirect-modal').on('show.bs.modal', function(){
+  setTimeout(function(){
+    $('body').addClass('modal-open');
+  }, 800);
+});
 
 $addressField = $('#address_field');
 // smarty address stuff
@@ -857,7 +874,7 @@ $('.contact-panel').click(function(e){
   var initialize = function () {
     setLastVisit();
     setColumnState();
-    // $('#company-modal').modal('show');
+    $('#company-modal').modal('show');
 
   /* initDownsells(); */
 

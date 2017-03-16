@@ -33,6 +33,9 @@ body {
 
   color: #375271;
 }
+.modal-open {
+  position: fixed;
+}
 .wallpaper {
   position: fixed;
   z-index: 2;
@@ -1029,10 +1032,12 @@ article.contact-panel label {
 
 @media (max-width: 767px) {
 
-  #good-hire-modal .modal-content,
   #bv-redirect-modal .modal-content,
   #company-modal .modal-content {
     padding: 40px 15px;
+  }
+  #good-hire-modal .modal-content {
+    padding: 20px 15px;
   }
   #company-modal .modal-dialog,
   #good-hire-modal .modal-dialog,
@@ -1047,7 +1052,7 @@ article.contact-panel label {
   #company-modal h3,
   #good-hire-modal h3,
   #bv-redirect-modal h3 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   #company-modal label.error {
@@ -1056,15 +1061,18 @@ article.contact-panel label {
 
   #good-hire-modal h3,
   #bv-redirect-modal h3 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   #good-hire-modal .modal-header p {
     font-size: 20px;
+    line-height: 28px;
   }
 
   #good-hire-modal img {
     width: 250px;
+    margin-top: 20px;
+    margin-bottom: 30px;
   }
 
   #bv-redirect-modal img  {
