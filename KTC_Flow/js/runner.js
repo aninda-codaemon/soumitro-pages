@@ -578,6 +578,7 @@ var getExtraTeaserData = function(records) {
       fn: "Please enter a first name",
       ln: "Please enter a last name"
     },
+
     submitHandler: function(form, e) {
       e.preventDefault();
       var formData = serializeToObject(($(form).serializeArray()));
@@ -612,6 +613,7 @@ var getExtraTeaserData = function(records) {
       getPhoneData(formData);
       hideSearches("phone");
     }
+
   });
 
   $emailSearchForm.validate({
@@ -641,12 +643,14 @@ var getExtraTeaserData = function(records) {
     messages: {
       address: "Please enter an address"
     },
+
     submitHandler: function(form, e){
       e.preventDefault();
       var formData = serializeToObject(($(form).serializeArray()));
       getPropertyData(formData);
       hideSearches("property");
     }
+
   });
 
   $companyForm.validate({
@@ -654,7 +658,7 @@ var getExtraTeaserData = function(records) {
       company_select: "required"
     },
     messages: {
-      company_select: "Please select your company's size"
+      company_select: "Please select a use case"
     },
     submitHandler: function(form, e) {
       e.preventDefault();
@@ -727,6 +731,9 @@ var redirectTime = function(where){
     if (timer === 0){
       window.clearInterval(redirectTimer);
       window.location.href = url;
+
+      //clears the modal and brings company-modal up so iOS will be in intitial
+      // state if user hits back
       $('.modal').modal('hide');
       $('#company-modal').modal('show');
     }
@@ -803,6 +810,11 @@ var liveaddress = $.LiveAddress({
   submitVerify: true
 });
 
+setTimeout(function(){
+  var smarty = $('.smarty-ui').last();
+  smarty.addClass('smarty-fix');
+  $('.smarty-ui').appendTo('.address-box');
+}, 1000);
 liveaddress.on("AddressWasAmbiguous", function(event, data, previousHandler) {
   // $('a.smarty-popup-close').html('<span class="glyphicon glyphicon-remove-circle"></span>');
   previousHandler(event, data);
@@ -871,7 +883,27 @@ $('.contact-panel').click(function(e){
   $firstInput.focus();
 });
 
+var adjustSmartyUi = function(eventType){
+
+  var container = $('.smarty-ui').last(),
+      top;
+  if (eventType === 'error'){
+
+    if (container){
+      top = parseInt(container.css('top').replace('px', ''));
+      container.css({"top": (top + (20 * labelCount)).toString() + "px"});
+    }
+  } else {
+
+    if (container){
+      top = parseInt(container.css('top').replace('px', ''));
+      container.css({"top": (top - (20 * labelCount)).toString() + "px"});
+    }
+  }
+};
+
   var initialize = function () {
+
     setLastVisit();
     setColumnState();
     $('#company-modal').modal('show');
