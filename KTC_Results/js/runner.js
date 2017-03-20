@@ -34,6 +34,7 @@ var checkForLead = function() {
     $('#leadBox-modal').modal('hide');
   } else {
     $('#leadBox-modal').modal('show');
+    $('#fn').focus();
   }
 };
 
