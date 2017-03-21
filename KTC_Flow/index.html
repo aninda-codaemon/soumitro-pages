@@ -142,6 +142,56 @@ drift.load('rgvdm473vfx2');
       </div>
     </div>
 
+    <div class="modal fade" id="exit-pop" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
+      <div class="modal-dialog container" role="document">
+        <div class="modal-content">
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 padding-stuff">
+
+              <div class="modal-header row">
+                <div class="col-sm-12">
+                  <h3>Have to Go?</h3>
+                  <h4>Try KnowThyCustomer Another Time</h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <form id="exit_lead" class="" action="" method="post" data-fr-store="leadData">
+                  <div class="form-names">
+                    <div class="col-sm-6">
+                      <label for="fn">FIRST NAME</label>
+                      <input id="fn" type="text" name="lead[first_name]" value="" placeholder="First Name" class="form-control">
+                    </div>
+
+                    <div class="col-sm-6">
+                      <label for="ln">LAST NAME</label>
+                      <input id="ln" type="text" name="lead[last_name]" value="" placeholder="Last Name" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-12">
+                    <label for="email">BUSINESS EMAIL ADDRESS</label>
+                    <input id="email-input" type="text" name="lead[email]" value="" placeholder="Email Address" class="form-control">
+                    <span class="carrot"></span>
+                    <div class="explain-box why-closed">
+                      <p>We strongly encourage you to use a business email such as name@companyname.com instead of a webmail address. This helps us ensure you're using KnowThycustomer for business purposes.</p>
+                    </div>
+                  </div>
+
+
+                  <div class="buttoner col-sm-12">
+                    <button type="submit" name="button" class="btn btn-primary btn-success hidden-xs">YES, I WANT A FREE TRIAL</button>
+                    <button type="submit" name="button" class="btn btn-primary btn-success visible-xs">FREE TRIAL</button>
+                    <a>No thanks, I don't need any customer data.</a>
+                  </div>
+                </form>
+              </div>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
     <div class="wallpaper"></div>
     <section class="top">
       <div class="top-inner">
@@ -517,6 +567,7 @@ drift.load('rgvdm473vfx2');
 
 <script src="js/framerida.helpers.js"></script>
 <script src="js/framerida.js"></script>
+<script src="js/downsell.js"></script>
 
 <script src="js/subscribeRunner.js"></script>
 <script src="js/runner.js"></script>

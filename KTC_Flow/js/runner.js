@@ -1,6 +1,7 @@
 ;(function ($) {
 
 noResults = false;
+exitPopSeen = false;
 
   var trackNL = function (evtName, props) {
     if (typeof nolimit !== 'undefined' && nolimit.track) {
@@ -77,6 +78,25 @@ noResults = false;
     //amplify.store("lastVisit", Date.now());
   };
 
+  var postLeadForm = function(dataArray) {
+  var formVals = {};
+    _.forEach(dataArray, function(v, k) {
+        formVals[v.name] = v.value;
+    });
+
+  var leadData = {};
+    leadData['lead[first_name]'] = formVals['lead[first_name]'] || '';
+    leadData['lead[last_name]'] = formVals['lead[last_name]'] || '';
+    leadData['lead[email]'] = formVals['lead[email]'] || '';
+
+  var leadQueryArr = [];
+
+  _.forEach(leadData, function(v, k) {
+      leadQueryArr.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
+  });
+  var leadQueryString = leadQueryArr.join('&');
+  $.post("https://www.knowthycustomer.com/api/v4/enterprise_leads.json", leadQueryString);
+};
 // Local storage object prep functions
 var addOrderNumber = function(array){
   array.forEach(function(record, index){
@@ -680,6 +700,33 @@ var getExtraTeaserData = function(records) {
 
   });
 
+  $('#exit_lead').validate({
+    rules: {
+      'lead[first_name]': 'required',
+      'lead[last_name]': 'required',
+      'lead[email]': 'required'
+    },
+    messages: {
+      'lead[first_name]': "Please enter a first name",
+      'lead[last_name]': "Please enter a last name",
+      'lead[email]': "Please enter an email"
+    },
+    errorPlacement: function(error, element){
+      error.insertBefore(element);
+    },
+
+    submitHandler: function(form, e) {
+      e.preventDefault();
+      trackNL('KTC ExitPop Lead - Submitted');
+      postLeadForm($(form).serializeArray());
+
+      window.location.href = 'https://www.knowthycustomer.com/lp/b56a8b/7/subscribe';
+      $('#exit-pop').modal('hide');
+      dataLayer.push({'event': 'ktc-exit-lead-submit'});
+
+    }
+  });
+
 
   //Transition to loading  animation
 
@@ -883,6 +930,24 @@ $('.contact-panel').click(function(e){
   $firstInput.focus();
 });
 
+// email nudge box
+$('#email-input').focus(function(){
+  $('.explain-box').fadeIn().removeClass('why-closed');
+  $('.carrot').fadeIn();
+});
+
+$('#email-input').blur(function(){
+  $('.explain-box').fadeOut().addClass('why-closed');
+  $('.carrot').fadeOut();
+});
+
+window.addEventListener('resize', function(){
+
+  if ($('.explain-box').hasClass('why-closed')){
+      $('.carrot').hide();
+  }
+});
+
 var adjustSmartyUi = function(eventType){
 
   var container = $('.smarty-ui').last(),
@@ -902,13 +967,62 @@ var adjustSmartyUi = function(eventType){
   }
 };
 
+var exitPop = function() {
+  if (exitPopSeen){
+    return;
+  }
+  exitPopSeen = true;
+  $('#exit-pop').modal('show');
+  window.setTimeout(function(){
+    $('#exit-pop input#fn').focus();
+  }, 1000);
+};
+
+$('.buttoner a').click(function(){
+  exitPopSeen = true;
+  $('#exit-pop').modal('hide');
+});
+
+var initDownsells = function () {
+
+		var VWO_CHECK_INTERVAL = 3000,
+				CHECK_TIMEOUT = 5000,
+				timeElapsed = 1000;
+
+		var activateDownsells = function () {
+			if (typeof downsell !== "undefined" && typeof downsell.init === "function") {
+				downsell.init({
+					onBack: {
+						override: true,
+						cb: exitPop
+					}
+				});
+			}
+		};
+
+		var vwoIntervalId,
+				vwoExists = typeof _vwo_code !== "undefined" && typeof _vwo_code.finished === 'function';
+
+		if (vwoExists) {
+			vwoIntervalId = window.setInterval(function () {
+				timeElapsed += VWO_CHECK_INTERVAL;
+				if (timeElapsed > CHECK_TIMEOUT || _vwo_code.finished()) {
+					window.clearInterval(vwoIntervalId);
+					activateDownsells();
+				}
+			}, VWO_CHECK_INTERVAL);
+		} else {
+			activateDownsells();
+		}
+	};
+
   var initialize = function () {
 
     setLastVisit();
     setColumnState();
-    $('#company-modal').modal('show');
+    // $('#company-modal').modal('show');
 
-  /* initDownsells(); */
+   initDownsells();
 
   };
 

@@ -1,26 +1,40 @@
 /*
-  Downsell.js
-*/
+ * Downsell.js - Modified to add onBreakingPlane.
+ * NOTE: This version hides any existing modal at the moment that a downsell modal is triggered.
+ * Beware!
+ */
 ;(function ($, _) {
+
+  var noop = function () {};
+  Date.now = Date.now || function() { return +new Date; };
 
   var defaults = {
     onBlur: {
       elem: "#downsell-blur",
+      override: false,
       cb: noop,
       outOfFocusDuration: 60 * 1000
     },
     onBack: {
       elem: "#downsell-back",
+      override: false,
       cb: noop
     },
     onIdle: {
       elem: "#downsell-idle",
+      override: false,
       cb: noop,
       inactiveThreshold: 30 * 1000
     },
     onUnload: {
       elem: "#downsell-unload",
+      override: false,
       cb: noop
+    },
+    onBreakingPlane: {
+      elem: "#downsell-breaking",
+      override: false,
+      cb: noop,
     }
   };
 
@@ -31,16 +45,9 @@
 
   var downsell = {},
       opts = {},
-      noop = function () {},
       stop = false; // stops triggering downsells.
 
   var activeModal;
-
-  var reportHeap = function (msg, prop) {
-    if (typeof window.heap !== "undefined" && heap.track) {
-      heap.track(msg, prop);
-    }
-  };
 
   var trackNL = function (evtName, props) {
     if (typeof nolimit !== 'undefined' && nolimit.track) {
@@ -70,6 +77,9 @@
       trackNL(eventType + " Modal - Viewed", props);
     }
 
+    // Don't show any other modal. BEWARE!
+    $(".modal.in").modal('hide');
+
     // Don't show any other downsell if back/unload modals are already shown.
     if (stop ||
         activeModal === opts.onBack.elem ||
@@ -85,6 +95,7 @@
         keyboard:false,
         show:true
       });
+
       activeModal = id;
       stop = true;
     }
@@ -158,14 +169,27 @@
 
   /* Poll for hash changes on IE. */
   var pollForHashChange = function () {
+    var elem = opts.onBack.elem,
+        cb = opts.onBack.cb,
+        override = opts.onBack.override;
+
     window.setInterval(function () {
       if (window.location.hash === "#") {
-        showModal(opts.onBack.elem, "onBack");
+        if (override) {
+          cb();
+          trackNL("onBack Modal - Viewed");
+        } else {
+          showModal(elem, "onBack");
+        }
       }
     }, 400);
   };
 
   var listenToHashChanges = function () {
+    var elem = opts.onBack.elem,
+        cb = opts.onBack.cb,
+        override = opts.onBack.override;
+
     if (isIE) {
       pollForHashChange();
       return;
@@ -173,8 +197,13 @@
     $(window).on("hashchange", function () {
       var hash = window.location.hash;
       if (!hash || hash === "#") {
-        showModal(opts.onBack.elem, "onBack");
-        $("body").click();
+        if (override) {
+          cb();
+          trackNL("onBack Modal - Viewed");
+        } else {
+          showModal(elem, "onBack");
+          $("body").click();
+        }
       }
     });
   };
@@ -235,7 +264,7 @@
       bounceRedirect = $subscribeBounceTB.data('sub-bounce-url');
     }
 
-    redirectTo = bounceRedirect || "https://www.knowthycustomer.com/subscribe/view_report_trial";
+    redirectTo = bounceRedirect || "https://www.beenverified.com/subscribe/view_report_trial";
 
     window.onbeforeunload = noop;
 
@@ -253,18 +282,63 @@
     window.onbeforeunload = beforeUnload;
   };
 
+  var onBreakingPlane = function () {
+    var elem = opts.onBreakingPlane.elem,
+        cb = opts.onBreakingPlane.cb,
+        override = opts.onBreakingPlane.override,
+        sensitivity = 20, // pixels from the top
+        threshold = 500,
+        thresholdId = null,
+        delayBeforeFiring = 0,
+        delayTimer,
+        firedBreakingPlaneAlready = false;
+
+    var mouseleaveY,
+        mouseenterY;
+
+    var fireBounce = function () {
+      if (firedBreakingPlaneAlready) return;
+      firedBreakingPlaneAlready = true;
+
+      if (override) {
+        cb();
+        trackNL("onBreakingPlane Modal - Viewed");
+      } else {
+        showModal(elem, "onBreakingPlane");
+      }
+    };
+
+    $(document).on('mouseleave', function (evt) {
+      if (evt.clientY > sensitivity) return;
+      delayTimer = setTimeout(fireBounce, delayBeforeFiring);
+    });
+
+    $(document).on('mouseenter', function (evt) {
+      if (delayTimer) {
+        clearTimeout(delayTimer);
+        delayTimer = null;
+      }
+    });
+  };
+
+  downsell.stop = function() {
+    $(document).off('mouseleave');
+    $(document).off('mouseenter');
+    $(window).off('hashchange');
+  };
+
+
   /* Initialize */
 
-  /*
   downsell.init = function (options) {
     _.extend(opts, defaults, options);
     onBack();
-   onUnload();
-
-    onIdle();
-    onBlur();
+    //onUnload();
+    //onIdle();
+    //onBlur();
+    onBreakingPlane();
   };
- */
+
   // Expose downsell as a global.
   window.downsell = downsell;
 
