@@ -991,10 +991,6 @@ article.contact-panel label {
     font-size: 16px;
   }
 
-  .form-names label.error {
-    float: none;
-    display: block;
-  }
 
   body {
     font-size: 18px;

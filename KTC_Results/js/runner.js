@@ -169,13 +169,13 @@ window.addEventListener('resize', function(){
     },
 
     messages: {
-      "lead[first_name]": "Please enter a first name",
-      "lead[last_name]": "Please enter a last name",
+      "lead[first_name]": "Please enter",
+      "lead[last_name]": "Please enter",
       "lead[email]": "Please enter a valid email",
       "lead[phone]": "Please enter a valid phone",
       "lead[company]": "Please enter a company",
       "lead[role]": "Please enter a role",
-      "lead[comment]": "Please select an option",
+      "lead[comment]": "Please provide feedback",
       tos: "Please accept our Terms of Service"
     },
 
