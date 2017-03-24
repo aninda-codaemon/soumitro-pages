@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="72px" height="79px" viewBox="0 0 72 79" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Identity-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M30.947389,0.533259351 C30.4241605,0.238748344 29.5759106,0.238708333 29.052611,0.533259351 L0.947389025,16.3529195 C0.424160514,16.6474305 0,17.3816752 0,17.9728308 L0,49.0271692 C0,49.6273105 0.424089432,50.3525295 0.947389025,50.6470805 L29.052611,66.4667406 C29.5758395,66.7612517 30.4240894,66.7612917 30.947389,66.4667406 L59.052611,50.6470805 C59.5758395,50.3525695 60,49.6183248 60,49.0271692 L60,17.9728308 C60,17.3726895 59.5759106,16.6474705 59.052611,16.3529195 L30.947389,0.533259351 Z" id="path-1"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.217391304 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="KTC-Landing-768" transform="translate(-39.000000, -2335.000000)">
+            <g id="Section2" transform="translate(0.000000, 980.000000)">
+                <g id="Identity" transform="translate(45.000000, 1361.000000)">
+                    <g id="Identity-icon">
+                        <g id="Page-1-Copy-2">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <g id="Page-1" transform="translate(11.250000, 12.044944)">
+                            <g>
+                                <path d="M18,41.9702298 L18,25.6927255" id="Stroke-7" stroke="#263348" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.125,3.375"></path>
+                                <path d="M0.0437907609,10.1694167 L14.0494973,18.5076646" id="Stroke-9" stroke="#263348" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.125,3.375"></path>
+                                <path d="M36.429135,10.1694167 L22.6379212,19.5643161" id="Stroke-11" stroke="#263348" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.125,3.375"></path>
+                                <g id="Lock" transform="translate(12.750000, 11.292135)">
+                                    <path d="M10.6134302,10.8190457 C10.6134302,13.7241031 8.28739548,16.0810364 5.41610577,16.0810364 C2.54674958,16.0810364 0.220714883,13.7241031 0.220714883,10.8190457 C0.220714883,7.91398825 2.54674958,5.55705489 5.41610577,5.55705489 C8.28739548,5.55705489 10.6134302,7.91398825 10.6134302,10.8190457 L10.6134302,10.8190457 Z" id="Stroke-3" stroke="#263348" stroke-width="2.5"></path>
+                                    <path d="M2.75847094,6.16977926 L2.75847094,2.74400402 C2.75847094,1.25819636 3.94952446,0.0523234732 5.41707253,0.0523234732 L5.41707253,0.0523234732 C6.88462061,0.0523234732 8.07567412,1.25819636 8.07567412,2.74400402 L8.07567412,6.16977926" id="Stroke-5" stroke="#263348" stroke-width="2.5"></path>
+                                    <path d="M6.70828282,9.79933918 C6.70828282,8.98889864 6.05861727,8.33114979 5.2581365,8.33114979 C4.45765573,8.33114979 3.80799018,8.98889864 3.80799018,9.79933918 C3.80799018,10.4316394 4.20823056,10.9601876 4.76315322,11.1657341 L3.80799018,12.7768273 L6.70828282,12.7768273 L5.75311977,11.1657341 C6.30804243,10.9601876 6.70828282,10.4316394 6.70828282,9.79933918" id="Fill-13" fill="#263348"></path>
+                                </g>
+                                <path d="M19.9614259,40.816755 C24.3937175,37.9646414 35.478636,29.1631575 36.2947139,12.0859793 C36.3533643,10.8501198 35.679723,9.69033915 34.6173135,9.07156406 L19.8256922,0.452669483 C18.7884186,-0.150889828 17.5098407,-0.150889828 16.4725672,0.452669483 L1.68094579,9.07156406 C0.618536368,9.69033915 -0.0551049364,10.8501198 0.00354542593,12.0859793 C0.819623324,29.1631575 11.9045418,37.9646414 16.3368335,40.816755 C17.4478389,41.5318967 18.8504204,41.5318967 19.9614259,40.816755 L19.9614259,40.816755 Z" id="Stroke-1" stroke="#19B2CC" stroke-width="2.5"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
