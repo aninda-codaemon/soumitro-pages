@@ -332,9 +332,9 @@ label.error {
   color: white;
 }
 
-.loading-animation h2 {
+.loading-animation h3 {
   margin: 40px 0px;
-  font-size: 64px;
+  font-size: 36px;
 }
 
 .loading-animation p {
@@ -368,7 +368,7 @@ label.error {
 }
 
 #people-results .contact-panel {
-  padding: 30px 20px; 
+  padding: 30px 20px;
 }
 
 .table-header .row {

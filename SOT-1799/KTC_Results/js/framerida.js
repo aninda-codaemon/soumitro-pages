@@ -1,5 +1,5 @@
 /*
- * framerida.js - 0.1.0
+ * framerida.js
  *
  * Terminology used throughout the comments/docs:
  * Data source - An entity whose data is saved in localStorage.
@@ -17,8 +17,7 @@
 (function(root, $, _, amplify, H) {
   "use strict";
 
-  var fr = {},
-      store = amplify.store,
+  var fr = {}, store = amplify.store,
       storage;
 
   /* Keeps a mapping of dataSources to bound elements */
@@ -27,9 +26,6 @@
 
   var templates = {}; // {elemId: {tpl: function() {}, dataSource: 'name'}}
   fr.templates = templates;
-
-  var ignoredValues = {}; // {elemId: {name1: val1, name2: val2}}
-  fr.ignoredValues = ignoredValues;
 
   /*
    * @private
@@ -49,9 +45,10 @@
         var hasFRClick = $selectedElems.find("[data-fr-click]").length > 0,
             hasFRSubmit = $selectedElems.find("[data-fr-store]").length > 0;
         if (hasFRClick) {
-          return origOn.apply($("body"), arguments[0], arguments);
+          return origOn.apply($("body"), arguments);
         }
       }
+
       return origOn.apply(this, arguments);
     };
   };
@@ -150,7 +147,7 @@
         .map(function(params) {
             var p = params.split('=');
             var key = p[0];
-            var val = window.decodeURIComponent(p[1]);
+            var val = window.decodeURIComponent(p[1] || "");
             val = val.replace(/\/+$/g, ""); // clean up trailing slash
             val = val.replace(/\+/g, " "); // replace white spaces
             return [key, val];
@@ -188,16 +185,6 @@
       var selectVal = select.getAttribute('value');
       if (selectVal) {
         $(select).val(selectVal);
-      }
-    });
-  };
-
-  fr._tickCheckBoxes = function ($boundElem) {
-    var $cbs = $boundElem.find("input[type=checkbox]");
-    $.each($cbs, function (idx, cb) {
-      var checkedVal = $(cb).attr('data-fr-checked');
-      if (checkedVal && checkedVal != "0") {
-        $(cb).prop('checked', checkedVal);
       }
     });
   };
@@ -283,6 +270,12 @@
     });
   };
 
+
+  function outerHTML(node){
+    return node.outerHTML || new XMLSerializer().serializeToString(node);
+  }
+
+
   /*
    * @private
    * Generate elements from the provided stub element.
@@ -331,10 +324,10 @@
       $eachStubParent.attr('data-fr-iterated', collectionName);
 
       dataPath = dataSource + '.' + collectionName + '[{{_framerida_index}}]';
-      $eachStubElem.attr('data-fr-bound-iterated', dataPath);
+      $eachStubElem.attr('data-fr-bound2', dataPath);
 
       repeatedHtml = "{{#each " + collectionName + "}}";
-      repeatedHtml += $eachStubElem[0].outerHTML;
+      repeatedHtml += outerHTML($eachStubElem[0]);
       repeatedHtml += "{{/each}}";
 
       repeatedHtml = fr._applyHtmlFixes(repeatedHtml);
@@ -420,30 +413,9 @@
         html = templates[$boundElem.attr('data-fr-id')](data);
       }
 
-      var boundElemId = $boundElem.data('fr-id');
-
       $boundElem.html(html);
-      if ($boundElem.attr('data-fr-store')) {
-
-        var $ignoredElems = $boundElem.find('[data-fr-ignore]');
-
-        // Populate those fields with in-memory values.
-        if (typeof boundElemId !== "undefined" && ignoredValues[boundElemId]) {
-          $ignoredElems.each(function (idx, ignoredElem) {
-            var $ignoredElem = $(ignoredElem),
-                ignoredName = $ignoredElem.attr('name'),
-                inMemoryValue = ignoredValues[boundElemId][ignoredName];
-            if ($ignoredElem.is(":checkbox")) {
-              $ignoredElem.prop('checked', inMemoryValue == 1);
-            } else {
-              $ignoredElem.val(inMemoryValue);
-            }
-          });
-        }
-      }
 
       fr._choosePossibleSelectOption($boundElem);
-      fr._tickCheckBoxes($boundElem);
     });
   };
 
@@ -480,67 +452,26 @@
 
   /*
    * @private
-   * Checks if the form argument's input fields has class names that
-   * contain 'error' or 'invalid' as substrings. The assumption here
-   * is that any validation plugin will mark inputs with the above
-   * mentioned classes when validation fails.
-   */
-  fr._hasInvalidClassNames = function (form) {
-     var hasInvalid = false,
-        $form = $(form),
-        $inputs = $form.find('input');
-     $inputs.each(function (idx, input) {
-       if (hasInvalid) return;
-       var classNames = ($(input).attr('class') || "").toLowerCase(),
-           hasInvalidName = classNames.indexOf("invalid")!== -1,
-           hasErrorName = classNames.indexOf("error") !== -1;
-       if (hasInvalidName || hasErrorName) {
-         hasInvalid = true;
-       }
-     });
-     return hasInvalid;
-  };
-
-  /*
-   * @private
    * Registers event handlers on data sources (only forms for now) and stores
    * their data to localStorage.
    */
   fr._bindDataSourceHandlers = function() {
-    $('body').on('submit', "[data-fr-store]", function(evt) {
-      if (fr._hasInvalidClassNames(this)) {
-        return;
+    $('body').on('submit', "[data-fr-store]", function (evt) {
+      if ($(this).find('.error, .invalid').length) {
+        // return;
       }
       var formVals = $(this).serializeArray(),
-          storageKey = $(this).data('fr-store'),
-          formId = $(this).data('fr-id'),
-          ignoredElems = $(this).find('[data-fr-ignore]');
+          storageKey = $(this).data('fr-store');
 
-      formVals = fr._transformFormData(formVals);
-
-      var cbs = $(this).find('[type=checkbox]');
-
-      if (cbs.length > 0) {
-      // Make sure that unticked checkboxes are also included in form data
-      // jQuery ignores unticked cbs and doesnt list them in serialized results.
-        _.each(cbs, function (cb) {
-          var $cb = $(cb), cbName = $cb.attr('name');
-          if (!formVals[cbName]) {
-            formVals[cbName] = "0"; // 0 for unchecked.
-          }
-        });
-      }
-
+      var ignoredElems = $(this).find('[data-fr-ignore]');
       ignoredElems = _.map(ignoredElems, function (ignored) {
         return $(ignored).attr('name');
       });
 
+      formVals = fr._transformFormData(formVals);
+
       _.each(ignoredElems, function (ignoredName) {
         if (formVals[ignoredName]) {
-          if (!ignoredValues[formId]) {
-            ignoredValues[formId] = {};
-          }
-          ignoredValues[formId][ignoredName] = formVals[ignoredName];
           delete formVals[ignoredName];
         }
       });
@@ -592,9 +523,12 @@
   fr.dataFromDataPath = function(dataPathString) {
 
     var dataPathRgx = /(\w.*)\.(\w+)\[(\d+)\]/g,
-        rgxResults = dataPathRgx.exec(dataPathString),
+        rgxResults,
         storage = store(),
         boundData;
+
+    dataPathRgx.lastIndex = 0;
+    rgxResults = dataPathRgx.exec(dataPathString);
 
     if (!rgxResults || rgxResults.length < 4) {
       throw new Error("Invalid dataPath structure: " + dataPathString);
@@ -636,7 +570,7 @@
    */
   fr._attachClickHandlers = function() {
     $("body").on("click", "[data-fr-click]", function(evt) {
-      var dataPath = $(this).data("fr-bound-iterated"),
+      var dataPath = $(this).data("fr-bound2"),
           actionStr = $(this).data("fr-click"),
           mapped = $(this).data("fr-map"),
           actionSplit, action, targetStorage, boundData;
@@ -702,17 +636,12 @@
 
     fr._attachClickHandlers();
     interceptJQueryOnEvents();
-    $("body").removeClass("hide").removeClass('fr-hide');
+
+    $("body").removeClass("hide");
   };
 
   if (!root._framerida_test_mode) {
-    try {
-     fr.initialize();
-    } catch (error) {
-      // Make sure the page gets displayed despite any errors.
-      $("body").removeClass("hide").removeClass('fr-hide');
-      throw error;
-    }
+    fr.initialize();
   }
 
   root.framerida = fr;

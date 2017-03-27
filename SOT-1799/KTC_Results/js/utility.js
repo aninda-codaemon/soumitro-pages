@@ -61,6 +61,43 @@
     return phonified;
   };
 
+  String.prototype.formatEmail = function() {
+    return this.replace(/[^@](X+)/g, '***');
+  };
+
+  String.prototype.formatPhone = function() {
+    return this.replace(/([\d|X]{3})([\d|X]{3})([\d|X]{4})/, '$1-$2-$3');
+  };
+
+  String.prototype.nameize = function() {
+    var name;
+    name = this;
+    if (name === null) {
+      return "";
+    }
+    if (name.match(/\s+/)) {
+      return _.map(this.split(" "), function(part) {
+        return part.nameize();
+      }).join(" ");
+    } else if (name.match(/^[A-Z][A-Z]+/)) {
+      name = name.toLowerCase();
+    } else {
+      name = name.toLowerCase();
+    }
+    if (name.match(/^mac/)) {
+      name = "Mac" + name.replace(/^mac/, '').capitalize();
+    } else if (name.match(/^mc/)) {
+      name = "Mc" + name.replace(/^mc/, '').capitalize();
+    } else if (name.match(/\-/)) {
+      name = _.map(name.split("-"), function(part) {
+        return part.capitalize();
+      }).join(' ');
+    } else {
+      name = name.capitalize();
+    }
+    return name;
+  };
+
   root._blank = function(string) {
     if (typeof string === 'undefined') {
       return true;

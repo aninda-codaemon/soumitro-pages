@@ -1,5 +1,8 @@
 ;(function ($) {
 
+  var currentTeaser,
+      $selectedRecord;
+
   var trackNL = function (evtName, props) {
     if (typeof nolimit !== 'undefined' && nolimit.track) {
       if (props) {
@@ -17,12 +20,13 @@
     }
   };
 
+
 //sets max-width for api boxes to be neighbor height
 var apiBoxHeight = function(){
-  $('.results article').each(function(index, article){
-    $apiBox = $(article).next();
+  $('article').each(function(index, article){
+    var $apiBox = $(article).next();
     // $apiBox.css({'max-height' : $(article).innerHeight()})
-    $dataBox = $apiBox.find('.data-box');
+    var $dataBox = $apiBox.find('.data-box');
     //-20 is for the padding
     $dataBox.css({'max-height' : $(article).innerHeight() - $apiBox.find('h5').outerHeight(true) - 20});
   });
@@ -102,7 +106,224 @@ window.addEventListener('resize', function(){
     //amplify.store("lastVisit", Date.now());
   };
 
+  var getExtraTeaserData = function(record) {
 
+
+    var bvid = record.bvid;
+
+    var baseUrl = "//www.beenverified.com/hk/dd/teaser/person?exporttype=jsonp";
+    var url = baseUrl + "&bvid=" + bvid;
+    var xhrData = $.ajax({
+      url: url,
+      dataType: 'jsonp',
+    });
+
+  $.when(xhrData).done(function(result) {
+    trackNL("Person Data Teaser Called");
+
+    var res = result;
+    var img = '';
+
+    // Get profile image URL
+    if (res.images[0] && typeof(res.images[0].url !== 'undefined')) {
+      img = res.images[0].url;
+    }
+
+    var phoneNumbers = $.map(res.phones, function(item){
+      return item.number.formatPhone();
+    });
+    var emailAddresses = $.map(res.emails, function(item){
+      return item.email_address.formatEmail().toLowerCase();
+    });
+    var socialNetworks = $.map(res.social, function(item){
+      return item.type.nameize();
+    });
+
+    // Data elements to display - Waterfall controlled here
+    var data = [
+      // {
+      //   'type': 'criminal',
+      //   'name': 'Criminal or Traffic*',
+      //   'single': 'Criminal or Traffic*',
+      //   'style': ' crim-box',
+      //   'weight': 9,
+      //   'showIfEmpty': 0,
+      //   'count': res.courts.criminal.length
+      // },
+      // {
+      //   'type': 'bankruptcy',
+      //   'name': 'Bankruptcy Filings',
+      //   'single': 'Bankruptcy Filing',
+      //   'style': ' crim-box',
+      //   'weight': 8,
+      //   'showIfEmpty': 0,
+      //   'count': res.courts.bankruptcy.length
+      // },
+      {
+        'type': 'associates',
+        'name': 'Associates & Relatives',
+        'single': 'Associates & Relatives',
+        'style': '',
+        'weight': 7,
+        'showIfEmpty': 0,
+        'count': res.connections.associates.length + res.connections.relatives.length
+      },
+      {
+        'type': 'emails',
+        'name': 'Email Addresses',
+        'single': 'Email Address',
+        'style': '',
+        'weight': 6,
+        'showIfEmpty': 0,
+        'count': res.emails.length,
+        'emailAddress': emailAddresses
+      },
+      {
+        'type': 'phones',
+        'name': 'Phone Numbers',
+        'single': 'Phone Number',
+        'style': ' phone-box',
+        'weight': 5,
+        'showIfEmpty': 0,
+        'count': res.phones.length,
+        'phoneNumber': phoneNumbers
+      },
+      {
+        'type': 'social',
+        'name': 'Social Media Profiles',
+        'single': 'Social Media Profile',
+        'style': ' social-box',
+        'weight': 4,
+        'showIfEmpty': 0,
+        'count': res.social.length,
+        'socialNetwork': socialNetworks
+      },
+      {
+        'type': 'photos',
+        'name': 'Photos',
+        'single': 'Photo',
+        'style': '',
+        'weight': 3,
+        'showIfEmpty': 0,
+        'count': res.images.length
+      },
+      {
+        'type': 'careers',
+        'name': 'Jobs and Education',
+        'single': 'Career',
+        'style': '',
+        'weight': 2,
+        'showIfEmpty': 0,
+        'count': res.jobs.length + res.educations.length
+      },
+
+    ];
+
+    // Booleans for templating & reporting
+    // var hasCriminal = _.some(data, function(item) {
+    //   if (item && item.type === 'criminal') {
+    //     return item.type === 'criminal' && item.count > 0;
+    //   } else {
+    //     return false;
+    //   }
+    // });
+    // var hasBankruptcy = _.some(data, function(item) {
+    //   if (item && item.type === 'bankruptcy') {
+    //     return item.type === 'bankruptcy' && item.count > 0;
+    //   } else {
+    //     return false;
+    //   }
+    // });
+    var hasPhone = _.some(data, function(item){
+      if (item && item.type === 'phones') {
+        return item.type === 'phones' && item.count > 0;
+      } else {
+        return false;
+      }
+    });
+    var hasEmail = _.some(data, function(item){
+      if (item && item.type === 'emails') {
+        return item.type === 'emails' && item.count > 0;
+      } else {
+        return false;
+      }
+    });
+    var hasSocial = _.some(data, function(item){
+      if (item && item.type === 'social') {
+        return item.type === 'social' && item.count > 0;
+      } else {
+        return false;
+      }
+    });
+
+    var hasPhotos = _.some(data, function(item) {
+      if (item && item.type === 'photos') {
+        return item.type === 'photos' && item.count > 0;
+      } else {
+        return false;
+      }
+    });
+    var hasCareers = _.some(data, function(item) {
+      if (item && item.type === 'careers') {
+        return item.type === 'careers' && item.count > 0;
+      } else {
+        return false;
+      }
+    });
+
+    // Reporting
+    if (hasPhone) {
+      trackNL("Data Modal Viewed Phone");
+    }
+    if (hasEmail) {
+      trackNL("Data Modal Viewed Email");
+    }
+    if (hasSocial) {
+      trackNL("Data Modal Viewed Social");
+    }
+    if (hasPhotos) {
+      trackNL("Data Modal Viewed Photos");
+    }
+
+    if (hasCareers) {
+      trackNL("Data Modal Viewed Jobs and Education");
+    }
+
+
+    // Force singular name here rather than in template... meh
+    data = _.forEach(data, function(item, key) {
+      if (item && item.count === 1) {
+        item.name = item.single;
+      }
+    });
+
+    // Scrub data for display
+    _.remove(data, function(item) {
+      if (item) {
+        return item.showIfEmpty === 0 && item.count === 0;
+      }
+    });
+    // data = _.sortByOrder(data, ['weight', 'count'], ['desc', 'desc']);
+
+    var teaserDataObj = {
+        recordCount: ($.type(res) !== 'array' ? 1 : 0),
+        extraData: _(data).omit(_.isUndefined).omit(_.isNull).value(),
+        photo: img,
+        hasPhone: hasPhone,
+        hasEmail: hasEmail,
+        hasSocial: hasSocial,
+        hasPhotos: hasPhotos,
+        hasCareers: hasCareers,
+    };
+    record.teaserData = teaserDataObj;
+    amplify.store('currentTeaser', {'teasers' : [record]});
+    apiBoxHeight();
+    $('loading-animation').hide();
+    $('#current-teaser').show();
+  });
+
+
+};
   // Form Validations
   var postLeadForm = function(dataArray) {
     var formVals = {};
@@ -228,7 +449,31 @@ var startLoading = function(searchType) {
       break;
   }
   changeLoadingText(searchType);
-}
+};
+
+var setCurrentRecord = function(){
+
+  if (!amplify.store().peopleData){
+    return;
+  }
+
+  // first record set in sorter in html script
+  getExtraTeaserData(firstRecord.record);
+  currentTeaser = firstRecord.record;
+  $selectedRecord = $('#people-teaser-results .row').first();
+  $selectedRecord.find('button').text('In Preview');
+  $selectedRecord.addClass('selected');
+};
+
+var changePreviewBox = function(record) {
+  $('#current-teaser').hide();
+  $('.loading-animation').show();
+
+  var dataPath = record.data("fr-bound2"),
+      data = framerida.dataFromDataPath(dataPath);
+
+  getExtraTeaserData(data);
+};
 
 var clickedPanel;
 $('.contact-panel').click(function(){
@@ -238,7 +483,7 @@ $('.contact-panel').click(function(){
 
   $(this).addClass("focused-panel");
   clickedPanel = this;
-})
+});
 
 var showResults = function() {
   var searched,
@@ -274,6 +519,22 @@ $('#email-input').blur(function(){
   $('.carrot').fadeOut();
 });
 
+$('#people-teaser-results .row').click(function(e){
+  e.preventDefault();
+  // debugger
+  if ($(e.currentTarget).is($selectedRecord)){
+    return;
+  } else {
+    $selectedRecord.removeClass('selected');
+    $selectedRecord.find('button').text('Preview');
+
+    $selectedRecord = $(e.currentTarget);
+    $selectedRecord.addClass('selected');
+    $selectedRecord.find('button').text('In Preview');
+    changePreviewBox($selectedRecord);
+  }
+});
+
 //mousetrap.js plugin to hide the leadbox modal
 Mousetrap.bind("s h o o m o d a l", function(){
   $('#leadBox-modal').modal('hide');
@@ -285,6 +546,7 @@ $('#leadBox-modal').scroll(function(){
 });
 
   var initialize = function () {
+    setCurrentRecord();
     showResults();
     apiBoxHeight();
     setLastVisit();
