@@ -112,8 +112,36 @@
     }
   };
 
+  root._previewAddresses = function(addressObject){
+    if (addressObject.Addresses === void 0){
+      return [];
+    }
+    if ($.type(addressObject.Addresses.Address) !== 'array') {
+      addresses = [addressObject.Addresses.Address];
+    } else if ($.type(addressObject.Addresses.Address) === 'array') {
+      addresses = addressObject.Addresses.Address;
+    }
+    return _.chain(addresses).map(function(address) {
+      return _makeAddress(address);
+    }, this).uniq().value();
+  };
+
   root._not_blank = function(string) {
     return !_blank(string);
+  };
+
+  root._makeAddress = function(address) {
+    var returnAddress;
+    if (typeof address === 'undefined') {
+      returnAddress = 'N/A';
+    } else if (_not_blank(address.City) && _not_blank(address.State)) {
+      returnAddress = "" + (address.City.nameize()) + ", " + address.State;
+    } else if (_not_blank(address.City)) {
+      returnAddress = address.City.nameize();
+    } else if (_not_blank(address.State)) {
+      returnAddress = address.State;
+    }
+    return returnAddress;
   };
 
   root.setBootstrapSelect = function(name, string) {

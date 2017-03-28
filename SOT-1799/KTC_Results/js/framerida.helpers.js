@@ -126,4 +126,66 @@
   });
 
 
+  // wasnt able to reupdate page on currentTeaser store change, framerida wasnt allowing each to be used to
+  // iterate over 'teasers' in object. Got rid of iteration and added preview helpers to
+  // instantly show change on page.
+
+  H.registerHelper('previewName', function(){
+
+    var names;
+    if (!this.Names.Name){
+      return;
+    }
+    if ($.type(this.Names.Name) !== 'array') {
+      names = [this.Names.Name];
+    } else if ($.type(this.Names.Name) === 'array') {
+      names = this.Names.Name;
+    }
+
+    var fn = names[0].First,
+        ln = names[0].Last;
+    return (fn + " " + ln).nameize();
+
+  });
+
+
+  H.registerHelper('previewLocation', function(){
+    // debugger
+    var record = this,
+        addresses = _previewAddresses(record);
+
+    if (addresses && addresses.length !== 0) {
+      var index = 0;
+      while (addresses[index] === undefined) {
+        index++;
+      }
+      return addresses[index].toUpperCase();
+    } else {
+      return [];
+    }
+
+  });
+
+  H.registerHelper('previewDead', function(){
+    if (this.hasDeadAge === '0'){
+      return false;
+    } else {
+      return this.DODs.Item.DeadAge;
+    }
+  });
+
+  H.registerHelper('previewAddresses', function(){
+    // debugger
+    var addresses = _previewAddresses(this);
+      if (addresses.length === 0){
+        return false;
+      } else if (addresses.length === 1){
+        return new Handlebars.SafeString('<p><span class="blue-title">' +'Addresses: </span>' + addresses[0] + '</p>');
+      } else {
+        return new Handlebars.SafeString('<p><span class="blue-title">' +'Addresses: </span>' + addresses[0] + ', +' + (addresses.length - 1).toString() + ' More!</p>');
+
+      }
+  });
+
+
 }(Handlebars));

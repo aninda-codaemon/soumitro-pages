@@ -138,6 +138,9 @@ window.addEventListener('resize', function(){
     var socialNetworks = $.map(res.social, function(item){
       return item.type.nameize();
     });
+    var Addresses = $.map(res.addresses, function(item){
+      debugger
+    });
 
     // Data elements to display - Waterfall controlled here
     var data = [
@@ -216,6 +219,15 @@ window.addEventListener('resize', function(){
         'showIfEmpty': 0,
         'count': res.jobs.length + res.educations.length
       },
+      {
+        'type': 'addresses',
+        'name': 'Address Records',
+        'single': 'Address Records',
+        'style': '',
+        'weight': 0,
+        'showIfEmpty': 0,
+        'count': res.addresses.length
+        }
 
     ];
 
@@ -271,6 +283,10 @@ window.addEventListener('resize', function(){
       }
     });
 
+    var hasProperty = _.some(data, function(item){
+      return (item.type === 'addresses' && item.count > 0) || (item.type === 'neighbors' && item.count > 0);
+    });
+
     // Reporting
     if (hasPhone) {
       trackNL("Data Modal Viewed Phone");
@@ -287,6 +303,10 @@ window.addEventListener('resize', function(){
 
     if (hasCareers) {
       trackNL("Data Modal Viewed Jobs and Education");
+    }
+
+    if (hasProperty) {
+      trackNL("Data Modal Viewed Property");
     }
 
 
@@ -314,12 +334,15 @@ window.addEventListener('resize', function(){
         hasSocial: hasSocial,
         hasPhotos: hasPhotos,
         hasCareers: hasCareers,
+        hasProperty: hasProperty
     };
     record.teaserData = teaserDataObj;
-    amplify.store('currentTeaser', {'teasers' : [record]});
-    apiBoxHeight();
+
+    amplify.store('currentTeaser', record);
+    // amplify.store('currentTeaser', record);
     $('loading-animation').hide();
-    $('#current-teaser').show();
+    $('#preview-box').show();
+    apiBoxHeight();
   });
 
 
@@ -466,7 +489,7 @@ var setCurrentRecord = function(){
 };
 
 var changePreviewBox = function(record) {
-  $('#current-teaser').hide();
+  $('#preview-box').hide();
   $('.loading-animation').show();
 
   var dataPath = record.data("fr-bound2"),
@@ -521,7 +544,7 @@ $('#email-input').blur(function(){
 
 $('#people-teaser-results .row').click(function(e){
   e.preventDefault();
-  // debugger
+
   if ($(e.currentTarget).is($selectedRecord)){
     return;
   } else {

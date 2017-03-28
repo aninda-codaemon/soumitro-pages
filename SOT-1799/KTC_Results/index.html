@@ -246,7 +246,9 @@ drift.load('rgvdm473vfx2');
                                 {{#if youDead}}
                                   DOD: {{youDead}}
                                 {{else}}
-                                  {{age}} y/o
+                                  {{#if age}}
+                                    {{age}} y/o
+                                  {{/if}}
                                 {{/if}}
                               </div>
                               <div class="col-md-3">
@@ -350,7 +352,7 @@ drift.load('rgvdm473vfx2');
               </div>
 
               <div class="row" data-fr-bind="currentTeaser" id="preview-box">
-                <div data-fr-each="teasers" data-fr-map="TeaserRecord" id="current-teaser">
+                <div id="current-teaser">
 
 
                 <div class="col-sm-12">
@@ -358,13 +360,13 @@ drift.load('rgvdm473vfx2');
                     <div class="row">
 
                       <div class="col-sm-8">
-                        <h3>{{fullName}}</h3>
+                        <h3>{{previewName}}</h3>
                       </div>
 
                       {{#if age}}
                       <div class="col-sm-4">
-                        {{#if youDead}}
-                          <h3 class="result-age">DOD: {{youDead}}</h3>
+                        {{#if previewDead}}
+                          <h3 class="result-age">DOD: {{previewDead}}</h3>
                         {{else}}
                           <h3 class="result-age"> {{age}} y/o</h3>
                         {{/if}}
@@ -372,7 +374,7 @@ drift.load('rgvdm473vfx2');
                       {{/if}}
                       <div class="col-sm-12">
                         <p class="place">
-                          {{place}}
+                          {{previewLocation}}
                         </p>
                       </div>
 
@@ -380,10 +382,9 @@ drift.load('rgvdm473vfx2');
 
                     <div class="row">
                       <div class="col-sm-12">
-                        {{#if hasAddresses}}
-                          <p>Addresses: {{addressCount}}</p>
-                        {{/if}}
-
+                        {{#previewAddresses}}
+                          <!-- <p>Addresses: {{previewAddresses}}</p> -->
+                        {{/previewAddresses}}
                         {{#if emails}}
                           <p>Emails: {{emailsCountTeaser}}</p>
                         {{/if}}
@@ -430,20 +431,17 @@ drift.load('rgvdm473vfx2');
                     </div>
                   </div>
                 </div>
-                </div>
-
-                <div class="loading-animation">
-                  <div class="loading-headers" id="people_loading" data-fr-bind="searchData">
-                    <h3>Retrieving Data...</h3>
-                  </div>
-
-                  <!-- <div id="ktclogoanimation_hype_container" style="margin:auto;position:relative;width:150px;height:150px;overflow:hidden;" aria-live="polite">
-                    <script type="text/javascript" charset="utf-8" src="js/ktclogoanimation_hype_generated_script.js?67886"></script>
-                  </div> -->
-
-                </div>
-
               </div>
+              <div class="loading-animation">
+                <div class="loading-headers" id="people_loading" data-fr-bind="searchData">
+                  <h3>Retrieving Data...</h3>
+                </div>
+
+                <!-- <div id="ktclogoanimation_hype_container" style="margin:auto;position:relative;width:150px;height:150px;overflow:hidden;" aria-live="polite">
+                <script type="text/javascript" charset="utf-8" src="js/ktclogoanimation_hype_generated_script.js?67886"></script>
+              </div> -->
+
+            </div>
             </div>
 
 
