@@ -84,6 +84,7 @@ h1 {
 
   color: #263348;
   margin-bottom: 55px;
+  margin-top: 40px;
 }
 h2 {
   font-family: 'halis_rblack';
@@ -112,15 +113,28 @@ h4 {
 
 h5 {
   font-size: 24px;
-  color: white;
+  color: #375271;
   font-family: 'halis_rblack';
+  margin-top: 20px;
 
 }
 
 h3.result-age {
-  color: #19B2CC;
+  color: #375271;
 }
 
+.blue-title {
+  color: #029FBA;
+  font-weight: 700;
+}
+
+.teaser-data {
+  margin-top: 10px;
+}
+
+#preview-box .contact-panel .btn {
+  margin-top: 30px;
+}
 .place {
   font-size: 16px;
   margin-bottom: 15px;
@@ -349,6 +363,10 @@ label.error {
   display: none;
 }
 
+.disappear {
+  visibility: hidden;
+}
+
 #people-teaser-results {
   max-height: 360px !important;
   overflow-y: scroll;
@@ -368,12 +386,47 @@ label.error {
 }
 
 #people-results .contact-panel {
-  padding: 30px 20px;
+  padding: 15px 20px 30px;
 }
 
+#people-results button {
+  background: #029FBA;
+  box-shadow: 0 4px 0 0 #005A6A;
+  border-radius: 5px;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  font-weight: bold;
+}
+
+#people-results button:active,
+#people-results button:focus,
+#people-results button.active{
+  background: #02778B;
+  box-shadow: 0 2px 0 0 #005A6A;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.table-header {
+  padding-bottom: 15px;
+  font-family: 'halis_rblack';
+  font-size: 16px;
+
+}
 .table-header .row {
   margin-left: 0px;
   margin-right: 0px;
+}
+
+.table-name {
+  font-family: 'halis_rblack';
+  font-size: 26px;
+}
+
+.between-margin {
+  margin-bottom: 20px;
 }
 
 
@@ -832,10 +885,11 @@ article.contact-panel label {
 }
 
 .api-box {
-  background: #263348;
+  background: #E9EAEB;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
   padding-bottom: 20px;
+  padding-right: 20px;
 
 }
 
@@ -858,23 +912,26 @@ article.contact-panel label {
 
 .data-box pre {
   background: inherit;
-  color: #19B2CC;
+  color: #375271;
   border: none;
   overflow-x: hidden;
 
 
 }
 
-.api-box ::-webkit-scrollbar {
+.api-box ::-webkit-scrollbar,
+#people-results ::-webkit-scrollbar {
   width: 7px;
 }
 
-.api-box ::-webkit-scrollbar-track {
+.api-box ::-webkit-scrollbar-track,
+#people-results ::-webkit-scrollbar-track {
   background: #375271;
   border-radius: 4px;
   height: 50%;
 }
-.api-box ::-webkit-scrollbar-thumb {
+.api-box ::-webkit-scrollbar-thumb,
+#people-results ::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background: #ACB8C6;
   height: 57px;
@@ -1100,6 +1157,18 @@ article.contact-panel label {
 
   .carrot {
     display: none !important;
+  }
+
+  .table-name {
+    font-size: 22px;
+  }
+
+  .contact-panel {
+    font-size: 18px;
+  }
+
+  #people-results .contact-panel {
+    padding: 15px 20px;
   }
 
   #footer {
@@ -1353,6 +1422,45 @@ article.contact-panel label {
   }
   .start-header p {
     font-size: 20px;
+  }
+
+  #people-results .contact-panel {
+    padding: 15px 0px;
+  }
+
+  .mobile-padding-fix {
+    padding: 0px 10px;
+  }
+
+  #people-results button {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+
+  #people-results ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-left-pad {
+    padding-left: 0px;
+  }
+
+  .between-margin{
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .table-header {
+    font-size: 14px;
+  }
+
+  .table-name {
+    font-size: 18px;
+  }
+
+  .table-name span {
+    font-size: 16px;
+    font-family: 'Work Sans', sans-serif;
   }
   .navbar-toggle {
     font-size: 0;

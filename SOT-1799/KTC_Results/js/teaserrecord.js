@@ -229,13 +229,13 @@
 
     TeaserRecord.prototype.place = function() {
       var addresses = this.addresses();
-
+    
       if (addresses && addresses.length !== 0) {
         var index = 0;
         while (addresses[index] === undefined) {
           index++
         }
-        return addresses[index].toUpperCase();
+        return addresses[index];
       } else {
         return [];
       }

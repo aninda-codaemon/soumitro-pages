@@ -546,11 +546,11 @@ $('#people-teaser-results .row').click(function(e){
     return;
   } else {
     $selectedRecord.removeClass('selected');
-    $selectedRecord.find('button').text('Preview');
+    $selectedRecord.find('button').text('Preview').removeClass('active');
 
     $selectedRecord = $(e.currentTarget);
     $selectedRecord.addClass('selected');
-    $selectedRecord.find('button').text('In Preview');
+    $selectedRecord.find('button').text('In Preview').addClass('active');
     changePreviewBox($selectedRecord);
   }
 });
