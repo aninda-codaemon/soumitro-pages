@@ -145,6 +145,20 @@
     return returnAddress;
   };
 
+  root._makeName = function(nameObject) {
+    var name;
+    if (nameObject.First === void 0 || nameObject.Last === void 0) {
+      return null;
+    } else {
+      name = _.chain(["First", "Middle", "Last"]).map(function(key) {
+        return nameObject[key];
+      }).filter(function(namePart) {
+        return _not_blank(namePart);
+      }).value().join(" ");
+      return name;
+    }
+  };
+
   root.setBootstrapSelect = function(name, string) {
     var item, text;
     item = $("select[name=" + name + "] option[value='" + string + "']")[0];

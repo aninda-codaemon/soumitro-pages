@@ -388,23 +388,11 @@ drift.load('rgvdm473vfx2');
 
                         {{previewPhones}}
 
+                        {{previewRelatives}}
 
                         {{previewSocial}}
-                        {{#if careers}}
-                          <p>Jobs: {{careersCountTeaser}}</p>
-                        {{/if}}
 
-                        {{#if relatives}}
-                          <p>Relatives: {{relativesCountTeaser}}</p>
-                        {{/if}}
-
-                        {{#if socialProfiles}}
-                          <p>Social Profiles: {{socialProfilesCountTeaser}}</p>
-                        {{/if}}
-
-                        {{#if photos}}
-                          <p>Images: {{photosCountTeaser}}</p>
-                        {{/if}}
+                        {{previewImages}}
                         <p>
                           Plus more!
                         </p>
@@ -423,7 +411,7 @@ drift.load('rgvdm473vfx2');
                     <h5>API Data</h5>
                     <div class="data-box">
                       <pre>
-                        {{prettyRecord}}
+                        {{previewPrettyRecord}}
                       </pre>
                     </div>
                   </div>

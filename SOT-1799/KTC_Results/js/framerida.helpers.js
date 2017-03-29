@@ -242,5 +242,81 @@
     }
   });
 
+  H.registerHelper('previewRelatives', function(){
+    // debugger
+    if (this.teaserData.hasRelatives === false) {
+      return false;
+    }
+
+    var extraData = this.teaserData.extraData,
+        careers = _.find(extraData, { 'type': 'careers' }).socialNetwork,
+        openingHtml = '<p><span class="blue-title">Social Profiles: </span>';
+
+    if (profiles.length <= 2){
+      var profList = profiles.join(', ');
+      return new Handlebars.SafeString(openingHtml + profList);
+    } else {
+      return new Handlebars.SafeString(openingHtml + profiles.slice(0,2).join(', ') + ', +' + (profiles.length - 2).toString() + ' More!</p>');
+    }
+  });
+
+  H.registerHelper('previewRelatives', function(){
+    var relatives;
+    if (this.Relatives === void 0){
+      return false;
+    }
+
+    if ($.type(this.Relatives.Relative) !== 'array') {
+      relatives = [this.Relatives.Relative];
+    } else if ($.type(this.Relatives.Relative) === 'array') {
+      relatives = this.Relatives.Relative;
+    }
+
+    var niceRelatives = _.chain(relatives).map(function(relative) {
+      return _makeName(relative);
+    }, this).filter(function(relative) {
+      return relative !== null;
+    }).map(function(relative) {
+      return relative.nameize();
+    }).uniq().value();
+
+    var openingHtml = '<p><span class="blue-title">Relatives: </span>';
+
+    if (niceRelatives.length <= 2){
+      return new Handlebars.SafeString(openingHtml + niceRelatives.join(', '));
+    } else {
+      return new Handlebars.SafeString(openingHtml + niceRelatives.slice(0,2).join(', ') + ', +' + (niceRelatives.length - 2).toString() + ' More!</p>');
+    }
+  });
+
+  H.registerHelper('previewImages', function(){
+    if (this.teaserData.hasPhotos === false) {
+      return false;
+    }
+
+    var extraData = this.teaserData.extraData,
+        count = _.find(extraData, { 'type': 'photos' }).count;
+
+    if (count < 1) {
+      return false;
+    }
+
+    var openingHtml = '<p><span class="blue-title">Images: </span>';
+    return new Handlebars.SafeString(openingHtml + count.toString());
+  });
+
+  H.registerHelper('previewPrettyRecord', function(){
+    return JSON.stringify(this, null, 2);
+  });
+
+
+
+
+
+
+
+
+
+
 
 }(Handlebars));
