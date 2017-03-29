@@ -177,14 +177,69 @@
   H.registerHelper('previewAddresses', function(){
     // debugger
     var addresses = _previewAddresses(this);
-      if (addresses.length === 0){
+      if (addresses.length <= 1){
         return false;
-      } else if (addresses.length === 1){
-        return new Handlebars.SafeString('<p><span class="blue-title">' +'Addresses: </span>' + addresses[0] + '</p>');
       } else {
-        return new Handlebars.SafeString('<p><span class="blue-title">' +'Addresses: </span>' + addresses[0] + ', +' + (addresses.length - 1).toString() + ' More!</p>');
+        if (!addresses[1]){
+          return false;
+        }
+
+        return new Handlebars.SafeString('<p><span class="blue-title">' +'Past Cities: </span>' + addresses[1] + ', +' + (addresses.length - 1).toString() + ' More!</p>');
 
       }
+  });
+
+  H.registerHelper('previewEmails', function(){
+    // debugger
+    if (this.teaserData.hasEmail === false) {
+      return false;
+    }
+
+    var extraData = this.teaserData.extraData,
+        emails = _.find(extraData, { 'type': 'emails' }).emailAddress,
+        openingHtml = '<p><span class="blue-title">Emails: </span>';
+
+    if (emails.length === 1){
+      return new Handlebars.SafeString(openingHtml + emails[0]);
+    } else {
+      return new Handlebars.SafeString(openingHtml + emails[0] + ', +' + (emails.length - 1).toString() + ' More!</p>');
+    }
+
+  });
+
+  H.registerHelper('previewPhones', function(){
+    // debugger
+    if (this.teaserData.hasPhone === false) {
+      return false;
+    }
+
+    var extraData = this.teaserData.extraData,
+        phoneNumbers = _.find(extraData, { 'type': 'phones' }).phoneNumber,
+        openingHtml = '<p><span class="blue-title">Phone Numbers: </span>';
+
+    if (phoneNumbers.length === 1){
+      return new Handlebars.SafeString(openingHtml + phoneNumbers[0]);
+    } else {
+      return new Handlebars.SafeString(openingHtml + phoneNumbers[0] + ', +' + (phoneNumbers.length - 1).toString() + ' More!</p>');
+    }
+  });
+
+  H.registerHelper('previewSocial', function(){
+    // debugger
+    if (this.teaserData.hasSocial === false) {
+      return false;
+    }
+
+    var extraData = this.teaserData.extraData,
+        profiles = _.find(extraData, { 'type': 'social' }).socialNetwork,
+        openingHtml = '<p><span class="blue-title">Social Profiles: </span>';
+
+    if (profiles.length <= 2){
+      var profList = profiles.join(', ');
+      return new Handlebars.SafeString(openingHtml + profList);
+    } else {
+      return new Handlebars.SafeString(openingHtml + profiles.slice(0,2).join(', ') + ', +' + (profiles.length - 2).toString() + ' More!</p>');
+    }
   });
 
 

@@ -382,17 +382,14 @@ drift.load('rgvdm473vfx2');
 
                     <div class="row">
                       <div class="col-sm-12">
-                        {{#previewAddresses}}
-                          <!-- <p>Addresses: {{previewAddresses}}</p> -->
-                        {{/previewAddresses}}
-                        {{#if emails}}
-                          <p>Emails: {{emailsCountTeaser}}</p>
-                        {{/if}}
+                        {{previewAddresses}}
 
-                        {{#if phoneNumbers}}
-                          <p>Phone Numbers: {{phoneNumbersCountTeaser}}</p>
-                        {{/if}}
+                        {{previewEmails}}
 
+                        {{previewPhones}}
+
+
+                        {{previewSocial}}
                         {{#if careers}}
                           <p>Jobs: {{careersCountTeaser}}</p>
                         {{/if}}

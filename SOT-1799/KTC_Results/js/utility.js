@@ -113,6 +113,7 @@
   };
 
   root._previewAddresses = function(addressObject){
+
     if (addressObject.Addresses === void 0){
       return [];
     }

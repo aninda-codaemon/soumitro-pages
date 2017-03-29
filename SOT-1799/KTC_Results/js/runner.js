@@ -138,9 +138,6 @@ window.addEventListener('resize', function(){
     var socialNetworks = $.map(res.social, function(item){
       return item.type.nameize();
     });
-    var Addresses = $.map(res.addresses, function(item){
-      debugger
-    });
 
     // Data elements to display - Waterfall controlled here
     var data = [
