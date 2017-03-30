@@ -272,6 +272,23 @@ hr {
   border: none;
 }
 
+.lead-part2 {
+  display: none;
+  position: relative;
+  animation: slideRight 0.75s forwards;
+}
+@keyframes slideRight {
+  0%{
+    right: 100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+.lead-part2 {
+}
+
+
 input.form-control.error, textarea.form-control.error {
   border-color: #EF1A1D;
   border-width: 2px;
@@ -1076,7 +1093,11 @@ article.contact-panel label {
     font-size: 16px;
   }
 
-
+  .form-names label.error {
+   float: none;
+   display: block;
+ }
+ 
   body {
     font-size: 18px;
   }
@@ -1170,7 +1191,12 @@ article.contact-panel label {
   #people-results .contact-panel {
     padding: 15px 20px;
   }
-
+  #people-teaser-results .row {
+    padding: 15px 0px;
+  }
+  .between-margin {
+    text-align: center;
+  }
   #footer {
     height: 300px;
   }
@@ -1423,6 +1449,9 @@ article.contact-panel label {
   .start-header p {
     font-size: 20px;
   }
+  #people-teaser-results .row {
+    padding: 5px 0px;
+  }
 
   #people-results .contact-panel {
     padding: 15px 0px;
@@ -1447,7 +1476,6 @@ article.contact-panel label {
 
   .between-margin{
     margin-top: 30px;
-    text-align: center;
   }
 
   .table-header {

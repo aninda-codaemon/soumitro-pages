@@ -101,64 +101,74 @@ drift.load('rgvdm473vfx2');
           </div>
 
           <div class="modal-body">
-            <form id="leadBox-form" class="" action="https://knowthycustomer.com/api/v4/enterprise_leads.json" method="post" data-fr-store="leadData">
-              <div class="row">
-                <div class="form-names">
-                  <div class="col-sm-6">
-                    <label for="fn">FIRST NAME</label>
-                    <input id="fn" type="text" name="lead[first_name]" value="" placeholder="First Name" class="form-control">
-                  </div>
-                  <div class="col-sm-6">
-                    <label for="ln">LAST NAME</label>
-                    <input id="ln" type="text" name="lead[last_name]" value="" placeholder="Last Name" class="form-control">
-                  </div>
-                </div>
-
-                <div class="col-sm-12">
-                  <label for="email">BUSINESS EMAIL ADDRESS</label>
-                  <input id="email-input" type="text" name="lead[email]" value="" placeholder="Email Address" class="form-control">
-                  <span class="carrot"></span>
-                  <div class="explain-box why-closed">
-                    <!-- <span class="visible-xs why-exit">X</span> -->
-                    <p>We strongly encourage you to use a business email such as name@companyname.com instead of a webmail address. This helps us ensure you're using KnowThycustomer for business purposes.</p>
-                  </div>
-                </div>
-
-                <div class="col-sm-12">
-                  <label for="phone">BUSINESS PHONE NUMBER</label>
-                  <input type="text" name="lead[phone]" value="" placeholder="Phone Number" class="form-control">
-                </div>
-
-                <div class="col-sm-12">
-                  <label for="company">COMPANY</label>
-                  <input type="text" name="lead[company]" value="" placeholder="Company" class="form-control">
-                </div>
-
-                <div class="col-sm-12">
-                  <label for="role">ROLE</label>
-                  <input type="text" name="lead[role]" value="" placeholder="Role" class="form-control">
-                </div>
-
-                <div class="col-sm-12">
-                  <label for="lead[comment]">HOW DO YOU PLAN ON USING KTC?</label>
-                  <textarea name="lead[comment]" rows="4" class= "form-control" placeholder="Enter Feedback" maxlength="255"></textarea>
-                </div>
-
-                <div id="tos">
-                  <label class="custom-checkbox">
-
-                    <input type="checkbox" name="tos" value="" class="col-xs-1">
-                    <em></em>
-                    By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="https://www.knowthycustomer.com/lp/fdafcf/7/uncategorized">Terms of Service</a> and <a href="https://www.knowthycustomer.com/lp/fdafcf/8/uncategorized">Privacy Policy</a> and you agree to receive email from KnowThyCustomer.com. We'll never sell your information or use your data as a part of our search results.
-                  </label>
-                </div>
-
+      <div class="lead-part1">
+        <form id="leadBox-form1" method="post" data-fr-store="leadDataPart1">
+          <div class="row">
+            <div class="form-names">
+              <div class="col-sm-6">
+                <label for="fn">FIRST NAME</label>
+                <input id="fn" type="text" name="lead[first_name]" value="" placeholder="First Name" class="form-control">
               </div>
-              <div class="the-buttoner">
-                <button type="submit" name="button" class="btn btn-primary">SEE RESULTS</button>
+              <div class="col-sm-6">
+                <label for="ln">LAST NAME</label>
+                <input id="ln" type="text" name="lead[last_name]" value="" placeholder="Last Name" class="form-control">
               </div>
-            </form>
+            </div>
+
+            <div class="col-sm-12">
+              <label for="email">BUSINESS EMAIL ADDRESS</label>
+              <input id="email-input" type="text" name="lead[email]" value="" placeholder="Email Address" class="form-control">
+              <span class="carrot"></span>
+              <div class="explain-box why-closed">
+                <!-- <span class="visible-xs why-exit">X</span> -->
+                <p>We strongly encourage you to use a business email such as name@companyname.com instead of a webmail address. This helps us ensure you're using KnowThycustomer for business purposes.</p>
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <label for="phone">BUSINESS PHONE NUMBER</label>
+              <input type="text" name="lead[phone]" value="" placeholder="Phone Number" class="form-control">
+            </div>
+
+            <div class="the-buttoner">
+              <button type="submit" name="button" class="btn btn-primary btn-success">CONTINUE</button>
+            </div>
           </div>
+        </form>
+      </div>
+          <div class="lead-part2">
+            <form id="leadBox-form2" class="" method="post">
+
+
+            <div class="col-sm-12">
+              <label for="company">COMPANY</label>
+              <input type="text" name="lead[company]" value="" placeholder="Company" class="form-control">
+            </div>
+
+            <div class="col-sm-12">
+              <label for="role">ROLE</label>
+              <input type="text" name="lead[role]" value="" placeholder="Role" class="form-control">
+            </div>
+
+            <div class="col-sm-12">
+              <label for="lead[comment]">HOW DO YOU PLAN ON USING KTC?</label>
+              <textarea name="lead[comment]" rows="4" class= "form-control" placeholder="Enter Feedback" maxlength="255"></textarea>
+            </div>
+
+            <div id="tos">
+              <label class="custom-checkbox">
+                <input type="checkbox" name="tos" value="" class="col-xs-1">
+                <em></em>
+                By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="https://www.knowthycustomer.com/lp/fdafcf/7/uncategorized">Terms of Service</a> and <a href="https://www.knowthycustomer.com/lp/fdafcf/8/uncategorized">Privacy Policy</a> and you agree to receive email from KnowThyCustomer.com. We'll never sell your information or use your data as a part of our search results.
+              </label>
+            </div>
+
+            <div class="the-buttoner">
+              <button type="submit" name="button" class="btn btn-primary btn-success">SEE RESULTS</button>
+            </div>
+          </form>
+        </div>
+      </div>
         </div>
       </div>
     </div>
@@ -279,7 +289,7 @@ drift.load('rgvdm473vfx2');
 
                 <div class="col-sm-12 mobile-padding-fix">
                   <article class="result contact-panel col-sm-7 col-md-8">
-                    <div class="animation-hider">
+                    <div class="animation-hider disappear">
 
                       <div class="row">
 

@@ -32,13 +32,26 @@ var apiBoxHeight = function(){
   });
 };
 
+var changeForms = function() {
+  $('#leadBox-modal .modal-header h3').text('Step 2.5: Almost done!').hide();
+  $('#leadBox-modal .modal-header h3').fadeIn();
+  $('#leadBox-modal .modal-header h4').text('Just a few more questions.').hide();
+  $('#leadBox-modal .modal-header h4').fadeIn();
+  $('.lead-part1').hide();
+  $('.lead-part2').show();
+};
+
 var checkForLead = function() {
-  var leadData = amplify.store().leadData;
-  if (leadData) {
+  var firstLead = amplify.store().leadDataPart1,
+      leadData = amplify.store().leadData;
+  if (firstLead && !leadData) {
+    $('#leadBox-modal .modal-content').css({"overflow" : "hidden"});
+    $('#leadBox-modal').modal('show');
+    changeForms();
+  } else if (leadData){
     $('#leadBox-modal').modal('hide');
   } else {
     $('#leadBox-modal').modal('show');
-    $('#fn').focus();
   }
 };
 
@@ -336,53 +349,65 @@ window.addEventListener('resize', function(){
     record.teaserData = teaserDataObj;
 
     amplify.store('currentTeaser', record);
-    // amplify.store('currentTeaser', record);
+
     $('loading-animation').hide();
-    $('#preview-box').show();
+
+    $('.animation-hider').removeClass('disappear');
     apiBoxHeight();
   });
 
 
 };
-  // Form Validations
-  var postLeadForm = function(dataArray) {
-    var formVals = {};
-      _.forEach(dataArray, function(v, k) {
-          formVals[v.name] = v.value;
-      });
+// Form Validations
+var postLeadForm = function(dataArray) {
+var formVals = {};
+  _.forEach(dataArray, function(v, k) {
+      formVals[v.name] = v.value;
+  });
 
-    var srchData = amplify.store("searchData"),
-    firstName = "",
-    lastName = "";
+var srchData = amplify.store("searchData"),
+firstName = "",
+lastName = "";
 
-    if (srchData && srchData.fn) {
-      firstName = srchData.fn || "";
-      lastName = srchData.ln || "";
-    }
+var firstLeadData = amplify.store('leadDataPart1');
 
-    var leadData = {};
-      leadData['lead[first_name]'] = formVals['lead[first_name]'] || '';
-      leadData['lead[last_name]'] = formVals['lead[last_name]'] || '';
-      leadData['lead[email]'] = formVals['lead[email]'] || '';
-      leadData['lead[company]'] = formVals['lead[company]'] || '';
-      leadData['lead[phone]'] = formVals['lead[phone]'] || '';
-      leadData['lead[role]'] = formVals['lead[role]'] || '';
-      leadData['lead[comment]'] = formVals['lead[comment]'] || '';
-      leadData['record_search[first_name]'] = firstName;
-      leadData['record_search[last_name]'] = lastName;
+// safari incognito fix if no firestLeadData
+if (!firstLeadData){
+  firstLeadData = {};
+  _forEach(safariIncognitoData, function(v,k){
+    formVals[v.name] = v.value;
+  });
+}
+if (srchData && srchData.fn) {
+  firstName = srchData.fn || "";
+  lastName = srchData.ln || "";
+}
 
+var leadData = {};
+  leadData['lead[first_name]'] = firstLeadData['lead[first_name]'] || '';
+  leadData['lead[last_name]'] = firstLeadData['lead[last_name]'] || '';
+  leadData['lead[email]'] = firstLeadData['lead[email]'] || '';
+  leadData['lead[company]'] = formVals['lead[company]'] || '';
+  leadData['lead[phone]'] = firstLeadData['lead[phone]'] || '';
+  leadData['lead[role]'] = formVals['lead[role]'] || '';
+  leadData['lead[comment]'] = formVals['lead[comment]'] || '';
+  leadData['record_search[first_name]'] = firstName;
+  leadData['record_search[last_name]'] = lastName;
 
-    var leadQueryArr = [];
+amplify.store('leadData', leadData);
 
-    _.forEach(leadData, function(v, k) {
-        leadQueryArr.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
-    });
+var leadQueryArr = [];
 
-    var leadQueryString = leadQueryArr.join('&');
-    $.post("https://www.knowthycustomer.com/api/v4/enterprise_leads.json", leadQueryString);
-  };
+_.forEach(leadData, function(v, k) {
+    leadQueryArr.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
+});
 
-  $leadForm = $('#leadBox-form');
+var leadQueryString = leadQueryArr.join('&');
+$.post("https://www.knowthycustomer.com/api/v4/enterprise_leads.json", leadQueryString);
+};
+
+$leadForm1 = $('#leadBox-form1');
+$leadForm2 = $('#leadBox-form2');
 
   $.validator.addMethod("phoneUS", function (phone_number, element) {
     phone_number = phone_number.replace(/\s+/g, "");
@@ -390,49 +415,68 @@ window.addEventListener('resize', function(){
     phone_number.match(/^(\+?1-?)?(\([2-9]([02-9]\d|1[02-9])\)|[2-9]([02-9]\d|1[02-9]))-?[2-9]([02-9]\d|1[02-9])-?\d{4}$/);
   }, "Please specify a valid phone number");
 
- $leadForm.validate({
+  $leadForm1.validate({
 
-    rules: {
-      "lead[first_name]": "required",
-      "lead[last_name]": "required",
-      "lead[email]": {
-        required: true,
-        email: true
+      rules: {
+        "lead[first_name]": "required",
+        "lead[last_name]": "required",
+        "lead[email]": {
+          required: true,
+          email: true
+        },
+        "lead[phone]": {
+          required: true,
+          phoneUS: true
+        },
+
       },
-      "lead[phone]": {
-        required: true,
-        phoneUS: true
+
+      messages: {
+        "lead[first_name]": "Please enter a first name",
+        "lead[last_name]": "Please enter a last name",
+        "lead[email]": "Please enter a valid email",
+        "lead[phone]": "Please enter a valid phone",
       },
-      "lead[company]": "required",
-      "lead[role]": "required",
-      "lead[comment]": "required",
-      tos: "required"
-    },
 
-    messages: {
-      "lead[first_name]": "Please enter",
-      "lead[last_name]": "Please enter",
-      "lead[email]": "Please enter a valid email",
-      "lead[phone]": "Please enter a valid phone",
-      "lead[company]": "Please enter a company",
-      "lead[role]": "Please enter a role",
-      "lead[comment]": "Please provide feedback",
-      tos: "Please accept our Terms of Service"
-    },
+      errorPlacement: function(error, element){
+        error.insertBefore(element);
+      },
 
-    errorPlacement: function(error, element){
-      error.insertBefore(element);
-    },
+      submitHandler: function(form, e) {
+        e.preventDefault();
+        trackNL('KTC LeadBox Part1 - Submitted');
+        changeForms();
+        $('#leadBox-modal .modal-content').css({"overflow" : "hidden"});
+        safariIncognitoData = $(form).serializeArray();
 
-    submitHandler: function(form, e) {
-      e.preventDefault();
-      trackNL('KTC LeadBox - Submitted');
-      postLeadForm($(form).serializeArray());
+      }
+    });
 
-      $('#leadBox-modal').modal('hide');
-      dataLayer.push({'event': 'ktc-lead-submit'});
-    }
-  });
+      $leadForm2.validate({
+        rules: {
+          "lead[company]": "required",
+          "lead[role]": "required",
+          "lead[comment]": "required",
+          tos: "required"
+        },
+        messages : {
+          "lead[company]": "Please enter a company",
+          "lead[role]": "Please enter a role",
+          "lead[comment]": "Please provide feedback",
+          tos: "Please accept our Terms of Service"
+        },
+        errorPlacement: function(error, element){
+          error.insertBefore(element);
+        },
+        submitHandler: function(form, e) {
+          e.preventDefault();
+          trackNL('KTC LeadBox Part2 - Submitted');
+          postLeadForm($(form).serializeArray());
+
+          $('#leadBox-modal').modal('hide');
+          dataLayer.push({'event': 'ktc-lead-submit'});
+        }
+      });
 
   //Transition to search animation
 var changeLoadingText = function(searchType) {
@@ -486,7 +530,8 @@ var setCurrentRecord = function(){
 };
 
 var changePreviewBox = function(record) {
-  $('#preview-box').hide();
+  // debugger
+  $('.animation-hider').addClass('disappear');
   $('.loading-animation').show();
 
   var dataPath = record.data("fr-bound2"),
@@ -545,6 +590,7 @@ $('#people-teaser-results .row').click(function(e){
   if ($(e.currentTarget).is($selectedRecord)){
     return;
   } else {
+
     $selectedRecord.removeClass('selected');
     $selectedRecord.find('button').text('Preview').removeClass('active');
 
@@ -571,7 +617,7 @@ $('#leadBox-modal').scroll(function(){
     apiBoxHeight();
     setLastVisit();
     setColumnState();
-    // checkForLead();
+    checkForLead();
 
     /* IE10/11 inserts textarea placeholder content as actual innerHTML.
    Override this by clearing textarea value onload */
