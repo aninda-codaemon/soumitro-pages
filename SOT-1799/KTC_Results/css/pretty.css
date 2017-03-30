@@ -285,7 +285,24 @@ hr {
     right: 0%;
   }
 }
-.lead-part2 {
+.teaser-data.active p{
+  animation: slide-right 0.60s forwards ease-out;
+  position: relative;
+  left: -100%;
+}
+
+.teaser-data {
+  overflow-x: hidden;
+}
+
+@keyframes slide-right {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 0%;
+  }
 }
 
 
@@ -1097,7 +1114,7 @@ article.contact-panel label {
    float: none;
    display: block;
  }
- 
+
   body {
     font-size: 18px;
   }

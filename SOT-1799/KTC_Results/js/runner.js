@@ -1,7 +1,8 @@
 ;(function ($) {
 
   var currentTeaser,
-      $selectedRecord;
+      $selectedRecord,
+      firstLoad = true;
 
   var trackNL = function (evtName, props) {
     if (typeof nolimit !== 'undefined' && nolimit.track) {
@@ -19,7 +20,6 @@
       }
     }
   };
-
 
 //sets max-width for api boxes to be neighbor height
 var apiBoxHeight = function(){
@@ -54,33 +54,6 @@ var checkForLead = function() {
     $('#leadBox-modal').modal('show');
   }
 };
-
-window.addEventListener('resize', function(){
-  apiBoxHeight();
-  if ($('.explain-box').hasClass('why-closed')){
-      $('.carrot').hide();
-  }
-});
-
-  // set column state for mobile teaser data
-
-  var setColumnState = function() {
-    var teaserPreview = $('.mobile-subject-teaser .teaser-preview');
-
-    if (teaserPreview.length === 1) {
-      teaserPreview.css('width', '100%');
-    }
-  };
-
-  // Set current year inside footer
-  ;(function ($) {
-    var currentDate = new Date(),
-        currentYear = currentDate.getFullYear(),
-        $currentYear = $('.current-year');
-
-    $currentYear.html(currentYear);
-  }(jQuery));
-
 
   var $bounceBackBtn = $('#iModal-back'),
       $bounceExitBtn = $('#iModal-exit'),
@@ -350,12 +323,26 @@ window.addEventListener('resize', function(){
 
     amplify.store('currentTeaser', record);
 
-    $('loading-animation').hide();
-
+    // $('loading-animation').hide();
+    // debugger
     $('.animation-hider').removeClass('disappear');
     apiBoxHeight();
+    if (!firstLoad){
+      if (!$('.teaser-data').hasClass('active')){
+        $('.teaser-data').addClass('active');
+      }
+      animationStation();
+    }
+    firstLoad = false;
   });
 
+var animationStation = function() {
+  $('.data-box').scrollTop($('.data-box')[0].scrollHeight - $('.data-box')[0].clientHeight);
+  $('.data-box').animate({"scrollTop":"0px"}, 800);
+  $('.teaser-data p').each(function(idx){
+    $(this).css({'animation-delay' : (0.25 *  idx) + 's'});
+  });
+};
 
 };
 // Form Validations
@@ -532,7 +519,7 @@ var setCurrentRecord = function(){
 var changePreviewBox = function(record) {
   // debugger
   $('.animation-hider').addClass('disappear');
-  $('.loading-animation').show();
+  // $('.loading-animation').show();
 
   var dataPath = record.data("fr-bound2"),
       data = framerida.dataFromDataPath(dataPath);
@@ -579,6 +566,13 @@ $('#email-input').focus(function(){
   $('.carrot').fadeIn();
 });
 
+window.addEventListener('resize', function(){
+  apiBoxHeight();
+  if ($('.explain-box').hasClass('why-closed')){
+      $('.carrot').hide();
+  }
+});
+
 $('#email-input').blur(function(){
   $('.explain-box').fadeOut().addClass('why-closed');
   $('.carrot').fadeOut();
@@ -616,8 +610,8 @@ $('#leadBox-modal').scroll(function(){
     showResults();
     apiBoxHeight();
     setLastVisit();
-    setColumnState();
-    checkForLead();
+
+    // checkForLead();
 
     /* IE10/11 inserts textarea placeholder content as actual innerHTML.
    Override this by clearing textarea value onload */
