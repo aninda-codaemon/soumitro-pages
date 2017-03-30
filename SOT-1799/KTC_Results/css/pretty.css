@@ -146,7 +146,7 @@ h3.result-age {
   font-size: 20px;
   margin-bottom: 0px;
   font-family: 'halis_rblack';
-  color: #19B2CC;
+
 }
 
 .head-place {
@@ -372,12 +372,21 @@ label.error {
 
 
 .loading-animation {
-  display: none;
+  /*display: none;*/
   text-align: center;
 }
-.loading-animation h2,
-.loading-animation h3 {
-  color: white;
+
+.loading-headers {
+  font-size: 36px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 50px;
+  left: -5px;
+}
+
+.loading-headers img {
+  margin-top: 20px;
 }
 
 .loading-animation h3 {
@@ -631,6 +640,10 @@ label.error {
   background: #fff;
   margin-bottom: 30px;
   /*box-shadow: 0 0 6px 0 rgba(0,0,0,0.22);*/
+}
+
+#current-teaser .contact-panel {
+  padding: 30px 40px;
 }
 
 .contact-panel h3 {
@@ -1208,6 +1221,9 @@ article.contact-panel label {
   #people-results .contact-panel {
     padding: 15px 20px;
   }
+  #current-teaser .contact-panel {
+    padding: 30px;
+  }
   #people-teaser-results .row {
     padding: 15px 0px;
   }
@@ -1472,6 +1488,10 @@ article.contact-panel label {
 
   #people-results .contact-panel {
     padding: 15px 0px;
+  }
+
+  #current-teaser .contact-panel {
+    padding: 15px;
   }
 
   .mobile-padding-fix {
@@ -1878,21 +1898,21 @@ article.contact-panel label {
 /*Force min height for loading page depending on window size*/
 
 @media (min-height: 1050px) and (min-width: 768px) {
-  .loading-animation {
+  /*.loading-animation {
     min-height: 800px;
-  }
+  }*/
 }
 
 @media (min-height: 1080px) and (min-width: 992px) {
-  .loading-animation {
+  /*.loading-animation {
     min-height: 750px;
-  }
+  }*/
 }
 
 @media (min-height: 1215px) and (min-width: 1400px) {
-  .loading-animation {
+  /*.loading-animation {
     min-height: 600px;
-  }
+  }*/
 }
 
 .flip_panel {

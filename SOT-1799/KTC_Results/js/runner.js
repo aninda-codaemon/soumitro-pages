@@ -21,17 +21,6 @@
     }
   };
 
-//sets max-width for api boxes to be neighbor height
-var apiBoxHeight = function(){
-  $('article').each(function(index, article){
-    var $apiBox = $(article).next();
-    // $apiBox.css({'max-height' : $(article).innerHeight()})
-    var $dataBox = $apiBox.find('.data-box');
-    //-20 is for the padding
-    $dataBox.css({'max-height' : $(article).innerHeight() - $apiBox.find('h5').outerHeight(true) - 20});
-  });
-};
-
 var changeForms = function() {
   $('#leadBox-modal .modal-header h3').text('Step 2.5: Almost done!').hide();
   $('#leadBox-modal .modal-header h3').fadeIn();
@@ -39,20 +28,6 @@ var changeForms = function() {
   $('#leadBox-modal .modal-header h4').fadeIn();
   $('.lead-part1').hide();
   $('.lead-part2').show();
-};
-
-var checkForLead = function() {
-  var firstLead = amplify.store().leadDataPart1,
-      leadData = amplify.store().leadData;
-  if (firstLead && !leadData) {
-    $('#leadBox-modal .modal-content').css({"overflow" : "hidden"});
-    $('#leadBox-modal').modal('show');
-    changeForms();
-  } else if (leadData){
-    $('#leadBox-modal').modal('hide');
-  } else {
-    $('#leadBox-modal').modal('show');
-  }
 };
 
   var $bounceBackBtn = $('#iModal-back'),
@@ -325,7 +300,8 @@ var checkForLead = function() {
 
     // $('loading-animation').hide();
     // debugger
-    $('.animation-hider').removeClass('disappear');
+    $('.loading-headers').css({"visibility" : "hidden"});
+    $('.animation-hider, .data-box, .api-box h5').removeClass('disappear');
     apiBoxHeight();
     if (!firstLoad){
       if (!$('.teaser-data').hasClass('active')){
@@ -345,187 +321,164 @@ var animationStation = function() {
 };
 
 };
-// Form Validations
+
 var postLeadForm = function(dataArray) {
-var formVals = {};
-  _.forEach(dataArray, function(v, k) {
+  var formVals = {};
+    _.forEach(dataArray, function(v, k) {
+        formVals[v.name] = v.value;
+    });
+
+  var srchData = amplify.store("searchData"),
+  firstName = "",
+  lastName = "";
+
+  var firstLeadData = amplify.store('leadDataPart1');
+
+  // safari incognito fix if no firestLeadData
+  if (!firstLeadData){
+    firstLeadData = {};
+    _forEach(safariIncognitoData, function(v,k){
       formVals[v.name] = v.value;
+    });
+  }
+  if (srchData && srchData.fn) {
+    firstName = srchData.fn || "";
+    lastName = srchData.ln || "";
+  }
+
+  var leadData = {};
+    leadData['lead[first_name]'] = firstLeadData['lead[first_name]'] || '';
+    leadData['lead[last_name]'] = firstLeadData['lead[last_name]'] || '';
+    leadData['lead[email]'] = firstLeadData['lead[email]'] || '';
+    leadData['lead[company]'] = formVals['lead[company]'] || '';
+    leadData['lead[phone]'] = firstLeadData['lead[phone]'] || '';
+    leadData['lead[role]'] = formVals['lead[role]'] || '';
+    leadData['lead[comment]'] = formVals['lead[comment]'] || '';
+    leadData['record_search[first_name]'] = firstName;
+    leadData['record_search[last_name]'] = lastName;
+
+  amplify.store('leadData', leadData);
+
+  var leadQueryArr = [];
+
+  _.forEach(leadData, function(v, k) {
+      leadQueryArr.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
   });
 
-var srchData = amplify.store("searchData"),
-firstName = "",
-lastName = "";
-
-var firstLeadData = amplify.store('leadDataPart1');
-
-// safari incognito fix if no firestLeadData
-if (!firstLeadData){
-  firstLeadData = {};
-  _forEach(safariIncognitoData, function(v,k){
-    formVals[v.name] = v.value;
-  });
-}
-if (srchData && srchData.fn) {
-  firstName = srchData.fn || "";
-  lastName = srchData.ln || "";
-}
-
-var leadData = {};
-  leadData['lead[first_name]'] = firstLeadData['lead[first_name]'] || '';
-  leadData['lead[last_name]'] = firstLeadData['lead[last_name]'] || '';
-  leadData['lead[email]'] = firstLeadData['lead[email]'] || '';
-  leadData['lead[company]'] = formVals['lead[company]'] || '';
-  leadData['lead[phone]'] = firstLeadData['lead[phone]'] || '';
-  leadData['lead[role]'] = formVals['lead[role]'] || '';
-  leadData['lead[comment]'] = formVals['lead[comment]'] || '';
-  leadData['record_search[first_name]'] = firstName;
-  leadData['record_search[last_name]'] = lastName;
-
-amplify.store('leadData', leadData);
-
-var leadQueryArr = [];
-
-_.forEach(leadData, function(v, k) {
-    leadQueryArr.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
-});
-
-var leadQueryString = leadQueryArr.join('&');
-$.post("https://www.knowthycustomer.com/api/v4/enterprise_leads.json", leadQueryString);
+  var leadQueryString = leadQueryArr.join('&');
+  $.post("https://www.knowthycustomer.com/api/v4/enterprise_leads.json", leadQueryString);
 };
+
+// Form Validations
 
 $leadForm1 = $('#leadBox-form1');
 $leadForm2 = $('#leadBox-form2');
 
-  $.validator.addMethod("phoneUS", function (phone_number, element) {
-    phone_number = phone_number.replace(/\s+/g, "");
-    return this.optional(element) || phone_number.length > 9 &&
-    phone_number.match(/^(\+?1-?)?(\([2-9]([02-9]\d|1[02-9])\)|[2-9]([02-9]\d|1[02-9]))-?[2-9]([02-9]\d|1[02-9])-?\d{4}$/);
-  }, "Please specify a valid phone number");
+$.validator.addMethod("phoneUS", function (phone_number, element) {
+  phone_number = phone_number.replace(/\s+/g, "");
+  return this.optional(element) || phone_number.length > 9 &&
+  phone_number.match(/^(\+?1-?)?(\([2-9]([02-9]\d|1[02-9])\)|[2-9]([02-9]\d|1[02-9]))-?[2-9]([02-9]\d|1[02-9])-?\d{4}$/);
+}, "Please specify a valid phone number");
 
-  $leadForm1.validate({
+$leadForm1.validate({
 
+    rules: {
+      "lead[first_name]": "required",
+      "lead[last_name]": "required",
+      "lead[email]": {
+        required: true,
+        email: true
+      },
+      "lead[phone]": {
+        required: true,
+        phoneUS: true
+      },
+
+    },
+
+    messages: {
+      "lead[first_name]": "Please enter a first name",
+      "lead[last_name]": "Please enter a last name",
+      "lead[email]": "Please enter a valid email",
+      "lead[phone]": "Please enter a valid phone",
+    },
+
+    errorPlacement: function(error, element){
+      error.insertBefore(element);
+    },
+
+    submitHandler: function(form, e) {
+      e.preventDefault();
+      trackNL('KTC LeadBox Part1 - Submitted');
+      changeForms();
+      $('#leadBox-modal .modal-content').css({"overflow" : "hidden"});
+      safariIncognitoData = $(form).serializeArray();
+
+    }
+  });
+
+    $leadForm2.validate({
       rules: {
-        "lead[first_name]": "required",
-        "lead[last_name]": "required",
-        "lead[email]": {
-          required: true,
-          email: true
-        },
-        "lead[phone]": {
-          required: true,
-          phoneUS: true
-        },
-
+        "lead[company]": "required",
+        "lead[role]": "required",
+        "lead[comment]": "required",
+        tos: "required"
       },
-
-      messages: {
-        "lead[first_name]": "Please enter a first name",
-        "lead[last_name]": "Please enter a last name",
-        "lead[email]": "Please enter a valid email",
-        "lead[phone]": "Please enter a valid phone",
+      messages : {
+        "lead[company]": "Please enter a company",
+        "lead[role]": "Please enter a role",
+        "lead[comment]": "Please provide feedback",
+        tos: "Please accept our Terms of Service"
       },
-
       errorPlacement: function(error, element){
         error.insertBefore(element);
       },
-
       submitHandler: function(form, e) {
         e.preventDefault();
-        trackNL('KTC LeadBox Part1 - Submitted');
-        changeForms();
-        $('#leadBox-modal .modal-content').css({"overflow" : "hidden"});
-        safariIncognitoData = $(form).serializeArray();
+        trackNL('KTC LeadBox Part2 - Submitted');
+        postLeadForm($(form).serializeArray());
 
+        $('#leadBox-modal').modal('hide');
+        dataLayer.push({'event': 'ktc-lead-submit'});
       }
     });
 
-      $leadForm2.validate({
-        rules: {
-          "lead[company]": "required",
-          "lead[role]": "required",
-          "lead[comment]": "required",
-          tos: "required"
-        },
-        messages : {
-          "lead[company]": "Please enter a company",
-          "lead[role]": "Please enter a role",
-          "lead[comment]": "Please provide feedback",
-          tos: "Please accept our Terms of Service"
-        },
-        errorPlacement: function(error, element){
-          error.insertBefore(element);
-        },
-        submitHandler: function(form, e) {
-          e.preventDefault();
-          trackNL('KTC LeadBox Part2 - Submitted');
-          postLeadForm($(form).serializeArray());
-
-          $('#leadBox-modal').modal('hide');
-          dataLayer.push({'event': 'ktc-lead-submit'});
-        }
-      });
-
   //Transition to search animation
-var changeLoadingText = function(searchType) {
-    $loadingText = $('.loading-animation h3');
-    window.setTimeout(function(){
-      $loadingText.hide();
-      $loadingText.text('Looking Up Billions of Records...').fadeIn();
-      window.setTimeout(function(){
-        $loadingText.hide();
-        $loadingText.text('Building Sample Report...').fadeIn();
-        window.setTimeout(function(){
-          showResults(searchType);
-        }, 7000);
-      }, 7000);
-    },7000);
-};
-
-var startLoading = function(searchType) {
-  $('body').scrollTop(0);
-  $('.loading-animation').show();
-
-  switch (searchType) {
-    case 'people':
-    $('#people_loading').removeClass('loading-hidden');
-      break;
-    case 'phone':
-      $('#phone_loading').removeClass('loading-hidden');
-      break;
-    case 'email':
-      $('#email_loading').removeClass('loading-hidden');
-      break;
-    case 'property':
-      $('#property_loading').removeClass('loading-hidden');
-      break;
-  }
-  changeLoadingText(searchType);
-};
-
-var setCurrentRecord = function(){
-
-  if (!amplify.store().peopleData){
-    return;
-  }
-
-  // first record set in sorter in html script
-  getExtraTeaserData(firstRecord.record);
-  currentTeaser = firstRecord.record;
-  $selectedRecord = $('#people-teaser-results .row').first();
-  $selectedRecord.find('button').text('In Preview');
-  $selectedRecord.addClass('selected');
-};
-
-var changePreviewBox = function(record) {
-  // debugger
-  $('.animation-hider').addClass('disappear');
-  // $('.loading-animation').show();
-
-  var dataPath = record.data("fr-bound2"),
-      data = framerida.dataFromDataPath(dataPath);
-
-  getExtraTeaserData(data);
-};
+// var changeLoadingText = function(searchType) {
+//     $loadingText = $('.loading-animation h3');
+//     window.setTimeout(function(){
+//       $loadingText.hide();
+//       $loadingText.text('Looking Up Billions of Records...').fadeIn();
+//       window.setTimeout(function(){
+//         $loadingText.hide();
+//         $loadingText.text('Building Sample Report...').fadeIn();
+//         window.setTimeout(function(){
+//           showResults(searchType);
+//         }, 7000);
+//       }, 7000);
+//     },7000);
+// };
+//
+// var startLoading = function(searchType) {
+//   $('body').scrollTop(0);
+//   $('.loading-animation').show();
+//
+//   switch (searchType) {
+//     case 'people':
+//     $('#people_loading').removeClass('loading-hidden');
+//       break;
+//     case 'phone':
+//       $('#phone_loading').removeClass('loading-hidden');
+//       break;
+//     case 'email':
+//       $('#email_loading').removeClass('loading-hidden');
+//       break;
+//     case 'property':
+//       $('#property_loading').removeClass('loading-hidden');
+//       break;
+//   }
+//   changeLoadingText(searchType);
+// };
 
 var clickedPanel;
 $('.contact-panel').click(function(){
@@ -537,34 +490,6 @@ $('.contact-panel').click(function(){
   clickedPanel = this;
 });
 
-var showResults = function() {
-  var searched,
-      data = amplify.store().searchData;
-
-  if (data.fn) {
-    $('#people-results').show();
-    $('#more-results').show();
-  } else if (data.phone) {
-    $('#phone-results').show();
-  } else if (data.email){
-    $('#email-results').show();
-  } else if (data.address) {
-    $('#property-results').show();
-  }
-};
-
-$('.flip-dat-shit').click(function(){
-  $('.flip_panel').addClass('flip');
-});
-
-$('.flip-back').click(function(){
-  $('.flip_panel').removeClass('flip');
-});
-
-$('#email-input').focus(function(){
-  $('.explain-box').fadeIn().removeClass('why-closed');
-  $('.carrot').fadeIn();
-});
 
 window.addEventListener('resize', function(){
   apiBoxHeight();
@@ -604,6 +529,83 @@ $('#leadBox-modal').scroll(function(){
   $('#leadBox-modal input').toggleClass('force-redraw');
   $('#leadBox-modal textarea').toggleClass('force-redraw');
 });
+
+var showResults = function() {
+  var searched,
+      data = amplify.store().searchData;
+
+  if (data.fn) {
+    $('#people-results').show();
+    $('#more-results').show();
+  } else if (data.phone) {
+    $('#phone-results').show();
+  } else if (data.email){
+    $('#email-results').show();
+  } else if (data.address) {
+    $('#property-results').show();
+  }
+};
+
+$('.flip-dat-shit').click(function(){
+  $('.flip_panel').addClass('flip');
+});
+
+$('.flip-back').click(function(){
+  $('.flip_panel').removeClass('flip');
+});
+
+$('#email-input').focus(function(){
+  $('.explain-box').fadeIn().removeClass('why-closed');
+  $('.carrot').fadeIn();
+});
+
+var setCurrentRecord = function(){
+
+  if (!amplify.store().peopleData){
+    return;
+  }
+
+  // first record set in sorter in html script
+  getExtraTeaserData(firstRecord.record);
+  currentTeaser = firstRecord.record;
+  $selectedRecord = $('#people-teaser-results .row').first();
+  $selectedRecord.find('button').text('In Preview');
+  $selectedRecord.addClass('selected');
+};
+
+var changePreviewBox = function(record) {
+  $('.animation-hider, .data-box, .api-box h5').addClass('disappear');
+  $('.loading-headers').css({"visibility" : "visible"});
+  var dataPath = record.data("fr-bound2"),
+      data = framerida.dataFromDataPath(dataPath);
+
+  getExtraTeaserData(data);
+};
+
+//sets max-width for api boxes to be neighbor height
+var apiBoxHeight = function(){
+  $('article').each(function(index, article){
+    var $apiBox = $(article).next();
+    // $apiBox.css({'max-height' : $(article).innerHeight()})
+    var $dataBox = $apiBox.find('.data-box');
+    //-20 is for the padding
+    $dataBox.css({'max-height' : $(article).innerHeight() - $apiBox.find('h5').outerHeight(true) - 20});
+  });
+};
+
+var checkForLead = function() {
+  var firstLead = amplify.store().leadDataPart1,
+      leadData = amplify.store().leadData;
+  if (firstLead && !leadData) {
+    $('#leadBox-modal .modal-content').css({"overflow" : "hidden"});
+    $('#leadBox-modal').modal('show');
+    changeForms();
+  } else if (leadData){
+    $('#leadBox-modal').modal('hide');
+  } else {
+    $('#leadBox-modal').modal('show');
+  }
+};
 
   var initialize = function () {
     setCurrentRecord();

@@ -84,94 +84,93 @@ drift.load('rgvdm473vfx2');
       <!-- LeadBox Modal -->
 
       <div class="modal fade" id="leadBox-modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false" >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <div class="row">
-              <div class="col-xs-10">
-                <h3>Step 2: Tell us about yourself.</h3>
-                <h4>And see your test result.</h4>
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="row">
+                <div class="col-xs-10">
+                  <h3>Step 2: Tell us about yourself.</h3>
+                  <h4>And see your test result.</h4>
+                </div>
+
+                <div class="col-xs-2 lock">
+                  <img src="img/Lock.svg" alt="" class=""/>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="modal-body">
+              <div class="lead-part1">
+                <form id="leadBox-form1" method="post" data-fr-store="leadDataPart1">
+                  <div class="row">
+                    <div class="form-names">
+                      <div class="col-sm-6">
+                        <label for="fn">FIRST NAME</label>
+                        <input id="fn" type="text" name="lead[first_name]" value="" placeholder="First Name" class="form-control">
+                      </div>
+                      <div class="col-sm-6">
+                        <label for="ln">LAST NAME</label>
+                        <input id="ln" type="text" name="lead[last_name]" value="" placeholder="Last Name" class="form-control">
+                      </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <label for="email">BUSINESS EMAIL ADDRESS</label>
+                        <input id="email-input" type="text" name="lead[email]" value="" placeholder="Email Address" class="form-control">
+                        <span class="carrot"></span>
+                        <div class="explain-box why-closed">
+                          <!-- <span class="visible-xs why-exit">X</span> -->
+                          <p>We strongly encourage you to use a business email such as name@companyname.com instead of a webmail address. This helps us ensure you're using KnowThycustomer for business purposes.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                      <label for="phone">BUSINESS PHONE NUMBER</label>
+                      <input type="text" name="lead[phone]" value="" placeholder="Phone Number" class="form-control">
+                    </div>
+
+                    <div class="the-buttoner">
+                      <button type="submit" name="button" class="btn btn-primary btn-success">CONTINUE</button>
+                    </div>
+                  </div>
+                </form>
               </div>
 
-              <div class="col-xs-2 lock">
-                <img src="img/Lock.svg" alt="" class=""/>
-              </div>
+              <div class="lead-part2">
+                <form id="leadBox-form2" class="" method="post">
+                  <div class="col-sm-12">
+                    <label for="company">COMPANY</label>
+                    <input type="text" name="lead[company]" value="" placeholder="Company" class="form-control">
+                  </div>
 
+                  <div class="col-sm-12">
+                    <label for="role">ROLE</label>
+                    <input type="text" name="lead[role]" value="" placeholder="Role" class="form-control">
+                  </div>
+
+                  <div class="col-sm-12">
+                    <label for="lead[comment]">HOW DO YOU PLAN ON USING KTC?</label>
+                    <textarea name="lead[comment]" rows="4" class= "form-control" placeholder="Enter Feedback" maxlength="255"></textarea>
+                  </div>
+
+                  <div id="tos">
+                    <label class="custom-checkbox">
+                      <input type="checkbox" name="tos" value="" class="col-xs-1">
+                      <em></em>
+                      By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="https://www.knowthycustomer.com/lp/fdafcf/7/uncategorized">Terms of Service</a> and <a href="https://www.knowthycustomer.com/lp/fdafcf/8/uncategorized">Privacy Policy</a> and you agree to receive email from KnowThyCustomer.com. We'll never sell your information or use your data as a part of our search results.
+                    </label>
+                  </div>
+
+                  <div class="the-buttoner">
+                    <button type="submit" name="button" class="btn btn-primary btn-success">SEE RESULTS</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
-
-          <div class="modal-body">
-      <div class="lead-part1">
-        <form id="leadBox-form1" method="post" data-fr-store="leadDataPart1">
-          <div class="row">
-            <div class="form-names">
-              <div class="col-sm-6">
-                <label for="fn">FIRST NAME</label>
-                <input id="fn" type="text" name="lead[first_name]" value="" placeholder="First Name" class="form-control">
-              </div>
-              <div class="col-sm-6">
-                <label for="ln">LAST NAME</label>
-                <input id="ln" type="text" name="lead[last_name]" value="" placeholder="Last Name" class="form-control">
-              </div>
-            </div>
-
-            <div class="col-sm-12">
-              <label for="email">BUSINESS EMAIL ADDRESS</label>
-              <input id="email-input" type="text" name="lead[email]" value="" placeholder="Email Address" class="form-control">
-              <span class="carrot"></span>
-              <div class="explain-box why-closed">
-                <!-- <span class="visible-xs why-exit">X</span> -->
-                <p>We strongly encourage you to use a business email such as name@companyname.com instead of a webmail address. This helps us ensure you're using KnowThycustomer for business purposes.</p>
-              </div>
-            </div>
-
-            <div class="col-sm-12">
-              <label for="phone">BUSINESS PHONE NUMBER</label>
-              <input type="text" name="lead[phone]" value="" placeholder="Phone Number" class="form-control">
-            </div>
-
-            <div class="the-buttoner">
-              <button type="submit" name="button" class="btn btn-primary btn-success">CONTINUE</button>
-            </div>
-          </div>
-        </form>
-      </div>
-          <div class="lead-part2">
-            <form id="leadBox-form2" class="" method="post">
-
-
-            <div class="col-sm-12">
-              <label for="company">COMPANY</label>
-              <input type="text" name="lead[company]" value="" placeholder="Company" class="form-control">
-            </div>
-
-            <div class="col-sm-12">
-              <label for="role">ROLE</label>
-              <input type="text" name="lead[role]" value="" placeholder="Role" class="form-control">
-            </div>
-
-            <div class="col-sm-12">
-              <label for="lead[comment]">HOW DO YOU PLAN ON USING KTC?</label>
-              <textarea name="lead[comment]" rows="4" class= "form-control" placeholder="Enter Feedback" maxlength="255"></textarea>
-            </div>
-
-            <div id="tos">
-              <label class="custom-checkbox">
-                <input type="checkbox" name="tos" value="" class="col-xs-1">
-                <em></em>
-                By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="https://www.knowthycustomer.com/lp/fdafcf/7/uncategorized">Terms of Service</a> and <a href="https://www.knowthycustomer.com/lp/fdafcf/8/uncategorized">Privacy Policy</a> and you agree to receive email from KnowThyCustomer.com. We'll never sell your information or use your data as a part of our search results.
-              </label>
-            </div>
-
-            <div class="the-buttoner">
-              <button type="submit" name="button" class="btn btn-primary btn-success">SEE RESULTS</button>
-            </div>
-          </form>
         </div>
       </div>
-        </div>
-      </div>
-    </div>
       <!-- Header Container -->
 
 
@@ -212,21 +211,10 @@ drift.load('rgvdm473vfx2');
               <div class="col-sm-12">
                 <div class="row">
                   <div class="start-header col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0">
-
-                      <h1>Step 3: Review Test Result</h1>
-                      <p>Pick one of the options below and preview their report.</p>
-
+                    <h1>Step 3: Review Test Result</h1>
+                    <p>Pick one of the options below and preview their report.</p>
                   </div>
-
                 </div>
-
-                <!-- <div id="more-results" data-fr-bind="peopleData">
-                  <h3>
-                    {{moreThanFive}}
-                  </h3>
-                </div> -->
-
-
 
                 <div class="results" id="people-results">
 
@@ -270,13 +258,13 @@ drift.load('rgvdm473vfx2');
                               </div>
                             </div>
                           </div>
-                        </table>
+                        </div>
                       </article>
                     </div>
 
 
                 </div>
-              </div>
+
               <div class="row">
                 <div class="col-sm-12 between-margin">
                   <p>See a Preview of the Full Report:</p>
@@ -340,11 +328,18 @@ drift.load('rgvdm473vfx2');
                         </div>
                       </div>
                     </div>
+
+                    <div class="loading-headers">
+                      <h3>Retrieving Data...</h3>
+                      <!-- gifs exported from hype weren't looping indefinitely, changed to PS and all was good -->
+                      <img src="img/KTCLogo-Animation.gif" alt="">
+                    </div>
+
                   </article>
 
                   <div class="col-sm-5 col-md-4 api-box">
-                    <h5>API Data</h5>
-                    <div class="data-box">
+                    <h5 class="disappear">API Data</h5>
+                    <div class="data-box disappear">
                       <pre>
                         {{previewPrettyRecord}}
                       </pre>
@@ -352,14 +347,11 @@ drift.load('rgvdm473vfx2');
                   </div>
                 </div>
               </div>
-              <div class="loading-animation">
-                <div class="loading-headers" id="people_loading" data-fr-bind="searchData">
-                  <h3>Retrieving Data...</h3>
-                </div>
 
                 <!-- <div id="ktclogoanimation_hype_container" style="margin:auto;position:relative;width:150px;height:150px;overflow:hidden;" aria-live="polite">
                 <script type="text/javascript" charset="utf-8" src="js/ktclogoanimation_hype_generated_script.js?67886"></script>
               </div> -->
+
 
             </div>
             </div>
@@ -395,27 +387,27 @@ drift.load('rgvdm473vfx2');
                       <div class="row">
                         <div class="col-sm-12">
                           {{#if lineType}}
-                            <p>Line Type: {{lineType}}</p>
+                            <p><span class="blue-title">Line Type:</span> {{lineType}}</p>
                           {{/if}}
 
                           {{#if carrier}}
-                            <p>Carrier: {{carrier}}</p>
+                            <p><span class="blue-title">Carrier:</span> {{carrier}}</p>
                           {{/if}}
 
                           {{#if phoneNumbers}}
-                            <p>Phone Numbers: {{phoneNumbers}}</p>
+                            <p><span class="blue-title">Phone Numbers:</span> {{phoneNumbers}}</p>
                           {{/if}}
 
                           {{#if businesses}}
-                            <p>Business: {{businesses}}</p>
+                            <p><span class="blue-title">Business:</span> {{businesses}}</p>
                           {{/if}}
 
                           {{#if spamScore}}
-                            <p>Spam Score: {{spamScore}}</p>
+                            <p><span class="blue-title">Spam Score:</span> {{spamScore}}</p>
                           {{/if}}
 
                           {{#if comments}}
-                            <p>Comments: {{comments}}</p>
+                            <p><span class="blue-title">Comments:</span> {{comments}}</p>
                           {{/if}}
 
                           <p>
@@ -479,23 +471,23 @@ drift.load('rgvdm473vfx2');
                     <div class="row">
                       <div class="col-sm-12">
                         {{#if socialProfiles}}
-                          <p>Social Profiles: {{profilesCountTeaser}}</p>
+                          <p><span class="blue-title">Social Profiles:</span> {{profilesCountTeaser}}</p>
                         {{/if}}
 
                         {{#if photos}}
-                          <p>Images: {{photosCountTeaser}}</p>
+                          <p><span class="blue-title">Images:</span> {{photosCountTeaser}}</p>
                         {{/if}}
 
                         {{#if careers}}
-                          <p>Jobs: {{careersCountTeaser}}</p>
+                          <p><span class="blue-title">Jobs:</span> {{careersCountTeaser}}</p>
                         {{/if}}
 
                         {{#if footprints}}
-                          <p>Digital Footprints: {{footprintsCountTeaser}}</p>
+                          <p><span class="blue-title">Digital Footprints:</span> {{footprintsCountTeaser}}</p>
                         {{/if}}
 
                         {{#if websites}}
-                          <p>Websites: {{websites}}</p>
+                          <p><span class="blue-title">Websites:</span> {{websites}}</p>
                         {{/if}}
 
                         <p>
@@ -542,39 +534,39 @@ drift.load('rgvdm473vfx2');
                   <div class="row">
                     <div class="col-sm-12">
                       {{#if yearBuilt}}
-                      <p>Year Built: {{yearBuilt}}</p>
+                      <p><span class="blue-title">Year Built:</span> {{yearBuilt}}</p>
                       {{/if}}
 
                       {{#if deeds}}
-                        <p>Deeds: {{deedsCountTeaser}}</p>
+                        <p><span class="blue-title">Deeds:</span> {{deedsCountTeaser}}</p>
                       {{/if}}
 
                       {{#if ownersCountTeaser}}
-                        <p>Owners: {{ownersCountTeaser}}</p>
+                        <p><span class="blue-title">Owners:</span> {{ownersCountTeaser}}</p>
                       {{/if}}
 
                       {{#if owners}}
-                        <p>Owner's Names: {{owners}}</p>
+                        <p><span class="blue-title">Owner's Names:</span> {{owners}}</p>
                       {{/if}}
 
                       {{#if residents}}
-                        <p>Residents: {{residentsCountTeaser}}</p>
+                        <p><span class="blue-title">Residents:</span> {{residentsCountTeaser}}</p>
                       {{/if}}
 
                       {{#if assessment}}
-                        <p>Assessment: {{assessment}}</p>
+                        <p><span class="blue-title">Assessment:</span> {{assessment}}</p>
                       {{/if}}
 
                       {{#if assessedYear}}
-                        <p> Year Assessed: {{assessedYear}}</p>
+                        <p><span class="blue-title">Year Assessed:</span> {{assessedYear}}</p>
                       {{/if}}
 
                       {{#if squareFootage}}
-                        <p>Square Footage: {{squareFootage}}</p>
+                        <p><span class="blue-title">Square Footage:</span> {{squareFootage}}</p>
                       {{/if}}
 
                       {{#if county}}
-                      <p>County: {{county}}</p>
+                      <p><span class="blue-title">County:</span> {{county}}</p>
                       {{/if}}
 
                       <p>

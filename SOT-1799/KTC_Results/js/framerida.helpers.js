@@ -133,7 +133,7 @@
   H.registerHelper('previewName', function(){
 
     var names;
-    if (!this.Names.Name){
+    if (!this.Names || !this.Names.Name){
       return;
     }
     if ($.type(this.Names.Name) !== 'array') {
