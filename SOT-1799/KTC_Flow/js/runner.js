@@ -799,7 +799,8 @@ var hideSearches = function(searchType) {
 };
 
 var showResults = function() {
-  window.location.href = "https://www.knowthycustomer.com/lp/b56a8b/3/search-results";
+  // window.location = $("body").data("next-page");
+  window.location.href = "https://www.knowthycustomer.com/lp/8a45dd/3/search-results";
 };
 
 var resetSearch = function() {

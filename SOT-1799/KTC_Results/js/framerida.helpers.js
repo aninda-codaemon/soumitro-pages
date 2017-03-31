@@ -191,7 +191,8 @@
 
   H.registerHelper('previewEmails', function(){
     // debugger
-    if (this.teaserData.hasEmail === false) {
+
+    if (!this.teaserData || this.teaserData.hasEmail === false) {
       return false;
     }
 
@@ -209,7 +210,7 @@
 
   H.registerHelper('previewPhones', function(){
     // debugger
-    if (this.teaserData.hasPhone === false) {
+    if (!this.teaserData || this.teaserData.hasPhone === false) {
       return false;
     }
 
@@ -226,7 +227,7 @@
 
   H.registerHelper('previewSocial', function(){
     // debugger
-    if (this.teaserData.hasSocial === false) {
+    if (!this.teaserData || this.teaserData.hasSocial === false) {
       return false;
     }
 
@@ -244,7 +245,7 @@
 
   H.registerHelper('previewRelatives', function(){
     // debugger
-    if (this.teaserData.hasRelatives === false) {
+    if (!this.teaserData || this.teaserData.hasRelatives === false) {
       return false;
     }
 
@@ -290,7 +291,7 @@
   });
 
   H.registerHelper('previewImages', function(){
-    if (this.teaserData.hasPhotos === false) {
+    if (!this.teaserData || this.teaserData.hasPhotos === false) {
       return false;
     }
 
