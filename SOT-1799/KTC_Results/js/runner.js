@@ -535,6 +535,7 @@ var showResults = function() {
       data = amplify.store().searchData;
 
   if (data.fn) {
+    $('.start-header p').text('Pick one of the options below and preview their report.');
     $('#people-results').show();
     $('#more-results').show();
   } else if (data.phone) {
