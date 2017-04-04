@@ -232,9 +232,15 @@
     }
 
     var extraData = this.teaserData.extraData,
-        profiles = _.find(extraData, { 'type': 'social' }).socialNetwork,
-        openingHtml = '<p><span class="blue-title">Social Profiles: </span>';
+        openingHtml = '<p><span class="blue-title">Social Profiles: </span>',
+        profiles = _.find(extraData, { 'type': 'social' }).socialNetwork;
 
+
+    profiles = _.chain(profiles).uniq().filter(function(profile){ return profile !== "";}).value();
+
+    if (profiles.length === 0) {
+      return false;
+    }
     if (profiles.length <= 2){
       var profList = profiles.join(', ');
       return new Handlebars.SafeString(openingHtml + profList);
