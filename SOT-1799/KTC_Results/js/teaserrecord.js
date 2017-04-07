@@ -229,7 +229,7 @@
 
     TeaserRecord.prototype.place = function() {
       var addresses = this.addresses();
-    
+
       if (addresses && addresses.length !== 0) {
         var index = 0;
         while (addresses[index] === undefined) {
@@ -469,7 +469,13 @@
       if (!this.record['DODs']) {
         return false;
       } else {
-        return this.record['DODs']['Item']['DOD']['Year'];
+        var item;
+        if (typeof this.record.DODs.Item.DOD === 'object') {
+          item = this.record.DODs.Item.DOD;
+        } else {
+          item = this.record.DODs.Item[0].DOD;
+        }
+        return item;
       }
     }
 
