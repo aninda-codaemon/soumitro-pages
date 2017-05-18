@@ -65,10 +65,10 @@
           human. I made a deal with a sea witch, became a human, and married the first
           blue-eyed man i met. After the wedding I lost track of my many sisters. BeenVerified
           helped me find the addresses of their tidal pools. Thanks!""</p>
+          <img src="img/lil-carla.png" alt="">
           <div class="info-box">
-            <img src="img/fb-ico.png" alt="">
-            Ari L., Atlantic Ocean
-            Thingamabob Hoarder
+            <p>Ari L., Atlantic Ocean</p>
+            <p>Thingamabob Hoarder</p>
           </div>
         </div>
 
@@ -78,10 +78,10 @@
           helped me reconnect with old friends. If only they could've warned me about my captor
           7 years ago!</p>
 
+          <img src="img/lil-carla.png" alt="">
           <div class="info-box">
-            <img src="img/fb-ico.png" alt="">
-            Ma, Akron, OH
-            Survivor
+            <p>Ma, Akron, OH</p>
+            <p>Survivor</p>
           </div>
         </div>
       </div>
@@ -93,8 +93,70 @@
       </div>
     </div>
 
-    <div class="col-sm-8" style="background: red">
-      <h2>and this is a heading</h2>
+    <div class="col-sm-8">
+      <div class="" data-fr-bind="searchData">
+        <h2>Searching for available information on {{phone}}</h2>
+
+      </div>
+      <div id="search-main-progress" class="progress-wrap">
+        <div class="progress progress-striped">
+            <div class="progress-bar bar" role="progressbar" aria-valuemin="5" aria-valuemax="100" style="width: 1%">
+                <span class="progress-text">
+                    <span class="progress-text-inner"></span>
+                </span>
+            </div>
+            <span class="progress-text-outer">
+                <span class="progress-text-outer"></span>
+            </span>
+        </div>
+    </div>
+    <div class="container">
+
+
+      <div class="row action-section">
+        <div class="col-sm-8 col-offset-sm-2">
+          <div class="action-box" data-fr-bind="searchData">
+
+
+
+            <div class="row">
+              <div class="section-tabs">
+                <div class="col-sm-3">
+                  <h5>Detecting Owner's Location</h5>
+                </div>
+
+                <div class="col-sm-3">
+                  <h5>Finding Owner's Name</h5>
+                </div>
+
+                <div class="col-sm-3">
+                  <h5>Detecting carrier &amp; number type</h5>
+                </div>
+
+                <div class="col-sm-3">
+                  <h5>Preparing Premium Data</h5>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <img src="img/lil-carla.png" alt="">
+              </div>
+              <div class="col-sm-8">
+
+                <div class="switch-section">
+                  <h3>Detecting Owner's Location</h3>
+                  <p>Your search for {{phone}} is underway. We start by detecting the number's
+                  geographical location. This is important so that you know where the call
+                  is coming from. It's the first step to knowing more about the number.</p>
+
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
     </div>
   </div>
   <footer id="footer">
