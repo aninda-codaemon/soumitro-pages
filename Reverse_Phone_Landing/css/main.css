@@ -185,7 +185,19 @@ section {
   background: white;
 }
 
+.switch-section,
+.action-section{
+  display: none;
+}
 
+.switch-section.active,
+.action-section.active {
+  display: block;
+}
+
+.section-tabs .tab.active {
+  border-bottom: 1px solid red;
+}
 
 /* ================================================ */
 /* == FOOTER  ===================================== */

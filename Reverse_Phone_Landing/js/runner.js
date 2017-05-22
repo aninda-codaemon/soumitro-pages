@@ -11,6 +11,21 @@ $(function() {
       //return b+c*(22.645*tc*ts + -59.29*ts*ts + 54.895*tc + -21.3*ts + 4.05*t);
     }
   });
+  var sections = $('.switch-section');
+      tabs = $('.section-tabs .tab');
+
+  var changeTab = function(idx) {
+
+    $('.switch-section').removeClass('active');
+    $('.section-tabs .tab').removeClass('active');
+
+    $(tabs[idx]).addClass('active');
+    $(sections[idx]).addClass('active');
+  };
+
+  var stepComplete = function() {
+
+  };
 
   $('.progress-text-inner').hide();
   var startLoader = function() {
@@ -19,6 +34,7 @@ $(function() {
     }, {
       duration: 40000,
       easing: 'easeBV',
+      complete: stepComplete,
       step: function(step) {
         var percent = Math.floor(step);
         $('.progress-text-inner').html(percent.toString() + "%");
@@ -29,14 +45,19 @@ $(function() {
 
         timeRemaining = Math.floor((durationRemain / 1000) % 60);
 
+        if (percent === 25) {
+          changeTab(1);
+        }
         if (percent === 50) {
           $('.progress-text-outer').fadeOut();
           $('.progress-text-inner').fadeIn();
+          changeTab(2);
         }
-      
-        if (percent === 98) {
 
+        if (percent === 75) {
+          changeTab(3);
         }
+
         if (percent === 42) {
           $('.test1').addClass('hidden-xs hidden-sm');
           $('.test2').removeClass('hidden-xs hidden-sm');
