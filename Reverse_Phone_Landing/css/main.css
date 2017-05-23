@@ -125,14 +125,88 @@ section {
   height: 100%
 }
 
-.info-box  {
-  display: inline-block;
-}
-
 .side-bar {
   background: white;
-  padding: 30px;
+  padding: 0px;
   box-shadow: 4px 0 15px 0 rgba(0, 0, 0, 0.14);
+}
+
+.map {
+  background: url('../img/google-map.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 355px;
+}
+
+.testimonials {
+  padding: 30px;
+  position: relative;
+}
+
+.testimonials img {
+  height: 40px;
+  border-radius: 50%;
+  vertical-align: top;
+  margin-right: 5px;
+}
+
+.testimonials p {
+  font-size: 17px;
+  line-height: 1.29;
+}
+img.quotes {
+  height: 34px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  border-radius: 0%;
+}
+.info-box {
+  margin-bottom: 30px;
+  margin-top: 15px;
+}
+.text  {
+  display: inline-block;
+  width: 85%;
+}
+
+.info-box p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.info-box p.name {
+  font-size: 15px;
+  color: #60ab41;
+}
+
+.first-account {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.second-account {
+  padding-top: 30px;
+}
+
+.secured {
+  padding: 25px;
+  background-color: #fcedba;
+}
+
+.secured h4 {
+  margin-top: 0px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.secured img {
+  height: 50px;
+  vertical-align: top;
+  margin-right: 10px;
+}
+
+.secured .text {
+  width: 80%;
 }
 
 .action-header {
@@ -256,10 +330,10 @@ section {
 
 .section-tabs .tab.active {
   border-bottom: none;
-  background: url('../img/active.png');
+  background: url('../img/active-2.svg');
   background-position: bottom;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 110%;
 }
 
 .tab {
@@ -311,6 +385,7 @@ section {
   padding-bottom: 80px;
   color: #747b91;
   background-color: #fff;
+  position: relative;
 }
 
 .carla-wrapper {
