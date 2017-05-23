@@ -70,6 +70,9 @@ nav {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#353167', endColorstr='#4a3b8f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
+.navbar-header {
+  margin-left: 50px;
+}
 .navbar-toggle {
   margin-top: -4px;
   padding: 6px 7px;
@@ -131,11 +134,13 @@ section {
   box-shadow: 4px 0 15px 0 rgba(0, 0, 0, 0.14);
 }
 
-.map {
-  background: url('../img/google-map.png');
+.map img {
+  /*background: url('../img/google-map.png');
   background-repeat: no-repeat;
-  background-size: 100%;
-  height: 355px;
+  background-size: 100%;*/
+  /*height: 355px;*/
+  height: 100%;
+  width: 100%;
 }
 
 .testimonials {
@@ -167,7 +172,6 @@ img.quotes {
 }
 .text  {
   display: inline-block;
-  width: 85%;
 }
 
 .info-box p {

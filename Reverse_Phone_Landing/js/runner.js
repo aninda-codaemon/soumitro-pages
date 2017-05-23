@@ -33,7 +33,7 @@ $(function() {
       width: "100%"
     }, {
       duration: 40000,
-      // easing: 'easeBV',
+      easing: 'easeBV',
       complete: stepComplete,
       step: function(step) {
         var percent = Math.floor(step);
@@ -48,6 +48,7 @@ $(function() {
         if (percent === 25) {
           changeTab(1);
         }
+
         if (percent === 50) {
           $('.progress-text-outer').fadeOut();
           $('.progress-text-inner').fadeIn();
