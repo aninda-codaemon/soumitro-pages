@@ -37,8 +37,19 @@ body {
   line-height: 21px;
 
   min-width: 280px;
-  background-color: #efefef;
+  background-color: #f5fafc;
   -webkit-font-smoothing: subpixel-antialiased;
+  overflow-x: hidden;
+}
+
+h2 {
+  margin-top: 10px;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  font-size: 26px;
 }
 
 /* ================================================ */
@@ -118,21 +129,53 @@ section {
   display: inline-block;
 }
 
-.action-section {
-  background: cyan;
+.side-bar {
+  background: white;
+  padding: 30px;
+  box-shadow: 4px 0 15px 0 rgba(0, 0, 0, 0.14);
 }
 
-.section-tabs {
-  border-bottom: 1px solid gray;
+.action-header {
+  background: #7e6f9c;
+  padding-top: 35px;
+  color: white;
 }
 
-.section-tabs h5 {
-  border-right: 1px solid gray;
+.phone-box {
+  display: inline-block;
 }
+.phone-circle {
+  border-radius: 50%;
+  background: #8b7da6;
+  height: 120px;
+  width: 120px;
+  position: relative;
+
+}
+
+.phone {
+  height: 50px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}
+
+.all-day {
+  display: inline-block;
+  border-radius: 16.5px;
+  background-color: #655890;
+  padding: 5px 12px;
+  margin-bottom: 0px;
+}
+.all-day img {
+  height: 22px;
+  margin-right: 5px;
+}
+
 /* progress bar */
 
 .progress-wrap {
-  margin: 20px 0 25px;
+  margin: 20px 0 0px;
 
   border-radius: 0px;
   background: #DAF3C0;
@@ -141,10 +184,10 @@ section {
 .progress-wrap .progress {
   height: 60px;
   margin-bottom: 0;
-  -webkit-box-shadow: 0 4px 0 0 #C6C6C6;
-  -moz-box-shadow: 0 4px 0 0 #C6C6C6;
-  -ms-box-shadow: 0 4px 0 0 #C6C6C6;
-  box-shadow: 0 4px 0 0 #C6C6C6;
+  -webkit-box-shadow: 0px 4px 15px 0 rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0px 4px 15px 0 rgba(0, 0, 0, 0.14);
+  -ms-box-shadow: 0px 4px 15px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 0px 4px 15px 0 rgba(0, 0, 0, 0.14);
   background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
   background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
   background-size: 40px 40px;
@@ -181,10 +224,26 @@ section {
   border-radius: 0px !important;
 }
 
-.action-box {
-  background: white;
+.custom-container {
+  margin-right: auto;
+  margin-left: auto;
 }
 
+.action-box {
+  background: white;
+
+  border-radius: 10px;
+  box-shadow: 0.9px 4.9px 30px 0 rgba(170, 196, 206, 0.3);
+}
+
+.action-section {
+  padding-top: 75px;
+}
+
+.switch-section p {
+  font-size: 17px;
+  line-height: 1.65;
+}
 .switch-section,
 .action-section{
   display: none;
@@ -196,7 +255,50 @@ section {
 }
 
 .section-tabs .tab.active {
-  border-bottom: 1px solid red;
+  border-bottom: none;
+  background: url('../img/active.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.tab {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 25px;
+  text-align: center;
+  border-bottom: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+  height: 130px;
+}
+
+.no-border {
+  border-right: none;
+}
+
+.tab img {
+  height: 40px;
+}
+
+.tab-number {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: -0.6px;
+  color: rgba(51, 51, 51, 0.1);
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.bottom-action {
+  padding: 60px 0px 80px;
+}
+.no-pad-right {
+  padding-right: 0px;
+}
+
+.no-pad-left {
+  padding-left: 0px;
 }
 
 /* ================================================ */

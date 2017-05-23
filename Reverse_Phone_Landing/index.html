@@ -51,7 +51,7 @@
     </nav>
   </header>
   <div class="placeholder clearfix">
-    <div class="col-sm-4">
+    <div class="col-sm-4 side-bar">
       <div class="map">
         <h2>this is a map</h2>
 
@@ -93,91 +93,113 @@
       </div>
     </div>
 
-    <div class="col-sm-8">
-      <div class="" data-fr-bind="searchData">
-        <h2>Searching for available information on {{phone}}</h2>
+    <div class="col-sm-8 no-pad-right no-pad-left">
+      <div class="action-header">
 
-      </div>
-      <div id="search-main-progress" class="progress-wrap">
-        <div class="progress progress-striped">
-            <div class="progress-bar bar" role="progressbar" aria-valuemin="5" aria-valuemax="100" style="width: 1%">
-                <span class="progress-text">
-                    <span class="progress-text-inner"></span>
-                </span>
+        <div class="row" data-fr-bind="searchData">
+          <div class="col-sm-2 col-sm-offset-1">
+            <div class="phone-circle">
+              <img class="phone" src="img/Phone.svg" alt="">
             </div>
-            <span class="progress-text-outer">
-                <span class="progress-text-outer"></span>
-            </span>
+          </div>
+
+          <div class="col-sm-7">
+            <div class="header-box">
+              <p class="all-day"><img src="img/24-hours.svg" alt="">Data found within the past 24 hours</p>
+              <h2>Searching for available information on {{phone}}</h2>
+            </div>
+
+          </div>
         </div>
-    </div>
 
+        <div id="search-main-progress" class="progress-wrap">
+          <div class="progress progress-striped">
+              <div class="progress-bar bar" role="progressbar" aria-valuemin="5" aria-valuemax="100" style="width: 1%">
+                  <span class="progress-text">
+                      <span class="progress-text-inner"></span>
+                  </span>
+              </div>
+              <span class="progress-text-outer">
+                  <span class="progress-text-outer"></span>
+              </span>
+          </div>
+        </div>
+      </div>
 
-
+    <div class="custom-container">
       <div class="row action-section active">
-        <div class="col-sm-8 col-offset-sm-2">
-          <div class="action-box" data-fr-bind="searchData">
+        <div class="col-sm-10 col-sm-offset-1">
+          <div class="action-box clearfix" data-fr-bind="searchData">
 
+              <div class="section-tabs clearfix">
 
-
-            <div class="row">
-              <div class="section-tabs">
                 <div class="col-sm-3 tab active">
+                  <img src="img/Location.svg" alt="">
+                  <span class=tab-number>01</span>
                   <h5>Detecting Owner's Location</h5>
                 </div>
 
                 <div class="col-sm-3 tab">
+                  <span class=tab-number>02</span>
+                  <img src="img/Owner_name.svg" alt="">
                   <h5>Finding Owner's Name</h5>
                 </div>
 
                 <div class="col-sm-3 tab">
+                  <span class=tab-number>03</span>
+                  <img src="img/Carrier.svg" alt="">
                   <h5>Detecting carrier &amp; number type</h5>
                 </div>
 
-                <div class="col-sm-3 tab">
+                <div class="col-sm-3 tab no-border">
+                  <span class=tab-number>04</span>
+                  <img src="img/Premium.svg" alt="">
                   <h5>Preparing Premium Data</h5>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-4">
-                <img src="img/lil-carla.png" alt="">
+
+              <div class="bottom-action clearfix">
+
+
+                <div class="col-sm-3">
+                  <img src="img/lil-carla.png" alt="">
+                </div>
+                <div class="col-sm-8">
+
+                  <div class="switch-section active">
+                    <h3>Detecting Owner's Location</h3>
+                    <p>Your search for {{phone}} is underway. We start by detecting the number's
+                    geographical location. This is important so that you know where the call
+                    is coming from. It's the first step to knowing more about the number.</p>
+                  </div>
+
+                  <div class="switch-section">
+                    <h3>Finding Owner's Name</h3>
+                    <p>Once we locate the phone number, we begin detecting the owner’s name.
+                      The owner’s name is the key piece of information we need to track down
+                      their age, photos, social media profiles, and addresses.</p>
+                  </div>
+
+                  <div class="switch-section">
+                    <h3>Detecting Carrier &amp; Number Type</h3>
+                    <p>Please wait, while we collect additional data about xxx-xxxx.
+                      Knowing whether a caller is using a cell phone or a landline
+                      can be a very valuable nugget of information.</p>
+                  </div>
+
+                  <div class="switch-section">
+                    <h3>Preparing Premium Data</h3>
+                    <p>We're preparing to search premium data that includes the
+                      owner's email addresses, social media profiles, employment history,
+                       additional phone numbers, and more!</p>
+                  </div>
+                </div>
               </div>
-              <div class="col-sm-8">
-
-                <div class="switch-section active">
-                  <h3>Detecting Owner's Location</h3>
-                  <p>Your search for {{phone}} is underway. We start by detecting the number's
-                  geographical location. This is important so that you know where the call
-                  is coming from. It's the first step to knowing more about the number.</p>
-
-                </div>
-
-                <div class="switch-section">
-                  <h3>Finding Owner's Name</h3>
-                  <p>Once we locate the phone number, we begin detecting the owner’s name.
-                    The owner’s name is the key piece of information we need to track down
-                    their age, photos, social media profiles, and addresses.</p>
-                </div>
-
-                <div class="switch-section">
-                  <h3>Detecting Carrier &amp; Number Type</h3>
-                  <p>Please wait, while we collect additional data about xxx-xxxx.
-                    Knowing whether a caller is using a cell phone or a landline
-                    can be a very valuable nugget of information.</p>
-                </div>
-
-                <div class="switch-section">
-                  <h3>Preparing Premium Data</h3>
-                  <p>We're preparing to search premium data that includes the
-                    owner's email addresses, social media profiles, employment history,
-                     additional phone numbers, and more!</p>
-
-                </div>
-            </div>
             </div>
           </div>
         </div>
-        </div>
+
+      </div>
 
         <div class="row action-section">
 

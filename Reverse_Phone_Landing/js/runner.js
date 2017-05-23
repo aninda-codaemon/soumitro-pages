@@ -33,7 +33,7 @@ $(function() {
       width: "100%"
     }, {
       duration: 40000,
-      easing: 'easeBV',
+      // easing: 'easeBV',
       complete: stepComplete,
       step: function(step) {
         var percent = Math.floor(step);
