@@ -42,15 +42,6 @@ body {
   overflow-x: hidden;
 }
 
-h2 {
-  margin-top: 10px;
-}
-
-h3 {
-  margin-top: 0px;
-  margin-bottom: 30px;
-  font-size: 26px;
-}
 
 /* ================================================ */
 /* == NAVBAR  ===================================== */
@@ -125,135 +116,16 @@ label.error {
 
 section {
   display: block;
-  height: 100%
-}
-
-.side-bar {
-  background: white;
-  padding: 0px;
-  box-shadow: 4px 0 15px 0 rgba(0, 0, 0, 0.14);
-}
-
-.map img {
-  /*background: url('../img/google-map.png');
-  background-repeat: no-repeat;
-  background-size: 100%;*/
-  /*height: 355px;*/
   height: 100%;
-  width: 100%;
-}
-
-.testimonials {
-  padding: 30px;
-  position: relative;
-}
-
-.testimonials img {
-  height: 40px;
-  border-radius: 50%;
-  vertical-align: top;
-  margin-right: 5px;
-}
-
-.testimonials p {
-  font-size: 17px;
-  line-height: 1.29;
-}
-img.quotes {
-  height: 34px;
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  border-radius: 0%;
-}
-.info-box {
-  margin-bottom: 30px;
-  margin-top: 15px;
-}
-.text  {
-  display: inline-block;
-}
-
-.info-box p {
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.info-box p.name {
-  font-size: 15px;
-  color: #60ab41;
-}
-
-.first-account {
-  border-bottom: 1px solid #e1e1e1;
-}
-
-.second-account {
-  padding-top: 30px;
-}
-
-.secured {
-  padding: 25px;
-  background-color: #fcedba;
-}
-
-.secured h4 {
-  margin-top: 0px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.secured img {
-  height: 50px;
-  vertical-align: top;
-  margin-right: 10px;
-}
-
-.secured .text {
-  width: 80%;
-}
-
-.action-header {
-  background: #7e6f9c;
-  padding-top: 35px;
-  color: white;
-}
-
-.phone-box {
-  display: inline-block;
-}
-.phone-circle {
-  border-radius: 50%;
-  background: #8b7da6;
-  height: 120px;
-  width: 120px;
-  position: relative;
-
-}
-
-.phone {
-  height: 50px;
-  position: absolute;
-  top: 25%;
-  left: 25%;
-}
-
-.all-day {
-  display: inline-block;
-  border-radius: 16.5px;
-  background-color: #655890;
-  padding: 5px 12px;
-  margin-bottom: 0px;
-}
-.all-day img {
-  height: 22px;
-  margin-right: 5px;
+  background: white;
+  box-shadow: 0.9px 4.9px 30px 0 rgba(170, 196, 206, 0.3);
+  border-radius: 10px;
 }
 
 /* progress bar */
 
 .progress-wrap {
-  margin: 20px 0 0px;
+  margin: 20px 0 30px;
 
   border-radius: 0px;
   background: #DAF3C0;
@@ -266,9 +138,9 @@ img.quotes {
   -moz-box-shadow: 0px 4px 15px 0 rgba(0, 0, 0, 0.14);
   -ms-box-shadow: 0px 4px 15px 0 rgba(0, 0, 0, 0.14);
   box-shadow: 0px 4px 15px 0 rgba(0, 0, 0, 0.14);
-  background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,1) 25%,transparent 25%,transparent 50%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 75%,transparent 75%,transparent);
+  /*background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,1) 25%,transparent 25%,transparent 50%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 75%,transparent 75%,transparent);
   background-image: linear-gradient(45deg,rgba(255,255,255,1) 25%,transparent 25%,transparent 50%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 75%,transparent 75%,transparent);
-  background-size: 40px 40px;
+  background-size: 40px 40px;*/
   /*background-color: #DAF3C0;*/
 }
 
@@ -302,75 +174,6 @@ img.quotes {
   border-radius: 0px !important;
 }
 
-.custom-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.action-box {
-  background: white;
-
-  border-radius: 10px;
-  box-shadow: 0.9px 4.9px 30px 0 rgba(170, 196, 206, 0.3);
-}
-
-.action-section {
-  padding-top: 75px;
-}
-
-.switch-section p {
-  font-size: 17px;
-  line-height: 1.65;
-}
-.switch-section,
-.action-section{
-  display: none;
-}
-
-.switch-section.active,
-.action-section.active {
-  display: block;
-}
-
-.section-tabs .tab.active {
-  border-bottom: none;
-  background: url('../img/active-2.svg');
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: 110%;
-}
-
-.tab {
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 25px;
-  text-align: center;
-  border-bottom: 1px solid #e1e1e1;
-  border-right: 1px solid #e1e1e1;
-  height: 130px;
-}
-
-.no-border {
-  border-right: none;
-}
-
-.tab img {
-  height: 40px;
-}
-
-.tab-number {
-  font-size: 28px;
-  font-weight: bold;
-  letter-spacing: -0.6px;
-  color: rgba(51, 51, 51, 0.1);
-  position: absolute;
-  right: 15px;
-  top: 15px;
-}
-
-.bottom-action {
-  padding: 60px 0px 80px;
-}
 .no-pad-right {
   padding-right: 0px;
 }
@@ -379,6 +182,14 @@ img.quotes {
   padding-left: 0px;
 }
 
+/* ================================================ */
+/* == Social  ===================================== */
+/* ================================================ */
+
+.left-bar {
+  background: #904ee1;
+  color: white;
+}
 /* ================================================ */
 /* == FOOTER  ===================================== */
 /* ================================================ */

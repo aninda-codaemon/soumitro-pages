@@ -15,9 +15,8 @@
 
   <header id="header">
     <nav class="navbar navbar-default navbar-static-top">
-
-
-
+      <div class="container">
+        <div class="row">
           <div class="col-sm-3">
             <div class="navbar-header">
               <!-- <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
@@ -45,80 +44,16 @@
               </ul>
             </div> -->
           </div>
-
-
-
+        </div>
+      </div>
     </nav>
   </header>
-  <div class="placeholder clearfix">
-    <div class="col-sm-4 side-bar">
-      <div class="map">
-        <img src="img/google-map.png" alt="">
-      </div>
-      <div class="testimonials">
 
-        <h3>Testimonials</h3>
-        <img class="quotes" src="img/quote.svg" alt="">
-        <div class="first-account">
 
-          <p class="text">"When I was younger I dreamt of getting rid of my mermaid fins and becoming a
-          human. I made a deal with a sea witch, became a human, and married the first
-          blue-eyed man i met. After the wedding I lost track of my many sisters. BeenVerified
-          helped me find the addresses of their tidal pools. Thanks!"</p>
-          <div class="info-box">
-            <img src="img/lil-carla.png" alt="">
-            <div class="text">
-              <p class="name">Ari L., Atlantic Ocean</p>
-              <p>Thingamabob Hoarder</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="second-account">
-
-          <p class="text">"When I was in my early twenties, I was kidnapped and held captive in a shed for
-          7 years. When I finally escaped with my 5 year old son, I didn't know anybody. BV
-          helped me reconnect with old friends. If only I had used their sex offender data,
-          they could've warned me about my captor 7 years ago!"</p>
-
-          <div class="info-box">
-            <img src="img/lil-carla.png" alt="">
-            <div class="text">
-              <p class="name">Ma, Akron, OH</p>
-              <p>Survivor</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="secured">
-        <img src="img/lock@2x.png" alt="">
-        <div class="text">
-          <h4>This search session is secured</h4>
-          <p>BeenVerified deploys strategies, including Secure 256-bit SSL technology,
-          to keep your personal information and payment from unauthorized 3rd parties.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-8 no-pad-right no-pad-left">
-      <div class="action-header">
-
-        <div class="row" data-fr-bind="searchData">
-          <div class="col-sm-2 col-sm-offset-1">
-            <div class="phone-circle">
-              <img class="phone" src="img/Phone.svg" alt="">
-            </div>
-          </div>
-
-          <div class="col-sm-7">
-            <div class="header-box">
-              <p class="all-day"><img src="img/24-hours.svg" alt="">Data found within the past 24 hours</p>
-              <h2>Searching for available information on {{phone}}</h2>
-            </div>
-
-          </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2" data-fr-bind="searchData">
+        <h1>Learning About The Owner of {{phone}}</h1>
 
         <div id="search-main-progress" class="progress-wrap">
           <div class="progress progress-striped">
@@ -132,89 +67,33 @@
               </span>
           </div>
         </div>
-      </div>
 
-    <div class="custom-container">
-      <div class="row action-section active">
-        <div class="col-sm-10 col-sm-offset-1">
-          <div class="action-box clearfix" data-fr-bind="searchData">
+        <section id="socialMedia">
+          <div class="container">
 
-              <div class="section-tabs clearfix">
 
-                <div class="col-sm-3 tab active">
-                  <img src="img/Location.svg" alt="">
-                  <span class=tab-number>01</span>
-                  <h5>Detecting Owner's Location</h5>
-                </div>
+          <div class="row">
+            <div class="col-sm-5 left-bar text-center">
+              <h4>We are searching for the following social media profiles</h4>
+              <p class="highlighted">Now Searching <span id="website">Vine</span></p>
 
-                <div class="col-sm-3 tab">
-                  <span class=tab-number>02</span>
-                  <img src="img/Owner_name.svg" alt="">
-                  <h5>Finding Owner's Name</h5>
-                </div>
+              <div class="icons">
 
-                <div class="col-sm-3 tab">
-                  <span class=tab-number>03</span>
-                  <img src="img/Carrier.svg" alt="">
-                  <h5>Detecting carrier &amp; number type</h5>
-                </div>
-
-                <div class="col-sm-3 tab no-border">
-                  <span class=tab-number>04</span>
-                  <img src="img/Premium.svg" alt="">
-                  <h5>Preparing Premium Data</h5>
-                </div>
               </div>
+              <p>&amp; many more...</p>
+            </div>
 
-              <div class="bottom-action clearfix">
+            <div class="col-sm-7">
 
-
-                <div class="col-sm-3">
-                  <img src="img/lil-carla.png" alt="">
-                </div>
-                <div class="col-sm-8">
-
-                  <div class="switch-section active">
-                    <h3>Detecting Owner's Location</h3>
-                    <p>Your search for {{phone}} is underway. We start by detecting the number's
-                    geographical location. This is important so that you know where the call
-                    is coming from. It's the first step to knowing more about the number.</p>
-                  </div>
-
-                  <div class="switch-section">
-                    <h3>Finding Owner's Name</h3>
-                    <p>Once we locate the phone number, we begin detecting the owner’s name.
-                      The owner’s name is the key piece of information we need to track down
-                      their age, photos, social media profiles, and addresses.</p>
-                  </div>
-
-                  <div class="switch-section">
-                    <h3>Detecting Carrier &amp; Number Type</h3>
-                    <p>Please wait, while we collect additional data about xxx-xxxx.
-                      Knowing whether a caller is using a cell phone or a landline
-                      can be a very valuable nugget of information.</p>
-                  </div>
-
-                  <div class="switch-section">
-                    <h3>Preparing Premium Data</h3>
-                    <p>We're preparing to search premium data that includes the
-                      owner's email addresses, social media profiles, employment history,
-                       additional phone numbers, and more!</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
-        </div>
-
+          </div>
+        </section>
       </div>
-
-        <div class="row action-section">
-
-        </div>
-    </div>
     </div>
   </div>
+
+
   <footer id="footer">
     <div class="container">
       <div class="row">
