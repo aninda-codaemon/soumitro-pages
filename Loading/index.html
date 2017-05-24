@@ -52,8 +52,10 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-sm-8 col-sm-offset-2" data-fr-bind="searchData">
-        <h1>Learning About The Owner of {{phone}}</h1>
+      <div class="col-sm-10 col-sm-offset-1" data-fr-bind="searchData">
+        <div class="text-center">
+          <h1>Learning About The Owner of {{phone}}</h1>
+        </div>
 
         <div id="search-main-progress" class="progress-wrap">
           <div class="progress progress-striped">
@@ -68,25 +70,83 @@
           </div>
         </div>
 
-        <section id="socialMedia">
-          <div class="container">
+        <section id="socialMedia" class="clearfix">
+          <!-- <div class="container"> -->
+            <!-- <div class="row"> -->
+              <div class="col-sm-5 left-side text-center">
+                <h4>We are searching for the following social media profiles</h4>
+                <p class="highlighted">Now Searching <span id="website">Vine</span></p>
 
+                  <ul id="social-media-groups" class="socialMedias list-unstyled clearfix">
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social twitter"><img src="img/social_icons/twitter.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social facebook"><img src="img/social_icons/facebook.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social google-plus"><img src="img/social_icons/google+.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social linkedin"><img src="img/social_icons/linkedin.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social snapchat"><img src="img/social_icons/snapchat.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social instagram"><img src="img/social_icons/instagram.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social pinterest"><img src="img/social_icons/pinterest.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social reddit"><img src="img/social_icons/reddit.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social youtube"><img src="img/social_icons/youtube.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social tumblr"><img src="img/social_icons/tumblr.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social whatsapp"><img src="img/social_icons/whatsapp.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social viber"><img src="img/social_icons/viber.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social evernote"><img src="img/social_icons/evernote.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social skype"><img src="img/social_icons/skype.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social google"><img src="img/social_icons/google.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social amazon"><img src="img/social_icons/amazon.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social vimeo"><img src="img/social_icons/vimeo.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social flickr"><img src="img/social_icons/flickr.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social blogger"><img src="img/social_icons/blogger.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/loading.svg" alt=""><span class="social facebook"><img src="img/social_icons/facebook.svg"></span></li>
+                  </ul>
 
-          <div class="row">
-            <div class="col-sm-5 left-bar text-center">
-              <h4>We are searching for the following social media profiles</h4>
-              <p class="highlighted">Now Searching <span id="website">Vine</span></p>
-
-              <div class="icons">
-
+                <p>&amp; many more...</p>
               </div>
-              <p>&amp; many more...</p>
-            </div>
 
-            <div class="col-sm-7">
+              <div class="col-sm-7 right-side">
+                <h3>Social Media Lookup</h3>
+                <p>We search dozens of social networks to uncover the owner's personal
+                  details. Social profiles may include secret pictures, suprising
+                  comments, as well as links to people they're friendly with.
+                  <span class="red-warning">If you're looking to catch a cheater</span>,
+                  social networks may be extremely helpful.
+                </p>
+              </div>
+            <!-- </div> -->
+          <!-- </div> -->
+        </section>
 
-            </div>
+        <section id="emailBox" class="clearfix">
+          <div class="col-sm-5 left-side text-center">
+            <h4>We are searching for email providers</h4>
+            <img src="img/Email-finder.svg" alt="">
           </div>
+
+          <div class="col-sm-7 right-side">
+            <h3>Email Address Finder</h3>
+            <p>This search finds email addresses used by the owner of
+              <span style"color: #007ee3">{{phone}}</span>. If you're looking to contact
+              the owner, then these email addresses can be a huge help. Plus, this search
+              may uncover secondary email addresses that <span class="red-warning"> the owner
+              is trying to hide from you</span>.
+            </p>
+          </div>
+        </section>
+
+        <section id="photoBox" class="clearfix">
+          <div class="col-sm-5 left-side text-center">
+            <h4>We are searching for online photos</h4>
+            <img src="img/Email-finder.svg" alt="">
+          </div>
+
+          <div class="col-sm-7 right-side">
+            <h3>Online Photo Search</h3>
+            <p>This search uncovers photos posted by the owner of
+              <span style"color: #007ee3">{{phone}}</span>. It could include photos of
+              their spouse, secret lovers, or <span class="red-warning">newer photos
+              they don't want you to know about</span>. You may be surprised by the
+              photots you find.
+            </p>
           </div>
         </section>
       </div>

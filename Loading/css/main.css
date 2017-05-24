@@ -38,10 +38,18 @@ body {
 
   min-width: 280px;
   background-color: #f5fafc;
-  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
+h3 {
+  font-size: 26px;
+  margin-top: 150px;
+  margin-bottom: 45px;
+}
+h4 {
+  font-size: 22px;
+}
 
 /* ================================================ */
 /* == NAVBAR  ===================================== */
@@ -120,6 +128,7 @@ section {
   background: white;
   box-shadow: 0.9px 4.9px 30px 0 rgba(170, 196, 206, 0.3);
   border-radius: 10px;
+  margin-bottom: 180px;
 }
 
 /* progress bar */
@@ -129,6 +138,7 @@ section {
 
   border-radius: 0px;
   background: #DAF3C0;
+
 }
 
 .progress-wrap .progress {
@@ -141,11 +151,12 @@ section {
   /*background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,1) 25%,transparent 25%,transparent 50%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 75%,transparent 75%,transparent);
   background-image: linear-gradient(45deg,rgba(255,255,255,1) 25%,transparent 25%,transparent 50%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 75%,transparent 75%,transparent);
   background-size: 40px 40px;*/
-  /*background-color: #DAF3C0;*/
+  background-color: white;
 }
 
 .progress-wrap .progress .progress-bar {
-  background-color: #81b44c;
+  background-color: #88d042;
+  background-image: none;
 }
 
 .progress-wrap .progress .progress-text {
@@ -170,10 +181,6 @@ section {
   color: #000;
 }
 
-.progress {
-  border-radius: 0px !important;
-}
-
 .no-pad-right {
   padding-right: 0px;
 }
@@ -182,14 +189,104 @@ section {
   padding-left: 0px;
 }
 
+.left-side {
+  color: white;
+  padding: 50px 12px 25px 24px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.right-side {
+  padding: 0 70px 0 30px;
+}
+
+.highlighted {
+  border-radius: 5px;
+  background-color: #7a37cc;
+  display: inline-block;
+  padding: 5px 13px;
+}
+
+.red-warning {
+  font-weight: bold;
+  color: #e7114c;
+}
+
 /* ================================================ */
 /* == Social  ===================================== */
 /* ================================================ */
 
-.left-bar {
-  background: #904ee1;
-  color: white;
+
+#socialMedia h4 {
+  margin-bottom: 25px;
 }
+
+#socialMedia .left-side {
+  background: #904ee1;
+}
+
+.right-side h3 {
+  margin-top: 150px;
+  margin-bottom: 45px;
+}
+.right-side p{
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+#social-media-groups li {
+  background: white;
+  border-radius: 50%;
+  height: 52px;
+  width: 52px;
+  display: inline-block;
+  position: relative;
+  margin: 0px 12px 12px 0px;
+}
+
+#social-media-groups {
+  display: inline-block;
+  margin-top: 35px !important;
+  margin-bottom: 30px;
+}
+
+#social-media-groups .social {
+  display: none;
+}
+
+#social-media-groups li img{
+  position: absolute;
+  left: 0;
+}
+
+/* ================================================ */
+/* == Email  ====================================== */
+/* ================================================ */
+  #emailBox .left-side {
+    background: #007ee3;
+    padding: 60px 10px 25px;
+    position: relative;
+    overflow: hidden;
+    max-height: 488px;
+  }
+
+  #emailBox h4 {
+    margin: 0px 80px;
+    line-height: 1.27
+  }
+
+  /* ================================================ */
+  /* == Photo  ====================================== */
+  /* ================================================ */
+
+  #photoBox h4 {
+    margin-bottom: 50px;
+  }
+
+  #photoBox .left-side {
+    background-color: #e7114c;
+    padding: 60px 80px 25px;
+  }
 /* ================================================ */
 /* == FOOTER  ===================================== */
 /* ================================================ */

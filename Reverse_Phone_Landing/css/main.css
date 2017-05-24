@@ -38,7 +38,7 @@ body {
 
   min-width: 280px;
   background-color: #f5fafc;
-  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 

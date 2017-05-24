@@ -14,27 +14,48 @@ $(function() {
   var sections = $('.switch-section');
       tabs = $('.section-tabs .tab');
 
-  var changeTab = function(idx) {
-
-    $('.switch-section').removeClass('active');
-    $('.section-tabs .tab').removeClass('active');
-
-    $(tabs[idx]).addClass('active');
-    $(sections[idx]).addClass('active');
-  };
-
-  var stepComplete = function() {
-
-  };
-
   $('.progress-text-inner').hide();
+
+  var socialFinders = function() {
+    duration = 20000;
+
+    var $lis = $("#social-media-groups li"),
+        listLen = $lis.length,
+        listIdxs = _.shuffle(_.range(0, listLen)),
+        currIdx = 0;
+
+    intervalId = window.setInterval(function () {
+      if (currIdx >= listLen) {
+
+
+          window.setTimeout(function () {
+            // showNextSection();
+          }, self.transitionDelay);
+
+
+        return window.clearInterval(intervalId);
+      }
+      var listIdx = listIdxs[currIdx],
+          $loadingImg = $($lis[listIdx]).find(".loading"),
+          profileName = $loadingImg.next()[0].classList[1].capitalize().split("-").join(" ");
+
+
+      $loadingImg.css('opacity', 0);
+      $loadingImg.next().fadeIn();
+      $('#website').hide().text(profileName).fadeIn();
+      // addClass('success');
+
+      currIdx += 1;
+    }, Math.round(duration / listLen));
+
+  };
+
   var startLoader = function() {
     var progress = $('.bar').animate({
       width: "100%"
     }, {
       duration: 40000,
       easing: 'easeBV',
-      complete: stepComplete,
       step: function(step) {
         var percent = Math.floor(step);
         $('.progress-text-inner').html(percent.toString() + "%");
@@ -45,18 +66,9 @@ $(function() {
 
         timeRemaining = Math.floor((durationRemain / 1000) % 60);
 
-        if (percent === 25) {
-          changeTab(1);
-        }
-
         if (percent === 50) {
           $('.progress-text-outer').fadeOut();
           $('.progress-text-inner').fadeIn();
-          changeTab(2);
-        }
-
-        if (percent === 75) {
-          changeTab(3);
         }
 
         if (percent === 42) {
@@ -73,6 +85,7 @@ $(function() {
 
   var initialize = function() {
     startLoader();
+    socialFinders();
   };
 
   initialize();
