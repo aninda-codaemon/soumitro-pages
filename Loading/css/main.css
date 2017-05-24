@@ -280,12 +280,56 @@ section {
   /* ================================================ */
 
   #photoBox h4 {
-    margin-bottom: 50px;
+    margin-bottom: 65px;
+    opacity: 1;
+    z-index: 2;
+    position: relative;
+  }
+
+  #photoBox img {
+    opacity: 1;
+    z-index: 2;
+    position: relative;
   }
 
   #photoBox .left-side {
-    background-color: #e7114c;
+    /*background-color: #e7114c;*/
     padding: 60px 80px 25px;
+    position: relative;
+    background-image: url("../img/images@2x.png");
+    background-size: 95%;
+
+  }
+
+  #photoBox .left-side:after {
+    background: linear-gradient(to bottom,rgba(231,17,76,1), rgba(231,17,76,0.5));
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  #photoBox .left-side img {
+    height: 180px;
+    border-radius: 50%;
+    margin-bottom: 130px;
+  }
+
+/* ================================================ */
+/* == Premium  ==================================== */
+/* ================================================ */
+
+  #premiumBox .left-side {
+    background-image: url("../img/Premium-desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -400px 0px, center;
+    min-height: 488px;
+    color: #000;
   }
 /* ================================================ */
 /* == FOOTER  ===================================== */
