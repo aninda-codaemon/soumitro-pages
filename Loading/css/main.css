@@ -261,6 +261,11 @@ section {
   left: 0;
 }
 
+#social-media-groups li img.spinner {
+  left: 23%;
+  top: 25%;
+}
+
 /* ================================================ */
 /* == Email  ====================================== */
 /* ================================================ */
@@ -502,7 +507,9 @@ section {
     margin-top: 100px;
   }
 
-  .progress-wrap .progress .progress-text {
+  .progress-wrap .progress .progress-text,
+  .progress-wrap .progress .progress-text-outer,
+  .progress-wrap .progress .progress-text-inner{
     height: 50px;
     line-height: 50px;
   }
