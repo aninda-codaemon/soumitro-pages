@@ -17,7 +17,7 @@ $(function() {
   $('.progress-text-inner').hide();
 
   var socialFinders = function() {
-    duration = 20000;
+    duration = 15000;
 
     var $lis = $("#social-media-groups li"),
         listLen = $lis.length,
@@ -54,7 +54,7 @@ $(function() {
     var progress = $('.bar').animate({
       width: "100%"
     }, {
-      duration: 40000,
+      duration: 75000,
       easing: 'easeBV',
       step: function(step) {
         var percent = Math.floor(step);
@@ -62,7 +62,7 @@ $(function() {
         $('.progress-text-outer').html("&nbsp; " + percent.toString() + "%");
 
         var percentRemain = 100 - percent.toString(),
-            durationRemain = 40000 * percentRemain / 100;
+            durationRemain = 75000 * percentRemain / 100;
 
         timeRemaining = Math.floor((durationRemain / 1000) % 60);
 
