@@ -70,25 +70,26 @@
           </div>
         </div>
 
-        <section id="socialMedia" class="clearfix">
+        <section id="socialMedia" class="clearfix active">
           <!-- <div class="container"> -->
             <!-- <div class="row"> -->
               <div class="col-sm-5 left-side text-center">
-                <h4>We are searching for the following social media profiles</h4>
+                <h4 class="hidden-xs">We are searching for the following social media profiles</h4>
                 <p class="highlighted">Now Searching <span id="website"></span></p>
-
+                <div class="icon-container">
+                  
                   <ul id="social-media-groups" class="socialMedias list-unstyled clearfix">
                     <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social twitter"><img src="img/social_icons/twitter.svg"></span></li>
                     <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social facebook"><img src="img/social_icons/facebook.svg"></span></li>
-                    <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social google-plus"><img src="img/social_icons/google+.svg"></span></li>
-                    <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social linkedin"><img src="img/social_icons/linkedin.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social google-Plus"><img src="img/social_icons/google+.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social linkedIn"><img src="img/social_icons/linkedin.svg"></span></li>
                     <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social snapchat"><img src="img/social_icons/snapchat.svg"></span></li>
                     <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social instagram"><img src="img/social_icons/instagram.svg"></span></li>
                     <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social pinterest"><img src="img/social_icons/pinterest.svg"></span></li>
                     <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social reddit"><img src="img/social_icons/reddit.svg"></span></li>
-                    <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social youtube"><img src="img/social_icons/youtube.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social youTube"><img src="img/social_icons/youtube.svg"></span></li>
                     <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social tumblr"><img src="img/social_icons/tumblr.svg"></span></li>
-                    <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social whatsapp"><img src="img/social_icons/whatsapp.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social whatsApp"><img src="img/social_icons/whatsapp.svg"></span></li>
                     <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social viber"><img src="img/social_icons/viber.svg"></span></li>
                     <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social evernote"><img src="img/social_icons/evernote.svg"></span></li>
                     <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social skype"><img src="img/social_icons/skype.svg"></span></li>
@@ -97,9 +98,10 @@
                     <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social vimeo"><img src="img/social_icons/vimeo.svg"></span></li>
                     <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social flickr"><img src="img/social_icons/flickr.svg"></span></li>
                     <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social blogger"><img src="img/social_icons/blogger.svg"></span></li>
-                    <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social facebook"><img src="img/social_icons/facebook.svg"></span></li>
+                    <li><img class="loading spinner" src="img/social_icons/social-spinner.gif" alt=""><span class="social tinder"><img src="img/social_icons/tinder.svg"></span></li>
                   </ul>
 
+                </div>
                 <p>&amp; many more...</p>
               </div>
 
@@ -118,8 +120,9 @@
 
         <section id="emailBox" class="clearfix">
           <div class="col-sm-5 left-side text-center">
-            <h4>We are searching for email providers</h4>
-            <img src="img/Email-finder.svg" alt="">
+            <h4 class="hidden-xs">We are searching for email providers</h4>
+            <img class="hidden-xs" src="img/Email-finder.svg" alt="">
+            <img class="visible-xs" src="img/Email-finder-mobile.svg" alt="">
           </div>
 
           <div class="col-sm-7 right-side">
@@ -136,7 +139,11 @@
         <section id="photoBox" class="clearfix">
           <div class="col-sm-5 left-side text-center">
             <h4>We are searching for online photos</h4>
-            <img src="img/img@2x.png" alt="">
+            <div class="photo-loader">
+              <img class="person-photo" src="img/img@2x.png" alt="">
+              <img class="green-spinner hidden-xs" src="img/desktop_spinner.gif" alt="">
+              <img class="green-spinner visible-xs" src="img/mobile_spinner.gif" alt="">
+            </div>
           </div>
 
           <div class="col-sm-7 right-side">
@@ -152,8 +159,8 @@
 
         <section id="premiumBox" class="clearfix">
           <div class="col-sm-5 left-side text-center">
-            <img src="img/crown.svg" alt="">
-            <h4>Premium data is available</h4>
+            <img class="hidden-xs" src="img/crown.svg" alt="">
+            <h4 class="hidden-xs">Premium data is available</h4>
           </div>
 
           <div class="col-sm-7 right-side">
@@ -168,7 +175,8 @@
 
         <section id="jobBox" class="clearfix">
           <div class="col-sm-5 left-side text-center">
-            <h4>Searching for education &amp; job history</h4>
+            <h4 class="hidden-xs">Searching for education &amp; job history</h4>
+            <img class="visible-xs" src="img/education-and-job-mobile.png" alt="">
           </div>
 
           <div class="col-sm-7 right-side">

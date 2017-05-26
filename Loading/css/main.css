@@ -125,12 +125,16 @@ label.error {
 }
 
 section {
-  display: block;
+  display: none;
   height: 100%;
   background: white;
   box-shadow: 0.9px 4.9px 30px 0 rgba(170, 196, 206, 0.3);
   border-radius: 10px;
   margin-bottom: 180px;
+}
+
+section.active {
+  display: block;
 }
 
 /* progress bar */
@@ -262,8 +266,11 @@ section {
 }
 
 #social-media-groups li img.spinner {
-  left: 23%;
   top: 25%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ================================================ */
@@ -293,15 +300,9 @@ section {
     position: relative;
   }
 
-  #photoBox img {
-    opacity: 1;
-    z-index: 2;
-    position: relative;
-  }
-
   #photoBox .left-side {
     /*background-color: #e7114c;*/
-    padding: 60px 60px 25px;
+    padding: 60px 0px 25px;
     position: relative;
     background-image: url("../img/images@2x.png");
     background-size: 95%;
@@ -320,10 +321,32 @@ section {
     border-bottom-left-radius: 10px;
   }
 
-  #photoBox .left-side img {
-    height: 180px;
-    border-radius: 50%;
+  .photo-loader {
+    position: relative;
+    height: 205px;
     margin-bottom: 130px;
+  }
+  #photoBox .left-side img {
+    opacity: 1;
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+
+  #photoBox .left-side img.green-spinner {
+    height: 196px;
+    width: 196px;
+    z-index: 1;
+  }
+
+  #photoBox .left-side img.person-photo {
+    z-index: 2;
+    top: 4%
   }
 
 /* ================================================ */
@@ -339,18 +362,19 @@ section {
     color: #000;
   }
 
-  /* ================================================ */
-  /* == Education =================================== */
-  /* ================================================ */
+/* ================================================ */
+/* == Job ========================================= */
+/* ================================================ */
 
-    #jobBox .left-side {
-      background-image: url("../img/education-and-job.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      min-height: 488px;
-      padding: 60px 60px 25px;
-    }
+  #jobBox .left-side {
+    background-image: url("../img/education-and-job.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 488px;
+    padding: 60px 60px 25px;
+  }
+
 /* ================================================ */
 /* == FOOTER  ===================================== */
 /* ================================================ */
@@ -396,6 +420,7 @@ section {
 .footer-links {
   margin-bottom: 75px;
 }
+
 #footer h4 {
   font-size: 22px;
   font-weight: bold;
@@ -482,16 +507,20 @@ section {
   .left-side {
     padding: 50px 12px 25px 24px;
   }
+
+  /* == Social  ===================================== */
+
   #social-media-groups li {
     height: 52px;
     width: 52px;
     margin: 0px 8px 8px 0px;
   }
-
+  /* == Premium  ===================================== */
   #premiumBox .left-side {
     background-position: -135px 0px, center;
   }
 
+  /* == Job  ======================================== */
   #jobBox .left-side {
     background-position: 0px -40px, center;
   }
@@ -500,12 +529,17 @@ section {
   h1 {
     font-size: 32px;
   }
+
+  section {
+    margin-bottom: 100px;
+  }
   .left-side {
     padding: 30px 6px 25px 12px;
   }
   .right-side h3 {
     margin-top: 100px;
   }
+  /* == Progress Bar  ===================================== */
 
   .progress-wrap .progress .progress-text,
   .progress-wrap .progress .progress-text-outer,
@@ -518,6 +552,8 @@ section {
     height: 50px;
     font-size: 18px;
   }
+
+  /* == Social  ===================================== */
 
   #socialMedia h4 {
     margin-bottom: 20px
@@ -533,25 +569,47 @@ section {
     margin: 0px 6px 6px 0px;
   }
 
+  /* == Email  ===================================== */
+
   #emailBox .left-side {
-    max-height: 430px;
+    max-height: 400px;
     padding: 30px 10px 25px;
   }
+
+  /* == Photo  ===================================== */
+
   #photoBox .left-side {
-    padding: 30px 60px 25px;
+    padding: 30px 0px 25px;
   }
 
   #photoBox .left-side img {
     height: 150px;
+    width: 150px;
     border-radius: 50%;
     margin-bottom: 75px;
   }
+
+  .photo-loader {
+    margin-bottom: 75px;
+  }
+
+  #photoBox .left-side img.person-photo {
+    top: 3%;
+  }
+
+  #photoBox .left-side img.green-spinner {
+    height: 161px;
+    width: 161px;
+  }
+  /* == Premium  ===================================== */
 
   #premiumBox .left-side {
     background-position: -140px 0px, center;
     min-height: 430px;
     color: #000;
   }
+
+  /* == Job  ===================================== */
 
   #jobBox .left-side {
     min-height: 470px;
@@ -562,10 +620,134 @@ section {
 }
 
 @media (max-width: 767px){
+  h1 {
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
   .navbar-logo img {
     width: 140px;
     height: 20px;
-    margin: 25px 0px;
+    margin: 18px 0px;
+  }
+
+  .progress-wrap .progress .progress-text,
+  .progress-wrap .progress .progress-text-outer,
+  .progress-wrap .progress .progress-text-inner{
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .progress-wrap .progress {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  section {
+    margin-bottom: 40px;
+  }
+
+  .left-side {
+    font-size: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+  }
+  .right-side {
+    text-align: center;
+    padding: 30px 15px;
+    font-size:  15px;
+  }
+
+  .right-side h3 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  .highlighted {
+    font-size: 13px;
+  }
+
+  /* == Social  ===================================== */
+
+  #social-media-groups {
+    margin-top: 10px !important;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #social-media-groups li {
+    height: 36px;
+    width: 36px;
+  }
+
+  #social-media-groups li img.spinner {
+    top: 25%;
+    height: 20px;
+    width: 20px;
+  }
+
+  /* == Email  ===================================== */
+  #emailBox .left-side {
+    padding-top: 0px;
+  }
+
+  #photoBox .left-side {
+    padding: 15px 60px 30px;
+  }
+
+  /* == Photo  ===================================== */
+
+  #photoBox .left-side:after {
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+  }
+  #photoBox .left-side img.person-photo,
+  #photoBox .left-side img.green-spinner {
+    height: 115px;
+    width: 115px;
+  }
+  #photoBox .left-side img.person-photo {
+    top: 4%;
+  }
+  #photoBox .left-side img.green-spinner {
+    height: 125px;
+    width: 125px;
+  }
+
+  #photoBox h4 {
+    margin-bottom: 25px;
+  }
+
+  .photo-loader {
+    position: relative;
+    height: 115px;
+    margin-bottom: 0px;
+  }
+
+  /* == Premium  ===================================== */
+
+  #premiumBox .left-side {
+    background: url("../img/Premium-mobile.png");
+    background-position: -380px bottom, center;
+    background-repeat: no-repeat;
+    min-height: 380px;
+  }
+
+  /* == Job  ===================================== */
+
+  #jobBox .left-side {
+    background-image: none;
+    background-color: #8dd9e0;
+    min-height: unset;
+  }
+
+  #jobBox .left-side img {
+    width: 100%;
   }
 
   #footer {
@@ -602,4 +784,16 @@ section {
     text-align: center;
   }
 
+}
+
+@media (max-width: 550px) {
+  #emailBox .left-side {
+    max-height: 375px;
+  }
+}
+
+@media (max-width: 400px) {
+  #emailBox .left-side {
+    max-height: 325px;
+  }
 }
