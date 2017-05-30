@@ -97,11 +97,31 @@ nav {
   background-color: #73b649;
 }
 
+.navbar-header {
+  float: none !important;
+}
+
+.navbar-logo {
+  float: left;
+}
+
 .navbar-logo img{
   display: block;
   margin:15px 0px;
   width: 160px;
   height: 30px;
+}
+
+.cheaters-nav {
+  border-radius: 5px;
+  background: #ef2742;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 0px 10px;
+  display: inline-block;
+  float: left;
+  margin-top: 22px;
+  margin-left: 5px;
 }
 
 /* ================================================ */
@@ -548,6 +568,11 @@ img.quotes {
     height: 20px;
     margin: 25px 0px;
   }
+
+  .cheaters-nav {
+  font-size: 10px;
+  margin-top: 19px;
+}
 
   #footer {
     padding-top: 0;
