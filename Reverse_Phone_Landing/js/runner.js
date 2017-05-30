@@ -1,5 +1,5 @@
 $(function() {
-
+   var animationDuration = 40000;
   $.extend($.easing, {
     easeBV: function(x, t, b, c, d) {
       var ts=(t/=d)*t;
@@ -11,20 +11,26 @@ $(function() {
       //return b+c*(22.645*tc*ts + -59.29*ts*ts + 54.895*tc + -21.3*ts + 4.05*t);
     }
   });
-  var sections = $('.switch-section');
-      tabs = $('.section-tabs .tab');
+  var $sections = $('.switch-section'),
+      $tabs = $('.section-tabs .tab'),
+      $loaderBoxes = $('.loader-box');
 
   var changeTab = function(idx) {
 
-    $('.switch-section').removeClass('active');
-    $('.section-tabs .tab').removeClass('active');
+    $sections.removeClass('active');
+    $tabs.removeClass('active');
+    $loaderBoxes.removeClass('active');
 
-    $(tabs[idx]).addClass('active');
-    $(sections[idx]).addClass('active');
-  };
-
-  var stepComplete = function() {
-
+    $($tabs[idx]).addClass('active');
+    $($sections[idx]).addClass('active');
+    var loaderImg = $($loaderBoxes[idx]).find('img.loader');
+    var imgSrc = loaderImg.attr('src');
+    // debugger
+    $($loaderBoxes[idx]).addClass('active');
+    window.setTimeout(function(){
+      loaderImg.attr('src', '#');
+      loaderImg.attr('src', imgSrc);
+    }, 200);
   };
 
   $('.progress-text-inner').hide();
@@ -32,9 +38,8 @@ $(function() {
     var progress = $('.bar').animate({
       width: "100%"
     }, {
-      duration: 40000,
+      duration: animationDuration,
       easing: 'easeBV',
-      complete: stepComplete,
       step: function(step) {
         var percent = Math.floor(step);
         $('.progress-text-inner').html(percent.toString() + "%");
@@ -45,18 +50,18 @@ $(function() {
 
         timeRemaining = Math.floor((durationRemain / 1000) % 60);
 
-        if (percent === 25) {
-          changeTab(1);
+        if (percent === 23) {
+
         }
 
         if (percent === 50) {
           $('.progress-text-outer').fadeOut();
           $('.progress-text-inner').fadeIn();
-          changeTab(2);
+
         }
 
         if (percent === 75) {
-          changeTab(3);
+
         }
 
         if (percent === 42) {
@@ -68,11 +73,23 @@ $(function() {
           $('.test3').removeClass('hidden-xs hidden-sm');
         }
       }
-  });
+    });
+  };
+
+  var startTabs = function() {
+    idx = 1;
+    var tabInterval = window.setInterval(function(){
+      changeTab(idx);
+      idx++ ;
+      if (idx === 4) {
+        window.clearInterval(tabInterval);
+      }
+    }, animationDuration / 4);
   };
 
   var initialize = function() {
     startLoader();
+    startTabs();
   };
 
   initialize();
