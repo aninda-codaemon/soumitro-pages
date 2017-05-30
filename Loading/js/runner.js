@@ -85,11 +85,19 @@ $(function() {
 
   var changeSections = function() {
     var sectionInterval = window.setInterval(function(){
-      if (currentIdx === sections.length - 1){
+      if (currentIdx === sections.length){
         window.clearInterval(sectionInterval);
+        window.setTimeout(function(){
+          window.location.href = $('body').data('next-page');
+        },750);
       }
       sections.removeClass('active');
       $(sections[currentIdx]).addClass('active');
+      //added this little hack for now to keep final section as displayed, because
+      // active class will be removed
+      if ($(sections[currentIdx]).is('#jobBox')) {
+        $(sections[currentIdx]).addClass('block-hack');
+      }
       currentIdx += 1;
     }, 15000);
   };
