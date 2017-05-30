@@ -26,6 +26,7 @@ $(function() {
     var loaderImg = $($loaderBoxes[idx]).find('img.loader');
     var imgSrc = loaderImg.attr('src');
     // debugger
+    $('.step-number').text('Step ' + (idx + 1).toString() + "/4");
     $($loaderBoxes[idx]).addClass('active');
     window.setTimeout(function(){
       loaderImg.attr('src', '#');

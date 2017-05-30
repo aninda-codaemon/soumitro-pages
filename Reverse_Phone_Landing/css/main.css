@@ -70,9 +70,6 @@ nav {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#353167', endColorstr='#4a3b8f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-.navbar-header {
-  margin-left: 50px;
-}
 .navbar-toggle {
   margin-top: -4px;
   padding: 6px 7px;
@@ -248,14 +245,19 @@ img.quotes {
   height: 120px;
   width: 120px;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
 .phone {
-  height: 50px;
+  height: 42px;
   position: absolute;
   top: 25%;
-  left: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
 
 .all-day {
@@ -293,7 +295,7 @@ img.quotes {
 }
 
 .progress-wrap .progress .progress-bar {
-  background-color: #81b44c;
+  background-color: #5cb85c;
 }
 
 .progress-wrap .progress .progress-text {
@@ -389,7 +391,7 @@ img.quotes {
 }
 
 .bottom-action {
-  padding: 60px 0px 80px;
+  padding: 60px 15px 80px;
 }
 
 .bottom-action .loader {
@@ -564,6 +566,71 @@ img.quotes {
 /* ================================================ */
 @media (max-width: 991px){
 
+
+  /* == Progress Bar  ===================================== */
+
+  .progress-wrap .progress .progress-text,
+  .progress-wrap .progress .progress-text-outer,
+  .progress-wrap .progress .progress-text-inner{
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .progress-wrap .progress {
+    height: 50px;
+    font-size: 18px;
+  }
+
+
+/* == Action Header  ===================================== */
+  .phone-circle {
+    height: 100px;
+    width: 100px;
+  }
+/* == Action Box  ===================================== */
+
+  .action-section {
+    padding-top: 40px;
+  }
+
+  .step-number {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: -0.6px;
+    color: rgba(51, 51, 51, 0.1);
+    position: absolute;
+    right: 35px;
+    top: 20px;
+  }
+
+  .loader-box {
+    height: 130px;
+    width: 130px;
+    display: none;
+  }
+
+  .loader-box.active {
+    display: block;
+  }
+
+  .loader-box img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .loader {
+    z-index: 1;
+    height: 130px;
+  }
+  .loader-icon {
+    height: 64px;
+    z-index: 2;
+    top: 22%;
+  }
+
 }
 
 @media (max-width: 767px){
@@ -573,10 +640,25 @@ img.quotes {
     margin: 25px 0px;
   }
 
+  /* == Progress Bar  ===================================== */
+
+  .progress-wrap .progress .progress-text,
+  .progress-wrap .progress .progress-text-outer,
+  .progress-wrap .progress .progress-text-inner{
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .progress-wrap .progress {
+    height: 40px;
+    font-size: 14px;
+  }
+
+
   .cheaters-nav {
-  font-size: 10px;
-  margin-top: 19px;
-}
+    font-size: 10px;
+    margin-top: 19px;
+  }
 
   #footer {
     padding-top: 0;
