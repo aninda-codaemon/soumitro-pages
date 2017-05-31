@@ -231,17 +231,18 @@ img.quotes {
 }
 
 .action-header {
-  background: #7e6f9c;
+  /*background: #7e6f9c;*/
+  background-image: url('../img/header-bg.png');
+  background-repeat: no-repeat;
+  /*background-size: cover;*/
   padding-top: 35px;
   color: white;
 }
 
-.phone-box {
-  display: inline-block;
-}
 .phone-circle {
   border-radius: 50%;
-  background: #8b7da6;
+  opacity: 0.1;
+	background-color: #ffffff;
   height: 120px;
   width: 120px;
   position: relative;
@@ -263,7 +264,7 @@ img.quotes {
 .all-day {
   display: inline-block;
   border-radius: 16.5px;
-  background-color: #655890;
+  background-color: #66498a;
   padding: 5px 12px;
   margin-bottom: 0px;
 }
@@ -566,7 +567,9 @@ img.quotes {
 /* ================================================ */
 @media (max-width: 991px){
 
-
+  h2 {
+    font-size: 28px;
+  }
   /* == Progress Bar  ===================================== */
 
   .progress-wrap .progress .progress-text,
@@ -606,19 +609,6 @@ img.quotes {
   .loader-box {
     height: 130px;
     width: 130px;
-    display: none;
-  }
-
-  .loader-box.active {
-    display: block;
-  }
-
-  .loader-box img {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
   }
 
   .loader {
@@ -631,13 +621,53 @@ img.quotes {
     top: 22%;
   }
 
+  /* == Side Bar   ===================================== */
+  .secured h4 {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 767px){
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
   .navbar-logo img {
     width: 140px;
     height: 20px;
     margin: 25px 0px;
+  }
+
+  .cheaters-nav {
+    font-size: 10px;
+    margin-top: 26px;
+  }
+
+  .action-header {
+    background-size: cover;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .phone-box {
+    margin-bottom: 10px;
+  }
+
+  .phone-circle {
+    height: 57px;
+    width: 57px;
+  }
+
+  .phone {
+    height: 30px;
+  }
+
+  .all-day {
+    font-size: 13px;
   }
 
   /* == Progress Bar  ===================================== */
@@ -654,12 +684,70 @@ img.quotes {
     font-size: 14px;
   }
 
-
-  .cheaters-nav {
-    font-size: 10px;
-    margin-top: 19px;
+  .map {
+    height: 110px;
   }
 
+  /* == Action Box  ===================================== */
+  .action-section {
+    padding: 0px;
+  }
+
+  .mobile-padding {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .action-box {
+    border-radius: 0;
+  }
+
+  .bottom-action {
+    padding: 45px 15px;
+    text-align: center;
+  }
+
+  .loader-box {
+    height: 120px;
+    width: 120px;
+    margin-bottom: 30px;
+  }
+
+  .loader {
+    z-index: 1;
+    height: 120px;
+  }
+  .loader-icon {
+    height: 64px;
+    z-index: 2;
+    top: 22%;
+  }
+
+  .switch-section p {
+    font-size: 15px;
+  }
+
+  .secured {
+    padding: 15px;
+  }
+
+  .secured h4 {
+    font-size: 16px;
+  }
+
+  .secured p {
+    font-size: 13px;
+  }
+
+  .secured img {
+    margin-right: 0px;
+  }
+
+  .testimonials p {
+    font-size: 15px;
+  }
+
+/* == Footer  ===================================== */
   #footer {
     padding-top: 0;
   }

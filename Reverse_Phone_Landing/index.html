@@ -52,7 +52,7 @@
     </nav>
   </header>
   <div class="placeholder clearfix">
-    <div class="col-sm-4 side-bar">
+    <div class="col-sm-4 side-bar hidden-xs">
       <div class="map">
         <img src="img/google-map.png" alt="">
       </div>
@@ -107,12 +107,13 @@
 
         <div class="clearfix" data-fr-bind="searchData">
           <div class="col-sm-3">
-            <div class="phone-circle">
+            <div class="phone-box">
+              <div class="phone-circle"></div>
               <img class="phone" src="img/Phone.svg" alt="">
             </div>
           </div>
 
-          <div class="col-sm-7">
+          <div class="col-sm-9">
             <div class="header-box">
               <p class="all-day"><img src="img/24-hours.svg" alt="">Data found within the past 24 hours</p>
               <h2>Searching for available information on {{phone}}</h2>
@@ -135,8 +136,12 @@
         </div>
       </div>
 
+      <div class="map visible-xs">
+        <img src="img/google-map.png" alt="">
+      </div>
+
       <div class="action-section active clearfix">
-        <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <div class="col-sm-12 col-md-10 col-md-offset-1 mobile-padding">
           <div class="action-box clearfix" data-fr-bind="searchData">
             <p class="visible-xs visible-sm step-number">Step 1/4</p>
               <div class="section-tabs clearfix hidden-xs hidden-sm">
@@ -226,6 +231,53 @@
           </div>
         </div>
 
+        <div class="visible-xs">
+          <div class="secured clearfix">
+            <div class="col-xs-2 col-sm-3 no-pad-left text-center">
+              <img src="img/lock@2x.png" alt="">
+
+            </div>
+            <div class="col-xs-9">
+              <h4>This search session is secured</h4>
+              <p class="hidden-sm">BeenVerified deploys strategies, including Secure 256-bit SSL technology,
+              to keep your personal information and payment from unauthorized 3rd parties.</p>
+            </div>
+          </div>
+
+          <div class="testimonials">
+
+            <h3>Testimonials</h3>
+            <img class="quotes" src="img/quote.svg" alt="">
+            <div class="first-account">
+
+              <p class="text">"When I was younger I dreamt of getting rid of my mermaid fins and becoming a
+              human. I made a deal with a sea witch, became a human, and married the first
+              blue-eyed man i met."</p>
+              <div class="info-box">
+                <img src="img/lil-carla.png" alt="">
+                <div class="text">
+                  <p class="name">Ari L., Atlantic Ocean</p>
+                  <p>Thingamabob Hoarder</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="second-account">
+
+              <p class="text">"When I was in my early twenties, I was kidnapped and held captive in a shed for
+              7 years. If only I had used their sex offender data earlier!"</p>
+
+              <div class="info-box">
+                <img src="img/lil-carla.png" alt="">
+                <div class="text">
+                  <p class="name">Ma, Akron, OH</p>
+                  <p>Survivor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     </div>
   </div>
