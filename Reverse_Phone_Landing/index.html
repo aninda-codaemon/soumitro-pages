@@ -9,6 +9,9 @@
     <link type="text/css" href="css/main.css" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+    <script src='//api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+    <link href='//api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
   </head>
   <body data-next-page="<%=next_page%>">
 
@@ -53,9 +56,7 @@
   </header>
   <div class="placeholder clearfix">
     <div class="col-sm-4 side-bar hidden-xs">
-      <div class="map">
-        <img src="img/google-map.png" alt="">
-      </div>
+      <div id="map"></div>
       <div class="testimonials">
 
         <h3>Testimonials</h3>
@@ -136,9 +137,9 @@
         </div>
       </div>
 
-      <div class="map visible-xs">
+      <!-- <div class="map visible-xs">
         <img src="img/google-map.png" alt="">
-      </div>
+      </div> -->
 
       <div class="action-section active clearfix">
         <div class="col-sm-12 col-md-10 col-md-offset-1 mobile-padding">
@@ -417,10 +418,15 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/amplify.store.min.js"></script>
     <script src="js/lodash.min.js"></script>
-    <script src="js/handlebars.min.js"></script>
-
     <script src="js/jquery.validate.js"></script>
     <script src="js/utility.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/rafPoly.js"></script>
+    <script type="text/javascript" src="js/mapAnimation.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+
+    <script src="js/handlebars.min.js"></script>
+
 
     <script src="js/framerida.helpers.js"></script>
     <script src="js/framerida.js"></script>
