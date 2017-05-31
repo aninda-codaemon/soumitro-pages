@@ -77,6 +77,10 @@ $(function() {
     });
   };
 
+  var changeScreen = function() {
+    console.log('changing')
+  };
+
   var startTabs = function() {
     idx = 1;
     var tabInterval = window.setInterval(function(){
@@ -84,6 +88,7 @@ $(function() {
       idx++ ;
       if (idx === 4) {
         window.clearInterval(tabInterval);
+        window.setTimeout(changeScreen, (animationDuration / 4) + 1000);
       }
     }, animationDuration / 4);
   };
