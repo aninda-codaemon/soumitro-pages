@@ -441,12 +441,28 @@ img.quotes {
 /* == Preview Box  ================================ */
 /* ================================================ */
 
+h2.overview {
+  margin-bottom: 25px;
+}
 #previewBox {
-  padding: 45px 0px;
+  margin-bottom: 140px;
+}
+.left-preview,
+.unlock-section {
+  padding: 45px 15px;
+  /*padding-bottom: 45px;*/
+}
+
+.left-preview {
+  border-right: solid 1px #e1e1e1;
+}
+
+.left-preview h2 {
+  margin-top: 0px;
 }
 table {
   margin-bottom: 60px;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 td {
   padding-bottom: 30px;
@@ -456,11 +472,11 @@ td {
   font-weight: bold;
   padding-left: 20px;
   border-right: solid 1px #e1e1e1;
-  padding-right: 40px;
+  padding-right: 20px;
 }
 
 .table-data {
-  padding-left: 40px;
+  padding-left: 20px;
 }
 
 td.no-bottom-pad {
@@ -468,24 +484,43 @@ td.no-bottom-pad {
 }
 
 .avatar-box {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   position: relative;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 0 rgba(51, 51, 51, 0.1);
 }
 
 .avatar-lock {
   position: absolute;
+  height: 20px;
+  bottom: 0;
+  right: 0;
 }
 
+.btn-large {
+  height: 69px;
+	border-radius: 8px;
+	background-color: #5cb85c;
+	box-shadow: 0 5px 0 0 #51a251;
+  color: white;
+  font-size: 20px;
+  width: 100%;
+  border: none;
+  margin-bottom: 20px;
+}
 
-.unlock-section {
-  border-left: solid 1px #e1e1e1;
+.unlock-header {
+  margin-bottom: 45px;
+}
+.unlock-section h3 {
+  margin-bottom: 15px;
 }
 
 .yellow-icons {
   position: relative;
-  width: 32px;
-	height: 32px;
+  width: 28px;
+	height: 28px;
 	background-color: #f5c419;
   border-radius: 50%;
   display: inline-block;
@@ -499,20 +534,20 @@ td.no-bottom-pad {
   left: 0;
   right: 0;
   top: 25%;
+  height: 50%;
 }
 .locked-points {
   margin-bottom: 25px;
 }
 .locked-points p {
-  display: inline-block;
-}
-.red-lock  {
-  float: right;
+  margin-top: 5px;
 }
 .no-pad-right {
   padding-right: 0px;
 }
-
+.red-lock {
+  margin-top: 9px;
+}
 .no-pad-left {
   padding-left: 0px;
 }
@@ -644,6 +679,31 @@ td.no-bottom-pad {
 /* ================================================ */
 /* == RESPONSIVE  ================================= */
 /* ================================================ */
+@media (min-width: 1400px){
+  .left-preview,
+  .unlock-section {
+    padding: 45px 30px;
+    /*padding-bottom: 45px;*/
+  }
+
+  .avatar-box {
+    height: 100px;
+    width: 100px;
+  }
+
+  .avatar-lock {
+    height: 30px;
+  }
+
+  .table-category {
+    padding-right: 40px;
+  }
+
+  .table-data {
+    padding-left: 40px;
+  }
+}
+
 @media (max-width: 991px){
 
   h2 {

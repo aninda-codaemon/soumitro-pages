@@ -235,10 +235,10 @@
         <div class="action-section active clearfix">
           <div class="col-sm-12 col-md-10 col-md-offset-1 mobile-padding">
             <div class="" data-fr-bind="searchData">
-              <h2>Overview of <span style="color: #f5c419;">{{phone}}</span></h2>
+              <h2 class="overview">Overview of <span style="color: #f5c419;">{{phone}}</span></h2>
               <div class="action-box clearfix" id="previewBox">
-                <div class="col-sm-8">
-                  <div class="col-sm-4">
+                <div class="col-sm-7 left-preview">
+                  <div class="col-sm-4 no-pad-left">
                     <div class="avatar-box">
                       <img src="img/avatar.svg" alt="">
                       <img class="avatar-lock" src="img/lock.svg" alt="">
@@ -247,6 +247,8 @@
 
                   <div class="col-sm-8">
                     <h2>Owner's Name: S**** S****</h2>
+                  </div>
+                  <div class="col-sm-12 no-pad-left no-pad-right">
                     <table>
                       <tr>
                         <td><img src="img/calendar.svg" alt=""></td>
@@ -274,59 +276,115 @@
                         <td class="table-data no-bottom-pad"><a href="#">Click Here</a></td>
                       </tr>
                     </table>
+
                   </div>
+                  <button type="button" name="button" class="btn-large">Continue To Full Report</button>
+                  <p class="text-center">* You need an account to be able to see this content.</p>
                 </div>
 
-                <div class="col-sm-4 unlock-section">
-                  <h3>Unlock Premium Data</h3>
-                  <p>Create Account To Search</p>
+                <div class="col-sm-5 unlock-section">
+                  <div class="unlock-header">
+                    <h3>Unlock Premium Data</h3>
+                    <p>Create Account To Search</p>
+                  </div>
 
-                    <div class="locked-points">
-                      <div class="yellow-icons">
-                        <img src="img/calendar-white.svg" alt="">
+                    <div class="locked-points row">
+                      <div class="col-sm-3">
+                        <div class="yellow-icons">
+                          <img src="img/calendar-white.svg" alt="">
+                        </div>
                       </div>
-                      <p>Age</p>
-                      <img class="red-lock" src="img/shape-1-copy-7.svg" alt="">
+
+                      <div class="col-sm-7">
+                        <p>Age</p>
+                      </div>
+                      <div class="col-sm-2">
+
+                        <img class="red-lock" src="img/shape-1-copy-7.svg" alt="">
+                      </div>
                     </div>
 
-                    <div class="locked-points">
-                      <div class="yellow-icons">
-                        <img src="img/map-pin-white.svg" alt="">
+
+
+                    <div class="locked-points row">
+                      <div class="col-sm-3">
+                        <div class="yellow-icons">
+                          <img src="img/map-pin-white.svg" alt="">
+                        </div>
                       </div>
-                      <p>Address</p>
-                      <img class="red-lock" src="img/shape-1-copy-7.svg" alt="">
+
+                      <div class="col-sm-7">
+                        <p>Address</p>
+                      </div>
+                      <div class="col-sm-2">
+
+                        <img class="red-lock" src="img/shape-1-copy-7.svg" alt="">
+                      </div>
                     </div>
 
-                    <div class="locked-points">
-                      <div class="yellow-icons">
-                        <img src="img/social.svg" alt="">
+                    <div class="locked-points row">
+                      <div class="col-sm-3">
+                        <div class="yellow-icons">
+                          <img src="img/social.svg" alt="">
+                        </div>
                       </div>
-                      <p>Social Media Profiles</p>
-                      <img class="red-lock" src="img/shape-1-copy-7.svg" alt="">
+
+                      <div class="col-sm-7">
+                        <p>Social Media Profiles</p>
+                      </div>
+                      <div class="col-sm-2">
+
+                        <img class="red-lock" src="img/shape-1-copy-7.svg" alt="">
+                      </div>
                     </div>
 
-                    <div class="locked-points">
-                      <div class="yellow-icons">
-                        <img src="img/email-white.svg" alt="">
+                    <div class="locked-points row">
+                      <div class="col-sm-3">
+                        <div class="yellow-icons">
+                          <img src="img/email-white.svg" alt="">
+                        </div>
                       </div>
-                      <p>Email Addresses</p>
-                      <img class="red-lock" src="img/shape-1-copy-7.svg" alt="">
+
+                      <div class="col-sm-7">
+                        <p>Email Addresses</p>
+                      </div>
+                      <div class="col-sm-2">
+
+                        <img class="red-lock" src="img/shape-1-copy-7.svg" alt="">
+                      </div>
                     </div>
 
-                    <div class="locked-points">
-                      <div class="yellow-icons">
-                        <img src="img/phone-white.svg" alt="">
+
+                    <div class="locked-points row">
+                      <div class="col-sm-3">
+                        <div class="yellow-icons">
+                          <img src="img/phone-white.svg" alt="">
+                        </div>
                       </div>
-                      <p>Phone Numbers</p>
-                      <img class="red-lock" src="img/shape-1-copy-7.svg" alt="">
+
+                      <div class="col-sm-7">
+                        <p>Phone Numbers</p>
+                      </div>
+                      <div class="col-sm-2">
+
+                        <img class="red-lock" src="img/shape-1-copy-7.svg" alt="">
+                      </div>
                     </div>
 
-                    <div class="locked-points">
-                      <div class="yellow-icons">
-                        <img src="img/criminal.svg" alt="">
+                    <div class="locked-points row">
+                      <div class="col-sm-3">
+                        <div class="yellow-icons">
+                          <img src="img/criminal.svg" alt="">
+                        </div>
                       </div>
-                      <p>Criminial Records</p>
-                      <img class="red-lock" src="img/shape-1-copy-7.svg" alt="">
+
+                      <div class="col-sm-7">
+                        <p>Criminal Records</p>
+                      </div>
+                      <div class="col-sm-2">
+
+                        <img class="red-lock" src="img/shape-1-copy-7.svg" alt="">
+                      </div>
                     </div>
                 </div>
 
