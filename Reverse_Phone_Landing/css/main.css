@@ -484,8 +484,8 @@ td.no-bottom-pad {
 }
 
 .avatar-box {
-  height: 80px;
-  width: 80px;
+  height: 90px;
+  width: 90px;
   position: relative;
   border-radius: 50%;
   box-shadow: 0 0 20px 0 rgba(51, 51, 51, 0.1);
@@ -493,13 +493,13 @@ td.no-bottom-pad {
 
 .avatar-lock {
   position: absolute;
-  height: 20px;
+  height: 30px;
   bottom: 0;
   right: 0;
 }
 
 .btn-large {
-  height: 69px;
+  height: 70px;
 	border-radius: 8px;
 	background-color: #5cb85c;
 	box-shadow: 0 5px 0 0 #51a251;
@@ -764,6 +764,37 @@ td.no-bottom-pad {
   .secured h4 {
     font-size: 18px;
   }
+
+  /* ==  Preview Box   ===================================== */
+
+  .left-preview {
+    padding: 45px 25px;
+  }
+  td {
+    padding-bottom: 24px;
+  }
+
+  td.not-last {
+    padding-bottom: 24px;
+  }
+  .table-category {
+    width: 57%;
+  }
+
+  .table-date {
+    padding-left: 25px;
+  }
+
+  .red-lock {
+    margin-top: 0px;
+    height: 20px;
+  }
+
+  .btn-large {
+    height: 60px;
+  }
+
+
 }
 
 @media (max-width: 767px){
@@ -885,6 +916,57 @@ td.no-bottom-pad {
 
   .testimonials p {
     font-size: 15px;
+  }
+
+  /* ==  Preview Box   ===================================== */
+
+  #previewBox h2 {
+    font-size: 22px;
+  }
+  #previewBox .mobile-header h2 {
+    font-size: 26px;
+  }
+  .owner-name {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 16px;
+  }
+  .left-preview {
+    padding: 20px;
+  }
+
+  .avatar-box {
+    height: 70px;
+    width: 70px;
+  }
+
+  .avatar-lock {
+    height: 30px;
+  }
+  td {
+    padding-bottom: 18px;
+  }
+
+  td.not-last {
+    padding-bottom: 24px;
+  }
+  .table-category {
+    width: 48%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .table-date {
+    padding-left: 25px;
+  }
+
+  .red-lock {
+    margin-top: 0px;
+    height: 15px;
+  }
+
+  .btn-large {
+    height: 56px;
   }
 
 /* == Footer  ===================================== */
