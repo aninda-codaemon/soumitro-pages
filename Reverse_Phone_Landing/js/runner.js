@@ -77,8 +77,25 @@ $(function() {
     });
   };
 
+
+  var changeHeader = function() {
+    $headerBox = $('.header-box');
+    // $headerBox.find('img').attr('src', '..');
+  };
+
+  var showLeadBox = function() {
+
+  };
+
   var changeScreen = function() {
-    console.log('changing')
+
+    $('#firstAction').removeClass('active');
+    $('#secondAction').addClass('active');
+
+    $('.report-btn').click(function(){
+      showLeadBox();
+    });
+    changeHeader();
   };
 
   var startTabs = function() {

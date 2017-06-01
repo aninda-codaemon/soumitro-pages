@@ -361,6 +361,21 @@ img.quotes {
   display: block;
 }
 
+#secondAction.action-section.active {
+  animation: fade-in 1.25s forwards;
+  opacity: 0;
+  
+}
+
+@keyframes fade-in{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .section-tabs .tab.active {
   border-bottom: none;
   background: url('../img/active-2.svg');
@@ -441,8 +456,12 @@ img.quotes {
 /* == Preview Box  ================================ */
 /* ================================================ */
 
+#secondAction.action-section {
+  padding-top: 0px;
+}
 h2.overview {
   margin-bottom: 25px;
+  margin-top: 50px;
 }
 #previewBox {
   margin-bottom: 140px;
@@ -547,6 +566,7 @@ td.no-bottom-pad {
 }
 .red-lock {
   margin-top: 9px;
+  height: 12px;
 }
 .no-pad-left {
   padding-left: 0px;
@@ -920,6 +940,10 @@ td.no-bottom-pad {
 
   /* ==  Preview Box   ===================================== */
 
+  #previewBox {
+    margin-bottom: 0px;
+
+  }
   #previewBox h2 {
     font-size: 22px;
   }
