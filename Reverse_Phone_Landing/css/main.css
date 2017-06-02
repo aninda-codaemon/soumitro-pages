@@ -297,7 +297,8 @@ img.quotes {
   color: white;
 }
 
-.phone-circle {
+.phone-circle,
+.check-circle{
   border-radius: 50%;
   opacity: 0.1;
 	background-color: #ffffff;
@@ -309,14 +310,20 @@ img.quotes {
 
 }
 
-.phone {
-  height: 42px;
+.phone,
+.check {
+  height: 50px;
   position: absolute;
   top: 25%;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
+}
+
+.check {
+  height: 78px;
+  top: 17%;
 }
 
 .all-day {
@@ -352,12 +359,14 @@ img.quotes {
   line-height: 1.65;
 }
 .switch-section,
-.action-section{
+.action-section,
+.headers{
   display: none;
 }
 
 .switch-section.active,
-.action-section.active {
+.action-section.active,
+.headers.active {
   display: block;
 }
 
@@ -521,12 +530,22 @@ td.no-bottom-pad {
   height: 60px;
 	border-radius: 8px;
 	background-color: #5cb85c;
-	box-shadow: 0 5px 0 0 #51a251;
+	box-shadow: 0 -5px 0 0 #51a251 inset;
   color: white;
   font-size: 20px;
   width: 100%;
   border: none;
   margin-bottom: 20px;
+}
+
+.btn-large:hover {
+  -webkit-box-shadow: 0 -3px 0 #506e32 inset;
+  -moz-box-shadow: 0 -3px 0 #506e32 inset;
+  box-shadow: 0 -3px 0 #506e32 inset;
+  background-color: #51a251;
+}
+.btn-large:focus {
+  outline: none;
 }
 
 .unlock-header {
@@ -749,9 +768,19 @@ td.no-bottom-pad {
 
 
 /* == Action Header  ===================================== */
-  .phone-circle {
+  .phone-circle,
+  .check-circle {
     height: 100px;
     width: 100px;
+  }
+
+  .check {
+    height: 44px;
+  }
+
+  .check {
+    height: 72px;
+    top: 14%;
   }
 /* == Action Box  ===================================== */
 
@@ -855,17 +884,24 @@ td.no-bottom-pad {
     padding-top: 10px;
   }
 
-  .phone-box {
+  .phone-box,
+  .check-box {
     margin-bottom: 10px;
   }
 
-  .phone-circle {
+  .phone-circle,
+  .check-circle {
     height: 57px;
     width: 57px;
   }
 
   .phone {
     height: 30px;
+  }
+
+  .check {
+    height: 45px;
+    top: 11%;
   }
 
   .all-day {
@@ -959,8 +995,17 @@ td.no-bottom-pad {
   #previewBox h2 {
     font-size: 22px;
   }
+
+  #previewBox h2.overview {
+    margin-top: 0px;
+    text-align: center;
+  }
   #previewBox .mobile-header h2 {
     font-size: 26px;
+  }
+
+  #previewBox .headers p {
+    font-size: 15px;
   }
   .owner-name {
     font-size: 14px;
@@ -987,7 +1032,7 @@ td.no-bottom-pad {
     padding-bottom: 24px;
   }
   .table-category {
-    width: 48%;
+    width: 55%;
     padding-left: 15px;
     padding-right: 15px;
   }

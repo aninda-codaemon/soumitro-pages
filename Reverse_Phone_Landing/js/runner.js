@@ -80,7 +80,9 @@ $(function() {
 
   var changeHeader = function() {
     $headerBox = $('.header-box');
-    // $headerBox.find('img').attr('src', '..');
+    $('#firstHeader').removeClass('active');
+    $('#secondHeader').addClass('active');
+
   };
 
   var showLeadBox = function() {

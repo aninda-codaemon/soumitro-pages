@@ -108,19 +108,39 @@
       <div class="action-header">
 
         <div class="clearfix" data-fr-bind="searchData">
-          <div class="col-sm-3">
-            <div class="phone-box">
-              <div class="phone-circle"></div>
-              <img class="phone" src="img/Phone.svg" alt="">
+          <div class="headers active" id="firstHeader">
+            <div class="col-sm-3">
+              <div class="phone-box">
+                <div class="phone-circle"></div>
+                <img class="phone" src="img/Phone.svg" alt="">
+              </div>
+            </div>
+
+            <div class="col-sm-9">
+              <div class="header-box">
+                <p class="all-day"><img src="img/24-hours.svg" alt="">Data found within the past 24 hours</p>
+                <h2>Searching for available information on <span style="color: #f5c419;"></span>{{phone}}</h2>
+              </div>
+
             </div>
           </div>
 
-          <div class="col-sm-9">
-            <div class="header-box">
-              <p class="all-day"><img src="img/24-hours.svg" alt="">Data found within the past 24 hours</p>
-              <h2>Searching for available information on <span style="color: #f5c419;"></span>{{phone}}</h2>
+          <div class="headers" id="secondHeader">
+            <div class="col-sm-3">
+              <div class="check-box">
+                <div class="check-circle"></div>
+                <img class="check" src="img/checkmark.svg" alt="">
+              </div>
             </div>
 
+            <div class="col-sm-9">
+              <div class="header-box">
+                <p class="all-day">Step 1 Complete!</p>
+                <h2>We found details about<span style="color: #f5c419;"></span>{{phone}}</h2>
+                <p><strong>Good News.</strong> We were able to locate the number.</p>
+              </div>
+
+            </div>
           </div>
         </div>
 
