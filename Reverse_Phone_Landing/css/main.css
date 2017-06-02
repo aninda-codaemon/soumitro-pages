@@ -210,7 +210,7 @@ img.quotes {
 }
 
 .secured {
-  padding: 25px;
+  padding: 35px 25px;
   background-color: #fcedba;
 }
 
@@ -364,7 +364,7 @@ img.quotes {
 #secondAction.action-section.active {
   animation: fade-in 1.25s forwards;
   opacity: 0;
-  
+
 }
 
 @keyframes fade-in{
@@ -449,7 +449,7 @@ img.quotes {
 .loader-icon {
   height: 80px;
   z-index: 2;
-  top: 20%;
+  top: 25%;
 }
 
 /* ================================================ */
@@ -461,14 +461,14 @@ img.quotes {
 }
 h2.overview {
   margin-bottom: 25px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 #previewBox {
-  margin-bottom: 140px;
+  margin-bottom: 130px;
 }
 .left-preview,
 .unlock-section {
-  padding: 45px 15px;
+  padding: 35px 15px;
   /*padding-bottom: 45px;*/
 }
 
@@ -480,11 +480,11 @@ h2.overview {
   margin-top: 0px;
 }
 table {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   margin-top: 30px;
 }
 td {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .table-category {
@@ -518,7 +518,7 @@ td.no-bottom-pad {
 }
 
 .btn-large {
-  height: 70px;
+  height: 60px;
 	border-radius: 8px;
 	background-color: #5cb85c;
 	box-shadow: 0 5px 0 0 #51a251;
@@ -534,6 +534,10 @@ td.no-bottom-pad {
 }
 .unlock-section h3 {
   margin-bottom: 15px;
+}
+
+.unlock-section p {
+  margin-bottom: 0px;
 }
 
 .yellow-icons {
@@ -556,7 +560,7 @@ td.no-bottom-pad {
   height: 50%;
 }
 .locked-points {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 .locked-points p {
   margin-top: 5px;
@@ -702,7 +706,7 @@ td.no-bottom-pad {
 @media (min-width: 1400px){
   .left-preview,
   .unlock-section {
-    padding: 45px 30px;
+    padding: 35px 30px;
     /*padding-bottom: 45px;*/
   }
 
@@ -788,10 +792,18 @@ td.no-bottom-pad {
   /* ==  Preview Box   ===================================== */
 
   .left-preview {
-    padding: 45px 25px;
+    padding: 35px 25px;
+  }
+
+  h2.overview {
+    margin-top: 25px;
+  }
+
+  table {
+    margin-bottom: 30px;
   }
   td {
-    padding-bottom: 24px;
+    padding-bottom: 18px;
   }
 
   td.not-last {
@@ -811,7 +823,7 @@ td.no-bottom-pad {
   }
 
   .btn-large {
-    height: 60px;
+    height: 50px;
   }
 
 
