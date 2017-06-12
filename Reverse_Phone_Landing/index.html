@@ -104,7 +104,7 @@
       </div>
     </div>
 
-    <div class="col-sm-8 no-pad-right no-pad-left">
+    <div class="col-sm-8 no-pad-right no-pad-left full-section">
       <div class="action-header">
 
         <div class="clearfix" data-fr-bind="searchData">
@@ -138,6 +138,24 @@
                 <p class="all-day">Step 1 Complete!</p>
                 <h2>We found details about<span style="color: #f5c419;"></span>{{phone}}</h2>
                 <p><strong>Good News.</strong> We were able to locate the number.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="headers" id="thirdHeader">
+            <div class="col-sm-3">
+              <div class="check-box">
+                <div class="check-circle"></div>
+                <img class="check" src="img/key.svg" alt="">
+              </div>
+            </div>
+
+            <div class="col-sm-9">
+              <div class="header-box">
+                <p class="all-day">Step 1 Complete!</p>
+                <h2>Account needed to view report on <span style="color: #f5c419;"></span>{{phone}}</h2>
+                <p>Create your account ot see the <strong>FREE</strong> report summary</p>
               </div>
 
             </div>
@@ -318,7 +336,7 @@
                     </table>
 
                   </div>
-                  <button type="button" name="button" class="btn-large report-btn">Continue To Full Report</button>
+                  <button id="report-btn" type="button" name="button" class="btn-large">Continue To Full Report</button>
                   <p class="text-center">* You need an account to be able to see this content.</p>
                 </div>
 
@@ -432,6 +450,154 @@
               </div>
             </div>
           </div>
+
+          <div class="action-section clearfix" id="thirdAction">
+            <h2 class="overview text-center">Start Creating Your FREE Account</h2>
+            <div class="row">
+              <div class="lead-section no-pad-left no-pad-right clearfix">
+                <div class="col-sm-8 left-column">
+                  <div class="lead-part">
+                    <div class="lead-header clearfix">
+                      <h3>Build Your Free Report</h3>
+                      <img class="norton hidden-xs" src="img/norton-secured.png" alt="">
+                    </div>
+
+                      <form id="signup-modal-form" action="<%= next_page %>" data-fr-bind="leadData" data-fr-store="leadData">
+                        <fieldset class="form-input-group">
+                          <div class="row">
+                            <div class="col-sm-3 hidden-xs">
+                              <p class="input-label">
+                                <div class="bold-labels">First Name:</div>
+                              </p>
+                            </div>
+                            <div class="col-sm-9">
+                              <input name="account[first_name]" value="{{account[first_name]}}" id="lead_first_name" type="text" class="form-control" placeholder="First Name" required/>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-3 hidden-xs">
+                              <p class="input-label">
+                                <div class="bold-labels">Last Name:</div>
+                              </p>
+                            </div>
+                            <div class="col-sm-9">
+                              <input name="account[last_name]" value="{{account[last_name]}}" id="lead_last_name" type="text" class="form-control" placeholder="Last Name" required/>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-3 hidden-xs">
+                              <p class="input-label">
+                                <div class="bold-labels">Email:</div>
+                              </p>
+                            </div>
+                            <div class="col-sm-9">
+                              <input name="user[email]" value="{{user[email]}}" id="lead_email" type="email" class="form-control" placeholder="Email Address" required/>
+                            </div>
+                          </div>
+                        </fieldset>
+                        <fieldset>
+                          <div class="">
+                            <p class="tos-text">By clicking "Continue" you represent you are over 18 years of age and have agreed to our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a> and <a href="//www.beenverified.com/privacy" target="_blank">Privacy Policy</a>                      and you agree to receive email from BeenVerified.com. We'll never sell your information or use your data as apart of our search results.</p>
+                          </div>
+                        </fieldset>
+                        <fieldset>
+                          <div class="">
+                            <button type="submit" class="btn-large"><span class="hidden-xs">Continue To Full Report</button>
+                          </div>
+                        </fieldset>
+                      </form>
+                      <!-- new form for logging in -->
+                      <form class="form-horizontal" action="https://www.beenverified.com/login" data-fr-bind="currentRecord" method="get" target="_blank">
+                        <fieldset>
+                          <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
+                          <h6 class="create-login">Already a BeenVerified member? <button class="btn btn-link btn-xs" id="login-redirect" type="submit">Click here to login</button>
+                        </h6>
+                        </fieldset>
+                      </form>
+
+                      <div class="seal-small visible-xs">
+                          <div class="verify-seal" style="text-align:center;"><img src="img/norton-secured.png"></div>
+                      </div>
+                  <!-- end new form for logging in -->
+
+
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="why-bv hidden-xs">
+                    <div class="why-header">
+                      <hr class="left">
+                      <h6>WHY BV?</h6>
+                      <hr class="right">
+                    </div>
+
+                    <div class="why-icons">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <img src="img/Reports.svg" alt="">
+                        </div>
+
+                        <div class="col-sm-8 fix">
+                          <h5>80 Million</h5>
+                          <div class="why-subheaders">Reports Run</div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <img src="img/Computer.svg" alt="">
+                        </div>
+
+                        <div class="col-sm-8 fix">
+                          <h5>100,000+</h5>
+                          <div class="why-subheaders">BeenVerified Users</div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <img src="img/Thumb.svg" alt="">
+                        </div>
+
+                        <div class="col-sm-8 fix">
+                          <h5>33,000+</h5>
+                          <div class="why-subheaders">Facebook Followers</div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <img src="img/Records.svg" alt="">
+                        </div>
+
+                        <div class="col-sm-8 fix">
+                          <h5>Millions</h5>
+                          <div class="why-subheaders">Of Public Records</div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <img src="img/10year.svg" alt="">
+                        </div>
+
+                        <div class="col-sm-8 fix">
+                          <h5>10 year</h5>
+                          <div lass="why-subheaders">Track Record</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="security-disclaimer text-center">
+              <img src="" alt="">
+              <p>This website is regularly scanned for vulnerabilities. The connection is secure.</p>
+            </div>
+          </div>
+        </div>
 
         <div class="visible-xs">
           <div class="secured clearfix">

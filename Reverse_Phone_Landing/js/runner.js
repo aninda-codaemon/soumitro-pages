@@ -1,5 +1,8 @@
 $(function() {
-   var animationDuration = 40000;
+    var animationDuration = 40000;
+    headerIdx = 0;
+    var HEADERS = ['#firstHeader', '#secondHeader', '#thirdHeader'];
+
   $.extend($.easing, {
     easeBV: function(x, t, b, c, d) {
       var ts=(t/=d)*t;
@@ -79,13 +82,23 @@ $(function() {
 
 
   var changeHeader = function() {
-    $headerBox = $('.header-box');
-    $('#firstHeader').removeClass('active');
-    $('#secondHeader').addClass('active');
+    if (headerIdx + 1> HEADERS.length) {
+      return;
+    }
 
+    $(HEADERS[headerIdx]).removeClass('active');
+    $(HEADERS[headerIdx + 1]).addClass('active');
+    headerIdx += 1;
   };
 
   var showLeadBox = function() {
+    $('.side-bar').hide();
+    $('.full-section').removeClass('col-sm-8');
+    $('.all-day').hide();
+    $('#search-main-progress').hide();
+    changeHeader();
+    $('#secondAction').removeClass('active');
+    $('#thirdAction').addClass('active');
 
   };
 
@@ -94,7 +107,7 @@ $(function() {
     $('#firstAction').removeClass('active');
     $('#secondAction').addClass('active');
 
-    $('.report-btn').click(function(){
+    $('#report-btn').click(function(){
       showLeadBox();
     });
     changeHeader();
