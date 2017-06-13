@@ -108,7 +108,7 @@
       <div class="action-header">
 
         <div class="clearfix" data-fr-bind="searchData">
-          <div class="headers active" id="firstHeader">
+          <div class="headers active clearfix" id="firstHeader">
             <div class="col-sm-3">
               <div class="phone-box">
                 <div class="phone-circle"></div>
@@ -125,7 +125,7 @@
             </div>
           </div>
 
-          <div class="headers" id="secondHeader">
+          <div class="headers clearfix" id="secondHeader">
             <div class="col-sm-3">
               <div class="check-box">
                 <div class="check-circle"></div>
@@ -143,7 +143,7 @@
             </div>
           </div>
 
-          <div class="headers" id="thirdHeader">
+          <div class="headers clearfix" id="thirdHeader">
             <div class="col-sm-3">
               <div class="check-box">
                 <div class="check-circle"></div>
@@ -452,13 +452,14 @@
           </div>
 
           <div class="action-section clearfix" id="thirdAction">
-            <h2 class="overview text-center">Start Creating Your FREE Account</h2>
+            <h2 class="overview text-center hidden-xs">Start Creating Your FREE Account</h2>
             <div class="row">
               <div class="lead-section no-pad-left no-pad-right clearfix">
                 <div class="col-sm-8 left-column">
                   <div class="lead-part">
                     <div class="lead-header clearfix">
-                      <h3>Build Your Free Report</h3>
+                      <h3 class="hidden-xs">Build Your Free Report</h3>
+                      <h3 class="visible-xs text-center">Start Creating Your FREE Account</h3>
                       <img class="norton hidden-xs" src="img/norton-secured.png" alt="">
                     </div>
 
@@ -502,7 +503,10 @@
                         </fieldset>
                         <fieldset>
                           <div class="">
-                            <button type="submit" class="btn-large"><span class="hidden-xs">Continue To Full Report</button>
+                            <button type="submit" class="btn-large">
+                              <span class="hidden-xs">Continue To Full Report</span>
+                              <span class="visible-xs">Access Full Report
+                            </button>
                           </div>
                         </fieldset>
                       </form>
@@ -592,8 +596,8 @@
               </div>
             </div>
 
-            <div class="security-disclaimer text-center">
-              <img src="" alt="">
+            <div class="security-disclaimer text-center hidden-xs">
+              <img src="img/tiny-lock.svg" alt="">
               <p>This website is regularly scanned for vulnerabilities. The connection is secure.</p>
             </div>
           </div>
