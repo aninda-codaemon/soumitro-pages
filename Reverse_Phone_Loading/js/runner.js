@@ -2,6 +2,7 @@ $(function() {
     var animationDuration = 40000;
     headerIdx = 0;
     var HEADERS = ['#firstHeader', '#secondHeader', '#thirdHeader'];
+    searchData = amplify.store().bv_searchData;
 
   $.extend($.easing, {
     easeBV: function(x, t, b, c, d) {
@@ -92,8 +93,14 @@ $(function() {
   };
 
   var showLeadBox = function() {
-    $('.side-bar').hide();
-    $('.full-section').removeClass('col-sm-8');
+
+    // $('.side-bar').hide("slide", {direction : "left", duration: 1000});
+
+    $('.side-bar').toggle('slide', function(){
+      $('.full-section').addClass('col-sm-12').removeClass('col-sm-8');
+      $('.side-bar').removeClass("hidden-xs");
+    });
+
     $('.all-day').hide();
     $('#search-main-progress').hide();
     changeHeader();
@@ -113,6 +120,21 @@ $(function() {
     changeHeader();
   };
 
+  var getFirstPhone = function() {
+
+    var baseUrl = 'https://staging.datadeckio.com/teaser/phone',
+        url = baseUrl + "?phone=" + searchData.phoneNumber,
+        xhrData = $.ajax({
+          url: url
+          // dataType: 'jsonp',
+          // jsonpCallback: 'parseResults'
+    });
+
+    $.when(xhrData).done(function(result){
+      debugger
+    });
+  };
+
   var startTabs = function() {
     idx = 1;
     var tabInterval = window.setInterval(function(){
@@ -120,6 +142,7 @@ $(function() {
       idx++ ;
       if (idx === 4) {
         window.clearInterval(tabInterval);
+        getFirstPhone();
         window.setTimeout(changeScreen, (animationDuration / 4) + 1000);
       }
     }, animationDuration / 4);
@@ -128,6 +151,11 @@ $(function() {
   var initialize = function() {
     startLoader();
     startTabs();
+    // added this little hack to prevent animations from happening again when changing browser sizes
+    window.setTimeout(function(){
+      $('.action-header, .side-bar').css({"left" : "0%"}).addClass('no-animation');
+      // $('.side-bar').css({"left" : "0%"}).addClass('no-animation')
+    }, 1000);
   };
 
   initialize();

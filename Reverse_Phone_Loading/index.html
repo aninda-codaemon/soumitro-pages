@@ -107,7 +107,7 @@
     <div class="col-sm-8 no-pad-right no-pad-left full-section">
       <div class="action-header">
 
-        <div class="clearfix" data-fr-bind="searchData">
+        <div class="clearfix" data-fr-bind="bv_searchData">
           <div class="headers active clearfix" id="firstHeader">
             <div class="col-sm-3">
               <div class="phone-box">
@@ -119,7 +119,7 @@
             <div class="col-sm-9">
               <div class="header-box">
                 <p class="all-day"><img src="img/24-hours.svg" alt="">Data found within the past 24 hours</p>
-                <h2>Searching for available information on <span style="color: #f5c419;"></span>{{phone}}</h2>
+                <h2>Searching for available information on <span style="color: #f5c419;">{{formattedPhoneNumber}}</span></h2>
               </div>
 
             </div>
@@ -136,7 +136,7 @@
             <div class="col-sm-9">
               <div class="header-box">
                 <p class="all-day">Step 1 Complete!</p>
-                <h2>We found details about<span style="color: #f5c419;"></span>{{phone}}</h2>
+                <h2>We found details about <span style="color: #f5c419;"></span>{{formattedPhoneNumber}}</h2>
                 <p><strong>Good News.</strong> We were able to locate the number.</p>
               </div>
 
@@ -154,7 +154,7 @@
             <div class="col-sm-9">
               <div class="header-box">
                 <p class="all-day">Step 1 Complete!</p>
-                <h2>Account needed to view report on <span style="color: #f5c419;"></span>{{phone}}</h2>
+                <h2>Account needed to view report on <span style="color: #f5c419;"></span>{{formattedPhoneNumber}}</h2>
                 <p>Create your account ot see the <strong>FREE</strong> report summary</p>
               </div>
 
@@ -182,7 +182,7 @@
 
       <div class="action-section active clearfix" id="firstAction">
         <div class="col-sm-12 col-md-10 col-md-offset-1 mobile-padding">
-          <div class="action-box clearfix" data-fr-bind="searchData">
+          <div class="action-box clearfix" data-fr-bind="bv_searchData">
             <p class="visible-xs visible-sm step-number">Step 1/4</p>
               <div class="section-tabs clearfix hidden-xs hidden-sm">
 
@@ -240,7 +240,7 @@
 
                   <div class="switch-section active">
                     <h3>Detecting Owner's Location</h3>
-                    <p>Your search for {{phone}} is underway. We start by detecting the number's
+                    <p>Your search for {{formattedPhoneNumber}} is underway. We start by detecting the number's
                     geographical location. This is important so that you know where the call
                     is coming from. It's the first step to knowing more about the number.</p>
                   </div>
@@ -273,11 +273,11 @@
 
         <div class="action-section clearfix" id="secondAction">
           <div class="col-sm-12 col-md-10 col-md-offset-1 mobile-padding">
-            <div class="" data-fr-bind="searchData">
-              <h2 class="overview hidden-xs">Overview of <span style="color: #f5c419;">{{phone}}</span></h2>
+            <div class="" data-fr-bind="bv_searchData">
+              <h2 class="overview hidden-xs">Overview of <span style="color: #f5c419;">{{formattedPhoneNumber}}</span></h2>
               <div class="action-box clearfix" id="previewBox">
                 <div class="col-md-7 left-preview">
-                  <h2 class="overview visible-xs">Overview of <span style="color: #f5c419;">{{phone}}</span></h2>
+                  <h2 class="overview visible-xs">Overview of <span style="color: #f5c419;">{{formattedPhoneNumber}}</span></h2>
                   <div class="col-xs-3 col-md-4 no-pad-left">
                     <div class="avatar-box">
                       <img src="img/avatar.svg" alt="">
