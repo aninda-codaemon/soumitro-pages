@@ -146,6 +146,7 @@ String.prototype.capitalize = function(lower) {
   };
 
   var reportLeadData = function (dataArray) {
+
     var formVals = {};
     _.forEach(dataArray, function (v, k) {
       formVals[v.name] = v.value;
@@ -325,6 +326,29 @@ String.prototype.capitalize = function(lower) {
       }
     });
   };
+
+  $('#signup-modal-form').validate({
+    rules: {
+      "account[first_name]": "required",
+      "account[last_name]": "required",
+      "user[email]": {
+          required: true,
+          email: true
+      }
+    },
+    messages: {
+      "account[first_name]": "Please enter a first name",
+      "account[last_name]": "Please enter a last name",
+      "user[email]": "Please enter an email"
+    },
+    submitHandler: function(form, e){
+
+      e.preventDefault();
+      var formData = $(form).serializeArray();
+      reportLeadData(formData);
+      window.location.href = $('body').data('next-page');
+    }
+  });
 
   $(document).ready(initializeFlow);
 

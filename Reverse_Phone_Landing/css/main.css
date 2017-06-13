@@ -691,6 +691,7 @@ h6.create-login {
 
 #signup-modal-form label.error {
   margin: 0 0 10px;
+  font-size: 16px;
 }
 
 label.error {
