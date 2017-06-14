@@ -15,11 +15,13 @@ $(function() {
       //return b+c*(22.645*tc*ts + -59.29*ts*ts + 54.895*tc + -21.3*ts + 4.05*t);
     }
   });
-  var $sections = $('.switch-section'),
-      $tabs = $('.section-tabs .tab'),
-      $loaderBoxes = $('.loader-box');
+
 
   var changeTab = function(idx) {
+
+     var $sections = $('.switch-section'),
+         $tabs = $('.section-tabs .tab'),
+         $loaderBoxes = $('.loader-box');
 
     $sections.removeClass('active');
     $tabs.removeClass('active');
@@ -142,7 +144,6 @@ $(function() {
       idx++ ;
       if (idx === 4) {
         window.clearInterval(tabInterval);
-        getFirstPhone();
         window.setTimeout(changeScreen, (animationDuration / 4) + 1000);
       }
     }, animationDuration / 4);
