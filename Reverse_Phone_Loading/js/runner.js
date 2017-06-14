@@ -125,9 +125,9 @@ $(function() {
     var baseUrl = 'https://staging.datadeckio.com/teaser/phone',
         url = baseUrl + "?phone=" + searchData.phoneNumber,
         xhrData = $.ajax({
-          url: url
-          // dataType: 'jsonp',
-          // jsonpCallback: 'parseResults'
+          url: url,
+          dataType: 'jsonp',
+          jsonpCallback: 'parseResults'
     });
 
     $.when(xhrData).done(function(result){
