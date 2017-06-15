@@ -38,6 +38,9 @@ body {
 
   min-width: 280px;
   background-color: #f5fafc;
+  background-image: url('../img/BG-dots.gif');
+  background-repeat: no-repeat;
+  background-position: top 12% right 10%;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -338,11 +341,15 @@ section.block-hack .left-side {
 /* == Email  ====================================== */
 /* ================================================ */
   #emailBox .left-side {
-    background: #007ee3;
+    background-color: #007ee3;
+    background-image: url("../img/email-finder-D.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
     padding: 60px 10px 25px;
     position: relative;
     overflow: hidden;
-    max-height: 488px;
+    height: 488px;
   }
 
   #emailBox h4 {
@@ -587,6 +594,9 @@ section.block-hack .left-side {
   }
 }
 @media (max-width: 991px){
+  body {
+    background-position: top 8% center;
+  }
   h1 {
     font-size: 32px;
   }
@@ -633,7 +643,7 @@ section.block-hack .left-side {
   /* == Email  ===================================== */
 
   #emailBox .left-side {
-    max-height: 400px;
+    height: 400px;
     padding: 30px 10px 25px;
   }
 
@@ -681,6 +691,9 @@ section.block-hack .left-side {
 }
 
 @media (max-width: 767px){
+  body {
+    background-image: none;
+  }
   h1 {
     font-size: 20px;
     margin-top: 25px;

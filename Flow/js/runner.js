@@ -1,5 +1,8 @@
 $(function() {
 
+  searchData = amplify.store().bv_searchData;
+  SECTION_TYPE = ["url", "email", "image_url", "phone", "education"];
+
   $.extend($.easing, {
     easeBV: function(x, t, b, c, d) {
       var ts=(t/=d)*t;
@@ -80,6 +83,11 @@ $(function() {
       }
     });
   };
+
+  var displayCount = function(idx) {
+    var dataCounts = amplify.store().fullTeaser.available_data_counts,
+        currentCount = SECTION_TYPE
+  };
   var sections = $('section'),
       currentIdx = 1;
 
@@ -93,6 +101,7 @@ $(function() {
       }
       sections.removeClass('active');
       $(sections[currentIdx]).addClass('active');
+      displayCount(currentIdx);
       //added this little hack for now to keep final section as displayed, because
       // active class will be removed
       if ($(sections[currentIdx]).is('#jobBox')) {
@@ -102,9 +111,26 @@ $(function() {
     }, 15000);
   };
 
+  var getTeaserData = function() {
+    var baseUrl = 'https://www.beenverified.com/hk/dd/teaser/phone',
+        url = baseUrl + "?phone=" + searchData.phoneNumber + "&type=full",
+        xhrData = $.ajax({
+          url: url,
+          dataType: 'jsonp'
+        });
+
+    $.when(xhrData.done(function(result, success){
+      if (success === 'success' && !$.isEmptyObject(result)){
+        amplify.store('fullTeaser', result);
+      }
+      displayCount(0);
+    }));
+  };
+
 
 
   var initialize = function() {
+    getTeaserData();
     startLoader();
     socialFinders();
     changeSections();
