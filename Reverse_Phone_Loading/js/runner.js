@@ -124,17 +124,33 @@ $(function() {
 
   var getFirstPhone = function() {
 
-    var baseUrl = 'https://staging.datadeckio.com/teaser/phone',
-        url = baseUrl + "?phone=" + searchData.phoneNumber,
-        xhrData = $.ajax({
-          url: url,
-          dataType: 'jsonp',
-          jsonpCallback: 'parseResults'
-    });
-
-    $.when(xhrData).done(function(result){
-      debugger
-    });
+    // var baseUrl = 'https://www.beenverified.com/hk/dd/teaser/phone',
+    //     url = baseUrl + "?phone=" + searchData.phoneNumber;
+    //
+    //     var xhrData = $.ajax({
+    //       url: url,
+    //       dataType: 'jsonp',
+    //       jsonpCallback: 'parseResults'
+    // });
+    //
+    // $.when(xhrData).done(function(result, status){
+    //   debugger
+    //
+    //   if (status === "success" && !$.isEmptyObject(result)) {
+    //     var searchData = {
+    //       phone: amplify.store().bv_searchData.phoneNumber,
+    //       latlng: [result.lat, result.lat],
+    //       name: result.names[0] ? result.names[0].full : "",
+    //       carrier: result.carrier,
+    //       type: result.type,
+    //       location: result.addresses[0] ? result.addresses[0].full : "",
+    //       // email: result.emails[0] ? result.emails[0]
+    //     };
+    //
+    //     amplify.store('firstTeaser', searchData);
+    //   }
+    // });
+    window.setTimeout(changeScreen, (animationDuration / 4) + 1000);
   };
 
   var startTabs = function() {
@@ -144,7 +160,7 @@ $(function() {
       idx++ ;
       if (idx === 4) {
         window.clearInterval(tabInterval);
-        window.setTimeout(changeScreen, (animationDuration / 4) + 1000);
+        getFirstPhone();
       }
     }, animationDuration / 4);
   };

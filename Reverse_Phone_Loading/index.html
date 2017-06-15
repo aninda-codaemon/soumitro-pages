@@ -10,8 +10,11 @@
 
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
-    <script src='//api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
-    <link href='//api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
+    <!-- <script src='//api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+    <link href='//api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' /> -->
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />
   </head>
   <body data-next-page="<%=next_page%>">
 
@@ -286,7 +289,7 @@
                   </div>
 
                   <div class="col-xs-8 mobile-header">
-                    <h2><span class="owner-name">Owner's Name:</span> S**** S****</h2>
+                    <h2><span class="owner-name">Owner's Name: </span>{{ownersName}}</h2>
                   </div>
                   <div class="col-xs-12 no-pad-left no-pad-right">
                     <table>
@@ -298,22 +301,22 @@
                       <tr>
                         <td><img src="img/map-pin.svg" alt=""></td>
                         <td class="table-category">Location</td>
-                        <td class="table-data">Morganville, NJ 12345</td>
+                        <td class="table-data">{{location}}</td>
                       </tr>
                       <tr>
                         <td><img src="img/antenna.svg" alt=""></td>
                         <td class="table-category">Carrier</td>
-                        <td class="table-data">Verizon</td>
+                        <td class="table-data">{{carrier}}</td>
                       </tr>
                       <tr>
                         <td><img src="img/line-type.svg" alt=""></td>
                         <td class="table-category">Line Type</td>
-                        <td class="table-data">Cell Phone</td>
+                        <td class="table-data">{{type}}</td>
                       </tr>
                       <tr>
                         <td class="no-bottom-pad not-last"><img src="img/email.svg" alt=""></td>
                         <td class="table-category no-bottom-pad not-last">Email Address</td>
-                        <td class="table-data no-bottom-pad not-last"><a href="#">Click Here</a></td>
+                        <td class="table-data no-bottom-pad not-last">{{email}}</td>
                       </tr>
 
                       <tr class="visible-sm visible-xs">
@@ -511,7 +514,7 @@
                         </fieldset>
                       </form>
                       <!-- new form for logging in -->
-                      <form class="form-horizontal" action="https://www.beenverified.com/login" data-fr-bind="currentRecord" method="get" target="_blank">
+                      <form class="form-horizontal" action="https://www.beenverified.com/login"  method="get" target="_blank">
                         <fieldset>
                           <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
                           <h6 class="create-login">Already a BeenVerified member? <button class="btn btn-link btn-xs" id="login-redirect" type="submit">Click here to login</button>
@@ -792,8 +795,8 @@
     <script src="js/jquery.validate.js"></script>
     <script src="js/utility.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
-    <script type="text/javascript" src="js/rafPoly.js"></script>
-    <script type="text/javascript" src="js/mapAnimation.js"></script>
+    <!-- <script type="text/javascript" src="js/rafPoly.js"></script> -->
+    <!-- <script type="text/javascript" src="js/mapAnimation.js"></script> -->
     <script type="text/javascript" src="js/search.js"></script>
 
     <script src="js/handlebars.min.js"></script>
@@ -804,6 +807,19 @@
     <!-- <script src="js/downsell.js"></script> -->
 
     <script src="js/runner.js"></script>
+    <script type="text/javascript">
 
+    // mapboxgl.accessToken = 'pk.eyJ1IjoiYmVlbnZlcmlmaWVkIiwiYSI6InBLR3UwVG8ifQ.tCCuBmKzRqNMGKIY2C1YOw';
+    //
+    // var map = new mapboxgl.Map({
+    //   container: 'map',
+    //   style: 'mapbox://styles/mapbox/streets-v9',
+    //   zoom: 15,
+    //   center: [-71.97722138410576, -13.517379300798098],
+    //   pitch: 60,
+    //   bearing: -60,
+    //   zoom: 10
+    // });
+    </script>
   </body>
 </html>

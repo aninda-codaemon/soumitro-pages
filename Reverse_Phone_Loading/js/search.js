@@ -98,7 +98,7 @@ String.prototype.capitalize = function(lower) {
   };
 
   var queryPhoneLookup = function (phoneNumber) {
-    var requestUrl = bvRPL.config.url + '&phone=' + phoneNumber;
+    var requestUrl = bvRPL.config.url + '?phone=' + phoneNumber;
     return $.ajax(requestUrl, {dataType: 'jsonp'});
   };
 
@@ -107,8 +107,12 @@ String.prototype.capitalize = function(lower) {
   };
 
   var createMap = function () {
-    var map = L.mapbox.map('map', 'beenverified.i3k1i3cc', bvRPL.leaflet.mapOpts);
-    map.setView(locations.usa, 5);
+    // var map = L.mapbox.map('map', 'beenverified.i3k1i3cc', bvRPL.leaflet.mapOpts);
+    // map.setView(locations.usa, 5);
+
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYmVlbnZlcmlmaWVkIiwiYSI6InBLR3UwVG8ifQ.tCCuBmKzRqNMGKIY2C1YOw';
+    var map = new mapboxgl.Map(bvRPL.leaflet.mapOpts);
     return map;
   };
 
@@ -200,15 +204,11 @@ String.prototype.capitalize = function(lower) {
     var activateLink = "<a href='" + subscribeUrl + "'>Activate Your Account To Search</a>";
 
     var prepped = {
-      ownersName: activateLink,
-      carrier: data.company,
-      lineType: (data.nxxusetype == "L") ? "Landline" : "Cellphone",
-      city: data.city,
-      state: data.state,
-      zipCode: activateLink,
-      streetAddress: activateLink,
-      neighborhood: activateLink,
-      elevation: activateLink,
+      ownersName: data.names[0] ? data.names[0].full : "",
+      carrier: data.carrier,
+      email: data.emails[0] ? data.emails[0] : "",
+      lineType: (data.type == "L") ? "Landline" : "Cellphone",
+      location: data.addresses[0] ? data.addresses[0].full : "",
       latitude: data.latitude,
       longitude: data.longitude
     };
@@ -226,6 +226,7 @@ String.prototype.capitalize = function(lower) {
   }
 
   var initializeFlow = function () {
+
     phoneNumber = phoneNumber.replace(/\D|\-/g,'');
 
     if (phoneNumber.match(/^(\d{3})-(\d{3})$/)) {
@@ -305,7 +306,7 @@ String.prototype.capitalize = function(lower) {
 
     $.when(phoneLookup).done(function (lookupResults, status) {
       // debugger
-      var data = lookupResults.results,
+      var data = lookupResults,
           success = (status === "success"),
           latlng = [];
 
@@ -314,15 +315,20 @@ String.prototype.capitalize = function(lower) {
         latlng.push(data.longitude);
 
         searchData = prepSearchData(data);
-
+        // debugger
         storeSearchData({
           latlng: latlng,
           phoneNumber: phoneNumber,
           formattedPhoneNumber: formattedPhoneNumber,
+          ownersName: searchData.ownersName,
+          location: searchData.location,
+          carrier: searchData.carrier,
+          type: searchData.type,
+          email: searchData.email,
           data: searchData
         });
 
-        mapAnimation.run(map, latlng, options.mapAnimationDelay, onMapAnimationFinished);
+        // mapAnimation.run(map, latlng, options.mapAnimationDelay, onMapAnimationFinished);
       }
     });
   };
