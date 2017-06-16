@@ -56,22 +56,8 @@
     'WV': "West Virginia",
     'WI': 'Wisconsin',
     'WY': 'Wymoing'
-  }
+  };
 
-  var searchType;
-  /*
-    Check if the supplied argument is not 'all' or a falsy value.
-    {{#validState state}} It's a state {{else}} All selected {{/validState}}
-  */
-  H.registerHelper('validState', function (stateValue, options) {
-    var isValid = stateValue && (stateValue.toLowerCase() !== "all");
-    return (isValid) ? options.fn(this) : options.inverse(this);
-  });
-
-  /*
-    Uppercase a string.
-    {{uppercase 'hello'}}
-  */
   H.registerHelper('uppercase', function (item) {
     if (!item) return "";
     return item.toUpperCase();
@@ -85,29 +71,60 @@
     return item.data.index + 1;
   });
 
-  H.registerHelper('fullState', function(item){
-    if (item === "ALL" || !item) {
-      return false;
-    }
-    return "in " + states[item];
-  })
-
-  H.registerHelper('phonify', function(item){
-    if (!item){
+  H.registerHelper('socialCount', function(item){
+    // debugger
+    var count = this.available_data_counts.url;
+    if (count === 0) {
       return "";
+    } else if (count === 1) {
+      return "1 Social media profile found.";
+    } else {
+      return count.toString() + " Social media profiles found.";
     }
-    var justNumbers = item.replace(/\D/g, ""),
-    phonified = "(" + justNumbers.slice(0,3) + ") " + justNumbers.slice(3,6) +"-" + justNumbers.slice(6,10);
-    return phonified;
-  })
+  });
 
-  H.registerHelper('allState', function(item){
-    if (item === "ALL") {
+  H.registerHelper('emailCount', function(item){
+    var count = this.available_data_counts.email;
+    if (count === 0) {
       return "";
+    } else if (count === 1) {
+      return "1 E-mail address found.";
+    } else {
+      return count.toString() + " E-mail addresses found.";
     }
-    else {
-      return ", " + item;
+  });
+
+  H.registerHelper('photoCount', function(item){
+    var count = this.available_data_counts.image_url;
+    if (count === 0) {
+      return "";
+    } else if (count === 1) {
+      return "1 Photo found.";
+    } else {
+      return count.toString() + " Photos found.";
     }
-  })
+  });
+
+  H.registerHelper('phoneCount', function(item){
+    var count = this.available_data_counts.phone.total;
+    if (count === 0) {
+      return "";
+    } else if (count === 1) {
+      return "1 Additional phone number located";
+    } else {
+      return count.toString() + " Additional phone numbers located.";
+    }
+  });
+
+  H.registerHelper('extraCount', function(item){
+    var count = this.available_data_counts.job;
+    if (count === 0) {
+      return "";
+    } else if (count === 1) {
+      return "1 Job found.";
+    } else {
+      return count.toString() + " Jobs found.";
+    }
+  });
 
 }(Handlebars));

@@ -51,11 +51,11 @@
   </header>
 
 
-  <div class="container">
+  <div class="container body-container">
     <div class="row">
       <div class="col-sm-12 col-md-10 col-md-offset-1" data-fr-bind="bv_searchData">
         <div class="text-center">
-          <h1>Learning About The Owner of <span syle="color: #f5c419;">{{formattedPhoneNumber}}</span></h1>
+          <h1>Learning About The Owner of <span class="yellowifed">{{formattedPhoneNumber}}</span></h1>
         </div>
 
         <div id="search-main-progress" class="progress-wrap">
@@ -191,7 +191,35 @@
           </div>
         </section>
       </div>
-    </div>
+
+      </div>
+      <div id="notificationBox" data-fr-bind="fullTeaser">
+        <div id="social-popup" class="notification">
+          <img src="img/social.svg" class="notification-icon" alt="">
+          <span>{{#socialCount}}{{/socialCount}}</span>
+        </div>
+
+        <div id="email-popup" class="notification">
+          <img src="img/email.svg" class="notification-icon" alt="">
+          <span>{{emailCount}}</span>
+        </div>
+
+        <div id="photos-popup" class="notification">
+          <img src="img/photos.svg" class="notification-icon" alt="">
+          <span>{{photosCount}}</span>
+        </div>
+
+        <div id="phone-popup" class="notification">
+          <img src="img/Phone.svg" class="notification-icon" alt="">
+          <span>{{phoneCount}}</span>
+        </div>
+
+        <div id="extra-popup" class="notification">
+          <img src="img/criminal.svg" class="notification-icon" alt="">
+          <span>{{extraCount}}</span>
+        </div>
+      </div>
+
   </div>
 
 

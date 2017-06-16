@@ -45,6 +45,10 @@ body {
   overflow-x: hidden;
 }
 
+.body-container {
+  position: relative;
+}
+
 h1 {
   font-size: 40px;
   margin-top: 75px;
@@ -126,6 +130,10 @@ nav {
   float: left;
   margin-top: 22px;
   margin-left: 5px;
+}
+
+.yellowifed {
+  color: #f5c419;
 }
 
 /* ================================================ */
@@ -283,6 +291,36 @@ section.block-hack .left-side {
 }
 
 /* ================================================ */
+/* == Notification Box  =========================== */
+/* ================================================ */
+
+#notificationBox {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 0 rgba(59, 36, 105, 0.17);
+	border: solid 1px rgba(102, 102, 102, 0.2);
+  width: 300px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 15px;
+}
+.notification {
+  border-bottom: solid 1px #e1e1e1;
+  padding: 15px 0px 12px;
+  font-size: 13px;
+}
+
+#extra-popup {
+  border-bottom: none;
+}
+.notification img {
+  width: 16px;
+  margin-right: 15px;
+
+}
+
+/* ================================================ */
 /* == Social  ===================================== */
 /* ================================================ */
 
@@ -346,7 +384,7 @@ section.block-hack .left-side {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
-    padding: 60px 10px 25px;
+    padding: 40px 10px 25px;
     position: relative;
     overflow: hidden;
     height: 488px;
@@ -583,6 +621,11 @@ section.block-hack .left-side {
     width: 52px;
     margin: 0px 8px 8px 0px;
   }
+
+  /* == Email  ===================================== */
+  #emailBox .left-side {
+    background-position: bottom -40px center;
+  }
   /* == Premium  ===================================== */
   #premiumBox .left-side {
     background-position: -135px 0px, center;
@@ -645,6 +688,7 @@ section.block-hack .left-side {
   #emailBox .left-side {
     height: 400px;
     padding: 30px 10px 25px;
+    background-position: bottom -20px center;
   }
 
   /* == Photo  ===================================== */

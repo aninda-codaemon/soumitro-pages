@@ -17,7 +17,8 @@
     style: 'mapbox://styles/mapbox/satellite-streets-v10',
     pitch: 50,
     bearing: -30,
-    zoom: 2.25
+    zoom: 2.25,
+    interactive: false
   };
 
   var leaflet = {

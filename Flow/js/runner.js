@@ -120,6 +120,7 @@ $(function() {
         });
 
     $.when(xhrData.done(function(result, success){
+
       if (success === 'success' && !$.isEmptyObject(result)){
         amplify.store('fullTeaser', result);
       }
