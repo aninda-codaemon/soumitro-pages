@@ -12,42 +12,15 @@ String.prototype.capitalize = function(lower) {
     done: "Found"
   };
 
-  var carriers = {
-    generic: {
-      elem: '#carrier-generic'
-    },
-    verizon: {
-      names: ['verizon'],
-      elem: '#carrier-verizon'
-    },
-    sprint: {
-      names: ['sprint', 'nextel'],
-      elem: '#carrier-sprint'
-    },
-    att: {
-      names: ['att', 'at&t', 'cingular'],
-      elem: '#carrier-att'
-    },
-    tmobile: {
-      names: ['tmobile', 't-mobile', 'omnipoint'],
-      elem: '#carrier-tmobile'
-    }
-  };
 
   var options = {
     mapAnimationDelay: 1000
   };
 
-  $(window).on('resize', function () {
-    enforceMapHeight();
-  });
+  // $(window).on('resize', function () {
+  //   enforceMapHeight();
+  // });
 
-  var centerLocatingText = function () {
-    var $locating = $('.locating-text'),
-        top = $locating.height() / 2,
-        left = $locating.width() / 2;
-    $locating.css('margin', '-' + top + 'px 0 0 -' + left + 'px');
-  };
 
   var enforceMapHeight = function () {
     // var width = $(this).width(),
@@ -57,13 +30,13 @@ String.prototype.capitalize = function(lower) {
   };
 
   var formatPhoneNumber = function (phoneNumber) {
-    phoneNumber = new String(phoneNumber); // Fix before using replace in IE9
+    phoneNumber = phoneNumber.toString(); // Fix before using replace in IE9
     var formatted = phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
     return formatted;
   };
 
   var formatPhoneNumberSimple = function (phoneNumber) {
-    phoneNumber = new String(phoneNumber); // Fix before using replace in IE9
+    phoneNumber = phoneNumber.toString(); // Fix before using replace in IE9
     var formatted = phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
     return formatted;
   };
@@ -188,10 +161,6 @@ String.prototype.capitalize = function(lower) {
     return $.post('/api/v4/leads.json', leadQueryString);
   };
 
-  var onMapAnimationFinished = function () {
-
-    // promptPersonalInfo();
-  };
 
   var storeSearchData = function (storageData) {
     amplify.store(bvRPL.config.searchData, storageData);
@@ -201,7 +170,7 @@ String.prototype.capitalize = function(lower) {
   var searchData;
 
   var prepSearchData = function (data) {
-    var activateLink = "<a href='" + subscribeUrl + "'>Activate Your Account To Search</a>";
+    // var activateLink = "<a href='" + subscribeUrl + "'>Activate Your Account To Search</a>";
 
     var prepped = {
       ownersName: data.names[0] ? data.names[0].full : "",
@@ -217,8 +186,8 @@ String.prototype.capitalize = function(lower) {
   };
 
 
-  var phoneNumber = getPhoneNumber(),
-      subscribeUrl = $("body").data('next-page') + "?record_search[phone_number]=" + phoneNumber;
+  var phoneNumber = getPhoneNumber();
+      // subscribeUrl = $("body").data('next-page') + "?record_search[phone_number]=" + phoneNumber;
 
   if (!phoneNumber) {
     window.location = bvRPL.config.landingUrl;
@@ -228,81 +197,43 @@ String.prototype.capitalize = function(lower) {
   var initializeFlow = function () {
 
     phoneNumber = phoneNumber.replace(/\D|\-/g,'');
-
-    if (phoneNumber.match(/^(\d{3})-(\d{3})$/)) {
-      phoneNumber += "-0000";
-      partialSearchFlow();
-    } else if (phoneNumber.match(/^(\d{3})(\d{3})$/)) {
-      phoneNumberDashed = phoneNumber.slice(0, 3) + "-" + phoneNumber.slice(3);
-      phoneNumber = phoneNumberDashed + "-0000";
-      partialSearchFlow();
-    } else {
-      fullSearchFlow();
-    }
+    fullSearchFlow();
 
     map = createMap();
+  };
+
+  var startMapFly = function(lng, lat) {
+    map.on('load', function(){
+      map.flyTo({
+        center: [lng,  lat],
+        zoom: 13,
+        bearing: 0,
+        pitch: 0,
+        speed: 0.5,
+        curve: 0.8
+      });
+    });
   };
 
 
   var fullSearchFlow = function () {
     var phoneLookup = queryPhoneLookup(phoneNumber);
-
-    centerLocatingText();
     enforceMapHeight();
 
+    var lookupData = false;
 
-    var lookupData, notFound = false;
 
-    var presentPhoneCarrier = function (lookupData) {
-      if (!lookupData || $.isEmptyObject(lookupData)) return;
 
-      var i, carrier, currCarrier, carrierNamesLen,
-          lookupCarrier = lookupData.company,
-          carrierFound = null;
-      if (!_.isString(lookupCarrier)) {
-        $(carriers.generic.elem).show();
-        return;
-      }
-
-      for (carrier in carriers) {
-        if (carrierFound) break;
-          currCarrier = carriers[carrier];
-          carrierNamesLen = currCarrier.names ? currCarrier.names.length : 0;
-        for (i = 0; i < carrierNamesLen; i++) {
-          currCarrierName = currCarrier.names[i];
-          if (lookupCarrier.toLowerCase().indexOf(currCarrierName.toLowerCase()) >= 0) {
-            carrierFound = carriers[carrier];
-          }
-          if (carrierFound) break;
-        }
-      }
-
-      if (carrierFound) {
-        $(carrierFound.elem).show();
-      } else {
-        $(carriers.generic.elem).show();
-      }
-
-      $carrierName.text(lookupCarrier);
-    };
-
-    var showNotFoundModal = function () {
-      $(".initial_modal").hide();
-      $(".notFound").show();
-    };
-
-    $.when(phoneLookup).done(function (lookupResults, status) {
-      if (status === "success") {
-        if ($.isEmptyObject(lookupResults.results)) {
-          notFound = true;
-        } else {
-          lookupData = lookupResults.results;
-        }
-      }
-    });
+    // $.when(phoneLookup).done(function (lookupResults, status) {
+    //   if (status === "success") {
+    //     if ($.isEmptyObject(lookupResults.results)) {
+    //     } else {
+    //       lookupData = lookupResults.results;
+    //     }
+    //   }
+    // });
 
     var formattedPhoneNumber = formatPhoneNumber(phoneNumber);
-    $('.phone-number').html(formattedPhoneNumber);
 
     $.when(phoneLookup).done(function (lookupResults, status) {
       // debugger
@@ -311,9 +242,17 @@ String.prototype.capitalize = function(lower) {
           latlng = [];
 
       if (success && !$.isEmptyObject(data)) {
+
         latlng.push(data.latitude);
         latlng.push(data.longitude);
 
+        // Again, mapbox is a monster and accepts coordinates as [lng, lat]
+        // debugger
+        // if ((latlng[0] !== "") && (latlng[1] !== "")) {
+        //   startMapFly(latlng[1], latlng[0]);
+        // }
+
+        startMapFly(14.42076, 50.08804);
         searchData = prepSearchData(data);
         // debugger
         storeSearchData({
@@ -327,8 +266,6 @@ String.prototype.capitalize = function(lower) {
           email: searchData.email,
           data: searchData
         });
-
-        // mapAnimation.run(map, latlng, options.mapAnimationDelay, onMapAnimationFinished);
       }
     });
   };

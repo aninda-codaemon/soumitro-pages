@@ -9,25 +9,15 @@
   var subscribeUrl = "https://www.beenverified.com/subscribe/reverse_phone_lookup";
   var blueCheckUrl = 'https://cdn1.beenverified.com/srg/Reverse-Phone/landing/img/blueCheck_32.png';
 
-  // var mapOpts = {
-  //   dragging: false,
-  //   touchZoom: false,
-  //   scrollWheelZoom: false,
-  //   doubleClickZoom: false,
-  //   boxZoom: false,
-  //   keyboard: false,
-  //   zoomControl: false,
-  //   startZoom: 4,
-  //   attributionControl: false
-  // };
-
   var mapOpts = {
     container: 'map',
-    center: [40.8139, 73.9624],
-    style: 'mapbox://styles/mapbox/streets-v9',
-    // pitch: 60,
-    // bearing: -60,
-    zoom: 10
+    // You have to swap the order of coordinates because mapbox is dumb and uses [long, lat] order -  M.H. 06/17
+
+    center: [-97.734375, 38.505191],
+    style: 'mapbox://styles/mapbox/satellite-streets-v10',
+    pitch: 50,
+    bearing: -30,
+    zoom: 2.25
   };
 
   var leaflet = {
