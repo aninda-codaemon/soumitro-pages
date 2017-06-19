@@ -505,10 +505,11 @@ section.block-hack .left-side {
 /* ================================================ */
 
   #jobBox .left-side {
-    background-image: url("../img/education-and-job.png");
-    background-size: cover;
+    background-color: #81e0ed;
+    background-image: url("../img/education-job.gif");
+    /*background-size: cover;*/
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom center;
     min-height: 488px;
     padding: 60px 60px 25px;
   }
@@ -663,10 +664,6 @@ section.block-hack .left-side {
     background-position: -135px 0px, center;
   }*/
 
-  /* == Job  ======================================== */
-  #jobBox .left-side {
-    background-position: 0px -40px, center;
-  }
 }
 @media (max-width: 991px){
   body {
@@ -897,8 +894,8 @@ section.block-hack .left-side {
   /* == Premium  ===================================== */
 
   #premiumBox .left-side {
-    background: url("../img/Premium-mobile.png");
-    background-position: -380px bottom, center;
+    background: url("../img/Premium-M.gif");
+    /*background-position: -380px bottom, center;*/
     background-repeat: no-repeat;
     min-height: 380px;
   }
@@ -906,9 +903,10 @@ section.block-hack .left-side {
   /* == Job  ===================================== */
 
   #jobBox .left-side {
-    background-image: none;
-    background-color: #8dd9e0;
-    min-height: unset;
+    background-color: #81e0ed;
+    background-size: inherit;
+    background-position: bottom center;
+    min-height: 280px;
   }
 
   #jobBox .left-side img {
