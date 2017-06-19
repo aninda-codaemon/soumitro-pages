@@ -85,28 +85,22 @@ $(function() {
     });
   };
 
+  dataCounts = amplify.store().fullTeaser.available_data_counts;
+
   var displayCount = function(idx) {
 
-    var dataCounts = amplify.store().fullTeaser.available_data_counts,
-        currentCount = dataCounts[SECTION_TYPE[idx]];
-
+    var currentCount = dataCounts[SECTION_TYPE[idx]],
+        $notification = $('.notification')[idx];
+    if (SECTION_TYPE[idx] === "phone"){
+      currentCount = dataCounts[SECTION_TYPE[idx]].total;
+    }
     if (currentCount > 0 ) {
       $('#notificationBox, .alert-icon, .carrot').show();
+      $($notification).addClass('active');
+      if (idx > 0){
+        $($('.notification')[idx - 1]).addClass('border');
+      }
     }
-    // debugger
-    var $notification = $('.notification')[idx];
-        // $miniNotifications = $('.mini-notification');
-
-    $($notification).addClass('active');
-
-    // if (idx > 0) {
-    //   if (idx > 1){
-    //     $($miniNotifications[idx - 2]).addClass('border');
-    //   }
-    //   $('#iconBox').show();
-    //   $($miniNotifications[idx - 1]).find('span.icon-count').text(currentCount - 1);
-    //   $($miniNotifications[idx - 1]).addClass('active');
-    // }
   };
   var sections = $('section'),
       currentIdx = 1;

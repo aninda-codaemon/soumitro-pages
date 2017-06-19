@@ -294,21 +294,18 @@ section.block-hack .left-side {
 /* == Notification Box  =========================== */
 /* ================================================ */
 
-#iconBox,
-#notificationBox{
-
+#notificationBox {
   background: white;
   border-radius: 10px;
   box-shadow: 0.9px 4.9px 30px 0 rgba(170, 196, 206, 0.3);
   margin-bottom: 30px;
   display: none;
-}
-#notificationBox {
-  padding-left: 15px;
-  margin-right: 15px;
+  padding: 0px 7px 15px;
   float: left;
   position: relative;
+  max-width: 90%;
 }
+
 
 .carrot {
   position: absolute;
@@ -322,11 +319,6 @@ section.block-hack .left-side {
   top: 15px;
 }
 
-#iconBox {
-  float: right;
-  padding: 15px 7px;
-}
-
 .alert-icon {
   height: 44px;
   float: left;
@@ -337,40 +329,24 @@ section.block-hack .left-side {
 
 }
 .notification {
-  /*border-bottom: solid 1px #e1e1e1;*/
-  padding: 15px 0px 12px;
+  padding: 0px 8px;
+  margin-top: 15px;
   font-size: 13px;
   display: none;
   float: left;
 }
 
-#extra-popup {
-  border-bottom: none;
-}
 .notification-icon{
   width: 16px;
-  margin-right: 15px;
-}
-
-#iconBox .mini-notification {
-  display: none;
-  float: left
-}
-
-.icon-count {
-  padding-right: 8px
-}
-.mini-notification .notification-icon {
   margin-right: 8px;
-  margin-left: 8px
 }
 
-.mini-notification.border {
+
+.notification.border {
   border-right: solid 1px #e1e1e1;
 }
 
-.notification.active,
-#iconBox .mini-notification.active {
+.notification.active {
   display: block;
 }
 
@@ -848,6 +824,13 @@ section.block-hack .left-side {
   .highlighted {
     font-size: 13px;
   }
+
+  /* == Notification Bar  ===================================== */
+
+  #notificationBox {
+    max-width: 100%;
+  }
+
 
   /* == Social  ===================================== */
 
