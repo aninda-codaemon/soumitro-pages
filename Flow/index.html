@@ -53,8 +53,8 @@
 
   <div class="container body-container">
     <div class="row">
-      <div class="col-sm-12 col-md-10 col-md-offset-1" data-fr-bind="bv_searchData">
-        <div class="text-center">
+      <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <div class="text-center" data-fr-bind="bv_searchData">
           <h1>Learning About The Owner of <span class="yellowifed">{{formattedPhoneNumber}}</span></h1>
         </div>
 
@@ -69,6 +69,67 @@
                   <span class="progress-text-outer"></span>
               </span>
           </div>
+        </div>
+
+        <div class="clearfix" data-fr-bind="fullTeaser">
+          <img class="alert-icon" src="img/Alert.svg" alt="">
+          <div id="notificationBox" class="clearfix">
+
+
+            <div id="social-popup" class="notification">
+              <img src="img/social.svg" class="notification-icon" alt="">
+              <span>{{socialCount}}</span>
+            </div>
+
+            <div id="email-popup" class="notification">
+              <img src="img/email.svg" class="notification-icon" alt="">
+              <span>{{emailCount}}</span>
+            </div>
+
+            <div id="photos-popup" class="notification">
+              <img src="img/photos.svg" class="notification-icon" alt="">
+              <span>{{photosCount}}</span>
+            </div>
+
+            <div id="phone-popup" class="notification">
+              <img src="img/Phone.svg" class="notification-icon" alt="">
+              <span>{{phoneCount}}</span>
+            </div>
+
+            <div id="extra-popup" class="notification">
+              <img src="img/criminal.svg" class="notification-icon" alt="">
+              <span>{{extraCount}}</span>
+            </div>
+
+            <span class="carrot"></span>
+          </div>
+
+          <!-- <div id="iconBox" class="clearfix">
+            <div class="mini-notification">
+              <img src="img/social.svg" class="notification-icon" alt="">
+              <span class="icon-count"></span>
+            </div>
+
+            <div class="mini-notification">
+              <img src="img/email.svg" class="notification-icon" alt="">
+              <span class="icon-count"></span>
+            </div>
+
+            <div class="mini-notification">
+              <img src="img/photos.svg" class="notification-icon" alt="">
+              <span class="icon-count"></span>
+            </div>
+
+            <div class="mini-notification">
+              <img src="img/Phone.svg" class="notification-icon" alt="">
+              <span class="icon-count"></span>
+            </div>
+
+            <div class="mini-notification">
+              <img src="img/criminal.svg" class="notification-icon" alt="">
+              <span class="icon-count"></span>
+            </div>
+          </div> -->
         </div>
 
         <section id="socialMedia" class="clearfix active">
@@ -119,7 +180,7 @@
           <!-- </div> -->
         </section>
 
-        <section id="emailBox" class="clearfix">
+        <section id="emailBox" class="clearfix" data-fr-bind="bv_searchData">
           <div class="col-sm-5 left-side text-center">
             <h4 class="hidden-xs">We are searching for email providers</h4>
             <!-- <img class="hidden-xs" src="img/Email-finder.svg" alt="">
@@ -137,7 +198,7 @@
           </div>
         </section>
 
-        <section id="photoBox" class="clearfix">
+        <section id="photoBox" class="clearfix" data-fr-bind="bv_searchData">
           <div class="col-sm-5 left-side text-center">
             <h4>We are searching for online photos</h4>
             <div class="photo-loader">
@@ -153,7 +214,7 @@
               <span style"color: #007ee3">{{phone}}</span>. It could include photos of
               their spouse, secret lovers, or <span class="red-warning">newer photos
               they don't want you to know about</span>. You may be surprised by the
-              photots you find.
+              photos you find.
             </p>
           </div>
         </section>
@@ -193,32 +254,7 @@
       </div>
 
       </div>
-      <div id="notificationBox" data-fr-bind="fullTeaser">
-        <div id="social-popup" class="notification">
-          <img src="img/social.svg" class="notification-icon" alt="">
-          <span>{{#socialCount}}{{/socialCount}}</span>
-        </div>
 
-        <div id="email-popup" class="notification">
-          <img src="img/email.svg" class="notification-icon" alt="">
-          <span>{{emailCount}}</span>
-        </div>
-
-        <div id="photos-popup" class="notification">
-          <img src="img/photos.svg" class="notification-icon" alt="">
-          <span>{{photosCount}}</span>
-        </div>
-
-        <div id="phone-popup" class="notification">
-          <img src="img/Phone.svg" class="notification-icon" alt="">
-          <span>{{phoneCount}}</span>
-        </div>
-
-        <div id="extra-popup" class="notification">
-          <img src="img/criminal.svg" class="notification-icon" alt="">
-          <span>{{extraCount}}</span>
-        </div>
-      </div>
 
   </div>
 

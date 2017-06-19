@@ -72,7 +72,7 @@
   });
 
   H.registerHelper('socialCount', function(item){
-    // debugger
+
     var count = this.available_data_counts.url;
     if (count === 0) {
       return "";

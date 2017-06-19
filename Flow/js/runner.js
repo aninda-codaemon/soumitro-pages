@@ -2,6 +2,7 @@ $(function() {
 
   searchData = amplify.store().bv_searchData;
   SECTION_TYPE = ["url", "email", "image_url", "phone", "education"];
+  animationDuration = 125000;
 
   $.extend($.easing, {
     easeBV: function(x, t, b, c, d) {
@@ -18,7 +19,7 @@ $(function() {
   $('.progress-text-inner').hide();
 
   var socialFinders = function() {
-    duration = 15000;
+    duration = 17000;
 
     var $lis = $("#social-media-groups li"),
         listLen = $lis.length,
@@ -55,7 +56,7 @@ $(function() {
     var progress = $('.bar').animate({
       width: "100%"
     }, {
-      duration: 75000,
+      duration: animationDuration,
       easing: 'easeBV',
       step: function(step) {
         var percent = Math.floor(step);
@@ -63,7 +64,7 @@ $(function() {
         $('.progress-text-outer').html("&nbsp; " + percent.toString() + "%");
 
         var percentRemain = 100 - percent.toString(),
-            durationRemain = 75000 * percentRemain / 100;
+            durationRemain = animationDuration * percentRemain / 100;
 
         timeRemaining = Math.floor((durationRemain / 1000) % 60);
 
@@ -85,8 +86,27 @@ $(function() {
   };
 
   var displayCount = function(idx) {
+
     var dataCounts = amplify.store().fullTeaser.available_data_counts,
-        currentCount = SECTION_TYPE
+        currentCount = dataCounts[SECTION_TYPE[idx]];
+
+    if (currentCount > 0 ) {
+      $('#notificationBox, .alert-icon, .carrot').show();
+    }
+    // debugger
+    var $notification = $('.notification')[idx];
+        // $miniNotifications = $('.mini-notification');
+
+    $($notification).addClass('active');
+
+    // if (idx > 0) {
+    //   if (idx > 1){
+    //     $($miniNotifications[idx - 2]).addClass('border');
+    //   }
+    //   $('#iconBox').show();
+    //   $($miniNotifications[idx - 1]).find('span.icon-count').text(currentCount - 1);
+    //   $($miniNotifications[idx - 1]).addClass('active');
+    // }
   };
   var sections = $('section'),
       currentIdx = 1;
@@ -101,14 +121,18 @@ $(function() {
       }
       sections.removeClass('active');
       $(sections[currentIdx]).addClass('active');
-      displayCount(currentIdx);
+
+      window.setTimeout(function(){
+        displayCount(currentIdx - 1);
+      }, (animationDuration / 5 ) - 3000);
+
       //added this little hack for now to keep final section as displayed, because
       // active class will be removed
       if ($(sections[currentIdx]).is('#jobBox')) {
         $(sections[currentIdx]).addClass('block-hack');
       }
       currentIdx += 1;
-    }, 15000);
+    }, animationDuration / sections.length);
   };
 
   var getTeaserData = function() {
@@ -124,7 +148,9 @@ $(function() {
       if (success === 'success' && !$.isEmptyObject(result)){
         amplify.store('fullTeaser', result);
       }
-      displayCount(0);
+      window.setTimeout(function(){
+        displayCount(0);
+      }, (animationDuration / 5 ) - 3000);
     }));
   };
 

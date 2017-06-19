@@ -252,7 +252,8 @@ String.prototype.capitalize = function(lower) {
         //   startMapFly(latlng[1], latlng[0]);
         // }
 
-        startMapFly(14.42076, 50.08804);
+        // startMapFly(14.42076, 50.08804);
+        startMapFly(151.209900, -33.865143);
         searchData = prepSearchData(data);
         // debugger
         storeSearchData({
