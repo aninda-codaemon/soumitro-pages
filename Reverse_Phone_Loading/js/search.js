@@ -236,7 +236,7 @@ String.prototype.capitalize = function(lower) {
     var formattedPhoneNumber = formatPhoneNumber(phoneNumber);
 
     $.when(phoneLookup).done(function (lookupResults, status) {
-      // debugger
+      debugger
       var data = lookupResults,
           success = (status === "success"),
           latlng = [];

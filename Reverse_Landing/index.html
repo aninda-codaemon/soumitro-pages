@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Phone Flow</title>
+	<meta name="Description" content="." />
+	<meta name="keywords" content="" />
+
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+<body data-spy="scroll" data-target="#content-nav">
+<!--Header-->
+<section id="top" >
+	<div class="container">
+		<header id="header">
+			<div class="row">
+				<div class="col-sm-6">
+					<span onclick="location.href='https://www.beenverified.com/';">
+						<div class="navbar-logo"><img src="img/bv-logo-white.svg">
+						</div>
+						</span>
+					<span class="badge">Cheaters Beware</span>
+				</div>
+				<div class="col-sm-6">
+<!--
+					<div class="user-area">
+						<a href="#" class="login">Log In</a>
+						<a href="#" class="signup">Sign Up</a>
+					</div>
+-->
+
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#user-area-nav" aria-expanded="false">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+				<div class="collapse navbar-collapse" id="user-area-nav">
+					<ul class="nav navbar-nav">
+						<li><a href="#" class="login">Log In</a></li>
+						<li><a href="#" class="signup">Sign Up</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<h1>See who they are calling or texting!</h1>
+		<h3>Find the owner’s name, age, address and more...</h3>
+
+		<div class="top-search">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<span class="badge"><strong>Start here:</strong> Search ANY phone #<span class="hidden-xs">, your significant other, or a mysterious caller...</span></span>
+
+					<form id="phoneForm"class="top-search-form" action="<%= next_page %>">
+						<div class="form-group">
+							<input type="tel" class="form-control" placeholder="ex: (000) 000-0000" name="phone">
+						</div>
+						<button type="submit" class="btn btn-success">Start Search</button>
+					</form>
+					<p>The search is confidential. <span class="hidden-xs">The owner will not be notified.</span> </p>
+				</div>
+			</div>
+		</div>
+
+		<div class="partners hidden-xs">
+			<img src="img/msnbc.png" />
+			<img src="img/mashable.png" />
+			<img src="img/tech-crunch.png" />
+			<img src="img/about-com.png" />
+		</div>
+	</div>
+	<div class="top-bg-img"></div>
+</section>
+<!--/Header-->
+
+<!--Main Content-->
+<div id="main-content">
+	<section class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<br /><br /><br />
+					<h2>Is your partner cheating on you?</h2>
+					<p>Are you worried that someone might be hiding something from you? With BeenVerified, you can learn a whole lot about a phone number.</p>
+				</div>
+
+				<div class="col-md-6 col-md-offset-1">
+					<img src="img/screens.png" class="full-img" />
+				</div>
+			</div>
+		</div>
+
+		<div class="testimonials">
+			<div class="container">
+				<div id="carousel-slider" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<div class="row">
+								<div class="col-sm-6">
+									<article class="testimonial">
+										<header class="testimonial-author">
+											<div class="rating">
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+											</div>
+
+											<figure>
+												<img src="img/testimonial-user.png" />
+											</figure>
+											<strong>Natasha, Oklahoma</strong>
+											<span>Nursing Student</span>
+										</header>
+
+										<p>"My daughter recently went out for soccer. I decided it would be a good idea to run another player’s father through BeenVerified. Turns out this guy had been charged with indecent exposure and was on parole."</p>
+									</article>
+								</div>
+
+								<div class="col-sm-6 hidden-xs">
+									<article class="testimonial">
+										<header class="testimonial-author">
+											<div class="rating">
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+											</div>
+
+											<figure>
+												<img src="img/testimonial-user.png" />
+											</figure>
+											<strong>Natasha, Oklahoma</strong>
+											<span>Nursing Student</span>
+										</header>
+										<p>"I've used BeenVerified hundreds of times. It's great!"</p>
+									</article>
+								</div>
+							</div>
+						</div>
+
+						<div class="item">
+							<div class="row">
+								<div class="col-sm-6 hidden-xs">
+									<article class="testimonial">
+										<header class="testimonial-author">
+											<div class="rating">
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+											</div>
+
+											<figure>
+												<img src="img/testimonial-user.png" />
+											</figure>
+											<strong>Natasha, Oklahoma</strong>
+											<span>Nursing Student</span>
+										</header>
+
+										<p>"My daughter recently went out for soccer. I decided it would be a good idea to run another player’s father through BeenVerified. Turns out this guy had been charged with indecent exposure and was on parole."</p>
+									</article>
+								</div>
+
+								<div class="col-sm-6">
+									<article class="testimonial">
+										<header class="testimonial-author">
+											<div class="rating">
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+												<i class="animate star star-one glyphicon glyphicon-star"></i>
+											</div>
+
+											<figure>
+												<img src="img/testimonial-user.png" />
+											</figure>
+											<strong>Natasha, Oklahoma</strong>
+											<span>Nursing Student</span>
+										</header>
+										<p>"I've used BeenVerified hundreds of times. It's great!"</p>
+									</article>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Controls -->
+					<a class="left carousel-control" href="#carousel-slider" role="button" data-slide="prev">
+					</a>
+					<a class="right carousel-control" href="#carousel-slider" role="button" data-slide="next">
+
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section blue-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h2 class="text-center">Uncover more than ever before <br class="hidden-xs" />with BeenVerified</h2>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="feature">
+							<em class="icon"><i class="icon-owner"></i> </em>
+							<h4>Owner Name</h4>
+							<div>
+								<figure class="user"><img src="img/john-smith.png" /></figure>
+								<p>
+									<span class="pull-right">(Age 35)</span>
+									<span>John Smith Doe</span>
+								</p>
+								<small>
+									Also Seen As<br />
+									- John Glenn Brady
+								</small>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="feature">
+							<em class="icon"><i class="icon-address"></i> </em>
+							<h4>Addresses</h4>
+							<div>
+								<figure>
+									<img src="img/Map.svg" />
+								</figure>
+								<p class="address-text">123 main street, Morganville, NJ 12345</p>
+							</div>
+							<span>1 or more where available</span>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="feature">
+							<em class="icon"><i class="icon-email"></i> </em>
+							<h4>Email Addresses</h4>
+
+							<div class="emails">
+								<figure class="email"><img src="img/yahoo.svg" /></figure>
+								<figure class="email"><img src="img/outlook.svg" /></figure>
+								<figure class="email"><img src="img/google.svg" /></figure>
+								<figure class="email"><img src="img/aol.svg" /></figure>
+							</div>
+							<span>plus many more...</span>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="feature">
+							<em class="icon"><i class="icon-phone"></i> </em>
+							<h4>Other Phone <span class="hidden-xs">Numbers</span> <span class="visible-xs">#s</span> </h4>
+							<div>
+								<figure class="phone">
+									<img src="img/address-book.svg" />
+								</figure>
+								<p>
+									(123) 456-7890<br />
+									(760)-317-2022
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="feature">
+							<em class="icon"><i class="icon-social"></i> </em>
+							<h4>Social Meida <span class="hidden-xs">Profiles</span> </h4>
+							<div class="emails">
+								<figure class="email"><img src="img/twitter.png" /></figure>
+								<figure class="email"><img src="img/facebook.png" /></figure>
+								<figure class="email"><img src="img/googleplus.png" /></figure>
+								<figure class="email"><img src="img/linkedin.png" /></figure>
+							</div>
+							<span>plus many more...</span>
+						</div>
+					</div>
+
+					<div class="col-sm-4">
+						<div class="feature">
+							<em class="icon"><i class="icon-photos"></i> </em>
+							<h4>Photos</h4>
+							<div class="photos">
+								<figure><img src="img/photo-tn.png" /></figure>
+								<figure><img src="img/photo-tn.png" /></figure>
+								<figure><img src="img/photo-tn.png" /></figure>
+								<figure class="hidden-sm"><img src="img/photo-tn.png" /></figure>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+</div>
+<!--/Main Content-->
+
+
+<footer id="footer">
+	<div class="container">
+		<div class="row">
+			<div class="trigger customer-service-wrapper col-sm-4 col-sm-push-8">
+				<h4>“Excellent Support<span class="hidden-sm hidden-md"> &amp; Service</span>”</h4>
+				<div class="row">
+					<div class="col-lg-4"> <i class="animate star star-one glyphicon glyphicon-star"></i><i class="animate star star-two glyphicon glyphicon-star"></i><i class="animate star star-three glyphicon glyphicon-star"></i><i class="animate star star-four glyphicon glyphicon-star"></i><i class="animate star star-five glyphicon glyphicon-star"></i> </div>
+					<div class="col-lg-6">
+						<p class="website">- via SiteJabber.com</p>
+					</div>
+				</div>
+				<p>
+<span class="phone-number">
+<a href="tel:+1-888-579-5910">1-888-579-5910</a>
+</span>
+					<br>
+					<span class="email-address">
+<a href="mailto:support@beenverified.com">support@beenverified.com</a>
+</span>
+					<br>
+					Mon<span class="hidden-sm">day</span> - Fri<span class="hidden-sm">day</span>: 8 am - 10 pm est
+					<br>
+					Sat<span class="hidden-sm">urday</span> - Sun<span class="hidden-sm">day</span>: 10 am - 8 pm est
+				</p>
+				<div class="carla-wrapper border-bottom">
+					<div class="row">
+						<div class="col-xs-8">
+							<p class="carla-quote">"Our goal is to provide helpful support that is quick and easy."</p>
+						</div>
+						<div class="col-xs-4 carla-box">
+							<img class="carla pull-right" src="//frcdn.beenverified.com/assets/img/3787487ad5628d313f5f776b2eacb26d.png">
+							<img class="carla-hand pull-right" src="//frcdn.beenverified.com/assets/img/c443ee8162aab093a8bdd7d6469d0960.png">
+						</div>
+					</div>
+				</div>
+				<div class="text-right">
+					<strong>Carla</strong>
+					<br>
+					<i>Director of Customer Care</i>
+				</div>
+			</div>
+			<div class="col-sm-8 col-sm-pull-4 footer-link-group xs-center">
+				<div class="row">
+					<div class="col-sm-4">
+						<h4>About Us</h4>
+						<ul>
+							<li><a href="//www.beenverified.com/about/">About BV</a></li>
+							<li><a href="//www.beenverified.com/about/testimonials/">Testimonials</a></li>
+							<li><a href="//www.beenverified.com/careers/">Careers</a></li>
+							<li><a href="//www.beenverified.com/about/leadership/">Leadership</a></li>
+							<li><a href="//www.beenverified.com/press/">Press</a></li>
+							<li><a href="//www.beenverified.com/people/">People White Pages</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-4">
+						<h4>Our Apps</h4>
+						<ul>
+							<li><a href="//www.beenverified.com/apps/">All BV Apps</a></li>
+							<li>
+								<a href="//www.beenverified.com/apps/ios/">For iPhone / iPad</a> - <a href="https://itunes.apple.com/us/app/background-check-app/id342585873?mt=8">Download</a>
+							</li>
+							<li>
+								<a href="//www.beenverified.com/apps/apple-watch/">For Apple Watch</a> - <a href="https://itunes.apple.com/us/app/background-check-app-beenverified/id342585873?mt=8">Download</a>
+							</li>
+							<li>
+								<a href="//www.beenverified.com/apps/android/">For Android</a> - <a href="https://market.android.com/details?id=com.beenverified.android&amp;feature=search_result">Download</a>
+							</li>
+							<li><a href="https://docs.google.com/a/beenverified.com/spreadsheet/viewform?formkey=dEU1elc5dDVoMElwYmlYUWQ0Wkxjbmc6MA">Developer API</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-4">
+						<h4>Help</h4>
+						<ul>
+							<li><a href="http://support.beenverified.com/home">Support</a></li>
+							<li><a href="//www.beenverified.com/contact/">Contact Us</a></li>
+							<li><a href="//www.beenverified.com/about/dos-donts/">Do's &amp; Don'ts</a></li>
+							<li><a href="//www.beenverified.com/faq/billing/">FAQ</a></li>
+							<li><a href="//www.beenverified.com/faq/opt-out/">Remove My Info</a></li>
+							<li><a href="http://partners.beenverified.com/signup">Affiliates</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row social-links">
+			<div class="col-xs-2">
+				<a href="//twitter.com/beenverified">
+					<img src="//frcdn.beenverified.com/assets/img/f6b1a0491cdfe98bb1ff33d6c77454b4.png" class="">
+					<span class="hidden-xs">Twitter</span>
+				</a>
+			</div>
+			<div class="col-xs-2">
+				<a href="//www.facebook.com/BeenVerified">
+					<img src="//frcdn.beenverified.com/assets/img/45966f0bc7c9ed394a660d3506f3d62e.png" class="">
+					<span class="hidden-xs">Facebook</span>
+				</a>
+			</div>
+			<div class="col-xs-2">
+				<a href="//plus.google.com/+beenverified/posts">
+					<img src="//frcdn.beenverified.com/assets/img/cf0634b75e0a2fa142a6adf5103ccb68.png" class="">
+					<span class="hidden-xs">Google+</span>
+				</a>
+			</div>
+			<div class="col-xs-2">
+				<a href="//www.linkedin.com/company/beenverified-com">
+					<img src="//frcdn.beenverified.com/assets/img/065d79674350bfbf00065f85201b9998.png" class="">
+					<span class="hidden-xs">LinkedIn</span>
+				</a>
+			</div>
+			<div class="col-xs-2">
+				<a href="//www.pinterest.com/beenverified/">
+					<img src="//frcdn.beenverified.com/assets/img/5f9ad4e3ac73ea6eda6eb05205563b21.png" class="">
+					<span class="hidden-xs">Pinterest</span>
+				</a>
+			</div>
+			<div class="col-xs-2">
+				<a href="//www.beenverified.com/blog/">
+					<img src="//frcdn.beenverified.com/assets/img/ca55b16f9bc8102bbc5e221a679cbd1e.png" class="">
+					<span class="hidden-xs">BV Blog</span>
+				</a>
+			</div>
+		</div>
+		<p class="disclaimer">Disclaimer: BeenVerified’s mission is to give people easy and affordable access to public record information. BeenVerified does not provide private investigator services, and is not a consumer reporting agency as defined by the Fair Credit Report Act because the information provided by BeenVerified is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses of BeenVerified, please review our <a href="//www.beenverified.com/about/dos-donts/">“Do’s &amp; Don’ts”</a> and our <a href="//www.beenverified.com/faq/terms-conditions/">Terms &amp; Conditions</a>. </p>
+		<div class="row">
+			<div class="col-sm-6">
+				<p class="xs-center"><a href="//www.beenverified.com">BeenVerified</a> © 2016 All Rights Reserved </p>
+			</div>
+			<div class="col-sm-6 text-right xs-center">
+				<a href="//www.beenverified.com/faq/terms-conditions/">Terms &amp; Conditions</a> |
+				<a href="//www.beenverified.com/faq/privacy/">Privacy Policy</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="js/jquery-1.12.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/amplify.store.min.js"></script>
+<script src="js/lodash.min.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/handlebars.min.js"></script>
+<script src="js/framerida.js"></script>
+<script src="js/scripts.js"></script>
+
+</body>
+</html>
