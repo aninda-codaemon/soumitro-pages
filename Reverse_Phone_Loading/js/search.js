@@ -163,6 +163,7 @@ String.prototype.capitalize = function(lower) {
 
 
   var storeSearchData = function (storageData) {
+
     amplify.store(bvRPL.config.searchData, storageData);
   };
 
@@ -236,7 +237,7 @@ String.prototype.capitalize = function(lower) {
     var formattedPhoneNumber = formatPhoneNumber(phoneNumber);
 
     $.when(phoneLookup).done(function (lookupResults, status) {
-      debugger
+
       var data = lookupResults,
           success = (status === "success"),
           latlng = [];
@@ -263,7 +264,7 @@ String.prototype.capitalize = function(lower) {
           ownersName: searchData.ownersName,
           location: searchData.location,
           carrier: searchData.carrier,
-          type: searchData.type,
+          type: searchData.lineType,
           email: searchData.email,
           data: searchData
         });
