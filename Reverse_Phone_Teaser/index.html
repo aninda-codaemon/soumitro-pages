@@ -191,11 +191,19 @@
 					<section>
 						<i class="icon icon-home"></i>
 						<h2>Owner's Current Address:</h2>
+						{{#if addresses}}
 						<p>
-							2<span class="unavailable">** *******</span> St, Marlboro, NJ
+							{{location}}
 						</p>
-						<h4>Additional Addresses:</h4>
-						<p>2 additional addresses, including New York, NY and Boston, MA</p>
+						{{#additionalAddresses}}
+							<h4>Additional Addresses:</h4>
+							<p>{{remainingAddresses}}</p>
+						{{/additionalAddresses}}
+						{{else}}
+							<p>
+								<a href="#" class="unlock">Unlock  to search crimes</a>
+							</p>
+						{{/if}}
 					</section>
 
 					<section>

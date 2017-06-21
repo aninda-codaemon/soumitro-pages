@@ -162,8 +162,8 @@
       return "";
     }
 
-    if (addresses[0].city === ""){
-      return states[addresses[0].state];
+    if (addresses[0].parts.city === ""){
+      return states[addresses[0].parts.state];
     } else {
       return addresses[0].full;
     }
@@ -171,12 +171,27 @@
 
   H.registerHelper('remainingAddresses', function(item){
     var addresses = this.addresses;
-
-    if (!addresses || _.isEmpty(addresses)) {
-      return "";
+    var addressCount = addresses.length;
+  if (addressCount === 2) {
+      return "1 additional address, including" + addresses[1].full;
+    } else {
+      return addressCount + " additional addresses, including" + addresses[1].full;
     }
+  });
 
-    var addressCount = addresses.length();
+  H.registerHelper('additionalAddresses', function(item){
+    var addresses = this.addresses;
+    // debugger
+
+    if (!addresses || !addresses[1]) {
+      return item.inverse(this);
+    }
+    var addressCount = addresses.length;
+    if (addressCount === 1) {
+      return item.inverse(this);
+    } else {
+      return item.fn(this);
+    }
 
   });
 
