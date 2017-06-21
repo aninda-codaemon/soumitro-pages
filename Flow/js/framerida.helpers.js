@@ -72,7 +72,9 @@
   });
 
   H.registerHelper('socialCount', function(item){
-
+    if (!this.available_data_counts) {
+      return;
+    }
     var count = this.available_data_counts.url;
     if (count === 0) {
       return "";
@@ -84,6 +86,9 @@
   });
 
   H.registerHelper('emailCount', function(item){
+    if (!this.available_data_counts) {
+      return;
+    }
     var count = this.available_data_counts.email;
     if (count === 0) {
       return "";
@@ -95,6 +100,9 @@
   });
 
   H.registerHelper('photoCount', function(item){
+    if (!this.available_data_counts) {
+      return;
+    }
     var count = this.available_data_counts.image_url;
     if (count === 0) {
       return "";
@@ -106,6 +114,9 @@
   });
 
   H.registerHelper('phoneCount', function(item){
+    if (!this.available_data_counts) {
+      return;
+    }
     var count = this.available_data_counts.phone.total;
     if (count === 0) {
       return "";
@@ -117,6 +128,9 @@
   });
 
   H.registerHelper('extraCount', function(item){
+    if (!this.available_data_counts) {
+      return;
+    }
     var count = this.available_data_counts.job;
     if (count === 0) {
       return "";

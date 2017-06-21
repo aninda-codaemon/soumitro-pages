@@ -85,9 +85,9 @@ $(function() {
     });
   };
 
-  dataCounts = amplify.store().fullTeaser.available_data_counts;
 
   var displayCount = function(idx) {
+    dataCounts = amplify.store().fullTeaser.available_data_counts;
 
     var currentCount = dataCounts[SECTION_TYPE[idx]],
         $notification = $('.notification')[idx];
