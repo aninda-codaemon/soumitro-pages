@@ -195,4 +195,52 @@
 
   });
 
+  H.registerHelper('hasEmails', function(item){
+    var emails = this.emails;
+
+    if (!emails || !emails[0]){
+      return item.inverse(this);
+    } else {
+      return item.fn(this);
+    }
+  });
+
+  H.registerHelper('emailList', function(item){
+    // debugger
+    var emails = this.emails;
+    if (!emails || !emails[0]){
+      return "";
+    }
+
+    var emailList = [];
+    for (var i = 0; i < emails.length; i++) {
+      if (i === 3) {
+        break;
+      }
+      emailList.push(emails[i].email_address);
+    }
+
+    return emailList.join(",  ");
+  });
+
+  H.registerHelper('moreThan3', function(item){
+    // debugger
+    var emails = this.emails;
+    if (!emails || !emails[0] || emails.length < 4){
+      return item.inverse(this);
+    } else {
+      return item.fn(this);
+    }
+  });
+
+  H.registerHelper('remainingEmails', function(item){
+    var emails = this.emails;
+
+    if (!emails) {
+      return "";
+    } else {
+      return emails.length - 3 ;
+    }
+  });
+
 }(Handlebars));

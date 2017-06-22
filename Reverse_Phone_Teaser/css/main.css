@@ -363,7 +363,6 @@ h3 {
 	background-image: url('../img/photo-icon.svg')
 }
 
-
 .report-features ul li .badge {
 	width: 31px;
 	height: 22px;
@@ -442,6 +441,10 @@ h3 {
 	text-align: left;
 	color: #333333;
 	margin:0 0 12px;
+}
+
+.report-content p.email-list {
+	letter-spacing: 0.3px;
 }
 .report-content .unavailable {
 	font-size: 30px;
