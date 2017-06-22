@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>google+</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="google+" fill-rule="nonzero">
+            <path d="M44,0 L4,0 C1.8,0 0,1.8 0,4 L0,44 C0,46.2 1.8,48 4,48 L44,48 C46.2,48 48,46.2 48,44 L48,4 C48,1.8 46.2,0 44,0 Z" id="Shape" fill="#E13719"></path>
+            <g id="G_x2B_" transform="translate(9.000000, 9.000000)" fill="#FFFFFF">
+                <polygon id="_x2B__1_" points="30 13 26 13 26 9 24 9 24 13 20 13 20 15 24 15 24 19 26 19 26 15 30 15"></polygon>
+                <path d="M15,17 C15,17 13,15.8 13,15 C13,15 12.5,13.2 14,12 C15.5,10.8 17,9 17,7 C17,4.7 16,2 14,1 L17,1 L19.4,0 C19.4,0 12.3,0 10,0 C5.8,0 2,3.3 2,7 C2,10.7 4.8,13.6 9.1,13.6 C9.4,13.6 9.7,13.6 10,13.6 C9.7,14.1 9.5,14.7 9.5,15.3 C9.5,16.3 10.3,17.3 11,18 C10.5,18 9.6,18 9,18 C3.8,18 0,20.6 0,24 C0,27.4 4.9,30 10,30 C15.9,30 20,27 20,23 C20,20.3 17.5,18.7 15,17 Z M11,13 C8.6,13 5.4,10.1 5,7 C4.6,3.9 6.6,0.9 9,1 C11.4,1.1 13.6,3.9 14,7.1 C14.4,10.2 13,13 11,13 Z M10,28 C6.4,28 3,26.7 3,24 C3,21.3 6.4,19 10,19 C10.8,19 12,19 12,19 C13,19 14.9,19.9 16,21 C17,22 17,23.7 17,24 C17,27 15,28 10,28 Z" id="g_1_"></path>
+            </g>
+        </g>
+    </g>
+</svg>
