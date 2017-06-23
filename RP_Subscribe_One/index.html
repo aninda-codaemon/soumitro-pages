@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Phone Flow</title>
+	<meta name="Description" content="." />
+	<meta name="keywords" content="" />
+
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body data-next-page="<%=next_page%>">
+<!--Header-->
+<header id="header" class="full-header">
+	<div class="row">
+		<div class="col-sm-6">
+			<span onclick="location.href='https://www.beenverified.com/';">
+				<div class="navbar-logo"><img src="img/bv-logo-white.svg"></div>
+			</span>
+			<span class="badge">Cheaters Beware</span>
+		</div>
+	</div>
+</header>
+<!--/Header-->
+
+<!--Main Content-->
+<div id="main-content" class="lightblue-bg subscribe" data-fr-bind="bv_searchData fullTeaser">
+	<div class="container">
+		<header class="subscribe-header">
+			<figure>
+
+					<img src="img/subscribe-report-top-icon.svg" />
+
+			</figure>
+			<h1>Your report is ready about {{formattedPhoneNumber}}</h1>
+			<h4>Data updated within the last 24 hours</h4>
+		</header>
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="report-summary">
+					<header>
+						<figure><img src="img/relative-icon.svg" style="margin-top: 25%;" /></figure>
+						<h2><span>Get instant information about </span>{{ownersName}}</h2>
+							{{#if location}}
+								<h4>From {{location}}</h4>
+							{{/if}}
+					</header>
+					<div id="map">
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-8">
+				<section class="subscribe-plans">
+
+
+						<h2>Choose a membership plan</h2>
+						<article class="highlighted">
+							<form class="" action="<%= next_page %>" method="post">
+								<strong>Unlimited Phone Reports</strong>
+								<span>Only $22.86/month</span>
+								<input type="hidden" name="plan" value="phone">
+								<button type="submit" class="btn btn-success">Continue</button>
+							</form>
+						</article>
+
+						<article>
+							<form class="" action="<%= next_page %>" method="post">
+								<strong>Unlimited Phone, People, Email &amp; Property Reports</strong>
+								<span>Only $28.48/month</span>
+								<input type="hidden" name="plan" value="all">
+								<button type="submit" class="btn btn-success">Continue</button>
+								<em class="badge hidden-xs">Special Offer</em>
+						</form>
+						</article>
+				</section>
+
+				<section class="plans-features">
+					<h3>All memberships include:</h3>
+					<div class="row">
+						<div class="col-sm-6">
+							<article class="plan-feature">
+								<figure>
+									<i class="plan-feature-icon pdf-icon"></i>
+								</figure>
+								<strong>Free PDFs</strong>
+								<span>Email or download your reports</span>
+							</article>
+						</div>
+
+						<div class="col-sm-6">
+							<article class="plan-feature">
+								<figure>
+									<i class="plan-feature-icon searches-icon"></i>
+								</figure>
+								<strong>Unlimited Searches</strong>
+								<span>Search dozens of reports every month</span>
+							</article>
+
+						</div>
+
+						<div class="col-sm-6">
+							<article class="plan-feature">
+								<figure>
+									<i class="plan-feature-icon notification-icon"></i>
+								</figure>
+								<strong>Report Notifications </strong>
+								<span>Get alerts when your reports change</span>
+							</article>
+						</div>
+
+						<div class="col-sm-6">
+							<article class="plan-feature">
+								<figure>
+									<i class="plan-feature-icon reports-icon"></i>
+								</figure>
+								<strong>Emailable Reports</strong>
+								<span>Share reports with family and friends</span>
+							</article>
+						</div>
+					</div>
+				</section>
+
+				<section class="guarantee">
+					<article>
+						<i class="guarantee-icon"></i>
+						<h4>Satisfaction Guaranteed</h4>
+						<p>If we can't find the number you're looking for, we will gladly
+							issue a refund!</p>
+					</article>
+
+					<article>
+						<i class="large-lock-icon"></i>
+						<h4>Security is important to us</h4>
+						<p>The site connection is secure and we will not notify {{ownersName}}
+							about your purchase.</p>
+					</article>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/Main Content-->
+
+<section class="support-schedule">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<header>
+					<img src="img/support.svg" />
+					Live Customer Support Hours
+				</header>
+				<ul>
+					<li>Monday  to Friday 8am - 10pm ET</li>
+					<li>Saturday & Sunday 10am - 8pm ET</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<footer id="footer" class="small-footer">
+	<div class="container">
+		<p class="disclaimer">Disclaimer: BeenVerified’s mission is to give people easy and affordable access to public record information. BeenVerified does not provide private investigator services, and is not a consumer reporting agency as defined by the Fair Credit Report Act because the information provided by BeenVerified is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses of BeenVerified, please review our <a href="//www.beenverified.com/about/dos-donts/">“Do’s &amp; Don’ts”</a> and our <a href="//www.beenverified.com/faq/terms-conditions/">Terms &amp; Conditions</a>. </p>
+		<div class="row">
+			<div class="col-sm-6">
+				<p class="xs-center"><a href="//www.beenverified.com">BeenVerified</a> © 2016 All Rights Reserved </p>
+			</div>
+			<div class="col-sm-6 text-right xs-center">
+				<a href="//www.beenverified.com/faq/terms-conditions/">Terms &amp; Conditions</a> |
+				<a href="//www.beenverified.com/faq/privacy/">Privacy Policy</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="js/jquery-1.12.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/amplify.store.min.js"></script>
+    <script src="js/lodash.min.js"></script>
+    <script src="js/handlebars.min.js"></script>
+
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/utility.js"></script>
+
+    <script src="js/framerida.helpers.js"></script>
+    <script src="js/framerida.js"></script>
+
+
+    <script src="js/runner.js"></script>
+
+</body>
+</html>

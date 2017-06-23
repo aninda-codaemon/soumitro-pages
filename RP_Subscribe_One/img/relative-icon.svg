@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="20px" viewBox="0 0 16 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>relative-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.2">
+        <g id="relative-icon" fill-rule="nonzero" fill="#000000">
+            <path d="M10.872,8.231 C12.1396828,7.4005353 12.9015794,5.98547693 12.897,4.47 C12.897,2.0399471 10.9270529,0.07 8.497,0.07 C6.0669471,0.07 4.097,2.0399471 4.097,4.47 C4.09278756,5.98538498 4.85459599,7.40027955 6.122,8.231 C3.20004847,8.52671072 0.98107469,10.9941611 0.996,13.931 L0.996,18.571 L1.009,18.644 L1.322,18.744 C3.79607861,19.5547458 6.38055851,19.9784089 8.984,20 C11.2802707,20.0745759 13.5644864,19.6387716 15.672,18.724 L15.966,18.572 L16,18.572 L16,13.932 C16.0153419,10.9940859 13.7951277,8.52578622 10.872,8.231 Z" id="Forma_1"></path>
+        </g>
+    </g>
+</svg>
