@@ -237,6 +237,7 @@ img.quotes {
   height: 50px;
   vertical-align: top;
   margin-right: 10px;
+  float: left;
 }
 
 .secured .text {
@@ -261,8 +262,6 @@ img.quotes {
   -moz-box-shadow: 0px 4px 15px 0 rgba(0, 0, 0, 0.14);
   -ms-box-shadow: 0px 4px 15px 0 rgba(0, 0, 0, 0.14);
   box-shadow: 0px 4px 15px 0 rgba(0, 0, 0, 0.14);
-  background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,1) 25%,transparent 25%,transparent 50%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 75%,transparent 75%,transparent);
-  background-image: linear-gradient(45deg,rgba(255,255,255,1) 25%,transparent 25%,transparent 50%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 75%,transparent 75%,transparent);
   background-size: 40px 40px;
   /*background-color: #DAF3C0;*/
 }
@@ -333,8 +332,8 @@ img.quotes {
   border-radius: 50%;
   opacity: 0.1;
 	background-color: #ffffff;
-  height: 120px;
-  width: 120px;
+  height: 100px;
+  width: 100px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -352,9 +351,26 @@ img.quotes {
   right: 0;
 }
 
+.phone-box,
+.check-box {
+  float:left;
+  display: inline-block;
+  position: relative;
+  margin-left: 30px;
+}
+
+.header-box {
+  float: left;
+  margin-left: 30px;
+}
+
+.header-box h2 {
+  max-width: 550px;
+}
+
 .check {
-  height: 78px;
-  top: 17%;
+  height: 73px;
+  top: 14%;
 }
 
 .all-day {
@@ -939,7 +955,7 @@ label.error {
 /* ================================================ */
 @media (min-width: 1600px){
   #map {
-    height: 500px !important;
+    height: 400px !important;
   }
 }
 
@@ -968,6 +984,13 @@ label.error {
   }
 }
 
+@media (min-width: 1200px) {
+  .header-box h2 {
+    max-width: unset;
+  }
+
+}
+
 @media (max-width: 991px){
 
   h2 {
@@ -991,8 +1014,12 @@ label.error {
 /* == Action Header  ===================================== */
   .phone-circle,
   .check-circle {
-    height: 100px;
-    width: 100px;
+    height: 85px;
+    width: 85px;
+  }
+
+  .phone {
+    height: 40px
   }
 
   .check {
@@ -1000,8 +1027,18 @@ label.error {
   }
 
   .check {
-    height: 72px;
-    top: 14%;
+    height: 63px;
+    top: 13%;
+  }
+
+  .phone-box,
+  .header-box,
+  .check-box {
+    margin-left: 25px;
+  }
+
+  .header-box h2 {
+    max-width: 375px
   }
 /* == Action Box  ===================================== */
 
@@ -1037,6 +1074,10 @@ label.error {
   /* == Side Bar   ===================================== */
   .secured h4 {
     font-size: 18px;
+  }
+
+  .testimonials {
+    padding: 25px;
   }
 
   /* ==  Preview Box   ===================================== */
@@ -1130,6 +1171,7 @@ label.error {
     margin-bottom: 10px;
   }
 
+
   .phone-circle,
   .check-circle {
     height: 57px;
@@ -1147,6 +1189,20 @@ label.error {
 
   .all-day {
     font-size: 13px;
+  }
+
+  .phone-box,
+  .header-box,
+  .check-box {
+    margin-left: 0px;
+    float: none;
+    display: block;
+    margin-left: 0px;
+  }
+
+  .header-box h2 {
+    max-width: unset;
+    margin-left: 0px
   }
 
   /* == Progress Bar  ===================================== */

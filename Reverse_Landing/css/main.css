@@ -62,13 +62,8 @@ label.error {
 }
 
 input.error {
-  border-top: 3px solid #eb3e51;
+  border-top: none;
 }
-
-input.error:focus {
-	border-top: 3px solid #eb3e51;
-}
-
 
 .btn {
 	border:none;
@@ -111,6 +106,10 @@ input.error:focus {
 }
 .form-control:focus {
 	box-shadow: 0 -5px #c8c8c8 inset;
+}
+
+.form-control.error {
+	box-shadow: 0 -5px #eb3e51 inset;
 }
 .full-img {
 	width: 100%;
@@ -377,10 +376,24 @@ input.error:focus {
 	width: 100%;
 	height: 100%;
 }
+
+.feature > div.photos figure img {
+	width: 100%;
+	width: auto;
+	height: 43px;
+}
+
+.feature > div.photos figure img.tall {
+	height: auto;
+	width: 43px;
+}
+
+
 .feature > div p {
 	font-size: 16px;
 	line-height: 20px;
 	margin:0;
+	display: block;
 }
 .feature > div small {
 	font-size: 15px;
@@ -449,6 +462,11 @@ input.error:focus {
 	margin: 0 50px;
 }
 
+.testimonial figure img {
+    height: 42px;
+    border-radius: 50%;
+}
+
 .testimonial-author {
 	overflow: hidden;
 	margin-bottom: 24px;
@@ -463,7 +481,6 @@ input.error:focus {
 	width:42px;
 	height: 42px;
 	float:left;
-	border-radiuss: 21px;
 	overflow:hidden;
 	margin-right:19px;
 }
@@ -717,6 +734,10 @@ input.error:focus {
 	.address-text {
 		display: inline-block;
 		max-width: 138px;
+	}
+
+	.testimonial-author strong {
+		display: inline-block;
 	}
 }
 

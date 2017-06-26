@@ -83,16 +83,18 @@ h3 {
 }
 
 .form-control {
-	border:none;
-	font-size: 24px;
-	border-radius: 6px;
-	line-height: 30px;
-	padding:15px 40px;
-	box-shadow: 0 -5px #e1e1e1 inset;
-	height: 60px;
+	height: 50px;
+	border-radius: 5px;
+	background-color: #ffffff;
+	box-shadow: inset 0 2px 5px 0 rgba(149, 149, 149, 0.3);
+	border: solid 1px #c2c2c2;
 }
+
 .form-control:focus {
-	box-shadow: 0 -5px #c8c8c8 inset;
+	border-radius: 5px;
+	background-color: #ffffff;
+	box-shadow: 0 0 10px 0 rgba(102, 175, 233, 0.44), inset 0 0 8px 0 rgba(102, 175, 233, 0.57);
+	border: solid 1px #66afe9;
 }
 
 .text-center {
@@ -150,6 +152,33 @@ h3 {
 	margin: 0;
 }
 
+.subscription-summary {
+	display: none;
+}
+
+#phoneMembership {
+	display: block;
+}
+
+.summary-details-wrapper {
+  display: block;
+  min-height: 28px;
+  margin-top: 8px;
+  border-bottom: 1px dotted #cfd9de;
+}
+
+.green-check {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin-top: 3px;
+	margin-left: 4px;
+	background: url("../img/checkmark.svg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
+
 .subscribe .subscribe-header h1 {
 	font-family: Lato;
 	font-size: 36px;
@@ -194,17 +223,7 @@ h3 {
 .subscribe .report-summary {
 	padding:30px 10px 10px
 }
-.report-summary #map {
-	height:216px;
-}
 
-.mapboxgl-marker {
-  background: url(../img/marker.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 30px;
-  width: 20px;
-}
 .report-summary h4 {
 	font-family: Lato;
 	font-size: 16px;
@@ -215,11 +234,28 @@ h3 {
 	margin: 0 0 15px;
 }
 
-.report-summary {
-    background: #FFF;
-    box-shadow: 0.9px 4.9px 30px 0 rgba(170, 196, 206, 0.3);
-    padding: 30px 20px;
-    margin-bottom: 20px;
+.report-summary,
+.testimonials,
+.secured,
+#form-first-part,
+#form-second-part {
+  background: #FFF;
+  box-shadow: 0.9px 4.9px 30px 0 rgba(170, 196, 206, 0.3);
+  padding: 30px 20px;
+  margin-bottom: 20px;
+	position: relative;
+}
+
+#form-first-part {
+	margin-bottom: 0px;
+}
+
+.secured-section {
+	background-color: #eff1f2;
+}
+
+.paypal-img {
+	height: 28px;
 }
 
 .report-summary figure {
@@ -419,22 +455,15 @@ h3 {
 .guarantee-icon {
 	width: 110px;
 	height: 93px;
-	background:url('../img/guarantee.jpg') 0 0 no-repeat;
-	position: absolute;
-	left:28px;
-	top: 50%;
-	margin-top:-46px;
-	background-size: 100% 100%;
 }
 .large-lock-icon {
 	width: 79px;
 	height: 91px;
-	background:url('../img/padlock.svg') 0 0 no-repeat;
-	position: absolute;
-	left:44px;
-	top: 50%;
-	margin-top:-47px;
-	background-size: 100% 100%;
+}
+
+.verify-seal img {
+  cursor: pointer;
+	width: 80px;
 }
 
 .support-schedule {

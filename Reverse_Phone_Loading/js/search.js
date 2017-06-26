@@ -23,10 +23,8 @@ String.prototype.capitalize = function(lower) {
 
 
   var enforceMapHeight = function () {
-    // var width = $(this).width(),
-    //     height = $(this).height();
-    // var height = '500';
-    $('#map').css('height', "350px");
+
+    $('#map').css('height', "300px");
   };
 
   var formatPhoneNumber = function (phoneNumber) {

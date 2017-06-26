@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Phone Flow</title>
+	<meta name="Description" content="." />
+	<meta name="keywords" content="" />
+
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+<body data-next-page="<%=next_page%>">
+<!--Header-->
+<header id="header" class="full-header">
+	<div class="row">
+		<div class="col-sm-6">
+			<span onclick="location.href='https://www.beenverified.com/';">
+				<div class="navbar-logo"><img src="img/bv-logo-white.svg"></div>
+			</span>
+			<span class="badge">Cheaters Beware</span>
+		</div>
+	</div>
+</header>
+<!--/Header-->
+
+<!--Main Content-->
+<div id="main-content" class="lightblue-bg subscribe" data-fr-bind="bv_searchData fullTeaser">
+	<div class="container">
+		<header class="subscribe-header">
+			<figure>
+
+					<img src="img/key.svg" />
+
+			</figure>
+			<h1>Activate Account to Get Instant Access</h1>
+
+		</header>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="report-summary">
+					<div class="col-sm-5">
+						{{formattedPhoneNumber}}
+					</div>
+
+					<div class="col-sm-7">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="report-summary subscription-summary" id="phoneMembership">
+					<header>
+						<h2>Order Summary</h2>
+					</header>
+
+						<div class="order-summary-section">
+							<span class="summary-details-wrapper clearfix">
+								<span class="order-summary-heading">One Month Phone Search Membership</span>
+								<span class="pull-right">$22.86</span>
+							</span>
+							<span class="summary-details-wrapper clearfix">
+								<span class="order-summary-heading">Report on {{formattedPhoneNumber}}</span>
+								<span class="pull-right">
+									<span class="green-check"></span>
+									<span>Included</span>
+								</span>
+							</span>
+							<span class="summary-details-wrapper clearfix">
+								<span class="order-summary-heading">Unlimited Reports</span>
+								<span class="pull-right">
+									<span class="green-check"></span>
+									<span>Included</span>
+								</span>
+							</span>
+							<span class="summary-details-wrapper clearfix">
+								<span class="order-summary-heading">Ongoing Notifications</span>
+								<span class="pull-right">
+									<span class="green-check"></span>
+									<span>Included</span>
+								</span>
+							</span>
+							<span class="summary-details-wrapper clearfix">
+								<span class="order-summary-heading">Easy Cancellation For Any Reason</span>
+								<span class="pull-right">
+									<span class="green-check"></span>
+									<span>Included</span>
+								</span>
+							</span>
+							<span class="summary-details-wrapper clearfix">
+								<span class="order-summary-heading">Unlimited PDF Reports</span>
+								<span class="pull-right">
+									<span class="green-check"></span>
+									<span>Free</span>
+								</span>
+							</span>
+						</div>
+				</div>
+
+				<div class="report-summary subscription-summary" id="allMembership">
+					<header>
+						<h2>Order Summary</h2>
+					</header>
+
+						<div class="order-summary-section">
+							<span class="summary-details-wrapper clearfix">
+								<span class="order-summary-heading">One Month Phone Search Membership</span>
+								<span class="pull-right">$22.86</span>
+							</span>
+							<span class="summary-details-wrapper clearfix">
+								<span class="order-summary-heading">Report on {{formattedPhoneNumber}}</span>
+								<span class="pull-right">
+									<span class="green-check"></span>
+									<span>Included</span>
+								</span>
+							</span>
+							<span class="summary-details-wrapper clearfix">
+								<span class="order-summary-heading">Unlimited Reports</span>
+								<span class="pull-right">
+									<span class="green-check"></span>
+									<span>Included</span>
+								</span>
+							</span>
+							<span class="summary-details-wrapper clearfix">
+								<span class="order-summary-heading">Ongoing Notifications</span>
+								<span class="pull-right">
+									<span class="green-check"></span>
+									<span>Included</span>
+								</span>
+							</span>
+							<span class="summary-details-wrapper clearfix">
+								<span class="order-summary-heading">Easy Cancellation For Any Reason</span>
+								<span class="pull-right">
+									<span class="green-check"></span>
+									<span>Included</span>
+								</span>
+							</span>
+							<span class="summary-details-wrapper clearfix">
+								<span class="order-summary-heading">Unlimited PDF Reports</span>
+								<span class="pull-right">
+									<span class="green-check"></span>
+									<span>Free</span>
+								</span>
+							</span>
+						</div>
+				</div>
+
+				<div class="testimonials">
+					<h2>Testimonials</h2>
+
+					<div class="">
+						These are testimonials. I dont feel like doing them right now
+						wahhhh
+					</div>
+			  </div>
+
+				<div class="secured text-center">
+					<article>
+						<img class="guarantee-icon" src="img/guarantee.jpg" alt="">
+						<h4>Satisfaction Guaranteed</h4>
+						<p>If we can't find the number you're looking for, we will gladly
+							issue a refund!</p>
+					</article>
+				</div>
+
+			</div>
+
+			<div class="col-sm-8">
+				<form id="subscribe_form" class="" action="/accounts" method="post">
+					<input id="promotion" name="promotion" type="hidden" value="view_report_trial">
+					<input name="authenticity_token" type="hidden" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=">
+
+
+						<div id="form-first-part" class="clearfix">
+							<h2>Secure Checkout:</h2>
+							<div class="seals verify-seal pull-right">
+								<img src="img/norton.svg" alt="">
+							</div>
+							<div class="form-group">
+		              <label for="account_first_name" class="col-sm-4 control-label">First Name</label>
+		              <div class="col-sm-8">
+		                <input class="form-control" id="account_first_name" name="account[first_name]" type="text" value="{{account[first_name]}}">
+		              </div>
+		            </div>
+		            <div class="form-group">
+		              <label for="account_last_name" class="col-sm-4 control-label">Last Name</label>
+		              <div class="col-sm-8">
+		                <input class="form-control inspectletIgnore" id="account_last_name" name="account[last_name]" type="text" value="{{account[last_name]}}">
+		              </div>
+		            </div>
+		            <div class="form-group">
+		              <label for="user_email" class="col-sm-4 control-label">Email Address</label>
+		              <div class="col-sm-8">
+		                <input class="form-control inspectletIgnore" id="user_email" maxsize="100" name="user[email]" type="email" value="{{user[email]}}">
+		              </div>
+		            </div>
+						</div>
+
+
+						<div class="secured-section">
+							<img class="large-lock-icon" src="img/padlock.svg" alt="">
+							<h4>Your security is important to us</h4>
+							<p>The site connection is secure and we will not notify {{ownersName}}
+								about your purchase.</p>
+						</div>
+
+						<div class="clearfix" id="form-second-part">
+							<h2>Select Your Payment Method:</h2>
+
+							<div class="form-group payOptionSelect">
+
+								<div id="paypal-radio" class="radio col-sm-8">
+									<label for="paypal">
+										<input type="radio" id="paypal-radio-button" name="payment_method" value="paypal"> <img class="paypal-img" src="img/Paypal.svg" alt="PayPal" /> The safer, easier way<span class="hidden-sm"></span>
+									</label>
+								</div>
+
+								<div id="credit-radio" class="radio col-sm-8 col-sm-offset-4">
+									<label for="credit">
+										<input type="radio" id="credit" name="payment_method" value="credit_card" checked> <img src="img/c-cards.png" alt="We accept MasterCard, Visa, Discover, and American Express" width="115px"> Use credit/debit<span class="hidden-sm"> card</span>
+									</label>
+								</div>
+
+								<div class="row cc-wrapper">
+						<div class="col-xs-12">
+							<div class="cc-wrapper-header row">
+								<div id="secure-wrapper" class="col-xs-6 col-sm-4">
+									<span id="secure-lock" class="glyphicon glyphicon-lock"></span>
+									<span id="secure-text" class="small text-success">Secure<span class="hidden-xs"> Server</span></span>
+								</div>
+								<div class="col-sm-4 hidden-xs">
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</div>
+								<div class="col-xs-6 col-sm-4">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="credit_card_card_number" class="col-sm-4 control-label">Card Number</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control inspectletIgnore" id="credit_card_card_number" name="credit_card[card_number]" size="30">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="credit_card[expiration_date(2i)]" class="col-xs-12 col-sm-4 control-label">Expiration</label>
+								<input id="credit_card_expiration_date_3i" name="credit_card[expiration_date(3i)]" type="hidden" value="1">
+								<div class="col-xs-6 col-sm-4 inspectlet-sensitive">
+									<select id="credit_card_expiration_date_2i" name="credit_card[expiration_date(2i)]" class="form-control">
+										<option value="1">January</option>
+										<option value="2">February</option>
+										<option value="3">March</option>
+										<option selected value="4">April</option>
+										<option value="5">May</option>
+										<option value="6">June</option>
+										<option value="7">July</option>
+										<option value="8">August</option>
+										<option value="9">September</option>
+										<option value="10">October</option>
+										<option value="11">November</option>
+										<option value="12">December</option>
+									</select>
+								</div>
+								<div class="col-xs-6 col-sm-4 inspectlet-sensitive">
+									<select id="credit_card_expiration_date_1i" name="credit_card[expiration_date(1i)]" class="form-control form-control-second">
+										<option selected value="2017">2017</option>
+										<option value="2018">2018</option>
+										<option value="2019">2019</option>
+										<option value="2020">2020</option>
+										<option value="2021">2021</option>
+										<option value="2022">2022</option>
+										<option value="2023">2023</option>
+										<option value="2024">2024</option>
+										<option value="2025">2025</option>
+										<option value="2026">2026</option>
+										<option value="2027">2027</option>
+										<option value="2028">2028</option>
+										<option value="2029">2029</option>
+										<option value="2030">2030</option>
+										<option value="2031">2031</option>
+										<option value="2032">2032</option>
+										<option value="2033">2033</option>
+										<option value="2034">2034</option>
+										<option value="2035">2035</option>
+										<option value="2036">2036</option>
+										<option value="2037">2037</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="cvv2" class="col-xs-12 col-sm-4 control-label">CVV#
+								</label>
+								<div class="col-xs-6 col-sm-4">
+									<input id="cvv2" maxlength="4" name="credit_card[verification_number]" size="4" type="text" class="form-control inspectletIgnore">
+								</div>
+								<div class="col-xs-6 col-sm-4 cvv-wrapper">
+									<img class="cvv-img" src="img/cvv.png" alt="CVV">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="zipcode" class="col-xs-12 col-sm-4 control-label">Zip Code</label>
+								<div class="col-xs-6 col-sm-4">
+									<input id="zipcode" class="form-control inspectletIgnore" maxsize="20" name="address[zip]" size="30" type="text">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="terms-container">
+					<label>
+						<div class="row">
+							<input id="account_tos" class="col-xs-1" name="account[tos]" type="checkbox" value="1">
+							<div class="col-xs-11">
+								<p class="small">
+									By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a> and <a href="/home/privacy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price"></span> every <span id="legal-type"></span>&nbsp;until this subscription is canceled.
+									You can cancel your membership at any time by contacting customer service at <span class="text-primary">1-888-579-5910</span> or emailing <a href="mailto:support@beenverified.com">support@beenverified.com</a>. You also agree that you
+									will <u>NOT</u> use any information about an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance;
+									or for any other purpose prohibited by our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>.
+								</p>
+							</div>
+						</div>
+					</label>
+				</div>
+
+				<input id="layout" name="layout" type="hidden" value="fresh">
+				<input id="user_password" name="user[password]" value="delay" type="hidden">
+				<input id="user_pwdelay" name="user[pwdelay]" value="true" type="hidden">
+				<input id="password" name="password" value="delay" type="hidden">
+				<input id="password_delay" name="pwdelay" value="true" type="hidden">
+				<input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
+				<input id="tos2" name="tos2" type="hidden" value="1">
+
+				<div class="submit-btn-wrapper">
+					<div id="create_button_container" class="row">
+
+						<div class="col-sm-8 col-sm-offset-2">
+							<button id="create_button" class="btn btn-block btn-lg btn-success" type="submit">View Report</button>
+							<div id="paypal-submitter" class="text-center" style="display:none;"></div>
+						</div>
+					</div>
+					<div id="spinner" class="hidden text-center">
+						<img class="spinner-inner" src="img/ajax-loader.gif" alt="Loading...">
+					</div>
+				</div>
+							</div>
+						</div>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/Main Content-->
+
+<section class="support-schedule">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<header>
+					<img src="img/support.svg" />
+					Live Customer Support Hours
+				</header>
+				<ul>
+					<li>Monday  to Friday 8am - 10pm ET</li>
+					<li>Saturday & Sunday 10am - 8pm ET</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<footer id="footer" class="small-footer">
+	<div class="container">
+		<p class="disclaimer">Disclaimer: BeenVerified’s mission is to give people easy and affordable access to public record information. BeenVerified does not provide private investigator services, and is not a consumer reporting agency as defined by the Fair Credit Report Act because the information provided by BeenVerified is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses of BeenVerified, please review our <a href="//www.beenverified.com/about/dos-donts/">“Do’s &amp; Don’ts”</a> and our <a href="//www.beenverified.com/faq/terms-conditions/">Terms &amp; Conditions</a>. </p>
+		<div class="row">
+			<div class="col-sm-6">
+				<p class="xs-center"><a href="//www.beenverified.com">BeenVerified</a> © 2016 All Rights Reserved </p>
+			</div>
+			<div class="col-sm-6 text-right xs-center">
+				<a href="//www.beenverified.com/faq/terms-conditions/">Terms &amp; Conditions</a> |
+				<a href="//www.beenverified.com/faq/privacy/">Privacy Policy</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="js/jquery-1.12.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/amplify.store.min.js"></script>
+    <script src="js/lodash.min.js"></script>
+    <script src="js/handlebars.min.js"></script>
+
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/utility.js"></script>
+
+    <script src="js/framerida.helpers.js"></script>
+    <script src="js/framerida.js"></script>
+
+
+    <script src="js/runner.js"></script>
+
+</body>
+</html>

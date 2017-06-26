@@ -58,7 +58,7 @@
     </nav>
   </header>
   <div class="placeholder clearfix">
-    <div class="col-sm-4 side-bar hidden-xs">
+    <div class="col-sm-4 col-md-3 side-bar hidden-xs">
       <div id="map"></div>
       <div class="testimonials">
 
@@ -95,54 +95,47 @@
       </div>
 
       <div class="secured clearfix">
-        <div class="col-xs-3 no-pad-left">
+
           <img src="img/lock@2x.png" alt="">
 
-        </div>
-        <div class="col-xs-9">
-          <h4>This search session is secured</h4>
-          <p class="hidden-xs">BeenVerified deploys strategies, including Secure 256-bit SSL technology,
-          to keep your personal information and payment from unauthorized 3rd parties.</p>
-        </div>
+          <div class="secured-text">
+            <h4>This search session is secured</h4>
+            <p class="hidden-xs">BeenVerified deploys strategies, including Secure 256-bit SSL technology,
+            to keep your personal information and payment from unauthorized 3rd parties.</p>
+          </div>
+
       </div>
     </div>
 
-    <div class="col-sm-8 no-pad-right no-pad-left full-section">
+    <div class="col-sm-8 col-md-9 no-pad-right no-pad-left full-section">
       <div class="action-header">
 
         <div class="clearfix" data-fr-bind="bv_searchData">
           <div class="headers active clearfix" id="firstHeader">
-            <div class="col-sm-3">
-              <div class="phone-box">
-                <div class="phone-circle"></div>
-                <img class="phone" src="img/Phone.svg" alt="">
-              </div>
+
+            <div class="phone-box">
+              <div class="phone-circle"></div>
+              <img class="phone" src="img/Phone.svg" alt="">
             </div>
 
-            <div class="col-sm-9">
-              <div class="header-box">
-                <p class="all-day"><img src="img/24-hours.svg" alt="">Data found within the past 24 hours</p>
-                <h2>Searching for available information on <span style="color: #f5c419;">{{formattedPhoneNumber}}</span></h2>
-              </div>
-
+            <div class="header-box">
+              <p class="all-day"><img src="img/24-hours.svg" alt="">Data found within the past 24 hours</p>
+              <h2>Searching for available information on <span style="color: #f5c419;">{{formattedPhoneNumber}}</span></h2>
             </div>
           </div>
 
           <div class="headers clearfix" id="secondHeader">
-            <div class="col-sm-3">
-              <div class="check-box">
-                <div class="check-circle"></div>
-                <img class="check" src="img/checkmark.svg" alt="">
-              </div>
+            <div class="check-box">
+              <div class="check-circle"></div>
+              <img class="check" src="img/checkmark.svg" alt="">
             </div>
 
-            <div class="col-sm-9">
-              <div class="header-box">
-                <p class="all-day">Step 1 Complete!</p>
-                <h2>We found details about <span style="color: #f5c419;"></span>{{formattedPhoneNumber}}</h2>
-                <p><strong>Good News.</strong> We were able to locate the number.</p>
-              </div>
 
+
+            <div class="header-box">
+              <p class="all-day">Step 1 Complete!</p>
+              <h2>We found details about <span style="color: #f5c419;"></span>{{formattedPhoneNumber}}</h2>
+              <p><strong>Good News.</strong> We were able to locate the number.</p>
             </div>
           </div>
 
@@ -802,22 +795,10 @@
 
     <script src="js/framerida.helpers.js"></script>
     <script src="js/framerida.js"></script>
-    <!-- <script src="js/downsell.js"></script> -->
 
     <script src="js/runner.js"></script>
     <script type="text/javascript">
 
-    // mapboxgl.accessToken = 'pk.eyJ1IjoiYmVlbnZlcmlmaWVkIiwiYSI6InBLR3UwVG8ifQ.tCCuBmKzRqNMGKIY2C1YOw';
-    //
-    // var map = new mapboxgl.Map({
-    //   container: 'map',
-    //   style: 'mapbox://styles/mapbox/streets-v9',
-    //   zoom: 15,
-    //   center: [-71.97722138410576, -13.517379300798098],
-    //   pitch: 60,
-    //   bearing: -60,
-    //   zoom: 10
-    // });
     </script>
   </body>
 </html>
