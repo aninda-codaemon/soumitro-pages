@@ -1,48 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="117" height="30" viewBox="0 0 117 30">
-  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
-<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
-   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-      <rdf:Description rdf:about=""/>
-   </rdf:RDF>
-</x:xmpmeta>
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                           
-<?xpacket end="w"?></metadata>
-<defs>
-    <style>
-      .cls-1 {
-        fill: #d2a300;
-      }
-
-      .cls-1, .cls-2 {
-        fill-rule: evenodd;
-      }
-
-      .cls-2 {
-        fill: #f5c419;
-      }
-    </style>
-  </defs>
-  <path id="Shape_956_copy_3" data-name="Shape 956 copy 3" class="cls-1" d="M116.157,23.743l-0.712,4.949L110.5,23.737Z"/>
-  <path id="Shape_956_copy_4" data-name="Shape 956 copy 4" class="cls-1" d="M0.2,24.13l5.686,0.1-5.759,5.9Z"/>
-  <path class="cls-2" d="M27,0L96,0.006,117,24H0Z"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="117px" height="31px" viewBox="0 0 117 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>ribbon-1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ribbon-1">
+            <polygon id="Shape_956_copy_3" fill="#D2A300" points="116.157 23.743 115.445 28.692 110.5 23.737"></polygon>
+            <polygon id="Shape_956_copy_4" fill="#D2A300" points="0.2 24.13 5.886 24.23 0.127 30.13"></polygon>
+            <polygon id="Shape" fill="#F5C419" points="27 0 96 0.006 117 24 0 24"></polygon>
+        </g>
+    </g>
 </svg>

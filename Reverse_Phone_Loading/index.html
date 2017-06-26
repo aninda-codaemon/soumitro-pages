@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>You Got Phones, We Got Data</title>
-
+    <title>Step 1 - Locating Owner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link type="text/css" href="css/main.css" rel="stylesheet">
@@ -113,7 +113,7 @@
         <div class="clearfix" data-fr-bind="bv_searchData">
           <div class="headers active clearfix" id="firstHeader">
 
-            <div class="phone-box">
+            <div class="phone-box hidden-xs">
               <div class="phone-circle"></div>
               <img class="phone" src="img/Phone.svg" alt="">
             </div>
@@ -125,7 +125,7 @@
           </div>
 
           <div class="headers clearfix" id="secondHeader">
-            <div class="check-box">
+            <div class="check-box hidden-xs">
               <div class="check-circle"></div>
               <img class="check" src="img/checkmark.svg" alt="">
             </div>
@@ -250,7 +250,7 @@
 
                   <div class="switch-section">
                     <h3>Detecting Carrier &amp; Number Type</h3>
-                    <p>Please wait, while we collect additional data about xxx-xxxx.
+                    <p>Please wait, while we collect additional data about {{formattedPhoneNumber}}.
                       Knowing whether a caller is using a cell phone or a landline
                       can be a very valuable nugget of information.</p>
                   </div>
@@ -258,7 +258,7 @@
                   <div class="switch-section">
                     <h3>Preparing Premium Data</h3>
                     <p>We're preparing to search premium data that includes the
-                      owner's email addresses, social media profiles, employment history,
+                      owner's <strong>email addresses</strong>, <strong>social media profiles</strong>, employment history,
                        additional phone numbers, and more!</p>
                   </div>
                 </div>
@@ -333,7 +333,6 @@
 
                   </div>
                   <button id="report-btn" type="button" name="button" class="btn-large">Continue To Full Report</button>
-                  <p class="text-center">* You need an account to be able to see this content.</p>
                 </div>
 
                 <div class="col-sm-5 unlock-section hidden-sm hidden-xs">
@@ -400,7 +399,7 @@
                       </div>
 
                       <div class="col-sm-7">
-                        <p>Email Addresses</p>
+                        <p>Education</p>
                       </div>
                       <div class="col-sm-2">
 

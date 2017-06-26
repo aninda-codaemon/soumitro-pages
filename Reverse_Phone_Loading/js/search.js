@@ -208,7 +208,7 @@ String.prototype.capitalize = function(lower) {
         zoom: 13,
         bearing: 0,
         pitch: 0,
-        speed: 0.5,
+        speed: 0.8,
         curve: 0.8
       });
     });

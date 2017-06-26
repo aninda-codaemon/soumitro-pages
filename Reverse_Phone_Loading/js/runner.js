@@ -1,5 +1,5 @@
 $(function() {
-    var animationDuration = 40000;
+    var animationDuration = 60000;
     headerIdx = 0;
     var HEADERS = ['#firstHeader', '#secondHeader', '#thirdHeader'];
     searchData = amplify.store().bv_searchData;
@@ -79,6 +79,12 @@ $(function() {
           $('.test2').addClass('hidden-xs hidden-sm');
           $('.test3').removeClass('hidden-xs hidden-sm');
         }
+
+        if (percent === 99) {
+          window.setTimeout(function(){
+            $('.progress-text-inner').html('100%');
+          }, 1000);
+        }
       }
     });
   };
@@ -99,7 +105,7 @@ $(function() {
     // $('.side-bar').hide("slide", {direction : "left", duration: 1000});
 
     $('.side-bar').toggle('slide', function(){
-      $('.full-section').addClass('col-sm-12').removeClass('col-sm-8');
+      $('.full-section').addClass('col-sm-12').removeClass('col-sm-8, col-md-9');
       $('.side-bar').removeClass("hidden-xs");
     });
 

@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <svg width="52px" height="72px" viewBox="0 0 52 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
-    <title>assets/img_blank_pin_outlined</title>
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>marker</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Freshness" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Freeform-Icons" transform="translate(-549.000000, -224.000000)" stroke="#FFFFFF" stroke-width="2" fill="#ef2742">
-            <path d="M575,225 C561.192708,225 550,236.77249 550,251.293778 C550,263.572418 567.875,287.202134 573.395833,294.206879 C573.791667,294.709639 574.380208,295.001127 575.001042,294.999997 C575.621875,294.999997 576.209375,294.708509 576.60625,294.205749 C582.127083,287.198745 600,263.571288 600,251.293778 C600,236.77249 588.807292,225 575,225" id="assets/img_blank_pin_outlined"></path>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="marker" transform="translate(1.000000, 1.000000)" stroke="#FFFFFF" stroke-width="2" fill="#EF2742" fill-rule="nonzero">
+            <path d="M25,0 C11.192708,0 0,11.77249 0,26.293778 C0,38.572418 17.875,62.202134 23.395833,69.206879 C23.791667,69.709639 24.380208,70.001127 25.001042,69.999997 C25.621875,69.999997 26.209375,69.708509 26.60625,69.205749 C32.127083,62.198745 50,38.571288 50,26.293778 C50,11.77249 38.807292,0 25,0" id="assets/img_blank_pin_outlined"></path>
         </g>
     </g>
 </svg>
