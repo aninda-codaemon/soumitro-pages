@@ -626,9 +626,7 @@ h3 {
 	color: #f5c419;;
 	margin:0 0 30px;
 }
-.report-summary ul {
-	margin: 0 0 0 20px;
-}
+
 .report-summary ul li {
 	margin:0;
 	padding:0;
@@ -960,6 +958,7 @@ h3 {
 	padding-left:54px;
 	background-repeat: no-repeat;
 	list-style: none;
+	height: 50px;
 }
 .report-content .social-media li.twitter {
 	background-image:url('../img/twitter.svg');
@@ -1012,7 +1011,7 @@ h3 {
 	background:#8b519a;
 	color:#FFF;
 	text-align: center;
-	padding:34px 10px;
+	padding:15px 10px;
 	z-index: 10;
 }
 .unlock-bar .btn {
@@ -1546,7 +1545,7 @@ h3 {
 	}
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
 	h1 {
 		font-size: 40px;
 	}
@@ -1555,6 +1554,32 @@ h3 {
 	}
 	.section {
 		text-align:center;
+	}
+	.report-summary ul li strong {
+		width: 55%;
+	}
+	.report-summary ul li span {
+		width: 45%;
+	}
+	.report-content .social-media li {
+		height: 40px;
+		background-size: 40px;
+	}
+
+	.report-summary {
+		padding: 30px 15px;
+	}
+
+	.btn {
+		padding: 15px 20px;
+	}
+
+	.report-features {
+		padding: 25px 10px;
+	}
+
+	.report-features ul li {
+		font-size: 14px;
 	}
 }
 
