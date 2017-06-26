@@ -105,7 +105,7 @@ $(function() {
     // $('.side-bar').hide("slide", {direction : "left", duration: 1000});
 
     $('.side-bar').toggle('slide', function(){
-      $('.full-section').addClass('col-sm-12').removeClass('col-sm-8, col-md-9');
+      $('.full-section').addClass('col-sm-12').removeClass('col-md-9 col-sm-8');
       $('.side-bar').removeClass("hidden-xs");
     });
 

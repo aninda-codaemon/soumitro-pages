@@ -648,7 +648,7 @@ td.no-bottom-pad {
 /* ================================================ */
 
 #thirdAction.action-section {
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 #thirdAction h2.overview {
@@ -1118,6 +1118,10 @@ label.error {
   }
 
     /* ==  Lead Box   ===================================== */
+
+    #thirdAction.action-section {
+      padding-top: 0px;
+    }
 
     .lead-section {
       width: 100%;

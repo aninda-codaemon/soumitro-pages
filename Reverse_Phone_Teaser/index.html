@@ -92,7 +92,7 @@
 						{{/if}}
 					</footer>
 
-					<a href="#" class="btn btn-success hidden-xs">Unlock Full Report</a>
+					<a href="<%= next_page %>" class="btn btn-success hidden-xs">Unlock Full Report</a>
 				</div>
 
 				<div class="report-features hidden-xs">
@@ -212,7 +212,7 @@
 						{{/additionalAddresses}}
 						{{else}}
 							<p>
-								<a href="#" class="unlock">Unlock to search crimes</a>
+								<a href="<%= next_page %>" class="unlock">Unlock to search crimes</a>
 							</p>
 						{{/if}}
 					</section>
@@ -244,7 +244,7 @@
 							</li>
 						</ul>
 						<p>
-							<a href="#" class="unlock">Plus unlock 3 more</a>
+							<a href="<%= next_page %>" class="unlock">Plus unlock 3 more</a>
 						</p>
 					</section>
 
@@ -255,12 +255,12 @@
 						<p class="email-list">{{emailList}}</p>
 							{{#moreThan3}}
 							<p>
-								<a href="#" class="unlock">Plus unlock {{remainingEmails}} more</a>
+								<a href="<%= next_page %>" class="unlock">Plus unlock {{remainingEmails}} more</a>
 							</p>
 							{{/moreThan3}}
 						{{else}}
 						<p>
-							<a href="#" class="unlock">Unlock to search emails</a>
+							<a href="<%= next_page %>" class="unlock">Unlock to search emails</a>
 						</p>
 						{{/hasEmails}}
 					</section>
@@ -270,7 +270,7 @@
 						<h2>Relatives:</h2>
 
 						<p>
-							<a href="#" class="unlock">Unlock to search relatives</a>
+							<a href="<%= next_page %>" class="unlock">Unlock to search relatives</a>
 						</p>
 					</section>
 
@@ -278,14 +278,14 @@
 						<i class="icon icon-criminal"></i>
 						<h2>Criminal Records</h2>
 						<p>
-							<a href="#" class="unlock">Unlock  to search crimes</a>
+							<a href="<%= next_page %>" class="unlock">Unlock  to search crimes</a>
 						</p>
 					</section>
 					<section>
 						<i class="icon icon-career"></i>
 						<h2>Career & Education:</h2>
 						<p>
-							<a href="#" class="unlock">Unlock  to search careers and educations</a>
+							<a href="<%= next_page %>" class="unlock">Unlock  to search careers and educations</a>
 						</p>
 					</section>
 				</div>
@@ -297,7 +297,7 @@
 
 <section class="unlock-bar" data-fr-bind="fullTeaser bv_searchData">
 	Your report on {{ownersName}} is ready to be viewed
-	<a href="#" class="btn btn-success">Unlock Full Report</a>
+	<a href="<%= next_page %>" class="btn btn-success">Unlock Full Report</a>
 </section>
 
 <div class="modal fade report-warning-dialog" tabindex="-1" role="dialog" data-show="true">

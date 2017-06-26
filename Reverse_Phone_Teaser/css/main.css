@@ -180,13 +180,17 @@ h3 {
 #header {
 	padding: 25px 0 140px;
 }
-.logo {
-	text-indent: -5000px;
-	display: inline-block;
-	width:171px;
-	height: 24px;
-	background:url('../img/logo.png') 0 0 no-repeat;
-	vertical-align: middle;
+
+.navbar-logo {
+	float: left;
+}
+.navbar-logo img{
+  display: block;
+  margin-bottom: 15px;
+
+  width: 170px;
+  height: 30px;
+	margin-top: 1px;
 }
 #header .badge {
 	display: inline-block;
@@ -1475,11 +1479,17 @@ h3 {
 	margin-right: 5px;
 }
 @media (min-width: 768px) {
-	social-links {
+	.social-links {
 		text-align: center;
 	}
 }
 @media (max-width: 767px) {
+
+	.navbar-logo img {
+		width: 140px;
+		height: 20px;
+		margin: 2px 0px 25px;
+	}
 	.social-links img {
 		width: 100%;
 		max-width: 40px;
