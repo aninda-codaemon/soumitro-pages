@@ -52,7 +52,13 @@ h3 {
 	margin:0 0 20px;
 }
 
+.no-pad-right {
+	padding-right: 0px;
+}
 
+.no-pad-left {
+	padding-left: 0px;
+}
 .btn {
 	border:none;
 	color: #3b2469;
@@ -181,6 +187,10 @@ label {
   border-bottom: 1px dotted #cfd9de;
 }
 
+.last-summary {
+	border-bottom: none;
+}
+
 .green-check {
 	display: inline-block;
 	width: 18px;
@@ -304,8 +314,17 @@ label {
 }
 
 .teaser-span {
-	float: left;
 	font-size: 16px;
+}
+
+.secured h4 {
+	font-size: 20px;
+	color: #8b519a;
+	margin-bottom: 20px
+}
+
+.secured p {
+	margin-bottom: 0px;
 }
 .report-summary,
 .testimonials,
@@ -392,10 +411,6 @@ label.error {
 #secure-wrapper {
     text-align: right;
 }
-
-/*.no-pad-left {
-	padding-left: 0px;
-}*/
 
 .report-summary figure {
     display: block;
@@ -718,13 +733,27 @@ label.error {
 /* *****************************  Responsive  *************************** */
 /* ********************************************************************** */
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
 	h1 {
 		font-size: 55px;
 	}
 }
 
-@media screen and (max-width: 992px) {
+@media (min-width: 1200px) {
+	.report-summary .no-pad-left {
+		padding-left: 15px;
+	}
+
+	.report-summary .no-pad-right {
+		padding-right: 15px;
+	}
+
+	.report-summary .no-pad-left.padding-override {
+		padding-left: 0px;
+	}
+}
+
+@media screen and (max-width: 991px) {
 	h1 {
 		font-size: 40px;
 	}
@@ -732,6 +761,15 @@ label.error {
 		font-size:24px;
 	}
 
+/* == Report Summary  ===================================== */
+	.report-box {
+    border-right: none;
+	}
+
+	.tablet-padding-right {
+		padding-right: 15px;
+		border-bottom: 1px dotted #cfd9de;
+	}
 }
 
 @media (max-width: 767px) {

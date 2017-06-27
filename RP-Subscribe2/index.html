@@ -33,18 +33,14 @@
 <div id="main-content" class="lightblue-bg subscribe" data-fr-bind="bv_searchData fullTeaser">
 	<div class="container">
 		<header class="subscribe-header">
-
-
-					<img src="img/key.svg" />
-
-
+			<img class="hidden-xs hidden-sm" src="img/key.svg" />
 			<h1>Activate Account to Get Instant Access</h1>
 
 		</header>
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="report-summary clearfix">
-					<div class="col-sm-5">
+					<div class="col-sm-12 col-md-5 no-pad-right tablet-padding-right">
 						<div class="col-sm-3">
 							<div class="avatar-box">
 								<img src="img/avatar.svg" alt="">
@@ -64,10 +60,10 @@
 						</div>
 					</div>
 
-					<div class="col-sm-7 results-box">
+					<div class="col-sm-12 col-md-7 results-box">
 						<p>Results include:</p>
 						<div class="teaser-results">
-							<div class="col-sm-4">
+							<div class="col-sm-4 no-pad-left hidden-xs padding-override">
 								<div class="teaser-span first-teaser">
 									<img src="img/checkmark.svg" alt="">
 									<span>Addresses</span>
@@ -79,7 +75,7 @@
 								</div>
 							</div>
 
-							<div class="col-sm-4">
+							<div class="col-sm-4 no-pad-left hidden-xs">
 								<div class="teaser-span first-teaser">
 									<img src="img/checkmark.svg" alt="">
 									<span>Relatives</span>
@@ -91,10 +87,44 @@
 								</div>
 							</div>
 
-							<div class="col-sm-4">
+							<div class="col-sm-4 no-pad-left hidden-xs">
 								<div class="teaser-span first-teaser">
 									<img src="img/checkmark.svg" alt="">
 									<span>Email addresses</span>
+								</div>
+
+								<div class="teaser-span">
+									<img src="img/checkmark.svg" alt="">
+									<span>&amp; much more!</span>
+								</div>
+
+							</div>
+
+							<div class="col-xs-6 visible-xs">
+								<div class="teaser-span first-teaser">
+									<img src="img/checkmark.svg" alt="">
+									<span>Addresses</span>
+								</div>
+
+								<div class="teaser-span">
+									<img src="img/checkmark.svg" alt="">
+									<span>Social profiles</span>
+								</div>
+								<div class="teaser-span">
+									<img src="img/checkmark.svg" alt="">
+									<span>Photos</span>
+								</div>
+							</div>
+
+							<div class="col-xs-6 no-pad-left visible-xs">
+								<div class="teaser-span first-teaser">
+									<img src="img/checkmark.svg" alt="">
+									<span>Email addresses</span>
+								</div>
+
+								<div class="teaser-span first-teaser">
+									<img src="img/checkmark.svg" alt="">
+									<span>Relatives</span>
 								</div>
 
 								<div class="teaser-span">
@@ -109,7 +139,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-md-4">
 				<div class="report-summary subscription-summary" id="phoneMembership">
 					<header>
 						<h2>Order Summary</h2>
@@ -124,35 +154,35 @@
 								<span class="order-summary-heading">Report on {{formattedPhoneNumber}}</span>
 								<span class="pull-right">
 									<span class="green-check"></span>
-									<span>Included</span>
+									<span class="hidden-sm hidden-xs">Included</span>
 								</span>
 							</span>
 							<span class="summary-details-wrapper clearfix">
 								<span class="order-summary-heading">Unlimited Reports</span>
 								<span class="pull-right">
 									<span class="green-check"></span>
-									<span>Included</span>
+									<span class="hidden-sm hidden-xs">Included</span>
 								</span>
 							</span>
 							<span class="summary-details-wrapper clearfix">
 								<span class="order-summary-heading">Ongoing Notifications</span>
 								<span class="pull-right">
 									<span class="green-check"></span>
-									<span>Included</span>
+									<span class="hidden-sm hidden-xs">Included</span>
 								</span>
 							</span>
 							<span class="summary-details-wrapper clearfix">
 								<span class="order-summary-heading">Easy Cancellation For Any Reason</span>
 								<span class="pull-right">
 									<span class="green-check"></span>
-									<span>Included</span>
+									<span class="hidden-sm hidden-xs">Included</span>
 								</span>
 							</span>
-							<span class="summary-details-wrapper clearfix">
+							<span class="summary-details-wrapper last-summary clearfix">
 								<span class="order-summary-heading">Unlimited PDF Reports</span>
 								<span class="pull-right">
 									<span class="green-check"></span>
-									<span class="text">Free</span>
+									<span class="text hidden-sm hidden-xs">Free</span>
 								</span>
 							</span>
 						</div>
@@ -206,7 +236,7 @@
 						</div>
 				</div>
 
-				<div class="testimonials">
+				<div class="testimonials hidden-xs hidden-sm">
 					<h2>Testimonials</h2>
 
 					<div class="">
@@ -215,7 +245,7 @@
 					</div>
 			  </div>
 
-				<div class="secured text-center">
+				<div class="secured text-center hidden-xs hidden-sm">
 					<article>
 						<img class="guarantee-icon" src="img/guarantee.jpg" alt="">
 						<h4>Satisfaction Guaranteed</h4>
@@ -228,7 +258,7 @@
 
 
 
-			<div class="col-sm-8">
+			<div class="col-md-8">
 				<form id="subscribe_form" class="" action="/accounts" method="post">
 					<input id="promotion" name="promotion" type="hidden" value="view_report_trial">
 					<input name="authenticity_token" type="hidden" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=">
@@ -299,13 +329,13 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="credit_card_card_number" class="col-sm-3 control-label no-pad-left">Card Number</label>
+								<label for="credit_card_card_number" class="col-sm-3 control-label">Card Number</label>
 								<div class="col-sm-7">
 									<input type="text" class="form-control inspectletIgnore" id="credit_card_card_number" name="credit_card[card_number]" size="30">
 								</div>
 							</div>
 							<div class="form-group clearfix">
-								<label for="credit_card[expiration_date(2i)]" class="col-sm-3 control-label no-pad-left">Expiration</label>
+								<label for="credit_card[expiration_date(2i)]" class="col-sm-3 control-label">Expiration</label>
 								<input id="credit_card_expiration_date_3i" name="credit_card[expiration_date(3i)]" type="hidden" value="1">
 								<div class="col-sm-3 inspectlet-sensitive">
 									<select id="credit_card_expiration_date_2i" name="credit_card[expiration_date(2i)]" class="form-control">
@@ -350,7 +380,7 @@
 								</div>
 							</div>
 							<div class="form-group clearfix">
-								<label for="cvv2" class="col-sm-3 control-label no-pad-left">CVV#
+								<label for="cvv2" class="col-sm-3 control-label">CVV#
 								</label>
 								<div class="col-xs-6 col-sm-3">
 									<input id="cvv2" maxlength="4" name="credit_card[verification_number]" size="4" type="text" class="form-control inspectletIgnore">
@@ -360,7 +390,7 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="zipcode" class="col-sm-3 control-label no-pad-left">Zip Code</label>
+								<label for="zipcode" class="col-sm-3 control-label">Zip Code</label>
 								<div class="col-xs-6 col-sm-3">
 									<input id="zipcode" class="form-control inspectletIgnore" maxsize="20" name="address[zip]" size="30" type="text">
 								</div>
@@ -407,6 +437,15 @@
 
 			</div>
 				</form>
+
+				<div class="secured text-center visible-xs visible-sm">
+					<article>
+						<img class="guarantee-icon" src="img/guarantee.jpg" alt="">
+						<h4>Satisfaction Guaranteed</h4>
+						<p>If we can't find the number you're looking for, we will gladly
+							issue a refund!</p>
+					</article>
+				</div>
 			</div>
 		</div>
 	</div>
