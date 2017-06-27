@@ -11,6 +11,7 @@ html, body {
 }
 body {
     font-size: 24px;
+		background-size: contain;
 	font-family: 'Lato', sans-serif;
 	color: #333333;
 	line-height: 1.5;
@@ -174,11 +175,8 @@ h3 {
 	height: 100px;
 	border-radius: 50px;
 	margin:0 auto 5px;
-	background:#5cb85c;
-	border: solid #e5f3ec 15px;
 	text-align: center;
 	background-clip: padding-box;
-	padding-top: 12px
 }
 .subscribe .report-summary h2 {
 	margin: 0 40px 5px;
@@ -379,15 +377,19 @@ h3 {
 }
 .plan-feature-icon.notification-icon {
 	background:url('../img/notification.svg') no-repeat 50% 50%;
+	background-size: contain;
 }
 .plan-feature-icon.searches-icon {
 	background:url('../img/searches.svg') no-repeat 50% 50%;
+	background-size: contain;
 }
 .plan-feature-icon.pdf-icon {
 	background:url('../img/pdf.svg') no-repeat 50% 50%;
+	background-size: contain;
 }
 .plan-feature-icon.reports-icon {
 	background:url('../img/email.svg') no-repeat 50% 50%;
+	background-size: contain;
 }
 
 .guarantee {
@@ -396,8 +398,13 @@ h3 {
 }
 .guarantee article {
 	border-top: solid 1px #ebebeb;
-	padding: 34px 30px 34px 166px;
+	padding: 30px;
 	position: relative;
+}
+
+.guarantee article .secure-text {
+	max-width: 75%;
+	display: inline-block;
 }
 .guarantee article:first-child {
 	border: none;
@@ -419,22 +426,14 @@ h3 {
 .guarantee-icon {
 	width: 110px;
 	height: 93px;
-	background:url('../img/guarantee.jpg') 0 0 no-repeat;
-	position: absolute;
-	left:28px;
-	top: 50%;
-	margin-top:-46px;
-	background-size: 100% 100%;
+	float: left;
+	margin-right: 28px;
 }
 .large-lock-icon {
 	width: 79px;
 	height: 91px;
-	background:url('../img/padlock.svg') 0 0 no-repeat;
-	position: absolute;
-	left:44px;
-	top: 50%;
-	margin-top:-47px;
-	background-size: 100% 100%;
+	float: left;
+	margin-right: 58px;
 }
 
 .support-schedule {
@@ -559,12 +558,26 @@ h3 {
 	}
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
 	h1 {
 		font-size: 40px;
 	}
 	h3 {
 		font-size:24px;
+	}
+
+	.support-schedule ul {
+		width: 40%;
+	}
+
+	.support-schedule header {
+		width: 60%;
+		font-size: 22px;
+	}
+
+	.guarantee article .secure-text {
+    max-width: 66%;
+    display: inline-block;
 	}
 
 }
@@ -604,6 +617,12 @@ h3 {
 	}
 	#main-content.lightblue-bg {
 		padding: 15px 0;
+	}
+
+	.subscribe .subscribe-header figure,
+	.subscribe .subscribe-header figure img {
+		height: 60px;
+		width: 60px;
 	}
 
 	.report-summary {
@@ -660,9 +679,14 @@ h3 {
 		font-size: 15px;
 	}
 	.guarantee article {
-		padding:115px 30px 25px;
+		padding: 25px 20px;
 		text-align: center;
 	}
+
+.guarantee article .secure-text {
+    max-width: unset;
+     display: block;
+}
 	.guarantee article p {
 		font-size: 15px;
 	}
@@ -673,18 +697,18 @@ h3 {
 	.guarantee-icon {
 		width: 98px;
 		height: 83px;
-		margin-left:-42px;
 	}
 	.large-lock-icon {
 		width: 70px;
 		height: 81px;
-		margin-left: -40px;
 	}
 	.guarantee-icon,
 	.large-lock-icon {
-		top:19px;
-		left: 50%;
-		margin-top: 0;
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		display: inline-block;
+		margin-bottom: 15px;
 	}
 	.support-schedule {
 		padding: 124px 20px 20px;
