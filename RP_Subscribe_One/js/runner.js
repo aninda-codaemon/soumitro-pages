@@ -13,7 +13,15 @@ $(function() {
     var map = new mapboxgl.Map(mapOpts);
 
     map.on('load', function(){
-      new mapboxgl.Marker().setLngLat([-97.734375, 38.505191]).addTo(map);
+      debugger
+      var latlng,
+          data = amplify.store().bv_searchData;
+      if (data && (data.latlng[0] !== "") && (data.latlng[1] !== "")) {
+        latlng = [data.latlng[0], data.latlng[1]];
+      } else {
+        latlng = [-97.734375, 38.505191];
+      }
+      new mapboxgl.Marker().setLngLat(latlng).addTo(map);
     });
   };
 
