@@ -10,7 +10,12 @@
 
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
-<body data-next-page="<%=next_page%>">
+<body data-next-page="<%=next_page%>" data-previous-page="<%= previous_page %>">
+
+	<div id="ppCanceled" class="alert alert-danger alert-dismissible text-center" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		Payment with PayPal Canceled.
+	</div>
 <!--Header-->
 <header id="header" class="full-header">
 	<div class="row">
@@ -28,23 +33,77 @@
 <div id="main-content" class="lightblue-bg subscribe" data-fr-bind="bv_searchData fullTeaser">
 	<div class="container">
 		<header class="subscribe-header">
-			<figure>
+
 
 					<img src="img/key.svg" />
 
-			</figure>
+
 			<h1>Activate Account to Get Instant Access</h1>
 
 		</header>
 		<div class="row">
 			<div class="col-sm-12">
-				<div class="report-summary">
+				<div class="report-summary clearfix">
 					<div class="col-sm-5">
-						{{formattedPhoneNumber}}
+						<div class="col-sm-3">
+							<div class="avatar-box">
+								<img src="img/avatar.svg" alt="">
+								<img src="img/lock.svg" class="avatar-lock" alt="">
+							</div>
+						</div>
+						<div class="col-sm-9 report-box">
+							<p>{{formattedPhoneNumber}}</p>
+							<span class="report-teasers clearfix">
+								<img src="img/avatar-small.svg" alt="">
+								<span class="first-teaser"><strong>Owner's Name: </strong>{{ownersName}}</span>
+							</span>
+							<span class="report-teasers clearfix">
+								<img src="img/location.svg" alt="">
+								<span><strong>Location: </strong>{{location}}</span>
+							</span>
+						</div>
 					</div>
 
-					<div class="col-sm-7">
+					<div class="col-sm-7 results-box">
+						<p>Results include:</p>
+						<div class="teaser-results">
+							<div class="col-sm-4">
+								<div class="teaser-span first-teaser">
+									<img src="img/checkmark.svg" alt="">
+									<span>Addresses</span>
+								</div>
 
+								<div class="teaser-span">
+									<img src="img/checkmark.svg" alt="">
+									<span>Photos</span>
+								</div>
+							</div>
+
+							<div class="col-sm-4">
+								<div class="teaser-span first-teaser">
+									<img src="img/checkmark.svg" alt="">
+									<span>Relatives</span>
+								</div>
+
+								<div class="teaser-span">
+									<img src="img/checkmark.svg" alt="">
+									<span>Social profiles</span>
+								</div>
+							</div>
+
+							<div class="col-sm-4">
+								<div class="teaser-span first-teaser">
+									<img src="img/checkmark.svg" alt="">
+									<span>Email addresses</span>
+								</div>
+
+								<div class="teaser-span">
+									<img src="img/checkmark.svg" alt="">
+									<span>&amp; much more!</span>
+								</div>
+
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -93,7 +152,7 @@
 								<span class="order-summary-heading">Unlimited PDF Reports</span>
 								<span class="pull-right">
 									<span class="green-check"></span>
-									<span>Free</span>
+									<span class="text">Free</span>
 								</span>
 							</span>
 						</div>
@@ -167,43 +226,51 @@
 
 			</div>
 
+
+
 			<div class="col-sm-8">
 				<form id="subscribe_form" class="" action="/accounts" method="post">
 					<input id="promotion" name="promotion" type="hidden" value="view_report_trial">
 					<input name="authenticity_token" type="hidden" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=">
-
+					<input class="plan_name_radio" id="phone_plan" name="subscription_plan_name" type="radio" value="<%= subscription_1 %>">
+					<input class="plan_name_radio" id="all_3_plan" name="subscription_plan_name" type="radio" value="<%= subscription_2 %>">
 
 						<div id="form-first-part" class="clearfix">
 							<h2>Secure Checkout:</h2>
 							<div class="seals verify-seal pull-right">
 								<img src="img/norton.svg" alt="">
 							</div>
-							<div class="form-group">
-		              <label for="account_first_name" class="col-sm-4 control-label">First Name</label>
-		              <div class="col-sm-8">
-		                <input class="form-control" id="account_first_name" name="account[first_name]" type="text" value="{{account[first_name]}}">
-		              </div>
-		            </div>
-		            <div class="form-group">
-		              <label for="account_last_name" class="col-sm-4 control-label">Last Name</label>
-		              <div class="col-sm-8">
-		                <input class="form-control inspectletIgnore" id="account_last_name" name="account[last_name]" type="text" value="{{account[last_name]}}">
-		              </div>
-		            </div>
-		            <div class="form-group">
-		              <label for="user_email" class="col-sm-4 control-label">Email Address</label>
-		              <div class="col-sm-8">
-		                <input class="form-control inspectletIgnore" id="user_email" maxsize="100" name="user[email]" type="email" value="{{user[email]}}">
-		              </div>
-		            </div>
+							<div class="form-fields clearfix">
+
+								<div class="form-group">
+			              <label for="account_first_name" class="col-sm-3 control-label">First Name</label>
+			              <div class="col-sm-7">
+			                <input class="form-control" id="account_first_name" name="account[first_name]" type="text" value="{{account[first_name]}}">
+			              </div>
+			            </div>
+			            <div class="form-group">
+			              <label for="account_last_name" class="col-sm-3 control-label">Last Name</label>
+			              <div class="col-sm-7">
+			                <input class="form-control inspectletIgnore" id="account_last_name" name="account[last_name]" type="text" value="{{account[last_name]}}">
+			              </div>
+			            </div>
+			            <div class="form-group">
+			              <label for="user_email" class="col-sm-3 control-label">Email Address</label>
+			              <div class="col-sm-7">
+			                <input class="form-control inspectletIgnore" id="user_email" maxsize="100" name="user[email]" type="email" value="{{user[email]}}">
+			              </div>
+			            </div>
+							</div>
 						</div>
 
 
-						<div class="secured-section">
+						<div class="secured-section clearfix">
 							<img class="large-lock-icon" src="img/padlock.svg" alt="">
-							<h4>Your security is important to us</h4>
-							<p>The site connection is secure and we will not notify {{ownersName}}
-								about your purchase.</p>
+							<div class="secured-text">
+								<h4>Your security is important to us</h4>
+								<p>The site connection is secure and we will not notify <span style="color: #007ee3">{{ownersName}}</span>
+									about your purchase.</p>
+							</div>
 						</div>
 
 						<div class="clearfix" id="form-second-part">
@@ -211,41 +278,36 @@
 
 							<div class="form-group payOptionSelect">
 
-								<div id="paypal-radio" class="radio col-sm-8">
+								<div id="paypal-radio" class="radio">
 									<label for="paypal">
 										<input type="radio" id="paypal-radio-button" name="payment_method" value="paypal"> <img class="paypal-img" src="img/Paypal.svg" alt="PayPal" /> The safer, easier way<span class="hidden-sm"></span>
 									</label>
 								</div>
 
-								<div id="credit-radio" class="radio col-sm-8 col-sm-offset-4">
+								<div id="credit-radio" class="radio">
 									<label for="credit">
 										<input type="radio" id="credit" name="payment_method" value="credit_card" checked> <img src="img/c-cards.png" alt="We accept MasterCard, Visa, Discover, and American Express" width="115px"> Use credit/debit<span class="hidden-sm"> card</span>
 									</label>
 								</div>
 
-								<div class="row cc-wrapper">
-						<div class="col-xs-12">
-							<div class="cc-wrapper-header row">
-								<div id="secure-wrapper" class="col-xs-6 col-sm-4">
+								<div class="cc-wrapper clearfix">
+
+							<div class="cc-wrapper-header clearfix">
+								<div id="secure-wrapper">
 									<span id="secure-lock" class="glyphicon glyphicon-lock"></span>
 									<span id="secure-text" class="small text-success">Secure<span class="hidden-xs"> Server</span></span>
 								</div>
-								<div class="col-sm-4 hidden-xs">
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								</div>
-								<div class="col-xs-6 col-sm-4">
-								</div>
 							</div>
 							<div class="form-group">
-								<label for="credit_card_card_number" class="col-sm-4 control-label">Card Number</label>
-								<div class="col-sm-8">
+								<label for="credit_card_card_number" class="col-sm-3 control-label no-pad-left">Card Number</label>
+								<div class="col-sm-7">
 									<input type="text" class="form-control inspectletIgnore" id="credit_card_card_number" name="credit_card[card_number]" size="30">
 								</div>
 							</div>
-							<div class="form-group">
-								<label for="credit_card[expiration_date(2i)]" class="col-xs-12 col-sm-4 control-label">Expiration</label>
+							<div class="form-group clearfix">
+								<label for="credit_card[expiration_date(2i)]" class="col-sm-3 control-label no-pad-left">Expiration</label>
 								<input id="credit_card_expiration_date_3i" name="credit_card[expiration_date(3i)]" type="hidden" value="1">
-								<div class="col-xs-6 col-sm-4 inspectlet-sensitive">
+								<div class="col-sm-3 inspectlet-sensitive">
 									<select id="credit_card_expiration_date_2i" name="credit_card[expiration_date(2i)]" class="form-control">
 										<option value="1">January</option>
 										<option value="2">February</option>
@@ -261,7 +323,7 @@
 										<option value="12">December</option>
 									</select>
 								</div>
-								<div class="col-xs-6 col-sm-4 inspectlet-sensitive">
+								<div class="col-sm-3 inspectlet-sensitive">
 									<select id="credit_card_expiration_date_1i" name="credit_card[expiration_date(1i)]" class="form-control form-control-second">
 										<option selected value="2017">2017</option>
 										<option value="2018">2018</option>
@@ -287,10 +349,10 @@
 									</select>
 								</div>
 							</div>
-							<div class="form-group">
-								<label for="cvv2" class="col-xs-12 col-sm-4 control-label">CVV#
+							<div class="form-group clearfix">
+								<label for="cvv2" class="col-sm-3 control-label no-pad-left">CVV#
 								</label>
-								<div class="col-xs-6 col-sm-4">
+								<div class="col-xs-6 col-sm-3">
 									<input id="cvv2" maxlength="4" name="credit_card[verification_number]" size="4" type="text" class="form-control inspectletIgnore">
 								</div>
 								<div class="col-xs-6 col-sm-4 cvv-wrapper">
@@ -298,18 +360,17 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="zipcode" class="col-xs-12 col-sm-4 control-label">Zip Code</label>
-								<div class="col-xs-6 col-sm-4">
+								<label for="zipcode" class="col-sm-3 control-label no-pad-left">Zip Code</label>
+								<div class="col-xs-6 col-sm-3">
 									<input id="zipcode" class="form-control inspectletIgnore" maxsize="20" name="address[zip]" size="30" type="text">
 								</div>
 							</div>
-						</div>
 					</div>
 				</div>
 
 				<div class="terms-container">
 					<label>
-						<div class="row">
+						<div class="">
 							<input id="account_tos" class="col-xs-1" name="account[tos]" type="checkbox" value="1">
 							<div class="col-xs-11">
 								<p class="small">
@@ -335,7 +396,7 @@
 					<div id="create_button_container" class="row">
 
 						<div class="col-sm-8 col-sm-offset-2">
-							<button id="create_button" class="btn btn-block btn-lg btn-success" type="submit">View Report</button>
+							<button id="create_button" class="btn btn-block btn-lg btn-success" type="submit">See Results Now</button>
 							<div id="paypal-submitter" class="text-center" style="display:none;"></div>
 						</div>
 					</div>
@@ -343,10 +404,8 @@
 						<img class="spinner-inner" src="img/ajax-loader.gif" alt="Loading...">
 					</div>
 				</div>
-							</div>
-						</div>
 
-
+			</div>
 				</form>
 			</div>
 		</div>
@@ -394,13 +453,36 @@
     <script src="js/handlebars.min.js"></script>
 
     <script src="js/jquery.validate.js"></script>
+	  <script src="js/jquery.validate.creditcard2.pack-1.0.0.js"></script>
+
+		<script src="js/check_cc.js"></script>
+	  <script src="js/base64.js"></script>
     <script src="js/utility.js"></script>
 
     <script src="js/framerida.helpers.js"></script>
     <script src="js/framerida.js"></script>
 
-
+		<script src="js/subscribeRunner.js"></script>
     <script src="js/runner.js"></script>
+
+		<script>
+		 window.paypalCheckoutReady = function() {
+			paypal.checkout.setup('Merchant-ID', {
+					click: function(e){
+						var validator = window.BvValidateSubForm()
+						if (!validator.form()) {
+							e.preventDefault()
+							return;
+						}
+						paypal.checkout.initXO();
+					},
+			 container: 'paypal-submitter',
+					size: 'medium',
+					shape: 'rect'
+			});
+			};
+	</script>
+	<script src="//www.paypalobjects.com/api/checkout.js" async></script>
 
 </body>
 </html>
