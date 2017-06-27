@@ -166,7 +166,6 @@ label {
 }
 
 .subscription-summary {
-	display: none;
 	font-size: 15px;
 }
 
@@ -177,15 +176,17 @@ label {
 .pull-right span.text {
 	min-width: 59px;
 }
-#phoneMembership {
-	display: block;
-}
 
 .summary-details-wrapper {
   display: block;
   min-height: 28px;
   margin: 12px 0px;
   border-bottom: 1px dotted #cfd9de;
+}
+
+span.order-summary-heading {
+  max-width: 67%;
+  display: inline-block;
 }
 
 .last-summary {
@@ -316,6 +317,20 @@ label {
 
 .teaser-span {
 	font-size: 16px;
+}
+
+.testimonials {
+	position: relative;
+}
+.testimonials .quote {
+	height: 32px;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+
+.testimonial {
+	margin-top: 15px;
 }
 
 .secured h4 {
@@ -924,7 +939,7 @@ label.error {
 	}
 
 	span.order-summary-heading {
-		max-width: 80% !important;
+		max-width: 80%;
 		display: inline-block;
 	}
 

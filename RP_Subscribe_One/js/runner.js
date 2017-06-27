@@ -13,7 +13,7 @@ $(function() {
     var map = new mapboxgl.Map(mapOpts);
 
     map.on('load', function(){
-      debugger
+
       var latlng,
           data = amplify.store().bv_searchData;
       if (data && (data.latlng[0] !== "") && (data.latlng[1] !== "")) {

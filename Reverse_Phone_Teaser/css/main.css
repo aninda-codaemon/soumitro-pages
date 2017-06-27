@@ -44,7 +44,7 @@ h1 {
 }
 h2 {
 	font-weight:400;
-	font-size: 50px;
+	font-size: 34px;
 	margin: 0 0 30px;
 }
 h3 {
@@ -850,6 +850,10 @@ h3 {
 	h1 {
 		font-size: 40px;
 	}
+
+	h2 {
+		font-size: 26px;
+	}
 	h3 {
 		font-size:24px;
 	}
@@ -890,7 +894,7 @@ h3 {
 		font-size: 32px;
 	}
 	h2 {
-		font-size: 28px;
+		font-size: 24px;
 	}
 	h3 {
 		font-size:18px;

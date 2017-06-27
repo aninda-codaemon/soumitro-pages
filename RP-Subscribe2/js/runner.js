@@ -1,12 +1,6 @@
 $(function() {
-  INPUT_OPTIONS = {
-    all : {
+  planType = "";
 
-    },
-    phone: {
-
-    }
-  };
   /* Initialize cvv popover for Bootstrap 3 */
   $('.cvv-img').popover({
       container: 'body',
@@ -33,30 +27,13 @@ $(function() {
   });
 
   // Update terms & conditions based on selected plan
-  var updatePlanLegal = function ($selectionSelected) {
-
-    // var $planPrice = $selectionSelected.find(".plan-price");
-    //
-    // var totalPrice = $planPrice.data('plan-price'),
-    //     type = $planPrice.data('plan-type'),
-    //     monthlyPrice = $planPrice.data('monthly-price'),
-    //     termLength = $planPrice.data('term-length');
-    //
-    //
-    // var $priceHTML = $('#legal-price'),
-    //     $typeHTML = $('#legal-type'),
-    //     $summaryTermHTML = $('#summary-term'),
-    //     $summaryMonthPriceHTML = $('#summary-month-price'),
-    //     $summaryTotalPriceHTML = $('.summary-total-price');
-    //
-    // $priceHTML.html(totalPrice);
-    // $summaryTotalPriceHTML.html(totalPrice);
-    // $summaryMonthPriceHTML.html(monthlyPrice);
-    // $typeHTML.html(type);
-    // $summaryTermHTML.html(termLength);
-    //
-    // $selectionWrap.removeClass('selection-selected');
-    // $selectionSelected.addClass('selection-selected');
+  var updatePlanLegal = function (plan) {
+    if (plan === "all") {
+      $('#legal-price').text('$44.58');
+      $('#legal-type').text('three months');
+      $('#subscription-price').text('$44.58');
+      $('#subscription').text("Three Month Search Membership");
+    }
   };
 
   // Secure Credit Card lock animation
@@ -136,9 +113,9 @@ $(function() {
   var setHiddenInput = function(plan) {
     $('.plan_name_radio').prop('checked', false);
     if (plan === 'phone') {
-      $('#phone_plan').prop('checked', true);
+      $('#22_1_month_nofree_afill_no_bjl').prop('checked', true);
     } else {
-      $('#all_3_plan').prop('checked', true);
+      $('#44_58_3_months_nofree_affil').prop('checked', true);
     }
   };
 
@@ -147,8 +124,9 @@ $(function() {
     verifySeal();
 
     if (query.plan){
-      // updatePlanLegal(query.plan);
+      planType = query.plan;
       setHiddenInput(query.plan);
+      updatePlanLegal(query.plan);
     } else {
       window.location.href = $('body').data('previous-page');
     }

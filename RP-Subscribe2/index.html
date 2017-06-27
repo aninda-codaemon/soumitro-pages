@@ -147,8 +147,8 @@
 
 						<div class="order-summary-section">
 							<span class="summary-details-wrapper clearfix">
-								<span class="order-summary-heading">One Month Phone Search Membership</span>
-								<span class="pull-right">$22.86</span>
+								<span id="subscription" class="order-summary-heading">One Month Phone Search Membership</span>
+								<span id="subscription-price" class="pull-right">$22.86</span>
 							</span>
 							<span class="summary-details-wrapper clearfix">
 								<span class="order-summary-heading">Report on {{formattedPhoneNumber}}</span>
@@ -188,60 +188,31 @@
 						</div>
 				</div>
 
-				<div class="report-summary subscription-summary" id="allMembership">
-					<header>
-						<h2>Order Summary</h2>
-					</header>
-
-						<div class="order-summary-section">
-							<span class="summary-details-wrapper clearfix">
-								<span class="order-summary-heading">One Month Phone Search Membership</span>
-								<span class="pull-right">$22.86</span>
-							</span>
-							<span class="summary-details-wrapper clearfix">
-								<span class="order-summary-heading">Report on {{formattedPhoneNumber}}</span>
-								<span class="pull-right">
-									<span class="green-check"></span>
-									<span>Included</span>
-								</span>
-							</span>
-							<span class="summary-details-wrapper clearfix">
-								<span class="order-summary-heading">Unlimited Reports</span>
-								<span class="pull-right">
-									<span class="green-check"></span>
-									<span>Included</span>
-								</span>
-							</span>
-							<span class="summary-details-wrapper clearfix">
-								<span class="order-summary-heading">Ongoing Notifications</span>
-								<span class="pull-right">
-									<span class="green-check"></span>
-									<span>Included</span>
-								</span>
-							</span>
-							<span class="summary-details-wrapper clearfix">
-								<span class="order-summary-heading">Easy Cancellation For Any Reason</span>
-								<span class="pull-right">
-									<span class="green-check"></span>
-									<span>Included</span>
-								</span>
-							</span>
-							<span class="summary-details-wrapper clearfix">
-								<span class="order-summary-heading">Unlimited PDF Reports</span>
-								<span class="pull-right">
-									<span class="green-check"></span>
-									<span>Free</span>
-								</span>
-							</span>
-						</div>
-				</div>
-
 				<div class="testimonials hidden-xs hidden-sm">
+					<img class="quote" src="img/quote.svg" alt="">
 					<h2>Testimonials</h2>
 
-					<div class="">
-						These are testimonials. I dont feel like doing them right now
-						wahhhh
+					<img class="stars" src="img/stars.svg" alt="">
+					<div class="testimonial-box">
+						<div class="testimonial">
+							"I was surprised at the results!"
+						</div>
+
+						<div class="testimonial">
+							"It was a lot less expensive than I expected."
+						</div>
+
+						<div class="testimonial">
+							"What I found was astonishing!"
+						</div>
+
+						<div class="testimonial">
+							"It gave me all the information I needed."
+						</div>
+
+						<div class="testimonial">
+							"I'd recommend BeenVerified to anyone."
+						</div>
 					</div>
 			  </div>
 
@@ -262,8 +233,8 @@
 				<form id="subscribe_form" class="" action="/accounts" method="post">
 					<input id="promotion" name="promotion" type="hidden" value="view_report_trial">
 					<input name="authenticity_token" type="hidden" value="u4xIYs1OHmyccuDzZIxw+gvAXAssxNK9dBNnwqRWEGQ=">
-					<input class="plan_name_radio" id="phone_plan" name="subscription_plan_name" type="radio" value="<%= subscription_1 %>">
-					<input class="plan_name_radio" id="all_3_plan" name="subscription_plan_name" type="radio" value="<%= subscription_2 %>">
+					<input class="plan_name_radio" id="22_1_month_nofree_afill_no_bjl" name="subscription_plan_name" type="radio" value="<%= subscription_1 %>">
+					<input class="plan_name_radio" id="44_58_3_months_nofree_affil" name="subscription_plan_name" type="radio" value="<%= subscription_2 %>">
 
 						<div id="form-first-part" class="clearfix">
 							<h2>Secure Checkout:</h2>
@@ -404,7 +375,7 @@
 							<input id="account_tos" class="col-xs-1" name="account[tos]" type="checkbox" value="1">
 							<div class="col-xs-11">
 								<p class="small">
-									By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a> and <a href="/home/privacy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price"></span> every <span id="legal-type"></span>&nbsp;until this subscription is canceled.
+									By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a> and <a href="/home/privacy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price">$22.86</span> every <span id="legal-type">month</span>&nbsp;until this subscription is canceled.
 									You can cancel your membership at any time by contacting customer service at <span class="text-primary">1-888-579-5910</span> or emailing <a href="mailto:support@beenverified.com">support@beenverified.com</a>. You also agree that you
 									will <u>NOT</u> use any information about an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance;
 									or for any other purpose prohibited by our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>.
