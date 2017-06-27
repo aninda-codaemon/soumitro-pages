@@ -1,1 +1,13 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110.08 110.08"><defs><style>.cls-1{fill:#ebebeb;}.cls-2{fill:#bcbcbc;}</style></defs><title>avatar</title><path class="cls-1" d="M55,110.08a55,55,0,1,1,55-55A55.11,55.11,0,0,1,55,110.08Z" transform="translate(0)"/><path class="cls-2" d="M66.14,63.94a20.57,20.57,0,1,0-28.4-6.3,21,21,0,0,0,6.3,6.3,26.32,26.32,0,0,0-24,26.2v7.3c9,7.9,21.7,12.6,35,12.6s26-4.7,35-12.6v-7.3A26.31,26.31,0,0,0,66.14,63.94Z" transform="translate(0)"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="110px" height="111px" viewBox="0 0 110 111" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>avatar-small</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="avatar-small" fill-rule="nonzero">
+            <path d="M55,110.08 C24.6243388,110.08 3.71994563e-15,85.4556612 0,55.08 C-3.71994563e-15,24.7043388 24.6243388,0.08 55,0.08 C85.3756612,0.08 110,24.7043388 110,55.08 C109.93948,85.4305578 85.3505578,110.01948 55,110.08 Z" id="Shape" fill="#EBEBEB"></path>
+            <path d="M66.14,63.94 C75.722138,57.8372534 78.5427426,45.1221425 72.4399968,35.540004 C66.337251,25.9578655 53.6221402,23.1372599 44.0400012,29.240005 C34.4578623,35.34275 31.6372557,48.0578605 37.74,57.64 C39.3652231,60.1664329 41.5135671,62.3147769 44.04,63.94 C30.4627733,65.1414503 20.0490896,76.5097218 20.04,90.14 L20.04,97.44 C29.04,105.34 41.74,110.04 55.04,110.04 C68.34,110.04 81.04,105.34 90.04,97.44 L90.04,90.14 C90.0403156,76.5429327 79.6799035,65.1854934 66.14,63.94 Z" id="Shape" fill="#BCBCBC"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="23px" viewBox="0 0 17 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>security</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="security" transform="translate(0.000000, -1.000000)" fill-rule="nonzero" fill="#5CB85C">
+            <path d="M5.48,7 C5.55565512,5.41378876 6.89299323,4.1834377 8.48,4.24 C10.0670068,4.1834377 11.4043449,5.41378876 11.48,7 L11.48,9.27 L14.58,9.27 L14.58,6.84 C14.4927463,3.55761223 11.7832397,0.955059868 8.5,1 C5.20128503,0.932856863 2.4673007,3.54175694 2.38,6.84 L2.38,9.27 L5.48,9.27 L5.48,7 Z M0,10.61 L0,24 L17,24 L17,10.61 L0,10.61 Z M8.1,19.93 L5.1,17.39 L5.98,16.39 L8,18.08 L11.38,14.57 L12.38,15.5 L8.1,19.93 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>
