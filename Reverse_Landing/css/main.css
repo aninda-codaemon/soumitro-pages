@@ -755,6 +755,10 @@ input.error {
 	h3 {
 		font-size:18px;
 	}
+
+	.form-control {
+		font-size: 20px;
+	}
 	#top {
 		padding-bottom:70px;
 	}
@@ -774,6 +778,7 @@ input.error {
 	}
 	#header .badge {
 		font-size:10px;
+		padding: 2px;
 	}
 	.top-search {
 		text-align:center;

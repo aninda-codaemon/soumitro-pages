@@ -180,6 +180,7 @@ section {
 
 .testimonials img {
   height: 40px;
+  width: 40px;
   border-radius: 50%;
   vertical-align: top;
   margin-right: 5px;
@@ -1080,6 +1081,14 @@ label.error {
     padding: 25px;
   }
 
+  .secured {
+    min-height: 295px;
+  }
+
+  .testimonials {
+    min-height: 525px;
+  }
+
   /* ==  Preview Box   ===================================== */
 
   .left-preview {
@@ -1092,6 +1101,7 @@ label.error {
 
   table {
     margin-bottom: 30px;
+    margin-top: 15px;
   }
   td {
     padding-bottom: 18px;
@@ -1147,6 +1157,14 @@ label.error {
     font-size: 22px;
     margin-bottom: 20px;
   }
+
+  .secured {
+    min-height: unset;
+  }
+
+  .testimonials {
+    min-height: unset;
+  }
   .navbar-logo img {
     width: 140px;
     height: 20px;
@@ -1164,6 +1182,7 @@ label.error {
     padding-top: 10px;
     left: -0%;
     animation: none;
+    z-index: 1;
   }
 
   .headers{

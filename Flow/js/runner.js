@@ -87,8 +87,11 @@ $(function() {
 
 
   var displayCount = function(idx) {
-    dataCounts = amplify.store().fullTeaser.available_data_counts;
-
+    var data = amplify.store().fullTeaser;
+    if (!data) {
+      return;
+    }
+    var dataCounts = data.available_data_counts;
     var currentCount = dataCounts[SECTION_TYPE[idx]],
         $notification = $('.notification')[idx];
     if (SECTION_TYPE[idx] === "phone"){
@@ -130,6 +133,9 @@ $(function() {
   };
 
   var getTeaserData = function() {
+    if (!searchData) {
+      return;
+    }
     var baseUrl = 'https://www.beenverified.com/hk/dd/teaser/phone',
         url = baseUrl + "?phone=" + searchData.phoneNumber + "&type=full",
         xhrData = $.ajax({

@@ -66,14 +66,12 @@
         <img class="quotes" src="img/quote.svg" alt="">
         <div class="first-account">
 
-          <p class="text">"When I was younger I dreamt of getting rid of my mermaid fins and becoming a
-          human. I made a deal with a sea witch, became a human, and married the first
-          blue-eyed man i met."</p>
+          <p class="text">"I'm a single mother dating online and I use BeenVerified to help protect my family."</p>
           <div class="info-box">
-            <img src="img/lil-carla.png" alt="">
+            <img src="img/rhonda.png" alt="">
             <div class="text">
-              <p class="name">Ari L., Atlantic Ocean</p>
-              <p>Thingamabob Hoarder</p>
+              <p class="name">Rhonda</p>
+              <p>Caring Mom</p>
             </div>
           </div>
         </div>
@@ -81,11 +79,10 @@
 
         <div class="second-account">
 
-          <p class="text">"When I was in my early twenties, I was kidnapped and held captive in a shed for
-          7 years. If only I had used their sex offender data earlier!"</p>
+          <p class="text">"Wish I would have had BeenVerified when I met a few of my ex's."</p>
 
           <div class="info-box">
-            <img src="img/lil-carla.png" alt="">
+            <img src="img/caitlin.png" alt="">
             <div class="text">
               <p class="name">Ma, Akron, OH</p>
               <p>Survivor</p>
@@ -209,23 +206,23 @@
                 <div class="col-sm-4">
                   <div class="loader-box active">
                     <img class="loader-icon" src="img/Location.svg" alt="">
-                    <img class="loader" src="img/spinner-desktop.gif" alt="">
+                    <img class="loader" src="img/spinner-D-15.gif" alt="">
                   </div>
 
                   <div class="loader-box">
                     <img class="loader-icon" src="img/Owner_name.svg" alt="">
-                    <img class="loader" src="img/spinner-desktop.gif" alt="">
+                    <img class="loader" src="img/spinner-D-15.gif" alt="">
                   </div>
 
                   <div class="loader-box">
                     <img class="loader-icon" src="img/Carrier.svg" alt="">
-                    <img class="loader" src="img/spinner-desktop.gif" alt="">
+                    <img class="loader" src="img/spinner-D-15.gif" alt="">
 
                   </div>
 
                   <div class="loader-box">
                     <img class="loader-icon" src="img/Premium.svg" alt="">
-                    <img class="loader" src="img/spinner-desktop.gif" alt="">
+                    <img class="loader" src="img/spinner-D-15.gif" alt="">
                   </div>
                 </div>
                 <div class="col-sm-8">
@@ -269,7 +266,7 @@
               <h2 class="overview hidden-xs">Overview of <span style="color: #f5c419;">{{formattedPhoneNumber}}</span></h2>
               <div class="action-box clearfix" id="previewBox">
                 <div class="col-md-7 left-preview">
-                  <h2 class="overview visible-xs">Overview of <span style="color: #f5c419;">{{formattedPhoneNumber}}</span></h2>
+                  <!-- <h2 class="overview visible-xs">Overview of <span style="color: #f5c419;">{{formattedPhoneNumber}}</span></h2> -->
                   <div class="col-xs-3 col-md-4 no-pad-left">
                     <div class="avatar-box">
                       <img src="img/avatar.svg" alt="">
@@ -278,7 +275,11 @@
                   </div>
 
                   <div class="col-xs-8 mobile-header">
-                    <h2><span class="owner-name">Owner's Name: </span>{{ownersName}}</h2>
+                    {{#if ownersName}}
+                      <h2><span class="owner-name">Owner's Name: </span>{{ownersName}}</h2>
+                    {{else}}
+                      <h2><span class="owner-name">Your Report is Ready!</span></h2>
+                    {{/if}}
                   </div>
                   <div class="col-xs-12 no-pad-left no-pad-right">
                     <table>
@@ -290,22 +291,56 @@
                       <tr>
                         <td><img src="img/map-pin.svg" alt=""></td>
                         <td class="table-category">Location</td>
-                        <td class="table-data">{{location}}</td>
+
+                          <td class="table-data">
+                            {{#if location}}
+                              {{location}}
+                            {{else}}
+                              <img src="img/key-icon.svg" alt="">
+                              <span style="color: #007ee3">Unlock <span class="hidden-xs">To Search</span></span>
+
+                            {{/if}}
+                          </td>
                       </tr>
                       <tr>
                         <td><img src="img/antenna.svg" alt=""></td>
                         <td class="table-category">Carrier</td>
-                        <td class="table-data">{{carrier}}</td>
+                          <td class="table-data">
+                            {{#if carrier}}
+                              {{carrier}}
+                            {{else}}
+                              <img src="img/key-icon.svg" alt="">
+                              <span style="color: #007ee3">Unlock <span class="hidden-xs">To Search</span></span>
+
+                            {{/if}}
+                          </td>
                       </tr>
                       <tr>
                         <td><img src="img/line-type.svg" alt=""></td>
                         <td class="table-category">Line Type</td>
-                        <td class="table-data">{{type}}</td>
+                          <td class="table-data">
+                            {{#if type}}
+                              {{type}}
+                            {{else}}
+                              <img src="img/key-icon.svg" alt="">
+                              <span style="color: #007ee3">Unlock <span class="hidden-xs">To Search</span></span>
+
+                            {{/if}}
+                          </td>
                       </tr>
                       <tr>
                         <td class="no-bottom-pad not-last"><img src="img/email.svg" alt=""></td>
                         <td class="table-category no-bottom-pad not-last">Email Address</td>
-                        <td class="table-data no-bottom-pad not-last">{{email}}</td>
+
+                          <td class="table-data no-bottom-pad not-last">
+                            {{#if email}}
+                              {{email}}
+                            {{else}}
+                              <img src="img/key-icon.svg" alt="">
+                              <span style="color: #007ee3">Unlock <span class="hidden-xs">To Search</span></span>
+
+                            {{/if}}
+                          </td>
                       </tr>
 
                       <tr class="visible-sm visible-xs">
@@ -613,28 +648,25 @@
             <img class="quotes" src="img/quote.svg" alt="">
             <div class="first-account">
 
-              <p class="text">"When I was younger I dreamt of getting rid of my mermaid fins and becoming a
-              human. I made a deal with a sea witch, became a human, and married the first
-              blue-eyed man i met."</p>
+              <p class="text">"I'm a single mother dating online and I use BeenVerified to help protect my family."</p>
               <div class="info-box">
-                <img src="img/lil-carla.png" alt="">
+                <img src="img/rhonda.png" alt="">
                 <div class="text">
-                  <p class="name">Ari L., Atlantic Ocean</p>
-                  <p>Thingamabob Hoarder</p>
+                  <p class="name">Rhonda</p>
+                  <p>Caring Mom</p>
                 </div>
               </div>
             </div>
 
             <div class="second-account">
 
-              <p class="text">"When I was in my early twenties, I was kidnapped and held captive in a shed for
-              7 years. If only I had used their sex offender data earlier!"</p>
+              <p class="text">"Wish I would have had BeenVerified when I met a few of me ex's."</p>
 
               <div class="info-box">
-                <img src="img/lil-carla.png" alt="">
+                <img src="img/caitlin.png" alt="">
                 <div class="text">
-                  <p class="name">Ma, Akron, OH</p>
-                  <p>Survivor</p>
+                  <p class="name">@caitlin_oconnor</p>
+                  <p>Instagram</p>
                 </div>
               </div>
             </div>

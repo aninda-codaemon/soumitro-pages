@@ -894,7 +894,7 @@ section.block-hack .left-side {
   /* == Premium  ===================================== */
 
   #premiumBox .left-side {
-    background: url("../img/Premium-M.gif");
+    background-image: url("../img/Premium-M-2x.gif");
     /*background-position: -380px bottom, center;*/
     background-repeat: no-repeat;
     min-height: 380px;
@@ -949,14 +949,8 @@ section.block-hack .left-side {
 
 }
 
-/*@media (max-width: 550px) {
-  #emailBox .left-side {
-    max-height: 375px;
+@media (max-width: 500px) {
+  #premiumBox .left-side {
+    min-height: 270px;
   }
 }
-
-@media (max-width: 400px) {
-  #emailBox .left-side {
-    max-height: 325px;
-  }
-}*/
