@@ -40,27 +40,27 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="report-summary clearfix">
-					<div class="col-sm-12 col-md-5 no-pad-right tablet-padding-right">
-						<div class="col-sm-3">
+					<div class="col-xs-12 col-md-5 no-pad-right tablet-padding-right mobile-padding">
+						<div class="col-sm-2 col-md-3">
 							<div class="avatar-box">
 								<img src="img/avatar.svg" alt="">
 								<img src="img/lock.svg" class="avatar-lock" alt="">
 							</div>
 						</div>
-						<div class="col-sm-9 report-box">
+						<div class="col-sm-10 col-md-9 report-box">
 							<p>{{formattedPhoneNumber}}</p>
 							<span class="report-teasers clearfix">
-								<img src="img/avatar-small.svg" alt="">
+								<img class="hidden-xs" src="img/avatar-small.svg" alt="">
 								<span class="first-teaser"><strong>Owner's Name: </strong>{{ownersName}}</span>
 							</span>
 							<span class="report-teasers clearfix">
-								<img src="img/location.svg" alt="">
+								<img class="hidden-xs" src="img/location.svg" alt="">
 								<span><strong>Location: </strong>{{location}}</span>
 							</span>
 						</div>
 					</div>
 
-					<div class="col-sm-12 col-md-7 results-box">
+					<div class="col-xs-12 col-md-7 results-box">
 						<p>Results include:</p>
 						<div class="teaser-results">
 							<div class="col-sm-4 no-pad-left hidden-xs padding-override">
@@ -335,9 +335,9 @@
 								</div>
 							</div>
 							<div class="form-group clearfix">
-								<label for="credit_card[expiration_date(2i)]" class="col-sm-3 control-label">Expiration</label>
+								<label for="credit_card[expiration_date(2i)]" class="col-xs-12 col-sm-3 control-label">Expiration</label>
 								<input id="credit_card_expiration_date_3i" name="credit_card[expiration_date(3i)]" type="hidden" value="1">
-								<div class="col-sm-3 inspectlet-sensitive">
+								<div class="col-xs-6 col-sm-3 inspectlet-sensitive">
 									<select id="credit_card_expiration_date_2i" name="credit_card[expiration_date(2i)]" class="form-control">
 										<option value="1">January</option>
 										<option value="2">February</option>
@@ -353,7 +353,7 @@
 										<option value="12">December</option>
 									</select>
 								</div>
-								<div class="col-sm-3 inspectlet-sensitive">
+								<div class="col-xs-6 col-sm-3 inspectlet-sensitive">
 									<select id="credit_card_expiration_date_1i" name="credit_card[expiration_date(1i)]" class="form-control form-control-second">
 										<option selected value="2017">2017</option>
 										<option value="2018">2018</option>
@@ -380,7 +380,7 @@
 								</div>
 							</div>
 							<div class="form-group clearfix">
-								<label for="cvv2" class="col-sm-3 control-label">CVV#
+								<label for="cvv2" class="col-xs-12 col-sm-3 control-label">CVV#
 								</label>
 								<div class="col-xs-6 col-sm-3">
 									<input id="cvv2" maxlength="4" name="credit_card[verification_number]" size="4" type="text" class="form-control inspectletIgnore">
@@ -390,7 +390,7 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="zipcode" class="col-sm-3 control-label">Zip Code</label>
+								<label for="zipcode" class="col-xs-12 col-sm-3 control-label">Zip Code</label>
 								<div class="col-xs-6 col-sm-3">
 									<input id="zipcode" class="form-control inspectletIgnore" maxsize="20" name="address[zip]" size="30" type="text">
 								</div>

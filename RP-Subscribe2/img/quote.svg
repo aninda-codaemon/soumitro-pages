@@ -1,1 +1,12 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 32"><defs><style>.cls-1{opacity:0.1;}</style></defs><title>Untitled-8</title><path class="cls-1" d="M37,8.83h0a8.83,8.83,0,1,0-6,8.33c-2,11.38-10.85,18.72-2.63,12.68C37.52,23.13,37,9.09,37,8.83Z" transform="translate(0 0)"/><path class="cls-1" d="M8.81,17.63a8.75,8.75,0,0,0,2.85-.48C9.68,28.53.81,35.87,9,29.83c9.11-6.7,8.59-20.74,8.58-21h0A8.81,8.81,0,1,0,8.81,17.63Z" transform="translate(0 0)"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="32px" viewBox="0 0 37 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>quote</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.102">
+        <g id="quote" fill="#000000">
+            <path d="M28.407,29.831 C20.19,35.871 29.054,28.532 31.036,17.152 C30.14,17.46 29.184,17.634 28.183,17.634 C23.32,17.634 19.377,13.687 19.377,8.818 C19.377,3.947 23.319,0 28.183,0 C33.049,0 36.991,3.947 36.991,8.818 C36.991,8.821 36.991,8.826 36.991,8.829 C37.001,9.087 37.52,23.133 28.407,29.831 Z M9.031,29.831 C0.813,35.871 9.678,28.532 11.659,17.152 C10.764,17.46 9.807,17.634 8.807,17.634 C3.943,17.634 0,13.687 0,8.818 C0,3.947 3.943,0 8.807,0 C13.671,0 17.614,3.947 17.614,8.818 C17.614,8.821 17.614,8.826 17.614,8.829 C17.625,9.087 18.142,23.133 9.031,29.831 Z"></path>
+        </g>
+    </g>
+</svg>

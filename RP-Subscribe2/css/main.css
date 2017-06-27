@@ -107,6 +107,7 @@ h3 {
 
 label {
 	font-weight: normal;
+	display: block;
 }
 
 .text-center {
@@ -366,8 +367,11 @@ label {
 
 label.error {
   color: #dc2341;
+	margin-bottom: 15px;
 }
-
+.terms-container label.error {
+	margin-left: 70px;
+}
 .secured-section {
 	background-color: #eff1f2;
 	padding: 20px 30px;
@@ -761,15 +765,59 @@ label.error {
 		font-size:24px;
 	}
 
+	#header .badge {
+		margin-top: 10px;
+	}
+
+	.subscribe-header {
+		margin-bottom: 20px;
+	}
+
+	#main-content.lightblue-bg.subscribe {
+    padding-bottom: 20px;
+}
+
 /* == Report Summary  ===================================== */
 	.report-box {
     border-right: none;
 	}
 
+	.report-box p {
+		margin-bottom: 20px;
+	}
+
 	.tablet-padding-right {
 		padding-right: 15px;
 		border-bottom: 1px dotted #cfd9de;
+		padding-bottom: 30px;
 	}
+
+	.results-box p {
+		margin-bottom: 20px;
+	}
+
+/* == Subscribe Form  ===================================== */
+	.form-fields {
+		margin-top: 30px;
+	}
+
+	.last-summary {
+		margin-bottom: 0px;
+	}
+
+	#user_email {
+		margin-bottom: 5px;
+	}
+
+	.support-schedule ul {
+		width: 40%;
+	}
+
+	.support-schedule header {
+		width: 60%;
+		font-size: 22px;
+	}
+
 }
 
 @media (max-width: 767px) {
@@ -781,10 +829,14 @@ label.error {
 		font-size: 32px;
 	}
 	h2 {
-		font-size: 28px;
+		font-size: 22px;
 	}
 	h3 {
 		font-size:18px;
+	}
+
+	label.error {
+		font-size: 15px;
 	}
 
 	#header {
@@ -800,6 +852,7 @@ label.error {
 	}
 	#header .badge {
 		font-size:10px;
+		margin-top: 0px;
 	}
 
 	#header.full-header {
@@ -809,14 +862,161 @@ label.error {
 		padding: 15px 0;
 	}
 
+	/* == Report Summary  ===================================== */
 	.report-summary {
-		padding: 20px 15px 0;
-		margin-bottom: 15px;
+		padding: 20px 0px;
 	}
 	.report-summary figure {
 		width: 80px;
 		height: 80px;
 		margin: 0 auto 12px;
+	}
+
+	.mobile-padding {
+		padding-left: 0px;
+		padding-right: 0px;
+		text-align: center;
+	}
+	.avatar-box {
+		height: 60px;
+		width: 60px;
+		display: inline-block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.report-teasers span {
+    float: none;
+	}
+
+	.report-box p {
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+
+	.results-box {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.results-box p {
+		padding-left: 15px;
+	}
+
+	.teaser-span {
+		font-size: 14px;
+	}
+
+	.teaser-span img {
+		margin-right: 8px;
+	}
+
+	.first-teaser {
+		margin-bottom: 0px;
+	}
+
+	.teaser-span {
+		margin-bottom: 15px;
+	}
+
+	.subscription-summary {
+		padding: 20px 15px;
+	}
+
+	span.order-summary-heading {
+		max-width: 80% !important;
+		display: inline-block;
+	}
+
+	/* == Subscribe Form  ===================================== */
+
+	#form-first-part {
+		padding: 20px 0px;
+	}
+
+	#form-first-part h2 {
+		padding-left: 15px;
+	}
+
+	.verify-seal img {
+    width: 70px;
+		padding-right: 15px;
+	}
+
+	.form-fields {
+    margin-top: 20px;
+	}
+
+	.form-control {
+		height: 44px;
+		margin-bottom: 0px;
+	}
+
+	.control-label {
+		font-size: 15px;
+	}
+
+	#user_email {
+    margin-bottom: 0px;
+	}
+
+	.large-lock-icon {
+		height: 33px;
+		width: 28px;
+	}
+
+	.secured-section {
+		padding: 15px;
+	}
+
+	.secured-text h4 {
+    font-size: 14px;
+	}
+
+	.secured-section p {
+		font-size: 13px;
+	}
+
+	#form-second-part {
+		padding: 20px 0px;
+		margin-bottom: 15px;
+	}
+	#form-second-part h2 {
+    margin-bottom: 22px;
+		padding: 0px 15px;
+	}
+
+	.radio input[type=radio] {
+    margin-right: 2px;
+	}
+
+	.paypal-img {
+    height: 22px;
+	}
+
+	#paypal-radio label,
+	#credit-radio label {
+		font-size: 13px;
+	}
+
+	.radio,
+	#secure-wrapper {
+		padding: 0px 15px;
+	}
+	.radio img {
+    margin-right: 5px;
+	}
+
+	#credit-radio {
+    padding-bottom: 30px;
+	}
+
+	#create_button_container {
+		padding: 0px 15px;
+	}
+
+	.secured {
+		padding: 20px 15px;
 	}
 
 	.subscribe .subscribe-header h1 {
@@ -876,21 +1076,11 @@ label.error {
 	.guarantee-icon {
 		width: 98px;
 		height: 83px;
-		margin-left:-42px;
 	}
-	.large-lock-icon {
-		width: 70px;
-		height: 81px;
-		margin-left: -40px;
-	}
-	.guarantee-icon,
-	.large-lock-icon {
-		top:19px;
-		left: 50%;
-		margin-top: 0;
-	}
+
 	.support-schedule {
-		padding: 124px 20px 20px;
+		padding: 124px 0px 20px;
+		margin-top: 0px;
 	}
 	.support-schedule header,
 	.support-schedule ul {
@@ -918,9 +1108,6 @@ label.error {
 	}
 	#footer.small-footer {
 		padding-top:20px;
-	}
-	.report-summary #map {
-		display: none;
 	}
 
 }
