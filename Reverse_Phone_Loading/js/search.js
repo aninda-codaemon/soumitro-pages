@@ -219,6 +219,10 @@ String.prototype.capitalize = function(lower) {
         speed: 0.8,
         curve: 0.8
       });
+
+      map.once('moveend', function(){
+        new mapboxgl.Marker().setLngLat([latlng[1], latlng[0]]).addTo(map);
+      });
     });
   };
 

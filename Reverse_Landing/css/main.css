@@ -111,9 +111,7 @@ input.error {
 .form-control.error {
 	box-shadow: 0 -5px #eb3e51 inset;
 }
-.full-img {
-	width: 100%;
-}
+
 .text-center {
 	text-align: center;
 }
@@ -452,7 +450,7 @@ input.error {
 
 .testimonials {
 	border-top: solid 1px #ebebeb;
-	padding: 60px 0 55px;
+	padding: 50px 0 0px;
 	margin-top: 68px;
 }
 .testimonials .carousel {
@@ -465,6 +463,10 @@ input.error {
 .testimonial figure img {
     height: 42px;
     border-radius: 50%;
+}
+
+.testimonial figure img.randi-shield {
+	border-radius: 0px;
 }
 
 .testimonial-author {
@@ -756,6 +758,9 @@ input.error {
 		font-size:18px;
 	}
 
+	.full-img {
+    width: 70%;
+	}
 	.form-control {
 		font-size: 20px;
 	}

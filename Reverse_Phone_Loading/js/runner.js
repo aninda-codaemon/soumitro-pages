@@ -105,7 +105,7 @@ $(function() {
     // Shawn made me get rid of these animations, i think they should go back in so im leaving it here
     // want to get rid of the side-bar column, and animate the width of the action column animating
     // to become a full page. the next two line would go into the toggle slide function below
-    
+
 
     $('.full-section').addClass('col-sm-12').removeClass('col-md-9 col-sm-8');
     $('.side-bar').removeClass("hidden-xs").hide();
@@ -117,7 +117,7 @@ $(function() {
     changeHeader();
     $('#secondAction').removeClass('active');
     $('#thirdAction').addClass('active');
-
+    $('#lead_first_name').focus()
   };
 
   var changeScreen = function() {

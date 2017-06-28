@@ -84,8 +84,8 @@
           <div class="info-box">
             <img src="img/caitlin.png" alt="">
             <div class="text">
-              <p class="name">Ma, Akron, OH</p>
-              <p>Survivor</p>
+              <p class="name">@caitlin_oconnor</p>
+              <p>Instagram</p>
             </div>
           </div>
         </div>
@@ -132,7 +132,12 @@
             <div class="header-box">
               <p class="all-day">Step 1 Complete!</p>
               <h2>We found details about <span style="color: #f5c419;"></span>{{formattedPhoneNumber}}</h2>
-              <p><strong>Good News.</strong> We were able to locate the number.</p>
+              <p><strong>Good News.</strong> We were able to locate the
+                {{#if ownersName}}
+                  <span><strong style="color: #f5c419;">owner</strong>.</span>
+                {{else}}
+                  number.</p>
+                {{/if}}
             </div>
           </div>
 
@@ -190,7 +195,7 @@
                 <div class="col-sm-3 tab">
                   <span class=tab-number>03</span>
                   <img src="img/Carrier.svg" alt="">
-                  <h5>Detecting carrier &amp; number type</h5>
+                  <h5>Detecting Carrier &amp; Number Type</h5>
                 </div>
 
                 <div class="col-sm-3 tab no-border">
@@ -276,7 +281,7 @@
 
                   <div class="col-xs-8 mobile-header">
                     {{#if ownersName}}
-                      <h2><span class="owner-name">Owner's Name: </span>{{ownersName}}</h2>
+                      <h2><span class="owner-name" style="font-size: 27px;">Owner's Name: <br></span>{{ownersName}}</h2>
                     {{else}}
                       <h2><span class="owner-name">Your Report is Ready!</span></h2>
                     {{/if}}
@@ -297,7 +302,7 @@
                               {{location}}
                             {{else}}
                               <img src="img/key-icon.svg" alt="">
-                              <span style="color: #007ee3">Unlock <span class="hidden-xs">To Search</span></span>
+                              <span style="color: #007ee3">Unlock <span class="hidden-xs hidden-sm">To Search</span></span>
 
                             {{/if}}
                           </td>
@@ -310,7 +315,7 @@
                               {{carrier}}
                             {{else}}
                               <img src="img/key-icon.svg" alt="">
-                              <span style="color: #007ee3">Unlock <span class="hidden-xs">To Search</span></span>
+                              <span style="color: #007ee3">Unlock <span class="hidden-xs hidden-sm">To Search</span></span>
 
                             {{/if}}
                           </td>
@@ -323,42 +328,37 @@
                               {{type}}
                             {{else}}
                               <img src="img/key-icon.svg" alt="">
-                              <span style="color: #007ee3">Unlock <span class="hidden-xs">To Search</span></span>
+                              <span style="color: #007ee3">Unlock <span class="hidden-xs hidden-sm">To Search</span></span>
 
                             {{/if}}
                           </td>
                       </tr>
                       <tr>
                         <td class="no-bottom-pad not-last"><img src="img/email.svg" alt=""></td>
-                        <td class="table-category no-bottom-pad not-last">Email Address</td>
+                        <td class="table-category no-bottom-pad not-last">Email</td>
 
                           <td class="table-data no-bottom-pad not-last">
                             {{#if email}}
                               {{email}}
                             {{else}}
                               <img src="img/key-icon.svg" alt="">
-                              <span style="color: #007ee3">Unlock <span class="hidden-xs">To Search</span></span>
+                              <span style="color: #007ee3">Unlock <span class="hidden-xs hidden-sm">To Search</span></span>
 
                             {{/if}}
                           </td>
                       </tr>
 
                       <tr class="visible-sm visible-xs">
-                        <td><img src="img/map-pin.svg" alt=""></td>
-                        <td class="table-category">Address</td>
-                        <td class="table-data"><img class="red-lock" src="img/shape-1-copy-7.svg" alt=""></td>
-                      </tr>
-
-                      <tr class="visible-sm visible-xs">
                         <td><img src="img/social.svg" alt=""></td>
-                        <td class="table-category">Social Media</td>
-                        <td class="table-data"><img class="red-lock" src="img/shape-1-copy-7.svg" alt=""></td>
+                        <td class="table-category">Social Profiles</td>
+                        <td class="table-data"><img src="img/key-icon.svg" alt=""><span style="color: #007ee3"> Unlock</span></td>
+
                       </tr>
 
                       <tr class="visible-sm visible-xs">
                         <td class="no-bottom-pad"><img src="img/criminal.svg" alt=""></td>
                         <td class="table-category no-bottom-pad">Criminal Records</td>
-                        <td class="table-data no-bottom-pad"><img class="red-lock" src="img/shape-1-copy-7.svg" alt=""></td>
+                        <td class="table-data"><img src="img/key-icon.svg" alt=""><span style="color: #007ee3"> Unlock</span></td>
                       </tr>
                     </table>
 
@@ -398,7 +398,7 @@
                       </div>
 
                       <div class="col-sm-7">
-                        <p>Address</p>
+                        <p>Addresses</p>
                       </div>
                       <div class="col-sm-2">
 
@@ -414,7 +414,7 @@
                       </div>
 
                       <div class="col-sm-7">
-                        <p>Social Media Profiles</p>
+                        <p>Social Profiles</p>
                       </div>
                       <div class="col-sm-2">
 
