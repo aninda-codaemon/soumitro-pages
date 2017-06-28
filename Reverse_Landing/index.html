@@ -40,7 +40,6 @@
 				<div class="collapse navbar-collapse" id="user-area-nav">
 					<ul class="nav navbar-nav">
 						<li><a href="#" class="login">Log In</a></li>
-						<li><a href="#" class="signup">Sign Up</a></li>
 					</ul>
 				</div>
 			</div>
@@ -57,7 +56,7 @@
 
 					<form id="phoneForm"class="top-search-form" action="<%= next_page %>">
 						<div class="form-group">
-							<input type="tel" class="form-control" placeholder="ex: (000) 000-0000" name="phone">
+							<input id="phone-number" type="tel" class="form-control" placeholder="ex: (000) 000-0000" name="phone">
 						</div>
 						<button type="submit" class="btn btn-success">Start Search</button>
 					</form>
@@ -458,6 +457,7 @@
 <script src="js/jquery.validate.js"></script>
 <script src="js/handlebars.min.js"></script>
 <script src="js/framerida.js"></script>
+<script src="js/jquery.mask.min.js"></script>
 <script src="js/scripts.js"></script>
 
 </body>

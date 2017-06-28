@@ -149,9 +149,9 @@ section {
   background: white;
   padding: 0px;
   box-shadow: 4px 0 15px 0 rgba(0, 0, 0, 0.14);
-  animation: slide-right 0.75s forwards;
+  /*animation: slide-right 0.75s forwards;*/
   position: relative;
-  left: -100%;
+  /*left: -100%;*/
 }
 
 @keyframes slide-right {
@@ -309,8 +309,8 @@ img.quotes {
   padding-top: 35px;
   color: white;
   position: relative;
-  left: 100%;
-  animation: 1s slide-left 0.5s forwards;
+  /*left: 100%;
+  animation: 1s slide-left 0.5s forwards;*/
 }
 
 .action-header.no-animation,
@@ -761,7 +761,7 @@ label.error {
 /* <--------------- right side */
 
 .full-section.col-sm-12 {
-  transition: width 0.75s;
+  /*transition: width 0.75s;*/
 }
 .why-bv {
   padding: 40px 20px 20px;
