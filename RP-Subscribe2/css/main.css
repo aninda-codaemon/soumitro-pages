@@ -114,6 +114,18 @@ label {
 .text-center {
 	text-align: center;
 }
+
+#error_container {
+    margin-top: 15px;
+}
+
+#errorExplanation {
+    border: 1px solid #e13d3d !important;
+    background-color: #fff7f7;
+    margin: 0 15px 15px;
+    padding: 0 15px 15px;
+    border-radius: 4px;
+}
 /* ********************************************************************** */
 /* ********************************* Header ***************************** */
 /* ********************************************************************** */
@@ -381,9 +393,18 @@ span.order-summary-heading {
 	display: none;
 }
 
-label.error {
+label.error,
+#messages {
   color: #dc2341;
 	margin-bottom: 15px;
+}
+
+#messages {
+	-webkit-padding-start: 40px;
+}
+#messages li {
+	display: list-item;
+	list-style-type: disc;
 }
 .terms-container label.error {
 	margin-left: 70px;
@@ -855,6 +876,14 @@ label.error {
 	}
 
 	label.error {
+		font-size: 15px;
+	}
+
+	#errorExplanation p.h3{
+	  font-size: 22px;
+	}
+
+	#errorExplanation{
 		font-size: 15px;
 	}
 

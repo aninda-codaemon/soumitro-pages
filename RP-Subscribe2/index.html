@@ -139,6 +139,18 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col-sm-12">
+
+				<div id="error_container" class="row hidden">
+					<div class="errorExplanation" id="errorExplanation">
+						<p class="h3">Oops, something went wrong.</p>
+						<p>There were problems with the following fields:</p>
+						<ul id='messages'>
+						</ul>
+					</div>
+				</div>
+			</div>
+
 			<div class="col-md-4">
 				<div class="report-summary subscription-summary" id="phoneMembership">
 					<header>
@@ -364,8 +376,8 @@
 				</div>
 
 				<div class="terms-container">
-					<label>
-						<div class="">
+
+						<div class="clearfix">
 							<div class="col-xs-1">
 								<input id="account_tos" class="" name="account[tos]" type="checkbox" value="1">
 							</div>
@@ -378,7 +390,7 @@
 								</p>
 							</div>
 						</div>
-					</label>
+
 				</div>
 
 				<input id="layout" name="layout" type="hidden" value="fresh">
