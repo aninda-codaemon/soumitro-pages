@@ -30,7 +30,7 @@
 <!--/Header-->
 
 <!--Main Content-->
-<div id="main-content" class="lightblue-bg subscribe" data-fr-bind="bv_searchData fullTeaser">
+<div id="main-content" class="lightblue-bg subscribe" data-fr-bind="bv_searchData fullTeaser paypal_lead">
 	<div class="container">
 		<header class="subscribe-header">
 			<img class="hidden-xs hidden-sm" src="img/key.svg" />
@@ -171,20 +171,14 @@
 									<span class="hidden-sm hidden-xs">Included</span>
 								</span>
 							</span>
-							<span class="summary-details-wrapper clearfix">
+							<span class="summary-details-wrapper last-summary clearfix">
 								<span class="order-summary-heading">Easy Cancellation For Any Reason</span>
 								<span class="pull-right">
 									<span class="green-check"></span>
 									<span class="hidden-sm hidden-xs">Included</span>
 								</span>
 							</span>
-							<span class="summary-details-wrapper last-summary clearfix">
-								<span class="order-summary-heading">Unlimited PDF Reports</span>
-								<span class="pull-right">
-									<span class="green-check"></span>
-									<span class="text hidden-sm hidden-xs">Free</span>
-								</span>
-							</span>
+
 						</div>
 				</div>
 
@@ -372,10 +366,12 @@
 				<div class="terms-container">
 					<label>
 						<div class="">
-							<input id="account_tos" class="col-xs-1" name="account[tos]" type="checkbox" value="1">
+							<div class="col-xs-1">
+								<input id="account_tos" class="" name="account[tos]" type="checkbox" value="1">
+							</div>
 							<div class="col-xs-11">
 								<p class="small">
-									By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a> and <a href="/home/privacy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price">$22.86</span> every <span id="legal-type">month</span>&nbsp;until this subscription is canceled.
+									By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a> and <a href="/home/privacy" target="_blank">Privacy Policy</a>. You agree to be billed <span id="legal-price">$22.86</span> every <span id="legal-type">month</span>&nbsp;until this subscription is canceled.
 									You can cancel your membership at any time by contacting customer service at <span class="text-primary">1-888-579-5910</span> or emailing <a href="mailto:support@beenverified.com">support@beenverified.com</a>. You also agree that you
 									will <u>NOT</u> use any information about an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance;
 									or for any other purpose prohibited by our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>.

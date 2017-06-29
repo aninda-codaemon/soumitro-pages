@@ -28,10 +28,7 @@ a {
 	cursor:pointer;
 	color:#333333;
 }
-a:hover {
-	text-decoration: none;
-	color:#3b2469;
-}
+
 P {
 	line-height: 1.5;
 	margin:0 0 20px;

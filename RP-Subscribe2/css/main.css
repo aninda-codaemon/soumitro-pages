@@ -27,10 +27,7 @@ a {
 	cursor:pointer;
 	color:#333333;
 }
-a:hover {
-	text-decoration: none;
-	color:#3b2469;
-}
+
 P {
 	line-height: 1.5;
 	margin:0 0 20px;
@@ -103,6 +100,10 @@ h3 {
 	background-color: #ffffff;
 	box-shadow: 0 0 10px 0 rgba(102, 175, 233, 0.44), inset 0 0 8px 0 rgba(102, 175, 233, 0.57);
 	border: solid 1px #66afe9;
+}
+
+.form-group {
+	margin-bottom: 0px;
 }
 
 label {
@@ -298,13 +299,13 @@ span.order-summary-heading {
 }
 
 .report-box p {
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 	color: #8b519a;
 	font-size: 30px;
 }
 
 .results-box p {
-	margin-bottom: 39px;
+	margin-bottom: 19px;
 	font-size: 20px;
 	color: #8b519a;
 	margin-top: 11px;
@@ -398,7 +399,6 @@ label.error {
 
 .secured-text h4 {
 	font-size: 18px;
-	color: #e7114c;
 }
 
 .paypal-img {
@@ -833,6 +833,10 @@ label.error {
 		font-size: 22px;
 	}
 
+	#form-second-part {
+		margin-bottom: 15px;
+	}
+
 }
 
 @media (max-width: 767px) {
@@ -964,7 +968,7 @@ label.error {
 
 	.form-control {
 		height: 44px;
-		margin-bottom: 0px;
+		/*margin-bottom: 0px;*/
 	}
 
 	.control-label {
