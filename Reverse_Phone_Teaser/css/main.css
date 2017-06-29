@@ -910,6 +910,13 @@ h3 {
 		font-size:18px;
 	}
 
+	.report-summary ul li strong {
+		width: 125px;
+	}
+	.report-summary ul li span {
+		width: auto;
+	}
+
 	#header {
 		padding: 18px 0 45px;
 	}
