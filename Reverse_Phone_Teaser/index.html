@@ -27,15 +27,15 @@
 <!--Main Content-->
 <div id="main-content" class="lightblue-bg report" data-fr-bind="fullTeaser bv_searchData">
 	<div class="container">
-		<h1>We found 32 records for <span>{{formattedPhoneNumber}}</span>! Unlock now to view the full report.</h1>
+		<h1>We found {{totalRecordCount}} records for <span>{{formattedPhoneNumber}}</span>! Unlock now to view the full report.</h1>
 
 		<div class="row">
 			<div class="col-sm-4">
 				<div class="report-summary">
-					<header>
+					<header class="text-center">
 						<figure><img src="img/relative-icon.svg" style="margin-top: 25%;" /></figure>
 						{{#if ownersName}}
-							<h2>Owner's Name: {{ownersName}}</h2>
+							<h2>Owner's Name: <br>{{ownersName}}</h2>
 						{{/if}}
 						<h3>{{formattedPhoneNumber}}</h3>
 					</header>
@@ -54,9 +54,15 @@
 								<i class="icon location-icon"></i>
 								Location
 							</strong>
+							{{#if location}}
 							<span>
 								{{location}}
 							</span>
+							{{else}}
+								<span class="lock-badge">
+									<img src="img/red-lock.svg" alt="">
+								</span>
+							{{/if}}
 						</li>
 						<li>
 							<strong>
@@ -66,7 +72,7 @@
 							{{#if carrier}}
 							<span>
 								{{carrier}}
-								<img src="img/verizon.png" />
+								<!-- <img src="img/verizon.png" /> -->
 							</span>
 							{{else}}
 								<span class="lock-badge">
@@ -149,7 +155,7 @@
 						</li>
 						<li>
 							<i class="icon icon-phone"></i>
-							Additional phone <span class="hidden-sm">numbers</span>
+							Phone <span class="hidden-sm">numbers</span>
 							{{#if available_data_counts.phone.total}}
 								<span class="badge">{{available_data_counts.phone.total}}</span>
 							{{else}}
@@ -266,27 +272,40 @@
 					</section>
 
 					<section>
-						<i class="icon icon-relatives"></i>
-						<h2>Relatives:</h2>
+						<i class="icon icon-phone"></i>
+						<h2>Additional Phone Numbers:</h2>
 
-						<p>
-							<a href="<%= next_page %>" class="unlock">Unlock to search relatives</a>
-						</p>
+						{{#hasAdditionalPhones}}
+						<p class="email-list">{{phoneList}}</p>
+							{{#moreThan3Phones}}
+							<p>
+								<a href="<%= next_page %>" class="unlock">Plus unlock {{remainingPhones}} more</a>
+							</p>
+							{{/moreThan3Phones}}
+						{{else}}
+							<p>
+								<a href="<%= next_page %>" class="unlock">Unlock to search additional phones</a>
+							</p>
+						{{/hasAdditionalPhones}}
 					</section>
 
 					<section>
 						<i class="icon icon-criminal"></i>
 						<h2>Criminal Records</h2>
 						<p>
-							<a href="<%= next_page %>" class="unlock">Unlock  to search crimes</a>
+							<a href="<%= next_page %>" class="unlock">Unlock to search crimes</a>
 						</p>
 					</section>
 					<section>
 						<i class="icon icon-career"></i>
-						<h2>Career & Education:</h2>
-						<p>
-							<a href="<%= next_page %>" class="unlock">Unlock  to search careers and educations</a>
-						</p>
+						<h2>Career &amp; Education:</h2>
+						{{#if available_data_counts.job}}
+							<a href="<%= next_page %>" class="unlock">Unlock to see {{educationCount}}<a>
+						{{else}}
+							<p>
+								<a href="<%= next_page %>" class="unlock">Unlock to search careers and educations</a>
+							</p>
+						{{/if}}
 					</section>
 				</div>
 			</div>

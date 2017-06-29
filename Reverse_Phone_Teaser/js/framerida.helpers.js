@@ -128,6 +128,21 @@
     }
   });
 
+  H.registerHelper('educationCount', function(item){
+    if (!this.available_data_counts) {
+      return;
+    }
+
+    var jobCount = this.available_data_counts.job,
+        educationCount = this.available_data_counts.education;
+
+    if ((jobCount + educationCount) < 1) {
+      return "1 Career & Education Report!";
+    } else {
+      return (jobCount + educationCount) + " Career & Education Reports!"
+    }
+  });
+
   H.registerHelper('extraCount', function(item){
     if (!this.available_data_counts) {
       return;
@@ -152,22 +167,35 @@
 
   H.registerHelper('totalRecordCount', function(item){
     if (!this.available_data_counts) {
-
-    }
-  });
-
-  H.registerHelper('location', function(item){
-    var addresses = this.addresses;
-    if (!addresses || _.isEmpty(addresses)) {
       return "";
     }
 
-    if (addresses[0].parts.city === ""){
-      return states[addresses[0].parts.state];
-    } else {
-      return addresses[0].full;
-    }
+    var counts = this.available_data_counts,
+        totalCount = 0;
+
+    Object.keys(counts).forEach(function(key){
+      if (typeof counts[key] === "number") {
+        totalCount += counts[key];
+      } else if (key === "phone"){
+        totalCount += counts[key].total;
+      }
+    });
+
+    return totalCount;
   });
+
+  // H.registerHelper('location', function(item){
+  //   var addresses = this.addresses;
+  //   if (!addresses || _.isEmpty(addresses)) {
+  //     return "";
+  //   }
+  //
+  //   if (addresses[0].parts.city === ""){
+  //     return states[addresses[0].parts.state];
+  //   } else {
+  //     return addresses[0].full;
+  //   }
+  // });
 
   H.registerHelper('remainingAddresses', function(item){
     var addresses = this.addresses;
@@ -195,6 +223,59 @@
 
   });
 
+  H.registerHelper('moreThan3Phones', function(item){
+    // debugger
+    var phones = this.phones;
+    if (!phones || !phones[1] || phones.length < 5){
+      return item.inverse(this);
+    } else {
+      return item.fn(this);
+    }
+  });
+
+  H.registerHelper('hasAdditionalPhones', function(item){
+    var phones = this.phones;
+    if (!(this.phones) || (this.phones.length <= 1)) {
+      return item.inverse(this);
+    } else {
+      return item.fn(this);
+    }
+  });
+
+  H.registerHelper('phoneList', function(item){
+    var phones = this.phones;
+
+    if (!phones || !phones[1]){
+      return "";
+    }
+    var phoneList = [];
+    for (var i = 1; i < phones.length; i++) {
+      if (i === 4) {
+        break;
+      }
+      var number = phones[i].number,
+          formattedNumber = "(" + number.slice(0,3) + ") " + number.slice(3,6) + "-" + number.slice(6,10);
+
+      if (formattedNumber) {
+        phoneList.push(formattedNumber);
+      }  else {
+        phoneList.push(number);
+      }
+    }
+
+    return phoneList.join(",\n");
+  });
+
+  H.registerHelper('remainingPhones', function(item){
+    var phones = this.phones;
+
+    if (!phones) {
+      return "";
+    } else {
+      return phones.length - 4 ;
+    }
+  });
+
   H.registerHelper('hasEmails', function(item){
     var emails = this.emails;
 
@@ -220,7 +301,7 @@
       emailList.push(emails[i].email_address);
     }
 
-    return emailList.join(",  ");
+    return emailList.join(",\n");
   });
 
   H.registerHelper('moreThan3', function(item){

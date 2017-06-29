@@ -51,8 +51,8 @@ body {
 
 h1 {
   font-size: 40px;
-  margin-top: 75px;
-  margin-bottom: 55px;
+  margin-top: 45px;
+  margin-bottom: 35px;
 }
 h3 {
   font-size: 26px;
@@ -825,6 +825,15 @@ section.block-hack .left-side {
 
   #notificationBox {
     max-width: 100%;
+    padding-bottom: 10px
+  }
+
+  .notification {
+    margin-top: 10px;
+  }
+
+  .notification.border {
+    border-right: none;
   }
 
 
@@ -835,6 +844,7 @@ section.block-hack .left-side {
     width: 250px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
   }
 
   #social-media-groups li {

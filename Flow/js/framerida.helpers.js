@@ -79,9 +79,9 @@
     if (count === 0) {
       return "";
     } else if (count === 1) {
-      return "1 Social media profile found.";
+      return "1 Social Profile found.";
     } else {
-      return count.toString() + " Social media profiles found.";
+      return count.toString() + " Social Profiles found.";
     }
   });
 
@@ -93,9 +93,9 @@
     if (count === 0) {
       return "";
     } else if (count === 1) {
-      return "1 E-mail address found.";
+      return "1 E-mail found.";
     } else {
-      return count.toString() + " E-mail addresses found.";
+      return count.toString() + " E-mails found.";
     }
   });
 
@@ -121,9 +121,9 @@
     if (count === 0) {
       return "";
     } else if (count === 1) {
-      return "1 Additional phone number located";
+      return "1 Phone Number Found";
     } else {
-      return count.toString() + " Additional phone numbers located.";
+      return count.toString() + "Phone Numbers found.";
     }
   });
 
