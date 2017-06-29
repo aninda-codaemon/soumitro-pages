@@ -438,6 +438,7 @@ input.error {
 }
 .feature > div.photos {
 	text-align: center;
+  padding: 15px 8px 7px;
 }
 .feature > div.photos figure {
 	float:none;
@@ -446,6 +447,7 @@ input.error {
 	border-radius: 6px;
 	margin: 0 5px;
 	display: inline-block;
+
 }
 
 .testimonials {

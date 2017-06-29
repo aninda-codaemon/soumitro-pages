@@ -430,6 +430,11 @@ img.quotes {
   display: block;
 }
 
+.switch-section.active {
+  float: left;
+  max-width: 60%;
+}
+
 .headers {
   padding-bottom: 35px;
 }
@@ -502,10 +507,13 @@ img.quotes {
   height: 165px;
   width: 165px;
   display: none;
+  position: relative;
 }
 
 .loader-box.active {
-  display: block;
+  display: inline-block;
+  float: left;
+  margin: 0px 4%;
 }
 
 .loader-box img {
@@ -1288,6 +1296,12 @@ label.error {
     margin-bottom: 30px;
   }
 
+  .loader-box.active {
+    display: inline-block;
+    float: none;
+    margin: 0px auto 30px;
+  }
+
   .loader {
     z-index: 1;
     height: 120px;
@@ -1298,6 +1312,10 @@ label.error {
     top: 22%;
   }
 
+  .switch-section.active {
+    float: none;
+    max-width: unset;
+  }
   .switch-section p {
     font-size: 15px;
   }

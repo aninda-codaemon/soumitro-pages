@@ -442,7 +442,6 @@ section.block-hack .left-side {
     position: relative;
     background-image: url("../img/images@2x.png");
     background-size: 95%;
-
   }
 
   #photoBox .left-side:after {
