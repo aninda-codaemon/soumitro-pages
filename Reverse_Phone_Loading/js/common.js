@@ -1,6 +1,6 @@
 (function () {
 
-  var url = 'https://www.beenverified.com/hk/dd/teaser/phone';
+  var url = 'https://www.beenverified.com/hk/dd/teaser/phone?exporttype=jsonp';
   var subCheckUrl = 'https://www.beenverified.com/hk/dd/premium/phone/reverseteaser?exporttype=jsonp';
   var mapNum = 60352;
   var apiKey = '26a01f91e0ce4bf99a5e773b7745b649';

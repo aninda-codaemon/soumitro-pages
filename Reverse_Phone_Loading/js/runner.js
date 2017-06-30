@@ -117,7 +117,7 @@ $(function() {
     changeHeader();
     $('#secondAction').removeClass('active');
     $('#thirdAction').addClass('active');
-    $('#lead_first_name').focus()
+    $('#lead_first_name').focus();
   };
 
   var changeScreen = function() {

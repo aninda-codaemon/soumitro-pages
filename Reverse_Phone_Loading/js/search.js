@@ -69,8 +69,8 @@ String.prototype.capitalize = function(lower) {
   };
 
   var queryPhoneLookup = function (phoneNumber) {
-    var requestUrl = bvRPL.config.url + '?phone=' + phoneNumber;
-    return $.ajax(requestUrl, {dataType: 'jsonp'});
+    var requestUrl = bvRPL.config.url + '&phone=' + phoneNumber;
+    return $.ajax(requestUrl, {dataType: 'jsonp', jsonpCallback: 'parseResults'});
   };
 
   var locations = {
@@ -177,8 +177,8 @@ String.prototype.capitalize = function(lower) {
       email: data.emails[0] ? data.emails[0] : "",
       lineType: (data.type == "L") ? "Landline" : "Cellphone",
       location: data.addresses[0] ? data.addresses[0].full : "",
-      latitude: data.latitude,
-      longitude: data.longitude
+      latitude: data.addresses[0] ? data.addresses[0].latitude : "",
+      longitude: data.addresses[0] ? data.addresses[0].longitude : "",
     };
 
     return prepped;
@@ -194,7 +194,6 @@ String.prototype.capitalize = function(lower) {
   }
 
   var initializeFlow = function () {
-
     phoneNumber = phoneNumber.replace(/\D|\-/g,'');
     fullSearchFlow();
 
@@ -204,15 +203,15 @@ String.prototype.capitalize = function(lower) {
   var startMapFly = function(lng, lat) {
 
     map.on('load', function(){
-      var latlng,
-          data = amplify.store().bv_searchData;
-      if (data && (data.latlng[0] !== "") && (data.latlng[1] !== "")) {
-        latlng = [data.latlng[0], data.latlng[1]];
-      } else {
-        latlng = [38.505191, -97.734375];
-      }
+      // var latlng,
+      //     data = amplify.store().bv_searchData;
+      // if (data && (data.latlng[0] !== "") && (data.latlng[1] !== "")) {
+      //   latlng = [data.latlng[0], data.latlng[1]];
+      // } else {
+      //   latlng = [38.505191, -97.734375];
+      // }
       map.flyTo({
-        center: [latlng[1],  latlng[0]],
+        center: [lng,  lat],
         zoom: 13,
         bearing: 0,
         pitch: 0,
@@ -221,7 +220,7 @@ String.prototype.capitalize = function(lower) {
       });
 
       map.once('moveend', function(){
-        new mapboxgl.Marker().setLngLat([latlng[1], latlng[0]]).addTo(map);
+        new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map);
       });
     });
   };
@@ -233,41 +232,27 @@ String.prototype.capitalize = function(lower) {
 
     var lookupData = false;
 
-
-
-    // $.when(phoneLookup).done(function (lookupResults, status) {
-    //   if (status === "success") {
-    //     if ($.isEmptyObject(lookupResults.results)) {
-    //     } else {
-    //       lookupData = lookupResults.results;
-    //     }
-    //   }
-    // });
-
     var formattedPhoneNumber = formatPhoneNumber(phoneNumber);
 
     $.when(phoneLookup).done(function (lookupResults, status) {
-
+      // debugger
       var data = lookupResults,
           success = (status === "success"),
           latlng = [];
 
       if (success && !$.isEmptyObject(data)) {
 
-        latlng.push(data.latitude);
-        latlng.push(data.longitude);
-
         // Again, mapbox is a monster and accepts coordinates as [lng, lat]
-        // debugger
-        // if ((latlng[0] !== "") && (latlng[1] !== "")) {
-        //   startMapFly(latlng[1], latlng[0]);
-        // }
-
-        // startMapFly(14.42076, 50.08804);
-        startMapFly(151.209900, -33.865143);
         searchData = prepSearchData(data);
+
+        if (searchData.latitude && searchData.longitude) {
+          startMapFly(searchData.longitude, searchData.latitude);
+        } else {
+          startMapFly(-97.734375, 38.505191);
+        }
+
         storeSearchData({
-          latlng: latlng,
+          latlng: [searchData.latitude, searchData.longitude],
           phoneNumber: phoneNumber,
           formattedPhoneNumber: formattedPhoneNumber,
           ownersName: searchData.ownersName,
