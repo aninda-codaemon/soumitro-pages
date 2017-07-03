@@ -381,7 +381,7 @@
 							<div class="col-xs-1">
 								<input id="account_tos" class="" name="account[tos]" type="checkbox" value="1">
 							</div>
-							<div class="col-xs-11">
+							<div class="col-xs-11 weird-fix">
 								<p class="small">
 									By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a> and <a href="/home/privacy" target="_blank">Privacy Policy</a>. You agree to be billed <span id="legal-price">$22.86</span> every <span id="legal-type">month</span>&nbsp;until this subscription is canceled.
 									You can cancel your membership at any time by contacting customer service at <span class="text-primary">1-888-579-5910</span> or emailing <a href="mailto:support@beenverified.com">support@beenverified.com</a>. You also agree that you
@@ -464,6 +464,90 @@
 	</div>
 </footer>
 
+<div id="iModal-trial" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button id="imodal-x" type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="img/badge.png" alt="$1" class="dollar-trial-img">
+          <h1>
+            <strong>SPECIAL LIMITED TIME OFFER!</strong>
+          </h1>
+          <h1>$1 TRIAL!</h1>
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+              <p>
+                Run unlimited background reports for the entire trial period.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+              <button type="button" id="show-dollar-trial" class="btn btn-lg btn-block btn-success text-center">Try BeenVerified for $1!</button>
+            </div>
+          </div>
+          <p><a href="<%= next_page %>" id="iModal-back"><span class="text-normal">or&nbsp;</span>go back to search results</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /#iModal-trial -->
+
+<div id="PayPal-Success" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <h2 class="text-success"><img src="img/success_icon.png" alt="PayPal Success" width="30" height="30"> One Last Step!</h2>
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+              <p id="paypal-confirm-sub-text">Just click the confirm button below to activate and view your report.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+              <button type="button" id="confirm-paypal" class="btn btn-lg btn-block btn-success text-center" style="margin:24px 0 10px">Confirm &amp; View Report <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+              <img id="paypal-spinner" class="spinner-inner" src="img/ajax-loader.gif" alt="Loading...">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <a href="#" id="iModal-dismiss" class="text-muted" style="cursor:hand;cursor:pointer;">Click Here to Cancel PayPal Payment</a>
+              <p id="paypal-confirm-error">There was a problem with your PayPal account.  Please close this modal and try changing the payment method on your PayPal account.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="PayPal-Failed" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <h2 class="text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span> Error</h2>
+          <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+              <p>Unfortunately your payment did not go through using PayPal.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <button type="button" id="pay-CreditCard" class="btn btn-lg btn-block btn-primary text-center">Pay With A Credit Card</button>
+            </div>
+            <div class="col-md-6">
+              <button type="button" id="pay-PayPal" class="btn btn-lg btn-block btn btn-default text-center">Try Again Using PayPal</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 <script src="js/jquery-1.12.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/amplify.store.min.js"></script>
@@ -481,6 +565,7 @@
     <script src="js/framerida.js"></script>
 
 		<script src="js/subscribeRunner.js"></script>
+		<script src="js/downsell.js"></script>
     <script src="js/runner.js"></script>
 
 		<script>

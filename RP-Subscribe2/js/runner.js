@@ -119,6 +119,39 @@ $(function() {
     }
   };
 
+  var initDownsells = function () {
+
+  var VWO_CHECK_INTERVAL = 3000,
+      CHECK_TIMEOUT = 5000,
+      timeElapsed = 1000;
+
+  var activateDownsells = function () {
+    if (typeof downsell !== "undefined" && typeof downsell.init === "function") {
+      downsell.init({
+        onBack: {
+          elem: "#iModal-trial",
+          cb: function () {}
+        }
+      });
+    }
+  };
+
+  var vwoIntervalId,
+      vwoExists = typeof _vwo_code !== "undefined" && typeof _vwo_code.finished === 'function';
+
+  if (vwoExists) {
+    vwoIntervalId = window.setInterval(function () {
+      timeElapsed += VWO_CHECK_INTERVAL;
+      if (timeElapsed > CHECK_TIMEOUT || _vwo_code.finished()) {
+        window.clearInterval(vwoIntervalId);
+        activateDownsells();
+      }
+    }, VWO_CHECK_INTERVAL);
+  } else {
+    activateDownsells();
+  }
+};
+
   var initialize = function() {
     var query = getQueryArgs();
     verifySeal();
@@ -131,6 +164,7 @@ $(function() {
       window.location.href = $('body').data('previous-page');
     }
 
+    initDownsells();
   };
 
   initialize();

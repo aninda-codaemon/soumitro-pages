@@ -43,7 +43,13 @@
 				<div class="report-summary">
 					<header>
 						<figure><img src="img/relative-icon.svg" style="margin-top: 25%;" /></figure>
-						<h2><span>Get instant information about </span>{{ownersName}}</h2>
+						<h2><span>Get instant information about
+							{{#if ownersName}}
+								</span>{{ownersName}}</h2>
+							{{else}}
+								</span> Your search </span>
+							{{/if}}
+							
 							{{#if location}}
 								<h4>From {{location}}</h4>
 							{{/if}}

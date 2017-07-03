@@ -123,7 +123,7 @@
     } else if (count === 1) {
       return "1 Phone Number Found";
     } else {
-      return count.toString() + "Phone Numbers found.";
+      return count.toString() + " Phone Numbers found.";
     }
   });
 

@@ -203,13 +203,7 @@ String.prototype.capitalize = function(lower) {
   var startMapFly = function(lng, lat) {
 
     map.on('load', function(){
-      // var latlng,
-      //     data = amplify.store().bv_searchData;
-      // if (data && (data.latlng[0] !== "") && (data.latlng[1] !== "")) {
-      //   latlng = [data.latlng[0], data.latlng[1]];
-      // } else {
-      //   latlng = [38.505191, -97.734375];
-      // }
+
       map.flyTo({
         center: [lng,  lat],
         zoom: 13,

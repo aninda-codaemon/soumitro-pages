@@ -682,6 +682,10 @@ input.error {
 	margin-bottom: 40px;
 }
 
+.full-img {
+	height: 400px;
+}
+
 
 /* ********************************************************************** */
 /* *****************************  Responsive  *************************** */
@@ -762,6 +766,7 @@ input.error {
 
 	.full-img {
     width: 70%;
+		height: auto;
 	}
 	.form-control {
 		font-size: 20px;

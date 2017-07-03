@@ -700,9 +700,16 @@ h3 {
 #footer p {
 	font-style: normal;
 }
+
+@media (max-width: 991px) {
+	#footer {
+		padding-bottom: 120px;
+	}
+}
 @media (max-width: 767px) {
 	#footer {
 		padding-top: 0;
+		padding-bottom: 60px;
 	}
 }
 .carla-wrapper {
@@ -879,7 +886,7 @@ h3 {
 	}
 
 	.report-summary {
-		padding: 30px 15px;
+		padding: 30px 15px 25px;
 	}
 
 	.btn {
@@ -915,6 +922,10 @@ h3 {
 	}
 	.report-summary ul li span {
 		width: auto;
+	}
+
+	.report-summary .btn {
+    margin-bottom: 25px;
 	}
 
 	#header {
