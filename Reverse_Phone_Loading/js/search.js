@@ -81,10 +81,25 @@ String.prototype.capitalize = function(lower) {
     // var map = L.mapbox.map('map', 'beenverified.i3k1i3cc', bvRPL.leaflet.mapOpts);
     // map.setView(locations.usa, 5);
 
+    //stupid mapbox doesnt support ie10 so we load a static image instead of cool map
 
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYmVlbnZlcmlmaWVkIiwiYSI6InBLR3UwVG8ifQ.tCCuBmKzRqNMGKIY2C1YOw';
-    var map = new mapboxgl.Map(bvRPL.leaflet.mapOpts);
-    return map;
+    if ( typeof mapboxgl !== 'undefined') {
+      mapboxgl.accessToken = 'pk.eyJ1IjoiYmVlbnZlcmlmaWVkIiwiYSI6InBLR3UwVG8ifQ.tCCuBmKzRqNMGKIY2C1YOw';
+      var map = new mapboxgl.Map(bvRPL.leaflet.mapOpts);
+      return map;
+    } else {
+
+      var lat = (amplify.store().latlng && amplify.store().latlng[0]) ? amplify.store().latlng[0] : 38.505191;
+      var lng = (amplify.store().latlng && amplify.store().latlng[1]) ? amplify.store().latlng[1] : -97.734375;
+
+      var mapUrl = "https://api.mapbox.com/v4/mapbox.emerald/pin-l-building+8064a4(" + lng + "," + lat + ")/" + lng + "," + lat + ",12/400x300.jpg70?access_token=pk.eyJ1IjoiYmVlbnZlcmlmaWVkIiwiYSI6InBLR3UwVG8ifQ.tCCuBmKzRqNMGKIY2C1YOw";
+        var tmpImg = new Image();
+        tmpImg.src = mapUrl;
+        tmpImg.onload = function() {
+          $('#map').append(tmpImg);
+        };
+
+    }
   };
 
   var cookie = function (key, val) {
@@ -196,7 +211,6 @@ String.prototype.capitalize = function(lower) {
   var initializeFlow = function () {
     phoneNumber = phoneNumber.replace(/\D|\-/g,'');
     fullSearchFlow();
-
     map = createMap();
   };
 
@@ -239,9 +253,9 @@ String.prototype.capitalize = function(lower) {
         // Again, mapbox is a monster and accepts coordinates as [lng, lat]
         searchData = prepSearchData(data);
 
-        if (searchData.latitude && searchData.longitude) {
+        if (searchData.latitude && searchData.longitude && typeof mapboxgl !== 'undefined') {
           startMapFly(searchData.longitude, searchData.latitude);
-        } else {
+        } else if (typeof mapboxgl !== 'undefined') {
           startMapFly(-97.734375, 38.505191);
         }
 
@@ -283,6 +297,8 @@ String.prototype.capitalize = function(lower) {
     }
   });
 
+  //this is if the 'Uint8ClampedArray' error for ie10 becomes a problem, going to load mapboxgl anyway
+  //because using window on load is much slower than document ready
+  // $(window).on('load', initializeFlow);
   $(document).ready(initializeFlow);
-
 }(jQuery, bvRPL, amplify, _));

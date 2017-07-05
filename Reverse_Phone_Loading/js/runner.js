@@ -115,15 +115,18 @@ $(function() {
     $('.all-day').hide();
     $('#search-main-progress').hide();
     changeHeader();
-    $('#secondAction').removeClass('active');
-    $('#thirdAction').addClass('active');
+    // $('#secondAction').removeClass('active');
+    $('#secondAction').hide();
+    $('#thirdAction').fadeIn();
     $('#lead_first_name').focus();
   };
 
   var changeScreen = function() {
+    var first = $('#firstAction'),
+        second = $('#secondAction');
 
-    $('#firstAction').removeClass('active');
-    $('#secondAction').addClass('active');
+    first.hide();
+    second.fadeIn();
 
     $('#report-btn').click(function(){
       showLeadBox();
@@ -176,6 +179,7 @@ $(function() {
 
   var initialize = function() {
     startLoader();
+    $('#firstAction').fadeIn();
     startTabs();
     // added this little hack to prevent animations from happening again when changing browser sizes
     window.setTimeout(function(){

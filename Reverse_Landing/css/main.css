@@ -261,13 +261,21 @@ input.error {
 }
 .top-search-form .form-group .form-control {
 	padding-left: 70px;
-	background:url('../img/phone-icon.svg') 20px 50% no-repeat #FFF;
-	background-size: 30px;
+	background:url('../img/phone-icon.svg');
+	background-repeat: no-repeat;
+	background-position-x: 20px;
+	background-color: #FFF;
+	background-position-y: 50%;
+	background-size: 30px 30px;
 }
 .top-search p {
 	color:#FFF;
 	padding-left:73px;
-	background:url('../img/norton.svg') 2px 0 no-repeat;
+	background:url('../img/norton.svg');
+	background-repeat: no-repeat;
+	background-position-x: 2px;
+	background-position-y: 0;
+	background-size: 62px 27px;
 	font-size: 15px;
 	line-height: 28px;
 	margin: 0;

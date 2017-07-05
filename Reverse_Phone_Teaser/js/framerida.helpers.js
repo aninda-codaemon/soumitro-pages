@@ -201,9 +201,9 @@
     var addresses = this.addresses;
     var addressCount = addresses.length;
   if (addressCount === 2) {
-      return "1 additional address, including" + addresses[1].full;
+      return "1 additional address, including " + addresses[1].full;
     } else {
-      return addressCount + " additional addresses, including" + addresses[1].full;
+      return addressCount + " additional addresses, including " + addresses[1].full;
     }
   });
 

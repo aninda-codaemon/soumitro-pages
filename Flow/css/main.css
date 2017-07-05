@@ -172,6 +172,8 @@ section.block-hack {
 
 section.active .left-side {
   animation: slide-down 0.5s forwards;
+  -moz-animation: none !important;
+  -moz-top: 0 !important;
 }
 
 section.active .right-side h3,
