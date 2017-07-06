@@ -53,10 +53,12 @@
 								<img class="hidden-xs" src="img/avatar-small.svg" alt="">
 								<span class="first-teaser"><strong>Owner's Name: </strong>{{ownersName}}</span>
 							</span>
+							{{#hasLocation}}
 							<span class="report-teasers clearfix">
 								<img class="hidden-xs" src="img/location.svg" alt="">
-								<span><strong>Location: </strong>{{location}}</span>
+								<span><strong>Location: </strong>{{firstLocation}}</span>
 							</span>
+							{{/hasLocation}}
 						</div>
 					</div>
 

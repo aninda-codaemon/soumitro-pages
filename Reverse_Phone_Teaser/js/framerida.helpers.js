@@ -58,6 +58,9 @@
     'WY': 'Wymoing'
   };
 
+  var profiles = ["facebook, linkedin, twitter, google"];
+
+
   H.registerHelper('uppercase', function (item) {
     if (!item) return "";
     return item.toUpperCase();
@@ -184,18 +187,37 @@
     return totalCount;
   });
 
-  // H.registerHelper('location', function(item){
-  //   var addresses = this.addresses;
-  //   if (!addresses || _.isEmpty(addresses)) {
-  //     return "";
-  //   }
-  //
-  //   if (addresses[0].parts.city === ""){
-  //     return states[addresses[0].parts.state];
-  //   } else {
-  //     return addresses[0].full;
-  //   }
-  // });
+  H.registerHelper('hasLocation', function(item){
+    var addresses = this.addresses;
+    if (!addresses || _.isEmpty(addresses)) {
+      return item.inverse(this);
+    } else {
+      return item.fn(this);
+    }
+  });
+
+  H.registerHelper('hasAdditionalPhones', function(item){
+    var phones = this.phones;
+    if (!(this.phones) || (this.phones.length <= 1)) {
+      return item.inverse(this);
+    } else {
+      return item.fn(this);
+    }
+  });
+
+  H.registerHelper('firstLocation', function(item){
+    var addresses = this.addresses;
+
+    if (!addresses || _.isEmpty(addresses)) {
+      return "";
+    }
+
+    if (addresses[0].parts.city === ""){
+      return states[addresses[0].parts.state];
+    } else {
+      return addresses[0].full;
+    }
+  });
 
   H.registerHelper('remainingAddresses', function(item){
     var addresses = this.addresses;
@@ -321,6 +343,63 @@
       return "";
     } else {
       return emails.length - 3 ;
+    }
+  });
+
+  H.registerHelper('phoneOwner', function(item){
+
+    var names = this.names;
+    if (!names || !names[0]){
+      return this.ownersName;
+    } else {
+      return names[0].parts.first_name + " " + names[0].parts.last_name;
+    }
+  });
+
+  H.registerHelper('hasSocial', function(item){
+    var urls = this.urls;
+
+    if (!urls ||  _.isEmpty(urls)) {
+      return item.inverse(this);
+    } else {
+      return item.fn(this);
+    }
+  });
+
+  H.registerHelper('socialCount', function(item){
+    var urls = this.urls;
+
+    if (!urls || _.isEmpty(urls)){
+      return '';
+    }
+
+    var types = [];
+    urls.forEach(function(item){
+      types.push(item.type);
+    });
+    // types = _.uniq(types);
+    return types.length;
+  });
+
+  H.registerHelper('hasProfile', function(profile, item){
+    if (!item) {
+      return false;
+    }
+    var urls = this.urls;
+
+    if (!urls || _.isEmpty(urls)){
+      return item.inverse(this);
+    }
+
+    var types = [];
+    urls.forEach(function(item){
+      types.push(item.type);
+    });
+
+    if (types.indexOf(profile) > -1 ){
+      return item.fn(this);
+    } else {
+      return item.inverse(this);
     }
   });
 

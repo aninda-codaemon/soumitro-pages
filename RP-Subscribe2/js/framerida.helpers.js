@@ -108,6 +108,29 @@
     else {
       return ", " + item;
     }
-  })
+  });
+
+  H.registerHelper('hasLocation', function(item){
+    var addresses = this.addresses;
+    if (!addresses || _.isEmpty(addresses)) {
+      return item.inverse(this);
+    } else {
+      return item.fn(this);
+    }
+  });
+
+  H.registerHelper('firstLocation', function(item){
+    var addresses = this.addresses;
+
+    if (!addresses || _.isEmpty(addresses)) {
+      return "";
+    }
+
+    if (addresses[0].parts.city === ""){
+      return states[addresses[0].parts.state];
+    } else {
+      return addresses[0].full;
+    }
+  });
 
 }(Handlebars));

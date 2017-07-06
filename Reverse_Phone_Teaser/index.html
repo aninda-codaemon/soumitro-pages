@@ -34,9 +34,9 @@
 				<div class="report-summary clearfix">
 					<header class="text-center">
 						<figure><img src="img/relative-icon.svg" style="margin-top: 25%;" /></figure>
-						{{#if ownersName}}
-							<h2>Owner's Name: <br>{{ownersName}}</h2>
-						{{/if}}
+						{{#phoneOwner}}
+							<h2>Owner's Name: <br>{{phoneOwner}}</h2>
+						{{/phoneOwner}}
 						<h3>{{formattedPhoneNumber}}</h3>
 					</header>
 					<ul>
@@ -54,15 +54,15 @@
 								<i class="icon location-icon"></i>
 								Location
 							</strong>
-							{{#if location}}
+							{{#hasLocation}}
 							<span>
-								{{location}}
+								{{firstLocation}}
 							</span>
 							{{else}}
 								<span class="lock-badge">
 									<img src="img/red-lock.svg" alt="">
 								</span>
-							{{/if}}
+							{{/hasLocation}}
 						</li>
 						<li>
 							<strong>
@@ -135,7 +135,7 @@
 							Social media profiles
 
 							{{#if available_data_counts.url}}
-								<span class="badge">{{available_data_counts.url}}</span>
+								<span class="badge">{{socialCount}}</span>
 							{{else}}
 							<span class="badge lock-badge">
 								<img src="img/red-lock.svg">
@@ -228,29 +228,41 @@
 						<h2>Social Media Profiles:</h2>
 						{{#if available_data_counts.url}}
 							<p>
-								We found {{available_data_counts.url}} social media profiles
+								We found {{socialCount}} social media profiles
 							</p>
+
+							<ul class="social-media">
+								{{#hasProfile 'twitter'}}
+									<li class="twitter">
+										<strong>Twitter</strong>
+										<a href="<%= next_page%>">https://www.twitter.com/<span class="unavailable">********</span> </a>
+									</li>
+								{{/hasProfile}}
+
+								{{#hasProfile 'facebook'}}
+								<li class="facebook">
+									<strong>Facebook</strong>
+									<a href="<%= next_page%>">https://www.facebook.com/<span class="unavailable">*****</span> </a>
+								</li>
+								{{/hasProfile}}
+
+								{{#hasProfile 'google'}}
+								<li class="google">
+									<strong>Google</strong>
+									<a href="<%= next_page%>">https://www.plus-google.com/<span class="unavailable">*******</span> </a>
+								</li>
+								{{/hasProfile}}
+
+								{{#hasProfile 'linkedin'}}
+								<li class="linkedin">
+									<strong>LinkedIn</strong>
+									<a href="<%= next_page%>">https://www.linkedIn.com/<span class="unavailable">******</span> </a>
+								</li>
+								{{/hasProfile}}
+							</ul>
 						{{/if}}
-						<ul class="social-media">
-							<li class="twitter">
-								<strong>Twitter</strong>
-								<a>https://www.twitter.com/<span class="unavailable">******</span> </a>
-							</li>
-							<li class="facebook">
-								<strong>Facebook</strong>
-								<a>https://www.facebook.com/<span class="unavailable">******</span> </a>
-							</li>
-							<li class="google">
-								<strong>Google</strong>
-								<a>https://www.plus-google.com/<span class="unavailable">******</span> </a>
-							</li>
-							<li class="linkedin">
-								<strong>LinkedIn</strong>
-								<a>https://www.linkedIn.com/<span class="unavailable">******</span> </a>
-							</li>
-						</ul>
 						<p>
-							<a href="<%= next_page %>" class="unlock">Plus unlock 3 more</a>
+							<a href="<%= next_page %>" class="unlock">Unlock to search profiles</a>
 						</p>
 					</section>
 

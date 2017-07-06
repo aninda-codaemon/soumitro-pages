@@ -663,6 +663,11 @@ td.no-bottom-pad {
   height: 12px;
 }
 
+.asterix {
+  font-size: 34px;
+  color: #E7114C;
+}
+
 /* ================================================ */
 /* == Lead Box   ================================== */
 /* ================================================ */
@@ -1368,6 +1373,7 @@ label.error {
     display: block;
     margin-bottom: 16px;
   }
+
   .left-preview {
     padding: 20px;
   }

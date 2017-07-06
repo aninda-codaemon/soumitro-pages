@@ -88,9 +88,12 @@ String.prototype.capitalize = function(lower) {
       var map = new mapboxgl.Map(bvRPL.leaflet.mapOpts);
       return map;
     } else {
-
-      var lat = (amplify.store().latlng && amplify.store().latlng[0]) ? amplify.store().latlng[0] : 38.505191;
-      var lng = (amplify.store().latlng && amplify.store().latlng[1]) ? amplify.store().latlng[1] : -97.734375;
+      var data = amplify.store().bv_searchData;
+      if (!data) {
+        return;
+      }
+      var lat = (data && data.latlng && data.latlng[0]) ? data.latlng[0] : 38.505191,
+          lng = (data && data.latlng && data.latlng[1]) ? data.latlng[1] : -97.734375;
 
       var mapUrl = "https://api.mapbox.com/v4/mapbox.emerald/pin-l-building+8064a4(" + lng + "," + lat + ")/" + lng + "," + lat + ",12/400x300.jpg70?access_token=pk.eyJ1IjoiYmVlbnZlcmlmaWVkIiwiYSI6InBLR3UwVG8ifQ.tCCuBmKzRqNMGKIY2C1YOw";
         var tmpImg = new Image();
@@ -183,17 +186,25 @@ String.prototype.capitalize = function(lower) {
   /* Holds data queried from the RPL API */
   var searchData;
 
+
+  var makeRandomName = function() {
+      first = Math.floor(Math.random() * 7) + 3;
+      last = Math.floor(Math.random() * 7) + 3;
+
+      return "*".repeat(first) + " " + "*".repeat(last);
+
+  };
   var prepSearchData = function (data) {
     // var activateLink = "<a href='" + subscribeUrl + "'>Activate Your Account To Search</a>";
 
     var prepped = {
-      ownersName: data.names[0] ? data.names[0].full : "",
+      ownersName: data.names[0] ? data.names[0].full : makeRandomName(),
       carrier: data.carrier,
       email: data.emails[0] ? data.emails[0] : "",
       lineType: (data.type == "L") ? "Landline" : "Cellphone",
       location: data.addresses[0] ? data.addresses[0].full : "",
-      latitude: data.addresses[0] ? data.addresses[0].latitude : "",
-      longitude: data.addresses[0] ? data.addresses[0].longitude : "",
+      latitude: data.latitude ? data.latitude : "",
+      longitude: data.longitude ? data.longitude : "",
     };
 
     return prepped;
