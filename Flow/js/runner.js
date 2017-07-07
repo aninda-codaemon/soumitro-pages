@@ -92,6 +92,9 @@ $(function() {
       return;
     }
     var dataCounts = data.available_data_counts;
+    if (!dataCounts) {
+      return;
+    }
     var currentCount = dataCounts[SECTION_TYPE[idx]],
         $notification = $('.notification')[idx];
     if (SECTION_TYPE[idx] === "phone"){

@@ -191,8 +191,8 @@ String.prototype.capitalize = function(lower) {
       first = Math.floor(Math.random() * 7) + 3;
       last = Math.floor(Math.random() * 7) + 3;
 
-      return "*".repeat(first) + " " + "*".repeat(last);
-
+      // return "*".repeat(first) + " " + "*".repeat(last);
+      return Array(first + 1).join("*") + " " + Array(last + 1).join("*");
   };
   var prepSearchData = function (data) {
     // var activateLink = "<a href='" + subscribeUrl + "'>Activate Your Account To Search</a>";
