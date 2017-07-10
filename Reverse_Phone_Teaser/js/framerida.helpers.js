@@ -74,7 +74,8 @@
     return item.data.index + 1;
   });
 
-  H.registerHelper('socialCount', function(item){
+  H.registerHelper('profileCount', function(item){
+
     if (!this.available_data_counts) {
       return;
     }
@@ -82,9 +83,9 @@
     if (count === 0) {
       return "";
     } else if (count === 1) {
-      return "1 Social media profile found.";
+      return "1 social media profile.";
     } else {
-      return count.toString() + " Social media profiles found.";
+      return count.toString() + " social media profiles.";
     }
   });
 
@@ -366,20 +367,21 @@
     }
   });
 
-  H.registerHelper('socialCount', function(item){
-    var urls = this.urls;
-
-    if (!urls || _.isEmpty(urls)){
-      return '';
-    }
-
-    var types = [];
-    urls.forEach(function(item){
-      types.push(item.type);
-    });
-    // types = _.uniq(types);
-    return types.length;
-  });
+  // H.registerHelper('socialCount', function(item){
+  //
+  //   var urls = this.urls;
+  //
+  //   if (!urls || _.isEmpty(urls)){
+  //     return '';
+  //   }
+  //
+  //   var types = [];
+  //   urls.forEach(function(item){
+  //     types.push(item.type);
+  //   });
+  //   // types = _.uniq(types);
+  //   return types.length;
+  // });
 
   H.registerHelper('hasProfile', function(profile, item){
     if (!item) {

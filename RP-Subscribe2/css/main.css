@@ -425,6 +425,33 @@ label.error,
 	height: 28px;
 }
 
+#paypal-confirm-error {
+	display: none;
+}
+
+#paypal-confirm-error {
+	margin-top: 10px;
+}
+#ppCanceled {
+	display: none;
+}
+
+#ppCanceled.alert {
+  	margin-bottom: 0px;
+  	border-radius: 0px;
+  	border: none;
+}
+
+#confirm-paypal {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-weight: 700;
+}
+
+#paypal-spinner {
+	display: none;
+}
+
 #form-second-part h2 {
 	margin-bottom: 36px;
 }

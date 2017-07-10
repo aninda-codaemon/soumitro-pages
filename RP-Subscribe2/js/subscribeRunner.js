@@ -340,7 +340,7 @@ var BVGetQueryVariable = function (variable) {
     }
   });
   $.support.cors = true;
-  
+
   var BV_PAYPAL_PREFLIGHT_URL = w.BV_PAYPAL_PREFLIGHT_URL || '/internal/api/signup_preflight.json',
       BV_ENDPOINT = w.BV_PAYPAL_ENDPOINT_URL || '/api/v4/account.json';
 
@@ -430,7 +430,7 @@ var BVGetQueryVariable = function (variable) {
 
   PaypalPaymentProcessor.prototype.process = function process(formData) {
     var def = new $.Deferred();
-    
+
     if (!BVGetQueryVariable("bvpp") || window.PaypalPaymentProcessorRetry === true) {
       processPaypalPreflight(formData, def);
     } else {
@@ -465,7 +465,7 @@ var BVGetQueryVariable = function (variable) {
       }
     });
 	$.support.cors = true;
-    
+
     var formXHR = $.post(BV_ENDPOINT, formData);
 
     formXHR.success(function () {
@@ -1040,12 +1040,12 @@ var BVGetQueryVariable = function (variable) {
           window.onbeforeunload = function () {};
           window.location = window.localStorage.getItem('payPalPreflightUrl');
         } else {
-          	$('#paypal-spinner').fadeOut();
+          $('#paypal-spinner').fadeOut();
         	$(confirmButton).fadeIn();
         	$('#iModal-dismiss').fadeIn();
         	$('#paypal-confirm-error').fadeIn();
         }
-        
+
         w.BvEventReporters.report("Paypal Payment Confirmation - Confirmed - Failed");
       });
       handlePaymentProcessing(payment);

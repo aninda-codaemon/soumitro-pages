@@ -93,8 +93,10 @@
 
 					<footer>
 						{{#if available_data_counts.image_url}}
-						<i class="icon icon-key"></i>
-						{{photoCount}}
+						<a class="key-link" href="<%= next_page %>">
+							<i class="icon icon-key"></i>
+							{{photoCount}}
+						</a>
 						{{/if}}
 					</footer>
 
@@ -135,7 +137,7 @@
 							Social media profiles
 
 							{{#if available_data_counts.url}}
-								<span class="badge">{{socialCount}}</span>
+								<span class="badge">{{available_data_counts.url}}</span>
 							{{else}}
 							<span class="badge lock-badge">
 								<img src="img/red-lock.svg">
@@ -228,7 +230,7 @@
 						<h2>Social Media Profiles:</h2>
 						{{#if available_data_counts.url}}
 							<p>
-								We found {{socialCount}} social media profiles
+								We found {{profileCount}}
 							</p>
 
 							<ul class="social-media">
@@ -327,7 +329,11 @@
 <!--/Main Content-->
 
 <section class="unlock-bar" data-fr-bind="fullTeaser bv_searchData">
-	Your report on {{ownersName}} is ready to be viewed
+	Your report on
+	{{#phoneOwner}}
+		{{phoneOwner}}
+	{{/phoneOwner}}
+	is ready to be viewed.
 	<a href="<%= next_page %>" class="btn btn-success">Unlock Full Report</a>
 </section>
 

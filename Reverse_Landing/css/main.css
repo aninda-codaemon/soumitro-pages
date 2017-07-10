@@ -263,6 +263,7 @@ input.error {
 	padding-left: 70px;
 	background:url('../img/phone-icon.svg');
 	background-repeat: no-repeat;
+	background-position: 20px 50%;
 	background-position-x: 20px;
 	background-color: #FFF;
 	background-position-y: 50%;

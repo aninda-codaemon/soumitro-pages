@@ -27,12 +27,14 @@ li {
 a {
 	transition: all ease .4s;
 	cursor:pointer;
-	color:#333333;
 }
-a:hover {
-	text-decoration: none;
-	color:#3b2469;
+
+a.key-link {
+	color: #007ee3;
+  text-decoration: underline;
+	font-weight: bold;
 }
+
 P {
 	line-height: 1.5;
 	margin:0 0 20px;
@@ -784,14 +786,6 @@ h3 {
 #footer li {
 	margin-bottom: 4px;
 	color: #747b91;
-}
-#footer a {
-	color: #747b91;
-}
-#footer a:hover,
-#footer a:focus {
-	text-decoration: none;
-	color: #006cd2;
 }
 
 @media (max-width: 767px) {
