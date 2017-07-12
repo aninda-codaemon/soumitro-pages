@@ -551,7 +551,7 @@ var BVGetQueryVariable = function (variable) {
         required: true,
         email: true
       },
-      tos2: {
+      'tos2': {
         required: true
       },
       'account[tos]': {
@@ -807,6 +807,7 @@ var BVGetQueryVariable = function (variable) {
       $('[name=account\\[last_name\\]]').rules('add', validatorRules['account[last_name]']);
       $('[name=user\\[email\\]]').rules('add', validatorRules['user[email]']);
       $('[name=account\\[tos\\]]').rules('add', validatorRules['account[tos]']);
+      $('[name=tos2').rules('add', validatorRules.tos2);
     };
 
  }(window, jQuery));

@@ -133,4 +133,14 @@
     }
   });
 
+  H.registerHelper('phoneOwner', function(item){
+
+  var names = this.names;
+  if (!names || !names[0]){
+    return this.ownersName;
+  } else {
+    return names[0].parts.first_name + " " + names[0].parts.last_name;
+  }
+});
+
 }(Handlebars));

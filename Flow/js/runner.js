@@ -57,7 +57,7 @@ $(function() {
       width: "100%"
     }, {
       duration: animationDuration,
-      easing: 'easeBV',
+      easing: 'linear',
       step: function(step) {
         var percent = Math.floor(step);
         $('.progress-text-inner').html(percent.toString() + "%");

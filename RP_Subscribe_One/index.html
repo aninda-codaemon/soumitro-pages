@@ -42,13 +42,10 @@
 			<div class="col-sm-4">
 				<div class="report-summary">
 					<header>
-						<figure><img src="img/relative-icon.svg" style="margin-top: 25%;" /></figure>
-						<h2><span>Get instant information about
-							{{#if ownersName}}
-								</span>{{ownersName}}</h2>
-							{{else}}
-						</span> your search </span>
-							{{/if}}
+						<figure><img src="img/relative-icon.svg" style="margin-top: 25%;"></img></figure>
+
+							<h2><span>Get instant information about {{phoneOwner}}</span></h2>
+
 
 							{{#if location}}
 								<h4>From {{location}}</h4>
@@ -148,13 +145,14 @@
 						<div class="secure-text">
 							<h4>Security is important to us</h4>
 
-							<p>The site connection is secure and we will not notify {{ownersName}}
+							<p>The site connection is secure and we will not notify {{phoneOwner}}
 								about your purchase.</p>
 						</div>
 					</article>
 				</section>
 			</div>
 		</div>
+
 	</div>
 </div>
 <!--/Main Content-->
