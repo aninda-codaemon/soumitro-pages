@@ -90,7 +90,7 @@
         return !_empty(value) && value !== '';
       }).length;
     };
-    
+
     TeaserRecord.prototype.showDataPointsOnMobile = function() {
       var mobileDataPoints = [
         this.salePrice(),
@@ -304,7 +304,7 @@
       }
       return this.record.deeds[0].lender_id_1st_td.ownerize().redact();
     };*/
-    
+
     TeaserRecord.prototype.houseNumber = function () {
       return this.record.parcel_address.parsed.primary_address_number || '';
     };
@@ -316,7 +316,7 @@
     TeaserRecord.prototype.postDirection = function () {
       return this.record.parcel_address.parsed.post_direction || '';
     };
-    
+
 
     TeaserRecord.prototype.streetName = function() {
       return this.record.parcel_address.parsed.street_name || '';

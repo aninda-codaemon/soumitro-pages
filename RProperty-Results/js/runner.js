@@ -1,16 +1,44 @@
 ;(function ($) {
 
   var searchData = localStorage.getItem('__amplify__propertyTeaserData') ? JSON.parse(localStorage.getItem('__amplify__propertyTeaserData')) : {};
+
   if (searchData) {
     searchData = searchData.data;
+    if (searchData.teasers[0]){
+      teaser = searchData.teasers[0];
+    }
   }
 
 
   Vue.config.devtools = true;
+
+  var county = function() {
+    var deeds = teaser.deeds;
+
+    if (!deeds || _empty(deeds[0])){
+      return false;
+    } else {
+      return deeds[0].county.properCaps() + " County";
+    }
+  };
+
+  var salePrice = function() {
+    if (_empty(teaser.last_sale_price)) {
+      return false;
+    }
+    if (teaser.last_sale_price) {
+      return false;
+    }
+    if (teaser.last_sale_price > 1000000) {
+      return teaser.last_sale_price.toString().moneyRange(1000000).numberize();
+    } else {
+      return teaser.last_sale_price.toString().moneyRange(100000).numberize();
+    }
+  };
   var buildingClass = function(){
 
-    if (_empty(searchData.buildings)) {
-      return '';
+    if (_empty(teaser.buildings)) {
+      return false;
     }
 
     var type = {
@@ -25,45 +53,91 @@
       9: "Miscellaneous",
       10: "Residential"
     };
-    return type[searchData.buildings[0].class];
+    return type[teaser.buildings[0].class];
   };
 
   var propertyTax = function() {
-    var taxes = searchData.taxes;
+    var taxes = teaser.taxes;
 
     if (!taxes || _empty(taxes.bills) || !taxes.bills[0].amount) {
       return false;
     } else {
-      return taxes.bills[0].amount;
+      return taxes.bills[0].amount + "$/yr in taxes";
     }
   };
 
   var yearBuilt = function() {
-    var buildings = searchData.buildings;
+    // debugger
+    var buildings = teaser.buildings;
     if (!buildings || _empty(buildings[0]) || !buildings[0].year_built){
       return false;
     } else {
-      return "Built between " + buildings[0].yearRange();
+      return "Built between " + buildings[0].year_built.toString().yearRange(25);
     }
   };
 
   var stories = function() {
-    var buildings = searchData.buildings;
+    var buildings = teaser.buildings;
 
     if (!buildings || _empty(buildings[0]) || !buildings[0].number_of_stories){
       return false;
     } else {
-      return buildings[0].number_of_stories.roomRange();
+      return buildings[0].number_of_stories.toString().roomRange() + " stories";
     }
   };
 
+
+  var lotSize = function() {
+    var dimensions = teaser.dimensions || {},
+        lotSize = (dimensions.width || 0) * (dimensions.depth || 0);
+
+    if (_empty(lotSize)) {
+      return false;
+    }
+
+    if (lotSize > 43560/2) {
+      return ((parseFloat(lotSize) / 43560).toFixed(2)).numberRange(0.75) + " acre lot size";
+    } else {
+      return lotSize.toString().numberRange(2750).numberize() + "ft2 lot size";
+    }
+  };
+
+
   var rooms = function() {
-    var buildings = searchData.buildings;
+    var buildings = teaser.buildings;
 
     if (!buildings || _empty(buildings[0]) || !buildings[0].rooms){
       return false;
     } else {
-      return buildings[0].rooms.total.roomRange();
+      return buildings[0].rooms.total.toString().roomRange() + " rooms";
+    }
+  };
+
+  var buildings = function() {
+    if (_empty(teaser.number_of_buildings)) {
+      return false;
+    }
+    return teaser.number_of_buildings.toString().roomRange() + " buildings";
+  };
+
+
+  var bedrooms = function() {
+    var buildings = teaser.buildings;
+
+    if (!buildings || _empty(buildings[0]) || !buildings[0].rooms){
+      return false;
+    } else {
+      return buildings[0].rooms.bed.toString().roomRange() + " bedrooms";
+    }
+  };
+
+  var bathrooms = function() {
+    var buildings = teaser.buildings;
+
+    if (!buildings || _empty(buildings[0]) || !buildings[0].rooms){
+      return false;
+    } else {
+      return buildings[0].rooms.baths.total.toString().roomRange() + " bathrooms";
     }
   };
 
@@ -74,19 +148,17 @@
       address: searchData.address,
       teaser: searchData.teasers[0] || searchData.teasers,
       dataRows: [
-        {name: "county", existance: searchData.owner ? true : false, text:"County", value: searchData.owner},
-        {name: "sold-1", existance: searchData.last_sold_price === 0 ? true : false, text:"last sale est."},
-        {name: "residential", existance: _empty(searchData.buildings), text : "", value: buildingClass()},
-        {name: "dollarbag", existance: propertyTax(), text:"$/yr in taxes", value: propertyTax()},
-        {name: "built", existance: yearBuilt(), text:"", value: yearBuilt()},
-        {name: "stories", existance: stories(), text:"", value: stories()},
-        {name: "ruler", existance: searchData.owner ? true : false, text:"County"},
-        {name: "rooms", existance: rooms(), text:"", value: rooms()},
-        {name: "buildings", existance: searchData.owner ? true : false, text:"County"},
-        {name: "bedroom", existance: searchData.owner ? true : false, text:"County"},
-        {name: "bathroom", existance: searchData.owner ? true : false, text:"County"},
-
-
+        {name: "county", value: county()},
+        {name: "sold-1", value: salePrice()},
+        {name: "residential", value: buildingClass()},
+        {name: "dollarbag", value: propertyTax()},
+        {name: "built", value: yearBuilt()},
+        {name: "stories", value: stories()},
+        {name: "ruler", existance: lotSize()},
+        {name: "rooms", value: rooms()},
+        {name: "buildings", value: buildings()},
+        {name: "bedroom", value: bedrooms()},
+        {name: "bathroom", value: bathrooms()},
       ]
     },
     methods: {
@@ -114,8 +186,6 @@
         }
         return parcel_address.parsed.city + ", " + parcel_address.parsed.state + " " + parcel_address.parsed.zip5;
       },
-
-      owner
     }
   });
 
