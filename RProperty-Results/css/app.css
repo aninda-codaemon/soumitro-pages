@@ -1,3 +1,5 @@
+[v-cloak] { display:none; }
+
 body {
 	margin: 0;
 	padding: 0;
@@ -31,11 +33,13 @@ body {
 	width: auto;
 }
 
-.has-error input.form-control {
-    color: #a94442;
+.has-error input.form-control{
+  color: #a94442;
 }
 
-.has-error .form-control {
+
+.has-error .form-control,
+.form-group input.error {
     border-color: #a94442;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
@@ -64,7 +68,7 @@ body {
 	border-radius: 2px;
 	padding-top: 7px;
 	padding-bottom: 7px;
-	
+
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 14px;
@@ -141,10 +145,16 @@ body {
 	border-radius: 5px;
 }
 
-.report-block-left-content {
+/*.report-block-left-content {
 	padding: 12px 35px;
-}
+}*/
+/*.report-block-left {
+	padding: 15px 25px 0 25px;
+}*/
 
+.report-info {
+	padding: 15px 35px 0px;
+}
 .report-block-right {
 	background-image: -webkit-linear-gradient(297deg, #D9F7F3 0%, #B2ECE3 93%);
 	background-image: -moz-linear-gradient(297deg, #D9F7F3 0%, #B2ECE3 93%);
@@ -342,7 +352,7 @@ ul.data-points li .bvicon {
 }
 
 .additional-info-wrapper {
-	position: absolute;
+	/*position: absolute;*/
 	left: 0;
 	right: 0;
 	bottom: 0;
@@ -404,7 +414,7 @@ ul.data-points li .bvicon {
 	font-size: 11px;
 	color: #9B9B9B;
 	letter-spacing: 0.24px;
-	text-transform: uppercase; 
+	text-transform: uppercase;
 }
 
 /********** Helper Classes **********/
@@ -458,10 +468,6 @@ ul.data-points li .bvicon {
     flex-basis: 100%;
 	}
 
-	.report-block-left {
-		padding: 15px 25px 0 25px;
-	}
-
 	.report-block-right {
 		border-radius: 0 0 5px 5px;
 		padding: 25px;
@@ -494,6 +500,13 @@ ul.data-points li .bvicon {
 	.form-group {
 		margin: 15px 0;
 	}
+
+	ul.data-points li.taxes,
+	ul.data-points li.built,
+	ul.data-points li.lot-size,
+	ul.data-points li.sale-price {
+		display: inline-block !important;
+	}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -505,12 +518,19 @@ ul.data-points li .bvicon {
   #submitbutton {
     font-size: 20px;
   }
-  
+
   .report-block-right-content {
     padding: 40px 20px;
   }
-  
+
   .report-block-right .report-title {
     font-size: 20px;
   }
+
+	ul.data-points li.stories,
+	ul.data-points li.rooms,
+	ul.data-points li.bedrooms,
+	ul.data-points li.bathrooms {
+		display: none;
+	}
 }
