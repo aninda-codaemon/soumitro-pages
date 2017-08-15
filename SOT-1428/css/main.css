@@ -175,7 +175,7 @@ hr {
 }
 .btn-primary:hover {
 	background:#283b7d;
-	box-shadow:0 0 4px rgb(40, 59, 125); 
+	box-shadow:0 0 4px rgb(40, 59, 125);
 }
 .btn-primary:active,
 .btn-primary.active {
@@ -189,7 +189,7 @@ hr {
 .btn-warning:hover {
 	background:#ffc300;
 	box-shadow:0 0 4px rgb(255, 155, 0);
-	color:#33313f; 
+	color:#33313f;
 }
 .btn-warning:active,
 .btn-warning:focus,
@@ -378,7 +378,7 @@ p.large.gray-light {
 .company-name span {
 	font-size:16px;
 }
-	
+
 /* ********************************************************************** */
 /* *************************** Main Content ***************************** */
 /* ********************************************************************** */
@@ -424,7 +424,7 @@ p.large.gray-light {
 }
 .map-header .breadcrumb strong {
 	font-weight:bold;
-	font-weight:400px;	
+	font-weight:400px;
 }
 .map-header .breadcrumb a:after {
 	content:'/';
@@ -525,7 +525,7 @@ p.large.gray-light {
 	font-size:20px;
 }
 .content-nav .navbar-form {
-	
+
 	position:relative;
 	margin:0;
 	padding:0;
@@ -547,7 +547,7 @@ p.large.gray-light {
 }
 .content-nav .navbar-form button:hover {
 	background:#283b7d;
-	box-shadow:0 0 4px rgb(40, 59, 125); 
+	box-shadow:0 0 4px rgb(40, 59, 125);
 }
 .content-nav .navbar-form .form-group {
 	position:relative;
@@ -567,7 +567,7 @@ p.large.gray-light {
 	line-height:30px;
 	padding:25px;
 	height:auto;
-	
+
 }
 
 #main-content {
@@ -636,7 +636,7 @@ p.large {
 }
 .responsive-img.space {
 	padding:0 20px;
-} 
+}
 .table {
 	margin:0;
 }
@@ -909,7 +909,7 @@ h2.inline {
 	background: #1F2F64;
 	padding:23px 20px 21px;
 	color:#FFF;
-	text-align:center;	
+	text-align:center;
 }
 .opt-in  strong {
 	display:block;
@@ -1018,7 +1018,7 @@ h2.inline {
 }
 .public-header .top-nav ul li {
 	float:left;
-	
+
 }
 .public-header .top-nav ul li:before {
 	content: '|';
@@ -1050,7 +1050,7 @@ h2.inline {
 	cursor:pointer;
 	color:#000;
 	font-size:34px;
-} 
+}
 .public-header .search-form .form-control {
 	width:100%;
 	background: #EDEDED;
@@ -1063,10 +1063,10 @@ h2.inline {
 	height:100px;
 	border-radius:0;
 }
-.public-header .search-form .form-control::-webkit-input-placeholder { 
+.public-header .search-form .form-control::-webkit-input-placeholder {
 	color: #000;
 }
-.public-header .search-form .form-control::-moz-placeholder { 
+.public-header .search-form .form-control::-moz-placeholder {
 	color: #000;
 }
 .public-header .search-form .form-control:-ms-input-placeholder {
@@ -1466,7 +1466,7 @@ h2.inline {
 		width:auto;
 		margin-top:30px;
 	}
-	
+
 	#main-content {
 		padding:20px 5px;
 	}
@@ -1491,7 +1491,7 @@ h2.inline {
 	    position: absolute;
 	    top: 0;
 	    left: 0;
-	    right: 0;	
+	    right: 0;
 	}
 	.content-nav .navbar-form button {
 		width:80px;
@@ -1741,7 +1741,7 @@ h2.inline {
 		box-shadow:none;
 		padding:0;
 	}
-	
+
 	.content-nav .navbar-nav {
 		margin:0;
 		border-bottom:solid 1px #D3D2D7;
@@ -1789,7 +1789,7 @@ h2.inline {
 		top:168px;
 		left:0;
 	}
-	
+
 	.content-nav .navbar-form {
 		position:fixed;
 		top:-52px;
@@ -1820,7 +1820,7 @@ h2.inline {
 		font-size: 20px;
 		color: #000000;
 	}
-	
+
 	.table.reflow-table thead th,
 	.table.reflow-table thead tr,
 	.table.reflow-table tbody tr,
@@ -1853,7 +1853,7 @@ h2.inline {
 	.table th .visible-xs{
 		display:inline !important
 	}
-	
+
 	.table.gray-header tbody td {
 		padding:15px 10px;
 	}
@@ -1898,9 +1898,9 @@ h2.inline {
 	}
 	.town-info ul li span {
 		font-family: 'publica_sansmedium';
-		font-size: 12px;	
+		font-size: 12px;
 	}
-	
+
 	h2.inline {
 		display:block;
 		margin:5px 0 20px;
@@ -2035,7 +2035,7 @@ h2.inline {
 	.top-nav-toggle.collapsed .bvicon-close {
 		display:none;
 	}
-	
+
 	.top-nav-toggle.collapsed em {
 		display:block;
 	}
