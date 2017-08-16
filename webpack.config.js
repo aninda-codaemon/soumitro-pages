@@ -11,7 +11,7 @@ const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 const cssFilename = 'css/[name].[contenthash:8].css';
-const extractTextPluginOptions = { publicPath: '' };
+const extractTextPluginOptions = { publicPath: process.env.NODE_ENV === 'production' ? '' : '/' };
 
 const root = process.argv[2];
 module.exports = {
