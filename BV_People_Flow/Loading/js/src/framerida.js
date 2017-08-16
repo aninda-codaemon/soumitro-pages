@@ -1,17 +1,8 @@
-/*
- * framerida.js
- *
- * Terminology used throughout the comments/docs:
- * Data source - An entity whose data is saved in localStorage.
- *    e.g:
- *         - A form element whose values are to be saved is a data source.
- *         - The query string is a data source.
- * Bound element - An element whose data comes from a data source.
- *    e.g:
- *        - An <h1> that binds to the "search" data found in localStorage.
- *        - A form whose input values are filled from data in localStorage.
- */
-
+import Handlebars from 'handlebars';
+import store from 'amplify-store';
+const amplify = {
+  store
+};
 (function (root, $, _, amplify, H) {
   "use strict";
 
@@ -142,7 +133,7 @@
       val = val.replace(/\+/g, " "); // replace white spaces
       return [key, val];
     })
-    .object()
+    .zipObject()
     .value();
     return args;
   };

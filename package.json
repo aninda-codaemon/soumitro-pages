@@ -21,10 +21,13 @@
   "homepage": "https://github.com/BeenVerifiedInc/sot_pages#readme",
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.1",
     "css-loader": "^0.28.4",
     "express": "^4.15.4",
     "file-loader": "^0.11.2",
-    "handlebars": "^4.0.10",
+    "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
     "imports-loader": "^0.7.1",
     "postcss-flexbugs-fixes": "^3.2.0",
@@ -36,7 +39,12 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
+    "amplify-store": "^0.1.0",
+    "bootstrap": "^3.3.7",
     "clean-webpack-plugin": "^0.1.16",
-    "handlebars-loader": "^1.5.0"
+    "handlebars": "^4.0.10",
+    "handlebars-loader": "^1.5.0",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4"
   }
 }
