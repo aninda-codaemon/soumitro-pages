@@ -1,3 +1,4 @@
+import 'imports-loader?this=>window!./js/modernizr.custom';
 // import trackNL from './js/track';
 import cleanQueryData from './js/query-parser';
 // import './js/progress-bar';

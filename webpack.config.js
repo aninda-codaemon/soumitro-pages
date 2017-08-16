@@ -11,6 +11,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
+  externals: [
+      {
+        window: 'window'
+      }
+  ],
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist'

@@ -6,12 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Loading Your Search Results - BeenVerified.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
-  <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
-  <link type="text/css" href="css/main.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
   <script type='text/javascript' src="js/modernizr.custom.js"></script>
-  <script type='text/javascript' src="bundle.js"></script>
-
   <link rel="manifest" href="/manifest.json">
 
   <!--[if lt IE 9]>
@@ -21,7 +17,7 @@
 
 </head>
 
-<body class="hide" data-next-page="<%= next_page %>">
+<body data-next-page="<%= next_page %>">
   <div id="main-wrap">
     <nav id="topWrapper" class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -363,6 +359,8 @@
       document.getElementsByTagName("head")[0].appendChild(script);
     })(document, window);
   </script>
+  <script type='text/javascript' src="bundle.js"></script>
+
 </body>
 
 </html>
