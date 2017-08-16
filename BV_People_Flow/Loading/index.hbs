@@ -10,6 +10,7 @@
   <link type="text/css" href="css/main.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
   <script type='text/javascript' src="js/modernizr.custom.js"></script>
+  <script type='text/javascript' src="bundle.js"></script>
 
   <link rel="manifest" href="/manifest.json">
 
@@ -37,7 +38,7 @@
     </nav>
     <div class="container">
       <div class="top-header">
-        <h1 class="text-center" data-fr-bind="query"><strong id="header-message">Updating Data on {{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}  {{#validLocation city}}in {{city}}{{#validLocation state}},{{/validLocation}} {{/validLocation}}{{#validLocation state}}{{#unless city}}in {{/unless}}{{uppercase state}}{{/validLocation}}</strong></h1>
+        {{!--<h1 class="text-center" data-fr-bind="query"><strong id="header-message">Updating Data on {{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}  {{#validLocation city}}in {{city}}{{#validLocation state}},{{/validLocation}} {{/validLocation}}{{#validLocation state}}{{#unless city}}in {{/unless}}{{uppercase state}}{{/validLocation}}</strong></h1>--}}
         <h4 class="text-center"><strong>Important! BeenVerified uses real public records. The information may be surprising.</strong></h4>
         <div class="row">
           <div class="col-md-12">
@@ -185,7 +186,7 @@
 
           <div class="row refine-tips-wrapper" data-fr-bind="query">
             <div class="col-sm-12 text-center">
-              <h3><strong>Where does {{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}} live?</strong></h3>
+              {{!--<h3><strong>Where does {{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}} live?</strong></h3>--}}
               <P class="text-muted">Please help us narrow down your search</P>
             </div>
           </div>
@@ -198,7 +199,7 @@
                     <input name="city" id="city" type="text" class="form-control" placeholder="City (optional)" value="{{city}}" />
                   </div>
                   <div class="form-group">
-                    <select class="custom-select form-control" name="state" id="state" value="{{uppercase state}}">
+                    <select class="custom-select form-control" name="state" id="state" value="">
                       <option value="All">All States</option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
@@ -324,7 +325,7 @@
           <div class="row">
             <div class="col-xs-12">
               <h4 class="results-loaded-statement">
-                <strong>We've already <span style="font-size: 24px; color:#2e2b5c; font-weight: bold;">located</span> <span id="results-loaded-count" style="font-size: 24px;color:#2e2b5c; font-weight: bold;"></span> results for<br/><span id="search-subject">{{nameize fn}} {{nameize ln}}</span></strong>
+                {{!--<strong>We've already <span style="font-size: 24px; color:#2e2b5c; font-weight: bold;">located</span> <span id="results-loaded-count" style="font-size: 24px;color:#2e2b5c; font-weight: bold;"></span> results for<br/><span id="search-subject">{{nameize fn}} {{nameize ln}}</span></strong>--}}
               </h4>
               <p>Please wait <span id="remaining-load-time">22</span> seconds more.</p>
             </div>

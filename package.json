@@ -1,0 +1,41 @@
+{
+  "name": "sot_pages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server --open",
+    "server": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BeenVerifiedInc/sot_pages.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BeenVerifiedInc/sot_pages/issues"
+  },
+  "homepage": "https://github.com/BeenVerifiedInc/sot_pages#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "css-loader": "^0.28.4",
+    "express": "^4.15.4",
+    "file-loader": "^0.11.2",
+    "handlebars": "^4.0.10",
+    "html-webpack-plugin": "^2.30.1",
+    "postcss-flexbugs-fixes": "^3.2.0",
+    "postcss-loader": "^2.0.6",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.5.4",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "dependencies": {
+    "clean-webpack-plugin": "^0.1.16",
+    "handlebars-loader": "^1.5.0"
+  }
+}
