@@ -278,7 +278,7 @@
                   <label for="credit_card[expiration_date(2i)]" class="col-xs-12 col-sm-4 control-label">Expiration</label>
                   <input id="credit_card_expiration_date_3i" name="credit_card[expiration_date(3i)]" type="hidden" value="1">
                   <div class="col-xs-6 col-sm-4 inspectlet-sensitive">
-                    <select id="credit_card_expiration_date_2i" name="credit_card[expiration_date(2i)]" class="form-control">
+                    <select v-model="exp_month" id="credit_card_expiration_date_2i" name="credit_card[expiration_date(2i)]" class="form-control">
                       <option value="1">January</option>
                       <option value="2">February</option>
                       <option value="3">March</option>
@@ -294,7 +294,7 @@
                     </select>
                   </div>
                   <div class="col-xs-6 col-sm-4 inspectlet-sensitive">
-                    <select id="credit_card_expiration_date_1i" name="credit_card[expiration_date(1i)]" class="form-control form-control-second">
+                    <select v-model="exp_year" id="credit_card_expiration_date_1i" name="credit_card[expiration_date(1i)]" class="form-control form-control-second">
                       <option selected value="2017">2017</option>
                       <option value="2018">2018</option>
                       <option value="2019">2019</option>
@@ -318,22 +318,28 @@
                       <option value="2037">2037</option>
                     </select>
                   </div>
+                  <div class="col-xs-12 col-sm-offset-4 col-sm-8">
+                    <label class="error" v-if="$v.exp_year.$error">Please enter a valid expiration date.</label>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="cvv2" class="col-xs-12 col-sm-4 control-label">CVV#
-                  </label>
+                  <label for="cvv2" class="col-xs-12 col-sm-4 control-label">CVV#</label>
                   <div class="col-xs-6 col-sm-4">
                     <input v-model="cvv"  v-bind:class="{'input-error': $v.cvv.$error}" v-on:blur="$v.cvv.$touch()" id="cvv2" maxlength="4" name="credit_card[verification_number]" size="4" type="tel" class="form-control inspectletIgnore">
-                    <label class="error" v-if="$v.cvv.$error">Please provide your card's verification number.</label>
                   </div>
                   <div class="col-xs-6 col-sm-4 cvv-wrapper">
                     <img class="cvv-img" src="img/c-cards-cvv.png" alt="CVV">
+                  </div>
+                  <div class="col-xs-12 col-sm-offset-4 col-sm-8">
+                    <label class="error" v-if="$v.cvv.$error">Please provide your card's verification number.</label>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="zipcode" class="col-xs-12 col-sm-4 control-label">Zip Code</label>
                   <div class="col-xs-6 col-sm-4">
                     <input v-model="address_zip"  v-bind:class="{'input-error': $v.address_zip.$error}" v-on:blur="$v.address_zip.$touch()" id="zipcode" class="form-control inspectletIgnore" maxsize="20" name="address[zip]" size="30" type="tel">
+                  </div>
+                  <div class="col-xs-12 col-sm-offset-4 col-sm-8">
                     <label class="error" v-if="$v.address_zip.$error">Please enter the postal code associated with your credit card.</label>
                   </div>
                 </div>
@@ -350,6 +356,7 @@
                     By clicking the checkbox you represent that you are over 18 years of age and agree to accept our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>, <a href="//www.beenverified.com/home/membership_agreement" target="_blank">Member Agreement</a> and <a href="/home/privacy" target="_blank">Privacy Policy</a>. You agree to be billed $<span id="legal-price"></span> every <span id="legal-type"></span>&nbsp;until this subscription is canceled. You can cancel your membership at any time by contacting customer service at <span class="text-primary">1-888-579-5910</span> or emailing <a href="mailto:support@beenverified.com">support@beenverified.com</a>. You also agree that you will <u>NOT</u> use any information about an individual obtained from BeenVerified as a factor in determining the individual's eligibility for employment; tenancy; educational admission or benefits; personal credit, loans, or insurance; or for any other purpose prohibited by our <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank">Terms of Service</a>.
                   </p>
                 </div>
+                <label class="error" v-if="$v.tosChecked.$error">Please accept the terms before continuing</label>
               </div>
             </label>
           </div>
