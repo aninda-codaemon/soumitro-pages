@@ -1,7 +1,6 @@
+/* NOTE: Updated specifically to point to v4/accounts (freshness) */
 /* NOTE: Verifi is disabled for this PayPal test. */
-window.BV_KILL_VERIFI = true;
-
-/** Updated to point to the v4 API on 3/15/2016 */
+window.BV_KILL_VERIFI = false;
 
 /*!
  * Subscribe.js - Supports signups via Verifi, Paypal with configurable fallback to
@@ -11,13 +10,28 @@ window.BV_KILL_VERIFI = true;
 
  // BV_KILL_VERIFI = true
  // BV_SIGNUP_REDIRECT_URL = '/accounts/creating_account'
- // BV_ENDPOINT_URL = '/api/v4/account.json'
+ // BV_ENDPOINT_URL = '/accounts.json'
  // BV_VERIFI_ENDPOINT = 'https://secure.verifi.com/api/v2/three-step/'
  // BV_VERIFI_STEP_2_TIMEOUT = 60000
  // BV_ENDPOINT_STEP1 = '/internal/api/signup_preflight.json'
- // BV_ENDPOINT_STEP3 =  '/api/v4/account.json'
+ // BV_ENDPOINT_STEP3 =  '/accounts.json'
  // BV_PAYPAL_PREFLIGHT_URL
  // BV_PAYPAL_ENDPOINT_URL
+
+ ;(function(w) {
+  // Check if the current domain has "secure." in it. If it does, use the
+  // absolute URL with "www" as the subdomain.
+  var hostname = window.location.hostname;
+  if (hostname && hostname.indexOf('secure.') > -1) {
+    hostname = hostname.replace('secure.', 'www.');
+    w.BV_SIGNUP_REDIRECT_URL = 'https://' + hostname + '/accounts/creating_account';
+    w.BV_ENDPOINT_URL = 'https://' + hostname + '/api/v4/account.json';
+    w.BV_PAYPAL_PREFLIGHT_URL = 'https://' + hostname + '/internal/api/signup_preflight.json';
+    w.BV_PAYPAL_ENDPOINT_URL = 'https://' + hostname + '/api/v4/account.json';
+  }
+ }(window));
+
+
 
 /**
  * Reporters - @public
@@ -30,7 +44,7 @@ window.BV_KILL_VERIFI = true;
       w.BvEventReporters.trackers = {};
     }
 
-    if (typeof heap !== 'undefined' && typeof heap.track === 'function') {
+   	if (typeof heap !== 'undefined' && typeof heap.track === 'function') {
       w.BvEventReporters.trackers.heap = "track";
     }
 
@@ -39,6 +53,11 @@ window.BV_KILL_VERIFI = true;
     }
  }(window));
 
+;(function(w){
+  if (typeof ga === 'undefined') {
+
+  }
+}(window));
 /**
  * BvEventReporters - @private
  */
@@ -50,6 +69,25 @@ window.BV_KILL_VERIFI = true;
 
     w.BvEventReporters.report = function BvEventReporter(eventType, eventProps) {
       try {
+        if (typeof ga !== 'undefined'){
+          if (eventProps) {
+            gaData = {
+              eventCategory: 'old_nolimit',
+              eventAction: 'flowrida_visitor_event',
+              eventLabel: eventType,
+              visitorEventInfo: JSON.stringify(eventProps)
+            };
+            ga('send', 'event', gaData);
+          } else {
+            gaData = {
+              eventCategory: 'old_nolimit',
+              eventAction: 'flowrida_visitor_event',
+              eventLabel: eventType,
+            };
+            ga('send', 'event', gaData);
+          }
+        }
+
         for (var k in w.BvEventReporters.trackers) {
           var fn = w.BvEventReporters.trackers[k];
           if (typeof fn === 'function') {
@@ -64,7 +102,17 @@ window.BV_KILL_VERIFI = true;
         }
       } catch (err) {}
     };
+
+    w.BvEventReporters.reportGA = function(reportInfo){
+      try {
+        if (typeof ga !== 'undefined'){
+          ga('send', 'event', reportInfo);
+        }
+      } catch(err) {}
+    };
  }(window));
+
+
 
 /**
  * VerifiPaymentProcessor - @private
@@ -72,9 +120,11 @@ window.BV_KILL_VERIFI = true;
 ;(function (w, $) {
   var VERIFI_ENDPOINT = w.BV_VERIFI_ENDPOINT || 'https://secure.verifi.com/api/v2/three-step/',
       BV_ENDPOINT_STEP_1 = w.BV_ENDPOINT_STEP1 || '/internal/api/signup_preflight.json',
+
       BV_ENDPOINT_STEP_3 = w.BV_ENDPOINT_STEP3 || '/api/v4/account.json',
       STEP_2_TIMEOUT = w.BV_VERIFI_STEP_2_TIMEOUT || (60 * 1000),
       REDIRECT_IDENTIFIER = 'beenverified.com';
+
 
   /**
    * Sends cc info directly to Verifi via iframe injection.
@@ -111,7 +161,7 @@ window.BV_KILL_VERIFI = true;
     var ccNum = $('#credit_card_card_number').val();
 
     var exp = $('#credit_card_expiration_date_2i').val() + yr;
-    if (exp && exp[0] != '0') {
+    if (exp && exp[0] != '0' && exp.length != 4) {
       exp = '0' + exp;
     }
     var cvv = $('#cvv2').val();
@@ -133,7 +183,9 @@ window.BV_KILL_VERIFI = true;
 
 
     $iframe.on('load', function (evt) {
+
       try {
+        w.BvEventReporters.reportGA({eventCategory: 'sot_verifi_subscribe_process', eventAction: 'iframe_redirect'});
         var url = $iframe.get()[0].contentWindow.location.href;
         if (url.indexOf(REDIRECT_IDENTIFIER) > -1) {
           w.clearTimeout(timeoutId);
@@ -141,8 +193,10 @@ window.BV_KILL_VERIFI = true;
           $iframe.remove();
         }
       } catch (err) {
+
         if (typeof w.BvEventReporters !== 'undefined') {
           w.BvEventReporters.report('Verifi Step 2 Error', err.message);
+          w.BvEventReporters.reportGA({eventCategory: 'sot_verifi_subscribe_process', eventAction: 'verifi_step_2_error', eventLabel: err.message});
         }
         def.reject([err.message]);
         $iframe.remove();
@@ -151,7 +205,6 @@ window.BV_KILL_VERIFI = true;
 
     $('#verifi-frame').get()[0].contentWindow.document.write($formContent.html());
     $('#verifi-frame').get()[0].contentWindow.document.getElementById('verifi-form').submit();
-
     return def.promise();
   };
 
@@ -193,6 +246,7 @@ window.BV_KILL_VERIFI = true;
     if (typeof ccNumber !== "string") {
       ccNumber = ccNumber.toString();
     }
+    ccNumber = ccNumber.replace(/[^\d|X]/g, "");
     var masked = '',
         x = 'X',
         prefixVals = 6,
@@ -206,11 +260,11 @@ window.BV_KILL_VERIFI = true;
       return masked;
     }
 
-    for (var i = 0; i < len; i += 1) {
-      if (i >= prefixVals && i < suffixVals) {
-        masked += x
+    for (var j = 0; j < len; j += 1) {
+      if (j >= prefixVals && j < suffixVals) {
+        masked += x;
       } else {
-        masked += ccNumber[i];
+        masked += ccNumber[j];
       }
     }
     return masked;
@@ -220,6 +274,7 @@ window.BV_KILL_VERIFI = true;
 
   VerifiPaymentProcessor.prototype.step1 = function step1(formData) {
     var customerInfo = excludeCreditCardInfo(formData);
+
     return $.post(BV_ENDPOINT_STEP_1, customerInfo);
   };
 
@@ -246,18 +301,21 @@ window.BV_KILL_VERIFI = true;
 
     var handleStepError = function (error) {
       def.reject(error);
+      w.BvEventReporters.reportGA({eventCategory: 'sot_verifi_subscribe_process', eventAction: 'step_error', eventLabel: error});
     };
 
     var handleStep3Error = function (error) {
       if (error && error.responseText) {
         // Note: This works for jQuery 1.9 and below. Otherwise expect an error.
         var resp = $.parseJSON(error.responseText);
-        if (resp && resp.results && resp.results.errors) {
-          def.reject(resp.results.errors);
+        if (resp && resp.account && resp.account.errors) {
+          w.BvEventReporters.reportGA({eventCategory: 'sot_verifi_subscribe_process', eventAction: 'step_3_error', eventLabel: resp.account.errors.join("  ")});
+          def.reject(resp.account.errors);
           return
         }
       }
       def.reject(['Sorry, there was an error processing your payment. Please verify your information and try again.']);
+      w.BvEventReporters.reportGA({eventCategory: 'sot_verifi_subscribe_process', eventAction: 'step_3_error', eventLabel: "processing error"});
     };
 
     var step1 = self.step1,
@@ -265,10 +323,13 @@ window.BV_KILL_VERIFI = true;
         step3 = self.step3;
 
     step1(formData).then(function (d1) {
+
       if (typeof d1.valid_for_signup !== 'undefined' && d1.valid_for_signup === false) {
         def.reject(d1.errors.user);
+        w.BvEventReporters.reportGA({eventCategory: 'sot_verifi_subscribe_process', eventAction: 'preflight-failure', eventLabel: d1.errors.user});
         return;
       }
+      w.BvEventReporters.reportGA({eventCategory: 'sot_verifi_subscribe_process', eventAction: 'preflight-success'});
 
       var formURL = d1.form_url;
 
@@ -277,6 +338,7 @@ window.BV_KILL_VERIFI = true;
         var token = parseVerifiToken(redirectURL);
 
         step3(formData, token).then(function (d3) {
+          w.BvEventReporters.reportGA({eventCategory: 'sot_verifi_subscribe_process', eventAction: 'signup_success'});
           def.resolve(d3);
         }, handleStep3Error);
 
@@ -303,6 +365,8 @@ var BVGetQueryVariable = function (variable) {
   return false;
 };
 
+
+
 /**
  * PaypalPaymentProcessor
  * Related query args:
@@ -310,6 +374,14 @@ var BVGetQueryVariable = function (variable) {
  * bvppcanc - when present, it implies that a paypal error ocurred.
  */
 ;(function (w, $, _) {
+
+  $.ajaxSetup({
+    //crossDomain: true,
+    xhrFields: {
+      withCredentials: true
+    }
+  });
+  $.support.cors = true;
 
   var BV_PAYPAL_PREFLIGHT_URL = w.BV_PAYPAL_PREFLIGHT_URL || '/internal/api/signup_preflight.json',
       BV_ENDPOINT = w.BV_PAYPAL_ENDPOINT_URL || '/api/v4/account.json';
@@ -335,9 +407,7 @@ var BVGetQueryVariable = function (variable) {
    */
   var processPaypalPreflight = function (formData, paymentProcessingDef) {
     amplify.store('paypal_lead', formData);
-
     var preflightXHR = $.post(BV_PAYPAL_PREFLIGHT_URL, excludeCreditCardInfo(formData));
-
     preflightXHR.done(function paypalPreflightDoneHandler(d) {
       w.BvEventReporters.report("Pre-flight Success", {payment_method: 'paypal'});
       if (typeof d.valid_for_signup !== 'undefined' && d.valid_for_signup === false) {
@@ -350,7 +420,7 @@ var BVGetQueryVariable = function (variable) {
         }
       } else {
         window.onbeforeunload = function () {};
-        // window.location = d.form_url;
+        //window.location = d.form_url;
         window.localStorage.setItem('payPalPreflightUrl', d.form_url);
         paypal.checkout.startFlow(d.form_url);
       }
@@ -416,17 +486,28 @@ var BVGetQueryVariable = function (variable) {
 }(window, jQuery, _));
 
 
+
+
+
 /**
  * BvPaymentProcessor
  */
 ;(function (w, $, _) {
 
-  var BV_ENDPOINT = w.BV_ENDPOINT_URL || 'https://www.beenverified.com/api/v4/account.json';
+  var BV_ENDPOINT = w.BV_ENDPOINT_URL || '/api/v4/account.json';
 
   var BvPaymentProcessor = function () { };
 
   BvPaymentProcessor.prototype.process = function process(formData) {
     var def = new $.Deferred();
+    $.ajaxSetup({
+      //crossDomain: true,
+      xhrFields: {
+        withCredentials: true
+      }
+    });
+	$.support.cors = true;
+
     var formXHR = $.post(BV_ENDPOINT, formData);
 
     formXHR.success(function () {
@@ -445,7 +526,7 @@ var BVGetQueryVariable = function (variable) {
         return;
       }
 
-      if (data.account && data.account.errors) {
+      if (data && data.account && data.account.errors) {
         w.BvEventReporters.report("Processing Failed", {payment_method: 'bv_credit', data: data.account.errors});
 
         var errors = _.reduce(data.account.errors, function(e, group, group_name) {
@@ -457,9 +538,8 @@ var BVGetQueryVariable = function (variable) {
           return e === "Credit cards is invalid";
         });
 
-        def.reject(errors);
+       def.reject(errors);
       } else {
-        def.reject();
         w.BvEventReporters.report("Processing Failed", {payment_method: 'bv_credit'});
       }
     });
@@ -469,32 +549,6 @@ var BVGetQueryVariable = function (variable) {
 
   w.BvPaymentProcessor = BvPaymentProcessor;
 }(window, jQuery, _));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -511,6 +565,8 @@ var BVGetQueryVariable = function (variable) {
  *       7       jcb
  */
 !function(a){a.checkCC=function(a){String.prototype.startsWith=function(a){return this.match("^"+a)==a},Array.prototype.has=function(a,b){for(var c=0;c<this.length;c++)if(this[c]==a)return b?c:!0;return!1},a=a.replace(/[^0-9]/g,"");for(var b=[],c=0,d=0,e=a;0!==e;)b[c]=e%10,e-=b[c],e/=10,c++,d++;if(13>d)return"invalid";var f="invalid";if(a.startsWith("5")){if(16!=d)return"invalid";f=1}else if(a.startsWith("4")){if(16!=d&&13!=d)return"invalid";f=2}else if(a.startsWith("34")||a.startsWith("37")){if(15!=d)return"invalid";f=3}else if(a.startsWith("36")||a.startsWith("38")||a.startsWith("300")||a.startsWith("301")||a.startsWith("302")||a.startsWith("303")||a.startsWith("304")||a.startsWith("305")){if(14!=d)return"invalid";f=4}else if(a.startsWith("6011")){if(15!=d&&16!=d)return"invalid";f=5}else{if(a.startsWith("2014")||a.startsWith("2149"))return 15!=d&&16!=d?"invalid":6;if(a.startsWith("3")){if(16!=d)return"invalid";f=7}else{if(!a.startsWith("2131")&&!a.startsWith("1800"))return"invalid";if(15!=d)return"invalid";f=7}}var h,g=0;for(h=1;d>h;h+=2){var i=2*b[h];g+=i%10,g+=(i-i%10)/10}for(h=0;d>h;h+=2)g+=b[h];return 0!==g%10?"invalid":(return_vals={"-1":"invalid",1:"master",2:"Visa",3:"american_express",4:"invalid",5:"Discover",6:"invalid",7:"invalid"},return_vals[""+f])}}(this);
+
+
 
 /**
  * FormValidator - Should return append to window.BvValidateSubForm which
@@ -537,7 +593,7 @@ var BVGetQueryVariable = function (variable) {
         required: true,
         email: true
       },
-      tos2: {
+      'tos2': {
         required: true
       },
       'account[tos]': {
@@ -723,7 +779,7 @@ var BVGetQueryVariable = function (variable) {
               required: "Please confirm your email.",
               equalTo: "Please enter the same email address as above."
           },
-          tos2: {
+          "tos2": {
               required: "You will need to agree in order to use our services."
           },
           "user[email]": "Please enter a valid email address."
@@ -793,23 +849,22 @@ var BVGetQueryVariable = function (variable) {
       $('[name=account\\[last_name\\]]').rules('add', validatorRules['account[last_name]']);
       $('[name=user\\[email\\]]').rules('add', validatorRules['user[email]']);
       $('[name=account\\[tos\\]]').rules('add', validatorRules['account[tos]']);
+
     };
 
  }(window, jQuery));
+
+
 
 /**
  * FormView - Apply form validation, submissions, and processing.
  */
 ;(function (w, $) {
 
-  var SIGNUP_REDIRECT_URL = w.BV_SIGNUP_REDIRECT_URL || '//www.beenverified.com/accounts/creating_account',
+  var SIGNUP_REDIRECT_URL = w.BV_SIGNUP_REDIRECT_URL || '/accounts/creating_account',
       formSelector = '#subscribe_form';
 
   var noop = function () {};
-
-  function closeFlow() {
-    paypal.checkout.closeFlow();
-  }
 
   var disableForm = function() {
     $('#create_button').attr('disabled', 'disabled');
@@ -821,7 +876,10 @@ var BVGetQueryVariable = function (variable) {
 
   var enableForm = function() {
     $('#create_button').removeAttr('disabled');
-    $('#create_button').show();
+    if (!$('#paypal-radio-button').prop('checked')){
+
+    	$('#create_button').show();
+    }
     $('#spinner').hide();
   };
 
@@ -864,6 +922,13 @@ var BVGetQueryVariable = function (variable) {
         scrollTop: $("#error_container").offset().top
     }, 500);
 
+    // found this bug, basically if preflight fails, paypal processor never closes
+    if (window.paypal && window.paypal.checkout) {
+
+      window.setTimeout($('#create_button').hide(), 1000);
+      window.paypal.checkout.closeFlow();
+    }
+
     w.BvEventReporters.report("Failed Signup", {data: errors});
   };
 
@@ -883,8 +948,6 @@ var BVGetQueryVariable = function (variable) {
 
     processing.fail(function (err) {
       handleProcessingError(err);
-      closeFlow();
-      disableForm();
     });
 
     processing.always(function () {
@@ -937,8 +1000,10 @@ var BVGetQueryVariable = function (variable) {
         w.BvValidateSubForm.enablePaypalValidation();
         paymentProcessor = new PaypalPaymentProcessor();
         $('.cc-wrapper').slideUp();
+
+
         $('#reports-anonymous').slideUp();
-        // $('#create_button').html('Proceed to PayPal');
+        //$('#create_button').html('Proceed to PayPal');
       	$('#create_button').hide();
 		$('#paypal-submitter').show();
     });
@@ -949,10 +1014,11 @@ var BVGetQueryVariable = function (variable) {
         w.BvValidateSubForm.enableAllValidation();
         paymentProcessor = new VerifiPaymentProcessor();
         $('.cc-wrapper').slideDown();
+
         $('#reports-anonymous').slideDown();
         $('#create_button').html(originalButtonText);
       	$('#create_button').show();
-		$('#paypal-submitter').hide();
+		    $('#paypal-submitter').hide();
     });
 
     if (BVGetQueryVariable("bvpp")) {
@@ -1024,16 +1090,16 @@ var BVGetQueryVariable = function (variable) {
       $('#paypal-spinner').fadeIn();
 
       payment.fail(function (e) {
-        var url = window.localStorage.getItem('payPalPreflightUrl')
+        var url = window.localStorage.getItem('payPalPreflightUrl');
         if (url) {
 		  $('#PayPal-Success').modal('hide');
           window.onbeforeunload = function () {};
           window.location = window.localStorage.getItem('payPalPreflightUrl');
         } else {
-        	        $('#paypal-spinner').fadeOut();
-          $(confirmButton).fadeIn();
-          $('#iModal-dismiss').fadeIn();
-          $('#paypal-confirm-error').fadeIn();
+          	$('#paypal-spinner').fadeOut();
+        	$(confirmButton).fadeIn();
+        	$('#iModal-dismiss').fadeIn();
+        	$('#paypal-confirm-error').fadeIn();
         }
 
         w.BvEventReporters.report("Paypal Payment Confirmation - Confirmed - Failed");
@@ -1046,28 +1112,6 @@ var BVGetQueryVariable = function (variable) {
       w.BvEventReporters.report("Paypal Payment Confirmation - Confirmed");
     });
 
-
-
-    // $('body').on('submit', formSelector, function (evt) {
-    //   evt.preventDefault();
-    //   debugger
-    //   // Check if we need to fallback to BV handling the payment processing.
-    //   if (!isPaypalSelected && typeof w.BV_KILL_VERIFI !== 'undefined' && w.BV_KILL_VERIFI === true) {
-    //     paymentProcessor = new BvPaymentProcessor();
-    //   }
-    //
-    //   var validated = subValidator.form();
-    //   if (!validated) return;
-    //
-    //   if (typeof w.BvEventReporters !== 'undefined') {
-    //     w.BvEventReporters.report("Signup Form Submitted");
-    //   }
-    //
-    //   var formData = serializeToObject($(this).serializeArray()),
-    //       payment = paymentProcessor.process(formData);
-    //
-    //   handlePaymentProcessing(payment);
-    // });
 
     var initializePayment = function(e){
 
