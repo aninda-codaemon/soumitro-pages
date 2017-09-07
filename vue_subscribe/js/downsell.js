@@ -41,7 +41,7 @@
       heap.track(msg, prop);
     }
   };
-  
+
   var trackNL = function (evtName, props) {
     if (typeof nolimit !== 'undefined' && nolimit.track) {
       if (props) {
@@ -258,7 +258,6 @@
   downsell.init = function (options) {
     _.extend(opts, defaults, options);
     onBack();
-    onUnload();
 
     onIdle();
     onBlur();

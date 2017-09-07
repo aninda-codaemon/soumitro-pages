@@ -365,6 +365,8 @@ var BVGetQueryVariable = function (variable) {
   return false;
 };
 
+window.BVGetQueryVariable = BVGetQueryVariable;
+
 
 
 /**
@@ -733,10 +735,20 @@ var BVGetQueryVariable = function (variable) {
 
     // $('#paypal-radio').on('click', function () {
     $('body').on('click', '#paypal-radio', function() {
+
         isPaypalSelected = true;
         $(this).find('input[type=radio]').prop('checked', true);
         paymentProcessor = new PaypalPaymentProcessor();
-        $('.cc-wrapper').slideUp();
+
+        //this is a really weird bug i couldnt figure out. Using slideUp would
+        //add a bunch more inline styles like height: 0px; overflow: hidden, that wouldnt
+        //get reset with slideDown when the page loaded after paypal is cancelled
+        
+        if (BVGetQueryVariable('bvpp')) {
+          $('.cc-wrapper').hide()
+        } else {
+          $('.cc-wrapper').slideUp();
+        }
         $('#reports-anonymous').slideUp();
 
       	$('#create_button').hide();
@@ -744,11 +756,20 @@ var BVGetQueryVariable = function (variable) {
     });
 
     $('body').on('click', '#credit-radio', function(){
+
         isPaypalSelected = false;
         $(this).find('input[type=radio]').prop('checked', true);
 
         paymentProcessor = new VerifiPaymentProcessor();
-        $('.cc-wrapper').slideDown();
+
+        //this is a really weird bug i couldnt figure out. Using slideUp would
+        //add a bunch more inline styles like height: 0px; overflow: hidden, that wouldnt
+        //get reset with slideDown when the page loaded after paypal is cancelled
+        if (BVGetQueryVariable('bvpp')) {
+          $('.cc-wrapper').show()
+        } else {
+          $('.cc-wrapper').slideDown();
+        }
 
         $('#reports-anonymous').slideDown();
         $('#create_button').html(originalButtonText);
@@ -776,7 +797,7 @@ var BVGetQueryVariable = function (variable) {
 
       paymentProcessor = new PaypalPaymentProcessor();
 
-      $('#paypal-radio').click();
+      $('body #paypal-radio').click();
 
       if (!BVGetQueryVariable("bvppcanc")) { // coerce
         $("#PayPal-Success").modal({backdrop: 'static', show: true});

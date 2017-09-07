@@ -239,14 +239,14 @@
             <div class="form-group payOptionSelect">
               <label for="user_email" class="col-sm-4 control-label">Payment</label>
 
-              <div id="paypal-radio" class="radio col-sm-8">
+              <div id="paypal-radio" class="radio col-sm-8" v-on:click='togglePayment'>
                 <label for="paypal">
-                  <input type="radio" v-on:click='togglePayment' id="paypal-radio-button" name="payment_method" value="paypal"> <img src="img/paypal2.png" alt="PayPal" /> The safer, easier way<span class="hidden-sm"> to pay</span>
+                  <input type="radio" v-model='activeField' id="paypal-radio-button" name="payment_method" value="paypal"> <img src="img/paypal2.png" alt="PayPal" /> The safer, easier way<span class="hidden-sm"> to pay</span>
                 </label>
               </div>
-              <div id="credit-radio" class="radio col-sm-8 col-sm-offset-4">
+              <div id="credit-radio" class="radio col-sm-8 col-sm-offset-4" v-on:click='togglePayment'>
                 <label for="credit">
-                  <input type="radio" v-on:click='togglePayment' id="credit" name="payment_method" value="credit_card" checked> <img src="img/c-cards.png" alt="We accept MasterCard, Visa, Discover, and American Express" width="115px"> Pay with credit/debit<span class="hidden-sm"> card</span>
+                  <input type="radio" v-model='activeField' id="credit" name="payment_method" value="credit_card"> <img src="img/c-cards.png" alt="We accept MasterCard, Visa, Discover, and American Express" width="115px"> Pay with credit/debit<span class="hidden-sm"> card</span>
                 </label>
               </div>
             </div>
@@ -642,7 +642,7 @@ Just click "Cancel" or "Stay On Page" to see your special offer.
   	 window.paypalCheckoutReady = function() {
      	paypal.checkout.setup('Merchant-ID', {
           click: function(e){
-            debugger
+
             if ($v.$invalid) {
               e.preventDefault()
               return;
