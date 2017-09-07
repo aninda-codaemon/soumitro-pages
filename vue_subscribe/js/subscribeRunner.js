@@ -1070,7 +1070,7 @@ var BVGetQueryVariable = function (variable) {
     // });
 
     var initializePayment = function(e){
-      debugger
+
       // Check if we need to fallback to BV handling the payment processing.
       if (!isPaypalSelected && typeof w.BV_KILL_VERIFI !== 'undefined' && w.BV_KILL_VERIFI === true) {
         paymentProcessor = new BvPaymentProcessor();
