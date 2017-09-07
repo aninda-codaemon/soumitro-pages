@@ -49,7 +49,7 @@
   </div><!-- /#report-bg -->
 
   <div id="wrapper" class="container" v-cloak>
-    <div class="row" data-fr-bind="propertyCurrentRecord">
+    <div class="row">
       <!-- #if street -->
       <template v-if="street">
         <div id="current-preview" class="col-sm-5 col-xs-12">
@@ -401,7 +401,7 @@
           <div class="panel-heading">
             <p class="panel-title strong">Order Summary</p>
           </div>
-          <div class="panel-body" data-fr-bind="propertyCurrentRecord">
+          <div class="panel-body">
             <!-- {{#if street}} -->
             <template v-if="street">
               <div class="order-summary-section order-summary-full-report">
@@ -429,32 +429,11 @@
             </div>
           </div>
         </div><!-- /#order-summary -->
-        <div id="full-report-checklist" class="panel side-panel" data-fr-bind="propertyCurrentRecord">
+        <div id="full-report-checklist" class="panel side-panel">
           <div class="panel-heading">
             <p class="panel-title strong">All Memberships Include</p>
           </div>
-          <div class="panel-body" data-fr-map="TeaserRecord">
-
-			<!--
-            {{#if street}}
-            <template v-if="street">
-              <div class="order-summary-section order-summary-full-report">
-                <p>
-                  <span class="now-included">Your Property Report on</span>
-                  <span class="order-summary-name now-included text-bv-blue">{{street}} {{city}}, {{state}} {{zip}}</span>
-                  <span class="now-included">may include, where available:</span>
-                </p>
-                <ul id="report-includes">
-                  <li>Ownership Details</li>
-                  <li>Deed History</li>
-                  <li>Tax Assessments</li>
-                  <li>Property Details</li>
-                  <li>Residents & Neighbors</li>
-                </ul>
-              </div>
-            </template>
-            {{/if}}
-	        -->
+          <div class="panel-body">
 
             <p class="now-included"><span v-if="propertyTeaserData.address">Plus, the following </span>Searches, where available:</p>
             <ul class="list-unstyled unlimited-list">
@@ -642,10 +621,10 @@ Just click "Cancel" or "Stay On Page" to see your special offer.
   <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
 
   <script src="https://cdn.jsdelivr.net/lodash/3.8.0/lodash.min.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/handlebarsjs/3.0.3/handlebars.min.js"></script> -->
+
   <script src="https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/placeholders/3.0.2/placeholders.min.js"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/amplifyjs/1.1.2/amplify.store.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/amplifyjs/1.1.2/amplify.store.min.js"></script>
   <script src="https://cdn.jsdelivr.net/jquery.validation/1.11.1/jquery.validate.min.js"></script>
 
   <script src="js/jquery.validate.creditcard2.pack-1.0.0.js"></script>
@@ -653,10 +632,7 @@ Just click "Cancel" or "Stay On Page" to see your special offer.
   <script src="js/utility.js"></script>
   <script src="js/cookie.js"></script>
   <script src="js/base64.js"></script>
-  <!-- <script src="js/teaserrecord.js"></script> -->
 
-  <!-- <script src="js/framerida.helpers.js"></script>
-  <script src="js/framerida.js"></script> -->
   <script src="js/downsell.js"></script>
 
   <script src="js/subscribeRunner.js"></script>
