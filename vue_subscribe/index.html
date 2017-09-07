@@ -251,7 +251,7 @@
               </div>
             </div>
 
-            <div class="row cc-wrapper" v-if="ccFields">
+            <div class="row cc-wrapper">
               <div class="col-xs-12">
               <div class="cc-wrapper-header row">
                 <div id="secure-wrapper" class="col-xs-6 col-sm-4">
@@ -642,8 +642,8 @@ Just click "Cancel" or "Stay On Page" to see your special offer.
   	 window.paypalCheckoutReady = function() {
      	paypal.checkout.setup('Merchant-ID', {
           click: function(e){
-          	var validator = window.BvValidateSubForm()
-            if (!validator.form()) {
+            debugger
+            if ($v.$invalid) {
               e.preventDefault()
               return;
             }

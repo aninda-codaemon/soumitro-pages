@@ -586,271 +586,11 @@ var BVGetQueryVariable = function (variable) {
       return checkCC(card_number);
     };
 
-    var validatorRules = {
-      "account[first_name]": "required",
-      "account[last_name]": "required",
-      "user[email]": {
-        required: true,
-        email: true
-      },
-      'tos2': {
-        required: true
-      },
-      'account[tos]': {
-        required: true
-      },
-      "credit_card[expiration_date(2i)]": {
-        validMonth: true
-      },
-      "credit_card[expiration_date(1i)]": {
-        validYear: true
-      },
-      // "address[address1]": "required",
-      // "address[city]": "required",
-      "address[zip]": {
-        maxlength: 5,
-        minlength: 5,
-        digits: true,
-        required: true
-      },
-      // "account[phone_number]": "required",
-      "credit_card[verification_number]": {
-        required: true,
-        number: true,
-        maxlength: 4,
-        validCVV: true
-      },
-      "credit_card[card_number]": {
-        creditcard2: function() {
-          var card_type = checkCardType();
-          return card_type;
-        }
-      }
-    };
-
-    /**
-     * Applies the validation rules using jQuery.validate(). - @private
-     */
-    var applyValidation = function (formSelector) {
-
-      var $subscribeForm = $(formSelector);
-
-      /**
-       * Validation using $.validate() plugin.
-       */
-
-      var $month = $("[name=credit_card\\[expiration_date\\(2i\\)\\]]"),
-          $year  = $("[name=credit_card\\[expiration_date\\(1i\\)\\]]"),
-          successURL     = $subscribeForm.data('sub-success-image'),
-          errorClass     = $subscribeForm.data('sub-error-class'),
-          successClass   = $subscribeForm.data('sub-success-class'),
-          ignoreMessages = $subscribeForm.data('sub-ignore-messages'),
-          ignoreSuccess  = $subscribeForm.data('sub-ignore-success');
-
-      // Custom validation rules.
-
-      var validMonthYear = function () {
-        var isValid = true,
-            m = parseInt($month.val(), 10),
-            y = parseInt($year.val(), 10),
-            isCurrentYear = year === y;
-
-        if (!y || !m || (y < year)) return false;
-
-        if (isCurrentYear) {
-          isValid = m >= month;
-        }
-
-        if (isValid) {
-          $month.removeClass(errorClass);
-          $year.removeClass(errorClass);
-          $month.addClass(successClass);
-          $year.addClass(successClass);
-        } else {
-          $month.removeClass(successClass);
-          $year.removeClass(successClass);
-          $month.addClass(errorClass);
-          $year.addClass(errorClass);
-        }
-
-        return isValid;
-      };
-
-      var validCVV = function () {
-        var valid = true, cardType = checkCardType(), cvv = $("#cvv2").val();
-        if (cardType === "american_express") {
-          valid = cvv && cvv.length === 4;
-        } else {
-          valid = cvv && cvv.length === 3;
-        }
-        return valid;
-      };
-
-      // Register custom validation methods.
-      $.validator.addMethod('validCVV', validCVV, 'Enter a valid card verification number');
-      $.validator.addMethod('validMonth', validMonthYear, ' ');
-      $.validator.addMethod('validYear', validMonthYear, 'Please enter a valid expiration date.');
-
-      // Validate dates on change.
-      $month.on('change', function () {
-        $year.valid();
-        $(this).valid();
-      });
-      $year.on('change', function () {
-        $month.valid();
-        $(this).valid();
-      });
-
-      // Validation rules.
-      var validatorOpts = {
-        rules: validatorRules,
-
-        success: function($label) {
-          // NOTE:
-          // Ideally, we'd be removing the error class, but jquery validate needs it.
-          // Otherwise, it adds another label field if its not present. To mitigate
-          // this, make sure that .success is declared after .error in your CSS.
-          $label.addClass('success');
-
-          if (successURL && $label.find("img").length === 0) {
-            $label.html($("<img>").attr('src', successURL));
-            $label.addClass('label-success');
-          }
-        },
-
-        highlight: function (input) {
-          var $input = $(input),
-              $targetElem;
-
-          if (input.name === "tos2" || input.name === "account[tos]") {
-            $input.parent().next().removeClass('label-success');
-          } else {
-            $input.parent().find('.label-success').removeClass('label-success');
-          }
-
-          if ($input.attr('type') === "checkbox") {
-            $targetElem = $input.parent();
-          } else {
-            $targetElem = $input;
-          }
-          $targetElem.removeClass(successClass);
-          $targetElem.addClass(errorClass);
-        },
-
-        unhighlight: function (input) {
-          var $input = $(input),
-              $targetElem;
-
-          if ($input.attr('type') === "checkbox") {
-            $targetElem = $input.parent();
-          } else {
-            $targetElem = $input;
-          }
-          $targetElem.removeClass(errorClass);
-          $targetElem.addClass(successClass);
-        },
-
-        invalidHandler: function (evt, validator) { },
-
-        messages: {
-          "account[first_name]": "Please enter your first name.",
-          "account[last_name]": "Please enter your last name.",
-          "account[tos]": "Please accept the terms before continuing.",
-          "credit_card[first_name]": "Please enter your first name.",
-          "credit_card[last_name]": "Please enter your Last name.",
-          "address[address1]": "Please enter the credit card billing address.",
-          "address[city]": "Please enter the city associated with your credit card.",
-          "address[zip]": "Please enter the postal code associated with your credit card.",
-          "account[phone_number]": "Please enter the phone number you can be reached at.",
-          "credit_card[verification_number]": {
-              required: "Please provide your card's verification number.",
-              number: "Card codes must be either 3 or 4 numerical digits"
-          },
-          "user[password]": {
-              required: "Please provide a password.",
-              minlength: "Your password must be at least 8 characters long."
-          },
-          "user[password_confirmation]": {
-              required: "Please provide a password.",
-              minlength: "Your password must be at least 8 characters long.",
-              equalTo: "Please enter the same password as above."
-          },
-          "user[email_confirmation]": {
-              required: "Please confirm your email.",
-              equalTo: "Please enter the same email address as above."
-          },
-          "tos2": {
-              required: "You will need to agree in order to use our services."
-          },
-          "user[email]": "Please enter a valid email address."
-        }
-      };
-
-      // Custom behavior set via data attributes on the form.
-      if (ignoreSuccess === true) {
-        delete validatorOpts.success;
-      }
-
-      if (ignoreMessages === true) {
-        validatorOpts.errorPlacement = noop;
-      } else {
-        validatorOpts.errorPlacement = function (error, element) {
-          var name = element.attr("name");
-
-           if (name === "account[tos]" || name === "tos2") {
-            error.insertAfter(element.parent());
-           } else {
-            error.insertAfter(element);
-           }
-        };
-      }
-
-      // Apply the validation rules. Return reference to the validator.
-      return $("#subscribe_form").validate(validatorOpts);
-    }; // End - applyValidation()
-
-    /**
-     * Helpers
-     */
-    var setCCMonthYear = function () {
-      var $month = $("#credit_card_expiration_date_2i"),
-          $year  = $("#credit_card_expiration_date_1i");
-      $month.val(month);
-      $year.val(year);
-    };
-
-    w.BvValidateSubForm = function (formSelector) {
-      setCCMonthYear();
-      return applyValidation(formSelector);
-    };
-
     function escapeStr(str) {
         if (str)
             return str.replace(/([ #;?%&,.+*~\':"!^$[\]()=>|\/@])/g,'\\$1');
         return str;
     }
-
-    w.BvValidateSubForm.disableAllValidation = function () {
-      for (var item in validatorRules) {
-        var selectorName = '[name=' + escapeStr(item) + ']';
-        $(selectorName).rules('remove');
-      }
-    };
-
-    w.BvValidateSubForm.enableAllValidation = function () {
-      for (var item in validatorRules) {
-        var selectorName = '[name=' + escapeStr(item) + ']';
-        $(selectorName).rules('add', validatorRules[item]);
-      }
-    };
-
-    w.BvValidateSubForm.enablePaypalValidation = function () {
-      $('[name=account\\[first_name\\]]').rules('add', validatorRules['account[first_name]']);
-      $('[name=account\\[last_name\\]]').rules('add', validatorRules['account[last_name]']);
-      $('[name=user\\[email\\]]').rules('add', validatorRules['user[email]']);
-      $('[name=account\\[tos\\]]').rules('add', validatorRules['account[tos]']);
-
-    };
 
  }(window, jQuery));
 
@@ -978,11 +718,9 @@ var BVGetQueryVariable = function (variable) {
    */
   var initialize = function () {
 
-    var subValidator = w.BvValidateSubForm(formSelector),
-        paymentProcessor = new VerifiPaymentProcessor(),
+    var paymentProcessor = new VerifiPaymentProcessor(),
         isPaypalSelected = false;
 
-    window.subValidator = subValidator; // TODO Remove
 
     /* Make sure the first plan is selected - IE10 fix. */
     var $planRows = $("input[name=subscription_plan_name]");
@@ -993,25 +731,22 @@ var BVGetQueryVariable = function (variable) {
 
     var originalButtonText = $('#create_button').html();
 
-    $('#paypal-radio').on('click', function () {
+    // $('#paypal-radio').on('click', function () {
+    $('body').on('click', '#paypal-radio', function() {
         isPaypalSelected = true;
         $(this).find('input[type=radio]').prop('checked', true);
-        w.BvValidateSubForm.disableAllValidation();
-        w.BvValidateSubForm.enablePaypalValidation();
         paymentProcessor = new PaypalPaymentProcessor();
         $('.cc-wrapper').slideUp();
-
-
         $('#reports-anonymous').slideUp();
-        //$('#create_button').html('Proceed to PayPal');
+
       	$('#create_button').hide();
-		$('#paypal-submitter').show();
+		    $('#paypal-submitter').show();
     });
 
-    $('#credit-radio').on('click', function () {
+    $('body').on('click', '#credit-radio', function(){
         isPaypalSelected = false;
         $(this).find('input[type=radio]').prop('checked', true);
-        w.BvValidateSubForm.enableAllValidation();
+
         paymentProcessor = new VerifiPaymentProcessor();
         $('.cc-wrapper').slideDown();
 
@@ -1114,20 +849,16 @@ var BVGetQueryVariable = function (variable) {
 
 
     var initializePayment = function(e){
-
       // Check if we need to fallback to BV handling the payment processing.
       if (!isPaypalSelected && typeof w.BV_KILL_VERIFI !== 'undefined' && w.BV_KILL_VERIFI === true) {
         paymentProcessor = new BvPaymentProcessor();
       }
 
-      var validated = subValidator.form();
-      if (!validated) return;
-
       if (typeof w.BvEventReporters !== 'undefined') {
         w.BvEventReporters.report("Signup Form Submitted");
       }
 
-      var formData = serializeToObject($(this).serializeArray()),
+      var formData = serializeToObject($('#subscribe_form').serializeArray()),
           payment = paymentProcessor.process(formData);
 
       handlePaymentProcessing(payment);
