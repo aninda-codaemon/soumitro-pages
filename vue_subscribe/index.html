@@ -361,7 +361,7 @@
             </label>
           </div>
 
-          <pre>$v: {{ $v }}</pre>
+          <!-- <pre>$v: {{ $v }}</pre> -->
 
           <input id="layout" name="layout" type="hidden" value="fresh">
           <input id="user_password" name="user[password]" value="delay" type="hidden">
@@ -405,7 +405,7 @@
             <!-- {{#if street}} -->
             <template v-if="street">
               <div class="order-summary-section order-summary-full-report">
-                <p>
+                <p class="clearfix">
                   <span class="order-summary-heading">Full Property Report on:</span>
                   <br/>
                   <span class="order-summary-name strong text-bv-blue">{{street}}<br>{{city}}, {{state}} {{zip}}</span>
@@ -415,7 +415,7 @@
             </template>
             <!-- {{/if}} -->
             <div>
-              <p>
+              <p class="clearfix">
                 <span class="order-summary-heading">Membership:</span>
                 <br/>
                 <span class="order-summary-plan-length strong text-bv-blue"><span id="summary-term"></span> of Unlimited Reports</span>
