@@ -743,7 +743,7 @@ window.BVGetQueryVariable = BVGetQueryVariable;
         //this is a really weird bug i couldnt figure out. Using slideUp would
         //add a bunch more inline styles like height: 0px; overflow: hidden, that wouldnt
         //get reset with slideDown when the page loaded after paypal is cancelled
-        
+
         if (BVGetQueryVariable('bvpp')) {
           $('.cc-wrapper').hide()
         } else {
@@ -764,7 +764,8 @@ window.BVGetQueryVariable = BVGetQueryVariable;
 
         //this is a really weird bug i couldnt figure out. Using slideUp would
         //add a bunch more inline styles like height: 0px; overflow: hidden, that wouldnt
-        //get reset with slideDown when the page loaded after paypal is cancelled
+        //get reset with slideDown when the page loaded after paypal is cancelled. It's almost if SlideUp didnt fully
+        //resolve into your straight up display:none
         if (BVGetQueryVariable('bvpp')) {
           $('.cc-wrapper').show()
         } else {
@@ -790,7 +791,15 @@ window.BVGetQueryVariable = BVGetQueryVariable;
 
         var planSelector = "input[value='" + paypalData['subscription_plan_name'] + "']",
             $planSelector = $(planSelector);
-        $planSelector.prop('checked', true);
+        $(window).load(function(){
+          var paypal = amplify.store('paypal_lead'),
+              plan = "input[value='" + paypal['subscription_plan_name'] + "']",
+              $planSelector = $(planSelector);
+
+          $('.plan_name_radio').prop('checked', false);
+          $planSelector.prop('checked', true);
+        })
+
         $('.selection-wrap').removeClass('selection-selected');
         $planSelector.closest('.selection-wrap').addClass('selection-selected');
       }
@@ -804,6 +813,7 @@ window.BVGetQueryVariable = BVGetQueryVariable;
         // $('#create_button').html('Confirm your Payment');
 
         $('#iModal-dismiss').on('click', function (evt) {
+
           evt.preventDefault();
           $("#PayPal-Success").modal('hide');
           window.PaypalPaymentProcessorRetry = true;

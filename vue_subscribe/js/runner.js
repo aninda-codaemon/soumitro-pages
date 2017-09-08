@@ -56,7 +56,11 @@
   };
 
   leadData = localStorage.getItem('__amplify__leadData') ? JSON.parse(localStorage.getItem('__amplify__leadData')) : {};
+  var paypalData = {};
 
+  if (BVGetQueryVariable('bvpp')){
+    paypalData = localStorage.getItem('__amplify__paypal_lead') ? JSON.parse(localStorage.getItem('__amplify__paypal_lead')).data : {};
+  }
   var teaserData = facadeLocalStorage.getItem('propertyTeaserData') || {},
       propertyTeaserData;
 
@@ -71,22 +75,23 @@
     propertyTeaserData.teasers = teaserData.teasers[0];
   }
 
+
   var applicationState = {
     ownerName: '',
     propertySearchData: facadeLocalStorage.getItem('propertySearchData') || initialPropertySearchData,
     propertyCurrentRecord: facadeLocalStorage.getItem('propertyCurrentRecord') || {},
     propertyTeaserData: propertyTeaserData || initialPropertyTeaserData,
     displayOwner: false,
-    first_name: leadData['account[first_name]'],
-    last_name : leadData['account[last_name]'],
-    email: leadData['user[email]'],
+    first_name: paypalData['account[first_name]'] ? paypalData['account[first_name]'] : leadData['account[first_name]'],
+    last_name : paypalData['account[last_name]'] ? paypalData['account[last_name]'] : leadData['account[last_name]'],
+    email: paypalData['user[email]'] ? paypalData['user[email]'] : leadData['user[email]'],
     ccNum: '',
     cvv: '',
     exp_month: '4',
     exp_year: '2017',
     address_zip: '',
-    tosChecked: false,
-    activeField: window.BVGetQueryVariable('bvpp') ? 'paypal' : 'credit_card'
+    tosChecked: paypalData['account[tos]'] ? true : false,
+    activeField: window.BVGetQueryVariable('bvpp') ? 'paypal' : 'credit_card',
   };
 
   //custom validation functions
@@ -214,17 +219,18 @@
             window.scrollTo(0, offset.top);
           }
         } else {
+
           window.initializePayment(e);
         }
       },
 
       togglePayment: function(e) {
-        if (e.target.id === 'credit') {
+        if (e.currentTarget.id === 'credit-radio') {
           this.activeField = 'credit_card';
-        } else if (e.target.id === "paypal-radio-button"){
+        } else if (e.currentTarget.id === "paypal-radio"){
           this.activeField = 'paypal';
         }
-      }
+      },
     },
 
     validations: {
@@ -417,6 +423,18 @@
     trackNL('onBack Modal - Exited');
   });
 
+  //added this fix to prevent freeze on page when paypal popup is exed out before loading is finished
+
+  $(document).on('DOMNodeRemoved', function(e){
+
+    if ($(e.target).is($('iframe')) || $(e.target).hasClass('paypal-checkout-sandbox') || $(e.target).find('.paypal-checkout-sandbox-iframe').length){
+      if ($(e.target).hasClass('.paypal-checkout-sandbox-iframe') || $(e.target).find('.paypal-checkout-sandbox-iframe').length){
+        paypal.checkout.closeFlow();
+        $('#spinner').hide();
+        $('#create_button').removeAttr('disabled');
+      }
+    }
+  });
 
   var initDownsells = function () {
 
@@ -424,16 +442,17 @@
         CHECK_TIMEOUT = 5000,
         timeElapsed = 1000;
 
-    var activateDownsells = function () {
-      if (typeof downsell !== "undefined" && typeof downsell.init === "function") {
-        downsell.init({
-          onBack: {
-            elem: "#iModal-trial",
-            cb: function () {}
-          }
-        });
-      }
-    };
+
+  var activateDownsells = function () {
+    if (typeof downsell !== "undefined" && typeof downsell.init === "function") {
+      downsell.init({
+        onBack: {
+          elem: "#iModal-trial",
+          cb: function () {}
+        }
+      });
+    }
+  };
 
     var vwoIntervalId,
         vwoExists = typeof _vwo_code !== "undefined" && typeof _vwo_code.finished === 'function';
