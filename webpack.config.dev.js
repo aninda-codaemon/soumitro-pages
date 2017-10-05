@@ -13,7 +13,7 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 const cssFilename = 'css/[name].[contenthash:8].css';
 const extractTextPluginOptions = { publicPath: '/' };
 
-const root = process.argv[2];
+const root = process.argv[3];
 module.exports = {
   entry: `${root}/index.js`,
   output: {
@@ -34,7 +34,7 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       inject: true,
-      template: `${root}/index.hbs`,
+      template: `${root}/index.html`,
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
@@ -51,20 +51,7 @@ module.exports = {
     }
   },
   module: {
-    // resolveLoader: {
-    //   fallback: path.join(__dirname, 'node_modules'),
-    //   alias: {
-    //     'hbs': 'handlebars-loader'
-    //   }
-    // },
     loaders: [
-      {
-        test: /\.hbs$/,
-        loader: 'handlebars-loader',
-        query: {
-          inlineRequires: '/img/'
-        }
-      },
       {
         test: /\.(js|jsx)$/,
         include: resolveApp(root),
@@ -82,7 +69,7 @@ module.exports = {
         use: {
           loader: 'html-loader',
           options: {
-            attrs: [':data-src']
+            attrs: ['img:src']
           }
         }
       },
@@ -104,7 +91,7 @@ module.exports = {
         }]
       },
       {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         loader: ExtractTextPlugin.extract(
           Object.assign(
             {
@@ -117,6 +104,9 @@ module.exports = {
                     minimize: true,
                     sourceMap: true,
                   },
+                },
+                {
+                 loader: 'sass-loader'
                 },
                 {
                   loader: require.resolve('postcss-loader'),

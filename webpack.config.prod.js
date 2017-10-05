@@ -6,12 +6,13 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 const cssFilename = 'css/[name].[contenthash:8].css';
-const extractTextPluginOptions = { publicPath: '' };
+const extractTextPluginOptions = { publicPath: '../' };
 
 const root = process.argv[3];
 module.exports = {
@@ -41,7 +42,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(js|jsx)$/,
+        test: /\.js$/,
         include: resolveApp(root),
         loader: require.resolve('babel-loader'),
         options: {
@@ -54,17 +55,16 @@ module.exports = {
         use: {
           loader: 'html-loader',
           options: {
-            attrs: [':data-src']
+            attrs: ['img:src']
           }
         }
       },
       {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.jpg$/, /\.png$/, /\.svg$/],
-        loader: require.resolve('url-loader'),
+        loader: 'file-loader',
         options: {
-          limit: 10000,
-          name: 'img/[name].[hash:8].[ext]',
-        },
+          name: 'img/[name].[ext]'
+        }  
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -76,7 +76,7 @@ module.exports = {
         }]
       },
       {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         loader: ExtractTextPlugin.extract(
           Object.assign(
             {
@@ -91,10 +91,11 @@ module.exports = {
                   },
                 },
                 {
+                 loader: 'sass-loader'
+                },
+                {
                   loader: require.resolve('postcss-loader'),
                   options: {
-                    // Necessary for external CSS imports to work
-                    // https://github.com/facebookincubator/create-react-app/issues/2677
                     ident: 'postcss',
                     plugins: () => [
                       require('postcss-flexbugs-fixes'),
@@ -103,7 +104,7 @@ module.exports = {
                           '>1%',
                           'last 4 versions',
                           'Firefox ESR',
-                          'not ie < 9', // React doesn't support IE8 anyway
+                          'not ie < 9',
                         ],
                         flexbox: 'no-2009',
                       }),
@@ -123,7 +124,7 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       inject: true,
-      template: `${root}/index.hbs`,
+      template: `${root}/index.html`,
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -159,6 +160,18 @@ module.exports = {
         screw_ie8: true
       },
       comments: false
+    }),
+    new ImageminPlugin({
+      pngquant: {
+        quality: '95-100'
+      },
+      jpegtran: {
+        progressive: true
+      },
+      svgo: null  // Flowrida doesn't like this
+    }),
+    new webpack.BannerPlugin({
+       banner: `Root folder: ${root}`
     })
   ],
 };
