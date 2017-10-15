@@ -1,3 +1,5 @@
+import _padStart from 'lodash/padStart';
+
 import * as localStorage from 'utils/localStorage';
 import { BrowserDetect } from 'utils/browser';
 import { Counter } from 'utils/counter';
@@ -17,7 +19,7 @@ const initializeCounter = data => {
     slope: data.slope,
     afterUpdateCallback: function (currentCount) {
       let count = currentCount + '';
-      let countItems = _.padStart(count, 8, '0');
+      let countItems = _padStart(count, 8, '0');
       for (let i = 0; i < countItems.length; i++) {
         $('#tick_' + i).html(countItems[i]);
       }
