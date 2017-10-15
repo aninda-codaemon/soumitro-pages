@@ -2,13 +2,12 @@ import * as localStorage from 'utils/localStorage';
 import { BrowserDetect } from 'utils/browser';
 import { Counter } from 'utils/counter';
 import { getReportCount } from 'api/stats';
+
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap';
 import './css/style.css';
 
 const isLocalStorageSupported = localStorage.isSupported();
-
-BrowserDetect.init();
 
 const initializeCounter = data => {
   const counterOptions = {
@@ -26,11 +25,25 @@ const initializeCounter = data => {
   counterInstance.start();
   $('#counter').removeClass('hide');
 };
-getReportCount().then(initializeCounter);
 
-//Search carousel selector
-const $carousel = $('.home-carousel-indicator');
-$carousel.on('click', function () {
-  $carousel.removeClass('active');
-  $(this).addClass('active');
-});
+const initializeCarousel = () => {
+  const $carousel = $('.carousel').carousel();
+  const $homeCarouselIndicator = $('.home-carousel-indicator');
+
+  $homeCarouselIndicator.on('click', function () {
+    $homeCarouselIndicator.removeClass('active');
+    $(this).addClass('active');
+  });
+
+  $carousel.on('slid.bs.carousel', function (evt) {
+    if (($('.carousel div.active').index() + 1) === 4) {
+      initAddress();
+    }
+  });
+};
+
+BrowserDetect.init();
+initializeCarousel();
+getReportCount().then(initializeCounter);
+$('.focus-me').focus();
+$('a.smarty-popup-close').html('<span class="glyphicon glyphicon-remove-circle"></span>');

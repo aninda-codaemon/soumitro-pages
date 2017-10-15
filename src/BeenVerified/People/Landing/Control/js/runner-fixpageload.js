@@ -8,36 +8,6 @@
     $headerSearchProperty = $('#header-search-property'),
     $addressField = $('#fullAddress');
 
-  //Ticker Counter
-  $.ajax({
-    url: "https://www.beenverified.com/stats/report_count.json",
-    dataType: 'json',
-    success: function (data) {
-      jCounter({
-        startCount: data.startCount,
-        slope: data.slope,
-        afterUpdateCallback: function (currentCount) {
-
-          count = currentCount + '';
-          count_items = count.padWithZeros(8).split("");
-
-          for (i = 0; i < count_items.length; i++) {
-            $("#tick_" + i).html(count_items[i]);
-          }
-        }
-      }).countIt();
-
-      // Remove 'hide' class when counter is populated and ready to render
-      $('#counter').removeClass('hide');
-    }
-  });
-
-  //Search carousel selector
-  $('.home-carousel-indicator').on('click', function () {
-    $('.home-carousel-indicator').removeClass('active');
-    $(this).addClass('active');
-  });
-
   //checks validation of checkmark after input focus lost
   var $firstNameInput = $('#fn');
   var $lastNameInput = $('#ln');
@@ -239,18 +209,6 @@
 
   }
 
-  var init = function () {
-    $('.carousel').carousel();
-    $('.focus-me').focus();
-    $('.carousel').on('slid.bs.carousel', function (evt) {
-      if (($('.carousel div.active').index() + 1) === 4) {
-        initAddress();
-      }
-    });
-    $('a.smarty-popup-close').html('<span class="glyphicon glyphicon-remove-circle"></span>');
-  };
-
-  init();
 }());
 
 /**
@@ -303,10 +261,6 @@
     });
   };
 
-  var show = function () {
-    $(".box-text-wrap").removeClass("hide");
-  };
-
   var initialize = function () {
     var query = window.location.search.substring(1),
       queryArgs = parseQueryArgs(query);
@@ -323,9 +277,7 @@
 
   try {
     initialize();
-    show();
   } catch (err) {
-    show();
     throw err;
   }
 
