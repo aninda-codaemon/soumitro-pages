@@ -8,20 +8,20 @@
     $headerSearchProperty = $('#header-search-property'),
     $addressField = $('#fullAddress');
 
-  //checks validation of checkmark after input focus lost
-  var $firstNameInput = $('#fn');
-  var $lastNameInput = $('#ln');
-  var checkRemover = function(inputField) {
-    if (inputField.val() === '' && inputField.hasClass('success')) {
-      inputField.removeClass('success');
-    }
-  }
-  $firstNameInput.on('change', function() {
-    checkRemover($firstNameInput)
-  })
-  $lastNameInput.on('change', function() {
-    checkRemover($lastNameInput)
-  })
+  // //checks validation of checkmark after input focus lost
+  // var $firstNameInput = $('#fn');
+  // var $lastNameInput = $('#ln');
+  // var checkRemover = function(inputField) {
+  //   if (inputField.val() === '' && inputField.hasClass('success')) {
+  //     inputField.removeClass('success');
+  //   }
+  // }
+  // $firstNameInput.on('change', function() {
+  //   checkRemover($firstNameInput)
+  // })
+  // $lastNameInput.on('change', function() {
+  //   checkRemover($lastNameInput)
+  // })
 
   var initAddress = function () {
     // address verification
@@ -120,41 +120,6 @@
       submitHandler: function (form) {
         trackNL("Submitted Search Form - People");
         window.setTimeout(function () {
-          form.submit();
-        }, REQUEST_DELAY);
-      }
-    });
-
-  }
-  if ($headerSearchPhone.length !== 0) {
-    $.validator.addMethod("phoneUS", function (phone_number, element) {
-      phone_number = phone_number.replace(/\s+/g, "");
-      return this.optional(element) || phone_number.length > 9 &&
-        phone_number.match(/^(\+?1-?)?(\([2-9]([02-9]\d|1[02-9])\)|[2-9]([02-9]\d|1[02-9]))-?[2-9]([02-9]\d|1[02-9])-?\d{4}$/);
-    }, "Please specify a valid phone number");
-
-    $headerSearchPhone.validate({
-      validClass: "success",
-
-      rules: {
-        "phone": {
-          required: true,
-          phoneUS: true
-        }
-      },
-      messages: {
-        phone: "Please enter a phone number. e.g., (212) 555-6789"
-      },
-
-      onkeyup: false,
-      onclick: false,
-      onsubmit: true,
-      submitHandler: function (form) {
-        trackNL("Submitted Search Form - Phone");
-        window.setTimeout(function () {
-          var phoneNumber = $("#phone").val(),
-                cleanNumber = phoneNumber.replace(/\D/g, '');
-          $('#phone').val(cleanNumber);
           form.submit();
         }, REQUEST_DELAY);
       }
