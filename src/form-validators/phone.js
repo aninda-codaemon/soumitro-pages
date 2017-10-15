@@ -8,6 +8,9 @@ const INVALID_PHONE_MESSAGE = 'Please enter a valid phone number. e.g. (212) 555
 const MAX_CHARACTERS_PHONE_NUMBER = 9;
 const defaultOptions = {
   validClass: 'success',
+  onkeyup: false,
+  onclick: false,
+  onsubmit: true,
   rules: {
     phone: {
       required: true,
@@ -28,7 +31,7 @@ const basicSubmitActions = () => {
   track('Submitted Search Form - Phone');
 }
 
-const validate = ($form, $phoneField, options) => {
+const validate = ($form, $phoneField, options = {}) => {
   const newOptions = _assignIn(defaultOptions, options);
   newOptions.submitHandler = (...args) => {
     basicSubmitActions(...args);

@@ -46,13 +46,21 @@ const initializeCarousel = () => {
   });
 };
 
+const initializePeopleValidator = () => {
+  const $headerSearchPeople = $('#header-search-people');
+  formValidator.people.validate($headerSearchPeople, {
+    submitHandler: function (form) {
+      window.setTimeout(function () {
+        form.submit();
+      }, REQUEST_DELAY);
+    }
+  });
+};
+
 const initializePhoneValidator = () => {
   const $headerSearchPhone = $('#header-search-phone');
   const $phoneField = $('#phone');
   formValidator.phone.validate($headerSearchPhone, $phoneField, {
-    onkeyup: false,
-    onclick: false,
-    onsubmit: true,
     submitHandler: function (form) {
       window.setTimeout(() => {
         const phoneNumber = $phoneField.val();
@@ -66,6 +74,7 @@ const initializePhoneValidator = () => {
 
 BrowserDetect.init();
 initializeCarousel();
+initializePeopleValidator();
 initializePhoneValidator();
 getReportCount().then(initializeCounter);
 $('.focus-me').focus();

@@ -2,8 +2,7 @@
 
   var REQUEST_DELAY = 300; // ms
 
-  var $headerSearchPeople = $('#header-search-people'),
-    $headerSearchPhone = $('#header-search-phone'),
+  var
     $headerSearchEmail = $('#header-search-email'),
     $headerSearchProperty = $('#header-search-property'),
     $addressField = $('#fullAddress');
@@ -93,39 +92,6 @@
     });
   };
   
-  $.validator.addMethod("notEmail", function(value, element) {
-    return this.optional(element) || !/^[ a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[ a-zA-Z0-9](?:[ a-zA-Z0-9-]{0,61}[ a-zA-Z0-9])?(?:\.[ a-zA-Z0-9](?:[ a-zA-Z0-9-]{0,61}[ a-zA-Z0-9])?)*$/.test(value);
-  }, "Email addresses are not searchable here");
-
-  if ($headerSearchPeople.length !== 0) {
-    $headerSearchPeople.validate({
-      validClass: "success",
-      rules: {
-        fn: {
-          required: true,
-          notEmail: true
-        },
-        ln: {
-          required: true,
-          notEmail: true
-        },
-      },
-      messages: {
-        fn: "Please enter a first name",
-        ln: "Please enter a last name"
-      },
-      onkeyup: false,
-      onclick: false,
-      onsubmit: true,
-      submitHandler: function (form) {
-        trackNL("Submitted Search Form - People");
-        window.setTimeout(function () {
-          form.submit();
-        }, REQUEST_DELAY);
-      }
-    });
-
-  }
   if ($headerSearchEmail.length !== 0) {
     $headerSearchEmail.validate({
       validClass: "success",
