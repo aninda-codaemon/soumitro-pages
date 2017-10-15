@@ -18,7 +18,7 @@ const Counter = {
         currentCount = Math.ceil((options.slope * currentIteration) + options.startCount);
         currentIteration = currentIteration + 1.0;
         options.afterUpdateCallback(currentCount);
-        setTimeout(this.start, options.interval);
+        setTimeout(this.start.bind(this), options.interval);
       }
     };
   }
