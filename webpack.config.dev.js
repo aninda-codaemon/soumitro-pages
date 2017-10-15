@@ -12,8 +12,8 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 const cssFilename = 'css/[name].[contenthash:8].css';
 const extractTextPluginOptions = { publicPath: '/' };
+const root = process.argv[4];
 
-const root = process.argv[3];
 module.exports = {
   entry: `${root}/index.js`,
   output: {
@@ -48,6 +48,7 @@ module.exports = {
   resolve: {
     alias: {
       'handlebars': 'handlebars/dist/handlebars.js',
+      'utils/request': path.resolve(__dirname, 'mocks/request.js'),
     },
     modules: [
       path.resolve('./src'),

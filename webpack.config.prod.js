@@ -30,7 +30,11 @@ module.exports = {
   resolve: {
     alias: {
       'handlebars': 'handlebars/dist/handlebars.js'
-    }
+    },
+    modules: [
+      path.resolve('./src'),
+      path.resolve('./node_modules')
+    ]
   },
   module: {
     loaders: [
@@ -43,11 +47,11 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        include: resolveApp(root),
+        include: resolveApp('./src'),
         loader: require.resolve('babel-loader'),
         options: {
           compact: true,
-          presets: ['es2015']
+          presets: ['es2015', 'es2016', 'es2017']
         },
       },
       {
@@ -144,9 +148,6 @@ module.exports = {
       jQuery: 'jquery',
       _: 'lodash',
     }),
-    new ExtractTextPlugin({
-      filename: cssFilename,
-    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false
@@ -161,6 +162,9 @@ module.exports = {
         screw_ie8: true
       },
       comments: false
+    }),
+    new ExtractTextPlugin({
+      filename: cssFilename,
     }),
     new ImageminPlugin({
       pngquant: {
