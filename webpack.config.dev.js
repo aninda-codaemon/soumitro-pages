@@ -47,8 +47,12 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      'handlebars': 'handlebars/dist/handlebars.js'
-    }
+      'handlebars': 'handlebars/dist/handlebars.js',
+    },
+    modules: [
+      path.resolve('./src'),
+      path.resolve('./node_modules')
+    ]
   },
   module: {
     loaders: [
