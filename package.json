@@ -53,6 +53,7 @@
     "clean-webpack-plugin": "^0.1.16",
     "fetch-jsonp": "^1.1.3",
     "handlebars": "^4.0.10",
+    "hi-base64": "^0.2.1",
     "jquery": "^3.2.1",
     "jquery-mask-plugin": "^1.14.12",
     "jquery-validation": "^1.17.0",
