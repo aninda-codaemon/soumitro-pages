@@ -2,7 +2,9 @@ import _padStart from 'lodash/padStart';
 
 import * as localStorage from 'utils/localStorage';
 import { BrowserDetect } from 'utils/browser';
+import { getQueryArgs } from 'utils/queryArgs';
 import { Counter } from 'utils/counter';
+import { displayDynamicContent } from 'utils/dynamicContent';
 import { getReportCount } from 'api/stats';
 import formValidator from 'form-validators';
 
@@ -10,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap';
 import './css/style.css';
 
+const queryArgs = getQueryArgs();
 const isLocalStorageSupported = localStorage.isSupported();
 
 const initializeCounter = data => {
@@ -40,7 +43,12 @@ const initializeCarousel = () => {
   });
 
   $carousel.on('slid.bs.carousel', function (evt) {
-    if (($('.carousel div.active').index() + 1) === 4) {
+    const $activeSection = $('.carousel div.active');
+    const index = $activeSection.index() + 1;
+    const PROPERTY_SECTION = 4;
+    
+    $activeSection.find('.first-input').focus();
+    if (index === PROPERTY_SECTION) {
       formValidator.property.initializeLiveAddress($addressField);
     }
   });
@@ -78,9 +86,17 @@ const initializeForms = () => {
   validators.forEach( initializeValidator => initializeValidator());
 };
 
-BrowserDetect.init();
-initializeCarousel();
-initializeForms();
-getReportCount().then(initializeCounter);
-$('.focus-me').focus();
-$('a.smarty-popup-close').html('<span class="glyphicon glyphicon-remove-circle"></span>');
+const initialize = () => {
+  BrowserDetect.init();
+  initializeCarousel();
+  initializeForms();
+  getReportCount().then(initializeCounter);
+
+  if (queryArgs) {
+    displayDynamicContent(queryArgs);
+  }
+  $('.focus-me').focus();
+  $('a.smarty-popup-close').html('<span class="glyphicon glyphicon-remove-circle"></span>');
+}
+
+initialize();
