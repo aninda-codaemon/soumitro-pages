@@ -130,18 +130,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: `${root}/index.html`,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAttributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true,
-      },
+      minify: false,
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
