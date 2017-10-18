@@ -1,6 +1,7 @@
 import _assignIn from 'lodash/assignIn';
 import 'liveaddress';
 
+import amplify from 'utils/amplify.store';
 import { track } from 'utils/track';
 
 const initializeLiveAddress = function ($propertyField) {
