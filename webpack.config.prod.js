@@ -134,8 +134,7 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery',
-      _: 'lodash',
+      jQuery: 'jquery'
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
