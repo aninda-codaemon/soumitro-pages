@@ -32,6 +32,7 @@ const initializeCounter = data => {
 const initializeCarousel = () => {
   const $carousel = $('.carousel').carousel();
   const $homeCarouselIndicator = $('.home-carousel-indicator');
+  const $addressField = $('#fullAddress');
 
   $homeCarouselIndicator.on('click', function () {
     $homeCarouselIndicator.removeClass('active');
@@ -40,7 +41,7 @@ const initializeCarousel = () => {
 
   $carousel.on('slid.bs.carousel', function (evt) {
     if (($('.carousel div.active').index() + 1) === 4) {
-      initAddress();
+      formValidator.property.initializeLiveAddress($addressField);
     }
   });
 };
@@ -61,11 +62,25 @@ const initializeEmailValidator = () => {
   formValidator.email.validate($headerSearchEmail);
 };
 
+const initializePropertyValidator = () => {
+  const $headerSearchProperty = $('#header-search-property');
+  formValidator.property.validate($headerSearchProperty);
+};
+
+const initializeForms = () => {
+  const validators = [
+    initializePeopleValidator,
+    initializePhoneValidator,
+    initializeEmailValidator,
+    initializePropertyValidator
+  ];
+
+  validators.forEach( initializeValidator => initializeValidator());
+};
+
 BrowserDetect.init();
 initializeCarousel();
-initializePeopleValidator();
-initializePhoneValidator();
-initializeEmailValidator();
+initializeForms();
 getReportCount().then(initializeCounter);
 $('.focus-me').focus();
 $('a.smarty-popup-close').html('<span class="glyphicon glyphicon-remove-circle"></span>');
