@@ -6,6 +6,11 @@ $.validator.addMethod('notEmail', function (value, element) {
   return this.optional(element) || !/^[ a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[ a-zA-Z0-9](?:[ a-zA-Z0-9-]{0,61}[ a-zA-Z0-9])?(?:\.[ a-zA-Z0-9](?:[ a-zA-Z0-9-]{0,61}[ a-zA-Z0-9])?)*$/.test(value);
 }, 'Email addresses are not searchable here');
 
+const submitHandler = form => {
+  track('Submitted Search Form - People');
+  form.submit();
+};
+
 const defaultOptions = {
   validClass: 'success',
   rules: {
@@ -18,6 +23,7 @@ const defaultOptions = {
       notEmail: true
     },
   },
+  submitHandler,
   messages: {
     fn: 'Please enter a first name',
     ln: 'Please enter a last name'
@@ -27,16 +33,8 @@ const defaultOptions = {
   onsubmit: true,
 };
 
-const basicSubmitActions = () => {
-  track('Submitted Search Form - People');
-}
-
 const validate = ($form, options = {}) => {
   const newOptions = _assignIn(defaultOptions, options);
-  newOptions.submitHandler = (...args) => {
-    basicSubmitActions(...args);
-    options.submitHandler && options.submitHandler(...args);;
-  }
   $form.validate(newOptions);
 };
 

@@ -10,7 +10,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap';
 import './css/style.css';
 
-const REQUEST_DELAY = 300;
 const isLocalStorageSupported = localStorage.isSupported();
 
 const initializeCounter = data => {
@@ -48,34 +47,25 @@ const initializeCarousel = () => {
 
 const initializePeopleValidator = () => {
   const $headerSearchPeople = $('#header-search-people');
-  formValidator.people.validate($headerSearchPeople, {
-    submitHandler: function (form) {
-      window.setTimeout(function () {
-        form.submit();
-      }, REQUEST_DELAY);
-    }
-  });
+  formValidator.people.validate($headerSearchPeople);
 };
 
 const initializePhoneValidator = () => {
   const $headerSearchPhone = $('#header-search-phone');
   const $phoneField = $('#phone');
-  formValidator.phone.validate($headerSearchPhone, $phoneField, {
-    submitHandler: function (form) {
-      window.setTimeout(() => {
-        const phoneNumber = $phoneField.val();
-        const cleanNumber = phoneNumber.replace(/\D/g, '');
-        $phoneField.val(cleanNumber);
-        form.submit();
-      }, REQUEST_DELAY);
-    }
-  });
-}
+  formValidator.phone.validate($headerSearchPhone, $phoneField);
+};
+
+const initializeEmailValidator = () => {
+  const $headerSearchEmail = $('#header-search-email');
+  formValidator.email.validate($headerSearchEmail);
+};
 
 BrowserDetect.init();
 initializeCarousel();
 initializePeopleValidator();
 initializePhoneValidator();
+initializeEmailValidator();
 getReportCount().then(initializeCounter);
 $('.focus-me').focus();
 $('a.smarty-popup-close').html('<span class="glyphicon glyphicon-remove-circle"></span>');

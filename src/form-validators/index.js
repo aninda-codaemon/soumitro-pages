@@ -1,9 +1,11 @@
 import 'jquery-validation';
 
-import phone from './phone';
+import email from './email';
 import people from './people';
+import phone from './phone';
 
 export default {
+  email,
   people,
   phone
 };

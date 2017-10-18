@@ -92,32 +92,6 @@
     });
   };
   
-  if ($headerSearchEmail.length !== 0) {
-    $headerSearchEmail.validate({
-      validClass: "success",
-
-      rules: {
-        "emailaddress": {
-          required: true,
-          email: true
-        },
-      },
-      messages: {
-        "emailaddress": "Please enter an Email Address"
-      },
-
-      onkeyup: false,
-      onclick: false,
-      onsubmit: true,
-      submitHandler: function (form) {
-        trackNL("Submitted Search Form - Email");
-        window.setTimeout(function () {
-          form.submit();
-        }, REQUEST_DELAY);
-      }
-    });
-
-  }
   if ($headerSearchProperty.length !== 0) {
     $headerSearchProperty.validate({
       rules: {
