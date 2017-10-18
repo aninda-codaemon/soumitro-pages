@@ -16,6 +16,9 @@ const extractTextPluginOptions = { publicPath: '../' };
 
 const root = process.argv[3];
 module.exports = {
+    // Don't attempt to continue if there are any errors.
+  bail: true,
+  devtool: 'source-map',
   entry: `${root}/index.js`,
   output: {
     filename: 'js/bundle.js',
@@ -149,7 +152,8 @@ module.exports = {
       compress: {
         screw_ie8: true
       },
-      comments: false
+      comments: false,
+      sourceMap: true
     }),
     new ExtractTextPlugin({
       filename: cssFilename,
