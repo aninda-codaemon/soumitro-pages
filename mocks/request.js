@@ -7,7 +7,9 @@ const registeredUrls = [
 
 const get = (url) => new Promise((resolve, reject) => {
   const result = _find(registeredUrls, { url });
-  resolve(result.response);
+  resolve({
+    data: result.response
+  });
 });
 
 export {
