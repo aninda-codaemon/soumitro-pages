@@ -14,7 +14,9 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 const cssFilename = 'css/[name].[contenthash:8].css';
 const extractTextPluginOptions = { publicPath: '../' };
 
-const root = process.argv[3];
+const lastIndex = process.argv.length - 1;
+const root = process.argv[lastIndex];
+
 module.exports = {
     // Don't attempt to continue if there are any errors.
   bail: true,
