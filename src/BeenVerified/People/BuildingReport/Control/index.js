@@ -57,4 +57,4 @@ getExtraTeaserData(bvid).then(includeRelativesModal);
 
 initializeTestimonials();
 initializeQueryArgs(queryArgs);
-initializeBVGO(wizard.skipStep());
+initializeBVGO(wizard.skipStep);

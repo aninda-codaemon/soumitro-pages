@@ -30,11 +30,6 @@
   
   window.bv.utils = {
     isMobile: checkMobile(),
-    getExtraTeaserData: getExtraTeaserData,
-    getTeaserData: getTeaserData,
-    getQueryArgs: getQueryArgs,
     notifyRecordCount: notifyRecordCount,
-    removeDiacritics: removeDiacritics,
-    trackNL: trackNL,
   };
 }());

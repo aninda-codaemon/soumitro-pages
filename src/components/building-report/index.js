@@ -5,6 +5,40 @@ import WizardManager from 'components/wizard/manager';
 
 const second = 1000;
 
+var containerSelector = $(".wizard-content");
+var stepsContainerSelector = $(".wizard-header");
+var stepSelector = $(".wizard-step");
+var steps = $(containerSelector).find(stepSelector);
+var stepCount = 4;//steps.size()-1;
+var isModal = true;
+var validateNext = function () { return true; };
+var validateFinish = function () { return true; };
+//////////////////////
+var step = 1;
+var container = $(containerSelector).find(stepsContainerSelector);
+steps.hide();
+$(steps[0]).show();
+if (isModal) {
+  $('#wizModal').on('hidden.bs.modal', function () {
+    step = 1;
+    $($(containerSelector + " .wizard-steps-panel .step-number")
+      .removeClass("done")
+      .removeClass("doing")[0])
+      .toggleClass("doing");
+
+    $($(containerSelector + " .wizard-step")
+      .hide()[0])
+      .show();
+  });
+}
+$('#wizModal').find(".wizard-steps-panel").remove();
+stepsContainerSelector.prepend('<div class="wizard-steps-panel steps-quantity-' + stepCount + '"></div>');
+var stepsPanel = $('#wizModal').find(".wizard-steps-panel");
+for (var s = 1; s <= 4; s++) {
+  stepsPanel.append('<div class="step-number step-' + s + '"><div class="number">' + s + '</div></div>');
+}
+$('#wizModal').find(".wizard-steps-panel .step-" + step).toggleClass("doing").find('.number').html('&nbsp;');
+
 function showExternalLoading(stepCompleted, duration, indexModalToDisplay) {
   var loads = $('#loadingModal .progress');
   var modTitles = $('.emdTitle');
