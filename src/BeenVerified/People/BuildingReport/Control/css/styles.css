@@ -2132,7 +2132,6 @@ h6.create-login {
   color: #fff;
   border-radius: 4px;
   background: #353167;
-  background: #353167 url('../img/rolling-w.gif') right 10px center / 18px scroll no-repeat !important;
 
   font-weight: bold !important;
 }

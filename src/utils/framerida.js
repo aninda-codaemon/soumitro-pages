@@ -12,7 +12,17 @@
  *        - A form whose input values are filled from data in localStorage.
  */
 
-/* global  _, jQuery, amplify, Handlebars */
+import Handlebars from 'handlebars';
+import { 
+  includes as _includes,
+  each as _each,
+  forEach as _forEach,
+  uniqueId as _uniqueId,
+  map as _map,
+} from 'lodash';
+
+import amplify from './amplifyStore';
+import './frameridaHelpers';
 
 (function(root, $, _, amplify, H) {
   "use strict";
@@ -233,8 +243,8 @@
    */
   fr._mergeDataSources = function(dataSources, storage) {
     var data = {};
-    _.forEach(dataSources, function(ds) {
-      _.forEach(storage[ds], function(val, prop) {
+    _forEach(dataSources, function(ds) {
+      _forEach(storage[ds], function(val, prop) {
         if (data[prop]) { // found a duplicate, namespace it.
           data[ds + '_' + prop] = val;
         } else {
@@ -263,7 +273,7 @@
    * Apply and return an instance of the provided function constructor.
    */
   fr._applyMapping = function(data, fn) {
-    return _.map(data, function(item, idx) {
+    return _map(data, function(item, idx) {
       var instance = new root[fn](item);
       instance._framerida_index = idx;
       return instance;
@@ -288,7 +298,7 @@
     $eachStubElems.each(function(idx, eachStubElem) {
       var $eachStubElem = $(eachStubElem),
           $eachStubParent = $eachStubElem.parent(),
-          stubId = _.uniqueId(),
+          stubId = _uniqueId(),
           mappingFunction = $eachStubElem.data("fr-map"),
           sortingFunction = $eachStubElem.data("fr-sort"),
           repeatedTpl, ds, dataPath;
@@ -363,10 +373,10 @@
       // If we have multiple dataSources, applying the mapping function gets
       // rid of data that it doesnt use. Here we add that data back.
       if (originalFrameridaClick && originalDataSources) {
-        _.forEach(originalDataSources, function(originalDs) {
+        _forEach(originalDataSources, function(originalDs) {
           if (originalDs === originalFrameridaClick) return;
           var dsData = store()[originalDs];
-          _.forEach(dsData, function(val, prop) {
+          _forEach(dsData, function(val, prop) {
             var propName = prop;
             if (data[prop]) {
               propName = originalDs + "_" + prop; // namespace dups
@@ -397,7 +407,7 @@
       var $boundElem = $(boundElem),
           $boundElemClone = $boundElem.clone(),
           $eachStubElems = $boundElemClone.find("[data-fr-each]"),
-          uid = _.uniqueId(),
+          uid = _uniqueId(),
           html;
 
       fr._processFrEachElems($eachStubElems, data, dataSource);
@@ -429,7 +439,7 @@
    */
   fr._transformFormData = function(data) {
     var result = {};
-    _.forEach(data, function(obj) {
+    _forEach(data, function(obj) {
       result[obj.name] = obj.value;
     });
     return result;
@@ -464,13 +474,13 @@
           storageKey = $(this).data('fr-store');
 
       var ignoredElems = $(this).find('[data-fr-ignore]');
-      ignoredElems = _.map(ignoredElems, function (ignored) {
+      ignoredElems = _map(ignoredElems, function (ignored) {
         return $(ignored).attr('name');
       });
 
       formVals = fr._transformFormData(formVals);
 
-      _.each(ignoredElems, function (ignoredName) {
+      _each(ignoredElems, function (ignoredName) {
         if (formVals[ignoredName]) {
           delete formVals[ignoredName];
         }
@@ -485,7 +495,7 @@
    * Renders elements when fr-each is used.
    */
   fr._renderEachStubs = function(dataSource) {
-    _.forEach(dataSourceDeps[dataSource], function(boundElem) {
+    _forEach(dataSourceDeps[dataSource], function(boundElem) {
       var $iteratedElems = $(boundElem).find('[data-fr-iterated]'),
           mappingFunction = $iteratedElems.data('fr-mapped'),
           sortingFunction = $iteratedElems.data('fr-sorted'),
@@ -612,7 +622,7 @@
     fr._bindDataSourceHandlers();
     fr._storeDataSourceDeps($boundElems);
 
-    _.forEach(dataSourceDeps, function(boundElems, dataSource) {
+    _forEach(dataSourceDeps, function(boundElems, dataSource) {
       fr._insertData($(boundElems), dataSource, storage);
     });
 
@@ -622,13 +632,13 @@
 
       // Find element sets that depend on this dataSource.
       // This includes elements that bind to multiple dataSources.
-      _.forEach(dataSourceDeps, function(val, ds) {
-        if (_.contains(ds.split(' '), dataSource)) {
+      _forEach(dataSourceDeps, function(val, ds) {
+        if (_includes(ds.split(' '), dataSource)) {
             boundElemsColl[ds] = dataSourceDeps[ds];
         }
       });
 
-      _.forEach(boundElemsColl, function(boundElems, ds) {
+      _forEach(boundElemsColl, function(boundElems, ds) {
         fr._insertData($(boundElems), ds, store());
         fr._renderEachStubs(ds);
       });

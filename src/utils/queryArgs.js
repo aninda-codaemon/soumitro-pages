@@ -21,7 +21,7 @@ const parseQueryArgs = query => {
 
 const getQueryArgs = () => {
   const query = window.location.search.substring(1);
-  return parseQueryArgs(query);
+  return parseQueryArgs(query) || {};
 };
 
 export {

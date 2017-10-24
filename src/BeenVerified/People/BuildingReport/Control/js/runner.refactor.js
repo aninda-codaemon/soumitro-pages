@@ -13,11 +13,6 @@
     defaultRunningTime *= mobileRatio;
     completeRun *= mobileRatio;
   }
-
-  // Test for Safari private browsing mode
-  try { localStorage.test = 2; } catch (e) {
-    trackNL('Safari Private Browsing');
-  }
   
   var recordCounts = {
     LANDING: 'RecordCount UponLanding',
@@ -54,47 +49,4 @@
       window.bv.utils.notifyRecordCount(initiator);
     });
   };
-
-  function initializeTestimonials() {
-    //-- Testimonials Switch Anim--//
-    var testSwitchNum = 0;
-    var numTestimonals = 10;
-    var TESTIMONIAL_DURATION = 17000;
-
-    function testimonialsSwitcher() {
-      var $item = $('.test-act:first');
-      var $nextItem = $('.test-act.hidden:first');
-      $item.remove();
-      $nextItem.fadeIn('fast').removeClass('hidden');
-
-      if (++testSwitchNum < numTestimonals) {
-        setTimeout(testimonialsSwitcher, TESTIMONIAL_DURATION);
-      }
-    };
-
-    setTimeout(testimonialsSwitcher, TESTIMONIAL_DURATION);
-  }
-
-  function initializeQueryArgs() {
-    var queryArgs = window.bv.utils.getQueryArgs() || {};
-    var validQueryArgs = queryArgs.fn && queryArgs.ln;
-
-    queryArgs.state = queryArgs.state || 'all';
-
-    window.getExtraTeaserData(queryArgs);
-
-    if (validQueryArgs) {
-      amplify.store('searchData', queryArgs);
-      getTeaserData(queryArgs, recordCounts.QUERY);
-    } else {
-      window.bv.utils.notifyRecordCount(recordCounts.LANDING);
-    }
-  }
-
-  function initialize() {
-    initializeTestimonials();
-    initializeQueryArgs();
-  };
-
-  initialize();
 }());

@@ -1,7 +1,7 @@
 /*
   Convenience helpers used in FrameRida.
 */
-
+import Handlebars from 'handlebars';
 (function (H) {
 
   /*
@@ -27,9 +27,7 @@
     return akasArr.join(", ");
   });
 
-
   H.registerHelper('formattedShortList', function (listObj) {
-
     var firstElem,
         otherElems,
         list;
