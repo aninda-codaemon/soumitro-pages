@@ -24,7 +24,16 @@ const getQueryArgs = () => {
   return parseQueryArgs(query) || {};
 };
 
+const getBVId = queryArgs => {
+  const currentRecord = amplify.store('currentRecord');
+  return (queryArgs && queryArgs.bvid && !currentRecord) ? queryArgs.bvid : currentRecord && currentRecord.bvid;
+}
+
+const isValidPeopleQuery = queryArgs => queryArgs.fn && queryArgs.ln;
+
 export {
   getQueryArgs,
-  parseQueryArgs
+  parseQueryArgs,
+  getBVId,
+  isValidPeopleQuery,
 };

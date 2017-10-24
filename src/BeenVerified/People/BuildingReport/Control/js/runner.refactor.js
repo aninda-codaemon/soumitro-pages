@@ -1,19 +1,4 @@
 ; (function () {
-  jQuery.fx.interval = 100;
-
-  var modalSearchHTML = $('#gen-report-modal5').html();
-  var intervalId;
-  var defaultRunningTime = 120;
-  var runningTime = 0; // current running time
-  var completeRun = 120 * 1000;                 // total running time
-  var mobileRatio = 0.375;
-  var trackNL = window.bv.utils.trackNL;
-
-  if (window.bv.isMobile) {
-    defaultRunningTime *= mobileRatio;
-    completeRun *= mobileRatio;
-  }
-  
   var recordCounts = {
     LANDING: 'RecordCount UponLanding',
     RESEARCH: 'RecordCount Re-Searching',

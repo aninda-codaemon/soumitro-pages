@@ -2,7 +2,7 @@ import { getTeaserData } from 'api/teaser';
 import { getExtraTeaserData } from 'api/extraTeaser';
 import amplify from 'utils/amplifyStore';
 import { initializeBVGO } from 'utils/bvgo';
-import { getQueryArgs } from 'utils/queryArgs';
+import { getBVId, getQueryArgs, isValidPeopleQuery } from 'utils/queryArgs';
 import * as localStorage from 'utils/localStorage';
 import { addRelativesModal, wizard } from 'components/building-report';
 import 'utils/framerida';
@@ -13,17 +13,15 @@ import './css/styles.css';
 
 const isLocalStorageSupported = localStorage.isSupported();
 const queryArgs = getQueryArgs();
-const validQueryArgs = queryArgs.fn && queryArgs.ln;
-const getBVId = queryArgs => {
-  const currentRecord = amplify.store('currentRecord');
-  return (queryArgs && queryArgs.bvid && !currentRecord) ? queryArgs.bvid : currentRecord.bvid;
-}
+const validQueryArgs = isValidPeopleQuery(queryArgs);
 const bvid = getBVId(queryArgs);
+
 const includeRelativesModal = extraTeaserData => {
   if (extraTeaserData.hasRelatives) {
     addRelativesModal();
   }
 }
+
 const initializeTestimonials = () => {
   const TESTIMONIAL_DURATION = 17000;
   const numTestimonals = 10;
@@ -42,7 +40,7 @@ const initializeTestimonials = () => {
   setTimeout(testimonialsSwitcher, TESTIMONIAL_DURATION);
 }
 
-const initializeQueryArgs = (queryArgs) => {
+const initializeQueryArgs = (queryArgs, validQueryArgs) => {
   queryArgs.state = queryArgs.state || 'all';
   if (validQueryArgs) {
     amplify.store('searchData', queryArgs);
@@ -55,6 +53,7 @@ const initializeQueryArgs = (queryArgs) => {
 
 getExtraTeaserData(bvid).then(includeRelativesModal);
 
+jQuery.fx.interval = 100;
 initializeTestimonials();
-initializeQueryArgs(queryArgs);
+initializeQueryArgs(queryArgs, validQueryArgs);
 initializeBVGO(wizard.skipStep);
