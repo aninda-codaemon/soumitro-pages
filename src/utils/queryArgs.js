@@ -1,4 +1,5 @@
 import _chain from 'lodash/chain';
+import amplify from 'utils/amplifyStore';
 
 const parseQueryArgs = query => {
   if (!query) {
