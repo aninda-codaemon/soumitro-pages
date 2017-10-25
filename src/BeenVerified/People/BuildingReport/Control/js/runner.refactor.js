@@ -1,9 +1,4 @@
 ; (function () {
-  var recordCounts = {
-    LANDING: 'RecordCount UponLanding',
-    RESEARCH: 'RecordCount Re-Searching',
-    QUERY: 'RecordCount QueryArgs'
-  };
 
   var getTeaserData = function (data, initiator) {
     var xhrData = window.bv.utils.getTeaserData(data);
@@ -31,7 +26,6 @@
       }
 
       amplify.store('teaserData', teaserDataObj);
-      window.bv.utils.notifyRecordCount(initiator);
     });
   };
 }());

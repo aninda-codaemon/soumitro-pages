@@ -162,7 +162,7 @@ import './frameridaHelpers';
             val = val.replace(/\+/g, " "); // replace white spaces
             return [key, val];
         })
-        .object()
+        .zipObject()
         .value();
     return args;
   };

@@ -7,7 +7,7 @@ import { capitalize, formatEmail, formatPhone, nameize } from 'utils/strings';
 
 const buildExtraTeaserEndpoint = bvid => `https://www.beenverified.com/hk/dd/teaser/person?exporttype=jsonp&bvid=${bvid}&criminal=1&bankruptcy=1`;
 
-const getNonEmptyItems = (item, infoType, capitalizedType) => () => {
+const getNonEmptyItems = (infoType, capitalizedType) => item => {
   if (item && item.type === infoType && item.count > 0) {
     track('Data Modal Viewed ' + capitalizedType);
     return true;
@@ -18,7 +18,7 @@ const getNonEmptyItems = (item, infoType, capitalizedType) => () => {
 const reduceExtraTeaserInformation = data => {
   return (reducedObject, infoType) => {
     const capitalizedType = capitalize(infoType);
-    reducedObject['has' + capitalizedType] = _.some(data, item => getNonEmptyItems(item, infoType, capitalizedType));
+    reducedObject['has' + capitalizedType] = _.some(data, getNonEmptyItems(infoType, capitalizedType));
     return reducedObject;
   }
 };

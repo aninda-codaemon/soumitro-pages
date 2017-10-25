@@ -15,7 +15,7 @@ const parseQueryArgs = query => {
       val = val.replace(/\+/g, " "); // replace white spaces
       return [key, val];
     })
-    .object()
+    .zipObject()
     .value();
   return args;
 };

@@ -149,3 +149,17 @@ export const removeDiacritics = str => {
 
   return str;
 }
+
+export const isEmpty = string => {
+  if (typeof string === 'undefined') {
+    return true;
+  } else if (string === null) {
+    return true;
+  } else if (string.match(/^\s+$/)) {
+    return true;
+  } else if (string === "") {
+    return true;
+  } else {
+    return false;
+  }
+};

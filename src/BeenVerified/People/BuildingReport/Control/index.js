@@ -1,10 +1,12 @@
 import { getTeaserData } from 'api/teaser';
 import { getExtraTeaserData } from 'api/extraTeaser';
-import amplify from 'utils/amplifyStore';
 import { initializeBVGO } from 'utils/bvgo';
+import { TeaserRecord } from 'models/teaserRecord';
+import { notifyRecordCount } from 'utils/track/notifyRecordCount';
 import { getBVId, getQueryArgs, isValidPeopleQuery } from 'utils/queryArgs';
-import * as localStorage from 'utils/localStorage';
 import { addRelativesModal, wizard } from 'components/building-report';
+import * as localStorage from 'utils/localStorage';
+import amplify from 'utils/amplifyStore';
 import 'utils/framerida';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -15,6 +17,11 @@ const isLocalStorageSupported = localStorage.isSupported();
 const queryArgs = getQueryArgs();
 const validQueryArgs = isValidPeopleQuery(queryArgs);
 const bvid = getBVId(queryArgs);
+const recordCounts = {
+  LANDING: 'RecordCount UponLanding',
+  RESEARCH: 'RecordCount Re-Searching',
+  QUERY: 'RecordCount QueryArgs'
+};
 
 const includeRelativesModal = extraTeaserData => {
   if (extraTeaserData.hasRelatives) {
@@ -44,10 +51,10 @@ const initializeQueryArgs = (queryArgs, validQueryArgs) => {
   queryArgs.state = queryArgs.state || 'all';
   if (validQueryArgs) {
     amplify.store('searchData', queryArgs);
-    getTeaserData(queryArgs, recordCounts.QUERY);
+    getTeaserData(queryArgs)
+      .then(() => notifyRecordCount(recordCounts.QUERY));
   } else {
-    // TODO: rewrite this.
-    // window.bv.utils.notifyRecordCount(recordCounts.LANDING);
+    notifyRecordCount(recordCounts.LANDING);
   }
 }
 

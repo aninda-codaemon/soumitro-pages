@@ -26,6 +26,17 @@ const parseMiddleInitial = function (data) {
   return data;
 };
 
+const parseTeaser = data => {
+  var records;
+  const recordCount = parseInt(data['response']['RecordCount']);
+  if (recordCount === 1) {
+    records = [data["response"]["Records"]['Record']];
+  } else {
+    records = data["response"]["Records"]['Record'];
+  }
+  return records;
+};
+
 const getTeaserData = data => {
   data = _.mapValues(data, cleanSearchValues);
   data = parseMiddleInitial(data);
@@ -38,7 +49,9 @@ const getTeaserData = data => {
     validData(data.mi)
   );
 
-  return get(url).then(response => response.data);
+  return get(url)
+    .then(response => response.data)
+    .then(parse);
 }
 
 export { getTeaserData };

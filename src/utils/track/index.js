@@ -1,4 +1,3 @@
-// TODO: Use track/index.js instead.
 const _get = 'lodash/get';
 
 const trackGA = (eventName, props) => {
