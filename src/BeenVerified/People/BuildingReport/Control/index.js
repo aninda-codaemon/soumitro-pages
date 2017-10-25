@@ -1,7 +1,7 @@
 import { getTeaserData } from 'api/teaser';
 import { getExtraTeaserData } from 'api/extraTeaser';
 import { initializeBVGO } from 'utils/bvgo';
-import { TeaserRecord } from 'models/teaserRecord';
+import { TeaserRecord } from 'parsers/teaserRecord';
 import { notifyRecordCount } from 'utils/track/notifyRecordCount';
 import { getBVId, getQueryArgs, isValidPeopleQuery } from 'utils/queryArgs';
 import { addRelativesModal, wizard } from 'components/building-report';
@@ -64,7 +64,3 @@ jQuery.fx.interval = 100;
 initializeTestimonials();
 initializeQueryArgs(queryArgs, validQueryArgs);
 initializeBVGO(wizard.skipStep);
-
-
-// TODO: notifyRecordCount
-// TODO: getTeaserData

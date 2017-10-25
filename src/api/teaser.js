@@ -1,6 +1,11 @@
-import _mapValues from 'lodash/mapValues';
+import {
+  mapValues as _mapValues,
+  get as _get,
+  find as _find,
+} from 'lodash';
 
 import { removeDiacritics } from 'utils/strings';
+import { TeaserRecord } from 'parsers/teaserRecord';
 
 const pattern = new RegExp("[^A-Za-z'-\s]", 'gi');
 
@@ -27,14 +32,33 @@ const parseMiddleInitial = function (data) {
 };
 
 const parseTeaser = data => {
-  var records;
-  const recordCount = parseInt(data['response']['RecordCount']);
-  if (recordCount === 1) {
-    records = [data["response"]["Records"]['Record']];
-  } else {
-    records = data["response"]["Records"]['Record'];
+  const recordCount = parseInt(_get(data, 'response.RecordCount', 0));
+  const records = _get(data, 'response.Records.Record');
+  
+  return {
+    recordCount,
+    records: recordCount === 1 ? [records] : records
+  };
+};
+
+const storeTeaserData = teaserData => {
+  amplify.store('teaserData', teaserDataObj);
+  return teaserData;
+}
+
+/** An user using Safari Incognito. */
+const fixIncognitoMode = bvid => ({ records }) => {
+  if (!amplify.store('currentRecord')) {
+    const currentRecord = _find((teaserRecords || []), { bvid });
+    const parsedRecord = new TeaserRecord(currentRecord);
+    /**
+     * Workaround for framerida binding issued, because isn't display the fields (fullName & firstName)
+     * Probably because those attributes are functions. 
+     */
+    currentRecord.fullName = parsedRecord.fullName();
+    currentRecord.firstName = parsedRecord.firstName();
+    amplify.store('currentRecord', currentRecord);
   }
-  return records;
 };
 
 const getTeaserData = data => {
@@ -51,7 +75,9 @@ const getTeaserData = data => {
 
   return get(url)
     .then(response => response.data)
-    .then(parse);
+    .then(parseTeaser)
+    .then(storeTeaserData)
+    .then(fixIncognitoMode(data.bvid));
 }
 
 export { getTeaserData };

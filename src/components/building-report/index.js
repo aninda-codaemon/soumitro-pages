@@ -1,43 +1,48 @@
+import 'jquery-validation';
+
 import { track } from 'utils/track';
+import { nameize } from 'utils/strings';
+import amplify from 'utils/amplifyStore';
 import Step from 'components/wizard/step';
 import Section from 'components/wizard/section';
 import WizardManager from 'components/wizard/manager';
 
 const second = 1000;
 
-var containerSelector = $(".wizard-content");
-var stepsContainerSelector = $(".wizard-header");
-var stepSelector = $(".wizard-step");
-var steps = $(containerSelector).find(stepSelector);
-var stepCount = 4;//steps.size()-1;
-var isModal = true;
-var validateNext = function () { return true; };
-var validateFinish = function () { return true; };
-//////////////////////
-var step = 1;
-var container = $(containerSelector).find(stepsContainerSelector);
-steps.hide();
-$(steps[0]).show();
-if (isModal) {
-  $('#wizModal').on('hidden.bs.modal', function () {
-    step = 1;
-    $($(containerSelector + " .wizard-steps-panel .step-number")
-      .removeClass("done")
-      .removeClass("doing")[0])
-      .toggleClass("doing");
+function showSubHeadlines(totalSections) {
+  var containerSelector = $(".wizard-content");
+  var stepsContainerSelector = $(".wizard-header");
+  var stepSelector = $(".wizard-step");
+  var sections = $(containerSelector).find(stepSelector);
+  var isModal = true;
+  var validateNext = function () { return true; };
+  var validateFinish = function () { return true; };
+  //////////////////////
+  var step = 1;
+  var container = $(containerSelector).find(stepsContainerSelector);
+  sections.hide();
+  $(sections[0]).show();
+  if (isModal) {
+    $('#wizModal').on('hidden.bs.modal', function () {
+      step = 1;
+      $($(containerSelector + " .wizard-steps-panel .step-number")
+        .removeClass("done")
+        .removeClass("doing")[0])
+        .toggleClass("doing");
 
-    $($(containerSelector + " .wizard-step")
-      .hide()[0])
-      .show();
-  });
+      $($(containerSelector + " .wizard-step")
+        .hide()[0])
+        .show();
+    });
+  }
+  $('#wizModal').find(".wizard-steps-panel").remove();
+  stepsContainerSelector.prepend('<div class="wizard-steps-panel steps-quantity-' + totalSections + '"></div>');
+  var stepsPanel = $('#wizModal').find(".wizard-steps-panel");
+  for (var s = 1; s <= 4; s++) {
+    stepsPanel.append('<div class="step-number step-' + s + '"><div class="number">' + s + '</div></div>');
+  }
+  $('#wizModal').find(".wizard-steps-panel .step-" + step).toggleClass("doing").find('.number').html('&nbsp;');
 }
-$('#wizModal').find(".wizard-steps-panel").remove();
-stepsContainerSelector.prepend('<div class="wizard-steps-panel steps-quantity-' + stepCount + '"></div>');
-var stepsPanel = $('#wizModal').find(".wizard-steps-panel");
-for (var s = 1; s <= 4; s++) {
-  stepsPanel.append('<div class="step-number step-' + s + '"><div class="number">' + s + '</div></div>');
-}
-$('#wizModal').find(".wizard-steps-panel .step-" + step).toggleClass("doing").find('.number').html('&nbsp;');
 
 function showExternalLoading(stepCompleted, duration, indexModalToDisplay) {
   var loads = $('#loadingModal .progress');
@@ -148,18 +153,14 @@ function onPopularUseCasesStart(stepCompleted) {
   var quotesIco = $('.speech-bub-ico');
   var quotes = $('.speech-bub');
   var quoteIndex = -1;
-  var icons = [
-    'img/Self-Color.svg',
-    'img/Relatives-Color.svg',
-    'img/Significant-Color.svg',
-    'img/Misc-Color.svg'
-  ];
   var duration = this.duration;
 
   var showNextQuote = function () {
     quoteIndex++;
     if (quoteIndex < 4) {
-      quotesIco.eq(quoteIndex % quotesIco.length).attr("src", icons[quoteIndex]);
+      var nextQuoteIcon = quotesIco.eq(quoteIndex % quotesIco.length);
+      var newIcon = nextQuoteIcon.attr('data-src');
+      nextQuoteIcon.attr('src', newIcon);
       quotes.eq(quoteIndex % quotes.length)
         .fadeIn(1000)
         .delay(duration / (quotes.length + 1))
@@ -227,7 +228,7 @@ function onRelativesModalStart(stepCompleted) {
   _.forEach(relatives, function (relative, i) {
     var fullName = relative.First + ' ' + (relative.Middle ? relative.Middle + ' ' : '') + relative.Last;
     $(rndNamesContiner[i])
-      .text(fullName.nameize())
+      .text(nameize(fullName))
       .closest('.hidden')
       .removeClass('hidden');
   });
@@ -511,6 +512,9 @@ section3.init([publicRecordsReview]);
 section4.init([saveResults, preparingMonitoring, completingReport]);
 
 var wizard = Object.assign({}, WizardManager);
-wizard.init([section1, section2, section3, section4]).start();
+var sections = [section1, section2, section3, section4];
+
+wizard.init(sections).start();
+showSubHeadlines(sections.length);
 
 export { wizard, addRelativesModal };
