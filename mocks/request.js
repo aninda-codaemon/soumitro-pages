@@ -9,9 +9,7 @@ const registeredUrls = [
 
 const get = (requestUrl) => new Promise((resolve, reject) => {
   const result = _find(registeredUrls, ({ url }) => requestUrl.indexOf(url) >= 0);
-  resolve({
-    data: result.response
-  });
+  resolve(result.response);
 });
 
 export {

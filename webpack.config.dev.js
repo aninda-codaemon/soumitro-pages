@@ -52,7 +52,7 @@ module.exports = {
   resolve: {
     alias: {
       'handlebars': 'handlebars/dist/handlebars.js',
-      //'utils/request': path.resolve(__dirname, 'mocks/request.js'),
+      'utils/request': path.resolve(__dirname, 'mocks/request.js'),
     },
     modules: [
       path.resolve('./src'),
