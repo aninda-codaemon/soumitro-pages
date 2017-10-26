@@ -1,6 +1,5 @@
 import 'jquery-validation';
 
-import { track } from 'utils/track';
 import Section from 'components/wizard/section';
 import WizardManager from 'components/wizard/manager';
 import {
@@ -69,7 +68,12 @@ section4.init([saveResults, preparingMonitoring, generatingReport]);
 const wizard = Object.assign({}, WizardManager);
 const sections = [section1, section2, section3, section4];
 
-wizard.init(sections);
+wizard.init({
+  sections,
+  onCompleted() {
+    window.location = $('body').data('next-page');
+  }
+});
 showSubHeadlines(sections.length);
 
 export { wizard, addRelativesModal };

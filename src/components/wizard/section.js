@@ -1,12 +1,11 @@
 const Section = {
   init(steps) {
-    this.active = false;
     this.currentStepIndex = 0;
     this.steps = steps;
   },
-  start(onSectionCompleted) {
-    this.active = true;
+  start(onSectionCompleted, isLastSection) {
     this.onSectionCompleted = onSectionCompleted;
+    this.isLastSection = isLastSection;
     this.startNextStep();
   },
   getCurrentStep() {
@@ -16,10 +15,14 @@ const Section = {
     var previousStepIndex = this.currentStepIndex === 0 ? 0 : this.currentStepIndex - 1;
     return this.steps[previousStepIndex];
   },
+  isLastStep() {
+    return this.currentStepIndex === this.steps.length - 1;
+  },
   startNextStep() {
-    var currentStep = this.getCurrentStep();
-    var prevStep = this.getPreviousStep();
-    currentStep.start(this.onStepCompleted.bind(this));
+    const currentStep = this.getCurrentStep();
+    const prevStep = this.getPreviousStep();
+    const isLastStep = this.isLastStep() && this.isLastSection;
+    currentStep.start(this.onStepCompleted.bind(this), isLastStep);
   },
   onStepCompleted() {
     this.currentStepIndex++;
@@ -30,8 +33,6 @@ const Section = {
     this.sectionCompleted();
   },
   sectionCompleted() {
-    this.active = false;
-    this.completed = true;
     this.onSectionCompleted();
   },
   skipStep() {

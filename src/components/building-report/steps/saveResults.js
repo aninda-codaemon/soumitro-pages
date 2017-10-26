@@ -1,3 +1,4 @@
+import { track } from 'utils/track';
 import Step from '../../wizard/step';
 import { showExternalModal } from './shared';
 

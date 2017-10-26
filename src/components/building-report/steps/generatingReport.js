@@ -38,7 +38,7 @@ function generatingReportStart(stepCompleted) {
   var currentLoop = 0;
 
   $('#crt-acct-warn-confirm').on('click', function () {
-    window.location = $('body').data('next-page');
+    stepCompleted();
   });
 
   function animateProgress() {

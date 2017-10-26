@@ -13,10 +13,11 @@ const Step = {
     this.$elem = options.$elem;
     this.isCompleted = false;
   },
-  start(onCompleted) {
+  start(onCompleted, isLastStep) {
     this.setTitle();
     this.track();
     this.onCompleted = onCompleted;
+    this.isLastStep = isLastStep;
     this.$elem.addClass('active').parent().show();
     this.onStart(this.complete.bind(this));
   },
@@ -33,7 +34,9 @@ const Step = {
   complete() {
     if (!this.isCompleted) {
       setTimeout(() => {
-        this.$elem.removeClass('active').parent().hide();
+        if (!this.isLastStep) {
+          this.$elem.removeClass('active').parent().hide();
+        }
         this.onCompleted();
       }, this.transitionDelay);
     }
