@@ -64,3 +64,4 @@ jQuery.fx.interval = 100;
 initializeTestimonials();
 initializeQueryArgs(queryArgs, validQueryArgs);
 initializeBVGO(wizard.skipStep);
+wizard.start();

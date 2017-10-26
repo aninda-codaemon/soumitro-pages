@@ -1,12 +1,14 @@
 
 import { track } from 'utils/track';
 
+const second = 1000;
+
 const Step = {
   init(options) {
     this.title = options.title;
     this.trackMsg = options.trackMsg;
-    this.duration = options.duration;
-    this.transitionDelay = options.transitionDelay || 0;
+    this.duration = options.duration && options.duration * second || 0;
+    this.transitionDelay = options.transitionDelay && options.transitionDelay * second || 0;
     this.onStart = options.onStart;
     this.$elem = options.$elem;
     this.isCompleted = false;
