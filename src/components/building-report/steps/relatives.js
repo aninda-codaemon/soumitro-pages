@@ -1,4 +1,5 @@
 import amplify from 'utils/amplifyStore';
+import { nameize } from 'utils/strings';
 import Step from '../../wizard/step';
 import { showExternalLoading } from './shared';
 

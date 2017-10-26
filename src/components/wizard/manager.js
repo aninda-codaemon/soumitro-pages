@@ -2,6 +2,9 @@ const WizardManager = {
   init(sections) {
     this.currentSectionIndex = 0;
     this.sections = sections;
+    // This is added because we might want to pass this function to the bvgo command.
+    // & we need to keep reference to the WizardManager object.
+    this.skipStep = this.skipStep.bind(this); 
     return this;
   },
   getCurrentSection() {

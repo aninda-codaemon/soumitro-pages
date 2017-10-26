@@ -1,7 +1,6 @@
 import 'jquery-validation';
 
 import { track } from 'utils/track';
-import { nameize } from 'utils/strings';
 import Section from 'components/wizard/section';
 import WizardManager from 'components/wizard/manager';
 import {
