@@ -1,7 +1,12 @@
 function showExternalLoading(stepCompleted, duration, indexModalToDisplay) {
   var loads = $('#loadingModal .progress');
   var modTitles = $('.emdTitle');
-  $('#loadingModal').show().removeClass('hidden');
+  $('#loadingModal')
+    .modal({
+      show: true,
+      keyboard: false
+    })
+    .removeClass('hidden');
   if (loads[indexModalToDisplay]) {
     $(loads[indexModalToDisplay]).removeClass('hidden');
     $(modTitles[indexModalToDisplay]).removeClass('hidden');
@@ -36,7 +41,12 @@ function showExternalModal(stepCompleted, duration, indexModal) {
   var extModals = $('#externalModal .ext-mod');
   var modTitles = $('#externalModal .emdlTitle');
 
-  $('#externalModal').show().removeClass('hidden');
+  $('#externalModal')
+    .modal({
+      show: true,
+      keyboard: false
+    })
+    .removeClass('hidden');
   if (extModals[indexModal]) {
     $(extModals[indexModal]).removeClass('hidden');
     $(modTitles[indexModal]).removeClass('hidden');
