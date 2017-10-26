@@ -4,8 +4,10 @@ import {
   find as _find,
 } from 'lodash';
 
+import { get } from 'utils/request';
 import { removeDiacritics } from 'utils/strings';
 import { TeaserRecord } from 'parsers/teaserRecord';
+import amplify from 'utils/amplifyStore';
 
 const pattern = new RegExp("[^A-Za-z'-\s]", 'gi');
 
@@ -42,14 +44,14 @@ const parseTeaser = data => {
 };
 
 const storeTeaserData = teaserData => {
-  amplify.store('teaserData', teaserDataObj);
+  amplify.store('teaserData', teaserData);
   return teaserData;
 }
 
 /** An user using Safari Incognito. */
 const fixIncognitoMode = bvid => ({ records }) => {
   if (!amplify.store('currentRecord')) {
-    const currentRecord = _find((teaserRecords || []), { bvid });
+    const currentRecord = _find((records || []), { bvid });
     const parsedRecord = new TeaserRecord(currentRecord);
     /**
      * Workaround for framerida binding issued, because isn't display the fields (fullName & firstName)
@@ -73,8 +75,7 @@ const getTeaserData = data => {
     validData(data.mi)
   );
 
-  return get(url)
-    .then(response => response.data)
+  return get(url, 'parseResults')
     .then(parseTeaser)
     .then(storeTeaserData)
     .then(fixIncognitoMode(data.bvid));

@@ -1,4 +1,7 @@
-import _chain from 'lodash/chain';
+import {
+  chain as _chain,
+  isEmpty as _isEmpty,
+} from 'lodash';
 import amplify from 'utils/amplifyStore';
 
 const parseQueryArgs = query => {
@@ -7,15 +10,15 @@ const parseQueryArgs = query => {
   }
   var args = _
     .chain(query.split('&'))
-    .map(function (params) {
-      var p = params.split('=');
-      var key = p[0];
-      var val = window.decodeURIComponent(p[1]);
-      val = val.replace(/\/+$/g, ""); // clean up trailing slash
-      val = val.replace(/\+/g, " "); // replace white spaces
-      return [key, val];
-    })
-    .zipObject()
+    .reduce(function(result, params) {
+        var p = params.split('=');
+        var key = p[0];
+        var val = window.decodeURIComponent(p[1] || "");
+        val = val.replace(/\/+$/g, ""); // clean up trailing slash
+        val = val.replace(/\+/g, " "); // replace white spaces
+        result[key] = val;
+        return result;
+    }, {})
     .value();
   return args;
 };
@@ -27,7 +30,7 @@ const getQueryArgs = () => {
 
 const getBVId = queryArgs => {
   const currentRecord = amplify.store('currentRecord');
-  return (queryArgs && queryArgs.bvid && !currentRecord) ? queryArgs.bvid : currentRecord && currentRecord.bvid;
+  return (queryArgs && queryArgs.bvid && _isEmpty(currentRecord)) ? queryArgs.bvid : currentRecord && currentRecord.bvid;
 }
 
 const isValidPeopleQuery = queryArgs => queryArgs.fn && queryArgs.ln;

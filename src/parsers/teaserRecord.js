@@ -33,14 +33,13 @@ const TeaserRecord = (function () {
     var name;
     if (nameObject.First === void 0 || nameObject.Last === void 0) {
       return null;
-    } else {
-      name = _.chain(["First", "Middle", "Last"]).map(function (key) {
-        return nameObject[key];
-      }).filter(function (namePart) {
-        return isEmpty(namePart);
-      }).value().join(" ");
-      return name;
     }
+    var x = isEmpty;
+    return _.chain(["First", "Middle", "Last"])
+      .map(key => nameObject[key])
+      .filter(namePart => !isEmpty(namePart))
+      .value()
+      .join(' ');
   };
 
   TeaserRecord.prototype._makeAddress = function (address) {

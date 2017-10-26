@@ -175,7 +175,6 @@ const storeData = teaserDataObj => {
 }
 
 const getExtraTeaserData = bvid => get(buildExtraTeaserEndpoint(bvid))
-  .then(response => response.data)
   .then(parseExtraTeaserData)
   .then(mergeInformationTypes)
   .then(storeData);
