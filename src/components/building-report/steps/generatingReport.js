@@ -31,18 +31,20 @@ function selectNextReporting() {
 };
 
 function generatingReportStart(stepCompleted) {
-  var progressBar = $("#sub-searching-progress-bar .progress-bar");
-  var duration = this.duration;
-  var transitionDelay = this.transitionDelay;
-  var maxLoop = 6;
-  var currentLoop = 0;
+  const progressBar = $("#sub-searching-progress-bar .progress-bar");
+  const maxLoop = 6;
+  const duration = this.duration;
+  const transitionDelay = this.transitionDelay;
+  const newDuration = (duration / maxLoop) - transitionDelay;
+  let currentLoop = 0;
 
   $('#crt-acct-warn-confirm').on('click', function () {
     stepCompleted();
   });
 
   function animateProgress() {
-    progressBar.animate({ width: '100%' }, duration / maxLoop, 'linear', function () {
+    
+    progressBar.animate({ width: '100%' }, newDuration, 'linear', function () {
       currentLoop++;
       if (currentLoop < maxLoop) {
         setTimeout(function () {

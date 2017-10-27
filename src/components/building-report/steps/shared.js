@@ -69,7 +69,7 @@ function showExternalModal(stepCompleted, duration, indexModal) {
 
 function hideExternalModal(indexModal) {
   var extModals = $('#externalModal .ext-mod');
-  $('#externalModal').addClass('hidden');
+  $('#externalModal').addClass('hidden').modal('hide');
   $(extModals[indexModal]).addClass('hidden');
 };
 
