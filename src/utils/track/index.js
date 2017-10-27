@@ -4,7 +4,7 @@ const trackGA = (eventName, props) => {
   if (typeof window.dataLayer !== 'undefined') {
     var gaData = {
       event: 'flowrida_visitor_event',
-      eventLabel: evtName,
+      eventLabel: eventName,
     };
     if (props) {
       gaData.visitorEventInfo = JSON.stringify(props)

@@ -65,3 +65,5 @@ initializeTestimonials();
 initializeQueryArgs(queryArgs, validQueryArgs);
 initializeBVGO(wizard.skipStep);
 wizard.start();
+
+window.$ = jQuery;
