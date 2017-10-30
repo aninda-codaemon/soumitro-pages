@@ -7,13 +7,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { root, indexHtmlPath } = require('./config');
 
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
-
 const cssFilename = 'css/[name].[contenthash:8].css';
 const extractTextPluginOptions = { publicPath: '/' };
-const root = process.argv[4];
 
 module.exports = {
   entry: `${root}/index.js`,
@@ -35,12 +34,11 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       inject: true,
-      template: `${root}/index.html`,
+      template: indexHtmlPath,
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      // _: 'lodash',
     }),
     new ExtractTextPlugin({
       filename: cssFilename,

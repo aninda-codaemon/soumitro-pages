@@ -7,15 +7,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const { root, indexHtmlPath } = require('./config');
 
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 const cssFilename = 'css/[name].[contenthash:8].css';
 const extractTextPluginOptions = { publicPath: '../' };
-
-const lastIndex = process.argv.length - 1;
-const root = process.argv[lastIndex];
 
 module.exports = {
     // Don't attempt to continue if there are any errors.
@@ -134,7 +132,7 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       inject: true,
-      template: `${root}/index.html`,
+      template: indexHtmlPath,
       minify: false,
     }),
     new webpack.ProvidePlugin({
