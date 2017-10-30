@@ -9,9 +9,13 @@ const Step = {
     this.trackMsg = options.trackMsg;
     this.duration = options.duration && options.duration * second || 0;
     this.transitionDelay = options.transitionDelay && options.transitionDelay * second || 0;
+    this.openModal = options.openModal;
     this.onStart = options.onStart;
+    this.closeModal = options.closeModal;
     this.$elem = options.$elem;
+    this.$modal = options.$modal;
     this.isCompleted = false;
+    this.complete = this.complete.bind(this);
   },
   start(onCompleted, isLastStep) {
     this.setTitle();
@@ -19,11 +23,17 @@ const Step = {
     this.onCompleted = onCompleted;
     this.isLastStep = isLastStep;
     this.$elem.addClass('active').parent().show();
-    this.onStart(this.complete.bind(this));
+    this.onStart(this.complete);
   },
   skip() {
     this.transitionDelay = 0;
-    this.complete();
+    if (this.$modal && !this.isModalDispled) {
+      this.isModalDispled = true;
+      this.openModal(this.complete, this.duration);
+    } else {
+      this.closeModal && this.closeModal();
+      this.complete();
+    }
   },
   setTitle() {
     $('.subHeadline').text(this.title);

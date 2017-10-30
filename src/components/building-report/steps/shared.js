@@ -24,17 +24,18 @@ function showExternalLoading(stepCompleted, duration, indexModalToDisplay) {
   function onAnimationComplete() {
     hideExternalLoading(indexModalToDisplay);
     stepCompleted();
-    $(modTitles[indexModalToDisplay]).addClass('hidden');
-    if (!$('.cont-loading-aditional').hasClass('hidden')) {
-      $('.cont-loading-aditional').addClass('hidden');
-    }
   };
 };
 
 function hideExternalLoading(indexModalToDisplay) {
   var loads = $('#loadingModal .progress');
+  var modTitles = $('.emdTitle');
   $('#loadingModal').addClass('hidden');
   $(loads[indexModalToDisplay]).addClass('hidden');
+  $(modTitles[indexModalToDisplay]).addClass('hidden');
+  if (!$('.cont-loading-aditional').hasClass('hidden')) {
+    $('.cont-loading-aditional').addClass('hidden');
+  }
 };
 
 function showExternalModal(stepCompleted, duration, indexModal) {
@@ -75,5 +76,7 @@ function hideExternalModal(indexModal) {
 
 export {
   showExternalLoading,
-  showExternalModal
+  hideExternalLoading,
+  showExternalModal,
+  hideExternalModal
 };

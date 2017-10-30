@@ -1,5 +1,7 @@
 import Step from '../../wizard/step';
-import { showExternalModal } from './shared';
+import { showExternalModal, hideExternalModal } from './shared';
+
+const COMPLETING_REPORT_INDEX = 1;
 
 function runSearchProgression(stepCompleted, duration) {
   var progressAnimate = $('#searching-progress-bar .progress-bar').animate(
@@ -7,7 +9,6 @@ function runSearchProgression(stepCompleted, duration) {
   );
   $.when(progressAnimate).done(function () {
     window.setTimeout(function () {
-      var COMPLETING_REPORT_INDEX = 1;
       showExternalModal(stepCompleted, duration, COMPLETING_REPORT_INDEX);
     }, 2000);
   });
@@ -66,7 +67,10 @@ generatingReport.init({
   $elem: $('#gen-report-modal5'),
   duration: 120,
   transitionDelay: 1,
-  onStart: generatingReportStart
+  onStart: generatingReportStart,
+  $modal: $('#externalModal'),
+  openModal: (stepCompleted, duration) => showExternalModal(stepCompleted, duration, COMPLETING_REPORT_INDEX),
+  closeModal: () => hideExternalModal(COMPLETING_REPORT_INDEX)
 });
 
 export { generatingReport };

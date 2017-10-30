@@ -1,6 +1,8 @@
 import { track } from 'utils/track';
 import Step from '../../wizard/step';
-import { showExternalModal } from './shared';
+import { showExternalModal, hideExternalModal } from './shared';
+
+const SAVE_RESULTS_INDEX = 0;
 
 function reportLeadData(dataArray) {
   var hostname = window.location.hostname;
@@ -66,7 +68,6 @@ function onSaveResultsStart(stepCompleted) {
       } catch (err) { }
     }
   }).on('submit', function () {
-    var SAVE_RESULTS_INDEX = 0;
     showExternalModal(stepCompleted, duration, SAVE_RESULTS_INDEX);
   });
 }
@@ -76,7 +77,10 @@ saveResults.init({
   title: 'Save Results',
   $elem: $('#gen-report-modal6'),
   duration: 18,
-  onStart: onSaveResultsStart
+  onStart: onSaveResultsStart,
+  $modal: $('#externalModal'),
+  openModal: (stepCompleted, duration) => showExternalModal(stepCompleted, duration, SAVE_RESULTS_INDEX),
+  closeModal: () => hideExternalModal(SAVE_RESULTS_INDEX)
 });
 
 export { saveResults };

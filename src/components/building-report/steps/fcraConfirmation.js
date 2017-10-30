@@ -1,5 +1,7 @@
 import Step from '../../wizard/step';
-import { showExternalLoading } from './shared';
+import { showExternalLoading, hideExternalLoading } from './shared';
+
+const CONTINUE_SESSION_INDEX = 1;
 
 function onFcraConfirmationStart(stepCompleted) {
   $('#fcra-confirm').validate({
@@ -18,7 +20,6 @@ function onFcraConfirmationStart(stepCompleted) {
       fcraCheckbox2: 'Please check the box to continue'
     },
     submitHandler: function (form) {
-      var CONTINUE_SESSION_INDEX = 1;
       showExternalLoading(stepCompleted, this.duration, CONTINUE_SESSION_INDEX);
     }.bind(this)
   });
@@ -30,7 +31,10 @@ confirmFCRA.init({
   trackMsg: 'Viewed FCRA Modal',
   $elem: $('#gen-report-modal11'),
   duration: 32,
-  onStart: onFcraConfirmationStart
+  onStart: onFcraConfirmationStart,
+  $modal: $('#loadingModal'),
+  openModal: (stepCompleted, duration) => showExternalLoading(stepCompleted, duration, CONTINUE_SESSION_INDEX),
+  closeModal: () => hideExternalLoading(CONTINUE_SESSION_INDEX)
 });
 
 export { confirmFCRA };

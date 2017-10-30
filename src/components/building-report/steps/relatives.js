@@ -1,7 +1,9 @@
 import amplify from 'utils/amplifyStore';
 import { nameize } from 'utils/strings';
 import Step from '../../wizard/step';
-import { showExternalLoading } from './shared';
+import { showExternalLoading, hideExternalLoading } from './shared';
+
+const CHECKING_SESSION_INDEX = 0;
 
 function onRelativesModalStart(stepCompleted) {
   var duration = this.duration;
@@ -23,8 +25,7 @@ function onRelativesModalStart(stepCompleted) {
   });
 
   $btn.on('click', function () {
-    var CHECKING_SESSION = 0;
-    showExternalLoading(stepCompleted, duration, CHECKING_SESSION);
+    showExternalLoading(stepCompleted, duration, CHECKING_SESSION_INDEX);
     $('.r-arrow').hide();
   });
 }
@@ -34,7 +35,10 @@ relatives.init({
   title: 'Choose Relatives',
   $elem: $('#gen-report-modal2'),
   duration: 20,
-  onStart: onRelativesModalStart
+  onStart: onRelativesModalStart,
+  $modal: $('#loadingModal'),
+  openModal: (stepCompleted, duration) => showExternalLoading(stepCompleted, duration, CHECKING_SESSION_INDEX),
+  closeModal: () => hideExternalLoading(CHECKING_SESSION_INDEX)
 });
 
 export { relatives };
