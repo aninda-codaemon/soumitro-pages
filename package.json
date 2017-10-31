@@ -25,6 +25,8 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
+    "babel-plugin-es6-promise": "^1.1.1",
+    "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2016": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
@@ -51,6 +53,7 @@
   "dependencies": {
     "amplify-store": "^0.1.0",
     "axios": "^0.16.2",
+    "babel-polyfill": "^6.26.0",
     "bootstrap": "^3.3.7",
     "clean-webpack-plugin": "^0.1.16",
     "fetch-jsonp": "^1.1.3",

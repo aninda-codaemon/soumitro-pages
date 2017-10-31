@@ -19,7 +19,7 @@ module.exports = {
     // Don't attempt to continue if there are any errors.
   bail: true,
   devtool: 'source-map',
-  entry: `${root}/index.js`,
+  entry: ['babel-polyfill', `${root}/index.js`],
   output: {
     filename: 'js/bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -54,7 +54,8 @@ module.exports = {
         loader: require.resolve('babel-loader'),
         options: {
           compact: true,
-          presets: ['es2015', 'es2016', 'es2017']
+          presets: ['es2015', 'es2016', 'es2017'],
+          plugins: ['es6-promise', 'transform-object-assign']
         },
       },
       {

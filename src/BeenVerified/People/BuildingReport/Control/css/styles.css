@@ -890,6 +890,10 @@ background: linear-gradient(45deg, #81b44c 0%,#83ce33 100%); /* W3C, IE10+, FF16
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#81b44c', endColorstr='#83ce33',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
+.progress-bar {
+  transition: none;
+}
+
 /* ==== POP-UPS ========== */
 
 #exit-pop-skip .modal-header {

@@ -56,27 +56,26 @@ function showExternalModal(stepCompleted, duration, indexModal) {
         'background-color': '#DC0216'
       });
     }
-
-    $(extModals[indexModal]).removeClass('hidden');
-    setTimeout(function () {
-      if (indexModal < 1) {
-        hideExternalModal(indexModal);
-        stepCompleted();
-        $(modTitles[indexModal]).addClass('hidden');
-      }
-    }, duration);
+    $(extModals[indexModal]).removeClass('hidden');    
   }
 };
+
+function hideExternalModalTitle() {
+  var $modTitles = $('#externalModal .emdlTitle');
+  $modTitles.addClass('hidden');
+}
 
 function hideExternalModal(indexModal) {
   var extModals = $('#externalModal .ext-mod');
   $('#externalModal').addClass('hidden').modal('hide');
   $(extModals[indexModal]).addClass('hidden');
+  hideExternalModalTitle();
 };
 
 export {
   showExternalLoading,
   hideExternalLoading,
   showExternalModal,
-  hideExternalModal
+  hideExternalModal,
+  hideExternalModalTitle
 };

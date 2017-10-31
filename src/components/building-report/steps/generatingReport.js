@@ -1,5 +1,5 @@
 import Step from '../../wizard/step';
-import { showExternalModal, hideExternalModal } from './shared';
+import { showExternalModal, hideExternalModal, hideExternalModalTitle } from './shared';
 
 const COMPLETING_REPORT_INDEX = 1;
 
@@ -10,6 +10,11 @@ function runSearchProgression(stepCompleted, duration) {
   $.when(progressAnimate).done(function () {
     window.setTimeout(function () {
       showExternalModal(stepCompleted, duration, COMPLETING_REPORT_INDEX);
+      setTimeout(function () {
+        hideExternalModal(indexModal);
+        stepCompleted();
+        hideExternalModalTitle();
+      }, duration);
     }, 2000);
   });
 };
