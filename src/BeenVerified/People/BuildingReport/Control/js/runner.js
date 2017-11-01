@@ -64,12 +64,13 @@ const initialize = (shouldDisplayRelatives = false) => {
   initializeTestimonials();
   initializeQueryArgs(queryArgs, validQueryArgs);
   
-  if (bvid) {
+  if (bvid && queryArgs.bvid) {
     getExtraTeaserData(bvid).then(includeRelativesModal(shouldDisplayRelatives));
   } else {
     let searchData = amplify.store('searchData');
     searchData.fullName = nameize(searchData.fn) + ' ' + nameize(searchData.ln);
     amplify.store('searchData', searchData);
+    amplify.store('currentRecord', null);
   }
   initializeBVGO(wizard.skipStep);
   wizard.start();
