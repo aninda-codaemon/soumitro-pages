@@ -73,13 +73,14 @@ function onSaveResultsStart(stepCompleted) {
 }
 
 const saveResults = Object.assign({}, Step);
+const skipSavingResultModal = true;
 saveResults.init({
   title: 'Save Results',
   $elem: $('#gen-report-modal6'),
   duration: 18,
   onStart: onSaveResultsStart,
   $modal: $('#externalModal'),
-  openModal: (stepCompleted, duration) => showExternalModal(stepCompleted, duration, SAVE_RESULTS_INDEX),
+  openModal: (stepCompleted, duration) => showExternalModal(stepCompleted, duration, SAVE_RESULTS_INDEX, skipSavingResultModal),
   closeModal: () => hideExternalModal(SAVE_RESULTS_INDEX)
 });
 

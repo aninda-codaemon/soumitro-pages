@@ -38,7 +38,7 @@ function hideExternalLoading(indexModalToDisplay) {
   }
 };
 
-function showExternalModal(stepCompleted, duration, indexModal) {
+function showExternalModal(stepCompleted, duration, indexModal, skipModal) {
   var extModals = $('#externalModal .ext-mod');
   var modTitles = $('#externalModal .emdlTitle');
 
@@ -56,7 +56,16 @@ function showExternalModal(stepCompleted, duration, indexModal) {
         'background-color': '#DC0216'
       });
     }
-    $(extModals[indexModal]).removeClass('hidden');    
+    $(extModals[indexModal]).removeClass('hidden');
+    if (skipModal) {
+      return;
+    }
+    setTimeout(function () {
+      if (indexModal < 1) {
+        hideExternalModal(indexModal);
+        stepCompleted();
+      }
+    }, duration);
   }
 };
 
