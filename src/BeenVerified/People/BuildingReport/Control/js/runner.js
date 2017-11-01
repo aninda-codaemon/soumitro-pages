@@ -5,6 +5,7 @@ import { TeaserRecord } from 'parsers/teaserRecord';
 import { notifyRecordCount } from 'utils/track/notifyRecordCount';
 import { getBVId, getQueryArgs, isValidPeopleQuery } from 'utils/queryArgs';
 import { addRelativesModal, wizard } from 'components/building-report';
+import { nameize } from 'utils/strings';
 import * as localStorage from 'utils/localStorage';
 import amplify from 'utils/amplifyStore';
 import 'utils/framerida';
@@ -60,10 +61,16 @@ const initializeQueryArgs = (queryArgs, validQueryArgs) => {
 
 const initialize = (shouldDisplayRelatives = false) => {
   jQuery.fx.interval = 100;
-
-  getExtraTeaserData(bvid).then(includeRelativesModal(shouldDisplayRelatives));
   initializeTestimonials();
   initializeQueryArgs(queryArgs, validQueryArgs);
+  
+  if (bvid) {
+    getExtraTeaserData(bvid).then(includeRelativesModal(shouldDisplayRelatives));
+  } else {
+    let searchData = amplify.store('searchData');
+    searchData.fullName = nameize(searchData.fn) + ' ' + nameize(searchData.ln);
+    amplify.store('searchData', searchData);
+  }
   initializeBVGO(wizard.skipStep);
   wizard.start();
   window.$ = jQuery;

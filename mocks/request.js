@@ -1,9 +1,11 @@
 import _find from 'lodash/find';
 import mockStats from './api/stats';
+import mockTeaser from './api/teaser';
 import mockExtraTeaser from './api/extraTeaser';
 
 const registeredUrls = [
   ...mockStats,
+  ...mockTeaser,
   ...mockExtraTeaser
 ];
 

@@ -45,7 +45,7 @@
 
   <div id="main-container">
     <div id="sub-container">
-      <div class="headline hidden-xs" data-fr-bind="currentRecord">Building Report: {{fullName}}</div>
+      <div class="headline hidden-xs" data-fr-bind="currentRecord searchData">Building Report: {{fullName}}</div>
       <div id="headlineContainer">
         <div class="subHeadline"></div>
         <div class="subHeadline hidden relatives-step"></div>
@@ -188,7 +188,7 @@
                   <!-- ===================================== -->
                   <section id="scanningSocialMedia" class="scanningSocialMedia" tabindex="-1" aria-hidden="true">
                     <div class="content">
-                      <div class="modal-body" data-fr-bind="currentRecord">
+                      <div class="modal-body" data-fr-bind="currentRecord searchData">
                         <div class="row">
                           <div class="col-sm-12 modal-padding">
                             <p>This search may reveal interesting information on <strong>{{fullName}}</strong> such as unseen
@@ -245,7 +245,7 @@
                             <img src="img/Relatives-Color.svg" class="heading-logo">
                           </div>
                           <div class="mobile-heading">
-                            <p data-fr-bind="currentRecord">
+                            <p data-fr-bind="currentRecord searchData">
                               We've located the following possible relatives of {{fullName}} who we have further information about. Please select those you'd like
                               to learn more information about.
                             </p>
@@ -339,14 +339,14 @@
                           <h3 class="modal-body-headline">
                             IMPORTANT
                           </h3>
-                          <span class="subtitle" data-fr-bind="currentRecord">
+                          <span class="subtitle" data-fr-bind="currentRecord searchData">
                             {{#if fullName}} {{fullName}} {{else}} {{firstName}}{{/if}}'s Phone Report May Contain Comments Provided By Users</span>
                           <div>
                             <p class="item-label text-center">Our phone reports contain user comments that may contain surprising information about them.
                               By continuing, you acknowledge that the comments included in phone reports are provided by
                               users.</p>
                           </div>
-                          <form id="fcraGroup" data-fr-bind="currentRecord">
+                          <form id="fcraGroup" data-fr-bind="currentRecord searchData">
                             <div class="form-group">
                               <p>
                                 <label for="fcraCheckbox">
@@ -387,7 +387,7 @@
                         </div>
 
                         <div class="modal-header col-sm-12">
-                          <p data-fr-bind="currentRecord">
+                          <p>
                             There are limits to how you may use BeenVerified reports.
                             <br />
                             Please review the box below to continue to sign up.
@@ -446,7 +446,7 @@
                           <div class="row icon-row">
                             <div class="col-sm-2 icon-img"><img src="img/icon1-search.svg"></div>
                             <div class="col-sm-9">
-                              <p data-fr-bind="currentRecord"> Success! Your background report on {{fullName}} is available.</p>
+                              <p data-fr-bind="currentRecord searchData"> Success! Your background report on {{fullName}} is available.</p>
                             </div>
                           </div>
                           <div class="row icon-row">
@@ -490,7 +490,7 @@
                             <div class="col-sm-8 left-column">
                               <div class="lead-part">
 
-                              <div class="" data-fr-bind="extraTeaserData currentRecord">
+                              <div class="" data-fr-bind="extraTeaserData currentRecord searchData">
 
                                   <img class="norton hidden-xs" src="img/norton-secured.png" alt="">
                                   {{#if recordCount}}
@@ -649,13 +649,13 @@
                         <div class="dmIconsCont">
                           <img src="img/monitor.svg">
                         </div>
-                        <p data-fr-bind="currentRecord">Ongoing Notifications About {{firstName}}</p>
+                        <p data-fr-bind="currentRecord searchData">Ongoing Notifications About {{firstName}}</p>
                       </div>
 
                       <div class="modal-body">
                         <div class="row">
                           <div class="col-sm-12">
-                            <p data-fr-bind="currentRecord">
+                            <p data-fr-bind="currentRecord searchData">
                               Don't be "left in the dark." BeenVerified can notify you whenever there are changes or updates to {{fullName}}'s report. People
                               are frequently moving, committing crimes, creating new social media profiles and changing
                               their phone numbers. You could miss out if important information changes in the future.
@@ -1064,7 +1064,7 @@
           <div class="searching-progress-bar-group col-xs-12">
             <div id="chck-loading" class="progress checking-sources-progress hidden">
               <div class="progress-bar progress-bar-success" style="width: 1%"></div>
-              <p class="text-center" data-fr-bind="currentRecord">Compiling {{firstName}}'s report.</p>
+              <p class="text-center" data-fr-bind="currentRecord searchData">Compiling {{firstName}}'s report.</p>
             </div>
             <div id="cont-loading" class="progress checking-sources-progress hidden">
               <div class="progress-bar progress-bar-success" style="width: 1%"></div>
@@ -1102,12 +1102,12 @@
             <div id="crt-acct-warn" class="ext-mod hidden">
               <div class="crc-acct-load-subHead">
                 <img src="img/report-ready.svg">
-                <p data-fr-bind="currentRecord">
+                <p data-fr-bind="currentRecord searchData">
                   <span>Your report is ready for:</span>
                   <strong>{{fullName}}</strong>
                 </p>
               </div>
-              <div class="crc-acct-load-body" data-fr-bind="currentRecord">
+              <div class="crc-acct-load-body">
                 <strong>Remember:</strong> BeenVerified reports use REAL public records from court houses, government
                 records and other sources. The data may surprise you.
                 <button id="crt-acct-warn-confirm" class="main-btn btn btn-md btn-block large-modal-btn">

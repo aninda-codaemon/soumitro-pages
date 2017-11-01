@@ -50,7 +50,7 @@ const storeTeaserData = teaserData => {
 
 /** An user using Safari Incognito. */
 const fixIncognitoMode = bvid => ({ records }) => {
-  if (!amplify.store('currentRecord')) {
+  if (!amplify.store('currentRecord') && bvid) {
     const currentRecord = _find((records || []), { bvid });
     const parsedRecord = new TeaserRecord(currentRecord);
     /**
