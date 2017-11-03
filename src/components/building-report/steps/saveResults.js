@@ -1,4 +1,5 @@
 import { track } from 'utils/track';
+import amplify from 'utils/amplifyStore';
 import Step from '../../wizard/step';
 import { showExternalModal, hideExternalModal } from './shared';
 
