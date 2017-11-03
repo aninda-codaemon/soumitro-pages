@@ -5,6 +5,8 @@ import { showExternalModal, hideExternalModal } from './shared';
 
 const SAVE_RESULTS_INDEX = 0;
 
+$('#emailCheckbox').prop('checked', true);
+console.log('print something plz?');
 function reportLeadData(dataArray) {
   var hostname = window.location.hostname;
   if (hostname && hostname.indexOf('secure.') > -1) {
@@ -35,6 +37,9 @@ function reportLeadData(dataArray) {
   leadData['lead[state]'] = formVals['account[state]'] || '';
   leadData['record_search[first_name]'] = firstName;
   leadData['record_search[last_name]'] = lastName;
+  leadData['lead[email_opt_in]'] = formVals['email_opt_in'] ? true : false;
+
+  amplify.store('leadData', formVals);
 
   var leadQueryArr = [];
   _.forEach(leadData, function (v, k) {
@@ -65,6 +70,9 @@ function onSaveResultsStart(stepCompleted) {
     if (validator.form()) {
       track('Submitted Lead Form - Success');
       try {
+        $('#emailCheckbox').prop('checked')
+          ? $('#emailCheckbox').val() === 'true'
+          : $('#emailCheckbox').val() === 'false';
         reportLeadData($(this).serializeArray());
         showExternalModal(stepCompleted, duration, SAVE_RESULTS_INDEX);
       } catch (err) { }
