@@ -9,7 +9,7 @@ $('#emailCheckbox').prop('checked', true);
 
 // Auto populate info form localStorage
 const leadData = amplify.store('leadData') || {};
-console.log(leadData);
+
 const firstName = leadData['account[first_name]'] || '';
 const lastName = leadData['account[last_name]'] || '';
 const email = leadData['user[email]'] || '';
