@@ -66,10 +66,9 @@ function onSaveResultsStart(stepCompleted) {
       track('Submitted Lead Form - Success');
       try {
         reportLeadData($(this).serializeArray());
+        showExternalModal(stepCompleted, duration, SAVE_RESULTS_INDEX);
       } catch (err) { }
     }
-  }).on('submit', function () {
-    showExternalModal(stepCompleted, duration, SAVE_RESULTS_INDEX);
   });
 }
 
