@@ -500,14 +500,14 @@
                                     <p class="modal-top-text" >We need this basic information:</p>
                                   {{/if}}
                               </div>
-                              <form id="signup-modal-form" action="<%= next_page %>" data-fr-bind="leadData" data-fr-bind="leadData">
+                              <form id="signup-modal-form" action="<%= next_page %>">
                                 <fieldset class="form-input-group">
                                   <div class="row">
                                     <div class="col-sm-3 hidden-xs hidden-sm">
                                       <div class="input-label">First Name</div>
                                     </div>
                                     <div class="col-sm-12 col-md-9">
-                                      <input name="account[first_name]" value="{{account[first_name]}}" id="lead_first_name" type="text" class="form-control" placeholder="First Name" required/>
+                                      <input name="account[first_name]" id="lead_first_name" type="text" class="form-control" placeholder="First Name" required/>
                                     </div>
                                   </div>
                                   <div class="row">
@@ -515,7 +515,7 @@
                                       <div class="input-label">Last Name</div>
                                     </div>
                                     <div class="col-sm-12 col-md-9">
-                                      <input name="account[last_name]" value="{{account[last_name]}}" id="lead_last_name" type="text" class="form-control" placeholder="Last Name" required/>
+                                      <input name="account[last_name]" id="lead_last_name" type="text" class="form-control" placeholder="Last Name" required/>
                                     </div>
                                   </div>
                                   <div class="row">
@@ -523,7 +523,7 @@
                                       <div class="input-label">Email</div>
                                     </div>
                                     <div class="col-sm-12 col-md-9">
-                                      <input name="user[email]" value="{{user[email]}}" id="lead_email" type="email" class="form-control" placeholder="Email Address" required/>
+                                      <input name="user[email]" id="lead_email" type="email" class="form-control" placeholder="Email Address" required/>
                                     </div>
                                   </div>
                                 </fieldset>
@@ -531,10 +531,12 @@
                                 <!-- Opt In Email check Box -->
                                 <div class="checkbox">
                                   <label>
-                                    <input id="emailCheckbox" name="email_opt_in" class="styled" type="checkbox" value="true">                        <p class="emailcheckbox-text">
-                                      I want to receive promotional emails from BeenVerified. We’ll never sell your information or use your data as a part of our search results.</p>
-                                    </label>
-                                  </div>
+                                    <input id="emailCheckbox" name="email_opt_in" class="styled" type="checkbox" value="true">
+                                    <p class="emailcheckbox-text">
+                                      I want to receive promotional emails from BeenVerified. We’ll never sell your information or use your data as a part of our search results.
+                                    </p>
+                                  </label>
+                                </div>
 
                                 <fieldset>
                                   <div class="">
