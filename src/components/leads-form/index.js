@@ -1,7 +1,8 @@
 import { track } from 'utils/track';
 import { saveLeads } from 'api/leads';
 
-const validateLeadsForm = $form => {
+const noop = () => {};
+const validateLeadsForm = ($form, onSubmit = noop) => {
   var validator = $form.validate({
     'account[first_name]': 'required',
     'account[last_name]': 'required',
@@ -21,6 +22,7 @@ const validateLeadsForm = $form => {
       track('Submitted Lead Form - Success');
       try {
         saveLeads($(this).serializeArray());
+        onSubmit();
       } catch (err) { }
     }
   });

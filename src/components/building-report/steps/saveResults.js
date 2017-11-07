@@ -9,11 +9,12 @@ const SAVE_RESULTS_INDEX = 0;
 function onSaveResultsStart(stepCompleted) {
   var duration = this.duration;
   var $signupModalForm = $('#signup-modal-form');
-  
-  validateLeadsForm($signupModalForm);
-  $signupModalForm.on('submit', function () {
+  var img = $('#crt-acct-load').find('img');
+  const onSubmit = () => {
     showExternalModal(stepCompleted, duration, SAVE_RESULTS_INDEX);
-  });
+  }
+  validateLeadsForm($signupModalForm, onSubmit);
+  img.attr('src', img.attr('data-src'));
 }
 
 const saveResults = Object.assign({}, Step);
