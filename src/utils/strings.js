@@ -22,7 +22,7 @@ export const numberize = text => text.toString().replace(/\B(?=(\d{3})+(?!\d))/g
 export const addressize = text => text.replace(/(\s|^)Nw|Ne|Sw|Se|Po|Af(\s|$)/g, txt => txt.toUpperCase());
 
 export const nameize = function (text) {
-  if (text === null) {
+  if (text === null || text === undefined) {
     return '';
   }
   if (text.match(/\s+/)) {
