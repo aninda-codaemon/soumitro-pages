@@ -13,7 +13,8 @@ function saveLeads(dataArray) {
     formVals[v.name] = v.value;
   });
 
-  var hasEmailOption = formVals.hasOwnProperty('email_opt_in');
+  // Does we have a checkbox asking for send emails?
+  var hasEmailOption = $('#emailCheckbox').length === 1;
 
   var srchData = amplify.store('searchData'),
     firstName = '',
