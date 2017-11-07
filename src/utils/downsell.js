@@ -6,32 +6,32 @@ import {
   extend as _extend
 } from 'lodash';
 
-var defaults = {
+const defaults = {
   onBlur: {
-    elem: "#downsell-blur",
+    elem: '#downsell-blur',
     cb: noop,
     outOfFocusDuration: 60 * 1000
   },
   onBack: {
-    elem: "#downsell-back",
+    elem: '#downsell-back',
     cb: noop
   },
   onIdle: {
-    elem: "#downsell-idle",
+    elem: '#downsell-idle',
     cb: noop,
     inactiveThreshold: 30 * 1000
   },
   onUnload: {
-    elem: "#downsell-unload",
+    elem: '#downsell-unload',
     cb: noop
   },
   onBreakingPlane: {
-    elem: "#downsell-breaking",
+    elem: '#downsell-breaking',
     cb: noop
   }
 };
 
-var isIE = navigator.userAgent.toLowerCase().indexOf('msie') > -1 || !!navigator.userAgent.match(/Trident.*rv\:11\./),
+const isIE = navigator.userAgent.toLowerCase().indexOf('msie') > -1 || !!navigator.userAgent.match(/Trident.*rv\:11\./),
   isFF = navigator.userAgent.toLowerCase().indexOf('firefox') > -1,
   isAndroid = navigator.userAgent.toLowerCase().indexOf('android') > -1,
   isIOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false;
@@ -44,8 +44,8 @@ var opts = {},
 
 var activeModal;
 
-var reportHeap = function(msg, prop) {
-  if (typeof window.heap !== "undefined" && heap.track) {
+const reportHeap = function(msg, prop) {
+  if (typeof window.heap !== 'undefined' && heap.track) {
     heap.track(msg, prop);
   }
 };
@@ -58,7 +58,7 @@ var showModal = function(id, eventType, suppress, durSecs) {
     if (durSecs) {
       props.duration = determineDurationBucket(durSecs);
     }
-    reportHeap(eventType + " Modal - Viewed", props);
+    reportHeap(eventType + ' Modal - Viewed', props);
   }
 
   // Don't show any other downsell if back/unload modals are already shown.
@@ -81,28 +81,28 @@ var showModal = function(id, eventType, suppress, durSecs) {
   }
 };
 
-var determineDurationBucket = function(duration) {
-  var buckets = {
-    30: "30s - 44s",
-    45: "45s - 59s",
-    60: "60s - 74s",
-    75: "75s - 89s",
-    90: "90s - 104s",
-    105: "105s - 119s",
-    120: "120s - 134s",
-    135: "135s - 149s",
-    150: "150s - 164s"
+const determineDurationBucket = (duration) => {
+  const buckets = {
+    30: '30s - 44s',
+    45: '45s - 59s',
+    60: '60s - 74s',
+    75: '75s - 89s',
+    90: '90s - 104s',
+    105: '105s - 119s',
+    120: '120s - 134s',
+    135: '135s - 149s',
+    150: '150s - 164s'
   };
 
   if (duration < 30) {
-    return "Less than 30s";
+    return 'Less than 30s';
   }
 
   if (duration > 165) {
-    return "More than 165s";
+    return 'More than 165s';
   }
 
-  var msg = "",
+  var msg = '',
     found = false;
   _forEach(buckets, function(v, k) {
     var nextVal = (parseInt(k, 10) + 15);
@@ -121,18 +121,18 @@ var blurTime,
 
 var onBlur = function() {
 
-  $(window).on("blur", function() {
+  $(window).on('blur', function() {
     if (onBlurShown) return;
     blurTime = Date.now();
   });
 
-  $(window).on("focus", function() {
+  $(window).on('focus', function() {
     if (onBlurShown) return;
     var timeNow = Date.now(),
       outOfFocusDuration = timeNow - blurTime;
     if (outOfFocusDuration > opts.onBlur.outOfFocusDuration) {
       onBlurShown = true;
-      showModal(opts.onBlur.elem, "onBlur", true, (outOfFocusDuration / 1000));
+      showModal(opts.onBlur.elem, 'onBlur', true, (outOfFocusDuration / 1000));
     }
   });
 };
@@ -140,10 +140,10 @@ var onBlur = function() {
 /* OnBack - Fired when the user hits the back button. */
 
 var markHash = function(cb) {
-  window.location.hash = "";
-  $("#mark-hash").click();
+  window.location.hash = '';
+  $('#mark-hash').click();
   window.setTimeout(function() {
-    window.location.hash = ".";
+    window.location.hash = '.';
     cb();
   }, 1000);
 };
@@ -151,8 +151,8 @@ var markHash = function(cb) {
 /* Poll for hash changes on IE. */
 var pollForHashChange = function() {
   window.setInterval(function() {
-    if (window.location.hash === "#") {
-      showModal(opts.onBack.elem, "onBack");
+    if (window.location.hash === '#') {
+      showModal(opts.onBack.elem, 'onBack');
     }
   }, 400);
 };
@@ -162,11 +162,11 @@ var listenToHashChanges = function() {
     pollForHashChange();
     return;
   }
-  $(window).on("hashchange", function() {
+  $(window).on('hashchange', function() {
     var hash = window.location.hash;
-    if (!hash || hash === "#") {
-      showModal(opts.onBack.elem, "onBack");
-      $("body").click();
+    if (!hash || hash === '#') {
+      showModal(opts.onBack.elem, 'onBack');
+      $('body').click();
     }
   });
 };
@@ -183,11 +183,11 @@ var lastActive = Date.now(),
 
 var onIdle = function() {
 
-  $(window).on("touchstart", function() {
+  $(window).on('touchstart', function() {
     lastActive = Date.now();
   });
 
-  $(window).on("click", function() {
+  $(window).on('click', function() {
     lastActive = Date.now();
   });
 
@@ -200,7 +200,7 @@ var onIdle = function() {
     var timeDelta = Date.now() - lastActive;
     if (timeDelta >= opts.onIdle.inactiveThreshold) {
       onIdleShown = true;
-      showModal(opts.onIdle.elem, "onIdle", true);
+      showModal(opts.onIdle.elem, 'onIdle', true);
     }
   }, 1000);
 
@@ -209,16 +209,16 @@ var onIdle = function() {
 /* OnUnload */
 
 var beforeUnload = function() {
-  reportHeap("onBeforeUnload Popup - Viewed");
+  reportHeap('onBeforeUnload Popup - Viewed');
   if (stop) {
     window.onbeforeunload = function() {};
     return;
   }
   stop = true;
   $('.modal.in').modal('hide');
-  // $(opts.onUnload.elem).addClass("force-show");
+  // $(opts.onUnload.elem).addClass('force-show');
 
-  var $subscribeBounceTB = $("#subscribe_bounce_text"),
+  var $subscribeBounceTB = $('#subscribe_bounce_text'),
     text = null,
     bounceRedirect = null;
 
@@ -227,13 +227,13 @@ var beforeUnload = function() {
     bounceRedirect = $subscribeBounceTB.data('sub-bounce-url');
   }
 
-  redirectTo = bounceRedirect || "https://www.beenverified.com/subscribe/view_report_trial";
+  redirectTo = bounceRedirect || 'https://www.beenverified.com/subscribe/view_report_trial';
 
   window.onbeforeunload = noop;
 
   window.setTimeout(function() {
     window.setTimeout(function() {
-      reportHeap("onBeforeUnload Popup - Accepted", {
+      reportHeap('onBeforeUnload Popup - Accepted', {
         redirected_to: redirectTo
       });
       window.location = redirectTo;
@@ -267,7 +267,7 @@ var onBreakingPlane = function() {
     if (x > $(window).width()) return;
 
     if (mouseenterY > y) {
-      showModal(elem, "onBreakingPlane");
+      showModal(elem, 'onBreakingPlane');
     }
   });
 };
