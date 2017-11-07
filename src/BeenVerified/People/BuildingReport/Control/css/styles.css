@@ -1246,7 +1246,7 @@ td.addressCheck {
   padding: 0 15px 15px 15px;
 }
 
-#scanningCriminal {
+#confirmData, #scanningCriminal {
   margin-top: 10px;
 }
 
@@ -1704,8 +1704,8 @@ p.log-load {
 /* === 6 == FCRA ================ */
 
 #gen-report-modal11 {
+  margin-top: 10px;
   font-family: 'Lato', Arial, Helvetica, sans-serif !important;
-
   text-align: center;
   vertical-align: top;
 }
