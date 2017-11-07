@@ -2,6 +2,7 @@
   Convenience helpers used in FrameRida.
 */
 import Handlebars from 'handlebars';
+import { nameize } from 'utils/strings';
 (function (H) {
 
   /*
@@ -85,7 +86,7 @@ import Handlebars from 'handlebars';
 
   H.registerHelper('nameize', function (item) {
     if (!item) return "";
-    return item.nameize();
+    return nameize(item);
   });
 
   /*
