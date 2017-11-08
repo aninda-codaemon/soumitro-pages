@@ -12,13 +12,13 @@ function onRelativesModalStart(stepCompleted) {
   var listIdxs = _.shuffle(_.range(0, listLen));
   var currIdx = 0;
   var $btn = $('#gen-report-confirm');
-  var rndNamesContiner = $('.rndname');
+  var rndNamesContainer = $('.rndname');
   var currentRecord = amplify.store('currentRecord');
   var relatives = _.get(currentRecord, 'Relatives.Relative') || [];
   relatives = Array.isArray(relatives) ? relatives : [relatives]
   _.forEach(relatives, function (relative, i) {
     var fullName = relative.First + ' ' + (relative.Middle ? relative.Middle + ' ' : '') + relative.Last;
-    $(rndNamesContiner[i])
+    $(rndNamesContainer[i])
       .text(nameize(fullName))
       .closest('.hidden')
       .removeClass('hidden');
