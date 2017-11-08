@@ -1710,6 +1710,14 @@ p.log-load {
   vertical-align: top;
 }
 
+#gen-report-modal11 .heading-logo {
+  margin-top: 20px;
+}
+
+#gen-report-modal11 .modal-header p {
+  margin-top: 10px;
+}
+
 #gen-report-modal11 a {
   color: #0f2d8f;
 }
