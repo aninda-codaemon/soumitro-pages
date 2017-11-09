@@ -39,7 +39,7 @@ const parseTeaser = data => {
   
   return {
     recordCount,
-    records: recordCount === 1 ? [records] : records
+    teasers: recordCount === 1 ? [records] : records
   };
 };
 
