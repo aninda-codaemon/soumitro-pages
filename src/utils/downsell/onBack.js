@@ -1,4 +1,4 @@
-import { trackNL } from './trackNL';
+import { track } from 'utils/track';
 
 const markHash = function (cb) {
   window.location.hash = "";
@@ -9,7 +9,7 @@ const markHash = function (cb) {
   }, 3000);
 };
 
-var pollForHashChange = function (opts, showModal) {
+const pollForHashChange = function (opts, showModal) {
   var elem = opts.elem
     , cb = opts.cb
     , override = opts.override;
@@ -17,7 +17,7 @@ var pollForHashChange = function (opts, showModal) {
     if (window.location.hash === "#") {
       if (override) {
         cb();
-        trackNL("onBack Modal - Viewed");
+        track("onBack Modal - Viewed");
       } else {
         showModal(elem, "onBack");
       }
@@ -38,7 +38,7 @@ const listenToHashChanges = function (opts, showModal, isIE) {
     if (!hash || hash === "#") {
       if (override) {
         cb();
-        trackNL("onBack Modal - Viewed");
+        track("onBack Modal - Viewed");
       } else {
         showModal(elem, "onBack");
         $("body").click();

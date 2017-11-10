@@ -5,13 +5,11 @@ import './styles.css';
 const shouldIncludeRelatives = true;
 initialize(shouldIncludeRelatives);
 
-//discount button event
 $('#btn-discount').click(function () {
     window.location = $('body').data('next-page');
 });
 
-//Init downsell
-(function addDontExitPlugin() {
+const InitializeDownsell = () => {
     /* 
      This code makes the downsell works a bit better in safari,
      because the back button has a weird behavior in mobile devices
@@ -30,4 +28,7 @@ $('#btn-discount').click(function () {
             elem: "#iModal-dontgo"
         }
   });
-})()
+};
+
+InitializeDownsell();
+

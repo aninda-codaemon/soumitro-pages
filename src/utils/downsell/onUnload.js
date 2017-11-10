@@ -1,10 +1,10 @@
-import { trackNL } from './trackNL';
+import { track } from 'utils/track';
 import {
   noop as _noop
 } from 'lodash';
 
 var beforeUnload = function () {
-  trackNL("onBeforeUnload Popup - Viewed");
+  track("onBeforeUnload Popup - Viewed");
   //TODO: this stop is referencing the index stop variable, need to pass it as a parameter.
   if (stop) {
     window.onbeforeunload = _noop;
@@ -26,7 +26,7 @@ var beforeUnload = function () {
   window.onbeforeunload = _noop;
   window.setTimeout(function () {
     window.setTimeout(function () {
-      trackNL("onBeforeUnload Popup - Accepted", {
+      track("onBeforeUnload Popup - Accepted", {
         redirected_to: redirectTo
       });
       window.location = redirectTo;

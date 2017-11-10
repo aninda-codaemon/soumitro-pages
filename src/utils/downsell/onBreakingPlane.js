@@ -1,4 +1,4 @@
-import { trackNL } from './trackNL';
+import { track } from 'utils/track';
 
 const onBreakingPlane = function (opts, showModal) {
   var elem = opts.elem, 
@@ -15,7 +15,7 @@ const onBreakingPlane = function (opts, showModal) {
     firedBreakingPlaneAlready = true;
     if (override) {
       cb();
-      trackNL("onBreakingPlane Modal - Viewed");
+      track("onBreakingPlane Modal - Viewed");
     } else {
       showModal(elem, "onBreakingPlane");
     }

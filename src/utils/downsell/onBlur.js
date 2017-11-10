@@ -9,7 +9,7 @@ const onBlur = function (opts, showModal) {
   $(window).on("focus", function () {
     if (onBlurShown)
       return;
-    var timeNow = Date.now(), 
+    const timeNow = Date.now(), 
       outOfFocusDuration = timeNow - blurTime;
 
     if (outOfFocusDuration > opts.outOfFocusDuration) {

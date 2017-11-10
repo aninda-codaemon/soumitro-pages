@@ -3,7 +3,6 @@ import {
   noop as _noop
 } from 'lodash';
 
-// Default config
 const defaults = {
   onBlur: {
     elem: "#downsell-blur",
@@ -65,8 +64,7 @@ const determineDurationBucket = function (duration) {
   return msg;
 };
 
-// Navigator validations
-var isIE = navigator.userAgent.toLowerCase().indexOf('msie') > -1 || !!navigator.userAgent.match(/Trident.*rv\:11\./),
+const isIE = navigator.userAgent.toLowerCase().indexOf('msie') > -1 || !!navigator.userAgent.match(/Trident.*rv\:11\./),
   isFF = navigator.userAgent.toLowerCase().indexOf('firefox') > -1,
   isAndroid = navigator.userAgent.toLowerCase().indexOf('android') > -1,
   isIOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false;
