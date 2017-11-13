@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const { root, indexHtmlPath } = require('./config');
+const { root, indexHtmlPath, gitInfo } = require('./config');
 
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
@@ -169,7 +169,11 @@ module.exports = {
       svgo: null  // Flowrida doesn't like this
     }),
     new webpack.BannerPlugin({
-       banner: `Root folder: ${root}`
+       banner: `
+       Root folder: ${root}
+       From repository: ${gitInfo.origin}
+       From Branch: ${gitInfo.branch}
+       `
     })
   ],
 };
