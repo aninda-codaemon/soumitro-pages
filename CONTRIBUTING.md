@@ -1,6 +1,6 @@
 # How to contribute to SOT_PAGES
 1. Clone the repo.
-2. We use the `Feature-branch` approach.
+2. We use the `Feature-branch` Gitflow.
 3. When you're going to create a variant page, create a branch like `Variant-Descriptive-Name`.
 
 # Considerations
