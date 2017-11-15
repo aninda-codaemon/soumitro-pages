@@ -50,10 +50,6 @@ function showSubHeadlines(totalSections) {
   $('#wizModal').find(".wizard-steps-panel .step-" + step).toggleClass("doing").find('.number').html('&nbsp;');
 }
 
-function addRelativesModal() {
-  section2.steps.splice(2, 0, relatives);
-}
-
 const section1 = Object.assign({}, Section);
 const section2 = Object.assign({}, Section);
 const section3 = Object.assign({}, Section);
@@ -68,11 +64,15 @@ section4.init([saveResults, preparingMonitoring, generatingReport]);
 const wizard = Object.assign({}, WizardManager);
 const sections = [section1, section2, section3, section4];
 
+function addRelativesModal() {
+  section2.steps.splice(2, 0, relatives);
+}
+
 wizard.init({
   sections,
   onCompleted() {
     window.location = $('body').data('next-page');
-  }
+  },
 });
 showSubHeadlines(sections.length);
 

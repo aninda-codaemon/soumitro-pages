@@ -1,33 +1,33 @@
 import {
-  extend as _extend
+  extend,
 } from 'lodash';
+import { track } from 'utils/track';
 
-import { 
-  defaults, 
-  determineDurationBucket, 
-  isIE 
+import {
+  defaults,
+  determineDurationBucket,
+  isIE,
 } from './config';
-
 import { onBack } from './onBack';
 import { onBlur } from './onBlur';
 import { onBreakingPlane } from './onBreakingPlane';
 import { onIdle } from './onIdle';
-import { track } from 'utils/track';
 
-var opts = {},
-  stop = false;
+let opts = {};
+let stop = false;
 
+// TODO: Investigate how this works. Maybe this active Modal looks like prevents to display a modal?
 var activeModal;
-const showModal = function (id, eventType, suppress, durSecs) {
+const showModal = function showModal(id, eventType, suppress, durSecs) {
   if (eventType) {
     var props = {};
     props.downsell_id = id;
     if (durSecs) {
       props.duration = determineDurationBucket(durSecs);
     }
-    track(eventType + " Modal - Viewed", props);
+    track(`${eventType} Modal - Viewed`, props);
   }
-  $(".modal.in").modal('hide');
+  $('.modal.in').modal('hide');
   if (stop || activeModal === opts.onBack.elem || activeModal === opts.onUnload.elem) {
     return;
   }
@@ -36,7 +36,7 @@ const showModal = function (id, eventType, suppress, durSecs) {
     $(id).modal({
       backdrop: 'static',
       keyboard: false,
-      show: true
+      show: true,
     });
     activeModal = id;
     stop = true;
@@ -45,7 +45,7 @@ const showModal = function (id, eventType, suppress, durSecs) {
 
 const downsell = {
   init(options) {
-    _extend(opts, defaults, options);
+    extend(opts, defaults, options);
     onBack(opts.onBack, showModal, isIE);
     onIdle(opts.onIdle, showModal);
     onBlur(opts.onBlur, showModal);
@@ -55,7 +55,7 @@ const downsell = {
     $(document).off('mouseleave');
     $(document).off('mouseenter');
     $(window).off('hashchange');
-  }
-}
+  },
+};
 
 export { downsell };

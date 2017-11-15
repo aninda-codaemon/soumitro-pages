@@ -1,14 +1,14 @@
 // TODO: Use track/index.js instead.
-const _get = 'lodash/get';
+const get = 'lodash/get';
 
 const trackGA = (eventName, props) => {
   if (typeof window.dataLayer !== 'undefined') {
-    var gaData = {
+    const gaData = {
       event: 'flowrida_visitor_event',
       eventLabel: eventName,
     };
     if (props) {
-      gaData.visitorEventInfo = JSON.stringify(props)
+      gaData.visitorEventInfo = JSON.stringify(props);
     }
 
     window.dataLayer.push(gaData);
@@ -16,13 +16,13 @@ const trackGA = (eventName, props) => {
 };
 
 /**
- * @param { eventName, props } args 
+ * @param { eventName, props } args
  */
 const track = (...args) => {
   const trackingFunctions = [
-    _.get(window, 'nolimit.track'),
-    _.get(window, 'heap.track'),
-    trackGA
+    get(window, 'nolimit.track'),
+    get(window, 'heap.track'),
+    trackGA,
   ];
 
   trackingFunctions.forEach(trackingFn => trackingFn && trackingFn(...args));
