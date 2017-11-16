@@ -63,6 +63,7 @@
     "jquery-mask-plugin": "^1.14.12",
     "jquery-validation": "^1.17.0",
     "liveaddress": "^5.1.0",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "mailcheck": "^1.1.1"
   }
 }

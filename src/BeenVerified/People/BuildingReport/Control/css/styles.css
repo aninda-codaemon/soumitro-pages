@@ -1912,6 +1912,13 @@ label.fcraCheckbox-wrapper {
   padding: 30px 20px 10px 50px;
 }
 
+#email_suggestion {
+  display: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
 /*Eemail opt in box*/
 #gen-report-modal6 .emailcheckbox-text {
   font-size: 14px;
