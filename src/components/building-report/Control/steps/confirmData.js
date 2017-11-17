@@ -1,4 +1,4 @@
-import Step from '../../wizard/step';
+import Step from 'components/wizard/step';
 
 function onConfirmDataStart(stepCompleted) {
   $('#confirmData .main-btn').on('click', stepCompleted);
