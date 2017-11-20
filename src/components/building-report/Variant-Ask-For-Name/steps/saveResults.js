@@ -4,12 +4,12 @@ import { nameize } from 'utils/strings';
 import Step from 'components/wizard/step';
 import { saveResults } from '../../Control/steps/saveResults';
 
-saveResults.onBeforeStart = function onDecorateSaveResultsBeforeStart() {
+saveResults.onBeforeStart = function onBeforeStartSaveResults() {
   const query = amplify.store(SEARCH_QUERY) || {};
   const fn = nameize(query.fn);
   const ln = nameize(query.ln);
   const fullName = `${fn} ${ln}`;
-  this.title = `Save Your Search On ${fullName}`;
+  this.title = 'Save Your Search';
   $('.headline').text(`Building Report: ${fullName}`);
 };
 

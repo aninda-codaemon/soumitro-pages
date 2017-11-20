@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Building BeenVerified Report</title>
+  <title>Preparing Background Check Service</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <!-- STYLES -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -437,6 +437,12 @@
                       <div class="modal-body">
                         <div>
                           <div class="row icon-row">
+                            <div class="col-sm-2 icon-img"><img src="../Control/img/icon1-search.svg"></div>
+                            <div class="col-sm-9">
+                              <p data-fr-bind="currentRecord searchData">Success! The Background Check Service is now ready for you to search.</p>
+                            </div>
+                          </div>
+                          <div class="row icon-row">
                             <div class="col-sm-2 icon-img"> <img src="../Control/img/icon2-report.svg"></div>
                             <div class="col-sm-9">
                               <p>Our background reports may include information from multiple databases, bankruptcy records,
@@ -456,7 +462,7 @@
 
                     <div class="row">
                       <div class="col-sm-5 col-sm-offset-3 col-md-6 col-md-offset-3">
-                        <button class="btn btn-success main-btn btn-block"><span>Continue to Report&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></span></button>
+                        <button class="btn btn-success main-btn btn-block"><span>Continue&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></span></button>
                       </div>
                     </div>
                   </section>
@@ -478,7 +484,6 @@
                         <div class="row">
                           <div id="head" class="col-sm-offset-2 col-sm-8 text-center">
                             <h4 class="title">Enter a name you'd like to learn more about.</h4>
-                            <p>Don't worry about who you search for now, with BeenVerified you can search 100 people a month.</p>
                           </div>
                         </div>
                         <div class="row">
@@ -1177,7 +1182,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <div class="emdlTitle hidden">Saving Results...</div>
+          <div class="emdlTitle hidden">Saving Your Search</div>
           <div class="emdlTitle warn-head hidden">IMPORTANT</div>
         </div>
         <div class="modal-body clearfix">
@@ -1187,13 +1192,6 @@
               <p>Please wait....</p>
             </div>
             <div id="crt-acct-warn" class="ext-mod hidden">
-              <div class="crc-acct-load-subHead">
-                <img src="../Control/img/report-ready.svg">
-                <p data-fr-bind="searchQuery">
-                  <span>Your report is ready for:</span>
-                  <strong>{{nameize fn}}</strong>
-                </p>
-              </div>
               <div class="crc-acct-load-body">
                 <strong>Remember:</strong> BeenVerified reports use REAL public records from court houses, government
                 records and other sources. The data may surprise you.

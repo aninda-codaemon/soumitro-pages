@@ -3,15 +3,15 @@ import Section from 'components/wizard/section';
 import WizardManager from 'components/wizard/manager';
 
 import {
+  criminalScan,
+  noteOnUserComments,
   saveResults,
   searchPeople,
 } from './steps';
 import {
   popularUseCases,
-  criminalScan,
   socialMediaScan,
   relatives,
-  noteOnUserComments,
   confirmFCRA,
   confirmData,
   preparingMonitoring,

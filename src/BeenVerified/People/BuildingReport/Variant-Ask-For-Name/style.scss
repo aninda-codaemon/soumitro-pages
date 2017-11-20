@@ -1,6 +1,7 @@
 $input-height: 45px;
 $tablet-width: 768px;
 $desktop-width: 992px;
+$input-color: #6d6d6d;
 
 @mixin small-devices {
   @media (max-width: #{$tablet-width - 1px}) {
@@ -41,12 +42,18 @@ $desktop-width: 992px;
       border: 1px solid #F9F9F9;
       box-shadow: inset 1px 0 2px 0 rgba(0,0,0,0.26);
       border-radius: 2px;
-      color: #9B9B9B;
+      color: #000;
       letter-spacing: 0;
       line-height: 24px;
       @include small-devices {
         padding: 6px 8px;
         margin-bottom: 15px;
+      }
+      &::-webkit-input-placeholder {
+        color: $input-color;
+      }
+      &:focus {
+        border: 1px solid #4198d6;
       }
     }
     select.form-control {
