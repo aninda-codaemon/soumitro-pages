@@ -6,5 +6,5 @@ const buildingReportInstance = {
   addRelativesModal,
   wizard,
 };
-const shouldIncludeRelatives = true;
+const shouldIncludeRelatives = false;
 initialize(buildingReportInstance, shouldIncludeRelatives);

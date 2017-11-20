@@ -182,7 +182,7 @@
                   <!-- ===================================== -->
                   <section id="scanningSocialMedia" class="scanningSocialMedia" tabindex="-1" aria-hidden="true">
                     <div class="content">
-                      <div class="modal-body" data-fr-bind="currentRecord searchData">
+                      <div class="modal-body">
                         <div class="row">
                           <div class="col-sm-12 modal-padding">
                             <p>Our social media search may reveal interesting information, such as unseen photos, videos, family, friends, professional connections and more.</p>
@@ -339,7 +339,7 @@
                               By continuing, you acknowledge that the comments included in phone reports are provided by
                               users.</p>
                           </div>
-                          <form id="fcraGroup" data-fr-bind="currentRecord searchData">
+                          <form id="fcraGroup">
                             <div class="form-group">
                               <p>
                                 <label for="fcraCheckbox">
@@ -736,14 +736,14 @@
                         <div class="dmIconsCont">
                           <img src="../Control/img/monitor.svg">
                         </div>
-                        <p data-fr-bind="currentRecord searchData">Ongoing Notifications About {{firstName}}</p>
+                        <p data-fr-bind="searchQuery">Ongoing Notifications About {{nameize fn}}</p>
                       </div>
 
                       <div class="modal-body">
                         <div class="row">
                           <div class="col-sm-12">
-                            <p data-fr-bind="currentRecord searchData">
-                              Don't be "left in the dark." BeenVerified can notify you whenever there are changes or updates to {{fullName}}'s report. People
+                            <p data-fr-bind="searchQuery">
+                              Don't be "left in the dark." BeenVerified can notify you whenever there are changes or updates to {{nameize fn}}'s report. People
                               are frequently moving, committing crimes, creating new social media profiles and changing
                               their phone numbers. You could miss out if important information changes in the future.
                             </p>
@@ -1151,7 +1151,7 @@
           <div class="searching-progress-bar-group col-xs-12">
             <div id="chck-loading" class="progress checking-sources-progress hidden">
               <div class="progress-bar progress-bar-success" style="width: 1%"></div>
-              <p class="text-center" data-fr-bind="currentRecord searchData">Compiling {{firstName}}'s report.</p>
+              <p class="text-center" data-fr-bind="searchQuery">Compiling {{nameize fn}}'s report.</p>
             </div>
             <div id="cont-loading" class="progress checking-sources-progress hidden">
               <div class="progress-bar progress-bar-success" style="width: 1%"></div>
@@ -1189,9 +1189,9 @@
             <div id="crt-acct-warn" class="ext-mod hidden">
               <div class="crc-acct-load-subHead">
                 <img src="../Control/img/report-ready.svg">
-                <p data-fr-bind="currentRecord searchData">
+                <p data-fr-bind="searchQuery">
                   <span>Your report is ready for:</span>
-                  <strong>{{fullName}}</strong>
+                  <strong>{{nameize fn}}</strong>
                 </p>
               </div>
               <div class="crc-acct-load-body">
