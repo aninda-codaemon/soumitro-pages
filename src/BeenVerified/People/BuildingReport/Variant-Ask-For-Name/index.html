@@ -567,6 +567,15 @@
                                       <button class="btn btn-block btn-success btn-search" type="submit">Search</button>
                                   </div>
                               </div>
+                              <div class="row hidden-xs">
+                                <div class="pull-right">
+                                  <p class="privacy">
+                                    <img src="../Control/img/lock.png" alt="Lock">
+                                    We respect your privacy
+                                    <img src="../Control/img/norton-secured.png" alt="Norton">
+                                  </p>
+                                </div>
+                              </div>
                             </form>
                           </div>
                         </div>
@@ -1182,7 +1191,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <div class="emdlTitle hidden">Saving Your Search</div>
+          <div class="emdlTitle hidden" data-fr-bind="searchQuery">Searching {{nameize fn}} {{nameize ln}}</div>
           <div class="emdlTitle warn-head hidden">IMPORTANT</div>
         </div>
         <div class="modal-body clearfix">
