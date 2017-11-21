@@ -1,7 +1,6 @@
 import { SEARCH_QUERY } from 'constants/storage'; 
 import formValidator from 'form-validators/people';
 import amplify from 'utils/amplifyStore';
-import { nameize } from 'utils/strings';
 import Step from 'components/wizard/step';
 import { showExternalModal, hideExternalModal } from '../../Control/steps/shared';
 
