@@ -1,4 +1,4 @@
-import Step from '../../wizard/step';
+import Step from 'components/wizard/step';
 
 const $progressBar = $('#searching-progress-bar-database .progress-bar');
 const quotesIco = $('.speech-bub-ico');

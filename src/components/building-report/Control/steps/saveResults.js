@@ -1,7 +1,7 @@
 import { track } from 'utils/track';
 import amplify from 'utils/amplifyStore';
 import { validateLeadsForm } from 'components/leads-form';
-import Step from '../../wizard/step';
+import Step from 'components/wizard/step';
 import { showExternalModal, hideExternalModal } from './shared';
 
 const SAVE_RESULTS_INDEX = 0;

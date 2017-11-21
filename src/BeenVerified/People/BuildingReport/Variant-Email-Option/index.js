@@ -1,8 +1,13 @@
-import { initialize } from '../Control/js/runner';
+import { addRelativesModal, wizard } from 'components/building-report';
 import amplify from 'utils/amplifyStore';
+import { initialize } from '../Control/js/runner';
 
+const buildingReportInstance = {
+  addRelativesModal,
+  wizard,
+};
 const shouldIncludeRelatives = true;
-initialize(shouldIncludeRelatives);
+initialize(buildingReportInstance, shouldIncludeRelatives);
 
 // Default - Check emailbox
 $('#emailCheckbox').prop('checked', true);
