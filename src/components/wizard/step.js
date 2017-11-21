@@ -15,9 +15,9 @@ const Step = {
     this.closeModal = options.closeModal;
     this.$elem = options.$elem;
     this.$modal = options.$modal;
+    this.onBeforeStart = options.onBeforeStart || noop;
     this.isCompleted = false;
     this.complete = this.complete.bind(this);
-    this.onBeforeStart = this.onBeforeStart || noop;
   },
   start(onCompleted, isLastStep) {
     this.onBeforeStart();
