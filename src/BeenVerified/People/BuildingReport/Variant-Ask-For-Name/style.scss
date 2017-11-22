@@ -56,12 +56,6 @@ $input-color: #6d6d6d;
         border: 1px solid #4198d6;
       }
     }
-    select.form-control {
-      -webkit-appearance: none;
-      background-image: url('../Control/img/arrow-down.png');
-      background-repeat: no-repeat;
-      background-position: right center;
-    }
     .btn {
       background: #81B44C;
       box-shadow: 0 4px 0 0 #638A3A;
@@ -80,5 +74,14 @@ $input-color: #6d6d6d;
 .no-padding-sm {
   @include small-devices {
     padding: 0;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 0){
+  #search-people form select.form-control {
+    -webkit-appearance: none;
+    background-image: url('../Control/img/arrow-down.png');
+    background-repeat: no-repeat;
+    background-position: right center;
   }
 }
