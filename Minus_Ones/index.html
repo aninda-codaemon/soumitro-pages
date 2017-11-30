@@ -55,6 +55,11 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
+  <div class="overlay-container">
+    <div id="body-overlay"></div>
+    <a id="skip-animation"href="#">X</a>
+  </div>
+
 <header id="header">
   <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -153,7 +158,7 @@
                                           </div>
                                           <div class="col-sm-3 no-pad-left no-pad-right">
                                               <label class="cross-browser" for="state">State</label>
-                                              <select name="state" class="form-control">
+                                              <select name="state" class="form-control" id="state">
                                                   <option value="All">All States</option>
                                                   <option value="AL">Alabama</option>
                                                   <option value="AK">Alaska</option>
@@ -279,44 +284,9 @@
           </div>
         </div>
       </div>
-      <div id="counter" class="center-block text-center hide">
-              <span class="counter-number text-center timer-wrapper">
-                  <span class="timer-digit-group">
-                      <span id="tick_0" class="timer-digit-single">4</span><span id="tick_1" class="timer-digit-single">7</span><span id="tick_2" class="timer-digit-single">2</span><span class="timer-digit-single">,</span><span id="tick_3" class="timer-digit-single">8</span><span id="tick_4" class="timer-digit-single">1</span><span id="tick_5" class="timer-digit-single">5</span><span class="timer-digit-single">,</span><span id="tick_6" class="timer-digit-single">6</span><span id="tick_7" class="timer-digit-single">2</span><span id="tick_8" class="timer-digit-single">2</span>
-                  </span><!-- /.timer-digit-group -->
-              </span> <!-- /.timer-wrapper -->
-          <span class="counter-text text-center">Reports & Counting</span>
-      </div>
     </div>
   </div>
 </header>
-  
-  <!-- TESTIMONIAL BAR -->
-
-<div class="prpl-box">
-  <div class="container">
-    <div class="row">
-     <p class="t-title">People Love Us</p>
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 test-s">
-                        <p>"BeenVerified was an absolute life saver for me. I found that he had criminal records in three states." </br><span><br>- Constance</span>
-            </p>
-      </div> <!-- Testimonial 1-->
-
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 test-s hidden-sm hidden-xs border-left">
-            <p>"I thought this guy had a crush on me. I decided to look him up on BeenVerified, not expecting to find anything. To my surprise he was convicted of stalking SEVERAL times." </br> <span><br>- Tina</span>
-            </p>
-      </div> <!-- Testimonial 2-->
-
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 test-s hidden-xs border-left">
-    <p>"I signed up for BeenVerified to find classmates for our 40th Class Reunion. I have found 90% of the people I have searched for." </br><span><br>- M</span>
-            </p>
-        </div> <!-- Testimonial 3-->
-
-      </div>
-    </div>
-  </div>
-
-<!-- END TESTIMONIAL BAR -->
 
 
 <footer id="footer">
@@ -451,6 +421,7 @@
     </div>
   </div>
 </footer>
+
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="js/lodash.min.js"></script>
 <script type="text/javascript" src="js/base64.js"></script>
@@ -460,8 +431,10 @@
 <script type="text/javascript" src="js/jquery.mask.min.js"></script>
 <script type="text/javascript" src="js/amplify.store.min.js"></script>
 <script type="text/javascript" src="js/jquery.liveaddress.js"></script>
-<script type="text/javascript" src="js/counter.js"></script>
 <script type="text/javascript" src="js/runner-fixpageload.js"></script>
+<script type="text/javascript" src="js/animations.js">
+
+</script>
 
 </body>
 </html>

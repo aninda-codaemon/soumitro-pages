@@ -1,3 +1,34 @@
+/************* NEW STYLES *************/
+
+.overlay-container {
+  display: none;
+}
+
+#body-overlay {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #000;
+  opacity: .5;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#skip-animation {
+  color: #fff;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  font-size: 20px;
+  z-index: 2;
+}
+
+#skip-animation:hover {
+  cursor: pointer;
+}
 body {
   font-family: 'Lato', Arial, Helvetica, sans-serif;
 }
@@ -393,7 +424,7 @@ a.btn.smarty-choice {
 
 .border-left{
   border-left: 1px solid #4A3B8F;
-  height: 120px;	
+  height: 120px;
 }
 
 .prpl-box .test-s img{
@@ -530,7 +561,7 @@ p.t-title {
     padding-top: 16px;
     padding-bottom: 16px;
   }
-  
+
   /************* END HEADER *************/
   /************* NAVBAR *************/
   .navbar {
@@ -599,11 +630,11 @@ p.t-title {
     font-size: 18px;
     margin-top: 15px;
   }
-  
+
   .privacy {
     margin-top: 20px;
   }
-  
+
   .search-form .privacy span {
     color: rgba(255, 255, 255, 0.5);
   }
@@ -659,7 +690,7 @@ p.t-title {
      margin: 30px auto -10px;
      }
     /********** END TESTIMONIAL BAR ********/
-  
+
   /************* FOOTER *************/
   #footer {
     padding-top: 40px;
