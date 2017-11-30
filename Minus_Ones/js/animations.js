@@ -1,7 +1,12 @@
 (function(){
 
   STEPS = [
-    { $elem: $('#fn') },
+    { 
+      $elem: $('#fn') , 
+      callback: function () {
+        new Typed(".first-input", {string: ['John'], typeSpeed: 40});
+      }
+    },
     { $elem: $('#ln') },
     { $elem: $('#city') },
     { $elem: $('#state') },
@@ -24,6 +29,12 @@
       prev_elem.$elem.css({'z-index': 0});
     }
     elem.$elem.css({'z-index': 2});
+    
+    //executed callback
+    if (elem.callback) {
+      elem.callback();
+    }
+
     if (idx === STEPS.length - 1) {
       // cancelAnimation();
       return
@@ -42,7 +53,7 @@
     cancel = false;
 
     $('.overlay-container').show();
-    window.setTimeout(function(){ animateStep(); }, 500);
+    window.setTimeout(function(){ animateStep(); }, 1000);
     $('#skip-animation').click(function(){
       cancelAnimation();
     });
