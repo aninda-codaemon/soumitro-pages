@@ -1,3 +1,5 @@
+/* eslint-disable */
+// TODO: Refactor this code. & add tests.
 import base64 from 'hi-base64';
 import _ from 'lodash';
 

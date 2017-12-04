@@ -7,21 +7,21 @@ function onFcraConfirmationStart(stepCompleted) {
   $('#fcra-confirm').validate({
     rules: {
       fcraCheckbox2: {
-        required: true
-      }
+        required: true,
+      },
     },
-    errorPlacement: function (error, element) {
+    errorPlacement(error, element) {
       element.closest('.form-group').addClass('error').append(error);
     },
-    success: function (label) {
+    success(label) {
       label.closest('.form-group').removeClass('error').find('label.error').remove();
     },
     messages: {
-      fcraCheckbox2: 'Please check the box to continue'
+      fcraCheckbox2: 'Please check the box to continue',
     },
-    submitHandler: function (form) {
+    submitHandler() {
       showExternalLoading(stepCompleted, this.duration, CONTINUE_SESSION_INDEX);
-    }.bind(this)
+    },
   });
 }
 
@@ -33,8 +33,9 @@ confirmFCRA.init({
   duration: 32,
   onStart: onFcraConfirmationStart,
   $modal: $('#loadingModal'),
-  openModal: (stepCompleted, duration) => showExternalLoading(stepCompleted, duration, CONTINUE_SESSION_INDEX),
-  closeModal: () => hideExternalLoading(CONTINUE_SESSION_INDEX)
+  openModal: (stepCompleted, duration) =>
+    showExternalLoading(stepCompleted, duration, CONTINUE_SESSION_INDEX),
+  closeModal: () => hideExternalLoading(CONTINUE_SESSION_INDEX),
 });
 
 export { confirmFCRA };

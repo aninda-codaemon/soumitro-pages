@@ -10,7 +10,7 @@ const keyMap = (fn) => {
 };
 
 const initializeBVGO = (fn) => {
-  $(window).keydown(function (e) {
+  $(window).keydown((e) => {
     const key = e.which;
     nextKey = (key === keys[nextKey]) ? nextKey + 1 : 0;
     keyMap(fn);

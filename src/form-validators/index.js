@@ -9,5 +9,5 @@ export default {
   email,
   people,
   phone,
-  property
+  property,
 };

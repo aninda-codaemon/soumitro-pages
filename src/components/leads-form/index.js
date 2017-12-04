@@ -8,22 +8,24 @@ const validateLeadsForm = ($form, onSubmit = noop) => {
     'account[last_name]': 'required',
     'user[email]': {
       required: true,
-      email: true
+      email: true,
     },
     messages: {
       'account[first_name]': 'Please enter a first name',
-      'account[last_name]': "Please enter a last name",
-      'user[email]': 'Please enter a valid email address'
-    }
+      'account[last_name]': 'Please enter a last name',
+      'user[email]': 'Please enter a valid email address',
+    },
   });
-  $form.on('submit', function (evt) {
+  $form.on('submit', function onFormSubmit(evt) {
     evt.preventDefault();
     if (validator.form()) {
       track('Submitted Lead Form - Success');
       try {
         saveLeads($(this).serializeArray());
         onSubmit();
-      } catch (err) { }
+      } catch (err) {
+        track(err);
+      }
     }
   });
 };

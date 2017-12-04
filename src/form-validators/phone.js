@@ -1,4 +1,4 @@
-import mask from 'jquery-mask-plugin';
+import 'jquery-mask-plugin';
 import _assignIn from 'lodash/assignIn';
 import { track } from 'utils/track';
 
@@ -6,7 +6,7 @@ const PHONE_MASK = '(000) 000-0000';
 const PHONE_REGEX = /^(\+?1-?)?(\([2-9]([02-9]\d|1[02-9])\)|[2-9]([02-9]\d|1[02-9]))-?[2-9]([02-9]\d|1[02-9])-?\d{4}$/;
 const INVALID_PHONE_MESSAGE = 'Please enter a valid phone number. e.g. (212) 555-6789';
 const MAX_CHARACTERS_PHONE_NUMBER = 9;
-const submitHandler = form => {
+const submitHandler = (form) => {
   track('Submitted Search Form - Phone');
   form.submit();
 };
@@ -18,18 +18,19 @@ const defaultOptions = {
   rules: {
     phone: {
       required: true,
-      phoneUS: true
-    }
+      phoneUS: true,
+    },
   },
   submitHandler,
   messages: {
-    phone: INVALID_PHONE_MESSAGE
-  }
+    phone: INVALID_PHONE_MESSAGE,
+  },
 };
 
-$.validator.addMethod('phoneUS', function(phoneNumber, element) {
+$.validator.addMethod('phoneUS', function phoneUS(phoneNumber, element) {
   phoneNumber = phoneNumber.replace(/\s+/g, '');
-  return this.optional(element) || phoneNumber.length > MAX_CHARACTERS_PHONE_NUMBER && phoneNumber.match(PHONE_REGEX);
+  return this.optional(element) ||
+    (phoneNumber.length > MAX_CHARACTERS_PHONE_NUMBER && phoneNumber.match(PHONE_REGEX));
 }, INVALID_PHONE_MESSAGE);
 
 const validate = ($form, $phoneField, options = {}) => {
@@ -39,5 +40,5 @@ const validate = ($form, $phoneField, options = {}) => {
 };
 
 export default {
-  validate
+  validate,
 };

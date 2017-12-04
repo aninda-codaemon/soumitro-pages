@@ -2,11 +2,11 @@ import _assignIn from 'lodash/assignIn';
 
 import { track } from 'utils/track';
 
-$.validator.addMethod('notEmail', function (value, element) {
-  return this.optional(element) || !/^[ a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[ a-zA-Z0-9](?:[ a-zA-Z0-9-]{0,61}[ a-zA-Z0-9])?(?:\.[ a-zA-Z0-9](?:[ a-zA-Z0-9-]{0,61}[ a-zA-Z0-9])?)*$/.test(value);
+$.validator.addMethod('notEmail', function notEmail(value, element) {
+  return this.optional(element) || !/^[ a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[ a-zA-Z0-9](?:[ a-zA-Z0-9-]{0,61}[ a-zA-Z0-9])?(?:\.[ a-zA-Z0-9](?:[ a-zA-Z0-9-]{0,61}[ a-zA-Z0-9])?)*$/.test(value); // eslint-disable-line
 }, 'Email addresses are not searchable here');
 
-const submitHandler = form => {
+const submitHandler = (form) => {
   track('Submitted Search Form - People');
   form.submit();
 };
@@ -16,17 +16,17 @@ const defaultOptions = {
   rules: {
     fn: {
       required: true,
-      notEmail: true
+      notEmail: true,
     },
     ln: {
       required: true,
-      notEmail: true
+      notEmail: true,
     },
   },
   submitHandler,
   messages: {
     fn: 'Please enter a first name',
-    ln: 'Please enter a last name'
+    ln: 'Please enter a last name',
   },
   onkeyup: false,
   onclick: false,
@@ -40,5 +40,5 @@ const validate = ($form, options = {}) => {
 
 
 export default {
-  validate
+  validate,
 };

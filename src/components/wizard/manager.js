@@ -5,7 +5,7 @@ const WizardManager = {
     this.onCompleted = onCompleted;
     // This is added because we might want to pass this function to the bvgo command.
     // & we need to keep reference to the WizardManager object.
-    this.skipStep = this.skipStep.bind(this); 
+    this.skipStep = this.skipStep.bind(this);
     return this;
   },
   getCurrentSection() {
@@ -37,12 +37,12 @@ const WizardManager = {
   updateHeadlines() {
     var stepsContainerSelector = $('.wizard-header');
     var currentSectionIndex = this.getCurrentSectionIndex();
-    stepsContainerSelector.find('.wizard-steps-panel .step-' + currentSectionIndex)
+    stepsContainerSelector.find(`.wizard-steps-panel .step-${currentSectionIndex}`)
       .toggleClass('doing')
       .toggleClass('done')
       .find('.number')
       .html('&nbsp;');
-    stepsContainerSelector.find('.wizard-steps-panel .step-' + (currentSectionIndex + 1))
+    stepsContainerSelector.find(`.wizard-steps-panel .step-${currentSectionIndex + 1}`)
       .toggleClass('doing')
       .contents()
       .find('.number')
@@ -51,7 +51,7 @@ const WizardManager = {
   skipStep() {
     var currentSection = this.getCurrentSection();
     currentSection.skipStep();
-  }
+  },
 };
 
 export default WizardManager;

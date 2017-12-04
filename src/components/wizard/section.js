@@ -9,7 +9,7 @@ const Section = {
     this.startNextStep();
   },
   getCurrentStep() {
-    return this.steps[this.currentStepIndex];;
+    return this.steps[this.currentStepIndex];
   },
   getPreviousStep() {
     var previousStepIndex = this.currentStepIndex === 0 ? 0 : this.currentStepIndex - 1;
@@ -20,7 +20,6 @@ const Section = {
   },
   startNextStep() {
     const currentStep = this.getCurrentStep();
-    const prevStep = this.getPreviousStep();
     const isLastStep = this.isLastStep() && this.isLastSection;
     currentStep.start(this.onStepCompleted.bind(this), isLastStep);
   },
@@ -38,7 +37,7 @@ const Section = {
   skipStep() {
     var currentStep = this.getCurrentStep();
     currentStep.skip();
-  }
+  },
 };
 
 export default Section;
