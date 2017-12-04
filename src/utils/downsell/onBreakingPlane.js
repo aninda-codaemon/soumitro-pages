@@ -1,33 +1,32 @@
 import { track } from 'utils/track';
 
-const onBreakingPlane = function (opts, showModal) {
-  var elem = opts.elem, 
-    cb = opts.cb, 
-    override = opts.override, 
-    sensitivity = 20, 
-    delayBeforeFiring = 0, 
-    delayTimer, 
-    firedBreakingPlaneAlready = false;
-    
-  const fireBounce = function () {
-    if (firedBreakingPlaneAlready)
+const onBreakingPlane = function onBreakingPlane(opts, showModal) {
+  const { elem, cb, override } = opts;
+  const sensitivity = 20;
+  const delayBeforeFiring = 0;
+  let delayTimer;
+  let firedBreakingPlaneAlready = false;
+  const fireBounce = function fireBounce() {
+    if (firedBreakingPlaneAlready) {
       return;
+    }
     firedBreakingPlaneAlready = true;
     if (override) {
       cb();
-      track("onBreakingPlane Modal - Viewed");
+      track('onBreakingPlane Modal - Viewed');
     } else {
-      showModal(elem, "onBreakingPlane");
+      showModal(elem, 'onBreakingPlane');
     }
   };
 
-  $(document).on('mouseleave', function (evt) {
-    if (evt.clientY > sensitivity)
+  $(document).on('mouseleave', (evt) => {
+    if (evt.clientY > sensitivity) {
       return;
+    }
     delayTimer = setTimeout(fireBounce, delayBeforeFiring);
   });
 
-  $(document).on('mouseenter', function (evt) {
+  $(document).on('mouseenter', () => {
     if (delayTimer) {
       clearTimeout(delayTimer);
       delayTimer = null;

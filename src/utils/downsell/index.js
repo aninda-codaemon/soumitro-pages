@@ -13,14 +13,14 @@ import { onBlur } from './onBlur';
 import { onBreakingPlane } from './onBreakingPlane';
 import { onIdle } from './onIdle';
 
-let opts = {};
+const opts = {};
 let stop = false;
 
 // TODO: Investigate how this works. Maybe this active Modal looks like prevents to display a modal?
-var activeModal;
+let activeModal;
 const showModal = function showModal(id, eventType, suppress, durSecs) {
   if (eventType) {
-    var props = {};
+    const props = {};
     props.downsell_id = id;
     if (durSecs) {
       props.duration = determineDurationBucket(durSecs);
