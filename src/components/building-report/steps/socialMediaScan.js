@@ -1,31 +1,36 @@
+import {
+  shuffle,
+  range,
+} from 'lodash';
 import Step from '../../wizard/step';
 
 function onScanningSocialMediaStart(stepCompleted) {
-  var self = this;
-  var duration = this.duration;
+  var { duration } = this;
 
   var socialPromise = $('#socialmedia-progress .progress-bar').animate(
-    { 'width': '100%' },
-    { duration: duration }
+    { width: '100%' },
+    { duration },
   );
 
-  var $lis = $('#social-media-groups li'),
-    listLen = $lis.length,
-    listIdxs = _.shuffle(_.range(0, listLen)),
-    currIdx = 0;
+  var $lis = $('#social-media-groups li');
+  var listLen = $lis.length;
+  var listIdxs = shuffle(range(0, listLen));
+  var currIdx = 0;
 
-  var intervalId = window.setInterval(function () {
+  var intervalId = window.setInterval(() => {
+    var listIdx;
+    var $loadingImg;
     if (currIdx >= listLen) {
       return;
     }
-    var listIdx = listIdxs[currIdx];
-    var $loadingImg = $($lis[listIdx]).find('.loading');
+    listIdx = listIdxs[currIdx];
+    $loadingImg = $($lis[listIdx]).find('.loading');
     $loadingImg.css('opacity', 0);
     $loadingImg.next().fadeIn();
     currIdx += 1;
   }, Math.round(duration / listLen));
 
-  $.when(socialPromise).done(function () {
+  $.when(socialPromise).done(() => {
     stepCompleted();
     window.clearInterval(intervalId);
   });
@@ -36,7 +41,7 @@ socialMediaScan.init({
   title: 'Social Media Scan',
   $elem: $('#scanningSocialMedia'),
   duration: 32,
-  onStart: onScanningSocialMediaStart
+  onStart: onScanningSocialMediaStart,
 });
 
 export { socialMediaScan };

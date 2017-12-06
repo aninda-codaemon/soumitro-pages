@@ -4,6 +4,7 @@ import {
 } from 'lodash';
 
 const beforeUnload = () => {
+  let stop;
   track('onBeforeUnload Popup - Viewed');
   // TODO: this stop is referencing the index stop variable, need to pass it as a parameter.
   if (stop) {

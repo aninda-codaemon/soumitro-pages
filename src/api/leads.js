@@ -1,31 +1,36 @@
+import {
+  forEach,
+} from 'lodash';
 import amplify from 'utils/amplifyStore';
 
 function saveLeads(dataArray) {
-  var hostname = window.location.hostname;
-  if (hostname && hostname.indexOf('secure.') > -1) {
-    hostname = hostname.replace('secure.', 'www.');
-    var LEADS_ENDPOINT_URL = 'https://' + hostname + '/api/v4/leads.json';
-  }
-  var LEADS_ENDPOINT = LEADS_ENDPOINT_URL || '/api/v4/leads.json';
-
+  var { location: { hostname } } = window;
   var formVals = {};
-  _.forEach(dataArray, function (v, k) {
-    formVals[v.name] = v.value;
-  });
-
+  var leadData = {};
+  var leadQueryArr = [];
+  var LEADS_ENDPOINT_URL;
+  var LEADS_ENDPOINT;
+  var leadQueryString;
   // Does we have a checkbox asking for send emails?
   var hasEmailOption = $('#emailCheckbox').length === 1;
+  var srchData = amplify.store('searchData');
+  var firstName = '';
+  var lastName = '';
 
-  var srchData = amplify.store('searchData'),
-    firstName = '',
-    lastName = '';
+  if (hostname && hostname.indexOf('secure.') > -1) {
+    hostname = hostname.replace('secure.', 'www.');
+    LEADS_ENDPOINT_URL = `https://${hostname}/api/v4/leads.json`;
+  }
+  LEADS_ENDPOINT = LEADS_ENDPOINT_URL || '/api/v4/leads.json';
+  forEach(dataArray, (v) => {
+    formVals[v.name] = v.value;
+  });
 
   if (srchData) {
     firstName = srchData.fn || '';
     lastName = srchData.ln || '';
   }
 
-  var leadData = {};
   leadData['lead[first_name]'] = formVals['account[first_name]'] || '';
   leadData['lead[last_name]'] = formVals['account[last_name]'] || '';
   leadData['lead[email]'] = formVals['user[email]'] || '';
@@ -34,17 +39,16 @@ function saveLeads(dataArray) {
   leadData['record_search[first_name]'] = firstName;
   leadData['record_search[last_name]'] = lastName;
   if (hasEmailOption) {
-    leadData['lead[email_opt_in]'] = formVals['email_opt_in'] ? true : false;
+    leadData['lead[email_opt_in]'] = !!formVals.email_opt_in;
   }
 
   amplify.store('leadData', formVals);
 
-  var leadQueryArr = [];
-  _.forEach(leadData, function (v, k) {
-    leadQueryArr.push(encodeURIComponent(k) + '=' + encodeURIComponent(v));
+  forEach(leadData, (v, k) => {
+    leadQueryArr.push(`${encodeURIComponent(k)}=${encodeURIComponent(v)}`);
   });
-  var leadQueryString = leadQueryArr.join('&');
+  leadQueryString = leadQueryArr.join('&');
   return $.post(LEADS_ENDPOINT, leadQueryString);
-};
+}
 
 export { saveLeads };

@@ -9,7 +9,7 @@ import { removeDiacritics } from 'utils/strings';
 import { TeaserRecord } from 'parsers/teaserRecord';
 import amplify from 'utils/amplifyStore';
 
-const pattern = new RegExp("[^A-Za-z'-\s]", 'gi');
+const pattern = new RegExp("[^A-Za-z'-s]", 'gi');
 
 const buildTeaserEndpoint = (fn, ln, state, city, age, mi) =>
   `https://www.beenverified.com/hk/teaser/?exporttype=jsonp&rc=100&fn=${fn}&ln=${ln}&state=${state}&city=${city}&age=${age}&mi=${mi}`;

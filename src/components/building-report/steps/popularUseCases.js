@@ -5,11 +5,11 @@ const quotesIco = $('.speech-bub-ico');
 const quotes = $('.speech-bub');
 let quoteIndex = -1;
 
-const showNextQuote = duration => {
+const showNextQuote = (duration) => {
   quoteIndex++;
   if (quoteIndex < 4) {
-    var nextQuoteIcon = quotesIco.eq(quoteIndex % quotesIco.length);
-    var newIcon = nextQuoteIcon.attr('data-src');
+    let nextQuoteIcon = quotesIco.eq(quoteIndex % quotesIco.length);
+    let newIcon = nextQuoteIcon.attr('data-src');
     nextQuoteIcon.attr('src', newIcon);
     quotes.eq(quoteIndex % quotes.length)
       .fadeIn(1000)
@@ -19,14 +19,9 @@ const showNextQuote = duration => {
 };
 
 function onPopularUseCasesStart(stepCompleted) {
-  const duration = this.duration;
+  var { duration } = this;
+  var initialProgress = $($progressBar).animate({ width: '100%' }, { duration });
   showNextQuote(duration);
-
-  var initialProgress = $($progressBar).animate(
-    { 'width': '100%' }, {
-      duration: duration
-    }
-  );
 
   $.when(initialProgress).done(stepCompleted);
 }
