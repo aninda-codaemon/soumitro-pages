@@ -1,5 +1,5 @@
 // TODO: Use track/index.js instead.
-const get = 'lodash/get';
+import { get } from 'lodash';
 
 const trackGA = (eventName, props) => {
   if (typeof window.dataLayer !== 'undefined') {
