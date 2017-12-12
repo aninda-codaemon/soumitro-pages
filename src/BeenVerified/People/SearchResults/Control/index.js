@@ -1,3 +1,4 @@
+import { getTeaserData } from 'api/teaser';
 import * as localStorage from 'utils/localStorage';
 import { BrowserDetect } from 'utils/browser';
 import { getQueryArgs } from 'utils/queryArgs';
@@ -16,10 +17,15 @@ const initializePeopleValidator = () => {
   formValidator.people.validate($headerSearchPeople);
 };
 
+// const determineLayoutState = () => {
+//
+// }
+
 const initialize = () => {
   BrowserDetect.init();
   initializePeopleValidator();
-
+  // don't think this really does anything anymore
+  // determineLayoutState();
   if (queryArgs) {
 
   }
