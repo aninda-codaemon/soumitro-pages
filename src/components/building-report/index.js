@@ -13,7 +13,7 @@ import {
   saveResults,
   preparingMonitoring,
   generatingReport,
-} from './steps';
+} from './Control/steps';
 
 function showSubHeadlines(totalSections) {
   var containerSelector = $('.wizard-content');

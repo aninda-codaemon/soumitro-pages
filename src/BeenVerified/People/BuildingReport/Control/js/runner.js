@@ -21,7 +21,7 @@ const recordCounts = {
   RESEARCH: 'RecordCount Re-Searching',
   QUERY: 'RecordCount QueryArgs',
 };
-let buildingReport = null;  // Injected Dependency.
+let buildingReport = null; // Injected Dependency.
 
 localStorage.isSupported();
 
