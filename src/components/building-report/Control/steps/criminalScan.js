@@ -1,4 +1,4 @@
-import Step from '../../wizard/step';
+import Step from 'components/wizard/step';
 
 function onScanningCriminalDataStart(stepCompleted) {
   var $progessBar = $('#searching-progress-bar-criminal .progress-bar');

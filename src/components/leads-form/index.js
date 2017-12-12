@@ -1,5 +1,8 @@
 import { track } from 'utils/track';
 import { saveLeads } from 'api/leads';
+import * as Mailcheck from 'mailcheck';
+// import { mailcheck } from 'mailcheck';
+
 
 const noop = () => {};
 const validateLeadsForm = ($form, onSubmit = noop) => {
@@ -28,6 +31,26 @@ const validateLeadsForm = ($form, onSubmit = noop) => {
       }
     }
   });
+
+
+  $('#lead_email').blur(function(){
+    Mailcheck.run({
+      email: $(this).val(),
+      suggested: function(suggestion){
+        $('#email_suggestion a').html(suggestion.full);
+        $('#email_suggestion').show();
+        $('#email_suggestion').on('click', {suggestion}, function(event){
+          $('#lead_email').val(event.data.suggestion.full);
+          window.setTimeout(function(){
+            $('#lead_email').blur(); }, 250);
+        });
+      },
+      empty: function() {
+        $('#email_suggestion').hide();
+      }
+    });
+  });
+
 };
 
 export { validateLeadsForm };

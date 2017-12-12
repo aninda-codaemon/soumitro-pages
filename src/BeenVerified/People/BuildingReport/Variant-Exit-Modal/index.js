@@ -1,9 +1,14 @@
+import { addRelativesModal, wizard } from 'components/building-report';
 import { downsell } from 'utils/downsell';
 import { initialize } from '../Control/js/runner';
 import './styles.css';
 
+const buildingReportInstance = {
+  addRelativesModal,
+  wizard,
+};
 const shouldIncludeRelatives = true;
-initialize(shouldIncludeRelatives);
+initialize(buildingReportInstance, shouldIncludeRelatives);
 
 $('#btn-discount').click(() => {
   window.location = $('body').data('next-page');

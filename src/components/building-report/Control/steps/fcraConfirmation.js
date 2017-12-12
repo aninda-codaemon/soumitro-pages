@@ -1,4 +1,4 @@
-import Step from '../../wizard/step';
+import Step from 'components/wizard/step';
 import { showExternalLoading, hideExternalLoading } from './shared';
 
 const CONTINUE_SESSION_INDEX = 1;

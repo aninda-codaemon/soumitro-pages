@@ -4,7 +4,7 @@ import {
   forEach,
 } from 'lodash';
 import { nameize } from 'utils/strings';
-import Step from '../../wizard/step';
+import Step from 'components/wizard/step';
 import { showExternalLoading, hideExternalLoading } from './shared';
 
 const CHECKING_SESSION_INDEX = 0;

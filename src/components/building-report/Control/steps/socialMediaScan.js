@@ -2,7 +2,7 @@ import {
   shuffle,
   range,
 } from 'lodash';
-import Step from '../../wizard/step';
+import Step from 'components/wizard/step';
 
 function onScanningSocialMediaStart(stepCompleted) {
   var { duration } = this;

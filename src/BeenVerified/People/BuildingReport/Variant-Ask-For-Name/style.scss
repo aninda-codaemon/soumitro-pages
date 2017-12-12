@@ -1,0 +1,87 @@
+$input-height: 45px;
+$tablet-width: 768px;
+$desktop-width: 992px;
+$input-color: #6d6d6d;
+
+@mixin small-devices {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-desktop {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+#search-people {
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0 15px 0;
+  }
+  form {
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
+    border-radius: 3px;
+    padding: 30px;
+    margin: 5px;
+    @include tablet-desktop {
+      margin: 25px 25px 45px 25px;
+    }
+    .input-label {
+      margin-bottom: 10px;
+    }
+    label.error {
+      margin: 5px 0;
+    }
+    .form-control {
+      border-radius: 0;
+      height: $input-height;
+      background: #F9F9F9;
+      border: 1px solid #F9F9F9;
+      box-shadow: inset 1px 0 2px 0 rgba(0,0,0,0.26);
+      border-radius: 2px;
+      color: #000;
+      letter-spacing: 0;
+      line-height: 24px;
+      @include small-devices {
+        padding: 6px 8px;
+        margin-bottom: 15px;
+      }
+      &::-webkit-input-placeholder {
+        color: $input-color;
+      }
+      &:focus {
+        border: 1px solid #4198d6;
+      }
+    }
+    .btn {
+      background: #81B44C;
+      box-shadow: 0 4px 0 0 #638A3A;
+      border-radius: 5px;
+      height: $input-height - 5;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+    .privacy {
+      font-size: 14px;
+      margin: 10px 0 0 0;
+    }
+  }
+}
+
+.no-padding-sm {
+  @include small-devices {
+    padding: 0;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 0){
+  #search-people form select.form-control {
+    -webkit-appearance: none;
+    background-image: url('../Control/img/arrow-down.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
+}

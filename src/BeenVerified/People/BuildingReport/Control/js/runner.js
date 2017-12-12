@@ -3,7 +3,6 @@ import { getExtraTeaserData } from 'api/extraTeaser';
 import { initializeBVGO } from 'utils/bvgo';
 import { notifyRecordCount } from 'utils/track/notifyRecordCount';
 import { getBVId, getQueryArgs, isValidPeopleQuery } from 'utils/queryArgs';
-import { addRelativesModal, wizard } from 'components/building-report';
 import { nameize } from 'utils/strings';
 import * as localStorage from 'utils/localStorage';
 import amplify from 'utils/amplifyStore';
@@ -22,12 +21,13 @@ const recordCounts = {
   RESEARCH: 'RecordCount Re-Searching',
   QUERY: 'RecordCount QueryArgs',
 };
+let buildingReport = null;  // Injected Dependency.
 
 localStorage.isSupported();
 
 const includeRelativesModal = shouldDisplayRelatives => (extraTeaserData) => {
   if (shouldDisplayRelatives && extraTeaserData.hasRelatives) {
-    addRelativesModal();
+    buildingReport.addRelativesModal();
   }
 };
 
@@ -60,7 +60,8 @@ const initializeQueryArgs = (args, validArgs) => {
   }
 };
 
-const initialize = (shouldDisplayRelatives = false) => {
+const initialize = (buildingReportInstance, shouldDisplayRelatives = false) => {
+  buildingReport = buildingReportInstance;
   jQuery.fx.interval = 100;
   initializeTestimonials();
   initializeQueryArgs(queryArgs, validQueryArgs);
@@ -73,8 +74,8 @@ const initialize = (shouldDisplayRelatives = false) => {
     amplify.store('searchData', searchData);
     amplify.store('currentRecord', null);
   }
-  initializeBVGO(wizard.skipStep);
-  wizard.start();
+  initializeBVGO(buildingReport.wizard.skipStep);
+  buildingReport.wizard.start();
   window.$ = jQuery;
 };
 

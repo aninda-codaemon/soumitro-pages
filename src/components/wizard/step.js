@@ -3,6 +3,7 @@ import { track } from 'utils/track';
 
 const second = 1000;
 const noop = () => {};
+
 const Step = {
   init(options) {
     this.title = options.title;
@@ -14,10 +15,12 @@ const Step = {
     this.closeModal = options.closeModal || noop;
     this.$elem = options.$elem;
     this.$modal = options.$modal;
+    this.onBeforeStart = options.onBeforeStart || noop;
     this.isCompleted = false;
     this.complete = this.complete.bind(this);
   },
   start(onCompleted, isLastStep) {
+    this.onBeforeStart();
     this.setTitle();
     this.track();
     this.onCompleted = onCompleted;

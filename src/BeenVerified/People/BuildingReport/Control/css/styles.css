@@ -1201,7 +1201,7 @@ td.addressCheck {
   position: absolute;
   top: 15px;
   right: 0;
-  left: calc( 53.5% + 1.4em/2 );
+  left: calc( 54.5% + 1.4em/2 );
 
   content: ' ';
 
@@ -1242,11 +1242,12 @@ td.addressCheck {
 #gen-report-modal1,
 #scanningCriminal,
 #scanningSocialMedia,
-#confirmData {
+#confirmData,
+#search-people {
   padding: 0 15px 15px 15px;
 }
 
-#confirmData, #scanningCriminal {
+#confirmData, #scanningCriminal, #search-people {
   margin-top: 10px;
 }
 
@@ -1911,6 +1912,13 @@ label.fcraCheckbox-wrapper {
 #gen-report-modal6 .lead-part {
   padding: 30px 20px 10px 50px;
 }
+
+#email_suggestion {
+  display: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 
 /*Eemail opt in box*/
 #gen-report-modal6 .emailcheckbox-text {

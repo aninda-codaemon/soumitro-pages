@@ -1,4 +1,4 @@
-import Step from '../../wizard/step';
+import Step from 'components/wizard/step';
 import { showExternalModal, hideExternalModal, hideExternalModalTitle } from './shared';
 
 const COMPLETING_REPORT_INDEX = 1;
