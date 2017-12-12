@@ -11,10 +11,10 @@ const indexHtmlPath = fs.existsSync(indexHtml) ? indexHtml : indexHtmlControl;
 const gitInfo = {
   origin: childProcess.execSync('git remote -v').toString().split('\n')[1].trim(),
   branch: childProcess.execSync('git status').toString().split('\n')[0].trim(),
-}
+};
 
 module.exports = {
   root,
   indexHtmlPath,
-  gitInfo
+  gitInfo,
 };
