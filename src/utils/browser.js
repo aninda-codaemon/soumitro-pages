@@ -80,4 +80,6 @@ const BrowserDetect = {
   },
 };
 
-export { BrowserDetect, isMobile };
+const mobileTimeRatio = 0.5;
+
+export { BrowserDetect, isMobile, mobileTimeRatio };

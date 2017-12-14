@@ -88,10 +88,6 @@ a:focus {
   color: #353167;
 }
 
-.search-toggled {
-  display: none;
-}
-
 .alert-info {
   background-color: #F2DA3E;
   border: none;
@@ -578,9 +574,6 @@ h3 {
 }
 
 @media (min-width: 768px) {
-  .search-toggled {
-    display: none;
-  }
   .results-filters {
     margin-top: 20px;
   }
