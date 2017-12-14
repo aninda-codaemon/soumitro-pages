@@ -19,5 +19,5 @@ export {
   confirmData,
   saveResults,
   preparingMonitoring,
-  generatingReport
+  generatingReport,
 };

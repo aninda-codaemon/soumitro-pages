@@ -1,3 +1,5 @@
+/* eslint-disable */
+// TODO: Refactor & add tests.
 import _ from 'lodash';
 
 import { get } from 'utils/request';

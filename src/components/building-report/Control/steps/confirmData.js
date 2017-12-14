@@ -8,7 +8,7 @@ const confirmData = Object.assign({}, Step);
 confirmData.init({
   title: 'Public Records Review',
   $elem: $('#confirmData'),
-  onStart: onConfirmDataStart
+  onStart: onConfirmDataStart,
 });
 
 export { confirmData };

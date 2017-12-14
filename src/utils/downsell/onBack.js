@@ -1,54 +1,50 @@
 import { track } from 'utils/track';
 
-const markHash = function (cb) {
-  window.location.hash = "";
+const markHash = (cb) => {
+  window.location.hash = '';
 
-  window.setTimeout(function () {
-    window.location.hash = ".";
+  window.setTimeout(() => {
+    window.location.hash = '.';
     cb();
   }, 3000);
 };
 
-const pollForHashChange = function (opts, showModal) {
-  var elem = opts.elem
-    , cb = opts.cb
-    , override = opts.override;
-  window.setInterval(function () {
-    if (window.location.hash === "#") {
+const pollForHashChange = (opts, showModal) => {
+  const { elem, cb, override } = opts;
+  window.setInterval(() => {
+    if (window.location.hash === '#') {
       if (override) {
         cb();
-        track("onBack Modal - Viewed");
+        track('onBack Modal - Viewed');
       } else {
-        showModal(elem, "onBack");
+        showModal(elem, 'onBack');
       }
     }
   }, 400);
 };
 
-const listenToHashChanges = function (opts, showModal, isIE) {
-  var elem = opts.elem
-    , cb = opts.cb
-    , override = opts.override;
+const listenToHashChanges = (opts, showModal, isIE) => {
+  const { elem, cb, override } = opts;
   if (isIE) {
     pollForHashChange(opts, showModal);
     return;
   }
-  $(window).on("hashchange", function () {
-    var hash = window.location.hash;
-    if (!hash || hash === "#") {
+  $(window).on('hashchange', () => {
+    const { hash } = window.location;
+    if (!hash || hash === '#') {
       if (override) {
         cb();
-        track("onBack Modal - Viewed");
+        track('onBack Modal - Viewed');
       } else {
-        showModal(elem, "onBack");
-        $("body").click();
+        showModal(elem, 'onBack');
+        $('body').click();
       }
     }
   });
 };
 
-const onBack = function (opts, showModal, isIE) {
-  markHash(function () {
+const onBack = (opts, showModal, isIE) => {
+  markHash(() => {
     listenToHashChanges(opts, showModal, isIE);
   });
 };

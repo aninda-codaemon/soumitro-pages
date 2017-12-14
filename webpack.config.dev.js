@@ -6,7 +6,7 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { root, indexHtmlPath } = require('./config');
 
 const appDirectory = fs.realpathSync(process.cwd());
@@ -19,16 +19,16 @@ module.exports = {
   output: {
     filename: 'js/bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: ''
+    publicPath: '',
   },
   externals: [
-      {
-        window: 'window'
-      }
+    {
+      window: 'window',
+    },
   ],
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
@@ -44,31 +44,35 @@ module.exports = {
       filename: cssFilename,
     }),
     new BundleAnalyzerPlugin({
-      openAnalyzer: false
-    })
+      openAnalyzer: false,
+    }),
   ],
   resolve: {
     alias: {
-      'handlebars': 'handlebars/dist/handlebars.js',
+      handlebars: 'handlebars/dist/handlebars.js',
       'utils/request': path.resolve(__dirname, 'mocks/request.js'),
     },
     modules: [
       path.resolve('./src'),
-      path.resolve('./node_modules')
-    ]
+      path.resolve('./node_modules'),
+    ],
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.(js|jsx)$/,
-        include: resolveApp(root),
-        loader: require.resolve('babel-loader'),
+        enforce: 'pre',
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        // use: [
+        //   'babel-loader',
+        //   'eslint-loader',
+        // ],
         options: {
-          
-          // This is a feature of `babel-loader` for webpack (not Babel itself).
-          // It enables caching results in ./node_modules/.cache/babel-loader/
-          // directory for faster rebuilds.
-          cacheDirectory: true,
+          emitError: true,
+          emitWarning: true,
+          failOnError: true,
+          failOnWarning: true,
         },
       },
       {
@@ -76,9 +80,9 @@ module.exports = {
         use: {
           loader: 'html-loader',
           options: {
-            attrs: ['img:src', 'img:data-src']
-          }
-        }
+            attrs: ['img:src', 'img:data-src'],
+          },
+        },
       },
       {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.jpg$/, /\.png$/, /\.svg$/],
@@ -93,54 +97,65 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           options: {
-            name: 'fonts/[name].[hash:8].[ext]'
-          }
-        }]
+            name: 'fonts/[name].[hash:8].[ext]',
+          },
+        }],
       },
       {
         test: /\.(css|scss)$/,
-        loader: ExtractTextPlugin.extract(
-          Object.assign(
-            {
-              fallback: require.resolve('style-loader'),
-              use: [
-                {
-                  loader: require.resolve('css-loader'),
-                  options: {
-                    importLoaders: 1,
-                    minimize: true,
-                    sourceMap: true,
-                  },
+        loader: ExtractTextPlugin.extract(Object.assign(
+          {
+            fallback: require.resolve('style-loader'),
+            use: [
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                  minimize: true,
+                  sourceMap: true,
                 },
-                {
-                 loader: 'sass-loader'
+              },
+              {
+                loader: 'sass-loader',
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  // Necessary for external CSS imports to work
+                  // https://github.com/facebookincubator/create-react-app/issues/2677
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'), // eslint-disable-line
+                    autoprefixer({
+                      browsers: [
+                        '>1%',
+                        'last 4 versions',
+                        'Firefox ESR',
+                        'not ie < 9', // React doesn't support IE8 anyway
+                      ],
+                      flexbox: 'no-2009',
+                    }),
+                  ],
                 },
-                {
-                  loader: require.resolve('postcss-loader'),
-                  options: {
-                    // Necessary for external CSS imports to work
-                    // https://github.com/facebookincubator/create-react-app/issues/2677
-                    ident: 'postcss',
-                    plugins: () => [
-                      require('postcss-flexbugs-fixes'),
-                      autoprefixer({
-                        browsers: [
-                          '>1%',
-                          'last 4 versions',
-                          'Firefox ESR',
-                          'not ie < 9', // React doesn't support IE8 anyway
-                        ],
-                        flexbox: 'no-2009',
-                      }),
-                    ],
-                  },
-                },
-              ],
-            },
-            extractTextPluginOptions
-          )
-        ),
+              },
+            ],
+          },
+          extractTextPluginOptions,
+        )),
       },
-    ]
+    ],
+    loaders: [
+      {
+        test: /\.(js|jsx)$/,
+        include: resolveApp(root),
+        loader: require.resolve('babel-loader'),
+        options: {
+          // This is a feature of `babel-loader` for webpack (not Babel itself).
+          // It enables caching results in ./node_modules/.cache/babel-loader/
+          // directory for faster rebuilds.
+          cacheDirectory: true,
+        },
+      },
+    ],
   },
 };

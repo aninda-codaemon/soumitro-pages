@@ -19,12 +19,12 @@ const defaultOptions = {
   rules: {
     emailaddress: {
       required: true,
-      email: true
+      email: true,
     },
   },
   submitHandler,
   messages: {
-    emailaddress: "Please enter an Email Address"
+    emailaddress: 'Please enter an Email Address',
   },
   onkeyup: false,
   onclick: false,
@@ -37,5 +37,5 @@ const validate = ($form, options = {}) => {
 };
 
 export default {
-  validate
+  validate,
 };

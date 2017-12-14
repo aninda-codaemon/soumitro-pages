@@ -8,11 +8,11 @@ const Step = {
   init(options) {
     this.title = options.title;
     this.trackMsg = options.trackMsg;
-    this.duration = options.duration && options.duration * second || 0;
-    this.transitionDelay = options.transitionDelay && options.transitionDelay * second || 0;
+    this.duration = (options.duration && options.duration * second) || 0;
+    this.transitionDelay = (options.transitionDelay && options.transitionDelay * second) || 0;
     this.openModal = options.openModal;
     this.onStart = options.onStart;
-    this.closeModal = options.closeModal;
+    this.closeModal = options.closeModal || noop;
     this.$elem = options.$elem;
     this.$modal = options.$modal;
     this.onBeforeStart = options.onBeforeStart || noop;
@@ -34,7 +34,7 @@ const Step = {
       this.isModalDispled = true;
       this.openModal(this.complete, this.duration);
     } else {
-      this.closeModal && this.closeModal();
+      this.closeModal();
       this.complete();
     }
   },
@@ -42,7 +42,7 @@ const Step = {
     $('.subHeadline').text(this.title);
   },
   track() {
-    track('Viewed ' + (this.trackMsg || this.title));
+    track(`Viewed ${(this.trackMsg || this.title)}`);
   },
   complete() {
     if (!this.isCompleted) {
@@ -54,7 +54,7 @@ const Step = {
       }, this.transitionDelay);
     }
     this.isCompleted = true;
-  }
+  },
 };
 
 export default Step;

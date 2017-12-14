@@ -1,4 +1,4 @@
-import { SEARCH_QUERY } from 'constants/storage'; 
+import { SEARCH_QUERY } from 'constants/storage';
 import { nameize } from 'utils/strings';
 import { validateLeadsForm } from 'components/leads-form';
 import Step from 'components/wizard/step';
@@ -8,7 +8,7 @@ function onSaveResultsStart(stepCompleted) {
   const $signupModalForm = $('#signup-modal-form');
   const onSubmit = () => {
     stepCompleted();
-  }
+  };
   validateLeadsForm($signupModalForm, onSubmit);
 }
 

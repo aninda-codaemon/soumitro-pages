@@ -1,25 +1,27 @@
-var lastActive = Date.now(), onIdleShown = false;
+let lastActive = Date.now();
+let onIdleShown = false;
 
-const onIdle = function (opts, showModal) {
-  $(window).on("touchstart", function () {
+const onIdle = function onIdle(opts, showModal) {
+  $(window).on('touchstart', () => {
     lastActive = Date.now();
   });
 
-  $(window).on("click", function () {
+  $(window).on('click', () => {
     lastActive = Date.now();
   });
 
-  $(window).on('scroll', function () {
+  $(window).on('scroll', () => {
     lastActive = Date.now();
   });
 
-  window.setInterval(function () {
-    if (onIdleShown)
+  window.setInterval(() => {
+    if (onIdleShown) {
       return;
-    var timeDelta = Date.now() - lastActive;
+    }
+    const timeDelta = Date.now() - lastActive;
     if (timeDelta >= opts.inactiveThreshold) {
       onIdleShown = true;
-      showModal(opts.elem, "onIdle", true);
+      showModal(opts.elem, 'onIdle', true);
     }
   }, 1000);
 };

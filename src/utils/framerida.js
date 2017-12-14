@@ -11,7 +11,7 @@
  *        - An <h1> that binds to the "search" data found in localStorage.
  *        - A form whose input values are filled from data in localStorage.
  */
-
+/* eslint-disable */
 import Handlebars from 'handlebars';
 import { 
   includes as _includes,

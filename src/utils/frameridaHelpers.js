@@ -2,36 +2,39 @@
   Convenience helpers used in FrameRida.
 */
 import Handlebars from 'handlebars';
+import {
+  slice,
+  includes,
+} from 'lodash';
 import { nameize } from 'utils/strings';
-(function (H) {
 
+(function initializeHelpers(H) {
   /*
     Check if the supplied argument is not 'all' or a falsy value.
     {{#validState state}} It's a state {{else}} All selected {{/validState}}
   */
-  H.registerHelper('validState', function (stateValue, options) {
-    var isValid = stateValue && (stateValue.toLowerCase() !== "all");
+  H.registerHelper('validState', function validState(stateValue, options) {
+    const isValid = stateValue && (stateValue.toLowerCase() !== 'all');
     return (isValid) ? options.fn(this) : options.inverse(this);
   });
 
   // limit an array to a maximum of elements (from the start)
-  H.registerHelper('limit', function (arr, limit) {
-    if (!_.isArray(arr)) { return []; }
-    return _.slice(arr, 0, limit);
+  H.registerHelper('limit', (arr, limit) => {
+    if (!Array.isArray(arr)) { return []; }
+    return slice(arr, 0, limit);
   });
 
-  H.registerHelper('shortList', function (akasFn) {
-    var akas = akasFn.apply(this);
+  H.registerHelper('shortList', function shortList(akasFn) {
+    const akas = akasFn.apply(this);
     if (!akas) return '';
-    if (akas.length < 1) return akas.join(", ");
-    var akasArr = akas.slice(0, 1);
-    return akasArr.join(", ");
+    if (akas.length < 1) return akas.join(', ');
+    const akasArr = akas.slice(0, 1);
+    return akasArr.join(', ');
   });
 
-  H.registerHelper('formattedShortList', function (listObj) {
-    var firstElem,
-        otherElems,
-        list;
+  H.registerHelper('formattedShortList', function formattedShortList(listObj) {
+    let otherElems;
+    let list;
 
     if (typeof listObj === 'function') {
       list = listObj.apply(this);
@@ -42,10 +45,10 @@ import { nameize } from 'utils/strings';
     }
 
     if (list.length === 0) {
-      return "None";
+      return 'None';
     }
 
-    firstElem = list[0];
+    const firstElem = list[0];
 
     if (list.length > 1) {
       otherElems = list.slice(1);
@@ -53,24 +56,24 @@ import { nameize } from 'utils/strings';
       otherElems = [];
     }
 
-    var output = "<div class='formatted-shortlist'>";
+    let output = "<div class='formatted-shortlist'>";
     output += "<span class='first-elem'>";
     output += firstElem;
-    output += "</span>";
+    output += '</span>';
 
     if (otherElems.length > 0) {
       output += "<div class='other-elems'>";
-      for (var i = 0; i < otherElems.length; i += 1) {
-        output += "<span class='other-elem'>"+ otherElems[i] + "</span>";
+      for (let i = 0; i < otherElems.length; i += 1) {
+        output += `<span class='other-elem'>${otherElems[i]}</span>`;
         if (i !== (otherElems.length - 1)) {
-          output += ", ";
+          output += ', ';
         }
       }
-      output += "</div>";
-      output += "<a href='#' class='moreInfo'> <span class='glyphicon glyphicon-chevron-down'></span> "+ otherElems.length +" <span class='more-text' data-more-text='More' data-less-text='Less'>More</span></a>";
+      output += '</div>';
+      output += `<a href='#' class='moreInfo'> <span class='glyphicon glyphicon-chevron-down'></span> ${otherElems.length} <span class='more-text' data-more-text='More' data-less-text='Less'>More</span></a>`;
     }
 
-    output += "</div>";
+    output += '</div>';
 
     return new H.SafeString(output);
   });
@@ -79,13 +82,13 @@ import { nameize } from 'utils/strings';
     Uppercase a string.
     {{uppercase 'hello'}}
   */
-  H.registerHelper('uppercase', function (item) {
-    if (!item) return "";
+  H.registerHelper('uppercase', (item) => {
+    if (!item) return '';
     return item.toUpperCase();
   });
 
-  H.registerHelper('nameize', function (item) {
-    if (!item) return "";
+  H.registerHelper('nameize', (item) => {
+    if (!item) return '';
     return nameize(item);
   });
 
@@ -93,98 +96,83 @@ import { nameize } from 'utils/strings';
     To be used within an each statement. Returns iterated index starting at 1
     instead of 0. return n % 2 == 0;
   */
-  H.registerHelper('index', function (item) {
-    return item.data.index + 1;
-  });
-  H.registerHelper('ifIndexEven', function (item) {
-    return (item.data.index + 1) % 2 === 0;
-  });
+  H.registerHelper('index', item => item.data.index + 1);
 
-  H.registerHelper('ifEven', function(conditional, options) {
-    if((conditional % 2) === 0) {
-      return options.fn(this);
-    } else {
-      return options.inverse(this);
-    }
-  });
+  H.registerHelper('ifIndexEven', item => (item.data.index + 1) % 2 === 0);
 
-  H.registerHelper('ifOdd', function(conditional, options) {
-    if((conditional % 2) === 0) {
-      return options.inverse(this);
-    } else {
+  H.registerHelper('ifEven', function ifEven(conditional, options) {
+    if ((conditional % 2) === 0) {
       return options.fn(this);
     }
+    return options.inverse(this);
   });
 
-  H.registerHelper('every', function(conditional, modulo, options) {
-    if((conditional % modulo) === 0) {
-      return options.fn(this);
-    } else {
+  H.registerHelper('ifOdd', function ifOdd(conditional, options) {
+    if ((conditional % 2) === 0) {
       return options.inverse(this);
     }
+    return options.fn(this);
   });
 
-  H.registerHelper('ifNot', function (x, y, options) {
-   if (x !== y && y) {
-     return options.fn(this);
-   }
-   return options.inverse(this);
-  });
-
-  H.registerHelper('ifIn', function(arr, elem, options) {
-    //console log(arr);
-    if (_.includes(arr, elem)) {
+  H.registerHelper('every', function every(conditional, modulo, options) {
+    if ((conditional % modulo) === 0) {
       return options.fn(this);
-    } else {
-      return options.inverse(this);
     }
+    return options.inverse(this);
   });
 
-  H.registerHelper('notEqual', function (x, y, options) {
+  H.registerHelper('ifNot', function ifNot(x, y, options) {
+    if (x !== y && y) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
+
+  H.registerHelper('ifIn', function ifIn(arr, elem, options) {
+    if (includes(arr, elem)) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
+
+  H.registerHelper('notEqual', function notEqual(x, y, options) {
     if (x && y && x.toUpperCase() !== y.toUpperCase() && y) {
       return options.fn(this);
     }
     return options.inverse(this);
   });
 
-  H.registerHelper('compare', function (lvalue, operator, rvalue, options) {
-
-    var operators, result;
-
+  H.registerHelper('compare', function compare(lvalue, operator, rvalue, options) {
     if (arguments.length < 3) {
-        throw new Error("Handlebars Helper 'compare' needs 2 parameters");
+      throw new Error("Handlebars Helper 'compare' needs 2 parameters");
     }
+    let newOptions = options;
+    let newRvalue = rvalue;
+    let newOperator = operator;
 
     if (options === undefined) {
-        options = rvalue;
-        rvalue = operator;
-        operator = "===";
+      newOptions = rvalue;
+      newRvalue = operator;
+      newOperator = '===';
     }
 
-    operators = {
-        '==': function (l, r) { return l == r; },
-        '===': function (l, r) { return l === r; },
-        '!=': function (l, r) { return l != r; },
-        '!==': function (l, r) { return l !== r; },
-        '&lt;': function (l, r) { return l < r; },
-        '&gt;': function (l, r) { return l > r; },
-        '&lt;=': function (l, r) { return l <= r; },
-        '&gt;=': function (l, r) { return l >= r; },
-        'typeof': function (l, r) { return typeof l == r; }
+    const operators = {
+      '==': (l, r) => l == r,               // eslint-disable-line
+      '===': (l, r) => l === r,
+      '!=': (l, r) => l != r,               // eslint-disable-line 
+      '!==': (l, r) => l !== r,
+      '&lt;': (l, r) => l < r,
+      '&gt;': (l, r) => l > r,
+      '&lt;=': (l, r) => l <= r,
+      '&gt;=': (l, r) => l >= r,
+      typeof: (l, r) => typeof l === r,     // eslint-disable-line
     };
 
-    if (!operators[operator]) {
-        throw new Error("Handlerbars Helper 'compare' doesn't know the operator " + operator);
+    if (!operators[newOperator]) {
+      throw new Error(`Handlerbars Helper 'compare' doesn't know the operator ${newOperator}`);
     }
 
-    result = operators[operator](lvalue, rvalue);
-
-    if (result) {
-        return options.fn(this);
-    } else {
-        return options.inverse(this);
-    }
-
-});
-
+    const result = operators[newOperator](lvalue, newRvalue);
+    return result ? newOptions.fn(this) : newOptions.inverse(this);
+  });
 }(Handlebars));

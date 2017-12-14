@@ -1,27 +1,24 @@
 import Step from 'components/wizard/step';
 
 function onNoteOnUserCommentsStart(stepCompleted) {
-  var duration = this.duration;
-  var $useCasesModal = $('#gen-report-modal3');
-
   $('#fcraGroup').validate({
     rules: {
       fcraCheckbox: {
-        required: true
-      }
+        required: true,
+      },
     },
-    errorPlacement: function (error, element) {
+    errorPlacement(error, element) {
       element.closest('.form-group').addClass('error').append(error);
     },
-    success: function (label) {
+    success(label) {
       label.closest('.form-group').removeClass('error').find('label.error').remove();
     },
     messages: {
-      fcraCheckbox: 'Please check the box to continue'
+      fcraCheckbox: 'Please check the box to continue',
     },
-    submitHandler: function (form) {
+    submitHandler() {
       stepCompleted();
-    }
+    },
   });
 }
 
@@ -30,7 +27,7 @@ noteOnUserComments.init({
   title: 'Note on User Comments',
   $elem: $('#gen-report-modal3'),
   duration: 20,
-  onStart: onNoteOnUserCommentsStart
+  onStart: onNoteOnUserCommentsStart,
 });
 
 export { noteOnUserComments };

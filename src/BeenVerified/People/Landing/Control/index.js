@@ -13,19 +13,18 @@ import 'bootstrap/dist/js/bootstrap';
 import './css/style.css';
 
 const queryArgs = getQueryArgs();
-const isLocalStorageSupported = localStorage.isSupported();
 
-const initializeCounter = data => {
+const initializeCounter = (data) => {
   const counterOptions = {
     startCount: data.startCount,
     slope: data.slope,
-    afterUpdateCallback: function (currentCount) {
-      let count = currentCount + '';
+    afterUpdateCallback(currentCount) {
+      let count = `${currentCount}`;
       let countItems = _padStart(count, 8, '0');
       for (let i = 0; i < countItems.length; i++) {
-        $('#tick_' + i).html(countItems[i]);
+        $(`#tick_${i}`).html(countItems[i]);
       }
-    }
+    },
   };
   const counterInstance = Counter.init(counterOptions);
   counterInstance.start();
@@ -37,16 +36,16 @@ const initializeCarousel = () => {
   const $homeCarouselIndicator = $('.home-carousel-indicator');
   const $addressField = $('#fullAddress');
 
-  $homeCarouselIndicator.on('click', function () {
+  $homeCarouselIndicator.on('click', function onCarouselIndicatorClick() {
     $homeCarouselIndicator.removeClass('active');
     $(this).addClass('active');
   });
 
-  $carousel.on('slid.bs.carousel', function (evt) {
+  $carousel.on('slid.bs.carousel', () => {
     const $activeSection = $('.carousel div.active');
     const index = $activeSection.index() + 1;
     const PROPERTY_SECTION = 4;
-    
+
     $activeSection.find('.first-input').focus();
     if (index === PROPERTY_SECTION) {
       formValidator.property.initializeLiveAddress($addressField);
@@ -80,10 +79,10 @@ const initializeForms = () => {
     initializePeopleValidator,
     initializePhoneValidator,
     initializeEmailValidator,
-    initializePropertyValidator
+    initializePropertyValidator,
   ];
 
-  validators.forEach( initializeValidator => initializeValidator());
+  validators.forEach(initializeValidator => initializeValidator());
 };
 
 const initialize = () => {
@@ -97,6 +96,7 @@ const initialize = () => {
   }
   $('.focus-me').focus();
   $('a.smarty-popup-close').html('<span class="glyphicon glyphicon-remove-circle"></span>');
-}
+};
 
+localStorage.isSupported();
 initialize();

@@ -1,20 +1,23 @@
-var blurTime, onBlurShown = false;
+let blurTime;
+let onBlurShown = false;
 
-const onBlur = function (opts, showModal) {
-  $(window).on("blur", function () {
-    if (onBlurShown)
+const onBlur = (opts, showModal) => {
+  $(window).on('blur', () => {
+    if (onBlurShown) {
       return;
+    }
     blurTime = Date.now();
   });
-  $(window).on("focus", function () {
-    if (onBlurShown)
+  $(window).on('focus', () => {
+    if (onBlurShown) {
       return;
-    const timeNow = Date.now(), 
-      outOfFocusDuration = timeNow - blurTime;
+    }
+    const timeNow = Date.now();
+    const outOfFocusDuration = timeNow - blurTime;
 
     if (outOfFocusDuration > opts.outOfFocusDuration) {
       onBlurShown = true;
-      showModal(opts.elem, "onBlur", true, (outOfFocusDuration / 1000));
+      showModal(opts.elem, 'onBlur', true, (outOfFocusDuration / 1000));
     }
   });
 };

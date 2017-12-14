@@ -16,42 +16,38 @@ import {
 } from './steps';
 
 function showSubHeadlines(totalSections) {
-  var containerSelector = $(".wizard-content");
-  var stepsContainerSelector = $(".wizard-header");
-  var stepSelector = $(".wizard-step");
+  var containerSelector = $('.wizard-content');
+  var stepsContainerSelector = $('.wizard-header');
+  var stepSelector = $('.wizard-step');
   var sections = $(containerSelector).find(stepSelector);
   var isModal = true;
-  var validateNext = function () { return true; };
-  var validateFinish = function () { return true; };
-  //////////////////////
   var step = 1;
-  var container = $(containerSelector).find(stepsContainerSelector);
   sections.hide();
   $(sections[0]).show();
   if (isModal) {
-    $('#wizModal').on('hidden.bs.modal', function () {
+    $('#wizModal').on('hidden.bs.modal', () => {
       step = 1;
-      $($(containerSelector + " .wizard-steps-panel .step-number")
-        .removeClass("done")
-        .removeClass("doing")[0])
-        .toggleClass("doing");
+      $($(`${containerSelector} .wizard-steps-panel .step-number`)
+        .removeClass('done')
+        .removeClass('doing')[0])
+        .toggleClass('doing');
 
-      $($(containerSelector + " .wizard-step")
+      $($(`${containerSelector} .wizard-step`)
         .hide()[0])
         .show();
     });
   }
-  $('#wizModal').find(".wizard-steps-panel").remove();
-  stepsContainerSelector.prepend('<div class="wizard-steps-panel steps-quantity-' + totalSections + '"></div>');
-  var stepsPanel = $('#wizModal').find(".wizard-steps-panel");
-  for (var s = 1; s <= 4; s++) {
-    stepsPanel.append('<div class="step-number step-' + s + '"><div class="number">' + s + '</div></div>');
+  $('#wizModal').find('.wizard-steps-panel').remove();
+  stepsContainerSelector.prepend(`<div class="wizard-steps-panel steps-quantity-${totalSections}"></div>`);
+  let stepsPanel = $('#wizModal').find('.wizard-steps-panel');
+  for (let s = 1; s <= 4; s++) {
+    stepsPanel.append(`<div class="step-number step-${s}"><div class="number">${s}</div></div>`);
   }
-  $('#wizModal').find(".wizard-steps-panel .step-" + step).toggleClass("doing").find('.number').html('&nbsp;');
-}
-
-function addRelativesModal() {
-  section2.steps.splice(2, 0, relatives);
+  $('#wizModal')
+    .find(`.wizard-steps-panel .step-${step}`)
+    .toggleClass('doing')
+    .find('.number')
+    .html('&nbsp;');
 }
 
 const section1 = Object.assign({}, Section);
@@ -68,11 +64,15 @@ section4.init([saveResults, preparingMonitoring, generatingReport]);
 const wizard = Object.assign({}, WizardManager);
 const sections = [section1, section2, section3, section4];
 
+function addRelativesModal() {
+  section2.steps.splice(2, 0, relatives);
+}
+
 wizard.init({
   sections,
   onCompleted() {
     window.location = $('body').data('next-page');
-  }
+  },
 });
 showSubHeadlines(sections.length);
 

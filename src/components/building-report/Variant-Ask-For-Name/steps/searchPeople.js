@@ -1,4 +1,4 @@
-import { SEARCH_QUERY } from 'constants/storage'; 
+import { SEARCH_QUERY } from 'constants/storage';
 import formValidator from 'form-validators/people';
 import amplify from 'utils/amplifyStore';
 import Step from 'components/wizard/step';
@@ -14,16 +14,16 @@ const submitHandler = (form, duration, stepCompleted) => {
   }, {});
   amplify.store(SEARCH_QUERY, query);
   showExternalModal(stepCompleted, duration, SAVE_RESULTS_INDEX);
-}
+};
 
 const initializePeopleValidator = ($form, duration, stepCompleted) => {
   formValidator.validate($form, {
-    submitHandler: (form) => submitHandler(form, duration, stepCompleted),
+    submitHandler: form => submitHandler(form, duration, stepCompleted),
   });
 };
 
 function onSearchPeopleStart(stepCompleted) {
-  const duration = this.duration;
+  const { duration } = this;
   const img = $('#crt-acct-load').find('img');
   initializePeopleValidator($searchForm, duration, stepCompleted);
   $searchForm.find('.focus-me').focus();
@@ -38,8 +38,9 @@ searchPeople.init({
   duration: 18,
   onStart: onSearchPeopleStart,
   $modal: $('#externalModal'),
-  openModal: (stepCompleted, duration) => showExternalModal(stepCompleted, duration, SAVE_RESULTS_INDEX, skipSavingResultModal),
-  closeModal: () => hideExternalModal(SAVE_RESULTS_INDEX)
+  openModal: (stepCompleted, duration) =>
+    showExternalModal(stepCompleted, duration, SAVE_RESULTS_INDEX, skipSavingResultModal),
+  closeModal: () => hideExternalModal(SAVE_RESULTS_INDEX),
 });
 
 export { searchPeople };

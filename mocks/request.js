@@ -6,14 +6,14 @@ import mockExtraTeaser from './api/extraTeaser';
 const registeredUrls = [
   ...mockStats,
   ...mockTeaser,
-  ...mockExtraTeaser
+  ...mockExtraTeaser,
 ];
 
-const get = (requestUrl) => new Promise((resolve, reject) => {
+const get = requestUrl => new Promise((resolve) => {
   const result = _find(registeredUrls, ({ url }) => requestUrl.indexOf(url) >= 0);
   resolve(result.response);
 });
 
 export {
-  get
+  get,
 };

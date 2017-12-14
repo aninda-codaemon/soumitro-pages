@@ -8,11 +8,10 @@ const displayTargetedContent = (queryArgs, $dynamicElems) => {
     return;
   }
 
-  $dynamicElems.forEach(element => {
-    const $elem = $(elem);
-    const $defaults = $elem.find('[data-bv-ref=default]');
-    const $target = $elem.find('[data-bv-ref=' + kw + ']');
-
+  $dynamicElems.forEach((element) => {
+    const $elem = $(element);
+    const $defaults = $elem.find('[data-bv-ref="default"]');
+    const $target = $elem.find(`[data-bv-ref="${kw}"]`);
 
     if (!$target || $target.length === 0) {
       $defaults.show();
@@ -23,9 +22,9 @@ const displayTargetedContent = (queryArgs, $dynamicElems) => {
   });
 };
 
-const displayDynamicContent = queryArgs => {
+const displayDynamicContent = (queryArgs) => {
   const $dynamicElems = findDynamicContent();
   displayTargetedContent(queryArgs, $dynamicElems);
-}
+};
 
 export { displayDynamicContent };
