@@ -73,6 +73,7 @@
     "jquery": "^3.2.1",
     "jquery-mask-plugin": "^1.14.12",
     "jquery-validation": "^1.17.0",
+    "list.js": "^1.5.0",
     "liveaddress": "^5.1.0",
     "lodash": "^4.17.4",
     "mailcheck": "^1.1.1"

@@ -1,4 +1,5 @@
 import map from 'lodash/map';
+import 'lodash/isArray';
 
 export const capitalize = (text) => {
   const letters = text.split('');

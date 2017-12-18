@@ -1,3 +1,4 @@
+import List from 'list.js';
 import amplify from 'utils/amplifyStore';
 import { isMobile } from 'utils/browser';
 
@@ -22,7 +23,7 @@ const backTopAnimation = () => {
   var $backToTop = $('.cd-top');
 
   // hide or show the "back to top" link
-  $(window).scroll(function onScrolls() {
+  $(window).scroll(function onScroll() {
     var scrollTop = $(this).scrollTop();
     if (scrollTop > offset) {
       $backToTop.addClass('cd-is-visible');
@@ -43,12 +44,57 @@ const backTopAnimation = () => {
   });
 };
 
+const showNoResults = () => {
+  $hasResults.hide();
+  $noResults.show();
+};
+
+const showResults = () => {
+  $noResults.hide();
+  $hasResults.show();
+};
+
+const showSubHeaderMobile = ($subHeaderDesktop, $subHeaderMobile) => {
+  $subHeaderDesktop.hide();
+  $subHeaderMobile.show();
+};
+
+const showSubheaderDesktop = ($subHeaderDesktop, $subHeaderMobile) => {
+  $subHeaderDesktop.show();
+  $subHeaderMobile.hide();
+};
+
+const showSubHeader = () => {
+  const $subHeaderDesktop = $('.subHeadOthers');
+  const $subHeaderMobile = $('.subHeadMobile');
+  if (isMobile) {
+    showSubHeaderMobile($subHeaderDesktop, $subHeaderMobile);
+  } else {
+    showSubheaderDesktop($subHeaderDesktop, $subHeaderMobile);
+  }
+};
+
+const updateRefineModal = () => {
+  var recordCount = 0;
+  if (amplify.store('teaserData') !== undefined) {
+    recordCount = Number(amplify.store('teaserData').recordCount);
+  }
+
+  if (recordCount < 1) {
+    showNoResults();
+  } else {
+    showResults();
+    showSubHeader();
+  }
+};
+
 const handleNoResults = () => {
   // if extra teaser data is defined - show refine modal only if not mobile
   if (amplify.store('teaserData') !== undefined && !isMobile) {
     updateRefineModal();
     $refineModal.modal('show');
-    validateRefineForm();
+    // TODO - should I have this here?
+    // validateRefineForm();
     $hasFilters.hide();
     $noFilters.show();
   }
@@ -99,51 +145,128 @@ const hideFiltersOnTwo = () => {
   }
 };
 
-const showNoResults = () => {
-  $hasResults.hide();
-  $noResults.show();
+// Sends all empty ages to bottom of results
+const deprioritizeEmptyAges = (list) => {
+  list.forEach((item) => {
+    item.hide();
+    $('#results').append(item.elm);
+  });
 };
 
-const showResults = () => {
-  $noResults.hide();
-  $hasResults.show();
-};
+const setFilterStates = () => {
+  let age = $('#age').val();
+  let state = $('#search-bar-state').val();
+  let showAgeFilter = age !== '';
+  let showStateFilter = state === 'All';
 
-const showSubHeaderMobile = ($subHeaderDesktop, $subHeaderMobile) => {
-  $subHeaderDesktop.hide();
-  $subHeaderMobile.show();
-};
-
-const showSubheaderDesktop = ($subHeaderDesktop, $subHeaderMobile) => {
-  $subHeaderDesktop.show();
-  $subHeaderMobile.hide();
-};
-
-const showSubHeader = () => {
-  const $subHeaderDesktop = $('.subHeadOthers');
-  const $subHeaderMobile = $('.subHeadMobile');
   if (isMobile) {
-    showSubHeaderMobile($subHeaderDesktop, $subHeaderMobile);
+    $('.age-filter-group').toggle(showAgeFilter);
+    $('.state-filter-group').toggle(showStateFilter);
   } else {
-    showSubheaderDesktop($subHeaderDesktop, $subHeaderMobile);
+    $('#age-filter').attr('disabled', showAgeFilter);
+    $('#state-filter').attr('disabled', !showStateFilter);
   }
 };
 
-const updateRefineModal = () => {
-  var recordCount = 0;
-  if (amplify.store('teaserData') !== undefined) {
-    recordCount = Number(amplify.store('teaserData').recordCount);
-  }
+const updateFilterOptions = (results) => {
+  var stateFilters = $('#state-filter option');
+  // hide filter options except the all option
+  // this makes all options hidden by default so we show only the needed options below
+  $('.results-filters select option').hide();
+  $('.results-filters select option[value=all]').show();
 
-  if (recordCount < 1) {
-    showNoResults();
-  } else {
-    showResults();
-    showSubHeader();
+  // loop through results list and only show the matching filters
+  for (let item = 0; item < results.length; item++) {
+    let currentRecord = results[item]._values; // eslint-disable-line
+    // show age filter options that match ages in the results lista
+    // refactored into the loop below but has issues with the last age-range option
+    if (currentRecord.resultAge >= 18 && currentRecord.resultAge <= 25) {
+      $('#age-filter option[value=18-25]').show();
+    } else if (currentRecord.resultAge >= 26 && currentRecord.resultAge <= 35) {
+      $('#age-filter option[value=26-35]').show();
+    } else if (currentRecord.resultAge >= 36 && currentRecord.resultAge <= 45) {
+      $('#age-filter option[value=36-45]').show();
+    } else if (currentRecord.resultAge >= 46 && currentRecord.resultAge <= 55) {
+      $('#age-filter option[value=46-55]').show();
+    } else if (currentRecord.resultAge >= 56 && currentRecord.resultAge <= 65) {
+      $('#age-filter option[value=56-65]').show();
+    } else if (currentRecord.resultAge >= 66 && currentRecord.resultAge <= 75) {
+      $('#age-filter option[value=66-75]').show();
+    } else if (currentRecord.resultAge >= 76 && currentRecord.resultAge <= 85) {
+      $('#age-filter option[value=76-85]').show();
+    } else if (currentRecord.resultAge >= 86 && currentRecord.resultAge <= 95) {
+      $('#age-filter option[value=86-95]').show();
+    } else if (currentRecord.resultAge >= 96 && currentRecord.resultAge <= 200) {
+      $('#age-filter option[value=96-200]').show();
+    }
+    /*
+      Loop through state options and show the state
+      option that matches with the state in the results list
+    */
+    for (let option = 1; option < stateFilters.length; option++) {
+      if (stateFilters[option].value === currentRecord.resultPlace.split(', ')[1]) {
+        $(`#state-filter option[value=${stateFilters[option].value}]`).show();
+      }
+    }
   }
 };
 
-const initSearchFilters = () => {
+// Update the record count - to use when table filters change
+const updateRecordCount = () => {
+  $('.record-count').text($('#results .results-row').length);
+};
+
+const getSearchName = () => {
+  let searchData = amplify.store('searchData');
+  if (!searchData) {
+    return '';
+  }
+  // define each name var based on search data
+  let { fn, ln, mi } = searchData;
+  let searchedName = `${fn} ${ln}`;
+  let fnSplit = (fn || '').split(' ');
+
+  // if middle initial is in search data, use it.
+  if (mi) {
+    searchedName = `${fn} ${mi} ${ln}`;
+  } else if (fnSplit.length === 2) {
+    // if user typed in two first names, combine the first name
+    searchedName = `${fnSplit[0] + fnSplit[1].toLowerCase()} ${ln}`;
+  } else if (fnSplit.length === 3) {
+    // if user typed in two first names and a third initial, combine it.
+    searchedName = `${fnSplit[0] + fnSplit[1].toLowerCase()} ${fnSplit[2]} ${ln}`;
+  }
+  return searchedName;
+};
+
+const filterSearchResults = searchedNameParts => (item) => {
+  let resultNameParts = item.values().resultName.split(' ');
+  // check if a middle initial is in the search
+  if (searchedNameParts.length === 3) {
+    // filter only the full result name if it matches both the first and last name
+    // the first letter of result's middle name must also match the middle initial
+    return (
+      resultNameParts[0] === searchedNameParts[0] &&
+      resultNameParts[2] === searchedNameParts[2] &&
+      resultNameParts[1].charAt(0).indexOf(searchedNameParts[1]) > -1
+    );
+  }
+  // check if result name has a middle name/initial
+  if (resultNameParts.length === 3) {
+    // filter only the result's first and last name if it matches the first and last name
+    return (
+      resultNameParts.split(' ')[0] === searchedNameParts[0] &&
+      resultNameParts[2] === searchedNameParts[1]
+    );
+  }
+  // filter only the result's first and last name if it matches the first and last name
+  return (
+    resultNameParts[0] === searchedNameParts[0] &&
+    resultNameParts[1] === searchedNameParts[1]
+  );
+};
+
+const initilizeSearchFilters = ({ onReset }) => {
   const recordCount = Number($('.record-count').text());
   /*
     Define sort/filter options using the class names of the data elements
@@ -197,15 +320,13 @@ const initSearchFilters = () => {
       if (selection && selection !== 'all' && selection !== '96-200') {
         searchResultsList.filter(item => (item.values().resultAge >= selection.split('-')[0] && item.values().resultAge <= selection.split('-')[1]));
         updateRecordCount();
-      }
-      // adding this extra condition as a fix to the above condition
-      // above does not filter out the last age group for some reason - need to debug that
-      // this else if condition is the solution for filtering ages above 95
-      else if (selection && selection === '96-200' && selection !== 'all') {
+      } else if (selection && selection === '96-200' && selection !== 'all') {
+        // adding the above extra condition as a fix to the above condition
+        // above does not filter out the last age group for some reason - need to debug that
+        // this else if condition is the solution for filtering ages above 95
         searchResultsList.filter(item => (item.values().resultAge > 95));
         updateRecordCount();
-      }
-      else {
+      } else {
         searchResultsList.filter();
         deprioritizeEmptyAges(emptyAgeList);
         updateRecordCount();
@@ -232,47 +353,13 @@ const initSearchFilters = () => {
       }
     });
 
-    // define searched name
-    var searchedName = '';
-    // first check to see if search data exists
-    // @TODO: refactor this as a function
-    if (amplify.store('searchData')) {
-      // define each name var based on search data
-      var first = amplify.store('searchData').fn + ' ',
-        middle = amplify.store('searchData').mi + ' ',
-        last = amplify.store('searchData').ln;
-
-      // check if middle initial is in search data
-      // define search name var based on the middle initial condition
-      if (amplify.store('searchData').mi !== '') {
-        if (amplify.store('searchData').mi !== undefined && amplify.store('searchData').mi !== null) {
-          searchedName = first + middle + last;
-        } else {
-          searchedName = first + last;
-        }
-        // if user typed in two first names,
-        // split the value and combine into one name
-      } else if (amplify.store('searchData').fn.split(' ').length === 2) {
-        first = amplify.store('searchData').fn.split(' ')[0] + amplify.store('searchData').fn.split(' ')[1].toLowerCase() + ' ';
-
-        searchedName = first + last;
-        // if user typed in two first names and a third initial
-        // split the value and seperate into first and middle
-      } else if (amplify.store('searchData').fn.split(' ').length === 3) {
-        first = amplify.store('searchData').fn.split(' ')[0] + amplify.store('searchData').fn.split(' ')[1].toLowerCase() + ' ';
-        middle = amplify.store('searchData').fn.split(' ')[2] + ' ';
-
-        searchedName = first + middle + last;
-      } else {
-        searchedName = first + last;
-      }
-    }
+    let searchedName = getSearchName();
 
     // -- Back to Top Button Event Handler ---//
     backTopAnimation();
 
     // exact match filter action
-    $('.exact-match').click(function () {
+    $('.exact-match').click(function onExactMatchClick() {
       $(this).toggleClass('active');
 
       // reset age filter
@@ -282,38 +369,8 @@ const initSearchFilters = () => {
       $('#state-filter option[value=all]').prop('selected', true);
 
       if ($(this).hasClass('active')) {
-
-        // @TODO: refactor into function
-        searchResultsList.filter(function (item) {
-          // check if a middle initial is in the search
-          if (searchedName.split(' ').length === 3) {
-            // filter only the full result name if it matches both the first and last name from search
-            // the first letter of result's middle name must also match the middle initial from search
-            if (item.values().resultName.split(' ')[0] === searchedName.split(' ')[0] && item.values().resultName.split(' ')[2] === searchedName.split(' ')[2] && item.values().resultName.split(' ')[1].charAt(0).indexOf(searchedName.split(' ')[1]) > -1) {
-              return true;
-            } else {
-              return false;
-            }
-          } else {
-            // @TODO: refactor these conditions - too much repeating
-            // check if result name has a middle name/initial
-            if (item.values().resultName.split(' ').length === 3) {
-              // filter only the result's first and last name if it matches the first and last name from search
-              if (item.values().resultName.split(' ')[0] === searchedName.split(' ')[0] && item.values().resultName.split(' ')[2] === searchedName.split(' ')[1]) {
-                return true;
-              } else {
-                return false;
-              }
-            } else {
-              // filter only the result's first and last name if it matches the first and last name from search
-              if (item.values().resultName.split(' ')[0] === searchedName.split(' ')[0] && item.values().resultName.split(' ')[1] === searchedName.split(' ')[1]) {
-                return true;
-              } else {
-                return false;
-              }
-            }
-          }
-        });
+        let searchedNameParts = searchedName.split(' ');
+        searchResultsList.filter(filterSearchResults(searchedNameParts));
         deprioritizeEmptyAges(emptyAgeList);
         updateRecordCount();
       } else {
@@ -333,7 +390,7 @@ const initSearchFilters = () => {
 
       // @TODO: call search function instead of simulating form submit
       $('#search-form').submit();
-      determineCollapse();
+      onReset();
     });
   } else {
     handleNoResults();
@@ -343,4 +400,4 @@ const initSearchFilters = () => {
 // keep all filters hidden by default
 $resultsFilters.hide();
 
-export { initSearchFilters };
+export { initilizeSearchFilters };

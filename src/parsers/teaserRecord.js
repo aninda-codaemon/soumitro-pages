@@ -48,11 +48,11 @@ const TeaserRecord = (function () {
     var returnAddress;
     if (typeof address === "undefined") {
       returnAddress = 'N/A';
-    } else if (isEmpty(address.City) && isEmpty(address.State)) {
+    } else if (!isEmpty(address.City) && !isEmpty(address.State)) {
       returnAddress = "" + (nameize(address.City)) + ", " + address.State;
-    } else if (isEmpty(address.City)) {
+    } else if (!isEmpty(address.City)) {
       returnAddress = nameize(address.City);
-    } else if (isEmpty(address.State)) {
+    } else if (!isEmpty(address.State)) {
       returnAddress = address.State;
     }
     return returnAddress;
@@ -210,7 +210,7 @@ const TeaserRecord = (function () {
       names = this.record.Names.Name.slice(1, +(this.record.Names.Name.length - 1) + 1 || 9e9);
       return _.chain(names).map(function (name) {
         return this._makeName(name);
-      }, this).filter(function (name) {
+      }.bind(this)).filter(function (name) {
         return name !== null;
       }).map(function (name) {
         return nameize(name);
@@ -232,7 +232,7 @@ const TeaserRecord = (function () {
     }
     return _.chain(relatives).map(function (relative) {
       return this._makeName(relative);
-    }, this).filter(function (relative) {
+    }.bind(this)).filter(function (relative) {
       return relative !== null;
     }).map(function (relative) {
       return nameize(relative);

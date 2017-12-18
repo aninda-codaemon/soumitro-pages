@@ -8,10 +8,13 @@ const registeredUrls = [
   ...mockTeaser,
   ...mockExtraTeaser,
 ];
+const SIMULATE_DELAY = 1000;
 
 const get = requestUrl => new Promise((resolve) => {
   const result = _find(registeredUrls, ({ url }) => requestUrl.indexOf(url) >= 0);
-  resolve(result.response);
+  setTimeout(() => {
+    resolve(result.response || result.responses[1]);
+  }, SIMULATE_DELAY);
 });
 
 export {

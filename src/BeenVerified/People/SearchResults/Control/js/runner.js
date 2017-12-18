@@ -11,11 +11,15 @@ import { getQueryArgs, isValidPeopleQuery } from 'utils/queryArgs';
 // import { nameize } from 'utils/strings';
 import * as localStorage from 'utils/localStorage';
 import amplify from 'utils/amplifyStore';
+import { initilizeSearchFilters } from 'components/people-results-table';
 import 'utils/framerida';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap';
 import '../css/styles.css';
+
+import { initializeDownsells } from './downsell';
+import { initializePeopleValidator } from './people-validator';
 
 let activated = false;
 const queryArgs = getQueryArgs();
@@ -27,7 +31,6 @@ const $toggleSearchBar = $('.search-toggled');
 const $searching = $('#results-wrapper-searching');
 const $noResults = $('#no-results');
 const $dataPanel = $('#data-panel');
-const $filters = $('#filters');
 localStorage.isSupported();
 
 const showSearchingAnimation = () => {
@@ -42,6 +45,7 @@ const hideSearchingAnimation = () => {
 };
 
 const determineCollapse = () => {
+  let $filters = $('#filters');
   if (window.innerWidth >= 768) {
     $filters.removeClass('collapse');
     return;
@@ -70,7 +74,8 @@ const activateRows = () => {
   activated = true;
   $dataPanel.on('click', 'tr.results-row', (e) => {
     e.preventDefault();
-    window.hasClickedResult = true;
+    // TODO: isn't
+    // window.hasClickedResult = true;
     window.setTimeout(() => {
       var currentRecord = amplify.store('currentRecord') || {};
       var searchData = amplify.store('searchData') || {};
@@ -79,7 +84,10 @@ const activateRows = () => {
   });
 };
 
-const renderResults = (teaserData, queryData) => {
+const renderResults = () => {
+  const teaserData = amplify.store('teaserData');
+  const queryData = amplify.store('query');
+
   if (teaserData && teaserData.recordCount === 0) {
     showNoResultsPanel();
     return;
@@ -93,31 +101,40 @@ const renderResults = (teaserData, queryData) => {
       $(`a#result${resultId}`).trigger('click');
     }
   }
-  // initSearchFilters();
+  initilizeSearchFilters({
+    onReset: () => determineCollapse(),
+  });
+};
+
+const searchPeople = (query, notificationType) => {
+  showSearchingAnimation();
+  getTeaserData(query).then(() => notifyRecordCount(notificationType))
+    .then(hideSearchingAnimation)
+    .then(renderResults);
 };
 
 const initializeQueryArgs = (args, validArgs) => {
-  args.state = args.state || 'all';
+  args.state = args.state || 'All';
   if (validArgs) {
     amplify.store('searchData', args);
     showSearchingAnimation();
-    getTeaserData(args)
-      .then(() => notifyRecordCount(recordCounts.QUERY))
-      .then(hideSearchingAnimation)
-      .then(renderResults);
-  } else {
-    notifyRecordCount(recordCounts.LANDING);
+    searchPeople(args, recordCounts.QUERY);
+    return;
   }
+  notifyRecordCount(recordCounts.LANDING);
 };
 
 const initializeToggleSearch = () => {
-  $('.btn-search-bar').click(() => $toggleSearchBar.toggleClass('hidden'));
+  $('.btn-search-bar').on('click', () => {
+    $toggleSearchBar.toggleClass('hidden');
+  });
 };
 
 const initializeRefine = () => {
   $dataPanel.on('click', '.refine-modal-trigger', (event) => {
     event.preventDefault();
-    validateRefineForm();
+    // TODO - should I have this here?
+    // validateRefineForm();
     $('#refine-modal').modal('show');
   });
 };
@@ -125,10 +142,17 @@ const initializeRefine = () => {
 const initialize = () => {
   jQuery.fx.interval = 100;
   window.$ = jQuery;
-
+  showSearchingAnimation();
+  initializePeopleValidator({
+    onSubmit: (args) => {
+      $toggleSearchBar.addClass('hidden');
+      searchPeople(args, recordCounts.RESEARCH);
+    },
+  });
   initializeToggleSearch();
   initializeQueryArgs(queryArgs, validQueryArgs);
   initializeRefine();
+  initializeDownsells();
 };
 
 export { initialize };

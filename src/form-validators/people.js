@@ -1,3 +1,4 @@
+import 'jquery-validation';
 import _assignIn from 'lodash/assignIn';
 
 import { track } from 'utils/track';
