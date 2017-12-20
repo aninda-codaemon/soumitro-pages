@@ -4,6 +4,7 @@ import { showExternalLoading, hideExternalLoading } from './shared';
 const CONTINUE_SESSION_INDEX = 1;
 
 function onFcraConfirmationStart(stepCompleted) {
+  var self = this;
   $('#fcra-confirm').validate({
     rules: {
       fcraCheckbox2: {
@@ -20,7 +21,7 @@ function onFcraConfirmationStart(stepCompleted) {
       fcraCheckbox2: 'Please check the box to continue',
     },
     submitHandler() {
-      showExternalLoading(stepCompleted, this.duration, CONTINUE_SESSION_INDEX);
+      showExternalLoading(stepCompleted, self.duration, CONTINUE_SESSION_INDEX);
     },
   });
 }
