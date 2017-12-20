@@ -87,10 +87,17 @@ function createWizard(options = {}) {
     preparingMonitoringInstance,
     generatingReportInstance,
   ]);
+<<<<<<< HEAD
 
   const wizard = Object.assign({}, WizardManager);
   const sections = [section1, section2, section3, section4];
 
+=======
+
+  const wizard = Object.assign({}, WizardManager);
+  const sections = [section1, section2, section3, section4];
+
+>>>>>>> SOT-2358: Refactoring components to allow config override and Adding Natural Intelligence Variant
   wizard.init({
     sections,
     onCompleted() {
