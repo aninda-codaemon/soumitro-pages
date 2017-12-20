@@ -2,6 +2,7 @@ import {
   mapValues as _mapValues,
   get as _get,
   find as _find,
+  chain as _chain,
 } from 'lodash';
 
 import { get } from 'utils/request';
@@ -43,6 +44,27 @@ const parseTeaser = (data) => {
   };
 };
 
+const teaserSorter = (records) => {
+  records = _chain(records).sortBy((record) => {
+    var decimal;
+    var sortAge;
+    if (record.age) {
+      sortAge = parseInt(record.age, 10);
+    } else {
+      sortAge = 200;
+    }
+    decimal = 999;
+    if (record.addresses().length > 0) {
+      decimal -= record.addresses().length;
+    }
+    if (record.relatives().length > 0) {
+      decimal -= record.relatives().length;
+    }
+    return parseFloat(`${sortAge}.${decimal}`);
+  }, this).value();
+  return records;
+};
+
 const storeTeaserData = (teaserData) => {
   amplify.store('teaserData', teaserData);
   return teaserData;
@@ -79,5 +101,7 @@ const getTeaserData = (data) => {
     .then(storeTeaserData)
     .then(fixIncognitoMode(data.bvid));
 };
+
+window.teaserSorter = teaserSorter;
 
 export { getTeaserData };

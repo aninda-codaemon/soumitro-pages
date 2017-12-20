@@ -5,7 +5,6 @@ import {
 import { getTeaserData } from 'api/teaser';
 // import { getExtraTeaserData } from 'api/extraTeaser';
 import { recordCounts } from 'constants/recordCounts';
-// import { initializeBVGO } from 'utils/bvgo';
 import { notifyRecordCount } from 'utils/track/notifyRecordCount';
 import { getQueryArgs, isValidPeopleQuery } from 'utils/queryArgs';
 // import { nameize } from 'utils/strings';
@@ -20,6 +19,7 @@ import '../css/styles.css';
 
 import { initializeDownsells } from './downsell';
 import { initializePeopleValidator } from './people-validator';
+import { initializeResizeHandler } from './resize-handler';
 
 let activated = false;
 const queryArgs = getQueryArgs();
@@ -31,7 +31,29 @@ const $toggleSearchBar = $('.search-toggled');
 const $searching = $('#results-wrapper-searching');
 const $noResults = $('#no-results');
 const $dataPanel = $('#data-panel');
+const $searchBar = $('#search-bar');
+const windowWidth = $(window).width();
+const windowSmall = 767;
+
 localStorage.isSupported();
+
+const showHeader = () => {
+  $searchBar.show();
+};
+
+const hideHeader = () => {
+  if (!$searchBar.hasClass('no-hide-header')) {
+    $searchBar.hide();
+  }
+};
+
+const determineLayoutState = () => {
+  if (windowWidth <= windowSmall) {
+    hideHeader();
+  } else {
+    showHeader();
+  }
+};
 
 const showSearchingAnimation = () => {
   $noResults.hide();
@@ -88,14 +110,14 @@ const renderResults = () => {
   const teaserData = amplify.store('teaserData');
   const queryData = amplify.store('query');
 
-  if (teaserData && teaserData.recordCount === 0) {
+  if (!teaserData || teaserData.recordCount === 0) {
     showNoResultsPanel();
     return;
   }
   showResultsPanel();
   activateRows();
   // bvid param? start the modal flow!
-  if (typeof queryData.bvid !== 'undefined') {
+  if (queryData && typeof queryData.bvid !== 'undefined') {
     let resultId = findIndex(teaserData.teasers, t => t.bvid === queryData.bvid);
     if (typeof resultId !== 'undefined' && isFinite(resultId)) {
       $(`a#result${resultId}`).trigger('click');
@@ -121,6 +143,8 @@ const initializeQueryArgs = (args, validArgs) => {
     searchPeople(args, recordCounts.QUERY);
     return;
   }
+  hideSearchingAnimation();
+  renderResults();
   notifyRecordCount(recordCounts.LANDING);
 };
 
@@ -153,6 +177,7 @@ const initialize = () => {
   initializeQueryArgs(queryArgs, validQueryArgs);
   initializeRefine();
   initializeDownsells();
+  initializeResizeHandler(determineCollapse, determineLayoutState);
 };
 
 export { initialize };
