@@ -2,6 +2,7 @@ import 'jquery-validation';
 
 import Section from 'components/wizard/section';
 import WizardManager from 'components/wizard/manager';
+
 import popularUseCases from './steps/popularUseCases';
 import noteOnUserComments from './steps/noteOnUserComments';
 import preparingMonitoring from './steps/preparingMonitoring';
