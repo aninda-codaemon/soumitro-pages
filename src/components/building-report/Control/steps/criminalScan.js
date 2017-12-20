@@ -31,12 +31,17 @@ function onScanningCriminalDataStart(stepCompleted) {
   $.when(initialProgress).done(stepCompleted);
 }
 
-const criminalScan = Object.assign({}, Step);
-criminalScan.init({
-  title: 'Criminal Database Search',
-  $elem: $('#scanningCriminal'),
-  duration: 32,
-  onStart: onScanningCriminalDataStart,
-});
+function createComponent(options = {}) {
+  const criminalScan = Object.assign({}, Step);
+  let newConfig = Object.assign({
+    title: 'Criminal Database Search',
+    $elem: $('#scanningCriminal'),
+    duration: 32,
+    onStart: onScanningCriminalDataStart,
+  }, options);
 
-export { criminalScan };
+  criminalScan.init(newConfig);
+  return criminalScan;
+}
+
+export default createComponent;

@@ -4,11 +4,15 @@ function onConfirmDataStart(stepCompleted) {
   $('#confirmData .main-btn').on('click', stepCompleted);
 }
 
-const confirmData = Object.assign({}, Step);
-confirmData.init({
-  title: 'Public Records Review',
-  $elem: $('#confirmData'),
-  onStart: onConfirmDataStart,
-});
+function createComponent(options = {}) {
+  const confirmData = Object.assign({}, Step);
+  let newConfig = Object.assign({
+    title: 'Public Records Review',
+    $elem: $('#confirmData'),
+    onStart: onConfirmDataStart,
+  }, options);
+  confirmData.init(newConfig);
+  return confirmData;
+}
 
-export { confirmData };
+export default createComponent;

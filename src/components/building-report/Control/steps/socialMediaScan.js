@@ -36,12 +36,17 @@ function onScanningSocialMediaStart(stepCompleted) {
   });
 }
 
-const socialMediaScan = Object.assign({}, Step);
-socialMediaScan.init({
-  title: 'Social Media Scan',
-  $elem: $('#scanningSocialMedia'),
-  duration: 32,
-  onStart: onScanningSocialMediaStart,
-});
+function createComponent(options = {}) {
+  const socialMediaScan = Object.assign({}, Step);
+  let newConfig = Object.assign({
+    title: 'Social Media Scan',
+    $elem: $('#scanningSocialMedia'),
+    duration: 32,
+    onStart: onScanningSocialMediaStart,
+  }, options);
 
-export { socialMediaScan };
+  socialMediaScan.init(newConfig);
+  return socialMediaScan;
+}
+
+export default createComponent;

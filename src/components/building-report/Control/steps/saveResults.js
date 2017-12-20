@@ -15,17 +15,20 @@ function onSaveResultsStart(stepCompleted) {
   img.attr('src', img.attr('data-src'));
 }
 
-const saveResults = Object.assign({}, Step);
-const skipSavingResultModal = true;
-saveResults.init({
-  title: 'Save Results',
-  $elem: $('#gen-report-modal6'),
-  duration: 18,
-  onStart: onSaveResultsStart,
-  $modal: $('#externalModal'),
-  openModal: (stepCompleted, duration) =>
-    showExternalModal(stepCompleted, duration, SAVE_RESULTS_INDEX, skipSavingResultModal),
-  closeModal: () => hideExternalModal(SAVE_RESULTS_INDEX),
-});
-
-export { saveResults };
+function createComponent(options = {}) {
+  const saveResults = Object.assign({}, Step);
+  const skipSavingResultModal = true;
+  let newConfig = Object.assign({
+    title: 'Save Results',
+    $elem: $('#gen-report-modal6'),
+    duration: 18,
+    onStart: onSaveResultsStart,
+    $modal: $('#externalModal'),
+    openModal: (stepCompleted, duration) =>
+      showExternalModal(stepCompleted, duration, SAVE_RESULTS_INDEX, skipSavingResultModal),
+    closeModal: () => hideExternalModal(SAVE_RESULTS_INDEX),
+  }, options);
+  saveResults.init(newConfig);
+  return saveResults;
+}
+export default createComponent;

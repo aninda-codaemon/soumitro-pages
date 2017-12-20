@@ -30,16 +30,21 @@ function onRelativesModalStart(stepCompleted) {
   });
 }
 
-const relatives = Object.assign({}, Step);
-relatives.init({
-  title: 'Choose Relatives',
-  $elem: $('#gen-report-modal2'),
-  duration: 20,
-  onStart: onRelativesModalStart,
-  $modal: $('#loadingModal'),
-  openModal: (stepCompleted, duration) =>
-    showExternalLoading(stepCompleted, duration, CHECKING_SESSION_INDEX),
-  closeModal: () => hideExternalLoading(CHECKING_SESSION_INDEX),
-});
+function createComponent(options = {}) {
+  const relatives = Object.assign({}, Step);
+  let newConfig = Object.assign({
+    title: 'Choose Relatives',
+    $elem: $('#gen-report-modal2'),
+    duration: 20,
+    onStart: onRelativesModalStart,
+    $modal: $('#loadingModal'),
+    openModal: (stepCompleted, duration) =>
+      showExternalLoading(stepCompleted, duration, CHECKING_SESSION_INDEX),
+    closeModal: () => hideExternalLoading(CHECKING_SESSION_INDEX),
+  }, options);
 
-export { relatives };
+  relatives.init(newConfig);
+  return relatives;
+}
+
+export default createComponent;

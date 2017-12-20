@@ -26,17 +26,21 @@ function onFcraConfirmationStart(stepCompleted) {
   });
 }
 
-const confirmFCRA = Object.assign({}, Step);
-confirmFCRA.init({
-  title: 'Please Confirm',
-  trackMsg: 'Viewed FCRA Modal',
-  $elem: $('#gen-report-modal11'),
-  duration: 32,
-  onStart: onFcraConfirmationStart,
-  $modal: $('#loadingModal'),
-  openModal: (stepCompleted, duration) =>
-    showExternalLoading(stepCompleted, duration, CONTINUE_SESSION_INDEX),
-  closeModal: () => hideExternalLoading(CONTINUE_SESSION_INDEX),
-});
+function createComponent(options = {}) {
+  const confirmFCRA = Object.assign({}, Step);
+  let newConfig = Object.assign({
+    title: 'Please Confirm',
+    trackMsg: 'Viewed FCRA Modal',
+    $elem: $('#gen-report-modal11'),
+    duration: 32,
+    onStart: onFcraConfirmationStart,
+    $modal: $('#loadingModal'),
+    openModal: (stepCompleted, duration) =>
+      showExternalLoading(stepCompleted, duration, CONTINUE_SESSION_INDEX),
+    closeModal: () => hideExternalLoading(CONTINUE_SESSION_INDEX),
+  }, options);
+  confirmFCRA.init(newConfig);
+  return confirmFCRA;
+}
 
-export { confirmFCRA };
+export default createComponent;

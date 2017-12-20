@@ -4,11 +4,16 @@ function onPreparingMonitoringStart(stepCompleted) {
   $('#ongoing-notifications').on('click', stepCompleted);
 }
 
-const preparingMonitoring = Object.assign({}, Step);
-preparingMonitoring.init({
-  title: 'Preparing Monitoring',
-  $elem: $('#gen-report-modal4'),
-  onStart: onPreparingMonitoringStart,
-});
+function createComponent(options = {}) {
+  const preparingMonitoring = Object.assign({}, Step);
+  let newConfig = Object.assign({
+    title: 'Preparing Monitoring',
+    $elem: $('#gen-report-modal4'),
+    onStart: onPreparingMonitoringStart,
+  }, options);
 
-export { preparingMonitoring };
+  preparingMonitoring.init(newConfig);
+  return preparingMonitoring;
+}
+
+export default createComponent;
