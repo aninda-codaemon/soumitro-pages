@@ -1,10 +1,10 @@
-import { addRelativesModal, wizard } from 'components/building-report';
+import { addRelativesModal, createWizard } from 'components/building-report';
 import amplify from 'utils/amplifyStore';
 import { initialize } from '../Control/js/runner';
 
 const buildingReportInstance = {
-  addRelativesModal,
-  wizard,
+  addRelativesModal: () => addRelativesModal(),
+  wizard: createWizard(),
 };
 const shouldIncludeRelatives = true;
 initialize(buildingReportInstance, shouldIncludeRelatives);
