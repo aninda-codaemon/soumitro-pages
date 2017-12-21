@@ -2,16 +2,19 @@ import 'jquery-validation';
 
 import Section from 'components/wizard/section';
 import WizardManager from 'components/wizard/manager';
-import popularUseCases from './Control/steps/popularUseCases';
-import noteOnUserComments from './Control/steps/noteOnUserComments';
-import preparingMonitoring from './Control/steps/preparingMonitoring';
-import confirmData from './Control/steps/confirmData';
-import criminalScan from './Control/steps/criminalScan';
-import socialMediaScan from './Control/steps/socialMediaScan';
-import confirmFCRA from './Control/steps/fcraConfirmation';
-import saveResults from './Control/steps/saveResults';
-import generatingReport from './Control/steps/generatingReport';
-import relatives from './Control/steps/relatives';
+
+import {
+  confirmData,
+  confirmFCRA,
+  criminalScan,
+  generatingReport,
+  noteOnUserComments,
+  popularUseCases,
+  preparingMonitoring,
+  relatives,
+  saveResults,
+  socialMediaScan,
+} from './Control/steps';
 
 function showSubHeadlines(totalSections) {
   var containerSelector = $('.wizard-content');
