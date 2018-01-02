@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>folder-lock</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M99.9997,120.0979 L19.9997,120.0979 C8.9547,120.0979 -0.0003,111.1439 -0.0003,100.0979 L-0.0003,20.0979 C-0.0003,9.0529 8.9547,0.0979 19.9997,0.0979 L99.9997,0.0979 C111.0457,0.0979 119.9997,9.0529 119.9997,20.0979 L119.9997,100.0979 C119.9997,111.1439 111.0457,120.0979 99.9997,120.0979" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="folder-lock" transform="translate(0.000000, -1.000000)">
+            <g id="Group-3" transform="translate(0.000000, 0.902000)">
+                <g id="Fill-4">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#7664C5" xlink:href="#path-1"></use>
+                    <polygon fill-opacity="0.09" fill="#000000" mask="url(#mask-2)" points="79.5349 161.0002 14.8879 96.3522 15.8389 25.0832 46.5709 25.0832 58.4089 30.9692 88.0419 28.9822 102.7759 36.0152 160.7179 96.5112"></polygon>
+                </g>
+            </g>
+            <polyline id="Stroke-7" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="84.9987 93.9857 16.9087 93.9857 16.9087 27.4847 48.7257 27.4847 56.3207 39.0497 99.9087 39.0497 99.9087 64.5447"></polyline>
+            <polyline id="Stroke-9" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" points="91.5417 32.2846 96.2087 32.2846 96.2087 39.2496"></polyline>
+            <polyline id="Stroke-11" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" points="52.2419 32.2846 88.0419 29.8846 88.0419 39.0496"></polyline>
+            <path d="M107.1315,97.5648 L87.9435,97.5648 C87.4125,97.5648 86.9835,97.1348 86.9835,96.6048 L86.9835,78.9248 C86.9835,78.3948 87.4125,77.9648 87.9435,77.9648 L107.1315,77.9648 C107.6615,77.9648 108.0915,78.3948 108.0915,78.9248 L108.0915,96.6048 C108.0915,97.1348 107.6615,97.5648 107.1315,97.5648 Z" id="Stroke-13" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M104.8913,76.6229 L104.8913,72.7609 C104.8913,68.6739 101.5783,65.3609 97.4913,65.3609 C93.4043,65.3609 90.0913,68.6739 90.0913,72.7609 L90.0913,76.6229" id="Stroke-15" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>
