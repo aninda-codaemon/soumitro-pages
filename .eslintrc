@@ -15,6 +15,9 @@
   },
   "globals": {
     "$": true,
-    "jQuery": true
+    "jQuery": true,
+    "describe": true,
+    "it": true,
+    "expect": true
   }
 }

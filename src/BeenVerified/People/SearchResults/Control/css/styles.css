@@ -354,6 +354,10 @@ html.touchevents .navbar-default .navbar-toggle:focus {
   margin-bottom: 40px;
 }
 
+.header-search-bar label.error {
+  margin-top: 5px;
+}
+
 .header-search .search-filter {
   display: none;
   margin-top: 8px;
