@@ -90,7 +90,6 @@ const initializeResizeHandler = (determineCollapse, determineLayoutState) => {
   determineLayoutState();
   determineCollapse();
   $('[data-toggle="tooltip"]').tooltip();
-  $('.search-toggled').css({ display: 'none' });
 
   $(window).on('resize', function onResize() {
     var currentWidth = $(this).width();
