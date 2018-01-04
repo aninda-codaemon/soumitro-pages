@@ -1247,7 +1247,9 @@ td.addressCheck {
   padding: 0 15px 15px 15px;
 }
 
-#confirmData, #scanningCriminal, #search-people {
+#confirmData,
+#scanningCriminal,
+#search-people {
   margin-top: 10px;
 }
 
@@ -1705,8 +1707,10 @@ p.log-load {
 /* === 6 == FCRA ================ */
 
 #gen-report-modal11 {
-  margin-top: 10px;
   font-family: 'Lato', Arial, Helvetica, sans-serif !important;
+
+  margin-top: 10px;
+
   text-align: center;
   vertical-align: top;
 }
@@ -1915,8 +1919,9 @@ label.fcraCheckbox-wrapper {
 
 #email_suggestion {
   display: none;
-  text-decoration: underline;
+
   cursor: pointer;
+  text-decoration: underline;
 }
 
 
@@ -3148,6 +3153,10 @@ h6.create-login {
   }
 
   /* 10 - Search Behind Report */
+  .gen-modal-5-wrapper {
+    margin: 0;
+  }
+
 
   #gen-report-modal5 h3 {
     font-size: 18px;
