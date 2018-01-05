@@ -40,10 +40,13 @@ function generatingReportStart(stepCompleted) {
   const { duration, transitionDelay } = this;
   const newDuration = (duration / maxLoop) - transitionDelay;
   let currentLoop = 0;
+  const sampleReportDiv = $('.sample-report-wrapper');
 
   $('#crt-acct-warn-confirm').on('click', () => {
     stepCompleted();
   });
+
+  sampleReportDiv.removeClass('hidden');
 
   function animateProgress() {
     progressBar.animate({ width: '100%' }, newDuration, 'linear', () => {
