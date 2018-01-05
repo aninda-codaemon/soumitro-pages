@@ -1,9 +1,22 @@
 #wizModal {
-  width: auto;
   display: inline-block;
+
+  width: auto;
 }
 
-.sample-report {
+.sample-report-wrapper {
   display: inline-block;
+
+  text-align: left;
   vertical-align: top;
+}
+
+.sample-report-image {
+  overflow-y: scroll;
+
+  height: 400px;
+}
+
+.sample-report-image img {
+  width: 262px;
 }
