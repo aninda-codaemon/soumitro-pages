@@ -1,0 +1,9 @@
+#wizModal {
+  width: auto;
+  display: inline-block;
+}
+
+.sample-report {
+  display: inline-block;
+  vertical-align: top;
+}
