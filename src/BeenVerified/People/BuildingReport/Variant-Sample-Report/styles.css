@@ -12,10 +12,6 @@
   max-width: 100%;
 }
 
-.sample-report-width-left {
-  width: 600px !important;
-}
-
 .sample-report-wrapper {
   display: inline-block;
 
@@ -51,11 +47,23 @@
   width: 262px;
 }
 
-/* @media screen and (min-width: 768px) and (max-width: 1577px) {
-  #wizModal .modal-content {
-    width: 600px !important;
+@media screen and (min-width: 992px) {
+  .sample-report-width-left {
+    width: 650px !important;
   }
-} */
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  /* #wizModal .modal-content {
+    width: 600px !important;
+  } */
+  .sample-report-width-left {
+    width: 460px !important;
+  }
+  .sample-report-image img {
+    width: 240px;
+  }
+}
 #wizModal .modal-content {
   max-width: 100%;
 }

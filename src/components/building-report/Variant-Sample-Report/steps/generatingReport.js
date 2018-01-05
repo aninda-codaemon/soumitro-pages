@@ -49,6 +49,7 @@ function generatingReportStart(stepCompleted) {
   $('#wizModal .modal-content').removeClass('set-width-850').addClass('sample-report-width-left');
   $('#wizModal .modal-header').removeClass('set-width-850');
   $('#wizModal .gen-modal-5-wrapper').addClass('sample-report-width-left');
+  $('.mod-footer').css('margin', '0');
 
   sampleReportDiv.removeClass('hidden');
 
