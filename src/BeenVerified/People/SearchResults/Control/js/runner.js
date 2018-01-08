@@ -110,7 +110,7 @@ const renderResults = () => {
   const teaserData = amplify.store('teaserData');
   const queryData = amplify.store('query');
 
-  if (!teaserData || teaserData.recordCount === 0) {
+  if (!teaserData || parseInt(teaserData.recordCount, 10) === 0) {
     showNoResultsPanel();
     return;
   }
