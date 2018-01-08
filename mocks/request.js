@@ -1,21 +1,20 @@
-import _find from 'lodash/find';
-import mockStats from './api/stats';
-import mockTeaser from './api/teaser';
-import mockExtraTeaser from './api/extraTeaser';
+import fetchJsonp from 'fetch-jsonp';
 
-const registeredUrls = [
-  ...mockStats,
-  ...mockTeaser,
-  ...mockExtraTeaser,
-];
-const SIMULATE_DELAY = 1000;
-
-const get = requestUrl => new Promise((resolve) => {
-  const result = _find(registeredUrls, ({ url }) => requestUrl.indexOf(url) >= 0);
-  setTimeout(() => {
-    resolve(result.response || result.responses[1]);
-  }, SIMULATE_DELAY);
-});
+const get = (url, callbackFn) => {
+  var cachedReponse = sessionStorage.getItem(url);
+  if (cachedReponse) {
+    return Promise.resolve(JSON.parse(cachedReponse));
+  }
+  return fetchJsonp(url, {
+    mode: 'no-cors',
+    jsonpCallbackFunction: callbackFn,
+  })
+    .then(response => response.json())
+    .then((response) => {
+      sessionStorage.setItem(url, JSON.stringify(response));
+      return response;
+    });
+};
 
 export {
   get,
