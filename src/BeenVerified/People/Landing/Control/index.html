@@ -47,61 +47,27 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-  <!-- Video Modal
-  --------------------------------------------------------------------->
-  <div class="modal fade" id="video-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-          <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">BeenVerified.com</h4>
-          </div>
-          <div class="modal-body">
-              <!-- <iframe src="https://www.youtube.com/embed/Kx1_38Bs4Us" allowfullscreen="" frameborder="0" height="315" width="100%"></iframe> -->
-              <iframe id="vimeoplayer" src="https://player.vimeo.com/video/143405917?api=1&player_id=vimeoplayer" width="100%" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/143405917">Welcome to BeenVerified!</a> from <a href="https://vimeo.com/user2341667">BeenVerified</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-          </div>
-      </div>
-    </div>
-  </div>
-
-  <header id="header" >
-  <nav id="topWrapper" class="navbar navbar-default navbar-static-top">
+<header id="header">
+  <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
       <div class="row">
         <div class="col-sm-3">
           <div class="navbar-header">
-              <span class="navbar-brand">
-                    <a href="https://www.beenverified.com/"><div class="navbar-logo"> <img src="img/bv-logo-white.svg" alt="img/bv-logo-white.png"/>
-                    </div></a>
-                </span>
-            <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-              <span id="nav-icon-closed">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </span>
-              <span id="nav-icon-open" class="">
-                <span class="glyphicon glyphicon-menu-up"></span>
-              </span>
-            </button>
-            <span class="navbar-brand">
-                <div class="navbar-logo">
-                </div>
-            </span>
+            <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <div class="navbar-logo">
+              <img src="img/bv-logo-white.svg" alt="img/bv-logo-white.png"/>
+            </div>
+
           </div>
         </div>
         <div class="col-sm-9">
-          <div id="navCollapse" class="navbar-collapse collapse">
+          <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <p class="nav-phone text-center">Questions? <a href="tel:+18885795910">1-888-579-5910</a></p>
+                <p class="nav-phone text-center">Questions? 1-888-579-5910</p>
               </li>
               <li class="nav-btn">
                 <a href="//www.beenverified.com/login" class="btn btn-block btn-login">Log In</a>
-              </li>
-              <li class="nav-btn">
-                <a href="https://www.beenverified.com/lp/32fc4f/4/subscribe" class="btn btn-block btn-register" rel="nofollow">Sign Up</a>
               </li>
             </ul>
           </div>
@@ -109,47 +75,50 @@
       </div>
     </div>
   </nav>
-  <div class="seal container hidden-xs">
-  <img src="img/10YearSeal.svg"/>
-  </div>
   <div class="home-search">
-    <div class="container trigger">
+    <div class="container">
       <div class="box-header">
         <div class="col-xs-12 text-center" data-bv-content>
-            <div class="box-header" data-bv-ref="default">
-            <div class="row">
-                <h1 class="col-xs-9 col-sm-12">Search <span class="hidden-xs">People &amp;</span> Public Records</h1>
-                <img class="visible-xs" src="img/10YearSeal.svg"/>
-                <p class="hidden-xs">Try searching a friend, relative or even yourself. The choice is yours!</p>
-                </div>
+			<div class="box-text-wrap" data-bv-ref="default">
+                <h1 style="font-size:55px">Looking to Find Out About Someone?</h1>
+                <p>So have the 1,000,000+ people who have tried BeenVerified.</p>
             </div>
-        </div> <!--data-bv-content-->
+        </div>
       </div>
       <div class="row">
         <div class="col-lg-10 col-lg-offset-1">
-          <div id="home-search-carousel" class="search-form" data-interval="false">
+          <div id="home-search-carousel" class="search-form carousel slide" data-interval="false">
+            <div class="header-cta hidden-xs">
+              <div class="header-cta-inside">
+                <span class="hidden-xs"><b>Start Here</b> -  Try searching a friend, relative, date, neighbor, or even yourself</span>
+              </div>
+            </div>
               <div class="row">
-                  <div class="col-sm-8">
-                      <div class="row home-carousel-wrapper">
-                          <div class="col-xs-3 text-center">
-                              <a href="https://www.beenverified.com/" id="search-type-people" class="home-carousel-indicator carousel-indicator-people active" data-target="#home-search-carousel" data-slide-to="0">People<span class="hidden-xs hidden-sm hidden-md"> Search</span>
+                  <div class="col-sm-7">
+                      <div class="home-carousel-wrapper">
+                          <div class="home-carousel-indicator-wrapper">
+                              <a href="#" id="search-type-people" class="home-carousel-indicator carousel-indicator-people active" data-target="#home-search-carousel" data-slide-to="0">People
+                              <span class="carrot-cta hidden"></span>
                              </a>
                          </div>
-                          <div class="col-xs-3 text-center">
-                            <a href="https://www.beenverified.com/reverse-phone/" id="search-type-phone" class="home-carousel-indicator" data-target="#home-search-carousel" data-slide-to="1">Phone<span class="hidden-xs hidden-sm hidden-md"> Lookup</span>
+                          <div class="home-carousel-indicator-wrapper">
+                              <a href="#" id="search-type-phone" class="home-carousel-indicator carousel-indicator-phone" data-target="#home-search-carousel" data-slide-to="1">Phone
+                              <span class="carrot-cta hidden"></span>
                               </a>
                           </div>
-                          <div class="col-xs-3 text-center">
-                            <a href="https://www.beenverified.com/email-search/" id="search-type-email" class="home-carousel-indicator" data-target="#home-search-carousel" data-slide-to="2">Email<span class="hidden-xs hidden-sm hidden-md"> Lookup</span>
+                          <div class="home-carousel-indicator-wrapper">
+                              <a href="#" id="search-type-email" class="home-carousel-indicator carousel-indicator-email" data-target="#home-search-carousel" data-slide-to="2">Email
+                              <span class="carrot-cta hidden"></span>
                               </a>
                           </div>
-                          <div class="col-xs-3 text-center no-pad-left">
-                            <a href="https://www.beenverified.com/reverse-address-lookup/" id="search-type-property" class="home-carousel-indicator" data-target="#home-search-carousel" data-slide-to="3">Address <span class="hidden-xs hidden-sm hidden-md"> Lookup</span>
+                          <div class="home-carousel-indicator-wrapper">
+                              <a href="#" id="search-type-property" class="home-carousel-indicator carousel-indicator-property" data-target="#home-search-carousel" data-slide-to="3">Property
+                              <span class="carrot-cta hidden"></span>
                               </a>
                           </div>
                       </div>
                   </div>
-                  <div class="col-sm-4 text-right privacy hidden-xs"> <img src="img/lock-opt.png" /> <span> We respect your privacy.</span> </div>
+                  <div class="col-sm-5 text-right no-pad-left privacy hidden-xs"> <img src="img/lock.png" /> <span> We respect your privacy</span> <img src="img/norton.png" class="norton"/></div>
               </div>
               <div class="carousel-inner">
                   <!-- Names Search -->
@@ -161,13 +130,12 @@
                                       <div class="row">
                                           <div class="col-sm-4 no-pad-right">
                                               <label class="cross-browser" for="fn">First Name</label>
-                                              <input type="text" name="fn" placeholder="First Name" id="fn" class="form-control first-input focus-me" data-placeholder-focus="false">
+                                              <input type="text" name="fn" placeholder="First Name" id="fn" class="form-control first-input focus-me">
                                               <!--<label for="fn" class="error"></label>-->
-
                                           </div>
                                           <div class="col-sm-4 no-pad-left no-pad-right">
                                               <label class="cross-browser" for="ln">Last Name</label>
-                                              <input type="text" name="ln" placeholder="Last Name" id="ln" class="form-control " data-placeholder-focus="false"/>
+                                              <input type="text" name="ln" placeholder="Last Name" id="ln" class="form-control "/>
                                               <!--<label for="ln" class="error"></label>-->
                                           </div>
                                           <div class="col-sm-4 no-pad-left no-pad-right">
@@ -242,11 +210,11 @@
                   <!-- Phone Search -->
                   <div class="item">
                       <!-- Previous link https://www.beenverified.com/reverse-phone-search -->
-                      <form action="https://https://www.beenverified.com/lp/596a06/2/loading" id="header-search-phone" rel="nofollow" class="header-search" role="form" method="get" name="record_search_form">
+                      <form action="https://www.beenverified.com/lp/596a06/2/loading" id="header-search-phone" class="header-search" role="form" method="get" name="record_search_form">
                           <div class="row">
                               <div class="col-sm-9 no-pad-right">
                                   <label class="cross-browser" for="phone">Phone Number</label>
-                                  <input type="tel" maxlength="16" name="phone" placeholder="Enter Phone Number" id="phone" class="form-control first-input" data-placeholder-focus="false">
+                                  <input type="tel" maxlength="16" name="phone" placeholder="Enter Phone Number" id="phone" class="form-control first-input">
                                   <!--<label for="phone" class="error"></label>-->
                               </div>
                               <div class="col-sm-3 no-pad-left">
@@ -259,11 +227,11 @@
 
                   <!-- Email Search -->
                   <div class="item">
-                    <form action="https://www.beenverified.com/lp/34f493/2/loading" id="header-search-email" rel="nofollow" class="header-search" role="form" method="get" name="email_search">
+                    <form action="https://www.beenverified.com/lp/c38ceb/2/loading" id="header-search-email" class="header-search" role="form" method="get" name="email_search">
                         <div class="row">
                             <div class="col-sm-9 col-no-padding no-pad-right">
                                 <label class="cross-browser" for="emailaddress">Email Address</label>
-                                <input type="email" name="emailaddress" placeholder="Enter Email Address" id="emailaddress" class="form-control first-input" data-placeholder-focus="false">
+                                <input type="email" name="emailaddress" placeholder="Enter Email Address" id="emailaddress" class="form-control first-input">
                                 <!--<label for="emailaddress" class="error"></label>-->
                             </div>
                             <div class="col-sm-3 no-pad-left">
@@ -276,11 +244,11 @@
 
                   <!-- Property Search -->
                   <div class="item">
-                    <form action="https://www.beenverified.com/lp/411a69/2/loading" id="header-search-property" rel="nofollow" class="header-search" role="form" method="get" name="property_search">
+                    <form action="https://www.beenverified.com/lp/7c7e9c/2/loading" id="header-search-property" class="header-search" role="form" method="get" name="property_search">
                         <div class="row">
                             <div class="col-sm-9 no-pad-right">
                                 <label class="cross-browser" for="fullAddress">Street Address</label>
-                                <input type="text" name="address" placeholder="Enter Address" id="fullAddress" class="form-control first-input" required="required" data-placeholder-focus="false">
+                                <input type="text" name="address" placeholder="Enter Address" id="fullAddress" class="form-control first-input" required="required">
                                 <!--<label for="address" class="error"></label>-->
                             </div>
                             <div class="col-sm-3 no-pad-left">
@@ -291,308 +259,70 @@
                     </form>
                   </div>
               </div>
-             <p class="pro-search">&nbsp;&nbsp;<a href="https://www.neighborwho.com" target="_blank">Try our new property site: <span><strong>NeighborWho.com</strong></span></a></p>
-          </div><!--END home-search-carousel-->
-          <div class="logos text-center hidden-xs">
-              <img src="img/press-opt.png" class="press-logos"/>
+               <div class="col-sm-4 text-center privacy visible-xs"> <img src="img/lock.png" /> <span> We respect your privacy</span> <img src="img/norton.png" class="norton"/></div>
+          </div>
+          <div class="logos text-center">
+              <img src="img/press.png" align="advertisement" class=""/>
           </div>
         </div>
       </div>
-      <div id="counter" class="center-block text-center">
+      <div id="counter" class="center-block text-center hide">
               <span class="counter-number text-center timer-wrapper">
                   <span class="timer-digit-group">
-                      <span id="tick_0" class="timer-digit-single">4</span><span id="tick_1" class="timer-digit-single">7</span><span id="tick_2" class="timer-digit-single">2</span><span class="timer-digit-single">,</span><span id="tick_3" class="timer-digit-single">8</span><span id="tick_4" class="timer-digit-single">1</span><span id="tick_5" class="timer-digit-single">5</span><span class="timer-digit-single">,</span><span id="tick_6" class="timer-digit-single">6</span><span id="tick_7" class="timer-digit-single">2</span><span id="tick_8" class="timer-digit-single">2</span>
+                      <span id="tick_0" class="timer-digit-single">4</span><span id="tick_1" class="timer-digit-single">7</span><span class="timer-digit-single">,</span><span id="tick_2" class="timer-digit-single">2</span><span id="tick_3" class="timer-digit-single">8</span><span id="tick_4" class="timer-digit-single">1</span><span class="timer-digit-single">,</span><span id="tick_5" class="timer-digit-single">5</span><span id="tick_6" class="timer-digit-single">6</span><span id="tick_7" class="timer-digit-single">2</span>
                   </span><!-- /.timer-digit-group -->
               </span> <!-- /.timer-wrapper -->
-          <span class="counter-text text-center">People Searches & Counting</span>
+          <span class="counter-text text-center">Reports & Counting</span>
       </div>
     </div>
   </div>
 </header>
-
-<section id="background-checks">
-    <div class="container">
-        <div class="box-header">
-          <h2 class="huge">What is People Search?</h2>
-          <p class="hidden-xs">Learn why millions of people search BeenVerified</p>
-        </div>
-        <div class="box-text ">
-          <div class="row">
-            <div class="col-sm-12">
-              <p>
-                Are you searching for someone? People search refers to an online search meant to locate an individual. With BeenVerified, you can comb multiple databases of publicly available information, including government records, social media records, and much more.<span class="hidden-xs hidden-sm hidden-md"> Even though the data is publicly available, BeenVerified’s people search might uncover information that you can’t find on Google.</span>
-              </p>
-              <br class="hidden-xs hidden-sm hidden-md">
-              <p class="hidden-xs hidden-sm hidden-md">
-                Your search can return basic information about a person including their age, current and prior addresses, family members, phone numbers or email addresses. Plus, you can sometimes find social media profiles, criminal records, court records, bankruptcy records, online photos and much more. All you need to do to get started is enter a first and last name in the search bar, and then confirm that we’ve found the person you’re looking for. If we have data on the person you’re looking for, we’ll uncover their data in minutes.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="box-contents trigger">
-          <div class="row">
-            <div class="col-sm-7 col-md-5">
-                <div class="row">
-                    <div class="col-xs-8 col-sm-12 screenshot-small-wrapper">
-                      <div class="animate bullet-one">
-                        <h2>Search Anyone, Anytime</h2>
-                        <p>Looking for someone? Our intuitive public records search engine makes it easy. See our "<a href="//www.beenverified.com/about/dos-donts/">Do's and Don'ts</a>."</p>
-                      </div>
-                      <div class="animate bullet-two">
-                        <h2>Affordable &amp; Accessible</h2>
-                        <p>We don't want you to ask yourself if it's "worth it" to run a search.</p>
-                      </div>
-                      <div class="animate bullet-three">
-                        <h2>Respect For Privacy</h2>
-                        <p>A privacy-friendly public record search is not an oxymoron. <a href="//www.beenverified.com/faq/privacy/">Learn how we do it.</a></p>
-                      </div>
-                      <div class="animate bullet-four">
-                        <h2>Public Records in One Easy Report</h2>
-                        <p>Search for what you are looking for and get all the data we find in one single report.</p>
-                      </div>
-                    </div>
-                    <div class="visible-xs col-xs-4 screenshot-small-wrapper">
-                        <img src="img/screenshot-sm-opt.png" alt="" class="animate screenshot screenshot-small"/>
-                    </div>
-                </div>
-                <div class="row box-button">
-                  <a href="//www.beenverified.com/about/bv-vs-comp/" class="btn btn-block btn-default btn-basic">Learn About Us</a>
-                </div>
-            </div>
-            <div class="col-sm-5 col-md-6 col-md-offset-1 hidden-xs text-center">
-                <img src="img/Report-Final.png" class="animate screenshot img-responsive" alt="" />
-            </div>
-          </div>
-        </div>
-    </div>
-</section>
-
-<section id="bvpro" class="bvpro-container">
-  <div class="container">
-    <div class="box-header text-center">
-      <h2 class="huge"> BeenVerified for Business </h2>
-      <p> Imagine the power of BeenVerified's massive public record database working for your business. That's BV Pro.</p>
-    </div>
-    <div class="box-contents">
-      <div class="row">
-        <div class="col-sm-6 col-xs-12">
-          <div class="row">
-            <div class="col-xs-5 col-md-6 bvproicon">
-              <img src="img/bvpro.svg" />
-            </div>
-            <div class="col-xs-7 col-md-6">
-              <h2> Why BV Pro?</h2>
-              <ul>
-                <li>Enterprise APIs</li>
-                <li>Perfect for Teams</li>
-                <li>Batch Processing</li>
-                <li>Customizable</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-xs-12">
-          <div class="row">
-            <div class="col-xs-5 col-md-5 bvproicon">
-              <img src="img/Whatisitimg.svg" />
-            </div>
-            <div class="col-xs-7 col-md-6">
-              <h2> What is it for?</h2>
-              <ul>
-                <li>Prevent Fraud</li>
-                <li>Scrub Records</li>
-                <li>Reach Customers</li>
-                <li>Client Relations</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> <!-- box contents -->
-    <div class="row text-center">
-      <a href="https://www.knowthycustomer.com/lp/22cc56/1/landing?utm_source=bvpro&pagetype=beenverified" class="btn btn-success btn-basic" rel="nofollow">Try BV Pro </a>
-    </div>
-    <div class="row text-center" style="padding-top:15px">
-      Not Sure? Check out our <a href="//www.beenverified.com/about/dos-donts/">“Do’s &amp; Don’ts”</a>
-    </div>
-
-  </div>
-<!-- </div> -->
-</section>
-
-
-</section>
-<section id="testimonials" class="testimonials-container">
-  <div class=" container">
-    <div class="box-header">
-      <h2 class="huge">Experience the BeenVerified Difference</h2>
-      <p class="hidden-xs">See what people like you are saying about BeenVerified</p>
-    </div>
-    <div class="box-contents">
-      <div class="row">
-        <div class="col-sm-6 col-md-5">
-            <div id="carousel-testimonials" class="carousel slide" data-ride="carousel" data-interval="false">
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <h2>Natasha, Oklahoma</h2>
-                        <h3>Nursing Student</h3>
-                        <div class="testi-contents testi-1">"My daughter recently went out for soccer. I decided it would be a good idea to run another player’s father through BeenVerified. Turns out this guy had been charged with indecent exposure and was on parole."</div>
-                    </div>
-                    <div class="item">
-                        <h2>Maryann, New Jersey</h2>
-                        <h3>Analyst</h3>
-                        <div class="testi-contents testi-2">"I used BeenVerified to check into a guy that I had met online. It turns out he had lied to me about where he lived and his family. Needless to say, thanks to BV I severed contact with him and have not heard from him since. Thank you BV!"</div>
-                    </div>
-                    <div class="item">
-                        <h2>Bob M, New Jersey</h2>
-                        <h3>Retired Detective</h3>
-                        <div class="testi-contents testi-3">"I am retired and have a ministry helping the dying and sick. I found a son and the mother was dying of cancer. She held on waiting for her son who had not been in touch for years."</div>
-                    </div>
-                    <div class="item">
-                        <h2>Rhonda, Missouri</h2>
-                        <h3>Caring Mom</h3>
-                        <div class="testi-contents testi-4">"I'm a single mother dating online and I use BeenVerified to help protect my family!"</div>
-                    </div>
-                </div>
-                <ul class="list-inline">
-                  <li data-target="#carousel-testimonials" data-slide-to="0" class="testimonial-photo active"><img src="img/testimonial-nat.png" /></li>
-                  <li data-target="#carousel-testimonials" data-slide-to="1" class="testimonial-photo"><img src="img/testimonial-mar.png" /></li>
-                  <li data-target="#carousel-testimonials" data-slide-to="2" class="testimonial-photo"><img src="img/testimonial-bob.png" /></li>
-                  <li data-target="#carousel-testimonials" data-slide-to="3" class="testimonial-photo"><img src="img/testimonial-rho.png" /></li>
-                </ul>
-            </div>
-          <a href="//www.beenverified.com/about/testimonials/" class="btn btn-default btn-block btn-basic">More Testimonials</a>
-        </div>
-        <div class="col-sm-6 col-md-5 col-md-offset-2 hidden-xs">
-            <div id="carousel-press" class="carousel slide" data-ride="carousel" data-interval="false">
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <h2>From the Press</h2>
-                        <h3>Gizmodo.com</h3>
-                        <div class="testi-contents press-1">"It found my photos on Flickr, my Amazon wishlist, my public Foursquare records, Vimeo, Picassa, and Stumbleupon accounts. It grabbed approximately twelve bajillion photos of me (with many, many false positives) and even more web links."</div>
-                    </div>
-                    <div class="item">
-                        <h2>From the Press</h2>
-                        <h3>U.S. News &amp; World Report</h3>
-                        <div class="testi-contents press-2">"BeenVerified easily and inexpensively provides access to public records information through its website and several mobile phone applications. No longer are large corporations the only ones who can afford background checks."</div>
-                    </div>
-                    <div class="item">
-                        <h2>From the Press</h2>
-                        <h3>NBC 6 Miami</h3>
-                        <div class="testi-contents press-3">"Instant information… Court documents, mortgage deeds, criminal records right in the palm of your hand."</div>
-                    </div>
-                </div>
-                <ul class="list-inline">
-                  <li data-target="#carousel-press" data-slide-to="0" class="testi-press active"><img src="img/testimonial-gizmodo-opt.png" /></li>
-                  <li data-target="#carousel-press" data-slide-to="1" class="testi-press"><img src="img/testimonial-usnews-opt.png" /></li>
-                  <li data-target="#carousel-press" data-slide-to="2" class="testi-press"><img src="img/testimonial-6miami-opt.png" /></li>
-                </ul>
-            </div>
-          <a href="//www.beenverified.com/press/" class="btn btn-default btn-block btn-basic">More Press Quotes</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="video" class="video-container">
-    <div class="inline-video trigger">
-      <img src="img/video-still.jpg"
-           class="inline-video__media"
-           data-video-URL="https://player.vimeo.com/external/143405917.hd.mp4?s=770c763cf4013dd076d07aa3308231db39e059ce&profile_id=113&api=1&player_id=inlinevideo"
-           data-video-width="1280"
-           data-video-height="720">
-      <a href="https://player.vimeo.com/external/143405917.hd.mp4?s=770c763cf4013dd076d07aa3308231db39e059ce&profile_id=113&api=1&player_id=inlinevideo" class="inline-video__play-trigger" id="inline-video__play-trigger"><img class="video-play-btn" src="img/video-play2.png" /></a>
-      <button type="button" class="inline-video__close-trigger" id="inline-video__close-trigger"><i class="glyphicon glyphicon-remove"></i></button>
-    </div>
-</section>
-
-<section id="app" class="slant">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-sm-push-6">
-                <div class="box-header">
-                    <h2 class="huge">Billions of Records at Your Fingertips</h2>
-                </div>
-                <div class="box-contents trigger">
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <p> With over 7,000,000 downloads so far, BeenVerified is the go-to choice for mobile public data access. </p>
-                            <div class="app-review-wrapper">
-                                <p>"Great App"&nbsp;&nbsp; <i class="animate star star-one glyphicon glyphicon-star"></i><i class="animate star star-two glyphicon glyphicon-star"></i><i class="animate star star-three glyphicon glyphicon-star"></i><i class="animate star star-four glyphicon glyphicon-star"></i><i class="animate star star-five glyphicon glyphicon-star"></i> </p>
-                                <p class="small">"BeenVerified is easy to use and provides the details needed for a reliable, accurate background check. Highly recommend!”
-                                    <span class="text-muted">- via the App Store</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row app-btn-wrapper">
-                        <div class="col-sm-6">
-                            <a href="https://itunes.apple.com/us/app/background-check-app/id342585873" class="app-button app-apple"><img src="img/app-apple.png" class="img-responsive" /></a>
-                        </div>
-                        <div class="col-sm-6">
-                            <a href="https://play.google.com/store/apps/details?id=com.beenverified.android" class="app-button app-google"><img src="img/app-google.png" data-alt-src="" class="img-responsive" /></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-sm-pull-6 text-center">
-              <div class="box-app-img">
-                <img src="img/app-one-opt.png" alt="" class="app-bundle-img app-one img-responsive center-block">
-                <img src="img/app-two-opt.png" alt="" class="app-bundle-img app-two img-responsive center-block">
-                <img src="img/app-three-opt.png" alt="" class="app-bundle-img app-three img-responsive center-block">
-                <img src="img/app-four-opt.png" alt="" class="app-bundle-img app-four img-responsive center-block">
-              </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="cta">
-  <p class="text-center"> <span>What are you waiting for?</span><a href="#" class="btn btn-success btn-basic backToTop">Search Someone</a></p>
-</section>
 <footer id="footer">
   <div class="container">
     <div class="row">
-        <div class="trigger customer-service-wrapper col-sm-4 col-sm-push-8">
-            <h4>“Excellent Support<span class="hidden-sm hidden-md"> &amp; Service</span>”</h4>
+        <div class="customer-service-wrapper col-sm-6 col-sm-offset-3 col-lg-4 col-lg-push-8 col-lg-offset-0">
+          <div>
+            <h4>“Excellent Support &amp; Service”</h4>
             <div class="row">
-              <div class="col-lg-4"> <i class="animate star star-one glyphicon glyphicon-star"></i><i class="animate star star-two glyphicon glyphicon-star"></i><i class="animate star star-three glyphicon glyphicon-star"></i><i class="animate star star-four glyphicon glyphicon-star"></i><i class="animate star star-five glyphicon glyphicon-star"></i> </div>
+              <div class="col-lg-4"> <img src="img/footer-rating.png"> </div>
               <div class="col-lg-6">
                 <p class="website">- via SiteJabber.com</p>
               </div>
             </div>
-            <p>
-              <span class="phone-number">
-                <a href="tel:+1-888-579-5910">1-888-579-5910</a>
-              </span>
-              <br/>
-              <span class="email-address">
-                <a href="mailto:support@beenverified.com">support@beenverified.com</a>
-              </span>
-              <br/>
-              Mon<span class="hidden-sm">day</span> - Fri<span class="hidden-sm">day</span>:	8 am - 10 pm est
-              <br/>
-              Sat<span class="hidden-sm">urday</span> - Sun<span class="hidden-sm">day</span>:	10 am - 8 pm est
-            </p>
-            <div class="carla-wrapper border-bottom">
-              <div class="row">
-                <div class="col-xs-8">
-                  <p class="carla-quote">"Our goal is to be quick, friendly and as helpful as possible."</p>
-                  <p class="carla-quote">- Dana, Customer Care</p>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>
+                        <span class="phone-number"><a href="tel:+1-888-579-5910">1-888-579-5910</a></span>
+                        <br/>
+                        <span class="email-address">
+                            <a href="mailto:support@beenverified.com">support@beenverified.com</a>
+                        </span>
+                        <br/>
+                        Monday - Friday	8 am - 10 pm est
+                        <br/>
+                        Saturday - Sunday	10 am - 8 pm est
+                    </p>
                 </div>
-
+            </div>
+            <div class="row">
+              <div class="col-lg-10 border-bottom">
+                <div class="row">
+                  <div class="col-xs-8">
+                    <p >"Our goal is to be quick and as helpful as possible."</p>
+                  </div>
+                  <div class="col-xs-4"> <img src="img/director.png" class="pull-right"> </div>
+                </div>
               </div>
             </div>
-            <!-- <div class="text-right">
-              <strike>Carla</strike>
-              <br/>
-              <i><strike>Director of Customer Care</strike></i>
-            </div> -->
+            <div class="row">
+              <div class="col-lg-10 text-right">
+                <p><span class="phone-number">Carla</span><br />
+                  <i>Director of Customer Care</i></p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-sm-8 col-sm-pull-4 footer-link-group xs-center">
+        <div class="col-lg-8 col-lg-pull-4 xs-center">
             <div class="row">
                 <div class="col-sm-4">
                     <h4>About Us</h4>
@@ -602,9 +332,7 @@
                         <li><a href="//www.beenverified.com/careers/">Careers</a></li>
                         <li><a href="//www.beenverified.com/about/leadership/">Leadership</a></li>
                         <li><a href="//www.beenverified.com/press/">Press</a></li>
-                        <li><a href="//www.beenverified.com/people/">White Pages</a></li>
-                        <li><a href="//www.beenverified.com/criminal-records/">Criminal Records</a></li>
-                        <li><a href="//www.beenverified.com/about/court-runner/">Court Runner</a></li>
+                        <li><a href="//www.beenverified.com/people/">People White Pages</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-4">
@@ -614,8 +342,8 @@
                         <li><a href="//www.beenverified.com/apps/ios/">For iPhone / iPad</a> - <a href="https://itunes.apple.com/us/app/background-check-app/id342585873?mt=8">Download</a></li>
                         <li><a href="//www.beenverified.com/apps/apple-watch/">For Apple Watch</a> - <a href="https://itunes.apple.com/us/app/background-check-app-beenverified/id342585873?mt=8">Download</a></li>
                         <li><a href="//www.beenverified.com/apps/android/">For Android</a> - <a href="https://market.android.com/details?id=com.beenverified.android&feature=search_result">Download</a></li>
-                        <li><a href="https://docs.google.com/a/beenverified.com/spreadsheet/viewform?formkey=dEU1elc5dDVoMElwYmlYUWQ0Wkxjbmc6MA" rel="nofollow">Developer API</a></li>
-                        <li><a href="//www.beenverified.com/bv-pro/">BV Pro</a></li>
+                        <li><a href="https://docs.google.com/a/beenverified.com/spreadsheet/viewform?formkey=dEU1elc5dDVoMElwYmlYUWQ0Wkxjbmc6MA">Developer API</a></li>
+                        <li><a href="https://www.beenverified.com/bv-pro/">BV Pro</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-4">
@@ -626,56 +354,54 @@
                         <li><a href="//www.beenverified.com/about/dos-donts/">Do's &amp; Don'ts</a></li>
                         <li><a href="//www.beenverified.com/faq/billing/">FAQ</a></li>
                         <li><a href="//www.beenverified.com/faq/opt-out/">Remove My Info</a></li>
-                      	<li><a href="//www.beenverified.com/affiliates/">Affiliates</a></li>
-                      	<li><a href="//www.beenverified.com/glossary/">Glossary</a></li>
-                        <li><a href="//www.beenverified.com/arrest-records/">Arrest Records</a></li>
+                        <li><a href="//www.beenverified.com/affiliates/">Affiliates</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="row social-links">
-        <div class="col-xs-2">
-            <a href="//twitter.com/beenverified">
-                <img src="img/tw-ico.png" class="">
-                <span class="hidden-xs">Twitter</span>
-            </a>
-        </div>
-        <div class="col-xs-2">
-            <a href="//www.facebook.com/BeenVerified">
-                <img src="img/fb-ico.png" class="">
-                <span class="hidden-xs">Facebook</span>
-            </a>
-        </div>
-        <div class="col-xs-2">
-            <a href="//plus.google.com/+beenverified/posts">
-                <img src="img/gplus-ico.png" class="">
-                <span class="hidden-xs">Google+</span>
-            </a>
-        </div>
-        <div class="col-xs-2">
-            <a href="//www.linkedin.com/company/beenverified-com">
-                <img src="img/li-ico.png" class="">
-                <span class="hidden-xs">LinkedIn</span>
-            </a>
-        </div>
-        <div class="col-xs-2">
-            <a href="//www.pinterest.com/beenverified/">
-                <img src="img/pin-ico.png" class="">
-                <span class="hidden-xs">Pinterest</span>
-            </a>
-        </div>
-        <div class="col-xs-2">
-            <a href="//www.beenverified.com/blog/">
-                <img src="img/bv-ico.png" class="">
-                <span class="hidden-xs">BV Blog</span>
-            </a>
+            <div class="row social-links">
+                <div class="col-xs-2">
+                    <a href="//twitter.com/beenverified">
+                        <img src="img/tw-ico.png" class="">
+                        <span class="hidden-xs">Twitter</span>
+                    </a>
+                </div>
+                <div class="col-xs-2">
+                    <a href="//www.facebook.com/BeenVerified">
+                        <img src="img/fb-ico.png" class="">
+                        <span class="hidden-xs">Facebook</span>
+                    </a>
+                </div>
+                <div class="col-xs-2">
+                    <a href="//plus.google.com/+beenverified/posts">
+                        <img src="img/gplus-ico.png" class="">
+                        <span class="hidden-xs">Google+</span>
+                    </a>
+                </div>
+                <div class="col-xs-2">
+                    <a href="//www.linkedin.com/company/beenverified-com">
+                        <img src="img/li-ico.png" class="">
+                        <span class="hidden-xs">LinkedIn</span>
+                    </a>
+                </div>
+                <div class="col-xs-2">
+                    <a href="//www.pinterest.com/beenverified/">
+                        <img src="img/pin-ico.png" class="">
+                        <span class="hidden-xs">Pinterest</span>
+                    </a>
+                </div>
+                <div class="col-xs-2">
+                    <a href="//www.beenverified.com/blog/">
+                        <img src="img/bv-ico.png" class="">
+                        <span class="hidden-xs">BV Blog</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
     <p class="disclaimer">Disclaimer: BeenVerified’s mission is to give people easy and affordable access to public record information. BeenVerified does not provide private investigator services, and is not a consumer reporting agency as defined by the Fair Credit Report Act because the information provided by BeenVerified is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses of BeenVerified, please review our <a href="//www.beenverified.com/about/dos-donts/">“Do’s &amp; Don’ts”</a> and our <a href="//www.beenverified.com/faq/terms-conditions/">Terms &amp; Conditions</a>. </p>
     <div class="row">
         <div class="col-sm-6">
-            <p class="xs-center"><a href="//www.beenverified.com">© <%= Date.today.year %> BeenVerified, Inc.</a>, all rights reserved. BeenVerified®, and the BeenVerified star mascot are registered trademarks of BeenVerified, Inc.</p>
+            <p class="xs-center"><a href="//www.beenverified.com">BeenVerified</a> © 2017 All Rights Reserved </p>
         </div>
         <div class="col-sm-6 text-right xs-center">
             <a href="//www.beenverified.com/faq/terms-conditions/">Terms &amp; Conditions</a> |
