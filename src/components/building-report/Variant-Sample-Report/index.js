@@ -12,7 +12,7 @@ import { confirmFCRA } from '../Control/steps/fcraConfirmation';
 import { confirmData } from '../Control/steps/confirmData';
 import { saveResults } from '../Control/steps/saveResults';
 import { preparingMonitoring } from '../Control/steps/preparingMonitoring';
-import { generatingReport } from './steps';
+import { generatingReport } from './steps/generatingReport';
 
 function showSubHeadlines(totalSections) {
   var containerSelector = $('.wizard-content');
