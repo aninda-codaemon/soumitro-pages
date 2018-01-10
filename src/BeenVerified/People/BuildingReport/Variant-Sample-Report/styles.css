@@ -7,6 +7,8 @@
 
 #wizModal .modal-content {
   max-width: 100%;
+
+  border-radius: 4px 4px 0 0;
 }
 
 .copy-header-personal {
@@ -23,6 +25,8 @@
 
   text-align: left;
   vertical-align: top;
+
+  border-radius: 4px 4px 0 0;
 }
 .sample-report-text {
   text-align: left;
@@ -73,6 +77,11 @@
   .sample-report-image img {
     width: 220px;
   }
+  .sample-report-image {
+    overflow-y: scroll;
+
+    height: 627px;
+  }
 }
 #wizModal .modal-content {
   max-width: 100%;
@@ -81,15 +90,13 @@
   .set-width-850 {
     width: 850px;
   }
-}
-
-@media screen and (min-width: 768px) {
   .sample-report-image {
     overflow-y: scroll;
 
     height: 555px;
   }
 }
+
 @media screen and (max-width: 767px) {
   .sample-report-image img {
     width: 100%;
@@ -154,6 +161,13 @@
     box-shadow: 0 3px 0 0 #353167;
   }
 }
+
+@media screen and (min-width: 481px) and (max-width: 991px) {
+  #wizModal .step-number {
+    width: 75px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .gen-report-modal5 .modal-body-copy p {
     text-align: center !important;
