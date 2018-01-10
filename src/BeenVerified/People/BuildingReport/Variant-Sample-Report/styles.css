@@ -12,10 +12,7 @@
 }
 
 .copy-header-personal {
-  /* padding: 16px 0 30px  80px; */
   background-image: url('img/icon-misc.svg');
-  /* background-position: left top;
-  background-size: 60px; */
 }
 
 .sample-report-wrapper {
@@ -48,7 +45,7 @@
 .sample-report-image {
   padding-top: 2%;
 
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.17);
 }
 
