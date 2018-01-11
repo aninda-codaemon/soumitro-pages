@@ -16,28 +16,28 @@ const cssFilename = 'css/[name].[contenthash:8].css';
 const extractTextPluginOptions = { publicPath: '../' };
 
 module.exports = {
-    // Don't attempt to continue if there are any errors.
+  // Don't attempt to continue if there are any errors.
   bail: true,
   devtool: 'source-map',
   entry: ['babel-polyfill', `${root}/index.js`],
   output: {
     filename: 'js/bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: ''
+    publicPath: '',
   },
   externals: [
-      {
-        window: 'window'
-      }
+    {
+      window: 'window',
+    },
   ],
   resolve: {
     alias: {
-      'handlebars': 'handlebars/dist/handlebars.js'
+      handlebars: 'handlebars/dist/handlebars.js',
     },
     modules: [
       path.resolve('./src'),
-      path.resolve('./node_modules')
-    ]
+      path.resolve('./node_modules'),
+    ],
   },
   module: {
     loaders: [
@@ -45,8 +45,8 @@ module.exports = {
         test: /\.hbs$/,
         loader: 'handlebars-loader',
         query: {
-          inlineRequires: '/img/'
-        }
+          inlineRequires: '/img/',
+        },
       },
       {
         test: /\.js$/,
@@ -55,7 +55,7 @@ module.exports = {
         options: {
           compact: true,
           presets: ['es2015', 'es2016', 'es2017'],
-          plugins: ['es6-promise', 'transform-object-assign']
+          plugins: ['es6-promise', 'transform-object-assign'],
         },
       },
       {
@@ -64,69 +64,67 @@ module.exports = {
           loader: 'html-loader',
           options: {
             attrs: ['img:src', 'img:data-src'],
-            minimize: false
-          }
-        }
+            minimize: false,
+          },
+        },
       },
       {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.jpg$/, /\.png$/, /\.svg$/],
         loader: 'file-loader',
         options: {
-          name: 'img/[name].[ext]'
-        }  
+          name: 'img/[name].[ext]',
+        },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [{
           loader: 'file-loader',
           options: {
-            name: 'fonts/[name].[hash:8].[ext]'
-          }
-        }]
+            name: 'fonts/[name].[hash:8].[ext]',
+          },
+        }],
       },
       {
         test: /\.(css|scss)$/,
-        loader: ExtractTextPlugin.extract(
-          Object.assign(
-            {
-              fallback: require.resolve('style-loader'),
-              use: [
-                {
-                  loader: require.resolve('css-loader'),
-                  options: {
-                    importLoaders: 1,
-                    minimize: true,
-                    sourceMap: true,
-                  },
+        loader: ExtractTextPlugin.extract(Object.assign(
+          {
+            fallback: require.resolve('style-loader'),
+            use: [
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                  minimize: true,
+                  sourceMap: true,
                 },
-                {
-                 loader: 'sass-loader'
+              },
+              {
+                loader: 'sass-loader',
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'), // eslint-disable-line
+                    autoprefixer({
+                      browsers: [
+                        '>1%',
+                        'last 4 versions',
+                        'Firefox ESR',
+                        'not ie < 9',
+                      ],
+                      flexbox: 'no-2009',
+                    }),
+                  ],
                 },
-                {
-                  loader: require.resolve('postcss-loader'),
-                  options: {
-                    ident: 'postcss',
-                    plugins: () => [
-                      require('postcss-flexbugs-fixes'),
-                      autoprefixer({
-                        browsers: [
-                          '>1%',
-                          'last 4 versions',
-                          'Firefox ESR',
-                          'not ie < 9',
-                        ],
-                        flexbox: 'no-2009',
-                      }),
-                    ],
-                  },
-                },
-              ],
-            },
-            extractTextPluginOptions
-          )
-        ),
+              },
+            ],
+          },
+          extractTextPluginOptions,
+        )),
       },
-    ]
+    ],
   },
 
   plugins: [
@@ -138,42 +136,42 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery'
+      jQuery: 'jquery',
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
-      debug: false
+      debug: false,
     }),
     new webpack.optimize.UglifyJsPlugin({
       beautify: false,
       mangle: {
         screw_ie8: true,
-        keep_fnames: true
+        keep_fnames: true,
       },
       compress: {
-        screw_ie8: true
+        screw_ie8: true,
       },
       comments: false,
-      sourceMap: true
+      sourceMap: true,
     }),
     new ExtractTextPlugin({
       filename: cssFilename,
     }),
     new ImageminPlugin({
       pngquant: {
-        quality: '95-100'
+        quality: '95-100',
       },
       jpegtran: {
-        progressive: true
+        progressive: true,
       },
-      svgo: null  // Flowrida doesn't like this
+      svgo: null, // Flowrida doesn't like this
     }),
     new webpack.BannerPlugin({
-       banner: `
-       Root folder: ${root}
-       From repository: ${gitInfo.origin}
-       From Branch: ${gitInfo.branch}
-       `
-    })
+      banner: `
+      Root folder: ${root}
+      From repository: ${gitInfo.origin}
+      From Branch: ${gitInfo.branch}
+      `,
+    }),
   ],
 };

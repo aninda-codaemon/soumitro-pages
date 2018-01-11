@@ -71,9 +71,9 @@ const storeTeaserData = (teaserData) => {
 };
 
 /** An user using Safari Incognito. */
-const fixIncognitoMode = bvid => ({ records }) => {
+const fixIncognitoMode = bvid => ({ teasers }) => {
   if (!amplify.store('currentRecord') && bvid) {
-    const currentRecord = _find((records || []), { bvid });
+    const currentRecord = _find((teasers || []), { bvid }) || {};
     const parsedRecord = new TeaserRecord(currentRecord);
     /** Workaround for framerida binding issued, because isn't display the
      * fields (fullName & firstName)
@@ -96,7 +96,7 @@ const getTeaserData = (data) => {
     validData(data.mi),
   );
 
-  return get(url, 'parseResults')
+  return get(url)
     .then(parseTeaser)
     .then(storeTeaserData)
     .then(fixIncognitoMode(data.bvid));
