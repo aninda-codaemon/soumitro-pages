@@ -4,15 +4,12 @@ import 'lodash/isArray';
 export const capitalize = (text) => {
   if (!text) return '';
 
-  if (text) {
-    const letters = text.split('');
-    if (letters.length === 0) {
-      return '';
-    }
-    letters[0] = letters[0].toUpperCase();
-    return letters.join('');
+  const letters = text.split('');
+  if (letters.length === 0) {
+    return '';
   }
-  return '';
+  letters[0] = letters[0].toUpperCase();
+  return letters.join('');
 };
 
 export const properCaps = text => text.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
