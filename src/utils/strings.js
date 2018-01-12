@@ -2,12 +2,16 @@ import map from 'lodash/map';
 import 'lodash/isArray';
 
 export const capitalize = (text) => {
-  const letters = text.split('');
-  if (letters.length === 0) {
-    return '';
+  if (text) {
+    const letters = text.split('');
+    if (letters.length === 0) {
+      return '';
+    }
+    letters[0] = letters[0].toUpperCase();
+    return letters.join('');
   }
-  letters[0] = letters[0].toUpperCase();
-  return letters.join('');
+
+  return '';
 };
 
 export const properCaps = text => text.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
