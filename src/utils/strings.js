@@ -2,6 +2,8 @@ import map from 'lodash/map';
 import 'lodash/isArray';
 
 export const capitalize = (text) => {
+  if (!text) return '';
+
   if (text) {
     const letters = text.split('');
     if (letters.length === 0) {
@@ -10,7 +12,6 @@ export const capitalize = (text) => {
     letters[0] = letters[0].toUpperCase();
     return letters.join('');
   }
-
   return '';
 };
 
