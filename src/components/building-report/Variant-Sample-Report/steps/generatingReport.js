@@ -59,6 +59,20 @@ function generatingReportStart(stepCompleted) {
 
   sampleReportDiv.removeClass('hidden');
 
+  function setHeight() {
+    let windowWidth = $(window).width();
+    if (windowWidth >= 768) {
+      let reportHeight = $('.modal-dialog').innerHeight();
+      $('.sample-report-wrapper').css('height', reportHeight);
+    }
+  }
+
+  setHeight();
+
+  $(window).resize(() => {
+    setHeight();
+  });
+
   function animateProgress() {
     progressBar.animate({ width: '100%' }, newDuration, 'linear', () => {
       currentLoop++;
