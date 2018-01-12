@@ -17,6 +17,13 @@ describe('capitalize function', () => {
 
     expect(capitalize(text)).toEqual(expectedText);
   });
+
+  it('should return an empty string', () => {
+    var text = null || undefined;
+    var expectedText = '';
+
+    expect(capitalize(text)).toEqual(expectedText);
+  });
 });
 
 describe('properCaps function', () => {
