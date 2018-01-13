@@ -1,6 +1,6 @@
 import fetchJsonp from 'fetch-jsonp';
 
-const get = (url, callbackFn) => {
+const get = (url, callbackFn = 'parseResults') => {
   var cachedReponse = sessionStorage.getItem(url);
   if (cachedReponse) {
     return Promise.resolve(JSON.parse(cachedReponse));

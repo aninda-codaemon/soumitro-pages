@@ -34,13 +34,19 @@ const mapSingularNames = item => {
   return item;
 };
 
+const setDefaultsToExtraTeaserData = data => {
+  data.connections = data.connections || {};
+  return data;
+}
+
 const parseExtraTeaserData = data => {
   track('Person Data Teaser Called');
-  var phoneNumbers = $.map(data.phones, item => formatPhone(item.number));
-  var emailAddresses = $.map(data.emails, item => formatEmail(item.email_address).toLowerCase());
-  var socialNetworks = $.map(data.social, item => nameize(item.type));
-  var associates = $.map(data.connections.associates, item => nameize(item.names[0].full));
-  var relatives = $.map(data.connections.relatives, item => nameize(item.names[0].full));
+  var newData = setDefaultsToExtraTeaserData(data);
+  var phoneNumbers = $.map(newData.phones, item => formatPhone(item.number));
+  var emailAddresses = $.map(newData.emails, item => formatEmail(item.email_address).toLowerCase());
+  var socialNetworks = $.map(newData.social, item => nameize(item.type));
+  var associates = $.map(newData.connections.associates, item => nameize(item.names[0].full));
+  var relatives = $.map(newData.connections.relatives, item => nameize(item.names[0].full));
 
   var result = [
     {
@@ -50,7 +56,7 @@ const parseExtraTeaserData = data => {
       'style': ' crim-box',
       'weight': 9,
       'showIfEmpty': 0,
-      'count': data.courts && data.courts.criminal ? data.courts.criminal.length : 0
+      'count': newData.courts && newData.courts.criminal ? newData.courts.criminal.length : 0
     },
     {
       'type': 'bankruptcy',
@@ -59,7 +65,7 @@ const parseExtraTeaserData = data => {
       'style': ' crim-box',
       'weight': 8,
       'showIfEmpty': 0,
-      'count': data.courts && data.courts.bankruptcy ? data.courts.bankruptcy.length : 0
+      'count': _.get(newData, 'courts.bankruptcy.length', 0),
     },
     {
       'type': 'associates',
@@ -68,7 +74,7 @@ const parseExtraTeaserData = data => {
       'style': '',
       'weight': 7,
       'showIfEmpty': 0,
-      'count': data.connections.associates.length,
+      'count': _.get(newData, 'connections.associates.length', 0),
       'associates': associates
     },
     {
@@ -78,7 +84,7 @@ const parseExtraTeaserData = data => {
       'style': '',
       'weight': 6,
       'showIfEmpty': 0,
-      'count': data.emails ? data.emails.length : 0,
+      'count': newData.emails ? newData.emails.length : 0,
       'emailAddress': emailAddresses
     },
     {
@@ -88,7 +94,7 @@ const parseExtraTeaserData = data => {
       'style': ' phone-box',
       'weight': 5,
       'showIfEmpty': 0,
-      'count': data.phones ? data.phones.length : 0,
+      'count': newData.phones ? newData.phones.length : 0,
       'phoneNumber': phoneNumbers
     },
     {
@@ -98,7 +104,7 @@ const parseExtraTeaserData = data => {
       'style': ' social-box',
       'weight': 4,
       'showIfEmpty': 0,
-      'count': data.social ? data.social.length : 0,
+      'count': newData.social ? newData.social.length : 0,
       'socialNetwork': socialNetworks
     },
     {
@@ -108,7 +114,7 @@ const parseExtraTeaserData = data => {
       'style': '',
       'weight': 3,
       'showIfEmpty': 0,
-      'count': data.images ? data.images.length : 0
+      'count': newData.images ? newData.images.length : 0
     },
     {
       'type': 'careers',
@@ -117,7 +123,7 @@ const parseExtraTeaserData = data => {
       'style': '',
       'weight': 2,
       'showIfEmpty': 0,
-      'count': (data.jobs ? data.jobs.length : 0) + (data.educations ? data.educations.length : 0)
+      'count': (newData.jobs ? newData.jobs.length : 0) + (newData.educations ? newData.educations.length : 0)
     },
     {
       'type': 'relatives',
@@ -176,7 +182,7 @@ const storeData = teaserDataObj => {
   return teaserDataObj;
 }
 
-const getExtraTeaserData = bvid => get(buildExtraTeaserEndpoint(bvid))
+const getExtraTeaserData = bvid => get(buildExtraTeaserEndpoint(bvid), 'jsonpCallbackExtraTeaser')
   .then(parseExtraTeaserData)
   .then(mergeInformationTypes)
   .then(storeData);
