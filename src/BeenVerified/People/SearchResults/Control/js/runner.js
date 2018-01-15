@@ -101,7 +101,7 @@ const activateRows = () => {
     window.setTimeout(() => {
       var currentRecord = amplify.store('currentRecord') || {};
       var searchData = amplify.store('searchData') || {};
-      window.location = `${nextPage}?fn=${(searchData.fn || '')}&ln=${(searchData.ln || '')}&mi=${(searchData.mi || '')}&city=${(searchData.city || '')}&state=${(searchData.state || '')}'&bvid=${currentRecord.bvid}`;
+      window.location = `${nextPage}?fn=${(searchData.fn || '')}&ln=${(searchData.ln || '')}&mi=${(searchData.mi || '')}&city=${(searchData.city || '')}&state=${(searchData.state || '')}&bvid=${currentRecord.bvid}`;
     }, 300);
   });
 };
