@@ -74,7 +74,7 @@ const convertState = (name, to) => {
 };
 
 const callToConvertStates = () => {
-  $('.fullState').each((i, obj) => {
+  $('.fullState').each(function converEachState(i, obj) {
     var abrevState = obj.innerText;
     var fullState = convertState(abrevState, 'name');
     this.innerText = fullState;
