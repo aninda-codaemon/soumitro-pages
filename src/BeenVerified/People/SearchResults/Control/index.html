@@ -81,7 +81,7 @@
                 <div class="col-sm-2 col-search-bar">
                   <label for="search-bar-state" class="sr-only">State</label>
                   <select class="custom-select form-control" id="search-bar-state" name="state" value="{{state}}">
-                    <option value="All">All States</option>
+                    <option value="all">All States</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
@@ -478,7 +478,7 @@
               </div>
               <div class="col-sm-2">
                 <select class="custom-select form-control" name="state" id="no-results-state" value="{{state}}">
-                  <option value="All">All States</option>
+                  <option value="all">All States</option>
                   <option value="AL">Alabama</option>
                   <option value="AK">Alaska</option>
                   <option value="AZ">Arizona</option>
@@ -554,7 +554,7 @@
         <img class="spinner" src="img/rolling-bf.gif">
       </p>
       <h3 class="text-info text-center" data-fr-bind="searchData">
-        Processing Records for {{uppercase fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{uppercase ln}}{{#ifNot state 'All'}} in {{uppercase state}}{{/ifNot}}
+        Processing Records for {{uppercase fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{uppercase ln}}{{#ifNot state 'all'}} in {{uppercase state}}{{/ifNot}}
       </h3>
       <p class="text-center">Results should load shortly</p>
     </div>
@@ -616,7 +616,7 @@
                 </div>
                 <div class="col-sm-2">
                   <select class="custom-select a form-control" name="state" value="{{state}}">
-                    <option value="All">All</option>
+                    <option value="all">All</option>
                     <option value="AK">AK</option>
                     <option value="AL">AL</option>
                     <option value="AR">AR</option>

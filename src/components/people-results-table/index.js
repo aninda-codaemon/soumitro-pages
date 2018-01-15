@@ -157,7 +157,7 @@ const setFilterStates = () => {
   let age = $('#age').val();
   let state = $('#search-bar-state').val();
   let showAgeFilter = age !== '';
-  let showStateFilter = state === 'All';
+  let showStateFilter = state === 'all';
 
   if (isMobile) {
     $('.age-filter-group').toggle(showAgeFilter);
@@ -385,7 +385,7 @@ const initilizeSearchFilters = ({ onReset }) => {
     $('.reset-filters').click(() => {
       // set these values to default
       $('#city').val('');
-      $('#search-bar-state').val('All');
+      $('#search-bar-state').val('all');
       $('#age').val('');
 
       // @TODO: call search function instead of simulating form submit
