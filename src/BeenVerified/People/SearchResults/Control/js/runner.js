@@ -136,7 +136,7 @@ const searchPeople = (query, notificationType) => {
 };
 
 const initializeQueryArgs = (args, validArgs) => {
-  args.state = args.state || 'all';
+  args.state = args.state || 'All';
   if (validArgs) {
     amplify.store('searchData', args);
     showSearchingAnimation();

@@ -56,7 +56,7 @@ const convertState = (name, to) => {
   ];
   var returnthis = false;
   name = name.toUpperCase();
-  $.each(states, (index, value) => {
+  states.forEach((value) => {
     if (to === 'name') {
       if (value.abbrev === name) {
         returnthis = value.name;

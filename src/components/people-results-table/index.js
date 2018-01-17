@@ -155,9 +155,9 @@ const deprioritizeEmptyAges = (list) => {
 
 const setFilterStates = () => {
   let age = $('#age').val();
-  let state = $('#search-bar-state').val();
+  let state = $('#search-bar-state').val() || '';
   let showAgeFilter = age !== '';
-  let showStateFilter = state === 'all';
+  let showStateFilter = state.toLowerCase() === 'all';
 
   if (isMobile) {
     $('.age-filter-group').toggle(showAgeFilter);
@@ -385,7 +385,7 @@ const initilizeSearchFilters = ({ onReset }) => {
     $('.reset-filters').click(() => {
       // set these values to default
       $('#city').val('');
-      $('#search-bar-state').val('all');
+      $('#search-bar-state').val('All');
       $('#age').val('');
 
       // @TODO: call search function instead of simulating form submit
