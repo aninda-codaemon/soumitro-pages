@@ -176,7 +176,6 @@ const updateFilterOptions = (results) => {
   // hide filter options except the all option
   // this makes all options hidden by default so we show only the needed options below
   $('.results-filters select option').remove();
-  $('.results-filters select option[value=all]').show();
 
   let $newStateFilter = $clonedStateFilter.clone();
   let $newAgeFilter = $clonedAgeFilter.clone();
@@ -243,6 +242,7 @@ const updateFilterOptions = (results) => {
 
   $('#state-filter').append($newStateFilter.find('option'));
   $('#age-filter').append($newAgeFilter.find('option'));
+  $('.results-filters select').val('All');
 };
 
 // Update the record count - to use when table filters change
