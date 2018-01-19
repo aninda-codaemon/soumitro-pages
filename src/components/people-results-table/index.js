@@ -1,5 +1,6 @@
 import List from 'list.js';
 import amplify from 'utils/amplifyStore';
+import states from 'constants/states';
 import { isMobile } from 'utils/browser';
 
 const $topBanner = $('#top-banner');
@@ -168,12 +169,36 @@ const setFilterStates = () => {
   }
 };
 
+const $clonedStateFilter = $('#state-filter').clone();
+const $clonedAgeFilter = $('#age-filter').clone();
+
 const updateFilterOptions = (results) => {
-  var stateFilters = $('#state-filter option');
   // hide filter options except the all option
   // this makes all options hidden by default so we show only the needed options below
-  $('.results-filters select option').hide();
+  $('.results-filters select option').remove();
   $('.results-filters select option[value=all]').show();
+
+  let $newStateFilter = $clonedStateFilter.clone();
+  let $newAgeFilter = $clonedAgeFilter.clone();
+  let statesObj = states.reduce((prev, { abbr, name }) => {
+    prev[abbr] = {
+      abbr,
+      name,
+      show: false,
+    };
+    return prev;
+  }, {});
+  let filteredAges = {
+    '18-25': { range: [18, 25], show: false },
+    '26-35': { range: [26, 35], show: false },
+    '36-45': { range: [36, 45], show: false },
+    '46-55': { range: [46, 55], show: false },
+    '56-65': { range: [56, 65], show: false },
+    '66-75': { range: [66, 75], show: false },
+    '76-85': { range: [76, 85], show: false },
+    '86-95': { range: [86, 95], show: false },
+    '96-200': { range: [96, 200], show: false },
+  };
 
   // loop through results list and only show the matching filters
   for (let item = 0; item < results.length; item++) {
@@ -181,34 +206,43 @@ const updateFilterOptions = (results) => {
     // show age filter options that match ages in the results lista
     // refactored into the loop below but has issues with the last age-range option
     if (currentRecord.resultAge >= 18 && currentRecord.resultAge <= 25) {
-      $('#age-filter option[value=18-25]').show();
+      filteredAges['18-25'].show = true;
     } else if (currentRecord.resultAge >= 26 && currentRecord.resultAge <= 35) {
-      $('#age-filter option[value=26-35]').show();
+      filteredAges['26-35'].show = true;
     } else if (currentRecord.resultAge >= 36 && currentRecord.resultAge <= 45) {
-      $('#age-filter option[value=36-45]').show();
+      filteredAges['36-45'].show = true;
     } else if (currentRecord.resultAge >= 46 && currentRecord.resultAge <= 55) {
-      $('#age-filter option[value=46-55]').show();
+      filteredAges['46-55'].show = true;
     } else if (currentRecord.resultAge >= 56 && currentRecord.resultAge <= 65) {
-      $('#age-filter option[value=56-65]').show();
+      filteredAges['56-65'].show = true;
     } else if (currentRecord.resultAge >= 66 && currentRecord.resultAge <= 75) {
-      $('#age-filter option[value=66-75]').show();
+      filteredAges['66-75'].show = true;
     } else if (currentRecord.resultAge >= 76 && currentRecord.resultAge <= 85) {
-      $('#age-filter option[value=76-85]').show();
+      filteredAges['76-85'].show = true;
     } else if (currentRecord.resultAge >= 86 && currentRecord.resultAge <= 95) {
-      $('#age-filter option[value=86-95]').show();
+      filteredAges['86-95'].show = true;
     } else if (currentRecord.resultAge >= 96 && currentRecord.resultAge <= 200) {
-      $('#age-filter option[value=96-200]').show();
+      filteredAges['96-200'].show = true;
     }
-    /*
-      Loop through state options and show the state
-      option that matches with the state in the results list
-    */
-    for (let option = 1; option < stateFilters.length; option++) {
-      if (stateFilters[option].value === currentRecord.resultPlace.split(', ')[1]) {
-        $(`#state-filter option[value=${stateFilters[option].value}]`).show();
-      }
-    }
+
+    let abbr = currentRecord.resultPlace.split(', ')[1];
+    statesObj[abbr].show = true;
   }
+
+  Object.keys(filteredAges).forEach((key) => {
+    if (!filteredAges[key].show) {
+      $newAgeFilter.find(`option[value="${key}"]`).remove();
+    }
+  });
+
+  Object.keys(statesObj).forEach((stateAbbr) => {
+    if (!statesObj[stateAbbr].show) {
+      $newStateFilter.find(`option[value="${stateAbbr}"]`).remove();
+    }
+  });
+
+  $('#state-filter').append($newStateFilter.find('option'));
+  $('#age-filter').append($newAgeFilter.find('option'));
 };
 
 // Update the record count - to use when table filters change
@@ -338,12 +372,12 @@ const initilizeSearchFilters = ({ onReset }) => {
       var selection = this.value;
 
       // reset age filter
-      $('#age-filter option[value=all]').prop('selected', true);
+      $('#age-filter option[value=All]').prop('selected', true);
 
       // reset exact match filter
       $('.exact-match').removeClass('active');
 
-      if (selection && selection !== 'all') {
+      if (selection && selection !== 'All') {
         searchResultsList.filter(item => item.values().resultPlace.split(', ')[1] === selection);
         updateRecordCount();
       } else {
