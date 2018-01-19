@@ -68,7 +68,7 @@ const convertState = (name, to) => {
         return false;
       }
     }
-    return false;
+    return true;
   });
   return returnthis;
 };

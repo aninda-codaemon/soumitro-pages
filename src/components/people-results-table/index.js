@@ -156,14 +156,14 @@ const deprioritizeEmptyAges = (list) => {
 const setFilterStates = () => {
   let age = $('#age').val();
   let state = $('#search-bar-state').val() || '';
-  let showAgeFilter = age !== '';
+  let showAgeFilter = age === '';
   let showStateFilter = state.toLowerCase() === 'all';
 
   if (isMobile) {
     $('.age-filter-group').toggle(showAgeFilter);
     $('.state-filter-group').toggle(showStateFilter);
   } else {
-    $('#age-filter').attr('disabled', showAgeFilter);
+    $('#age-filter').attr('disabled', !showAgeFilter);
     $('#state-filter').attr('disabled', !showStateFilter);
   }
 };
