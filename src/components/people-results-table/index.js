@@ -225,7 +225,9 @@ const updateFilterOptions = (results) => {
     }
 
     let abbr = currentRecord.resultPlace.split(', ')[1];
-    statesObj[abbr].show = true;
+    if (statesObj[abbr]) {
+      statesObj[abbr].show = true;
+    }
   }
 
   Object.keys(filteredAges).forEach((key) => {
