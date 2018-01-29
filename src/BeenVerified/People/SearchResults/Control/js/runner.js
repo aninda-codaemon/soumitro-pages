@@ -3,11 +3,9 @@ import {
   isFinite,
 } from 'lodash';
 import { getTeaserData } from 'api/teaser';
-// import { getExtraTeaserData } from 'api/extraTeaser';
 import { recordCounts } from 'constants/recordCounts';
 import { notifyRecordCount } from 'utils/track/notifyRecordCount';
 import { getQueryArgs, isValidPeopleQuery } from 'utils/queryArgs';
-// import { nameize } from 'utils/strings';
 import * as localStorage from 'utils/localStorage';
 import amplify from 'utils/amplifyStore';
 import { initilizeSearchFilters } from 'components/people-results-table';

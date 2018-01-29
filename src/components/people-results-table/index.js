@@ -346,17 +346,17 @@ const initilizeSearchFilters = ({ onReset }) => {
       var selection = this.value;
 
       // reset state filter
-      $('#state-filter option[value=all]').prop('selected', true);
+      $('#state-filter option[value=All]').prop('selected', true);
 
       // reset exact match filter
       $('.exact-match').removeClass('active');
 
       // @TODO: fix the issue with the age group filter ignoring 96+ age group
       // for now, ignoring the 96+ age group and creating a seperate condition seems to work
-      if (selection && selection !== 'all' && selection !== '96-200') {
+      if (selection && selection !== 'All' && selection !== '96-200') {
         searchResultsList.filter(item => (item.values().resultAge >= selection.split('-')[0] && item.values().resultAge <= selection.split('-')[1]));
         updateRecordCount();
-      } else if (selection && selection === '96-200' && selection !== 'all') {
+      } else if (selection && selection === '96-200' && selection !== 'All') {
         // adding the above extra condition as a fix to the above condition
         // above does not filter out the last age group for some reason - need to debug that
         // this else if condition is the solution for filtering ages above 95
@@ -399,10 +399,10 @@ const initilizeSearchFilters = ({ onReset }) => {
       $(this).toggleClass('active');
 
       // reset age filter
-      $('#age-filter option[value=all]').prop('selected', true);
+      $('#age-filter option[value=All]').prop('selected', true);
 
       // reset state filter
-      $('#state-filter option[value=all]').prop('selected', true);
+      $('#state-filter option[value=All]').prop('selected', true);
 
       if ($(this).hasClass('active')) {
         let searchedNameParts = searchedName.split(' ');
