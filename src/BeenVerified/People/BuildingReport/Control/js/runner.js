@@ -49,9 +49,21 @@ const initializeTestimonials = () => {
   setTimeout(testimonialsSwitcher, TESTIMONIAL_DURATION);
 };
 
+const shouldGetTeaserData = (args) => {
+  var searchData = amplify.store('searchData', args);
+  return (
+    args.fn !== searchData.fn ||
+    args.ln !== searchData.ln ||
+    args.mi !== searchData.mi ||
+    args.state !== searchData.state ||
+    args.city !== searchData.city ||
+    args.age !== searchData.age
+  );
+};
+
 const initializeQueryArgs = (args, validArgs) => {
   args.state = args.state || 'all';
-  if (validArgs) {
+  if (validArgs && shouldGetTeaserData(args)) {
     args.fullName = `${nameize(args.fn)} ${nameize(args.ln)}`;
 
     amplify.store('searchData', args);
