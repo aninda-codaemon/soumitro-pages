@@ -26,6 +26,7 @@ const WizardManager = {
     return this.currentSectionIndex === this.sections.length - 1;
   },
   onSectionCompleted() {
+    this.onSectionCompletedListener(this.currentSectionIndex);
     this.currentSectionIndex++;
     this.updateHeadlines();
     if (this.currentSectionIndex < this.sections.length) {
@@ -33,6 +34,9 @@ const WizardManager = {
       return;
     }
     this.onCompleted();
+  },
+  subscribeOnSectionCompleted(listener) {
+    this.onSectionCompletedListener = listener;
   },
   updateHeadlines() {
     var stepsContainerSelector = $('.wizard-header');

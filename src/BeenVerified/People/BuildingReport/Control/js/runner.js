@@ -52,6 +52,8 @@ const initializeTestimonials = () => {
 const initializeQueryArgs = (args, validArgs) => {
   args.state = args.state || 'all';
   if (validArgs) {
+    args.fullName = `${nameize(args.fn)} ${nameize(args.ln)}`;
+
     amplify.store('searchData', args);
     getTeaserData(args)
       .then(() => notifyRecordCount(recordCounts.QUERY));
@@ -61,21 +63,23 @@ const initializeQueryArgs = (args, validArgs) => {
 };
 
 const initialize = (buildingReportInstance, shouldDisplayRelatives = false) => {
+  const SECTION_BEFORE_LEADBOX = 1; // zero index based.
   buildingReport = buildingReportInstance;
   jQuery.fx.interval = 100;
   initializeTestimonials();
   initializeQueryArgs(queryArgs, validQueryArgs);
 
-  if (bvid && queryArgs.bvid) {
-    getExtraTeaserData(bvid).then(includeRelativesModal(shouldDisplayRelatives));
-  } else {
-    const searchData = amplify.store('searchData') || {};
-    searchData.fullName = `${nameize(searchData.fn)} ${nameize(searchData.ln)}`;
-    amplify.store('searchData', searchData);
+  if (!bvid) {
     amplify.store('currentRecord', null);
   }
+
   initializeBVGO(buildingReport.wizard.skipStep);
   buildingReport.wizard.start();
+  buildingReport.wizard.subscribeOnSectionCompleted((sectionIndex) => {
+    if (sectionIndex === SECTION_BEFORE_LEADBOX && bvid) {
+      getExtraTeaserData(bvid).then(includeRelativesModal(shouldDisplayRelatives));
+    }
+  });
   window.$ = jQuery;
 };
 
