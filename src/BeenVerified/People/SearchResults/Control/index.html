@@ -66,11 +66,11 @@
                   <label for="fn" class="sr-only">First Name</label>
                   <input name="fn" id="fn" type="text" class="form-control" placeholder="First Name" required value="{{nameize fn}}" />
                 </div>
-                <div class="col-sm-1 col-search-bar hidden-xs">
+                <div class="col-sm-2 col-search-bar">
                   <label for="mi" class="sr-only">Middle Initial</label>
-                  <input name="mi" id="mi" type="text" class="form-control" placeholder="MI" value="{{uppercase mi}}" maxlength="1" />
+                  <input name="mi" id="mi" type="text" class="form-control" placeholder="Middle Name" value="{{nameize mi}}" />
                 </div>
-                <div class="col-sm-3 col-search-bar">
+                <div class="col-sm-2 col-search-bar">
                   <label for="ln" class="sr-only">Last Name</label>
                   <input name="ln" id="ln" type="text" class="form-control" placeholder="Last Name" required value="{{nameize ln}}" />
                 </div>
@@ -161,14 +161,13 @@
     <div id="top-banner" class="container section-alt section-min top-section">
       <div class="row section-header">
         <h3 class="text-center text-info hidden-xs">
-          <span class="hasResults"><span class="record-count">{{recordCount}}</span> Results for <strong>{{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}</strong> in the last 24 hours!
-          <span class="noResults">We found <span class="record-count">{{recordCount}}</span> result for <strong>{{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}!</strong> Click the Green Button <span class="hidden-xs">Below</span></span>
+          <span class="hasResults"><span class="record-count">{{recordCount}}</span> Results for <strong>{{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}</strong> in the last 24 hours!
+          <span class="noResults">We found <span class="record-count">{{recordCount}}</span> result for <strong>{{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}!</strong> Click the Green Button <span class="hidden-xs">Below</span></span>
         </h3>
         <h3 class="text-center text-info visible-xs">
-          <span class="hasResults"><span class="record-count">{{recordCount}}</span> Results for <strong>{{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong>{{#if state}} in <strong>{{uppercase state}}{{/if}}{{/notEqual}}</strong>
-          <span class="noResults">We found <span class="record-count">{{recordCount}}</span> result for <strong>{{nameize fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}!</strong> Click the Green Button <span class="hidden-xs">Below</span></span>
+          <span class="hasResults"><span class="record-count">{{recordCount}}</span> Results for <strong>{{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong>{{#if state}} in <strong>{{uppercase state}}{{/if}}{{/notEqual}}</strong>
+          <span class="noResults">We found <span class="record-count">{{recordCount}}</span> result for <strong>{{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}!</strong> Click the Green Button <span class="hidden-xs">Below</span></span>
         </h3>
-
         <!-- Original SubHeader -->
         <p class="text-center subHeadOthers hidden-xs hidden-sm visible-md visible-lg">
           Locate the person you're looking for in the results
@@ -464,10 +463,10 @@
               <div class="col-sm-3">
                 <input name="fn" id="fn" type="text" class="form-control" placeholder="First Name" required value="{{fn}}" />
               </div>
-              <div class="col-sm-1">
-                <input name="mi" id="mi" type="text" class="form-control" placeholder="MI" value="{{mi}}" />
+              <div class="col-sm-2">
+                <input name="mi" id="mi" type="text" class="form-control" placeholder="Middle Name" value="{{mi}}" />
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-2">
                 <input name="ln" id="ln" type="text" class="form-control" placeholder="Last Name" required value="{{ln}}" />
               </div>
               <div class="col-sm-1">
@@ -533,12 +532,12 @@
                   <option value="WY">Wyoming</option>
                 </select>
               </div>
-              <div class="row">
-                <div class="col-sm-2 col-sm-offset-5">
-                  <input type="submit" class="main-btn form-control" value="Search" style="margin-top:20px;" />
-                </div>
-              </div>
             </fieldset>
+            <div class="row">
+              <div class="col-sm-2 col-sm-offset-5">
+                <input type="submit" class="main-btn form-control" value="Search" style="margin-top:20px;" />
+              </div>
+            </div>
           </form>
         </div>
       </div>
@@ -602,10 +601,10 @@
                 <div class="col-sm-3">
                   <input name="fn" type="text" class="form-control" placeholder="First Name" required value="{{fn}}" />
                 </div>
-                <div class="col-sm-1">
-                  <input name="mi" type="text" class="form-control" placeholder="M.I." value="{{mi}}" />
+                <div class="col-sm-2">
+                  <input name="mi" type="text" class="form-control" placeholder="Middle Name" value="{{mi}}" />
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                   <input name="ln" type="text" class="form-control" placeholder="Last Name" required value="{{ln}}" />
                 </div>
                 <div class="col-sm-1">
@@ -672,12 +671,12 @@
                   </select>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-sm-4 col-sm-offset-4">
-                  <input type="submit" class="main-btn form-control refine-search" value="Refine Search" />
-                </div>
-              </div>
             </fieldset>
+            <div class="row">
+              <div class="col-sm-4 col-sm-offset-4">
+                <input type="submit" class="main-btn form-control refine-search" value="Refine Search" />
+              </div>
+            </div>
           </form>
         </div><!-- /.modal-body -->
 

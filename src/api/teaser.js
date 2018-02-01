@@ -6,11 +6,9 @@ import {
 } from 'lodash';
 
 import { get } from 'utils/request';
-import { removeDiacritics } from 'utils/strings';
+import { cleanSearchValues } from 'utils/strings';
 import { TeaserRecord } from 'parsers/teaserRecord';
 import amplify from 'utils/amplifyStore';
-
-const pattern = new RegExp("[^A-Za-z'-s]", 'gi');
 
 const buildTeaserEndpoint = (fn, ln, state, city, age, mi) =>
   `https://www.beenverified.com/hk/teaser/?exporttype=jsonp&rc=100&fn=${fn}&ln=${ln}&state=${state}&city=${city}&age=${age}&mi=${mi}`;
@@ -19,18 +17,22 @@ const validState = state => ((state && state.toLowerCase() === 'all') ? '' : sta
 
 const validData = data => ((data && typeof data !== 'undefined') ? data : '');
 
-const cleanSearchValues = value => removeDiacritics(value).replace(pattern, '');
-
-const parseMiddleInitial = (data) => {
-  const parsedMi = data.fn.match(/^.*\s([A-Za-z])$/);
-  if (parsedMi) {
-    if (!data.mi || data.mi.length === 0) {
-      data.mi = parsedMi[1]; // eslint-disable-line
-    }
-    data.fn = data.fn.replace(/\s[A-Za-z]$/, '').replace(/\s+/g, '');
-  } else {
-    data.fn = data.fn.replace(/\s+/g, '');
+const parseMiddleName = (data) => {
+  if (!data.fn) {
+    return data;
   }
+
+  let { fn } = data;
+  const parsedMi = fn.match(/^\S*\s\S+$/i);
+  if (parsedMi) {
+    const [, mi] = fn.split(' ');
+    [fn] = fn.split(' ');
+    if (!data.mi || data.mi.length === 0) {
+      data.mi = mi;
+    }
+  }
+  data.fn = fn.replace(/\s+/g, '');
+
   return data;
 };
 
@@ -88,7 +90,7 @@ const fixIncognitoMode = bvid => ({ teasers }) => {
 
 const getTeaserData = (data) => {
   data = _mapValues(data, cleanSearchValues);
-  data = parseMiddleInitial(data);
+  data = parseMiddleName(data);
   const url = buildTeaserEndpoint(
     data.fn,
     data.ln,
