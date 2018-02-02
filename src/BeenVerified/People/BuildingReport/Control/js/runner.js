@@ -50,7 +50,7 @@ const initializeTestimonials = () => {
 };
 
 const shouldGetTeaserData = (args) => {
-  var searchData = amplify.store('searchData', args);
+  var searchData = amplify.store('searchData') || {};
   return (
     args.fn !== searchData.fn ||
     args.ln !== searchData.ln ||
