@@ -21,6 +21,12 @@ const validateLeadsForm = ($form, onSubmit = noop) => {
     evt.preventDefault();
     if (validator.form()) {
       track('Submitted Lead Form - Success');
+
+      const $emailCheckbox = $('#emailCheckbox');
+      if ($emailCheckbox && $emailCheckbox.prop('checked')) {
+        track('OPT-IN submitted lead form - success');
+      }
+
       try {
         saveLeads($(this).serializeArray());
         onSubmit();
