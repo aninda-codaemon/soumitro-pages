@@ -1,5 +1,6 @@
 import { addRelativesModal, wizard } from 'components/building-report';
 import { downsell } from 'utils/downsell';
+import { initializeReloadCachedPageHandler } from 'utils/browser';
 import { initialize } from '../Control/js/runner';
 import './styles.css';
 
@@ -15,13 +16,7 @@ $('#btn-discount').click(() => {
 });
 
 const InitializeDownsell = () => {
-  /* This code makes the downsell works a bit better in safari,
-    because the back button has a weird behavior in mobile devices */
-  $(window).on('pageshow', (event) => {
-    if (event.originalEvent.persisted) {
-      window.location.reload();
-    }
-  });
+  initializeReloadCachedPageHandler();
 
   downsell.init({
     onBack: {

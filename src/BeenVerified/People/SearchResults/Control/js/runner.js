@@ -8,6 +8,7 @@ import { notifyRecordCount } from 'utils/track/notifyRecordCount';
 import { getQueryArgs, isValidPeopleQuery } from 'utils/queryArgs';
 import * as localStorage from 'utils/localStorage';
 import amplify from 'utils/amplifyStore';
+import { initializeReloadCachedPageHandler } from 'utils/browser';
 import { initilizeSearchFilters } from 'components/people-results-table';
 import 'utils/framerida';
 
@@ -176,6 +177,7 @@ const initialize = () => {
   initializeRefine();
   initializeDownsells();
   initializeResizeHandler(determineCollapse, determineLayoutState);
+  initializeReloadCachedPageHandler();
 };
 
 export { initialize };
