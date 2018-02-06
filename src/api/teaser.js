@@ -82,8 +82,6 @@ const fixIncognitoMode = bvid => ({ teasers }) => {
      * Probably because those attributes are functions */
     currentRecord.fullName = parsedRecord.fullName();
     currentRecord.firstName = parsedRecord.firstName();
-    currentRecord.recordCount = parsedRecord.recordCount();
-    currentRecord.recordCountDisplay = parsedRecord.recordCountDisplay();
     amplify.store('currentRecord', currentRecord);
   }
 };
