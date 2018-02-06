@@ -9,7 +9,7 @@ const getSubmitHandler = onSubmit => function onSearchSubmit(form) {
   }
   let serialArray = $(form).serializeArray();
   let formVals = serialArray.reduce((prev, obj) => {
-    prev[obj.name] = cleanSearchValues(obj.value);
+    prev[obj.name] = obj.name && obj.name.toLowerCase() !== 'age' ? cleanSearchValues(obj.value) : obj.value;
     return prev;
   }, {});
   amplify.store('searchData', formVals);
