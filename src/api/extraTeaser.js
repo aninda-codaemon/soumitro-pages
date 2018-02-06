@@ -157,12 +157,13 @@ const parseExtraTeaserData = data => {
   var recordCount = result.reduce((prev, next) => {
     return prev + (next.count || 0);
   }, 0);
+  var MINIMUM_NUMBER_OF_RECORDS = 4;
 
   return {
     data,
     photo: _.get(result, 'images[0].url') || '',
     coordinates,
-    recordCount: recordCount,
+    recordCount: recordCount < MINIMUM_NUMBER_OF_RECORDS ? 0 : recordCount,
     recordCountDisplay: getRecordCountText(recordCount),
   };
 };
