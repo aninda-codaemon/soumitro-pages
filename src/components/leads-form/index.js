@@ -22,8 +22,7 @@ const validateLeadsForm = ($form, onSubmit = noop) => {
     if (validator.form()) {
       track('Submitted Lead Form - Success');
 
-      const $emailCheckbox = $('#emailCheckbox');
-      if ($emailCheckbox && $emailCheckbox.prop('checked')) {
+      if ($('#emailCheckbox').prop('checked')) {
         track('OPT-IN submitted lead form - success');
       }
 
