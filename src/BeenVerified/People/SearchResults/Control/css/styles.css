@@ -19,6 +19,10 @@ table td,
   text-shadow: none;
 }
 
+select::-ms-expand {
+  display: none;
+}
+
 .modal {
   pointer-events: none;
 }
