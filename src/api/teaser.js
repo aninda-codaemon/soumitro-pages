@@ -5,7 +5,7 @@ import {
   chain as _chain,
 } from 'lodash';
 
-import { getAjax } from 'utils/request';
+import { get } from 'utils/request';
 import { cleanSearchValues } from 'utils/strings';
 import { TeaserRecord } from 'parsers/teaserRecord';
 import amplify from 'utils/amplifyStore';
@@ -100,7 +100,7 @@ const getTeaserData = (data) => {
     validData(data.mi),
   );
 
-  return getAjax(url)
+  return get(url)
     .then(parseTeaser)
     .then(storeTeaserData)
     .then(fixIncognitoMode(data.bvid));
