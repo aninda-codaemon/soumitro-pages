@@ -5,6 +5,15 @@ const get = (url, callbackFn = 'parseResults') => fetchJsonp(url, {
   jsonpCallbackFunction: callbackFn,
 }).then(response => response.json());
 
+const getAjax = (url, callbackFn = 'parseResults') => $.when(
+  $.ajax({
+    url: url,
+    dataType: 'jsonp',
+    jsonpCallback: callbackFn
+  })
+);
+
 export {
   get,
+  getAjax,
 };
