@@ -10,6 +10,23 @@
 }
 
 #gen-report-modal6 .emailcheckbox-text {
+  font-size: 13px;
+
   margin-top: 0;
+  margin-right: 0;
   margin-bottom: 0;
+}
+
+#gen-report-modal6 .modal-body p {
+  line-height: 18px;
+}
+
+#gen-report-modal6  .checkbox label {
+  padding-left: 0;
+}
+
+@media (min-width: 768px) and  (max-width: 991px) {
+  #gen-report-modal6 .form-input-group {
+    padding: 23px;
+  }
 }
