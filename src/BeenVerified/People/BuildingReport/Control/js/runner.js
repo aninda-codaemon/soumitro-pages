@@ -15,7 +15,6 @@ import '../css/styles.css';
 
 const queryArgs = getQueryArgs();
 const validQueryArgs = isValidPeopleQuery(queryArgs);
-const bvid = getBVId(queryArgs);
 const recordCounts = {
   LANDING: 'RecordCount UponLanding',
   RESEARCH: 'RecordCount Re-Searching',
@@ -80,10 +79,8 @@ const initialize = (buildingReportInstance, shouldDisplayRelatives = false) => {
   jQuery.fx.interval = 100;
   initializeTestimonials();
   initializeQueryArgs(queryArgs, validQueryArgs);
-
-  if (!bvid) {
-    amplify.store('currentRecord', null);
-  }
+  let currentRecord = amplify.store('currentRecord') || {};
+  let bvid = getBVId(queryArgs) || currentRecord.bvid;
 
   initializeBVGO(buildingReport.wizard.skipStep);
   buildingReport.wizard.start();
