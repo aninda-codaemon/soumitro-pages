@@ -39,6 +39,13 @@ const setDefaultsToExtraTeaserData = data => {
   return data;
 }
 
+const getRecordCountText =  (count) => {
+  if (count === 0) {
+    return '';
+  }
+  return count === 1 ? '1 record' : `${count} records`;
+}
+
 const parseExtraTeaserData = data => {
   track('Person Data Teaser Called');
   var newData = setDefaultsToExtraTeaserData(data);
@@ -142,20 +149,26 @@ const parseExtraTeaserData = data => {
     latitude: firstAddress.latitude,
     longitude: firstAddress.longitude
   } : null;
+  var data = _.chain(result)
+    .filter(filterEmptyData)
+    .map(mapSingularNames)
+    .sortBy(['weight', 'count'], ['desc', 'desc'])
+    .value();
+  var recordCount = result.reduce((prev, next) => {
+    return prev + (next.count || 0);
+  }, 0);
+  var MINIMUM_NUMBER_OF_RECORDS = 4;
 
   return {
-    data: _.chain(result)
-      .filter(filterEmptyData)
-      .map(mapSingularNames)
-      .sortBy(['weight', 'count'], ['desc', 'desc'])
-      .value(),
+    data,
     photo: _.get(result, 'images[0].url') || '',
     coordinates,
-    recordCount: Array.isArray(result) ? 0 : 1,
+    recordCount: recordCount < MINIMUM_NUMBER_OF_RECORDS ? 0 : recordCount,
+    recordCountDisplay: getRecordCountText(recordCount),
   };
-}
+};
 
-const mergeInformationTypes = ({ coordinates, data, recordCount, photo }) => {
+const mergeInformationTypes = ({ coordinates, data, recordCount, recordCountDisplay, photo }) => {
   const infoTypes = [
     'criminal',
     'bankruptcy',
@@ -170,17 +183,18 @@ const mergeInformationTypes = ({ coordinates, data, recordCount, photo }) => {
   const information = infoTypes.reduce(reduceExtraTeaserInformation(data), {});
   var teaserDataObj = {
     recordCount,
+    recordCountDisplay,
     extraData: _(data).omit(_.isUndefined).omit(_.isNull).value(),
     photo,
     coordinates
   };
   return _.assign(teaserDataObj, information);
-} 
+};
 
 const storeData = teaserDataObj => {
   amplify.store('extraTeaserData', teaserDataObj);
   return teaserDataObj;
-}
+};
 
 const getExtraTeaserData = bvid => get(buildExtraTeaserEndpoint(bvid), 'jsonpCallbackExtraTeaser')
   .then(parseExtraTeaserData)

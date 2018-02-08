@@ -15,7 +15,6 @@ import '../css/styles.css';
 
 const queryArgs = getQueryArgs();
 const validQueryArgs = isValidPeopleQuery(queryArgs);
-const bvid = getBVId(queryArgs);
 const recordCounts = {
   LANDING: 'RecordCount UponLanding',
   RESEARCH: 'RecordCount Re-Searching',
@@ -49,9 +48,23 @@ const initializeTestimonials = () => {
   setTimeout(testimonialsSwitcher, TESTIMONIAL_DURATION);
 };
 
+const shouldGetTeaserData = (args) => {
+  var searchData = amplify.store('searchData') || {};
+  return (
+    args.fn !== searchData.fn ||
+    args.ln !== searchData.ln ||
+    args.mi !== searchData.mi ||
+    args.state !== searchData.state ||
+    args.city !== searchData.city ||
+    args.age !== searchData.age
+  );
+};
+
 const initializeQueryArgs = (args, validArgs) => {
   args.state = args.state || 'all';
-  if (validArgs) {
+  if (validArgs && shouldGetTeaserData(args)) {
+    args.fullName = `${nameize(args.fn)} ${nameize(args.ln)}`;
+
     amplify.store('searchData', args);
     getTeaserData(args)
       .then(() => notifyRecordCount(recordCounts.QUERY));
@@ -61,21 +74,21 @@ const initializeQueryArgs = (args, validArgs) => {
 };
 
 const initialize = (buildingReportInstance, shouldDisplayRelatives = false) => {
+  const SECTION_BEFORE_LEADBOX = 1; // zero index based.
   buildingReport = buildingReportInstance;
   jQuery.fx.interval = 100;
   initializeTestimonials();
   initializeQueryArgs(queryArgs, validQueryArgs);
+  let currentRecord = amplify.store('currentRecord') || {};
+  let bvid = getBVId(queryArgs) || currentRecord.bvid;
 
-  if (bvid && queryArgs.bvid) {
-    getExtraTeaserData(bvid).then(includeRelativesModal(shouldDisplayRelatives));
-  } else {
-    const searchData = amplify.store('searchData') || {};
-    searchData.fullName = `${nameize(searchData.fn)} ${nameize(searchData.ln)}`;
-    amplify.store('searchData', searchData);
-    amplify.store('currentRecord', null);
-  }
   initializeBVGO(buildingReport.wizard.skipStep);
   buildingReport.wizard.start();
+  buildingReport.wizard.subscribeOnSectionCompleted((sectionIndex) => {
+    if (sectionIndex === SECTION_BEFORE_LEADBOX && bvid) {
+      getExtraTeaserData(bvid).then(includeRelativesModal(shouldDisplayRelatives));
+    }
+  });
   window.$ = jQuery;
 };
 

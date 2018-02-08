@@ -1,6 +1,7 @@
 import { addRelativesModal, createWizard } from 'components/building-report';
 import amplify from 'utils/amplifyStore';
 import { initialize } from '../Control/js/runner';
+import './style.scss';
 
 const buildingReportInstance = {
   addRelativesModal: () => addRelativesModal(),
