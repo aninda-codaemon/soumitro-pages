@@ -50,13 +50,19 @@ const initializeTestimonials = () => {
 
 const shouldGetTeaserData = (args) => {
   var searchData = amplify.store('searchData') || {};
+  let currentRecord = amplify.store('currentRecord');
+
+  if (currentRecord && args.bvid && args.bvid !== currentRecord.bvid) {
+    return true;
+  }
+
   return (
     args.fn !== searchData.fn ||
     args.ln !== searchData.ln ||
     args.mi !== searchData.mi ||
     args.state !== searchData.state ||
     args.city !== searchData.city ||
-    args.age !== searchData.age
+    (args.age && args.age !== searchData.age)
   );
 };
 
@@ -66,6 +72,7 @@ const initializeQueryArgs = (args, validArgs) => {
     args.fullName = `${nameize(args.fn)} ${nameize(args.ln)}`;
 
     amplify.store('searchData', args);
+    amplify.store('currentRecord', null);
     getTeaserData(args)
       .then(() => notifyRecordCount(recordCounts.QUERY));
   } else {
@@ -75,12 +82,11 @@ const initializeQueryArgs = (args, validArgs) => {
 
 const initialize = (buildingReportInstance, shouldDisplayRelatives = false) => {
   const SECTION_BEFORE_LEADBOX = 1; // zero index based.
+  let bvid = getBVId(queryArgs);
   buildingReport = buildingReportInstance;
   jQuery.fx.interval = 100;
   initializeTestimonials();
   initializeQueryArgs(queryArgs, validQueryArgs);
-  let currentRecord = amplify.store('currentRecord') || {};
-  let bvid = getBVId(queryArgs) || currentRecord.bvid;
 
   initializeBVGO(buildingReport.wizard.skipStep);
   buildingReport.wizard.start();
