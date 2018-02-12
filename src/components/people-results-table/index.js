@@ -123,20 +123,13 @@ const hideFilters = () => {
   $('.noFilters').show();
 };
 
-const showFiltersOnMobile = (recordCount, minimunRecords) =>
-  ((recordCount > minimunRecords) ? showFilters() : hideFilters());
-
-const showFiltersOnDesktop = (recordCount, minimunRecords) =>
+const toggleFilters = (recordCount, minimunRecords) =>
   ((recordCount > minimunRecords) ? showFilters() : hideFilters());
 
 const showFiltersOnDevice = (recordCount) => {
-  const minimumMobileRecords = 20;
+  const minimumMobileRecords = 9;
   const minimumDesktopRecords = 14;
-  if (isMobile) {
-    showFiltersOnMobile(recordCount, minimumMobileRecords);
-  } else {
-    showFiltersOnDesktop(recordCount, minimumDesktopRecords);
-  }
+  toggleFilters(recordCount, isMobile ? minimumMobileRecords : minimumDesktopRecords);
 };
 
 // TODO: Do we need this?
@@ -157,16 +150,9 @@ const deprioritizeEmptyAges = (list) => {
 const setFilterStates = () => {
   let age = $('#age').val();
   let state = $('#search-bar-state').val() || '';
-  let showAgeFilter = age === '';
-  let showStateFilter = state.toLowerCase() === 'all';
 
-  if (isMobile) {
-    $('.age-filter-group').toggle(showAgeFilter);
-    $('.state-filter-group').toggle(showStateFilter);
-  } else {
-    $('#age-filter').attr('disabled', !showAgeFilter);
-    $('#state-filter').attr('disabled', !showStateFilter);
-  }
+  $('#age-filter').attr('disabled', age !== '');
+  $('#state-filter').attr('disabled', state.toLowerCase() !== 'all');
 };
 
 const $clonedStateFilter = $('#state-filter').clone();
@@ -303,7 +289,7 @@ const filterSearchResults = searchedNameParts => (item) => {
 };
 
 const initilizeSearchFilters = ({ onReset }) => {
-  const recordCount = Number($('.record-count').text());
+  const recordCount = Number($('.record-count:visible').text());
   /*
     Define sort/filter options using the class names of the data elements
     these classes are linked to the table data in index.html
