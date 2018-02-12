@@ -1,4 +1,5 @@
 import states from 'constants/states';
+import { isMobile } from 'utils/browser';
 
 var windowWidth = $(window).width();
 var stateConverted = false;
@@ -32,7 +33,9 @@ const callToConvertStates = () => {
 };
 
 const updateStates = () => {
-  callToConvertStates();
+  if (isMobile) {
+    callToConvertStates();
+  }
   stateConverted = true;
 };
 

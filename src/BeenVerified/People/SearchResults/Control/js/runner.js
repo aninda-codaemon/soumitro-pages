@@ -115,6 +115,7 @@ const renderResults = () => {
   }
   showResultsPanel();
   activateRows();
+  $(window).trigger('newResults');
   // bvid param? start the modal flow!
   if (queryData && typeof queryData.bvid !== 'undefined') {
     let resultId = findIndex(teaserData.teasers, t => t.bvid === queryData.bvid);
