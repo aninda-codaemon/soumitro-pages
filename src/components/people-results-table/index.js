@@ -235,7 +235,13 @@ const updateFilterOptions = (results) => {
 
 // Update the record count - to use when table filters change
 const updateRecordCount = () => {
-  $('.record-count').text($('#results .results-row').length);
+  const resultsRowsCount = $('#results .results-row').length;
+  $('.record-count').text(resultsRowsCount);
+  const newHeaderTextIndex = resultsRowsCount > 1 ? 0 : 1;
+  $('[data-result-header]').each((index, element) => {
+    const $elem = $(element);
+    $elem.text($elem.data().resultHeader.split('-')[newHeaderTextIndex]);
+  });
 };
 
 const getSearchName = () => {

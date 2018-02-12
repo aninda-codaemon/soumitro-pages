@@ -161,11 +161,11 @@
     <div id="top-banner" class="container section-alt section-min top-section">
       <div class="row section-header">
         <h3 class="text-center text-info hidden-xs">
-          <span class="hasResults"><span class="record-count">{{recordCount}}</span> Result{{#ifNot recordCount 1}}s{{/ifNot}} for <strong>{{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}</strong> in the last 24 hours!
+          <span class="hasResults"><span class="record-count">{{recordCount}}</span> <span class="record-result-word" data-result-header="Results-Result">Result{{#ifNot recordCount 1}}s{{/ifNot}}</span> for <strong>{{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}</strong> in the last 24 hours!
           <span class="noResults">We found <span class="record-count">{{recordCount}}</span> result for <strong>{{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}!</strong> Click the Green Button <span class="hidden-xs">Below</span></span>
         </h3>
         <h3 class="text-center text-info visible-xs">
-          <span class="hasResults"><span class="record-count">{{recordCount}}</span> Result{{#ifNot recordCount 1}}s{{/ifNot}} for <strong>{{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong>{{#if state}} in <strong>{{uppercase state}}{{/if}}{{/notEqual}}</strong>
+          <span class="hasResults"><span class="record-count">{{recordCount}}</span> <span class="record-result-word" data-result-header="Results-Result">Result{{#ifNot recordCount 1}}s{{/ifNot}}</span> for <strong>{{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong>{{#if state}} in <strong>{{uppercase state}}{{/if}}{{/notEqual}}</strong>
           <span class="noResults">We found <span class="record-count">{{recordCount}}</span> result for <strong>{{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}!</strong> Click the Green Button <span class="hidden-xs">Below</span></span>
         </h3>
         <!-- Original SubHeader -->
