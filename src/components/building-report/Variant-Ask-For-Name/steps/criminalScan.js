@@ -1,7 +1,12 @@
-import { criminalScan } from '../../Control/steps/criminalScan';
+import criminalScan from '../../Control/steps/criminalScan';
 
-criminalScan.onBeforeStart = function onBeforeStartCriminalScan() {
-  $('.headline').text('Loading Public Records Service');
-};
+function createComponent(options = {}) {
+  let criminalScanInstance = criminalScan(options.criminalScan);
+  criminalScanInstance.onBeforeStart = function onBeforeStartCriminalScan() {
+    $('.headline').text('Loading Public Records Service');
+  };
 
-export { criminalScan };
+  return criminalScanInstance;
+}
+
+export default createComponent;

@@ -1,7 +1,12 @@
-import { noteOnUserComments } from '../../Control/steps/noteOnUserComments';
+import noteOnUserComments from '../../Control/steps/noteOnUserComments';
 
-noteOnUserComments.onBeforeStart = function onBeforeStartNoteOnUserComments() {
-  $('.headline').text('Important: Real Records Given');
-};
+function createComponent(options = {}) {
+  let noteOnUserCommentsInstance = noteOnUserComments(options.noteOnUserComments);
+  noteOnUserCommentsInstance.onBeforeStart = function onBeforeStartNoteOnUserComments() {
+    $('.headline').text('Important: Real Records Given');
+  };
 
-export { noteOnUserComments };
+  return noteOnUserCommentsInstance;
+}
+
+export default createComponent;

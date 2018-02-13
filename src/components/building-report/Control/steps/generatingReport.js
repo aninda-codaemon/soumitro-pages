@@ -62,17 +62,21 @@ function generatingReportStart(stepCompleted) {
   animateProgress();
 }
 
-const generatingReport = Object.assign({}, Step);
-generatingReport.init({
-  title: 'Completing the Report',
-  $elem: $('#gen-report-modal5'),
-  duration: 120,
-  transitionDelay: 1,
-  onStart: generatingReportStart,
-  $modal: $('#externalModal'),
-  openModal: (stepCompleted, duration) =>
-    showExternalModal(stepCompleted, duration, COMPLETING_REPORT_INDEX),
-  closeModal: () => hideExternalModal(COMPLETING_REPORT_INDEX),
-});
+function createComponent(options = {}) {
+  const generatingReport = Object.assign({}, Step);
+  let newCongif = Object.assign({
+    title: 'Completing the Report',
+    $elem: $('#gen-report-modal5'),
+    duration: 120,
+    transitionDelay: 1,
+    onStart: generatingReportStart,
+    $modal: $('#externalModal'),
+    openModal: (stepCompleted, duration) =>
+      showExternalModal(stepCompleted, duration, COMPLETING_REPORT_INDEX),
+    closeModal: () => hideExternalModal(COMPLETING_REPORT_INDEX),
+  }, options);
+  generatingReport.init(newCongif);
+  return generatingReport;
+}
 
-export { generatingReport };
+export default createComponent;

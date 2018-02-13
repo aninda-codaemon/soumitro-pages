@@ -22,12 +22,17 @@ function onNoteOnUserCommentsStart(stepCompleted) {
   });
 }
 
-const noteOnUserComments = Object.assign({}, Step);
-noteOnUserComments.init({
-  title: 'Note on User Comments',
-  $elem: $('#gen-report-modal3'),
-  duration: 20,
-  onStart: onNoteOnUserCommentsStart,
-});
+function createComponent(options = {}) {
+  const noteOnUserComments = Object.assign({}, Step);
+  let newConfig = Object.assign({
+    title: 'Note on User Comments',
+    $elem: $('#gen-report-modal3'),
+    duration: 20,
+    onStart: onNoteOnUserCommentsStart,
+  }, options);
 
-export { noteOnUserComments };
+  noteOnUserComments.init(newConfig);
+  return noteOnUserComments;
+}
+
+export default createComponent;

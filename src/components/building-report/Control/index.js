@@ -2,17 +2,18 @@ import 'jquery-validation';
 
 import Section from 'components/wizard/section';
 import WizardManager from 'components/wizard/manager';
+
 import {
   popularUseCases,
+  noteOnUserComments,
+  preparingMonitoring,
+  confirmData,
   criminalScan,
   socialMediaScan,
-  relatives,
-  noteOnUserComments,
   confirmFCRA,
-  confirmData,
   saveResults,
-  preparingMonitoring,
   generatingReport,
+  relatives,
 } from './steps';
 
 function showSubHeadlines(totalSections) {
@@ -55,25 +56,50 @@ const section2 = Object.assign({}, Section);
 const section3 = Object.assign({}, Section);
 const section4 = Object.assign({}, Section);
 
-section1.init([popularUseCases]);
-// NOTE: The relatives would be added dynamically if the person has relatives.
-section2.init([criminalScan, socialMediaScan, /* RELATIVES */ noteOnUserComments, confirmFCRA]);
-section3.init([confirmData]);
-section4.init([saveResults, preparingMonitoring, generatingReport]);
-
-const wizard = Object.assign({}, WizardManager);
-const sections = [section1, section2, section3, section4];
-
-function addRelativesModal() {
-  section2.steps.splice(2, 0, relatives);
+function addRelativesModal(options = {}) {
+  let relativesInstance = relatives(options.relatives);
+  section2.steps.splice(2, 0, relativesInstance);
 }
 
-wizard.init({
-  sections,
-  onCompleted() {
-    window.location = $('body').data('next-page');
-  },
-});
-showSubHeadlines(sections.length);
+function createWizard(options = {}) {
+  let popularUseCasesInstance = popularUseCases(options.popularUseCases);
+  let noteOnUserCommentsInstance = noteOnUserComments(options.noteOnUserComments);
+  let preparingMonitoringInstance = preparingMonitoring(options.preparingMonitoring);
+  let confirmDataInstance = confirmData(options.confirmData);
+  let criminalScanInstance = criminalScan(options.criminalScan);
+  let socialMediaScanInstance = socialMediaScan(options.socialMediaScan);
+  let confirmFCRAInstance = confirmFCRA(options.confirmFCRA);
+  let saveResultsInstance = saveResults(options.saveResults);
+  let generatingReportInstance = generatingReport(options.generatingReport);
 
-export { wizard, addRelativesModal };
+  section1.init([popularUseCasesInstance]);
+  // NOTE: The relatives would be added dynamically if the person has relatives.
+  section2.init([
+    criminalScanInstance,
+    socialMediaScanInstance,
+    /* RELATIVES */
+    noteOnUserCommentsInstance,
+    confirmFCRAInstance,
+  ]);
+  section3.init([confirmDataInstance]);
+  section4.init([
+    saveResultsInstance,
+    preparingMonitoringInstance,
+    generatingReportInstance,
+  ]);
+
+  const wizard = Object.assign({}, WizardManager);
+  const sections = [section1, section2, section3, section4];
+
+  wizard.init({
+    sections,
+    onCompleted() {
+      window.location = $('body').data('next-page');
+    },
+  });
+  showSubHeadlines(sections.length);
+
+  return wizard;
+}
+
+export { createWizard, addRelativesModal };

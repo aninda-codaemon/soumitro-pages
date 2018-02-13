@@ -1,11 +1,11 @@
-import { addRelativesModal, wizard } from 'components/building-report';
+import { addRelativesModal, createWizard } from 'components/building-report';
 import { downsell } from 'utils/downsell';
 import { initialize } from '../Control/js/runner';
 import './styles.css';
 
 const buildingReportInstance = {
-  addRelativesModal,
-  wizard,
+  addRelativesModal: () => addRelativesModal(),
+  wizard: createWizard(),
 };
 const shouldIncludeRelatives = true;
 initialize(buildingReportInstance, shouldIncludeRelatives);

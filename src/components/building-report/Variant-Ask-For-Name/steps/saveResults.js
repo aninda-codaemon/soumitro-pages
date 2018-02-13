@@ -20,12 +20,17 @@ function onBeforeStartSaveResults() {
   $('.headline').text(`Building Report: ${fullName}`);
 }
 
-const saveResults = Object.assign({}, Step);
-saveResults.init({
-  title: 'Save Your Search',
-  $elem: $('#gen-report-modal6'),
-  onStart: onSaveResultsStart,
-  onBeforeStart: onBeforeStartSaveResults,
-});
+function createComponent(options = {}) {
+  const saveResults = Object.assign({}, Step);
+  let newConfig = Object.assign({
+    title: 'Save Your Search',
+    $elem: $('#gen-report-modal6'),
+    onStart: onSaveResultsStart,
+    onBeforeStart: onBeforeStartSaveResults,
+  }, options);
+  saveResults.init(newConfig);
 
-export { saveResults };
+  return saveResults;
+}
+
+export default createComponent;

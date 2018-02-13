@@ -30,17 +30,24 @@ function onSearchPeopleStart(stepCompleted) {
   img.attr('src', img.attr('data-src'));
 }
 
-const searchPeople = Object.assign({}, Step);
-const skipSavingResultModal = true;
-searchPeople.init({
-  title: 'Search for anyone',
-  $elem: $('#search-people'),
-  duration: 18,
-  onStart: onSearchPeopleStart,
-  $modal: $('#externalModal'),
-  openModal: (stepCompleted, duration) =>
-    showExternalModal(stepCompleted, duration, SAVE_RESULTS_INDEX, skipSavingResultModal),
-  closeModal: () => hideExternalModal(SAVE_RESULTS_INDEX),
-});
 
-export { searchPeople };
+function createComponent(options = {}) {
+  const searchPeople = Object.assign({}, Step);
+  const skipSavingResultModal = true;
+  let newConfig = Object.assign({
+    title: 'Search for anyone',
+    $elem: $('#search-people'),
+    duration: 18,
+    onStart: onSearchPeopleStart,
+    $modal: $('#externalModal'),
+    openModal: (stepCompleted, duration) =>
+      showExternalModal(stepCompleted, duration, SAVE_RESULTS_INDEX, skipSavingResultModal),
+    closeModal: () => hideExternalModal(SAVE_RESULTS_INDEX),
+  }, options);
+
+  searchPeople.init(newConfig);
+
+  return searchPeople;
+}
+
+export default createComponent;

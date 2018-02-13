@@ -26,12 +26,16 @@ function onPopularUseCasesStart(stepCompleted) {
   $.when(initialProgress).done(stepCompleted);
 }
 
-const popularUseCases = Object.assign({}, Step);
-popularUseCases.init({
-  title: 'Popular Use Cases',
-  $elem: $('#gen-report-modal1'),
-  duration: 32,
-  onStart: onPopularUseCasesStart,
-});
+function createComponent(options = {}) {
+  const popularUseCases = Object.assign({}, Step);
+  let newConfig = Object.assign({
+    title: 'Popular Use Cases',
+    $elem: $('#gen-report-modal1'),
+    duration: 32,
+    onStart: onPopularUseCasesStart,
+  }, options);
+  popularUseCases.init(newConfig);
+  return popularUseCases;
+}
 
-export { popularUseCases };
+export default createComponent;
