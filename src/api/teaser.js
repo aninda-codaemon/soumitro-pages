@@ -82,6 +82,8 @@ const fixIncognitoMode = bvid => ({ teasers }) => {
      * Probably because those attributes are functions */
     currentRecord.fullName = parsedRecord.fullName();
     currentRecord.firstName = parsedRecord.firstName();
+    // Hacky fix for framerida problem
+    currentRecord['_framerida_mapped'] = 'TeaserRecord'; // eslint-disable-line
     amplify.store('currentRecord', currentRecord);
   }
 };
