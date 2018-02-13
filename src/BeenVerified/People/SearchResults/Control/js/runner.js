@@ -106,7 +106,7 @@ const activateRows = () => {
   });
 };
 
-const renderResults = () => {
+const renderResults = (renderResultsCallback = noop) => () => {
   const teaserData = amplify.store('teaserData');
   const queryData = amplify.store('query');
 
@@ -127,25 +127,26 @@ const renderResults = () => {
   initilizeSearchFilters({
     onReset: () => determineCollapse(),
   });
+  renderResultsCallback();
 };
 
-const searchPeople = (query, notificationType) => {
+const searchPeople = (query, notificationType, renderResultsCallback) => {
   showSearchingAnimation();
   getTeaserData(query).then(() => notifyRecordCount(notificationType))
     .then(hideSearchingAnimation)
-    .then(renderResults);
+    .then(renderResults(renderResultsCallback));
 };
 
-const initializeQueryArgs = (args, validArgs) => {
+const initializeQueryArgs = (args, validArgs, renderResultsCallback) => {
   args.state = args.state || 'All';
   if (validArgs) {
     amplify.store('searchData', args);
     showSearchingAnimation();
-    searchPeople(args, recordCounts.QUERY);
+    searchPeople(args, recordCounts.QUERY, renderResultsCallback);
     return;
   }
   hideSearchingAnimation();
-  renderResults();
+  renderResults(renderResultsCallback)();
   notifyRecordCount(recordCounts.LANDING);
 };
 
@@ -164,23 +165,22 @@ const initializeRefine = () => {
   });
 };
 
-const initialize = (codeCallback = noop) => {
+const initialize = (renderResultsCallback) => {
   jQuery.fx.interval = 100;
   window.$ = jQuery;
   showSearchingAnimation();
   initializePeopleValidator({
     onSubmit: (args) => {
       $toggleSearchBar.addClass('hidden');
-      searchPeople(args, recordCounts.RESEARCH);
+      searchPeople(args, recordCounts.RESEARCH, renderResultsCallback);
     },
   });
   initializeToggleSearch();
-  initializeQueryArgs(queryArgs, validQueryArgs);
+  initializeQueryArgs(queryArgs, validQueryArgs, renderResultsCallback);
   initializeRefine();
   initializeDownsells();
   initializeResizeHandler(determineCollapse, determineLayoutState);
   initializeReloadCachedPageHandler();
-  codeCallback();
 };
 
 export { initialize };
