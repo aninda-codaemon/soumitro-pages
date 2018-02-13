@@ -1,6 +1,7 @@
 import {
   findIndex,
   isFinite,
+  noop,
 } from 'lodash';
 import { getTeaserData } from 'api/teaser';
 import { recordCounts } from 'constants/recordCounts';
@@ -163,7 +164,7 @@ const initializeRefine = () => {
   });
 };
 
-const initialize = () => {
+const initialize = (cb = noop) => {
   jQuery.fx.interval = 100;
   window.$ = jQuery;
   showSearchingAnimation();
@@ -179,6 +180,7 @@ const initialize = () => {
   initializeDownsells();
   initializeResizeHandler(determineCollapse, determineLayoutState);
   initializeReloadCachedPageHandler();
+  cb();
 };
 
 export { initialize };
