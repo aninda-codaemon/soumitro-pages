@@ -165,7 +165,7 @@ const initializeRefine = () => {
   });
 };
 
-const initialize = (codeCallback = noop) => {
+const initialize = (renderResultsCallback) => {
   jQuery.fx.interval = 100;
   window.$ = jQuery;
   showSearchingAnimation();
@@ -181,7 +181,6 @@ const initialize = (codeCallback = noop) => {
   initializeDownsells();
   initializeResizeHandler(determineCollapse, determineLayoutState);
   initializeReloadCachedPageHandler();
-  codeCallback();
 };
 
 export { initialize };
