@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>BeenVerified Results</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+</head>
+
+<body class="hide" data-next-page="<%=next_page%>">
+  <!-- ======== -->
+  <!--  HEADER  -->
+  <!-- ======== -->
+  <div id="topWrapper">
+    <header id="header">
+      <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-sm-3">
+              <div class="navbar-header">
+                <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                  <span id="nav-icon-toggle">
+                    <i class="fa fa-search icon"></i>
+                  </span>
+                </button>
+                <span onclick="location.href='https://www.beenverified.com/';">
+                  <div class="navbar-logo"><img src="../Control/img/bv-logo-white.svg">
+                  </div>
+                </span>
+              </div>
+            </div>
+
+            <div class="col-sm-9">
+              <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="nav-btn hidden-xs">
+                    <button type="button" name="button" class="btn btn-block btn-search-bar">Modify Your Search</button>
+                  </li>
+                  <li class="nav-btn">
+                    <a href="//www.beenverified.com/login" class="btn btn-block btn-login">Log In</a>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+
+          </div><!--END row-->
+        </div><!--END container-->
+      </nav>
+    </header>
+
+    <!-- ============== -->
+    <!-- = TOP SEARCH = -->
+    <!-- ============== -->
+    <div id="search_bar" class="header-search collapse navbar-collapse">
+      <div class="container search-wrapper search-toggled hidden">
+
+        <form class="header-search-bar bv-search" id="search-form" data-fr-bind="searchData" data-fr-store="searchData">
+          <div class="row">
+            <div class="col-sm-10">
+              <div class="row">
+                <div class="col-sm-3 col-search-bar">
+                  <label for="fn" class="sr-only">First Name</label>
+                  <input name="fn" id="fn" type="text" class="form-control" placeholder="First Name" required value="{{nameize fn}}" />
+                </div>
+                <div class="col-sm-2 col-search-bar">
+                  <label for="mi" class="sr-only">Middle Initial</label>
+                  <input name="mi" id="mi" type="text" class="form-control" placeholder="Middle Name" value="{{nameize mi}}" />
+                </div>
+                <div class="col-sm-2 col-search-bar">
+                  <label for="ln" class="sr-only">Last Name</label>
+                  <input name="ln" id="ln" type="text" class="form-control" placeholder="Last Name" required value="{{nameize ln}}" />
+                </div>
+                <div class="col-sm-2 col-search-bar hidden-xs">
+                  <label for="city" class="sr-only">City</label>
+                  <input name="city" id="city" type="text" class="form-control" placeholder="City" value="{{city}}" />
+                </div>
+                <div class="col-sm-2 col-search-bar">
+                  <label for="search-bar-state" class="sr-only">State</label>
+                  <select class="custom-select form-control" id="search-bar-state" name="state" value="{{state}}">
+                    <option value="All">All States</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="PR">Puerto Rico</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                  </select>
+                </div>
+                <div class="col-sm-1 col-search-bar hidden-xs">
+                  <label for="Age" class="sr-only">Age</label>
+                  <input name="age" id="age" type="text" maxlength="3" class="form-control" placeholder="Age" value="{{age}}" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="search-filter row clearfix"></div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <input type="submit" class="main-btn" value="Search" />
+            </div>
+          </div><!--END row-->
+        </form>
+      </div><!--END search-wrapper-->
+    </div><!--END search_bar-->
+  </div><!--END topWrapper-->
+
+  <!-- ============== -->
+  <!-- = DATA PANEL = -->
+  <!-- ============== -->
+  <div id="data-panel" data-fr-bind="searchData teaserData">
+    <div id="top-banner" class="container section-alt section-min top-section">
+      <div class="row section-header">
+        <h3 class="text-center text-info hidden-xs">
+          <span class="hasResults"><span class="record-count">{{recordCount}}</span> Result{{#ifNot recordCount 1}}s{{/ifNot}} for <strong>{{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}</strong> in the last 24 hours!
+          <span class="noResults">We found <span class="record-count">{{recordCount}}</span> result for <strong>{{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}!</strong> Click the Green Button <span class="hidden-xs">Below</span></span>
+        </h3>
+        <h3 class="text-center text-info visible-xs">
+          <span class="hasResults"><span class="record-count">{{recordCount}}</span> Result{{#ifNot recordCount 1}}s{{/ifNot}} for <strong>{{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong>{{#if state}} in <strong>{{uppercase state}}{{/if}}{{/notEqual}}</strong>
+          <span class="noResults">We found <span class="record-count">{{recordCount}}</span> result for <strong>{{nameize fn}}{{#if mi}} {{nameize mi}}{{/if}} {{nameize ln}}{{#notEqual state 'All'}} </strong> in <strong>{{uppercase state}}{{/notEqual}}!</strong> Click the Green Button <span class="hidden-xs">Below</span></span>
+        </h3>
+        <!-- Original SubHeader -->
+        <p class="text-center subHeadOthers hidden-xs hidden-sm visible-md visible-lg">
+          Locate the person you're looking for in the results
+          <span class="hasFilters">or modify your search using the filters.</span>
+          <span class="noFilters">and click on the green button to access the report.</span>
+        </p>
+
+
+        <!-- Use Cases & Info on Search Results -->
+        <div id="useCaseInfo" class="row-fluid hidden-md hidden-lg visible-xs visible-sm">
+          <div class="col-md-4 useCaseInfo info1 hidden-sm hidden-xs">
+            <div class="title">
+              <strong>Stop Wondering</strong>
+            </div>
+            <div>
+              Have a feeling about someone? It's never too late to try and find those personal details you've been wondering about.
+            </div>
+          </div>
+          <div class="col-md-4 useCaseInfo info2 hidden-sm hidden-xs">
+            <div class="title">
+              <strong>Stay Up to Date</strong>
+            </div>
+            <div>
+              With BeenVerified, you can stay up to date about someone's public records. Let us do the work for you.
+            </div>
+          </div>
+          <div class="col-md-4 useCaseInfo info3">
+            <div class="title">
+              <strong>Get Started</strong>
+            </div>
+            <div>
+              Click <span class="build">"Build Report"</span> to look up phone numbers, email addresses, criminal records &amp; much more!
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div><!--END useCaseInfo-->
+
+
+        <!--<p class="text-center subHeadMobile">
+          <span>Data refreshed within the last 24 hours.</span>
+          <span class="hasFilters">Find the person you're looking for in the results below. Tap the search box at the top to filter or modify your search</span>
+          <span class="noFilters">Find the person you're looking for in the results below.</span>
+        </p>-->
+
+      <form class="row results-filters center-block">
+          <div class="col-xs-12 col-sm-2 col-md-1 col-lg-1 filter-header">
+           <p>FILTERS
+           <button type="button" class="btn btn-info toggle-filter visible-xs" data-toggle="collapse" data-target="#filters">
+              <img src="../Control/img/drop_arrow.png" alt="">
+            </button>
+           </p>
+         </div>
+         <div id="filters" class="collapse">
+          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 form-group age-filter-group">
+            <div class="input-group">
+              <label for="age-filter" class="input-group-addon">By Age:</label>
+              <select name="ageGroup" class="form-control" id="age-filter">
+                <option value="All">Show All</option>
+                <option value="18-25">18 - 25</option>
+                <option value="26-35">26 - 35</option>
+                <option value="36-45">36 - 45</option>
+                <option value="46-55">46 - 55</option>
+                <option value="56-65">56 - 65</option>
+                <option value="66-75">66 - 75</option>
+                <option value="76-85">76 - 85</option>
+                <option value="86-95">86 - 95</option>
+                <option value="96-200">96+</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-4 col-lg-3 form-group state-filter-group">
+            <div class="input-group">
+              <label for="state-filter" class="input-group-addon">By States:</label>
+              <select class="form-control" id="state-filter">
+                <option value="All">Show All</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District Of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="PR">Puerto Rico</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-2 col-md-offset-1 col-md-2 col-lg-offset-3 col-lg-2">
+            <div class="row filter-buttons">
+            <div class="col-xs-12 col-sm-12">
+                <button type="button" class="btn btn-xs btn-default reset-filters">
+                     <i class="fa fa-refresh icon"></i> Reset Filters
+                </button>
+              </div>
+            </div>
+          </div>
+        </div> <!--collapsible-->
+      </form> <!--end mobile-filters-->
+      </div><!-- /.row .section-header -->
+    </div><!-- #top-banner -->
+
+    <div id="results-wrapper" class="wrap section-min section-light">
+      <div class="container">
+        <!--TABLE FOR RESULTS -->
+        <table id="results-table" class="table table-bordered table-striped table-hover tablesorter">
+          <thead class="table-header">
+            <tr>
+              <th id="th-hash" class="th-center col-md-1">
+                Photo
+              </th>
+              <th class="name-col col-md-3 sort" data-sort="resultName">
+                <span class="sorting-arrows">Name</span>
+              </th>
+              <th id="th-age" class="col-md-1 sort asc" data-sort="resultAge">
+                <span class="sorting-arrows">Age</span>
+              </th>
+              <th id="th-cities" class="col-md-2 sort" data-sort="resultPlace">
+                <span class="sorting-arrows">Cities</span>
+              </th>
+              <th id="th-relatives" class="col-md-2">
+                Relatives
+              </th>
+              <th id="th-view-btn" class="th-center col-md-2">
+                Build Report
+              </th>
+            </tr>
+          </thead>
+          <tbody id="results" class="list">
+            <!-- THIS IS WHERE ALL THE ACTION HAPPENS -->
+            <tr data-fr-each="teasers" data-fr-map="TeaserRecord" data-fr-sort="teaserSorter" data-fr-click="store currentRecord" class="results-row">
+              <td class="td-hash hidden-xs">
+                <div class="photo-locked">
+                  <div class="user-img"></div>
+                  <i class="fa fa-lock"></i>
+                </div>
+              </td>
+              <td class="name-col hidden-xs">
+                <a href="#" class="name-found resultName">
+                  {{fullName}}
+                </a>
+                {{#hasDataPoints}}<img class="checkmark-img" src="img/checkmark.svg" /> 
+                <div class="green-bubble">
+                  <div class="arrow-right"></div>
+                  <div class="green-bubble-text"> 
+                    Results found
+                  </div>
+                </div>
+                {{/hasDataPoints}}
+                <div class="place-single">
+                  <strong>{{place}}</strong>
+                  <br />
+                  {{place2}}
+                </div>
+                <div class="hidden-xs hidden-sm">
+                  <ul class="aka-list list-unstyled">
+                    {{#hasAkas}}
+                    <li class="aka-list-heading">Also Seen As</li>
+                    {{/hasAkas}} {{#allNames}}
+                    <li>- {{.}}</li>
+                    {{/allNames}}
+                  </ul>
+                </div>
+              </td>
+              <td class="age-col hidden-xs">
+                <span class="resultAge">{{age}}</span>
+              </td>
+              <td>
+                <ul class="list-unstyled places-list">
+                  {{#places}}
+                    <li class="resultPlace">{{.}}</li>
+                  {{/places}}
+                </ul>
+              </td>
+              <td class="relative-col hidden-xs">
+                <ul class="list-unstyled relatives-list hidden-xs">
+                  {{#relatives}}
+                    <li class="resultRelative">{{.}}</li>
+                  {{/relatives}}
+                </ul>
+              </td>
+              <td class="report-col align-center hidden-xs">
+                <a href="#" id="result{{_framerida_index}}" class="btn-block aux-btn generate_report_from_teaser text-center">
+                  <span class="hidden-xs">Build Report</span>
+                  <span class="visible-xs">Build Report</span>
+                </a>
+              </td>
+
+              <!-- Mobile Look -->
+              <td class="name-col visible-xs">
+                <div class="name-mob-wrap"> 
+                  <a href="#" class="name-found resultName">{{fullName}}</a>
+                  {{#hasDataPoints}}<img class="checkmark-img" src="img/checkmark.svg" /> 
+                    <div class="green-bubble">
+                      <div class="arrow-right"></div>
+                      <div class="green-bubble-text"> 
+                        Results found
+                      </div>
+                    </div>
+                  {{/hasDataPoints}}
+                </div>
+                <div class="age-state-wrap visible-xs"><span>{{#if age}} Age: <strong class="resultAge">{{age}}</strong>{{/if}} {{#if state}}{{#if age}}|{{/if}}{{/if}} {{#if state}} <span class="place-single fullState">{{state}}</span>{{/if}}</span></div>
+                <div class="resultsBotSubCont visible-xs">
+                <div class="results-cities">
+                  {{#if places}}
+                  <span><strong>CITIES</strong></span>
+                  <ul class="list-unstyled places-list">
+                    {{#places}}
+                      <li class="resultPlace">{{.}}</li>
+                    {{/places}}
+                  </ul>
+                  {{/if}}
+                </div>
+                <div class="results-relatives">
+                  {{#if relatives}}
+                  <span><strong>RELATIVES</strong></span>
+                  <ul class="list-unstyled relatives-list">
+                    {{#relatives}}
+                      <li class="resultRelative">{{.}}</li>
+                    {{/relatives}}
+                  </ul>
+                  {{/if}}
+                </div>
+                <div class="btnMobContain">
+                  <a href="#" id="resultMob{{_framerida_index}}" class="btn-block aux-btn generate_report_from_teaser text-center">
+                    <span class="visible-xs"><strong>Build Report</strong></span>
+                  </a>
+                </div>
+              </div>
+              </td>
+              <!-- Mobile Look Finish HERE -->
+            </tr>
+          </tbody>
+        </table>
+        <div class="refine-search-wrapper">
+          <p class="alert alert-info hasResults">Can't find who you were looking for? <span class="refine-modal-trigger">Click here</span> to refine your search and narrow down the results.</p>
+          <p class="alert alert-info noResults">Can't find who you were looking for? <span class="refine-modal-trigger">Click here</span> to expand your search or try another name.</p>
+        </div>
+      </div>
+    </div><!-- #results-wrapper -->
+  </div><!--#data-panel-->
+
+  <!-- ============== -->
+  <!-- = NO RESULTS = -->
+  <!-- ============== -->
+  <div id="no-results">
+    <div class="container-fluid top-section section-alt section-min">
+      <div class="row section-header">
+        <h3 class="text-center text-info no-match"><strong>Sorry!</strong> We could not find any matches.</h3>
+      </div>
+    </div>
+    <div class="container-fluid section-min section-light">
+      <div class="row no-results-content">
+        <div class="col-sm-4 no-results-icon">
+          <img src="../Control/img/no-results.png" />
+        </div>
+        <div class="col-sm-8 no-results-text">
+          <h3 class="text-info">Try one of these tips to help improve your results:</h3>
+          <ul class="results-hints list-unstyled">
+            <li><i class="icon-yes-check"></i>Expand your search to include all states.</li>
+            <li><i class="icon-yes-check"></i>Double check your spelling.</li>
+            <li><i class="icon-yes-check"></i>Try using their maiden name.</li>
+          </ul>
+        </div><!--no-results-text-->
+      </div><!--.row no-results-content-->
+
+      <div class="search-wrapper">
+        <div class="row">
+          <form id="no-results-form" class="no-results bv-search section-min" data-fr-bind="searchData" data-fr-store="searchData">
+            <fieldset>
+              <div class="col-sm-3">
+                <input name="fn" id="fn" type="text" class="form-control" placeholder="First Name" required value="{{fn}}" />
+              </div>
+              <div class="col-sm-2">
+                <input name="mi" id="mi" type="text" class="form-control" placeholder="Middle Name" value="{{mi}}" />
+              </div>
+              <div class="col-sm-2">
+                <input name="ln" id="ln" type="text" class="form-control" placeholder="Last Name" required value="{{ln}}" />
+              </div>
+              <div class="col-sm-1">
+                <input name="age" id="age" type="text" class="form-control input-age" placeholder="Age" value="{{age}}" />
+              </div>
+              <div class="col-sm-2">
+                <input name="city" id="city" type="text" class="form-control" placeholder="City" value="{{city}}" />
+              </div>
+              <div class="col-sm-2">
+                <select class="custom-select form-control" name="state" id="no-results-state" value="{{state}}">
+                  <option value="All">All States</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="DC">District Of Columbia</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="PR">Puerto Rico</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>
+              </div>
+            </fieldset>
+            <div class="row">
+              <div class="col-sm-2 col-sm-offset-5">
+                <input type="submit" class="main-btn form-control" value="Search" style="margin-top:20px;" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div><!-- /#no-results -->
+
+  <!-- ============================= -->
+  <!-- = RESULTS SEARCHING WRAPPER = -->
+  <!-- ============================= -->
+  <div id="results-wrapper-searching" class="container-fluid section-min section-light">
+    <div class="row section-header">
+      <p class="text-center">
+        <img class="spinner" src="../Control/img/rolling-bf.gif">
+      </p>
+      <h3 class="text-info text-center" data-fr-bind="searchData">
+        Processing Records for {{uppercase fn}}{{#if mi}} {{uppercase mi}}{{/if}} {{uppercase ln}}{{#ifNot state 'All'}} in {{uppercase state}}{{/ifNot}}
+      </h3>
+      <p class="text-center">Results should load shortly</p>
+    </div>
+  </div><!-- #results-wrapper-searching -->
+
+  <!-- ================ -->
+  <!-- = Refine Modal = -->
+  <!-- ================ -->
+  <div id="refine-modal" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header section-header" data-fr-bind="teaserData">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color:#333;">×</button>
+          <p>
+            <strong>Can't find who you're looking for?</strong>
+          </p>
+        </div><!-- /.modal-header -->
+
+        <div class="modal-body">
+          <div class="row refine-tips-wrapper">
+            <div class="col-sm-3 search-icon-placeholder">
+            </div>
+            <div class="col-sm-9 hasResults">
+              <p><strong>Narrow down your results or double-check the spelling.</strong></p>
+              <ul class="refine-tips-list list-unstyled">
+                <li><i class="icon-yes-check"></i> Add a current or previous city where they've lived.</li>
+                <li><i class="icon-yes-check"></i> Add an approximate current age. If you don't know, it's ok to guess!</li>
+                <li><i class="icon-yes-check"></i> Try adding a middle initial.</li>
+              </ul>
+            </div>
+            <div class="col-sm-9 noResults">
+              <p><strong>Try one of these tips to help improve your results:</strong></p>
+              <ul class="refine-tips-list list-unstyled">
+                <li><i class="icon-yes-check"></i> Add a current or previous city where they've lived.</li>
+                <li><i class="icon-yes-check"></i> Add an approximate current age. If you don't know, it's ok to guess!</li>
+                <li><i class="icon-yes-check"></i> Try adding a middle initial.</li>
+              </ul>
+            </div>
+          </div><!-- /.row .refine-tips-wrapper -->
+
+          <form id="refine-modal-form" class="bv-search alt-search" data-fr-store="searchData" data-fr-bind="searchData">
+            <fieldset>
+              <div class="row refine-input-wrapper">
+                <div class="col-sm-3">
+                  <input name="fn" type="text" class="form-control" placeholder="First Name" required value="{{fn}}" />
+                </div>
+                <div class="col-sm-2">
+                  <input name="mi" type="text" class="form-control" placeholder="Middle Name" value="{{mi}}" />
+                </div>
+                <div class="col-sm-2">
+                  <input name="ln" type="text" class="form-control" placeholder="Last Name" required value="{{ln}}" />
+                </div>
+                <div class="col-sm-1">
+                  <input name="age" type="text" class="form-control input-age" placeholder="Age" value="{{age}}" />
+                </div>
+                <div class="col-sm-2">
+                  <input name="city" type="text" class="form-control" placeholder="City" value="{{city}}" />
+                </div>
+                <div class="col-sm-2">
+                  <select class="custom-select a form-control" name="state" value="{{state}}">
+                    <option value="All">All</option>
+                    <option value="AK">AK</option>
+                    <option value="AL">AL</option>
+                    <option value="AR">AR</option>
+                    <option value="AZ">AZ</option>
+                    <option value="CA">CA</option>
+                    <option value="CO">CO</option>
+                    <option value="CT">CT</option>
+                    <option value="DC">DC</option>
+                    <option value="DE">DE</option>
+                    <option value="FL">FL</option>
+                    <option value="GA">GA</option>
+                    <option value="HI">HI</option>
+                    <option value="IA">IA</option>
+                    <option value="ID">ID</option>
+                    <option value="IL">IL</option>
+                    <option value="IN">IN</option>
+                    <option value="KS">KS</option>
+                    <option value="KY">KY</option>
+                    <option value="LA">LA</option>
+                    <option value="MA">MA</option>
+                    <option value="MD">MD</option>
+                    <option value="ME">ME</option>
+                    <option value="MI">MI</option>
+                    <option value="MN">MN</option>
+                    <option value="MO">MO</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="NC">NC</option>
+                    <option value="ND">ND</option>
+                    <option value="NE">NE</option>
+                    <option value="NH">NH</option>
+                    <option value="NJ">NJ</option>
+                    <option value="NM">NM</option>
+                    <option value="NV">NV</option>
+                    <option value="NY">NY</option>
+                    <option value="OH">OH</option>
+                    <option value="OK">OK</option>
+                    <option value="OR">OR</option>
+                    <option value="PA">PA</option>
+                    <option value="PR">PR</option>
+                    <option value="RI">RI</option>
+                    <option value="SC">SC</option>
+                    <option value="SD">SD</option>
+                    <option value="TN">TN</option>
+                    <option value="TX">TX</option>
+                    <option value="UT">UT</option>
+                    <option value="VA">VA</option>
+                    <option value="VT">VT</option>
+                    <option value="WA">WA</option>
+                    <option value="WI">WI</option>
+                    <option value="WV">WV</option>
+                    <option value="WY">WY</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+            <div class="row">
+              <div class="col-sm-4 col-sm-offset-4">
+                <input type="submit" class="main-btn form-control refine-search" value="Refine Search" />
+              </div>
+            </div>
+          </form>
+        </div><!-- /.modal-body -->
+
+      </div>
+    </div>
+  </div><!-- /#refine-modal -->
+
+  <!-- ========== -->
+  <!-- = FOOTER = -->
+  <!-- ========== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="trigger customer-service-wrapper col-sm-4 col-sm-push-8">
+          <h4>“Excellent Support<span class="hidden-sm hidden-md"> &amp; Service</span>”</h4>
+          <div class="row">
+            <div class="col-lg-4"> <i class="animate star star-one glyphicon glyphicon-star"></i><i class="animate star star-two glyphicon glyphicon-star"></i><i class="animate star star-three glyphicon glyphicon-star"></i><i class="animate star star-four glyphicon glyphicon-star"></i>
+              <i class="animate star star-five glyphicon glyphicon-star"></i>
+            </div>
+            <div class="col-lg-6">
+              <p class="website">- via SiteJabber.com</p>
+            </div>
+          </div>
+          <p>
+            <span class="phone-number">
+                <a href="tel:+1-888-579-5910">1-888-579-5910</a>
+              </span>
+            <br/>
+            <span class="email-address">
+                <a href="mailto:support@beenverified.com">support@beenverified.com</a>
+              </span>
+            <br/> Mon
+            <span class="hidden-sm">day</span> - Fri<span class="hidden-sm">day</span>: 8 am - 9 pm est
+            <br/> Sat
+            <span class="hidden-sm">urday</span> - Sun<span class="hidden-sm">day</span>: 12 pm - 8 pm est
+          </p>
+          <div class="carla-wrapper border-bottom">
+            <div class="row">
+              <div class="col-xs-8">
+                <p class="carla-quote">"Our goal is to provide helpful support that is quick and easy."</p>
+              </div>
+              <div class="col-xs-4 carla-box">
+                <img class="carla pull-right" src="../Control/img/lil-carla.png">
+                <img class="carla-hand pull-right" src="../Control/img/lil-carla-hand2.png">
+              </div>
+            </div>
+          </div>
+          <div class="text-right">
+            <strong>Carla</strong>
+            <br/>
+            <i>Director of Customer Care</i>
+          </div>
+        </div>
+        <div class="col-sm-8 col-sm-pull-4 footer-link-group xs-center">
+          <div class="row">
+            <div class="col-sm-4">
+              <h4>About Us</h4>
+              <ul>
+                <li><a href="//www.beenverified.com/about/">About BV</a></li>
+                <li><a href="//www.beenverified.com/about/testimonials/">Testimonials</a></li>
+                <li><a href="//www.beenverified.com/careers/">Careers</a></li>
+                <li><a href="//www.beenverified.com/about/leadership/">Leadership</a></li>
+                <li><a href="//www.beenverified.com/press/">Press</a></li>
+                <li><a href="//www.beenverified.com/people/">People White Pages</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-4">
+              <h4>BV Apps & Data</h4>
+              <ul>
+                <li><a href="//www.beenverified.com/apps/">All BV Apps</a></li>
+                <li><a href="//www.beenverified.com/apps/ios/">For iPhone / iPad</a> - <a href="https://itunes.apple.com/us/app/background-check-app/id342585873?mt=8">Download</a></li>
+                <li><a href="//www.beenverified.com/apps/apple-watch/">For Apple Watch</a> - <a href="https://itunes.apple.com/us/app/background-check-app-beenverified/id342585873?mt=8">Download</a></li>
+                <li><a href="//www.beenverified.com/apps/android/">For Android</a> - <a href="https://market.android.com/details?id=com.beenverified.android&feature=search_result">Download</a></li>
+                <li><a href="https://docs.google.com/a/beenverified.com/spreadsheet/viewform?formkey=dEU1elc5dDVoMElwYmlYUWQ0Wkxjbmc6MA">Developer API</a></li>
+                <li><a href="https://www.knowthycustomer.com/?utm_source=beenverified&pagetype=beenverified">BV Pro</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-4">
+              <h4>Help</h4>
+              <ul>
+                <li><a href="http://support.beenverified.com/home">Support</a></li>
+                <li><a href="//www.beenverified.com/contact/">Contact Us</a></li>
+                <li><a href="//www.beenverified.com/about/dos-donts/">Do's &amp; Don'ts</a></li>
+                <li><a href="//www.beenverified.com/faq/billing/">FAQ</a></li>
+                <li><a href="//www.beenverified.com/faq/opt-out/">Remove My Info</a></li>
+                <li><a href="http://partners.beenverified.com/signup">Affiliates</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row social-links">
+        <div class="col-xs-2">
+          <a href="//twitter.com/beenverified">
+            <img src="../Control/img/tw-ico.png" class="">
+            <span class="hidden-xs">Twitter</span>
+          </a>
+        </div>
+        <div class="col-xs-2">
+          <a href="//www.facebook.com/BeenVerified">
+            <img src="../Control/img/fb-ico.png" class="">
+            <span class="hidden-xs">Facebook</span>
+          </a>
+        </div>
+        <div class="col-xs-2">
+          <a href="//plus.google.com/+beenverified/posts">
+            <img src="../Control/img/gplus-ico.png" class="">
+            <span class="hidden-xs">Google+</span>
+          </a>
+        </div>
+        <div class="col-xs-2">
+          <a href="//www.linkedin.com/company/beenverified-com">
+            <img src="../Control/img/li-ico.png" class="">
+            <span class="hidden-xs">LinkedIn</span>
+          </a>
+        </div>
+        <div class="col-xs-2">
+          <a href="//www.pinterest.com/beenverified/">
+            <img src="../Control/img/pin-ico.png" class="">
+            <span class="hidden-xs">Pinterest</span>
+          </a>
+        </div>
+        <div class="col-xs-2">
+          <a href="//www.beenverified.com/blog/">
+            <img src="../Control/img/bv-ico.png" class="">
+            <span class="hidden-xs">BV Blog</span>
+          </a>
+        </div>
+      </div>
+      <p class="disclaimer">Disclaimer: BeenVerified’s mission is to give people easy and affordable access to public record information. BeenVerified does not provide private investigator services, and is not a consumer reporting agency as defined by the Fair Credit Report
+        Act because the information provided by BeenVerified is not collected or provided, in whole or in part, for the purpose of furnishing consumer reports about those search subjects. For more information governing the permitted and prohibited uses
+        of BeenVerified, please review our <a href="//www.beenverified.com/about/dos-donts/">“Do’s &amp; Don’ts”</a> and our <a href="//www.beenverified.com/faq/terms-conditions/">Terms &amp; Conditions</a>. </p>
+      <div class="row">
+        <div class="col-sm-6">
+          <p class="xs-center"><a href="//www.beenverified.com">BeenVerified</a> &copy; <%= Date.today.year %> All Rights Reserved </p>
+        </div>
+        <div class="col-sm-6 text-right xs-center">
+          <a href="//www.beenverified.com/faq/terms-conditions/">Terms &amp; Conditions</a> |
+          <a href="//www.beenverified.com/faq/privacy/">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer><!-- footer-->
+
+	<a href="#0" class="cd-top visible-xs"><span>BACK TO TOP</span></a>
+</body>
+</html>

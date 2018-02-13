@@ -483,6 +483,10 @@ const TeaserRecord = (function () {
     return result;
   };
 
+  TeaserRecord.prototype.hasDataPoints = function() {
+    return this.age || this.relativesCount() || this.hasAddresses();
+  };
+
   return TeaserRecord;
 
 })();
