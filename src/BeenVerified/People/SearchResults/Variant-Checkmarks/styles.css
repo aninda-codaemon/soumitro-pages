@@ -1088,7 +1088,7 @@ a.name-found {
   margin-top: -4px;
 }
 
-#results tr.active-row .green-bubble {
+.checkmark-wrapper, .checkmark-wrapper:hover .green-bubble {
   display: inline;
 }
 

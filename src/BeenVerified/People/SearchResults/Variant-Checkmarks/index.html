@@ -351,11 +351,14 @@
                 <a href="#" class="name-found resultName">
                   {{fullName}}
                 </a>
-                {{#hasDataPoints}}<img class="checkmark-img" src="img/checkmark.svg" /> 
-                <div class="green-bubble">
-                  <div class="arrow-right"></div>
-                  <div class="green-bubble-text"> 
-                    Results found
+                {{#hasDataPoints}}
+                <div class="checkmark-wrapper">
+                  <img class="checkmark-img" src="img/checkmark.svg" /> 
+                  <div class="green-bubble">
+                    <div class="arrow-right"></div>
+                    <div class="green-bubble-text"> 
+                      Results found
+                    </div>
                   </div>
                 </div>
                 {{/hasDataPoints}}
