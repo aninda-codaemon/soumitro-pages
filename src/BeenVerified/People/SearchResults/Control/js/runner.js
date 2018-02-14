@@ -1,7 +1,6 @@
 import {
   findIndex,
   isFinite,
-  noop,
 } from 'lodash';
 import { getTeaserData } from 'api/teaser';
 import { recordCounts } from 'constants/recordCounts';
@@ -106,7 +105,7 @@ const activateRows = () => {
   });
 };
 
-const renderResults = (renderResultsCallback = noop) => () => {
+const renderResults = () => {
   const teaserData = amplify.store('teaserData');
   const queryData = amplify.store('query');
 
@@ -127,26 +126,25 @@ const renderResults = (renderResultsCallback = noop) => () => {
   initilizeSearchFilters({
     onReset: () => determineCollapse(),
   });
-  renderResultsCallback();
 };
 
-const searchPeople = (query, notificationType, renderResultsCallback) => {
+const searchPeople = (query, notificationType) => {
   showSearchingAnimation();
   getTeaserData(query).then(() => notifyRecordCount(notificationType))
     .then(hideSearchingAnimation)
-    .then(renderResults(renderResultsCallback));
+    .then(renderResults);
 };
 
-const initializeQueryArgs = (args, validArgs, renderResultsCallback) => {
+const initializeQueryArgs = (args, validArgs) => {
   args.state = args.state || 'All';
   if (validArgs) {
     amplify.store('searchData', args);
     showSearchingAnimation();
-    searchPeople(args, recordCounts.QUERY, renderResultsCallback);
+    searchPeople(args, recordCounts.QUERY);
     return;
   }
   hideSearchingAnimation();
-  renderResults(renderResultsCallback)();
+  renderResults();
   notifyRecordCount(recordCounts.LANDING);
 };
 
@@ -165,18 +163,18 @@ const initializeRefine = () => {
   });
 };
 
-const initialize = (renderResultsCallback) => {
+const initialize = () => {
   jQuery.fx.interval = 100;
   window.$ = jQuery;
   showSearchingAnimation();
   initializePeopleValidator({
     onSubmit: (args) => {
       $toggleSearchBar.addClass('hidden');
-      searchPeople(args, recordCounts.RESEARCH, renderResultsCallback);
+      searchPeople(args, recordCounts.RESEARCH);
     },
   });
   initializeToggleSearch();
-  initializeQueryArgs(queryArgs, validQueryArgs, renderResultsCallback);
+  initializeQueryArgs(queryArgs, validQueryArgs);
   initializeRefine();
   initializeDownsells();
   initializeResizeHandler(determineCollapse, determineLayoutState);
