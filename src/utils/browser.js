@@ -82,4 +82,14 @@ const BrowserDetect = {
 
 const mobileTimeRatio = 0.5;
 
-export { BrowserDetect, isMobile, mobileTimeRatio };
+/* This code makes the downsell and browser back event work a bit better in safari, because
+  the back button has a weird behavior in mobile devices and some safari browser versions */
+const initializeReloadCachedPageHandler = () => {
+  jQuery(window).on('pageshow', (event) => {
+    if (event.originalEvent.persisted) {
+      window.location.reload();
+    }
+  });
+};
+
+export { BrowserDetect, isMobile, mobileTimeRatio, initializeReloadCachedPageHandler };

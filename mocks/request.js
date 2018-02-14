@@ -8,6 +8,7 @@ const get = (url, callbackFn = 'parseResults') => {
   return fetchJsonp(url, {
     mode: 'no-cors',
     jsonpCallbackFunction: callbackFn,
+    timeout: 10000,
   })
     .then(response => response.json())
     .then((response) => {

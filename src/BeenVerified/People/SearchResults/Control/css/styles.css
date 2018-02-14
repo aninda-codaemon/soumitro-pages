@@ -19,6 +19,10 @@ table td,
   text-shadow: none;
 }
 
+select::-ms-expand {
+  display: none;
+}
+
 .modal {
   pointer-events: none;
 }
@@ -110,7 +114,7 @@ span.bold {
 }
 
 .section-min {
-  padding: 16px 15px 0px 15px;
+  padding: 16px 15px 10px 15px;
 }
 
 #refine-modal .refine-input-wrapper .col-sm-3,
@@ -368,7 +372,10 @@ form.bv-search input {
   *padding-top: 0;
 }
 
-#no-results-form fieldset div input {
+#no-results-form fieldset div input, 
+#refine-modal-form fieldset div input,
+#search-form input[type="text"]
+{
   margin-bottom: 10px;
 }
 
@@ -529,6 +536,18 @@ h3 {
 
 .filter-buttons .btn.reset-filters .icon {
   color: #0F2D8F;
+}
+
+@media (min-width:768px) {
+  #no-results-form div[class^="col-"] {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  #refine-modal-form .refine-input-wrapper div[class^="col-"] {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
 }
 
 @media (max-width: 767px) {

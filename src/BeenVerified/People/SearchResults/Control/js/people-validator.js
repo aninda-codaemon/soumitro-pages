@@ -1,28 +1,6 @@
 import amplify from 'utils/amplifyStore';
 import peopleValidator from 'form-validators/people';
-
-var searchRules = {
-  submitHandler: () => {},
-  rules: {
-    fn: {
-      required: true,
-      notEmail: true,
-    },
-    ln: {
-      required: true,
-      notEmail: true,
-    },
-    mi: {
-      notEmail: true,
-    },
-    age: {
-      notEmail: true,
-    },
-    city: {
-      notEmail: true,
-    },
-  },
-};
+import { cleanSearchValues } from 'utils/strings';
 
 const getSubmitHandler = onSubmit => function onSearchSubmit(form) {
   // close search menu if it's open (mobile)
@@ -31,7 +9,7 @@ const getSubmitHandler = onSubmit => function onSearchSubmit(form) {
   }
   let serialArray = $(form).serializeArray();
   let formVals = serialArray.reduce((prev, obj) => {
-    prev[obj.name] = obj.value;
+    prev[obj.name] = obj.name && obj.name.toLowerCase() !== 'age' ? cleanSearchValues(obj.value) : obj.value;
     return prev;
   }, {});
   amplify.store('searchData', formVals);
@@ -43,7 +21,9 @@ const initializePeopleValidator = ({ onSubmit }) => {
   var $refineForm = $('#refine-modal-form');
   var $noResultsForm = $('#no-results-form');
 
-  searchRules.submitHandler = getSubmitHandler(onSubmit);
+  var searchRules = {
+    submitHandler: getSubmitHandler(onSubmit),
+  };
 
   peopleValidator.validate($searchForm, searchRules);
   peopleValidator.validate($refineForm, searchRules);
