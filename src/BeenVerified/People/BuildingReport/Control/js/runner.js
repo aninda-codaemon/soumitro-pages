@@ -1,3 +1,4 @@
+import _get from 'lodash/get';
 import { getTeaserData } from 'api/teaser';
 import { getExtraTeaserData } from 'api/extraTeaser';
 import { initializeBVGO } from 'utils/bvgo';
@@ -24,8 +25,11 @@ let buildingReport = null; // Injected Dependency.
 
 localStorage.isSupported();
 
-const includeRelativesModal = shouldDisplayRelatives => (extraTeaserData) => {
-  if (shouldDisplayRelatives && extraTeaserData.hasRelatives) {
+const includeRelativesModal = (shouldDisplayRelatives) => {
+  let currentRecord = amplify.store('currentRecord');
+  var relatives = _get(currentRecord, 'Relatives.Relative') || [];
+
+  if (shouldDisplayRelatives && relatives.length > 0) {
     buildingReport.addRelativesModal();
   }
 };
@@ -92,9 +96,10 @@ const initialize = (buildingReportInstance, shouldDisplayRelatives = false) => {
   buildingReport.wizard.start();
   buildingReport.wizard.subscribeOnSectionCompleted((sectionIndex) => {
     if (sectionIndex === SECTION_BEFORE_LEADBOX && bvid) {
-      getExtraTeaserData(bvid).then(includeRelativesModal(shouldDisplayRelatives));
+      getExtraTeaserData(bvid);
     }
   });
+  includeRelativesModal(shouldDisplayRelatives);
   window.$ = jQuery;
 };
 
