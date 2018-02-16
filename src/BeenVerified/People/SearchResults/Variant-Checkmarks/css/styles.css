@@ -140,7 +140,7 @@ span.bold {
   padding-top: 4px;
   padding-bottom: 6px;
   vertical-align: middle;
-  background: url(../Control/img/drop-arrow.png) no-repeat right top;
+  background: url(../../Control/img/drop-arrow.png) no-repeat right top;
   background-color: #fff;
   -moz-appearance: none!important;
   -webkit-appearance: none;
@@ -372,7 +372,7 @@ form.bv-search input {
   *padding-top: 0;
 }
 
-#no-results-form fieldset div input, 
+#no-results-form fieldset div input,
 #refine-modal-form fieldset div input,
 #search-form input[type="text"]
 {
@@ -641,7 +641,7 @@ li {
 .icon-yes-check {
   width: 17px;
   height: 17px;
-  background-image: url(../Control/img/icon-sprite.png);
+  background-image: url(../../Control/img/icon-sprite.png);
   background-repeat: no-repeat;
   background-position: -63px -240px;
 }
@@ -1028,7 +1028,7 @@ table#results-table tr:hover td button {
 .user-img {
   padding-top: 10px;
   height: 40px;
-  background-image: url('../Control/img/Self-Gray.svg');
+  background-image: url('../../Control/img/Self-Gray.svg');
   background-repeat: no-repeat;
   background-size: 35px;
   background-position: 0px center;
@@ -1098,8 +1098,8 @@ a.name-found {
 }
 
 .arrow-right {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
   border-right: 8px solid #81b44c;
@@ -1259,7 +1259,7 @@ ul.aka-list li {
 
 .search-icon-placeholder {
   height: 112px;
-  background-image: url('../Control/img/refine-icon.svg');
+  background-image: url('../../Control/img/refine-icon.svg');
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -1546,7 +1546,7 @@ p.loader {
   }
   /*.search-icon-placeholder {
     height: 40px;
-    background-image: url('../Control/img/search-icon-small.png');
+    background-image: url('../../Control/img/search-icon-small.png');
     background-position: center center;
   }*/
   .no-results-icon img {
@@ -1703,7 +1703,7 @@ p.loader {
   }
   .user-img {
     height: 40px;
-    /*background-image: url(../Control/img/user-img.png);*/
+    /*background-image: url(../../Control/img/user-img.png);*/
     background-repeat: no-repeat;
     background-size: 35px;
     margin-right: 15px;
@@ -1850,17 +1850,17 @@ p.loader {
 }
 
 .useCaseInfo.info1 {
-  background: url('../Control/img/Peace.png') no-repeat 20px 0px;
+  background: url('../../Control/img/Peace.png') no-repeat 20px 0px;
   padding-left: 85px;
 }
 
 .useCaseInfo.info2 {
-  background: url('../Control/img/up-to-date.png') no-repeat 20px 0px;
+  background: url('../../Control/img/up-to-date.png') no-repeat 20px 0px;
   padding-left: 85px;
 }
 
 .useCaseInfo.info3 {
-  background: url('../Control/img/get-started.png') no-repeat 20px 0px;
+  background: url('../../Control/img/get-started.png') no-repeat 20px 0px;
   padding-left: 85px;
   border-right: none;
 }

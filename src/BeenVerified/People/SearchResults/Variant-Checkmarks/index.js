@@ -1,4 +1,5 @@
 import { initialize } from '../Control/js/runner';
-import './styles.css';
+import './css/styles.css';
+import './css/cheaters-beware.css';
 
 initialize();
