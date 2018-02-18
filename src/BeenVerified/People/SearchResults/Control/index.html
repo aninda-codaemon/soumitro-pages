@@ -348,7 +348,20 @@
                 </div>
               </td>
               <td class="name-col hidden-xs">
-                <a href="#" class="name-found resultName">{{fullName}}</a>
+                <a href="#" class="name-found resultName">
+                  {{fullName}}
+                </a>
+                {{#hasDataPoints}}
+                <div class="checkmark-wrapper">
+                  <img class="checkmark-img" src="img/checkmark.svg" /> 
+                  <div class="green-bubble">
+                    <div class="arrow-right"></div>
+                    <div class="green-bubble-text"> 
+                      Results found
+                    </div>
+                  </div>
+                </div>
+                {{/hasDataPoints}}
                 <div class="place-single">
                   <strong>{{place}}</strong>
                   <br />
@@ -390,7 +403,17 @@
 
               <!-- Mobile Look -->
               <td class="name-col visible-xs">
-                <div class="name-mob-wrap"> <a href="#" class="name-found resultName">{{fullName}}</a></div>
+                <div class="name-mob-wrap"> 
+                  <a href="#" class="name-found resultName">{{fullName}}</a>
+                  {{#hasDataPoints}}<img class="checkmark-img" src="img/checkmark.svg" /> 
+                    <div class="green-bubble">
+                      <div class="arrow-right"></div>
+                      <div class="green-bubble-text"> 
+                        Results found
+                      </div>
+                    </div>
+                  {{/hasDataPoints}}
+                </div>
                 <div class="age-state-wrap visible-xs"><span>{{#if age}} Age: <strong class="resultAge">{{age}}</strong>{{/if}} {{#if state}}{{#if age}}|{{/if}}{{/if}} {{#if state}} <span class="place-single fullState">{{state}}</span>{{/if}}</span></div>
                 <div class="resultsBotSubCont visible-xs">
                 <div class="results-cities">
