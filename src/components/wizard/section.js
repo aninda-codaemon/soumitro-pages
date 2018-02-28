@@ -3,9 +3,10 @@ const Section = {
     this.currentStepIndex = 0;
     this.steps = steps;
   },
-  start(onSectionCompleted, isLastSection) {
+  start(onSectionCompleted, onLastStepStart, isLastSection) {
     this.onSectionCompleted = onSectionCompleted;
     this.isLastSection = isLastSection;
+    this.onLastStepStart = onLastStepStart;
     this.startNextStep();
   },
   getCurrentStep() {
@@ -21,6 +22,9 @@ const Section = {
   startNextStep() {
     const currentStep = this.getCurrentStep();
     const isLastStep = this.isLastStep() && this.isLastSection;
+    if (isLastStep) {
+      this.onLastStepStart();
+    }
     currentStep.start(this.onStepCompleted.bind(this), isLastStep);
   },
   onStepCompleted() {

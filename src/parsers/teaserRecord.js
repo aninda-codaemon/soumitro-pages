@@ -348,7 +348,7 @@ const TeaserRecord = (function () {
     } else {
       var extraData = this.record.extraData;
       var crimRecords = _.find(extraData, { 'type': 'criminal' });
-      return crimRecords.count;
+      return crimRecords ? crimRecords.count : 0;
     }
   };
   TeaserRecord.prototype.bankruptcyCount = function () {
@@ -357,30 +357,21 @@ const TeaserRecord = (function () {
     } else {
       var extraData = this.record.extraData,
         bankruptcies = _.find(extraData, { 'type': 'bankruptcy' });
-      return bankruptcies.count;
+      return bankruptcies ? bankruptcies.count : 0;
     }
   };
   TeaserRecord.prototype.associatedCount = function () {
     var extraData = this.record.extraData,
       associates = _.find(extraData, { 'type': 'associates' });
-    if (associates) {
-      return associates.count;
-    } else {
-      return 0
-    }
+    return associates ? associates.count : 0;
   };
 
   TeaserRecord.prototype.relativesCount = function () {
-
     var extraData = this.record.extraData,
       relatives = _.find(extraData, { 'type': 'relatives' });
-
-    if (relatives) {
-      return relatives.count;
-    } else {
-      return 0
-    }
+    return relatives ? relatives.count : 0
   };
+
   TeaserRecord.prototype.emailCount = function () {
     if (!this.record.hasEmail) {
       return 0;

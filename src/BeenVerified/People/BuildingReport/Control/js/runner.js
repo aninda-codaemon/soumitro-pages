@@ -84,7 +84,11 @@ const initializeQueryArgs = (args, validArgs) => {
   }
 };
 
-const initialize = (buildingReportInstance, shouldDisplayRelatives = false) => {
+const initialize = (
+  buildingReportInstance,
+  shouldDisplayRelatives = false,
+  shouldGetExtraTeaserDataOnLastStep = false,
+) => {
   const SECTION_BEFORE_LEADBOX = 1; // zero index based.
   let bvid = getBVId(queryArgs);
   buildingReport = buildingReportInstance;
@@ -93,12 +97,18 @@ const initialize = (buildingReportInstance, shouldDisplayRelatives = false) => {
   initializeQueryArgs(queryArgs, validQueryArgs);
 
   initializeBVGO(buildingReport.wizard.skipStep);
-  buildingReport.wizard.start();
-  buildingReport.wizard.subscribeOnSectionCompleted((sectionIndex) => {
-    if (sectionIndex === SECTION_BEFORE_LEADBOX && bvid) {
+  if (shouldGetExtraTeaserDataOnLastStep) {
+    buildingReport.wizard.subscribeOnLastStepStart(() => {
       getExtraTeaserData(bvid);
-    }
-  });
+    });
+  } else {
+    buildingReport.wizard.subscribeOnSectionCompleted((sectionIndex) => {
+      if (sectionIndex === SECTION_BEFORE_LEADBOX && bvid) {
+        getExtraTeaserData(bvid);
+      }
+    });
+  }
+  buildingReport.wizard.start();
   includeRelativesModal(shouldDisplayRelatives);
   window.$ = jQuery;
 };

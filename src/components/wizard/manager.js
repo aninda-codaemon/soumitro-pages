@@ -20,13 +20,19 @@ const WizardManager = {
   startNextSection() {
     const currentSection = this.getCurrentSection();
     const isLastSection = this.isLastSection();
-    currentSection.start(this.onSectionCompleted.bind(this), isLastSection);
+    currentSection.start(
+      this.onSectionCompleted.bind(this),
+      this.onLastStepStart.bind(this),
+      isLastSection,
+    );
   },
   isLastSection() {
     return this.currentSectionIndex === this.sections.length - 1;
   },
   onSectionCompleted() {
-    this.onSectionCompletedListener(this.currentSectionIndex);
+    if (this.onSectionCompleteListener) {
+      this.onSectionCompleteListener(this.currentSectionIndex);
+    }
     this.currentSectionIndex++;
     this.updateHeadlines();
     if (this.currentSectionIndex < this.sections.length) {
@@ -35,8 +41,16 @@ const WizardManager = {
     }
     this.onCompleted();
   },
+  onLastStepStart() {
+    if (this.isLastSection() && this.onLastStepStartListener) {
+      this.onLastStepStartListener();
+    }
+  },
   subscribeOnSectionCompleted(listener) {
-    this.onSectionCompletedListener = listener;
+    this.onSectionCompleteListener = listener;
+  },
+  subscribeOnLastStepStart(listener) {
+    this.onLastStepStartListener = listener;
   },
   updateHeadlines() {
     var stepsContainerSelector = $('.wizard-header');
