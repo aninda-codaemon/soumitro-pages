@@ -6,4 +6,5 @@ const buildingReportInstance = {
   wizard: createWizard(),
 };
 const shouldIncludeRelatives = true;
-initialize(buildingReportInstance, shouldIncludeRelatives);
+const shouldGetExtraTeaserDataOnLastStep = true;
+initialize(buildingReportInstance, shouldIncludeRelatives, shouldGetExtraTeaserDataOnLastStep);
