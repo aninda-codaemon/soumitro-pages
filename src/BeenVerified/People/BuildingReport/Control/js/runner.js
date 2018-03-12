@@ -88,7 +88,7 @@ const initializeQueryArgs = (args, validArgs) => {
 const initialize = (
   buildingReportInstance,
   shouldDisplayRelatives = false,
-  shouldGetExtraTeaserDataOnLastStep = false,
+  shouldGetExtraTeaserDataOnLastStep = true,
 ) => {
   const SECTION_BEFORE_LEADBOX = 1; // zero index based.
   let bvid = getBVId(queryArgs);
