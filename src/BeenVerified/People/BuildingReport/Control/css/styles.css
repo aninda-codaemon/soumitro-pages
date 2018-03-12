@@ -1945,6 +1945,12 @@ label.fcraCheckbox-wrapper {
 
     text-align: left;
   }
+  .headline {
+    font-size: 26px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    line-height: 30px;
+  }
 }
 
 #gen-report-modal6 .norton {
