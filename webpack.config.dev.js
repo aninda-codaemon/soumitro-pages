@@ -71,8 +71,8 @@ module.exports = {
         options: {
           emitError: true,
           emitWarning: true,
-          failOnError: true,
-          failOnWarning: true,
+          failOnError: false,
+          failOnWarning: false,
         },
       },
       {
