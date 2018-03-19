@@ -491,20 +491,9 @@
                               <div class="lead-part">
 
                               <div class="" data-fr-bind="extraTeaserData currentRecord searchData">
-
-                                  <img class="norton hidden-xs" src="../Control/img/norton-secured.png" alt="">
-                                  {{#if recordCount}}
-                                    <h3 class="modal-top-text-big">
-                                      We found {{recordCountDisplay}} on {{fullName}}
-                                      {{#if criminalCount}}
-                                        and <span class="criminal-count">{{criminalCountDisplay}}</span>
-                                      {{/if}}
-                                    </h3>
-                                    <p class="modal-top-text">We need the following info to save your results:</p>
-                                  {{else}}
-                                    <h3 class="modal-top-text-big">To See Your Results</h3>
-                                    <p class="modal-top-text" >We need this basic information:</p>
-                                  {{/if}}
+                                <img class="norton hidden-xs" src="../Control/img/norton-secured.png" alt="">
+                                <h3 class="modal-top-text-big">To See Your Results</h3>
+                                <p class="modal-top-text" >We need this basic information:</p>
                               </div>
                               <form id="signup-modal-form" action="<%= next_page %>" data-fr-bind="leadData" data-fr-store="leadData" data-fr-bind="leadData">
                                 <fieldset class="form-input-group">
