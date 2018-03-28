@@ -418,55 +418,23 @@ td.addressCheck {
   background-color: white;
 }
 
-.carla-wrapper {
-  position: relative;
-}
-.carla-box {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-
-  overflow-y: hidden;
-
-  min-height: 60px;
-}
-.carla {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-
-  width: 55px;
-  height: 60px;
-}
-.carla-hand {
-  position: absolute;
-  right: 22px;
-  bottom: -18px;
-
-  width: 58px;
-  height: 18px;
-}
-
 #footer h4 {
   font-size: 22px;
   font-weight: bold;
 
   margin-bottom: 10px;
 
-  color: #333;
+  color: #353167;
 }
-#footer .customer-service-wrapper {
-  margin-bottom: 30px;
-  padding: 20px 20px 10px;
+#footer p {
+  font-size: 14px;
+  font-weight: 400;
 
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #efefef;
+  color: #9b9b9b;
 }
-#footer .footer-link-group {
-  padding-top: 20px;
+#footer .quote p {
+  padding-right: 20px;
 }
-
 #footer p {
   font-size: 14px;
   font-weight: 400;
@@ -480,11 +448,12 @@ td.addressCheck {
   list-style: none;
 }
 #footer li {
+  font-size: 14px;
   margin-bottom: 4px;
-
-  color: #747b91;
+  color: #949595;
 }
 #footer a {
+  font-size: 14px;
   color: #0f2d8f;
 }
 #footer a:hover,
@@ -492,6 +461,89 @@ td.addressCheck {
   text-decoration: none;
 
   color: #3b49e5;
+}
+
+#footer .email-address a,
+#footer .phone-number a {
+  color: #0f2d8f;
+}
+#footer .email-address a:hover,
+#footer .phone-number a:hover {
+  color: #3b49e5;
+}
+#footer .phone-number {
+  color: #333;
+}
+.website img {
+  padding-right: 10px;
+}
+
+#footer .hours span,
+#footer .email-address span,
+#footer .phone-number span,
+#footer .ussupport span {
+  padding: 0;
+  padding-bottom: 5px;
+}
+
+.hours span.col-xs-11,
+.email-address span.col-xs-11,
+.phone-number span.col-xs-11,
+.ussupport span.col-xs-11 {
+  margin-left: 0;
+}
+social-links {
+  margin-top: 25px;
+}
+.social-links img {
+  height: 16px;
+
+  vertical-align: text-bottom;
+}
+.social-links div {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.border-bottom {
+  margin-bottom: 10px;
+}
+#footer .no-pad-left {
+  padding-left: 0;
+}
+.quote {
+  margin-top: 0;
+}
+
+.disclaimer {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+/************* END FOOTER *************/
+@media only screen and (max-width : 767px) {
+  /************* FOOTER *************/
+  #footer {
+    padding-top: 40px;
+  }
+  #footer h4 {
+    font-size: 20px;
+
+    margin-top: 20px;
+    margin-bottom: 12px;
+  }
+  .social-links img {
+    max-width: 25px;
+    height: 100%;
+  }
+  .quote {
+    margin-top: 0;
+  }
+
+  footer li,
+  footer p {
+    text-align: left !important;
+  }
+
+  /************* END FOOTER *************/
 }
 
 .social-links {
@@ -2644,10 +2696,6 @@ h6.create-login {
     border-bottom: 1px solid #ccc;
     border-radius: 0;
     background-color: #fff;
-  }
-
-  #footer ul a {
-    line-height: 40px;
   }
 
   .social-links img {
