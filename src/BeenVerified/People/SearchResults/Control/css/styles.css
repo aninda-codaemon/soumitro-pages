@@ -62,15 +62,6 @@ select,
   font-size: 18px;
 }
 
-.modal.fade.in {
-  top: 50px;
-}
-
-.modal-backdrop {
-  opacity: 0.7 !important;
-  background: #000 !important;
-}
-
 a,
 button,
 input,
@@ -115,12 +106,6 @@ span.bold {
 
 .section-min {
   padding: 16px 15px 10px 15px;
-}
-
-#refine-modal .refine-input-wrapper .col-sm-3,
-#refine-modal .refine-input-wrapper .col-sm-2,
-#refine-modal .refine-input-wrapper .col-sm-1 {
-  padding: 0 5px;
 }
 
 .main-btn,
@@ -373,7 +358,6 @@ form.bv-search input {
 }
 
 #no-results-form fieldset div input, 
-#refine-modal-form fieldset div input,
 #search-form input[type="text"]
 {
   margin-bottom: 10px;
@@ -542,11 +526,6 @@ h3 {
   #no-results-form div[class^="col-"] {
     padding-left: 6px;
     padding-right: 6px;
-  }
-
-  #refine-modal-form .refine-input-wrapper div[class^="col-"] {
-    padding-left: 2px;
-    padding-right: 2px;
   }
 }
 
@@ -1259,46 +1238,10 @@ ul.aka-list li {
   }
 }
 
-/* -- REFINE -- */
-
-.refine-search {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-#refine-modal .modal-header {
-  background-color: #f2da3e;
-}
-
-#refine-modal .modal-header p {
-  color: #333;
-}
-
-.refine-search-wrapper p {
-  text-align: center;
-}
-
-.refine-modal-trigger {
-  display: inline-block;
-  cursor: pointer;
-  cursor: hand;
-  text-decoration: underline;
-  color: #0f2d8f;
-}
-
-.refine-tips-list li {
-  font-size: 14px;
-  line-height: 18px;
-  margin-left: 20px;
-}
-
 #noResults,
 .noResults,
 .hasFilters {
   display: none;
-}
-.refine-tips-wrapper {
-  margin-bottom: 20px;
 }
 
 .search-icon-placeholder {
@@ -1315,15 +1258,6 @@ ul.aka-list li {
 .spinner {
   width: 24px;
   height: 24px;
-}
-
-.modal.fade.in {
-  margin-top: 10px !important;
-}
-
-.modal-bottom {
-  padding: 20px;
-  border-radius: 0 0 4px 4px;
 }
 
 #results-wrapper-searching {
@@ -1383,99 +1317,6 @@ p.loader {
   color: #81B44C;
 }
 
-.modal-header {
-  border-radius: 4px 4px 0 0;
-  background-color: #353167;
-}
-
-.modal-header .fa {
-  font-size: 24px;
-  color: #fff;
-}
-
-.modal-header .close {
-  opacity: 1;
-  color: #fff;
-  text-shadow: none;
-}
-
-.modal-header .close:hover,
-.modal-header .close:focus {
-  cursor: pointer;
-  cursor: hand;
-  color: #4594e3;
-}
-
-.modal-header .close img {
-  width: 12px;
-}
-
-.modal-header p {
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 28px;
-  margin-top: 2px;
-  margin-right: 8%;
-  margin-bottom: 3px;
-  margin-left: auto;
-  color: #fff;
-}
-
-.modal-dialog {
-  font-size: 16px;
-  line-height: 21px;
-}
-
-.modal-body-header {
-  font-size: 26px;
-}
-
-.modal-body {
-  overflow: visible;
-  max-height: none;
-  padding: 30px 30px 0;
-}
-
-.modal-body i {
-  margin-right: 10px;
-}
-
-.modal-body h3 {
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.modal form {
-  margin: 0;
-}
-
-.modal-footer {
-  font-size: 13px;
-  color: #333;
-  border-radius: 0 0 4px 4px;
-  background-color: #f5f5f5;
-}
-
-.modal-footer p {
-  margin-bottom: 0;
-}
-
-.close:hover,
-.close:focus {
-  cursor: pointer;
-  text-decoration: none;
-  opacity: 0.4;
-  color: #000;
-  filter: alpha(opacity=40);
-}
-
-.modal-body-copy {
-  height: 275px;
-  padding: 10px 20px;
-  border-radius: 4px;
-  background-color: #f2f7fa;
-}
-
 /* ================================================ */
 /* == RESPONSIVE GOODIES ========================== */
 /* ================================================ */
@@ -1487,9 +1328,6 @@ p.loader {
 }
 
 @media (min-width: 992px) {
-  .modal-dialog {
-    width: 850px;
-  }
   input#age {
     padding-right: 6px;
     padding-left: 6px;
@@ -1497,55 +1335,13 @@ p.loader {
 }
 
 @media (max-width: 991px) {
-  .modal-body-copy {
-    height: auto;
-  }
   .form-control {
     padding: 6px 3px;
-  }
-  .modal {
-    top: 0 !important;
-  }
-  .modal-dialog {
-    width: auto !important;
-    margin: 10px !important;
   }
 }
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-  .modal {
-    padding: 0 !important;
-    min-width: 100%;
-    background-color: #fff;
-  }
-  .modal-dialog {
-    position: fixed;
-    height: 100%;
-    margin: 0 !important;
-    min-width: 100%;
-  }
-  .modal-content {
-    position: relative;
-    overflow-y: auto;
-    height: 100%;
-    min-width: 100%;
-    padding: 0 0 45px;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-  }
-  .modal-header {
-    border-radius: 0 !important;
-  }
-  .modal-footer {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    border-radius: 0 !important;
-    background: #fff;
-    border: none;
-  }
   h1,
   h2,
   p,
@@ -1585,35 +1381,11 @@ p.loader {
   .header-search-bar select {
     margin-bottom: 8px;
   }
-  .refine-tips-wrapper {
-    text-align: center;
-  }
-  /*.search-icon-placeholder {
-    height: 40px;
-    background-image: url('../img/search-icon-small.png');
-    background-position: center center;
-  }*/
   .no-results-icon img {
     width: 100px;
   }
-  /* MODALS */
-  .modal-header p {
-    font-size: 18px;
-    line-height: 21px;
-  }
-  .modal-body h3 {
-    font-size: 21px;
-    line-height: 28px;
-    margin-top: -5px;
-  }
-  #refine-modal .modal-body {
-    margin-bottom: 18px;
-  }
   .xs-center {
     text-align: center;
-  }
-  #refine-modal-form input {
-    margin-bottom: 6px !important;
   }
   #footer p {
     font-size: 16px;
@@ -1860,12 +1632,6 @@ p.loader {
   }
 }
 
-@media (min-width: 992px) {
-  .modal-dialog {
-    min-width: 850px;
-  }
-}
-
 @media (min-width: 768px) and (max-width: 768px) {
   #top-banner.section-min {
     padding-left: 30px;
@@ -1875,7 +1641,6 @@ p.loader {
 }
 
 /* Use Cases & Info on Search Results */
-
 #useCaseInfo {
   background-color: #FFFFFF;
   padding: 30px 15px;
