@@ -16,6 +16,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap';
 import '../css/styles.css';
 import '../css/cheatersbadge.css';
+import '../css/refine-modal.scss';
 
 import { initializeDownsells } from './downsell';
 import { initializePeopleValidator } from './people-validator';
