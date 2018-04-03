@@ -1,7 +1,5 @@
 import { addRelativesModal, createWizard } from 'components/building-report';
 import { initialize } from '../Control/js/runner';
-import * as localStorage from 'utils/localStorage';
-import amplify from 'utils/amplifyStore';
 
 let options = {
   popularUseCases: {
@@ -29,12 +27,13 @@ const buildingReportInstance = {
 const shouldIncludeRelatives = false;
 initialize(buildingReportInstance, shouldIncludeRelatives);
 
-// let tabTitle = document.title;
-let isOldTitle;
+let isOldTitleToggle;
+const triggerToggleTime = 145000;
+const toggleIntervalTime = 2000;
 
-const changeTabTitle = (isOldTitle2 = true) => {
-  if (isOldTitle2) {
-    document.title = 'Report is Ready';
+const changeTabTitle = (isOldTitle = true) => {
+  if (isOldTitle) {
+    document.title = 'Report is Waiting';
     isOldTitle = false;
   } else {
     document.title = 'Building BeenVerified Report';
@@ -43,7 +42,7 @@ const changeTabTitle = (isOldTitle2 = true) => {
 };
 
 const initiateTitleToggle = () => {
-  setInterval(() => { changeTabTitle(isOldTitle); }, 2000);
+  setInterval(() => { changeTabTitle(isOldTitleToggle); }, toggleIntervalTime);
 };
 
-setTimeout(initiateTitleToggle(), 14500);
+setTimeout(initiateTitleToggle, triggerToggleTime);
