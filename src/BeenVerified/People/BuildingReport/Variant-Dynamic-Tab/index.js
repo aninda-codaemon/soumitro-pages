@@ -34,10 +34,10 @@ const toggleIntervalTime = 2000;
 const changeTabTitle = (isOldTitle = true) => {
   if (isOldTitle) {
     document.title = 'Report is Waiting';
-    isOldTitle = false;
+    isOldTitleToggle = false;
   } else {
     document.title = 'Building BeenVerified Report';
-    isOldTitle = true;
+    isOldTitleToggle = true;
   }
 };
 
