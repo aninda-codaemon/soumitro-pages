@@ -17,7 +17,7 @@ function onRelativesModalStart(stepCompleted) {
   var relatives = get(currentRecord, 'Relatives.Relative') || [];
   relatives = Array.isArray(relatives) ? relatives : [relatives];
   forEach(relatives, (relative, i) => {
-    var fullName = `${relative.First} ${relative.Middle ? `${relative.Middle} ` : ''}${relative.Last}`;
+    var fullName = `${relative.First || ''} ${relative.Middle ? `${relative.Middle} ` : ''}${relative.Last || ''}`;
     $(rndNamesContainer[i])
       .text(nameize(fullName))
       .closest('.hidden')
