@@ -28,7 +28,7 @@ const shouldIncludeRelatives = false;
 initialize(buildingReportInstance, shouldIncludeRelatives);
 
 let isOldTitleToggle;
-const triggerToggleTime = 145000;
+const triggerToggleTime = 105000;
 const toggleIntervalTime = 2000;
 
 const changeTabTitle = (isOldTitle = true) => {
