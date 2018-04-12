@@ -94,7 +94,7 @@ function createWizard(options = {}) {
   wizard.init({
     sections,
     onCompleted() {
-      window.location = $('body').data('next-page');
+      window.location = `${$('body').data('next-page')}?hide-fcra=true`;
     },
   });
   showSubHeadlines(sections.length);
