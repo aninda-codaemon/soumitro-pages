@@ -85,11 +85,30 @@ const initializeQueryArgs = (args, validArgs) => {
   }
 };
 
+let isOldTitleToggle;
+const triggerToggleTime = 105000;
+const toggleIntervalTime = 2000;
+
+const changeTabTitle = (isOldTitle = true) => {
+  if (isOldTitle) {
+    document.title = 'Report is Waiting';
+    isOldTitleToggle = false;
+  } else {
+    document.title = 'Building BeenVerified Report';
+    isOldTitleToggle = true;
+  }
+};
+
+const initiateTitleToggle = () => {
+  setInterval(() => { changeTabTitle(isOldTitleToggle); }, toggleIntervalTime);
+};
+
 const initialize = (
   buildingReportInstance,
   shouldDisplayRelatives = false,
   shouldGetExtraTeaserDataOnLastStep = true,
 ) => {
+  setTimeout(initiateTitleToggle, triggerToggleTime); // initiate tab title toggle
   const SECTION_BEFORE_LEADBOX = 1; // zero index based.
   let bvid = getBVId(queryArgs);
   buildingReport = buildingReportInstance;
