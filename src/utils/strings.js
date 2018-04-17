@@ -156,7 +156,7 @@ export const removeDiacritics = (str) => {
   return result;
 };
 
-export const cleanSearchValues = value => removeDiacritics(value).replace(/[^A-Za-z']/gi, '').trim();
+export const cleanSearchValues = value => removeDiacritics(value).trim();
 
 export const isEmpty = (string) => {
   if (typeof string === 'undefined') {
