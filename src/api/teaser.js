@@ -10,8 +10,8 @@ import { cleanSearchValues } from 'utils/strings';
 import { TeaserRecord } from 'parsers/teaserRecord';
 import amplify from 'utils/amplifyStore';
 
-const buildTeaserEndpoint = (fn, ln, state, city, age, mi) =>
-  `https://www.beenverified.com/hk/teaser/?exporttype=jsonp&rc=100&fn=${fn}&ln=${ln}&state=${state}&city=${city}&age=${age}&mi=${mi}`;
+const buildTeaserEndpoint = (fn, ln, state, city, age, mn) =>
+  `https://www.beenverified.com/hk/teaser/?exporttype=jsonp&rc=100&fn=${fn}&ln=${ln}&state=${state}&city=${city}&age=${age}&mn=${mn}`;
 
 const validState = state => ((state && state.toLowerCase() === 'all') ? '' : state);
 
