@@ -78,11 +78,11 @@ const initializeQueryArgs = (args, validArgs) => {
 
     amplify.store('searchData', args);
     amplify.store('currentRecord', null);
-    getTeaserData(args)
+    return getTeaserData(args)
       .then(() => notifyRecordCount(recordCounts.QUERY));
-  } else {
-    notifyRecordCount(recordCounts.LANDING);
   }
+  notifyRecordCount(recordCounts.LANDING);
+  return Promise.resolve();
 };
 
 let isOldTitleToggle;
@@ -114,7 +114,7 @@ const initialize = (
   buildingReport = buildingReportInstance;
   jQuery.fx.interval = 100;
   initializeTestimonials();
-  initializeQueryArgs(queryArgs, validQueryArgs);
+  const initializeQueryPromise = initializeQueryArgs(queryArgs, validQueryArgs);
 
   initializeBVGO(buildingReport.wizard.skipStep);
   if (shouldGetExtraTeaserDataOnLastStep) {
@@ -129,7 +129,8 @@ const initialize = (
     });
   }
   buildingReport.wizard.start();
-  includeRelativesModal(shouldDisplayRelatives);
+  initializeQueryPromise
+    .then(() => includeRelativesModal(shouldDisplayRelatives));
   window.$ = jQuery;
 };
 
