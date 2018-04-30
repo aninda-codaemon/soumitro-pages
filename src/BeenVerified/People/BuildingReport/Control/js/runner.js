@@ -30,7 +30,7 @@ const includeRelativesModal = (shouldDisplayRelatives) => {
   let currentRecord = amplify.store('currentRecord');
   var relatives = _get(currentRecord, 'Relatives.Relative') || [];
 
-  if (shouldDisplayRelatives && relatives.length > 0) {
+  if (shouldDisplayRelatives && (Array.isArray(relatives) ? relatives.length > 0 : true)) {
     buildingReport.addRelativesModal();
   }
 };
