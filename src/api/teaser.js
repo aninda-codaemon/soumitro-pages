@@ -86,6 +86,7 @@ const fixIncognitoMode = bvid => ({ teasers }) => {
     currentRecord.firstName = parsedRecord.firstName();
     // Hacky fix for framerida problem
     currentRecord['_framerida_mapped'] = 'TeaserRecord'; // eslint-disable-line
+    currentRecord['_framerida_click'] = 'store currentRecord'; // eslint-disable-line
     amplify.store('currentRecord', currentRecord);
   }
 };
