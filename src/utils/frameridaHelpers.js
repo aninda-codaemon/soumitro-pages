@@ -175,4 +175,26 @@ import { nameize } from 'utils/strings';
     const result = operators[newOperator](lvalue, newRvalue);
     return result ? newOptions.fn(this) : newOptions.inverse(this);
   });
+
+  H.registerHelper('isEqual', function isEqual(x, y, options) {
+    if (x && y && x.toUpperCase() === y.toUpperCase() && y) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
+
+  /*
+    Title a string. eg : las vegas => Las Vegas
+    {{titleUpperCase 'las vegas'}}
+  */
+
+  H.registerHelper('titleUpperCase', (item) => {
+    var i;
+    if (!item) return '';
+    item = item.toLowerCase().split(' ');
+    for (i = 0; i < item.length; i++) {
+      item[i] = item[i].charAt(0).toUpperCase() + item[i].slice(1);
+    }
+    return item.join(' ');
+  });
 }(Handlebars));
