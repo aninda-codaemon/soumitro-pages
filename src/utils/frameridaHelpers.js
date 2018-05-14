@@ -6,7 +6,7 @@ import {
   slice,
   includes,
 } from 'lodash';
-import { nameize } from 'utils/strings';
+import { nameize, despace, properCaps } from 'utils/strings';
 
 (function initializeHelpers(H) {
   /*
@@ -174,5 +174,28 @@ import { nameize } from 'utils/strings';
 
     const result = operators[newOperator](lvalue, newRvalue);
     return result ? newOptions.fn(this) : newOptions.inverse(this);
+  });
+
+  H.registerHelper('isEqual', function isEqual(x, y, options) {
+    if (x && y && x.toUpperCase() === y.toUpperCase() && y) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
+
+  /*
+    Title a string. eg : las vegas => Las Vegas
+    {{convertToTitleCase 'las vegas'}}
+  */
+
+  H.registerHelper('convertToTitleCase', (item) => {
+    var i;
+    if (!item) return '';
+    item = despace(item);
+    item = item.toLowerCase().split(' ');
+    for (i = 0; i < item.length; i++) {
+      item[i] = properCaps(item[i]);
+    }
+    return item.join(' ');
   });
 }(Handlebars));
