@@ -189,13 +189,7 @@ import { nameize, despace, properCaps } from 'utils/strings';
   */
 
   H.registerHelper('convertToTitleCase', (item) => {
-    var i;
     if (!item) return '';
-    item = despace(item);
-    item = item.toLowerCase().split(' ');
-    for (i = 0; i < item.length; i++) {
-      item[i] = properCaps(item[i]);
-    }
-    return item.join(' ');
+    return despace(properCaps(item));
   });
 }(Handlebars));
