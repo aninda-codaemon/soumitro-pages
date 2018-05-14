@@ -6,7 +6,7 @@ import {
   slice,
   includes,
 } from 'lodash';
-import { nameize } from 'utils/strings';
+import { nameize, despace, properCaps } from 'utils/strings';
 
 (function initializeHelpers(H) {
   /*
@@ -185,15 +185,16 @@ import { nameize } from 'utils/strings';
 
   /*
     Title a string. eg : las vegas => Las Vegas
-    {{titleUpperCase 'las vegas'}}
+    {{convertToTitleCase 'las vegas'}}
   */
 
-  H.registerHelper('titleUpperCase', (item) => {
+  H.registerHelper('convertToTitleCase', (item) => {
     var i;
     if (!item) return '';
+    item = despace(item);
     item = item.toLowerCase().split(' ');
     for (i = 0; i < item.length; i++) {
-      item[i] = item[i].charAt(0).toUpperCase() + item[i].slice(1);
+      item[i] = properCaps(item[i]);
     }
     return item.join(' ');
   });
