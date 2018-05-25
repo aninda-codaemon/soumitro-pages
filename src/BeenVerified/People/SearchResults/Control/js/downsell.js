@@ -57,6 +57,4 @@ const initializeDownsells = () => {
   }, VWO_CHECK_INTERVAL);
 };
 
-export {
-  initializeDownsells,
-};
+export { initializeDownsells };

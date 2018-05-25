@@ -1,6 +1,4 @@
-import {
-  extend,
-} from 'lodash';
+import { extend } from 'lodash';
 import { track } from 'utils/track';
 
 import {
