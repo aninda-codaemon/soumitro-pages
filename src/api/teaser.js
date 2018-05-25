@@ -92,6 +92,9 @@ const fixIncognitoMode = bvid => ({ teasers }) => {
 };
 
 const getTeaserData = (data) => {
+  if (data.town) {
+    data.city = data.town;
+  }
   data = _mapValues(data, (value, key) => ($.inArray(key, ['fn', 'ln', 'mi', 'city', 'state']) > -1 ? cleanSearchValues(value) : value));
   data = parseMiddleName(data);
   const url = buildTeaserEndpoint(

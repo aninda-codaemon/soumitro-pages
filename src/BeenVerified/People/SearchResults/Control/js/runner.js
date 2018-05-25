@@ -35,6 +35,9 @@ const $dataPanel = $('#data-panel');
 const $searchBar = $('#search-bar');
 const windowWidth = $(window).width();
 const windowSmall = 767;
+let skipped = amplify.store('skippedForward') ? amplify.store('skippedForward') : false;
+const SKIP_SEG_FILE = '2597_263';
+const isSegmentPage = queryArgs.segfid === SKIP_SEG_FILE;
 
 localStorage.isSupported();
 
@@ -99,6 +102,7 @@ const activateRows = () => {
     e.preventDefault();
     // TODO: isn't
     // window.hasClickedResult = true;
+    amplify.store('skippedForward', true);
     window.setTimeout(() => {
       var currentRecord = amplify.store('currentRecord') || {};
       var searchData = amplify.store('searchData') || {};
@@ -106,6 +110,8 @@ const activateRows = () => {
     }, 300);
   });
 };
+
+const skipToFlow = () => $('a#result0').trigger('click');
 
 const renderResults = () => {
   const teaserData = amplify.store('teaserData');
@@ -117,6 +123,14 @@ const renderResults = () => {
   }
   showResultsPanel();
   activateRows();
+  if (isSegmentPage && parseInt(teaserData.recordCount, 10) === 1) {
+    if (skipped !== true) {
+      skipToFlow();
+    } else {
+      amplify.store('skippedForward', false);
+      skipped = false;
+    }
+  }
   $(window).trigger('newResults');
   // bvid param? start the modal flow!
   if (queryData && typeof queryData.bvid !== 'undefined') {

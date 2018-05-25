@@ -1,11 +1,6 @@
 import { extend } from 'lodash';
 import { track } from 'utils/track';
-
-import {
-  defaults,
-  determineDurationBucket,
-  isIE,
-} from './config';
+import { defaults, determineDurationBucket, isIE } from './config';
 import { onBack } from './onBack';
 import { onBlur } from './onBlur';
 import { onBreakingPlane } from './onBreakingPlane';
