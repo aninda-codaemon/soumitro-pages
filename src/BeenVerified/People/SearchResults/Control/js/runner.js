@@ -116,14 +116,15 @@ const skipToFlow = () => $('a#result0').trigger('click');
 const renderResults = () => {
   const teaserData = amplify.store('teaserData');
   const queryData = amplify.store('query');
+  const teaserCount = teaserData ? parseInt(teaserData.recordCount, 10) : 0;
 
-  if (!teaserData || parseInt(teaserData.recordCount, 10) === 0) {
+  if (!teaserData || teaserCount === 0) {
     showNoResultsPanel();
     return;
   }
   showResultsPanel();
   activateRows();
-  if (isSegmentPage && parseInt(teaserData.recordCount, 10) === 1) {
+  if (isSegmentPage && teaserCount === 1) {
     if (skipped !== true) {
       skipToFlow();
     } else {
@@ -140,6 +141,7 @@ const renderResults = () => {
     }
   }
   initilizeSearchFilters({
+    recordCount: teaserCount,
     onReset: () => determineCollapse(),
   });
 };

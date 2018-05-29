@@ -294,8 +294,7 @@ const filterSearchResults = searchedNameParts => (item) => {
   );
 };
 
-const initilizeSearchFilters = ({ onReset }) => {
-  const recordCount = Number($('.record-count:visible').text());
+const initilizeSearchFilters = ({ onReset, recordCount }) => {
   /*
     Define sort/filter options using the class names of the data elements
     these classes are linked to the table data in index.html
