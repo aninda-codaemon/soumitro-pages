@@ -17,41 +17,6 @@ import {
   relatives,
 } from './steps';
 
-function showSubHeadlines(totalSections) {
-  var containerSelector = $('.wizard-content');
-  var stepsContainerSelector = $('.wizard-header');
-  var stepSelector = $('.wizard-step');
-  var sections = $(containerSelector).find(stepSelector);
-  var isModal = true;
-  var step = 1;
-  sections.hide();
-  $(sections[0]).show();
-  if (isModal) {
-    $('#wizModal').on('hidden.bs.modal', () => {
-      step = 1;
-      $($(`${containerSelector} .wizard-steps-panel .step-number`)
-        .removeClass('done')
-        .removeClass('doing')[0])
-        .toggleClass('doing');
-
-      $($(`${containerSelector} .wizard-step`)
-        .hide()[0])
-        .show();
-    });
-  }
-  $('#wizModal').find('.wizard-steps-panel').remove();
-  stepsContainerSelector.prepend(`<div class="wizard-steps-panel steps-quantity-${totalSections}"></div>`);
-  let stepsPanel = $('#wizModal').find('.wizard-steps-panel');
-  for (let s = 1; s <= 4; s++) {
-    stepsPanel.append(`<div class="step-number step-${s}"><div class="number">${s}</div></div>`);
-  }
-  $('#wizModal')
-    .find(`.wizard-steps-panel .step-${step}`)
-    .toggleClass('doing')
-    .find('.number')
-    .html('&nbsp;');
-}
-
 const section1 = Object.assign({}, Section);
 const section2 = Object.assign({}, Section);
 const section3 = Object.assign({}, Section);
@@ -102,7 +67,6 @@ function createWizard(options = {}) {
       window.location = `${$('body').data('next-page')}?hide-fcra=true`;
     },
   });
-  showSubHeadlines(sections.length);
 
   return wizard;
 }
