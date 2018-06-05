@@ -1,3 +1,4 @@
+import initiateQuestion from './initiateQuestion';
 import popularUseCases from './popularUseCases';
 import criminalScan from './criminalScan';
 import socialMediaScan from './socialMediaScan';
@@ -10,6 +11,7 @@ import generatingReport from './generatingReport';
 import relatives from './relatives';
 
 export {
+  initiateQuestion,
   popularUseCases,
   criminalScan,
   socialMediaScan,

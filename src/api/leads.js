@@ -1,6 +1,4 @@
-import {
-  forEach,
-} from 'lodash';
+import { forEach } from 'lodash';
 import amplify from 'utils/amplifyStore';
 
 function saveLeads(dataArray) {

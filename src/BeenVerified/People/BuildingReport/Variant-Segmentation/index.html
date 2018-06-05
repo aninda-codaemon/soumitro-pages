@@ -23,8 +23,9 @@
             <div class="col-sm-6">
               <div class="navbar-header">
                 <span onclick="location.href='https://www.beenverified.com/' ;">
-                  <div class="navbar-logo"><img src="img/bv-logo-white.svg">
-                 </div>
+                  <div class="navbar-logo">
+                    <img src="img/bv-logo-white.svg">
+                  </div>
                 </span>
                 <span class="badge">Find Out Today</span>
               </div>
@@ -40,7 +41,10 @@
 
   <div id="main-container">
     <div id="sub-container">
-      <div class="headline" data-fr-bind="currentRecord searchData">Building Report: <span class="hidden-xs">{{fullName}}</span><span class="visible-xs-inline">{{firstName}}</span></div>
+      <div class="headline" data-fr-bind="currentRecord searchData">Building Report:
+        <span class="hidden-xs">{{fullName}}</span>
+        <span class="visible-xs-inline">{{firstName}}</span>
+      </div>
       <div id="headlineContainer">
         <div class="subHeadline"></div>
         <div class="subHeadline hidden relatives-step"></div>
@@ -56,6 +60,75 @@
             <div class="modal-content">
               <div class="modal-header wizard-header"></div>
               <div class="modal-body wizard-content">
+                <div class="wizard-step">
+                  <!-- ==================================== -->
+                  <!-- ======= Question Modal ================== -->
+                  <!-- ==================================== -->
+                  <section id="initiate-report" tabindex="-1" aria-hidden="true">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="col-xs-2">
+                          <div class="icon-wrapper">
+                            <img src="img/icn_myself.svg"/>
+                          </div>
+                          <div class="icon-text-wrapper">
+                            <p>Search Myself</p>
+                          </div>
+                        </div>
+                        <div class="col-xs-2">
+                          <div class="icon-wrapper">
+                            <img src="img/icn_contact.svg"/>
+                          </div>
+                          <div class="icon-text-wrapper">
+                            <p>Contact Info</p>
+                          </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="icon-wrapper">
+                              <img src="img/icn_records.svg"/>
+                            </div>
+                            <div class="icon-text-wrapper">
+                              <p>Criminal Records</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="icon-wrapper">
+                              <img src="img/icn_dating.svg"/>
+                            </div>
+                            <div class="icon-text-wrapper">
+                              <p>Dating & Cheaters</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="icon-wrapper">
+                              <img src="img/icn_family.svg"/>
+                            </div>
+                            <div class="icon-text-wrapper">
+                              <p>Family Safety</p>
+                          </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="icon-wrapper">
+                              <img src="img/icn_professional.svg"/>
+                            </div>
+                            <div class="icon-text-wrapper">
+                              <p>Professional Use</p>
+                            </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div>
+                      <button id="gen-report-confirm" class="btn btn-md large-modal-btn">
+                        <strong id="gen-report-message">Other</strong>
+                      </button>
+                    </div>
+
+                    <div>
+                      asdf
+                    </div>
+                  </section>
+                </div>
                 <div class="wizard-step">
                   <!-- ==================================== -->
                   <!-- == 0 == Popular Use Cases Modal  ========= -->
@@ -111,8 +184,8 @@
                             <div id="speech-bub-four" class="speech-bub clearfix">
                               <h3>Neighborhood Watch</h3>
                               <p>
-                                Help protect your family by searching the people and places nearby. You might not realize who your family is interacting with on
-                                a daily basis.
+                                Help protect your family by searching the people and places nearby. You might not realize who your family is interacting
+                                with on a daily basis.
                               </p>
                               <img class="" src="img/Misc-Bg.svg">
                             </div>
@@ -126,7 +199,8 @@
                     </div>
                   </section>
                   <div class="mod-footer">
-                    <span><strong>Reminder:</strong> This website is a secure connection</span>
+                    <span>
+                      <strong>Reminder:</strong> This website is a secure connection</span>
                   </div>
                   <!--/#gen-report-modal0 -->
                 </div>
@@ -186,29 +260,138 @@
                       <div class="modal-body" data-fr-bind="currentRecord searchData">
                         <div class="row">
                           <div class="col-sm-12 modal-padding">
-                            <p>This search may reveal interesting information on <strong>{{fullName}}</strong> such as unseen
-                              photos, videos, family, friends, professional connections and more.</p>
+                            <p>This search may reveal interesting information on
+                              <strong>{{fullName}}</strong> such as unseen photos, videos, family, friends, professional connections
+                              and more.</p>
                             <div class="social-widget">
                               <div class="row">
                                 <ul id="social-media-groups" class="socialMedias list-unstyled">
-                                  <li><img class="loading spinner" src="img/rolling-grey.gif"><span class="social facebook"><img src="img/facebook.png"><p class="hidden-xs">Facebook</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-greyf.gif"><span class="social flickr"><img src="img/flickr.png"><p class="hidden-xs">Flickr</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-greym.gif"><span class="social twitter"><img src="img/twitter.png"><p class="hidden-xs">Twitter</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-grey.gif"><span class="social gplus"><img src="img/gplus2.png"><p class="hidden-xs">Google+</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-greyf.gif"><span class="social myspace"><img src="img/myspace.png"><p class="hidden-xs">MySpace</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-greym.gif"><span class="social kickstarter"><img src="img/kickstarter.png"><p class="hidden-xs">Kickstarter</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-grey.gif"><span class="social linkedin"><img src="img/linkedin.png"><p class="hidden-xs">Linkedin</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-greyf.gif"><span class="social youtube"><img src="img/youtube.png"><p class="hidden-xs">Youtube</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-greym.gif"><span class="social picasa"><img src="img/picasa.png"><p class="hidden-xs">Picasa</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-greyf.gif"><span class="social pinterest"><img src="img/pinterest.png"><p class="hidden-xs">Pinterest</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-grey.gif"><span class="social reddit"><img src="img/reddit.png"><p class="hidden-xs">Reddit</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-greyf.gif"><span class="social gravatar"><img src="img/gravatar.png"><p class="hidden-xs">Gravatar</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-grey.gif"><span class="social ancestry"><img src="img/ancestry.png"><p class="hidden-xs">Ancestry</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-greym.gif"><span class="social klout"><img src="img/klout.png"><p class="hidden-xs">Klout</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-greyf.gif"><span class="social instagram"><img src="img/instagram.png"><p class="hidden-xs">Instagram</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-grey.gif"><span class="social amazon"><img src="img/amazon.png"><p class="hidden-xs">Amazon</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-greyf.gif"><span class="social vimeo"><img src="img/vimeo.png"><p class="hidden-xs">Vimeo</p></span></li>
-                                  <li><img class="loading spinner" src="img/rolling-greym.gif"><span class="social foursquare"><img src="img/foursquare.png"><p class="hidden-xs">Foursquare</p></span></li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-grey.gif">
+                                    <span class="social facebook">
+                                      <img src="img/facebook.png">
+                                      <p class="hidden-xs">Facebook</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-greyf.gif">
+                                    <span class="social flickr">
+                                      <img src="img/flickr.png">
+                                      <p class="hidden-xs">Flickr</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-greym.gif">
+                                    <span class="social twitter">
+                                      <img src="img/twitter.png">
+                                      <p class="hidden-xs">Twitter</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-grey.gif">
+                                    <span class="social gplus">
+                                      <img src="img/gplus2.png">
+                                      <p class="hidden-xs">Google+</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-greyf.gif">
+                                    <span class="social myspace">
+                                      <img src="img/myspace.png">
+                                      <p class="hidden-xs">MySpace</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-greym.gif">
+                                    <span class="social kickstarter">
+                                      <img src="img/kickstarter.png">
+                                      <p class="hidden-xs">Kickstarter</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-grey.gif">
+                                    <span class="social linkedin">
+                                      <img src="img/linkedin.png">
+                                      <p class="hidden-xs">Linkedin</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-greyf.gif">
+                                    <span class="social youtube">
+                                      <img src="img/youtube.png">
+                                      <p class="hidden-xs">Youtube</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-greym.gif">
+                                    <span class="social picasa">
+                                      <img src="img/picasa.png">
+                                      <p class="hidden-xs">Picasa</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-greyf.gif">
+                                    <span class="social pinterest">
+                                      <img src="img/pinterest.png">
+                                      <p class="hidden-xs">Pinterest</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-grey.gif">
+                                    <span class="social reddit">
+                                      <img src="img/reddit.png">
+                                      <p class="hidden-xs">Reddit</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-greyf.gif">
+                                    <span class="social gravatar">
+                                      <img src="img/gravatar.png">
+                                      <p class="hidden-xs">Gravatar</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-grey.gif">
+                                    <span class="social ancestry">
+                                      <img src="img/ancestry.png">
+                                      <p class="hidden-xs">Ancestry</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-greym.gif">
+                                    <span class="social klout">
+                                      <img src="img/klout.png">
+                                      <p class="hidden-xs">Klout</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-greyf.gif">
+                                    <span class="social instagram">
+                                      <img src="img/instagram.png">
+                                      <p class="hidden-xs">Instagram</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-grey.gif">
+                                    <span class="social amazon">
+                                      <img src="img/amazon.png">
+                                      <p class="hidden-xs">Amazon</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-greyf.gif">
+                                    <span class="social vimeo">
+                                      <img src="img/vimeo.png">
+                                      <p class="hidden-xs">Vimeo</p>
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <img class="loading spinner" src="img/rolling-greym.gif">
+                                    <span class="social foursquare">
+                                      <img src="img/foursquare.png">
+                                      <p class="hidden-xs">Foursquare</p>
+                                    </span>
+                                  </li>
                                 </ul>
                               </div>
                             </div>
@@ -241,8 +424,8 @@
                           </div>
                           <div class="mobile-heading">
                             <p data-fr-bind="currentRecord searchData">
-                              We've located the following possible relatives of {{fullName}} who we have further information about. Please select those you'd like
-                              to learn more information about.
+                              We've located the following possible relatives of {{fullName}} who we have further information about. Please select those
+                              you'd like to learn more information about.
                             </p>
                           </div>
                           <form id="form-horizontal" class="col-sm-10 col-sm-offset-1">
@@ -270,7 +453,7 @@
                                     <input type="checkbox" name="rela-checkboxes" id="rela-checkboxes-2" value="1" class="styled">
                                     <span data-fr-bind="currentRecord">
                                       <span class="rndname"></span>
-                                     </span>
+                                    </span>
                                   </label>
                                 </div>
                                 <div class="col-sm-6 col-md-6 hidden">
@@ -278,7 +461,7 @@
                                     <input type="checkbox" name="rela-checkboxes" id="rela-checkboxes-3" value="1" class="styled">
                                     <span data-fr-bind="currentRecord">
                                       <span class="rndname"></span>
-                                      </span>
+                                    </span>
                                   </label>
                                 </div>
                                 <div class="col-sm-6 col-md-6 hidden">
@@ -286,7 +469,7 @@
                                     <input type="checkbox" name="rela-checkboxes" id="rela-checkboxes-4" value="1" class="styled">
                                     <span data-fr-bind="currentRecord">
                                       <span class="rndname"></span>
-                                      </span>
+                                    </span>
                                   </label>
                                 </div>
                                 <div class="col-sm-6 col-md-6 hidden">
@@ -294,7 +477,7 @@
                                     <input type="checkbox" name="rela-checkboxes" id="rela-checkboxes-5" value="1" class="styled">
                                     <span data-fr-bind="currentRecord">
                                       <span class="rndname"></span>
-                                      </span>
+                                    </span>
                                   </label>
                                 </div>
                               </div>
@@ -307,9 +490,9 @@
                         <div class="modal-footer">
                           <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-md-offset-3 col-md-6">
                             <button id="gen-report-confirm" class="main-btn btn btn-md btn-block large-modal-btn success">
-                                    <strong id="gen-report-message">Continue to Background Report</strong>
-                                    <i class="fa fa-chevron-right" id="arrowhead-right"></i>
-                                  </button>
+                              <strong id="gen-report-message">Continue to Background Report</strong>
+                              <i class="fa fa-chevron-right" id="arrowhead-right"></i>
+                            </button>
                           </div>
                         </div>
                         <!-- /.modal-footer -->
@@ -337,9 +520,9 @@
                           <span class="subtitle" data-fr-bind="currentRecord searchData">
                             {{#if fullName}} {{fullName}} {{else}} {{firstName}}{{/if}}'s Phone Report May Contain Comments Provided By Users</span>
                           <div>
-                            <p class="item-label text-center">Our phone reports contain user comments that may contain surprising information about them.
-                              By continuing, you acknowledge that the comments included in phone reports are provided by
-                              users.</p>
+                            <p class="item-label text-center">Our phone reports contain user comments that may contain surprising information about them. By
+                              continuing, you acknowledge that the comments included in phone reports are provided by users.
+                            </p>
                           </div>
                           <form id="fcraGroup" data-fr-bind="currentRecord searchData">
                             <div class="form-group">
@@ -354,7 +537,9 @@
                             </div>
                             <p data-fr-bind="currentRecord" class="log-load"></p>
                             <div class="btn-wrap col-sm-4 col-sm-offset-4 col-xs-12">
-                              <button class="data-modal-confirm btn btn-success btn-block"><span> I AGREE </span></button>
+                              <button class="data-modal-confirm btn btn-success btn-block">
+                                <span> I AGREE </span>
+                              </button>
                             </div>
 
                           </form>
@@ -384,8 +569,7 @@
                         <div class="modal-header col-sm-12">
                           <p>
                             There are limits to how you may use BeenVerified reports.
-                            <br />
-                            Please review the box below to continue to sign up.
+                            <br /> Please review the box below to continue to sign up.
                           </p>
                         </div>
                         <!-- /.modal-header -->
@@ -400,8 +584,8 @@
                                       <label class="fcraCheckbox-wrapper" for="fcraCheckbox2">
                                         <input id="fcraCheckbox2" name="fcraCheckbox2" class="styled" type="checkbox" required>
                                         <label for="fcraCheckbox2" class="fcraCheckbox-box">
-                                          I will not use information provided by BeenVerified for decisions about employment,
-                                          insurance, tenant screening, consumer credit or any other purpose restricted by the
+                                          I will not use information provided by BeenVerified for decisions about employment, insurance, tenant screening, consumer
+                                          credit or any other purpose restricted by the
                                           <a href="https://www.consumer.ftc.gov/sites/default/files/articles/pdf/pdf-0111-fair-credit-reporting-act.pdf" target="_blank">
                                             Fair Credit Reporting Act (FCRA)
                                           </a>
@@ -416,7 +600,9 @@
                               </div>
                             </div>
                             <div class="col-sm-4 col-sm-offset-4 col-xs-12">
-                              <button class="btn btn-success main-btn btn-block"><span>I AGREE</span></button>
+                              <button class="btn btn-success main-btn btn-block">
+                                <span>I AGREE</span>
+                              </button>
                             </div>
                           </form>
                         </div>
@@ -439,20 +625,26 @@
                       <div class="modal-body">
                         <div>
                           <div class="row icon-row">
-                            <div class="col-sm-2 icon-img"><img src="img/icon1-search.svg"></div>
+                            <div class="col-sm-2 icon-img">
+                              <img src="img/icon1-search.svg">
+                            </div>
                             <div class="col-sm-9">
                               <p data-fr-bind="currentRecord searchData"> Success! Your background report on {{fullName}} is available.</p>
                             </div>
                           </div>
                           <div class="row icon-row">
-                            <div class="col-sm-2 icon-img"> <img src="img/icon2-report.svg"></div>
+                            <div class="col-sm-2 icon-img">
+                              <img src="img/icon2-report.svg">
+                            </div>
                             <div class="col-sm-9">
                               <p>Our background reports may include information from multiple databases, bankruptcy records,
                                 career history, social media profiles and even online photos.</p>
                             </div>
                           </div>
                           <div class="row">
-                            <div class="col-sm-2 icon-img"> <img src="img/icon3-time.svg"></div>
+                            <div class="col-sm-2 icon-img">
+                              <img src="img/icon3-time.svg">
+                            </div>
                             <div class="col-sm-9">
                               <p>Some of the information contained in these reports could take weeks to acquire if you sought
                                 out the information on your own.</p>
@@ -464,7 +656,11 @@
 
                     <div class="row">
                       <div class="col-sm-5 col-sm-offset-3 col-md-6 col-md-offset-3">
-                        <button class="btn btn-success main-btn btn-block"><span>Continue to Report&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></span></button>
+                        <button class="btn btn-success main-btn btn-block">
+                          <span>Continue to Report&nbsp;
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                          </span>
+                        </button>
                       </div>
                     </div>
                   </section>
@@ -485,70 +681,79 @@
                             <div class="col-sm-8 left-column">
                               <div class="lead-part">
 
-                              <div class="" data-fr-bind="extraTeaserData currentRecord searchData">
-                                <img class="norton hidden-xs" src="img/norton-secured.png" alt="">
-                                <h3 class="modal-top-text-big">To See Your Results</h3>
-                                <p class="modal-top-text" >We need this basic information:</p>
-                              </div>
-                              <form id="signup-modal-form" action="<%= next_page %>" data-fr-bind="leadData" data-fr-store="leadData" data-fr-bind="leadData">
-                                <fieldset class="form-input-group">
-                                  <div class="row">
-                                    <div class="col-sm-3 hidden-xs hidden-sm">
-                                      <div class="input-label">First Name</div>
+                                <div class="" data-fr-bind="extraTeaserData currentRecord searchData">
+                                  <img class="norton hidden-xs" src="img/norton-secured.png" alt="">
+                                  <h3 class="modal-top-text-big">To See Your Results</h3>
+                                  <p class="modal-top-text">We need this basic information:</p>
+                                </div>
+                                <form id="signup-modal-form" action="<%= next_page %>" data-fr-bind="leadData" data-fr-store="leadData" data-fr-bind="leadData">
+                                  <fieldset class="form-input-group">
+                                    <div class="row">
+                                      <div class="col-sm-3 hidden-xs hidden-sm">
+                                        <div class="input-label">First Name</div>
+                                      </div>
+                                      <div class="col-sm-12 col-md-9">
+                                        <input name="account[first_name]" value="{{account[first_name]}}" id="lead_first_name" type="text" class="form-control" placeholder="First Name"
+                                          required/>
+                                      </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-9">
-                                      <input name="account[first_name]" value="{{account[first_name]}}" id="lead_first_name" type="text" class="form-control" placeholder="First Name" required/>
+                                    <div class="row">
+                                      <div class="col-sm-3 hidden-xs hidden-sm">
+                                        <div class="input-label">Last Name</div>
+                                      </div>
+                                      <div class="col-sm-12 col-md-9">
+                                        <input name="account[last_name]" value="{{account[last_name]}}" id="lead_last_name" type="text" class="form-control" placeholder="Last Name"
+                                          required/>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col-sm-3 hidden-xs hidden-sm">
-                                      <div class="input-label">Last Name</div>
+                                    <div class="row">
+                                      <div class="col-sm-3 hidden-xs hidden-sm">
+                                        <div class="input-label">Email</div>
+                                      </div>
+                                      <div class="col-sm-12 col-md-9">
+                                        <label for="lead_email" id="email_suggestion">Did you mean
+                                          <a></a>?</label>
+                                        <input name="user[email]" value="{{user[email]}}" id="lead_email" type="email" class="form-control" placeholder="Email Address"
+                                          required/>
+                                      </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-9">
-                                      <input name="account[last_name]" value="{{account[last_name]}}" id="lead_last_name" type="text" class="form-control" placeholder="Last Name" required/>
-                                    </div>
-                                  </div>
-                                  <div class="row">
-                                    <div class="col-sm-3 hidden-xs hidden-sm">
-                                      <div class="input-label">Email</div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-9">
-                                      <label for="lead_email" id="email_suggestion">Did you mean <a></a>?</label>
-                                      <input name="user[email]" value="{{user[email]}}" id="lead_email" type="email" class="form-control" placeholder="Email Address" required/>
-                                    </div>
-                                  </div>
-                                </fieldset>
+                                  </fieldset>
 
-                                <fieldset>
-                                  <div class="">
-                                    <button type="submit" class="main-btn main-btn-large btn-block"><span class="hidden-xs">&nbsp;Access &amp; </span>Continue</button>
-                                  </div>
-                                </fieldset>
+                                  <fieldset>
+                                    <div class="">
+                                      <button type="submit" class="main-btn main-btn-large btn-block">
+                                        <span class="hidden-xs">&nbsp;Access &amp; </span>Continue</button>
+                                    </div>
+                                  </fieldset>
 
-                                <fieldset>
-                                  <div class="">
-                                    <p class="tos-text">
-                                      By clicking "Continue", you represent that you are over 18 years of age and have agreed to our
-                                      <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank"> Terms of Service</a> and
-                                      <a href="//www.beenverified.com/privacy" target="_blank"> Privacy Policy </a>
-                                      and you agree to receive email from BeenVerified.com. We’ll never sell your information or use your data as a part of our search results.
-                                    </p>
-                                  </div>
-                                </fieldset>
-                              </form>
-                              <!-- new form for logging in -->
-                              <form class="form-horizontal" action="https://www.beenverified.com/f/login" data-fr-bind="currentRecord" method="get" target="_blank">
-                                <fieldset>
-                                  <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
-                                  <h6 class="create-login">Already a BeenVerified member? <button class="btn btn-link btn-xs" id="login-redirect" type="submit">Click here to login</button>
-                                </h6>
-                                </fieldset>
-                              </form>
+                                  <fieldset>
+                                    <div class="">
+                                      <p class="tos-text">
+                                        By clicking "Continue", you represent that you are over 18 years of age and have agreed to our
+                                        <a href="//www.beenverified.com/consumer-terms-of-service" target="_blank"> Terms of Service</a> and
+                                        <a href="//www.beenverified.com/privacy" target="_blank"> Privacy Policy </a>
+                                        and you agree to receive email from BeenVerified.com. We’ll never sell your information or use your data as a part of our
+                                        search results.
+                                      </p>
+                                    </div>
+                                  </fieldset>
+                                </form>
+                                <!-- new form for logging in -->
+                                <form class="form-horizontal" action="https://www.beenverified.com/f/login" data-fr-bind="currentRecord" method="get" target="_blank">
+                                  <fieldset>
+                                    <input id="record_search_person_id" name="record_search[person_id]" type="hidden" value="{{bvid}}">
+                                    <h6 class="create-login">Already a BeenVerified member?
+                                      <button class="btn btn-link btn-xs" id="login-redirect" type="submit">Click here to login</button>
+                                    </h6>
+                                  </fieldset>
+                                </form>
 
-                              <div class="seal-small visible-xs">
-                                  <div class="verify-seal" style="text-align:center;"><img src="img/norton-secured.png"></div>
-                              </div>
-                              <!-- end new form for logging in -->
+                                <div class="seal-small visible-xs">
+                                  <div class="verify-seal" style="text-align:center;">
+                                    <img src="img/norton-secured.png">
+                                  </div>
+                                </div>
+                                <!-- end new form for logging in -->
 
 
                               </div>
@@ -619,7 +824,7 @@
                                     </div>
                                   </div>
                                 </div>
-                            </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -648,14 +853,16 @@
                         <div class="row">
                           <div class="col-sm-12">
                             <p data-fr-bind="currentRecord searchData">
-                              Don't be "left in the dark." BeenVerified can notify you whenever there are changes or updates to {{fullName}}'s report. People
-                              are frequently moving, committing crimes, creating new social media profiles and changing
+                              Don't be "left in the dark." BeenVerified can notify you whenever there are changes or updates to {{fullName}}'s report.
+                              People are frequently moving, committing crimes, creating new social media profiles and changing
                               their phone numbers. You could miss out if important information changes in the future.
                             </p>
                             <div>
                               <div class="col-sm-12">
                                 <button type="submit" id="ongoing-notifications" class="main-btn btn-lg btn-block">
-                                        <strong>Continue</strong> <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                                  <strong>Continue</strong>
+                                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -698,19 +905,23 @@
                                   <strong>Personal Information</strong>
                                 </h3>
                                 <div class="hidden-lg hidden-md hidden-sm hidden-xs visible-xxs">
-                                  <p>The report may reveal, where available or applicable, a person’s full name, maiden name, age, known aliases,
-                                    address history with “last seen” date, current address, and <strong>email addresses</strong>.</p>
+                                  <p>The report may reveal, where available or applicable, a person’s full name, maiden name,
+                                    age, known aliases, address history with “last seen” date, current address, and
+                                    <strong>email addresses</strong>.</p>
                                   <div class="clearfix"></div>
                                 </div>
                                 <div class="visible-xs hidden-xxs">
                                   <ul>
                                     <li>
-                                      <p class="text-left">The report may reveal, where available or applicable, a person’s full name, maiden name, age, known
-                                        aliases, address history with “last seen” date, current address and <strong>email addresses</strong>.</p>
+                                      <p class="text-left">The report may reveal, where available or applicable, a person’s full name, maiden
+                                        name, age, known aliases, address history with “last seen” date, current address
+                                        and
+                                        <strong>email addresses</strong>.</p>
                                     </li>
                                     <li class=>
-                                      <p class="text-left"><strong>Phone numbers</strong> may contain, where available, owner names and other
-                                        possible persons associated with those numbers.</p>
+                                      <p class="text-left">
+                                        <strong>Phone numbers</strong> may contain, where available, owner names and other possible
+                                        persons associated with those numbers.</p>
                                     </li>
                                   </ul>
                                   <div class="clearfix"></div>
@@ -718,36 +929,43 @@
                                 <div class="hidden-xs">
                                   <ul>
                                     <li>
-                                      <p>The report may reveal, where available or applicable, a person’s full name, maiden name, age, known
-                                        aliases, address history with “last seen” date, current address and <strong>email addresses</strong>.</p>
+                                      <p>The report may reveal, where available or applicable, a person’s full name, maiden
+                                        name, age, known aliases, address history with “last seen” date, current address
+                                        and
+                                        <strong>email addresses</strong>.</p>
                                     </li>
                                     <li>
-                                      <p><strong>Phone numbers</strong> may contain, where available, owner names and other
-                                        possible persons associated with those numbers.</p>
+                                      <p>
+                                        <strong>Phone numbers</strong> may contain, where available, owner names and other possible
+                                        persons associated with those numbers.</p>
                                     </li>
                                     <li>
-                                      <p>The <strong>current address</strong> is displayed with a map, satellite imagery and
-                                        access to an in-depth property report.</p>
+                                      <p>The
+                                        <strong>current address</strong> is displayed with a map, satellite imagery and access to
+                                        an in-depth property report.</p>
                                     </li>
                                   </ul>
                                 </div>
                               </div>
                               <div id="card-property" class="card-single">
                                 <h3 class="text-info body-copy-header copy-header-prop">
-                                  <strong>Addresses and <!-- <br class="visible-xs"> -->Property</strong>
+                                  <strong>Addresses and
+                                    <!-- <br class="visible-xs"> -->Property</strong>
                                 </h3>
                                 <div class="hidden-lg hidden-md hidden-sm hidden-xs visible-xxs">
-                                  <p>This report may locate, where available, their current and historical <strong>real estate assets,</strong>                                    including detailed information on those properties.</p>
+                                  <p>This report may locate, where available, their current and historical
+                                    <strong>real estate assets,</strong> including detailed information on those properties.</p>
                                   <div class="clearfix"></div>
                                 </div>
                                 <div class="visible-xs hidden-xxs">
                                   <ul>
                                     <li>
-                                      <p class="text-left">This report may locate, where available, their current and historical <strong>real estate assets,</strong>                                        including detailed information on those properties.</p>
+                                      <p class="text-left">This report may locate, where available, their current and historical
+                                        <strong>real estate assets,</strong> including detailed information on those properties.</p>
                                     </li>
                                     <li>
-                                      <p class="text-left">View satellite maps, parcel numbers and county assessor data such as <strong>property taxes</strong>,
-                                        home value and building specs.</p>
+                                      <p class="text-left">View satellite maps, parcel numbers and county assessor data such as
+                                        <strong>property taxes</strong>, home value and building specs.</p>
                                     </li>
                                   </ul>
                                   <div class="clearfix"></div>
@@ -755,14 +973,16 @@
                                 <div class="hidden-xs">
                                   <ul>
                                     <li>
-                                      <p>This report may locate, where available, their current and historical <strong>real estate assets,</strong>                                        including detailed information on those properties.</p>
+                                      <p>This report may locate, where available, their current and historical
+                                        <strong>real estate assets,</strong> including detailed information on those properties.</p>
                                     </li>
                                     <li>
-                                      <p>View satellite maps, parcel numbers and county assessor data such as <strong>property taxes</strong>,
-                                        home value and building specs.</p>
+                                      <p>View satellite maps, parcel numbers and county assessor data such as
+                                        <strong>property taxes</strong>, home value and building specs.</p>
                                     </li>
                                     <li>
-                                      <p>Even see buyer/seller info, <strong>sales prices</strong> and co-owners, where available.</p>
+                                      <p>Even see buyer/seller info,
+                                        <strong>sales prices</strong> and co-owners, where available.</p>
                                     </li>
                                   </ul>
                                 </div>
@@ -772,18 +992,21 @@
                                   <strong>Criminal</strong>
                                 </h3>
                                 <div class="hidden-lg hidden-md hidden-sm hidden-xs visible-xxs">
-                                  <p>May contain, where available, <strong>arrest or conviction records,</strong> as well as
-                                    outstanding warrants, traffic violations and speeding tickets.</p>
+                                  <p>May contain, where available,
+                                    <strong>arrest or conviction records,</strong> as well as outstanding warrants, traffic violations
+                                    and speeding tickets.</p>
                                   <div class="clearfix"></div>
                                 </div>
                                 <div class="visible-xs hidden-xxs">
                                   <ul>
                                     <li>
-                                      <p class="text-left">May contain, where available, <strong>arrest or conviction records,</strong> as well
-                                        as outstanding warrants, traffic violations and speeding tickets.</p>
+                                      <p class="text-left">May contain, where available,
+                                        <strong>arrest or conviction records,</strong> as well as outstanding warrants, traffic violations
+                                        and speeding tickets.</p>
                                     </li>
                                     <li>
-                                      <p class="text-left">When a criminal record is found, we detail the offense along with the <strong>date and location</strong>                                        of the crime.</p>
+                                      <p class="text-left">When a criminal record is found, we detail the offense along with the
+                                        <strong>date and location</strong> of the crime.</p>
                                     </li>
                                   </ul>
                                   <div class="clearfix"></div>
@@ -791,35 +1014,41 @@
                                 <div class="hidden-xs">
                                   <ul>
                                     <li>
-                                      <p>May contain, where available, <strong>arrest or conviction records,</strong> as well
-                                        as outstanding warrants, traffic violations and speeding tickets.</p>
+                                      <p>May contain, where available,
+                                        <strong>arrest or conviction records,</strong> as well as outstanding warrants, traffic violations
+                                        and speeding tickets.</p>
                                     </li>
                                     <li>
-                                      <p>When a criminal record is found, we detail the offense along with the <strong>date and location</strong>                                        of the crime.</p>
+                                      <p>When a criminal record is found, we detail the offense along with the
+                                        <strong>date and location</strong> of the crime.</p>
                                     </li>
                                     <li>
-                                      <p>We compile federal, state, county and local databases including courts and <strong>police records</strong>.
-                                        Criminal Records are found based on availability.</p>
+                                      <p>We compile federal, state, county and local databases including courts and
+                                        <strong>police records</strong>. Criminal Records are found based on availability.</p>
                                     </li>
                                   </ul>
                                 </div>
                               </div>
                               <div id="card-relatives" class="card-single">
                                 <h3 class="text-info body-copy-header copy-header-rel">
-                                  <strong>Relatives and <!-- <br class="visible-xs"> -->Connections</strong>
+                                  <strong>Relatives and
+                                    <!-- <br class="visible-xs"> -->Connections</strong>
                                 </h3>
                                 <div class="hidden-lg hidden-md hidden-sm hidden-xs visible-xxs">
-                                  <p>Our access to hard to find public records may reveal individuals who have a <strong>close relationship</strong>                                    to your search subject.</p>
+                                  <p>Our access to hard to find public records may reveal individuals who have a
+                                    <strong>close relationship</strong> to your search subject.</p>
                                   <div class="clearfix"></div>
                                 </div>
                                 <div class="visible-xs hidden-xxs">
                                   <ul>
                                     <li>
-                                      <p class="text-left">Our access to hard to find public records may reveal individuals who have a <strong>close relationship</strong>                                        to your search subject.</p>
+                                      <p class="text-left">Our access to hard to find public records may reveal individuals who have a
+                                        <strong>close relationship</strong> to your search subject.</p>
                                     </li>
                                     <li>
-                                      <p class="text-left">In addition to relatives, this report may show, where available, <strong>boyfriends/girlfriends</strong>,
-                                        roommates, business associates, as well as ex-husbands and ex-wives.</p>
+                                      <p class="text-left">In addition to relatives, this report may show, where available,
+                                        <strong>boyfriends/girlfriends</strong>, roommates, business associates, as well as ex-husbands
+                                        and ex-wives.</p>
                                     </li>
                                   </ul>
                                   <div class="clearfix"></div>
@@ -827,14 +1056,17 @@
                                 <div class="hidden-xs">
                                   <ul>
                                     <li>
-                                      <p>Our access to hard to find public records may reveal individuals who have a <strong>close relationship</strong>                                        to your search subject.</p>
+                                      <p>Our access to hard to find public records may reveal individuals who have a
+                                        <strong>close relationship</strong> to your search subject.</p>
                                     </li>
                                     <li>
-                                      <p>In addition to relatives, this report may show, where available, <strong>boyfriends/girlfriends</strong>,
-                                        roommates, business associates, as well as ex-husbands and ex-wives.</p>
+                                      <p>In addition to relatives, this report may show, where available,
+                                        <strong>boyfriends/girlfriends</strong>, roommates, business associates, as well as ex-husbands
+                                        and ex-wives.</p>
                                     </li>
                                     <li>
-                                      <p>We've recently added relatives of relatives to help <strong>broaden your search</strong>.</p>
+                                      <p>We've recently added relatives of relatives to help
+                                        <strong>broaden your search</strong>.</p>
                                     </li>
                                   </ul>
                                 </div>
@@ -844,18 +1076,20 @@
                                   <strong>Social Media</strong>
                                 </h3>
                                 <div class="hidden-lg hidden-md hidden-sm hidden-xs visible-xxs">
-                                  <p>Your report may uncover <strong>social media accounts</strong> owned by or associated with
-                                    your search subject.</p>
+                                  <p>Your report may uncover
+                                    <strong>social media accounts</strong> owned by or associated with your search subject.</p>
                                   <div class="clearfix"></div>
                                 </div>
                                 <div class="visible-xs hidden-xxs">
                                   <ul>
                                     <li>
-                                      <p class="text-left">Your report may uncover <strong>social media accounts</strong> owned by or associated
-                                        with your search subject.</p>
+                                      <p class="text-left">Your report may uncover
+                                        <strong>social media accounts</strong> owned by or associated with your search subject.</p>
                                     </li>
                                     <li>
-                                      <p class="text-left">Social networks are a potentially helpful way to uncover <strong>additional information.</strong></p>
+                                      <p class="text-left">Social networks are a potentially helpful way to uncover
+                                        <strong>additional information.</strong>
+                                      </p>
                                     </li>
                                   </ul>
                                   <div class="clearfix"></div>
@@ -863,15 +1097,17 @@
                                 <div class="hidden-xs">
                                   <ul>
                                     <li>
-                                      <p>Your report may uncover <strong>social media accounts</strong> owned by or associated
-                                        with your search subject.</p>
+                                      <p>Your report may uncover
+                                        <strong>social media accounts</strong> owned by or associated with your search subject.</p>
                                     </li>
                                     <li>
-                                      <p>Social networks are a potentially helpful way to uncover <strong>additional information.</strong></p>
+                                      <p>Social networks are a potentially helpful way to uncover
+                                        <strong>additional information.</strong>
+                                      </p>
                                     </li>
                                     <li>
-                                      <p>The social search now potentially uncovers <strong>photos</strong>, educational records
-                                        and professional history.</p>
+                                      <p>The social search now potentially uncovers
+                                        <strong>photos</strong>, educational records and professional history.</p>
                                     </li>
                                   </ul>
                                 </div>
@@ -881,20 +1117,21 @@
                                   <strong>Miscellaneous</strong>
                                 </h3>
                                 <div class="hidden-lg hidden-md hidden-sm hidden-xs visible-xxs">
-                                  <p>We also give you the ability to run <strong>reverse phone number lookups</strong>, email
-                                    searches and property reports.</p>
+                                  <p>We also give you the ability to run
+                                    <strong>reverse phone number lookups</strong>, email searches and property reports.</p>
                                   <div class="clearfix"></div>
                                 </div>
                                 <div class="visible-xs hidden-xxs">
                                   <ul>
                                     <li>
-                                      <p class="text-left">We also give you the ability to run <strong>reverse phone number lookups</strong>,
-                                        email searches and property reports.</p>
+                                      <p class="text-left">We also give you the ability to run
+                                        <strong>reverse phone number lookups</strong>, email searches and property reports.</p>
                                     </li>
                                     <li>
-                                      <p class="text-left">You'll get access to BeenVerified's <strong>proprietary Monitoring feature</strong>,
-                                        which sends alerts and monitors potential changes we find in our data on an ongoing
-                                        basis.</p>
+                                      <p class="text-left">You'll get access to BeenVerified's
+                                        <strong>proprietary Monitoring feature</strong>, which sends alerts and monitors potential
+                                        changes we find in our data on an ongoing basis.
+                                      </p>
                                     </li>
                                   </ul>
                                   <div class="clearfix"></div>
@@ -902,16 +1139,19 @@
                                 <div class="hidden-xs">
                                   <ul>
                                     <li>
-                                      <p>We also give you the ability to run <strong>reverse phone number lookups</strong>,
-                                        email searches and property reports.</p>
+                                      <p>We also give you the ability to run
+                                        <strong>reverse phone number lookups</strong>, email searches and property reports.</p>
                                     </li>
                                     <li>
-                                      <p>You'll get access to BeenVerified's <strong>proprietary Monitoring feature</strong>,
-                                        which sends alerts and monitors potential changes we find in our data on an ongoing
-                                        basis.</p>
+                                      <p>You'll get access to BeenVerified's
+                                        <strong>proprietary Monitoring feature</strong>, which sends alerts and monitors potential
+                                        changes we find in our data on an ongoing basis.
+                                      </p>
                                     </li>
                                     <li>
-                                      <p>No more having to stay on top of the data yourself - <strong>let BeenVerified assist you.</strong></p>
+                                      <p>No more having to stay on top of the data yourself -
+                                        <strong>let BeenVerified assist you.</strong>
+                                      </p>
                                     </li>
                                   </ul>
                                 </div>
@@ -923,12 +1163,18 @@
 
                         <div class="modal-footer">
                           <p id="modal-msgs">
-                            <span class="msg-selected">Personal Information <span class="hidden-xs">Slide</span> Progress...</span>
-                            <span>Property Section <span class="hidden-xs">Slide</span> Progress...</span>
-                            <span>Criminal Information <span class="hidden-xs">Slide</span> Progress...</span>
-                            <span>Relatives Information <span class="hidden-xs">Slide</span> Progress...</span>
-                            <span>Social Media Section <span class="hidden-xs">Slide</span> Progress...</span>
-                            <span>Miscellaneous Information <span class="hidden-xs">Slide</span> Progress...</span>
+                            <span class="msg-selected">Personal Information
+                              <span class="hidden-xs">Slide</span> Progress...</span>
+                            <span>Property Section
+                              <span class="hidden-xs">Slide</span> Progress...</span>
+                            <span>Criminal Information
+                              <span class="hidden-xs">Slide</span> Progress...</span>
+                            <span>Relatives Information
+                              <span class="hidden-xs">Slide</span> Progress...</span>
+                            <span>Social Media Section
+                              <span class="hidden-xs">Slide</span> Progress...</span>
+                            <span>Miscellaneous Information
+                              <span class="hidden-xs">Slide</span> Progress...</span>
                           </p>
                           <div id="sub-searching-progress-bar" class="progress">
                             <div class="progress-bar progress-bar-success" style="width: 1%"></div>
@@ -1050,7 +1296,8 @@
       <div class="modal-content">
         <div class="modal-header">
           <div class="emdTitle hidden">Checking session...</div>
-          <div class="emdTitle hidden"><i class="fa fa-lock" aria-hidden="true"></i> Continuing session...</div>
+          <div class="emdTitle hidden">
+            <i class="fa fa-lock" aria-hidden="true"></i> Continuing session...</div>
         </div>
         <div class="modal-body clearfix">
           <div class="searching-progress-bar-group col-xs-12">
@@ -1066,7 +1313,9 @@
               <div class="col-sm-9 col-xs-9">
                 <p>This is a secure website using a SSL Certificate.</p>
               </div>
-              <div class="col-sm-3 col-xs-3"><img src="img/norton.gif"></div>
+              <div class="col-sm-3 col-xs-3">
+                <img src="img/norton.gif">
+              </div>
             </div>
           </div>
         </div>
@@ -1088,7 +1337,9 @@
         <div class="modal-body clearfix">
           <div class="searching-progress-bar-group col-xs-12">
             <div id="crt-acct-load" class="ext-mod hidden">
-              <div><img data-src="img/loading-check-lock.gif"></div>
+              <div>
+                <img data-src="img/loading-check-lock.gif">
+              </div>
               <p>Please wait....</p>
             </div>
             <div id="crt-acct-warn" class="ext-mod hidden">
@@ -1100,11 +1351,11 @@
                 </p>
               </div>
               <div class="crc-acct-load-body">
-                <strong>Remember:</strong> BeenVerified reports use REAL public records from court houses, government
-                records and other sources. The data may surprise you.
+                <strong>Remember:</strong> BeenVerified reports use REAL public records from court houses, government records and
+                other sources. The data may surprise you.
                 <button id="crt-acct-warn-confirm" class="main-btn btn btn-md btn-block large-modal-btn">
-                        <span id="crt-acct-warn-message"> YES, I UNDERSTAND</span>
-                      </button>
+                  <span id="crt-acct-warn-message"> YES, I UNDERSTAND</span>
+                </button>
               </div>
             </div>
           </div>
@@ -1120,147 +1371,206 @@
       <div class="row">
         <div class="customer-service-wrapper col-sm-12 col-md-4 col-md-push-8 col-md-offset-0 col-lg-4 col-lg-push-8 col-lg-offset-0">
           <div class="col-sm-6 col-md-12 col-lg-12 no-pad-left">
-            <h4><i>“Excellent Support &amp; Service”</i></h4>
+            <h4>
+              <i>“Excellent Support &amp; Service”</i>
+            </h4>
             <div class="col-xs-12 no-pad-left">
-              <p class="website"><img src="img/footer-stars.svg">
-              - via SiteJabber.com</p>
+              <p class="website">
+                <img src="img/footer-stars.svg"> - via SiteJabber.com</p>
             </div>
 
             <div class="visible-sm quote">
               <img src="img/divider.svg">
-              <p><i>"Our goal is to be quick, friendly and as helpful as possible."</i>
-              <br/>
-              -Dana, Customer Care</p>
+              <p>
+                <i>"Our goal is to be quick, friendly and as helpful as possible."</i>
+                <br/> -Dana, Customer Care</p>
             </div>
           </div>
 
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-6">
-                    <p>
-                        <span class="phone-number">
-                          <span class="col-xs-1"><img src="img/call.svg"></span>
-                          <span class="col-xs-11"><a href="tel:+1-888-579-5910">1-888-579-5910</a></span>
-                          </span>
-                        <br/>
-                        <span class="email-address">
-                            <span class="col-xs-1"><img src="img/email.svg"></span>
-                            <span class="col-xs-11"><a href="mailto:support@beenverified.com">support@beenverified.com</a></span>
-                        </span>
-                        <br/>
-                        <span class="hours">
-                          <span class="col-xs-1"><img src="img/clock.svg"></span>
-                          <span class="col-xs-11">
-                          Monday - Friday	8 am - 10 pm est
-                          <br/>
-                          Saturday - Sunday	10 am - 8 pm est
-                          </span>
-                      </span>
-                      <br/>
-                      <span class="ussupport">
-                          <span class="col-xs-1"><img src="img/us-flag.svg"></span>
-                          <span class="col-xs-11">
-                          Phone support proudly based in the U.S.
-                          </span>
-                      </span>
-                    </p>
-                </div>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-6">
+              <p>
+                <span class="phone-number">
+                  <span class="col-xs-1">
+                    <img src="img/call.svg">
+                  </span>
+                  <span class="col-xs-11">
+                    <a href="tel:+1-888-579-5910">1-888-579-5910</a>
+                  </span>
+                </span>
+                <br/>
+                <span class="email-address">
+                  <span class="col-xs-1">
+                    <img src="img/email.svg">
+                  </span>
+                  <span class="col-xs-11">
+                    <a href="mailto:support@beenverified.com">support@beenverified.com</a>
+                  </span>
+                </span>
+                <br/>
+                <span class="hours">
+                  <span class="col-xs-1">
+                    <img src="img/clock.svg">
+                  </span>
+                  <span class="col-xs-11">
+                    Monday - Friday 8 am - 10 pm est
+                    <br/> Saturday - Sunday 10 am - 8 pm est
+                  </span>
+                </span>
+                <br/>
+                <span class="ussupport">
+                  <span class="col-xs-1">
+                    <img src="img/us-flag.svg">
+                  </span>
+                  <span class="col-xs-11">
+                    Phone support proudly based in the U.S.
+                  </span>
+                </span>
+              </p>
             </div>
-            <div class="row">
-              <div class="col-lg-10 hidden-sm">
-                <div class="row quote">
-                  <div class="col-xs-12">
-                      <img src="img/divider.svg">
-                    <p><i>"Our goal is to be quick, friendly and as helpful as possible."</i>
-                      <br/>
-                    -Dana, Customer Care</p>
-                  </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-10 hidden-sm">
+              <div class="row quote">
+                <div class="col-xs-12">
+                  <img src="img/divider.svg">
+                  <p>
+                    <i>"Our goal is to be quick, friendly and as helpful as possible."</i>
+                    <br/> -Dana, Customer Care</p>
                 </div>
               </div>
             </div>
+          </div>
         </div>
         <div class="col-lg-8 col-lg-pull-4 col-md-8 col-md-pull-4">
           <div class="row">
             <div class="col-sm-4">
               <h4>About Us</h4>
               <ul>
-                <li><a href="//www.beenverified.com/about/">About BV</a></li>
-                <li><a href="//www.beenverified.com/about/testimonials/">Testimonials</a></li>
-                <li><a href="//www.beenverified.com/careers/">Careers</a></li>
-                <li><a href="//www.beenverified.com/about/leadership/">Leadership</a></li>
-                <li><a href="//www.beenverified.com/press/">Press</a></li>
-                <li><a href="//www.beenverified.com/people/">People White Pages</a></li>
+                <li>
+                  <a href="//www.beenverified.com/about/">About BV</a>
+                </li>
+                <li>
+                  <a href="//www.beenverified.com/about/testimonials/">Testimonials</a>
+                </li>
+                <li>
+                  <a href="//www.beenverified.com/careers/">Careers</a>
+                </li>
+                <li>
+                  <a href="//www.beenverified.com/about/leadership/">Leadership</a>
+                </li>
+                <li>
+                  <a href="//www.beenverified.com/press/">Press</a>
+                </li>
+                <li>
+                  <a href="//www.beenverified.com/people/">People White Pages</a>
+                </li>
               </ul>
             </div>
             <div class="col-sm-4">
               <h4>Our Apps</h4>
               <ul>
-                <li><a href="//www.beenverified.com/apps/">All BV Apps</a></li>
-                <li><a href="//www.beenverified.com/apps/ios/">For iPhone / iPad</a> - <a href="https://itunes.apple.com/us/app/background-check-app/id342585873?mt=8">Download</a></li>
-                <li><a href="//www.beenverified.com/apps/apple-watch/">For Apple Watch</a> - <a href="https://itunes.apple.com/us/app/background-check-app-beenverified/id342585873?mt=8">Download</a></li>
-                <li><a href="//www.beenverified.com/apps/android/">For Android</a> - <a href="https://market.android.com/details?id=com.beenverified.android&feature=search_result">Download</a></li>
-                <li><a href="https://docs.google.com/a/beenverified.com/spreadsheet/viewform?formkey=dEU1elc5dDVoMElwYmlYUWQ0Wkxjbmc6MA">Developer API</a></li>
+                <li>
+                  <a href="//www.beenverified.com/apps/">All BV Apps</a>
+                </li>
+                <li>
+                  <a href="//www.beenverified.com/apps/ios/">For iPhone / iPad</a> -
+                  <a href="https://itunes.apple.com/us/app/background-check-app/id342585873?mt=8">Download</a>
+                </li>
+                <li>
+                  <a href="//www.beenverified.com/apps/apple-watch/">For Apple Watch</a> -
+                  <a href="https://itunes.apple.com/us/app/background-check-app-beenverified/id342585873?mt=8">Download</a>
+                </li>
+                <li>
+                  <a href="//www.beenverified.com/apps/android/">For Android</a> -
+                  <a href="https://market.android.com/details?id=com.beenverified.android&feature=search_result">Download</a>
+                </li>
+                <li>
+                  <a href="https://docs.google.com/a/beenverified.com/spreadsheet/viewform?formkey=dEU1elc5dDVoMElwYmlYUWQ0Wkxjbmc6MA">Developer API</a>
+                </li>
               </ul>
             </div>
             <div class="col-sm-4">
               <h4>Help</h4>
               <ul>
-                <li><a href="http://support.beenverified.com/home">Support</a></li>
-                <li><a href="//www.beenverified.com/contact/">Contact Us</a></li>
-                <li><a href="//www.beenverified.com/about/dos-donts/">Do's &amp; Don'ts</a></li>
-                <li><a href="//www.beenverified.com/faq/billing/">FAQ</a></li>
-                <li><a href="//www.beenverified.com/faq/opt-out/">Remove My Info</a></li>
-                <li><a href="http://partners.beenverified.com/signup">Affiliates</a></li>
+                <li>
+                  <a href="http://support.beenverified.com/home">Support</a>
+                </li>
+                <li>
+                  <a href="//www.beenverified.com/contact/">Contact Us</a>
+                </li>
+                <li>
+                  <a href="//www.beenverified.com/about/dos-donts/">Do's &amp; Don'ts</a>
+                </li>
+                <li>
+                  <a href="//www.beenverified.com/faq/billing/">FAQ</a>
+                </li>
+                <li>
+                  <a href="//www.beenverified.com/faq/opt-out/">Remove My Info</a>
+                </li>
+                <li>
+                  <a href="http://partners.beenverified.com/signup">Affiliates</a>
+                </li>
               </ul>
             </div>
           </div>
           <div class="row social-links">
-              <div class="col-xs-2">
-                <a href="//twitter.com/beenverified">
-                  <img src="img/tw-ico.png" class="">
-                  <span class="hidden-xs">Twitter</span>
-                </a>
-              </div>
-              <div class="col-xs-2">
-                <a href="//www.facebook.com/BeenVerified">
-                  <img src="img/fb-ico.png" class="">
-                  <span class="hidden-xs">Facebook</span>
-                </a>
-              </div>
-              <div class="col-xs-2">
-                <a href="//plus.google.com/+beenverified/posts">
-                  <img src="img/gplus-ico.png" class="">
-                  <span class="hidden-xs">Google+</span>
-                </a>
-              </div>
-              <div class="col-xs-2">
-                <a href="//www.linkedin.com/company/beenverified-com">
-                  <img src="img/li-ico.png" class="">
-                  <span class="hidden-xs">LinkedIn</span>
-                </a>
-              </div>
-              <div class="col-xs-2">
-                <a href="//www.pinterest.com/beenverified/">
-                  <img src="img/pin-ico.png" class="">
-                  <span class="hidden-xs">Pinterest</span>
-                </a>
-              </div>
-              <div class="col-xs-2">
-                <a href="//www.beenverified.com/blog/">
-                  <img src="img/bv-ico.png" class="">
-                  <span class="hidden-xs">BV Blog</span>
-                </a>
-              </div>
+            <div class="col-xs-2">
+              <a href="//twitter.com/beenverified">
+                <img src="img/tw-ico.png" class="">
+                <span class="hidden-xs">Twitter</span>
+              </a>
             </div>
+            <div class="col-xs-2">
+              <a href="//www.facebook.com/BeenVerified">
+                <img src="img/fb-ico.png" class="">
+                <span class="hidden-xs">Facebook</span>
+              </a>
+            </div>
+            <div class="col-xs-2">
+              <a href="//plus.google.com/+beenverified/posts">
+                <img src="img/gplus-ico.png" class="">
+                <span class="hidden-xs">Google+</span>
+              </a>
+            </div>
+            <div class="col-xs-2">
+              <a href="//www.linkedin.com/company/beenverified-com">
+                <img src="img/li-ico.png" class="">
+                <span class="hidden-xs">LinkedIn</span>
+              </a>
+            </div>
+            <div class="col-xs-2">
+              <a href="//www.pinterest.com/beenverified/">
+                <img src="img/pin-ico.png" class="">
+                <span class="hidden-xs">Pinterest</span>
+              </a>
+            </div>
+            <div class="col-xs-2">
+              <a href="//www.beenverified.com/blog/">
+                <img src="img/bv-ico.png" class="">
+                <span class="hidden-xs">BV Blog</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <p class="disclaimer xs-center">
-        Disclaimer: BeenVerified&rsquo;s mission is to give people easy and affordable access to public record information, but BeenVerified does not provide private investigator services or consumer reports, and is not a consumer reporting agency per the <a href="https://www.beenverified.com/about/fcra/" target="_blank" rel="nofollow">Fair Credit Reporting Act</a>. You may not use our site or service or the information provided to make decisions about employment, admission, consumer credit, insurance, tenant screening or any other purpose that would require FCRA compliance. For more information governing permitted and prohibited uses, please review our <a href="//www.beenverified.com/about/dos-donts/" target="_blank" rel="nofollow">&ldquo;Do&rsquo;s &amp; Don&rsquo;ts&rdquo;</a> and <a href="//www.beenverified.com/faq/terms-conditions/" target="_blank" rel="nofollow">Terms &amp; Conditions</a>.
+        Disclaimer: BeenVerified&rsquo;s mission is to give people easy and affordable access to public record information, but BeenVerified
+        does not provide private investigator services or consumer reports, and is not a consumer reporting agency per the
+        <a href="https://www.beenverified.com/about/fcra/" target="_blank" rel="nofollow">Fair Credit Reporting Act</a>. You may not use our site or service or the information provided to make decisions
+        about employment, admission, consumer credit, insurance, tenant screening or any other purpose that would require
+        FCRA compliance. For more information governing permitted and prohibited uses, please review our
+        <a href="//www.beenverified.com/about/dos-donts/" target="_blank" rel="nofollow">&ldquo;Do&rsquo;s &amp; Don&rsquo;ts&rdquo;</a> and
+        <a href="//www.beenverified.com/faq/terms-conditions/" target="_blank" rel="nofollow">Terms &amp; Conditions</a>.
       </p>
 
       <div class="row">
         <div class="col-sm-7">
           <p class="xs-center">
-            &copy; <%= Date.today.year %> <strong>BeenVerified, Inc.</strong>, all rights reserved. BeenVerified&copy;, and the BeenVerified star mascot are registered trademarks of BeenVerified, Inc.
+            &copy;
+            <%= Date.today.year %>
+              <strong>BeenVerified, Inc.</strong>, all rights reserved. BeenVerified&copy;, and the BeenVerified star mascot are
+              registered trademarks of BeenVerified, Inc.
           </p>
         </div>
         <div class="col-sm-5 text-right xs-center">

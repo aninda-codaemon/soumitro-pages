@@ -393,6 +393,18 @@ h3 {
 
 
 /* -- INFORMATION -- */
+#initiate-report {
+  padding-top: 46px;
+}
+.icon-wrapper img {
+  width: 70px;
+}
+
+.icon-text-wrapper p {
+  margin: 20px 0px !important;
+}
+
+
 
 li {
   line-height: 24px;
