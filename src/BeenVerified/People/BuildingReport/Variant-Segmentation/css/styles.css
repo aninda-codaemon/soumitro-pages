@@ -403,7 +403,44 @@ h3 {
 .icon-text-wrapper p {
   margin: 20px 0px !important;
 }
+.bottom-wrapper {
+  background: #4a3b8f;
+  color: #fff;
+}
+.bottom-wrapper p {
+  font-size: 14px;
+  font-weight: 700;
+}
+.bottom-wrapper p, .security-icon-wrapper {
+  display: inline-block;
+}
+.modal-header .subheader-text {
+  font-size: 20px;
+  text-align: center;
+  margin: 3px;
+}
+.security-icon-wrapper {
+  position: relative;
+  top: -2px;
+}
+.security-icon-wrapper img {
+  width: 54.9px;
+}
+.panel-btn-wrapper {
+  margin-top: 20px;
+  margin-bottom: 31px;
+}
+.bottom-wrapper-text, .security-icon-wrapper {
+  display: inline-block;
+}
+@media screen and (max-width: 767px) {
 
+  .bottom-wrapper-text p {
+    font-size: 14px !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+}
 
 
 li {
@@ -1182,7 +1219,7 @@ social-links {
 .wizard-step {
   display: none;
 
-  padding-bottom: 7px;
+  /* padding-bottom: 7px; */
 }
 
 .wizard-steps-panel {

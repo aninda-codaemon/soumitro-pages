@@ -68,6 +68,11 @@ function createWizard(options = {}) {
     },
   });
 
+  let subTitle = 'Click the closest option for your needs, so we can customize your experience.';
+
+  $('.modal-header')
+    .append($('<p/>').addClass('subheader-text').text(subTitle));
+
   return wizard;
 }
 

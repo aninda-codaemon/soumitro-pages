@@ -1,4 +1,5 @@
 import Step from 'components/wizard/step';
+// import track from 'utils/track'; // eslint-disable-line
 
 function showSubHeadlines(totalSections) {
   var containerSelector = $('.wizard-content');
@@ -35,11 +36,23 @@ function showSubHeadlines(totalSections) {
     .html('&nbsp;');
 }
 
+// function sendGATracking(searchType) {
+
+// } // eslint-disable-line
+
 function onInitiateQuestion() {
-  $('.icon-text-wrapper').click(() => {
+  $('.option-wrapper').click(() => {
     showSubHeadlines(4);
+    $('.subheader-text').hide();
+    // console.log(e); // eslint-disable-line
+    // console.log($('.option-wrapper').attr("data-search")); // eslint-disable-line
+  });
+  $('.list-wrapper').click((e) => {
+    console.log(e);// eslint-disable-line
   });
 }
+
+// trackNL('email flow, opt-in submitted lead form - success'); // eslint-disable-line
 
 function createComponent(options = {}) {
   const initiateQuestion = Object.assign({}, Step);
