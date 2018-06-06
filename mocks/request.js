@@ -17,6 +17,4 @@ const get = (url, callbackFn = 'parseResults') => {
     });
 };
 
-export {
-  get,
-};
+export { get };

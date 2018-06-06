@@ -325,7 +325,7 @@
               <th class="name-col col-md-3 sort" data-sort="resultName">
                 <span class="sorting-arrows">Name</span>
               </th>
-              <th id="th-age" class="col-md-1 sort asc" data-sort="resultAge">
+              <th id="th-age" class="col-md-1 sort" data-sort="resultAge">
                 <span class="sorting-arrows">Age</span>
               </th>
               <th id="th-cities" class="col-md-2 sort" data-sort="resultPlace">
@@ -341,7 +341,7 @@
           </thead>
           <tbody id="results" class="list">
             <!-- THIS IS WHERE ALL THE ACTION HAPPENS -->
-            <tr data-fr-each="teasers" data-fr-map="TeaserRecord" data-fr-sort="teaserSorter" data-fr-click="store currentRecord" class="results-row">
+            <tr data-fr-each="teasers" data-fr-map="TeaserRecord" data-fr-click="store currentRecord" class="results-row" data-position="{{_framerida_index}}">
               <td class="td-hash hidden-xs">
                 <div class="photo-locked">
                   <div class="user-img"></div>

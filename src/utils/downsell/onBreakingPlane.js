@@ -20,7 +20,8 @@ const onBreakingPlane = function onBreakingPlane(opts, showModal) {
   };
 
   $(document).on('mouseleave', (evt) => {
-    if (evt.clientY > sensitivity) {
+    const tagName = evt.target.tagName || '';
+    if (evt.clientY > sensitivity || tagName.toLowerCase() === 'select') {
       return;
     }
     delayTimer = setTimeout(fireBounce, delayBeforeFiring);
