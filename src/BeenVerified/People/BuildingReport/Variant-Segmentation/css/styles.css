@@ -390,22 +390,61 @@ h3 {
   margin: 10px 0;
 }
 
-
-
 /* -- INFORMATION -- */
-#initiate-report {
+.initiate-report-title-wrapper h1 {
+  font-size: 34px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #4a4a4a;
+}
+.initiate-report-wrapper {
+  background: #fff;
+  width: auto;
+  max-width: 850px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.17);
+  border-radius: 5px;
+}
+
+.option-wrapper {
+  cursor: pointer;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+#initiate-report:active, #initiate-report:focus,
+#gen-report-confirm2:active, #gen-report-confirm2:focus {
+  outline: transparent !important;
+}
+
+.list-wrapper {
   padding-top: 46px;
 }
-.icon-wrapper img {
+.icon-wrapper img, .icon-wrapper-hover img {
   width: 70px;
+}
+.icon-text-wrapper p {
+  font-weight: 700;
+  font-size: 18px;
+}
+.icon-wrapper, .icon-text-wrapper {
+  display: inherit;
 }
 
 .icon-text-wrapper p {
   margin: 20px 0px !important;
 }
 .bottom-wrapper {
+  padding-top: 9px;
+}
+.bottom-wrapper, .report-header-wrapper {
   background: #4a3b8f;
   color: #fff;
+}
+.report-header-wrapper {
+  padding-top: 13px;
+  padding-bottom: 8px;
+}
+.report-header-wrapper p {
+  font-size: 20px;
 }
 .bottom-wrapper p {
   font-size: 14px;
@@ -433,12 +472,50 @@ h3 {
 .bottom-wrapper-text, .security-icon-wrapper {
   display: inline-block;
 }
-@media screen and (max-width: 767px) {
+#gen-report-message2 {
+  color: #0F2D8F;
+}
+#gen-report-confirm2:hover {
+  text-decoration: underline;
+}
+#gen-report-confirm2 {
+  background: transparent;
+  text-decoration: underline;
+}
 
+@media screen and (min-width: 768px) {
+  .hover-question-icon {
+    display: none;
+  }
+  .option-wrapper:hover .hover-question-icon {
+    display: inline;
+  }
+  .option-wrapper:hover .question-icon {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .initiate-report-title-wrapper h1 {
+    font-size: 24px;
+    margin-top: 11px;
+  }
   .bottom-wrapper-text p {
     font-size: 14px !important;
     margin-top: 10px !important;
     margin-bottom: 10px !important;
+  }
+  .bottom-wrapper {
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .report-header-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .report-header-wrapper p {
+    font-size: 16px;
   }
 }
 

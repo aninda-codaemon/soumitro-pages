@@ -41,6 +41,102 @@
 
   <div id="main-container">
     <div id="sub-container">
+      <div class="initiate-report-title-wrapper">
+        <h1>What Are You Most Interested In?</h1>
+      </div>
+      <div class="initiate-report-wrapper container">
+        <!-- ==================================== -->
+        <!-- ======= Question Modal ============= -->
+        <!-- ==================================== -->
+        <div id="initiate-report" tabindex="-1" aria-hidden="true">
+          <div class="row">
+            <div class="report-header-wrapper">
+              <p>Click the closest option for your needs, so we can customize your experience</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 list-wrapper">
+              <div class="option-wrapper col-xs-6 col-sm-2" data-search="myself">
+                <div class="icon-wrapper col-xs-12">
+                  <img class="question-icon" src="img/icn_myself.svg" />
+                  <img class="hover-question-icon hidden-xs" src="img/icn_myself_hover.svg"/> 
+                </div>
+                <div class="icon-text-wrapper col-xs-12">
+                  <p>Search Myself</p>
+                </div>
+              </div>
+              <div class="option-wrapper col-xs-6 col-sm-2" data-search="contact">
+                <div class="icon-wrapper col-xs-12">
+                  <img class="question-icon" src="img/icn_contact.svg" />
+                  <img class="hover-question-icon hidden-xs" src="img/icn_contact_hover.svg" />
+                </div>
+                <div class="icon-text-wrapper col-xs-12">
+                  <p>Contact Info</p>
+                </div>
+              </div>
+              <div class="option-wrapper col-xs-6 col-sm-2" data-search="records">
+                <div class="icon-wrapper col-xs-12">
+                  <img class="question-icon" src="img/icn_records.svg" />
+                  <img class="hover-question-icon hidden-xs" src="img/icn_records_hover.svg" />
+                </div>
+                <div class="icon-text-wrapper col-xs-12">
+                  <p>Criminal Records</p>
+                </div>
+              </div>
+              <div class="option-wrapper col-xs-6 col-sm-2" data-search="dating">
+                <div class="icon-wrapper col-xs-12">
+                  <img class="question-icon" src="img/icn_dating.svg" />
+                  <img class="hover-question-icon hidden-xs" src="img/icn_dating_hover.svg" />
+                </div>
+                <div class="icon-text-wrapper col-xs-12">
+                  <p>Dating &#38; Cheaters</p>
+                </div>
+              </div>
+              <div class="option-wrapper col-xs-6 col-sm-2" data-search="family">
+                <div class="icon-wrapper col-xs-12">
+                  <img class="question-icon" src="img/icn_family.svg" />
+                  <img class="hover-question-icon hidden-xs" src="img/icn_family_hover.svg" />
+                </div>
+                <div class="icon-text-wrapper col-xs-12">
+                  <p>Family Safety</p>
+                </div>
+              </div>
+              <div class="option-wrapper col-xs-6 col-sm-2" data-search="professional">
+                <div class="icon-wrapper col-xs-12">
+                  <img class="question-icon" src="img/icn_professional.svg" />
+                  <img class="hover-question-icon hidden-xs" src="img/icn_professional_hover.svg" />
+                </div>
+                <div class="icon-text-wrapper col-xs-12">
+                  <p>Professional Use</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="panel-btn-wrapper">
+              <button id="gen-report-confirm2" class="btn btn-md large-modal-btn">
+                <strong id="gen-report-message2">Other</strong>
+              </button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="bottom-wrapper col-xs-12">
+              <div class="bottom-wrapper-text">
+                <p>Your connection is secure and private</p>
+              </div>
+              <div class="security-icon-wrapper">
+                <img src="img/badge_norton_small.svg" />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
       <div class="headline" data-fr-bind="currentRecord searchData">Building Report:
         <span class="hidden-xs">{{fullName}}</span>
         <span class="visible-xs-inline">{{firstName}}</span>
@@ -60,81 +156,7 @@
             <div class="modal-content">
               <div class="modal-header wizard-header"></div>
               <div class="modal-body wizard-content">
-                <div class="wizard-step">
-                  <!-- ==================================== -->
-                  <!-- ======= Question Modal ============= -->
-                  <!-- ==================================== -->
-                  <section id="initiate-report" tabindex="-1" aria-hidden="true">
-                    <div class="row">
-                      <div class="col-xs-12 list-wrapper">
-                        <div class="option-wrapper col-xs-6 col-sm-2" data-search="myself">
-                          <div class="icon-wrapper">
-                            <img src="img/icn_myself.svg"/>
-                          </div>
-                          <div class="icon-text-wrapper">
-                            <p>Search Myself</p>
-                          </div>
-                        </div>
-                        <div class="option-wrapper col-xs-6 col-sm-2" data-search="contact">
-                          <div class="icon-wrapper">
-                            <img src="img/icn_contact.svg"/>
-                          </div>
-                          <div class="icon-text-wrapper">
-                            <p>Contact Info</p>
-                          </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-2">
-                            <div class="icon-wrapper">
-                              <img src="img/icn_records.svg"/>
-                            </div>
-                            <div class="icon-text-wrapper">
-                              <p>Criminal Records</p>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-2">
-                            <div class="icon-wrapper">
-                              <img src="img/icn_dating.svg"/>
-                            </div>
-                            <div class="icon-text-wrapper">
-                              <p>Dating & Cheaters</p>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-2">
-                            <div class="icon-wrapper">
-                              <img src="img/icn_family.svg"/>
-                            </div>
-                            <div class="icon-text-wrapper">
-                              <p>Family Safety</p>
-                          </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-2">
-                            <div class="icon-wrapper">
-                              <img src="img/icn_professional.svg"/>
-                            </div>
-                            <div class="icon-text-wrapper">
-                              <p>Professional Use</p>
-                            </div>
-                        </div>
-                      </div>
 
-                    </div>
-                    <div class="panel-btn-wrapper">
-                      <button id="gen-report-confirm2" class="btn btn-md large-modal-btn">
-                        <strong id="gen-report-message2">Other</strong>
-                      </button>
-                    </div>
-
-                    <div class="bottom-wrapper col-xs-12">
-                      <div class="bottom-wrapper-text">
-                        <p>Your connection is secure and private</p>
-                      </div>
-                      <div class="security-icon-wrapper">
-                        <img src="img/badge_norton_small.svg" />
-                      </div>
-                    </div>
-                    
-                  </section>
-                </div>
                 <div class="wizard-step">
                   <!-- ==================================== -->
                   <!-- == 0 == Popular Use Cases Modal  ========= -->

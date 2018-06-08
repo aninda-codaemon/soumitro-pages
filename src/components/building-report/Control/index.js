@@ -4,7 +4,6 @@ import Section from 'components/wizard/section';
 import WizardManager from 'components/wizard/manager';
 
 import {
-  initiateQuestion,
   popularUseCases,
   noteOnUserComments,
   preparingMonitoring,
@@ -17,19 +16,52 @@ import {
   relatives,
 } from './steps';
 
+function showSubHeadlines(totalSections) {
+  var containerSelector = $('.wizard-content');
+  var stepsContainerSelector = $('.wizard-header');
+  var stepSelector = $('.wizard-step');
+  var sections = $(containerSelector).find(stepSelector);
+  var isModal = true;
+  var step = 1;
+  sections.hide();
+  $(sections[0]).show();
+  if (isModal) {
+    $('#wizModal').on('hidden.bs.modal', () => {
+      step = 1;
+      $($(`${containerSelector} .wizard-steps-panel .step-number`)
+        .removeClass('done')
+        .removeClass('doing')[0])
+        .toggleClass('doing');
+
+      $($(`${containerSelector} .wizard-step`)
+        .hide()[0])
+        .show();
+    });
+  }
+  $('#wizModal').find('.wizard-steps-panel').remove();
+  stepsContainerSelector.prepend(`<div class="wizard-steps-panel steps-quantity-${totalSections}"></div>`);
+  let stepsPanel = $('#wizModal').find('.wizard-steps-panel');
+  for (let s = 1; s <= 4; s++) {
+    stepsPanel.append(`<div class="step-number step-${s}"><div class="number">${s}</div></div>`);
+  }
+  $('#wizModal')
+    .find(`.wizard-steps-panel .step-${step}`)
+    .toggleClass('doing')
+    .find('.number')
+    .html('&nbsp;');
+}
+
 const section1 = Object.assign({}, Section);
 const section2 = Object.assign({}, Section);
 const section3 = Object.assign({}, Section);
 const section4 = Object.assign({}, Section);
-const section5 = Object.assign({}, Section);
 
 function addRelativesModal(options = {}) {
   let relativesInstance = relatives(options.relatives);
-  section3.steps.splice(2, 0, relativesInstance);
+  section2.steps.splice(2, 0, relativesInstance);
 }
 
 function createWizard(options = {}) {
-  let initiateQuestionInstance = initiateQuestion(options.initiateQuestion);
   let popularUseCasesInstance = popularUseCases(options.popularUseCases);
   let noteOnUserCommentsInstance = noteOnUserComments(options.noteOnUserComments);
   let preparingMonitoringInstance = preparingMonitoring(options.preparingMonitoring);
@@ -40,26 +72,24 @@ function createWizard(options = {}) {
   let saveResultsInstance = saveResults(options.saveResults);
   let generatingReportInstance = generatingReport(options.generatingReport);
 
-  section1.init([initiateQuestionInstance]);
-
-  section2.init([popularUseCasesInstance]);
+  section1.init([popularUseCasesInstance]);
   // NOTE: The relatives would be added dynamically if the person has relatives.
-  section3.init([
+  section2.init([
     criminalScanInstance,
     socialMediaScanInstance,
     /* RELATIVES */
     noteOnUserCommentsInstance,
     confirmFCRAInstance,
   ]);
-  section4.init([confirmDataInstance]);
-  section5.init([
+  section3.init([confirmDataInstance]);
+  section4.init([
     saveResultsInstance,
     preparingMonitoringInstance,
     generatingReportInstance,
   ]);
 
   const wizard = Object.assign({}, WizardManager);
-  const sections = [section1, section2, section3, section4, section5];
+  const sections = [section1, section2, section3, section4];
 
   wizard.init({
     sections,
@@ -68,10 +98,7 @@ function createWizard(options = {}) {
     },
   });
 
-  let subTitle = 'Click the closest option for your needs, so we can customize your experience.';
-
-  $('.modal-header')
-    .append($('<p/>').addClass('subheader-text').text(subTitle));
+  showSubHeadlines(sections.length);
 
   return wizard;
 }
