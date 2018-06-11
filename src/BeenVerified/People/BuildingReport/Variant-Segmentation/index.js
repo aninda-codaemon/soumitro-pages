@@ -52,13 +52,13 @@ function trackGAEvent(searchType) {
       track('UC Segment Choice - Family Safety');
       break;
     case 'Professional Use':
-      track('US Segment Choice - Professional Use');
+      track('UC Segment Choice - Professional Use');
       break;
     case 'Other':
-      track('US Segment Choice - Other');
+      track('UC Segment Choice - Other');
       break;
     case 'Skip This Step':
-      track('US Segment Choice - Skip This Step');
+      track('UC Segment Choice - Skip This Step');
       break;
     default:
       return searchType;
