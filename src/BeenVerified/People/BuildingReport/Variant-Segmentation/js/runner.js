@@ -115,7 +115,7 @@ const initialize = (
   jQuery.fx.interval = 100;
   initializeTestimonials();
   const initializeQueryPromise = initializeQueryArgs(queryArgs, validQueryArgs);
-
+  // debugger;// eslint-disable-line
   initializeBVGO(buildingReport.wizard.skipStep);
   if (shouldGetExtraTeaserDataOnLastStep) {
     buildingReport.wizard.subscribeOnLastStepStart(() => {

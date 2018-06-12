@@ -56,12 +56,12 @@ const section2 = Object.assign({}, Section);
 const section3 = Object.assign({}, Section);
 const section4 = Object.assign({}, Section);
 
-function addRelativesModal(options = {}) {
+function addRelativesModalDating(options = {}) {
   let relativesInstance = relatives(options.relatives);
   section2.steps.splice(2, 0, relativesInstance);
 }
 
-function createWizard(options = {}) {
+function createWizardDating(options = {}) {
   let datingUseCasesInstance = datingUseCases(options.datingUseCases);
   let noteOnUserCommentsInstance = noteOnUserComments(options.noteOnUserComments);
   let preparingMonitoringInstance = preparingMonitoring(options.preparingMonitoring);
@@ -103,4 +103,4 @@ function createWizard(options = {}) {
   return wizard;
 }
 
-export { createWizard, addRelativesModal };
+export { createWizardDating, addRelativesModalDating };
