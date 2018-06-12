@@ -1,12 +1,33 @@
 import { track } from 'utils/track/index';
-import { addRelativesModal, createWizard } from 'components/building-report';
+import { addRelativesModal, createWizard, createWizardDating, addRelativesModalDating } from 'components/building-report';
 import { initialize } from './js/runner';
 
+let flowOption;
+let buildingReportObject;
 
-const buildingReportInstance = {
-  addRelativesModal: () => addRelativesModal(),
-  wizard: createWizard(),
-};
+// const buildingReportInstance = {
+
+//   addRelativesModal: () => addRelativesModal(),
+//   wizard: createWizard(),
+// };
+
+const buildingReportInstance = (() => {
+  switch (flowOption) {
+    case 'dating':
+      buildingReportObject = {
+        addRelativesModalDating: () => addRelativesModalDating(),
+        wizard: createWizardDating(),
+      };
+      return buildingReportObject;
+    default:
+      buildingReportObject = {
+        addRelativesModal: () => addRelativesModal(),
+        wizard: createWizard(),
+      };
+      return buildingReportObject;
+  }
+});
+
 const shouldIncludeRelatives = true;
 const shouldGetExtraTeaserDataOnLastStep = true;
 
@@ -18,6 +39,7 @@ const initiateModalFlow = () => {
   $('.headline').show();
   $('.wizContent').show();
   $('.initiate-report-title-wrapper').hide();
+
   initialize(
     buildingReportInstance,
     shouldIncludeRelatives,
@@ -25,8 +47,11 @@ const initiateModalFlow = () => {
   );
 };
 
-$('.option-wrapper').click(() => {
+$('.option-wrapper').click((e) => {
+  // initiateModalFlow(); // eslint-disable-line
+  flowOption = e.currentTarget.dataset.search;
   initiateModalFlow();
+  // console.log(e.currentTarget.dataset.search); // eslint-disable-line
 });
 
 $('#gen-report-confirm2').click(() => {
