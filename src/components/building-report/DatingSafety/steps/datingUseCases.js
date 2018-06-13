@@ -1,24 +1,29 @@
 import Step from 'components/wizard/step';
 
-const $progressBar = $('#searching-progress-bar-database .progress-bar');
-const quotesIco = $('.speech-bub-ico');
-const quotes = $('.speech-bub');
-let quoteIndex = -1;
+const $progressBar = $('#searching-progress-bar-database-dating .progress-bar');
+
+const quotes = $('.speech-bub-dating-wrapper');
 
 const showNextQuote = (duration) => {
-  quoteIndex++;
-  if (quoteIndex < 4) {
-    let nextQuoteIcon = quotesIco.eq(quoteIndex % quotesIco.length);
-    let newIcon = nextQuoteIcon.attr('data-src');
-    nextQuoteIcon.attr('src', newIcon);
-    quotes.eq(quoteIndex % quotes.length)
-      .fadeIn(1000)
-      .delay(duration / (quotes.length + 1))
-      .fadeOut(1000, () => showNextQuote(duration));
-  }
+  let quotesID;
+  let interval = duration / (quotes.length + 1);
+
+  (() => {
+    $('#speech-bub-dating-wrapper1').fadeIn(1000);
+  })();
+
+  let arrCounter = 2;
+  const displayText = setInterval(() => {
+    quotesID = $(`#speech-bub-dating-wrapper${arrCounter}`);
+    arrCounter++;
+    quotesID.fadeIn(1000);
+    if (arrCounter > quotes.length) {
+      clearInterval(displayText);
+    }
+  }, interval);
 };
 
-function onPopularUseCasesStart(stepCompleted) {
+function onDatingUseCasesStart(stepCompleted) {
   var { duration } = this;
   var initialProgress = $($progressBar).animate({ width: '100%' }, { duration });
   showNextQuote(duration);
@@ -27,15 +32,15 @@ function onPopularUseCasesStart(stepCompleted) {
 }
 
 function createComponent(options = {}) {
-  const popularUseCases = Object.assign({}, Step);
+  const datingUseCases = Object.assign({}, Step);
   let newConfig = Object.assign({
-    title: 'Popular Use Cases',
+    title: 'For Safety, Peace Of Mind, & Finding Love',
     $elem: $('#gen-dating-modal1'),
     duration: 32,
-    onStart: onPopularUseCasesStart,
+    onStart: onDatingUseCasesStart,
   }, options);
-  popularUseCases.init(newConfig);
-  return popularUseCases;
+  datingUseCases.init(newConfig);
+  return datingUseCases;
 }
 
 export default createComponent;

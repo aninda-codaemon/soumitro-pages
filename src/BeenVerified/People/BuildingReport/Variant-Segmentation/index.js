@@ -2,38 +2,28 @@ import { track } from 'utils/track/index';
 import { addRelativesModal, createWizard, createWizardDating, addRelativesModalDating } from 'components/building-report';
 import { initialize } from './js/runner';
 
-let searchSelection;
-// const buildingReportInstance = {
-
-//   addRelativesModal: () => addRelativesModal(),
-//   wizard: createWizard(),
-// };
-let buildingReportInstance;
 const shouldIncludeRelatives = true;
 const shouldGetExtraTeaserDataOnLastStep = true;
 
 $('.headline').hide();
 $('.wizContent').hide();
 
-const setBuildingReportInstance = (flowOption) => {
+const getBuildingReportInstance = (flowOption) => {
   let buildingReportObject = {};
   switch (flowOption) {
     case 'dating':
-      debugger; // eslint-disable-line
       buildingReportObject = {
         addRelativesModalDating: () => addRelativesModalDating(),
         wizard: createWizardDating(),
       };
-      break;
+      return buildingReportObject;
     default:
       buildingReportObject = {
         addRelativesModal: () => addRelativesModal(),
         wizard: createWizard(),
       };
-      break;
+      return buildingReportObject;
   }
-  buildingReportInstance = buildingReportObject;
-  return buildingReportInstance;
 };
 
 const initiateModalFlow = (flowOption) => {
@@ -42,7 +32,7 @@ const initiateModalFlow = (flowOption) => {
   $('.wizContent').show();
   $('.initiate-report-title-wrapper').hide();
 
-  setBuildingReportInstance(flowOption);
+  const buildingReportInstance = getBuildingReportInstance(flowOption);
 
   initialize(
     buildingReportInstance,
@@ -52,7 +42,7 @@ const initiateModalFlow = (flowOption) => {
 };
 
 $('.option-wrapper').click((e) => {
-  searchSelection = e.currentTarget.dataset.search;
+  let searchSelection = e.currentTarget.dataset.search;
   initiateModalFlow(searchSelection);
 });
 
