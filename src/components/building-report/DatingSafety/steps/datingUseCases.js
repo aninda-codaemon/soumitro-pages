@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Step from 'components/wizard/step';
 
 const $progressBar = $('#searching-progress-bar-database-dating .progress-bar');
@@ -9,18 +10,23 @@ const showNextQuote = (duration) => {
   let interval = duration / (quotes.length + 1);
 
   (() => {
-    $('#speech-bub-dating-wrapper1').fadeIn(1000);
+    $('#speech-bub-dating-wrapper1').hide().css('visibility', 'visible').fadeIn(1000);
   })();
 
   let arrCounter = 2;
   const displayText = setInterval(() => {
     quotesID = $(`#speech-bub-dating-wrapper${arrCounter}`);
     arrCounter++;
-    quotesID.fadeIn(1000);
+    quotesID.hide().css('visibility', 'visible').fadeIn(1000);
     if (arrCounter > quotes.length) {
       clearInterval(displayText);
+      $('.part1-speech-bub').hide();
+      $('.part2-speech-bub').fadeIn(1000);
     }
   }, interval);
+
+  // $('.part1-speech-bub').hide();
+  // $('.part2-speech-bub').fadeIn();
 };
 
 function onDatingUseCasesStart(stepCompleted) {
@@ -36,7 +42,7 @@ function createComponent(options = {}) {
   let newConfig = Object.assign({
     title: 'For Safety, Peace Of Mind, & Finding Love',
     $elem: $('#gen-dating-modal1'),
-    duration: 32,
+    duration: 1,
     onStart: onDatingUseCasesStart,
   }, options);
   datingUseCases.init(newConfig);

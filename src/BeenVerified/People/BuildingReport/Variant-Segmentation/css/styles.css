@@ -1416,16 +1416,155 @@ social-links {
 
 #gen-report-modal1,
 #scanningCriminal,
+#scanningCriminal-dating,
 #scanningSocialMedia,
 #confirmData,
 #search-people {
   padding: 0 15px 15px 15px;
 }
 
-#confirmData, #scanningCriminal, #search-people {
+#confirmData, #scanningCriminal, #scanningCriminal-dating, #search-people {
   margin-top: 10px;
 }
 
+/* DATING FLOW - DATING USE CASES */
+#gen-dating-modal1 p {
+  font-size: 20px;
+}
+.speech-bub-dating-wrapper p {
+  display: inline-block;
+}
+.speech-bub-dating-wrapper {
+  text-align: left;
+  margin-left: 2%;
+}
+.speech-bub-dating {
+  position: relative;
+  text-align: left;
+  color: #333;
+}
+#speech-bub-dating-wrapper1, #speech-bub-dating-wrapper2, #speech-bub-dating-wrapper3 {
+  visibility: hidden;
+}
+
+.bub-visible1 {
+  visibility: visible !important;
+}
+
+/* #speech-bub-dating-wrapper1 .bub-visible, #speech-bub-dating-wrapper2 .bub-visible, #speech-bub-dating-wrapper3 .bub-visible {
+  visibility: visible !important;
+  -webkit-animation: bub-visible-animation 1s;
+  -moz-animation: bub-visible-animation 1s;
+  -o-animation: bub-visible-animation 1s;
+  animation: bub-visible-animation 1s;
+} */
+
+.part2-speech-bub {
+  display: none;
+  text-align: center;
+  padding-top: 4%;
+  margin-left: 0;
+}
+
+.speech-bub-img-wrapper img {
+  width: 80px;
+}
+
+.speech-bub-dating-text p {
+  font-size: 20px;
+}
+
+/* @-webkit-keyframes bub-visible-animation {
+  from {visibility: hidden;}
+  to {visibility: visible;}
+}
+
+@keyframes bub-visible-animation {
+  from {visibility: hidden;}
+  to {visibility: visible;}
+} */
+
+/* END - DATING USE CASES */
+  /* 2 - Scanning Criminal DATING FLOW*/
+  #criminalLeft img {
+    position: relative;
+
+    height: 80px;
+    margin: 0 20px 20px 20px;
+  }
+
+  #scanningCriminal-dating .checking-sources-progress {
+    margin-bottom: 20px;
+  }
+  #criminalContent-dating {
+    height: inherit;
+  }
+
+  #criminalContent-dating ul {
+    font-size: 20px;
+    line-height: 20px;
+
+    margin-left: 0;
+    padding: 0;
+  }
+  #criminalContent-dating li {
+    font-size: 16px;
+  
+    margin-bottom: 5px;
+  }
+  
+  #criminalContent-dating li i {
+    font-size: 8px;
+  
+    position: relative;
+    top: -3px;
+  
+    margin-right: 5px;
+  }
+  #criminalHeader-dating p {
+    font-size: 20px;
+
+    margin: 20px 0 5px 0;
+  }
+
+  #criminalHeader-dating {
+    padding-left: 6%;
+    padding-right: 6%;
+    margin-top: 1%;
+    text-align: center;
+    margin-bottom: 2%;
+  }
+
+  #criminalContent-dating p {
+    margin: 5px 0 10px 0;
+  }
+  #criminalLeft {
+    display: block;
+
+    height: auto;
+    margin: 0;
+
+    text-align: center;
+  }
+
+  #criminalRight {
+    display: block;
+
+    padding: 0;
+  }
+  #foundCriminal p {
+    font-size: 20px;
+
+    margin-top: 0;
+    padding-top: 0;
+  }
+  #foundCriminal img {
+    display: block;
+
+    height: 50px;
+    margin: 0 auto 10px auto;
+  }
+  /* END CRIMINAL - DATING FLOW */
 
 /* == 0 == Test New Modal ========== */
 
@@ -1479,17 +1618,7 @@ social-links {
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
 }
 
-.speech-bub-dating-wrapper p {
-  display: inline-block;
-}
-.speech-bub-dating {
-  position: relative;
-  text-align: left;
-  color: #333;
-}
-#speech-bub-dating-wrapper1, #speech-bub-dating-wrapper2, #speech-bub-dating-wrapper3 {
-  display: none;
-}
+
 
 .searching-progress-bar-group {
   margin-bottom: 10px;

@@ -53,22 +53,22 @@ $('#gen-report-confirm2').click(() => {
 
 function trackGAEvent(searchType) {
   switch (searchType) {
-    case 'Search Myself':
+    case 'myself':
       track('UC Segment Choice - Search Myself');
       break;
-    case 'Contact Info':
+    case 'contact':
       track('UC Segment Choice - Contact Info');
       break;
-    case 'Criminal Records':
+    case 'records':
       track('UC Segment Choice - Criminal Records');
       break;
-    case 'Dating &#38; Cheaters':
+    case 'dating':
       track('UC Segment Choice - Dating Safety');
       break;
-    case 'Family Safety':
+    case 'family':
       track('UC Segment Choice - Family Safety');
       break;
-    case 'Professional Use':
+    case 'professional':
       track('UC Segment Choice - Professional Use');
       break;
     case 'Other':
@@ -83,8 +83,9 @@ function trackGAEvent(searchType) {
   return searchType;
 }
 
-$('.list-wrapper').click((e) => {
-  trackGAEvent(e.target.innerHTML);
+$('.option-wrapper').click((e) => {
+  let searchOption = e.currentTarget.dataset.search;
+  trackGAEvent(searchOption);
 });
 
 $('#gen-report-confirm2').click((e) => {
