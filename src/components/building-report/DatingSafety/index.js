@@ -1,3 +1,4 @@
+/* eslint-disable */
 import 'jquery-validation';
 
 import Section from 'components/wizard/section';
@@ -6,6 +7,7 @@ import WizardManager from 'components/wizard/manager';
 import {
   datingUseCases,
   noteOnUserComments,
+  contactInfoSearch,
   preparingMonitoring,
   confirmData,
   criminalScan,
@@ -63,11 +65,12 @@ function addRelativesModalDating(options = {}) {
 
 function createWizardDating(options = {}) {
   let datingUseCasesInstance = datingUseCases(options.datingUseCases);
-  let noteOnUserCommentsInstance = noteOnUserComments(options.noteOnUserComments);
+  // let noteOnUserCommentsInstance = noteOnUserComments(options.noteOnUserComments);
   let preparingMonitoringInstance = preparingMonitoring(options.preparingMonitoring);
   let confirmDataInstance = confirmData(options.confirmData);
   let criminalScanInstance = criminalScan(options.criminalScan);
   let socialMediaScanInstance = socialMediaScan(options.socialMediaScan);
+  let contactInfoSearchInstance = contactInfoSearch(options.contactInfoSearch);
   let confirmFCRAInstance = confirmFCRA(options.confirmFCRA);
   let saveResultsInstance = saveResults(options.saveResults);
   let generatingReportInstance = generatingReport(options.generatingReport);
@@ -76,18 +79,20 @@ function createWizardDating(options = {}) {
   // NOTE: The relatives would be added dynamically if the person has relatives.
   section2.init([
     criminalScanInstance,
-    socialMediaScanInstance,
+    
     /* RELATIVES */
-    noteOnUserCommentsInstance,
-    confirmFCRAInstance,
+    // noteOnUserCommentsInstance,
+    // confirmFCRAInstance,
   ]);
-  section3.init([confirmDataInstance]);
-  section4.init([
-    saveResultsInstance,
-    preparingMonitoringInstance,
-    generatingReportInstance,
-  ]);
+  section3.init([socialMediaScanInstance]);
+  // section3.init([confirmDataInstance]);
+  // section4.init([
+  //   saveResultsInstance,
+  //   preparingMonitoringInstance,
+  //   generatingReportInstance,
+  // ]);
 
+  section4.init([contactInfoSearchInstance]);
   const wizard = Object.assign({}, WizardManager);
   const sections = [section1, section2, section3, section4];
 

@@ -2,6 +2,7 @@ import datingUseCases from './datingUseCases';
 import popularUseCases from './popularUseCases';
 import criminalScan from './criminalScan';
 import socialMediaScan from './socialMediaScan';
+import contactInfoSearch from './contactInfoSearch';
 import noteOnUserComments from './noteOnUserComments';
 import confirmFCRA from './fcraConfirmation';
 import confirmData from './confirmData';
@@ -16,6 +17,7 @@ export {
   criminalScan,
   socialMediaScan,
   relatives,
+  contactInfoSearch,
   noteOnUserComments,
   confirmFCRA,
   confirmData,

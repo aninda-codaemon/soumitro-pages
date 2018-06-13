@@ -36,7 +36,7 @@ function createComponent(options = {}) {
   let newConfig = Object.assign({
     title: 'Criminal Record Search',
     $elem: $('#scanningCriminal-dating'),
-    duration: 1,
+    duration: 32,
     onStart: onScanningCriminalDataStart,
   }, options);
 
