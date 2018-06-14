@@ -1,47 +1,75 @@
+/* eslint-disable */
+import {
+  shuffle,
+  range,
+} from 'lodash';
 import Step from 'components/wizard/step';
-
-function onScanningCriminalDataStart(stepCompleted) {
-  var $progessBar = $('#contact-progress-bar-dating .progress-bar');
+let counter = 1;
+// function onScanningSocialMediaStart(stepCompleted) {
+function onScanningContactInfoStart(stepCompleted) {
   var { duration } = this;
-  var initialProgress = $($progessBar).animate({ width: '100%' }, {
-    duration,
-    progress(animation, progress) {
-      var progression = Math.ceil(progress * 100);
-      $('#socialmedia-progress-percent-dating').html(progression);
-    },
-  });
-  var $crimSteps = $('#scanningCriminal-dating li');
-  var $crimStepsIco = $('#scanningCriminal-dating li i');
-  var currentCrimStep = 0;
-  var stepBoxSection = () => {
-    if (currentCrimStep < $crimSteps.length) { // if not past the end then
-      $crimSteps.eq(currentCrimStep).delay(duration / ($crimSteps.length + 1)).fadeIn('fast', () => {
-        $crimStepsIco.eq(currentCrimStep).removeClass('fa-circle-o-notch fa-spinner fa-pulse fa-3x fa-fw');
-        $crimStepsIco.eq(currentCrimStep).addClass('fa-circle');
-        $crimStepsIco.eq(currentCrimStep).css('color', '#4A3B8F');
-        $crimSteps.eq(currentCrimStep).removeClass('blurryText');
-        currentCrimStep++;
-        stepBoxSection();
-      });
-    }
-  };
-  $crimSteps.eq(0).show();
-  stepBoxSection();
 
-  $.when(initialProgress).done(stepCompleted);
+  var socialPromise = $('#contactinfo-progress .progress-bar').animate(
+    { width: '100%' },
+    { duration },
+  );
+
+  const icons = $('.contact-info-icon');
+  let interval = duration / 2;
+
+  (() => {
+    $('.spinner1').css('visibility', 'visible');
+    $('.spinner2').css('visibility', 'visible');
+  })();
+
+  const displayIcon = setInterval(() => {
+
+      $(`.spinner${counter}`).css('visibility', 'hidden');
+      $(`.icon${counter}`).css('visibility', 'visible');
+      counter++
+      console.log(counter);
+
+    if (counter === 3) {
+      clearInterval(displayIcon)
+    }
+  }, interval);
+  
+  // var $lis = $('#social-media-groups li');
+  // var listLen = $lis.length;
+  // var listIdxs = shuffle(range(0, listLen));
+  // var currIdx = 0;
+
+  // var intervalId = window.setInterval(() => {
+  //   var listIdx;
+  //   var $loadingImg;
+  //   if (currIdx >= listLen) {
+  //     return;
+  //   }
+    // listIdx = listIdxs[currIdx];
+  //   $loadingImg = $($lis[listIdx]).find('.loading');
+  //   $loadingImg.css('opacity', 0);
+  //   $loadingImg.next().fadeIn();
+  //   currIdx += 1;
+  // }, Math.round(duration / listLen));
+
+  $.when(socialPromise).done(() => {
+    // stepCompleted();
+    // window.clearInterval(intervalId);
+  });
 }
 
 function createComponent(options = {}) {
-  const criminalScan = Object.assign({}, Step);
+  // const socialMediaScan = Object.assign({}, Step);
+  const contactInfoScan = Object.assign({}, Step);
   let newConfig = Object.assign({
-    title: 'Criminal Record Search',
-    $elem: $('#scanningCriminal-dating'),
+    title: 'Contact Information Search',
+    $elem: $('#scanningContactInfo'),
     duration: 32,
-    onStart: onScanningCriminalDataStart,
+    onStart: onScanningContactInfoStart,
   }, options);
 
-  criminalScan.init(newConfig);
-  return criminalScan;
+  contactInfoScan.init(newConfig);
+  return contactInfoScan;
 }
 
 export default createComponent;

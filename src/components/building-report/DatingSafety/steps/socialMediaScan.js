@@ -41,7 +41,7 @@ function createComponent(options = {}) {
   let newConfig = Object.assign({
     title: 'Social Media Scan',
     $elem: $('#scanningSocialMedia'),
-    duration: 32,
+    duration: 1,
     onStart: onScanningSocialMediaStart,
   }, options);
 

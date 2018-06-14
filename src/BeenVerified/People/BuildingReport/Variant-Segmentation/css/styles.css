@@ -1566,6 +1566,31 @@ social-links {
   }
   /* END CRIMINAL - DATING FLOW */
 
+/* === SCANNING CONTACT INFO - DATING FLOW */
+/* .contact-info-icon-pt1, .contact-info-icon-pt2, .contact-info-icon-pt3, .contact-info-icon-pt4 {
+  opacity:0;
+} */
+.spinner1, .spinner2 {
+  width: 40px;
+}
+.icon1 img, .icon2 img {
+  width: 60px;
+  position: relative;
+  left: -20px;
+}
+.icon1, .spinner1, .icon2, .spinner2 {
+  visibility: hidden;
+};
+.contact-info-icon p {
+  font-size: 20px;
+}
+#contactinfo-progress {
+  margin-left: 4%;
+    margin-right: 4%;
+    height: 36px;
+}
+/* END SCANNING CONTACT INFO - DATING FLOW */
+
 /* == 0 == Test New Modal ========== */
 
 #gen-report-modal1 {
