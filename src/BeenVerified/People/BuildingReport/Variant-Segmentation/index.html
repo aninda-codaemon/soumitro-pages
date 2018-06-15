@@ -1510,14 +1510,11 @@
                 <!--== CONTACT INFO SEARCH - DATING FLOW=-->
                 <!-- ============================== -->
                 <div class="wizard-step">
-                  <!-- <section id="scanningSocialMedia1" class="scanningSocialMedia" tabindex="-1" aria-hidden="true"> -->
                   <section id="scanningContactInfo" class="scanningSocialMedia" tabindex="-1" aria-hidden="true">
                     <div class="content">
                       <div class="modal-body" data-fr-bind="currentRecord searchData">
                         <div class="row">
                           <div class="col-sm-12 modal-padding">
-                            <!-- <p>This search may reveal interesting information on
-                              <strong>{{fullName}}</strong> such as unseen photos, videos, family, friends, professional connections and more.</p> -->
                             <p>Hidden email addresses or phone numbers are some of the most common tip-offs that someone is
                               lying to you, or even cheating. We search for both to help give you peace of mind.</p>
                             <div class="social-widget">
@@ -1540,15 +1537,12 @@
                                     </li>
                                   </ul>
                                 </div>
-                                <!-- <ul id="social-media-groups" class="socialMedias list-unstyled"> -->
-
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                       <!-- /.modal-body -->
-                      <!-- <div id="socialmedia-progress" class="publicRecord progress"> -->
                       <div id="contactinfo-progress" class="publicRecord progress">
                         <div class="progress-bar progress-bar-success" style="width:1%"></div>
                       </div>
@@ -1560,6 +1554,59 @@
                   <!--/#scanningSocialMedia -->
                 </div>
                 <!-- END CONTACT INFO SEARCH - DATING FLOW -->
+
+                <!-- ANYTHING ELSE FLOW-->
+                <div class="wizard-step">
+                  <!-- ==================================================== -->
+                  <!-- == 5 == USER CONFIRMATION ALERT CONTENT ============ -->
+                  <!-- ==================================================== -->
+                  <!-- <section id="gen-report-modal3" class="loggingin" tabindex="-1" aria-hidden="true"> -->
+                  <section id="anything-else-datingflow" class="loggingin" tabindex="-1" aria-hidden="true">
+                    <div class="">
+                      <div class="content">
+
+                        <div class="modal-body">
+                          <h3 class="modal-body-headline">
+                            IMPORTANT
+                          </h3>
+                          <span class="subtitle" data-fr-bind="currentRecord searchData">
+                            {{#if fullName}} {{fullName}} {{else}} {{firstName}}{{/if}}'s Phone Report May Contain Comments Provided By Users</span>
+                          <div>
+                            <p class="item-label text-center">Our phone reports contain user comments that may contain surprising information about them. By
+                              continuing, you acknowledge that the comments included in phone reports are provided by users.
+                            </p>
+                          </div>
+                          <!-- <form id="fcraGroup" data-fr-bind="currentRecord searchData"> -->
+                          <form id="fcraGroup" data-fr-bind="currentRecord searchData">
+                            <div class="form-group">
+                              <p>
+                                <label for="fcraCheckbox">
+                                  <input id="fcraCheckbox" name="fcraCheckbox" class="styled" type="checkbox">
+                                  <span>
+                                    I understand that I may see unfiltered comments on {{fullName}}'s phone report
+                                  </span>
+                                </label>
+                              </p>
+                            </div>
+                            <p data-fr-bind="currentRecord" class="log-load"></p>
+                            <div class="btn-wrap col-sm-4 col-sm-offset-4 col-xs-12">
+                              <button class="data-modal-confirm btn btn-success btn-block">
+                                <span> I AGREE </span>
+                              </button>
+                            </div>
+
+                          </form>
+                        </div>
+                        <!-- /.modal-body -->
+                      </div>
+                    </div>
+                  </section>
+                  <!-- /#gen-report-modal3 -->
+                  <div class="mod-footer">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Please do not refresh, close or press the back button on this page or your information may be lost.
+                  </div>
+                </div>
+                <!-- ANYTHING ELSE FLOW END -->
 
               </div>
             </div>
