@@ -10,24 +10,39 @@ $('.wizContent').hide();
 
 const getBuildingReportInstance = (flowOption) => {
   let buildingReportObject = {};
-  console.log('flowOption: ', flowOption);
-  switch (flowOption) {
-    case 'dating':
-      // buildingReportObject = {
-      //   addRelativesModalDating: () => addRelativesModalDating(),
-      //   wizard: createWizardDating(),
-      // };
-      // return buildingReportObject;
-      console.log('Option Dating');
-    case 'myself':
-      console.log('Option myself');
-    default:
-      buildingReportObject = {
-        addRelativesModal: () => addRelativesModal(),
-        wizard: createWizard(),
-      };
-      return buildingReportObject;
-  }
+
+  // switch (flowOption) {
+  //   // case 'dating':
+  //   //   // buildingReportObject = {
+  //   //   //   addRelativesModalDating: () => addRelativesModalDating(),
+  //   //   //   wizard: createWizardDating(),
+  //   //   // };
+  //   //   // return buildingReportObject;
+  //   //   console.log('Option Dating');
+  //   //   buildingReportObject = {
+  //   //     addRelativesModal: () => addRelativesModal(),
+  //   //     wizard: createWizard({}, flowOption),
+  //   //   };
+  //   // case 'myself':
+  //   //   console.log('Option myself');
+  //   //   buildingReportObject = {
+  //   //     addRelativesModal: () => addRelativesModal(),
+  //   //     wizard: createWizard({}, flowOption),
+  //   //   };
+  //   // default:
+  //   //   buildingReportObject = {
+  //   //     addRelativesModal: () => addRelativesModal(),
+  //   //     wizard: createWizard(),
+  //   //   };
+  //   //   return buildingReportObject;
+  // }
+
+  console.log('Initialised Build Report with option: ', flowOption);
+  buildingReportObject = {
+    addRelativesModal: () => addRelativesModal(),
+    wizard: createWizard({}, flowOption),
+  };
+  return buildingReportObject;
 };
 
 const initiateModalFlow = (flowOption) => {
@@ -45,13 +60,15 @@ const initiateModalFlow = (flowOption) => {
   );
 };
 
-$('.option-wrapper').click((e) => {
+$('.option-wrapper').click((e) => {  
+  e.stopPropagation();
   let searchSelection = e.currentTarget.dataset.search;
+  console.log('From option wrapper: ', searchSelection);
   initiateModalFlow(searchSelection);
 });
 
 $('#gen-report-confirm2').click(() => {
-  initiateModalFlow();
+  initiateModalFlow('other');
 });
 
 
@@ -93,6 +110,5 @@ $('.option-wrapper').click((e) => {
 });
 
 $('#gen-report-confirm2').click((e) => {
-  console.log(e.target.children[0].innerHTML);
-  trackGAEvent(e.target.children[0].innerHTML);
+  trackGAEvent('other');
 });

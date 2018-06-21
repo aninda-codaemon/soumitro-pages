@@ -14,6 +14,7 @@ import {
   saveResults,
   generatingReport,
   relatives,
+  datingUseCases,
 } from './steps';
 
 function showSubHeadlines(totalSections) {
@@ -24,7 +25,8 @@ function showSubHeadlines(totalSections) {
   var isModal = true;
   var step = 1;
   sections.hide();
-  $(sections[0]).show();
+  //$(sections[0]).show();
+  
   if (isModal) {
     $('#wizModal').on('hidden.bs.modal', () => {
       step = 1;
@@ -61,7 +63,9 @@ function addRelativesModal(options = {}) {
   section2.steps.splice(2, 0, relativesInstance);
 }
 
-function createWizard(options = {}, ) {
+function createWizard(options = {}, flowOption = 'other') {
+  console.log('Flow option from components index: ', flowOption);
+
   let popularUseCasesInstance = popularUseCases(options.popularUseCases);
   let noteOnUserCommentsInstance = noteOnUserComments(options.noteOnUserComments);
   let preparingMonitoringInstance = preparingMonitoring(options.preparingMonitoring);
@@ -71,22 +75,43 @@ function createWizard(options = {}, ) {
   let confirmFCRAInstance = confirmFCRA(options.confirmFCRA);
   let saveResultsInstance = saveResults(options.saveResults);
   let generatingReportInstance = generatingReport(options.generatingReport);
+  let datingUseCasesInstance = datingUseCases(options.datingUseCases);
 
-  section1.init([popularUseCasesInstance]);
-  // NOTE: The relatives would be added dynamically if the person has relatives.
-  section2.init([
-    criminalScanInstance,
-    socialMediaScanInstance,
-    /* RELATIVES */
-    noteOnUserCommentsInstance,
-    confirmFCRAInstance,
-  ]);
-  section3.init([confirmDataInstance]);
-  section4.init([
-    saveResultsInstance,
-    preparingMonitoringInstance,
-    generatingReportInstance,
-  ]);
+  switch (flowOption) {
+    case 'dating':
+      section1.init([datingUseCasesInstance]);
+      // NOTE: The relatives would be added dynamically if the person has relatives.
+      section2.init([
+        criminalScanInstance,
+        socialMediaScanInstance,
+        /* RELATIVES */
+        noteOnUserCommentsInstance,
+        confirmFCRAInstance,
+      ]);
+      section3.init([confirmDataInstance]);
+      section4.init([
+        saveResultsInstance,
+        preparingMonitoringInstance,
+        generatingReportInstance,
+      ]);
+      break;
+    default:
+      section1.init([popularUseCasesInstance]);
+      // NOTE: The relatives would be added dynamically if the person has relatives.
+      section2.init([
+        criminalScanInstance,
+        socialMediaScanInstance,
+        /* RELATIVES */
+        noteOnUserCommentsInstance,
+        confirmFCRAInstance,
+      ]);
+      section3.init([confirmDataInstance]);
+      section4.init([
+        saveResultsInstance,
+        preparingMonitoringInstance,
+        generatingReportInstance,
+      ]);
+  }
 
   const wizard = Object.assign({}, WizardManager);
   const sections = [section1, section2, section3, section4];
