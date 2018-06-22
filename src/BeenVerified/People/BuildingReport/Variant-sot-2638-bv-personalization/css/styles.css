@@ -88,7 +88,7 @@ section:focus {
   width: auto;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
 .headline {
@@ -119,11 +119,11 @@ section:focus {
   font-size: 14px;
 
   margin: 0 -7px -7px;
-  padding: 10px;
+  padding: 10px 0 18px;
 
   text-align: center;
 
-  color: #333;
+  color: #4a4a4a;
   border-top: none;
   border-radius: 0 0 4px 4px;
   background: #f2da3e;
@@ -389,10 +389,11 @@ h3 {
 
 /* -- INFORMATION -- */
 .initiate-report-title-wrapper h1 {
-  font-size: 34px;
-  margin-top: 0;
-  margin-bottom: 30px;
-  color: #4a4a4a;
+    font-size: 34px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #4a4a4a;
+    font-weight: bold;
 }
 .initiate-report-wrapper {
   background: #fff;
@@ -413,35 +414,40 @@ h3 {
 }
 
 .list-wrapper {
-  padding-top: 46px;
+  padding-top: 50px;
 }
 .icon-wrapper img, .icon-wrapper-hover img {
-  width: 70px;
+    width: 70px;
+    height: 74px;
 }
 .icon-text-wrapper p {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 17px;
 }
 .icon-wrapper, .icon-text-wrapper {
   display: inherit;
 }
 
 .icon-text-wrapper p {
-  margin: 20px 0px !important;
-}
-.bottom-wrapper {
-  padding-top: 9px;
-}
-.bottom-wrapper, .report-header-wrapper {
-  background: #4a3b8f;
-  color: #fff;
+  margin: 20px 0 0;
 }
 .report-header-wrapper {
-  padding-top: 13px;
-  padding-bottom: 8px;
+    background: #353167;
+    color: #fff;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    border-radius: 5px 5px 0 0;
+}
+.bottom-wrapper {
+    background: #4A3B8F;
+    color: #fff;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 0 0 5px 5px;
 }
 .report-header-wrapper p {
-  font-size: 20px;
+    font-size: 20px;
+    margin: 0;
 }
 .bottom-wrapper p {
   font-size: 14px;
@@ -449,6 +455,7 @@ h3 {
 }
 .bottom-wrapper p, .security-icon-wrapper {
   display: inline-block;
+    margin: 0;
 }
 .modal-header .subheader-text {
   font-size: 20px;
@@ -460,11 +467,12 @@ h3 {
   top: -2px;
 }
 .security-icon-wrapper img {
-  width: 54.9px;
+    width: 55px;
+    margin-left: 10px;
 }
 .panel-btn-wrapper {
-  margin-top: 20px;
-  margin-bottom: 31px;
+    margin-top: 40px;
+    margin-bottom: 45px;
 }
 .bottom-wrapper-text, .security-icon-wrapper {
   display: inline-block;
@@ -477,9 +485,10 @@ h3 {
   text-decoration: underline;
 }
 #gen-report-confirm2 {
-  color: #0F2D8F;
-  background: transparent;
-  text-decoration: underline;
+    color: #0F2D8F;
+    background: transparent;
+    text-decoration: underline;
+    padding: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -495,27 +504,35 @@ h3 {
 }
 
 @media screen and (max-width: 767px) {
-  .initiate-report-title-wrapper h1 {
-    font-size: 24px;
-    margin-top: 11px;
-  }
-  .bottom-wrapper-text p {
-    font-size: 14px !important;
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
-  }
-  .bottom-wrapper {
-    padding-top: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-  .report-header-wrapper {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .report-header-wrapper p {
-    font-size: 16px;
-  }
+    .initiate-report-title-wrapper h1 {
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .bottom-wrapper-text p {
+        font-size: 14px;
+    }
+    .bottom-wrapper {
+        padding: 10px 0;
+        border-radius: 0;
+    }
+    .report-header-wrapper {
+        padding: 15px;
+        border-radius: 0;
+    }
+    .report-header-wrapper p {
+        font-size: 16px;
+    }
+    .list-wrapper {
+        padding: 35px 0 0;
+    }
+    .icon-text-wrapper p {
+        margin: 15px 0 35px;
+    }
+    .panel-btn-wrapper {
+        margin-top: 0;
+        margin-bottom: 35px;
+    }
 }
 
 
@@ -1430,15 +1447,36 @@ social-links {
 }
 
 /* DATING FLOW - DATING USE CASES */
-#gen-dating-modal1 p {
-  font-size: 20px;
+#gen-dating-modal1 {
+    padding: 15px;
+}
+#gen-dating-modal1 .modal-body-header {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #4a4a4a;
+    font-weight: normal;
+    text-align: center;
+}
+#gen-dating-modal1 .icon-div {
+    padding: 0 55px;
+}
+.part1-speech-bub {
+    height: 40px;
+    vertical-align: middle;
+    margin-bottom: 12px;
+}
+.part1-speech-bub p {
+    font-size: 20px;
+    color: #4a4a4a;
+    margin: 0 0 0 15px;
 }
 .speech-bub-dating-wrapper p {
   display: inline-block;
 }
 .speech-bub-dating-wrapper {
-  text-align: left;
-  margin-left: 2%;
+    text-align: left;
+    vertical-align: middle;
 }
 .speech-bub-dating {
   position: relative;
@@ -1456,7 +1494,7 @@ social-links {
 .part2-speech-bub {
   display: none;
   text-align: center;
-  padding-top: 4%;
+  padding-top: 0;
   margin-left: 0;
 }
 
@@ -1465,7 +1503,8 @@ social-links {
 }
 
 .speech-bub-dating-text p {
-  font-size: 20px;
+    font-size: 20px;
+    margin: 25px 0 50px;
 }
 
 /* END - DATING USE CASES */
@@ -1687,10 +1726,9 @@ social-links {
 }
 
 .checking-sources-progress {
-  position: relative;
-
-  height: 40px;
-  margin: 40px 15px 10px 15px;
+    position: relative;
+    height: 30px;
+    margin: 40px 25px 15px;
 }
 
 .checking-sources-progress p {
@@ -1735,11 +1773,8 @@ social-links {
 
 
 .searching-progress-bar-group {
-  margin-bottom: 10px;
-
-  text-align: center;
-
-  border-radius: 4px;
+    text-align: center;
+    border-radius: 4px;
 }
 
 #crt-acct-load {
@@ -1956,14 +1991,13 @@ ul.socialMedias img.loading.spinner {
 }
 
 #scanningSocialMedia .progress {
-  position: relative;
+    position: relative;
 
-  height: 40px;
-  margin: 5px 15px 15px;
-
-  color: white;
-  border-radius: 4px;
-  background: #e8e8e8;
+    height: 30px;
+    margin: 40px 25px 15px;
+    color: white;
+    border-radius: 4px;
+    background: #e8e8e8;
 }
 
 
@@ -2795,9 +2829,57 @@ h6.create-login {
   text-align: left;
 }
 
-
-
-
+/* == 11 == CONTACT INFORMATION & OTHER INFORMATION SEARCH ====================== */
+#scanningEmail, #scanningOtherInfo {
+    padding: 15px;
+}
+#scanningEmail .sub-heading {
+    font-size: 20px;
+    color: #4a4a4a;
+    text-align: center;
+    margin: 25px 0 60px;
+}
+#scanningEmail .loading {
+    width: 40px;
+    height: 40px;
+}
+#scanningOtherInfo .sub-heading {
+    font-size: 20px;
+    color: #4a4a4a;
+    text-align: center;
+    margin: 25px 0 30px;
+}
+#scanningOtherInfo .modal-footer {
+    border: none;
+    padding: 0;
+}
+#btn-finalize {
+    height: 54px;
+    margin: 30px 0 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+#scanningOtherInfo .checkbox-bg {
+    background: #FFFFFF;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
+    border-radius: 3px;
+    padding: 24px 30px;
+}
+#scanningOtherInfo .skip-link {
+    margin: 0 0 15px;
+    text-align: center;
+}
+#scanningOtherInfo .skip-link a {
+    font-size: 18px;
+    color: #0F2D8F;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+#scanningOtherInfo .chckbx {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
 
 
 /* == OTHER MODAL THINS ========================= */
@@ -3009,7 +3091,7 @@ h6.create-login {
 
   #main-container {
     min-height: 630px !important;
-    padding-top: 10px;
+      padding-top: 20px;
   }
 
 
@@ -3203,20 +3285,42 @@ h6.create-login {
   }
 
 
-  /* 01 - Popular Used */
+    /* 01 - Popular Used */
 
-  .speech-bub, .speech-bub-dating {
-    width: 100%;
-    height: auto;
-    padding: 25px;
+    .speech-bub, .speech-bub-dating {
+        width: 100%;
+        height: auto;
+        padding: 25px;
 
-    border-radius: 3px;
-  }
-
-  .speech-bub-ico {
-    width: 45px;
-    height: 45px;
-  }
+        border-radius: 3px;
+    }
+    #gen-dating-modal1 .icon-div {
+        padding: 0 15px;
+    }
+    #gen-dating-modal1 .part1-speech-bub {
+        margin-bottom: 20px;
+    }
+    #gen-dating-modal1 .speech-bub-ico {
+        width: 40px;
+        height: 40px;
+        float: left;
+        display: inline;
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+    #gen-dating-modal1 .part1-speech-bub p {
+        display: inline;
+        margin: 0;
+    }
+    #gen-dating-modal1 .modal-body-header {
+        font-size: 18px;
+        margin: 0 0 25px;
+    }
+    .speech-bub-dating-text p {
+        margin: 20px 0 0;
+        font-size: 18px;
+        line-height: 24px;
+    }
 
   #bubbleHolder p {
     width: 100%;
@@ -3473,6 +3577,13 @@ h6.create-login {
 
     text-align: center;
   }
+    #scanningEmail .sub-heading, #scanningOtherInfo .sub-heading {
+        font-size: 18px;
+        margin: 25px 0 30px;
+    }
+    #scanningOtherInfo .checkbox-bg {
+        padding: 20px;
+    }
 }
 
 

@@ -2,7 +2,7 @@ import { track } from 'utils/track/index';
 import { addRelativesModal, createWizard } from 'components/building-report/Variant-sot-2638-bv-personalization/';
 import { initialize } from './js/runner';
 
-const shouldIncludeRelatives = true;
+// const shouldIncludeRelatives = true;
 const shouldGetExtraTeaserDataOnLastStep = true;
 
 $('.headline').hide();
@@ -10,42 +10,25 @@ $('.wizContent').hide();
 
 const getBuildingReportInstance = (flowOption) => {
   let buildingReportObject = {};
-
-  // switch (flowOption) {
-  //   // case 'dating':
-  //   //   // buildingReportObject = {
-  //   //   //   addRelativesModalDating: () => addRelativesModalDating(),
-  //   //   //   wizard: createWizardDating(),
-  //   //   // };
-  //   //   // return buildingReportObject;
-  //   //   console.log('Option Dating');
-  //   //   buildingReportObject = {
-  //   //     addRelativesModal: () => addRelativesModal(),
-  //   //     wizard: createWizard({}, flowOption),
-  //   //   };
-  //   // case 'myself':
-  //   //   console.log('Option myself');
-  //   //   buildingReportObject = {
-  //   //     addRelativesModal: () => addRelativesModal(),
-  //   //     wizard: createWizard({}, flowOption),
-  //   //   };
-  //   // default:
-  //   //   buildingReportObject = {
-  //   //     addRelativesModal: () => addRelativesModal(),
-  //   //     wizard: createWizard(),
-  //   //   };
-  //   //   return buildingReportObject;
-  // }
-
   console.log('Initialised Build Report with option: ', flowOption);
-  buildingReportObject = {
-    addRelativesModal: () => addRelativesModal(),
-    wizard: createWizard({}, flowOption),
-  };
+
+  switch (flowOption) {
+    case 'other':
+      buildingReportObject = {
+        addRelativesModal: () => addRelativesModal(),
+        wizard: createWizard({}, flowOption),
+      };
+      break;
+    default:
+      buildingReportObject = {
+        wizard: createWizard({}, flowOption),
+      };
+  }
   return buildingReportObject;
 };
 
 const initiateModalFlow = (flowOption) => {
+  let shouldIncludeRelatives = false;
   $('.initiate-report-wrapper').hide();
   $('.headline').show();
   $('.wizContent').show();
@@ -53,24 +36,16 @@ const initiateModalFlow = (flowOption) => {
 
   const buildingReportInstance = getBuildingReportInstance(flowOption);
 
+  if (flowOption === 'other') {
+    shouldIncludeRelatives = true;
+  }
+
   initialize(
     buildingReportInstance,
     shouldIncludeRelatives,
     shouldGetExtraTeaserDataOnLastStep,
   );
 };
-
-$('.option-wrapper').click((e) => {  
-  e.stopPropagation();
-  let searchSelection = e.currentTarget.dataset.search;
-  console.log('From option wrapper: ', searchSelection);
-  initiateModalFlow(searchSelection);
-});
-
-$('#gen-report-confirm2').click(() => {
-  initiateModalFlow('other');
-});
-
 
 function trackGAEvent(searchType) {
   switch (searchType) {
@@ -105,10 +80,14 @@ function trackGAEvent(searchType) {
 }
 
 $('.option-wrapper').click((e) => {
-  let searchOption = e.currentTarget.dataset.search;
-  trackGAEvent(searchOption);
+  e.stopPropagation();
+  let searchSelection = e.currentTarget.dataset.search;
+  console.log('From option wrapper: ', searchSelection);
+  trackGAEvent(searchSelection);
+  initiateModalFlow(searchSelection);
 });
 
-$('#gen-report-confirm2').click((e) => {
+$('#gen-report-confirm2').click(() => {
   trackGAEvent('other');
+  initiateModalFlow('other');
 });

@@ -2,11 +2,11 @@ import {
   shuffle,
   range,
 } from 'lodash';
-import Step from 'components/wizard/step';
+import Step from 'components/wizard/Variant-sot-2638-bv-personalization/step';
 
 function onScanningSocialMediaStart(stepCompleted) {
-  var { duration } = this;
-
+  var { duration, footerToDisplay, $elem } = this;
+  var $modFooter = $($elem).nextAll('.mod-footer');
   var socialPromise = $('#socialmedia-progress .progress-bar').animate(
     { width: '100%' },
     { duration },
@@ -29,7 +29,8 @@ function onScanningSocialMediaStart(stepCompleted) {
     $loadingImg.next().fadeIn();
     currIdx += 1;
   }, Math.round(duration / listLen));
-
+  $modFooter.hide();
+  $modFooter.eq(footerToDisplay).show();
   $.when(socialPromise).done(() => {
     stepCompleted();
     window.clearInterval(intervalId);

@@ -8,7 +8,8 @@ import saveResults from './saveResults';
 import preparingMonitoring from './preparingMonitoring';
 import generatingReport from './generatingReport';
 import relatives from './relatives';
-import datingUseCases from './datingUseCases'
+import datingUseCases from './datingUseCases';
+import contactInfoSearch from './contactInfoSearch';
 
 export {
   popularUseCases,
@@ -21,5 +22,6 @@ export {
   saveResults,
   preparingMonitoring,
   generatingReport,
-  datingUseCases
+  datingUseCases,
+  contactInfoSearch,
 };

@@ -1,8 +1,9 @@
-import Step from 'components/wizard/step';
+import Step from 'components/wizard/Variant-sot-2638-bv-personalization/step';
 
 function onScanningCriminalDataStart(stepCompleted) {
   var $progessBar = $('#searching-progress-bar-criminal .progress-bar');
-  var { duration } = this;
+  var { duration, footerToDisplay, $elem } = this;
+  var $modFooter = $($elem).nextAll('.mod-footer');
   var initialProgress = $($progessBar).animate({ width: '100%' }, {
     duration,
     progress(animation, progress) {
@@ -25,6 +26,8 @@ function onScanningCriminalDataStart(stepCompleted) {
       });
     }
   };
+  $modFooter.hide();
+  $modFooter.eq(footerToDisplay).show();
   $crimSteps.eq(0).show();
   stepBoxSection();
 
