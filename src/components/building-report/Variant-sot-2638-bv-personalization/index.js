@@ -15,7 +15,8 @@ import {
   generatingReport,
   relatives,
   datingUseCases,
-  contactInfoSearch
+  contactInfoSearch,
+  anythingElse,
 } from './steps';
 
 function showSubHeadlines(totalSections) {
@@ -81,10 +82,11 @@ function createWizard(options = {}, flowOption = 'other') {
   let generatingReportInstance = generatingReport(options.generatingReport);
   let datingUseCasesInstance = datingUseCases(options.datingUseCases);
   let contactInfoSearchInstance = contactInfoSearch(options.contactInfoSearch);
+  let anythingElseInstance = anythingElse(options.anythingElse);
 
   switch (flowOption) {
     case 'dating':
-      sectionContainer1 = [datingUseCasesInstance];
+      sectionContainer1 = [anythingElseInstance, datingUseCasesInstance];
       sectionContainer2 = [criminalScanInstance];
       sectionContainer3 = [socialMediaScanInstance];
       sectionContainer4 = [contactInfoSearchInstance, saveResultsInstance, preparingMonitoringInstance, generatingReportInstance];

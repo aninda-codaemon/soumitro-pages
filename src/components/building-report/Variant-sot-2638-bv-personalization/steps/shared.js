@@ -29,7 +29,9 @@ function hideExternalModal(indexModal) {
 function showExternalLoading(stepCompleted, duration, indexModalToDisplay) {
   var loads = $('#loadingModal .progress');
   var modTitles = $('.emdTitle');
-  var $progBar = $(loads[indexModalToDisplay]).find('.progress-bar');
+  var $progBar = $(loads[indexModalToDisplay]).find('div.progress-bar');
+  console.log(loads[indexModalToDisplay]);
+  console.log($progBar);
   $progBar.animate({ width: '100%' }, {
     duration,
     complete: () => onAnimationComplete(stepCompleted, indexModalToDisplay),
@@ -45,7 +47,9 @@ function showExternalLoading(stepCompleted, duration, indexModalToDisplay) {
     $(modTitles[indexModalToDisplay]).removeClass('hidden');
   }
 
-  $('.cont-loading-aditional').toggleClass('hidden', !indexModalToDisplay);
+  if (indexModalToDisplay === 1) {
+    $('.cont-loading-aditional').toggleClass('hidden', !indexModalToDisplay);
+  }
 }
 
 function showExternalModal(stepCompleted, duration, indexModal, skipModal) {

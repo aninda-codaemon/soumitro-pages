@@ -1514,6 +1514,10 @@
                 <!--== CONTACT INFO SEARCH - DATING FLOW=-->
                 <!-- ============================== -->
                 <div class="wizard-step">
+                  <!-- ============================== -->
+                  <!--== CONTACT INFO SEARCH - DATING FLOW=-->
+                  <!-- ============================== -->
+
                   <section id="scanningContactInfo" class="scanningSocialMedia" tabindex="-1" aria-hidden="true">
                     <div class="content">
                       <div class="modal-body" data-fr-bind="currentRecord searchData">
@@ -1526,15 +1530,15 @@
                                 <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-center">
                                   <ul>
                                     <li class="contact-info-icon col-xs-6">
-                                      <img class="spinner1" src="img/icn_loading.gif">
-                                      <span class="icon1">
+                                      <img class="loading-spinner" src="img/icn_loading.gif">
+                                      <span class="contact-info-icon-container">
                                         <img src="img/icn_phone_color.svg">
                                         <p class="hidden-xs">Phone numbers</p>
                                       </span>
                                     </li>
                                     <li class="contact-info-icon col-xs-6">
-                                      <img class="spinner2" src="img/icn_loading.gif">
-                                      <span class="icon2">
+                                      <img class="loading-spinner" src="img/icn_loading.gif">
+                                      <span class="contact-info-icon-container">
                                         <img src="img/icn_mail_color.svg">
                                         <p class="hidden-xs">Email addresses</p>
                                       </span>
@@ -1552,10 +1556,10 @@
                       </div>
                     </div>
                   </section>
+                  <!--/#scanningSocialMedia -->
                   <div class="mod-footer">
                     <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Please do not refresh, close, or press the back button on this page or your information may be lost.
                   </div>
-                  <!--/#scanningSocialMedia -->
                 </div>
                 <!-- END CONTACT INFO SEARCH - DATING FLOW -->
 
@@ -1564,45 +1568,88 @@
                   <!-- ==================================================== -->
                   <!-- == 5 == USER CONFIRMATION ALERT CONTENT ============ -->
                   <!-- ==================================================== -->
-                  <!-- <section id="gen-report-modal3" class="loggingin" tabindex="-1" aria-hidden="true"> -->
-                  <section id="anything-else-datingflow" class="loggingin" tabindex="-1" aria-hidden="true">
-                    <div class="">
-                      <div class="content">
-
-                        <div class="modal-body">
-                          <h3 class="modal-body-headline">
-                            IMPORTANT
-                          </h3>
-                          <span class="subtitle" data-fr-bind="currentRecord searchData">
-                            {{#if fullName}} {{fullName}} {{else}} {{firstName}}{{/if}}'s Phone Report May Contain Comments Provided By Users</span>
-                          <div>
-                            <p class="item-label text-center">Our phone reports contain user comments that may contain surprising information about them. By
-                              continuing, you acknowledge that the comments included in phone reports are provided by users.
-                            </p>
+                  <section id="anythingElseModal" class="loggingin" tabindex="-1" aria-hidden="true">
+                    <div class="content">
+                      <div class="modal-body">
+                          <div class="row text-center">
+                              <div class="col-md-12">
+                                  <img src="img/icn_folderplus_color.svg" class="heading-logo">
+                              </div>
                           </div>
-                          <!-- <form id="fcraGroup" data-fr-bind="currentRecord searchData"> -->
-                          <form id="fcraGroup" data-fr-bind="currentRecord searchData">
-                            <div class="form-group">
-                              <p>
-                                <label for="fcraCheckbox">
-                                  <input id="fcraCheckbox" name="fcraCheckbox" class="styled" type="checkbox">
-                                  <span>
-                                    I understand that I may see unfiltered comments on {{fullName}}'s phone report
-                                  </span>
-                                </label>
-                              </p>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <p class="sub-heading">Do you want to search any other information for your report? Our priority is to help you search for exactly what you need.</p>
                             </div>
-                            <p data-fr-bind="currentRecord" class="log-load"></p>
-                            <div class="btn-wrap col-sm-4 col-sm-offset-4 col-xs-12">
-                              <button class="data-modal-confirm btn btn-success btn-block">
-                                <span> I AGREE </span>
-                              </button>
-                            </div>
-
-                          </form>
-                        </div>
-                        <!-- /.modal-body -->
+                          </div>
+                          <div class="row">
+                            <form id="anythingElseGroup" data-fr-bind="currentRecord searchData" class="col-sm-10 col-sm-offset-1">
+                              <fieldset class="checkbox-bg">
+                                <!-- Multiple Checkboxes -->
+                                <div class="form-group">
+                                  <div class="col-sm-6 col-md-6">
+                                    <label class="chckbx" for="other-info-checkbox0">
+                                      <input type="checkbox" name="rela-checkboxes" id="other-info-checkbox0" value="1" class="styled">
+                                      <span data-fr-bind="currentRecord">
+                                        <span class="rndname">Photos &amp; Images</span>
+                                      </span>
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-6 col-md-6">
+                                    <label class="chckbx" for="other-info-checkbox1">
+                                      <input type="checkbox" name="rela-checkboxes" id="other-info-checkbox1" value="1" class="styled">
+                                      <span data-fr-bind="currentRecord">
+                                        <span class="rndname">Friends &amp; Roommates</span>
+                                      </span>
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-6 col-md-6">
+                                    <label class="chckbx" for="other-info-checkbox2">
+                                      <input type="checkbox" name="rela-checkboxes" id="other-info-checkbox2" value="1" class="styled">
+                                      <span data-fr-bind="currentRecord">
+                                        <span class="rndname">Home &amp; House Info</span>
+                                      </span>
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-6 col-md-6">
+                                    <label class="chckbx" for="other-info-checkbox3">
+                                      <input type="checkbox" name="rela-checkboxes" id="other-info-checkbox3" value="1" class="styled">
+                                      <span data-fr-bind="currentRecord">
+                                        <span class="rndname">Bankruptcies</span>
+                                      </span>
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-6 col-md-6 hidden">
+                                    <label class="chckbx" for="rela-checkboxes-4">
+                                      <input type="checkbox" name="rela-checkboxes" id="rela-checkboxes-4" value="1" class="styled">
+                                      <span data-fr-bind="currentRecord">
+                                        <span class="rndname"></span>
+                                      </span>
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-6 col-md-6 hidden">
+                                    <label class="chckbx" for="rela-checkboxes-5">
+                                      <input type="checkbox" name="rela-checkboxes" id="rela-checkboxes-5" value="1" class="styled">
+                                      <span data-fr-bind="currentRecord">
+                                        <span class="rndname"></span>
+                                      </span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <!-- Ends Form Group -->
+                              </fieldset>
+                            </form>
+                          </div>
                       </div>
+                      <!-- /.modal-body -->
+                      <div class="modal-footer">
+                        <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 col-md-offset-4 col-md-4">
+                          <button id="btn-finalize" class="main-btn btn btn-md btn-block large-modal-btn success">
+                          Finalize Report
+                          </button>
+                          <p class="skip-link"><a id="skip-anything-else" href="#">No thanks, skip this</a></p>
+                        </div>
+                      </div>
+                      <!-- /.modal-footer -->
                     </div>
                   </section>
                   <!-- /#gen-report-modal3 -->
@@ -1716,6 +1763,7 @@
           <div class="emdTitle hidden">Checking session...</div>
           <div class="emdTitle hidden">
             <i class="fa fa-lock" aria-hidden="true"></i> Continuing session...</div>
+          <div class="emdTitle hidden text-center">Great!</div>
         </div>
         <div class="modal-body clearfix">
           <div class="searching-progress-bar-group col-xs-12">
@@ -1734,6 +1782,11 @@
               <div class="col-sm-3 col-xs-3">
                 <img src="img/norton.gif">
               </div>
+            </div>
+            <div id="great-loading" class="progress checking-sources-progress hidden">
+              <p class="text-center">We are searching for the additional data you requested and finalizing your report.</p>
+              <div class="progress-bar progress-bar-success great" style="width: 1%"></div>
+              <p class="text-center"></p>
             </div>
           </div>
         </div>

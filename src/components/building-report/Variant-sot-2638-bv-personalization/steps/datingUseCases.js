@@ -23,9 +23,7 @@ const showNextQuote = (duration) => {
       $('.part2-speech-bub').fadeIn(1000);
     }
   }, interval);
-
-  // $('.part1-speech-bub').hide();
-  // $('.part2-speech-bub').fadeIn();
+  
 };
 
 function onDatingUseCasesStart(stepCompleted) {

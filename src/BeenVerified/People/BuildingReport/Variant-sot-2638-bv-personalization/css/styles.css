@@ -1590,18 +1590,19 @@ social-links {
   /* END CRIMINAL - DATING FLOW */
 
 /* === SCANNING CONTACT INFO - DATING FLOW */
-.spinner1, .spinner2 {
+.loading-spinner {
+  visibility: visible;
   width: 40px;
 }
-.icon1 img, .icon2 img {
+.contact-info-icon-container img {
   width: 60px;
   position: relative;
   left: -20px;
 }
-.icon1, .spinner1, .icon2, .spinner2 {
+.contact-info-icon-container {
   visibility: hidden;
-};
-.contact-info-icon p {
+}
+.contact-info-icon-container p {
   font-size: 20px;
 }
 #contactinfo-progress {
@@ -2830,7 +2831,7 @@ h6.create-login {
 }
 
 /* == 11 == CONTACT INFORMATION & OTHER INFORMATION SEARCH ====================== */
-#scanningEmail, #scanningOtherInfo {
+#scanningEmail, #anythingElseModal {
     padding: 15px;
 }
 #scanningEmail .sub-heading {
@@ -2843,13 +2844,13 @@ h6.create-login {
     width: 40px;
     height: 40px;
 }
-#scanningOtherInfo .sub-heading {
+#anythingElseModal .sub-heading {
     font-size: 20px;
     color: #4a4a4a;
     text-align: center;
     margin: 25px 0 30px;
 }
-#scanningOtherInfo .modal-footer {
+#anythingElseModal .modal-footer {
     border: none;
     padding: 0;
 }
@@ -2859,23 +2860,23 @@ h6.create-login {
     font-size: 18px;
     font-weight: 700;
 }
-#scanningOtherInfo .checkbox-bg {
+#anythingElseModal .checkbox-bg {
     background: #FFFFFF;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
     border-radius: 3px;
     padding: 24px 30px;
 }
-#scanningOtherInfo .skip-link {
+#anythingElseModal .skip-link {
     margin: 0 0 15px;
     text-align: center;
 }
-#scanningOtherInfo .skip-link a {
+#anythingElseModal .skip-link a {
     font-size: 18px;
     color: #0F2D8F;
     margin-bottom: 15px;
     font-weight: 600;
 }
-#scanningOtherInfo .chckbx {
+#anythingElseModal .chckbx {
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
@@ -3577,11 +3578,11 @@ h6.create-login {
 
     text-align: center;
   }
-    #scanningEmail .sub-heading, #scanningOtherInfo .sub-heading {
+    #scanningEmail .sub-heading, #anythingElseModal .sub-heading {
         font-size: 18px;
         margin: 25px 0 30px;
     }
-    #scanningOtherInfo .checkbox-bg {
+    #anythingElseModal .checkbox-bg {
         padding: 20px;
     }
 }

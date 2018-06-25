@@ -1,35 +1,30 @@
 import Step from 'components/wizard/step';
 
-let counter = 1;
+
 function onScanningContactInfoStart(stepCompleted) {
   var { duration } = this;
+  const $progressBar = $('#contactinfo-progress .progress-bar');
+  const $spinner = $('.loading-spinner');
+  const $icon = $('.contact-info-icon-container');
+  const interval = duration / 3;
+  let counter = 0;
 
-  var socialPromise = $('#contactinfo-progress .progress-bar').animate(
+  var barProgress = $progressBar.animate(
     { width: '100%' },
     { duration },
   );
-  
-  let interval = duration / 2;
-
-  (() => {
-    $('.spinner1').css('visibility', 'visible');
-    $('.spinner2').css('visibility', 'visible');
-  })();
-
-  const displayIcon = setInterval(() => {
-    $(`.spinner${counter}`).css('visibility', 'hidden');
-    $(`.icon${counter}`).css('visibility', 'visible');
-    counter++;
-
-    if (counter === 3) {
-      clearInterval(displayIcon);
+  const displayIcon = () => {
+    if (counter < $spinner.length) {
+      $spinner.eq(counter).delay(interval).fadeIn('fast', () => {
+        $icon.eq(counter).css('visibility', 'visible');
+        $spinner.eq(counter).css('visibility', 'hidden');
+        counter++;
+        displayIcon();
+      });
     }
-  }, interval);
-
-  $.when(socialPromise).done(() => {
-    stepCompleted();
-    window.clearInterval(displayIcon);
-  });
+  };
+  displayIcon();
+  $.when(barProgress).done(stepCompleted);
 }
 
 function createComponent(options = {}) {

@@ -10,6 +10,7 @@ import generatingReport from './generatingReport';
 import relatives from './relatives';
 import datingUseCases from './datingUseCases';
 import contactInfoSearch from './contactInfoSearch';
+import anythingElse from './anythingElse';
 
 export {
   popularUseCases,
@@ -24,4 +25,5 @@ export {
   generatingReport,
   datingUseCases,
   contactInfoSearch,
+  anythingElse,
 };
