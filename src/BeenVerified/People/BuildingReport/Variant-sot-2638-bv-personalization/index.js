@@ -11,7 +11,7 @@ $('.wizContent').hide();
 const getBuildingReportInstance = (flowOption) => {
   let buildingReportObject = {};
   console.log('Initialised Build Report with option: ', flowOption);
-
+  
   switch (flowOption) {
     case 'other':
       buildingReportObject = {

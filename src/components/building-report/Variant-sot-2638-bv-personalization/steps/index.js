@@ -11,6 +11,7 @@ import relatives from './relatives';
 import datingUseCases from './datingUseCases';
 import contactInfoSearch from './contactInfoSearch';
 import anythingElse from './anythingElse';
+import monitoringDating from './monitoringDating';
 
 export {
   popularUseCases,
@@ -26,4 +27,5 @@ export {
   datingUseCases,
   contactInfoSearch,
   anythingElse,
+  monitoringDating,
 };

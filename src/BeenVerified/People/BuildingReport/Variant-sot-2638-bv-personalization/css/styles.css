@@ -1220,10 +1220,9 @@ social-links {
 }
 
 #loadingModal .modal-body p {
-  font-size: 14px;
-  line-height: 20px;
-
-  margin: 5px;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0 0 30px;
 }
 
 #loadingModal .cont-loading-aditional {
@@ -1238,6 +1237,16 @@ social-links {
   width: 80px;
 }
 
+.checking-sources-progress-great {
+  height: 30px;
+}
+
+#loadingModal .great-loading-text {
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0 0 30px;
+}
+
 #externalModal .modal-content {
   max-width: 460px !important;
   margin: 0 auto;
@@ -1250,24 +1259,19 @@ social-links {
 #externalModal #crt-acct-load p {
   font-size: 20px;
   font-weight: bold;
-
   margin: 0;
-
   color: #4a4a4a;
 }
 
 #externalModal .crc-acct-load-subHead img {
   display: inline-block;
-
   width: 60px;
   margin: 10px;
 }
 
 #externalModal .crc-acct-load-subHead p {
   font-size: 16px;
-
   display: inline-block;
-
   margin: 0 0 0 5px;
 }
 
@@ -1283,7 +1287,6 @@ social-links {
 
 #crt-acct-warn-confirm {
   display: block;
-
   max-width: 200px;
   margin: 20px auto;
 }
@@ -1294,55 +1297,43 @@ social-links {
 
 #wizModal {
   width: 100%;
-
   outline: none;
 }
 
 #wizModal .modal-content {
   overflow: hidden;
-
   width: auto;
   max-width: 850px;
   margin: 0 auto;
-
   border: none;
   box-shadow: 0 0 8px rgba(0,0,0,0.15);
 }
 
 .wizard-step {
   display: none;
-
   /* padding-bottom: 7px; */
 }
 
 .wizard-steps-panel {
   position: relative;
-
   margin-bottom: 11px;
 }
 
 .wizard-steps-panel .step-number {
   font-size: 20px;
-
   position: relative;
-
   display: inline-block;
-
   text-align: center;
 }
 
 .wizard-steps-panel .step-number .number {
   line-height: 30px;
-
   z-index: 15;
-
   width: 34px;
   height: 34px;
   margin-bottom: -10.5px;
   margin-left: calc(50% - 1.7em / 2 );
-
   text-align: center;
-
   color: white;
   border: 1px solid #5e5b86;
   border-radius: 5px;
@@ -1508,7 +1499,92 @@ social-links {
 }
 
 /* END - DATING USE CASES */
-  /* 2 - Scanning Criminal DATING FLOW*/
+
+/* ========== SEARCH MYSELF ========== */
+#gen-myself-modal1, #gen-myself-modal2, #gen-myself-modal3 {
+    padding: 15px;
+}
+#gen-myself-modal1 .icon-div {
+    padding: 0 55px;
+}
+#gen-myself-modal1 .speech-bub-text {
+    display: inline;
+    margin: 0;
+}
+#gen-myself-modal1 .part1-speech-bub {
+    margin-bottom: 20px;
+    display: inline-block;
+}
+#gen-myself-modal1 .speech-bub-ico {
+    width: 40px;
+    height: 40px;
+    float: left;
+    display: inline;
+    margin: 0 15px 15px 0;
+}
+#gen-myself-modal2 .sub-heading {
+    font-size: 20px;
+    color: #4a4a4a;
+    text-align: center;
+    margin: 25px 0 40px;
+}
+#gen-myself-modal2 .icon-heading {
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: left;
+    color: #000000;
+    letter-spacing: 0.56px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+#gen-myself-modal2 ol {
+    padding: 0;
+}
+#gen-myself-modal2 li {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000000;
+    line-height: 24px;
+}
+#gen-myself-modal2 .info-list {
+    padding-left: 0;
+}
+.text-green {
+    color: #81B44C !important;
+}
+#gen-myself-modal3 .sub-heading {
+    font-size: 20px;
+    color: #4a4a4a;
+    text-align: center;
+    margin: 25px 0 30px;
+}
+#gen-myself-modal3 .form-heading {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+}
+#gen-myself-modal3 .f-name {
+    width: 40%;
+    float: left;
+    padding: 0 5px;
+}
+#gen-myself-modal3 .l-name, #gen-myself-modal3 .cty, #gen-myself-modal3 .state {
+    width: 20%;
+    float: left;
+    padding: 0 5px;
+}
+#gen-myself-modal3 .form-control, #gen-myself-modal3 .custom-select {
+    width: 100%;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+}
+/* ========== END SEARCH MYSELF ========== */
+
+/* 2 - Scanning Criminal DATING FLOW*/
   #criminalLeft img {
     position: relative;
 
@@ -1748,11 +1824,13 @@ social-links {
   color: #333;
 }
 .speech-bub-ico {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    float: left;
+    display: inline;
+    margin-bottom: 10px;
+    margin-right: 15px;
 }
-
 .speech-bub {
   position: relative;
 
@@ -1770,12 +1848,10 @@ social-links {
   border-radius: 5px;
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
 }
-
-
-
 .searching-progress-bar-group {
     text-align: center;
     border-radius: 4px;
+    padding: 30px 30px 40px;
 }
 
 #crt-acct-load {
@@ -2831,7 +2907,7 @@ h6.create-login {
 }
 
 /* == 11 == CONTACT INFORMATION & OTHER INFORMATION SEARCH ====================== */
-#scanningEmail, #anythingElseModal {
+#scanningEmail, #anythingElseModal, #preparingMonitoring {
     padding: 15px;
 }
 #scanningEmail .sub-heading {
@@ -3584,6 +3660,12 @@ h6.create-login {
     }
     #anythingElseModal .checkbox-bg {
         padding: 20px;
+    }
+    #gen-myself-modal3 .f-name {
+        width: 100%;
+    }
+    #gen-myself-modal3 .l-name, #gen-myself-modal3 .cty, #gen-myself-modal3 .state {
+        width: 100%;
     }
 }
 
