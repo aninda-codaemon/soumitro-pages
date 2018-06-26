@@ -1220,6 +1220,12 @@ social-links {
 }
 
 #loadingModal .modal-body p {
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0 0 30px;
+}
+
+#loadingModal .great-loading-text {
     font-size: 20px;
     line-height: 24px;
     margin: 0 0 30px;
@@ -1237,16 +1243,6 @@ social-links {
   width: 80px;
 }
 
-.checking-sources-progress-great {
-  height: 30px;
-}
-
-#loadingModal .great-loading-text {
-  font-size: 20px;
-  line-height: 24px;
-  margin: 0 0 30px;
-}
-
 #externalModal .modal-content {
   max-width: 460px !important;
   margin: 0 auto;
@@ -1259,19 +1255,24 @@ social-links {
 #externalModal #crt-acct-load p {
   font-size: 20px;
   font-weight: bold;
+
   margin: 0;
+
   color: #4a4a4a;
 }
 
 #externalModal .crc-acct-load-subHead img {
   display: inline-block;
+
   width: 60px;
   margin: 10px;
 }
 
 #externalModal .crc-acct-load-subHead p {
   font-size: 16px;
+
   display: inline-block;
+
   margin: 0 0 0 5px;
 }
 
@@ -1287,6 +1288,7 @@ social-links {
 
 #crt-acct-warn-confirm {
   display: block;
+
   max-width: 200px;
   margin: 20px auto;
 }
@@ -1297,43 +1299,55 @@ social-links {
 
 #wizModal {
   width: 100%;
+
   outline: none;
 }
 
 #wizModal .modal-content {
   overflow: hidden;
+
   width: auto;
   max-width: 850px;
   margin: 0 auto;
+
   border: none;
   box-shadow: 0 0 8px rgba(0,0,0,0.15);
 }
 
 .wizard-step {
   display: none;
+
   /* padding-bottom: 7px; */
 }
 
 .wizard-steps-panel {
   position: relative;
+
   margin-bottom: 11px;
 }
 
 .wizard-steps-panel .step-number {
   font-size: 20px;
+
   position: relative;
+
   display: inline-block;
+
   text-align: center;
 }
 
 .wizard-steps-panel .step-number .number {
   line-height: 30px;
+
   z-index: 15;
+
   width: 34px;
   height: 34px;
   margin-bottom: -10.5px;
   margin-left: calc(50% - 1.7em / 2 );
+
   text-align: center;
+
   color: white;
   border: 1px solid #5e5b86;
   border-radius: 5px;
@@ -1557,13 +1571,14 @@ social-links {
     font-size: 20px;
     color: #4a4a4a;
     text-align: center;
-    margin: 25px 0 30px;
+    margin: 0 0 30px;
 }
 #gen-myself-modal3 .form-heading {
     font-size: 20px;
     font-weight: 700;
     color: #000000;
     text-align: center;
+    margin: 0 0 30px;
 }
 #gen-myself-modal3 .f-name {
     width: 40%;
@@ -1808,6 +1823,10 @@ social-links {
     margin: 40px 25px 15px;
 }
 
+.checking-sources-progress-2 {
+    height: 30px;
+}
+
 .checking-sources-progress p {
   font-size: 16px;
   font-weight: 700;
@@ -1851,7 +1870,7 @@ social-links {
 .searching-progress-bar-group {
     text-align: center;
     border-radius: 4px;
-    padding: 30px 30px 40px;
+    padding: 0;
 }
 
 #crt-acct-load {
@@ -2003,9 +2022,10 @@ social-links {
 }
 
 .heading-logo {
-  width: 80px;
-  height: 80px;
-  margin-top: 8px;
+    width: 80px;
+    height: 80px;
+    margin-top: 15px;
+    margin-bottom: 25px;
 }
 
 #criminalRight li i {
@@ -2907,7 +2927,7 @@ h6.create-login {
 }
 
 /* == 11 == CONTACT INFORMATION & OTHER INFORMATION SEARCH ====================== */
-#scanningEmail, #anythingElseModal, #preparingMonitoring {
+#scanningEmail, #anythingElseModal, #preparingMonitoring, #important {
     padding: 15px;
 }
 #scanningEmail .sub-heading {
@@ -2924,7 +2944,8 @@ h6.create-login {
     font-size: 20px;
     color: #4a4a4a;
     text-align: center;
-    margin: 25px 0 30px;
+    margin: 0 0 30px;
+    padding: 0 35px;
 }
 #anythingElseModal .modal-footer {
     border: none;
@@ -2957,7 +2978,49 @@ h6.create-login {
     font-weight: 700;
     margin-bottom: 10px;
 }
-
+#preparingMonitoring .sub-heading {
+    font-size: 20px;
+    color: #4a4a4a;
+    text-align: center;
+    margin: 0;
+    padding: 0 35px;
+}
+#important .sub-heading {
+    font-size: 20px;
+    color: #4a4a4a;
+    text-align: center;
+    margin: 0 0 30px;
+    padding: 0 35px;
+}
+#important .checkbox {
+    background: #FFFFFF;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
+    border-radius: 3px;
+    padding: 14px 30px 22px;
+    margin: 0 0 30px;
+}
+#important .btn {
+    margin-bottom: 25px;
+    height: 56px;
+}
+#gen-myself-modal3 .modal-footer {
+    border: none;
+    padding: 0;
+}
+#gen-myself-modal3 .skip-link {
+    margin: 0 0 15px;
+    text-align: center;
+}
+#gen-myself-modal3 .skip-link a {
+    font-size: 18px;
+    color: #0F2D8F;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+#btn-continue {
+    height: 56px;
+    margin: 15px 0 20px;
+}
 
 /* == OTHER MODAL THINS ========================= */
 
