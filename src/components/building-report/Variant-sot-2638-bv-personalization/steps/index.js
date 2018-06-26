@@ -12,6 +12,7 @@ import datingUseCases from './datingUseCases';
 import contactInfoSearch from './contactInfoSearch';
 import anythingElse from './anythingElse';
 import monitoringDating from './monitoringDating';
+import fcraDating from './fcraDating';
 
 export {
   popularUseCases,
@@ -28,4 +29,5 @@ export {
   contactInfoSearch,
   anythingElse,
   monitoringDating,
+  fcraDating,
 };

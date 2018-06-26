@@ -7,6 +7,9 @@ function hideExternalLoading(indexModalToDisplay) {
   if (!$('.cont-loading-aditional').hasClass('hidden')) {
     $('.cont-loading-aditional').addClass('hidden');
   }
+  if (!$('.great-loading-additional').hasClass('hidden')) {
+    $('.great-loading-additional').addClass('hidden');
+  }
 }
 
 function onAnimationComplete(stepCompleted, indexModalToDisplay) {
@@ -45,6 +48,10 @@ function showExternalLoading(stepCompleted, duration, indexModalToDisplay) {
   if (loads[indexModalToDisplay]) {
     $(loads[indexModalToDisplay]).removeClass('hidden');
     $(modTitles[indexModalToDisplay]).removeClass('hidden');
+  }
+
+  if (indexModalToDisplay === 2) {
+    $('.great-loading-additional').removeClass('hidden');
   }
 
   if (indexModalToDisplay === 1) {

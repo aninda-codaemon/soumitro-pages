@@ -1479,8 +1479,65 @@
                     <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Please do not refresh, close, or press the back button on this page or your information may be lost.
                   </div>
                 </div>
-                <!-- Monitoring -->
 
+                <!-- Monitoring -->
+                <div class="wizard-step">
+                  <!-- ===================================== -->
+                  <!-- =========== FCRA CHECKBOX =========== -->
+                  <!-- ===================================== -->
+                  <section id="fcraDatingModal" class="loggingin" tabindex="-1" aria-hidden="true">
+                    <div class="content">
+                      <div class="row text-center">
+                        <img src="img/icn_folderexc_color.svg" class="heading-logo">
+                      </div>
+
+                      <div class="modal-header col-sm-12">
+                        <p>
+                          There are limits to how you may use the data we provide.
+                          <br>
+                          Please review the box below to continue.
+                        </p>
+                      </div>
+                      <!-- /modal-header -->
+                      <div class="modal-body">
+                        <form id="fcra-dating-confirm">
+                          <div class="row">
+                            <div class="col-sm-10 col-sm-offset-1">
+                              <div class="panel panel-default">
+                                <div class="form-group">
+                                  <p for="fcraCheckboxDating">
+                                    <label class="fcraCheckbox-wrapper" for="fcraCheckboxDating">
+                                      <input id="fcraCheckboxDating" name="fcraCheckboxDating" class="styled" type="checkbox" required>
+                                      <label for="fcraCheckboxDating" class="fcraCheckbox-box">
+                                        I will not use information provided by BeenVerified for decisions about employment, insurance, tenant screening, consumer
+                                        credit or any other purpose restricted by the
+                                        <a href="https://www.consumer.ftc.gov/sites/default/files/articles/pdf/pdf-0111-fair-credit-reporting-act.pdf" target="_blank">
+                                          Fair Credit Reporting Act (FCRA)
+                                        </a>
+                                        . If you have any questions, view our
+                                        <a href="https://www.beenverified.com/about/dos-donts/" target="_blank">Do's & Don'ts</a>
+                                        page.
+                                      </label>
+                                    </label>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-4 col-sm-offset-4 col-xs-12">
+                            <button class="btn btn-success main-btn btn-block">
+                              <span>Get My Report Now</span>
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                      <!-- /.modal-body -->
+                    </div>
+                  </section>
+                </div>
+                <!-- Dating FCRA -->
+
+                <!-- Dating FCRA -->
                 <!--=== END DATING SAFETY FLOW =====-->
               </div>
             </div>
@@ -1607,7 +1664,7 @@
               </div>
             </div>
 
-            <div class="">
+            <div class="great-loading-additional hidden">
               <p class="text-center great-loading-text">We are searching for the additional data you requested and finalizing your report.</p>
             </div>
             <div id="great-loading" class="progress checking-sources-progress hidden">

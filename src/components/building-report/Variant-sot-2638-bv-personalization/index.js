@@ -18,6 +18,7 @@ import {
   contactInfoSearch,
   anythingElse,
   monitoringDating,
+  fcraDating,
 } from './steps';
 
 function showSubHeadlines(totalSections) {
@@ -84,14 +85,15 @@ function createWizard(options = {}, flowOption = 'other') {
   let datingUseCasesInstance = datingUseCases(options.datingUseCases);
   let contactInfoSearchInstance = contactInfoSearch(options.contactInfoSearch);
   let anythingElseInstance = anythingElse(options.anythingElse);
-  let monitoringDatingInstance = monitoringDating(options.monitoringDating);
+  let monitoringDatingInstance = monitoringDating(options.monitoringDating);fcraDating
+  let fcraDatingInstance = fcraDating(options.fcraDating);
 
   switch (flowOption) {
     case 'dating':
-      sectionContainer1 = [anythingElseInstance, datingUseCasesInstance];
+      sectionContainer1 = [datingUseCasesInstance];
       sectionContainer2 = [criminalScanInstance];
       sectionContainer3 = [socialMediaScanInstance];
-      sectionContainer4 = [contactInfoSearchInstance, saveResultsInstance, monitoringDatingInstance, generatingReportInstance];
+      sectionContainer4 = [contactInfoSearchInstance, anythingElseInstance, saveResultsInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     default:
       sectionContainer1 = [popularUseCasesInstance];
