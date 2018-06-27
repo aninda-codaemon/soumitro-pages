@@ -33,8 +33,6 @@ function showExternalLoading(stepCompleted, duration, indexModalToDisplay) {
   var loads = $('#loadingModal .progress');
   var modTitles = $('.emdTitle');
   var $progBar = $(loads[indexModalToDisplay]).find('div.progress-bar');
-  console.log(loads[indexModalToDisplay]);
-  console.log($progBar);
   $progBar.animate({ width: '100%' }, {
     duration,
     complete: () => onAnimationComplete(stepCompleted, indexModalToDisplay),

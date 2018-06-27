@@ -68,8 +68,6 @@ function addRelativesModal(options = {}) {
 }
 
 function createWizard(options = {}, flowOption = 'other') {
-  console.log('Flow option from components index: ', flowOption);
-  console.log(options);
   let sectionContainer1 = [];
   let sectionContainer2 = [];
   let sectionContainer3 = [];
@@ -78,15 +76,15 @@ function createWizard(options = {}, flowOption = 'other') {
   let noteOnUserCommentsInstance = noteOnUserComments(options.noteOnUserComments);
   let preparingMonitoringInstance = preparingMonitoring(options.preparingMonitoring);
   let confirmDataInstance = confirmData(options.confirmData);
-  let criminalScanInstance = criminalScan(options); // criminalScan(options.criminalScan);
-  let socialMediaScanInstance = socialMediaScan(options); // socialMediaScan(options.socialMediaScan);
+  let criminalScanInstance = criminalScan(options.criminalScan);
+  let socialMediaScanInstance = socialMediaScan(options.socialMediaScan);
   let confirmFCRAInstance = confirmFCRA(options.confirmFCRA);
   let saveResultsInstance = saveResults(options.saveResults);
   let generatingReportInstance = generatingReport(options.generatingReport);
   let datingUseCasesInstance = datingUseCases(options.datingUseCases);
   let contactInfoSearchInstance = contactInfoSearch(options.contactInfoSearch);
   let anythingElseInstance = anythingElse(options.anythingElse);
-  let monitoringDatingInstance = monitoringDating(options.monitoringDating);fcraDating
+  let monitoringDatingInstance = monitoringDating(options.monitoringDating);
   let fcraDatingInstance = fcraDating(options.fcraDating);
   let saveReportDatingInstance = saveReportDating(options.saveReportDating);
 

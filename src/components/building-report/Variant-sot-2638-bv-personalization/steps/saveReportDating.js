@@ -2,7 +2,6 @@ import { validateLeadsForm } from 'components/leads-form';
 import Step from 'components/wizard/step';
 
 function onSaveResultsStart(stepCompleted) {
-  var { duration } = this;
   var $signupModalForm = $('#signup-modal-form');
   var img = $('#crt-acct-load').find('img');
   const onSubmit = () => {
@@ -21,7 +20,6 @@ function onSaveResultsStart(stepCompleted) {
 
 function createComponent(options = {}) {
   const saveResults = Object.assign({}, Step);
-  const skipSavingResultModal = true;
   let newConfig = Object.assign({
     title: 'Save Results',
     $elem: $('#gen-report-modal6'),
