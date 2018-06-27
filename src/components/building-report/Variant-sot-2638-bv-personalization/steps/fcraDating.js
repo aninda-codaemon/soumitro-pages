@@ -1,12 +1,11 @@
 import Step from 'components/wizard/step';
 
-const CONTINUE_SESSION_INDEX = 1;
-
 function onDatingFcraConfirmationStart(stepCompleted) {
-  var self = this;
+  $('.headline').html('Final Message: Please Read');
+  $('.subHeadline').addClass('text-red').html('Important').show();
   $('#fcra-dating-confirm').validate({
     rules: {
-      fcraCheckbox2: {
+      fcraCheckboxDating: {
         required: true,
       },
     },
@@ -17,7 +16,7 @@ function onDatingFcraConfirmationStart(stepCompleted) {
       label.closest('.form-group').removeClass('error').find('label.error').remove();
     },
     messages: {
-      fcraCheckbox2: 'Please check the box to continue',
+      fcraCheckboxDating: 'Please check the box to continue',
     },
     submitHandler() {
       stepCompleted();

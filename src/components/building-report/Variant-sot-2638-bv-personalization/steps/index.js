@@ -13,6 +13,7 @@ import contactInfoSearch from './contactInfoSearch';
 import anythingElse from './anythingElse';
 import monitoringDating from './monitoringDating';
 import fcraDating from './fcraDating';
+import saveReportDating from './saveReportDating';
 
 export {
   popularUseCases,
@@ -30,4 +31,5 @@ export {
   anythingElse,
   monitoringDating,
   fcraDating,
+  saveReportDating,
 };

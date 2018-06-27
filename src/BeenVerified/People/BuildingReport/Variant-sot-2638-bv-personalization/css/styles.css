@@ -477,6 +477,9 @@ h3 {
 .bottom-wrapper-text, .security-icon-wrapper {
   display: inline-block;
 }
+.dating-header {
+  display: none;
+}
 #gen-report-message2 {
   color: #0F2D8F;
 }
@@ -1226,7 +1229,7 @@ social-links {
 }
 
 #loadingModal .great-loading-text {
-    font-size: 20px;
+    font-size: 20px !important;
     line-height: 24px;
     margin: 0 0 30px;
 }
@@ -1241,6 +1244,14 @@ social-links {
 
 #loadingModal .cont-loading-aditional img {
   width: 80px;
+}
+
+#loadingModal .popup-modal-pad {
+    padding: 30px 30px 40px;
+}
+
+#great-loading {
+    margin: 0;
 }
 
 #externalModal .modal-content {
@@ -1566,6 +1577,9 @@ social-links {
 }
 .text-green {
     color: #81B44C !important;
+}
+.text-red {
+    color: #DC0015 !important;
 }
 #gen-myself-modal3 .sub-heading {
     font-size: 20px;
@@ -2927,7 +2941,7 @@ h6.create-login {
 }
 
 /* == 11 == CONTACT INFORMATION & OTHER INFORMATION SEARCH ====================== */
-#scanningEmail, #anythingElseModal, #preparingMonitoring, #important {
+#scanningEmail, #anythingElseModal, #preparingMonitoring, #fcraDatingModal {
     padding: 15px;
 }
 #scanningEmail .sub-heading {
@@ -2985,21 +2999,21 @@ h6.create-login {
     margin: 0;
     padding: 0 35px;
 }
-#important .sub-heading {
+#fcraDatingModal .sub-heading {
     font-size: 20px;
     color: #4a4a4a;
     text-align: center;
     margin: 0 0 30px;
     padding: 0 35px;
 }
-#important .checkbox {
+#fcraDatingModal .checkbox {
     background: #FFFFFF;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
     border-radius: 3px;
     padding: 14px 30px 22px;
     margin: 0 0 30px;
 }
-#important .btn {
+#fcraDatingModal .btn {
     margin-bottom: 25px;
     height: 56px;
 }

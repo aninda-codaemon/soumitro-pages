@@ -8,6 +8,7 @@ function onMonitoringDatingStart(stepCompleted) {
     { width: '100%' },
     { duration },
   );
+  $('.headline-text').html('Finalizing Report on ');
   $.when(barProgress).done(stepCompleted);
 }
 
