@@ -8,8 +8,11 @@ function onSaveResultsStart(stepCompleted) {
     $('.dating-header').html('').hide();
     $('.wizard-header').show();
     $('.subHeadline').show();
+    $('.norton').addClass('hidden-xs');
     stepCompleted();
   };
+
+  $('.norton').removeClass('hidden-xs');
   $('.headline-text').html('Save Your Report: ');
   $('.wizard-header').hide();
   $('.dating-header').html('<div class="text-center">Your Report is Ready!</div>').show();

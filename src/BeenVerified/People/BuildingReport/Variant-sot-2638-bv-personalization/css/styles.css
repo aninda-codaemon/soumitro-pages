@@ -64,6 +64,13 @@ section.active .content {
   }
 }
 
+.text-red {
+    color: #DC0015 !important;
+}
+.dating-header {
+  display: none;
+}
+
 section:focus {
   outline: none;
 }
@@ -476,9 +483,6 @@ h3 {
 }
 .bottom-wrapper-text, .security-icon-wrapper {
   display: inline-block;
-}
-.dating-header {
-  display: none;
 }
 #gen-report-message2 {
   color: #0F2D8F;
@@ -998,7 +1002,7 @@ social-links {
 .modal-header {
   font-size: 24px;
 
-  padding: 8px;
+  padding: 15px;
 
   color: white;
   border-radius: 4px 4px 0 0;
@@ -1234,6 +1238,10 @@ social-links {
     margin: 0 0 30px;
 }
 
+#loadingModal .popup-modal-pad {
+    padding: 30px 30px 40px;
+}
+
 #loadingModal .cont-loading-aditional {
   margin: 10px 0;
 }
@@ -1244,14 +1252,6 @@ social-links {
 
 #loadingModal .cont-loading-aditional img {
   width: 80px;
-}
-
-#loadingModal .popup-modal-pad {
-    padding: 30px 30px 40px;
-}
-
-#great-loading {
-    margin: 0;
 }
 
 #externalModal .modal-content {
@@ -1348,21 +1348,22 @@ social-links {
 }
 
 .wizard-steps-panel .step-number .number {
-  line-height: 30px;
+    line-height: 30px;
 
-  z-index: 15;
+    z-index: 15;
 
-  width: 34px;
-  height: 34px;
-  margin-bottom: -10.5px;
-  margin-left: calc(50% - 1.7em / 2 );
+    width: 30px;
+    height: 30px;
+    margin-bottom: -10.5px;
+    margin-left: calc(50% - 1.7em / 2 );
 
-  text-align: center;
+    text-align: center;
 
-  color: white;
-  border: 1px solid #5e5b86;
-  border-radius: 5px;
-  background-color: rgba(38, 12, 12, 0.3);
+    color: white;
+    /*border: 1px solid #5e5b86;*/
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(83, 65, 165, 1);
 }
 
 .wizard-steps-panel .step-number.doing .number,
@@ -1411,7 +1412,7 @@ social-links {
   position: absolute;
   top: 15px;
   right: 0;
-  left: calc( 54.5% + 1.4em/2 );
+  left: calc( 54.5% + 1em/2 );
 
   content: ' ';
 
@@ -1468,14 +1469,13 @@ social-links {
 }
 #gen-dating-modal1 .modal-body-header {
     font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin: 20px 35px 30px;
     color: #4a4a4a;
     font-weight: normal;
     text-align: center;
 }
 #gen-dating-modal1 .icon-div {
-    padding: 0 55px;
+    padding: 0 70px;
 }
 .part1-speech-bub {
     height: 40px;
@@ -1485,7 +1485,7 @@ social-links {
 .part1-speech-bub p {
     font-size: 20px;
     color: #4a4a4a;
-    margin: 0 0 0 15px;
+    margin: 0;
 }
 .speech-bub-dating-wrapper p {
   display: inline-block;
@@ -1515,103 +1515,17 @@ social-links {
 }
 
 .speech-bub-img-wrapper img {
-  width: 80px;
+    width: 80px;
+    margin-top: 15px;
 }
 
 .speech-bub-dating-text p {
     font-size: 20px;
+    color: #4a4a4a;
     margin: 25px 0 50px;
 }
 
 /* END - DATING USE CASES */
-
-/* ========== SEARCH MYSELF ========== */
-#gen-myself-modal1, #gen-myself-modal2, #gen-myself-modal3 {
-    padding: 15px;
-}
-#gen-myself-modal1 .icon-div {
-    padding: 0 55px;
-}
-#gen-myself-modal1 .speech-bub-text {
-    display: inline;
-    margin: 0;
-}
-#gen-myself-modal1 .part1-speech-bub {
-    margin-bottom: 20px;
-    display: inline-block;
-}
-#gen-myself-modal1 .speech-bub-ico {
-    width: 40px;
-    height: 40px;
-    float: left;
-    display: inline;
-    margin: 0 15px 15px 0;
-}
-#gen-myself-modal2 .sub-heading {
-    font-size: 20px;
-    color: #4a4a4a;
-    text-align: center;
-    margin: 25px 0 40px;
-}
-#gen-myself-modal2 .icon-heading {
-    font-size: 20px;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-align: left;
-    color: #000000;
-    letter-spacing: 0.56px;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-#gen-myself-modal2 ol {
-    padding: 0;
-}
-#gen-myself-modal2 li {
-    font-size: 20px;
-    font-weight: 500;
-    color: #000000;
-    line-height: 24px;
-}
-#gen-myself-modal2 .info-list {
-    padding-left: 0;
-}
-.text-green {
-    color: #81B44C !important;
-}
-.text-red {
-    color: #DC0015 !important;
-}
-#gen-myself-modal3 .sub-heading {
-    font-size: 20px;
-    color: #4a4a4a;
-    text-align: center;
-    margin: 0 0 30px;
-}
-#gen-myself-modal3 .form-heading {
-    font-size: 20px;
-    font-weight: 700;
-    color: #000000;
-    text-align: center;
-    margin: 0 0 30px;
-}
-#gen-myself-modal3 .f-name {
-    width: 40%;
-    float: left;
-    padding: 0 5px;
-}
-#gen-myself-modal3 .l-name, #gen-myself-modal3 .cty, #gen-myself-modal3 .state {
-    width: 20%;
-    float: left;
-    padding: 0 5px;
-}
-#gen-myself-modal3 .form-control, #gen-myself-modal3 .custom-select {
-    width: 100%;
-    height: 40px;
-    background: #FFFFFF;
-    border: 1px solid #CCCCCC;
-    border-radius: 5px;
-}
-/* ========== END SEARCH MYSELF ========== */
 
 /* 2 - Scanning Criminal DATING FLOW*/
   #criminalLeft img {
@@ -1708,12 +1622,12 @@ social-links {
   visibility: hidden;
 }
 .contact-info-icon-container p {
-  font-size: 20px;
+    font-size: 20px;
+    margin-bottom: 0;
 }
 #contactinfo-progress {
-  margin-left: 4%;
-    margin-right: 4%;
-    height: 36px;
+    height: 30px;
+    margin: 25px 25px 15px;
 }
 /* END SCANNING CONTACT INFO - DATING FLOW */
 
@@ -1844,16 +1758,12 @@ social-links {
 .checking-sources-progress p {
   font-size: 16px;
   font-weight: 700;
-
   position: absolute;
   z-index: 2;
   top: 5px;
-
   width: 99%;
   margin: 4px 0 0 0;
-
   text-align: center;
-
   color: #333;
 }
 .speech-bub-ico {
@@ -1861,21 +1771,17 @@ social-links {
     height: 40px;
     float: left;
     display: inline;
-    margin-bottom: 10px;
     margin-right: 15px;
+    margin-bottom: 10px;
 }
 .speech-bub {
   position: relative;
-
   display: none;
-
   width: 95%;
   height: 190px;
   margin: 0 auto;
   padding: 33px 40px;
-
   text-align: left;
-
   color: #333;
   border-radius: 3px;
   border-radius: 5px;
@@ -1884,7 +1790,7 @@ social-links {
 .searching-progress-bar-group {
     text-align: center;
     border-radius: 4px;
-    padding: 0;
+    padding: 0 15px;
 }
 
 #crt-acct-load {
@@ -2311,11 +2217,10 @@ p.log-load {
 }
 
 #gen-report-modal11 #fcra-confirm .panel .form-group {
-  padding: 14px 20px;
-
-  border: 2px solid transparent;
-  border-radius: 3px;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
+    padding: 14px 20px;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
 }
 
 #gen-report-modal11 #fcra-confirm .panel .form-group.error {
@@ -2521,7 +2426,7 @@ label.fcraCheckbox-wrapper {
     text-align: left;
   }
   .headline {
-    font-size: 26px;
+    font-size: 24px;
     margin-bottom: 10px;
     margin-top: 10px;
     line-height: 30px;
@@ -2538,17 +2443,13 @@ label.fcraCheckbox-wrapper {
   font-size: 20px;
   font-weight: bold;
   line-height: 28px;
-
   margin-top: -5px;
-
-  text-align: center;
-
+  text-align: left;
   color: #4a4a4a;
 }
 
 #gen-report-modal6 .form-input-group {
   padding: 30px;
-
   border: none;
   border-radius: 3px;
   background: #fff;
@@ -2557,8 +2458,8 @@ label.fcraCheckbox-wrapper {
 
 #gen-report-modal6 .modal-top-text {
   font-size: 18px;
-
   margin: 0 0 20px 0;
+  text-align: left;
 }
 
 #gen-report-modal6 .input-label {
@@ -2940,8 +2841,9 @@ h6.create-login {
   text-align: left;
 }
 
-/* == 11 == CONTACT INFORMATION & OTHER INFORMATION SEARCH ====================== */
-#scanningEmail, #anythingElseModal, #preparingMonitoring, #fcraDatingModal {
+/* ========== START NEWLY ADDED CSS ========== */
+
+#scanningEmail, #anythingElseModal, #monitoringDatingModal, #fcraDatingModal, #contactInfoSearch, #professionalProfileSearch, #contactInfoSocialProfile, #gen-contact-modal1, #gen-criminal-modal1, #familySaftyModal1, #tacklingChallenges, #scanningContactInfo {
     padding: 15px;
 }
 #scanningEmail .sub-heading {
@@ -2954,6 +2856,58 @@ h6.create-login {
     width: 40px;
     height: 40px;
 }
+#scanningContactInfo .sub-heading {
+    font-size: 20px;
+    color: #4a4a4a;
+    text-align: center;
+    margin: 20px 35px 25px;
+}
+
+#scanningContactInfo ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+/* ============================== */
+
+ul.contactInfos li {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100px;
+    margin-bottom: 40px;
+}
+
+ul.contactInfos img.loading.spinner {
+    margin-left: -12px !important;
+}
+
+
+#contact-info-groups li span {
+    width: 50%;
+}
+
+#contact-info-groups li img,
+#contact-info-groups i.loading {
+    font-size: 26px;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    max-width: 100%;
+    margin-left: -15px;
+}
+
+#contact-info-groups li p {
+    font-size: 18px;
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    top: 100px;
+}
+/* ============================== */
+
 #anythingElseModal .sub-heading {
     font-size: 20px;
     color: #4a4a4a;
@@ -2990,22 +2944,27 @@ h6.create-login {
 #anythingElseModal .chckbx {
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 10px;
+    color: #4a4a4a;
+    margin-bottom: 15px;
 }
-#preparingMonitoring .sub-heading {
+#anythingElseModal #anythingElseGroup .chckbx .rndname {
+    margin-left: 15px;
+}
+#monitoringDatingModal .sub-heading {
     font-size: 20px;
     color: #4a4a4a;
     text-align: center;
     margin: 0;
     padding: 0 35px;
 }
+
 #fcraDatingModal .sub-heading {
     font-size: 20px;
     color: #4a4a4a;
     text-align: center;
     margin: 0 0 30px;
-    padding: 0 35px;
 }
+
 #fcraDatingModal .checkbox {
     background: #FFFFFF;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
@@ -3013,10 +2972,52 @@ h6.create-login {
     padding: 14px 30px 22px;
     margin: 0 0 30px;
 }
+
 #fcraDatingModal .btn {
-    margin-bottom: 25px;
     height: 56px;
+    margin-top: 10px;
+    margin-bottom: 25px;
 }
+
+#fcraDatingModal #fcra-dating-confirm .panel .form-group {
+    padding: 14px 20px;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
+    margin: 0;
+}
+
+#fcraDatingModal label.error {
+    line-height: 18px;
+    width: 94%;
+    margin: 10px 20px;
+    text-align: left;
+    color: #dc0015;
+    border: none;
+    background-color: transparent;
+}
+
+#fcraDatingModal label #fcraCheckboxDating {
+    margin-left: -20px;
+}
+
+#fcraDatingModal .fcraCheckbox-box {
+    float: right;
+    margin-left: 0;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#fcraDatingModal #fcra-dating-confirm p {
+    margin: 0 20px;
+}
+
+#fcraDatingModal #fcra-dating-confirm .panel .form-group.error {
+    border-color: #dc0015;
+}
+
 #gen-myself-modal3 .modal-footer {
     border: none;
     padding: 0;
@@ -3035,9 +3036,157 @@ h6.create-login {
     height: 56px;
     margin: 15px 0 20px;
 }
+#gen-contact-modal1 .sub-heading, #gen-criminal-modal1 .sub-heading, #familySaftyModal1 .sub-heading, #tacklingChallenges .sub-heading {
+    font-size: 20px;
+    color: #4a4a4a;
+    text-align: center;
+    margin: 20px 0 40px;
+    padding: 0 35px;
+}
+#gen-contact-modal1 .icon-div, #gen-criminal-modal1 .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
+    padding: 0 55px;
+}
+#gen-dating-modal1, #gen-contact-modal1 .speech-bub-text, #gen-criminal-modal1 .speech-bub-text, #familySaftyModal1 .speech-bub-text, #tacklingChallenges .speech-bub-text {
+    display: inline;
+    margin: 0;
+}
+#gen-contact-modal1 .part1-speech-bub, #gen-criminal-modal1 .part1-speech-bub, #familySaftyModal1 .part1-speech-bub, #tacklingChallenges .part1-speech-bub {
+    margin-bottom: 20px;
+    display: inline-block;
+}
+#gen-contact-modal1 .speech-bub-ico, #gen-criminal-modal1 .speech-bub-ico, #familySaftyModal1 .speech-bub-ico, #tacklingChallenges .speech-bub-ico {
+    width: 40px;
+    height: 40px;
+    float: left;
+    display: inline;
+    margin: 0 15px 15px 0;
+}
+#contactInfoSearch .sub-heading {
+    font-size: 20px;
+    color: #4a4a4a;
+    text-align: center;
+    margin: 20px 0 40px;
+    padding: 0 35px;
+}
+#contactInfoSearch .icon-div {
+    padding: 0 120px;
+}
+#contactInfoSearch .icon-text {
+    font-size: 20px;
+    color: #4A4A4A;
+    text-align: center;
+    margin: 20px 0 0;
+}
+#professionalProfileSearch .sub-heading {
+    font-size: 20px;
+    color: #4a4a4a;
+    text-align: center;
+    margin: 0;
+    padding: 0 35px;
+}
+#contactInfoSocialProfile .sub-heading {
+    font-size: 20px;
+    color: #4a4a4a;
+    text-align: center;
+    margin: 20px 0 40px;
+    padding: 0 35px;
+}
+#contactInfoSocialProfile .icon-text {
+    font-size: 20px;
+    color: #4A4A4A;
+    text-align: center;
+    margin: 20px 0 0;
+}
+
+/*--- SEARCH MYSELF ---*/
+
+#gen-myself-modal1, #gen-myself-modal2, #gen-myself-modal3 {
+    padding: 15px;
+}
+#gen-myself-modal1 .icon-div {
+    padding: 0 55px;
+}
+#gen-myself-modal1 .speech-bub-text {
+    display: inline;
+    margin: 0;
+}
+#gen-myself-modal1 .part1-speech-bub {
+    margin-bottom: 20px;
+    display: inline-block;
+}
+#gen-myself-modal1 .speech-bub-ico {
+    width: 40px;
+    height: 40px;
+    float: left;
+    display: inline;
+    margin: 0 15px 15px 0;
+}
+#gen-myself-modal2 .sub-heading {
+    font-size: 20px;
+    color: #4a4a4a;
+    text-align: center;
+    margin: 25px 0 40px;
+}
+#gen-myself-modal2 .icon-heading {
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: left;
+    color: #000000;
+    letter-spacing: 0.56px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+#gen-myself-modal2 ol {
+    padding: 0;
+}
+#gen-myself-modal2 li {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000000;
+    line-height: 24px;
+}
+#gen-myself-modal2 .info-list {
+    padding-left: 0;
+}
+.text-green {
+    color: #81B44C !important;
+}
+#gen-myself-modal3 .sub-heading {
+    font-size: 20px;
+    color: #4a4a4a;
+    text-align: center;
+    margin: 0 0 30px;
+}
+#gen-myself-modal3 .form-heading {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+    margin: 0 0 30px;
+}
+#gen-myself-modal3 .f-name {
+    width: 40%;
+    float: left;
+    padding: 0 5px;
+}
+#gen-myself-modal3 .l-name, #gen-myself-modal3 .cty, #gen-myself-modal3 .state {
+    width: 20%;
+    float: left;
+    padding: 0 5px;
+}
+#gen-myself-modal3 .form-control, #gen-myself-modal3 .custom-select {
+    width: 100%;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+}
+/*--- END SEARCH MYSELF ---*/
+
+/* ========== END NEWLY ADDED CSS ========== */
 
 /* == OTHER MODAL THINS ========================= */
-
 
 .btn-wrap {
   padding: 10px 20px 10px 20px;
@@ -3392,9 +3541,10 @@ h6.create-login {
   }
   .mod-footer {
     border-radius: 0;
+      padding: 15px;
   }
   .searching-progress-bar-group {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
 
   .checking-sources-progress {
@@ -3471,7 +3621,7 @@ h6.create-login {
         margin: 0 0 25px;
     }
     .speech-bub-dating-text p {
-        margin: 20px 0 0;
+        margin: 20px 0 40px;
         font-size: 18px;
         line-height: 24px;
     }
@@ -3549,7 +3699,6 @@ h6.create-login {
   #social-media-groups li img,
   #social-media-groups i.loading {
     top: 0;
-
     margin-left: -16px;
   }
   #scanningSocialMedia .progress {
@@ -3587,10 +3736,7 @@ h6.create-login {
   section.active#gen-report-modal2 {
     padding: 0 0 20px 0;
   }
-
-
   /* 5 - Alert 1 */
-
   #gen-report-modal3 .modal-body-headline {
     text-align: center;
   }
@@ -3598,10 +3744,8 @@ h6.create-login {
   #gen-report-modal3 div.form-group {
     font-size: 16px;
     font-weight: 400;
-
     margin: 0 0 0 auto;
     padding-left: 25px;
-
     text-align: left;
   }
 
@@ -3615,7 +3759,6 @@ h6.create-login {
   #gen-report-modal11 .modal-header p {
     font-size: 16px;
     line-height: 20px;
-
     color: #333;
   }
   #gen-report-modal11 .modal-body {
@@ -3639,7 +3782,6 @@ h6.create-login {
 
   #confirmData .modal-body .icon-img {
     margin-bottom: 10px;
-
     text-align: center;
   }
 
@@ -3669,7 +3811,6 @@ h6.create-login {
   #gen-report-modal4 .captHeadContent p {
     font-size: 20px;
     line-height: 24px;
-
     margin: 0;
   }
 
@@ -3733,16 +3874,103 @@ h6.create-login {
   }
     #scanningEmail .sub-heading, #anythingElseModal .sub-heading {
         font-size: 18px;
-        margin: 25px 0 30px;
+        margin: 0 0 20px;
+        padding: 0;
     }
     #anythingElseModal .checkbox-bg {
-        padding: 20px;
+        padding: 20px 20px 0;
     }
     #gen-myself-modal3 .f-name {
         width: 100%;
     }
     #gen-myself-modal3 .l-name, #gen-myself-modal3 .cty, #gen-myself-modal3 .state {
         width: 100%;
+    }
+    #contactInfoSearch .icon-div {
+        padding: 0 15px;
+    }
+    #contactInfoSearch .icon-text, #contactInfoSocialProfile .icon-text {
+        font-size: 16px;
+        margin: 15px 0 30px;
+    }
+    #contactInfoSearch .sub-heading, #contactInfoSocialProfile .sub-heading {
+        font-size: 18px;
+        margin: 2px 0 15px;
+        padding: 0;
+    }
+    #professionalProfileSearch .sub-heading {
+        font-size: 18px;
+        padding: 0;
+    }
+    #gen-myself-modal1 .icon-div {
+        padding: 0 15px;
+    }
+    #gen-myself-modal1 .part1-speech-bub {
+        height: auto;
+        margin-bottom: 15px;
+    }
+    .speech-bub-img-wrapper img {
+        margin-top: 10px;
+    }
+    #scanningCriminal #criminalHeader p {
+        margin: 0 0 5px 0;
+    }
+    .heading-logo {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    #scanningContactInfo .sub-heading {
+        font-size: 18px;
+        margin: 2px 0 30px;
+    }
+    #scanningContactInfo .social-widget {
+        padding: 0;
+    }
+    #contactinfo-progress {
+        margin: 30px 0 5px;
+    }
+    #btn-finalize {
+        margin: 20px 0 20px;
+    }
+    #contact-info-groups li img, #contact-info-groups i.loading {
+        margin-left: -30px;
+    }
+    #loadingModal .popup-modal-pad {
+        padding: 30px 20px 40px;
+    }
+    #gen-report-modal6 .form-input-group {
+        padding: 30px 20px;
+    }
+    #signup-modal-form input {
+        background: #F9F9F9;
+        border: 1px solid #F9F9F9;
+        box-shadow: inset 1px 0 2px 0 rgba(0,0,0,0.26);
+        border-radius: 2px;
+    }
+    #monitoringDatingModal .sub-heading {
+        font-size: 18px;
+        padding: 0;
+    }
+    #monitoringDatingModal .mob-para {
+        font-size: 16px !important;
+        padding: 0;
+    }
+    #fcraDatingModal .sub-heading {
+        font-size: 18px;
+        margin: 0 0 20px;
+        padding: 0;
+    }
+    #fcraDatingModal .btn {
+        margin-top: 0;
+    }
+    #fcraDatingModal #fcra-dating-confirm .panel .form-group {
+        padding: 14px 10px;
+    }
+    #fcraDatingModal #fcra-dating-confirm p {
+        margin: 0 0 0 20px;
+    }
+    #contact-info-groups li p {
+        left: 0;
     }
 }
 
@@ -3863,7 +4091,6 @@ h6.create-login {
   .copy-header-offend,
   .copy-header-misc {
     padding: 20px 0 10px 70px;
-
     background-size: 50px;
   }
 

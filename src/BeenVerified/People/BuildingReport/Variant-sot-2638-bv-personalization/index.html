@@ -1251,15 +1251,15 @@
                                   <div class="col-xs-12 icon-div">
                                     <div id="speech-bub-dating-wrapper1" class="speech-bub-dating-wrapper part1-speech-bub">
                                       <img class="speech-bub-ico" aria-hidden="true" src="img/icn_fingerprint_color.svg">
-                                      <p>Arrest and criminal records that may help you protect yourself.</p>
+                                      <p class="speech-bub-text">Arrest and criminal records that may help you protect yourself.</p>
                                     </div>
                                     <div id="speech-bub-dating-wrapper2" class="speech-bub-dating-wrapper part1-speech-bub">
                                       <img class="speech-bub-ico" aria-hidden="true" src="img/icn_globe_color_small.svg">
-                                      <p>Social media accounts that you may not know about.</p>
+                                      <p class="speech-bub-text">Social media accounts that you may not know about.</p>
                                     </div>
                                     <div id="speech-bub-dating-wrapper3" class="speech-bub-dating-wrapper part1-speech-bub">
                                       <img class="speech-bub-ico" aria-hidden="true" src="img/icn_phone_color_small.svg">
-                                      <p>Phone numbers or email addresses they may be hiding.</p>
+                                      <p class="speech-bub-text">Phone numbers or email addresses they may be hiding.</p>
                                     </div>
                                     <div class="speech-bub-dating-wrapper part2-speech-bub">
                                       <div class="speech-bub-img-wrapper">
@@ -1273,14 +1273,14 @@
 
                                     </div>
                                   </div>
-                                  <div id="bubbleHolder-dating" class="col-xs-12 col-sm-9">
+                                  <!--<div id="bubbleHolder-dating" class="col-xs-12 col-sm-9">
                                     <div id="speech-bub-one-dating" class="speech-bub-dating clearfix">
                                     </div>
                                     <div id="speech-bub-two-dating" class="speech-bub-dating clearfix">
                                     </div>
                                     <div id="speech-bub-three-dating" class="speech-bub-dating clearfix">
                                     </div>
-                                  </div>
+                                  </div>-->
 
                                 </div>
 
@@ -1307,25 +1307,25 @@
                     <div class="content">
                       <div class="modal-body" data-fr-bind="currentRecord searchData">
                         <div class="row">
-                          <div class="col-sm-12 modal-padding">
-                            <p>Hidden email addresses or phone numbers are some of the most common tip-offs that someone is
+                          <div class="col-sm-12">
+                            <p class="sub-heading">Hidden email addresses or phone numbers are some of the most common tip-offs that someone is
                               lying to you, or even cheating. We search for both to help give you peace of mind.</p>
                             <div class="social-widget">
                               <div class="row">
                                 <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-center">
-                                  <ul>
+                                  <ul id="contact-info-groups" class="contactInfos list-unstyled">
                                     <li class="contact-info-icon col-xs-6">
                                       <img class="loading-spinner" src="img/icn_loading.gif">
                                       <span class="contact-info-icon-container">
                                         <img src="img/icn_phone_color.svg">
-                                        <p class="hidden-xs">Phone numbers</p>
+                                        <p>Phone numbers</p>
                                       </span>
                                     </li>
                                     <li class="contact-info-icon col-xs-6">
                                       <img class="loading-spinner" src="img/icn_loading.gif">
                                       <span class="contact-info-icon-container">
                                         <img src="img/icn_mail_color.svg">
-                                        <p class="hidden-xs">Email addresses</p>
+                                        <p>Email addresses</p>
                                       </span>
                                     </li>
                                   </ul>
@@ -1343,7 +1343,7 @@
                   </section>
                   <!--/#scanningSocialMedia -->
                   <div class="mod-footer">
-                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Please do not refresh, close, or press the back button on this page or your information may be lost.
+                        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Please do not refresh, close, or press the back button on this page or your information may be lost.
                   </div>
                 </div>
                 <!-- END CONTACT INFO SEARCH - DATING FLOW -->
@@ -1459,13 +1459,12 @@
                         </div>
                         <div class="row">
                           <div class="col-md-12">
-                            <p class="sub-heading text-center">
-                              We are preparing our monitoring service for you.
-                            </p>
                             <p class="sub-heading text-center" data-fr-bind="currentRecord searchData">
-                              BeenVerified can notify you whenever there are changes or updates to <strong>{{fullName}}</strong> profile.
-                              People are constantly moving, updating social media profiles, and even committing crimes. Our service can
-                              alert you when those changes occur, so you don’t miss anything important.
+                                We are preparing our monitoring service for you.
+                                <br><br>
+                                <span class="mob-para">BeenVerified can notify you whenever there are changes or updates to <strong>{{fullName}}</strong> profile.
+                                People are constantly moving, updating social media profiles, and even committing crimes. Our service can
+                                alert you when those changes occur, so you don’t miss anything important.</span>
                             </p>
                           </div>
                         </div>
@@ -1505,13 +1504,12 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                  <form id="fcra-dating-confirm">
+                                <form id="fcra-dating-confirm">
                                     <div class="row">
                                       <div class="col-sm-10 col-sm-offset-1">
-
-
-                                          <div class="checkbox">
-                                            <div class="form-group">
+                                        <div class="panel">
+                                          <div class="form-group">
+                                            <p for="fcraCheckbox2">
                                               <label class="fcraCheckbox-wrapper" for="fcraCheckboxDating">
                                                 <input id="fcraCheckboxDating" name="fcraCheckboxDating" class="styled" type="checkbox" required>
                                                 <label for="fcraCheckboxDating" class="fcraCheckbox-box">
@@ -1521,21 +1519,22 @@
                                                     Fair Credit Reporting Act (FCRA)
                                                   </a>
                                                   . If you have any questions, view our
-                                                  <a href="https://www.beenverified.com/about/dos-donts/" target="_blank">Do's & Don'ts</a>
+                                                  <a href="https://www.beenverified.com/about/dos-donts/" target="_blank">Do's &amp; Don'ts</a>
                                                   page.
                                                 </label>
                                               </label>
-                                            </div>
+                                            </p>
                                           </div>
-
                                         </div>
+                                      </div>
                                     </div>
                                     <div class="col-sm-4 col-sm-offset-4 col-xs-12">
                                       <button class="btn btn-success main-btn btn-block">
                                         <span>Get My Report Now</span>
                                       </button>
                                     </div>
-                                  </form>
+                                </form>
+
                             </div>
                         </div>
 
