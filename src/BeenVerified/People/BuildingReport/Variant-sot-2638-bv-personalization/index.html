@@ -1481,7 +1481,7 @@
                   </div>
                 </div>
 
-                <!-- Monitoring -->
+                <!-- Dating FCRA -->
                 <div class="wizard-step">
                   <!-- ===================================== -->
                   <!-- =========== FCRA CHECKBOX =========== -->
@@ -1534,17 +1534,127 @@
                                       </button>
                                     </div>
                                 </form>
-
                             </div>
                         </div>
-
                     </div>
                   </section>
                 </div>
                 <!-- Dating FCRA -->
-
-                <!-- Dating FCRA -->
                 <!--=== END DATING SAFETY FLOW =====-->
+
+                <!--=== START CONTACT INFO FLOW =====-->
+                <div class="wizard-step">
+                  <!-- ===================================== -->
+                  <!-- ====== Finding Old Flames  ======== -->
+                  <!-- ===================================== -->
+                  <section id="oldFlamesContactModal" class="loggingin" tabindex="-1" aria-hidden="true">
+                    <div class="content">
+                      <div class="row">
+                        <div class="col-md-12 old-flames-top-header">
+                          <p class="modal-body-header sub-heading">
+                            It's hard staying in touch. Whether you're looking to reach out to an old flame, plan a class reunion, or search for lost relatives, we can help you reconnect with friends and family. We’ll search for the following:
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="searching-progress-bar-group col-xs-12">
+                          <div class="row">
+                            <div class="col-xs-12 icon-div text-left">
+                              <div class="icons-container">
+                                <div class="speech-bub-dating-wrapper old-flame-speech-bub-sec1 old-flame-part1-speech-bub part1-speech-bub">
+                                  <img class="speech-bub-ico" aria-hidden="true" src="img/icn_phone_color_small.svg">
+                                  <p class="speech-bub-text">Phone numbers, emails, and home addresses.</p>
+                                </div>
+                                <div class="speech-bub-dating-wrapper old-flame-speech-bub-sec1 old-flame-part1-speech-bub part1-speech-bub">
+                                  <img class="speech-bub-ico" aria-hidden="true" src="img/icn_globe_color_small.svg">
+                                  <p class="speech-bub-text">Social media accounts that they may use.</p>
+                                </div>
+                                <div class="speech-bub-dating-wrapper old-flame-speech-bub-sec1 old-flame-part1-speech-bub part1-speech-bub">
+                                  <img class="speech-bub-ico" aria-hidden="true" src="img/icn_briefcase_color.svg">
+                                  <p class="speech-bub-text">Professional profiles that can reveal where they work or go to school.</p>
+                                </div>
+                              </div>
+
+                              <div class="speech-bub-dating-wrapper old-flame-speech-bub-sec1 old-flame-part2-speech-bub part2-speech-bub">
+                                <div class="speech-bub-img-wrapper">
+                                    <img src="img/icn_lightbulb_color.svg">
+                                </div>
+                                <div class="speech-bub-dating-text">
+                                  <p>
+                                    <b>TIP:</b> People searching for you online may use your name as a starting point, but there are other ways they can discover details about your identity. Your home address, phone number, and email address are all bits of information that can generate thorough and sometimes surprising reports.
+                                    <br><br>
+                                    The ability to search for and monitor your profile through these different reports is included.
+                                  </p>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                          <div id="searching-progress-bar-old-flame-contact" class="progress checking-sources-progress">
+                            <div class="progress-bar progress-bar-success" style="width: 1%"></div>
+                            <p class="text-center"></p>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <div class="mod-footer">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Please do not refresh, close, or press the back button on this page or your information may be lost.
+                  </div>
+                </div>
+
+                <div class="wizard-step">
+                  <!-- ===================================== -->
+                  <!-- ====  Contact Information Search  === -->
+                  <!-- ===================================== -->
+                  <section id="contactInfoSearchModal" class="loggingin" tabindex="-1" aria-hidden="true">
+                      <div class="content">
+                            <div class="modal-body" data-fr-bind="currentRecord searchData">
+                                <div class="row">
+                                  <div class="col-sm-12">
+                                    <p class="sub-heading">We will start by searching for phone numbers, email addresses, and home addresses. This is the most common way of finding someone outside of social media.</p>
+                                    <div class="social-widget">
+                                      <div class="row">
+                                        <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-center">
+                                          <ul id="contact-info-srch-groups" class="contactInfos list-unstyled">
+                                            <li class="contact-info-icon col-xs-6">
+                                              <img class="loading-spinner" src="img/icn_loading.gif">
+                                              <span class="contact-info-icon-container">
+                                                <img src="img/icn_phone_color.svg">
+                                                <p>Phone numbers</p>
+                                              </span>
+                                            </li>
+                                            <li class="contact-info-icon col-xs-6">
+                                              <img class="loading-spinner" src="img/icn_loading.gif">
+                                              <span class="contact-info-icon-container">
+                                                <img src="img/icn_mail_color.svg">
+                                                <p>Email addresses</p>
+                                              </span>
+                                            </li>
+                                            <li class="contact-info-icon col-xs-6">
+                                              <img class="loading-spinner" src="img/icn_loading.gif">
+                                              <span class="contact-info-icon-container">
+                                                <img src="img/icn_location_color.svg">
+                                                <p>Home address</p>
+                                              </span>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                        </div>
+                      <!-- /.modal-body -->
+                        </div>
+                  </section>
+                  <div class="mod-footer">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Please do not refresh, close, or press the back button on this page or your information may be lost.
+                  </div>
+                </div>
+                <!--=== END CONTACT INFO FLOW =====-->
+
               </div>
             </div>
           </div>

@@ -2843,7 +2843,7 @@ h6.create-login {
 
 /* ========== START NEWLY ADDED CSS ========== */
 
-#scanningEmail, #anythingElseModal, #monitoringDatingModal, #fcraDatingModal, #contactInfoSearch, #professionalProfileSearch, #contactInfoSocialProfile, #gen-contact-modal1, #gen-criminal-modal1, #familySaftyModal1, #tacklingChallenges, #scanningContactInfo {
+#scanningEmail, #anythingElseModal, #monitoringDatingModal, #fcraDatingModal, #contactInfoSearchModal, #professionalProfileSearch, #contactInfoSocialProfile, #oldFlamesContactModal, #gen-criminal-modal1, #familySaftyModal1, #tacklingChallenges, #scanningContactInfo {
     padding: 15px;
 }
 #scanningEmail .sub-heading {
@@ -2883,7 +2883,6 @@ ul.contactInfos img.loading.spinner {
     margin-left: -12px !important;
 }
 
-
 #contact-info-groups li span {
     width: 50%;
 }
@@ -2899,6 +2898,39 @@ ul.contactInfos img.loading.spinner {
 }
 
 #contact-info-groups li p {
+    font-size: 18px;
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    top: 100px;
+}
+
+/*----------*/
+
+#contact-info-srch-groups li span {
+    width: 50%;
+}
+
+#contactInfoSearchModal ul.contactInfos li {
+    position: relative;
+    float: left;
+    width: 33.33%;
+    height: 100px;
+    margin-bottom: 40px;
+}
+
+#contact-info-srch-groups li img,
+#contact-info-srch-groups i.loading {
+    font-size: 26px;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    max-width: 100%;
+    margin-left: -15px;
+}
+
+#contact-info-srch-groups li p {
     font-size: 18px;
     position: absolute;
     width: 100%;
@@ -3036,46 +3068,40 @@ ul.contactInfos img.loading.spinner {
     height: 56px;
     margin: 15px 0 20px;
 }
-#gen-contact-modal1 .sub-heading, #gen-criminal-modal1 .sub-heading, #familySaftyModal1 .sub-heading, #tacklingChallenges .sub-heading {
+#oldFlamesContactModal .sub-heading, #gen-criminal-modal1 .sub-heading, #familySaftyModal1 .sub-heading, #tacklingChallenges .sub-heading {
     font-size: 20px;
     color: #4a4a4a;
     text-align: center;
     margin: 20px 0 40px;
     padding: 0 35px;
 }
-#gen-contact-modal1 .icon-div, #gen-criminal-modal1 .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
+#oldFlamesContactModal .icon-div, #gen-criminal-modal1 .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
     padding: 0 55px;
 }
-#gen-dating-modal1, #gen-contact-modal1 .speech-bub-text, #gen-criminal-modal1 .speech-bub-text, #familySaftyModal1 .speech-bub-text, #tacklingChallenges .speech-bub-text {
+#gen-dating-modal1, #oldFlamesContactModal .speech-bub-text, #gen-criminal-modal1 .speech-bub-text, #familySaftyModal1 .speech-bub-text, #tacklingChallenges .speech-bub-text {
     display: inline;
     margin: 0;
 }
-#gen-contact-modal1 .part1-speech-bub, #gen-criminal-modal1 .part1-speech-bub, #familySaftyModal1 .part1-speech-bub, #tacklingChallenges .part1-speech-bub {
+#oldFlamesContactModal .part1-speech-bub, #gen-criminal-modal1 .part1-speech-bub, #familySaftyModal1 .part1-speech-bub, #tacklingChallenges .part1-speech-bub {
     margin-bottom: 20px;
     display: inline-block;
 }
-#gen-contact-modal1 .speech-bub-ico, #gen-criminal-modal1 .speech-bub-ico, #familySaftyModal1 .speech-bub-ico, #tacklingChallenges .speech-bub-ico {
+#oldFlamesContactModal .speech-bub-ico, #gen-criminal-modal1 .speech-bub-ico, #familySaftyModal1 .speech-bub-ico, #tacklingChallenges .speech-bub-ico {
     width: 40px;
     height: 40px;
     float: left;
     display: inline;
     margin: 0 15px 15px 0;
 }
-#contactInfoSearch .sub-heading {
+#oldFlamesContactModal .icons-container {
+    height: 180px;
+}
+#contactInfoSearchModal .sub-heading {
     font-size: 20px;
     color: #4a4a4a;
     text-align: center;
     margin: 20px 0 40px;
     padding: 0 35px;
-}
-#contactInfoSearch .icon-div {
-    padding: 0 120px;
-}
-#contactInfoSearch .icon-text {
-    font-size: 20px;
-    color: #4A4A4A;
-    text-align: center;
-    margin: 20px 0 0;
 }
 #professionalProfileSearch .sub-heading {
     font-size: 20px;
@@ -3585,7 +3611,7 @@ ul.contactInfos img.loading.spinner {
 
     border: 3px solid none;
     border-radius: 5px;
-    background-color: rgba(38, 12, 12, 0.3);
+    background-color: rgba(83, 65, 165, 1);
   }
 
 
@@ -3886,14 +3912,7 @@ ul.contactInfos img.loading.spinner {
     #gen-myself-modal3 .l-name, #gen-myself-modal3 .cty, #gen-myself-modal3 .state {
         width: 100%;
     }
-    #contactInfoSearch .icon-div {
-        padding: 0 15px;
-    }
-    #contactInfoSearch .icon-text, #contactInfoSocialProfile .icon-text {
-        font-size: 16px;
-        margin: 15px 0 30px;
-    }
-    #contactInfoSearch .sub-heading, #contactInfoSocialProfile .sub-heading {
+    #contactInfoSearchModal .sub-heading, #contactInfoSocialProfile .sub-heading {
         font-size: 18px;
         margin: 2px 0 15px;
         padding: 0;
@@ -3935,6 +3954,9 @@ ul.contactInfos img.loading.spinner {
     #contact-info-groups li img, #contact-info-groups i.loading {
         margin-left: -30px;
     }
+    #contact-info-srch-groups li img, #contact-info-srch-groups i.loading {
+        margin-left: -30px;
+    }
     #loadingModal .popup-modal-pad {
         padding: 30px 20px 40px;
     }
@@ -3969,8 +3991,15 @@ ul.contactInfos img.loading.spinner {
     #fcraDatingModal #fcra-dating-confirm p {
         margin: 0 0 0 20px;
     }
-    #contact-info-groups li p {
+    #contact-info-groups li p, #contact-info-srch-groups li p {
         left: 0;
+    }
+    #gen-dating-modal1, #oldFlamesContactModal .speech-bub-text, #gen-criminal-modal1 .speech-bub-text, #familySaftyModal1 .speech-bub-text, #tacklingChallenges .speech-bub-text {
+        display: block;
+        margin: 0;
+    }
+    #contactInfoSearchModal ul.contactInfos li {
+        width: 50%;
     }
 }
 
@@ -4120,4 +4149,30 @@ ul.contactInfos img.loading.spinner {
   .testimonials {
     margin-top: 10px;
   }
+}
+
+@media (min-width:500px) and (max-width:767px) {
+    .wizard-steps-panel .step-number .number:after {
+        position: absolute;
+        top: 15px;
+        right: 0;
+        left: calc( 54.5% + 1.1em/2 );
+        content: ' ';
+        border: 1px solid #5e5b86;
+        border-radius: 0;
+        background: none !important;
+    }
+}
+
+@media (min-width:320px) and (max-width:767px) {
+    .wizard-steps-panel .step-number .number:before {
+        position: absolute;
+        top: 15px;
+        right: calc( 53.5% + 1.5em/2 );
+        left: 0;
+        content: ' ';
+        border: 1px solid #5e5b86;
+        border-radius: 0;
+        background: none !important;
+    }
 }

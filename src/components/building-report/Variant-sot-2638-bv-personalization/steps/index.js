@@ -14,6 +14,8 @@ import anythingElse from './anythingElse';
 import monitoringDating from './monitoringDating';
 import fcraDating from './fcraDating';
 import saveReportDating from './saveReportDating';
+import oldFlamesContact from './oldFlamesContact';
+import contactInfoSearchModal from './contactInfoSearchModal';
 
 export {
   popularUseCases,
@@ -32,4 +34,6 @@ export {
   monitoringDating,
   fcraDating,
   saveReportDating,
+  oldFlamesContact,
+  contactInfoSearchModal,
 };

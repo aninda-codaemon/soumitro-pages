@@ -8,7 +8,7 @@ function onScanningContactInfoStart(stepCompleted) {
   const $icon = $('.contact-info-icon-container');
   const interval = duration / 3;
   let counter = 0;
-  
+
   var barProgress = $progressBar.animate(
     { width: '100%' },
     { duration },
@@ -31,7 +31,7 @@ function createComponent(options = {}) {
   const contactInfoScan = Object.assign({}, Step);
   let newConfig = Object.assign({
     title: 'Contact Information Search',
-    $elem: $('#scanningContactInfo'),
+    $elem: $('#contactInfoSearchModal'),
     duration: 32,
     onStart: onScanningContactInfoStart,
   }, options);
