@@ -3,10 +3,10 @@ import Step from 'components/wizard/step';
 
 function onScanningContactInfoStart(stepCompleted) {
   var { duration } = this;
-  const $progressBar = $('#contactinfo-progress .progress-bar');
-  const $spinner = $('.loading-spinner');
-  const $icon = $('.contact-info-icon-container');
-  const interval = duration / 3;
+  const $progressBar = $('#contactinfo-modal-progress .progress-bar');
+  const $spinner = $('.contact-loading-spinner');
+  const $icon = $('.contact-info-icon-container-modal');
+  const interval = duration / ($spinner.length + 1);
   let counter = 0;
 
   var barProgress = $progressBar.animate(

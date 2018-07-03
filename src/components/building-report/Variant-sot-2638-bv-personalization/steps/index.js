@@ -16,6 +16,8 @@ import fcraDating from './fcraDating';
 import saveReportDating from './saveReportDating';
 import oldFlamesContact from './oldFlamesContact';
 import contactInfoSearchModal from './contactInfoSearchModal';
+import profileSearchContact from './profileSearchContact';
+import anythingElseContact from './anythingElseContact';
 
 export {
   popularUseCases,
@@ -36,4 +38,6 @@ export {
   saveReportDating,
   oldFlamesContact,
   contactInfoSearchModal,
+  profileSearchContact,
+  anythingElseContact,
 };

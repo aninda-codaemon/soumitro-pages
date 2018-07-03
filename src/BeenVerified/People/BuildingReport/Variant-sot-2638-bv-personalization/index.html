@@ -1610,47 +1610,173 @@
                   <!-- ===================================== -->
                   <section id="contactInfoSearchModal" class="loggingin" tabindex="-1" aria-hidden="true">
                       <div class="content">
-                            <div class="modal-body" data-fr-bind="currentRecord searchData">
-                                <div class="row">
-                                  <div class="col-sm-12">
-                                    <p class="sub-heading">We will start by searching for phone numbers, email addresses, and home addresses. This is the most common way of finding someone outside of social media.</p>
-                                    <div class="social-widget">
-                                      <div class="row">
-                                        <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-center">
-                                          <ul id="contact-info-srch-groups" class="contactInfos list-unstyled">
-                                            <li class="contact-info-icon col-xs-6">
-                                              <img class="loading-spinner" src="img/icn_loading.gif">
-                                              <span class="contact-info-icon-container">
-                                                <img src="img/icn_phone_color.svg">
-                                                <p>Phone numbers</p>
-                                              </span>
-                                            </li>
-                                            <li class="contact-info-icon col-xs-6">
-                                              <img class="loading-spinner" src="img/icn_loading.gif">
-                                              <span class="contact-info-icon-container">
-                                                <img src="img/icn_mail_color.svg">
-                                                <p>Email addresses</p>
-                                              </span>
-                                            </li>
-                                            <li class="contact-info-icon col-xs-6">
-                                              <img class="loading-spinner" src="img/icn_loading.gif">
-                                              <span class="contact-info-icon-container">
-                                                <img src="img/icn_location_color.svg">
-                                                <p>Home address</p>
-                                              </span>
-                                            </li>
-                                          </ul>
-                                        </div>
+                          <div class="modal-body" data-fr-bind="currentRecord searchData">
+                              <div class="row">
+                                <div class="col-sm-12">
+                                  <p class="sub-heading">We will start by searching for phone numbers, email addresses, and home addresses. This is the most common way of finding someone outside of social media.</p>
+                                  <div class="social-widget">
+                                    <div class="row">
+                                      <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-center">
+                                        <ul id="contact-info-srch-groups" class="contactInfos list-unstyled">
+                                          <li class="contact-info-icon col-xs-6">
+                                            <img class="loading-spinner contact-loading-spinner" src="img/icn_loading.gif">
+                                            <span class="contact-info-icon-container contact-info-icon-container-modal">
+                                              <img src="img/icn_phone_color.svg">
+                                              <p>Phone numbers</p>
+                                            </span>
+                                          </li>
+                                          <li class="contact-info-icon col-xs-6">
+                                            <img class="loading-spinner contact-loading-spinner" src="img/icn_loading.gif">
+                                            <span class="contact-info-icon-container contact-info-icon-container-modal">
+                                              <img src="img/icn_mail_color.svg">
+                                              <p>Email addresses</p>
+                                            </span>
+                                          </li>
+                                          <li class="contact-info-icon col-xs-6">
+                                            <img class="loading-spinner contact-loading-spinner" src="img/icn_loading.gif">
+                                            <span class="contact-info-icon-container contact-info-icon-container-modal">
+                                              <img src="img/icn_location_color.svg">
+                                              <p>Home address</p>
+                                            </span>
+                                          </li>
+                                        </ul>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
-                        </div>
-                      <!-- /.modal-body -->
+                              </div>
+                          </div>
+                          <!-- /.modal-body -->
+                          <div id="contactinfo-modal-progress" class="publicRecord progress">
+                            <div class="progress-bar progress-bar-success" style="width:1%"></div>
+                          </div>
                         </div>
                   </section>
                   <div class="mod-footer">
                     <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Please do not refresh, close, or press the back button on this page or your information may be lost.
+                  </div>
+                </div>
+
+                <div class="wizard-step">
+                  <!-- ===================================== -->
+                  <!-- ====  Professional Profile Search  === -->
+                  <!-- ===================================== -->
+                  <section id="professionalProfileSearch" class="loggingin" tabindex="-1" aria-hidden="true">
+                    <div class="content">
+                      <div class="row">
+                        <div class="col-md-12 text-center">
+                          <img src="img/icn_briefcase_color.svg" class="heading-logo">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="searching-progress-bar-group col-md-12">
+                          <p class="modal-body-header sub-heading text-center">
+                            Getting a rundown of places a person may have gone to school or worked can provide additional ways to reach out to them, and can also confirm if you’re looking at the right person’s profile.
+                          </p>
+                          <div id="prof-profile-search-progress-bar" class="progress checking-sources-progress">
+                            <div class="progress-bar progress-bar-success" style="width: 1%"></div>
+                            <p class="text-center"></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <div class="mod-footer">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Please do not refresh, close, or press the back button on this page or your information may be lost.
+                  </div>
+                </div>
+
+                <div class="wizard-step">
+                  <!-- ===================================== -->
+                  <!-- ====  Anything Else You Want To Know  === -->
+                  <!-- ===================================== -->
+                  <section id="anythingElseModalContact" class="loggingin" tabindex="-1" aria-hidden="true">
+                    <div class="content">
+                      <div class="modal-body">
+                          <div class="row text-center">
+                              <div class="col-md-12">
+                                  <img src="img/icn_folderplus_color.svg" class="heading-logo">
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <p class="sub-heading">Do you want to search any other information for your report? Our priority is to help you search for exactly what you need.</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <form id="anythingElseContact" data-fr-bind="currentRecord searchData" class="col-sm-10 col-sm-offset-1">
+                              <fieldset class="checkbox-bg">
+                                <!-- Multiple Checkboxes -->
+                                <div class="form-group">
+                                  <div class="col-sm-6 col-md-6">
+                                    <label class="chckbx" for="other-info-checkbox0">
+                                      <input type="checkbox" name="rela-checkboxes" id="other-info-checkbox0" value="1" class="styled">
+                                      <span data-fr-bind="currentRecord">
+                                        <span class="rndname">Relatives</span>
+                                      </span>
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-6 col-md-6">
+                                    <label class="chckbx" for="other-info-checkbox1">
+                                      <input type="checkbox" name="rela-checkboxes" id="other-info-checkbox1" value="1" class="styled">
+                                      <span data-fr-bind="currentRecord">
+                                        <span class="rndname">Arrest &amp; Criminal Records</span>
+                                      </span>
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-6 col-md-6">
+                                    <label class="chckbx" for="other-info-checkbox2">
+                                      <input type="checkbox" name="rela-checkboxes" id="other-info-checkbox2" value="1" class="styled">
+                                      <span data-fr-bind="currentRecord">
+                                        <span class="rndname">Friends &amp; Roommates</span>
+                                      </span>
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-6 col-md-6">
+                                    <label class="chckbx" for="other-info-checkbox3">
+                                      <input type="checkbox" name="rela-checkboxes" id="other-info-checkbox3" value="1" class="styled">
+                                      <span data-fr-bind="currentRecord">
+                                        <span class="rndname">Full Background Report</span>
+                                      </span>
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-6 col-md-6 hidden">
+                                    <label class="chckbx" for="rela-checkboxes-4">
+                                      <input type="checkbox" name="rela-checkboxes" id="rela-checkboxes-4" value="1" class="styled">
+                                      <span data-fr-bind="currentRecord">
+                                        <span class="rndname"></span>
+                                      </span>
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-6 col-md-6 hidden">
+                                    <label class="chckbx" for="rela-checkboxes-5">
+                                      <input type="checkbox" name="rela-checkboxes" id="rela-checkboxes-5" value="1" class="styled">
+                                      <span data-fr-bind="currentRecord">
+                                        <span class="rndname"></span>
+                                      </span>
+                                    </label>
+                                  </div>
+                                </div>
+                                <!-- Ends Form Group -->
+                              </fieldset>
+                            </form>
+                          </div>
+                      </div>
+                      <!-- /.modal-body -->
+                      <div class="modal-footer">
+                        <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 col-md-offset-4 col-md-4">
+                          <button id="btn-finalize-contact" class="main-btn btn btn-md btn-block large-modal-btn success">
+                          Finalize Report
+                          </button>
+                          <p class="skip-link"><a id="skip-anything-else-contact" href="#">No thanks, skip this</a></p>
+                        </div>
+                      </div>
+                      <!-- /.modal-footer -->
+                    </div>
+                  </section>
+                  <!-- /#gen-report-modal3 -->
+                  <div class="mod-footer">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Please do not refresh, close or press the back button on this page or your information may be lost.
                   </div>
                 </div>
                 <!--=== END CONTACT INFO FLOW =====-->

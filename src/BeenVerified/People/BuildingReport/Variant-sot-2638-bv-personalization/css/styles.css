@@ -1625,7 +1625,7 @@ social-links {
     font-size: 20px;
     margin-bottom: 0;
 }
-#contactinfo-progress {
+#contactinfo-progress, #contactinfo-modal-progress {
     height: 30px;
     margin: 25px 25px 15px;
 }
