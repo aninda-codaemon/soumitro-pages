@@ -2843,7 +2843,7 @@ h6.create-login {
 
 /* ========== START NEWLY ADDED CSS ========== */
 
-#scanningEmail, #anythingElseModal, #monitoringDatingModal, #fcraDatingModal, #contactInfoSearchModal, #professionalProfileSearch, #contactInfoSocialProfile, #oldFlamesContactModal, #gen-criminal-modal1, #familySaftyModal1, #tacklingChallenges, #scanningContactInfo {
+#scanningEmail, #anythingElseModal, #anythingElseModalContact, #monitoringDatingModal, #fcraDatingModal, #contactInfoSearchModal, #professionalProfileSearch, #contactInfoSocialProfile, #oldFlamesContactModal, #gen-criminal-modal1, #familySaftyModal1, #tacklingChallenges, #scanningContactInfo {
     padding: 15px;
 }
 #scanningEmail .sub-heading {
@@ -2940,46 +2940,46 @@ ul.contactInfos img.loading.spinner {
 }
 /* ============================== */
 
-#anythingElseModal .sub-heading {
+#anythingElseModal .sub-heading, #anythingElseModalContact .sub-heading {
     font-size: 20px;
     color: #4a4a4a;
     text-align: center;
     margin: 0 0 30px;
     padding: 0 35px;
 }
-#anythingElseModal .modal-footer {
+#anythingElseModal .modal-footer, #anythingElseModalContact .modal-footer {
     border: none;
     padding: 0;
 }
-#btn-finalize {
+#btn-finalize, #btn-finalize-contact {
     height: 54px;
     margin: 30px 0 20px;
     font-size: 18px;
     font-weight: 700;
 }
-#anythingElseModal .checkbox-bg {
+#anythingElseModal .checkbox-bg, #anythingElseModalContact .checkbox-bg {
     background: #FFFFFF;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
     border-radius: 3px;
     padding: 24px 30px;
 }
-#anythingElseModal .skip-link {
+#anythingElseModal .skip-link, #anythingElseModalContact .skip-link {
     margin: 0 0 15px;
     text-align: center;
 }
-#anythingElseModal .skip-link a {
+#anythingElseModal .skip-link a, #anythingElseModalContact .skip-link a {
     font-size: 18px;
     color: #0F2D8F;
     margin-bottom: 15px;
     font-weight: 600;
 }
-#anythingElseModal .chckbx {
+#anythingElseModal .chckbx, #anythingElseModalContact .chckbx {
     font-size: 18px;
     font-weight: 700;
     color: #4a4a4a;
     margin-bottom: 15px;
 }
-#anythingElseModal #anythingElseGroup .chckbx .rndname {
+#anythingElseModal #anythingElseGroup #anythingElseModalContact .chckbx .rndname {
     margin-left: 15px;
 }
 #monitoringDatingModal .sub-heading {
@@ -3898,12 +3898,12 @@ ul.contactInfos img.loading.spinner {
 
     text-align: center;
   }
-    #scanningEmail .sub-heading, #anythingElseModal .sub-heading {
+    #scanningEmail .sub-heading, #anythingElseModal .sub-heading, #anythingElseModalContact .sub-heading {
         font-size: 18px;
         margin: 0 0 20px;
         padding: 0;
     }
-    #anythingElseModal .checkbox-bg {
+    #anythingElseModal .checkbox-bg, #anythingElseModalContact .checkbox-bg {
         padding: 20px 20px 0;
     }
     #gen-myself-modal3 .f-name {

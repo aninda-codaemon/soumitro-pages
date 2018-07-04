@@ -17,9 +17,10 @@ const showNextQuote = (duration) => {
 
   const displayText = setInterval(() => {
     maxSteps++;
-    if (maxSteps >= part1Length) {      
+    if (maxSteps == part1Length) {
       clearInterval(displayText);
       $('.old-flames-top-header').hide();
+      $('div.icons-container').removeClass('icons-container');
       $part1.hide();
       $part2.show();
     }
