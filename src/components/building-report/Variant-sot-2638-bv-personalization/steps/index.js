@@ -19,6 +19,9 @@ import contactInfoSearchModal from './contactInfoSearchModal';
 import profileSearchContact from './profileSearchContact';
 import anythingElseContact from './anythingElseContact';
 import socialMediaScanContact from './socialMediaScanContact';
+import myselfUseCases from './myselfUseCases';
+import bgSearchUseCases from './bgSearchUseCases';
+import anyThingElseYouWantToKnow from './anyThingElseYouWantToKnow';
 
 export {
   popularUseCases,
@@ -42,4 +45,7 @@ export {
   profileSearchContact,
   anythingElseContact,
   socialMediaScanContact,
+  myselfUseCases,
+  bgSearchUseCases,
+  anyThingElseYouWantToKnow,
 };

@@ -3125,36 +3125,35 @@ ul.contactInfos img.loading.spinner {
     margin: 20px 0 0;
 }
 
-/*--- SEARCH MYSELF ---*/
-
-#gen-myself-modal1, #gen-myself-modal2, #gen-myself-modal3 {
+/*--- SEARCH MYSELF START ---*/
+#gen-myself-modal1,#gen-bgsearch-modal1, #gen-bgsearch, #gen-myself-modal3 {
     padding: 15px;
 }
-#gen-myself-modal1 .icon-div {
+#gen-myself-modal1 .icon-div-myself {
     padding: 0 55px;
 }
-#gen-myself-modal1 .speech-bub-text {
+#gen-myself-modal1 .speech-bub-text-myself {
     display: inline;
     margin: 0;
 }
-#gen-myself-modal1 .part1-speech-bub {
+#gen-myself-modal1 .part1-speech-bub-myself {
     margin-bottom: 20px;
     display: inline-block;
 }
-#gen-myself-modal1 .speech-bub-ico {
+#gen-myself-modal1 .speech-bub-ico-myself {
     width: 40px;
     height: 40px;
     float: left;
     display: inline;
     margin: 0 15px 15px 0;
 }
-#gen-myself-modal2 .sub-heading {
+#gen-bgsearch-modal1 .sub-heading-bgsearch {
     font-size: 20px;
     color: #4a4a4a;
     text-align: center;
     margin: 25px 0 40px;
 }
-#gen-myself-modal2 .icon-heading {
+#gen-bgsearch-modal1 .icon-heading-bgsearch {
     font-size: 20px;
     font-weight: 900;
     text-transform: uppercase;
@@ -3164,18 +3163,31 @@ ul.contactInfos img.loading.spinner {
     margin-top: 0;
     margin-bottom: 10px;
 }
-#gen-myself-modal2 ol {
+#gen-bgsearch-modal1 ol {
     padding: 0;
 }
-#gen-myself-modal2 li {
+#gen-bgsearch-modal1 li {
     font-size: 20px;
     font-weight: 500;
     color: #000000;
     line-height: 24px;
 }
-#gen-myself-modal2 .info-list {
+#gen-bgsearch-modal1 .info-list-bgsearch {
     padding-left: 0;
 }
+#gen-bgsearch-modal1 .contact-info-image {
+    width: 96px;
+    height: 96px;
+}
+
+#gen-bgsearch-modal1 .hidden-ciimage {
+  display: none;
+}
+
+#bgsearch-wrapper1 ol li {
+  display: none;
+}
+
 .text-green {
     color: #81B44C !important;
 }
@@ -3209,7 +3221,57 @@ ul.contactInfos img.loading.spinner {
     border: 1px solid #CCCCCC;
     border-radius: 5px;
 }
-/*--- END SEARCH MYSELF ---*/
+
+#gen-myself-modal3 label.error {
+    margin: 5px 0 10px !important;
+}
+.part1-speech-bub-myself {
+    /*height: 40px;*/
+    vertical-align: middle;
+    margin-bottom: 12px;
+    padding-left: 30px;
+}
+.part1-speech-bub-myself p {
+    font-size: 20px;
+    color: #4a4a4a;
+    margin: 0 0 0 15px;
+}
+.speech-bub-wrapper-myself p {
+  display: inline-block;
+}
+.speech-bub-wrapper-myself {
+    text-align: left;
+    vertical-align: middle;
+}
+.speech-bub-myself {
+  position: relative;
+  text-align: left;
+  color: #333;
+}
+#speech-bub-myself-wrapper1, #speech-bub-myself-wrapper2, #speech-bub-myself-wrapper3 {
+  visibility: hidden;
+}
+
+
+.part2-speech-bub-myself {
+  display: none;
+  text-align: center;
+  padding-top: 0;
+  margin-left: 0;
+}
+
+.speech-bub-img-wrapper-myself img {
+  width: 80px;
+}
+
+.speech-bub-text-myself p {
+    font-size: 20px;
+    margin: 25px 0 50px;
+}
+#gen-bgsearch-modal1 .list-fix-height {
+  height: 120px;
+}
+/*--- END SEARCH MYSELF END ---*/
 
 /* ========== END NEWLY ADDED CSS ========== */
 
@@ -4176,4 +4238,8 @@ ul.contactInfos img.loading.spinner {
         border-radius: 0;
         background: none !important;
     }
+
+    #gen-bgsearch-modal1 .list-fix-height {
+     height: 140px;
+   }
 }

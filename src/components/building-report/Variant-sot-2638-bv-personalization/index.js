@@ -25,6 +25,9 @@ import {
   profileSearchContact,
   anythingElseContact,
   socialMediaScanContact,
+  myselfUseCases,
+  bgSearchUseCases,
+  anyThingElseYouWantToKnow,
 } from './steps';
 
 function showSubHeadlines(totalSections) {
@@ -97,6 +100,9 @@ function createWizard(options = {}, flowOption = 'other') {
   let profileSearchContactInstance = profileSearchContact(options.profileSearchContact);
   let anythingElseContactInstance = anythingElseContact(options.anythingElseContact);socialMediaScanContact
   let socialMediaScanContactInstance = socialMediaScanContact(options.socialMediaScanContact);
+  let myselfUseCasesInstance = myselfUseCases(options.myselfUseCases);
+  let bgSearchUseCasesInstance = bgSearchUseCases(options.bgSearchUseCases);
+  let anyThingElseYouWantToKnowInstance = anyThingElseYouWantToKnow(options.anyThingElseYouWantToKnow);
 
   switch (flowOption) {
     case 'dating':
@@ -104,6 +110,12 @@ function createWizard(options = {}, flowOption = 'other') {
       sectionContainer2 = [criminalScanInstance];
       sectionContainer3 = [socialMediaScanInstance];
       sectionContainer4 = [contactInfoSearchInstance, anythingElseInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
+      break;
+    case 'myself':
+      sectionContainer1 = [bgSearchUseCasesInstance];
+      sectionContainer2 = [socialMediaScanInstance];
+      sectionContainer3 = [criminalScanInstance];
+      sectionContainer4 = [myselfUseCasesInstance,anyThingElseYouWantToKnowInstance,saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     case 'contact':
       sectionContainer1 = [oldFlamesContactInstance];
