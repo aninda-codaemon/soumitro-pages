@@ -2972,6 +2972,7 @@ ul.contactInfos img.loading.spinner {
     color: #0F2D8F;
     margin-bottom: 15px;
     font-weight: 600;
+    text-decoration: none;
 }
 #anythingElseModal .chckbx, #anythingElseModalContact .chckbx {
     font-size: 18px;

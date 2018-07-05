@@ -23,7 +23,8 @@ import {
   oldFlamesContact,
   contactInfoSearchModal,
   profileSearchContact,
-  anythingElseContact
+  anythingElseContact,
+  socialMediaScanContact,
 } from './steps';
 
 function showSubHeadlines(totalSections) {
@@ -94,7 +95,8 @@ function createWizard(options = {}, flowOption = 'other') {
   let oldFlamesContactInstance = oldFlamesContact(options.oldFlamesContact);
   let contactInfoSearchModalInstance = contactInfoSearchModal(options.contactInfoSearchModal);
   let profileSearchContactInstance = profileSearchContact(options.profileSearchContact);
-  let anythingElseContactInstance = anythingElseContact(options.anythingElseContact);
+  let anythingElseContactInstance = anythingElseContact(options.anythingElseContact);socialMediaScanContact
+  let socialMediaScanContactInstance = socialMediaScanContact(options.socialMediaScanContact);
 
   switch (flowOption) {
     case 'dating':
@@ -106,7 +108,7 @@ function createWizard(options = {}, flowOption = 'other') {
     case 'contact':
       sectionContainer1 = [oldFlamesContactInstance];
       sectionContainer2 = [contactInfoSearchModalInstance];
-      sectionContainer3 = [socialMediaScanInstance];
+      sectionContainer3 = [socialMediaScanContactInstance];
       sectionContainer4 = [profileSearchContactInstance, anythingElseContactInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     default:

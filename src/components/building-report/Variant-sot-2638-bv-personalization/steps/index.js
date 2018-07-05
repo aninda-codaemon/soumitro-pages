@@ -18,6 +18,7 @@ import oldFlamesContact from './oldFlamesContact';
 import contactInfoSearchModal from './contactInfoSearchModal';
 import profileSearchContact from './profileSearchContact';
 import anythingElseContact from './anythingElseContact';
+import socialMediaScanContact from './socialMediaScanContact';
 
 export {
   popularUseCases,
@@ -40,4 +41,5 @@ export {
   contactInfoSearchModal,
   profileSearchContact,
   anythingElseContact,
+  socialMediaScanContact,
 };
