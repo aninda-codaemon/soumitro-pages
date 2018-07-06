@@ -22,6 +22,7 @@ import socialMediaScanContact from './socialMediaScanContact';
 import myselfUseCases from './myselfUseCases';
 import bgSearchUseCases from './bgSearchUseCases';
 import anyThingElseYouWantToKnow from './anyThingElseYouWantToKnow';
+import hiddenPastCriminal from './hiddenPastCriminal';
 
 export {
   popularUseCases,
@@ -48,4 +49,5 @@ export {
   myselfUseCases,
   bgSearchUseCases,
   anyThingElseYouWantToKnow,
+  hiddenPastCriminal,
 };

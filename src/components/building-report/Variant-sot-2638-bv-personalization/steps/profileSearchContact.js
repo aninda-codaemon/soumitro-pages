@@ -18,7 +18,7 @@ function createComponent(options = {}) {
     onStart: onProfileSearchStart,
     duration: 30,
   }, options);
-
+  
   profileSearch.init(newConfig);
   return profileSearch;
 }

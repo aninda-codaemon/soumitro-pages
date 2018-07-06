@@ -2843,7 +2843,7 @@ h6.create-login {
 
 /* ========== START NEWLY ADDED CSS ========== */
 
-#scanningEmail, #anythingElseModal, #anythingElseModalContact, #monitoringDatingModal, #fcraDatingModal, #contactInfoSearchModal, #professionalProfileSearch, #contactInfoSocialProfile, #oldFlamesContactModal, #gen-criminal-modal1, #familySaftyModal1, #tacklingChallenges, #scanningContactInfo {
+#scanningEmail, #anythingElseModal, #anythingElseModalContact, #monitoringDatingModal, #fcraDatingModal, #contactInfoSearchModal, #professionalProfileSearch, #contactInfoSocialProfile, #oldFlamesContactModal, #hidden-criminal-past-modal, #familySaftyModal1, #tacklingChallenges, #scanningContactInfo {
     padding: 15px;
 }
 #scanningEmail .sub-heading {
@@ -3069,32 +3069,32 @@ ul.contactInfos img.loading.spinner {
     height: 56px;
     margin: 15px 0 20px;
 }
-#oldFlamesContactModal .sub-heading, #gen-criminal-modal1 .sub-heading, #familySaftyModal1 .sub-heading, #tacklingChallenges .sub-heading {
+#oldFlamesContactModal .sub-heading, #hidden-criminal-past-modal .sub-heading, #familySaftyModal1 .sub-heading, #tacklingChallenges .sub-heading {
     font-size: 20px;
     color: #4a4a4a;
     text-align: center;
     margin: 20px 0 40px;
     padding: 0 35px;
 }
-#oldFlamesContactModal .icon-div, #gen-criminal-modal1 .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
+#oldFlamesContactModal .icon-div, #hidden-criminal-past-modal .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
     padding: 0 55px;
 }
-#gen-dating-modal1, #oldFlamesContactModal .speech-bub-text, #gen-criminal-modal1 .speech-bub-text, #familySaftyModal1 .speech-bub-text, #tacklingChallenges .speech-bub-text {
+#gen-dating-modal1, #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text, #familySaftyModal1 .speech-bub-text, #tacklingChallenges .speech-bub-text {
     display: inline;
     margin: 0;
 }
-#oldFlamesContactModal .part1-speech-bub, #gen-criminal-modal1 .part1-speech-bub, #familySaftyModal1 .part1-speech-bub, #tacklingChallenges .part1-speech-bub {
+#oldFlamesContactModal .part1-speech-bub, #hidden-criminal-past-modal .part1-speech-bub, #familySaftyModal1 .part1-speech-bub, #tacklingChallenges .part1-speech-bub {
     margin-bottom: 20px;
     display: inline-block;
 }
-#oldFlamesContactModal .speech-bub-ico, #gen-criminal-modal1 .speech-bub-ico, #familySaftyModal1 .speech-bub-ico, #tacklingChallenges .speech-bub-ico {
+#oldFlamesContactModal .speech-bub-ico, #hidden-criminal-past-modal .speech-bub-ico, #familySaftyModal1 .speech-bub-ico, #tacklingChallenges .speech-bub-ico {
     width: 40px;
     height: 40px;
     float: left;
     display: inline;
     margin: 0 15px 15px 0;
 }
-#oldFlamesContactModal .icons-container {
+#oldFlamesContactModal .icons-container, #hidden-criminal-past-modal .icons-container {
     height: 180px;
 }
 #contactInfoSearchModal .sub-heading {
@@ -4057,7 +4057,7 @@ ul.contactInfos img.loading.spinner {
     #contact-info-groups li p, #contact-info-srch-groups li p {
         left: 0;
     }
-    #gen-dating-modal1, #oldFlamesContactModal .speech-bub-text, #gen-criminal-modal1 .speech-bub-text, #familySaftyModal1 .speech-bub-text, #tacklingChallenges .speech-bub-text {
+    #gen-dating-modal1, #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text, #familySaftyModal1 .speech-bub-text, #tacklingChallenges .speech-bub-text {
         display: block;
         margin: 0;
     }
