@@ -29,6 +29,9 @@ import {
   bgSearchUseCases,
   anyThingElseYouWantToKnow,
   hiddenPastCriminal,
+  criminalScanRecords,
+  contactInfoSearchCriminal,
+  anythingElseCriminal,
 } from './steps';
 
 function showSubHeadlines(totalSections) {
@@ -105,7 +108,10 @@ function createWizard(options = {}, flowOption = 'other') {
   let bgSearchUseCasesInstance = bgSearchUseCases(options.bgSearchUseCases);
   let anyThingElseYouWantToKnowInstance = anyThingElseYouWantToKnow(options.anyThingElseYouWantToKnow);
   let hiddenPastCriminalInstance = hiddenPastCriminal(options.hiddenPastCriminal);
-  
+  let criminalScanRecordsInstance = criminalScanRecords(options.criminalScanRecords);
+  let contactInfoSearchCriminalInstance = contactInfoSearchCriminal(options.contactInfoSearchCriminal);
+  let anythingElseCriminalInstance = anythingElseCriminal(options.anythingElseCriminal);
+
   switch (flowOption) {
     case 'dating':
       sectionContainer1 = [datingUseCasesInstance];
@@ -121,9 +127,9 @@ function createWizard(options = {}, flowOption = 'other') {
       break;
     case 'records':
       sectionContainer1 = [hiddenPastCriminalInstance];
-      sectionContainer2 = [criminalScanInstance];
-      sectionContainer3 = [contactInfoSearchModalInstance];
-      sectionContainer4 = [myselfUseCasesInstance, anyThingElseYouWantToKnowInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
+      sectionContainer2 = [criminalScanRecordsInstance];
+      sectionContainer3 = [contactInfoSearchCriminalInstance];
+      sectionContainer4 = [bgSearchUseCasesInstance, anythingElseCriminalInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     case 'contact':
       sectionContainer1 = [oldFlamesContactInstance];

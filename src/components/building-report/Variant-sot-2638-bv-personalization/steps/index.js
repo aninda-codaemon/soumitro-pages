@@ -23,6 +23,9 @@ import myselfUseCases from './myselfUseCases';
 import bgSearchUseCases from './bgSearchUseCases';
 import anyThingElseYouWantToKnow from './anyThingElseYouWantToKnow';
 import hiddenPastCriminal from './hiddenPastCriminal';
+import criminalScanRecords from './criminalScanRecords';
+import contactInfoSearchCriminal from './contactInfoSearchCriminal';
+import anythingElseCriminal from './anythingElseCriminal';
 
 export {
   popularUseCases,
@@ -50,4 +53,7 @@ export {
   bgSearchUseCases,
   anyThingElseYouWantToKnow,
   hiddenPastCriminal,
+  criminalScanRecords,
+  contactInfoSearchCriminal,
+  anythingElseCriminal,
 };
