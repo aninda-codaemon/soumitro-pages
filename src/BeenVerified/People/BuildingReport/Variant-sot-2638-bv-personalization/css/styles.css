@@ -1452,6 +1452,7 @@ social-links {
 
 #gen-report-modal1,
 #scanningCriminal,
+#scanningCriminalRecords,
 #scanningCriminal-dating,
 #scanningSocialMedia,
 #confirmData,
@@ -1459,7 +1460,7 @@ social-links {
   padding: 0 15px 15px 15px;
 }
 
-#confirmData, #scanningCriminal, #scanningCriminal-dating, #search-people {
+#confirmData, #scanningCriminal, #scanningCriminalRecords, #scanningCriminal-dating, #search-people {
   margin-top: 10px;
 }
 
@@ -1535,7 +1536,7 @@ social-links {
     margin: 0 20px 20px 20px;
   }
 
-  #scanningCriminal-dating .checking-sources-progress {
+  #scanningCriminal-dating .checking-sources-progress, #scanningCriminalRecords .checking-sources-progress {
     margin-bottom: 20px;
   }
   #criminalContent-dating {
@@ -3439,7 +3440,6 @@ ul.contactInfos img.loading.spinner {
     padding-top: 4px;
   }
 
-
   #signup-modal-form input {
     height: 44px;
     margin: 10px auto;
@@ -3451,8 +3451,6 @@ ul.contactInfos img.loading.spinner {
   .modal-body-copy {
     height: auto;
   }
-
-
   #signup-modal-form .main-btn {
     font-size: 21px;
   }
@@ -3468,7 +3466,6 @@ ul.contactInfos img.loading.spinner {
   #gen-report-modal5 .modal-footer p {
     margin-top: 20px;
   }
-
   .modal-dialog {
     width: 100%;
   }
@@ -3485,7 +3482,6 @@ ul.contactInfos img.loading.spinner {
     min-height: 630px !important;
       padding-top: 20px;
   }
-
 
   h1,
   h2,
@@ -3510,7 +3506,6 @@ ul.contactInfos img.loading.spinner {
   .headlineContainer {
     padding: 0 20px;
   }
-
 
   .testimonials p {
     font-size: 18px;
@@ -3543,7 +3538,6 @@ ul.contactInfos img.loading.spinner {
     margin-bottom: 30px;
     padding-top: 30px;
     padding-bottom: 20px;
-
     border: none;
     border-bottom: 1px solid #ccc;
     border-radius: 0;
@@ -3562,6 +3556,9 @@ ul.contactInfos img.loading.spinner {
     margin-top: 10px;
   }
 
+  .margin-zero {
+    margin: 0 !important;
+  }
   /* MODALS */
 
   .modal {
@@ -3729,7 +3726,7 @@ ul.contactInfos img.loading.spinner {
     margin: 0 20px 20px 20px;
   }
 
-  #scanningCriminal .checking-sources-progress {
+  #scanningCriminal .checking-sources-progress, #scanningCriminalRecords .checking-sources-progress {
     margin-bottom: 20px;
   }
   #criminalContent {
@@ -3994,7 +3991,7 @@ ul.contactInfos img.loading.spinner {
     .speech-bub-img-wrapper img {
         margin-top: 10px;
     }
-    #scanningCriminal #criminalHeader p {
+    #scanningCriminal #criminalHeader p, #scanningCriminalRecords #criminalHeader p {
         margin: 0 0 5px 0;
     }
     .heading-logo {
@@ -4063,6 +4060,13 @@ ul.contactInfos img.loading.spinner {
     }
     #contactInfoSearchModal ul.contactInfos li, #contactInfoSearchCriminalModal ul.contactInfos li {
         width: 50%;
+    }
+
+    #hidden-criminal-past-modal .icons-container {
+      height: auto;
+    }
+    #hidden-criminal-past-modal .part1-speech-bub {
+      margin-bottom: 20px; 
     }
 }
 

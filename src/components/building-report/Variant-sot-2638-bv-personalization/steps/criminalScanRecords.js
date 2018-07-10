@@ -1,7 +1,7 @@
 import Step from 'components/wizard/Variant-sot-2638-bv-personalization/step';
 
 function onScanningCriminalDataStart(stepCompleted) {
-  var $progessBar = $('#searching-progress-bar-criminal .progress-bar');
+  var $progessBar = $('#searching-progress-bar-criminal-records .progress-bar');
   var { duration, footerToDisplay, $elem } = this;
   var $modFooter = $($elem).nextAll('.mod-footer');
   var initialProgress = $($progessBar).animate({ width: '100%' }, {
@@ -11,8 +11,8 @@ function onScanningCriminalDataStart(stepCompleted) {
       $('#socialmedia-progress-percent').html(progression);
     },
   });
-  var $crimSteps = $('#scanningCriminal li');
-  var $crimStepsIco = $('#scanningCriminal li i');
+  var $crimSteps = $('#scanningCriminalRecords li');
+  var $crimStepsIco = $('#scanningCriminalRecords li i');
   var currentCrimStep = 0;
   var stepBoxSection = () => {
     if (currentCrimStep < $crimSteps.length) { // if not past the end then
@@ -27,8 +27,6 @@ function onScanningCriminalDataStart(stepCompleted) {
       });
     }
   };
-  $('#criminalHeader').html(`<p>We will build a criminal report that may list an individual’s digitized arrest and court records so you can better understand their motives.</p>`);
-  $('#criminalContent').find('p').html('');
   $modFooter.hide();
   $modFooter.eq(footerToDisplay).show();
   $crimSteps.eq(0).show();
@@ -41,7 +39,7 @@ function createComponent(options = {}) {
   const criminalScan = Object.assign({}, Step);
   let newConfig = Object.assign({
     title: 'Criminal Record Search',
-    $elem: $('#scanningCriminal'),
+    $elem: $('#scanningCriminalRecords'),
     duration: 32,
     onStart: onScanningCriminalDataStart,
   }, options);
