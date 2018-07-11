@@ -4063,10 +4063,10 @@ ul.contactInfos img.loading.spinner {
     }
 
     #hidden-criminal-past-modal .icons-container {
-      height: auto;
+      height: 300px;
     }
     #hidden-criminal-past-modal .part1-speech-bub {
-      margin-bottom: 20px; 
+      margin: 20px 0;
     }
 }
 
