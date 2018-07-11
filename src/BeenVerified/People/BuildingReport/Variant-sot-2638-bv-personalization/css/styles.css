@@ -4055,8 +4055,10 @@ ul.contactInfos img.loading.spinner {
         left: 0;
     }
     #gen-dating-modal1, #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text, #familySaftyModal1 .speech-bub-text, #tacklingChallenges .speech-bub-text {
-        display: block;
+        display: inline-block;
         margin: 0;
+        width: 80%;
+        text-align: left;
     }
     #contactInfoSearchModal ul.contactInfos li, #contactInfoSearchCriminalModal ul.contactInfos li {
         width: 50%;
@@ -4066,7 +4068,11 @@ ul.contactInfos img.loading.spinner {
       height: 300px;
     }
     #hidden-criminal-past-modal .part1-speech-bub {
-      margin: 20px 0;
+        height: auto;
+      margin: 0 0 20px;
+    }
+    #oldFlamesContactModal .icon-div, #hidden-criminal-past-modal .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
+        padding: 0 15px;
     }
 }
 
