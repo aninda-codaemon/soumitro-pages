@@ -32,6 +32,12 @@ import {
   criminalScanRecords,
   contactInfoSearchCriminal,
   anythingElseCriminal,
+  familySafetyUseCases,
+  socialMediaScanFamilySafety,
+  criminalScanFamilySafety,
+  anyThingElseFamilySafety,
+  socialMediaScanMyself,
+  criminalScanMyself,
 } from './steps';
 
 function showSubHeadlines(totalSections) {
@@ -111,6 +117,12 @@ function createWizard(options = {}, flowOption = 'other') {
   let criminalScanRecordsInstance = criminalScanRecords(options.criminalScanRecords);
   let contactInfoSearchCriminalInstance = contactInfoSearchCriminal(options.contactInfoSearchCriminal);
   let anythingElseCriminalInstance = anythingElseCriminal(options.anythingElseCriminal);
+  let familySafetyUseCasesInstance = familySafetyUseCases(options.familySafetyUseCases);
+  let socialMediaScanFamilySafetyInstance = socialMediaScanFamilySafety(options.socialMediaScanFamilySafety);
+  let criminalScanFamilySafetyInstance = criminalScanFamilySafety(options.criminalScanFamilySafety);
+  let anyThingElseFamilySafetyInstance = anyThingElseFamilySafety(options.anyThingElseFamilySafety);
+  let socialMediaScanMyselfInstance = socialMediaScanMyself(options.socialMediaScanMyself);
+  let criminalScanMyselfInstance = criminalScanMyself(options.criminalScanMyself);
 
   switch (flowOption) {
     case 'dating':
@@ -120,10 +132,10 @@ function createWizard(options = {}, flowOption = 'other') {
       sectionContainer4 = [contactInfoSearchInstance, anythingElseInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     case 'myself':
-      sectionContainer1 = [bgSearchUseCasesInstance];
-      sectionContainer2 = [socialMediaScanInstance];
-      sectionContainer3 = [criminalScanInstance];
-      sectionContainer4 = [myselfUseCasesInstance,anyThingElseYouWantToKnowInstance,saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
+      sectionContainer1 = [myselfUseCasesInstance];
+      sectionContainer2 = [socialMediaScanMyselfInstance];
+      sectionContainer3 = [criminalScanMyselfInstance];
+      sectionContainer4 = [bgSearchUseCasesInstance, anyThingElseYouWantToKnowInstance,saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     case 'records':
       sectionContainer1 = [hiddenPastCriminalInstance];
@@ -136,6 +148,12 @@ function createWizard(options = {}, flowOption = 'other') {
       sectionContainer2 = [contactInfoSearchModalInstance];
       sectionContainer3 = [socialMediaScanContactInstance];
       sectionContainer4 = [profileSearchContactInstance, anythingElseContactInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
+      break;
+    case 'family':
+      sectionContainer1 = [familySafetyUseCasesInstance];
+      sectionContainer2 = [criminalScanFamilySafetyInstance];
+      sectionContainer3 = [socialMediaScanFamilySafetyInstance];
+      sectionContainer4 = [bgSearchUseCasesInstance, anyThingElseFamilySafetyInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     default:
       sectionContainer1 = [popularUseCasesInstance];

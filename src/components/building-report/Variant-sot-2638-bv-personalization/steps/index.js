@@ -26,6 +26,12 @@ import hiddenPastCriminal from './hiddenPastCriminal';
 import criminalScanRecords from './criminalScanRecords';
 import contactInfoSearchCriminal from './contactInfoSearchCriminal';
 import anythingElseCriminal from './anythingElseCriminal';
+import familySafetyUseCases from './familySafetyUseCases';
+import socialMediaScanFamilySafety from './socialMediaScanFamilySafety';
+import criminalScanFamilySafety from './criminalScanFamilySafety';
+import anyThingElseFamilySafety from './anyThingElseFamilySafety';
+import socialMediaScanMyself from './socialMediaScanMyself';
+import criminalScanMyself from './criminalScanMyself';
 
 export {
   popularUseCases,
@@ -56,4 +62,10 @@ export {
   criminalScanRecords,
   contactInfoSearchCriminal,
   anythingElseCriminal,
+  familySafetyUseCases,
+  socialMediaScanFamilySafety,
+  criminalScanFamilySafety,
+  anyThingElseFamilySafety,
+  socialMediaScanMyself,
+  criminalScanMyself,
 };

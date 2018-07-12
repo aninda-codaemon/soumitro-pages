@@ -250,6 +250,12 @@
                             <p>Our criminal records search includes official goverment records.</p>
                             <span>These records are aggregated from real law enforcement agencies and government court houses.</span>
                           </div>
+                          <div id="criminalHeaderMyself" class="col-sm-12 hidden">
+                            <p>People make mistakes, but don’t let yours haunt you forever. Stay one step ahead by finding out if it’s still out there to be found.</p>
+                          </div>
+                          <div id="criminalHeaderFamilySafety" class="col-sm-12 hidden">
+                            <p>We will build a criminal report that may list an individual’s digitized arrest and court records so you can stay informed.</p>
+                          </div>
 
                           <div id="criminalContent" class="col-sm-12">
                             <p class="text-center">When available, criminal records include:</p>
@@ -297,7 +303,9 @@
                             <p id="social-scan-default-text">This search may reveal interesting information on
                               <strong>{{fullName}}</strong> such as unseen photos, videos, family, friends, professional connections
                               and more.</p>
-                              <p id="social-scan-contact-info-text" class="hidden">A person’s social media accounts are a great way to get in touch with them. In many cases, it’s more effective than traditional methods like phone calls or emails.</p>
+                            <p id="social-scan-contact-info-text" class="hidden">A person’s social media accounts are a great way to get in touch with them. In many cases, it’s more effective than traditional methods like phone calls or emails.</p>
+                            <p id="social-scan-myself-text" class="hidden">Social media can reveal a lot about a person’s identity and personality. Make sure that your online presence is telling the story you want it to: our search can help uncover old or forgotten profiles that may need your attention.</p>
+                            <p id="social-scan-familysafety-text" class="hidden">A person’s online presence can tell you a lot about them. Get the big picture: take your search to the next level and you may uncover surprising facts about someone living very close to you.</p>
                             <div class="social-widget">
                               <div class="row">
                                 <ul id="social-media-groups" class="socialMedias list-unstyled">
@@ -1543,7 +1551,7 @@
                 <div class="wizard-step">
                   <section id="gen-myself-modal1" class="try" tabindex="-1" aria-hidden="true">
                     <div class="content">
-                      <div class="row">
+                      <div class="row" id="myself-modal-body-header">
                         <div class="col-md-12">
                           <p class="modal-body-header text-center">
                             Monitoring and protecting your reputation online is important. Whether you’re looking for love, a job, or something else, know what information is out there before others find it. We can help. We’ll search for the following:
@@ -1699,8 +1707,11 @@
                         </div>
                         <div class="row">
                           <div class="col-md-12">
-                            <p class="modal-body-header sub-heading text-center">
+                            <p id="anyThingElse-header1" class="modal-body-header sub-heading text-center">
                               You can both monitor yourself and search for information on others. Our priority is to give you the tools to search for exactly what you need.
+                            </p>
+                            <p id="anyThingElse-header2" class="modal-body-header sub-heading text-center hidden">
+                              You can run unlimited searches. Our priority is to search for all of the information you need to help you feel safer.
                             </p>
                           </div>
                         </div>
@@ -2306,8 +2317,62 @@
                     <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Please do not refresh, close or press the back button on this page or your information may be lost.
                   </div>
                 </div>
-
                 <!--=== END CRIMINAL RECORDS FLOW =====-->
+
+                <!--======= FAMILY SAFETY FLOW START =====-->
+                <!-- ============================== -->
+                <div class="wizard-step">
+                  <section id="gen-familysafety-modal1" class="try" tabindex="-1" aria-hidden="true">
+                    <div class="content">
+                      <div class="row" id="familysafety-modal-body-header">
+                        <div class="col-md-12">
+                          <p class="modal-body-header text-center">
+                            Monitor who's around you to help keep your family safe: we can help you stay in the know about the latest changes in your surroundings. Whether you suspect a neighbor may be up to no good or if you just want to be proactive, we can help. We’ll search for the following:
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="searching-progress-bar-group col-xs-12">
+                          <div class="row">
+                            <div class="col-xs-12 icon-div text-left">
+                              <div id="speech-bub-familysafety-wrapper1" class="speech-bub-wrapper-familysafety part1-speech-bub-familysafety">
+                                <img class="speech-bub-ico-familysafety" aria-hidden="true" src="img/icn_globe_color_small.svg">
+                                <p class="speech-bub-text-familysafety">Arrest and criminal records: check if a someone has a hidden past.</p>
+                              </div>
+                              <div id="speech-bub-familysafety-wrapper2" class="speech-bub-wrapper-familysafety part1-speech-bub-familysafety">
+                                <img class="speech-bub-ico-familysafety" aria-hidden="true" src="img/icn_fingerprint_color.svg">
+                                <p class="speech-bub-text-familysafety">Social media profiles that you may not be aware of.</p>
+                              </div>
+                              <div id="speech-bub-familysafety-wrapper3" class="speech-bub-wrapper-familysafety part1-speech-bub-familysafety">
+                                <img class="speech-bub-ico-familysafety" aria-hidden="true" src="img/icn_mglass_color_small.svg">
+                                <p class="speech-bub-text-familysafety">All the information we pull about a person is put into one convenient place to help you understand the big picture and stay safe. You can make smart decisions based on your findings.</p>
+                              </div>
+                              <div class="speech-bub-wrapper-familysafety part2-speech-bub-familysafety">
+                                <div class="speech-bub-img-wrapper-familysafety">
+                                  <img src="img/icn_lightbulb_color.svg">
+                                </div>
+                                <div class="speech-bub-text-familysafety">
+                                  <p>
+                                    <b>TIP:</b> If you feel a bit unsafe around someone but are having trouble finding them by name, you can also run a reverse phone or email address search to help uncover more hidden details about them. All of these search types are fully included.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="searching-progress-bar-database-familysafety" class="progress checking-sources-progress">
+                            <div class="progress-bar progress-bar-success" style="width: 1%"></div>
+                            <p class="text-center"></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <div class="mod-footer">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Please do not refresh, close, or press the back button on this page or your information may be lost.
+                  </div>
+                </div>
+                <!--========= END FAMILY SAFETY FLOW =====-->
+
               </div>
             </div>
           </div>

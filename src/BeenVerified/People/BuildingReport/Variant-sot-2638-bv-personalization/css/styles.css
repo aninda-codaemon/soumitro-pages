@@ -2385,7 +2385,6 @@ label.fcraCheckbox-wrapper {
   padding: 15px;
 }
 
-
 /* == 8 == SAVE YOUR RESULTS ========================== */
 #gen-report-modal6 .modal-body {
   padding: 0;
@@ -2400,11 +2399,77 @@ label.fcraCheckbox-wrapper {
   cursor: pointer;
 }
 
-
 /*Eemail opt in box*/
 #gen-report-modal6 .emailcheckbox-text {
   font-size: 14px;
 }
+
+/*--- FAMILY SAFETY START ---*/
+#gen-familysafety-modal1 {
+  padding: 15px;
+}
+#gen-familysafety-modal1 .icon-div-familysafety {
+  padding: 0 55px;
+}
+#gen-familysafety-modal1 .speech-bub-text-familysafety {
+  display: inline;
+  margin: 0;
+}
+#gen-familysafety-modal1 .part1-speech-bub-familysafety {
+  /*margin-bottom: 20px;*/
+  display: inline-block;
+}
+#gen-familysafety-modal1 .speech-bub-ico-familysafety {
+  width: 40px;
+  height: 40px;
+  float: left;
+  display: inline;
+  margin: 0 15px 15px 0;
+}
+.part1-speech-bub-familysafety {
+  /*height: 40px;*/
+  vertical-align: middle;
+  /*margin-bottom: 12px;*/
+  padding-left: 30px;
+}
+.part1-speech-bub-familysafety p {
+  font-size: 20px;
+  color: #4a4a4a;
+  margin: 0 0 0 15px;
+}
+.speech-bub-wrapper-familysafety p {
+display: inline-block;
+}
+.speech-bub-wrapper-familysafety {
+  text-align: left;
+  vertical-align: middle;
+}
+.speech-bub-familysafety {
+position: relative;
+text-align: left;
+color: #333;
+}
+#speech-bub-familysafety-wrapper1, #speech-bub-familysafety-wrapper2, #speech-bub-familysafety-wrapper3 {
+visibility: hidden;
+}
+
+.part2-speech-bub-familysafety {
+  display: none;
+  text-align: center;
+  padding-top: 0;
+  margin-left: 0;
+}
+
+.speech-bub-img-wrapper-familysafety img {
+  width: 80px;
+}
+
+.speech-bub-text-familysafety p {
+  font-size: 20px;
+  margin: 25px 0 50px;
+}
+
+/*--- END SEARCH MYSELF END ---*/
 
 @media screen and (min-width: 992px) {
   #gen-report-modal6 #emailCheckbox {
