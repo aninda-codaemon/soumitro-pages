@@ -3203,7 +3203,6 @@ ul.contactInfos img.loading.spinner {
     margin: 0;
 }
 #gen-myself-modal1 .part1-speech-bub-myself {
-    margin-bottom: 20px;
     display: inline-block;
 }
 #gen-myself-modal1 .speech-bub-ico-myself {
@@ -3273,12 +3272,12 @@ ul.contactInfos img.loading.spinner {
 #gen-myself-modal3 .f-name {
     width: 40%;
     float: left;
-    padding: 0 5px;
+    padding: 0 3px;
 }
 #gen-myself-modal3 .l-name, #gen-myself-modal3 .cty, #gen-myself-modal3 .state {
     width: 20%;
     float: left;
-    padding: 0 5px;
+    padding: 0 3px;
 }
 #gen-myself-modal3 .form-control, #gen-myself-modal3 .custom-select {
     width: 100%;
@@ -3294,7 +3293,6 @@ ul.contactInfos img.loading.spinner {
 .part1-speech-bub-myself {
     /*height: 40px;*/
     vertical-align: middle;
-    margin-bottom: 12px;
     padding-left: 30px;
 }
 .part1-speech-bub-myself p {
@@ -4310,5 +4308,15 @@ ul.contactInfos img.loading.spinner {
 
     #gen-bgsearch-modal1 .list-fix-height {
      height: 140px;
+   }
+   #gen-familysafety-modal1 .speech-bub-text-familysafety,#gen-myself-modal1 .speech-bub-text-myself {
+    margin: 0;
+    display: inline-block;
+    margin: 0;
+    width: 78%;
+    text-align: left;
+   }
+   #gen-myself-modal1 .part1-speech-bub-myself, #gen-familysafety-modal1 .part1-speech-bub-familysafety {
+    padding-left: 15px;
    }
 }
