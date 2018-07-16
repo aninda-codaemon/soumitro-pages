@@ -32,6 +32,8 @@ import criminalScanFamilySafety from './criminalScanFamilySafety';
 import anyThingElseFamilySafety from './anyThingElseFamilySafety';
 import socialMediaScanMyself from './socialMediaScanMyself';
 import criminalScanMyself from './criminalScanMyself';
+import tacklingChallenge from './tacklingChallenge';
+import contactInfoProfessional from './contactInfoProfessional';
 
 export {
   popularUseCases,
@@ -68,4 +70,6 @@ export {
   anyThingElseFamilySafety,
   socialMediaScanMyself,
   criminalScanMyself,
+  tacklingChallenge,
+  contactInfoProfessional,
 };

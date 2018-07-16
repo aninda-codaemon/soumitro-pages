@@ -2986,6 +2986,14 @@ ul.contactInfos img.loading.spinner {
     margin-bottom: 40px;
 }
 
+#contactInfoSocialProfile ul.contactInfos li {
+  position: relative;
+  float: left;
+  width: 25%;
+  height: 100px;
+  margin-bottom: 40px;
+}
+
 #contact-info-srch-groups li img,
 #contact-info-srch-groups i.loading {
     font-size: 26px;
@@ -3160,7 +3168,7 @@ ul.contactInfos img.loading.spinner {
     display: inline;
     margin: 0 15px 15px 0;
 }
-#oldFlamesContactModal .icons-container, #hidden-criminal-past-modal .icons-container {
+#oldFlamesContactModal .icons-container, #hidden-criminal-past-modal .icons-container, #tacklingChallenges .icons-container {
     height: 180px;
 }
 #contactInfoSearchModal .sub-heading, #contactInfoSearchCriminalModal .sub-heading {
@@ -3845,6 +3853,10 @@ ul.contactInfos img.loading.spinner {
     margin-bottom: 4%;
   }
 
+  #contactInfoSocialProfile ul.contactInfos li {
+    width: 50%;    
+  }
+
   #social-media-groups li img,
   #social-media-groups i.loading {
     top: 0;
@@ -4129,6 +4141,13 @@ ul.contactInfos img.loading.spinner {
       height: 300px;
     }
     #hidden-criminal-past-modal .part1-speech-bub {
+      margin: 20px 0;
+    }
+
+    #tacklingChallenges .icons-container {
+      height: 300px;
+    }
+    #tacklingChallenges .part1-speech-bub {
       margin: 20px 0;
     }
 }

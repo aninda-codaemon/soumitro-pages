@@ -38,6 +38,8 @@ import {
   anyThingElseFamilySafety,
   socialMediaScanMyself,
   criminalScanMyself,
+  tacklingChallenge,
+  contactInfoProfessional,
 } from './steps';
 
 function showSubHeadlines(totalSections) {
@@ -123,6 +125,8 @@ function createWizard(options = {}, flowOption = 'other') {
   let anyThingElseFamilySafetyInstance = anyThingElseFamilySafety(options.anyThingElseFamilySafety);
   let socialMediaScanMyselfInstance = socialMediaScanMyself(options.socialMediaScanMyself);
   let criminalScanMyselfInstance = criminalScanMyself(options.criminalScanMyself);
+  let tacklingChallengeInstance = tacklingChallenge(options.tacklingChallenge);
+  let contactInfoProfessionalInstance = contactInfoProfessional(options.contactInfoProfessional);
 
   switch (flowOption) {
     case 'dating':
@@ -153,6 +157,12 @@ function createWizard(options = {}, flowOption = 'other') {
       sectionContainer1 = [familySafetyUseCasesInstance];
       sectionContainer2 = [criminalScanFamilySafetyInstance];
       sectionContainer3 = [socialMediaScanFamilySafetyInstance];
+      sectionContainer4 = [bgSearchUseCasesInstance, anyThingElseFamilySafetyInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
+      break;
+    case 'professional':
+      sectionContainer1 = [tacklingChallengeInstance];
+      sectionContainer2 = [contactInfoProfessionalInstance];
+      sectionContainer3 = [criminalScanRecordsInstance];
       sectionContainer4 = [bgSearchUseCasesInstance, anyThingElseFamilySafetyInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     default:
