@@ -21,7 +21,6 @@ function onScanningCriminalDataStart(stepCompleted) {
         $crimStepsIco.eq(currentCrimStep).addClass('fa-circle');
         $crimStepsIco.eq(currentCrimStep).css('color', '#4A3B8F');
         $crimSteps.eq(currentCrimStep).removeClass('blurryText');
-        console.log('currentCrimStep: ', currentCrimStep);
         currentCrimStep++;
         stepBoxSection();
       });

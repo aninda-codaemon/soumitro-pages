@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icn_folderexc_color</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M13.3331333,80 C5.9698,80 -0.000200000001,73.364 -0.000200000001,66 L-0.0002,12.9970022 C-0.0002,5.63366885 5.9698,0 13.3331333,0 L66.6664667,0 C74.0304667,0 79.9998,5.63366885 79.9998,12.9970022 L79.9998,66 C79.9998,73.364 74.0304667,80 66.6664667,80 L13.3331333,80 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BV-Mobile_SAUC_DS_Step-10" transform="translate(-120.000000, -275.000000)">
+            <g id="FM" transform="translate(10.000000, 275.000000)">
+                <g id="icn_folderexc_color" transform="translate(110.000000, 0.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#F2DA3E" xlink:href="#path-1"></use>
+                    <polygon id="Fill-4" fill="#DCC638" mask="url(#mask-2)" points="52.7211333 107.232067 9.62246667 64.3100344 11.6664667 16.2524689 32.1544667 16.2524689 60.9571333 18.0026 70.4071333 22.5166902 109.035133 62.6820672"></polygon>
+                    <polygon id="Stroke-7" stroke="#FFFFFF" stroke-width="5.33333333" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)" points="11.6664667 62.7471992 11.6664667 16.2525352 32.1544667 16.2525352 37.0458 23.6693467 68.3331333 23.6693467 68.3331333 62.7471992"></polygon>
+                    <polyline id="Stroke-9" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)" points="34.4190667 16.7957 66.2310667 16.7957 66.2310667 23.6694131"></polyline>
+                    <path d="M39.4789333,34.9954705 L39.4789333,44.1106262" id="Stroke-11" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></path>
+                    <path d="M41.4724,51.2518385 C41.4724,52.3519779 40.5770667,53.2436418 39.4724,53.2436418 C38.3677333,53.2436418 37.4724,52.3519779 37.4724,51.2518385 C37.4724,50.1516992 38.3677333,49.2600352 39.4724,49.2600352 C40.5770667,49.2600352 41.4724,50.1516992 41.4724,51.2518385" id="Fill-13" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

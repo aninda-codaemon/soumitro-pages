@@ -5,13 +5,13 @@ import {
 import Step from 'components/wizard/Variant-sot-2638-bv-personalization/step';
 
 function onScanningSocialMediaStart(stepCompleted) {
-  var { duration, footerToDisplay, $elem } = this;
+  var { duration, footerToDisplay, headerToDisplay, $elem } = this;
   var $modFooter = $($elem).nextAll('.mod-footer');
   var socialPromise = $('#socialmedia-progress .progress-bar').animate(
     { width: '100%' },
     { duration },
   );
-
+  var $scanContainer = $('.social-media-modal-container');
   var $lis = $('#social-media-groups li');
   var listLen = $lis.length;
   var listIdxs = shuffle(range(0, listLen));
@@ -29,6 +29,10 @@ function onScanningSocialMediaStart(stepCompleted) {
     $loadingImg.next().fadeIn();
     currIdx += 1;
   }, Math.round(duration / listLen));
+  $scanContainer
+    .find(`.social-scan-text${headerToDisplay}`).removeClass('hidden');
+    // .end()
+    // .find('#social-scan-contact-info-text').removeClass('hidden');
   $modFooter.hide();
   $modFooter.eq(footerToDisplay).show();
   $.when(socialPromise).done(() => {

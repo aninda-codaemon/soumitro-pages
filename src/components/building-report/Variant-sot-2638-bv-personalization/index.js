@@ -40,6 +40,7 @@ import {
   criminalScanMyself,
   tacklingChallenge,
   contactInfoProfessional,
+  anyThingElseProfessional,
 } from './steps';
 
 function showSubHeadlines(totalSections) {
@@ -88,6 +89,7 @@ function addRelativesModal(options = {}) {
 }
 
 function createWizard(options = {}, flowOption = 'other') {
+  console.log('Options: ', options);
   let sectionContainer1 = [];
   let sectionContainer2 = [];
   let sectionContainer3 = [];
@@ -127,6 +129,7 @@ function createWizard(options = {}, flowOption = 'other') {
   let criminalScanMyselfInstance = criminalScanMyself(options.criminalScanMyself);
   let tacklingChallengeInstance = tacklingChallenge(options.tacklingChallenge);
   let contactInfoProfessionalInstance = contactInfoProfessional(options.contactInfoProfessional);
+  let anyThingElseProfessionalInstance = anyThingElseProfessional(options.anyThingElseProfessional);
 
   switch (flowOption) {
     case 'dating':
@@ -139,7 +142,7 @@ function createWizard(options = {}, flowOption = 'other') {
       sectionContainer1 = [myselfUseCasesInstance];
       sectionContainer2 = [socialMediaScanMyselfInstance];
       sectionContainer3 = [criminalScanMyselfInstance];
-      sectionContainer4 = [bgSearchUseCasesInstance, anyThingElseYouWantToKnowInstance,saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
+      sectionContainer4 = [bgSearchUseCasesInstance, anyThingElseProfessionalInstance,saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     case 'records':
       sectionContainer1 = [hiddenPastCriminalInstance];
@@ -156,14 +159,14 @@ function createWizard(options = {}, flowOption = 'other') {
     case 'family':
       sectionContainer1 = [familySafetyUseCasesInstance];
       sectionContainer2 = [criminalScanFamilySafetyInstance];
-      sectionContainer3 = [socialMediaScanFamilySafetyInstance];
-      sectionContainer4 = [bgSearchUseCasesInstance, anyThingElseFamilySafetyInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
+      sectionContainer3 = [socialMediaScanInstance]; // socialMediaScanFamilySafetyInstance
+      sectionContainer4 = [bgSearchUseCasesInstance, anyThingElseProfessionalInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     case 'professional':
       sectionContainer1 = [tacklingChallengeInstance];
       sectionContainer2 = [contactInfoProfessionalInstance];
       sectionContainer3 = [criminalScanRecordsInstance];
-      sectionContainer4 = [bgSearchUseCasesInstance, anyThingElseFamilySafetyInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
+      sectionContainer4 = [bgSearchUseCasesInstance, anyThingElseProfessionalInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     default:
       sectionContainer1 = [popularUseCasesInstance];

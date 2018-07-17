@@ -30,7 +30,7 @@ function onScanningContactInfoStart(stepCompleted) {
 function createComponent(options = {}) {
   const contactInfoScan = Object.assign({}, Step);
   let newConfig = Object.assign({
-    title: 'Contact Info &amp; Social Profiles',
+    title: 'Contact Info & Social Profiles',
     $elem: $('#contactInfoSocialProfile'),
     duration: 32,
     onStart: onScanningContactInfoStart,

@@ -3269,6 +3269,7 @@ ul.contactInfos img.loading.spinner {
     color: #4a4a4a;
     text-align: center;
     margin: 0 0 30px;
+    padding: 0 25px;
 }
 #gen-myself-modal3 .form-heading {
     font-size: 20px;

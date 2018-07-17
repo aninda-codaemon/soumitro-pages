@@ -34,6 +34,7 @@ import socialMediaScanMyself from './socialMediaScanMyself';
 import criminalScanMyself from './criminalScanMyself';
 import tacklingChallenge from './tacklingChallenge';
 import contactInfoProfessional from './contactInfoProfessional';
+import anyThingElseProfessional from './anyThingElseProfessional';
 
 export {
   popularUseCases,
@@ -72,4 +73,5 @@ export {
   criminalScanMyself,
   tacklingChallenge,
   contactInfoProfessional,
+  anyThingElseProfessional,
 };

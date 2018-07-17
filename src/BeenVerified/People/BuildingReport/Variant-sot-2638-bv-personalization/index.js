@@ -15,7 +15,27 @@ const getBuildingReportInstance = (flowOption) => {
     case 'other':
       buildingReportObject = {
         addRelativesModal: () => addRelativesModal(),
-        wizard: createWizard({}, flowOption),
+        wizard: createWizard({'socialMediaScan': {'headerToDisplay': 1}}, flowOption),
+      };
+      break;
+    case 'myself':
+      buildingReportObject = {
+        wizard: createWizard({'socialMediaScan': {'headerToDisplay': 3}, 'anyThingElseProfessional': {'headerToDisplay': 1}}, flowOption),
+      };
+      break;
+    case 'family':
+      buildingReportObject = {
+        wizard: createWizard({'socialMediaScan': {'headerToDisplay': 4}, 'anyThingElseProfessional': {'headerToDisplay': 2}}, flowOption),
+      };
+      break;
+    case 'professional':
+      buildingReportObject = {
+        wizard: createWizard({'anyThingElseProfessional': {'headerToDisplay': 3}}, flowOption),
+      };
+      break;
+    case 'contact':
+      buildingReportObject = {
+        wizard: createWizard({'socialMediaScan': {'headerToDisplay': 2}}, flowOption),
       };
       break;
     default:

@@ -19,6 +19,7 @@ const Step = {
     this.isCompleted = false;
     this.complete = this.complete.bind(this);
     this.footerToDisplay = options.footerToDisplay || 0;
+    this.headerToDisplay = options.headerToDisplay || 1;
   },
   start(onCompleted, isLastStep) {
     this.onBeforeStart();
