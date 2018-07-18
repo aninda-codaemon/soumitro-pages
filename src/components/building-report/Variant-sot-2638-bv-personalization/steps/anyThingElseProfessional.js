@@ -4,7 +4,7 @@ import { showExternalLoading, hideExternalLoading } from './shared';
 const CONTINUE_SESSION_INDEX = 2;
 
 function onUserFormSubmitStart(stepCompleted) {
-  const { headerToDisplay } = this;
+  const { headerToDisplay, duration } = this;
   $('#anyThingElse').validate({
     rules: {
       fn: {
@@ -25,10 +25,10 @@ function onUserFormSubmitStart(stepCompleted) {
       ln: 'Please enter a last name',
     },
     submitHandler() {
-      showExternalLoading(stepCompleted, self.duration, CONTINUE_SESSION_INDEX);
+      showExternalLoading(stepCompleted, duration, CONTINUE_SESSION_INDEX);
     },
   });
-  
+
   $(`#anyThingElse-header${headerToDisplay}`).removeClass('hidden');
   $('#skip-anyThingElse-step').on('click', stepCompleted);
 }
@@ -38,7 +38,7 @@ function createComponent(options = {}) {
   let newConfig = Object.assign({
     title: 'Anything Else You Want To Know?',
     $elem: $('#gen-myself-modal3'),
-    duration: 25,
+    duration: 30,
     onStart: onUserFormSubmitStart,
     $modal: $('#loadingModal'),
     openModal: (stepCompleted, duration) =>

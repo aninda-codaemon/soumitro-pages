@@ -40,7 +40,7 @@ function createComponent(options = {}) {
   let newConfig = Object.assign({
     title: 'For Knowing If Someone Has A Hidden Past',
     $elem: $('#hidden-criminal-past-modal'),
-    duration: 30,
+    duration: 35,
     onStart: onContactOldFlamesStart,
   }, options);
   hiddenPast.init(newConfig);

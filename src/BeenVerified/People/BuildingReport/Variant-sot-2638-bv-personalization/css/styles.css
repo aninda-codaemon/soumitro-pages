@@ -1513,6 +1513,7 @@ social-links {
   text-align: center;
   padding-top: 0;
   margin-left: 0;
+  margin-bottom: 118px;
 }
 
 .speech-bub-img-wrapper img {
@@ -3164,7 +3165,7 @@ ul.contactInfos img.loading.spinner {
 #oldFlamesContactModal .icon-div, #hidden-criminal-past-modal .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
     padding: 0 40px;
 }
-#gen-dating-modal1, #oldFlamesContactModal .speech-bub-text, #familySaftyModal1 .speech-bub-text, #tacklingChallenges .speech-bub-text {
+#gen-dating-modal1, #oldFlamesContactModal .speech-bub-text, #familySaftyModal1 .speech-bub-text /*, #tacklingChallenges .speech-bub-text*/ {
     display: inline-block;
     margin: 0;
 }
@@ -4142,7 +4143,7 @@ ul.contactInfos img.loading.spinner {
         left: 0;
     }
     #gen-dating-modal1, #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text, #familySaftyModal1 .speech-bub-text, #tacklingChallenges .speech-bub-text {
-        display: block;
+        display: flex;
         margin: 0;
     }
     #contactInfoSearchModal ul.contactInfos li, #contactInfoSearchCriminalModal ul.contactInfos li {
@@ -4150,7 +4151,7 @@ ul.contactInfos img.loading.spinner {
     }
 
     #hidden-criminal-past-modal .icons-container {
-      height: 300px;
+      height: 315px;
     }
     /* #hidden-criminal-past-modal .part1-speech-bub {
       margin: 20px 0;
@@ -4368,20 +4369,29 @@ ul.contactInfos img.loading.spinner {
     }
     #oldFlamesContactModal .icon-div, #hidden-criminal-past-modal .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
       padding: 0 30px;
+     }     
+     #hidden-criminal-past-modal .speech-bub-text{
+       text-align: left;
+       /* padding-left: 55px; */
+       font-size: 16px !important;
+       display: flex;
      }
-     #hidden-criminal-past-modal .part1-speech-bub{
-      margin-bottom: 60px;
-    }
-    #hidden-criminal-past-modal .speech-bub-text{
-      text-align: left;
-      padding-left: 55px;
-      font-size: 15px !important;
-    }
-    #gen-familysafety-modal1 .sub-heading, #gen-myself-modal1 .sub-heading, #oldFlamesContactModal .sub-heading, #hidden-criminal-past-modal .sub-heading, #familySaftyModal1 .sub-heading, #tacklingChallenges .sub-heading {
-      font-size: 20px;
-      color: #4a4a4a;
-      text-align: center;
-      margin: 20px 0 40px;
-      padding:0;
-  }
+     #tacklingChallenges .speech-bub-text{
+       text-align: left;
+       /* padding-left: 55px; */
+     }
+     #gen-familysafety-modal1 .sub-heading, #gen-myself-modal1 .sub-heading, #oldFlamesContactModal .sub-heading, #hidden-criminal-past-modal .sub-heading, #familySaftyModal1 .sub-heading, #tacklingChallenges .sub-heading, #gen-dating-modal1 .sub-heading {
+       font-size: 18px;
+       color: #4a4a4a;
+       text-align: center;
+       margin: 20px 0 40px;
+       padding:0;
+   }
+   #tacklingChallenges .part1-speech-bub {
+     margin-bottom: 35px;
+   }
+
+   #hidden-criminal-past-modal .long-text-pad {
+     padding-top: 35px;
+   }
 }

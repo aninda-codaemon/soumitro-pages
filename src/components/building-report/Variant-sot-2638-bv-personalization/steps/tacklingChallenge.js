@@ -10,7 +10,7 @@ const showNextQuote = (duration) => {
   let interval = duration / ($quotes.length + 1);
   let maxSteps = 0;
   let part1Length = $part1.length;
-  
+
   $part2.hide();
   $quotes.hide();
   $quotes.eq(maxSteps).fadeIn(1000);
@@ -40,7 +40,7 @@ function createComponent(options = {}) {
   let newConfig = Object.assign({
     title: 'Tackling Your Challenges',
     $elem: $('#tacklingChallenges'),
-    duration: 30,
+    duration: 35,
     onStart: onTacklingChallengesStart,
   }, options);
   tacklingChallenges.init(newConfig);

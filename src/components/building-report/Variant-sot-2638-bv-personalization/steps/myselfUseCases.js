@@ -20,12 +20,10 @@ const showNextQuote = (duration) => {
     if (arrCounter > quotes.length) {
       clearInterval(displayText);
       $('.part1-speech-bub-myself').hide();
+      $('#myself-modal-body-header').hide();
       $('.part2-speech-bub-myself').fadeIn(1000);
     }
   }, interval);
-
-  // $('.part1-speech-bub').hide();
-  // $('.part2-speech-bub').fadeIn();
 };
 
 function onMyselfUseCasesStart(stepCompleted) {
@@ -40,7 +38,7 @@ function createComponent(options = {}) {
   let newConfig = Object.assign({
     title: 'For Monitoring Your Reputation, Associates, & Online Presence',
     $elem: $('#gen-myself-modal1'),
-    duration: 30,
+    duration: 35,
     onStart: onMyselfUseCasesStart,
   }, options);
   myselfUseCases.init(newConfig);

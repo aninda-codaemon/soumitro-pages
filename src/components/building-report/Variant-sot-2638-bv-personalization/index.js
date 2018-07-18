@@ -88,8 +88,7 @@ function addRelativesModal(options = {}) {
   section2.steps.splice(2, 0, relativesInstance);
 }
 
-function createWizard(options = {}, flowOption = 'other') {
-  console.log('Options: ', options);
+function createWizard(options = {}, flowOption = 'other') {  
   let sectionContainer1 = [];
   let sectionContainer2 = [];
   let sectionContainer3 = [];
