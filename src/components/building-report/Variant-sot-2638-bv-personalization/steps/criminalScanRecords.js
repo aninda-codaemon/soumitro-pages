@@ -2,7 +2,7 @@ import Step from 'components/wizard/Variant-sot-2638-bv-personalization/step';
 
 function onScanningCriminalDataStart(stepCompleted) {
   var $progessBar = $('#searching-progress-bar-criminal-records .progress-bar');
-  var { duration, footerToDisplay, $elem } = this;
+  var { duration, footerToDisplay, headerToDisplay, $elem } = this;
   var $modFooter = $($elem).nextAll('.mod-footer');
   var initialProgress = $($progessBar).animate({ width: '100%' }, {
     duration,
@@ -26,6 +26,7 @@ function onScanningCriminalDataStart(stepCompleted) {
       });
     }
   };
+  $(`.criminal-reord-header${headerToDisplay}`).removeClass('hidden');
   $modFooter.hide();
   $modFooter.eq(footerToDisplay).show();
   $crimSteps.eq(0).show();

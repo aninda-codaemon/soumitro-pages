@@ -141,7 +141,7 @@ function createWizard(options = {}, flowOption = 'other') {
     case 'myself':
       sectionContainer1 = [myselfUseCasesInstance];
       sectionContainer2 = [socialMediaScanMyselfInstance];
-      sectionContainer3 = [criminalScanMyselfInstance];
+      sectionContainer3 = [criminalScanRecordsInstance];
       sectionContainer4 = [bgSearchUseCasesInstance, anyThingElseProfessionalInstance,saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     case 'records':
@@ -158,7 +158,7 @@ function createWizard(options = {}, flowOption = 'other') {
       break;
     case 'family':
       sectionContainer1 = [familySafetyUseCasesInstance];
-      sectionContainer2 = [criminalScanFamilySafetyInstance];
+      sectionContainer2 = [criminalScanRecordsInstance];
       sectionContainer3 = [socialMediaScanInstance]; // socialMediaScanFamilySafetyInstance
       sectionContainer4 = [bgSearchUseCasesInstance, anyThingElseProfessionalInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
