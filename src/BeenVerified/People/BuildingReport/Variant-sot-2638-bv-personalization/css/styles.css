@@ -1488,9 +1488,9 @@ social-links {
     color: #4a4a4a;
     margin: 0;
 }
-.speech-bub-dating-wrapper p {
+/* .speech-bub-dating-wrapper p {
   display: inline-block;
-}
+} */
 .speech-bub-dating-wrapper {
     text-align: left;
     vertical-align: middle;
@@ -2409,7 +2409,7 @@ label.fcraCheckbox-wrapper {
   padding: 15px;
 }
 #gen-familysafety-modal1 .icon-div-familysafety {
-  padding: 0 55px;
+  padding: 0 30px;
 }
 #gen-familysafety-modal1 .speech-bub-text-familysafety {
   display: inline;
@@ -3150,7 +3150,7 @@ ul.contactInfos img.loading.spinner {
     margin: 20px 0 40px;
     padding: 0 35px;
 }
-#oldFlamesContactModal .icon-div, #hidden-criminal-past-modal .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
+/* #oldFlamesContactModal .icon-div, #hidden-criminal-past-modal .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
     padding: 0 55px;
 }
 #gen-dating-modal1, #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text, #familySaftyModal1 .speech-bub-text, #tacklingChallenges .speech-bub-text {
@@ -3159,6 +3159,17 @@ ul.contactInfos img.loading.spinner {
 }
 #oldFlamesContactModal .part1-speech-bub, #hidden-criminal-past-modal .part1-speech-bub, #familySaftyModal1 .part1-speech-bub, #tacklingChallenges .part1-speech-bub {
     margin-bottom: 20px;
+    display: inline-block;
+} */
+#oldFlamesContactModal .icon-div, #hidden-criminal-past-modal .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
+    padding: 0 40px;
+}
+#gen-dating-modal1, #oldFlamesContactModal .speech-bub-text, #familySaftyModal1 .speech-bub-text, #tacklingChallenges .speech-bub-text {
+    display: inline-block;
+    margin: 0;
+}
+#oldFlamesContactModal .part1-speech-bub, #hidden-criminal-past-modal .part1-speech-bub, #familySaftyModal1 .part1-speech-bub, #tacklingChallenges .part1-speech-bub {
+    margin-bottom: 30px;
     display: inline-block;
 }
 #oldFlamesContactModal .speech-bub-ico, #hidden-criminal-past-modal .speech-bub-ico, #familySaftyModal1 .speech-bub-ico, #tacklingChallenges .speech-bub-ico {
@@ -3855,7 +3866,7 @@ ul.contactInfos img.loading.spinner {
   }
 
   #contactInfoSocialProfile ul.contactInfos li {
-    width: 50%;    
+    width: 50%;
   }
 
   #social-media-groups li img,
@@ -4141,9 +4152,9 @@ ul.contactInfos img.loading.spinner {
     #hidden-criminal-past-modal .icons-container {
       height: 300px;
     }
-    #hidden-criminal-past-modal .part1-speech-bub {
+    /* #hidden-criminal-past-modal .part1-speech-bub {
       margin: 20px 0;
-    }
+    } */
 
     #tacklingChallenges .icons-container {
       height: 300px;
@@ -4339,4 +4350,38 @@ ul.contactInfos img.loading.spinner {
    #gen-myself-modal1 .part1-speech-bub-myself, #gen-familysafety-modal1 .part1-speech-bub-familysafety {
     padding-left: 15px;
    }
+   #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text {
+    text-align: left;
+   }
+   #oldFlamesContactModal .part1-speech-bub, #familySaftyModal1 .part1-speech-bub, #tacklingChallenges .part1-speech-bub {
+      margin-bottom: 20px;
+      display: inline-block;
+      padding: 0;
+    }
+    #hidden-criminal-past-modal .part1-speech-bub {
+      margin-bottom: 45px;
+      display: inline-block;
+      padding: 0;
+    }
+    #anythingElseModal, #anythingElseModalContact, #contactInfoSearchCriminalModal, #contactInfoSearchModal, #contactInfoSocialProfile, #familySaftyModal1, #fcraDatingModal, #hidden-criminal-past-modal, #monitoringDatingModal, #oldFlamesContactModal, #professionalProfileSearch, #scanningContactInfo, #scanningEmail, #tacklingChallenges {
+      padding: 15px;
+    }
+    #oldFlamesContactModal .icon-div, #hidden-criminal-past-modal .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
+      padding: 0 30px;
+     }
+     #hidden-criminal-past-modal .part1-speech-bub{
+      margin-bottom: 60px;
+    }
+    #hidden-criminal-past-modal .speech-bub-text{
+      text-align: left;
+      padding-left: 55px;
+      font-size: 15px !important;
+    }
+    #gen-familysafety-modal1 .sub-heading, #gen-myself-modal1 .sub-heading, #oldFlamesContactModal .sub-heading, #hidden-criminal-past-modal .sub-heading, #familySaftyModal1 .sub-heading, #tacklingChallenges .sub-heading {
+      font-size: 20px;
+      color: #4a4a4a;
+      text-align: center;
+      margin: 20px 0 40px;
+      padding:0;
+  }
 }
