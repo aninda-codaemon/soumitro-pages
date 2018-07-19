@@ -29,10 +29,7 @@ function onScanningSocialMediaStart(stepCompleted) {
     $loadingImg.next().fadeIn();
     currIdx += 1;
   }, Math.round(duration / listLen));
-  $scanContainer
-    .find(`.social-scan-text${headerToDisplay}`).removeClass('hidden');
-    // .end()
-    // .find('#social-scan-contact-info-text').removeClass('hidden');
+  $scanContainer.find(`.social-scan-text${headerToDisplay}`).removeClass('hidden');    
   $modFooter.hide();
   $modFooter.eq(footerToDisplay).show();
   $.when(socialPromise).done(() => {

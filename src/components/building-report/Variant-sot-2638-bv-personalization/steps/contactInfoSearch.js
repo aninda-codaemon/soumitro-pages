@@ -8,7 +8,7 @@ function onScanningContactInfoStart(stepCompleted) {
   const $icon = $('.contact-info-icon-container');
   const interval = duration / 3;
   let counter = 0;
-  
+
   var barProgress = $progressBar.animate(
     { width: '100%' },
     { duration },
@@ -24,7 +24,7 @@ function onScanningContactInfoStart(stepCompleted) {
     }
   };
   displayIcon();
-  $.when(barProgress).done(stepCompleted);
+  // $.when(barProgress).done(stepCompleted);
 }
 
 function createComponent(options = {}) {

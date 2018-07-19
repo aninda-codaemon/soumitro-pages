@@ -7,7 +7,7 @@ const $part2 = $('.old-flame-part2-speech-bub');
 
 const showNextQuote = (duration) => {
   let quotesID;
-  let interval = duration / ($quotes.length + 1);
+  let interval = duration / ($quotes.length + 2);
   let maxSteps = 0;
   let part1Length = $part1.length;
 
@@ -40,7 +40,7 @@ function createComponent(options = {}) {
   let newConfig = Object.assign({
     title: 'For Finding Old Flames, Former Classmates, & Lost Loved Ones',
     $elem: $('#oldFlamesContactModal'),
-    duration: 30,
+    duration: 40,
     onStart: onContactOldFlamesStart,
   }, options);
   oldFlameContact.init(newConfig);

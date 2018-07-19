@@ -24,7 +24,9 @@ const showNextQuote = (duration) => {
       $part1.hide();
       $part2.show();
     }
-    $quotes.eq(maxSteps).fadeIn(1000);
+
+    if (maxSteps < part1Length) {
+    $quotes.eq(maxSteps).fadeIn(1000);}
   }, interval);
 };
 

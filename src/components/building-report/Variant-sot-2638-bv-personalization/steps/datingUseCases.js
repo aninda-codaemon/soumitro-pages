@@ -19,11 +19,11 @@ const showNextQuote = (duration) => {
     quotesID.hide().css('visibility', 'visible').fadeIn(1000);
     if (arrCounter > quotes.length) {
       clearInterval(displayText);
+      $('div.dating-safety-top-header').hide();
       $('.part1-speech-bub').hide();
       $('.part2-speech-bub').fadeIn(1000);
     }
   }, interval);
-  
 };
 
 function onDatingUseCasesStart(stepCompleted) {
@@ -38,7 +38,7 @@ function createComponent(options = {}) {
   let newConfig = Object.assign({
     title: 'For Safety, Peace Of Mind, & Finding Love',
     $elem: $('#gen-dating-modal1'),
-    duration: 30,
+    duration: 35,
     onStart: onDatingUseCasesStart,
   }, options);
   datingUseCases.init(newConfig);

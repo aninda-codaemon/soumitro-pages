@@ -88,7 +88,7 @@ function addRelativesModal(options = {}) {
   section2.steps.splice(2, 0, relativesInstance);
 }
 
-function createWizard(options = {}, flowOption = 'other') {  
+function createWizard(options = {}, flowOption = 'other') {
   let sectionContainer1 = [];
   let sectionContainer2 = [];
   let sectionContainer3 = [];
@@ -133,13 +133,13 @@ function createWizard(options = {}, flowOption = 'other') {
   switch (flowOption) {
     case 'dating':
       sectionContainer1 = [datingUseCasesInstance];
-      sectionContainer2 = [criminalScanInstance];
+      sectionContainer2 = [criminalScanRecordsInstance];
       sectionContainer3 = [socialMediaScanInstance];
       sectionContainer4 = [contactInfoSearchInstance, anythingElseInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     case 'myself':
       sectionContainer1 = [myselfUseCasesInstance];
-      sectionContainer2 = [socialMediaScanMyselfInstance];
+      sectionContainer2 = [socialMediaScanInstance];
       sectionContainer3 = [criminalScanRecordsInstance];
       sectionContainer4 = [bgSearchUseCasesInstance, anyThingElseProfessionalInstance,saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
@@ -152,7 +152,7 @@ function createWizard(options = {}, flowOption = 'other') {
     case 'contact':
       sectionContainer1 = [oldFlamesContactInstance];
       sectionContainer2 = [contactInfoSearchModalInstance];
-      sectionContainer3 = [socialMediaScanContactInstance];
+      sectionContainer3 = [socialMediaScanInstance];
       sectionContainer4 = [profileSearchContactInstance, anythingElseContactInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     case 'family':

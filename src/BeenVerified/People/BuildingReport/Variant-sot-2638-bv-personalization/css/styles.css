@@ -1503,7 +1503,9 @@ social-links {
 #speech-bub-dating-wrapper1, #speech-bub-dating-wrapper2, #speech-bub-dating-wrapper3 {
   visibility: hidden;
 }
-
+#gen-dating-modal1 .checking-sources-progress {
+  margin-top: 30px;
+}
 .bub-visible1 {
   visibility: visible !important;
 }
@@ -1513,7 +1515,7 @@ social-links {
   text-align: center;
   padding-top: 0;
   margin-left: 0;
-  margin-bottom: 118px;
+  margin-bottom: 60px;
 }
 
 .speech-bub-img-wrapper img {
@@ -1532,18 +1534,24 @@ social-links {
 /* 2 - Scanning Criminal DATING FLOW*/
   #criminalLeft img {
     position: relative;
-
     height: 80px;
     margin: 0 20px 20px 20px;
   }
 
   #scanningCriminal-dating .checking-sources-progress, #scanningCriminalRecords .checking-sources-progress {
     margin-bottom: 20px;
+    margin-top: 33px;
+  }
+  #hidden-criminal-past-modal .checking-sources-progress {
+    margin-top: 8px;
+  }
+  #scanningCriminalRecords #criminalHeader p {
+    font-size: 20px;
+    margin: 0 20px 10px 20px;
   }
   #criminalContent-dating {
     height: inherit;
   }
-
   #criminalContent-dating ul {
     font-size: 20px;
     line-height: 20px;
@@ -1556,18 +1564,14 @@ social-links {
 
     margin-bottom: 5px;
   }
-
   #criminalContent-dating li i {
     font-size: 8px;
-
     position: relative;
     top: -3px;
-
     margin-right: 5px;
   }
   #criminalHeader-dating p {
     font-size: 20px;
-
     margin: 20px 0 5px 0;
   }
 
@@ -1629,7 +1633,17 @@ social-links {
 }
 #contactinfo-progress, #contactinfo-modal-progress, #contactinfo-criminal-modal-progress {
     height: 30px;
-    margin: 25px 25px 15px;
+    margin: 5px 25px 15px;
+}
+#oldFlamesContactModal .checking-sources-progress {
+  margin-top: 2px;
+}
+#oldFlamesContactModal .part2-speech-bub {
+  display: none;
+  text-align: center;
+  padding-top: 0;
+  margin-left: 0;
+  margin-bottom: 78px;
 }
 /* END SCANNING CONTACT INFO - DATING FLOW */
 
@@ -1904,9 +1918,9 @@ social-links {
 
 #criminalHeader p {
   font-size: 20px;
-
   margin: 20px 20px 0 20px;
 }
+
 #criminalHeader span {
   font-size: 16px;
 }
@@ -1947,7 +1961,7 @@ social-links {
     width: 80px;
     height: 80px;
     margin-top: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 26px;
 }
 
 #criminalRight li i {
@@ -1959,12 +1973,14 @@ social-links {
 
 ul.socialMedias li {
   position: relative;
-
   float: left;
-
   width: 16.666%;
   height: 32px;
   margin-bottom: 8%;
+}
+
+ul.socialMedias li.reduce-margin {
+  margin-bottom: 20px;
 }
 
 ul.socialMedias img.loading.spinner {
@@ -1991,12 +2007,9 @@ ul.socialMedias img.loading.spinner {
 #social-media-groups li p {
   font-size: 13px;
   line-height: 16px;
-
   position: absolute;
-
   width: 100%;
   margin: 0;
-
   text-align: center;
 }
 
@@ -2011,20 +2024,16 @@ ul.socialMedias img.loading.spinner {
 
 #scanningSocialMedia .progress {
     position: relative;
-
     height: 30px;
-    margin: 40px 25px 15px;
+    margin: 2px 25px 15px;
     color: white;
     border-radius: 4px;
     background: #e8e8e8;
 }
 
-
 .social-widget {
   padding: 15px;
 }
-
-
 
 p.log-load {
   font-size: 12px;
@@ -2927,7 +2936,7 @@ h6.create-login {
     font-size: 20px;
     color: #4a4a4a;
     text-align: center;
-    margin: 20px 35px 25px;
+    margin: 20px 35px -6px;
 }
 
 #scanningContactInfo ul {
@@ -2985,6 +2994,7 @@ ul.contactInfos img.loading.spinner {
     width: 33.33%;
     height: 100px;
     margin-bottom: 40px;
+    margin-top: -1px;
 }
 
 #contactInfoSocialProfile ul.contactInfos li {
@@ -3148,7 +3158,7 @@ ul.contactInfos img.loading.spinner {
     font-size: 20px;
     color: #4a4a4a;
     text-align: center;
-    margin: 20px 0 40px;
+    margin: 20px 0 30px;
     padding: 0 35px;
 }
 /* #oldFlamesContactModal .icon-div, #hidden-criminal-past-modal .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
@@ -3180,14 +3190,19 @@ ul.contactInfos img.loading.spinner {
     display: inline;
     margin: 0 15px 15px 0;
 }
-#oldFlamesContactModal .icons-container, #hidden-criminal-past-modal .icons-container, #tacklingChallenges .icons-container {
+#oldFlamesContactModal .icons-container, #hidden-criminal-past-modal .icons-container {
     height: 180px;
+    margin-bottom: 40px;
+}
+#tacklingChallenges .icons-container {
+  height: 180px;
+  margin-bottom: 6px;
 }
 #contactInfoSearchModal .sub-heading, #contactInfoSearchCriminalModal .sub-heading {
     font-size: 20px;
     color: #4a4a4a;
     text-align: center;
-    margin: 20px 0 40px;
+    margin: 20px 0 0 0;
     padding: 0 35px;
 }
 #professionalProfileSearch .sub-heading {
@@ -3201,7 +3216,7 @@ ul.contactInfos img.loading.spinner {
     font-size: 20px;
     color: #4a4a4a;
     text-align: center;
-    margin: 20px 0 40px;
+    margin: 20px 0 10px 0;
     padding: 0 35px;
 }
 #contactInfoSocialProfile .icon-text {
@@ -3357,6 +3372,21 @@ ul.contactInfos img.loading.spinner {
   height: 120px;
 }
 /*--- END SEARCH MYSELF END ---*/
+
+/*-- PROFESSIONAL FLOW --*/
+#tacklingChallenges .checking-sources-progress {
+  margin-top: 40px;
+}
+#contactInfoSocialProfile .checking-sources-progress {
+  margin-top: 20px;
+}
+#tacklingChallenges .part2-speech-bub {
+  display: none;
+  text-align: center;
+  padding-top: 0;
+  margin-left: 0;
+  margin-bottom: 67px;
+}
 
 /* ========== END NEWLY ADDED CSS ========== */
 
@@ -3723,7 +3753,6 @@ ul.contactInfos img.loading.spinner {
   }
   .checking-sources-progress p {
     font-size: 16px;
-
     top: 3px;
   }
 
@@ -3827,7 +3856,6 @@ ul.contactInfos img.loading.spinner {
 
   #criminalHeader p {
     font-size: 18px;
-
     margin: 20px 0 5px 0;
   }
 
@@ -4369,7 +4397,7 @@ ul.contactInfos img.loading.spinner {
     }
     #oldFlamesContactModal .icon-div, #hidden-criminal-past-modal .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
       padding: 0 30px;
-     }     
+     }
      #hidden-criminal-past-modal .speech-bub-text{
        text-align: left;
        /* padding-left: 55px; */
