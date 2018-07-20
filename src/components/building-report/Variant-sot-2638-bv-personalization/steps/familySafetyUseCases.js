@@ -5,11 +5,11 @@ const quotes = $('.speech-bub-wrapper-myself');
 const showNextQuote = (duration) => {
   let quotesID;
   let interval = duration / (quotes.length + 1);
-
+  
   (() => {
     $('#speech-bub-familysafety-wrapper1').hide().css('visibility', 'visible').fadeIn(1000);
   })();
-
+  
   let arrCounter = 2;
   const displayText = setInterval(() => {
     quotesID = $(`#speech-bub-familysafety-wrapper${arrCounter}`);

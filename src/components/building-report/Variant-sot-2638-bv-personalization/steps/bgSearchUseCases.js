@@ -11,17 +11,24 @@ let $fadeTime = 0;
 let $imgNum = 13;
 let quoteIndex = -1;
 let olListCounter = 0;
-
+let liCounter = 1;
+let faceId;
+faceId = $(`.fim${liCounter}`);
 const showNextListQuote = (duration) => {
   quoteIndex++;
    if (quoteIndex < 7) {
     quotes.eq(quoteIndex % quotes.length)
-     .fadeIn(800, function() {
+     .fadeIn(1000, function() {
         olList.eq(olListCounter).each(function() {
            $(this).find('li').each(function(i) {
-            $(this).delay(1600 * i).show(110);
+              $(this).delay(2000 * i).show(120,function(){
+                 faceId.hide();
+                 liCounter++;
+                 faceId = $(`.fim${liCounter}`);
+                 faceId.show();
+              });
             });
-           olListCounter++;
+          olListCounter++;
         }); 
        })
     .delay(duration / (quotes.length + 1))
@@ -36,7 +43,8 @@ const loadFaceImg = (duration) => {
 function onBgSearchUseCasesStart(stepCompleted) {
   var { duration } = this;
   var initialProgress = $($progressBar).animate({ width: '100%' }, { duration });
-   $.when(loadFaceImg(duration)).then(showNextListQuote(duration));
+   //$.when(loadFaceImg(duration)).then(showNextListQuote(duration));
+   showNextListQuote(duration);
    $.when(initialProgress).done(stepCompleted);
 }
 
@@ -53,7 +61,7 @@ function createComponent(options = {}) {
   let newConfig = Object.assign({
     title: 'Background Search',
     $elem: $('#gen-bgsearch-modal1'),
-    duration: 25,
+    duration: 28,
     onStart: onBgSearchUseCasesStart,
   }, options);
   bgSearchUseCases.init(newConfig);
@@ -61,3 +69,4 @@ function createComponent(options = {}) {
 }
 
 export default createComponent;
+

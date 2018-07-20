@@ -4411,6 +4411,24 @@ ul.contactInfos img.loading.spinner {
     margin: 20px 0 40px;
     padding:0;
   }
+  #gen-myself-modal1 .part2-speech-bub-myself {
+    padding-bottom: 65px;
+  }
+  /*#oldFlamesContactModal .part2-speech-bub {
+    padding-bottom: 2px;
+  }*/
+  #hidden-criminal-past-modal .part2-speech-bub {
+    padding-bottom: 200px;
+  }
+  #tacklingChallenges .part2-speech-bub {
+    padding-bottom: 10px;
+  }
+  #gen-familysafety-modal1 .part2-speech-bub-familysafety {
+    padding-bottom: 70px;
+  }
+  #oldFlamesContactModal .icons-container {
+    margin-bottom: 55px !important;
+  }
 }
 @media (min-width:200px) and (max-width:320px) {
   #hidden-criminal-past-modal .long-text-pad {
