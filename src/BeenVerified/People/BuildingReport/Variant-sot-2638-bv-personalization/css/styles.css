@@ -4087,128 +4087,125 @@ ul.contactInfos img.loading.spinner {
 
     text-align: center;
   }
-    #scanningEmail .sub-heading, #anythingElseModal .sub-heading, #anythingElseModalContact .sub-heading, #anythingElseModalCriminal .sub-heading {
-        font-size: 18px;
-        margin: 0 0 20px;
-        padding: 0;
-    }
-    #anythingElseModal .checkbox-bg, #anythingElseModalContact .checkbox-bg, #anythingElseModalCriminal .checkbox-bg {
-        padding: 20px 20px 0;
-    }
-    #gen-myself-modal3 .f-name {
-        width: 100%;
-    }
-    #gen-myself-modal3 .l-name, #gen-myself-modal3 .cty, #gen-myself-modal3 .state {
-        width: 100%;
-    }
-    #contactInfoSearchModal .sub-heading, #contactInfoSocialProfile .sub-heading, #contactInfoSearchCriminalModal .sub-heading {
-        font-size: 18px;
-        margin: 2px 0 15px;
-        padding: 0;
-    }
-    #professionalProfileSearch .sub-heading {
-        font-size: 18px;
-        padding: 0;
-    }
-    #gen-myself-modal1 .icon-div {
-        padding: 0 15px;
-    }
-    #gen-myself-modal1 .part1-speech-bub {
-        height: auto;
-        margin-bottom: 15px;
-    }
-    .speech-bub-img-wrapper img {
-        margin-top: 10px;
-    }
-    #scanningCriminal #criminalHeader p, #scanningCriminalRecords #criminalHeader p {
-        margin: 0 0 5px 0;
-    }
-    .heading-logo {
-        margin-top: 10px;
-        margin-bottom: 20px;
-    }
-    #scanningContactInfo .sub-heading {
-        font-size: 18px;
-        margin: 2px 0 30px;
-    }
-    #scanningContactInfo .social-widget {
-        padding: 0;
-    }
-    #contactinfo-progress {
-        margin: 30px 0 5px;
-    }
-    #btn-finalize {
-        margin: 20px 0 20px;
-    }
-    #contact-info-groups li img, #contact-info-groups i.loading {
-        margin-left: -30px;
-    }
-    #contact-info-srch-groups li img, #contact-info-srch-groups i.loading {
-        margin-left: -30px;
-    }
-    #loadingModal .popup-modal-pad {
-        padding: 30px 20px 40px;
-    }
-    #gen-report-modal6 .form-input-group {
-        padding: 30px 20px;
-    }
-    #signup-modal-form input {
-        background: #F9F9F9;
-        border: 1px solid #F9F9F9;
-        box-shadow: inset 1px 0 2px 0 rgba(0,0,0,0.26);
-        border-radius: 2px;
-    }
-    #monitoringDatingModal .sub-heading {
-        font-size: 18px;
-        padding: 0;
-    }
-    #monitoringDatingModal .mob-para {
-        font-size: 16px !important;
-        padding: 0;
-    }
-    #fcraDatingModal .sub-heading {
-        font-size: 18px;
-        margin: 0 0 20px;
-        padding: 0;
-    }
-    #fcraDatingModal .btn {
-        margin-top: 0;
-    }
-    #fcraDatingModal #fcra-dating-confirm .panel .form-group {
-        padding: 14px 10px;
-    }
-    #fcraDatingModal #fcra-dating-confirm p {
-        margin: 0 0 0 20px;
-    }
-    #contact-info-groups li p, #contact-info-srch-groups li p {
-        left: 0;
-    }
-    #gen-dating-modal1, #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text, #familySaftyModal1 .speech-bub-text, #tacklingChallenges .speech-bub-text {
-        display: flex;
-        margin: 0;
-    }
-    #contactInfoSearchModal ul.contactInfos li, #contactInfoSearchCriminalModal ul.contactInfos li {
-        width: 50%;
-    }
+  #scanningEmail .sub-heading, #anythingElseModal .sub-heading, #anythingElseModalContact .sub-heading, #anythingElseModalCriminal .sub-heading {
+      font-size: 18px;
+      margin: 0 0 20px;
+      padding: 0;
+  }
+  #anythingElseModal .checkbox-bg, #anythingElseModalContact .checkbox-bg, #anythingElseModalCriminal .checkbox-bg {
+      padding: 20px 20px 0;
+  }
+  #gen-myself-modal3 .f-name {
+      width: 100%;
+  }
+  #gen-myself-modal3 .l-name, #gen-myself-modal3 .cty, #gen-myself-modal3 .state {
+      width: 100%;
+  }
+  #contactInfoSearchModal .sub-heading, #contactInfoSocialProfile .sub-heading, #contactInfoSearchCriminalModal .sub-heading {
+      font-size: 18px;
+      margin: 2px 0 15px;
+      padding: 0;
+  }
+  #professionalProfileSearch .sub-heading {
+      font-size: 18px;
+      padding: 0;
+  }
+  #gen-myself-modal1 .icon-div {
+      padding: 0 15px;
+  }
+  #gen-myself-modal1 .part1-speech-bub {
+      height: auto;
+      margin-bottom: 15px;
+  }
+  .speech-bub-img-wrapper img {
+      margin-top: 10px;
+  }
+  #scanningCriminal #criminalHeader p, #scanningCriminalRecords #criminalHeader p {
+      margin: 0 0 5px 0;
+  }
+  .heading-logo {
+      margin-top: 10px;
+      margin-bottom: 20px;
+  }
+  #scanningContactInfo .sub-heading {
+      font-size: 18px;
+      margin: 2px 0 30px;
+  }
+  #scanningContactInfo .social-widget {
+      padding: 0;
+  }
+  #contactinfo-progress {
+      margin: 30px 0 5px;
+  }
+  #btn-finalize {
+      margin: 20px 0 20px;
+  }
+  #contact-info-groups li img, #contact-info-groups i.loading {
+      margin-left: -30px;
+  }
+  #contact-info-srch-groups li img, #contact-info-srch-groups i.loading {
+      margin-left: -30px;
+  }
+  #loadingModal .popup-modal-pad {
+      padding: 30px 20px 40px;
+  }
+  #gen-report-modal6 .form-input-group {
+      padding: 30px 20px;
+  }
+  #signup-modal-form input {
+      background: #F9F9F9;
+      border: 1px solid #F9F9F9;
+      box-shadow: inset 1px 0 2px 0 rgba(0,0,0,0.26);
+      border-radius: 2px;
+  }
+  #monitoringDatingModal .sub-heading {
+      font-size: 18px;
+      padding: 0;
+  }
+  #monitoringDatingModal .mob-para {
+      font-size: 16px !important;
+      padding: 0;
+  }
+  #fcraDatingModal .sub-heading {
+      font-size: 18px;
+      margin: 0 0 20px;
+      padding: 0;
+  }
+  #fcraDatingModal .btn {
+      margin-top: 0;
+  }
+  #fcraDatingModal #fcra-dating-confirm .panel .form-group {
+      padding: 14px 10px;
+  }
+  #fcraDatingModal #fcra-dating-confirm p {
+      margin: 0 0 0 20px;
+  }
+  #contact-info-groups li p, #contact-info-srch-groups li p {
+      left: 0;
+  }
+  #gen-dating-modal1, #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text, #familySaftyModal1 .speech-bub-text, #tacklingChallenges .speech-bub-text {
+      display: flex;
+      margin: 0;
+  }
+  #contactInfoSearchModal ul.contactInfos li, #contactInfoSearchCriminalModal ul.contactInfos li {
+      width: 50%;
+  }
 
-    #hidden-criminal-past-modal .icons-container {
-      height: 315px;
-    }
-    /* #hidden-criminal-past-modal .part1-speech-bub {
-      margin: 20px 0;
-    } */
+  #hidden-criminal-past-modal .icons-container {
+    height: 315px;
+  }
+  /* #hidden-criminal-past-modal .part1-speech-bub {
+    margin: 20px 0;
+  } */
 
-    #tacklingChallenges .icons-container {
-      height: 300px;
-    }
-    #tacklingChallenges .part1-speech-bub {
-      margin: 20px 0;
-    }
+  #tacklingChallenges .icons-container {
+    height: 300px;
+  }
+  #tacklingChallenges .part1-speech-bub {
+    margin: 20px 0;
+  }
 }
-
-
 /* Landscape phones and down */
-
 @media (max-width: 480px) {
   h3 {
     font-size: 22px;
@@ -4325,88 +4322,78 @@ ul.contactInfos img.loading.spinner {
     padding: 20px 0 10px 70px;
     background-size: 50px;
   }
-
   .modal-body-copy p {
     margin: 0;
-
     text-align: left;
   }
-
   #modal-msgs {
     font-size: 20px;
     line-height: 26px;
   }
-
   #loadingModal .cont-loading-aditional img {
     width: 60px;
   }
 }
-
 @media (max-width:700px) and (min-width:370px) {
   .test-cont li {
     padding-left: 10px;
   }
 }
-
 @media (max-width:369px) {
   .testimonials {
     margin-top: 10px;
   }
 }
-
 @media (min-width:500px) and (max-width:767px) {
-    .wizard-steps-panel .step-number .number:after {
-        position: absolute;
-        top: 15px;
-        right: 0;
-        left: calc( 54.5% + 1.1em/2 );
-        content: ' ';
-        border: 1px solid #5e5b86;
-        border-radius: 0;
-        background: none !important;
-    }
+  .wizard-steps-panel .step-number .number:after {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    left: calc( 54.5% + 1.1em/2 );
+    content: ' ';
+    border: 1px solid #5e5b86;
+    border-radius: 0;
+    background: none !important;
+  }
 }
-
 @media (min-width:320px) and (max-width:767px) {
-    .wizard-steps-panel .step-number .number:before {
-        position: absolute;
-        top: 15px;
-        right: calc( 53.5% + 1.5em/2 );
-        left: 0;
-        content: ' ';
-        border: 1px solid #5e5b86;
-        border-radius: 0;
-        background: none !important;
-    }
-
-    #gen-bgsearch-modal1 .list-fix-height {
-     height: 140px;
-   }
-   #gen-familysafety-modal1 .speech-bub-text-familysafety,#gen-myself-modal1 .speech-bub-text-myself {
+  .wizard-steps-panel .step-number .number:before {
+    position: absolute;
+    top: 15px;
+    right: calc( 53.5% + 1.5em/2 );
+    left: 0;
+    content: ' ';
+    border: 1px solid #5e5b86;
+    border-radius: 0;
+    background: none !important;
+  }
+  #gen-bgsearch-modal1 .list-fix-height {
+    height: 140px;
+  }
+  #gen-familysafety-modal1 .speech-bub-text-familysafety,#gen-myself-modal1 .speech-bub-text-myself {
     margin: 0;
     display: inline-block;
     margin: 0;
     width: 78%;
     text-align: left;
-   }
-   #gen-myself-modal1 .part1-speech-bub-myself, #gen-familysafety-modal1 .part1-speech-bub-familysafety {
+  }
+  #gen-myself-modal1 .part1-speech-bub-myself, #gen-familysafety-modal1 .part1-speech-bub-familysafety {
     padding-left: 15px;
-   }
-   #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text {
+  }
+  #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text {
     text-align: left;
-   }
-   #oldFlamesContactModal .part1-speech-bub, #familySaftyModal1 .part1-speech-bub {
+  }
+  #oldFlamesContactModal .part1-speech-bub, #familySaftyModal1 .part1-speech-bub {
     margin-bottom: 20px;
     display: inline-block;
     padding: 0;
   }
-  
   #anythingElseModal, #anythingElseModalContact, #contactInfoSearchCriminalModal, #contactInfoSearchModal, #contactInfoSocialProfile, #familySaftyModal1, #fcraDatingModal, #hidden-criminal-past-modal, #monitoringDatingModal, #oldFlamesContactModal, #professionalProfileSearch, #scanningContactInfo, #scanningEmail, #tacklingChallenges {
     padding: 15px;
   }
   #oldFlamesContactModal .icon-div, #hidden-criminal-past-modal .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
     padding: 0 30px;
-   }
+  }
   #hidden-criminal-past-modal .speech-bub-text{
     text-align: left;
     /* padding-left: 55px; */
@@ -4426,51 +4413,50 @@ ul.contactInfos img.loading.spinner {
   }
 }
 @media (min-width:200px) and (max-width:320px) {
-#hidden-criminal-past-modal .long-text-pad {
-  padding-top: 25px;
-}
-
+  #hidden-criminal-past-modal .long-text-pad {
+    padding-top: 25px;
+  }
 }
 @media (min-width:320px) and (max-width:370px) {
-#hidden-criminal-past-modal .part1-speech-bub {
-  margin-bottom: 55px;
-  display: inline-block;
-  padding: 0;
-}
-#hidden-criminal-past-modal .long-text-pad {
-  padding-top: 35px;
-}
-#tacklingChallenges .part1-speech-bub {
-  margin-bottom: 35px;
-}
+  #hidden-criminal-past-modal .part1-speech-bub {
+    margin-bottom: 55px;
+    display: inline-block;
+    padding: 0;
+  }
+  #hidden-criminal-past-modal .long-text-pad {
+    padding-top: 35px;
+  }
+  #tacklingChallenges .part1-speech-bub {
+    margin-bottom: 35px;
+  }
 }
 @media (min-width:370px) and (max-width:480px) {
-#hidden-criminal-past-modal .part1-speech-bub {
-  margin-bottom: 50px;
-  display: inline-block;
-  padding: 0;
-}
-#hidden-criminal-past-modal .long-text-pad {
-  padding-top: 5px;
-}
-#tacklingChallenges .part1-speech-bub {
-  margin-bottom: 5px;
-  display: inline-block;
-  padding: 0;
-}
+  #hidden-criminal-past-modal .part1-speech-bub {
+    margin-bottom: 50px;
+    display: inline-block;
+    padding: 0;
+  }
+  #hidden-criminal-past-modal .long-text-pad {
+    padding-top: 5px;
+  }
+  #tacklingChallenges .part1-speech-bub {
+    margin-bottom: 5px;
+    display: inline-block;
+    padding: 0;
+  }
 }
 @media (min-width:480px) and (max-width:767px) {
-#hidden-criminal-past-modal .part1-speech-bub {
-  margin-bottom: 25px;
-  display: inline-block;
-  padding: 0;
-}
-#hidden-criminal-past-modal .long-text-pad {
-  padding-top: 5px;
-}
-#tacklingChallenges .part1-speech-bub {
-  margin-bottom: 5px;
-  display: inline-block;
-  padding: 0;
-}
+  #hidden-criminal-past-modal .part1-speech-bub {
+    margin-bottom: 25px;
+    display: inline-block;
+    padding: 0;
+  }
+  #hidden-criminal-past-modal .long-text-pad {
+    padding-top: 5px;
+  }
+  #tacklingChallenges .part1-speech-bub {
+    margin-bottom: 5px;
+    display: inline-block;
+    padding: 0;
+  }
 }
