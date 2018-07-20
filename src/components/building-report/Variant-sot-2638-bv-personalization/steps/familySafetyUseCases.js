@@ -36,7 +36,7 @@ function createComponent(options = {}) {
   let newConfig = Object.assign({
     title: 'For Keeping Your Family Safe And Staying In The Know',
     $elem: $('#gen-familysafety-modal1'),
-    duration: 30,
+    duration: 40,
     onStart: onFamilySafetyUseCasesStart,
   }, options);
   familySafetyUseCases.init(newConfig);

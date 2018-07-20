@@ -1072,9 +1072,7 @@ social-links {
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
-
   margin: 20px;
-
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2436,6 +2434,9 @@ label.fcraCheckbox-wrapper {
   display: inline;
   margin: 0 15px 15px 0;
 }
+#gen-familysafety-modal1 .modal-body-header {
+  margin-bottom: 30px!important;
+}
 .part1-speech-bub-familysafety {
   /*height: 40px;*/
   vertical-align: middle;
@@ -2468,6 +2469,7 @@ visibility: hidden;
   text-align: center;
   padding-top: 0;
   margin-left: 0;
+  margin-bottom: 78px;
 }
 
 .speech-bub-img-wrapper-familysafety img {
@@ -2477,6 +2479,10 @@ visibility: hidden;
 .speech-bub-text-familysafety p {
   font-size: 20px;
   margin: 25px 0 50px;
+}
+
+#gen-myself-modal1 .checking-sources-progress {
+  margin-top: 36px;
 }
 
 /*--- END SEARCH MYSELF END ---*/
@@ -3366,7 +3372,7 @@ ul.contactInfos img.loading.spinner {
 
 .speech-bub-text-myself p {
     font-size: 20px;
-    margin: 25px 0 50px;
+    margin: 25px 0 45px;
 }
 #gen-bgsearch-modal1 .list-fix-height {
   height: 120px;
