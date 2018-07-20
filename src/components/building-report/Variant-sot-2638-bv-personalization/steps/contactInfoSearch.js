@@ -24,7 +24,7 @@ function onScanningContactInfoStart(stepCompleted) {
     }
   };
   displayIcon();
-  // $.when(barProgress).done(stepCompleted);
+  $.when(barProgress).done(stepCompleted);
 }
 
 function createComponent(options = {}) {

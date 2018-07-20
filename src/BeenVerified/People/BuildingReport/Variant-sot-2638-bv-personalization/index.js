@@ -28,6 +28,11 @@ const getBuildingReportInstance = (flowOption) => {
         wizard: createWizard({'criminalScanRecords': {'headerToDisplay': 3}, 'socialMediaScan': {'headerToDisplay': 4}, 'anyThingElseProfessional': {'headerToDisplay': 2}}, flowOption),
       };
       break;
+    case 'dating':
+      buildingReportObject = {
+        wizard: createWizard({'criminalScanRecords': {'headerToDisplay': 4}}, flowOption),
+      };
+      break;
     case 'professional':
       buildingReportObject = {
         wizard: createWizard({'anyThingElseProfessional': {'headerToDisplay': 3}}, flowOption),

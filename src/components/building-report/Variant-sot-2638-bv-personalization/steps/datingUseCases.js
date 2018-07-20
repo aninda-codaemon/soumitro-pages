@@ -2,7 +2,7 @@
 import Step from 'components/wizard/step';
 
 const $progressBar = $('#searching-progress-bar-database-dating .progress-bar');
-const quotes = $('.speech-bub-dating-wrapper');
+const quotes = $('.speech-bub-dating-cheaters-wrapper');
 
 const showNextQuote = (duration) => {
   let quotesID;
