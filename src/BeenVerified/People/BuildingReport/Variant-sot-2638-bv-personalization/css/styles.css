@@ -1643,6 +1643,13 @@ social-links {
   margin-left: 0;
   margin-bottom: 78px;
 }
+#hidden-criminal-past-modal .part2-speech-bub {
+  display: none;
+  text-align: center;
+  padding-top: 0;
+  margin-left: 0;
+  margin-bottom: 148px;
+}
 /* END SCANNING CONTACT INFO - DATING FLOW */
 
 /* ANYTHING ELSE QUESTION - DATING FLOW */

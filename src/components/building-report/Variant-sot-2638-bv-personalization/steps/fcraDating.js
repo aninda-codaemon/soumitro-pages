@@ -3,6 +3,8 @@ import Step from 'components/wizard/step';
 function onDatingFcraConfirmationStart(stepCompleted) {
   $('.headline').html('Final Message: Please Read');
   $('.subHeadline').addClass('text-red').html('Important').show();
+  $('.wizard-header').hide();
+  $('.dating-header').html('<div class="text-center">Your Report is Ready!</div>').show();
   $('#fcra-dating-confirm').validate({
     rules: {
       fcraCheckboxDating: {

@@ -30,7 +30,7 @@ const getBuildingReportInstance = (flowOption) => {
       break;
     case 'dating':
       buildingReportObject = {
-        wizard: createWizard({'criminalScanRecords': {'headerToDisplay': 4}}, flowOption),
+        wizard: createWizard({'criminalScanRecords': {'headerToDisplay': 4}, 'socialMediaScan': {'headerToDisplay': 5}}, flowOption),
       };
       break;
     case 'professional':
