@@ -24,20 +24,13 @@ import {
   contactInfoSearchModal,
   profileSearchContact,
   anythingElseContact,
-  // socialMediaScanContact,
   myselfUseCases,
   bgSearchUseCases,
-  // anyThingElseYouWantToKnow,
   hiddenPastCriminal,
   criminalScanRecords,
   contactInfoSearchCriminal,
   anythingElseCriminal,
   familySafetyUseCases,
-  // socialMediaScanFamilySafety,
-  // criminalScanFamilySafety,
-  // anyThingElseFamilySafety,
-  // socialMediaScanMyself,
-  // criminalScanMyself,
   tacklingChallenge,
   contactInfoProfessional,
   anyThingElseProfessional,
@@ -112,20 +105,13 @@ function createWizard(options = {}, flowOption = 'other') {
   let contactInfoSearchModalInstance = contactInfoSearchModal(options.contactInfoSearchModal);
   let profileSearchContactInstance = profileSearchContact(options.profileSearchContact);
   let anythingElseContactInstance = anythingElseContact(options.anythingElseContact);
-  // let socialMediaScanContactInstance = socialMediaScanContact(options.socialMediaScanContact);
   let myselfUseCasesInstance = myselfUseCases(options.myselfUseCases);
   let bgSearchUseCasesInstance = bgSearchUseCases(options.bgSearchUseCases);
-  // let anyThingElseYouWantToKnowInstance = anyThingElseYouWantToKnow(options.anyThingElseYouWantToKnow);
   let hiddenPastCriminalInstance = hiddenPastCriminal(options.hiddenPastCriminal);
   let criminalScanRecordsInstance = criminalScanRecords(options.criminalScanRecords);
   let contactInfoSearchCriminalInstance = contactInfoSearchCriminal(options.contactInfoSearchCriminal);
   let anythingElseCriminalInstance = anythingElseCriminal(options.anythingElseCriminal);
   let familySafetyUseCasesInstance = familySafetyUseCases(options.familySafetyUseCases);
-  // let socialMediaScanFamilySafetyInstance = socialMediaScanFamilySafety(options.socialMediaScanFamilySafety);
-  // let criminalScanFamilySafetyInstance = criminalScanFamilySafety(options.criminalScanFamilySafety);
-  // let anyThingElseFamilySafetyInstance = anyThingElseFamilySafety(options.anyThingElseFamilySafety);
-  // let socialMediaScanMyselfInstance = socialMediaScanMyself(options.socialMediaScanMyself);
-  // let criminalScanMyselfInstance = criminalScanMyself(options.criminalScanMyself);
   let tacklingChallengeInstance = tacklingChallenge(options.tacklingChallenge);
   let contactInfoProfessionalInstance = contactInfoProfessional(options.contactInfoProfessional);
   let anyThingElseProfessionalInstance = anyThingElseProfessional(options.anyThingElseProfessional);
@@ -158,7 +144,7 @@ function createWizard(options = {}, flowOption = 'other') {
     case 'family':
       sectionContainer1 = [familySafetyUseCasesInstance];
       sectionContainer2 = [criminalScanRecordsInstance];
-      sectionContainer3 = [socialMediaScanInstance]; // socialMediaScanFamilySafetyInstance
+      sectionContainer3 = [socialMediaScanInstance];
       sectionContainer4 = [bgSearchUseCasesInstance, anyThingElseProfessionalInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     case 'professional':

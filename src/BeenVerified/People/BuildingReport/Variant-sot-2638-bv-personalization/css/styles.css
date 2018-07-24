@@ -25,6 +25,7 @@ section {
 
 section.active {
   display: block;
+
   vertical-align: bottom;
 }
 
@@ -1641,7 +1642,7 @@ social-links {
   text-align: center;
   padding-top: 0;
   margin-left: 0;
-  margin-bottom: 78px;
+  /*margin-bottom: 78px;*/
 }
 #hidden-criminal-past-modal .part2-speech-bub {
   display: none;
@@ -2987,7 +2988,7 @@ ul.contactInfos img.loading.spinner {
 }
 
 #contact-info-groups li p {
-    font-size: 18px;
+    font-size: 16px;
     position: absolute;
     width: 100%;
     margin: 0;
@@ -3029,7 +3030,7 @@ ul.contactInfos img.loading.spinner {
 }
 
 #contact-info-srch-groups li p {
-    font-size: 18px;
+    font-size: 16px;
     position: absolute;
     width: 100%;
     margin: 0;
@@ -3192,10 +3193,15 @@ ul.contactInfos img.loading.spinner {
     display: inline-block;
     margin: 0;
 }
-#oldFlamesContactModal .part1-speech-bub, #hidden-criminal-past-modal .part1-speech-bub, #familySaftyModal1 .part1-speech-bub, #tacklingChallenges .part1-speech-bub {
-    margin-bottom: 30px;
+ #hidden-criminal-past-modal .part1-speech-bub, #familySaftyModal1 .part1-speech-bub, #tacklingChallenges .part1-speech-bub {
+    margin-bottom: 20px;
     display: block;
     min-height: 50px !important;
+}
+#oldFlamesContactModal .part1-speech-bub {
+  margin-bottom: 5px;
+  display: block;
+  min-height: 50px !important;
 }
 #oldFlamesContactModal .speech-bub-ico, #hidden-criminal-past-modal .speech-bub-ico, #familySaftyModal1 .speech-bub-ico, #tacklingChallenges .speech-bub-ico {
     width: 40px;
@@ -3204,16 +3210,19 @@ ul.contactInfos img.loading.spinner {
     /* display: inline; */
     margin: 0 15px 15px 0;
 }
-#oldFlamesContactModal .icons-container, #hidden-criminal-past-modal .icons-container {
+#hidden-criminal-past-modal .icons-container {
     height: 180px;
     margin-bottom: 40px;
 }
+#oldFlamesContactModal .icons-container {
+  height: 190px;
+}
 #hidden-criminal-past-modal .icons-container {
-  margin-bottom: 56px;
+  margin-bottom: 40px;
 }
 #tacklingChallenges .icons-container {
-  height: 180px;
-  margin-bottom: 6px;
+  height: 185px;
+  /*margin-bottom: 6px;*/
 }
 #contactInfoSearchModal .sub-heading, #contactInfoSearchCriminalModal .sub-heading {
     font-size: 20px;
@@ -3402,7 +3411,7 @@ ul.contactInfos img.loading.spinner {
   text-align: center;
   padding-top: 0;
   margin-left: 0;
-  margin-bottom: 67px;
+  margin-bottom: 95px;
 }
 
 /* ========== END NEWLY ADDED CSS ========== */
@@ -3818,7 +3827,7 @@ ul.contactInfos img.loading.spinner {
         padding: 0 15px;
     }
     #gen-dating-modal1 .part1-speech-bub {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
     #gen-dating-modal1 .speech-bub-ico {
         width: 40px;
@@ -4373,7 +4382,7 @@ ul.contactInfos img.loading.spinner {
     background: none !important;
   }
   #gen-bgsearch-modal1 .list-fix-height {
-    height: 140px;
+    height: 150px;
   }
   #gen-familysafety-modal1 .speech-bub-text-familysafety,#gen-myself-modal1 .speech-bub-text-myself {
     margin: 0;
@@ -4417,27 +4426,45 @@ ul.contactInfos img.loading.spinner {
     padding:0;
   }
   #gen-myself-modal1 .part2-speech-bub-myself {
-    padding-bottom: 65px;
+    padding-bottom: 65px !important;
   }
-  /*#oldFlamesContactModal .part2-speech-bub {
-    padding-bottom: 2px;
-  }*/
+  #oldFlamesContactModal .part2-speech-bub {
+    padding-bottom: 0px !important;
+  }
   #hidden-criminal-past-modal .part2-speech-bub {
-    padding-bottom: 100px;
+    padding-bottom: 260px !important;
   }
   #tacklingChallenges .part2-speech-bub {
-    padding-bottom: 10px;
+    padding-bottom: 60px !important;
   }
   #gen-familysafety-modal1 .part2-speech-bub-familysafety {
-    padding-bottom: 70px;
+    padding-bottom: 100px !important;
   }
   #oldFlamesContactModal .icons-container {
-    margin-bottom: 55px !important;
+    margin-bottom: 75px !important;
+  }
+  .part2-speech-bub {
+    margin-bottom: 0px !important; 
+  }
+
+  #gen-bgsearch-modal1 .icon-heading-bgsearch {
+    font-size: 18px !important;
+  }
+  #gen-bgsearch-modal1 li {
+    font-size: 18px !important;
+  }
+  #tacklingChallenges .icons-container {
+    height: 270px !important;
+    margin-bottom: 6px !important;
   }
 }
 @media (min-width:200px) and (max-width:320px) {
   #hidden-criminal-past-modal .long-text-pad {
     padding-top: 25px;
+  }
+  #gen-myself-modal1 .speech-bub-text-myself, #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text,
+  #gen-dating-modal1 .speech-bub-text, #tacklingChallenges .speech-bub-text, #gen-familysafety-modal1 .speech-bub-text-familysafety {
+   padding-bottom: 21px !important;
   }
 }
 @media (min-width:320px) and (max-width:370px) {
@@ -4450,7 +4477,11 @@ ul.contactInfos img.loading.spinner {
     padding-top: 35px;
   }
   #tacklingChallenges .part1-speech-bub {
-    margin-bottom: 35px;
+    margin-bottom: 50px;
+  }
+  #gen-myself-modal1 .speech-bub-text-myself, #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text,
+  #gen-dating-modal1 .speech-bub-text, #tacklingChallenges .speech-bub-text, #gen-familysafety-modal1 .speech-bub-text-familysafety {
+   padding-bottom: 21px !important;
   }
 }
 @media (min-width:370px) and (max-width:480px) {
@@ -4467,6 +4498,10 @@ ul.contactInfos img.loading.spinner {
     /* display: inline-block; */
     padding: 0;
   }
+  #gen-myself-modal1 .speech-bub-text-myself, #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text,
+  #gen-dating-modal1 .speech-bub-text, #tacklingChallenges .speech-bub-text, #gen-familysafety-modal1 .speech-bub-text-familysafety {
+   padding-bottom: 21px !important;
+  }
 }
 @media (min-width:480px) and (max-width:767px) {
   #hidden-criminal-past-modal .part1-speech-bub {
@@ -4481,5 +4516,9 @@ ul.contactInfos img.loading.spinner {
     margin-bottom: 5px;
     display: inline-block;
     padding: 0;
+  }
+  #gen-myself-modal1 .speech-bub-text-myself, #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text,
+  #gen-dating-modal1 .speech-bub-text, #tacklingChallenges .speech-bub-text, #gen-familysafety-modal1 .speech-bub-text-familysafety {
+   padding-bottom: 21px !important;
   }
 }
