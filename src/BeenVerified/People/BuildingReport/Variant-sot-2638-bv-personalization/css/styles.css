@@ -25,7 +25,6 @@ section {
 
 section.active {
   display: block;
-
   vertical-align: bottom;
 }
 

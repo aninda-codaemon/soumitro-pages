@@ -24,20 +24,20 @@ import {
   contactInfoSearchModal,
   profileSearchContact,
   anythingElseContact,
-  socialMediaScanContact,
+  // socialMediaScanContact,
   myselfUseCases,
   bgSearchUseCases,
-  anyThingElseYouWantToKnow,
+  // anyThingElseYouWantToKnow,
   hiddenPastCriminal,
   criminalScanRecords,
   contactInfoSearchCriminal,
   anythingElseCriminal,
   familySafetyUseCases,
-  socialMediaScanFamilySafety,
-  criminalScanFamilySafety,
-  anyThingElseFamilySafety,
-  socialMediaScanMyself,
-  criminalScanMyself,
+  // socialMediaScanFamilySafety,
+  // criminalScanFamilySafety,
+  // anyThingElseFamilySafety,
+  // socialMediaScanMyself,
+  // criminalScanMyself,
   tacklingChallenge,
   contactInfoProfessional,
   anyThingElseProfessional,
@@ -111,25 +111,25 @@ function createWizard(options = {}, flowOption = 'other') {
   let oldFlamesContactInstance = oldFlamesContact(options.oldFlamesContact);
   let contactInfoSearchModalInstance = contactInfoSearchModal(options.contactInfoSearchModal);
   let profileSearchContactInstance = profileSearchContact(options.profileSearchContact);
-  let anythingElseContactInstance = anythingElseContact(options.anythingElseContact);socialMediaScanContact
-  let socialMediaScanContactInstance = socialMediaScanContact(options.socialMediaScanContact);
+  let anythingElseContactInstance = anythingElseContact(options.anythingElseContact);
+  // let socialMediaScanContactInstance = socialMediaScanContact(options.socialMediaScanContact);
   let myselfUseCasesInstance = myselfUseCases(options.myselfUseCases);
   let bgSearchUseCasesInstance = bgSearchUseCases(options.bgSearchUseCases);
-  let anyThingElseYouWantToKnowInstance = anyThingElseYouWantToKnow(options.anyThingElseYouWantToKnow);
+  // let anyThingElseYouWantToKnowInstance = anyThingElseYouWantToKnow(options.anyThingElseYouWantToKnow);
   let hiddenPastCriminalInstance = hiddenPastCriminal(options.hiddenPastCriminal);
   let criminalScanRecordsInstance = criminalScanRecords(options.criminalScanRecords);
   let contactInfoSearchCriminalInstance = contactInfoSearchCriminal(options.contactInfoSearchCriminal);
   let anythingElseCriminalInstance = anythingElseCriminal(options.anythingElseCriminal);
   let familySafetyUseCasesInstance = familySafetyUseCases(options.familySafetyUseCases);
-  let socialMediaScanFamilySafetyInstance = socialMediaScanFamilySafety(options.socialMediaScanFamilySafety);
-  let criminalScanFamilySafetyInstance = criminalScanFamilySafety(options.criminalScanFamilySafety);
-  let anyThingElseFamilySafetyInstance = anyThingElseFamilySafety(options.anyThingElseFamilySafety);
-  let socialMediaScanMyselfInstance = socialMediaScanMyself(options.socialMediaScanMyself);
-  let criminalScanMyselfInstance = criminalScanMyself(options.criminalScanMyself);
+  // let socialMediaScanFamilySafetyInstance = socialMediaScanFamilySafety(options.socialMediaScanFamilySafety);
+  // let criminalScanFamilySafetyInstance = criminalScanFamilySafety(options.criminalScanFamilySafety);
+  // let anyThingElseFamilySafetyInstance = anyThingElseFamilySafety(options.anyThingElseFamilySafety);
+  // let socialMediaScanMyselfInstance = socialMediaScanMyself(options.socialMediaScanMyself);
+  // let criminalScanMyselfInstance = criminalScanMyself(options.criminalScanMyself);
   let tacklingChallengeInstance = tacklingChallenge(options.tacklingChallenge);
   let contactInfoProfessionalInstance = contactInfoProfessional(options.contactInfoProfessional);
   let anyThingElseProfessionalInstance = anyThingElseProfessional(options.anyThingElseProfessional);
-
+  
   switch (flowOption) {
     case 'dating':
       sectionContainer1 = [datingUseCasesInstance];
