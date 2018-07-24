@@ -12,8 +12,8 @@ const showNextQuote = (duration) => {
   let part1Length = $part1.length;
 
   $part2.hide();
-  $quotes.hide();
-  $quotes.eq(maxSteps).fadeIn(1000);
+  // $quotes.hide();
+  $quotes.eq(maxSteps).css('visibility', 'visible').fadeIn(1000);
 
   const displayText = setInterval(() => {
     maxSteps++;
@@ -23,8 +23,8 @@ const showNextQuote = (duration) => {
       $('div#tackling-challenge-section1').removeClass('icons-container');
       $part1.hide();
       $part2.show();
-    }
-    $quotes.eq(maxSteps).fadeIn(1000);
+    }    
+    $quotes.eq(maxSteps).css('visibility', 'visible').fadeIn(1000);
   }, interval);
 };
 

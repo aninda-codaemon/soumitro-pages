@@ -3221,7 +3221,7 @@ ul.contactInfos img.loading.spinner {
   margin-bottom: 40px;
 }
 #tacklingChallenges .icons-container {
-  height: 185px;
+  height: 160px;
   /*margin-bottom: 6px;*/
 }
 #contactInfoSearchModal .sub-heading, #contactInfoSearchCriminalModal .sub-heading {
@@ -3378,7 +3378,6 @@ ul.contactInfos img.loading.spinner {
   visibility: hidden;
 }
 
-
 .part2-speech-bub-myself {
   display: none;
   text-align: center;
@@ -3401,7 +3400,7 @@ ul.contactInfos img.loading.spinner {
 
 /*-- PROFESSIONAL FLOW --*/
 #tacklingChallenges .checking-sources-progress {
-  margin-top: 40px;
+  margin-top: 32px;
 }
 #contactInfoSocialProfile .checking-sources-progress {
   margin-top: 20px;
@@ -3411,9 +3410,11 @@ ul.contactInfos img.loading.spinner {
   text-align: center;
   padding-top: 0;
   margin-left: 0;
-  margin-bottom: 95px;
+  margin-bottom: 78px;
 }
-
+.tackling-challenge-part1-speech-bub {
+  visibility: hidden;
+}
 /* ========== END NEWLY ADDED CSS ========== */
 
 /* == OTHER MODAL THINS ========================= */
