@@ -11,7 +11,7 @@ const showNextQuote = (duration) => {
   let part1Length = $part1.length;
 
   $part2.hide();
-  $quotes.eq(maxSteps).css('visibility', 'visible').fadeIn(1000);
+  $quotes.eq(maxSteps).hide().css('visibility', 'visible').fadeIn(1000);
 
   const displayText = setInterval(() => {
     maxSteps++;
@@ -22,7 +22,7 @@ const showNextQuote = (duration) => {
       $part1.hide();
       $part2.show();
     }
-    $quotes.eq(maxSteps).css('visibility', 'visible').fadeIn(1000);
+    $quotes.eq(maxSteps).hide().css('visibility', 'visible').fadeIn(1000);
   }, interval);
 };
 

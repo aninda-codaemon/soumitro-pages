@@ -4,7 +4,7 @@ import Step from 'components/wizard/step';
 function onScanningContactInfoStart(stepCompleted) {
   var { duration } = this;
   const $progressBar = $('#contactinfo-modal-progress .progress-bar');
-  const $spinner = $('.contact-loading-spinner');
+  const $spinner = $('#contactInfoSearchModal .contact-loading-spinner');
   const $icon = $('.contact-info-icon-container-modal');
   const interval = duration / ($spinner.length + 1);
   let counter = 0;
@@ -14,7 +14,7 @@ function onScanningContactInfoStart(stepCompleted) {
     { duration },
   );
   const displayIcon = () => {
-    if (counter < $spinner.length) {
+    if (counter < $spinner.length) {      
       $spinner.eq(counter).delay(interval).fadeIn('fast', () => {
         $icon.eq(counter).css('visibility', 'visible');
         $spinner.eq(counter).css('visibility', 'hidden');

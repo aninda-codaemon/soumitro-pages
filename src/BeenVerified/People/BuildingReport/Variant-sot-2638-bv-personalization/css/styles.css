@@ -1632,7 +1632,7 @@ social-links {
 }
 #contactinfo-progress, #contactinfo-modal-progress, #contactinfo-criminal-modal-progress {
     height: 30px;
-    margin: 5px 25px 15px;
+    margin: 20px 0px 0px;
 }
 #oldFlamesContactModal .checking-sources-progress {
   margin-top: 2px;
@@ -4430,13 +4430,13 @@ ul.contactInfos img.loading.spinner {
     padding-bottom: 65px !important;
   }
   #oldFlamesContactModal .part2-speech-bub {
-    padding-bottom: 0px !important;
+    padding-bottom: 5px !important;
   }
   #hidden-criminal-past-modal .part2-speech-bub {
-    padding-bottom: 260px !important;
+    padding-bottom: 245px !important;
   }
   #tacklingChallenges .part2-speech-bub {
-    padding-bottom: 60px !important;
+    padding-bottom: 30px !important;
   }
   #gen-familysafety-modal1 .part2-speech-bub-familysafety {
     padding-bottom: 100px !important;
@@ -4457,6 +4457,9 @@ ul.contactInfos img.loading.spinner {
   #tacklingChallenges .icons-container {
     height: 270px !important;
     margin-bottom: 6px !important;
+  }
+  #scanningSocialMedia .modal-body {
+    padding-bottom: 5px;
   }
 }
 @media (min-width:200px) and (max-width:320px) {
