@@ -8,24 +8,18 @@ function onUserFormSubmitStart(stepCompleted) {
   $('#anyThingElse').validate({
     rules: {
       fn: {
-        required: true,
+        required: false,
       },
       ln: {
-        required: true,
+        required: false,
       },
     },
-    errorPlacement(error, element) {
-      element.closest('.form-group').addClass('error').append(error);
-    },
-    success(label) {
-      label.closest('.form-group').removeClass('error').find('label.error').remove();
-    },
-    messages: {
-      fn: 'Please enter a first name',
-      ln: 'Please enter a last name',
-    },
-    submitHandler() {
-      showExternalLoading(stepCompleted, duration, CONTINUE_SESSION_INDEX);
+    submitHandler: function() { 
+      if($('#fn').val() || $('#ln').val() ) {
+          showExternalLoading(stepCompleted, duration, CONTINUE_SESSION_INDEX);
+       }else{
+        stepCompleted();  
+      }   
     },
   });
 
