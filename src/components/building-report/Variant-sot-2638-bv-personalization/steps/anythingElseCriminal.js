@@ -6,8 +6,12 @@ const CONTINUE_SESSION_INDEX = 2;
 function onAnythingElseStart(stepCompleted) {
   var self = this;
   $('#btn-finalize-criminal').on('click', () => {
-    showExternalLoading(stepCompleted, self.duration, CONTINUE_SESSION_INDEX);
-    $('.r-arrow').hide();
+    if ($('input[name="criminal-checkboxes"]:checkbox').is(':checked')) {      
+      showExternalLoading(stepCompleted, self.duration, CONTINUE_SESSION_INDEX);
+      $('.r-arrow').hide();
+    } else {      
+      stepCompleted();
+    }
   });
 
   $('#skip-anything-else-criminal').on('click', (e) => {

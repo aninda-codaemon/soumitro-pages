@@ -5,9 +5,13 @@ const CONTINUE_SESSION_INDEX = 2;
 
 function onAnythingElseStart(stepCompleted) {
   var self = this;
-  $('#btn-finalize').on('click', () => {
-    showExternalLoading(stepCompleted, self.duration, CONTINUE_SESSION_INDEX);
-    $('.r-arrow').hide();
+  $('#btn-finalize').on('click', (e) => {
+    if ($('input[name="dating-checkboxes"]:checkbox').is(':checked')) {      
+      showExternalLoading(stepCompleted, self.duration, CONTINUE_SESSION_INDEX);
+      $('.r-arrow').hide();
+    } else {      
+      stepCompleted();
+    }
   });
 
   $('#skip-anything-else').on('click', (e) => {

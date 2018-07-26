@@ -6,8 +6,12 @@ const CONTINUE_SESSION_INDEX = 2;
 function onAnythingElseStart(stepCompleted) {
   var self = this;
   $('#btn-finalize-contact').on('click', () => {
-    showExternalLoading(stepCompleted, self.duration, CONTINUE_SESSION_INDEX);
-    $('.r-arrow').hide();
+    if ($('input[name="contact-checkboxes"]:checkbox').is(':checked')) {      
+      showExternalLoading(stepCompleted, self.duration, CONTINUE_SESSION_INDEX);
+      $('.r-arrow').hide();
+    } else {      
+      stepCompleted();
+    }
   });
 
   $('#skip-anything-else-contact').on('click', (e) => {
