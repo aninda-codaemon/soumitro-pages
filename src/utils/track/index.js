@@ -9,7 +9,7 @@ const trackGA = (eventName, props) => {
     if (props) {
       gaData.visitorEventInfo = JSON.stringify(props);
     }
-
+    
     window.dataLayer.push(gaData);
   }
 };

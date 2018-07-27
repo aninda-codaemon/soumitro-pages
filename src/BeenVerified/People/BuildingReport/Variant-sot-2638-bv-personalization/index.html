@@ -132,6 +132,7 @@
               </div>
             </div>
           </div>
+          <div class="hidden flow-identifier" data-flow="Other"></div>
 
         </div>
       </div>
@@ -1247,7 +1248,7 @@
                             <div class="row">
                               <div class="col-md-12 dating-safety-top-header">
                                 <p class="modal-body-header text-center sub-heading">Whether you’re meeting up with an online date for the first time or itching to find out if your partner
-                                  is cheating, you deserve to be in the know. We’ll search for:</p>
+                                  is cheating, you deserve to be in the know.</p>
                               </div>
                             </div>
                             <div class="row">
@@ -1369,7 +1370,7 @@
                                 <div class="form-group">
                                   <div class="col-sm-6 col-md-6">
                                     <label class="chckbx" for="other-info-checkbox0">
-                                      <input type="checkbox" name="dating-checkboxes" id="other-info-checkbox0" value="1" class="styled">
+                                      <input type="checkbox" name="dating-checkboxes" id="other-info-checkbox0" value="photos_and_images" class="styled">
                                       <span data-fr-bind="currentRecord">
                                         <span class="rndname">Photos &amp; Images</span>
                                       </span>
@@ -1377,7 +1378,7 @@
                                   </div>
                                   <div class="col-sm-6 col-md-6">
                                     <label class="chckbx" for="other-info-checkbox1">
-                                      <input type="checkbox" name="dating-checkboxes" id="other-info-checkbox1" value="1" class="styled">
+                                      <input type="checkbox" name="dating-checkboxes" id="other-info-checkbox1" value="home_and_house_info" class="styled">
                                       <span data-fr-bind="currentRecord">
                                         <span class="rndname">Home &amp; House Info</span>
                                       </span>
@@ -1385,7 +1386,7 @@
                                   </div>
                                   <div class="col-sm-6 col-md-6">
                                     <label class="chckbx" for="other-info-checkbox2">
-                                      <input type="checkbox" name="dating-checkboxes" id="other-info-checkbox2" value="1" class="styled">
+                                      <input type="checkbox" name="dating-checkboxes" id="other-info-checkbox2" value="friends_and_roommates" class="styled">
                                       <span data-fr-bind="currentRecord">
                                         <span class="rndname">Friends &amp; Roommates</span>
                                       </span>
@@ -1393,7 +1394,7 @@
                                   </div>
                                   <div class="col-sm-6 col-md-6">
                                     <label class="chckbx" for="other-info-checkbox3">
-                                      <input type="checkbox" name="dating-checkboxes" id="other-info-checkbox3" value="1" class="styled">
+                                      <input type="checkbox" name="dating-checkboxes" id="other-info-checkbox3" value="bankruptcies" class="styled">
                                       <span data-fr-bind="currentRecord">
                                         <span class="rndname">Bankruptcies</span>
                                       </span>
@@ -1547,7 +1548,7 @@
                       <div class="row" id="myself-modal-body-header">
                         <div class="col-md-12">
                           <p class="modal-body-header text-center sub-heading">
-                            Monitoring and protecting your reputation online is important. Whether you’re looking for love, a job, or something else, know what information is out there before others find it. We can help. We’ll search for the following:
+                            Monitoring and protecting your reputation is important. Whether your looking for a job or in the dating scene, know what is out there before others find it.
                           </p>
                         </div>
                       </div>
@@ -1565,7 +1566,7 @@
                               </div>
                               <div id="speech-bub-myself-wrapper3" class="speech-bub-wrapper-myself part1-speech-bub-myself">
                                 <img class="speech-bub-ico-myself" aria-hidden="true" src="img/icn_mglass_color_small.svg">
-                                <p class="speech-bub-text-myself">We run an in-depth background report on you, that may collect information you may not be aware of. It can even reveal if your name is connected to any shady activity or persons, such as possible associates and even relatives.</p>
+                                <p class="speech-bub-text-myself">We run a background check on you, and can send alerts every time it gets updated. It can even reveal if your name is connected to any outside shady activity or persons.</p>
                               </div>
 
                               <div class="speech-bub-wrapper-myself part2-speech-bub-myself">
@@ -1606,8 +1607,11 @@
                   <div class="content">
                     <div class="row">
                       <div class="col-md-12">
-                        <p class="modal-body-header sub-heading-bgsearch text-center">
+                        <p id="bgSearch-header1" class="modal-body-header sub-heading-bgsearch text-center hidden">
                           Our background check reports offer 13 different categories of data to give you a comprehensive look at your publicly available information.
+                        </p>
+                        <p id="bgSearch-header2" class="modal-body-header sub-heading-bgsearch text-center hidden" data-fr-bind="currentRecord searchData">
+                          Our background check reports offer 13 different categories of data to give you a comprehensive look at {{firstName}}'s background.
                         </p>
                       </div>
                     </div>
@@ -1649,7 +1653,7 @@
                             <h2 class="icon-heading-bgsearch">CRIMINAL RECORDS</h2>
                             <ol class="info-list-ol">
                               <li><span class="text-green">7.</span> Crimes</li>
-                              <li class="hidden-ciimage"><span class="text-green">8.</span> Traffic Vialotaions</li>
+                              <li class="hidden-ciimage"><span class="text-green">8.</span> Traffic Violations</li>
                             </ol>
                           </div>
                           <div id="bgsearch-wrapper4" class="col-md-4 text-left col-xs-7 info-list clearfix hidden-ciimage">
@@ -1819,7 +1823,7 @@
                       <div class="row">
                         <div class="col-md-12 old-flames-top-header">
                           <p class="modal-body-header sub-heading">
-                            It's hard staying in touch. Whether you're looking to reach out to an old flame, plan a class reunion, or search for lost relatives, we can help you reconnect with friends and family. We’ll search for the following:
+                            Whether you're looking to reach out to an old flame, plan a class reunion, or search for lost relatives, we can help you reconnect with friends and family.
                           </p>
                         </div>
                       </div>
@@ -1978,7 +1982,7 @@
                                 <div class="form-group">
                                   <div class="col-sm-6 col-md-6">
                                     <label class="chckbx" for="other-info-contact-checkbox0">
-                                      <input type="checkbox" name="contact-checkboxes" id="other-info-contact-checkbox0" value="1" class="styled">
+                                      <input type="checkbox" name="contact-checkboxes" id="other-info-contact-checkbox0" value="relatives" class="styled">
                                       <span data-fr-bind="currentRecord">
                                         <span class="rndname">Relatives</span>
                                       </span>
@@ -1986,7 +1990,7 @@
                                   </div>
                                   <div class="col-sm-6 col-md-6">
                                     <label class="chckbx" for="other-info-contact-checkbox1">
-                                      <input type="checkbox" name="contact-checkboxes" id="other-info-contact-checkbox1" value="1" class="styled">
+                                      <input type="checkbox" name="contact-checkboxes" id="other-info-contact-checkbox1" value="arrest_and_criminal_records" class="styled">
                                       <span data-fr-bind="currentRecord">
                                         <span class="rndname">Arrest &amp; Criminal Records</span>
                                       </span>
@@ -1994,7 +1998,7 @@
                                   </div>
                                   <div class="col-sm-6 col-md-6">
                                     <label class="chckbx" for="other-info-contact-checkbox2">
-                                      <input type="checkbox" name="contact-checkboxes" id="other-info-contact-checkbox2" value="1" class="styled">
+                                      <input type="checkbox" name="contact-checkboxes" id="other-info-contact-checkbox2" value="friends_and_roommates" class="styled">
                                       <span data-fr-bind="currentRecord">
                                         <span class="rndname">Friends &amp; Roommates</span>
                                       </span>
@@ -2002,7 +2006,7 @@
                                   </div>
                                   <div class="col-sm-6 col-md-6">
                                     <label class="chckbx" for="other-info-contact-checkbox3">
-                                      <input type="checkbox" name="contact-checkboxes" id="other-info-contact-checkbox3" value="1" class="styled">
+                                      <input type="checkbox" name="contact-checkboxes" id="other-info-contact-checkbox3" value="full_background_report" class="styled">
                                       <span data-fr-bind="currentRecord">
                                         <span class="rndname">Full Background Report</span>
                                       </span>
@@ -2059,7 +2063,7 @@
                       <div class="row">
                         <div class="col-md-12 hidden-past-top-header">
                           <p class="modal-body-header sub-heading">
-                          Whether you’re looking for an online date’s hidden past or trying to help someone you love, knowing all the facts can help you feel safe. We can help you find out if the person you’re looking for as a criminal record. We’ll search for:
+                            Whether you’re looking for an online date’s hidden past or trying to help someone you love, knowing a person’s criminal record can help you feel safe.
                           </p>
                         </div>
                       </div>
@@ -2071,15 +2075,15 @@
                               <div id="hidden-past-section1" class="icons-container">
                                 <div class="speech-bub-dating-wrapper hidden-past-speech-bub-sec1 hidden-past-part1-speech-bub part1-speech-bub">
                                   <img class="speech-bub-ico" aria-hidden="true" src="img/icn_fingerprint_color_small.svg">
-                                  <p class="speech-bub-text">Arrests and criminal and traffic records that can reveal a stranger’s lie or assist you in helping a loved one.</p>
+                                  <p class="speech-bub-text">Arrest and criminal records that can reveal a stranger's lie or assist you in helping a loved one.</p>
                                 </div>
                                 <div class="speech-bub-dating-wrapper hidden-past-speech-bub-sec1 hidden-past-part1-speech-bub part1-speech-bub">
                                   <img class="speech-bub-ico" aria-hidden="true" src="img/icn_phone_color_small.svg">
-                                  <p class="speech-bub-text">Phone numbers, emails, and home addresses can enable you to reach out to a struggling relative or to stop a deceitful person in his or her tracks.</p>
+                                  <p class="speech-bub-text">Contact info and social media accounts that can help enable you to reach out, or to stop a deceitful person in their tracks.</p>
                                 </div>
                                 <div class="speech-bub-dating-wrapper hidden-past-speech-bub-sec1 hidden-past-part1-speech-bub part1-speech-bub long-text-pad">
                                   <img class="speech-bub-ico" aria-hidden="true" src="img/icn_mglass_color_small.svg">
-                                  <p class="speech-bub-text">A comprehensive background check can offer a detailed look at a person’s past and present so you can prepare for the future.</p>
+                                  <p class="speech-bub-text">A full background check, which can offer a details look at a person's past and present so you can prepare for the future.</p>
                                 </div>
                               </div>
 
@@ -2325,7 +2329,7 @@
                       <div class="row" id="familysafety-modal-body-header">
                         <div class="col-md-12">
                           <p class="modal-body-header text-center sub-heading">
-                            Monitor who's around you to help keep your family safe: we can help you stay in the know about the latest changes in your surroundings. Whether you suspect a neighbor may be up to no good or if you just want to be proactive, we can help. We’ll search for the following:
+                            Monitor who's around you to help keep your family safe: we can help you stay in the know about the latest changes in your surroundings. Whether you suspect a neighbor may be up to no good or if you just want to be proactive, we can help.
                           </p>
                         </div>
                       </div>
@@ -2343,7 +2347,7 @@
                               </div>
                               <div id="speech-bub-familysafety-wrapper3" class="speech-bub-wrapper-familysafety part1-speech-bub-familysafety">
                                 <img class="speech-bub-ico-familysafety" aria-hidden="true" src="img/icn_mglass_color_small.svg">
-                                <p class="speech-bub-text-familysafety">All the information we pull about a person is put into one convenient place to help you understand the big picture and stay safe. You can make smart decisions based on your findings.</p>
+                                <p class="speech-bub-text-familysafety">We will run a comprehensive background check to help you make better, more well-informed decisions about the people around you and your family.</p>
                               </div>
                               <div class="speech-bub-wrapper-familysafety part2-speech-bub-familysafety">
                                 <div class="speech-bub-img-wrapper-familysafety">

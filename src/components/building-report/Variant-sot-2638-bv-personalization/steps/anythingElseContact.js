@@ -1,3 +1,4 @@
+import { track } from 'utils/track/index';
 import Step from 'components/wizard/step';
 import { showExternalLoading, hideExternalLoading } from './shared';
 
@@ -5,8 +6,19 @@ const CONTINUE_SESSION_INDEX = 2;
 
 function onAnythingElseStart(stepCompleted) {
   var self = this;
+  const flowName = $('.flow-identifier').attr('data-flow').toLowerCase();
+  const test = (chkVal) => {
+    console.log('Checkbox value: ', chkVal);
+  };
+
   $('#btn-finalize-contact').on('click', () => {
-    if ($('input[name="contact-checkboxes"]:checkbox').is(':checked')) {      
+    if ($('input[name="contact-checkboxes"]:checkbox').is(':checked')) {
+      $('input[name="contact-checkboxes"]:checkbox:checked').map(function(){
+        const $el = $(this);        
+        const gaMessage = `uc segment - ${flowName} - more info checkbox, ${$el.attr('value')}`;
+        track(gaMessage);
+        test(gaMessage);
+      });   
       showExternalLoading(stepCompleted, self.duration, CONTINUE_SESSION_INDEX);
       $('.r-arrow').hide();
     } else {      

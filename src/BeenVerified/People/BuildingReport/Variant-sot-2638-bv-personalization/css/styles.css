@@ -1474,7 +1474,7 @@ social-links {
     text-align: center;
 }
 #gen-dating-modal1 .icon-div {
-    padding: 0 70px;
+    padding: 0 50px;
 }
 .part1-speech-bub {
     height: 40px;
@@ -1502,7 +1502,7 @@ social-links {
   visibility: hidden;
 }
 #gen-dating-modal1 .checking-sources-progress {
-  margin-top: 30px;
+  margin-top: 15px;
 }
 .bub-visible1 {
   visibility: visible !important;
@@ -1513,7 +1513,7 @@ social-links {
   text-align: center;
   padding-top: 0;
   margin-left: 0;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .speech-bub-img-wrapper img {
@@ -1524,7 +1524,7 @@ social-links {
 .speech-bub-dating-text p {
     font-size: 20px;
     color: #4a4a4a;
-    margin: 25px 0 50px;
+    /*margin: 25px 0 50px;*/
 }
 
 /* END - DATING USE CASES */
@@ -1642,14 +1642,14 @@ social-links {
   text-align: center;
   padding-top: 0;
   margin-left: 0;
-  /*margin-bottom: 78px;*/
+  margin-bottom: 0px !important;
 }
 #hidden-criminal-past-modal .part2-speech-bub {
   display: none;
   text-align: center;
   padding-top: 0;
   margin-left: 0;
-  margin-bottom: 168px;
+  margin-bottom: 130px;
 }
 /* END SCANNING CONTACT INFO - DATING FLOW */
 
@@ -2477,7 +2477,7 @@ visibility: hidden;
   text-align: center;
   padding-top: 0;
   margin-left: 0;
-  margin-bottom: 78px;
+  margin-bottom: 50px;
 }
 
 .speech-bub-img-wrapper-familysafety img {
@@ -2490,7 +2490,7 @@ visibility: hidden;
 }
 
 #gen-myself-modal1 .checking-sources-progress {
-  margin-top: 36px;
+  margin-top: 30px;
 }
 
 /*--- END SEARCH MYSELF END ---*/
@@ -3215,7 +3215,7 @@ ul.contactInfos img.loading.spinner {
     margin-bottom: 40px;
 }
 #oldFlamesContactModal .icons-container {
-  height: 190px;
+  height: 175px;
 }
 #hidden-criminal-past-modal .icons-container {
   margin-bottom: 40px;
@@ -3331,13 +3331,13 @@ ul.contactInfos img.loading.spinner {
     text-align: center;
     margin: 0 0 30px;
 }
-#gen-myself-modal3 .f-name {
+/*#gen-myself-modal3 .f-name {
     width: 40%;
     float: left;
     padding: 0 3px;
-}
-#gen-myself-modal3 .l-name, #gen-myself-modal3 .cty, #gen-myself-modal3 .state {
-    width: 20%;
+}*/
+#gen-myself-modal3 .f-name,#gen-myself-modal3 .l-name, #gen-myself-modal3 .cty, #gen-myself-modal3 .state {
+    width: 25%;
     float: left;
     padding: 0 3px;
 }
@@ -3391,7 +3391,7 @@ ul.contactInfos img.loading.spinner {
 
 .speech-bub-text-myself p {
     font-size: 20px;
-    margin: 25px 0 45px;
+    margin: 25px 0 5px;
 }
 #gen-bgsearch-modal1 .list-fix-height {
   height: 120px;
@@ -3410,7 +3410,7 @@ ul.contactInfos img.loading.spinner {
   text-align: center;
   padding-top: 0;
   margin-left: 0;
-  margin-bottom: 78px;
+  margin-bottom: 65px;
 }
 .tackling-challenge-part1-speech-bub {
   visibility: hidden;
@@ -3752,8 +3752,7 @@ ul.contactInfos img.loading.spinner {
   .modal-body p {
     font-size: 16px;
     line-height: 20px;
-
-    margin: 15px;
+    /*margin: 15px;*/
   }
   .modal-body .modal-body-headline {
     font-size: 25px;
@@ -3847,7 +3846,7 @@ ul.contactInfos img.loading.spinner {
         margin: 0 0 25px;
     }
     .speech-bub-dating-text p {
-        margin: 20px 0 40px;
+        margin: 20px 0 20px;
         font-size: 18px;
         line-height: 24px;
     }
@@ -4427,22 +4426,25 @@ ul.contactInfos img.loading.spinner {
     padding:0;
   }
   #gen-myself-modal1 .part2-speech-bub-myself {
-    padding-bottom: 65px !important;
+    padding-bottom: 10px !important;
   }
   #oldFlamesContactModal .part2-speech-bub {
     padding-bottom: 5px !important;
   }
   #hidden-criminal-past-modal .part2-speech-bub {
-    padding-bottom: 245px !important;
+    padding-bottom: 235px !important;
   }
   #tacklingChallenges .part2-speech-bub {
-    padding-bottom: 30px !important;
+    padding-bottom: 40px !important;
+  }
+  #gen-dating-modal1 .part2-speech-bub{
+    padding-bottom: 20px !important;
   }
   #gen-familysafety-modal1 .part2-speech-bub-familysafety {
-    padding-bottom: 100px !important;
+    padding-bottom: 75px !important;
   }
   #oldFlamesContactModal .icons-container {
-    margin-bottom: 75px !important;
+    margin-bottom: 85px !important;
   }
   .part2-speech-bub {
     margin-bottom: 0px !important; 
@@ -4460,6 +4462,9 @@ ul.contactInfos img.loading.spinner {
   }
   #scanningSocialMedia .modal-body {
     padding-bottom: 5px;
+  }
+  #gen-myself-modal1 .checking-sources-progress {
+    margin-top: 20px;
   }
 }
 @media (min-width:200px) and (max-width:320px) {

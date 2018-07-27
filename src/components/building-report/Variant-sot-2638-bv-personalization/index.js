@@ -133,7 +133,7 @@ function createWizard(options = {}, flowOption = 'other') {
       sectionContainer1 = [hiddenPastCriminalInstance];
       sectionContainer2 = [criminalScanRecordsInstance];
       sectionContainer3 = [contactInfoSearchCriminalInstance];
-      sectionContainer4 = [bgSearchUseCasesInstance, anythingElseCriminalInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
+      sectionContainer4 = [bgSearchUseCasesInstance, anyThingElseProfessionalInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     case 'contact':
       sectionContainer1 = [oldFlamesContactInstance];
@@ -151,7 +151,7 @@ function createWizard(options = {}, flowOption = 'other') {
       sectionContainer1 = [tacklingChallengeInstance];
       sectionContainer2 = [contactInfoProfessionalInstance];
       sectionContainer3 = [criminalScanRecordsInstance];
-      sectionContainer4 = [bgSearchUseCasesInstance, anyThingElseProfessionalInstance, saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
+      sectionContainer4 = [bgSearchUseCasesInstance,anyThingElseProfessionalInstance , saveReportDatingInstance, monitoringDatingInstance, fcraDatingInstance];
       break;
     default:
       sectionContainer1 = [popularUseCasesInstance];

@@ -20,7 +20,7 @@ const getBuildingReportInstance = (flowOption) => {
       break;
     case 'myself':
       buildingReportObject = {
-        wizard: createWizard({'criminalScanRecords': {'headerToDisplay': 2}, 'socialMediaScan': {'headerToDisplay': 3}, 'anyThingElseProfessional': {'headerToDisplay': 1}}, flowOption),
+        wizard: createWizard({'criminalScanRecords': {'headerToDisplay': 2}, 'socialMediaScan': {'headerToDisplay': 3}, 'anyThingElseProfessional': {'headerToDisplay': 1},'bgSearchUseCases': {'headerToDisplay': 1}}, flowOption),
       };
       break;
     case 'family':
@@ -41,6 +41,11 @@ const getBuildingReportInstance = (flowOption) => {
     case 'contact':
       buildingReportObject = {
         wizard: createWizard({'socialMediaScan': {'headerToDisplay': 2}}, flowOption),
+      };
+      break;
+    case 'records':
+      buildingReportObject = {
+        wizard: createWizard({'bgSearchUseCases': {'headerToDisplay': 2}}, flowOption),
       };
       break;
     default:
@@ -72,24 +77,31 @@ const initiateModalFlow = (flowOption) => {
 };
 
 function trackGAEvent(searchType) {
+  const $flowIdentifier = $('.flow-identifier');
   switch (searchType) {
     case 'myself':
       track('UC Segment Choice - Search Myself');
+      $flowIdentifier.attr('data-flow', 'Search Myself');
       break;
     case 'contact':
       track('UC Segment Choice - Contact Info');
+      $flowIdentifier.attr('data-flow', 'Contact Info');
       break;
     case 'records':
       track('UC Segment Choice - Criminal Records');
+      $flowIdentifier.attr('data-flow', 'Criminal Records');
       break;
     case 'dating':
       track('UC Segment Choice - Dating Safety');
+      $flowIdentifier.attr('data-flow', 'Dating Safety');
       break;
     case 'family':
       track('UC Segment Choice - Family Safety');
+      $flowIdentifier.attr('data-flow', 'Family Safety');
       break;
     case 'professional':
       track('UC Segment Choice - Professional Use');
+      $flowIdentifier.attr('data-flow', 'Professional Use');
       break;
     case 'Other':
       track('UC Segment Choice - Other');

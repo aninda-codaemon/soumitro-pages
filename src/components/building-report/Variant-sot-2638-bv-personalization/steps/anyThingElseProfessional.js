@@ -1,10 +1,16 @@
 /* eslint-disable */
+import { track } from 'utils/track/index';
 import Step from 'components/wizard/Variant-sot-2638-bv-personalization/step';
 import { showExternalLoading, hideExternalLoading } from './shared';
 const CONTINUE_SESSION_INDEX = 2;
 
 function onUserFormSubmitStart(stepCompleted) {
   const { headerToDisplay, duration } = this;
+  const flowName = $('.flow-identifier').attr('data-flow').toLowerCase();
+  const test = (chkVal) => {
+    console.log('Checkbox value: ', chkVal);
+  };
+
   $('#anyThingElse').validate({
     rules: {
       fn: {
@@ -15,11 +21,14 @@ function onUserFormSubmitStart(stepCompleted) {
       },
     },
     submitHandler: function() { 
-      if($('#fn').val() || $('#ln').val() ) {
-          showExternalLoading(stepCompleted, duration, CONTINUE_SESSION_INDEX);
-       }else{
-        stepCompleted();  
-      }   
+      if ($('#fn').val() || $('#ln').val()) {
+        const gaMessage = `uc segment - ${flowName} - search additional person`;
+        track(gaMessage);
+        test(gaMessage);
+        showExternalLoading(stepCompleted, duration, CONTINUE_SESSION_INDEX);
+      } else {
+        stepCompleted();
+      }
     },
   });
 

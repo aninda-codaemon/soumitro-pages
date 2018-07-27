@@ -1,4 +1,4 @@
-import Step from 'components/wizard/step';
+import Step from 'components/wizard/Variant-sot-2638-bv-personalization/step';
 const $progressBar = $('#searching-progress-bar-database-bgsearch .progress-bar');
 const quotes = $('.info-list');
 const olList = $('.info-list-ol');
@@ -31,9 +31,10 @@ faceId = $(`.fim${liCounter}`);
   };
 
 function onBgSearchUseCasesStart(stepCompleted) {
-  var { duration } = this;
+  var { headerToDisplay,duration } = this;
   var initialProgress = $($progressBar).animate({ width: '100%' }, { duration });
    showNextListQuote(duration);
+   $(`#bgSearch-header${headerToDisplay}`).removeClass('hidden');
   $.when(initialProgress).done(stepCompleted);
 }
 
