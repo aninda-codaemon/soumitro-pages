@@ -38,7 +38,7 @@ function createComponent(options = {}) {
   let newConfig = Object.assign({
     title: 'For Monitoring Your Reputation, Associates, & Online Presence',
     $elem: $('#gen-myself-modal1'),
-    duration: 35,
+    duration: 40,
     onStart: onMyselfUseCasesStart,
   }, options);
   myselfUseCases.init(newConfig);

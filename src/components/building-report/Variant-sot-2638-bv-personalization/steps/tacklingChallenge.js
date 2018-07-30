@@ -39,7 +39,7 @@ function createComponent(options = {}) {
   let newConfig = Object.assign({
     title: 'Tackling Your Challenges',
     $elem: $('#tacklingChallenges'),
-    duration: 35,
+    duration: 40,
     onStart: onTacklingChallengesStart,
   }, options);
   tacklingChallenges.init(newConfig);

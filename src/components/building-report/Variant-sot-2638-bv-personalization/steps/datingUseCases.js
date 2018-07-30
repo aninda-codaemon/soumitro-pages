@@ -38,7 +38,7 @@ function createComponent(options = {}) {
   let newConfig = Object.assign({
     title: 'For Safety, Peace Of Mind, & Finding Love',
     $elem: $('#gen-dating-modal1'),
-    duration: 35,
+    duration: 40,
     onStart: onDatingUseCasesStart,
   }, options);
   datingUseCases.init(newConfig);
