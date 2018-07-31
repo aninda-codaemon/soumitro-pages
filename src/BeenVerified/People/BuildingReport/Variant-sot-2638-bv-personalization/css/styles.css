@@ -1,3 +1,12 @@
+body {
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  min-width: 280px;
+  padding-right: 0 !important;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
 h2,
 h3,
 h4,
@@ -25,20 +34,26 @@ section {
 
 section.active {
   display: block;
-
   vertical-align: bottom;
 }
 
-
 section.active .content {
   animation: fade-in 0.75s forwards ease-out;
+}
+
+section:focus {
+  outline: none;
+}
+
+p small {
+  font-size: 14px;
+  line-height: 16px;
 }
 
 @keyframes slide-left {
   0% {
     left: -100%;
   }
-
   100% {
     left: 0;
   }
@@ -48,7 +63,6 @@ section.active .content {
   0% {
     right: -100%;
   }
-
   100% {
     right: 0;
   }
@@ -58,21 +72,17 @@ section.active .content {
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
 }
 
 .text-red {
-    color: #DC0015 !important;
-}
-.dating-header {
-  display: none;
+  color: #DC0015 !important;
 }
 
-section:focus {
-  outline: none;
+.dating-header {
+  display: none;
 }
 
 #arrowhead-right {
@@ -80,28 +90,19 @@ section:focus {
 }
 
 #main-container {
-  width: 100%;
   min-height: 730px;
-  padding-right: 0 !important;
-
   text-align: center;
-
   background: #efefef;
 }
 
 #sub-container {
-  display: block;
-
-  width: auto;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   padding-top: 40px;
 }
 
 .headline {
   font-size: 34px;
   font-weight: 300;
-
   margin-bottom: 20px;
 }
 
@@ -109,27 +110,22 @@ section:focus {
   font-size: 24px;
   font-weight: 700;
   line-height: 30px;
-
   margin-top: 10px;
 }
 
 #wizModal .content {
   overflow: hidden;
-
   border: none;
   border-radius: none;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .mod-footer {
   font-size: 14px;
-
   margin: 0 -7px -7px;
   padding: 10px 0 18px;
-
   text-align: center;
-
   color: #4a4a4a;
   border-top: none;
   border-radius: 0 0 4px 4px;
@@ -138,7 +134,6 @@ section:focus {
 
 .mod-footer i {
   margin-right: 5px;
-
   color: #dc0216;
 }
 
@@ -148,14 +143,9 @@ section:focus {
 
 .content {
   position: relative;
-
-  width: auto;
-  margin-right: auto;
-  margin-left: auto;
-
+  margin: 0 auto;
   text-align: left;
   pointer-events: auto;
-
   background: white;
 }
 
@@ -167,15 +157,9 @@ label {
   font-size: 15px;
 }
 
-p small {
-  font-size: 14px;
-  line-height: 16px;
-}
-
 ul,
 ol {
   margin: 0;
-
   list-style-type: none;
 }
 
@@ -187,16 +171,15 @@ select,
   font-size: 18px !important;
 }
 
-
 a,
 button,
 input,
 .dropdown-toggle,
 .link-wrap {
   -webkit-transition: all 0.3s ease;
-     -moz-transition: all 0.3s ease;
-      -ms-transition: all 0.3s ease;
-          transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 a:hover,
@@ -207,68 +190,47 @@ a:focus {
 .text-info {
   font-size: 28px;
   font-weight: 200;
-
   color: #353167;
-}
-
-body {
-  font-family: 'Lato',Arial,Helvetica,sans-serif;
-  font-size: 16px;
-  line-height: 21px;
-
-  min-width: 280px;
-  padding-right: 0 !important;
-
-  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .main-btn,
 .main-btn:hover,
 .main-btn:focus,
 .main-btn:active {
-  color: #fff!important;
+  color: #fff !important;
 }
-
 
 label.error {
   line-height: 18px;
-
   width: 100%;
   margin: -5px 0 10px 0;
   margin: 2px 0 10px 0 \9;
   padding: 6px 0;
-
   text-align: center;
-
   color: #c9302b;
   border: 1px solid #e9322d;
   border-radius: 4px;
   background-color: #f2dede;
 }
 
-
 /* -- NAVBAR -- */
 
 #topWrapper {
-  background: #353167; /* Old browsers */
-  background:    -moz-linear-gradient(-45deg, #353167 0%, #4a3b8f 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #353167 0%,#4a3b8f 100%); /* Chrome10-25,Safari5.1-6 */
-  background:         linear-gradient(135deg, #353167 0%,#4a3b8f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#353167', endColorstr='#4a3b8f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient  */
+  background: #353167;
+  background: -moz-linear-gradient(-45deg, #353167 0%, #4a3b8f 100%);
+  background: -webkit-linear-gradient(-45deg, #353167 0%, #4a3b8f 100%);
+  background: linear-gradient(135deg, #353167 0%, #4a3b8f 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#353167', endColorstr='#4a3b8f', GradientType=1);
 }
 
 nav {
   font-size: 16px;
-
-  margin: 0!important;
-
+  margin: 0 !important;
   color: #fff;
   border: none;
-  border-radius: 0!important;
+  border-radius: 0 !important;
   background-color: #024485;
 }
-
 
 .navbar-default {
   border: none !important;
@@ -278,17 +240,14 @@ nav {
 .nav-phone {
   font-size: 16px;
   font-weight: 400;
-
   margin: 0;
   padding: 10px 5px 0;
-
   color: #fff;
 }
 
 .nav-btn {
   margin: 5px 5px 0;
 }
-
 
 .navbar-nav {
   margin: 10px 0 0;
@@ -297,25 +256,21 @@ nav {
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
   margin-bottom: 15px;
-
   border-top: none;
   box-shadow: none;
-  /*border-bottom: 1px solid #37225a;*/
 }
+
 .navbar-brand {
   max-width: 172px;
   height: auto;
   margin: 0 !important;
-  padding-top: 20px;
-  padding-bottom: 20px;
-
+  padding: 20px 0px;
   cursor: pointer;
-
-  background-color: #81b44c!important;
+  background-color: #81b44c !important;
 }
+
 .navbar-logo img {
   display: block;
-
   width: 160px;
   height: 30px;
   margin-top: 9px;
@@ -325,7 +280,6 @@ nav {
   min-width: 44px;
   min-height: 40px;
   margin: 15px 0;
-
   border-color: transparent;
 }
 
@@ -342,44 +296,42 @@ nav {
   border-color: #fff;
   background: transparent;
 }
+
 html.touchevents .navbar-default .navbar-toggle:hover,
 html.touchevents .navbar-default .navbar-toggle:focus {
   border-color: transparent;
 }
+
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #fff;
 }
 
-
-
 .main-btn {
   display: inline-block;
-
   padding-top: 8px;
   padding-bottom: 10px;
-
   color: #fff;
   border: 1px solid #81b44c;
   border-radius: 4px;
   background-color: #81b44c;
   -webkit-box-shadow: 0 -4px 0 #638a3a inset;
-     -moz-box-shadow: 0 -4px 0 #638a3a inset;
-          box-shadow: 0 -4px 0 #638a3a inset;
+  -moz-box-shadow: 0 -4px 0 #638a3a inset;
+  box-shadow: 0 -4px 0 #638a3a inset;
 }
 
 .main-btn:hover,
 .main-btn:focus {
   background-color: #638a3a;
   -webkit-box-shadow: 0 -2px 0 #506e32 inset;
-     -moz-box-shadow: 0 -2px 0 #506e32 inset;
-          box-shadow: 0 -2px 0 #506e32 inset;
+  -moz-box-shadow: 0 -2px 0 #506e32 inset;
+  box-shadow: 0 -2px 0 #506e32 inset;
 }
 
 .main-btn:active {
   background-color: #81b44c;
   -webkit-box-shadow: 0 2px 0 #638a3a inset;
-     -moz-box-shadow: 0 2px 0 #638a3a inset;
-          box-shadow: 0 2px 0 #638a3a inset;
+  -moz-box-shadow: 0 2px 0 #638a3a inset;
+  box-shadow: 0 2px 0 #638a3a inset;
 }
 
 .section-header {
@@ -390,23 +342,24 @@ html.touchevents .navbar-default .navbar-toggle:focus {
 h3 {
   font-size: 25px;
   line-height: 32px;
-
   margin: 10px 0;
 }
 
 /* -- INFORMATION -- */
+
 .initiate-report-title-wrapper h1 {
-    font-size: 34px;
-    margin-top: 0;
-    margin-bottom: 30px;
-    color: #4a4a4a;
-    font-weight: bold;
+  font-size: 34px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #4a4a4a;
+  font-weight: bold;
 }
+
 .initiate-report-wrapper {
   background: #fff;
   width: auto;
   max-width: 850px;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.17);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.17);
   border-radius: 5px;
 }
 
@@ -415,87 +368,108 @@ h3 {
   padding-left: 0px;
   padding-right: 0px;
 }
-#initiate-report:active, #initiate-report:focus,
-#gen-report-confirm2:active, #gen-report-confirm2:focus {
+
+#initiate-report:active,
+#initiate-report:focus,
+#gen-report-confirm2:active,
+#gen-report-confirm2:focus {
   outline: transparent !important;
 }
 
 .list-wrapper {
   padding-top: 50px;
 }
-.icon-wrapper img, .icon-wrapper-hover img {
-    width: 70px;
-    height: 74px;
+
+.icon-wrapper img,
+.icon-wrapper-hover img {
+  width: 70px;
+  height: 74px;
 }
+
 .icon-text-wrapper p {
   font-weight: 700;
   font-size: 17px;
 }
-.icon-wrapper, .icon-text-wrapper {
+
+.icon-wrapper,
+.icon-text-wrapper {
   display: inherit;
 }
 
 .icon-text-wrapper p {
   margin: 20px 0 0;
 }
+
 .report-header-wrapper {
-    background: #353167;
-    color: #fff;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    border-radius: 5px 5px 0 0;
+  background: #353167;
+  color: #fff;
+  padding: 18px 0px;
+  border-radius: 5px 5px 0 0;
 }
+
 .bottom-wrapper {
-    background: #4A3B8F;
-    color: #fff;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    border-radius: 0 0 5px 5px;
+  background: #4A3B8F;
+  color: #fff;
+  padding: 12px 0px;
+  border-radius: 0 0 5px 5px;
 }
+
 .report-header-wrapper p {
-    font-size: 20px;
-    margin: 0;
+  font-size: 20px;
+  margin: 0;
 }
+
 .bottom-wrapper p {
   font-size: 14px;
   font-weight: 700;
 }
-.bottom-wrapper p, .security-icon-wrapper {
+
+.bottom-wrapper p,
+.security-icon-wrapper {
   display: inline-block;
-    margin: 0;
+  margin: 0;
 }
+
 .modal-header .subheader-text {
   font-size: 20px;
   text-align: center;
   margin: 3px;
 }
+
 .security-icon-wrapper {
   position: relative;
   top: -2px;
 }
+
 .security-icon-wrapper img {
-    width: 55px;
-    margin-left: 10px;
+  width: 55px;
+  margin-left: 10px;
 }
+
 .panel-btn-wrapper {
-    margin-top: 40px;
-    margin-bottom: 45px;
+  margin-top: 40px;
+  margin-bottom: 45px;
 }
-.bottom-wrapper-text, .security-icon-wrapper {
+
+.bottom-wrapper-text,
+.security-icon-wrapper {
   display: inline-block;
 }
+
 #gen-report-message2 {
   color: #0F2D8F;
 }
+
 #gen-report-confirm2:hover {
   color: #0F2D8F;
   text-decoration: underline;
 }
+
 #gen-report-confirm2 {
-    color: #0F2D8F;
-    background: transparent;
-    text-decoration: underline;
-    padding: 0;
+  color: #0F2D8F;
+  background: transparent;
+  text-decoration: underline;
+  padding: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -511,58 +485,52 @@ h3 {
 }
 
 @media screen and (max-width: 767px) {
-    .initiate-report-title-wrapper h1 {
-        font-size: 24px;
-        margin-top: 0;
-        margin-bottom: 20px;
-    }
-    .bottom-wrapper-text p {
-        font-size: 14px;
-    }
-    .bottom-wrapper {
-        padding: 10px 0;
-        border-radius: 0;
-    }
-    .report-header-wrapper {
-        padding: 15px;
-        border-radius: 0;
-    }
-    .report-header-wrapper p {
-        font-size: 16px;
-    }
-    .list-wrapper {
-        padding: 35px 0 0;
-    }
-    .icon-text-wrapper p {
-        margin: 15px 0 35px;
-    }
-    .panel-btn-wrapper {
-        margin-top: 0;
-        margin-bottom: 35px;
-    }
+  .initiate-report-title-wrapper h1 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .bottom-wrapper-text p {
+    font-size: 14px;
+  }
+  .bottom-wrapper {
+    padding: 10px 0;
+    border-radius: 0;
+  }
+  .report-header-wrapper {
+    padding: 15px;
+    border-radius: 0;
+  }
+  .report-header-wrapper p {
+    font-size: 16px;
+  }
+  .list-wrapper {
+    padding: 35px 0 0;
+  }
+  .icon-text-wrapper p {
+    margin: 15px 0 35px;
+  }
+  .panel-btn-wrapper {
+    margin-top: 0;
+    margin-bottom: 35px;
+  }
 }
-
 
 li {
   line-height: 24px;
-
   margin-top: 4px;
 }
 
 td.phoneCheck,
 td.addressCheck {
   padding-top: 20px;
-
   text-align: center;
 }
-
 
 /* -- FOOTER -- */
 
 #footer {
-  padding-top: 80px;
-  padding-bottom: 80px;
-
+  padding: 80px 0;
   color: #747b91;
   background-color: white;
 }
@@ -570,45 +538,46 @@ td.addressCheck {
 #footer h4 {
   font-size: 22px;
   font-weight: bold;
-
   margin-bottom: 10px;
-
   color: #353167;
 }
+
 #footer p {
   font-size: 14px;
   font-weight: 400;
-
   color: #9b9b9b;
 }
+
 #footer .quote p {
   padding-right: 20px;
 }
+
 #footer p {
   font-size: 14px;
   font-weight: 400;
-
   color: #747b91;
 }
+
 #footer ul {
   margin: 0;
   padding: 0;
-
   list-style: none;
 }
+
 #footer li {
   font-size: 14px;
   margin-bottom: 4px;
   color: #949595;
 }
+
 #footer a {
   font-size: 14px;
   color: #0f2d8f;
 }
+
 #footer a:hover,
 #footer a:focus {
   text-decoration: none;
-
   color: #3b49e5;
 }
 
@@ -616,13 +585,16 @@ td.addressCheck {
 #footer .phone-number a {
   color: #0f2d8f;
 }
+
 #footer .email-address a:hover,
 #footer .phone-number a:hover {
   color: #3b49e5;
 }
+
 #footer .phone-number {
   color: #333;
 }
+
 .website img {
   padding-right: 10px;
 }
@@ -641,24 +613,29 @@ td.addressCheck {
 .ussupport span.col-xs-11 {
   margin-left: 0;
 }
+
 social-links {
   margin-top: 25px;
 }
+
 .social-links img {
   height: 16px;
-
   vertical-align: text-bottom;
 }
+
 .social-links div {
   padding-right: 10px;
   padding-left: 10px;
 }
+
 .border-bottom {
   margin-bottom: 10px;
 }
+
 #footer .no-pad-left {
   padding-left: 0;
 }
+
 .quote {
   margin-top: 0;
 }
@@ -667,15 +644,16 @@ social-links {
   margin-top: 20px;
   margin-bottom: 40px;
 }
+
 /************* END FOOTER *************/
-@media only screen and (max-width : 767px) {
+
+@media only screen and (max-width: 767px) {
   /************* FOOTER *************/
   #footer {
     padding-top: 40px;
   }
   #footer h4 {
     font-size: 20px;
-
     margin-top: 20px;
     margin-bottom: 12px;
   }
@@ -686,12 +664,10 @@ social-links {
   .quote {
     margin-top: 0;
   }
-
   footer li,
   footer p {
     text-align: left !important;
   }
-
   /************* END FOOTER *************/
 }
 
@@ -699,6 +675,7 @@ social-links {
   margin-top: 15px;
   margin-bottom: 40px;
 }
+
 .social-links img {
   max-width: 22px;
   margin-right: 5px;
@@ -706,41 +683,40 @@ social-links {
 
 .border-bottom {
   margin-top: 20px;
-
   border-bottom: 1px solid #ccc;
 }
+
 #footer .email-address a,
 #footer .phone-number a {
   color: #0f2d8f;
 }
+
 #footer .phone-number {
   color: #333;
 }
+
 #footer i.star {
   font-size: 18px;
-
   opacity: 1;
   color: #f2da3e;
 }
+
 .disclaimer {
   margin-top: 20px;
   margin-bottom: 40px;
 }
+
 .border-bottom {
   margin-top: 20px;
-
   border-bottom: 1px solid #ccc;
 }
 
 .body-copy-header {
   padding-top: 10px;
   padding-bottom: 20px;
-
   background-repeat: no-repeat;
   background-position: right top;
 }
-
-
 
 /* -- Exit Pop Refine -- */
 
@@ -763,7 +739,6 @@ social-links {
 
 #exitPopRefine .modal-body {
   font-size: 16px;
-
   padding: 0 30px 30px 30px;
 }
 
@@ -774,7 +749,6 @@ social-links {
 
 #exitPopRefine .modal-header {
   text-align: center;
-
   border: none;
   background-color: #efefef;
 }
@@ -792,11 +766,9 @@ social-links {
 #exitPopRefine label.error {
   font-size: 13px;
   line-height: 14px;
-
   margin: 5px 0 0 0;
   margin: 5px 0 0 0 \9;
   padding: 0;
-
   color: #dc0015;
   border: none;
   border-radius: none;
@@ -808,55 +780,52 @@ social-links {
 }
 
 /* Safari, Chrome and Opera */
+
 #exitPopRefine input[name=mi]::-webkit-input-placeholder {
   font-size: 13px;
-
   padding-top: 4px;
-
   color: #ccc;
 }
+
 /* Firefox 18- */
+
 #exitPopRefine input[name=mi]:-moz-placeholder {
   font-size: 13px;
-
   padding-top: 4px;
-
   color: #ccc;
 }
+
 /* Firefox 19+ */
+
 #exitPopRefine input[name=mi]::-moz-placeholder {
   font-size: 13px;
-
   padding-top: 4px;
-
   color: #ccc;
 }
+
 /* IE 10+ */
+
 #exitPopRefine input[name=mi]:-ms-input-placeholder {
   font-size: 13px;
-
   padding-top: 4px;
-
   color: #ccc;
 }
+
 /* Edge */
+
 #exitPopRefine input[name=mi]::-ms-input-placeholder {
   font-size: 13px;
-
   padding-top: 4px;
-
   color: #ccc;
 }
+
 /* Standard one last! */
+
 #exitPopRefine input[name=mi]:placeholder-shown {
   font-size: 13px;
-
   padding-top: 4px;
-
   color: #ccc;
 }
-
-
 
 .form-control {
   padding: 6px 8px;
@@ -867,17 +836,16 @@ social-links {
   width: 24px;
   height: 24px;
 }
+
 .loading.spinner {
   width: 22px;
   height: 22px;
 }
 
-
 .main-btn,
 .aux-btn {
   padding-top: 8px;
   padding-bottom: 10px;
-
   border-radius: 4px;
 }
 
@@ -887,8 +855,8 @@ social-links {
   border: none;
   background-color: #81b44c;
   -webkit-box-shadow: 0 -4px 0 #638a3a inset;
-     -moz-box-shadow: 0 -4px 0 #638a3a inset;
-          box-shadow: 0 -4px 0 #638a3a inset;
+  -moz-box-shadow: 0 -4px 0 #638a3a inset;
+  box-shadow: 0 -4px 0 #638a3a inset;
 }
 
 .main-btn:hover,
@@ -898,35 +866,35 @@ social-links {
   color: #fff;
   background-color: #638a3a;
   -webkit-box-shadow: 0 -2px 0 #506e32 inset;
-     -moz-box-shadow: 0 -2px 0 #506e32 inset;
-          box-shadow: 0 -2px 0 #506e32 inset;
+  -moz-box-shadow: 0 -2px 0 #506e32 inset;
+  box-shadow: 0 -2px 0 #506e32 inset;
 }
 
 .main-btn:active,
 .aux-btn:active {
   background-color: #81b44c;
   -webkit-box-shadow: 0 2px 0 #638a3a inset;
-     -moz-box-shadow: 0 2px 0 #638a3a inset;
-          box-shadow: 0 2px 0 #638a3a inset;
+  -moz-box-shadow: 0 2px 0 #638a3a inset;
+  box-shadow: 0 2px 0 #638a3a inset;
 }
 
-
-
 /* ============================================ */
+
 /* == MODAL STYLES ============================ */
+
 /* ============================================ */
 
 #report-status-modal .modal-header {
-  border: 1px solid rgba(0,0,0,0.2);
-  -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-          box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 #report-status-modal .modal-body {
-  border: 1px solid rgba(0,0,0,0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   background: white;
-  -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-          box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 #report-status-modal .modal-body,
@@ -941,9 +909,8 @@ social-links {
 
 #gen-report-modal2 form {
   padding: 25px 35px;
-
   border-radius: 3px;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
 }
 
 #gen-report-modal2 .modal-footer {
@@ -952,41 +919,33 @@ social-links {
 
 #gen-report-modal2 .chckbx {
   font-weight: 400;
-
   width: 100%;
   padding: 5px 15px;
-
   cursor: pointer;
 }
 
 #gen-report-modal2 .rndname {
   font-size: 18px;
   font-weight: bold;
-
   display: inline-block;
   overflow: hidden;
-
   max-width: 82%;
-
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
 #gen-report-modal2 .chckbx input {
   margin-right: 8px;
-
   vertical-align: top;
-
   border-radius: 2px;
   background: #f9f9f9;
-  box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.26);
+  box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.26);
 }
 
 #gen-report-modal2 .chckbx i {
   position: relative;
   top: -5px;
   left: 5px;
-
   color: #f2da3e;
 }
 
@@ -998,23 +957,18 @@ social-links {
   color: #81b44c;
 }
 
-
 .modal-header {
   font-size: 24px;
-
   padding: 15px;
-
   color: white;
   border-radius: 4px 4px 0 0;
   background: #353167;
-
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#353167', endColorstr='#4a3b8f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#353167', endColorstr='#4a3b8f', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
 }
-
 
 .modal-header .fa {
   font-size: 24px;
-
   color: #fff;
 }
 
@@ -1028,7 +982,6 @@ social-links {
 .modal-header .close:focus {
   cursor: pointer;
   cursor: hand;
-
   color: #4594e3;
 }
 
@@ -1036,14 +989,11 @@ social-links {
   font-size: 22px;
   font-weight: 400;
   line-height: 28px;
-
   margin-top: 2px;
   margin-right: 8%;
   margin-bottom: 3px;
   margin-left: auto;
-
   text-align: left;
-
   color: #fff;
 }
 
@@ -1058,7 +1008,6 @@ social-links {
 
 .modal-body {
   overflow: visible;
-
   max-height: none;
   padding: 0;
 }
@@ -1079,14 +1028,12 @@ social-links {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 .main-btn.main-btn-large.btn-block {
   padding: 20px 0 !important;
 }
 
 .modal-footer {
   font-size: 13px;
-
   color: #333;
   border-radius: 0 0 4px 4px;
   /* background-color: #f5f5f5; */
@@ -1098,19 +1045,17 @@ social-links {
 
 .progress {
   -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-
+  -moz-border-radius: 4px;
+  border-radius: 4px;
   filter: none !important;
 }
 
 .progress-bar-success {
-  background: #81b44c; /* Old browsers */
-  background:    -moz-linear-gradient(45deg, #81b44c 0%, #83ce33 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #81b44c 0%,#83ce33 100%); /* Chrome10-25,Safari5.1-6 */
-  background:         linear-gradient(45deg, #81b44c 0%,#83ce33 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#81b44c', endColorstr='#83ce33',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: #81b44c;
+  background: -moz-linear-gradient(45deg, #81b44c 0%, #83ce33 100%);
+  background: -webkit-linear-gradient(45deg, #81b44c 0%, #83ce33 100%);
+  background: linear-gradient(45deg, #81b44c 0%, #83ce33 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#81b44c', endColorstr='#83ce33', GradientType=1);
 }
 
 .progress-bar {
@@ -1121,27 +1066,23 @@ social-links {
 
 #exit-pop-skip .modal-header {
   padding-bottom: 0;
-
   border-bottom: none;
   background-color: transparent;
 }
 
 #exit-pop-skip .modal-header h1 {
   margin-bottom: 0;
-
   color: #e84e68;
 }
 
 #exit-pop-skip .modal-header .close {
   position: absolute;
   right: 14px;
-
   color: #333;
 }
 
 #exit-pop-skip .modal-body {
   overflow: visible;
-
   max-height: none;
   padding: 30px;
   padding-top: 0;
@@ -1157,9 +1098,7 @@ social-links {
   z-index: 999;
   top: 50%;
   left: 50%;
-
   display: none;
-
   margin-top: -60px;
   margin-left: -60px;
 }
@@ -1170,16 +1109,13 @@ social-links {
 
 #exit-pop-skip button#skip-to-preview {
   font-weight: bold;
-
   margin-top: 15px;
-
   text-transform: uppercase;
-
   border: 1px solid #57992d;
   background-color: #81b44c;
   -webkit-box-shadow: 0 -4px 0 #638a3a inset;
-     -moz-box-shadow: 0 -4px 0 #638a3a inset;
-          box-shadow: 0 -4px 0 #638a3a inset;
+  -moz-box-shadow: 0 -4px 0 #638a3a inset;
+  box-shadow: 0 -4px 0 #638a3a inset;
 }
 
 #exit-pop-skip input:hover,
@@ -1188,18 +1124,18 @@ social-links {
   border-color: #638a3a;
   background-color: #638a3a;
   -webkit-box-shadow: 0 -2px 0 #506e32 inset;
-     -moz-box-shadow: 0 -2px 0 #506e32 inset;
-          box-shadow: 0 -2px 0 #506e32 inset;
+  -moz-box-shadow: 0 -2px 0 #506e32 inset;
+  box-shadow: 0 -2px 0 #506e32 inset;
 }
 
 .modal-open {
   overflow: auto !important;
   overflow: auto !important;
   overflow-x: hidden !important;
-
   margin: 0 !important;
   padding: 0 !important;
 }
+
 .modal-padding {
   padding: 0 50px;
 }
@@ -1207,7 +1143,6 @@ social-links {
 .modal-open .modal {
   /*top: 30px;*/
   padding-top: 60px;
-
   background-color: rgba(0, 0, 0, 0.25);
 }
 
@@ -1226,19 +1161,19 @@ social-links {
 }
 
 #loadingModal .modal-body p {
-    font-size: 14px;
-    line-height: 24px;
-    margin: 0 0 30px;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0 0 30px;
 }
 
 #loadingModal .great-loading-text {
-    font-size: 20px !important;
-    line-height: 24px;
-    margin: 0 0 30px;
+  font-size: 20px !important;
+  line-height: 24px;
+  margin: 0 0 30px;
 }
 
 #loadingModal .popup-modal-pad {
-    padding: 30px 30px 40px;
+  padding: 30px 30px 40px;
 }
 
 #loadingModal .cont-loading-aditional {
@@ -1265,40 +1200,36 @@ social-links {
 #externalModal #crt-acct-load p {
   font-size: 20px;
   font-weight: bold;
-
   margin: 0;
-
   color: #4a4a4a;
 }
 
 #externalModal .crc-acct-load-subHead img {
   display: inline-block;
-
   width: 60px;
   margin: 10px;
 }
 
 #externalModal .crc-acct-load-subHead p {
   font-size: 16px;
-
   display: inline-block;
-
   margin: 0 0 0 5px;
 }
 
 .warn-head {
   background-color: #dc0216 !important;
 }
+
 .crc-acct-load-body {
   margin-top: 10px;
 }
+
 .crc-acct-load-body strong {
   color: #dc0216;
 }
 
 #crt-acct-warn-confirm {
   display: block;
-
   max-width: 200px;
   margin: 20px auto;
 }
@@ -1309,67 +1240,52 @@ social-links {
 
 #wizModal {
   width: 100%;
-
   outline: none;
 }
 
 #wizModal .modal-content {
   overflow: hidden;
-
   width: auto;
   max-width: 850px;
   margin: 0 auto;
-
   border: none;
-  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
 }
 
 .wizard-step {
   display: none;
-
-  /* padding-bottom: 7px; */
 }
 
 .wizard-steps-panel {
   position: relative;
-
   margin-bottom: 11px;
 }
 
 .wizard-steps-panel .step-number {
   font-size: 20px;
-
   position: relative;
-
   display: inline-block;
-
   text-align: center;
 }
 
 .wizard-steps-panel .step-number .number {
-    line-height: 30px;
-
-    z-index: 15;
-
-    width: 30px;
-    height: 30px;
-    margin-bottom: -10.5px;
-    margin-left: calc(50% - 1.7em / 2 );
-
-    text-align: center;
-
-    color: white;
-    /*border: 1px solid #5e5b86;*/
-    border: none;
-    border-radius: 5px;
-    background-color: rgba(83, 65, 165, 1);
+  line-height: 30px;
+  z-index: 15;
+  width: 30px;
+  height: 30px;
+  margin-bottom: -10.5px;
+  margin-left: calc(50% - 1.7em / 2);
+  text-align: center;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(83, 65, 165, 1);
 }
 
 .wizard-steps-panel .step-number.doing .number,
 .wizard-steps-panel .step-number.doing .number:after,
 .wizard-steps-panel .step-number.doing .number:before {
   z-index: 20 !important;
-
   color: transparent;
   background: #79c447 url('../img/find-24.png');
   background-repeat: no-repeat;
@@ -1386,9 +1302,7 @@ social-links {
 .wizard-steps-panel .step-number:first-child .number:before {
   position: absolute;
   left: 0;
-
   content: ' ';
-
   border: none;
   border-radius: 0;
   background: none !important;
@@ -1397,11 +1311,9 @@ social-links {
 .wizard-steps-panel .step-number .number:before {
   position: absolute;
   top: 15px;
-  right: calc( 53.5% + 1.4em/2 );
+  right: calc( 53.5% + 1.4em/2);
   left: 0;
-
   content: ' ';
-
   border: 1px solid #5e5b86;
   border-radius: 0;
   background: none !important;
@@ -1411,10 +1323,8 @@ social-links {
   position: absolute;
   top: 15px;
   right: 0;
-  left: calc( 54.5% + 1em/2 );
-
+  left: calc( 54.5% + 1em/2);
   content: ' ';
-
   border: 1px solid #5e5b86;
   border-radius: 0;
   background: none !important;
@@ -1422,12 +1332,10 @@ social-links {
 
 .wizard-steps-panel .step-number:last-child .number:after {
   position: absolute;
-  top: calc( 1.4em / 2 );
+  top: calc( 1.4em / 2);
   right: 0;
-  left: calc( 53.5% + 1.4em/2 );
-
+  left: calc( 53.5% + 1.4em/2);
   content: ' ';
-
   border: none;
   border-radius: 0;
   background: none !important;
@@ -1448,7 +1356,6 @@ social-links {
   width: 10%;
 }
 
-
 #gen-report-modal1,
 #scanningCriminal,
 #scanningCriminalRecords,
@@ -1459,55 +1366,73 @@ social-links {
   padding: 0 15px 15px 15px;
 }
 
-#confirmData, #scanningCriminal, #scanningCriminalRecords, #scanningCriminal-dating, #search-people {
+#confirmData,
+#scanningCriminal,
+#scanningCriminalRecords,
+#scanningCriminal-dating,
+#search-people {
   margin-top: 10px;
 }
 
 /* DATING FLOW - DATING USE CASES */
+
 #gen-dating-modal1 {
-    padding: 15px;
+  padding: 15px;
 }
+
 #gen-dating-modal1 .modal-body-header {
-    font-size: 20px;
-    margin: 20px 35px 30px;
-    color: #4a4a4a;
-    font-weight: normal;
-    text-align: center;
+  font-size: 20px;
+  margin: 20px 35px 30px;
+  color: #4a4a4a;
+  font-weight: normal;
+  text-align: center;
 }
+
 #gen-dating-modal1 .icon-div {
-    padding: 0 50px;
+  padding: 0 50px;
 }
+
 .part1-speech-bub {
-    height: 40px;
-    vertical-align: middle;
-    margin-bottom: 12px;
+  height: 40px;
+  vertical-align: middle;
+  margin-bottom: 12px;
 }
+
 .part1-speech-bub p {
-    font-size: 20px;
-    color: #4a4a4a;
-    margin: 0;
+  font-size: 20px;
+  color: #4a4a4a;
+  margin: 0;
 }
+
 /* .speech-bub-dating-wrapper p {
   display: inline-block;
 } */
+
 .speech-bub-dating-wrapper {
-    text-align: left;
-    vertical-align: middle;
+  text-align: left;
+  vertical-align: middle;
 }
+
 .speech-bub-dating {
   position: relative;
   text-align: left;
   color: #333;
 }
-#speech-bub-dating-wrapper1, #speech-bub-dating-wrapper2, #speech-bub-dating-wrapper3 {
+
+#speech-bub-dating-wrapper1,
+#speech-bub-dating-wrapper2,
+#speech-bub-dating-wrapper3 {
   visibility: hidden;
 }
+
 #gen-dating-modal1 .checking-sources-progress {
   margin-top: 30px;
 }
+
 .bub-visible1 {
   visibility: visible !important;
 }
+
 .part2-speech-bub {
   display: none;
   text-align: center;
@@ -1517,126 +1442,144 @@ social-links {
 }
 
 .speech-bub-img-wrapper img {
-    width: 80px;
-    margin-top: 15px;
+  width: 80px;
+  margin-top: 15px;
 }
 
 .speech-bub-dating-text p {
-    font-size: 20px;
-    color: #4a4a4a;
-    /*margin: 25px 0 50px;*/
+  font-size: 20px;
+  color: #4a4a4a;
+  /*margin: 25px 0 50px;*/
 }
 
 /* END - DATING USE CASES */
 
 /* 2 - Scanning Criminal DATING FLOW*/
-  #criminalLeft img {
-    position: relative;
-    height: 80px;
-    margin: 0 20px 20px 20px;
-  }
 
-  #scanningCriminal-dating .checking-sources-progress, #scanningCriminalRecords .checking-sources-progress {
-    margin-bottom: 20px;
-    margin-top: 33px;
-  }
-  #hidden-criminal-past-modal .checking-sources-progress {
-    margin-top: 8px;
-  }
-  #scanningCriminalRecords #criminalHeader p {
-    font-size: 20px;
-    margin: 0 20px 10px 20px;
-  }
-  #criminalContent-dating {
-    height: inherit;
-  }
-  #criminalContent-dating ul {
-    font-size: 20px;
-    line-height: 20px;
+#criminalLeft img {
+  position: relative;
+  height: 80px;
+  margin: 0 20px 20px 20px;
+}
 
-    margin-left: 0;
-    padding: 0;
-  }
-  #criminalContent-dating li {
-    font-size: 16px;
+#scanningCriminal-dating .checking-sources-progress,
+#scanningCriminalRecords .checking-sources-progress {
+  margin-bottom: 20px;
+  margin-top: 33px;
+}
 
-    margin-bottom: 5px;
-  }
-  #criminalContent-dating li i {
-    font-size: 8px;
-    position: relative;
-    top: -3px;
-    margin-right: 5px;
-  }
-  #criminalHeader-dating p {
-    font-size: 20px;
-    margin: 20px 0 5px 0;
-  }
+#hidden-criminal-past-modal .checking-sources-progress {
+  margin-top: 8px;
+}
 
-  #criminalHeader-dating {
-    padding-left: 6%;
-    padding-right: 6%;
-    margin-top: 1%;
-    text-align: center;
-    margin-bottom: 2%;
-  }
+#scanningCriminalRecords #criminalHeader p {
+  font-size: 20px;
+  margin: 0 20px 10px 20px;
+}
 
-  #criminalContent-dating p {
-    margin: 5px 0 10px 0;
-  }
-  #criminalLeft {
-    display: block;
-    height: auto;
-    margin: 0;
-    text-align: center;
-  }
+#criminalContent-dating {
+  height: inherit;
+}
 
-  #criminalRight {
-    display: block;
+#criminalContent-dating ul {
+  font-size: 20px;
+  line-height: 20px;
+  margin-left: 0;
+  padding: 0;
+}
 
-    padding: 0;
-  }
-  #foundCriminal p {
-    font-size: 20px;
+#criminalContent-dating li {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
 
-    margin-top: 0;
-    padding-top: 0;
-  }
-  #foundCriminal img {
-    display: block;
+#criminalContent-dating li i {
+  font-size: 8px;
+  position: relative;
+  top: -3px;
+  margin-right: 5px;
+}
 
-    height: 50px;
-    margin: 0 auto 10px auto;
-  }
-  .hidden-past-part1-speech-bub {
-    visibility: hidden;
-  }
-  /* END CRIMINAL - DATING FLOW */
+#criminalHeader-dating p {
+  font-size: 20px;
+  margin: 20px 0 5px 0;
+}
+
+#criminalHeader-dating {
+  padding-left: 6%;
+  padding-right: 6%;
+  margin-top: 1%;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+#criminalContent-dating p {
+  margin: 5px 0 10px 0;
+}
+
+#criminalLeft {
+  display: block;
+  height: auto;
+  margin: 0;
+  text-align: center;
+}
+
+#criminalRight {
+  display: block;
+  padding: 0;
+}
+
+#foundCriminal p {
+  font-size: 20px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+#foundCriminal img {
+  display: block;
+  height: 50px;
+  margin: 0 auto 10px auto;
+}
+
+.hidden-past-part1-speech-bub {
+  visibility: hidden;
+}
+
+/* END CRIMINAL - DATING FLOW */
 
 /* === SCANNING CONTACT INFO - DATING FLOW */
+
 .loading-spinner {
   visibility: visible;
   width: 40px;
 }
+
 .contact-info-icon-container img {
   width: 60px;
   position: relative;
   left: -20px;
 }
+
 .contact-info-icon-container {
   visibility: hidden;
 }
+
 .contact-info-icon-container p {
-    font-size: 20px;
-    margin-bottom: 0;
+  font-size: 20px;
+  margin-bottom: 0;
 }
-#contactinfo-progress, #contactinfo-modal-progress, #contactinfo-criminal-modal-progress {
-    height: 30px;
-    margin: 20px 0px 0px;
+
+#contactinfo-progress,
+#contactinfo-modal-progress,
+#contactinfo-criminal-modal-progress {
+  height: 30px;
+  margin: 20px 0px 0px;
 }
+
 #oldFlamesContactModal .checking-sources-progress {
   margin-top: 2px;
 }
+
 #oldFlamesContactModal .part2-speech-bub {
   display: none;
   text-align: center;
@@ -1644,6 +1587,7 @@ social-links {
   margin-left: 0;
   margin-bottom: 15px !important;
 }
+
 #hidden-criminal-past-modal .part2-speech-bub {
   display: none;
   text-align: center;
@@ -1651,6 +1595,7 @@ social-links {
   margin-left: 0;
   margin-bottom: 120px;
 }
+
 /* END SCANNING CONTACT INFO - DATING FLOW */
 
 /* ANYTHING ELSE QUESTION - DATING FLOW */
@@ -1659,23 +1604,17 @@ social-links {
 
 #anything-else-datingflow .modal-body-headline {
   font-size: 20px;
-
   text-align: center;
   letter-spacing: 3px;
-
   color: #dc0216;
 }
 
 #anything-else-datingflow span.subtitle {
   font-size: 20px;
   font-weight: 400;
-
   display: block;
-
   margin-top: 5px;
-
   text-align: center;
-
   color: #333;
 }
 
@@ -1683,17 +1622,12 @@ social-links {
   font-size: 16px;
 }
 
-
 #anything-else-datingflow label.error {
   line-height: 18px;
-
   display: none;
-
   width: 90%;
   margin: 10px 20px;
-
   text-align: left;
-
   color: #dc0015;
   border: none;
   border-radius: 4px;
@@ -1709,10 +1643,9 @@ social-links {
 
 #anything-else-datingflow .form-group {
   padding: 14px 20px;
-
   border: 2px solid transparent;
   border-radius: 3px;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
 }
 
 #anything-else-datingflow .form-group.error {
@@ -1721,7 +1654,6 @@ social-links {
 
 #anything-else-datingflow .form-group p {
   margin: 0;
-
   cursor: pointer;
   text-align: left;
 }
@@ -1732,7 +1664,6 @@ social-links {
 
 #anything-else-datingflow .form-group p label span {
   float: right;
-
   margin-left: 5px;
 }
 
@@ -1740,7 +1671,7 @@ social-links {
   border-radius: 2px;
   outline: none;
   background: #f9f9f9;
-  box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.26);
+  box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.26);
 }
 
 #anything-else-datingflow .form-group input.error {
@@ -1768,13 +1699,13 @@ social-links {
 }
 
 .checking-sources-progress {
-    position: relative;
-    height: 30px;
-    margin: 30px 25px 15px;
+  position: relative;
+  height: 30px;
+  margin: 30px 25px 15px;
 }
 
 .checking-sources-progress-2 {
-    height: 30px;
+  height: 30px;
 }
 
 .checking-sources-progress p {
@@ -1788,14 +1719,16 @@ social-links {
   text-align: center;
   color: #333;
 }
+
 .speech-bub-ico {
-    width: 40px;
-    height: 40px;
-    float: left;
-    display: inline;
-    margin-right: 15px;
-    margin-bottom: 10px;
+  width: 40px;
+  height: 40px;
+  float: left;
+  display: inline;
+  margin-right: 15px;
+  margin-bottom: 10px;
 }
+
 .speech-bub {
   position: relative;
   display: none;
@@ -1807,12 +1740,13 @@ social-links {
   color: #333;
   border-radius: 3px;
   border-radius: 5px;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
 }
+
 .searching-progress-bar-group {
-    text-align: center;
-    border-radius: 4px;
-    padding: 0 15px;
+  text-align: center;
+  border-radius: 4px;
+  padding: 0 15px;
 }
 
 #crt-acct-load {
@@ -1826,28 +1760,29 @@ social-links {
   margin: 30px 0 20px 0;
 }
 
-#bubbleHolder, #bubbleHolder-dating {
+#bubbleHolder,
+#bubbleHolder-dating {
   position: relative;
 }
 
-#bubbleHolder h3, #bubbleHolder-dating h3 {
+#bubbleHolder h3,
+#bubbleHolder-dating h3 {
   font-size: 18px;
-
   margin: -5px 0 10px;
-
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
-#bubbleHolder p, #bubbleHolder-dating p {
+#bubbleHolder p,
+#bubbleHolder-dating p {
   font-size: 18px;
   line-height: 24px;
-
   width: 80%;
   margin: 0;
 }
 
-#bubbleHolder img, #bubbleHolder-dating img {
+#bubbleHolder img,
+#bubbleHolder-dating img {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -1857,31 +1792,25 @@ social-links {
 .close:focus {
   cursor: pointer;
   text-decoration: none;
-
   opacity: 0.4;
   color: #333;
-
   filter: alpha(opacity=40);
 }
 
 #report-status-modal .modal-footer,
 #gen-report-modal1 .modal-footer {
   font-size: 13px;
-
   margin: 0 -7px -7px;
   padding: 10px 0;
-
   text-align: center;
-
   color: #333;
   border-top: none;
   border-radius: 0 0 4px 4px;
   background: #f2da3e;
 }
 
-
-
 /* ====== 02 - CRIMINAL DATA ===== */
+
 #criminalHeader {
   text-align: center;
 }
@@ -1902,6 +1831,7 @@ social-links {
 #criminalRight {
   height: inherit;
 }
+
 #criminalContent ul {
   font-size: 18px;
   line-height: 24px;
@@ -1909,16 +1839,13 @@ social-links {
 
 #criminalContent li {
   font-size: 16px;
-
   margin-bottom: 5px;
 }
 
 #criminalContent li i {
   font-size: 8px;
-
   position: relative;
   top: -3px;
-
   margin-right: 5px;
 }
 
@@ -1937,37 +1864,33 @@ social-links {
   right: 0;
 }
 
-
 #foundCriminal img {
   margin-right: 10px;
 }
+
 #foundCriminal p {
   font-size: 24px;
   font-weight: 700;
-
   padding-top: 55px;
-
   text-align: center;
-
   color: #333;
 }
 
 .blurryText {
   color: transparent;
-  text-shadow: 0 0 5px rgba(0,0,0,0.3);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .fa-spinner {
   font-size: 16px;
-
   margin-left: -4px;
 }
 
 .heading-logo {
-    width: 80px;
-    height: 80px;
-    margin-top: 15px;
-    margin-bottom: 26px;
+  width: 80px;
+  height: 80px;
+  margin-top: 15px;
+  margin-bottom: 26px;
 }
 
 #criminalRight li i {
@@ -1993,7 +1916,6 @@ ul.socialMedias img.loading.spinner {
   margin-left: -12px !important;
 }
 
-
 #social-media-groups li span {
   width: 16.66%;
 }
@@ -2001,11 +1923,9 @@ ul.socialMedias img.loading.spinner {
 #social-media-groups li img,
 #social-media-groups i.loading {
   font-size: 26px;
-
   position: absolute;
   top: 25px;
   left: 50%;
-
   max-width: 100%;
   margin-left: -16px;
 }
@@ -2029,12 +1949,12 @@ ul.socialMedias img.loading.spinner {
 }
 
 #scanningSocialMedia .progress {
-    position: relative;
-    height: 30px;
-    margin: 2px 25px 15px;
-    color: white;
-    border-radius: 4px;
-    background: #e8e8e8;
+  position: relative;
+  height: 30px;
+  margin: 2px 25px 15px;
+  color: white;
+  border-radius: 4px;
+  background: #e8e8e8;
 }
 
 .social-widget {
@@ -2045,13 +1965,10 @@ p.log-load {
   font-size: 12px;
   font-weight: bold !important;
   line-height: 14px;
-
   margin-top: 14px;
   margin-bottom: 15px;
-
   text-align: center;
 }
-
 
 /* == 4 == RELATIVES QUESTIONS ================= */
 
@@ -2059,25 +1976,19 @@ p.log-load {
 
 #gen-report-modal2 .modal-body {
   display: inline-block;
-
   padding: 15px;
 }
 
-
-
 #gen-report-modal2 .modal-footer #gen-report-confirm {
   font-size: 18px !important;
-
   margin: 0;
   padding: 15px;
-
   border: none;
 }
 
 #gen-report-modal2 .modal-footer #gen-report-confirm[disabled=disabled],
 #gen-report-modal2 .modal-footer #gen-report-confirm:disabled {
   cursor: progress;
-
   opacity: 0.5;
   color: #c9c9c9 !important;
   border-color: #c9c9c9;
@@ -2087,9 +1998,7 @@ p.log-load {
 
 #gen-report-modal2 .modal-footer #arrowhead-right {
   font-size: 18px;
-
   position: relative;
-
   margin-left: 10px;
 }
 
@@ -2097,23 +2006,17 @@ p.log-load {
 
 #gen-report-modal3 .modal-body-headline {
   font-size: 20px;
-
   text-align: center;
   letter-spacing: 3px;
-
   color: #dc0216;
 }
 
 #gen-report-modal3 span.subtitle {
   font-size: 20px;
   font-weight: 400;
-
   display: block;
-
   margin-top: 5px;
-
   text-align: center;
-
   color: #333;
 }
 
@@ -2121,17 +2024,12 @@ p.log-load {
   font-size: 16px;
 }
 
-
 #gen-report-modal3 label.error {
   line-height: 18px;
-
   display: none;
-
   width: 90%;
   margin: 10px 20px;
-
   text-align: left;
-
   color: #dc0015;
   border: none;
   border-radius: 4px;
@@ -2147,10 +2045,9 @@ p.log-load {
 
 #gen-report-modal3 .form-group {
   padding: 14px 20px;
-
   border: 2px solid transparent;
   border-radius: 3px;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
 }
 
 #gen-report-modal3 .form-group.error {
@@ -2159,7 +2056,6 @@ p.log-load {
 
 #gen-report-modal3 .form-group p {
   margin: 0;
-
   cursor: pointer;
   text-align: left;
 }
@@ -2170,7 +2066,6 @@ p.log-load {
 
 #gen-report-modal3 .form-group p label span {
   float: right;
-
   margin-left: 5px;
 }
 
@@ -2178,7 +2073,7 @@ p.log-load {
   border-radius: 2px;
   outline: none;
   background: #f9f9f9;
-  box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.26);
+  box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.26);
 }
 
 #gen-report-modal3 .form-group input.error {
@@ -2189,7 +2084,6 @@ p.log-load {
   font-size: 16px;
 }
 
-
 #gen-report-modal3 .btn-wrap {
   padding-bottom: 20px;
 }
@@ -2197,8 +2091,6 @@ p.log-load {
 #gen-report-modal3 .btn-wrap .btn {
   padding: 15px;
 }
-
-
 
 /* === 6 == FCRA ================ */
 
@@ -2225,19 +2117,18 @@ p.log-load {
   border-bottom: none;
   background-color: white;
 }
+
 #gen-report-modal11 .modal-header p {
   font-size: 20px;
-
   text-align: center;
-
   color: #333;
 }
 
 #gen-report-modal11 #fcra-confirm .panel .form-group {
-    padding: 14px 20px;
-    border: 2px solid transparent;
-    border-radius: 3px;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
+  padding: 14px 20px;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
 }
 
 #gen-report-modal11 #fcra-confirm .panel .form-group.error {
@@ -2254,15 +2145,14 @@ p.log-load {
 
 #gen-report-modal11 .fcraCheckbox-box {
   float: right;
-
   margin-left: 5px;
-
   cursor: pointer;
 }
 
 #gen-report-modal11 .modal-header p span:first-child {
   color: #dc0216;
 }
+
 #gen-report-modal11 .modal-header p span:nth-child(2) {
   color: #81b44c;
 }
@@ -2271,16 +2161,12 @@ p.log-load {
   padding-top: 0;
 }
 
-
 #gen-report-modal11 .modal-body p {
   font-size: 16px;
   font-weight: 400;
-
   margin: 0;
   padding: 0 0 6px 16px;
-
   text-align: left;
-
   color: #333;
 }
 
@@ -2297,14 +2183,10 @@ p.log-load {
 
 #gen-report-modal11 label.error {
   line-height: 18px;
-
   display: none;
-
   width: 94%;
   margin: 10px 20px;
-
   text-align: left;
-
   color: #dc0015;
   border: none;
   border-radius: 4px;
@@ -2314,13 +2196,14 @@ p.log-load {
 #fcra-confirm .panel {
   margin-top: 10px;
   margin-bottom: 20px;
-
   border: none;
   box-shadow: none;
 }
 
 /* =================== Report Staus Modal End ================= */
+
 /*Img */
+
 #fcra-confirm img {
   width: 180px;
   height: auto;
@@ -2338,20 +2221,21 @@ label.fcraCheckbox-wrapper {
   cursor: pointer;
 }
 
-
-
 /* 7 == CONFIRM DATA MODAL ========== */
 
 #confirmData .modal-body .icon-img {
   text-align: right;
 }
+
 #confirmData .modal-body .icon-img img {
   width: 60px;
   height: 60px;
 }
+
 #confirmData .modal-body .icon-row {
   margin-bottom: 20px;
 }
+
 #confirmData .modal-body {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -2359,26 +2243,20 @@ label.fcraCheckbox-wrapper {
 
 #confirmData .modal-body p {
   line-height: 22px;
-  /*display: inline-block;*/
-
   margin: 0;
-
   text-align: left;
 }
 
 #confirmData .data-seals {
   width: auto;
   height: 150px;
-
   text-align: center;
-
   background: lightgray;
 }
 
 #confirmData .locations:before {
   width: 80%;
   margin: 0 auto;
-
   border-top: 1px solid;
 }
 
@@ -2388,7 +2266,6 @@ label.fcraCheckbox-wrapper {
 
 #confirmData .state-seal {
   display: inline-block;
-
   width: 100px;
   height: 100px;
   padding: 20px 20px 20px 20px;
@@ -2396,15 +2273,16 @@ label.fcraCheckbox-wrapper {
 
 #confirmData .btn {
   font-weight: bold;
-
   margin-bottom: 20px;
   padding: 15px;
 }
 
 /* == 8 == SAVE YOUR RESULTS ========================== */
+
 #gen-report-modal6 .modal-body {
   padding: 0;
 }
+
 #gen-report-modal6 .lead-part {
   padding: 30px 20px 10px 50px;
 }
@@ -2416,25 +2294,31 @@ label.fcraCheckbox-wrapper {
 }
 
 /*Eemail opt in box*/
+
 #gen-report-modal6 .emailcheckbox-text {
   font-size: 14px;
 }
 
 /*--- FAMILY SAFETY START ---*/
+
 #gen-familysafety-modal1 {
   padding: 15px;
 }
+
 #gen-familysafety-modal1 .icon-div-familysafety {
   padding: 0 30px;
 }
+
 #gen-familysafety-modal1 .speech-bub-text-familysafety {
   display: inline;
   margin: 0;
 }
+
 #gen-familysafety-modal1 .part1-speech-bub-familysafety {
   padding-bottom: 2px;
   display: inline-block;
 }
+
 #gen-familysafety-modal1 .speech-bub-ico-familysafety {
   width: 40px;
   height: 40px;
@@ -2442,34 +2326,41 @@ label.fcraCheckbox-wrapper {
   display: inline;
   margin: 0 15px 15px 0;
 }
+
 #gen-familysafety-modal1 .modal-body-header {
-  margin-bottom: 20px!important;
+  margin-bottom: 20px !important;
 }
+
 .part1-speech-bub-familysafety {
-  /*height: 40px;*/
   vertical-align: middle;
-  /*margin-bottom: 12px;*/
   padding-left: 30px;
 }
+
 .part1-speech-bub-familysafety p {
   font-size: 20px;
   color: #4a4a4a;
   margin: 0 0 0 15px;
 }
+
 .speech-bub-wrapper-familysafety p {
-display: inline-block;
+  display: inline-block;
 }
+
 .speech-bub-wrapper-familysafety {
   text-align: left;
   vertical-align: middle;
 }
+
 .speech-bub-familysafety {
-position: relative;
-text-align: left;
-color: #333;
+  position: relative;
+  text-align: left;
+  color: #333;
 }
-#speech-bub-familysafety-wrapper1, #speech-bub-familysafety-wrapper2, #speech-bub-familysafety-wrapper3 {
-visibility: hidden;
+
+#speech-bub-familysafety-wrapper1,
+#speech-bub-familysafety-wrapper2,
+#speech-bub-familysafety-wrapper3 {
+  visibility: hidden;
 }
 
 .part2-speech-bub-familysafety {
@@ -2506,13 +2397,13 @@ visibility: hidden;
     padding-left: 0;
   }
 }
+
 @media screen and (max-width: 767px) {
   #gen-report-modal6 #emailCheckbox {
     margin-top: 0;
   }
   #gen-report-modal6 .emailcheckbox-text {
     margin-left: 25px;
-
     text-align: left;
   }
   .headline {
@@ -2525,7 +2416,6 @@ visibility: hidden;
 
 #gen-report-modal6 .norton {
   float: right;
-
   width: 68px;
 }
 
@@ -2543,7 +2433,7 @@ visibility: hidden;
   border: none;
   border-radius: 3px;
   background: #fff;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
 }
 
 #gen-report-modal6 .modal-top-text {
@@ -2560,9 +2450,7 @@ visibility: hidden;
 #gen-report-modal6 p.tos-text {
   font-size: 14px;
   line-height: 18px;
-
   margin-top: 10px;
-
   text-align: left;
 }
 
@@ -2572,22 +2460,18 @@ visibility: hidden;
 
 #gen-report-modal6 .why-bv {
   min-height: 511px;
-
   border-bottom-right-radius: 6px;
   background: #f9f9f9;
 }
 
 #gen-report-modal6 .why-header {
   position: relative;
-
   padding: 26px 0;
 }
 
 #gen-report-modal6 .why-subheaders {
   font-size: 16px;
-
   margin-bottom: 30px;
-
   color: #9b9b9b;
 }
 
@@ -2595,34 +2479,26 @@ visibility: hidden;
   position: relative;
   right: 0;
   left: 0;
-
   margin: 0 0 15px 0;
-
   border-bottom: 1px solid #fff;
 }
 
 #gen-report-modal6 .why-bv h5 {
   font-size: 18px;
   font-weight: bold;
-
   margin: 0;
-
   letter-spacing: 1.5px;
   text-transform: uppercase;
-
   color: #9b9b9b;
 }
 
 #gen-report-modal6 .why-bv h6 {
   font-size: 20px;
   font-weight: bold;
-
   margin: 0;
   margin-top: 0;
-
   text-align: center;
   letter-spacing: 2.78px;
-
   color: #4a4a4a;
 }
 
@@ -2644,16 +2520,13 @@ visibility: hidden;
 
 #login-redirect {
   font-size: 12px !important;
-
   padding: 0 0 2px 0;
-
   color: #0f2d8f;
 }
 
 .form-input-group {
   margin-bottom: 10px;
   padding: 15px;
-
   border: 1px solid #e5e5e5;
   border-radius: 4px;
   background-color: #efefef;
@@ -2663,14 +2536,12 @@ visibility: hidden;
   height: 45px;
   margin: 2.5px auto;
   padding: 0 10px;
-
   border-radius: 2px;
 }
 
 #signup-modal-form .main-btn {
   font-size: 18px !important;
   font-weight: 700;
-
   padding-top: 15px !important;
 }
 
@@ -2694,15 +2565,12 @@ visibility: hidden;
 .modal-body p.tos-text {
   font-size: 14px;
   line-height: 18px;
-
   margin: 10px 0;
-
   text-align: center;
 }
 
 h6.create-login {
   font-weight: 500 !important;
-
   text-align: center;
 }
 
@@ -2714,69 +2582,58 @@ h6.create-login {
 
 /* === 9 == REPORT WATCHER ================*/
 
-
 #gen-report-modal4 .modal-body {
   margin-bottom: 20px;
-
   text-align: left;
 }
 
 #gen-report-modal4 .modal-body p {
   font-size: 16px;
   line-height: 24px;
-
   margin-bottom: 20px;
 }
 
 #gen-report-modal4 .captHeadContent p {
   font-size: 22px;
   font-weight: 700;
-
   margin: 10px 0;
-
   text-align: center;
 }
 
 #gen-report-modal4 .dmIconsCont {
   margin: 0 auto 20px;
-
   text-align: center;
 }
+
 #gen-report-modal4 .captHeadContent .dmIconsCont img {
   width: 80px;
   margin: 20px auto 5px;
 }
 
-
 #gen-report-modal4 .modal-body {
   margin-bottom: 15px;
 }
-
-
 
 /* == 10 == GENERATING REPORT ====================== */
 
 #searching-progress-bar {
   position: relative;
-
   height: 45px;
   margin-top: 10px;
   margin-bottom: 20px;
-
   border-radius: 4px;
   background: #777;
 }
 
 #sub-searching-progress-bar {
   position: relative;
-
   height: 45px;
   margin-top: 10px;
   margin-bottom: 20px;
-
   border-radius: 4px;
   background: #777;
 }
+
 #sub-searching-progress-bar .progress-bar {
   transition: none;
 }
@@ -2789,14 +2646,12 @@ h6.create-login {
 .body-copy-header {
   padding-top: 10px;
   padding-bottom: 20px;
-
   background-repeat: no-repeat;
   background-position: right top;
 }
 
 .card-single {
   display: none;
-
   min-height: 190px;
 }
 
@@ -2805,48 +2660,42 @@ h6.create-login {
 }
 
 .copy-header-personal {
-  padding: 16px 0 30px  80px;
-
+  padding: 16px 0 30px 80px;
   background-image: url('../img/icon-personal.svg');
   background-position: left top;
   background-size: 60px;
 }
 
 .copy-header-prop {
-  padding: 16px 0 30px  80px;
-
+  padding: 16px 0 30px 80px;
   background-image: url('../img/icon-address.svg');
   background-position: left top;
   background-size: 60px;
 }
 
 .copy-header-crim {
-  padding: 16px 0 30px  80px;
-
+  padding: 16px 0 30px 80px;
   background-image: url('../img/icon-crim.svg');
   background-position: left top;
   background-size: 60px;
 }
 
 .copy-header-rel {
-  padding: 16px 0 30px  80px;
-
+  padding: 16px 0 30px 80px;
   background-image: url('../img/icon-rel.svg');
   background-position: left top;
   background-size: 60px;
 }
 
 .copy-header-offend {
-  padding: 16px 0 30px  80px;
-
+  padding: 16px 0 30px 80px;
   background-image: url('../img/icon-sol.svg');
   background-position: left top;
   background-size: 60px;
 }
 
 .copy-header-misc {
-  padding: 16px 0 30px  80px;
-
+  padding: 16px 0 30px 80px;
   background-image: url('../img/icon-misc.svg');
   background-position: left top;
   background-size: 60px;
@@ -2855,34 +2704,27 @@ h6.create-login {
 .modal-body-list .list-single {
   margin: 0;
   padding: 9px 6px;
-
   text-align: left;
-
   border-bottom: 1px solid #dedede;
 }
 
 .list-selected {
   font-weight: bold !important;
-
   color: #fff;
   border-radius: 4px;
   background: #353167;
 }
 
-
 #modal-msgs {
   font-size: 18px;
   font-weight: bold;
   line-height: 0;
-
   margin-bottom: 10px;
-
   text-align: left;
 }
 
 #modal-msgs span {
   display: none;
-
   margin: 20px 0;
 }
 
@@ -2899,7 +2741,6 @@ h6.create-login {
   padding: 0;
 }
 
-
 #gen-report-modal5 ul p {
   margin: 0;
   padding-right: 15px;
@@ -2907,50 +2748,62 @@ h6.create-login {
 
 #gen-report-modal5 li {
   margin: 5px 0 10px 20px;
-
   list-style-type: disc;
 }
+
 #gen-report-modal5 .modal-body {
   padding-bottom: 20px;
-
   text-align: left;
 }
 
 #gen-report-modal5 .modal-footer {
   padding: 10px 15px 20px;
-
   border-top: none !important;
 }
 
 #gen-report-modal5 .modal-footer p {
   font-size: 18px;
   font-weight: bold;
-
   margin: 20px 0 10px 0;
-
   text-align: left;
 }
 
 /* ========== START NEWLY ADDED CSS ========== */
 
-#scanningEmail, #anythingElseModal, #anythingElseModalContact, #monitoringDatingModal, #fcraDatingModal, #contactInfoSearchModal, #contactInfoSearchCriminalModal, #professionalProfileSearch, #contactInfoSocialProfile, #oldFlamesContactModal, #hidden-criminal-past-modal, #familySaftyModal1, #tacklingChallenges, #scanningContactInfo {
-    padding: 15px;
+#scanningEmail,
+#anythingElseModal,
+#anythingElseModalContact,
+#monitoringDatingModal,
+#fcraDatingModal,
+#contactInfoSearchModal,
+#contactInfoSearchCriminalModal,
+#professionalProfileSearch,
+#contactInfoSocialProfile,
+#oldFlamesContactModal,
+#hidden-criminal-past-modal,
+#familySaftyModal1,
+#tacklingChallenges,
+#scanningContactInfo {
+  padding: 15px;
 }
+
 #scanningEmail .sub-heading {
-    font-size: 20px;
-    color: #4a4a4a;
-    text-align: center;
-    margin: 25px 0 60px;
+  font-size: 20px;
+  color: #4a4a4a;
+  text-align: center;
+  margin: 25px 0 60px;
 }
+
 #scanningEmail .loading {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }
+
 #scanningContactInfo .sub-heading {
-    font-size: 20px;
-    color: #4a4a4a;
-    text-align: center;
-    margin: 20px 35px -6px;
+  font-size: 20px;
+  color: #4a4a4a;
+  text-align: center;
+  margin: 20px 35px -6px;
 }
 
 #scanningContactInfo .social-widget {
@@ -2958,61 +2811,62 @@ h6.create-login {
 }
 
 #scanningContactInfo ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
 /* ============================== */
 
 ul.contactInfos li {
-    position: relative;
-    float: left;
-    width: 50%;
-    height: 100px;
-    margin-bottom: 25px;
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 100px;
+  margin-bottom: 25px;
 }
 
 ul.contactInfos img.loading.spinner {
-    margin-left: -12px !important;
+  margin-left: -12px !important;
 }
 
 #contact-info-groups li span {
-    width: 50%;
+  width: 50%;
 }
 
 #contact-info-groups li img,
 #contact-info-groups i.loading {
-    font-size: 26px;
-    position: absolute;
-    top: 25px;
-    left: 50%;
-    max-width: 100%;
-    margin-left: -15px;
+  font-size: 26px;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  max-width: 100%;
+  margin-left: -15px;
 }
 
 #contact-info-groups li p {
-    font-size: 16px;
-    position: absolute;
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    top: 100px;
+  font-size: 16px;
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  top: 100px;
 }
 
 /*----------*/
 
 #contact-info-srch-groups li span {
-    width: 50%;
+  width: 50%;
 }
 
-#contactInfoSearchModal ul.contactInfos li, #contactInfoSearchCriminalModal ul.contactInfos li {
-    position: relative;
-    float: left;
-    width: 33.33%;
-    height: 100px;
-    margin-bottom: 25px;
-    margin-top: -1px;
+#contactInfoSearchModal ul.contactInfos li,
+#contactInfoSearchCriminalModal ul.contactInfos li {
+  position: relative;
+  float: left;
+  width: 33.33%;
+  height: 100px;
+  margin-bottom: 25px;
+  margin-top: -1px;
 }
 
 #contactInfoSocialProfile ul.contactInfos li {
@@ -3025,160 +2879,191 @@ ul.contactInfos img.loading.spinner {
 
 #contact-info-srch-groups li img,
 #contact-info-srch-groups i.loading {
-    font-size: 26px;
-    position: absolute;
-    top: 25px;
-    left: 50%;
-    max-width: 100%;
-    margin-left: -15px;
+  font-size: 26px;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  max-width: 100%;
+  margin-left: -15px;
 }
 
 #contact-info-srch-groups li p {
-    font-size: 16px;
-    position: absolute;
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    top: 100px;
+  font-size: 16px;
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  top: 100px;
 }
+
 /* ============================== */
 
-#anythingElseModal .sub-heading, #anythingElseModalContact .sub-heading, #anythingElseModalCriminal .sub-heading {
-    font-size: 20px;
-    color: #4a4a4a;
-    text-align: center;
-    margin: 0 0 30px;
-    padding: 0 35px;
+#anythingElseModal .sub-heading,
+#anythingElseModalContact .sub-heading,
+#anythingElseModalCriminal .sub-heading {
+  font-size: 20px;
+  color: #4a4a4a;
+  text-align: center;
+  margin: 0 0 30px;
+  padding: 0 35px;
 }
-#anythingElseModal .modal-footer, #anythingElseModalContact .modal-footer, #anythingElseModalCriminal .modal-footer {
-    border: none;
-    padding: 0;
+
+#anythingElseModal .modal-footer,
+#anythingElseModalContact .modal-footer,
+#anythingElseModalCriminal .modal-footer {
+  border: none;
+  padding: 0;
 }
-#btn-finalize, #btn-finalize-contact, #btn-finalize-criminal {
-    height: 54px;
-    margin: 30px 0 20px;
-    font-size: 18px;
-    font-weight: 700;
+
+#btn-finalize,
+#btn-finalize-contact,
+#btn-finalize-criminal {
+  height: 54px;
+  margin: 30px 0 20px;
+  font-size: 18px;
+  font-weight: 700;
 }
-#anythingElseModal .checkbox-bg, #anythingElseModalContact .checkbox-bg, #anythingElseModalCriminal .checkbox-bg {
-    background: #FFFFFF;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
-    border-radius: 3px;
-    padding: 24px 30px;
+
+#anythingElseModal .checkbox-bg,
+#anythingElseModalContact .checkbox-bg,
+#anythingElseModalCriminal .checkbox-bg {
+  background: #FFFFFF;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  border-radius: 3px;
+  padding: 24px 30px;
 }
-#anythingElseModal .skip-link, #anythingElseModalContact .skip-link, #anythingElseModalCriminal .skip-link {
-    margin: 0 0 15px;
-    text-align: center;
+
+#anythingElseModal .skip-link,
+#anythingElseModalContact .skip-link,
+#anythingElseModalCriminal .skip-link {
+  margin: 0 0 15px;
+  text-align: center;
 }
-#anythingElseModal .skip-link a, #anythingElseModalContact .skip-link a, #anythingElseModalCriminal .skip-link a {
-    font-size: 18px;
-    color: #0F2D8F;
-    margin-bottom: 15px;
-    font-weight: 600;
-    text-decoration: none;
+
+#anythingElseModal .skip-link a,
+#anythingElseModalContact .skip-link a,
+#anythingElseModalCriminal .skip-link a {
+  font-size: 18px;
+  color: #0F2D8F;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-decoration: none;
 }
-#anythingElseModal .chckbx, #anythingElseModalContact .chckbx, #anythingElseModalCriminal .chckbx {
-    font-size: 18px;
-    font-weight: 700;
-    color: #4a4a4a;
-    margin-bottom: 15px;
+
+#anythingElseModal .chckbx,
+#anythingElseModalContact .chckbx,
+#anythingElseModalCriminal .chckbx {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4a4a4a;
+  margin-bottom: 15px;
 }
+
 #anythingElseModal #anythingElseGroup #anythingElseModalContact #anythingElseModalCriminal .chckbx .rndname {
-    margin-left: 15px;
+  margin-left: 15px;
 }
+
 #monitoringDatingModal .sub-heading {
-    font-size: 20px;
-    color: #4a4a4a;
-    text-align: center;
-    margin: 0;
-    padding: 0 35px;
+  font-size: 20px;
+  color: #4a4a4a;
+  text-align: center;
+  margin: 0;
+  padding: 0 35px;
 }
 
 #fcraDatingModal .sub-heading {
-    font-size: 20px;
-    color: #4a4a4a;
-    text-align: center;
-    margin: 0 0 30px;
+  font-size: 20px;
+  color: #4a4a4a;
+  text-align: center;
+  margin: 0 0 30px;
 }
 
 #fcraDatingModal .checkbox {
-    background: #FFFFFF;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
-    border-radius: 3px;
-    padding: 14px 30px 22px;
-    margin: 0 0 30px;
+  background: #FFFFFF;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  border-radius: 3px;
+  padding: 14px 30px 22px;
+  margin: 0 0 30px;
 }
 
 #fcraDatingModal .btn {
-    height: 56px;
-    margin-top: 10px;
-    margin-bottom: 25px;
+  height: 56px;
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 
 #fcraDatingModal #fcra-dating-confirm .panel .form-group {
-    padding: 14px 20px;
-    border: 2px solid transparent;
-    border-radius: 3px;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
-    margin: 0;
+  padding: 14px 20px;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.11);
+  margin: 0;
 }
 
 #fcraDatingModal label.error {
-    line-height: 18px;
-    width: 94%;
-    margin: 10px 20px;
-    text-align: left;
-    color: #dc0015;
-    border: none;
-    background-color: transparent;
+  line-height: 18px;
+  width: 94%;
+  margin: 10px 20px;
+  text-align: left;
+  color: #dc0015;
+  border: none;
+  background-color: transparent;
 }
 
 #fcraDatingModal label #fcraCheckboxDating {
-    margin-left: -20px;
+  margin-left: -20px;
 }
 
 #fcraDatingModal .fcraCheckbox-box {
-    float: right;
-    margin-left: 0;
-    cursor: pointer;
-    text-align: left;
-    font-size: 16px;
-    line-height: 24px;
+  float: right;
+  margin-left: 0;
+  cursor: pointer;
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 #fcraDatingModal #fcra-dating-confirm p {
-    margin: 0 20px;
+  margin: 0 20px;
 }
 
 #fcraDatingModal #fcra-dating-confirm .panel .form-group.error {
-    border-color: #dc0015;
+  border-color: #dc0015;
 }
 
 #gen-myself-modal3 .modal-footer {
-    border: none;
-    padding: 0;
+  border: none;
+  padding: 0;
 }
+
 #gen-myself-modal3 .skip-link {
-    margin: 0 0 15px;
-    text-align: center;
+  margin: 0 0 15px;
+  text-align: center;
 }
+
 #gen-myself-modal3 .skip-link a {
-    font-size: 18px;
-    color: #0F2D8F;
-    margin-bottom: 15px;
-    font-weight: 600;
+  font-size: 18px;
+  color: #0F2D8F;
+  margin-bottom: 15px;
+  font-weight: 600;
 }
+
 #btn-continue {
-    height: 56px;
-    margin: 15px 0 20px;
+  height: 56px;
+  margin: 15px 0 20px;
 }
-#oldFlamesContactModal .sub-heading, #hidden-criminal-past-modal .sub-heading, #familySaftyModal1 .sub-heading, #tacklingChallenges .sub-heading {
-    font-size: 20px;
-    color: #4a4a4a;
-    text-align: center;
-    margin: 20px 0 30px;
-    padding: 0 35px;
+
+#oldFlamesContactModal .sub-heading,
+#hidden-criminal-past-modal .sub-heading,
+#familySaftyModal1 .sub-heading,
+#tacklingChallenges .sub-heading {
+  font-size: 20px;
+  color: #4a4a4a;
+  text-align: center;
+  margin: 20px 0 30px;
+  padding: 0 35px;
 }
+
 /* #oldFlamesContactModal .icon-div, #hidden-criminal-past-modal .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
     padding: 0 55px;
 }
@@ -3190,125 +3075,166 @@ ul.contactInfos img.loading.spinner {
     margin-bottom: 20px;
     display: inline-block;
 } */
-#oldFlamesContactModal .icon-div, #hidden-criminal-past-modal .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
-    padding: 0 40px;
+
+#oldFlamesContactModal .icon-div,
+#hidden-criminal-past-modal .icon-div,
+#familySaftyModal1 .icon-div,
+#tacklingChallenges .icon-div {
+  padding: 0 40px;
 }
-#gen-dating-modal1, #oldFlamesContactModal .speech-bub-text, #familySaftyModal1 .speech-bub-text /*, #tacklingChallenges .speech-bub-text*/ {
-    display: inline-block;
-    margin: 0;
+
+#gen-dating-modal1,
+#oldFlamesContactModal .speech-bub-text,
+#familySaftyModal1 .speech-bub-text
+/*, #tacklingChallenges .speech-bub-text*/
+
+  {
+  display: inline-block;
+  margin: 0;
 }
- #hidden-criminal-past-modal .part1-speech-bub, #familySaftyModal1 .part1-speech-bub, #tacklingChallenges .part1-speech-bub {
-    margin-bottom: 20px;
-    display: block;
-    min-height: 50px !important;
+
+#hidden-criminal-past-modal .part1-speech-bub,
+#familySaftyModal1 .part1-speech-bub,
+#tacklingChallenges .part1-speech-bub {
+  margin-bottom: 20px;
+  display: block;
+  min-height: 50px !important;
 }
+
 #oldFlamesContactModal .part1-speech-bub {
   margin-bottom: 5px;
   display: block;
   min-height: 50px !important;
 }
-#oldFlamesContactModal .speech-bub-ico, #hidden-criminal-past-modal .speech-bub-ico, #familySaftyModal1 .speech-bub-ico, #tacklingChallenges .speech-bub-ico {
-    width: 40px;
-    height: 40px;
-    float: left;
-    /* display: inline; */
-    margin: 0 15px 15px 0;
+
+#oldFlamesContactModal .speech-bub-ico,
+#hidden-criminal-past-modal .speech-bub-ico,
+#familySaftyModal1 .speech-bub-ico,
+#tacklingChallenges .speech-bub-ico {
+  width: 40px;
+  height: 40px;
+  float: left;
+  /* display: inline; */
+  margin: 0 15px 15px 0;
 }
+
 #hidden-criminal-past-modal .icons-container {
-    height: 180px;
-    margin-bottom: 40px;
+  height: 180px;
+  margin-bottom: 40px;
 }
+
 #oldFlamesContactModal .icons-container {
   height: 190px;
 }
+
 #hidden-criminal-past-modal .icons-container {
   margin-bottom: 40px;
 }
+
 #tacklingChallenges .icons-container {
   height: 160px;
   /*margin-bottom: 6px;*/
 }
-#contactInfoSearchModal .sub-heading, #contactInfoSearchCriminalModal .sub-heading {
-    font-size: 20px;
-    color: #4a4a4a;
-    text-align: center;
-    margin: 20px 0 0 0;
-    padding: 0 35px;
+
+#contactInfoSearchModal .sub-heading,
+#contactInfoSearchCriminalModal .sub-heading {
+  font-size: 20px;
+  color: #4a4a4a;
+  text-align: center;
+  margin: 20px 0 0 0;
+  padding: 0 35px;
 }
+
 #professionalProfileSearch .sub-heading {
-    font-size: 20px;
-    color: #4a4a4a;
-    text-align: center;
-    margin: 0;
-    padding: 0 35px;
-    padding-bottom: 10px;
+  font-size: 20px;
+  color: #4a4a4a;
+  text-align: center;
+  margin: 0;
+  padding: 0 35px;
+  padding-bottom: 10px;
 }
+
 #contactInfoSocialProfile .sub-heading {
-    font-size: 20px;
-    color: #4a4a4a;
-    text-align: center;
-    margin: 20px 0 10px 0;
-    padding: 0 35px;
+  font-size: 20px;
+  color: #4a4a4a;
+  text-align: center;
+  margin: 20px 0 10px 0;
+  padding: 0 35px;
 }
+
 #contactInfoSocialProfile .icon-text {
-    font-size: 20px;
-    color: #4A4A4A;
-    text-align: center;
-    margin: 20px 0 0;
+  font-size: 20px;
+  color: #4A4A4A;
+  text-align: center;
+  margin: 20px 0 0;
 }
 
 /*--- SEARCH MYSELF START ---*/
-#gen-myself-modal1,#gen-bgsearch-modal1, #gen-bgsearch, #gen-myself-modal3 {
-    padding: 15px;
+
+#gen-myself-modal1,
+#gen-bgsearch-modal1,
+#gen-bgsearch,
+#gen-myself-modal3 {
+  padding: 15px;
 }
+
 #gen-myself-modal1 .icon-div-myself {
-    padding: 0 55px;
+  padding: 0 55px;
 }
+
 #gen-myself-modal1 .speech-bub-text-myself {
-    display: inline;
-    margin: 0;
+  display: inline;
+  margin: 0;
 }
+
 #gen-myself-modal1 .part1-speech-bub-myself {
-    display: inline-block;
+  display: inline-block;
 }
+
 #gen-myself-modal1 .speech-bub-ico-myself {
-    width: 40px;
-    height: 40px;
-    float: left;
-    display: inline;
-    margin: 0 15px 15px 0;
+  width: 40px;
+  height: 40px;
+  float: left;
+  display: inline;
+  margin: 0 15px 15px 0;
 }
+
 #gen-bgsearch-modal1 .sub-heading-bgsearch {
-    font-size: 20px;
-    color: #4a4a4a;
-    text-align: center;
-    margin: 25px 0 40px;
+  font-size: 20px;
+  color: #4a4a4a;
+  text-align: center;
+  margin: 25px 0 40px;
 }
+
 #gen-bgsearch-modal1 .icon-heading-bgsearch {
-    font-size: 20px;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-align: left;
-    color: #000000;
-    letter-spacing: 0.56px;
-    margin-top: 0;
-    margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: left;
+  color: #000000;
+  letter-spacing: 0.56px;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
+
 #gen-bgsearch-modal1 ol {
-    padding: 0;
+  padding: 0;
 }
+
 #gen-bgsearch-modal1 li {
-    font-size: 20px;
-    font-weight: 500;
-    color: #000000;
-    line-height: 24px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+  line-height: 24px;
 }
+
 #gen-bgsearch-modal1 .info-list-bgsearch {
-    padding-left: 0;
+  padding-left: 0;
 }
+
 #gen-bgsearch-modal1 .contact-info-image {
-    width: 96px;
-    height: 96px;
+  width: 96px;
+  height: 96px;
 }
 
 #gen-bgsearch-modal1 .hidden-ciimage {
@@ -3320,66 +3246,82 @@ ul.contactInfos img.loading.spinner {
 }
 
 .text-green {
-    color: #81B44C !important;
+  color: #81B44C !important;
 }
+
 #gen-myself-modal3 .sub-heading {
-    font-size: 20px;
-    color: #4a4a4a;
-    text-align: center;
-    margin: 0 0 30px;
-    padding: 0 25px;
+  font-size: 20px;
+  color: #4a4a4a;
+  text-align: center;
+  margin: 0 0 30px;
+  padding: 0 25px;
 }
+
 #gen-myself-modal3 .form-heading {
-    font-size: 20px;
-    font-weight: 700;
-    color: #000000;
-    text-align: center;
-    margin: 0 0 30px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  margin: 0 0 30px;
 }
+
 /*#gen-myself-modal3 .f-name {
     width: 40%;
     float: left;
     padding: 0 3px;
 }*/
-#gen-myself-modal3 .f-name,#gen-myself-modal3 .l-name, #gen-myself-modal3 .cty, #gen-myself-modal3 .state {
-    width: 25%;
-    float: left;
-    padding: 0 3px;
+
+#gen-myself-modal3 .f-name,
+#gen-myself-modal3 .l-name,
+#gen-myself-modal3 .cty,
+#gen-myself-modal3 .state {
+  width: 25%;
+  float: left;
+  padding: 0 3px;
 }
-#gen-myself-modal3 .form-control, #gen-myself-modal3 .custom-select {
-    width: 100%;
-    height: 40px;
-    background: #FFFFFF;
-    border: 1px solid #CCCCCC;
-    border-radius: 5px;
+
+#gen-myself-modal3 .form-control,
+#gen-myself-modal3 .custom-select {
+  width: 100%;
+  height: 40px;
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
 }
 
 #gen-myself-modal3 label.error {
-    margin: 5px 0 10px !important;
+  margin: 5px 0 10px !important;
 }
+
 .part1-speech-bub-myself {
-    /*height: 40px;*/
-    vertical-align: middle;
-    padding-left: 30px;
+  vertical-align: middle;
+  padding-left: 30px;
 }
+
 .part1-speech-bub-myself p {
-    font-size: 20px;
-    color: #4a4a4a;
-    margin: 0 0 0 15px;
+  font-size: 20px;
+  color: #4a4a4a;
+  margin: 0 0 0 15px;
 }
+
 .speech-bub-wrapper-myself p {
   display: inline-block;
 }
+
 .speech-bub-wrapper-myself {
-    text-align: left;
-    vertical-align: middle;
+  text-align: left;
+  vertical-align: middle;
 }
+
 .speech-bub-myself {
   position: relative;
   text-align: left;
   color: #333;
 }
-#speech-bub-myself-wrapper1, #speech-bub-myself-wrapper2, #speech-bub-myself-wrapper3 {
+
+#speech-bub-myself-wrapper1,
+#speech-bub-myself-wrapper2,
+#speech-bub-myself-wrapper3 {
   visibility: hidden;
 }
 
@@ -3395,24 +3337,30 @@ ul.contactInfos img.loading.spinner {
 }
 
 .speech-bub-text-myself p {
-    font-size: 20px;
-    margin: 25px 0 5px;
+  font-size: 20px;
+  margin: 25px 0 5px;
 }
+
 #gen-bgsearch-modal1 .list-fix-height {
   height: 120px;
 }
+
 #gen-bgsearch-modal1 .sub-heading {
   padding-bottom: 15px;
 }
+
 /*--- END SEARCH MYSELF END ---*/
 
 /*-- PROFESSIONAL FLOW --*/
+
 #tacklingChallenges .checking-sources-progress {
   margin-top: 32px;
 }
+
 #contactInfoSocialProfile .checking-sources-progress {
   margin-top: 20px;
 }
+
 #tacklingChallenges .part2-speech-bub {
   display: none;
   text-align: center;
@@ -3420,9 +3368,11 @@ ul.contactInfos img.loading.spinner {
   margin-left: 0;
   margin-bottom: 50px;
 }
+
 .tackling-challenge-part1-speech-bub {
   visibility: hidden;
 }
+
 /* ========== END NEWLY ADDED CSS ========== */
 
 /* == OTHER MODAL THINS ========================= */
@@ -3430,37 +3380,30 @@ ul.contactInfos img.loading.spinner {
 .btn-wrap {
   padding: 10px 20px 10px 20px;
 }
+
 .btn-wrap .btn {
   font-size: 16px;
   font-weight: bold;
-
   color: #fff !important;
   border: none;
   background-color: #81b44c;
   box-shadow: 0 4px 0 0 #638a3a;
 }
 
-
 #ongoing-notifications {
   font-size: 28px !important;
-
   width: 40%;
   margin: 15px 30%;
   padding: 15px;
-
   border: none;
 }
 
 #ongoing-notifications i {
   font-size: 24px;
-
   margin-left: 6px;
 }
 
-
-
 /* Testimonals */
-
 
 .test-cont {
   width: 850px;
@@ -3474,9 +3417,7 @@ ul.contactInfos img.loading.spinner {
   margin-bottom: 40px;
   margin-left: auto;
   padding: 0;
-
   list-style: none;
-
   color: black;
 }
 
@@ -3484,9 +3425,7 @@ ul.contactInfos img.loading.spinner {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
   font-weight: bold;
-
   margin-bottom: 0;
-
   color: #1f2e64;
 }
 
@@ -3494,10 +3433,8 @@ ul.contactInfos img.loading.spinner {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
   font-weight: medium;
-
   letter-spacing: 0.25px;
   text-transform: uppercase;
-
   color: #747b91;
 }
 
@@ -3506,18 +3443,16 @@ ul.contactInfos img.loading.spinner {
   margin-right: 0;
   margin-left: 0;
   padding-left: 0;
-
   -webkit-transition: all 0.5s ease-in;
-     -moz-transition: all 0.5s ease-in;
-      -ms-transition: all 0.5s ease-in;
-       -o-transition: all 0.5s ease-in;
-          transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
   text-align: left;
 }
 
 .test-cont img {
   display: block;
-
   margin-top: 24px;
 }
 
@@ -3525,42 +3460,39 @@ ul.contactInfos img.loading.spinner {
   padding: 0;
 }
 
-
-
 /* ================================================ */
+
 /* == RESPONSIVE GOODIES ========================== */
+
 /* ================================================ */
+
 @media (min-width: 768px) {
   #gen-report-modal6 h3.modal-top-text-big {
     text-align: left !important;
   }
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
   #sub-container {
     display: block !important;
   }
-
   #gen-report-modal2 .rndname {
     max-width: 76%;
   }
-
   .modal-padding {
     padding: 0 30px;
   }
-
-  .speech-bub, .speech-bub-dating {
+  .speech-bub,
+  .speech-bub-dating {
     height: 210px;
     padding: 24px 40px;
   }
-
   .social-links .col-xs-2 {
     padding: 0;
   }
-
   .social-links .col-xs-2:first-child {
     padding-left: 15px;
   }
-
   .social-links .col-xs-2:last-child {
     padding-right: 15px;
   }
@@ -3572,28 +3504,26 @@ ul.contactInfos img.loading.spinner {
     margin: 0 auto;
   }
 }
+
 /* TABLET - From 768px to 991px*/
+
 @media (max-width: 991px) {
   .test-cont {
     width: 100%;
     max-width: 850px;
     padding: 20px 30px 0 30px;
   }
-
   .wizContent {
     margin-top: 10px;
   }
-
   #gen-report-modal6 .why-icons img {
     width: 70px;
     padding-top: 4px;
   }
-
   #signup-modal-form input {
     height: 44px;
     margin: 10px auto;
   }
-
   #searching-progress-bar {
     margin-bottom: 0;
   }
@@ -3619,6 +3549,7 @@ ul.contactInfos img.loading.spinner {
     width: 100%;
   }
 }
+
 /* Landscape phone to portrait tablet */
 
 @media (max-width: 767px) {
@@ -3626,53 +3557,38 @@ ul.contactInfos img.loading.spinner {
     width: 140px;
     height: 20px;
   }
-
   #main-container {
     min-height: 630px !important;
-      padding-top: 20px;
+    padding-top: 20px;
   }
-
   h1,
   h2,
   p,
   footer li {
     text-align: center;
   }
-
   section {
     padding-top: 0;
     padding-bottom: 0;
   }
-
-  section.active {
-    display: block;
-  }
-
   #gen-report-modal6 .lead-part {
     padding: 20px 10px;
   }
-
   .headlineContainer {
     padding: 0 20px;
   }
-
   .testimonials p {
     font-size: 18px;
-
     text-align: left !important;
   }
-
   #gen-report-modal6 p.tos-text {
     padding: 0 10px;
   }
-
   #footer {
     padding-top: 0;
   }
-
   #footer h4 {
     font-size: 18px;
-
     margin-top: 20px;
     margin-bottom: 12px;
   }
@@ -3692,53 +3608,41 @@ ul.contactInfos img.loading.spinner {
     border-radius: 0;
     background-color: #fff;
   }
-
   .social-links img {
     width: 100%;
     max-width: 40px;
   }
-
   .xs-center {
     text-align: center;
   }
   #bubbleHolder {
     margin-top: 10px;
   }
-
   .margin-zero {
     margin: 0 !important;
   }
   /* MODALS */
-
   .modal {
     min-width: 100%;
     padding: 0 !important;
-
     background-color: #fff;
   }
-
   .modal-padding {
     padding: 0;
   }
-
   .modal-dialog {
     position: relative;
     top: 10px;
-
     min-width: 100%;
     height: 100%;
     margin: 0 !important;
   }
-
   .modal-content,
   .content {
     position: relative;
-
     overflow-y: auto;
-
     padding: 0 0 0;
   }
-
   .modal-header {
     border-radius: 0 !important;
   }
@@ -3749,24 +3653,18 @@ ul.contactInfos img.loading.spinner {
     font-size: 18px;
     line-height: 21px;
   }
-
   .modal-body h3 {
     font-size: 21px;
     line-height: 28px;
-
     margin-top: -5px;
   }
-
   .modal-body p {
     font-size: 16px;
     line-height: 20px;
-    /*margin: 15px;*/
   }
   .modal-body .modal-body-headline {
     font-size: 25px;
-
     padding-bottom: 15px;
-
     text-align: center;
   }
   #report-status-modal .modal-footer,
@@ -3775,12 +3673,11 @@ ul.contactInfos img.loading.spinner {
   }
   .mod-footer {
     border-radius: 0;
-      padding: 15px;
+    padding: 15px;
   }
   .searching-progress-bar-group {
     margin-bottom: 5px;
   }
-
   .checking-sources-progress {
     width: 100%;
     margin: 20px 0 0 0;
@@ -3789,149 +3686,120 @@ ul.contactInfos img.loading.spinner {
     font-size: 16px;
     top: 3px;
   }
-
   #bubbleHolder img {
     position: relative;
-
     float: right;
-
     margin-right: -25px;
     margin-bottom: -25px;
   }
-
   #wizModal {
     margin-top: 20px;
   }
   .wizContent {
     margin: 0;
   }
-
   .wizard-steps-panel .step-number .number {
     line-height: 30px;
-
     z-index: 15;
-
     margin-bottom: -11.5px;
-    margin-left: calc(50% - 1.7em / 2 );
-
+    margin-left: calc(50% - 1.7em / 2);
     text-align: center;
-
     border: 3px solid none;
     border-radius: 5px;
     background-color: rgba(83, 65, 165, 1);
   }
-
-
-    /* 01 - Popular Used */
-
-    .speech-bub, .speech-bub-dating {
-        width: 100%;
-        height: auto;
-        padding: 25px;
-
-        border-radius: 3px;
-    }
-    #gen-dating-modal1 .icon-div {
-        padding: 0 15px;
-    }
-    #gen-dating-modal1 .part1-speech-bub {
-        margin-bottom: 15px;
-    }
-    #gen-dating-modal1 .speech-bub-ico {
-        width: 40px;
-        height: 40px;
-        float: left;
-        display: inline;
-        margin-bottom: 0;
-        margin-right: 10px;
-    }
-    #gen-dating-modal1 .part1-speech-bub p {
-        display: inline;
-        margin: 0;
-    }
-    #gen-dating-modal1 .modal-body-header {
-        font-size: 18px;
-        margin: 0 0 25px;
-    }
-    .speech-bub-dating-text p {
-        margin: 20px 0 20px;
-        font-size: 18px;
-        line-height: 24px;
-    }
-
+  /* 01 - Popular Used */
+  .speech-bub,
+  .speech-bub-dating {
+    width: 100%;
+    height: auto;
+    padding: 25px;
+    border-radius: 3px;
+  }
+  #gen-dating-modal1 .icon-div {
+    padding: 0 15px;
+  }
+  #gen-dating-modal1 .part1-speech-bub {
+    margin-bottom: 15px;
+  }
+  #gen-dating-modal1 .speech-bub-ico {
+    width: 40px;
+    height: 40px;
+    float: left;
+    display: inline;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+  #gen-dating-modal1 .part1-speech-bub p {
+    display: inline;
+    margin: 0;
+  }
+  #gen-dating-modal1 .modal-body-header {
+    font-size: 18px;
+    margin: 0 0 25px;
+  }
+  .speech-bub-dating-text p {
+    margin: 20px 0 20px;
+    font-size: 18px;
+    line-height: 24px;
+  }
   #bubbleHolder p {
     width: 100%;
-
     text-align: left;
   }
-
   /* 2 - Scanning Criminal */
   #criminalLeft img {
     position: relative;
-
     height: 80px;
     margin: 0 20px 20px 20px;
   }
-
-  #scanningCriminal .checking-sources-progress, #scanningCriminalRecords .checking-sources-progress {
+  #scanningCriminal .checking-sources-progress,
+  #scanningCriminalRecords .checking-sources-progress {
     margin-bottom: 20px;
   }
   #criminalContent {
     height: inherit;
   }
-
   #criminalContent ul {
     font-size: 16px;
     line-height: 20px;
-
     margin-left: 0;
     padding: 0;
   }
-
   #criminalHeader p {
     font-size: 18px;
     margin: 20px 0 5px 0;
   }
-
   #criminalContent p {
     margin: 5px 0 10px 0;
   }
   #criminalLeft {
     display: block;
-
     height: auto;
     margin: 0;
-
     text-align: center;
   }
-
   #criminalRight {
     display: block;
-
     padding: 0;
   }
   #foundCriminal p {
     font-size: 20px;
-
     margin-top: 0;
     padding-top: 0;
   }
   #foundCriminal img {
     display: block;
-
     height: 50px;
     margin: 0 auto 10px auto;
   }
-
   /* 3 - Scanning Social Media */
   ul.socialMedias li {
     margin-bottom: 4%;
   }
-
   #contactInfoSocialProfile ul.contactInfos li {
     width: 50%;
   }
-
   #social-media-groups li img,
   #social-media-groups i.loading {
     top: 0;
@@ -3943,32 +3811,25 @@ ul.contactInfos img.loading.spinner {
   .social-widget {
     padding: 15px 20px;
   }
-
   /* 4 - Relatives */
   #gen-report-modal2 .content {
     padding-bottom: 0;
   }
-
   #gen-report-modal2 form {
     position: relative;
-
     width: 100%;
     margin: 0 auto;
     padding: 25px 0;
   }
-
   #gen-report-modal2 .modal-footer {
     padding: 10px 0;
   }
-
   #gen-report-modal2 .modal-footer>div {
     padding: 0 6px;
   }
-
   #gen-report-modal2 .form-group {
     margin-bottom: 0;
   }
-
   section.active#gen-report-modal2 {
     padding: 0 0 20px 0;
   }
@@ -3976,7 +3837,6 @@ ul.contactInfos img.loading.spinner {
   #gen-report-modal3 .modal-body-headline {
     text-align: center;
   }
-
   #gen-report-modal3 div.form-group {
     font-size: 16px;
     font-weight: 400;
@@ -3984,14 +3844,11 @@ ul.contactInfos img.loading.spinner {
     padding-left: 25px;
     text-align: left;
   }
-
   #gen-report-modal11 #fcra-confirm .panel .form-group {
     margin: 10px;
     padding-left: 25px;
   }
-
   /* 6 - Alert 2 */
-
   #gen-report-modal11 .modal-header p {
     font-size: 16px;
     line-height: 20px;
@@ -4001,61 +3858,46 @@ ul.contactInfos img.loading.spinner {
     padding-right: 0;
     padding-left: 0;
   }
-
   #gen-report-modal11 .modal-body p {
     padding: 8px;
   }
-
   #gen-report-modal11 .fcraCheckbox-wrapper .fcraCheckbox-box {
     margin-left: 5px;
   }
-
   #fcra-confirm img {
     width: 100px;
   }
-
   /* 7 - State Record Summary */
-
   #confirmData .modal-body .icon-img {
     margin-bottom: 10px;
     text-align: center;
   }
-
   #confirmData .modal-body p {
     margin: 0 30px;
   }
-
   /* 8 - Save Your Resuts */
-
   #signup-modal-form .main-btn {
     font-size: 21px;
   }
-
   form#signup-modal-form {
     margin-top: 20px;
   }
-
   /* 9 - Report Watcher */
-
   #ongoing-notifications {
     width: 60%;
     margin: 15px 20%;
     padding-top: 20px;
     padding-bottom: 22px;
   }
-
   #gen-report-modal4 .captHeadContent p {
     font-size: 20px;
     line-height: 24px;
     margin: 0;
   }
-
   #gen-report-modal4 .modal-body p {
     line-height: 22px;
   }
-
   /* 10 - Search Behind Report */
-
   #gen-report-modal5 .content {
     padding-bottom: 0;
   }
@@ -4066,38 +3908,30 @@ ul.contactInfos img.loading.spinner {
     padding: 10px;
   }
   /* Loading Modal */
-
   /* External Modal */
-
   #loadingModal .modal-content,
   #externalModal .modal-content {
     border-radius: 4px;
   }
-
   #loadingModal .modal-header,
   #externalModal .modal-header {
     font-size: 20px;
     line-height: 26px;
-
     border-radius: 4px 4px 0 0;
   }
-
   .cont-loading-aditional div {
     padding-right: 0;
     padding-left: 0;
   }
-
   input#fcraCheckbox,
   #fcraCheckbox2 {
     margin: 0 0 0 -17px;
   }
-
   #exitPopRefine p strong span {
     text-align: left;
   }
   #sub-container {
     display: block;
-
     padding-top: 0;
   }
   #exit-pop-skip .modal-header h1 {
@@ -4105,113 +3939,129 @@ ul.contactInfos img.loading.spinner {
   }
   .warn-head {
     font-size: 16px;
-
     text-align: center;
   }
-  #scanningEmail .sub-heading, #anythingElseModal .sub-heading, #anythingElseModalContact .sub-heading, #anythingElseModalCriminal .sub-heading {
-      font-size: 18px;
-      margin: 0 0 20px;
-      padding: 0;
+  #scanningEmail .sub-heading,
+  #anythingElseModal .sub-heading,
+  #anythingElseModalContact .sub-heading,
+  #anythingElseModalCriminal .sub-heading {
+    font-size: 18px;
+    margin: 0 0 20px;
+    padding: 0;
   }
-  #anythingElseModal .checkbox-bg, #anythingElseModalContact .checkbox-bg, #anythingElseModalCriminal .checkbox-bg {
-      padding: 20px 20px 0;
+  #anythingElseModal .checkbox-bg,
+  #anythingElseModalContact .checkbox-bg,
+  #anythingElseModalCriminal .checkbox-bg {
+    padding: 20px 20px 0;
   }
   #gen-myself-modal3 .f-name {
-      width: 100%;
+    width: 100%;
   }
-  #gen-myself-modal3 .l-name, #gen-myself-modal3 .cty, #gen-myself-modal3 .state {
-      width: 100%;
+  #gen-myself-modal3 .l-name,
+  #gen-myself-modal3 .cty,
+  #gen-myself-modal3 .state {
+    width: 100%;
   }
-  #contactInfoSearchModal .sub-heading, #contactInfoSocialProfile .sub-heading, #contactInfoSearchCriminalModal .sub-heading {
-      font-size: 18px;
-      margin: 2px 0 15px;
-      padding: 0;
+  #contactInfoSearchModal .sub-heading,
+  #contactInfoSocialProfile .sub-heading,
+  #contactInfoSearchCriminalModal .sub-heading {
+    font-size: 18px;
+    margin: 2px 0 15px;
+    padding: 0;
   }
   #professionalProfileSearch .sub-heading {
-      font-size: 18px;
-      padding: 0;
+    font-size: 18px;
+    padding: 0;
   }
   #gen-myself-modal1 .icon-div {
-      padding: 0 15px;
+    padding: 0 15px;
   }
   #gen-myself-modal1 .part1-speech-bub {
-      height: auto;
-      margin-bottom: 15px;
+    height: auto;
+    margin-bottom: 15px;
   }
   .speech-bub-img-wrapper img {
-      margin-top: 10px;
+    margin-top: 10px;
   }
-  #scanningCriminal #criminalHeader p, #scanningCriminalRecords #criminalHeader p {
-      margin: 0 0 5px 0;
+  #scanningCriminal #criminalHeader p,
+  #scanningCriminalRecords #criminalHeader p {
+    margin: 0 0 5px 0;
   }
   .heading-logo {
-      margin-top: 10px;
-      margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
   #scanningContactInfo .sub-heading {
-      font-size: 18px;
-      margin: 2px 0 30px;
+    font-size: 18px;
+    margin: 2px 0 30px;
   }
   #scanningContactInfo .social-widget {
-      padding: 0;
+    padding: 0;
   }
   #contactinfo-progress {
-      margin: 30px 0 5px;
+    margin: 30px 0 5px;
   }
   #btn-finalize {
-      margin: 20px 0 20px;
+    margin: 20px 0 20px;
   }
-  #contact-info-groups li img, #contact-info-groups i.loading {
-      margin-left: -30px;
+  #contact-info-groups li img,
+  #contact-info-groups i.loading {
+    margin-left: -30px;
   }
-  #contact-info-srch-groups li img, #contact-info-srch-groups i.loading {
-      margin-left: -30px;
+  #contact-info-srch-groups li img,
+  #contact-info-srch-groups i.loading {
+    margin-left: -30px;
   }
   #loadingModal .popup-modal-pad {
-      padding: 30px 20px 40px;
+    padding: 30px 20px 40px;
   }
   #gen-report-modal6 .form-input-group {
-      padding: 30px 20px;
+    padding: 30px 20px;
   }
   #signup-modal-form input {
-      background: #F9F9F9;
-      border: 1px solid #F9F9F9;
-      box-shadow: inset 1px 0 2px 0 rgba(0,0,0,0.26);
-      border-radius: 2px;
+    background: #F9F9F9;
+    border: 1px solid #F9F9F9;
+    box-shadow: inset 1px 0 2px 0 rgba(0, 0, 0, 0.26);
+    border-radius: 2px;
   }
   #monitoringDatingModal .sub-heading {
-      font-size: 18px;
-      padding: 0;
+    font-size: 18px;
+    padding: 0;
   }
   #monitoringDatingModal .mob-para {
-      font-size: 16px !important;
-      padding: 0;
+    font-size: 16px !important;
+    padding: 0;
   }
   #fcraDatingModal .sub-heading {
-      font-size: 18px;
-      margin: 0 0 20px;
-      padding: 0;
+    font-size: 18px;
+    margin: 0 0 20px;
+    padding: 0;
   }
   #fcraDatingModal .btn {
-      margin-top: 0;
+    margin-top: 0;
   }
   #fcraDatingModal #fcra-dating-confirm .panel .form-group {
-      padding: 14px 10px;
+    padding: 14px 10px;
   }
   #fcraDatingModal #fcra-dating-confirm p {
-      margin: 0 0 0 20px;
+    margin: 0 0 0 20px;
   }
-  #contact-info-groups li p, #contact-info-srch-groups li p {
-      left: 0;
+  #contact-info-groups li p,
+  #contact-info-srch-groups li p {
+    left: 0;
   }
-  #gen-dating-modal1, #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text, #familySaftyModal1 .speech-bub-text, #tacklingChallenges .speech-bub-text {
-      display: flex;
-      margin: 0;
+  #gen-dating-modal1,
+  #oldFlamesContactModal .speech-bub-text,
+  #hidden-criminal-past-modal .speech-bub-text,
+  #familySaftyModal1 .speech-bub-text,
+  #tacklingChallenges .speech-bub-text {
+    display: flex;
+    margin: 0;
   }
-  #contactInfoSearchModal ul.contactInfos li, #contactInfoSearchCriminalModal ul.contactInfos li {
-      width: 50%;
+  #contactInfoSearchModal ul.contactInfos li,
+  #contactInfoSearchCriminalModal ul.contactInfos li {
+    width: 50%;
   }
-
   #hidden-criminal-past-modal .icons-container {
     height: auto;
     padding-bottom: 10px;
@@ -4219,7 +4069,6 @@ ul.contactInfos img.loading.spinner {
   /* #hidden-criminal-past-modal .part1-speech-bub {
     margin: 20px 0;
   } */
-
   #tacklingChallenges .icons-container {
     height: 300px;
   }
@@ -4227,7 +4076,9 @@ ul.contactInfos img.loading.spinner {
     margin: 20px 0;
   }
 }
+
 /* Landscape phones and down */
+
 @media (max-width: 480px) {
   h3 {
     font-size: 22px;
@@ -4241,21 +4092,18 @@ ul.contactInfos img.loading.spinner {
     font-size: 15px;
     font-weight: 700;
   }
-
   .hidden-xxs {
     display: none;
   }
   .visible-xxs {
     display: inline-block !important;
   }
-
   .hidden-xxs {
     display: none !important;
   }
   .visible-xxs {
     display: block !important;
   }
-
   .wizard-steps-panel.steps-quantity-2 .step-number,
   .wizard-steps-panel.steps-quantity-3 .step-number,
   .wizard-steps-panel.steps-quantity-4 .step-number,
@@ -4266,7 +4114,6 @@ ul.contactInfos img.loading.spinner {
   .wizard-steps-panel.steps-quantity-9 .step-number {
     width: 20%;
   }
-
   .testimonials p {
     font-size: 16px;
     line-height: 22px;
@@ -4278,39 +4125,36 @@ ul.contactInfos img.loading.spinner {
     padding-right: 20px;
     padding-left: 20px;
   }
-  .test-cont  img {
+  .test-cont img {
     width: 30px;
     margin-top: 24px;
   }
-
   /* 1 - Modal1 */
-  #speech-bub-one:after, #speech-bub-one-dating:after  {
+  #speech-bub-one:after,
+  #speech-bub-one-dating:after {
     left: 3.5%;
   }
-
-  #speech-bub-two:after, #speech-bub-two-dating:after {
+  #speech-bub-two:after,
+  #speech-bub-two-dating:after {
     left: 31.5%;
   }
-
-  #speech-bub-three:after, #speech-bub-three-dating:after {
+  #speech-bub-three:after,
+  #speech-bub-three-dating:after {
     left: 58.5%;
   }
-
-  #speech-bub-four:after, #speech-bub-four-dating:after {
+  #speech-bub-four:after,
+  #speech-bub-four-dating:after {
     left: 86.5%;
   }
-
   /* 2 - Criminal */
   #criminalContent {
     height: inherit;
   }
-
   #criminalContent ul {
     font-size: 16px;
     line-height: 20px;
   }
   /* 9 - Report Watcher */
-
   #ongoing-notifications {
     width: 80%;
     margin: 10px 10%;
@@ -4328,9 +4172,7 @@ ul.contactInfos img.loading.spinner {
     margin-top: 15px;
     margin-bottom: 20px;
   }
-
   /* 10 - Search Behind Report */
-
   #gen-report-modal5 h3 {
     font-size: 18px;
     line-height: 24px;
@@ -4356,33 +4198,37 @@ ul.contactInfos img.loading.spinner {
     width: 60px;
   }
 }
+
 @media (max-width:700px) and (min-width:370px) {
   .test-cont li {
     padding-left: 10px;
   }
 }
+
 @media (max-width:369px) {
   .testimonials {
     margin-top: 10px;
   }
 }
+
 @media (min-width:500px) and (max-width:767px) {
   .wizard-steps-panel .step-number .number:after {
     position: absolute;
     top: 15px;
     right: 0;
-    left: calc( 54.5% + 1.1em/2 );
+    left: calc( 54.5% + 1.1em/2);
     content: ' ';
     border: 1px solid #5e5b86;
     border-radius: 0;
     background: none !important;
   }
 }
+
 @media (min-width:320px) and (max-width:767px) {
   .wizard-steps-panel .step-number .number:before {
     position: absolute;
     top: 15px;
-    right: calc( 53.5% + 1.5em/2 );
+    right: calc( 53.5% + 1.5em/2);
     left: 0;
     content: ' ';
     border: 1px solid #5e5b86;
@@ -4392,17 +4238,20 @@ ul.contactInfos img.loading.spinner {
   #gen-bgsearch-modal1 .list-fix-height {
     height: 150px;
   }
-  #gen-familysafety-modal1 .speech-bub-text-familysafety,#gen-myself-modal1 .speech-bub-text-myself {
+  #gen-familysafety-modal1 .speech-bub-text-familysafety,
+  #gen-myself-modal1 .speech-bub-text-myself {
     margin: 0;
     display: inline-block;
     margin: 0;
     width: 78%;
     text-align: left;
   }
-  #gen-myself-modal1 .part1-speech-bub-myself, #gen-familysafety-modal1 .part1-speech-bub-familysafety {
+  #gen-myself-modal1 .part1-speech-bub-myself,
+  #gen-familysafety-modal1 .part1-speech-bub-familysafety {
     padding-left: 15px;
   }
-  #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text {
+  #oldFlamesContactModal .speech-bub-text,
+  #hidden-criminal-past-modal .speech-bub-text {
     text-align: left;
   }
   #oldFlamesContactModal .part1-speech-bub {
@@ -4415,28 +4264,50 @@ ul.contactInfos img.loading.spinner {
     display: inline-block;
     padding: 0;
   }
-  #anythingElseModal, #anythingElseModalContact, #contactInfoSearchCriminalModal, #contactInfoSearchModal, #contactInfoSocialProfile, #familySaftyModal1, #fcraDatingModal, #hidden-criminal-past-modal, #monitoringDatingModal, #oldFlamesContactModal, #professionalProfileSearch, #scanningContactInfo, #scanningEmail, #tacklingChallenges {
+  #anythingElseModal,
+  #anythingElseModalContact,
+  #contactInfoSearchCriminalModal,
+  #contactInfoSearchModal,
+  #contactInfoSocialProfile,
+  #familySaftyModal1,
+  #fcraDatingModal,
+  #hidden-criminal-past-modal,
+  #monitoringDatingModal,
+  #oldFlamesContactModal,
+  #professionalProfileSearch,
+  #scanningContactInfo,
+  #scanningEmail,
+  #tacklingChallenges {
     padding: 15px;
   }
-  #oldFlamesContactModal .icon-div, #hidden-criminal-past-modal .icon-div, #familySaftyModal1 .icon-div, #tacklingChallenges .icon-div {
+  #oldFlamesContactModal .icon-div,
+  #hidden-criminal-past-modal .icon-div,
+  #familySaftyModal1 .icon-div,
+  #tacklingChallenges .icon-div {
     padding: 0 30px;
   }
-  #hidden-criminal-past-modal .speech-bub-text{
+  #hidden-criminal-past-modal .speech-bub-text {
     text-align: left;
     /* padding-left: 55px; */
     font-size: 16px !important;
     display: flex;
   }
-  #tacklingChallenges .speech-bub-text{
+  #tacklingChallenges .speech-bub-text {
     text-align: left;
     /* padding-left: 55px; */
   }
-  #gen-familysafety-modal1 .sub-heading, #gen-myself-modal1 .sub-heading, #oldFlamesContactModal .sub-heading, #hidden-criminal-past-modal .sub-heading, #familySaftyModal1 .sub-heading, #tacklingChallenges .sub-heading, #gen-dating-modal1 .sub-heading {
+  #gen-familysafety-modal1 .sub-heading,
+  #gen-myself-modal1 .sub-heading,
+  #oldFlamesContactModal .sub-heading,
+  #hidden-criminal-past-modal .sub-heading,
+  #familySaftyModal1 .sub-heading,
+  #tacklingChallenges .sub-heading,
+  #gen-dating-modal1 .sub-heading {
     font-size: 18px;
     color: #4a4a4a;
     text-align: center;
     margin: 20px 0 40px;
-    padding:0;
+    padding: 0;
   }
   #gen-myself-modal1 .part2-speech-bub-myself {
     padding-bottom: 1px !important;
@@ -4451,7 +4322,7 @@ ul.contactInfos img.loading.spinner {
   #tacklingChallenges .part2-speech-bub {
     padding-bottom: 45px !important;
   }
-  #gen-dating-modal1 .part2-speech-bub{
+  #gen-dating-modal1 .part2-speech-bub {
     padding-bottom: 15px !important;
   }
   #gen-familysafety-modal1 .part2-speech-bub-familysafety {
@@ -4461,9 +4332,8 @@ ul.contactInfos img.loading.spinner {
     margin-bottom: 65px !important;
   }
   .part2-speech-bub {
-    margin-bottom: 0px !important; 
+    margin-bottom: 0px !important;
   }
-
   #gen-bgsearch-modal1 .icon-heading-bgsearch {
     font-size: 18px !important;
   }
@@ -4481,15 +4351,21 @@ ul.contactInfos img.loading.spinner {
     margin-top: 20px;
   }
 }
+
 @media (min-width:200px) and (max-width:320px) {
   #hidden-criminal-past-modal .long-text-pad {
     padding-top: 25px;
   }
-  #gen-myself-modal1 .speech-bub-text-myself, #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text,
-  #gen-dating-modal1 .speech-bub-text, #tacklingChallenges .speech-bub-text, #gen-familysafety-modal1 .speech-bub-text-familysafety {
-   padding-bottom: 21px !important;
+  #gen-myself-modal1 .speech-bub-text-myself,
+  #oldFlamesContactModal .speech-bub-text,
+  #hidden-criminal-past-modal .speech-bub-text,
+  #gen-dating-modal1 .speech-bub-text,
+  #tacklingChallenges .speech-bub-text,
+  #gen-familysafety-modal1 .speech-bub-text-familysafety {
+    padding-bottom: 21px !important;
   }
 }
+
 @media (min-width:320px) and (max-width:370px) {
   #hidden-criminal-past-modal .part1-speech-bub {
     margin-bottom: 50px;
@@ -4501,15 +4377,19 @@ ul.contactInfos img.loading.spinner {
   #tacklingChallenges .part1-speech-bub {
     margin-bottom: 50px;
   }
-  #gen-myself-modal1 .speech-bub-text-myself, #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text,
-  #gen-dating-modal1 .speech-bub-text, #tacklingChallenges .speech-bub-text, #gen-familysafety-modal1 .speech-bub-text-familysafety {
-   padding-bottom: 21px !important;
+  #gen-myself-modal1 .speech-bub-text-myself,
+  #oldFlamesContactModal .speech-bub-text,
+  #hidden-criminal-past-modal .speech-bub-text,
+  #gen-dating-modal1 .speech-bub-text,
+  #tacklingChallenges .speech-bub-text,
+  #gen-familysafety-modal1 .speech-bub-text-familysafety {
+    padding-bottom: 21px !important;
   }
 }
+
 @media (min-width:370px) and (max-width:480px) {
   #hidden-criminal-past-modal .part1-speech-bub {
     margin-bottom: 50px;
-    /* display: inline-block; */
     padding: 0;
   }
   #hidden-criminal-past-modal .long-text-pad {
@@ -4517,18 +4397,21 @@ ul.contactInfos img.loading.spinner {
   }
   #tacklingChallenges .part1-speech-bub {
     margin-bottom: 5px;
-    /* display: inline-block; */
     padding: 0;
   }
-  #gen-myself-modal1 .speech-bub-text-myself, #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text,
-  #gen-dating-modal1 .speech-bub-text, #tacklingChallenges .speech-bub-text, #gen-familysafety-modal1 .speech-bub-text-familysafety {
-   padding-bottom: 21px !important;
+  #gen-myself-modal1 .speech-bub-text-myself,
+  #oldFlamesContactModal .speech-bub-text,
+  #hidden-criminal-past-modal .speech-bub-text,
+  #gen-dating-modal1 .speech-bub-text,
+  #tacklingChallenges .speech-bub-text,
+  #gen-familysafety-modal1 .speech-bub-text-familysafety {
+    padding-bottom: 21px !important;
   }
 }
+
 @media (min-width:480px) and (max-width:767px) {
   #hidden-criminal-past-modal .part1-speech-bub {
     margin-bottom: 25px;
-    /* display: inline-block; */
     padding: 0;
   }
   #hidden-criminal-past-modal .long-text-pad {
@@ -4539,8 +4422,12 @@ ul.contactInfos img.loading.spinner {
     display: inline-block;
     padding: 0;
   }
-  #gen-myself-modal1 .speech-bub-text-myself, #oldFlamesContactModal .speech-bub-text, #hidden-criminal-past-modal .speech-bub-text,
-  #gen-dating-modal1 .speech-bub-text, #tacklingChallenges .speech-bub-text, #gen-familysafety-modal1 .speech-bub-text-familysafety {
-   padding-bottom: 21px !important;
+  #gen-myself-modal1 .speech-bub-text-myself,
+  #oldFlamesContactModal .speech-bub-text,
+  #hidden-criminal-past-modal .speech-bub-text,
+  #gen-dating-modal1 .speech-bub-text,
+  #tacklingChallenges .speech-bub-text,
+  #gen-familysafety-modal1 .speech-bub-text-familysafety {
+    padding-bottom: 21px !important;
   }
 }
